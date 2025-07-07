@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="104dp" android:width="104dp" android:viewportWidth="104" android:viewportHeight="104">
+    <path android:fillColor="#eb8bd3" android:pathData="M16,0L88,0A16,16 0,0 1,104 16L104,88A16,16 0,0 1,88 104L16,104A16,16 0,0 1,0 88L0,16A16,16 0,0 1,16 0z"/>
+    <path android:fillColor="@drawable/res_0x7f080013_az_battlepass_gold_bg__0" android:pathData="M16,0L88,0A16,16 0,0 1,104 16L104,88A16,16 0,0 1,88 104L16,104A16,16 0,0 1,0 88L0,16A16,16 0,0 1,16 0z"/>
+    <path android:fillColor="@drawable/res_0x7f080014_az_battlepass_gold_bg__1" android:pathData="M16,0L88,0A16,16 0,0 1,104 16L104,88A16,16 0,0 1,88 104L16,104A16,16 0,0 1,0 88L0,16A16,16 0,0 1,16 0z"/>
+    <path android:fillColor="@drawable/res_0x7f080015_az_battlepass_gold_bg__2" android:pathData="M16,0L88,0A16,16 0,0 1,104 16L104,88A16,16 0,0 1,88 104L16,104A16,16 0,0 1,0 88L0,16A16,16 0,0 1,16 0z"/>
+    <path android:fillColor="@drawable/res_0x7f080016_az_battlepass_gold_bg__3" android:pathData="M16,0L88,0A16,16 0,0 1,104 16L104,88A16,16 0,0 1,88 104L16,104A16,16 0,0 1,0 88L0,16A16,16 0,0 1,16 0z"/>
+    <path android:fillColor="@drawable/res_0x7f080017_az_battlepass_gold_bg__4" android:pathData="M16,0L88,0A16,16 0,0 1,104 16L104,88A16,16 0,0 1,88 104L16,104A16,16 0,0 1,0 88L0,16A16,16 0,0 1,16 0z"/>
+</vector>

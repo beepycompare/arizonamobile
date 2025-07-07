@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:height="10dp" android:width="10dp">
+    <item android:drawable="@drawable/white_circle"/>
+    <item android:drawable="@drawable/telegram_black_icon_round"/>
+</layer-list>

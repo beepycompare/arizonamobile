@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="10dp" android:layout_marginRight="10dp" android:layout_marginHorizontal="10dp">
+        <com.arizona.common.ui.AvatarView android:id="@+id/avatar" android:layout_width="28dp" android:layout_height="28dp" android:layout_marginRight="5dp"/>
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="65dp">
+            <LinearLayout android:gravity="start|center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/ic_attach" android:visibility="gone" android:layout_width="6dp" android:layout_height="6dp" android:src="@drawable/ic_paperclip" android:layout_marginEnd="3dp"/>
+                <androidx.appcompat.widget.AppCompatTextView android:textSize="8sp" android:textColor="#ffffff" android:ellipsize="end" android:id="@+id/contact_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="65dp" android:maxLines="2"/>
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/ic_notification_off" android:visibility="gone" android:layout_width="8dp" android:layout_height="8dp" android:src="@drawable/ic_notification_off" android:layout_marginStart="2dp"/>
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatTextView android:textSize="8sp" android:textColor="#aaaaaa" android:id="@+id/message_text" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:maxWidth="65dp" android:maxLines="1"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+        <LinearLayout android:gravity="end|center_vertical" android:orientation="horizontal" android:id="@+id/actions_container" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView android:id="@+id/add_or_remove_user_btn" android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/ic_remove_user_messenger"/>
+            <androidx.appcompat.widget.AppCompatImageView android:id="@+id/send_message_btn" android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/ic_send_messenger" android:tint="#aaaaaa" android:layout_marginStart="10dp" android:layout_marginEnd="2dp"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="end|center_vertical" android:orientation="vertical" android:id="@+id/status_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatTextView android:textSize="8sp" android:textColor="#aaaaaa" android:id="@+id/last_time_message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="22:00"/>
+            <androidx.cardview.widget.CardView android:layout_gravity="center" android:id="@+id/message_status" android:visibility="visible" android:layout_width="5dp" android:layout_height="5dp" android:layout_marginTop="5dp" android:layout_marginBottom="2dp" android:elevation="0dp" app:cardBackgroundColor="#4a8ef4" app:cardCornerRadius="50dp" app:cardElevation="0dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <View android:id="@+id/item_divider" android:background="#2f2f2f" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="4dp" android:layout_marginTop="10dp" android:layout_marginRight="4dp" android:layout_marginHorizontal="4dp"/>
+</LinearLayout>

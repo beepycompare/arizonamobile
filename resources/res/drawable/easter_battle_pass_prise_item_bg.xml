@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="112dp" android:width="112dp" android:viewportWidth="112" android:viewportHeight="112">
+    <group>
+        <clip-path android:pathData="M12.52,0L98.59,0A12.52,12.52 0,0 1,111.1 12.52L111.1,98.59A12.52,12.52 0,0 1,98.59 111.1L12.52,111.1A12.52,12.52 0,0 1,0 98.59L0,12.52A12.52,12.52 0,0 1,12.52 0z"/>
+        <path android:fillColor="#1f2329" android:pathData="M12.52,0L98.59,0A12.52,12.52 0,0 1,111.1 12.52L111.1,98.59A12.52,12.52 0,0 1,98.59 111.1L12.52,111.1A12.52,12.52 0,0 1,0 98.59L0,12.52A12.52,12.52 0,0 1,12.52 0z"/>
+        <path android:fillColor="@drawable/res_0x7f0800f7_easter_battle_pass_prise_item_bg__0" android:pathData="M-43.27,198.25l159.83,-214.98l16.29,12.11l-159.83,214.98z" android:strokeAlpha="0.4" android:fillAlpha="0.4"/>
+        <path android:fillColor="@drawable/res_0x7f0800f8_easter_battle_pass_prise_item_bg__1" android:pathData="M-26.98,210.36l159.83,-214.98l15.94,11.85l-159.83,214.98z" android:strokeAlpha="0.4" android:fillAlpha="0.4"/>
+        <path android:fillColor="@drawable/res_0x7f0800f9_easter_battle_pass_prise_item_bg__2" android:pathData="M-75.5,174.29l159.83,-214.98l32.23,23.96l-159.83,214.98z" android:strokeAlpha="0.4" android:fillAlpha="0.4"/>
+        <path android:fillColor="@drawable/res_0x7f0800fa_easter_battle_pass_prise_item_bg__3" android:pathData="M-70.58,107.01l159.83,-214.98l29.04,21.59l-159.83,214.98z" android:strokeAlpha="0.2" android:fillAlpha="0.2"/>
+    </group>
+    <path android:fillColor="#00000000" android:pathData="M12.52,0.59L98.58,0.59A11.93,11.93 0,0 1,110.52 12.52L110.52,98.58A11.93,11.93 0,0 1,98.58 110.52L12.52,110.52A11.93,11.93 0,0 1,0.59 98.58L0.59,12.52A11.93,11.93 0,0 1,12.52 0.59z" android:strokeColor="@drawable/res_0x7f0800fb_easter_battle_pass_prise_item_bg__4" android:strokeWidth="1.1736"/>
+</vector>

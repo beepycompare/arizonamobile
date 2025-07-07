@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph" app:startDestination="@+id/informationPageFragment">
+    <fragment android:label="InformationPageFragment" android:name="com.arizona.launcher.ui.information_main.InformationPageFragment" android:id="@+id/informationPageFragment"/>
+    <fragment android:label="ServersFragment" android:name="com.arizona.launcher.ui.servers.ServersFragment" android:id="@+id/serversFragment"/>
+    <fragment android:label="SettingsPageFragment" android:name="com.arizona.launcher.ui.settings.SettingsPageFragment" android:id="@+id/settingsPageFragment"/>
+    <fragment android:label="ServerInfoFragment" android:name="com.arizona.launcher.ui.servers.ServerInfoActivity" android:id="@+id/serverInfoFragment">
+        <argument android:name="serverInfo" app:argType="com.arizona.launcher.model.servers.SAMPServerInfo"/>
+    </fragment>
+</navigation>

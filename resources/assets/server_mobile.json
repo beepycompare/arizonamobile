@@ -1,0 +1,351 @@
+[
+    {
+        "number": 2,
+        "name": "Mobile II",
+        "ip": "80.66.82.148",
+        "port": 5125,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1740041882
+            },
+            {
+                "online": 1000,
+                "time": 1740045542
+            },
+            {
+                "online": 1000,
+                "time": 1740049201
+            },
+            {
+                "online": 1000,
+                "time": 1740052802
+            },
+            {
+                "online": 1000,
+                "time": 1740056462
+            },
+            {
+                "online": 1000,
+                "time": 1740060123
+            },
+            {
+                "online": 1000,
+                "time": 1740063782
+            },
+            {
+                "online": 1000,
+                "time": 1740067382
+            },
+            {
+                "online": 1000,
+                "time": 1740070982
+            },
+            {
+                "online": 1000,
+                "time": 1740074582
+            },
+            {
+                "online": 1000,
+                "time": 1740078182
+            },
+            {
+                "online": 1000,
+                "time": 1740081841
+            },
+            {
+                "online": 1000,
+                "time": 1740085442
+            },
+            {
+                "online": 1000,
+                "time": 1740089102
+            },
+            {
+                "online": 1000,
+                "time": 1740092761
+            },
+            {
+                "online": 1000,
+                "time": 1740096362
+            },
+            {
+                "online": 1000,
+                "time": 1740100021
+            },
+            {
+                "online": 1000,
+                "time": 1740103631
+            },
+            {
+                "online": 1000,
+                "time": 1740107286
+            },
+            {
+                "online": 1000,
+                "time": 1740110887
+            },
+            {
+                "online": 1000,
+                "time": 1740114542
+            },
+            {
+                "online": 1000,
+                "time": 1740118143
+            },
+            {
+                "online": 1000,
+                "time": 1740121801
+            },
+            {
+                "online": 1000,
+                "time": 1740125403
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arizonamob2",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/102.webp",
+        "additionalIps": [
+            "80.66.82.148"
+        ],
+        "recomend": true,
+        "donateMultiplier": 2,
+        "experienceMultiplier": 1
+    },
+    {
+        "number": 3,
+        "name": "Mobile III",
+        "ip": "80.66.82.136",
+        "port": 5125,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1740041882
+            },
+            {
+                "online": 1000,
+                "time": 1740045542
+            },
+            {
+                "online": 1000,
+                "time": 1740049201
+            },
+            {
+                "online": 1000,
+                "time": 1740052802
+            },
+            {
+                "online": 1000,
+                "time": 1740056462
+            },
+            {
+                "online": 1000,
+                "time": 1740060123
+            },
+            {
+                "online": 1000,
+                "time": 1740063782
+            },
+            {
+                "online": 1000,
+                "time": 1740067382
+            },
+            {
+                "online": 1000,
+                "time": 1740070982
+            },
+            {
+                "online": 1000,
+                "time": 1740074582
+            },
+            {
+                "online": 1000,
+                "time": 1740078182
+            },
+            {
+                "online": 1000,
+                "time": 1740081841
+            },
+            {
+                "online": 1000,
+                "time": 1740085442
+            },
+            {
+                "online": 1000,
+                "time": 1740089102
+            },
+            {
+                "online": 1000,
+                "time": 1740092761
+            },
+            {
+                "online": 1000,
+                "time": 1740096362
+            },
+            {
+                "online": 1000,
+                "time": 1740100021
+            },
+            {
+                "online": 1000,
+                "time": 1740103631
+            },
+            {
+                "online": 1000,
+                "time": 1740107286
+            },
+            {
+                "online": 1000,
+                "time": 1740110887
+            },
+            {
+                "online": 1000,
+                "time": 1740114542
+            },
+            {
+                "online": 1000,
+                "time": 1740118143
+            },
+            {
+                "online": 1000,
+                "time": 1740121801
+            },
+            {
+                "online": 1000,
+                "time": 1740125403
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/mobilarizona3",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/103.webp",
+        "additionalIps": [
+            "80.66.82.136"
+        ],
+        "donateMultiplier": 2,
+        "experienceMultiplier": 1
+    },
+    {
+        "number": 1,
+        "name": "Mobile I",
+        "ip": "80.66.82.162",
+        "port": 5125,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1740041882
+            },
+            {
+                "online": 1000,
+                "time": 1740045542
+            },
+            {
+                "online": 1000,
+                "time": 1740049201
+            },
+            {
+                "online": 1000,
+                "time": 1740052802
+            },
+            {
+                "online": 1000,
+                "time": 1740056462
+            },
+            {
+                "online": 1000,
+                "time": 1740060123
+            },
+            {
+                "online": 1000,
+                "time": 1740063782
+            },
+            {
+                "online": 1000,
+                "time": 1740067382
+            },
+            {
+                "online": 1000,
+                "time": 1740070982
+            },
+            {
+                "online": 1000,
+                "time": 1740074582
+            },
+            {
+                "online": 1000,
+                "time": 1740078182
+            },
+            {
+                "online": 1000,
+                "time": 1740081841
+            },
+            {
+                "online": 1000,
+                "time": 1740085442
+            },
+            {
+                "online": 1000,
+                "time": 1740089102
+            },
+            {
+                "online": 1000,
+                "time": 1740092761
+            },
+            {
+                "online": 1000,
+                "time": 1740096362
+            },
+            {
+                "online": 1000,
+                "time": 1740100021
+            },
+            {
+                "online": 1000,
+                "time": 1740103631
+            },
+            {
+                "online": 1000,
+                "time": 1740107286
+            },
+            {
+                "online": 1000,
+                "time": 1740110887
+            },
+            {
+                "online": 1000,
+                "time": 1740114542
+            },
+            {
+                "online": 1000,
+                "time": 1740118143
+            },
+            {
+                "online": 1000,
+                "time": 1740121801
+            },
+            {
+                "online": 1000,
+                "time": 1740125403
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arzmobile1",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/101.webp",
+        "additionalIps": [
+            "80.66.82.162"
+        ],
+        "donateMultiplier": 2,
+        "experienceMultiplier": 1
+    }
+]

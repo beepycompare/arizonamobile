@@ -1,0 +1,46 @@
+package ru.mrlargha.commonui.databinding;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import ru.mrlargha.commonui.R;
+/* loaded from: classes5.dex */
+public final class EasterBattlePassTaskScreenBinding implements ViewBinding {
+    private final FrameLayout rootView;
+    public final RecyclerView rvTask;
+
+    private EasterBattlePassTaskScreenBinding(FrameLayout rootView, RecyclerView rvTask) {
+        this.rootView = rootView;
+        this.rvTask = rvTask;
+    }
+
+    @Override // androidx.viewbinding.ViewBinding
+    public FrameLayout getRoot() {
+        return this.rootView;
+    }
+
+    public static EasterBattlePassTaskScreenBinding inflate(LayoutInflater inflater) {
+        return inflate(inflater, null, false);
+    }
+
+    public static EasterBattlePassTaskScreenBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
+        View inflate = inflater.inflate(R.layout.easter_battle_pass_task_screen, parent, false);
+        if (attachToParent) {
+            parent.addView(inflate);
+        }
+        return bind(inflate);
+    }
+
+    public static EasterBattlePassTaskScreenBinding bind(View rootView) {
+        int i = R.id.rv_task;
+        RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
+        if (recyclerView != null) {
+            return new EasterBattlePassTaskScreenBinding((FrameLayout) rootView, recyclerView);
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(rootView.getResources().getResourceName(i)));
+    }
+}

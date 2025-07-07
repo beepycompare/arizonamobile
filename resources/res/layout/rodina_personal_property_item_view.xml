@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:paddingTop="2dp" android:paddingBottom="4dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <TextView android:textSize="@dimen/_11sdp" android:gravity="start|center_vertical" android:layout_gravity="start" android:id="@+id/rodina_personal_property_item_view_key" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/rodina_regular_white_80_text"/>
+    <Space android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+    <TextView android:textStyle="bold" android:layout_gravity="right" android:id="@+id/rodina_personal_property_item_view_value" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/rodina_regular_white_text"/>
+</LinearLayout>

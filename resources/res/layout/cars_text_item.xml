@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/cars_text_item" android:layout_width="@dimen/_61sdp" android:layout_height="@dimen/_18sdp" android:layout_marginRight="@dimen/_3sdp" android:layout_marginBottom="@dimen/_7sdp">
+    <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:id="@+id/item_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Denis_Mironow" android:fontFamily="@font/pfdmedium" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
+    <TextView android:textSize="@dimen/_5sdp" android:textColor="#8f8f8f" android:id="@+id/item_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Стоимость покупку гос-ву" android:fontFamily="@font/pfdindisplaypro_light" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toBottomOf="@+id/item_title"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

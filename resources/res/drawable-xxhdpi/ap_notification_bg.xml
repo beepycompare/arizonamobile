@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="145dp" android:width="500dp" android:viewportWidth="500" android:viewportHeight="145">
+    <path android:fillColor="@drawable/res_0x7f080006_ap_notification_bg__0" android:pathData="M0,0h500v145h-500z" android:fillAlpha="0.5"/>
+</vector>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:padding="@dimen/_2sdp" android:layout_width="@dimen/_100sdp" android:layout_height="@dimen/_100sdp">
+    <ImageView android:id="@+id/bg" android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/easter_battle_pass_prise_item_bg" android:adjustViewBounds="true"/>
+    <androidx.constraintlayout.widget.ConstraintLayout android:orientation="vertical" android:padding="@dimen/_8sdp" android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:gravity="center" android:id="@+id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Пасхальный рюкзак кролика" android:fontFamily="@font/heading_now_66_bold" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+        <ImageView android:id="@+id/iv_name" android:layout_width="0dp" android:layout_height="0dp" android:src="@drawable/baseline_warning_24" android:adjustViewBounds="true" app:layout_constraintBottom_toTopOf="@+id/btn_unselect" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/tv_title"/>
+        <LinearLayout android:gravity="center" android:id="@+id/btn_unselect" android:background="@drawable/easter_battle_pass_tab_unselect_bg" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="@dimen/_16sdp" android:layout_alignParentBottom="true" app:layout_constraintBottom_toBottomOf="0">
+            <ImageView android:layout_width="@dimen/_6sdp" android:layout_height="wrap_content" android:src="@drawable/check_mark" android:layout_marginEnd="@dimen/_3sdp"/>
+            <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Получено"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/btn_select" android:layout_width="match_parent" android:layout_height="@dimen/_16sdp" app:layout_constraintBottom_toBottomOf="0">
+            <LinearLayout android:gravity="center" android:background="@drawable/easter_battle_pass_shop_unselect_button_bg" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="3" android:layout_marginEnd="@dimen/_2sdp">
+                <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:id="@+id/price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2500"/>
+                <ImageView android:layout_width="@dimen/_9sdp" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:src="@drawable/easter_battle_pass_money_egg_icon"/>
+            </LinearLayout>
+            <TextView android:textSize="@dimen/_6sdp" android:textColor="#16191d" android:gravity="center" android:layout_gravity="center" android:id="@+id/buy_button" android:background="@drawable/easter_battle_pass_shop_select_button_bg" android:layout_width="0dp" android:layout_height="match_parent" android:text="Купить" android:layout_weight="4"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

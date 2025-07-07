@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/winter_battlepass_roulette_bg_white" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/battlepass_text" android:id="@+id/tv_prise_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/_4sdp"/>
+</FrameLayout>

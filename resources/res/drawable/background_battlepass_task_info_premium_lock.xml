@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="660dp" android:width="616dp" android:viewportWidth="616" android:viewportHeight="660">
+    <path android:fillColor="@drawable/res_0x7f08001a_background_battlepass_task_info_premium_lock__0" android:pathData="M16,0L600,0A16,16 0,0 1,616 16L616,644A16,16 0,0 1,600 660L16,660A16,16 0,0 1,0 644L0,16A16,16 0,0 1,16 0z"/>
+    <path android:fillColor="#00000000" android:pathData="M16,1L600,1A15,15 0,0 1,615 16L615,644A15,15 0,0 1,600 659L16,659A15,15 0,0 1,1 644L1,16A15,15 0,0 1,16 1z" android:strokeColor="@drawable/res_0x7f08001b_background_battlepass_task_info_premium_lock__1" android:strokeWidth="2"/>
+</vector>

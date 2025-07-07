@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="horizontal" android:id="@+id/linearLayout" android:background="?android:attr/selectableItemBackground" android:padding="4dp" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="8dp">
+    <FrameLayout android:layout_width="50dp" android:layout_height="50dp" android:layout_margin="5dp">
+        <ImageView android:id="@+id/server_logo" android:padding="4dp" android:layout_width="50dp" android:layout_height="50dp"/>
+        <ImageView android:layout_gravity="end|bottom" android:id="@+id/project_logo" android:background="@drawable/project_oval" android:padding="8dp" android:layout_width="25dp" android:layout_height="25dp" android:backgroundTint="@color/arizona_accent" android:backgroundTintMode="src_over" app:srcCompat="@drawable/arizona_small_uncolored"/>
+        <ImageView android:layout_gravity="end|bottom" android:id="@+id/ring" android:background="@drawable/project_oval" android:padding="8dp" android:layout_width="25dp" android:layout_height="25dp"/>
+        <TextView android:textStyle="italic|bold" android:textColor="@color/black" android:gravity="center" android:layout_gravity="center" android:id="@+id/serverNumber" android:padding="2dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4dp" android:text=" 1 " android:foregroundGravity="center" android:fontFamily="@font/gotham" android:textAlignment="center"/>
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp">
+        <TextView android:textSize="@dimen/_12sdp" android:textStyle="bold" android:textColor="@color/white" android:id="@+id/server_name" android:padding="4dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Phoenix"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:padding="4dp" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/user_icon_vec"/>
+            <TextView android:textSize="@dimen/_12sdp" android:id="@+id/players_count" android:padding="4dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1000/1000"/>
+        </LinearLayout>
+    </LinearLayout>
+    <Space android:layout_gravity="fill_horizontal" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="10"/>
+    <ImageView android:layout_gravity="center" android:id="@+id/favorite_add_button" android:padding="10dp" android:layout_width="55dp" android:layout_height="match_parent" android:src="@drawable/star_uncolored"/>
+    <ImageView android:id="@+id/play_button" android:visibility="gone" android:layout_width="40dp" android:layout_height="40dp" android:layout_margin="5dp" android:src="@drawable/ic_play" app:tint="@color/gray_blue"/>
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="horizontal" android:paddingLeft="10dp" android:paddingTop="10dp" android:paddingRight="10dp" android:paddingBottom="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="10dp">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@+id/icon" android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/ic_add_user_messenger"/>
+        <androidx.appcompat.widget.AppCompatTextView android:textSize="8sp" android:textColor="#aaaaaa" android:ellipsize="end" android:id="@+id/name" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:maxWidth="80dp" android:maxLines="1" android:layout_marginStart="5dp"/>
+    </LinearLayout>
+    <View android:id="@+id/divider" android:background="#2f2f2f" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="4dp" android:layout_marginRight="4dp" android:layout_marginHorizontal="4dp"/>
+</LinearLayout>

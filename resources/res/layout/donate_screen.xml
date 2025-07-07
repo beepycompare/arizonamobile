@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/donate" android:background="@drawable/donate_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/_30sdp" android:paddingTop="@dimen/_12sdp" android:paddingRight="@dimen/_30sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="@dimen/_30sdp">
+        <FrameLayout android:id="@+id/top_bar" android:layout_width="match_parent" android:layout_height="@dimen/_24sdp">
+            <TextView android:textSize="@dimen/_22sdp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="start|bottom" android:id="@+id/tv_title" android:paddingTop="0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/shop" android:includeFontPadding="false" android:lineSpacingExtra="0dp" android:lineSpacingMultiplier="1" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            <LinearLayout android:layout_gravity="end|center_vertical" android:layout_width="wrap_content" android:layout_height="match_parent">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/battle_pass_container" android:background="@drawable/donate_bp_bg" android:layout_width="wrap_content" android:layout_height="match_parent" android:paddingEnd="@dimen/_8sdp" android:layout_marginEnd="@dimen/_8sdp">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="match_parent" android:src="@drawable/donate_bp_game_image" android:scaleType="centerCrop" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_2sdp"/>
+                    <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bp" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                </LinearLayout>
+                <LinearLayout android:background="@drawable/donate_top_bar_item_bg" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginEnd="@dimen/_8sdp">
+                    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:paddingLeft="@dimen/_14sdp" android:paddingRight="@dimen/_14sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/_14sdp">
+                        <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:id="@+id/iv_money_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:fontFamily="@font/heading_now_66_bold"/>
+                        <ImageView android:id="@+id/iv_money_ic" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/ic_dollar" android:tint="#95ff00" android:layout_marginStart="@dimen/_4sdp"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="wrap_content" android:layout_height="match_parent" android:src="@drawable/donate_add_money_button" android:scaleType="fitCenter" android:adjustViewBounds="true"/>
+                </LinearLayout>
+                <LinearLayout android:background="@drawable/donate_top_bar_item_bg" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginEnd="@dimen/_8sdp">
+                    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:paddingLeft="@dimen/_14sdp" android:paddingRight="@dimen/_14sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/_14sdp">
+                        <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:id="@+id/iv_az_coin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:fontFamily="@font/heading_now_66_bold"/>
+                        <ImageView android:id="@+id/iv_az_ic" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/ic_az_coins" android:layout_marginStart="@dimen/_4sdp"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="wrap_content" android:layout_height="match_parent" android:src="@drawable/donate_add_az_coins_button" android:scaleType="fitCenter" android:adjustViewBounds="true"/>
+                </LinearLayout>
+                <ImageView android:layout_width="wrap_content" android:layout_height="match_parent" android:src="@drawable/donate_close_button" android:scaleType="fitCenter" android:adjustViewBounds="true"/>
+            </LinearLayout>
+        </FrameLayout>
+        <LinearLayout android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/_12sdp" android:clipToOutline="false">
+            <androidx.recyclerview.widget.RecyclerView android:scrollbarThumbVertical="@drawable/donate_scrollbar_thumb" android:scrollbarTrackVertical="@drawable/donate_scrollbar_track" android:scrollbarStyle="outsideInset" android:id="@+id/rv_categories" android:scrollbars="vertical" android:clipChildren="false" android:clipToPadding="false" android:layout_width="@dimen/_150sdp" android:layout_height="match_parent" android:verticalScrollbarPosition="left" android:paddingStart="@dimen/_5sdp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_4sdp">
+                <include android:id="@+id/main_page" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/donate_main_page"/>
+                <include android:id="@+id/ordinary_page" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/donate_ordinary_page"/>
+                <include android:id="@+id/purchase_page" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/donate_purchase_page"/>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <include android:id="@+id/replenishment_dialog_page" android:visibility="gone" layout="@layout/donate_replenishment_dialog"/>
+</FrameLayout>

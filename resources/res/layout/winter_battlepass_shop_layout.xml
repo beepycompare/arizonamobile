@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="horizontal" android:id="@+id/az_battlepass_layout_tasks_container" android:layout_width="0dp" android:layout_height="0dp">
+    <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:id="@+id/shop_item_list" android:visibility="visible" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_weight="0.25" android:layout_marginHorizontal="10dp" app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" app:spanCount="3"/>
+    <LinearLayout android:orientation="vertical" android:id="@+id/shop_info_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="0.85" android:layout_marginEnd="10dp">
+        <TextView android:textSize="15sp" android:textColor="@color/white" android:gravity="start" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Оформление\10покупки:" android:fontFamily="@font/pfdmedium"/>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+            <TextView android:textSize="13sp" android:textColor="@color/white" android:ellipsize="end" android:gravity="start" android:id="@+id/shop_info_item_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="item name" android:maxLines="2" android:fontFamily="@font/pfdmedium"/>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+            <RelativeLayout android:id="@+id/shop_info_item_discount_container" android:background="@drawable/background_ic_addcart_enabled" android:padding="6dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="13sp" android:textColor="@color/white" android:gravity="start" android:id="@+id/shop_info_item_discount_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="75%" android:layout_centerInParent="true" android:fontFamily="@font/pfdmedium"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <ImageView android:id="@+id/shop_info_item_image" android:layout_width="match_parent" android:layout_height="80dp" android:layout_marginTop="30dp" android:src="@drawable/ic_warning"/>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/discount_info_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="30dp">
+            <TextView android:textSize="9sp" android:textColor="#b8b8b8" android:gravity="start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Цена:" android:drawablePadding="20dp" android:fontFamily="@font/pfdindisplaypro_medium"/>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+            <TextView android:textSize="9sp" android:textColor="#b8b8b8" android:gravity="start" android:id="@+id/shop_info_discount_number_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="discount" android:drawablePadding="20dp" android:fontFamily="@font/pfdindisplaypro_medium" android:layout_marginEnd="5dp"/>
+            <ImageView android:layout_width="9dp" android:layout_height="9dp" android:src="@drawable/battlepass_2025_ic_battlepoints"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/price_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+            <TextView android:textSize="11sp" android:textColor="@color/white" android:ellipsize="end" android:gravity="start" android:id="@+id/shop_info_price_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Цена\10со скидкой:" android:maxLines="2" android:fontFamily="@font/pfdmedium"/>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+            <RelativeLayout android:id="@+id/shop_info_price_container" android:background="@drawable/background_az_battlepass_type_task_enabled" android:paddingLeft="7dp" android:paddingTop="5dp" android:paddingRight="7dp" android:paddingBottom="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="7dp" android:paddingVertical="5dp">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/shop_info_price_number_container" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="11sp" android:textColor="@color/black" android:gravity="center" android:id="@+id/shop_info_price_number_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="price" android:fontFamily="@font/pfdindisplaypro_medium" android:layout_marginEnd="5dp"/>
+                    <ImageView android:layout_width="11dp" android:layout_height="11dp" android:src="@drawable/battlepass_2025_ic_battlepoints"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:id="@+id/az_battlepass_layout_tasks_container" android:background="@drawable/background_shop_item" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp" android:layout_marginEnd="20dp">
+    <ImageView android:id="@+id/shop_item_image" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginTop="20dp" android:src="@drawable/ic_warning"/>
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginBottom="20dp" android:layout_marginStart="5dp" android:layout_marginEnd="5dp">
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+            <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="start" android:id="@+id/shop_item_name_text" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="item name" android:fontFamily="@font/pfdindisplaypro_regular"/>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/discount_container" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3dp">
+                <TextView android:textSize="8sp" android:textColor="#b8b8b8" android:gravity="start" android:id="@+id/shop_item_discount_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10000" android:drawablePadding="20dp" android:fontFamily="@font/pfdindisplaypro_medium" android:layout_marginEnd="5dp"/>
+                <ImageView android:layout_width="8dp" android:layout_height="8dp" android:src="@drawable/battlepass_2025_ic_battlepoints"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/price_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp">
+                <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="start" android:id="@+id/shop_item_price_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="price" android:drawablePadding="20dp" android:fontFamily="@font/pfdindisplaypro_medium" android:layout_marginEnd="5dp"/>
+                <ImageView android:layout_width="12dp" android:layout_height="12dp" android:src="@drawable/battlepass_2025_ic_battlepoints"/>
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout android:gravity="center" android:layout_gravity="center_vertical" android:id="@+id/shop_button" android:background="@drawable/background_ic_addcart_enabled" android:padding="8dp" android:layout_width="35dp" android:layout_height="35dp" android:layout_marginStart="20dp">
+            <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_addcart" android:layout_centerInParent="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

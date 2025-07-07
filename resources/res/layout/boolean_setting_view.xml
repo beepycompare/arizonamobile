@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="8dp">
+    <com.google.android.material.switchmaterial.SwitchMaterial android:textSize="@dimen/_11sdp" android:textColor="@color/white" android:id="@+id/setting_switch" android:layout_width="match_parent" android:layout_height="48dp" android:checked="true" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" android:switchMinWidth="50dp" android:fontFamily="@font/gotham" android:splitTrack="false" android:thumbTint="@color/switch_thumb_color"/>
+</FrameLayout>

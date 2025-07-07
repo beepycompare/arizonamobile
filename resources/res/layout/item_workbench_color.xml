@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/parentCardView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="4dp" app:cardBackgroundColor="@color/blue" app:cardCornerRadius="5dp">
+    <View android:layout_gravity="center" android:id="@+id/viewBgLocked" android:background="@drawable/shining_workshop_color" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+    <ImageView android:layout_gravity="center" android:id="@+id/ivSelectedColor" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_selected_color"/>
+</androidx.cardview.widget.CardView>
