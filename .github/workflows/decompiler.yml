@@ -1,0 +1,71 @@
+name: Decompile APK
+
+on:
+  workflow_dispatch:
+  # schedule:
+    # - cron: '0 * * * *'
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get latest version info
+        id: version
+        run: |
+          curl -s https://mob.maz-ins.com/game/release/app_version.json -o app_version.json
+          VERSION=$(jq -r '.launcherVersion' app_version.json)
+          VERSION_NAME=$(jq -r '.launcherVersionName' app_version.json)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "version_name=$VERSION_NAME" >> $GITHUB_OUTPUT
+
+      - name: Download last_version.txt
+        run: |
+          curl -f -O https://raw.githubusercontent.com/${{ github.repository }}/main/last_version.txt || echo "none" > last_version.txt
+
+      - name: Check if version already decompiled
+        id: check_version
+        run: |
+          LAST_VERSION=$(cat last_version.txt)
+          if [ "$LAST_VERSION" = "${{ steps.version.outputs.version }}" ]; then
+            echo "Already decompiled this version, exiting."
+            exit 1
+          fi
+
+      - name: Checkout repository
+        if: steps.check_version.outcome == 'success'
+        uses: actions/checkout@v3
+
+      - name: Download APK
+        if: steps.check_version.outcome == 'success'
+        run: |
+          curl -L -o app.apk https://mob.maz-ins.com/game/release/launcher_new/app-arizona-release_web.apk
+
+      - name: Install jadx
+        if: steps.check_version.outcome == 'success'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openjdk-17-jre-headless wget unzip
+          wget https://github.com/skylot/jadx/releases/download/v1.4.7/jadx-1.4.7.zip
+          unzip -o jadx-1.4.7.zip
+
+      - name: Decompile APK
+        if: steps.check_version.outcome == 'success'
+        run: |
+          rm -rf sources resources jadx_out
+          ./bin/jadx --show-bad-code -d jadx_out app.apk
+          mv jadx_out/sources sources
+          if [ -d jadx_out/resources ]; then
+            mv jadx_out/resources resources
+          fi
+
+      - name: Save version info
+        if: steps.check_version.outcome == 'success'
+        run: |
+          echo "${{ steps.version.outputs.version }}" > last_version.txt
+
+      - name: Commit and push changes
+        if: steps.check_version.outcome == 'success'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Decompiled APK version ${{ steps.version.outputs.version_name }}
+          file_pattern: 'sources/* resources/* last_version.txt'	
