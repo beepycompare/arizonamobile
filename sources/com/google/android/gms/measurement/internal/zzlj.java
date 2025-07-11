@@ -1,48 +1,44 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.RemoteException;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import android.os.Bundle;
+import java.util.List;
+import java.util.Map;
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzlj implements Runnable {
-    final /* synthetic */ com.google.android.gms.internal.measurement.zzcy zza;
-    final /* synthetic */ zzlw zzb;
+public interface zzlj {
+    void zza(String str, String str2, Bundle bundle);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzlj(zzlw zzlwVar, com.google.android.gms.internal.measurement.zzcy zzcyVar) {
-        this.zza = zzcyVar;
-        this.zzb = zzlwVar;
-    }
+    void zzb(String str, String str2, Bundle bundle, long j);
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x006d A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        Long valueOf;
-        zzlw zzlwVar = this.zzb;
-        zzio zzioVar = zzlwVar.zzu.zzv().zzu;
-        if (zzioVar.zzm().zzh().zzr(zzjw.ANALYTICS_STORAGE)) {
-            if (!zzioVar.zzm().zzp(zzioVar.zzaU().currentTimeMillis()) && zzioVar.zzm().zzl.zza() != 0) {
-                valueOf = Long.valueOf(zzioVar.zzm().zzl.zza());
-                if (valueOf == null) {
-                    zzlwVar.zzu.zzw().zzY(this.zza, valueOf.longValue());
-                    return;
-                }
-                try {
-                    this.zza.zze(null);
-                    return;
-                } catch (RemoteException e) {
-                    this.zzb.zzu.zzaW().zze().zzb("getSessionId failed with exception", e);
-                    return;
-                }
-            }
-        } else {
-            zzioVar.zzaW().zzl().zza("Analytics storage consent denied; will not get session id");
-        }
-        valueOf = null;
-        if (valueOf == null) {
-        }
-    }
+    Map zzd(String str, String str2, boolean z);
+
+    void zze(zzjo zzjoVar);
+
+    void zzf(zzjp zzjpVar);
+
+    void zzg(zzjp zzjpVar);
+
+    String zzh();
+
+    String zzi();
+
+    String zzj();
+
+    String zzk();
+
+    long zzl();
+
+    void zzm(String str);
+
+    void zzn(String str);
+
+    void zzo(Bundle bundle);
+
+    void zzp(String str, String str2, Bundle bundle);
+
+    List zzq(String str, String str2);
+
+    int zzr(String str);
+
+    Object zzx(int i);
 }

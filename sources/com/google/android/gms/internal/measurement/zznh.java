@@ -1,14 +1,16 @@
 package com.google.android.gms.internal.measurement;
-
-import java.io.IOException;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-public interface zznh extends zzni {
-    zzng zzcA();
+final class zznh {
+    private static final zzng zza;
 
-    void zzcB(zzlk zzlkVar) throws IOException;
+    static {
+        int i = zznt.zza;
+        zza = new zzng();
+    }
 
-    zzld zzcb();
-
-    int zzcf();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static zzng zza() {
+        return zza;
+    }
 }

@@ -25,7 +25,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
     public static final Key Key = new Key(null);
 
     /* renamed from: dispatch */
-    public abstract void mo10019dispatch(CoroutineContext coroutineContext, Runnable runnable);
+    public abstract void mo10050dispatch(CoroutineContext coroutineContext, Runnable runnable);
 
     public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
         return true;

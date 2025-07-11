@@ -68,7 +68,7 @@ public final class JdkFutureAdapters {
                     this.adapterExecutor.execute(new Runnable() { // from class: com.google.common.util.concurrent.JdkFutureAdapters$ListenableFutureAdapter$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            JdkFutureAdapters.ListenableFutureAdapter.this.m8207x6e801c7a();
+                            JdkFutureAdapters.ListenableFutureAdapter.this.m8206x6e801c7a();
                         }
                     });
                 }
@@ -77,7 +77,7 @@ public final class JdkFutureAdapters {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$addListener$0$com-google-common-util-concurrent-JdkFutureAdapters$ListenableFutureAdapter  reason: not valid java name */
-        public /* synthetic */ void m8207x6e801c7a() {
+        public /* synthetic */ void m8206x6e801c7a() {
             try {
                 Uninterruptibles.getUninterruptibly(this.delegate);
             } catch (Throwable unused) {

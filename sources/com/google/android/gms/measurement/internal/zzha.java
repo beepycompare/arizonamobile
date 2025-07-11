@@ -1,46 +1,73 @@
 package com.google.android.gms.measurement.internal;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
-import com.google.android.gms.common.internal.MethodInvocation;
-import com.google.android.gms.common.internal.TelemetryData;
-import com.google.android.gms.common.internal.TelemetryLogging;
-import com.google.android.gms.common.internal.TelemetryLoggingClient;
-import com.google.android.gms.common.internal.TelemetryLoggingOptions;
-import com.google.android.gms.tasks.OnFailureListener;
-import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicLong;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import android.content.Intent;
+import android.content.IntentFilter;
+import com.google.android.gms.common.internal.Preconditions;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzha {
-    private static zzha zza;
-    private final zzio zzb;
-    private final TelemetryLoggingClient zzc;
-    private final AtomicLong zzd = new AtomicLong(-1);
+public final class zzha extends BroadcastReceiver {
+    private final zzpf zza;
+    private boolean zzb;
+    private boolean zzc;
 
-    private zzha(Context context, zzio zzioVar) {
-        this.zzc = TelemetryLogging.getClient(context, TelemetryLoggingOptions.builder().setApi("measurement:api").build());
-        this.zzb = zzioVar;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzha(zzpf zzpfVar) {
+        Preconditions.checkNotNull(zzpfVar);
+        this.zza = zzpfVar;
+    }
+
+    @Override // android.content.BroadcastReceiver
+    public final void onReceive(Context context, Intent intent) {
+        zzpf zzpfVar = this.zza;
+        zzpfVar.zzu();
+        String action = intent.getAction();
+        zzpfVar.zzaV().zzk().zzb("NetworkBroadcastReceiver received action", action);
+        if (!"android.net.conn.CONNECTIVITY_CHANGE".equals(action)) {
+            zzpfVar.zzaV().zze().zzb("NetworkBroadcastReceiver received unknown action", action);
+            return;
+        }
+        boolean zzb = zzpfVar.zzi().zzb();
+        if (this.zzc != zzb) {
+            this.zzc = zzb;
+            zzpfVar.zzaW().zzj(new zzgz(this, zzb));
+        }
+    }
+
+    public final void zza() {
+        zzpf zzpfVar = this.zza;
+        zzpfVar.zzu();
+        zzpfVar.zzaW().zzg();
+        if (this.zzb) {
+            return;
+        }
+        zzpfVar.zzaY().registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+        this.zzc = zzpfVar.zzi().zzb();
+        zzpfVar.zzaV().zzk().zzb("Registering connectivity change receiver. Network connected", Boolean.valueOf(this.zzc));
+        this.zzb = true;
+    }
+
+    public final void zzb() {
+        zzpf zzpfVar = this.zza;
+        zzpfVar.zzu();
+        zzpfVar.zzaW().zzg();
+        zzpfVar.zzaW().zzg();
+        if (this.zzb) {
+            zzpfVar.zzaV().zzk().zza("Unregistering connectivity change receiver");
+            this.zzb = false;
+            this.zzc = false;
+            try {
+                zzpfVar.zzaY().unregisterReceiver(this);
+            } catch (IllegalArgumentException e) {
+                this.zza.zzaV().zzb().zzb("Failed to unregister the network broadcast receiver", e);
+            }
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static zzha zza(zzio zzioVar) {
-        if (zza == null) {
-            zza = new zzha(zzioVar.zzaT(), zzioVar);
-        }
-        return zza;
-    }
-
-    public final synchronized void zzc(int i, int i2, long j, long j2, int i3) {
-        final long elapsedRealtime = this.zzb.zzaU().elapsedRealtime();
-        AtomicLong atomicLong = this.zzd;
-        if (atomicLong.get() != -1 && elapsedRealtime - atomicLong.get() <= 1800000) {
-            return;
-        }
-        this.zzc.log(new TelemetryData(0, Arrays.asList(new MethodInvocation(36301, i2, 0, j, j2, null, null, 0, i3)))).addOnFailureListener(new OnFailureListener() { // from class: com.google.android.gms.measurement.internal.zzgz
-            @Override // com.google.android.gms.tasks.OnFailureListener
-            public final void onFailure(Exception exc) {
-                zzha.this.zzd.set(elapsedRealtime);
-            }
-        });
+    public final /* synthetic */ zzpf zzc() {
+        return this.zza;
     }
 }

@@ -326,6 +326,7 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
         ArrayList<String> arrayList3;
         ArrayList<String> arrayList4;
         Object obj6;
+        int i;
         View view5;
         final Rect rect;
         final View view6;
@@ -400,25 +401,25 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                 int size = sharedElementTargetNames.size();
                 View view10 = view7;
                 Rect rect3 = rect2;
-                int i = 0;
-                while (i < size) {
-                    int i2 = size;
-                    int indexOf = sharedElementSourceNames.indexOf(sharedElementTargetNames.get(i));
+                int i2 = 0;
+                while (i2 < size) {
+                    int i3 = size;
+                    int indexOf = sharedElementSourceNames.indexOf(sharedElementTargetNames.get(i2));
                     if (indexOf != -1) {
-                        sharedElementSourceNames.set(indexOf, sharedElementSourceNames2.get(i));
+                        sharedElementSourceNames.set(indexOf, sharedElementSourceNames2.get(i2));
                     }
-                    i++;
-                    size = i2;
+                    i2++;
+                    size = i3;
                 }
                 ArrayList<String> sharedElementTargetNames2 = operation4.getFragment().getSharedElementTargetNames();
                 Intrinsics.checkNotNullExpressionValue(sharedElementTargetNames2, "lastIn.fragment.sharedElementTargetNames");
                 Pair pair = !z ? TuplesKt.to(operation.getFragment().getExitTransitionCallback(), operation4.getFragment().getEnterTransitionCallback()) : TuplesKt.to(operation.getFragment().getEnterTransitionCallback(), operation4.getFragment().getExitTransitionCallback());
                 SharedElementCallback sharedElementCallback = (SharedElementCallback) pair.component1();
                 SharedElementCallback sharedElementCallback2 = (SharedElementCallback) pair.component2();
-                int i3 = 0;
-                for (int size2 = sharedElementSourceNames.size(); i3 < size2; size2 = size2) {
-                    arrayMap.put(sharedElementSourceNames.get(i3), sharedElementTargetNames2.get(i3));
-                    i3++;
+                int i4 = 0;
+                for (int size2 = sharedElementSourceNames.size(); i4 < size2; size2 = size2) {
+                    arrayMap.put(sharedElementSourceNames.get(i4), sharedElementTargetNames2.get(i4));
+                    i4++;
                     arrayList8 = arrayList8;
                 }
                 ArrayList<View> arrayList9 = arrayList8;
@@ -450,7 +451,7 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                     int size3 = sharedElementSourceNames.size() - 1;
                     if (size3 >= 0) {
                         while (true) {
-                            int i4 = size3 - 1;
+                            int i5 = size3 - 1;
                             String str4 = sharedElementSourceNames.get(size3);
                             View view12 = arrayMap2.get(str4);
                             if (view12 == null) {
@@ -458,10 +459,10 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                             } else if (!Intrinsics.areEqual(str4, ViewCompat.getTransitionName(view12))) {
                                 arrayMap.put(ViewCompat.getTransitionName(view12), (String) arrayMap.remove(str4));
                             }
-                            if (i4 < 0) {
+                            if (i5 < 0) {
                                 break;
                             }
-                            size3 = i4;
+                            size3 = i5;
                         }
                     }
                 } else {
@@ -487,7 +488,7 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                     int size4 = sharedElementTargetNames2.size() - 1;
                     if (size4 >= 0) {
                         while (true) {
-                            int i5 = size4 - 1;
+                            int i6 = size4 - 1;
                             String name = sharedElementTargetNames2.get(size4);
                             View view14 = arrayMap4.get(name);
                             if (view14 == null) {
@@ -503,10 +504,10 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                                     arrayMap.put(findKeyForValue2, ViewCompat.getTransitionName(view14));
                                 }
                             }
-                            if (i5 < 0) {
+                            if (i6 < 0) {
                                 break;
                             }
-                            size4 = i5;
+                            size4 = i6;
                         }
                     }
                 } else {
@@ -540,15 +541,17 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                     arrayList7.addAll(arrayMap2.values());
                     if (arrayList3.isEmpty()) {
                         obj6 = wrapTransitionInSet;
+                        i = 0;
                         view5 = view9;
                     } else {
+                        i = 0;
                         view5 = arrayMap2.get(sharedElementSourceNames.get(0));
                         obj6 = wrapTransitionInSet;
                         fragmentTransitionImpl.setEpicenter(obj6, view5);
                     }
                     arrayList8 = arrayList9;
                     arrayList8.addAll(arrayMap4.values());
-                    if (arrayList4.isEmpty() || (view6 = arrayMap4.get(sharedElementTargetNames2.get(0))) == null) {
+                    if (arrayList4.isEmpty() || (view6 = arrayMap4.get(sharedElementTargetNames2.get(i))) == null) {
                         rect = rect3;
                     } else {
                         rect = rect3;
@@ -565,8 +568,8 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                     fragmentTransitionImpl.scheduleRemoveTargets(obj6, null, null, null, null, obj6, arrayList8);
                     linkedHashMap3.put(operation, true);
                     linkedHashMap3.put(operation4, true);
-                    view8 = view5;
                     rect2 = rect;
+                    view8 = view5;
                     obj9 = obj6;
                     list3 = list4;
                     arrayMap = arrayMap;
@@ -599,9 +602,9 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                 if (cloneTransition != null) {
                     LinkedHashMap linkedHashMap5 = linkedHashMap4;
                     final ArrayList<View> arrayList14 = new ArrayList<>();
-                    Iterator<TransitionInfo> it5 = it4;
-                    View view17 = operation5.getFragment().mView;
                     ArrayList<View> arrayList15 = arrayList12;
+                    View view17 = operation5.getFragment().mView;
+                    Iterator<TransitionInfo> it5 = it4;
                     Intrinsics.checkNotNullExpressionValue(view17, "operation.fragment.mView");
                     defaultSpecialEffectsController.captureTransitioningViews(arrayList14, view17);
                     if (z3) {
@@ -668,27 +671,21 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
                         View view18 = view3;
                         obj = obj3;
                         view16 = view18;
-                        it4 = it5;
                         linkedHashMap4 = linkedHashMap;
-                        obj11 = obj5;
-                        arrayList8 = arrayList;
-                        arrayList12 = arrayList15;
-                        str = str3;
-                        defaultSpecialEffectsController = this;
                     } else {
-                        Object mergeTransitionsTogether = fragmentTransitionImpl.mergeTransitionsTogether(obj5, obj2, null);
+                        obj5 = fragmentTransitionImpl.mergeTransitionsTogether(obj5, obj2, null);
                         View view19 = view3;
                         obj = obj3;
                         view16 = view19;
                         linkedHashMap4 = linkedHashMap;
                         obj10 = obj4;
-                        obj11 = mergeTransitionsTogether;
-                        arrayList8 = arrayList;
-                        arrayList12 = arrayList15;
-                        str = str3;
-                        defaultSpecialEffectsController = this;
-                        it4 = it5;
                     }
+                    obj11 = obj5;
+                    arrayList8 = arrayList;
+                    arrayList12 = arrayList15;
+                    str = str3;
+                    defaultSpecialEffectsController = this;
+                    it4 = it5;
                     view15 = view4;
                     operation4 = operation2;
                 } else if (!z3) {

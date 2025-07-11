@@ -58,10 +58,6 @@ import com.miami.game.core.files.Files;
 import com.miami.game.core.files.updater.domain.FilesUpdaterInteractor;
 import com.miami.game.core.foreground.service.DownloadService;
 import com.miami.game.core.foreground.service.DownloadService_MembersInjector;
-import com.miami.game.core.gamefiles.info.data.GamefilesInfoRepository;
-import com.miami.game.core.gamefiles.info.data.api.GamefilesInfoApiRepository;
-import com.miami.game.core.gamefiles.info.data.store.GameInfoPrefRepository;
-import com.miami.game.core.gamefiles.info.domain.GamefilesInfoInteractor;
 import com.miami.game.core.local.repository.common.LocalRepository;
 import com.miami.game.core.local.repository.di.LocalRepositoryModule_ProvideGsonFactory;
 import com.miami.game.core.local.repository.di.LocalRepositoryModule_ProvideLocalRepositoryFactory;
@@ -758,7 +754,6 @@ public final class DaggerArizonaApplication_HiltComponents_SingletonC {
         Provider<DownloaderSyncInteractor> downloaderSyncInteractorProvider;
         private final FavoriteServerModule favoriteServerModule;
         Provider<FilesUpdaterInteractor> filesUpdaterInteractorProvider;
-        Provider<GamefilesInfoInteractor> gamefilesInfoInteractorProvider;
         private final LauncherDBModule launcherDBModule;
         Provider<NewsInteractor> newsInteractorProvider;
         Provider<NotificationStateHolder> notificationStateHolderProvider;
@@ -815,18 +810,6 @@ public final class DaggerArizonaApplication_HiltComponents_SingletonC {
             return new NewsRepository(newsApiRepository(), newsPrefRepository());
         }
 
-        GamefilesInfoApiRepository gamefilesInfoApiRepository() {
-            return new GamefilesInfoApiRepository(this.provideAppNetworkDataSourceProvider.get());
-        }
-
-        GameInfoPrefRepository gameInfoPrefRepository() {
-            return new GameInfoPrefRepository(this.provideLocalRepositoryProvider.get());
-        }
-
-        GamefilesInfoRepository gamefilesInfoRepository() {
-            return new GamefilesInfoRepository(gamefilesInfoApiRepository(), gameInfoPrefRepository());
-        }
-
         Downloader downloader() {
             return DowndloaderModule_ProvideDownloaderFactory.provideDownloader(this.downdloaderModule, ApplicationContextModule_ProvideContextFactory.provideContext(this.applicationContextModule));
         }
@@ -864,15 +847,14 @@ public final class DaggerArizonaApplication_HiltComponents_SingletonC {
             this.serversInteractorProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 8));
             this.settingsInteractorProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 10));
             this.notificationStateHolderProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 11));
-            this.gamefilesInfoInteractorProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 13));
-            this.provideDownloaderInfoDatabaseProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 16));
-            this.downloaderSyncDbRepositoryProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 15));
-            this.downloaderSyncInteractorProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 14));
+            this.provideDownloaderInfoDatabaseProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 15));
+            this.downloaderSyncDbRepositoryProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 14));
+            this.downloaderSyncInteractorProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 13));
             this.filesUpdaterInteractorProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 12));
-            this.settingsRepositoryProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 17));
-            this.preferencesRepositoryProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 18));
-            this.provideRideDatabaseProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 20));
-            this.provideNotificationHistoryDAOProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 19));
+            this.settingsRepositoryProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 16));
+            this.preferencesRepositoryProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 17));
+            this.provideRideDatabaseProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 19));
+            this.provideNotificationHistoryDAOProvider = DoubleCheck.provider((Provider) new SwitchingProvider(this.singletonCImpl, 18));
         }
 
         @Override // dagger.hilt.android.flags.FragmentGetContextFix.FragmentGetContextFixEntryPoint
@@ -929,22 +911,20 @@ public final class DaggerArizonaApplication_HiltComponents_SingletonC {
                     case 11:
                         return (T) new NotificationStateHolder();
                     case 12:
-                        return (T) new FilesUpdaterInteractor(this.singletonCImpl.connectionResolverImpl(), this.singletonCImpl.gamefilesInfoInteractorProvider.get(), this.singletonCImpl.downloaderSyncInteractorProvider.get());
+                        return (T) new FilesUpdaterInteractor(this.singletonCImpl.downloaderSyncInteractorProvider.get());
                     case 13:
-                        return (T) new GamefilesInfoInteractor(this.singletonCImpl.gamefilesInfoRepository());
-                    case 14:
                         return (T) new DownloaderSyncInteractor(this.singletonCImpl.downloaderSyncRepository());
-                    case 15:
+                    case 14:
                         return (T) new DownloaderSyncDbRepository(this.singletonCImpl.provideDownloaderInfoDatabaseProvider.get());
-                    case 16:
+                    case 15:
                         return (T) LauncherDBModule_ProvideDownloaderInfoDatabaseFactory.provideDownloaderInfoDatabase(this.singletonCImpl.launcherDBModule, ApplicationContextModule_ProvideContextFactory.provideContext(this.singletonCImpl.applicationContextModule));
-                    case 17:
+                    case 16:
                         return (T) new SettingsRepository(this.singletonCImpl.sharedPreferences());
-                    case 18:
+                    case 17:
                         return (T) new PreferencesRepository(this.singletonCImpl.sharedPreferences());
-                    case 19:
+                    case 18:
                         return (T) DatabaseModule_ProvideNotificationHistoryDAOFactory.provideNotificationHistoryDAO(this.singletonCImpl.databaseModule, this.singletonCImpl.provideRideDatabaseProvider.get());
-                    case 20:
+                    case 19:
                         return (T) DatabaseModule_ProvideRideDatabaseFactory.provideRideDatabase(this.singletonCImpl.databaseModule, ApplicationContextModule_ProvideContextFactory.provideContext(this.singletonCImpl.applicationContextModule));
                     default:
                         throw new AssertionError(this.id);

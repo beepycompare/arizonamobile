@@ -43,7 +43,7 @@ public class ImageDownload implements Closeable {
         this.future = executorService.submit(new Runnable() { // from class: com.google.firebase.messaging.ImageDownload$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ImageDownload.this.m8272lambda$start$0$comgooglefirebasemessagingImageDownload(taskCompletionSource);
+                ImageDownload.this.m8271lambda$start$0$comgooglefirebasemessagingImageDownload(taskCompletionSource);
             }
         });
         this.task = taskCompletionSource.getTask();
@@ -51,7 +51,7 @@ public class ImageDownload implements Closeable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$start$0$com-google-firebase-messaging-ImageDownload  reason: not valid java name */
-    public /* synthetic */ void m8272lambda$start$0$comgooglefirebasemessagingImageDownload(TaskCompletionSource taskCompletionSource) {
+    public /* synthetic */ void m8271lambda$start$0$comgooglefirebasemessagingImageDownload(TaskCompletionSource taskCompletionSource) {
         try {
             taskCompletionSource.setResult(blockingDownload());
         } catch (Exception e) {

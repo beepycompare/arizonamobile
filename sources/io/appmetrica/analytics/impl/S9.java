@@ -12,18 +12,18 @@ import java.util.concurrent.TimeUnit;
 public final class S9 implements IHandlerExecutor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Looper f622a;
+    public final Looper f623a;
     public final Handler b;
-    public final HandlerThreadC0661vb c;
+    public final HandlerThreadC0653vb c;
 
     public S9(String str) {
         this(a(str));
     }
 
-    public static HandlerThreadC0661vb a(String str) {
-        HandlerThreadC0661vb handlerThreadC0661vb = new HandlerThreadC0661vb(str + Constants.FILENAME_SEQUENCE_SEPARATOR + Md.f535a.incrementAndGet());
-        handlerThreadC0661vb.start();
-        return handlerThreadC0661vb;
+    public static HandlerThreadC0653vb a(String str) {
+        HandlerThreadC0653vb handlerThreadC0653vb = new HandlerThreadC0653vb(str + Constants.FILENAME_SEQUENCE_SEPARATOR + Md.f536a.incrementAndGet());
+        handlerThreadC0653vb.start();
+        return handlerThreadC0653vb;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor, java.util.concurrent.Executor
@@ -43,15 +43,15 @@ public final class S9 implements IHandlerExecutor {
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor
     public final Looper getLooper() {
-        return this.f622a;
+        return this.f623a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
     public final boolean isRunning() {
         boolean z;
-        HandlerThreadC0661vb handlerThreadC0661vb = this.c;
-        synchronized (handlerThreadC0661vb) {
-            z = handlerThreadC0661vb.f1090a;
+        HandlerThreadC0653vb handlerThreadC0653vb = this.c;
+        synchronized (handlerThreadC0653vb) {
+            z = handlerThreadC0653vb.f1091a;
         }
         return z;
     }
@@ -68,10 +68,10 @@ public final class S9 implements IHandlerExecutor {
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
     public final void stopRunning() {
-        HandlerThreadC0661vb handlerThreadC0661vb = this.c;
-        synchronized (handlerThreadC0661vb) {
-            handlerThreadC0661vb.f1090a = false;
-            handlerThreadC0661vb.interrupt();
+        HandlerThreadC0653vb handlerThreadC0653vb = this.c;
+        synchronized (handlerThreadC0653vb) {
+            handlerThreadC0653vb.f1091a = false;
+            handlerThreadC0653vb.interrupt();
         }
     }
 
@@ -82,13 +82,13 @@ public final class S9 implements IHandlerExecutor {
         return futureTask;
     }
 
-    public S9(HandlerThreadC0661vb handlerThreadC0661vb) {
-        this(handlerThreadC0661vb, handlerThreadC0661vb.getLooper(), new Handler(handlerThreadC0661vb.getLooper()));
+    public S9(HandlerThreadC0653vb handlerThreadC0653vb) {
+        this(handlerThreadC0653vb, handlerThreadC0653vb.getLooper(), new Handler(handlerThreadC0653vb.getLooper()));
     }
 
-    public S9(HandlerThreadC0661vb handlerThreadC0661vb, Looper looper, Handler handler) {
-        this.c = handlerThreadC0661vb;
-        this.f622a = looper;
+    public S9(HandlerThreadC0653vb handlerThreadC0653vb, Looper looper, Handler handler) {
+        this.c = handlerThreadC0653vb;
+        this.f623a = looper;
         this.b = handler;
     }
 

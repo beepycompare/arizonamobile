@@ -370,6 +370,17 @@ public class Util {
         return uri == null || (uri2 = uri.toString()) == null || uri2.length() == 0 || uri2.matches(Constants.FB_AUTH_REGEX);
     }
 
+    public static boolean isUrlWithTrackerQueryParam(Uri uri) {
+        try {
+            if (uri.getQueryParameter("adj_t") != null) {
+                return true;
+            }
+            return uri.getQueryParameter("adjust_t") != null;
+        } catch (Exception unused) {
+            return false;
+        }
+    }
+
     public static boolean isValidParameter(String str, String str2, String str3) {
         if (str == null) {
             getLogger().error("%s parameter %s is missing", str3, str2);

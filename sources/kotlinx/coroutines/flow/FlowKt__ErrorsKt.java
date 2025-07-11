@@ -116,7 +116,7 @@ public final /* synthetic */ class FlowKt__ErrorsKt {
     }
 
     /* renamed from: catch */
-    public static final <T> Flow<T> m10001catch(Flow<? extends T> flow, Function3<? super FlowCollector<? super T>, ? super Throwable, ? super Continuation<? super Unit>, ? extends Object> function3) {
+    public static final <T> Flow<T> m10032catch(Flow<? extends T> flow, Function3<? super FlowCollector<? super T>, ? super Throwable, ? super Continuation<? super Unit>, ? extends Object> function3) {
         return new FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1(flow, function3);
     }
 

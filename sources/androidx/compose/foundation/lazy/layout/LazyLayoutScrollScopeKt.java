@@ -38,22 +38,22 @@ public final class LazyLayoutScrollScopeKt {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x027a  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x027b  */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00eb A[Catch: ItemFoundInScroll -> 0x01e9, TryCatch #3 {ItemFoundInScroll -> 0x01e9, blocks: (B:35:0x00e7, B:37:0x00eb, B:39:0x00f1, B:53:0x0120, B:57:0x015c), top: B:112:0x00e7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00eb A[Catch: ItemFoundInScroll -> 0x01ea, TryCatch #3 {ItemFoundInScroll -> 0x01ea, blocks: (B:35:0x00e7, B:37:0x00eb, B:39:0x00f1, B:53:0x0120, B:57:0x015c), top: B:112:0x00e7 }] */
     /* JADX WARN: Removed duplicated region for block: B:42:0x0102  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0118  */
     /* JADX WARN: Removed duplicated region for block: B:55:0x0159  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x015b  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0160  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x01b5  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x024a  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x024d  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0161  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0164  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x01b6  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x024b  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x024e  */
     /* JADX WARN: Type inference failed for: r8v0, types: [androidx.compose.animation.core.AnimationState, T] */
     /* JADX WARN: Type inference failed for: r8v16, types: [androidx.compose.animation.core.AnimationState, T] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:69:0x01b5 -> B:18:0x0073). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:69:0x01b6 -> B:18:0x0073). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -95,10 +95,10 @@ public final class LazyLayoutScrollScopeKt {
         final float f6;
         AnimationState animationState;
         Float boxFloat2;
-        int i15;
+        boolean z;
         final LazyLayoutScrollScope lazyLayoutScrollScope5;
-        final int i16;
-        int i17;
+        final int i15;
+        int i16;
         Function1<AnimationScope<Float, AnimationVector1D>, Unit> function1;
         if (continuation instanceof LazyLayoutScrollScopeKt$animateScrollToItem$1) {
             lazyLayoutScrollScopeKt$animateScrollToItem$1 = (LazyLayoutScrollScopeKt$animateScrollToItem$1) continuation;
@@ -107,8 +107,8 @@ public final class LazyLayoutScrollScopeKt {
                 Object obj = lazyLayoutScrollScopeKt$animateScrollToItem$1.result;
                 coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i4 = lazyLayoutScrollScopeKt$animateScrollToItem$1.label;
-                int i18 = 0;
-                int i19 = 1;
+                int i17 = 0;
+                int i18 = 1;
                 if (i4 != 0) {
                     f = 0.0f;
                     ResultKt.throwOnFailure(obj);
@@ -184,7 +184,7 @@ public final class LazyLayoutScrollScopeKt {
                         }
                     }
                     try {
-                        int i20 = i > lazyLayoutScrollScope.getFirstVisibleItemIndex() ? 1 : 0;
+                        int i19 = i > lazyLayoutScrollScope.getFirstVisibleItemIndex() ? 1 : 0;
                         Ref.IntRef intRef2 = new Ref.IntRef();
                         intRef2.element = 1;
                         i8 = i2;
@@ -195,7 +195,7 @@ public final class LazyLayoutScrollScopeKt {
                         lazyLayoutScrollScopeKt$animateScrollToItem$12 = lazyLayoutScrollScopeKt$animateScrollToItem$1;
                         f4 = mo389toPx0680j_43;
                         i10 = i;
-                        i11 = i20;
+                        i11 = i19;
                         lazyLayoutScrollScope3 = lazyLayoutScrollScope;
                         if (booleanRef.element) {
                         }
@@ -266,8 +266,8 @@ public final class LazyLayoutScrollScopeKt {
                     float f7 = lazyLayoutScrollScopeKt$animateScrollToItem$1.F$2;
                     float f8 = lazyLayoutScrollScopeKt$animateScrollToItem$1.F$1;
                     f3 = lazyLayoutScrollScopeKt$animateScrollToItem$1.F$0;
-                    int i21 = lazyLayoutScrollScopeKt$animateScrollToItem$1.I$2;
-                    int i22 = lazyLayoutScrollScopeKt$animateScrollToItem$1.I$1;
+                    int i20 = lazyLayoutScrollScopeKt$animateScrollToItem$1.I$2;
+                    int i21 = lazyLayoutScrollScopeKt$animateScrollToItem$1.I$1;
                     i7 = lazyLayoutScrollScopeKt$animateScrollToItem$1.I$0;
                     Ref.IntRef intRef3 = (Ref.IntRef) lazyLayoutScrollScopeKt$animateScrollToItem$1.L$3;
                     f = 0.0f;
@@ -279,8 +279,8 @@ public final class LazyLayoutScrollScopeKt {
                         objectRef = objectRef2;
                         booleanRef = booleanRef2;
                         f2 = f8;
-                        i17 = i21;
-                        i8 = i22;
+                        i16 = i20;
+                        i8 = i21;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12 = lazyLayoutScrollScopeKt$animateScrollToItem$1;
                         f4 = f7;
                         lazyLayoutScrollScope3 = lazyLayoutScrollScope6;
@@ -289,7 +289,7 @@ public final class LazyLayoutScrollScopeKt {
                         e = e4;
                         lazyLayoutScrollScope2 = lazyLayoutScrollScope6;
                         i5 = 0;
-                        i6 = i22;
+                        i6 = i21;
                     }
                     try {
                         try {
@@ -301,10 +301,10 @@ public final class LazyLayoutScrollScopeKt {
                             i6 = i8;
                             lazyLayoutScrollScope2 = lazyLayoutScrollScope3;
                         }
-                        i9 = i17;
+                        i9 = i16;
                         intRef = intRef3;
-                        i18 = 0;
-                        i19 = 1;
+                        i17 = 0;
+                        i18 = 1;
                     } catch (ItemFoundInScroll e6) {
                         e = e6;
                         i7 = i10;
@@ -361,12 +361,12 @@ public final class LazyLayoutScrollScopeKt {
                         try {
                             try {
                                 try {
-                                    calculateDistanceTo$default = LazyLayoutScrollScope.calculateDistanceTo$default(lazyLayoutScrollScope3, i10, i18, 2, null) + i8;
+                                    calculateDistanceTo$default = LazyLayoutScrollScope.calculateDistanceTo$default(lazyLayoutScrollScope3, i10, i17, 2, null) + i8;
                                 } catch (ItemFoundInScroll e7) {
                                     e = e7;
                                     lazyLayoutScrollScopeKt$animateScrollToItem$13 = lazyLayoutScrollScopeKt$animateScrollToItem$12;
                                     lazyLayoutScrollScope2 = lazyLayoutScrollScope5;
-                                    i7 = i16;
+                                    i7 = i15;
                                     i6 = i8;
                                 }
                             } catch (ItemFoundInScroll e8) {
@@ -429,17 +429,17 @@ public final class LazyLayoutScrollScopeKt {
                                 final Ref.FloatRef floatRef2 = new Ref.FloatRef();
                                 animationState = (AnimationState) objectRef.element;
                                 boxFloat2 = Boxing.boxFloat(f6);
-                                i15 = ((Number) ((AnimationState) objectRef.element).getVelocity()).floatValue() != f ? i18 : i19;
-                                final boolean z = i11 == 0 ? i19 : i18;
+                                z = (((Number) ((AnimationState) objectRef.element).getVelocity()).floatValue() != f ? i18 : i17) ^ i18;
+                                final boolean z2 = i11 == 0 ? i18 : i17;
                                 lazyLayoutScrollScope5 = lazyLayoutScrollScope3;
-                                i16 = i10;
+                                i15 = i10;
                                 final Ref.BooleanRef booleanRef3 = booleanRef;
                                 final Ref.ObjectRef objectRef3 = objectRef;
                                 lazyLayoutScrollScope2 = lazyLayoutScrollScope5;
-                                i7 = i16;
+                                i7 = i15;
                                 float f9 = f2;
                                 intRef3 = intRef;
-                                i17 = i9;
+                                i16 = i9;
                                 i6 = i8;
                                 function1 = new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$animateScrollToItem$4
                                     /* JADX INFO: Access modifiers changed from: package-private */
@@ -459,7 +459,7 @@ public final class LazyLayoutScrollScopeKt {
                                         boolean animateScrollToItem$isOvershot;
                                         float coerceAtLeast;
                                         boolean animateScrollToItem$isOvershot2;
-                                        if (!LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i16)) {
+                                        if (!LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i15)) {
                                             if (f6 > 0.0f) {
                                                 coerceAtLeast = RangesKt.coerceAtMost(animationScope.getValue().floatValue(), f6);
                                             } else {
@@ -467,8 +467,8 @@ public final class LazyLayoutScrollScopeKt {
                                             }
                                             float f10 = coerceAtLeast - floatRef2.element;
                                             float scrollBy = LazyLayoutScrollScope.this.scrollBy(f10);
-                                            if (!LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i16)) {
-                                                animateScrollToItem$isOvershot2 = LazyLayoutScrollScopeKt.animateScrollToItem$isOvershot(z, LazyLayoutScrollScope.this, i16, i8);
+                                            if (!LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i15)) {
+                                                animateScrollToItem$isOvershot2 = LazyLayoutScrollScopeKt.animateScrollToItem$isOvershot(z2, LazyLayoutScrollScope.this, i15, i8);
                                                 if (!animateScrollToItem$isOvershot2) {
                                                     if (f10 != scrollBy) {
                                                         animationScope.cancelAnimation();
@@ -476,40 +476,40 @@ public final class LazyLayoutScrollScopeKt {
                                                         return;
                                                     }
                                                     floatRef2.element += f10;
-                                                    if (z) {
+                                                    if (z2) {
                                                         if (animationScope.getValue().floatValue() > f2) {
                                                             animationScope.cancelAnimation();
                                                         }
                                                     } else if (animationScope.getValue().floatValue() < (-f2)) {
                                                         animationScope.cancelAnimation();
                                                     }
-                                                    if (z) {
+                                                    if (z2) {
                                                         if (intRef.element >= 2) {
-                                                            int lastVisibleItemIndex = i16 - LazyLayoutScrollScope.this.getLastVisibleItemIndex();
-                                                            int i23 = i9;
-                                                            if (lastVisibleItemIndex > i23) {
-                                                                LazyLayoutScrollScope.this.snapToItem(i16 - i23, 0);
+                                                            int lastVisibleItemIndex = i15 - LazyLayoutScrollScope.this.getLastVisibleItemIndex();
+                                                            int i22 = i9;
+                                                            if (lastVisibleItemIndex > i22) {
+                                                                LazyLayoutScrollScope.this.snapToItem(i15 - i22, 0);
                                                             }
                                                         }
                                                     } else if (intRef.element >= 2) {
                                                         int firstVisibleItemIndex = LazyLayoutScrollScope.this.getFirstVisibleItemIndex();
-                                                        int i24 = i16;
-                                                        int i25 = firstVisibleItemIndex - i24;
-                                                        int i26 = i9;
-                                                        if (i25 > i26) {
-                                                            LazyLayoutScrollScope.this.snapToItem(i24 + i26, 0);
+                                                        int i23 = i15;
+                                                        int i24 = firstVisibleItemIndex - i23;
+                                                        int i25 = i9;
+                                                        if (i24 > i25) {
+                                                            LazyLayoutScrollScope.this.snapToItem(i23 + i25, 0);
                                                         }
                                                     }
                                                 }
                                             }
                                         }
-                                        animateScrollToItem$isOvershot = LazyLayoutScrollScopeKt.animateScrollToItem$isOvershot(z, LazyLayoutScrollScope.this, i16, i8);
+                                        animateScrollToItem$isOvershot = LazyLayoutScrollScopeKt.animateScrollToItem$isOvershot(z2, LazyLayoutScrollScope.this, i15, i8);
                                         if (animateScrollToItem$isOvershot) {
-                                            LazyLayoutScrollScope.this.snapToItem(i16, i8);
+                                            LazyLayoutScrollScope.this.snapToItem(i15, i8);
                                             booleanRef3.element = false;
                                             animationScope.cancelAnimation();
-                                        } else if (LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i16)) {
-                                            throw new ItemFoundInScroll(LazyLayoutScrollScope.calculateDistanceTo$default(LazyLayoutScrollScope.this, i16, 0, 2, null), objectRef3.element);
+                                        } else if (LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i15)) {
+                                            throw new ItemFoundInScroll(LazyLayoutScrollScope.calculateDistanceTo$default(LazyLayoutScrollScope.this, i15, 0, 2, null), objectRef3.element);
                                         }
                                     }
                                 };
@@ -519,14 +519,14 @@ public final class LazyLayoutScrollScopeKt {
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.L$3 = intRef3;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.I$0 = i7;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.I$1 = i6;
-                                lazyLayoutScrollScopeKt$animateScrollToItem$12.I$2 = i17;
+                                lazyLayoutScrollScopeKt$animateScrollToItem$12.I$2 = i16;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.F$0 = f3;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.F$1 = f9;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.F$2 = f4;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.I$3 = i11;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.label = 1;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$13 = lazyLayoutScrollScopeKt$animateScrollToItem$12;
-                                if (SuspendAnimationKt.animateTo$default(animationState, boxFloat2, null, i15, function1, lazyLayoutScrollScopeKt$animateScrollToItem$13, 2, null) != coroutine_suspended) {
+                                if (SuspendAnimationKt.animateTo$default(animationState, boxFloat2, null, z, function1, lazyLayoutScrollScopeKt$animateScrollToItem$13, 2, null) != coroutine_suspended) {
                                     objectRef = objectRef3;
                                     booleanRef = booleanRef3;
                                     lazyLayoutScrollScope3 = lazyLayoutScrollScope2;
@@ -535,12 +535,12 @@ public final class LazyLayoutScrollScopeKt {
                                     i8 = i6;
                                     i10 = i7;
                                     intRef3.element++;
-                                    i9 = i17;
+                                    i9 = i16;
                                     intRef = intRef3;
-                                    i18 = 0;
-                                    i19 = 1;
+                                    i17 = 0;
+                                    i18 = 1;
                                     if (booleanRef.element) {
-                                        calculateDistanceTo$default = LazyLayoutScrollScope.calculateDistanceTo$default(lazyLayoutScrollScope3, i10, i18, 2, null) + i8;
+                                        calculateDistanceTo$default = LazyLayoutScrollScope.calculateDistanceTo$default(lazyLayoutScrollScope3, i10, i17, 2, null) + i8;
                                         if (Math.abs(calculateDistanceTo$default) < f3) {
                                             try {
                                                 f5 = Math.max(Math.abs(calculateDistanceTo$default), f4);
@@ -551,7 +551,7 @@ public final class LazyLayoutScrollScopeKt {
                                                 e = e10;
                                                 i7 = i10;
                                                 lazyLayoutScrollScopeKt$animateScrollToItem$1 = lazyLayoutScrollScopeKt$animateScrollToItem$12;
-                                                i5 = i18;
+                                                i5 = i17;
                                                 i6 = i8;
                                                 lazyLayoutScrollScope2 = lazyLayoutScrollScope3;
                                                 copy$default = AnimationStateKt.copy$default((AnimationState) e.getPreviousAnimation(), 0.0f, 0.0f, 0L, 0L, false, 30, (Object) null);
@@ -611,19 +611,18 @@ public final class LazyLayoutScrollScopeKt {
                         final Ref.FloatRef floatRef22 = new Ref.FloatRef();
                         animationState = (AnimationState) objectRef.element;
                         boxFloat2 = Boxing.boxFloat(f6);
-                        if (((Number) ((AnimationState) objectRef.element).getVelocity()).floatValue() != f) {
-                        }
+                        z = (((Number) ((AnimationState) objectRef.element).getVelocity()).floatValue() != f ? i18 : i17) ^ i18;
                         if (i11 == 0) {
                         }
                         lazyLayoutScrollScope5 = lazyLayoutScrollScope3;
-                        i16 = i10;
+                        i15 = i10;
                         final Ref.BooleanRef booleanRef32 = booleanRef;
                         final Ref.ObjectRef<AnimationState<Float, AnimationVector1D>> objectRef32 = objectRef;
                         lazyLayoutScrollScope2 = lazyLayoutScrollScope5;
-                        i7 = i16;
+                        i7 = i15;
                         float f92 = f2;
                         intRef3 = intRef;
-                        i17 = i9;
+                        i16 = i9;
                         i6 = i8;
                         function1 = new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$animateScrollToItem$4
                             /* JADX INFO: Access modifiers changed from: package-private */
@@ -643,7 +642,7 @@ public final class LazyLayoutScrollScopeKt {
                                 boolean animateScrollToItem$isOvershot;
                                 float coerceAtLeast;
                                 boolean animateScrollToItem$isOvershot2;
-                                if (!LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i16)) {
+                                if (!LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i15)) {
                                     if (f6 > 0.0f) {
                                         coerceAtLeast = RangesKt.coerceAtMost(animationScope.getValue().floatValue(), f6);
                                     } else {
@@ -651,8 +650,8 @@ public final class LazyLayoutScrollScopeKt {
                                     }
                                     float f10 = coerceAtLeast - floatRef22.element;
                                     float scrollBy = LazyLayoutScrollScope.this.scrollBy(f10);
-                                    if (!LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i16)) {
-                                        animateScrollToItem$isOvershot2 = LazyLayoutScrollScopeKt.animateScrollToItem$isOvershot(z, LazyLayoutScrollScope.this, i16, i8);
+                                    if (!LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i15)) {
+                                        animateScrollToItem$isOvershot2 = LazyLayoutScrollScopeKt.animateScrollToItem$isOvershot(z2, LazyLayoutScrollScope.this, i15, i8);
                                         if (!animateScrollToItem$isOvershot2) {
                                             if (f10 != scrollBy) {
                                                 animationScope.cancelAnimation();
@@ -660,40 +659,40 @@ public final class LazyLayoutScrollScopeKt {
                                                 return;
                                             }
                                             floatRef22.element += f10;
-                                            if (z) {
+                                            if (z2) {
                                                 if (animationScope.getValue().floatValue() > f2) {
                                                     animationScope.cancelAnimation();
                                                 }
                                             } else if (animationScope.getValue().floatValue() < (-f2)) {
                                                 animationScope.cancelAnimation();
                                             }
-                                            if (z) {
+                                            if (z2) {
                                                 if (intRef.element >= 2) {
-                                                    int lastVisibleItemIndex = i16 - LazyLayoutScrollScope.this.getLastVisibleItemIndex();
-                                                    int i23 = i9;
-                                                    if (lastVisibleItemIndex > i23) {
-                                                        LazyLayoutScrollScope.this.snapToItem(i16 - i23, 0);
+                                                    int lastVisibleItemIndex = i15 - LazyLayoutScrollScope.this.getLastVisibleItemIndex();
+                                                    int i22 = i9;
+                                                    if (lastVisibleItemIndex > i22) {
+                                                        LazyLayoutScrollScope.this.snapToItem(i15 - i22, 0);
                                                     }
                                                 }
                                             } else if (intRef.element >= 2) {
                                                 int firstVisibleItemIndex = LazyLayoutScrollScope.this.getFirstVisibleItemIndex();
-                                                int i24 = i16;
-                                                int i25 = firstVisibleItemIndex - i24;
-                                                int i26 = i9;
-                                                if (i25 > i26) {
-                                                    LazyLayoutScrollScope.this.snapToItem(i24 + i26, 0);
+                                                int i23 = i15;
+                                                int i24 = firstVisibleItemIndex - i23;
+                                                int i25 = i9;
+                                                if (i24 > i25) {
+                                                    LazyLayoutScrollScope.this.snapToItem(i23 + i25, 0);
                                                 }
                                             }
                                         }
                                     }
                                 }
-                                animateScrollToItem$isOvershot = LazyLayoutScrollScopeKt.animateScrollToItem$isOvershot(z, LazyLayoutScrollScope.this, i16, i8);
+                                animateScrollToItem$isOvershot = LazyLayoutScrollScopeKt.animateScrollToItem$isOvershot(z2, LazyLayoutScrollScope.this, i15, i8);
                                 if (animateScrollToItem$isOvershot) {
-                                    LazyLayoutScrollScope.this.snapToItem(i16, i8);
+                                    LazyLayoutScrollScope.this.snapToItem(i15, i8);
                                     booleanRef32.element = false;
                                     animationScope.cancelAnimation();
-                                } else if (LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i16)) {
-                                    throw new ItemFoundInScroll(LazyLayoutScrollScope.calculateDistanceTo$default(LazyLayoutScrollScope.this, i16, 0, 2, null), objectRef32.element);
+                                } else if (LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i15)) {
+                                    throw new ItemFoundInScroll(LazyLayoutScrollScope.calculateDistanceTo$default(LazyLayoutScrollScope.this, i15, 0, 2, null), objectRef32.element);
                                 }
                             }
                         };
@@ -703,14 +702,14 @@ public final class LazyLayoutScrollScopeKt {
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.L$3 = intRef3;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.I$0 = i7;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.I$1 = i6;
-                        lazyLayoutScrollScopeKt$animateScrollToItem$12.I$2 = i17;
+                        lazyLayoutScrollScopeKt$animateScrollToItem$12.I$2 = i16;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.F$0 = f3;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.F$1 = f92;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.F$2 = f4;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.I$3 = i11;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.label = 1;
                         lazyLayoutScrollScopeKt$animateScrollToItem$13 = lazyLayoutScrollScopeKt$animateScrollToItem$12;
-                        if (SuspendAnimationKt.animateTo$default(animationState, boxFloat2, null, i15, function1, lazyLayoutScrollScopeKt$animateScrollToItem$13, 2, null) != coroutine_suspended) {
+                        if (SuspendAnimationKt.animateTo$default(animationState, boxFloat2, null, z, function1, lazyLayoutScrollScopeKt$animateScrollToItem$13, 2, null) != coroutine_suspended) {
                         }
                         return coroutine_suspended;
                     }
@@ -770,8 +769,8 @@ public final class LazyLayoutScrollScopeKt {
         Object obj2 = lazyLayoutScrollScopeKt$animateScrollToItem$1.result;
         coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i4 = lazyLayoutScrollScopeKt$animateScrollToItem$1.label;
-        int i182 = 0;
-        int i192 = 1;
+        int i172 = 0;
+        int i182 = 1;
         if (i4 != 0) {
         }
         copy$default = AnimationStateKt.copy$default((AnimationState) e.getPreviousAnimation(), 0.0f, 0.0f, 0L, 0L, false, 30, (Object) null);

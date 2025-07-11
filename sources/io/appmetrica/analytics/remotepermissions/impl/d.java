@@ -9,7 +9,7 @@ import org.json.JSONObject;
 public final class d implements JsonParser {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1263a = "permissions";
+    public final String f1264a = "permissions";
     public final String b = "name";
     public final String c = "list";
     public final String d = "enabled";
@@ -19,7 +19,7 @@ public final class d implements JsonParser {
     public final a parse(JSONObject jSONObject) {
         JSONArray optJSONArray;
         HashSet hashSet = new HashSet();
-        JSONObject optJSONObject = jSONObject.optJSONObject(this.f1263a);
+        JSONObject optJSONObject = jSONObject.optJSONObject(this.f1264a);
         if (optJSONObject != null && (optJSONArray = optJSONObject.optJSONArray(this.c)) != null) {
             int length = optJSONArray.length();
             for (int i = 0; i < length; i++) {

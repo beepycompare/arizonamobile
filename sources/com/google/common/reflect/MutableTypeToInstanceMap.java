@@ -89,7 +89,7 @@ public final class MutableTypeToInstanceMap<B> extends ForwardingMap<TypeToken<?
         private final Map.Entry<K, V> delegate;
 
         /* renamed from: $r8$lambda$PXRRP_NYxQ7IKAyO13H8YX2p-q0  reason: not valid java name */
-        public static /* synthetic */ UnmodifiableEntry m8195$r8$lambda$PXRRP_NYxQ7IKAyO13H8YX2pq0(Map.Entry entry) {
+        public static /* synthetic */ UnmodifiableEntry m8194$r8$lambda$PXRRP_NYxQ7IKAyO13H8YX2pq0(Map.Entry entry) {
             return new UnmodifiableEntry(entry);
         }
 
@@ -123,7 +123,7 @@ public final class MutableTypeToInstanceMap<B> extends ForwardingMap<TypeToken<?
             return Iterators.transform(entries, new Function() { // from class: com.google.common.reflect.MutableTypeToInstanceMap$UnmodifiableEntry$$ExternalSyntheticLambda0
                 @Override // com.google.common.base.Function
                 public final Object apply(Object obj) {
-                    return MutableTypeToInstanceMap.UnmodifiableEntry.m8195$r8$lambda$PXRRP_NYxQ7IKAyO13H8YX2pq0((Map.Entry) obj);
+                    return MutableTypeToInstanceMap.UnmodifiableEntry.m8194$r8$lambda$PXRRP_NYxQ7IKAyO13H8YX2pq0((Map.Entry) obj);
                 }
             });
         }

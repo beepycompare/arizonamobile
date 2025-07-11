@@ -6,9 +6,9 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: RepairGameError.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
-/* synthetic */ class RepairGameErrorKt$RepairGameErrorDialogRoute$2$1 extends FunctionReferenceImpl implements Function0<Unit> {
+final /* synthetic */ class RepairGameErrorKt$RepairGameErrorDialogRoute$2$1 extends FunctionReferenceImpl implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public RepairGameErrorKt$RepairGameErrorDialogRoute$2$1(Object obj) {
         super(0, obj, CommonDialogComponent.class, "onConfirm", "onConfirm()V", 0);

@@ -2,25 +2,25 @@ package com.google.android.gms.internal.measurement;
 
 import android.os.RemoteException;
 import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzen extends zzeu {
-    final /* synthetic */ boolean zza;
-    final /* synthetic */ zzff zzb;
+public final class zzen extends zzeq {
+    final /* synthetic */ zzes zza;
+    final /* synthetic */ zzfb zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzen(zzff zzffVar, boolean z) {
-        super(zzffVar, true);
-        this.zza = z;
-        this.zzb = zzffVar;
+    public zzen(zzfb zzfbVar, zzes zzesVar) {
+        super(zzfbVar, true);
+        this.zza = zzesVar;
+        Objects.requireNonNull(zzfbVar);
+        this.zzb = zzfbVar;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeu
+    @Override // com.google.android.gms.internal.measurement.zzeq
     final void zza() throws RemoteException {
-        zzcv zzcvVar;
-        zzcvVar = this.zzb.zzj;
-        ((zzcv) Preconditions.checkNotNull(zzcvVar)).setDataCollectionEnabled(this.zza);
+        ((zzcr) Preconditions.checkNotNull(this.zzb.zzQ())).registerOnMeasurementEventListener(this.zza);
     }
 }

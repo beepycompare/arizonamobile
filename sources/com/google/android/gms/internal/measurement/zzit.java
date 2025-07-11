@@ -1,49 +1,61 @@
 package com.google.android.gms.internal.measurement;
-
-import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzit extends zzmd implements zzni {
-    private static final zzit zzb;
-    private int zzd;
-    private String zze = "";
-    private zzmj zzf = zzcn();
-
-    static {
-        zzit zzitVar = new zzit();
-        zzb = zzitVar;
-        zzmd.zzct(zzit.class, zzitVar);
-    }
-
+public final class zzit extends zzma implements zznm {
     private zzit() {
+        throw null;
     }
 
-    public final String zzb() {
-        return this.zze;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzit(byte[] bArr) {
+        super(zziu.zzv());
     }
 
-    public final List zzc() {
-        return this.zzf;
+    public final zzit zza(long j) {
+        zzaX();
+        ((zziu) this.zza).zzn(j);
+        return this;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzmd
-    public final Object zzl(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 != 0) {
-            if (i2 == 2) {
-                return zzcq(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001ဈ\u0000\u0002\u001b", new Object[]{"zzd", "zze", "zzf", zziz.class});
-            } else if (i2 != 3) {
-                if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzb;
-                    }
-                    throw null;
-                }
-                return new zzis(null);
-            } else {
-                return new zzit();
-            }
-        }
-        return (byte) 1;
+    public final zzit zzb(String str) {
+        zzaX();
+        ((zziu) this.zza).zzo(str);
+        return this;
+    }
+
+    public final zzit zzc(String str) {
+        zzaX();
+        ((zziu) this.zza).zzp(str);
+        return this;
+    }
+
+    public final zzit zzd() {
+        zzaX();
+        ((zziu) this.zza).zzq();
+        return this;
+    }
+
+    public final zzit zze(long j) {
+        zzaX();
+        ((zziu) this.zza).zzr(j);
+        return this;
+    }
+
+    public final zzit zzf() {
+        zzaX();
+        ((zziu) this.zza).zzs();
+        return this;
+    }
+
+    public final zzit zzg(double d) {
+        zzaX();
+        ((zziu) this.zza).zzt(d);
+        return this;
+    }
+
+    public final zzit zzh() {
+        zzaX();
+        ((zziu) this.zza).zzu();
+        return this;
     }
 }

@@ -2,6 +2,7 @@ package ru.mrlargha.commonui.elements.employmentNote.presentation.viewHolder;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -22,7 +23,7 @@ import ru.mrlargha.commonui.elements.employmentNote.domain.TaskInfo;
 import ru.mrlargha.commonui.elements.employmentNote.presentation.adapter.TaskRewardAdapter;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: TaskViewHolder.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\u0018\u00002\u00020\u0001BE\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0018\u0010\u0004\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005\u0012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\b0\n\u0012\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ&\u0010\u0010\u001a\u00020\b2\u0006\u0010\u0011\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00072\u0006\u0010\u0013\u001a\u00020\u00072\u0006\u0010\u0014\u001a\u00020\u0015R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0004\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lru/mrlargha/commonui/elements/employmentNote/presentation/viewHolder/TaskViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemTasksBinding;", "onItemClicked", "Lkotlin/Function2;", "Lru/mrlargha/commonui/elements/employmentNote/domain/TaskInfo;", "", "", "onShowClueClicked", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/employmentNote/domain/FractionTasks;", "context", "Landroid/content/Context;", "<init>", "(Lru/mrlargha/commonui/databinding/ItemTasksBinding;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Landroid/content/Context;)V", "bind", "item", "position", "selectedItemPosition", "isVisible", "", "CommonUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\u0018\u00002\u00020\u0001BE\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0018\u0010\u0004\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005\u0012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\b0\n\u0012\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ&\u0010\u0010\u001a\u00020\b2\u0006\u0010\u0011\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00072\u0006\u0010\u0013\u001a\u00020\u00072\u0006\u0010\u0014\u001a\u00020\u0015R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0004\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lru/mrlargha/commonui/elements/employmentNote/presentation/viewHolder/TaskViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemTasksBinding;", "onItemClicked", "Lkotlin/Function2;", "Lru/mrlargha/commonui/elements/employmentNote/domain/TaskInfo;", "", "", "onShowClueClicked", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/employmentNote/domain/FractionTasks;", "context", "Landroid/content/Context;", "<init>", "(Lru/mrlargha/commonui/databinding/ItemTasksBinding;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Landroid/content/Context;)V", "bind", "item", "position", "selectedItemPosition", "isVisible", "", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class TaskViewHolder extends RecyclerView.ViewHolder {
     private final ItemTasksBinding binding;
@@ -64,6 +65,8 @@ public final class TaskViewHolder extends RecyclerView.ViewHolder {
         TaskRewardAdapter taskRewardAdapter = new TaskRewardAdapter();
         itemTasksBinding.rvTaskRewards.setAdapter(taskRewardAdapter);
         if (!arrayList2.isEmpty()) {
+            Log.d("frontend", "bind: " + arrayList2);
+            itemTasksBinding.bg.setBackground(null);
             if (item.getCompleted() == 1) {
                 itemTasksBinding.parentLayout.setBackgroundTintList(ColorStateList.valueOf(this.context.getColor(R.color.green_type5)));
                 itemTasksBinding.ivItemIcon.setImageResource(R.drawable.ic_task_done);
@@ -83,13 +86,15 @@ public final class TaskViewHolder extends RecyclerView.ViewHolder {
                         itemTasksBinding.ivItemIcon.setImageResource(R.drawable.ic_task_info);
                         break;
                     case 4:
+                        itemTasksBinding.bg.setBackgroundResource(R.drawable.employement_task_bg_daily);
                         itemTasksBinding.ivItemIcon.setImageResource(R.drawable.ic_daily_task);
                         break;
                     case 5:
-                        itemTasksBinding.ivItemIcon.setImageResource(R.drawable.ic_vicecity_task);
+                        itemTasksBinding.bg.setBackgroundResource(R.drawable.employement_task_bg_global);
+                        itemTasksBinding.ivItemIcon.setImageResource(R.drawable.ic_global_task);
                         break;
                     case 6:
-                        itemTasksBinding.ivItemIcon.setImageResource(R.drawable.ic_global_task);
+                        itemTasksBinding.ivItemIcon.setImageResource(R.drawable.ic_vicecity_task);
                         break;
                 }
             }

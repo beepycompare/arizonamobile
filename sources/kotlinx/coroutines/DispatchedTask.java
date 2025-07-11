@@ -73,16 +73,16 @@ public abstract class DispatchedTask<T> extends Task {
                 Result.Companion companion = Result.Companion;
                 if (DebugKt.getRECOVER_STACK_TRACES() && (continuation instanceof CoroutineStackFrame)) {
                     cancellationException = StackTraceRecoveryKt.recoverFromStackFrame(cancellationException2, (CoroutineStackFrame) continuation);
-                    continuation.resumeWith(Result.m8443constructorimpl(ResultKt.createFailure(cancellationException)));
+                    continuation.resumeWith(Result.m8471constructorimpl(ResultKt.createFailure(cancellationException)));
                 }
                 cancellationException = cancellationException2;
-                continuation.resumeWith(Result.m8443constructorimpl(ResultKt.createFailure(cancellationException)));
+                continuation.resumeWith(Result.m8471constructorimpl(ResultKt.createFailure(cancellationException)));
             } else if (exceptionalResult$kotlinx_coroutines_core != null) {
                 Result.Companion companion2 = Result.Companion;
-                continuation.resumeWith(Result.m8443constructorimpl(ResultKt.createFailure(exceptionalResult$kotlinx_coroutines_core)));
+                continuation.resumeWith(Result.m8471constructorimpl(ResultKt.createFailure(exceptionalResult$kotlinx_coroutines_core)));
             } else {
                 Result.Companion companion3 = Result.Companion;
-                continuation.resumeWith(Result.m8443constructorimpl(getSuccessfulResult$kotlinx_coroutines_core(takeState$kotlinx_coroutines_core)));
+                continuation.resumeWith(Result.m8471constructorimpl(getSuccessfulResult$kotlinx_coroutines_core(takeState$kotlinx_coroutines_core)));
             }
             Unit unit = Unit.INSTANCE;
             if (updateUndispatchedCompletion == null || updateUndispatchedCompletion.clearThreadContext()) {

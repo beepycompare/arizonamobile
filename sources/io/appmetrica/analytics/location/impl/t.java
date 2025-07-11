@@ -8,13 +8,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class t {
 
     /* renamed from: a  reason: collision with root package name */
-    public LocationFilter f1194a;
+    public LocationFilter f1195a;
     public Location d;
     public long e;
     public final CopyOnWriteArrayList c = new CopyOnWriteArrayList();
     public final TimePassedChecker b = new TimePassedChecker();
 
     public t(LocationFilter locationFilter) {
-        this.f1194a = locationFilter;
+        this.f1195a = locationFilter;
     }
 }

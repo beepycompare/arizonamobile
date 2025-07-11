@@ -9,15 +9,15 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Yk extends ECommerceEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Sf f726a;
-    public final C0445mj b;
-    public final InterfaceC0583s8 c;
+    public final Sf f727a;
+    public final C0437mj b;
+    public final InterfaceC0575s8 c;
 
     public Yk(ECommerceProduct eCommerceProduct, ECommerceScreen eCommerceScreen) {
-        this(new Sf(eCommerceProduct), new C0445mj(eCommerceScreen), new Zk());
+        this(new Sf(eCommerceProduct), new C0437mj(eCommerceScreen), new Zk());
     }
 
-    public final InterfaceC0583s8 a() {
+    public final InterfaceC0575s8 a() {
         return this.c;
     }
 
@@ -32,12 +32,12 @@ public final class Yk extends ECommerceEvent {
     }
 
     public final String toString() {
-        return "ShownProductCardInfoEvent{product=" + this.f726a + ", screen=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "ShownProductCardInfoEvent{product=" + this.f727a + ", screen=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public Yk(Sf sf, C0445mj c0445mj, InterfaceC0583s8 interfaceC0583s8) {
-        this.f726a = sf;
-        this.b = c0445mj;
-        this.c = interfaceC0583s8;
+    public Yk(Sf sf, C0437mj c0437mj, InterfaceC0575s8 interfaceC0575s8) {
+        this.f727a = sf;
+        this.b = c0437mj;
+        this.c = interfaceC0575s8;
     }
 }

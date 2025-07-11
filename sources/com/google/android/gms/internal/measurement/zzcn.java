@@ -1,5 +1,16 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.4.0 */
+
+import android.os.Handler;
+import android.os.Looper;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public interface zzcn {
+public final class zzcn extends Handler {
+    public zzcn() {
+        Looper.getMainLooper();
+    }
+
+    public zzcn(Looper looper) {
+        super(looper);
+        Looper.getMainLooper();
+    }
 }

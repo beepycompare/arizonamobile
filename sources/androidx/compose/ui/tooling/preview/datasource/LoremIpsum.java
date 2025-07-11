@@ -25,7 +25,7 @@ public class LoremIpsum implements PreviewParameterProvider<String> {
 
     @Override // androidx.compose.ui.tooling.preview.PreviewParameterProvider
     public Sequence<String> getValues() {
-        return SequencesKt.sequenceOf(generateLoremIpsum(this.words));
+        return SequencesKt.sequenceOf((Object[]) new String[]{generateLoremIpsum(this.words)});
     }
 
     private final String generateLoremIpsum(int i) {

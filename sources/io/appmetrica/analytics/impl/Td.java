@@ -5,14 +5,14 @@ import android.os.Process;
 public final class Td implements Xk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f640a;
+    public final int f641a;
 
     public Td(int i) {
-        this.f640a = i;
+        this.f641a = i;
     }
 
     @Override // io.appmetrica.analytics.impl.Xk
     public final boolean a(String str) {
-        return this.f640a != Process.myPid();
+        return this.f641a != Process.myPid();
     }
 }

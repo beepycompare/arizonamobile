@@ -17,12 +17,12 @@ public final class SlotNavigatorExtKt$dismiss$3 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        m8037invoke(obj, obj2);
+        m8036invoke(obj, obj2);
         return Unit.INSTANCE;
     }
 
     /* renamed from: invoke  reason: collision with other method in class */
-    public final void m8037invoke(Object obj, Object obj2) {
+    public final void m8036invoke(Object obj, Object obj2) {
         this.$onComplete.invoke(Boolean.valueOf(obj2 != null));
     }
 }

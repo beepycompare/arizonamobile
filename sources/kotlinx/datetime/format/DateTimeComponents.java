@@ -1,8 +1,8 @@
 package kotlinx.datetime.format;
 
-import java.time.DayOfWeek;
-import java.time.Month;
+import kotlin.Deprecated;
 import kotlin.Metadata;
+import kotlin.ReplaceWith;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -12,16 +12,21 @@ import kotlin.jvm.internal.MutablePropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.IntRange;
 import kotlin.reflect.KProperty;
+import kotlin.time.Instant;
 import kotlinx.datetime.DateTimeFormatException;
+import kotlinx.datetime.DayOfWeek;
 import kotlinx.datetime.DayOfWeekKt;
-import kotlinx.datetime.Instant;
 import kotlinx.datetime.LocalDate;
 import kotlinx.datetime.LocalDateKt;
 import kotlinx.datetime.LocalDateTime;
 import kotlinx.datetime.LocalTime;
+import kotlinx.datetime.Month;
 import kotlinx.datetime.MonthKt;
+import kotlinx.datetime.OverloadMarker;
 import kotlinx.datetime.TimeZoneKt;
 import kotlinx.datetime.UtcOffset;
+import kotlinx.datetime.YearMonth;
+import kotlinx.datetime.format.DateTimeComponents;
 import kotlinx.datetime.format.DateTimeComponentsFormat;
 import kotlinx.datetime.format.DateTimeFormatBuilder;
 import kotlinx.datetime.internal.DateCalculationsKt;
@@ -29,12 +34,13 @@ import kotlinx.datetime.internal.MathJvmKt;
 import kotlinx.datetime.internal.format.AppendableFormatStructure;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: DateTimeComponents.kt */
-@Metadata(d1 = {"\u0000v\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010\u000b\n\u0002\b\u0012\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u0000 v2\u00020\u0001:\u0002vwB\u0011\b\u0000\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u000e\u0010a\u001a\u00020b2\u0006\u0010c\u001a\u00020dJ\u000e\u0010e\u001a\u00020b2\u0006\u0010f\u001a\u00020gJ\u0016\u0010h\u001a\u00020b2\u0006\u0010i\u001a\u00020j2\u0006\u0010k\u001a\u00020lJ\u0016\u0010h\u001a\u00020b2\u0006\u0010f\u001a\u00020g2\u0006\u0010k\u001a\u00020lJ\u000e\u0010m\u001a\u00020b2\u0006\u0010k\u001a\u00020lJ\u000e\u0010n\u001a\u00020b2\u0006\u0010o\u001a\u00020pJ\u0006\u0010q\u001a\u00020jJ\u0006\u0010r\u001a\u00020dJ\u0006\u0010s\u001a\u00020gJ\u0006\u0010t\u001a\u00020pJ\u0006\u0010u\u001a\u00020lR/\u0010\u0007\u001a\u0004\u0018\u00010\u00062\b\u0010\u0005\u001a\u0004\u0018\u00010\u00068F@FX\u0086\u008e\u0002¢\u0006\u0012\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\r*\u0004\b\b\u0010\tR\u0014\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR/\u0010\u0011\u001a\u0004\u0018\u00010\u00102\b\u0010\u0005\u001a\u0004\u0018\u00010\u00108F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u0016\u0010\u0017\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R4\u0010\u001b\u001a\n\u0018\u00010\u0019j\u0004\u0018\u0001`\u001a2\u000e\u0010\u0018\u001a\n\u0018\u00010\u0019j\u0004\u0018\u0001`\u001a8F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR/\u0010 \u001a\u0004\u0018\u00010\u00102\b\u0010\u0005\u001a\u0004\u0018\u00010\u00108F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b#\u0010$\u001a\u0004\b!\u0010\u0013\"\u0004\b\"\u0010\u0015R/\u0010%\u001a\u0004\u0018\u00010\u00102\b\u0010\u0005\u001a\u0004\u0018\u00010\u00108F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b(\u0010\u0017\u001a\u0004\b&\u0010\u0013\"\u0004\b'\u0010\u0015R/\u0010)\u001a\u0004\u0018\u00010\u00102\b\u0010\u0005\u001a\u0004\u0018\u00010\u00108F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b,\u0010\u0017\u001a\u0004\b*\u0010\u0013\"\u0004\b+\u0010\u0015R/\u0010-\u001a\u0004\u0018\u00010\u00102\b\u0010\u0005\u001a\u0004\u0018\u00010\u00108F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b0\u0010\u0017\u001a\u0004\b.\u0010\u0013\"\u0004\b/\u0010\u0015R4\u00103\u001a\n\u0018\u000101j\u0004\u0018\u0001`22\u000e\u0010\u0018\u001a\n\u0018\u000101j\u0004\u0018\u0001`28F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b4\u00105\"\u0004\b6\u00107R/\u00108\u001a\u0004\u0018\u00010\u00102\b\u0010\u0005\u001a\u0004\u0018\u00010\u00108F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b;\u0010\u0017\u001a\u0004\b9\u0010\u0013\"\u0004\b:\u0010\u0015R(\u0010<\u001a\u0004\u0018\u00010\u00102\b\u0010\u0018\u001a\u0004\u0018\u00010\u00108F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b=\u0010\u0013\"\u0004\b>\u0010\u0015R/\u0010?\u001a\u0004\u0018\u00010\u00102\b\u0010\u0005\u001a\u0004\u0018\u00010\u00108F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bB\u0010\u0017\u001a\u0004\b@\u0010\u0013\"\u0004\bA\u0010\u0015R/\u0010D\u001a\u0004\u0018\u00010C2\b\u0010\u0005\u001a\u0004\u0018\u00010C8F@FX\u0086\u008e\u0002¢\u0006\u0012\u001a\u0004\bF\u0010G\"\u0004\bH\u0010I*\u0004\bE\u0010\tR/\u0010J\u001a\u0004\u0018\u00010\u00102\b\u0010\u0005\u001a\u0004\u0018\u00010\u00108F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bM\u0010\u0017\u001a\u0004\bK\u0010\u0013\"\u0004\bL\u0010\u0015R/\u0010N\u001a\u0004\u0018\u00010\u00102\b\u0010\u0005\u001a\u0004\u0018\u00010\u00108F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bQ\u0010\u0017\u001a\u0004\bO\u0010\u0013\"\u0004\bP\u0010\u0015R/\u0010R\u001a\u0004\u0018\u00010\u00102\b\u0010\u0005\u001a\u0004\u0018\u00010\u00108F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bU\u0010\u0017\u001a\u0004\bS\u0010\u0013\"\u0004\bT\u0010\u0015R/\u0010W\u001a\u0004\u0018\u00010V2\b\u0010\u0005\u001a\u0004\u0018\u00010V8F@FX\u0086\u008e\u0002¢\u0006\u0012\u001a\u0004\bY\u0010Z\"\u0004\b[\u0010\\*\u0004\bX\u0010\tR/\u0010]\u001a\u0004\u0018\u00010\u00102\b\u0010\u0005\u001a\u0004\u0018\u00010\u00108F@FX\u0086\u008e\u0002¢\u0006\u0012\u001a\u0004\b_\u0010\u0013\"\u0004\b`\u0010\u0015*\u0004\b^\u0010\t¨\u0006x"}, d2 = {"Lkotlinx/datetime/format/DateTimeComponents;", "", "contents", "Lkotlinx/datetime/format/DateTimeComponentsContents;", "(Lkotlinx/datetime/format/DateTimeComponentsContents;)V", "<set-?>", "Lkotlinx/datetime/format/AmPmMarker;", "amPm", "getAmPm$delegate", "(Lkotlinx/datetime/format/DateTimeComponents;)Ljava/lang/Object;", "getAmPm", "()Lkotlinx/datetime/format/AmPmMarker;", "setAmPm", "(Lkotlinx/datetime/format/AmPmMarker;)V", "getContents$kotlinx_datetime", "()Lkotlinx/datetime/format/DateTimeComponentsContents;", "", "dayOfMonth", "getDayOfMonth", "()Ljava/lang/Integer;", "setDayOfMonth", "(Ljava/lang/Integer;)V", "dayOfMonth$delegate", "Lkotlinx/datetime/format/TwoDigitNumber;", "value", "Ljava/time/DayOfWeek;", "Lkotlinx/datetime/DayOfWeek;", "dayOfWeek", "getDayOfWeek", "()Ljava/time/DayOfWeek;", "setDayOfWeek", "(Ljava/time/DayOfWeek;)V", "dayOfYear", "getDayOfYear", "setDayOfYear", "dayOfYear$delegate", "Lkotlinx/datetime/format/ThreeDigitNumber;", "hour", "getHour", "setHour", "hour$delegate", "hourOfAmPm", "getHourOfAmPm", "setHourOfAmPm", "hourOfAmPm$delegate", "minute", "getMinute", "setMinute", "minute$delegate", "Ljava/time/Month;", "Lkotlinx/datetime/Month;", "month", "getMonth", "()Ljava/time/Month;", "setMonth", "(Ljava/time/Month;)V", "monthNumber", "getMonthNumber", "setMonthNumber", "monthNumber$delegate", "nanosecond", "getNanosecond", "setNanosecond", "offsetHours", "getOffsetHours", "setOffsetHours", "offsetHours$delegate", "", "offsetIsNegative", "getOffsetIsNegative$delegate", "getOffsetIsNegative", "()Ljava/lang/Boolean;", "setOffsetIsNegative", "(Ljava/lang/Boolean;)V", "offsetMinutesOfHour", "getOffsetMinutesOfHour", "setOffsetMinutesOfHour", "offsetMinutesOfHour$delegate", "offsetSecondsOfMinute", "getOffsetSecondsOfMinute", "setOffsetSecondsOfMinute", "offsetSecondsOfMinute$delegate", "second", "getSecond", "setSecond", "second$delegate", "", "timeZoneId", "getTimeZoneId$delegate", "getTimeZoneId", "()Ljava/lang/String;", "setTimeZoneId", "(Ljava/lang/String;)V", "year", "getYear$delegate", "getYear", "setYear", "setDate", "", "localDate", "Lkotlinx/datetime/LocalDate;", "setDateTime", "localDateTime", "Lkotlinx/datetime/LocalDateTime;", "setDateTimeOffset", "instant", "Lkotlinx/datetime/Instant;", "utcOffset", "Lkotlinx/datetime/UtcOffset;", "setOffset", "setTime", "localTime", "Lkotlinx/datetime/LocalTime;", "toInstantUsingOffset", "toLocalDate", "toLocalDateTime", "toLocalTime", "toUtcOffset", "Companion", "Formats", "kotlinx-datetime"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0010\u000b\n\u0002\b\u0012\n\u0002\u0010\u000e\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 \u0081\u00012\u00020\u0001:\u0004\u0081\u0001\u0082\u0001B\u0013\b\u0000\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bJ\u000e\u0010\f\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\u000eJ\u000e\u0010\u000f\u001a\u00020\t2\u0006\u0010\u0010\u001a\u00020\u0011J\u000e\u0010\u0012\u001a\u00020\t2\u0006\u0010\u0013\u001a\u00020\u0014J\u000e\u0010\u0015\u001a\u00020\t2\u0006\u0010\u0016\u001a\u00020\u0017J\u0016\u0010\u0018\u001a\u00020\t2\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u0016\u001a\u00020\u0017J\u0016\u0010\u0018\u001a\u00020\t2\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0016\u001a\u00020\u0017J\u0006\u0010y\u001a\u00020\u0017J\u0006\u0010z\u001a\u00020\u000eJ\u0006\u0010{\u001a\u00020\u0011J\u0006\u0010|\u001a\u00020\u000bJ\u0006\u0010}\u001a\u00020\u0014J\u0011\u0010~\u001a\u00020\u001a2\t\b\u0002\u0010\u007f\u001a\u00030\u0080\u0001R\u0014\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R/\u0010\u001d\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c8F@FX\u0086\u008e\u0002¢\u0006\u0012\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#*\u0004\b\u001e\u0010\u001fR/\u0010$\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b'\u0010(\u001a\u0004\b%\u0010!\"\u0004\b&\u0010#R(\u0010+\u001a\u0004\u0018\u00010*2\b\u0010)\u001a\u0004\u0018\u00010*8F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b,\u0010-\"\u0004\b.\u0010/R/\u00100\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b3\u0010(\u001a\u0004\b1\u0010!\"\u0004\b2\u0010#R5\u00104\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c8F@FX\u0087\u008e\u0002¢\u0006\u0018\n\u0004\b9\u0010(\u0012\u0004\b5\u00106\u001a\u0004\b7\u0010!\"\u0004\b8\u0010#R(\u0010;\u001a\u0004\u0018\u00010:2\b\u0010)\u001a\u0004\u0018\u00010:8F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b<\u0010=\"\u0004\b>\u0010?R/\u0010@\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bC\u0010D\u001a\u0004\bA\u0010!\"\u0004\bB\u0010#R/\u0010E\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bH\u0010(\u001a\u0004\bF\u0010!\"\u0004\bG\u0010#R/\u0010I\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bL\u0010(\u001a\u0004\bJ\u0010!\"\u0004\bK\u0010#R/\u0010N\u001a\u0004\u0018\u00010M2\b\u0010\u001b\u001a\u0004\u0018\u00010M8F@FX\u0086\u008e\u0002¢\u0006\u0012\u001a\u0004\bP\u0010Q\"\u0004\bR\u0010S*\u0004\bO\u0010\u001fR/\u0010T\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bW\u0010(\u001a\u0004\bU\u0010!\"\u0004\bV\u0010#R/\u0010X\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b[\u0010(\u001a\u0004\bY\u0010!\"\u0004\bZ\u0010#R(\u0010\\\u001a\u0004\u0018\u00010\u001c2\b\u0010)\u001a\u0004\u0018\u00010\u001c8F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b]\u0010!\"\u0004\b^\u0010#R/\u0010`\u001a\u0004\u0018\u00010_2\b\u0010\u001b\u001a\u0004\u0018\u00010_8F@FX\u0086\u008e\u0002¢\u0006\u0012\u001a\u0004\bb\u0010c\"\u0004\bd\u0010e*\u0004\ba\u0010\u001fR/\u0010f\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bi\u0010(\u001a\u0004\bg\u0010!\"\u0004\bh\u0010#R/\u0010j\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bm\u0010(\u001a\u0004\bk\u0010!\"\u0004\bl\u0010#R/\u0010n\u001a\u0004\u0018\u00010\u001c2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001c8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bq\u0010(\u001a\u0004\bo\u0010!\"\u0004\bp\u0010#R/\u0010s\u001a\u0004\u0018\u00010r2\b\u0010\u001b\u001a\u0004\u0018\u00010r8F@FX\u0086\u008e\u0002¢\u0006\u0012\u001a\u0004\bu\u0010v\"\u0004\bw\u0010x*\u0004\bt\u0010\u001f¨\u0006\u0083\u0001"}, d2 = {"Lkotlinx/datetime/format/DateTimeComponents;", "", "contents", "Lkotlinx/datetime/format/DateTimeComponentsContents;", "<init>", "(Lkotlinx/datetime/format/DateTimeComponentsContents;)V", "getContents$kotlinx_datetime", "()Lkotlinx/datetime/format/DateTimeComponentsContents;", "setTime", "", "localTime", "Lkotlinx/datetime/LocalTime;", "setYearMonth", "yearMonth", "Lkotlinx/datetime/YearMonth;", "setDate", "localDate", "Lkotlinx/datetime/LocalDate;", "setDateTime", "localDateTime", "Lkotlinx/datetime/LocalDateTime;", "setOffset", "utcOffset", "Lkotlinx/datetime/UtcOffset;", "setDateTimeOffset", "instant", "Lkotlin/time/Instant;", "<set-?>", "", "year", "getYear$delegate", "(Lkotlinx/datetime/format/DateTimeComponents;)Ljava/lang/Object;", "getYear", "()Ljava/lang/Integer;", "setYear", "(Ljava/lang/Integer;)V", "monthNumber", "getMonthNumber", "setMonthNumber", "monthNumber$delegate", "Lkotlinx/datetime/format/TwoDigitNumber;", "value", "Lkotlinx/datetime/Month;", "month", "getMonth", "()Lkotlinx/datetime/Month;", "setMonth", "(Lkotlinx/datetime/Month;)V", "day", "getDay", "setDay", "day$delegate", "dayOfMonth", "getDayOfMonth$annotations", "()V", "getDayOfMonth", "setDayOfMonth", "dayOfMonth$delegate", "Lkotlinx/datetime/DayOfWeek;", "dayOfWeek", "getDayOfWeek", "()Lkotlinx/datetime/DayOfWeek;", "setDayOfWeek", "(Lkotlinx/datetime/DayOfWeek;)V", "dayOfYear", "getDayOfYear", "setDayOfYear", "dayOfYear$delegate", "Lkotlinx/datetime/format/ThreeDigitNumber;", "hour", "getHour", "setHour", "hour$delegate", "hourOfAmPm", "getHourOfAmPm", "setHourOfAmPm", "hourOfAmPm$delegate", "Lkotlinx/datetime/format/AmPmMarker;", "amPm", "getAmPm$delegate", "getAmPm", "()Lkotlinx/datetime/format/AmPmMarker;", "setAmPm", "(Lkotlinx/datetime/format/AmPmMarker;)V", "minute", "getMinute", "setMinute", "minute$delegate", "second", "getSecond", "setSecond", "second$delegate", "nanosecond", "getNanosecond", "setNanosecond", "", "offsetIsNegative", "getOffsetIsNegative$delegate", "getOffsetIsNegative", "()Ljava/lang/Boolean;", "setOffsetIsNegative", "(Ljava/lang/Boolean;)V", "offsetHours", "getOffsetHours", "setOffsetHours", "offsetHours$delegate", "offsetMinutesOfHour", "getOffsetMinutesOfHour", "setOffsetMinutesOfHour", "offsetMinutesOfHour$delegate", "offsetSecondsOfMinute", "getOffsetSecondsOfMinute", "setOffsetSecondsOfMinute", "offsetSecondsOfMinute$delegate", "", "timeZoneId", "getTimeZoneId$delegate", "getTimeZoneId", "()Ljava/lang/String;", "setTimeZoneId", "(Ljava/lang/String;)V", "toUtcOffset", "toYearMonth", "toLocalDate", "toLocalTime", "toLocalDateTime", "toInstantUsingOffset", "youShallNotPass", "Lkotlinx/datetime/OverloadMarker;", "Companion", "Formats", "kotlinx-datetime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DateTimeComponents {
-    static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "monthNumber", "getMonthNumber()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "dayOfMonth", "getDayOfMonth()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "dayOfYear", "getDayOfYear()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "hour", "getHour()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "hourOfAmPm", "getHourOfAmPm()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "minute", "getMinute()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "second", "getSecond()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "offsetHours", "getOffsetHours()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "offsetMinutesOfHour", "getOffsetMinutesOfHour()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "offsetSecondsOfMinute", "getOffsetSecondsOfMinute()Ljava/lang/Integer;", 0))};
+    static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "monthNumber", "getMonthNumber()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "day", "getDay()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "dayOfMonth", "getDayOfMonth()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "dayOfYear", "getDayOfYear()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "hour", "getHour()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "hourOfAmPm", "getHourOfAmPm()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "minute", "getMinute()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "second", "getSecond()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "offsetHours", "getOffsetHours()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "offsetMinutesOfHour", "getOffsetMinutesOfHour()Ljava/lang/Integer;", 0)), Reflection.mutableProperty1(new MutablePropertyReference1Impl(DateTimeComponents.class, "offsetSecondsOfMinute", "getOffsetSecondsOfMinute()Ljava/lang/Integer;", 0))};
     public static final Companion Companion = new Companion(null);
     private final DateTimeComponentsContents contents;
+    private final TwoDigitNumber day$delegate;
     private final TwoDigitNumber dayOfMonth$delegate;
     private final ThreeDigitNumber dayOfYear$delegate;
     private final TwoDigitNumber hour$delegate;
@@ -50,8 +56,12 @@ public final class DateTimeComponents {
         this(null, 1, null);
     }
 
+    @Deprecated(message = "Use 'day' instead", replaceWith = @ReplaceWith(expression = "day", imports = {}))
+    public static /* synthetic */ void getDayOfMonth$annotations() {
+    }
+
     /* compiled from: DateTimeComponents.kt */
-    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J%\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\u0017\u0010\u0006\u001a\u0013\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007¢\u0006\u0002\b\n¨\u0006\u000b"}, d2 = {"Lkotlinx/datetime/format/DateTimeComponents$Companion;", "", "()V", "Format", "Lkotlinx/datetime/format/DateTimeFormat;", "Lkotlinx/datetime/format/DateTimeComponents;", "block", "Lkotlin/Function1;", "Lkotlinx/datetime/format/DateTimeFormatBuilder$WithDateTimeComponents;", "", "Lkotlin/ExtensionFunctionType;", "kotlinx-datetime"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J%\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\u0017\u0010\u0007\u001a\u0013\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b¢\u0006\u0002\b\u000b¨\u0006\f"}, d2 = {"Lkotlinx/datetime/format/DateTimeComponents$Companion;", "", "<init>", "()V", "Format", "Lkotlinx/datetime/format/DateTimeFormat;", "Lkotlinx/datetime/format/DateTimeComponents;", "block", "Lkotlin/Function1;", "Lkotlinx/datetime/format/DateTimeFormatBuilder$WithDateTimeComponents;", "", "Lkotlin/ExtensionFunctionType;", "kotlinx-datetime"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -86,19 +96,31 @@ public final class DateTimeComponents {
             }
         });
         final IncompleteLocalDate date2 = contents.getDate();
-        this.dayOfMonth$delegate = new TwoDigitNumber(new MutablePropertyReference0Impl(date2) { // from class: kotlinx.datetime.format.DateTimeComponents$dayOfMonth$2
+        this.day$delegate = new TwoDigitNumber(new MutablePropertyReference0Impl(date2) { // from class: kotlinx.datetime.format.DateTimeComponents$day$2
             @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KProperty0
             public Object get() {
-                return ((IncompleteLocalDate) this.receiver).getDayOfMonth();
+                return ((IncompleteLocalDate) this.receiver).getDay();
             }
 
             @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KMutableProperty0
             public void set(Object obj) {
-                ((IncompleteLocalDate) this.receiver).setDayOfMonth((Integer) obj);
+                ((IncompleteLocalDate) this.receiver).setDay((Integer) obj);
             }
         });
         final IncompleteLocalDate date3 = contents.getDate();
-        this.dayOfYear$delegate = new ThreeDigitNumber(new MutablePropertyReference0Impl(date3) { // from class: kotlinx.datetime.format.DateTimeComponents$dayOfYear$2
+        this.dayOfMonth$delegate = new TwoDigitNumber(new MutablePropertyReference0Impl(date3) { // from class: kotlinx.datetime.format.DateTimeComponents$dayOfMonth$2
+            @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KProperty0
+            public Object get() {
+                return ((IncompleteLocalDate) this.receiver).getDay();
+            }
+
+            @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KMutableProperty0
+            public void set(Object obj) {
+                ((IncompleteLocalDate) this.receiver).setDay((Integer) obj);
+            }
+        });
+        final IncompleteLocalDate date4 = contents.getDate();
+        this.dayOfYear$delegate = new ThreeDigitNumber(new MutablePropertyReference0Impl(date4) { // from class: kotlinx.datetime.format.DateTimeComponents$dayOfYear$2
             @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KProperty0
             public Object get() {
                 return ((IncompleteLocalDate) this.receiver).getDayOfYear();
@@ -163,36 +185,36 @@ public final class DateTimeComponents {
         this.offsetHours$delegate = new TwoDigitNumber(new MutablePropertyReference0Impl(offset) { // from class: kotlinx.datetime.format.DateTimeComponents$offsetHours$2
             @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KProperty0
             public Object get() {
-                return ((IncompleteUtcOffset) this.receiver).getTotalHoursAbs();
+                return ((IncompleteUtcOffset) this.receiver).getOffsetHours();
             }
 
             @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KMutableProperty0
             public void set(Object obj) {
-                ((IncompleteUtcOffset) this.receiver).setTotalHoursAbs((Integer) obj);
+                ((IncompleteUtcOffset) this.receiver).setOffsetHours((Integer) obj);
             }
         });
         final IncompleteUtcOffset offset2 = contents.getOffset();
         this.offsetMinutesOfHour$delegate = new TwoDigitNumber(new MutablePropertyReference0Impl(offset2) { // from class: kotlinx.datetime.format.DateTimeComponents$offsetMinutesOfHour$2
             @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KProperty0
             public Object get() {
-                return ((IncompleteUtcOffset) this.receiver).getMinutesOfHour();
+                return ((IncompleteUtcOffset) this.receiver).getOffsetMinutesOfHour();
             }
 
             @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KMutableProperty0
             public void set(Object obj) {
-                ((IncompleteUtcOffset) this.receiver).setMinutesOfHour((Integer) obj);
+                ((IncompleteUtcOffset) this.receiver).setOffsetMinutesOfHour((Integer) obj);
             }
         });
         final IncompleteUtcOffset offset3 = contents.getOffset();
         this.offsetSecondsOfMinute$delegate = new TwoDigitNumber(new MutablePropertyReference0Impl(offset3) { // from class: kotlinx.datetime.format.DateTimeComponents$offsetSecondsOfMinute$2
             @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KProperty0
             public Object get() {
-                return ((IncompleteUtcOffset) this.receiver).getSecondsOfMinute();
+                return ((IncompleteUtcOffset) this.receiver).getOffsetSecondsOfMinute();
             }
 
             @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KMutableProperty0
             public void set(Object obj) {
-                ((IncompleteUtcOffset) this.receiver).setSecondsOfMinute((Integer) obj);
+                ((IncompleteUtcOffset) this.receiver).setOffsetSecondsOfMinute((Integer) obj);
             }
         });
     }
@@ -206,204 +228,24 @@ public final class DateTimeComponents {
     }
 
     /* compiled from: DateTimeComponents.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\bÆ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0017\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0017\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007¨\u0006\n"}, d2 = {"Lkotlinx/datetime/format/DateTimeComponents$Formats;", "", "()V", "ISO_DATE_TIME_OFFSET", "Lkotlinx/datetime/format/DateTimeFormat;", "Lkotlinx/datetime/format/DateTimeComponents;", "getISO_DATE_TIME_OFFSET", "()Lkotlinx/datetime/format/DateTimeFormat;", "RFC_1123", "getRFC_1123", "kotlinx-datetime"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\b¨\u0006\u000b"}, d2 = {"Lkotlinx/datetime/format/DateTimeComponents$Formats;", "", "<init>", "()V", "ISO_DATE_TIME_OFFSET", "Lkotlinx/datetime/format/DateTimeFormat;", "Lkotlinx/datetime/format/DateTimeComponents;", "getISO_DATE_TIME_OFFSET", "()Lkotlinx/datetime/format/DateTimeFormat;", "RFC_1123", "getRFC_1123", "kotlinx-datetime"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Formats {
         public static final Formats INSTANCE = new Formats();
-        private static final DateTimeFormat<DateTimeComponents> ISO_DATE_TIME_OFFSET = DateTimeComponents.Companion.Format(new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$ISO_DATE_TIME_OFFSET$1
+        private static final DateTimeFormat<DateTimeComponents> ISO_DATE_TIME_OFFSET = DateTimeComponents.Companion.Format(new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents) {
-                invoke2(withDateTimeComponents);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents Format) {
-                Intrinsics.checkNotNullParameter(Format, "$this$Format");
-                Format.date(LocalDateFormatKt.getISO_DATE());
-                DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents = Format;
-                DateTimeFormatBuilderKt.alternativeParsing(withDateTimeComponents, new Function1[]{new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$ISO_DATE_TIME_OFFSET$1.1
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents2) {
-                        invoke2(withDateTimeComponents2);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
-                        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                        DateTimeFormatBuilderKt.m10056char(alternativeParsing, 't');
-                    }
-                }}, new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$ISO_DATE_TIME_OFFSET$1.2
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents2) {
-                        invoke2(withDateTimeComponents2);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
-                        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                        DateTimeFormatBuilderKt.m10056char(alternativeParsing, 'T');
-                    }
-                });
-                DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents2 = Format;
-                DateTimeFormatBuilder.WithTime.DefaultImpls.hour$default(withDateTimeComponents2, null, 1, null);
-                DateTimeFormatBuilderKt.m10056char(withDateTimeComponents, AbstractJsonLexerKt.COLON);
-                DateTimeFormatBuilder.WithTime.DefaultImpls.minute$default(withDateTimeComponents2, null, 1, null);
-                DateTimeFormatBuilderKt.m10056char(withDateTimeComponents, AbstractJsonLexerKt.COLON);
-                DateTimeFormatBuilder.WithTime.DefaultImpls.second$default(withDateTimeComponents2, null, 1, null);
-                DateTimeFormatBuilderKt.optional$default(withDateTimeComponents, null, new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$ISO_DATE_TIME_OFFSET$1.3
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents3) {
-                        invoke2(withDateTimeComponents3);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents optional) {
-                        Intrinsics.checkNotNullParameter(optional, "$this$optional");
-                        DateTimeFormatBuilderKt.m10056char(optional, '.');
-                        optional.secondFraction(1, 9);
-                    }
-                }, 1, null);
-                DateTimeFormatBuilderKt.alternativeParsing(withDateTimeComponents, new Function1[]{new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$ISO_DATE_TIME_OFFSET$1.4
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents3) {
-                        invoke2(withDateTimeComponents3);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
-                        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                        DateTimeFormatBuilder.WithUtcOffset.DefaultImpls.offsetHours$default(alternativeParsing, null, 1, null);
-                    }
-                }}, new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$ISO_DATE_TIME_OFFSET$1.5
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents3) {
-                        invoke2(withDateTimeComponents3);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
-                        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                        alternativeParsing.offset(UtcOffset.Formats.INSTANCE.getISO());
-                    }
-                });
+            public final Object invoke(Object obj) {
+                Unit ISO_DATE_TIME_OFFSET$lambda$5;
+                ISO_DATE_TIME_OFFSET$lambda$5 = DateTimeComponents.Formats.ISO_DATE_TIME_OFFSET$lambda$5((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                return ISO_DATE_TIME_OFFSET$lambda$5;
             }
         });
-        private static final DateTimeFormat<DateTimeComponents> RFC_1123 = DateTimeComponents.Companion.Format(new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$RFC_1123$1
+        private static final DateTimeFormat<DateTimeComponents> RFC_1123 = DateTimeComponents.Companion.Format(new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents) {
-                invoke2(withDateTimeComponents);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents Format) {
-                Intrinsics.checkNotNullParameter(Format, "$this$Format");
-                DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents = Format;
-                DateTimeFormatBuilderKt.alternativeParsing(withDateTimeComponents, new Function1[]{new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$RFC_1123$1.1
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
-                        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                    }
-
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents2) {
-                        invoke2(withDateTimeComponents2);
-                        return Unit.INSTANCE;
-                    }
-                }}, new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$RFC_1123$1.2
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents2) {
-                        invoke2(withDateTimeComponents2);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
-                        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                        alternativeParsing.dayOfWeek(DayOfWeekNames.Companion.getENGLISH_ABBREVIATED());
-                        alternativeParsing.chars(", ");
-                    }
-                });
-                Format.dayOfMonth(Padding.NONE);
-                DateTimeFormatBuilderKt.m10056char(withDateTimeComponents, ' ');
-                Format.monthName(MonthNames.Companion.getENGLISH_ABBREVIATED());
-                DateTimeFormatBuilderKt.m10056char(withDateTimeComponents, ' ');
-                DateTimeFormatBuilder.WithDate.DefaultImpls.year$default(Format, null, 1, null);
-                DateTimeFormatBuilderKt.m10056char(withDateTimeComponents, ' ');
-                DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents2 = Format;
-                DateTimeFormatBuilder.WithTime.DefaultImpls.hour$default(withDateTimeComponents2, null, 1, null);
-                DateTimeFormatBuilderKt.m10056char(withDateTimeComponents, AbstractJsonLexerKt.COLON);
-                DateTimeFormatBuilder.WithTime.DefaultImpls.minute$default(withDateTimeComponents2, null, 1, null);
-                DateTimeFormatBuilderKt.optional$default(withDateTimeComponents, null, new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$RFC_1123$1.3
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents3) {
-                        invoke2(withDateTimeComponents3);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents optional) {
-                        Intrinsics.checkNotNullParameter(optional, "$this$optional");
-                        DateTimeFormatBuilderKt.m10056char(optional, AbstractJsonLexerKt.COLON);
-                        DateTimeFormatBuilder.WithTime.DefaultImpls.second$default(optional, null, 1, null);
-                    }
-                }, 1, null);
-                Format.chars(" ");
-                DateTimeFormatBuilderKt.alternativeParsing(withDateTimeComponents, new Function1[]{new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$RFC_1123$1.4
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents3) {
-                        invoke2(withDateTimeComponents3);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
-                        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                        alternativeParsing.chars("UT");
-                    }
-                }, new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$RFC_1123$1.5
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents3) {
-                        invoke2(withDateTimeComponents3);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
-                        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                        alternativeParsing.chars("Z");
-                    }
-                }}, new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$RFC_1123$1.6
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents3) {
-                        invoke2(withDateTimeComponents3);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
-                        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                        DateTimeFormatBuilderKt.optional(alternativeParsing, "GMT", new Function1<DateTimeFormatBuilder.WithDateTimeComponents, Unit>() { // from class: kotlinx.datetime.format.DateTimeComponents.Formats.RFC_1123.1.6.1
-                            @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents3) {
-                                invoke2(withDateTimeComponents3);
-                                return Unit.INSTANCE;
-                            }
-
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2(DateTimeFormatBuilder.WithDateTimeComponents optional) {
-                                Intrinsics.checkNotNullParameter(optional, "$this$optional");
-                                optional.offset(UtcOffset.Formats.INSTANCE.getFOUR_DIGITS());
-                            }
-                        });
-                    }
-                });
+            public final Object invoke(Object obj) {
+                Unit RFC_1123$lambda$13;
+                RFC_1123$lambda$13 = DateTimeComponents.Formats.RFC_1123$lambda$13((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                return RFC_1123$lambda$13;
             }
         });
 
@@ -414,14 +256,227 @@ public final class DateTimeComponents {
             return ISO_DATE_TIME_OFFSET;
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit ISO_DATE_TIME_OFFSET$lambda$5(DateTimeFormatBuilder.WithDateTimeComponents Format) {
+            Intrinsics.checkNotNullParameter(Format, "$this$Format");
+            Format.date(LocalDateFormatKt.getISO_DATE());
+            DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents = Format;
+            DateTimeFormatBuilderKt.alternativeParsing(withDateTimeComponents, new Function1[]{new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda6
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$0;
+                    ISO_DATE_TIME_OFFSET$lambda$5$lambda$0 = DateTimeComponents.Formats.ISO_DATE_TIME_OFFSET$lambda$5$lambda$0((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                    return ISO_DATE_TIME_OFFSET$lambda$5$lambda$0;
+                }
+            }}, new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda7
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$1;
+                    ISO_DATE_TIME_OFFSET$lambda$5$lambda$1 = DateTimeComponents.Formats.ISO_DATE_TIME_OFFSET$lambda$5$lambda$1((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                    return ISO_DATE_TIME_OFFSET$lambda$5$lambda$1;
+                }
+            });
+            DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents2 = Format;
+            DateTimeFormatBuilder.WithTime.hour$default(withDateTimeComponents2, null, 1, null);
+            DateTimeFormatBuilderKt.m10098char(withDateTimeComponents, AbstractJsonLexerKt.COLON);
+            DateTimeFormatBuilder.WithTime.minute$default(withDateTimeComponents2, null, 1, null);
+            DateTimeFormatBuilderKt.m10098char(withDateTimeComponents, AbstractJsonLexerKt.COLON);
+            DateTimeFormatBuilder.WithTime.second$default(withDateTimeComponents2, null, 1, null);
+            DateTimeFormatBuilderKt.optional$default(withDateTimeComponents, null, new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda8
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$2;
+                    ISO_DATE_TIME_OFFSET$lambda$5$lambda$2 = DateTimeComponents.Formats.ISO_DATE_TIME_OFFSET$lambda$5$lambda$2((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                    return ISO_DATE_TIME_OFFSET$lambda$5$lambda$2;
+                }
+            }, 1, null);
+            DateTimeFormatBuilderKt.alternativeParsing(withDateTimeComponents, new Function1[]{new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda9
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$3;
+                    ISO_DATE_TIME_OFFSET$lambda$5$lambda$3 = DateTimeComponents.Formats.ISO_DATE_TIME_OFFSET$lambda$5$lambda$3((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                    return ISO_DATE_TIME_OFFSET$lambda$5$lambda$3;
+                }
+            }}, new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda10
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$4;
+                    ISO_DATE_TIME_OFFSET$lambda$5$lambda$4 = DateTimeComponents.Formats.ISO_DATE_TIME_OFFSET$lambda$5$lambda$4((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                    return ISO_DATE_TIME_OFFSET$lambda$5$lambda$4;
+                }
+            });
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$0(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
+            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+            DateTimeFormatBuilderKt.m10098char(alternativeParsing, 't');
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$1(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
+            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+            DateTimeFormatBuilderKt.m10098char(alternativeParsing, 'T');
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$2(DateTimeFormatBuilder.WithDateTimeComponents optional) {
+            Intrinsics.checkNotNullParameter(optional, "$this$optional");
+            DateTimeFormatBuilderKt.m10098char(optional, '.');
+            optional.secondFraction(1, 9);
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$3(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
+            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+            DateTimeFormatBuilder.WithUtcOffset.offsetHours$default(alternativeParsing, null, 1, null);
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$4(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
+            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+            alternativeParsing.offset(UtcOffset.Formats.INSTANCE.getISO());
+            return Unit.INSTANCE;
+        }
+
         public final DateTimeFormat<DateTimeComponents> getRFC_1123() {
             return RFC_1123;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit RFC_1123$lambda$13(DateTimeFormatBuilder.WithDateTimeComponents Format) {
+            Intrinsics.checkNotNullParameter(Format, "$this$Format");
+            DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents = Format;
+            DateTimeFormatBuilderKt.alternativeParsing(withDateTimeComponents, new Function1[]{new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda12
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit RFC_1123$lambda$13$lambda$6;
+                    RFC_1123$lambda$13$lambda$6 = DateTimeComponents.Formats.RFC_1123$lambda$13$lambda$6((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                    return RFC_1123$lambda$13$lambda$6;
+                }
+            }}, new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda13
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit RFC_1123$lambda$13$lambda$7;
+                    RFC_1123$lambda$13$lambda$7 = DateTimeComponents.Formats.RFC_1123$lambda$13$lambda$7((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                    return RFC_1123$lambda$13$lambda$7;
+                }
+            });
+            Format.day(Padding.NONE);
+            DateTimeFormatBuilderKt.m10098char(withDateTimeComponents, ' ');
+            Format.monthName(MonthNames.Companion.getENGLISH_ABBREVIATED());
+            DateTimeFormatBuilderKt.m10098char(withDateTimeComponents, ' ');
+            DateTimeFormatBuilder.WithYearMonth.year$default(Format, null, 1, null);
+            DateTimeFormatBuilderKt.m10098char(withDateTimeComponents, ' ');
+            DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents2 = Format;
+            DateTimeFormatBuilder.WithTime.hour$default(withDateTimeComponents2, null, 1, null);
+            DateTimeFormatBuilderKt.m10098char(withDateTimeComponents, AbstractJsonLexerKt.COLON);
+            DateTimeFormatBuilder.WithTime.minute$default(withDateTimeComponents2, null, 1, null);
+            DateTimeFormatBuilderKt.optional$default(withDateTimeComponents, null, new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda1
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit RFC_1123$lambda$13$lambda$8;
+                    RFC_1123$lambda$13$lambda$8 = DateTimeComponents.Formats.RFC_1123$lambda$13$lambda$8((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                    return RFC_1123$lambda$13$lambda$8;
+                }
+            }, 1, null);
+            Format.chars(" ");
+            DateTimeFormatBuilderKt.alternativeParsing(withDateTimeComponents, new Function1[]{new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda2
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit RFC_1123$lambda$13$lambda$9;
+                    RFC_1123$lambda$13$lambda$9 = DateTimeComponents.Formats.RFC_1123$lambda$13$lambda$9((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                    return RFC_1123$lambda$13$lambda$9;
+                }
+            }, new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda3
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit RFC_1123$lambda$13$lambda$10;
+                    RFC_1123$lambda$13$lambda$10 = DateTimeComponents.Formats.RFC_1123$lambda$13$lambda$10((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                    return RFC_1123$lambda$13$lambda$10;
+                }
+            }}, new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda4
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit RFC_1123$lambda$13$lambda$12;
+                    RFC_1123$lambda$13$lambda$12 = DateTimeComponents.Formats.RFC_1123$lambda$13$lambda$12((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                    return RFC_1123$lambda$13$lambda$12;
+                }
+            });
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit RFC_1123$lambda$13$lambda$6(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
+            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit RFC_1123$lambda$13$lambda$7(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
+            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+            alternativeParsing.dayOfWeek(DayOfWeekNames.Companion.getENGLISH_ABBREVIATED());
+            alternativeParsing.chars(", ");
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit RFC_1123$lambda$13$lambda$8(DateTimeFormatBuilder.WithDateTimeComponents optional) {
+            Intrinsics.checkNotNullParameter(optional, "$this$optional");
+            DateTimeFormatBuilderKt.m10098char(optional, AbstractJsonLexerKt.COLON);
+            DateTimeFormatBuilder.WithTime.second$default(optional, null, 1, null);
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit RFC_1123$lambda$13$lambda$9(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
+            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+            alternativeParsing.chars("UT");
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit RFC_1123$lambda$13$lambda$10(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
+            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+            alternativeParsing.chars("Z");
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit RFC_1123$lambda$13$lambda$12(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
+            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+            DateTimeFormatBuilderKt.optional(alternativeParsing, "GMT", new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda11
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit RFC_1123$lambda$13$lambda$12$lambda$11;
+                    RFC_1123$lambda$13$lambda$12$lambda$11 = DateTimeComponents.Formats.RFC_1123$lambda$13$lambda$12$lambda$11((DateTimeFormatBuilder.WithDateTimeComponents) obj);
+                    return RFC_1123$lambda$13$lambda$12$lambda$11;
+                }
+            });
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit RFC_1123$lambda$13$lambda$12$lambda$11(DateTimeFormatBuilder.WithDateTimeComponents optional) {
+            Intrinsics.checkNotNullParameter(optional, "$this$optional");
+            optional.offset(UtcOffset.Formats.INSTANCE.getFOUR_DIGITS());
+            return Unit.INSTANCE;
         }
     }
 
     public final void setTime(LocalTime localTime) {
         Intrinsics.checkNotNullParameter(localTime, "localTime");
         this.contents.getTime().populateFrom(localTime);
+    }
+
+    public final void setYearMonth(YearMonth yearMonth) {
+        Intrinsics.checkNotNullParameter(yearMonth, "yearMonth");
+        this.contents.getDate().getYearMonth().populateFrom(yearMonth);
     }
 
     public final void setDate(LocalDate localDate) {
@@ -476,7 +531,7 @@ public final class DateTimeComponents {
     public final Month getMonth() {
         Integer monthNumber = getMonthNumber();
         if (monthNumber != null) {
-            return MonthKt.Month(monthNumber.intValue());
+            return MonthKt.m10091Month(monthNumber.intValue());
         }
         return null;
     }
@@ -485,48 +540,56 @@ public final class DateTimeComponents {
         setMonthNumber(month != null ? Integer.valueOf(MonthKt.getNumber(month)) : null);
     }
 
+    public final Integer getDay() {
+        return this.day$delegate.getValue(this, $$delegatedProperties[1]);
+    }
+
+    public final void setDay(Integer num) {
+        this.day$delegate.setValue(this, $$delegatedProperties[1], num);
+    }
+
     public final Integer getDayOfMonth() {
-        return this.dayOfMonth$delegate.getValue(this, $$delegatedProperties[1]);
+        return this.dayOfMonth$delegate.getValue(this, $$delegatedProperties[2]);
     }
 
     public final void setDayOfMonth(Integer num) {
-        this.dayOfMonth$delegate.setValue(this, $$delegatedProperties[1], num);
+        this.dayOfMonth$delegate.setValue(this, $$delegatedProperties[2], num);
     }
 
     public final DayOfWeek getDayOfWeek() {
-        Integer isoDayOfWeek = this.contents.getDate().getIsoDayOfWeek();
-        if (isoDayOfWeek != null) {
-            return DayOfWeekKt.DayOfWeek(isoDayOfWeek.intValue());
+        Integer dayOfWeek = this.contents.getDate().getDayOfWeek();
+        if (dayOfWeek != null) {
+            return DayOfWeekKt.m10081DayOfWeek(dayOfWeek.intValue());
         }
         return null;
     }
 
     public final void setDayOfWeek(DayOfWeek dayOfWeek) {
-        this.contents.getDate().setIsoDayOfWeek(dayOfWeek != null ? Integer.valueOf(DayOfWeekKt.getIsoDayNumber(dayOfWeek)) : null);
+        this.contents.getDate().setDayOfWeek(dayOfWeek != null ? Integer.valueOf(DayOfWeekKt.getIsoDayNumber(dayOfWeek)) : null);
     }
 
     public final Integer getDayOfYear() {
-        return this.dayOfYear$delegate.getValue(this, $$delegatedProperties[2]);
+        return this.dayOfYear$delegate.getValue(this, $$delegatedProperties[3]);
     }
 
     public final void setDayOfYear(Integer num) {
-        this.dayOfYear$delegate.setValue(this, $$delegatedProperties[2], num);
+        this.dayOfYear$delegate.setValue(this, $$delegatedProperties[3], num);
     }
 
     public final Integer getHour() {
-        return this.hour$delegate.getValue(this, $$delegatedProperties[3]);
+        return this.hour$delegate.getValue(this, $$delegatedProperties[4]);
     }
 
     public final void setHour(Integer num) {
-        this.hour$delegate.setValue(this, $$delegatedProperties[3], num);
+        this.hour$delegate.setValue(this, $$delegatedProperties[4], num);
     }
 
     public final Integer getHourOfAmPm() {
-        return this.hourOfAmPm$delegate.getValue(this, $$delegatedProperties[4]);
+        return this.hourOfAmPm$delegate.getValue(this, $$delegatedProperties[5]);
     }
 
     public final void setHourOfAmPm(Integer num) {
-        this.hourOfAmPm$delegate.setValue(this, $$delegatedProperties[4], num);
+        this.hourOfAmPm$delegate.setValue(this, $$delegatedProperties[5], num);
     }
 
     public final AmPmMarker getAmPm() {
@@ -538,19 +601,19 @@ public final class DateTimeComponents {
     }
 
     public final Integer getMinute() {
-        return this.minute$delegate.getValue(this, $$delegatedProperties[5]);
+        return this.minute$delegate.getValue(this, $$delegatedProperties[6]);
     }
 
     public final void setMinute(Integer num) {
-        this.minute$delegate.setValue(this, $$delegatedProperties[5], num);
+        this.minute$delegate.setValue(this, $$delegatedProperties[6], num);
     }
 
     public final Integer getSecond() {
-        return this.second$delegate.getValue(this, $$delegatedProperties[6]);
+        return this.second$delegate.getValue(this, $$delegatedProperties[7]);
     }
 
     public final void setSecond(Integer num) {
-        this.second$delegate.setValue(this, $$delegatedProperties[6], num);
+        this.second$delegate.setValue(this, $$delegatedProperties[7], num);
     }
 
     public final Integer getNanosecond() {
@@ -565,35 +628,35 @@ public final class DateTimeComponents {
     }
 
     public final Boolean getOffsetIsNegative() {
-        return this.contents.getOffset().isNegative();
+        return this.contents.getOffset().getOffsetIsNegative();
     }
 
     public final void setOffsetIsNegative(Boolean bool) {
-        this.contents.getOffset().setNegative(bool);
+        this.contents.getOffset().setOffsetIsNegative(bool);
     }
 
     public final Integer getOffsetHours() {
-        return this.offsetHours$delegate.getValue(this, $$delegatedProperties[7]);
+        return this.offsetHours$delegate.getValue(this, $$delegatedProperties[8]);
     }
 
     public final void setOffsetHours(Integer num) {
-        this.offsetHours$delegate.setValue(this, $$delegatedProperties[7], num);
+        this.offsetHours$delegate.setValue(this, $$delegatedProperties[8], num);
     }
 
     public final Integer getOffsetMinutesOfHour() {
-        return this.offsetMinutesOfHour$delegate.getValue(this, $$delegatedProperties[8]);
+        return this.offsetMinutesOfHour$delegate.getValue(this, $$delegatedProperties[9]);
     }
 
     public final void setOffsetMinutesOfHour(Integer num) {
-        this.offsetMinutesOfHour$delegate.setValue(this, $$delegatedProperties[8], num);
+        this.offsetMinutesOfHour$delegate.setValue(this, $$delegatedProperties[9], num);
     }
 
     public final Integer getOffsetSecondsOfMinute() {
-        return this.offsetSecondsOfMinute$delegate.getValue(this, $$delegatedProperties[9]);
+        return this.offsetSecondsOfMinute$delegate.getValue(this, $$delegatedProperties[10]);
     }
 
     public final void setOffsetSecondsOfMinute(Integer num) {
-        this.offsetSecondsOfMinute$delegate.setValue(this, $$delegatedProperties[9], num);
+        this.offsetSecondsOfMinute$delegate.setValue(this, $$delegatedProperties[10], num);
     }
 
     public final String getTimeZoneId() {
@@ -608,6 +671,10 @@ public final class DateTimeComponents {
         return this.contents.getOffset().toUtcOffset();
     }
 
+    public final YearMonth toYearMonth() {
+        return this.contents.getDate().getYearMonth().toYearMonth();
+    }
+
     public final LocalDate toLocalDate() {
         return this.contents.getDate().toLocalDate();
     }
@@ -620,21 +687,30 @@ public final class DateTimeComponents {
         return LocalDateKt.atTime(toLocalDate(), toLocalTime());
     }
 
-    public final Instant toInstantUsingOffset() {
+    public static /* synthetic */ Instant toInstantUsingOffset$default(DateTimeComponents dateTimeComponents, OverloadMarker overloadMarker, int i, Object obj) {
+        if ((i & 1) != 0) {
+            overloadMarker = OverloadMarker.Companion.getINSTANCE$kotlinx_datetime();
+        }
+        return dateTimeComponents.toInstantUsingOffset(overloadMarker);
+    }
+
+    public final Instant toInstantUsingOffset(OverloadMarker youShallNotPass) {
+        Intrinsics.checkNotNullParameter(youShallNotPass, "youShallNotPass");
         UtcOffset utcOffset = toUtcOffset();
         LocalTime localTime = toLocalTime();
         IncompleteLocalDate copy = this.contents.getDate().copy();
-        copy.setYear(Integer.valueOf(((Number) LocalDateFormatKt.requireParsedField(copy.getYear(), "year")).intValue() % 10000));
+        copy.setYear(Integer.valueOf(((Number) YearMonthFormatKt.requireParsedField(copy.getYear(), "year")).intValue() % 10000));
         try {
             Integer year = getYear();
             Intrinsics.checkNotNull(year);
-            long safeAdd = MathJvmKt.safeAdd(MathJvmKt.safeMultiply(year.intValue() / 10000, (long) DateCalculationsKt.SECONDS_PER_10000_YEARS), ((copy.toLocalDate().toEpochDays() * 86400) + localTime.toSecondOfDay()) - utcOffset.getTotalSeconds());
-            if (safeAdd < Instant.Companion.getMIN$kotlinx_datetime().getEpochSeconds() || safeAdd > Instant.Companion.getMAX$kotlinx_datetime().getEpochSeconds()) {
-                throw new DateTimeFormatException("The parsed date is outside the range representable by Instant");
-            }
+            long safeAdd = MathJvmKt.safeAdd(MathJvmKt.safeMultiply(year.intValue() / 10000, (long) DateCalculationsKt.SECONDS_PER_10000_YEARS), ((copy.toLocalDate().m10087toEpochDays() * 86400) + localTime.toSecondOfDay()) - utcOffset.getTotalSeconds());
             Instant.Companion companion = Instant.Companion;
             Integer nanosecond = getNanosecond();
-            return companion.fromEpochSeconds(safeAdd, nanosecond != null ? nanosecond.intValue() : 0);
+            Instant fromEpochSeconds = companion.fromEpochSeconds(safeAdd, nanosecond != null ? nanosecond.intValue() : 0);
+            if (fromEpochSeconds.getEpochSeconds() == safeAdd) {
+                return fromEpochSeconds;
+            }
+            throw new DateTimeFormatException("The parsed date is outside the range representable by Instant");
         } catch (ArithmeticException e) {
             throw new DateTimeFormatException("The parsed date is outside the range representable by Instant", e);
         }

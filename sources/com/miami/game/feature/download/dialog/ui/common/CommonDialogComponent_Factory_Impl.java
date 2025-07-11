@@ -6,9 +6,9 @@ import dagger.internal.InstanceFactory;
 import javax.inject.Provider;
 /* loaded from: classes4.dex */
 public final class CommonDialogComponent_Factory_Impl implements CommonDialogComponent.Factory {
-    private final C0116CommonDialogComponent_Factory delegateFactory;
+    private final C0108CommonDialogComponent_Factory delegateFactory;
 
-    CommonDialogComponent_Factory_Impl(C0116CommonDialogComponent_Factory delegateFactory) {
+    CommonDialogComponent_Factory_Impl(C0108CommonDialogComponent_Factory delegateFactory) {
         this.delegateFactory = delegateFactory;
     }
 
@@ -17,11 +17,11 @@ public final class CommonDialogComponent_Factory_Impl implements CommonDialogCom
         return this.delegateFactory.get(componentContext, description);
     }
 
-    public static Provider<CommonDialogComponent.Factory> create(C0116CommonDialogComponent_Factory delegateFactory) {
+    public static Provider<CommonDialogComponent.Factory> create(C0108CommonDialogComponent_Factory delegateFactory) {
         return InstanceFactory.create(new CommonDialogComponent_Factory_Impl(delegateFactory));
     }
 
-    public static dagger.internal.Provider<CommonDialogComponent.Factory> createFactoryProvider(C0116CommonDialogComponent_Factory delegateFactory) {
+    public static dagger.internal.Provider<CommonDialogComponent.Factory> createFactoryProvider(C0108CommonDialogComponent_Factory delegateFactory) {
         return InstanceFactory.create(new CommonDialogComponent_Factory_Impl(delegateFactory));
     }
 }

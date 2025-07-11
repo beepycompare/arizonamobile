@@ -6,16 +6,16 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class Eb implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0265fd f406a;
+    public final C0257fd f407a;
 
     public Eb() {
-        this(new C0265fd(new Ln()));
+        this(new C0257fd(new Ln()));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final byte[] fromModel(Kn kn) {
-        return MessageNano.toByteArray((MessageNano) this.f406a.f836a.fromModel(kn));
+        return MessageNano.toByteArray((MessageNano) this.f407a.f837a.fromModel(kn));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -24,8 +24,8 @@ public final class Eb implements Converter {
         throw new UnsupportedOperationException();
     }
 
-    public Eb(C0265fd c0265fd) {
-        this.f406a = c0265fd;
+    public Eb(C0257fd c0257fd) {
+        this.f407a = c0257fd;
     }
 
     public final Kn a(byte[] bArr) {

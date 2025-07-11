@@ -17,7 +17,7 @@ import ru.mrlargha.commonui.R;
 /* loaded from: classes5.dex */
 public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
     public final LinearLayout azBattlepassLayoutTasksContainer;
-    public final ImageView btnBuyPremiumLock;
+    public final TextView btnBuyPremiumLock;
     public final RelativeLayout buttonDailyTasks;
     public final TextView buttonDailyTasksText;
     public final RelativeLayout buttonLongTasks;
@@ -51,7 +51,7 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
     public final RecyclerView taskItemsRewardsList;
     public final TextView tasksTimeText;
 
-    private WinterBattlepassTasksLayoutBinding(LinearLayout rootView, LinearLayout azBattlepassLayoutTasksContainer, ImageView btnBuyPremiumLock, RelativeLayout buttonDailyTasks, TextView buttonDailyTasksText, RelativeLayout buttonLongTasks, TextView buttonLongTasksText, RelativeLayout buttonPremiumTasks, TextView buttonPremiumTasksText, RelativeLayout buttonShopTasks, TextView buttonShopTasksText, RelativeLayout buttonTaskInfoGetReward, ImageView buyLevelsBtnSd, RecyclerView commonTaskRecycleView, LinearLayout containerTasksTimer, RelativeLayout currTaskInfoContainer, TextView itemCount, LinearLayout levelContainer, TextView levelPassText, TextView mainExperienceText, LinearLayout progressDoneContainer, LinearProgressIndicator progressExperience, TextView progressInPercentText, LinearLayout remainingTime, TextView remainingTimeText, LinearLayout taskContainerListIsEmpty, LinearLayout taskInfo, FrameLayout taskInfoBlur, TextView taskInfoDesc, LinearLayout taskInfoPremiumLockContainer, ProgressBar taskInfoProgressBar, TextView taskInfoTitle, RecyclerView taskItemsRewardsList, TextView tasksTimeText) {
+    private WinterBattlepassTasksLayoutBinding(LinearLayout rootView, LinearLayout azBattlepassLayoutTasksContainer, TextView btnBuyPremiumLock, RelativeLayout buttonDailyTasks, TextView buttonDailyTasksText, RelativeLayout buttonLongTasks, TextView buttonLongTasksText, RelativeLayout buttonPremiumTasks, TextView buttonPremiumTasksText, RelativeLayout buttonShopTasks, TextView buttonShopTasksText, RelativeLayout buttonTaskInfoGetReward, ImageView buyLevelsBtnSd, RecyclerView commonTaskRecycleView, LinearLayout containerTasksTimer, RelativeLayout currTaskInfoContainer, TextView itemCount, LinearLayout levelContainer, TextView levelPassText, TextView mainExperienceText, LinearLayout progressDoneContainer, LinearProgressIndicator progressExperience, TextView progressInPercentText, LinearLayout remainingTime, TextView remainingTimeText, LinearLayout taskContainerListIsEmpty, LinearLayout taskInfo, FrameLayout taskInfoBlur, TextView taskInfoDesc, LinearLayout taskInfoPremiumLockContainer, ProgressBar taskInfoProgressBar, TextView taskInfoTitle, RecyclerView taskItemsRewardsList, TextView tasksTimeText) {
         this.rootView = rootView;
         this.azBattlepassLayoutTasksContainer = azBattlepassLayoutTasksContainer;
         this.btnBuyPremiumLock = btnBuyPremiumLock;
@@ -108,38 +108,38 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
     public static WinterBattlepassTasksLayoutBinding bind(View rootView) {
         LinearLayout linearLayout = (LinearLayout) rootView;
         int i = R.id.btn_buy_premium_lock;
-        ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
-        if (imageView != null) {
+        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+        if (textView != null) {
             i = R.id.button_daily_tasks;
             RelativeLayout relativeLayout = (RelativeLayout) ViewBindings.findChildViewById(rootView, i);
             if (relativeLayout != null) {
                 i = R.id.button_daily_tasks_text;
-                TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-                if (textView != null) {
+                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                if (textView2 != null) {
                     i = R.id.button_long_tasks;
                     RelativeLayout relativeLayout2 = (RelativeLayout) ViewBindings.findChildViewById(rootView, i);
                     if (relativeLayout2 != null) {
                         i = R.id.button_long_tasks_text;
-                        TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                        if (textView2 != null) {
+                        TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                        if (textView3 != null) {
                             i = R.id.button_premium_tasks;
                             RelativeLayout relativeLayout3 = (RelativeLayout) ViewBindings.findChildViewById(rootView, i);
                             if (relativeLayout3 != null) {
                                 i = R.id.button_premium_tasks_text;
-                                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                if (textView3 != null) {
+                                TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                if (textView4 != null) {
                                     i = R.id.button_shop_tasks;
                                     RelativeLayout relativeLayout4 = (RelativeLayout) ViewBindings.findChildViewById(rootView, i);
                                     if (relativeLayout4 != null) {
                                         i = R.id.button_shop_tasks_text;
-                                        TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                        if (textView4 != null) {
+                                        TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                        if (textView5 != null) {
                                             i = R.id.button_task_info_get_reward;
                                             RelativeLayout relativeLayout5 = (RelativeLayout) ViewBindings.findChildViewById(rootView, i);
                                             if (relativeLayout5 != null) {
                                                 i = R.id.buy_levels_btn_sd;
-                                                ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                                if (imageView2 != null) {
+                                                ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                if (imageView != null) {
                                                     i = R.id.common_task_recycle_view;
                                                     RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
                                                     if (recyclerView != null) {
@@ -150,17 +150,17 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
                                                             RelativeLayout relativeLayout6 = (RelativeLayout) ViewBindings.findChildViewById(rootView, i);
                                                             if (relativeLayout6 != null) {
                                                                 i = R.id.item_count;
-                                                                TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                if (textView5 != null) {
+                                                                TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                if (textView6 != null) {
                                                                     i = R.id.level_container;
                                                                     LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
                                                                     if (linearLayout3 != null) {
                                                                         i = R.id.level_pass_text;
-                                                                        TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                        if (textView6 != null) {
+                                                                        TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                        if (textView7 != null) {
                                                                             i = R.id.main_experience_text;
-                                                                            TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                            if (textView7 != null) {
+                                                                            TextView textView8 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                            if (textView8 != null) {
                                                                                 i = R.id.progress_done_container;
                                                                                 LinearLayout linearLayout4 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
                                                                                 if (linearLayout4 != null) {
@@ -168,14 +168,14 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
                                                                                     LinearProgressIndicator linearProgressIndicator = (LinearProgressIndicator) ViewBindings.findChildViewById(rootView, i);
                                                                                     if (linearProgressIndicator != null) {
                                                                                         i = R.id.progress_in_percent_text;
-                                                                                        TextView textView8 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                        if (textView8 != null) {
+                                                                                        TextView textView9 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                        if (textView9 != null) {
                                                                                             i = R.id.remaining_time;
                                                                                             LinearLayout linearLayout5 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
                                                                                             if (linearLayout5 != null) {
                                                                                                 i = R.id.remaining_time_text;
-                                                                                                TextView textView9 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                if (textView9 != null) {
+                                                                                                TextView textView10 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                if (textView10 != null) {
                                                                                                     i = R.id.task_container_list_is_empty;
                                                                                                     LinearLayout linearLayout6 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
                                                                                                     if (linearLayout6 != null) {
@@ -186,8 +186,8 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
                                                                                                             FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
                                                                                                             if (frameLayout != null) {
                                                                                                                 i = R.id.task_info_desc;
-                                                                                                                TextView textView10 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                if (textView10 != null) {
+                                                                                                                TextView textView11 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                if (textView11 != null) {
                                                                                                                     i = R.id.task_info_premium_lock_container;
                                                                                                                     LinearLayout linearLayout8 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
                                                                                                                     if (linearLayout8 != null) {
@@ -195,15 +195,15 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
                                                                                                                         ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(rootView, i);
                                                                                                                         if (progressBar != null) {
                                                                                                                             i = R.id.task_info_title;
-                                                                                                                            TextView textView11 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                            if (textView11 != null) {
+                                                                                                                            TextView textView12 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                            if (textView12 != null) {
                                                                                                                                 i = R.id.task_items_rewards_list;
                                                                                                                                 RecyclerView recyclerView2 = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
                                                                                                                                 if (recyclerView2 != null) {
                                                                                                                                     i = R.id.tasks_time_text;
-                                                                                                                                    TextView textView12 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                    if (textView12 != null) {
-                                                                                                                                        return new WinterBattlepassTasksLayoutBinding(linearLayout, linearLayout, imageView, relativeLayout, textView, relativeLayout2, textView2, relativeLayout3, textView3, relativeLayout4, textView4, relativeLayout5, imageView2, recyclerView, linearLayout2, relativeLayout6, textView5, linearLayout3, textView6, textView7, linearLayout4, linearProgressIndicator, textView8, linearLayout5, textView9, linearLayout6, linearLayout7, frameLayout, textView10, linearLayout8, progressBar, textView11, recyclerView2, textView12);
+                                                                                                                                    TextView textView13 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                    if (textView13 != null) {
+                                                                                                                                        return new WinterBattlepassTasksLayoutBinding(linearLayout, linearLayout, textView, relativeLayout, textView2, relativeLayout2, textView3, relativeLayout3, textView4, relativeLayout4, textView5, relativeLayout5, imageView, recyclerView, linearLayout2, relativeLayout6, textView6, linearLayout3, textView7, textView8, linearLayout4, linearProgressIndicator, textView9, linearLayout5, textView10, linearLayout6, linearLayout7, frameLayout, textView11, linearLayout8, progressBar, textView12, recyclerView2, textView13);
                                                                                                                                     }
                                                                                                                                 }
                                                                                                                             }

@@ -452,7 +452,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
             }
             this.pointerAwaiter = null;
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m8443constructorimpl(pointerEvent));
+            cancellableContinuation.resumeWith(Result.m8471constructorimpl(pointerEvent));
         }
 
         public final void cancel(Throwable th) {
@@ -549,7 +549,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
                             ResultKt.throwOnFailure(obj);
                             if (j <= 0 && (cancellableContinuation = this.pointerAwaiter) != null) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuation.resumeWith(Result.m8443constructorimpl(ResultKt.createFailure(new PointerEventTimeoutCancellationException(j))));
+                                cancellableContinuation.resumeWith(Result.m8471constructorimpl(ResultKt.createFailure(new PointerEventTimeoutCancellationException(j))));
                             }
                             launch$default = BuildersKt__Builders_commonKt.launch$default(SuspendingPointerInputModifierNodeImpl.this.getCoroutineScope(), null, null, new SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$job$1(j, this, null), 3, null);
                             suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.L$0 = launch$default;
@@ -638,7 +638,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
             this.pointerHandlers.add(pointerEventHandlerCoroutine);
             Continuation<Unit> createCoroutine = ContinuationKt.createCoroutine(function2, pointerEventHandlerCoroutine, pointerEventHandlerCoroutine);
             Result.Companion companion = Result.Companion;
-            createCoroutine.resumeWith(Result.m8443constructorimpl(Unit.INSTANCE));
+            createCoroutine.resumeWith(Result.m8471constructorimpl(Unit.INSTANCE));
             Unit unit = Unit.INSTANCE;
         }
         cancellableContinuationImpl2.invokeOnCancellation(new Function1<Throwable, Unit>() { // from class: androidx.compose.ui.input.pointer.SuspendingPointerInputModifierNodeImpl$awaitPointerEventScope$2$2

@@ -5,7 +5,6 @@ import androidx.compose.ui.graphics.ColorKt;
 import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import androidx.media3.extractor.ts.TsExtractor;
 import androidx.recyclerview.widget.ItemTouchHelper;
-import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measurement.dynamite.ModuleDescriptor;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import kotlin.Metadata;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
@@ -87,7 +86,7 @@ public final class PaletteTokens {
     private static final long Secondary30 = ColorKt.Color$default(74, 68, 88, 0, 8, null);
     private static final long Secondary40 = ColorKt.Color$default(98, 91, 113, 0, 8, null);
     private static final long Secondary50 = ColorKt.Color$default(122, 114, 137, 0, 8, null);
-    private static final long Secondary60 = ColorKt.Color$default(149, ModuleDescriptor.MODULE_VERSION, 165, 0, 8, null);
+    private static final long Secondary60 = ColorKt.Color$default(149, 141, 165, 0, 8, null);
     private static final long Secondary70 = ColorKt.Color$default(176, 167, 192, 0, 8, null);
     private static final long Secondary80 = ColorKt.Color$default(ComposerKt.providerMapsKey, DownloaderService.STATUS_WAITING_TO_RETRY, 220, 0, 8, null);
     private static final long Secondary90 = ColorKt.Color$default(232, 222, 248, 0, 8, null);
@@ -99,7 +98,7 @@ public final class PaletteTokens {
     private static final long Tertiary20 = ColorKt.Color$default(73, 37, 50, 0, 8, null);
     private static final long Tertiary30 = ColorKt.Color$default(99, 59, 72, 0, 8, null);
     private static final long Tertiary40 = ColorKt.Color$default(125, 82, 96, 0, 8, null);
-    private static final long Tertiary50 = ColorKt.Color$default(BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER, 105, 119, 0, 8, null);
+    private static final long Tertiary50 = ColorKt.Color$default(152, 105, 119, 0, 8, null);
     private static final long Tertiary60 = ColorKt.Color$default(181, 131, 146, 0, 8, null);
     private static final long Tertiary70 = ColorKt.Color$default(210, 157, TsExtractor.TS_STREAM_TYPE_AC4, 0, 8, null);
     private static final long Tertiary80 = ColorKt.Color$default(239, 184, 200, 0, 8, null);

@@ -14,7 +14,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class o implements UpdatePolicy {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SystemTimeProvider f234a;
+    public final SystemTimeProvider f235a;
 
     public o() {
         this(null, 1, null);
@@ -32,17 +32,17 @@ public final class o implements UpdatePolicy {
         for (Map.Entry<String, ? extends BillingInfo> entry : map.entrySet()) {
             BillingInfo value = entry.getValue();
             if (value.type == ProductType.INAPP && !billingInfoManager.isFirstInappCheckOccurred()) {
-                if (this.f234a.currentTimeMillis() - value.purchaseTime <= TimeUnit.SECONDS.toMillis(billingConfig.firstCollectingInappMaxAgeSeconds)) {
+                if (this.f235a.currentTimeMillis() - value.purchaseTime <= TimeUnit.SECONDS.toMillis(billingConfig.firstCollectingInappMaxAgeSeconds)) {
                     linkedHashMap.put(entry.getKey(), entry.getValue());
                 }
             } else {
                 BillingInfo billingInfo = billingInfoManager.get(value.productId);
                 if (billingInfo != null) {
                 }
-                if (this.f234a.currentTimeMillis() - value.purchaseTime > TimeUnit.SECONDS.toMillis(billingConfig.firstCollectingInappMaxAgeSeconds)) {
+                if (this.f235a.currentTimeMillis() - value.purchaseTime > TimeUnit.SECONDS.toMillis(billingConfig.firstCollectingInappMaxAgeSeconds)) {
                     if (value.type == ProductType.SUBS) {
                     }
-                    if (billingInfo != null && value.type == ProductType.SUBS && this.f234a.currentTimeMillis() - billingInfo.sendTime >= TimeUnit.SECONDS.toMillis(billingConfig.sendFrequencySeconds)) {
+                    if (billingInfo != null && value.type == ProductType.SUBS && this.f235a.currentTimeMillis() - billingInfo.sendTime >= TimeUnit.SECONDS.toMillis(billingConfig.sendFrequencySeconds)) {
                     }
                 }
                 linkedHashMap.put(entry.getKey(), entry.getValue());
@@ -52,7 +52,7 @@ public final class o implements UpdatePolicy {
     }
 
     public o(SystemTimeProvider systemTimeProvider) {
-        this.f234a = systemTimeProvider;
+        this.f235a = systemTimeProvider;
     }
 
     public /* synthetic */ o(SystemTimeProvider systemTimeProvider, int i, DefaultConstructorMarker defaultConstructorMarker) {

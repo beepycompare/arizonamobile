@@ -1,16 +1,14 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
 final class zznd {
-    private static final zznc zza;
+    public final zzos zza;
+    public final zzos zzc;
+    public final Object zzb = "";
+    public final Object zzd = "";
 
-    static {
-        int i = zznp.zza;
-        zza = new zznc();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static zznc zza() {
-        return zza;
+    public zznd(zzos zzosVar, Object obj, zzos zzosVar2, Object obj2) {
+        this.zza = zzosVar;
+        this.zzc = zzosVar2;
     }
 }

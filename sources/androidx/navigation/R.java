@@ -7,9 +7,9 @@ public final class R {
         public static int action = 0x7f040002;
         public static int data = 0x7f040192;
         public static int dataPattern = 0x7f040193;
-        public static int graph = 0x7f040275;
-        public static int navGraph = 0x7f040458;
-        public static int targetPackage = 0x7f0405ae;
+        public static int graph = 0x7f040276;
+        public static int navGraph = 0x7f040459;
+        public static int targetPackage = 0x7f0405b0;
 
         private attr() {
         }
@@ -17,7 +17,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int nav_controller_view_tag = 0x7f0a0929;
+        public static int nav_controller_view_tag = 0x7f0a0944;
 
         private id() {
         }

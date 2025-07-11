@@ -5,20 +5,20 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 public final class Ze implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f737a;
+    public final /* synthetic */ String f738a;
     public final /* synthetic */ String b;
     public final /* synthetic */ PluginErrorDetails c;
-    public final /* synthetic */ C0139af d;
+    public final /* synthetic */ C0131af d;
 
-    public Ze(C0139af c0139af, String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.d = c0139af;
-        this.f737a = str;
+    public Ze(C0131af c0131af, String str, String str2, PluginErrorDetails pluginErrorDetails) {
+        this.d = c0131af;
+        this.f738a = str;
         this.b = str2;
         this.c = pluginErrorDetails;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        ((InterfaceC0387kb) this.d.d.get()).getPluginExtension().reportError(this.f737a, this.b, this.c);
+        ((InterfaceC0379kb) this.d.d.get()).getPluginExtension().reportError(this.f738a, this.b, this.c);
     }
 }

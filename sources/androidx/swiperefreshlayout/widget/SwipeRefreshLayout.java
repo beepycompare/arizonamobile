@@ -333,7 +333,7 @@ public class SwipeRefreshLayout extends ViewGroup implements NestedScrollingPare
     }
 
     private void startProgressAlphaStartAnimation() {
-        this.mAlphaStartAnimation = startAlphaAnimation(this.mProgress.getAlpha(), 76);
+        this.mAlphaStartAnimation = startAlphaAnimation(this.mProgress.getAlpha(), STARTING_PROGRESS_ALPHA);
     }
 
     private void startProgressAlphaMaxAnimation() {
@@ -678,7 +678,7 @@ public class SwipeRefreshLayout extends ViewGroup implements NestedScrollingPare
             setAnimationProgress(Math.min(1.0f, f / this.mTotalDragDistance));
         }
         if (f < this.mTotalDragDistance) {
-            if (this.mProgress.getAlpha() > 76 && !isAnimationRunning(this.mAlphaStartAnimation)) {
+            if (this.mProgress.getAlpha() > STARTING_PROGRESS_ALPHA && !isAnimationRunning(this.mAlphaStartAnimation)) {
                 startProgressAlphaStartAnimation();
             }
         } else if (this.mProgress.getAlpha() < 255 && !isAnimationRunning(this.mAlphaMaxAnimation)) {
@@ -781,7 +781,7 @@ public class SwipeRefreshLayout extends ViewGroup implements NestedScrollingPare
         }
         this.mInitialMotionY = f2 + i;
         this.mIsBeingDragged = true;
-        this.mProgress.setAlpha(76);
+        this.mProgress.setAlpha(STARTING_PROGRESS_ALPHA);
     }
 
     private void animateOffsetToCorrectPosition(int i, Animation.AnimationListener animationListener) {

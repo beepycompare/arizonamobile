@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import com.google.common.collect.ImmutableSet;
 import java.util.HashMap;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzaa {
     private static final ImmutableSet zza = ImmutableSet.of("_syn", "_err", "_el");
@@ -21,7 +21,7 @@ public final class zzaa {
         }
     }
 
-    public static Object zzd(String str, Object obj, Object obj2) {
+    public static Object zzh(String str, Object obj, Object obj2) {
         if (!zza.contains(str) || !(obj2 instanceof Double)) {
             if (str.startsWith("_")) {
                 if (!(obj instanceof String) && obj != null) {
@@ -62,19 +62,41 @@ public final class zzaa {
     public final String toString() {
         String str = this.zzb;
         String obj = this.zzd.toString();
-        return "Event{name='" + str + "', timestamp=" + this.zzc + ", params=" + obj + "}";
+        int length = String.valueOf(str).length();
+        long j = this.zzc;
+        StringBuilder sb = new StringBuilder(length + 25 + String.valueOf(j).length() + 9 + obj.length() + 1);
+        sb.append("Event{name='");
+        sb.append(str);
+        sb.append("', timestamp=");
+        sb.append(j);
+        sb.append(", params=");
+        sb.append(obj);
+        sb.append("}");
+        return sb.toString();
     }
 
     public final long zza() {
         return this.zzc;
     }
 
-    /* renamed from: zzb */
-    public final zzaa clone() {
-        return new zzaa(this.zzb, this.zzc, new HashMap(this.zzd));
+    public final String zzb() {
+        return this.zzb;
     }
 
-    public final Object zzc(String str) {
+    public final void zzc(String str) {
+        this.zzb = str;
+    }
+
+    public final void zzd(String str, Object obj) {
+        if (obj == null) {
+            this.zzd.remove(str);
+            return;
+        }
+        Map map = this.zzd;
+        map.put(str, zzh(str, map.get(str), obj));
+    }
+
+    public final Object zze(String str) {
         Map map = this.zzd;
         if (map.containsKey(str)) {
             return map.get(str);
@@ -82,24 +104,12 @@ public final class zzaa {
         return null;
     }
 
-    public final String zze() {
-        return this.zzb;
-    }
-
     public final Map zzf() {
         return this.zzd;
     }
 
-    public final void zzg(String str) {
-        this.zzb = str;
-    }
-
-    public final void zzh(String str, Object obj) {
-        if (obj == null) {
-            this.zzd.remove(str);
-            return;
-        }
-        Map map = this.zzd;
-        map.put(str, zzd(str, map.get(str), obj));
+    /* renamed from: zzg */
+    public final zzaa clone() {
+        return new zzaa(this.zzb, this.zzc, new HashMap(this.zzd));
     }
 }

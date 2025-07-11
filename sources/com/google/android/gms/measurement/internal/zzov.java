@@ -1,31 +1,26 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzov extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<zzov> CREATOR = new zzow();
-    public final String zza;
-    public final long zzb;
-    public final int zzc;
+public final class zzov implements zzgv {
+    final /* synthetic */ String zza;
+    final /* synthetic */ List zzb;
+    final /* synthetic */ zzpf zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzov(String str, long j, int i) {
+    public zzov(zzpf zzpfVar, String str, List list) {
         this.zza = str;
-        this.zzb = j;
-        this.zzc = i;
+        this.zzb = list;
+        Objects.requireNonNull(zzpfVar);
+        this.zzc = zzpfVar;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        String str = this.zza;
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeString(parcel, 1, str, false);
-        SafeParcelWriter.writeLong(parcel, 2, this.zzb);
-        SafeParcelWriter.writeInt(parcel, 3, this.zzc);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    @Override // com.google.android.gms.measurement.internal.zzgv
+    public final void zza(String str, int i, Throwable th, byte[] bArr, Map map) {
+        this.zzc.zzU(true, i, th, bArr, this.zza, this.zzb);
     }
 }

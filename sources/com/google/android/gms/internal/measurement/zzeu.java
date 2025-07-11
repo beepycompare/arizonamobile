@@ -1,41 +1,26 @@
 package com.google.android.gms.internal.measurement;
 
+import android.app.Activity;
 import android.os.RemoteException;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.4.0 */
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
 /* loaded from: classes3.dex */
-public abstract class zzeu implements Runnable {
-    final long zzh;
-    final long zzi;
-    final boolean zzj;
-    final /* synthetic */ zzff zzk;
+final class zzeu extends zzeq {
+    final /* synthetic */ Activity zza;
+    final /* synthetic */ zzfa zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzeu(zzff zzffVar, boolean z) {
-        this.zzk = zzffVar;
-        this.zzh = zzffVar.zza.currentTimeMillis();
-        this.zzi = zzffVar.zza.elapsedRealtime();
-        this.zzj = z;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzeu(zzfa zzfaVar, Activity activity) {
+        super(zzfaVar.zza, true);
+        this.zza = activity;
+        Objects.requireNonNull(zzfaVar);
+        this.zzb = zzfaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z;
-        z = this.zzk.zzh;
-        if (z) {
-            zzb();
-            return;
-        }
-        try {
-            zza();
-        } catch (Exception e) {
-            this.zzk.zzU(e, false, this.zzj);
-            zzb();
-        }
-    }
-
-    abstract void zza() throws RemoteException;
-
-    protected void zzb() {
+    @Override // com.google.android.gms.internal.measurement.zzeq
+    final void zza() throws RemoteException {
+        ((zzcr) Preconditions.checkNotNull(this.zzb.zza.zzQ())).onActivityStartedByScionActivityInfo(zzdf.zza(this.zza), this.zzi);
     }
 }

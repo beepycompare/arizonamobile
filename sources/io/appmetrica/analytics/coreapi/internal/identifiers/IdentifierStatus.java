@@ -19,7 +19,7 @@ public enum IdentifierStatus {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f242a;
+    private final String f243a;
 
     @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001J\u0012\u0010\u0005\u001a\u00020\u00042\b\u0010\u0003\u001a\u0004\u0018\u00010\u0002H\u0007¨\u0006\u0006"}, d2 = {"Lio/appmetrica/analytics/coreapi/internal/identifiers/IdentifierStatus$Companion;", "", "", "stringValue", "Lio/appmetrica/analytics/coreapi/internal/identifiers/IdentifierStatus;", "from", "core-api_release"}, k = 1, mv = {1, 6, 0})
     /* loaded from: classes4.dex */
@@ -53,7 +53,7 @@ public enum IdentifierStatus {
     }
 
     IdentifierStatus(String str) {
-        this.f242a = str;
+        this.f243a = str;
     }
 
     @JvmStatic
@@ -62,6 +62,6 @@ public enum IdentifierStatus {
     }
 
     public final String getValue() {
-        return this.f242a;
+        return this.f243a;
     }
 }

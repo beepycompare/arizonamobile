@@ -7,21 +7,21 @@ public final class D implements Parcelable {
     public static final C CREATOR = new C();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0796x f1270a;
+    public final C0788x f1271a;
     public final F b;
-    public final C0798z c;
+    public final C0790z c;
 
-    public D(C0796x c0796x, F f, C0798z c0798z) {
-        this.f1270a = c0796x;
+    public D(C0788x c0788x, F f, C0790z c0790z) {
+        this.f1271a = c0788x;
         this.b = f;
-        this.c = c0798z;
+        this.c = c0790z;
     }
 
-    public final C0796x a() {
-        return this.f1270a;
+    public final C0788x a() {
+        return this.f1271a;
     }
 
-    public final C0798z b() {
+    public final C0790z b() {
         return this.c;
     }
 
@@ -35,12 +35,12 @@ public final class D implements Parcelable {
     }
 
     public final String toString() {
-        return "ParcelableScreenshotConfig(apiCaptorConfig=" + this.f1270a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
+        return "ParcelableScreenshotConfig(apiCaptorConfig=" + this.f1271a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f1270a, i);
+        parcel.writeParcelable(this.f1271a, i);
         parcel.writeParcelable(this.b, i);
         parcel.writeParcelable(this.c, i);
     }
@@ -50,9 +50,9 @@ public final class D implements Parcelable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public D(h0 h0Var) {
-        this(r2, r3, r5 != null ? new C0798z(r5) : null);
+        this(r2, r3, r5 != null ? new C0790z(r5) : null);
         e0 a2 = h0Var.a();
-        C0796x c0796x = a2 != null ? new C0796x(a2) : null;
+        C0788x c0788x = a2 != null ? new C0788x(a2) : null;
         i0 c = h0Var.c();
         F f = c != null ? new F(c) : null;
         f0 b = h0Var.b();

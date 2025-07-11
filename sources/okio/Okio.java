@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.Socket;
 import java.nio.file.OpenOption;
 import java.security.MessageDigest;
 import javax.crypto.Cipher;
@@ -60,8 +59,8 @@ public final class Okio {
         return Okio__JvmOkioKt.hashingSource(source, mac);
     }
 
-    public static final boolean isAndroidGetsocknameError(AssertionError assertionError) {
-        return Okio__JvmOkioKt.isAndroidGetsocknameError(assertionError);
+    public static final Socket[] inMemorySocketPair(long j) {
+        return Okio__JvmOkioKt.inMemorySocketPair(j);
     }
 
     public static final FileSystem openZip(FileSystem fileSystem, Path path) throws IOException {
@@ -80,12 +79,16 @@ public final class Okio {
         return Okio__JvmOkioKt.sink(outputStream);
     }
 
-    public static final Sink sink(Socket socket) throws IOException {
+    public static final Sink sink(java.net.Socket socket) throws IOException {
         return Okio__JvmOkioKt.sink(socket);
     }
 
     public static final Sink sink(java.nio.file.Path path, OpenOption... openOptionArr) throws IOException {
         return Okio__JvmOkioKt.sink(path, openOptionArr);
+    }
+
+    public static final Socket socket(java.net.Socket socket) {
+        return Okio__JvmOkioKt.socket(socket);
     }
 
     public static final Source source(File file) throws FileNotFoundException {
@@ -96,7 +99,7 @@ public final class Okio {
         return Okio__JvmOkioKt.source(inputStream);
     }
 
-    public static final Source source(Socket socket) throws IOException {
+    public static final Source source(java.net.Socket socket) throws IOException {
         return Okio__JvmOkioKt.source(socket);
     }
 

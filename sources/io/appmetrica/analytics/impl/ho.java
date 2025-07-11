@@ -3,17 +3,17 @@ package io.appmetrica.analytics.impl;
 import android.content.Context;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 /* loaded from: classes4.dex */
-public final class ho implements InterfaceC0213db {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0213db
+public final class ho implements InterfaceC0205db {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0205db
     public final String a(Context context) {
         ProtobufStateStorage<Object> a2;
-        C0299gm c0299gm;
+        C0291gm c0291gm;
         try {
-            Om a3 = Nm.a(C0299gm.class);
-            if (a3 == null || (a2 = a3.a(context, a3.c(context))) == null || (c0299gm = (C0299gm) a2.read()) == null) {
+            Om a3 = Nm.a(C0291gm.class);
+            if (a3 == null || (a2 = a3.a(context, a3.c(context))) == null || (c0291gm = (C0291gm) a2.read()) == null) {
                 return null;
             }
-            return c0299gm.f857a;
+            return c0291gm.f858a;
         } catch (Throwable unused) {
             return null;
         }

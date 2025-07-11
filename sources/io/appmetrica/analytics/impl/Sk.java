@@ -11,22 +11,22 @@ public final class Sk {
     public static final String i = "SESSION_IS_ALIVE_REPORT_NEEDED";
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f630a;
+    public final String f631a;
     protected final Cif b;
-    public C0736yb c;
+    public C0728yb c;
 
     public Sk(Cif cif, String str) {
         this.b = cif;
-        this.f630a = str;
-        C0736yb c0736yb = new C0736yb();
+        this.f631a = str;
+        C0728yb c0728yb = new C0728yb();
         try {
             String h2 = cif.h(str);
             if (!TextUtils.isEmpty(h2)) {
-                c0736yb = new C0736yb(h2);
+                c0728yb = new C0728yb(h2);
             }
         } catch (Throwable unused) {
         }
-        this.c = c0736yb;
+        this.c = c0728yb;
     }
 
     public final Sk a(long j) {
@@ -65,10 +65,10 @@ public final class Sk {
     }
 
     public final Boolean i() {
-        C0736yb c0736yb = this.c;
-        c0736yb.getClass();
+        C0728yb c0728yb = this.c;
+        c0728yb.getClass();
         try {
-            return Boolean.valueOf(c0736yb.getBoolean(i));
+            return Boolean.valueOf(c0728yb.getBoolean(i));
         } catch (Throwable unused) {
             return null;
         }
@@ -80,7 +80,7 @@ public final class Sk {
     }
 
     public final void b() {
-        this.b.e(this.f630a, this.c.toString());
+        this.b.e(this.f631a, this.c.toString());
         this.b.b();
     }
 
@@ -106,7 +106,7 @@ public final class Sk {
     }
 
     public final void a() {
-        this.c = new C0736yb();
+        this.c = new C0728yb();
         b();
     }
 }

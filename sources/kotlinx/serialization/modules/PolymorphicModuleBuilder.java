@@ -54,7 +54,7 @@ public final class PolymorphicModuleBuilder<Base> {
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Deprecated in favor of function with more precise name: defaultDeserializer", replaceWith = @ReplaceWith(expression = "defaultDeserializer(defaultSerializerProvider)", imports = {}))
     /* renamed from: default  reason: not valid java name */
-    public final void m10160default(Function1<? super String, ? extends DeserializationStrategy<? extends Base>> defaultSerializerProvider) {
+    public final void m10225default(Function1<? super String, ? extends DeserializationStrategy<? extends Base>> defaultSerializerProvider) {
         Intrinsics.checkNotNullParameter(defaultSerializerProvider, "defaultSerializerProvider");
         defaultDeserializer(defaultSerializerProvider);
     }

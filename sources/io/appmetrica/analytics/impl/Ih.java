@@ -12,12 +12,12 @@ public abstract class Ih implements Callable {
     public static final Hh d = new Hh();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0426m0 f477a;
+    public final C0418m0 f478a;
     public final Wk b;
     public boolean c;
 
-    public Ih(C0426m0 c0426m0, Wk wk) {
-        this.f477a = c0426m0;
+    public Ih(C0418m0 c0418m0, Wk wk) {
+        this.f478a = c0418m0;
         this.b = wk;
     }
 
@@ -26,24 +26,24 @@ public abstract class Ih implements Callable {
     public void a(Throwable th) {
     }
 
-    public final C0426m0 b() {
-        return this.f477a;
+    public final C0418m0 b() {
+        return this.f478a;
     }
 
     public boolean c() {
-        C0426m0 c0426m0 = this.f477a;
-        synchronized (c0426m0) {
-            if (c0426m0.d == null) {
-                c0426m0.e = new CountDownLatch(1);
-                Intent a2 = AbstractC0720xk.a(c0426m0.f929a);
+        C0418m0 c0418m0 = this.f478a;
+        synchronized (c0418m0) {
+            if (c0418m0.d == null) {
+                c0418m0.e = new CountDownLatch(1);
+                Intent a2 = AbstractC0712xk.a(c0418m0.f930a);
                 try {
-                    c0426m0.g.b(c0426m0.f929a);
-                    c0426m0.f929a.bindService(a2, c0426m0.i, 1);
+                    c0418m0.g.b(c0418m0.f930a);
+                    c0418m0.f930a.bindService(a2, c0418m0.i, 1);
                 } catch (Throwable unused) {
                 }
             }
         }
-        this.f477a.a(5000L);
+        this.f478a.a(5000L);
         return true;
     }
 
@@ -70,16 +70,16 @@ public abstract class Ih implements Callable {
             this.c = true;
             int i = 0;
             do {
-                C0426m0 c0426m0 = this.f477a;
-                synchronized (c0426m0) {
-                    iAppMetricaService = c0426m0.d;
+                C0418m0 c0418m0 = this.f478a;
+                synchronized (c0418m0) {
+                    iAppMetricaService = c0418m0.d;
                 }
                 if (iAppMetricaService != null) {
                     try {
                         a(iAppMetricaService);
                         Wk wk = this.b;
-                        if (wk == null || ((C0618ti) wk).a()) {
-                            this.f477a.c();
+                        if (wk == null || ((C0610ti) wk).a()) {
+                            this.f478a.c();
                             return;
                         }
                         return;

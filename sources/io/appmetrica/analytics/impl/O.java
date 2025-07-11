@@ -10,7 +10,7 @@ public final class O {
         if (identifiersResult == null) {
             details = AdvIdentifiersResult.Details.INTERNAL_ERROR;
         } else {
-            switch (N.f543a[identifiersResult.status.ordinal()]) {
+            switch (N.f544a[identifiersResult.status.ordinal()]) {
                 case 1:
                     details = AdvIdentifiersResult.Details.OK;
                     break;

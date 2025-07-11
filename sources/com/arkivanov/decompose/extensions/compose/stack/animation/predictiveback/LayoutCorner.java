@@ -16,18 +16,18 @@ public final class LayoutCorner {
     }
 
     /* renamed from: copy-D5KLDUw$default  reason: not valid java name */
-    public static /* synthetic */ LayoutCorner m8000copyD5KLDUw$default(LayoutCorner layoutCorner, float f, boolean z, int i, Object obj) {
+    public static /* synthetic */ LayoutCorner m7999copyD5KLDUw$default(LayoutCorner layoutCorner, float f, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
             f = layoutCorner.radius;
         }
         if ((i & 2) != 0) {
             z = layoutCorner.isFixed;
         }
-        return layoutCorner.m8002copyD5KLDUw(f, z);
+        return layoutCorner.m8001copyD5KLDUw(f, z);
     }
 
     /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-    public final float m8001component1D9Ej5fM() {
+    public final float m8000component1D9Ej5fM() {
         return this.radius;
     }
 
@@ -36,7 +36,7 @@ public final class LayoutCorner {
     }
 
     /* renamed from: copy-D5KLDUw  reason: not valid java name */
-    public final LayoutCorner m8002copyD5KLDUw(float f, boolean z) {
+    public final LayoutCorner m8001copyD5KLDUw(float f, boolean z) {
         return new LayoutCorner(f, z, null);
     }
 
@@ -65,7 +65,7 @@ public final class LayoutCorner {
     }
 
     /* renamed from: getRadius-D9Ej5fM  reason: not valid java name */
-    public final float m8003getRadiusD9Ej5fM() {
+    public final float m8002getRadiusD9Ej5fM() {
         return this.radius;
     }
 

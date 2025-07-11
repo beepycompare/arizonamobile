@@ -128,11 +128,11 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                                 intersects$SnapshotStateKt__SnapshotFlowKt = SnapshotStateKt__SnapshotFlowKt.intersects$SnapshotStateKt__SnapshotFlowKt(mutableScatterSet2, set);
                                 if (!intersects$SnapshotStateKt__SnapshotFlowKt) {
                                     i = 0;
-                                    set = (Set) ChannelResult.m9971getOrNullimpl(channel.mo9959tryReceivePtdJZtk());
+                                    set = (Set) ChannelResult.m10002getOrNullimpl(channel.mo9990tryReceivePtdJZtk());
                                 }
                             }
                             i = 1;
-                            set = (Set) ChannelResult.m9971getOrNullimpl(channel.mo9959tryReceivePtdJZtk());
+                            set = (Set) ChannelResult.m10002getOrNullimpl(channel.mo9990tryReceivePtdJZtk());
                         } while (set != null);
                         if (i != 0) {
                             mutableScatterSet2.clear();
@@ -313,7 +313,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                     if (i == 0) {
                     }
                     i = 1;
-                    set = (Set) ChannelResult.m9971getOrNullimpl(channel.mo9959tryReceivePtdJZtk());
+                    set = (Set) ChannelResult.m10002getOrNullimpl(channel.mo9990tryReceivePtdJZtk());
                 } while (set != null);
                 if (i != 0) {
                 }

@@ -12,7 +12,7 @@ public final class Ui extends MessageNano {
     public static volatile Ui[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f661a;
+    public boolean f662a;
     public Ti b;
     public Si c;
 
@@ -32,7 +32,7 @@ public final class Ui extends MessageNano {
     }
 
     public final Ui a() {
-        this.f661a = false;
+        this.f662a = false;
         this.b = null;
         this.c = null;
         this.cachedSize = -1;
@@ -42,7 +42,7 @@ public final class Ui extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        boolean z = this.f661a;
+        boolean z = this.f662a;
         if (z) {
             computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(1, z);
         }
@@ -56,7 +56,7 @@ public final class Ui extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        boolean z = this.f661a;
+        boolean z = this.f662a;
         if (z) {
             codedOutputByteBufferNano.writeBool(1, z);
         }
@@ -79,7 +79,7 @@ public final class Ui extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 8) {
-                this.f661a = codedInputByteBufferNano.readBool();
+                this.f662a = codedInputByteBufferNano.readBool();
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new Ti();

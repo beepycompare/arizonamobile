@@ -58,7 +58,6 @@ import ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger;
 import ru.mrlargha.arizonaui.mobile.presentation.page.messenger.api.MessagesApi;
 import ru.mrlargha.arizonaui.mobile.presentation.page.messenger.api.MessengerRetrofitClient;
 import ru.mrlargha.arizonaui.mobile.presentation.page.messenger.api.obj.ContactApiResponse;
-import ru.mrlargha.arizonaui.mobile.presentation.page.messenger.api.obj.ContactModel;
 import ru.mrlargha.arizonaui.mobile.presentation.page.messenger.api.obj.SettingsApiResponse;
 import ru.mrlargha.arizonaui.mobile.presentation.page.messenger.api.obj.SettingsRequest;
 import ru.mrlargha.commonui.core.IBackendNotifier;
@@ -68,7 +67,7 @@ import ru.mrlargha.commonui.elements.CustomKeyboard;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.recycle_view.PaginationScrollListener;
 /* compiled from: Messenger.kt */
-@Metadata(d1 = {"\u0000¦\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u000b\u0018\u0000 Z2\u00020\u00012\u00020\u0002:\u0003Z[\\B\u0011\u0012\b\u0010\u0003\u001a\u0004\u0018\u00010\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u0004H\u0002J\b\u0010-\u001a\u00020.H\u0002J\u0012\u0010/\u001a\u00020.2\b\u00100\u001a\u0004\u0018\u00010\fH\u0002J\b\u00101\u001a\u00020.H\u0002J\b\u00102\u001a\u00020.H\u0002J\b\u00103\u001a\u00020.H\u0002J\b\u00104\u001a\u00020.H\u0002J\b\u00105\u001a\u00020.H\u0002J\b\u00106\u001a\u00020.H\u0002J\u001a\u00107\u001a\u00020.2\b\u00108\u001a\u0004\u0018\u0001092\u0006\u0010:\u001a\u00020\tH\u0016J\b\u0010;\u001a\u00020.H\u0002J!\u0010<\u001a\u00020.2\u0006\u0010\u0018\u001a\u00020\f2\n\b\u0002\u0010=\u001a\u0004\u0018\u00010\u0004H\u0002¢\u0006\u0002\u0010>J\b\u0010?\u001a\u00020.H\u0002J\u0010\u0010@\u001a\u00020.2\u0006\u0010A\u001a\u00020BH\u0002J\b\u0010C\u001a\u00020.H\u0002J\b\u0010D\u001a\u00020.H\u0002J\b\u0010E\u001a\u00020.H\u0002J\b\u0010F\u001a\u00020.H\u0002J\u0010\u0010G\u001a\u00020.2\u0006\u0010\u001b\u001a\u00020&H\u0002J\b\u0010H\u001a\u00020.H\u0016J\b\u0010I\u001a\u00020.H\u0016J\u0006\u0010J\u001a\u00020.J\u000e\u0010K\u001a\u00020.2\u0006\u0010L\u001a\u00020MJ\u0010\u0010N\u001a\u00020.2\u0006\u0010L\u001a\u00020MH\u0002J\u0014\u0010O\u001a\u00020.2\f\u0010P\u001a\b\u0012\u0004\u0012\u00020R0QJ\u000e\u0010S\u001a\u00020.2\u0006\u0010\u0018\u001a\u00020\fJ\u0006\u0010T\u001a\u00020.J\u0006\u0010U\u001a\u00020.J\u0016\u0010V\u001a\u00020.2\u0006\u0010W\u001a\u00020\u00042\u0006\u0010X\u001a\u00020\fJ\u000e\u0010Y\u001a\u00020.2\u0006\u0010=\u001a\u00020\u0004R\u0012\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001d\u001a\n \u0015*\u0004\u0018\u00010\u001e0\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020)X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006]"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger;", "Lru/mrlargha/arizonaui/mobile/presentation/MobileController;", "Landroid/widget/CompoundButton$OnCheckedChangeListener;", "notificationMessageId", "", "<init>", "(Ljava/lang/Integer;)V", "Ljava/lang/Integer;", "isPaginationLoading", "", "paginationPage", "searchNickname", "", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "context", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneBinding;", "sharedPreferences", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "token", "userIdForAddContact", "isRefreshToken", "page", "Landroidx/constraintlayout/widget/ConstraintLayout;", "api", "Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/api/MessagesApi;", "pageBinding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneMessengerPageBinding;", "contactsAdapter", "Lru/mrlargha/arizonaui/mobile/presentation/adapter/MobilePhoneMessengerContactsAdapter;", "colorsAdapter", "Lru/mrlargha/arizonaui/mobile/presentation/adapter/MobilePhoneMessengerColorsAdapter;", "currentPage", "Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger$Page;", "previousPage", "currentSettings", "Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/api/obj/SettingsRequest;", "getUserIdJson", "", "id", "loadNextPage", "", "requestContacts", SettingsConstants.NICKNAME, "showMessagesLoader", "showContacts", "showEmptySearchedContacts", "openChatEvent", "requestToken", "prepareSettings", "onCheckedChanged", "buttonView", "Landroid/widget/CompoundButton;", "isChecked", "preparePage", "loadChats", "dialogId", "(Ljava/lang/String;Ljava/lang/Integer;)V", "loadSettings", "updateSettingsInfo", "settings", "Lru/mrlargha/arizonaui/mobile/domain/obj/SettingsInfo;", "setupEmptyPages", "setupNewCorrespondencePage", "setupMessagesPage", "prepareHeader", "updatePage", "renderPage", "removePage", "contactSettingsUpdate", "onOpenNewChat", "contactInfo", "Lru/mrlargha/arizonaui/mobile/domain/obj/ContactInfo;", "contactAddOrRemove", "contactUpdates", "data", "", "Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/api/obj/ContactModel;", "addToken", "addContactAction", "removeContactAction", "onNewMessage", "userId", "newMessage", "updateDialog", "Companion", "Page", "InputCustomKeyboardListener", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009a\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\f\u0018\u0000 V2\u00020\u00012\u00020\u0002:\u0003VWXB\u0011\u0012\b\u0010\u0003\u001a\u0004\u0018\u00010\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u0004H\u0002J\b\u0010-\u001a\u00020.H\u0002J\u0012\u0010/\u001a\u00020.2\b\u00100\u001a\u0004\u0018\u00010\fH\u0002J\b\u00101\u001a\u00020.H\u0002J\b\u00102\u001a\u00020.H\u0002J\b\u00103\u001a\u00020.H\u0002J\b\u00104\u001a\u00020.H\u0002J\b\u00105\u001a\u00020.H\u0002J\b\u00106\u001a\u00020.H\u0002J\u0018\u00107\u001a\u00020.2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\tH\u0016J\b\u0010;\u001a\u00020.H\u0002J!\u0010<\u001a\u00020.2\u0006\u0010\u0018\u001a\u00020\f2\n\b\u0002\u0010=\u001a\u0004\u0018\u00010\u0004H\u0002¢\u0006\u0002\u0010>J\b\u0010?\u001a\u00020.H\u0002J\u0010\u0010@\u001a\u00020.2\u0006\u0010A\u001a\u00020BH\u0002J\b\u0010C\u001a\u00020.H\u0002J\b\u0010D\u001a\u00020.H\u0002J\b\u0010E\u001a\u00020.H\u0002J\b\u0010F\u001a\u00020.H\u0002J\u0010\u0010G\u001a\u00020.2\u0006\u0010\u001b\u001a\u00020&H\u0002J\b\u0010H\u001a\u00020.H\u0016J\b\u0010I\u001a\u00020.H\u0016J\u0006\u0010J\u001a\u00020.J\u000e\u0010K\u001a\u00020.2\u0006\u0010L\u001a\u00020MJ\u0010\u0010N\u001a\u00020.2\u0006\u0010L\u001a\u00020MH\u0002J\u000e\u0010O\u001a\u00020.2\u0006\u0010\u0018\u001a\u00020\fJ\u0006\u0010P\u001a\u00020.J\u0006\u0010Q\u001a\u00020.J\u0016\u0010R\u001a\u00020.2\u0006\u0010S\u001a\u00020\u00042\u0006\u0010T\u001a\u00020\fJ\u000e\u0010U\u001a\u00020.2\u0006\u0010=\u001a\u00020\u0004R\u0012\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001d\u001a\n \u0015*\u0004\u0018\u00010\u001e0\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020)X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006Y"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger;", "Lru/mrlargha/arizonaui/mobile/presentation/MobileController;", "Landroid/widget/CompoundButton$OnCheckedChangeListener;", "notificationMessageId", "", "<init>", "(Ljava/lang/Integer;)V", "Ljava/lang/Integer;", "isPaginationLoading", "", "paginationPage", "searchNickname", "", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "context", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneBinding;", "sharedPreferences", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "token", "userIdForAddContact", "isRefreshToken", "page", "Landroidx/constraintlayout/widget/ConstraintLayout;", "api", "Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/api/MessagesApi;", "pageBinding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneMessengerPageBinding;", "contactsAdapter", "Lru/mrlargha/arizonaui/mobile/presentation/adapter/MobilePhoneMessengerContactsAdapter;", "colorsAdapter", "Lru/mrlargha/arizonaui/mobile/presentation/adapter/MobilePhoneMessengerColorsAdapter;", "currentPage", "Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger$Page;", "previousPage", "currentSettings", "Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/api/obj/SettingsRequest;", "getUserIdJson", "", "id", "loadNextPage", "", "requestContacts", SettingsConstants.NICKNAME, "showMessagesLoader", "showContacts", "showEmptySearchedContacts", "openChatEvent", "requestToken", "prepareSettings", "onCheckedChanged", "buttonView", "Landroid/widget/CompoundButton;", "isChecked", "preparePage", "loadChats", "dialogId", "(Ljava/lang/String;Ljava/lang/Integer;)V", "loadSettings", "updateSettingsInfo", "settings", "Lru/mrlargha/arizonaui/mobile/domain/obj/SettingsInfo;", "setupEmptyPages", "setupNewCorrespondencePage", "setupMessagesPage", "prepareHeader", "updatePage", "renderPage", "removePage", "contactSettingsUpdate", "onOpenNewChat", "contactInfo", "Lru/mrlargha/arizonaui/mobile/domain/obj/ContactInfo;", "contactAddOrRemove", "addToken", "addContactAction", "removeContactAction", "onNewMessage", "userId", "newMessage", "updateDialog", "Companion", "Page", "InputCustomKeyboardListener", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class Messenger implements MobileController, CompoundButton.OnCheckedChangeListener {
     public static final Companion Companion = new Companion(null);
@@ -99,9 +98,9 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     private String searchNickname = "";
 
     /* compiled from: Messenger.kt */
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -204,7 +203,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     }
 
     /* compiled from: Messenger.kt */
-    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger$Companion;", "", "<init>", "()V", "MESSENGER_PREFS", "", "TOKEN_PREFS", "MIN_SYMBOLS_SEARCH", "", "TAG", "JWT_EXPIRED", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger$Companion;", "", "<init>", "()V", "MESSENGER_PREFS", "", "TOKEN_PREFS", "MIN_SYMBOLS_SEARCH", "", "TAG", "JWT_EXPIRED", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -246,7 +245,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: Messenger.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0019\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013¨\u0006\u0014"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger$Page;", "", "page", "", "title", "", "<init>", "(Ljava/lang/String;IILjava/lang/String;)V", "getPage", "()I", "getTitle", "()Ljava/lang/String;", "EMPTY_MESSAGES", "EMPTY_CONTACTS", "MESSAGES", "NEW_CORRESPONDENCE", "CONTACTS_SEARCH", "MY_CONTACTS", "LOADING", "SETTINGS", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0019\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013¨\u0006\u0014"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger$Page;", "", "page", "", "title", "", "<init>", "(Ljava/lang/String;IILjava/lang/String;)V", "getPage", "()I", "getTitle", "()Ljava/lang/String;", "EMPTY_MESSAGES", "EMPTY_CONTACTS", "MESSAGES", "NEW_CORRESPONDENCE", "CONTACTS_SEARCH", "MY_CONTACTS", "LOADING", "SETTINGS", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Page {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -270,6 +269,14 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
             return $ENTRIES;
         }
 
+        public static Page valueOf(String str) {
+            return (Page) Enum.valueOf(Page.class, str);
+        }
+
+        public static Page[] values() {
+            return (Page[]) $VALUES.clone();
+        }
+
         private Page(String str, int i, int i2, String str2) {
             this.page = i2;
             this.title = str2;
@@ -288,14 +295,6 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
         }
-
-        public static Page valueOf(String str) {
-            return (Page) Enum.valueOf(Page.class, str);
-        }
-
-        public static Page[] values() {
-            return (Page[]) $VALUES.clone();
-        }
     }
 
     private final byte[] getUserIdJson(int i) {
@@ -313,7 +312,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         if (this.token.length() == 0 || this.searchNickname.length() == 0) {
             return;
         }
-        MessagesApi.DefaultImpls.findContact$default(this.api, this.token, this.searchNickname, 0, this.paginationPage, 4, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$loadNextPage$1
+        MessagesApi.findContact$default(this.api, this.token, this.searchNickname, 0, this.paginationPage, 4, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$loadNextPage$1
             @Override // retrofit2.Callback
             public void onResponse(Call<List<? extends ContactApiResponse>> call, Response<List<? extends ContactApiResponse>> response) {
                 MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter;
@@ -359,7 +358,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         if (str != null) {
             this.searchNickname = str;
         }
-        MessagesApi.DefaultImpls.findContact$default(this.api, this.token, str, 0, this.paginationPage, 4, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$requestContacts$2
+        MessagesApi.findContact$default(this.api, this.token, str, 0, this.paginationPage, 4, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$requestContacts$2
             @Override // retrofit2.Callback
             public void onResponse(Call<List<? extends ContactApiResponse>> call, Response<List<? extends ContactApiResponse>> response) {
                 MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter;
@@ -473,7 +472,8 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     }
 
     @Override // android.widget.CompoundButton.OnCheckedChangeListener
-    public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
+    public void onCheckedChanged(CompoundButton buttonView, boolean z) {
+        Intrinsics.checkNotNullParameter(buttonView, "buttonView");
         this.currentSettings = SettingsRequest.copy$default(this.currentSettings, 0, z ? 1 : 0, 1, null);
         IBackendNotifier iBackendNotifier = this.frontendNotifier;
         int id = UIElementID.ARIZONA_MOBILE_PHONE.getId();
@@ -503,7 +503,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     }
 
     private final void loadChats(String str, final Integer num) {
-        MessagesApi.DefaultImpls.getMessages$default(this.api, str, 0, 0, null, 14, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$loadChats$1
+        MessagesApi.getMessages$default(this.api, str, 0, 0, null, 14, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$loadChats$1
             @Override // retrofit2.Callback
             public void onResponse(Call<List<? extends ContactApiResponse>> call, Response<List<? extends ContactApiResponse>> response) {
                 MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter;
@@ -951,18 +951,6 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         this.frontendNotifier.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), -1, i, getUserIdJson(contactInfo.getId()));
     }
 
-    public final void contactUpdates(List<ContactModel> data) {
-        Intrinsics.checkNotNullParameter(data, "data");
-        MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter = this.contactsAdapter;
-        List<ContactModel> list = data;
-        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
-        for (ContactModel contactModel : list) {
-            arrayList.add(contactModel.toModel());
-        }
-        mobilePhoneMessengerContactsAdapter.addData(arrayList);
-        updatePage(Page.CONTACTS_SEARCH);
-    }
-
     public final void addToken(String token) {
         Intrinsics.checkNotNullParameter(token, "token");
         this.sharedPreferences.edit().putString("token", token).apply();
@@ -999,7 +987,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     }
 
     /* compiled from: Messenger.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\t\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0016J\b\u0010\b\u001a\u00020\tH\u0016J\b\u0010\n\u001a\u00020\u000bH\u0016J\u0012\u0010\f\u001a\u0004\u0018\u00010\u00072\u0006\u0010\r\u001a\u00020\u000bH\u0016J\u0010\u0010\u000e\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u000bH\u0016J\u0012\u0010\u000f\u001a\u00020\u00052\b\u0010\u0010\u001a\u0004\u0018\u00010\u0007H\u0016J\u0010\u0010\u0011\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u000bH\u0016J\b\u0010\u0013\u001a\u00020\u0005H\u0016¨\u0006\u0014"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger$InputCustomKeyboardListener;", "Lru/mrlargha/commonui/elements/CustomKeyboard$InputListener;", "<init>", "(Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger;)V", "t_OnInputEnd", "", "str", "", "t_BinderIsEmpty", "", "t_GetKeyboardHistorySize", "", "t_GetKeyboardHistoryText", FirebaseAnalytics.Param.INDEX, "t_SetChatType", "t_SetLastString", "std", "t_SetChatHeight", "height", "closeKeyboard", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\t\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0016J\b\u0010\b\u001a\u00020\tH\u0016J\b\u0010\n\u001a\u00020\u000bH\u0016J\u0012\u0010\f\u001a\u0004\u0018\u00010\u00072\u0006\u0010\r\u001a\u00020\u000bH\u0016J\u0010\u0010\u000e\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u000bH\u0016J\u0012\u0010\u000f\u001a\u00020\u00052\b\u0010\u0010\u001a\u0004\u0018\u00010\u0007H\u0016J\u0010\u0010\u0011\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u000bH\u0016J\b\u0010\u0013\u001a\u00020\u0005H\u0016¨\u0006\u0014"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger$InputCustomKeyboardListener;", "Lru/mrlargha/commonui/elements/CustomKeyboard$InputListener;", "<init>", "(Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger;)V", "t_OnInputEnd", "", "str", "", "t_BinderIsEmpty", "", "t_GetKeyboardHistorySize", "", "t_GetKeyboardHistoryText", FirebaseAnalytics.Param.INDEX, "t_SetChatType", "t_SetLastString", "std", "t_SetChatHeight", "height", "closeKeyboard", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public final class InputCustomKeyboardListener implements CustomKeyboard.InputListener {
         @Override // ru.mrlargha.commonui.elements.CustomKeyboard.InputListener

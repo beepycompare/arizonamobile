@@ -12,6 +12,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
@@ -19,7 +20,7 @@ import kotlin.jvm.functions.Function3;
 import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ScalingButton.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInputEventHandler {
     final /* synthetic */ Function0<Unit> $onClick;
@@ -34,8 +35,8 @@ public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInput
     }
 
     /* compiled from: ScalingButton.kt */
-    @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/PressGestureScope;", "it", "Landroidx/compose/ui/geometry/Offset;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-    @DebugMetadata(c = "com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$2", f = "ScalingButton.kt", i = {}, l = {LockFreeTaskQueueCore.CLOSED_SHIFT}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/PressGestureScope;", "it", "Landroidx/compose/ui/geometry/Offset;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+    @DebugMetadata(c = "com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$2", f = "ScalingButton.kt", i = {0}, l = {LockFreeTaskQueueCore.CLOSED_SHIFT}, m = "invokeSuspend", n = {"$this$detectTapGestures"}, s = {"L$0"})
     /* renamed from: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$2  reason: invalid class name */
     /* loaded from: classes4.dex */
     static final class AnonymousClass2 extends SuspendLambda implements Function3<PressGestureScope, Offset, Continuation<? super Unit>, Object> {
@@ -63,13 +64,14 @@ public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInput
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
+            PressGestureScope pressGestureScope = (PressGestureScope) this.L$0;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             try {
                 if (i == 0) {
                     ResultKt.throwOnFailure(obj);
-                    PressGestureScope pressGestureScope = (PressGestureScope) this.L$0;
                     ScalingButtonKt.ScalingButtonLong$lambda$11(this.$selected$delegate, true);
+                    this.L$0 = SpillingKt.nullOutSpilledVariable(pressGestureScope);
                     this.label = 1;
                     if (pressGestureScope.awaitRelease(this) == coroutine_suspended) {
                         return coroutine_suspended;

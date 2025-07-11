@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.provider.DocumentsContract;
 import android.util.Log;
 import java.util.ArrayList;
+import kotlin.UByte$$ExternalSyntheticBackport0;
 /* loaded from: classes2.dex */
 class TreeDocumentFile extends DocumentFile {
     private Context mContext;
@@ -139,7 +140,7 @@ class TreeDocumentFile extends DocumentFile {
     private static void closeQuietly(AutoCloseable autoCloseable) {
         if (autoCloseable != null) {
             try {
-                autoCloseable.close();
+                UByte$$ExternalSyntheticBackport0.m8544m((Object) autoCloseable);
             } catch (RuntimeException e) {
                 throw e;
             } catch (Exception unused) {

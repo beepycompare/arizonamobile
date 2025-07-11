@@ -1,78 +1,19 @@
 package com.google.android.gms.internal.measurement;
-
-import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzie extends zzmd implements zzni {
-    private static final zzie zzb;
-    private int zzd;
-    private int zze;
-    private zzmi zzf = zzcl();
-
-    static {
-        zzie zzieVar = new zzie();
-        zzb = zzieVar;
-        zzmd.zzct(zzie.class, zzieVar);
-    }
-
+public final class zzie extends zzma implements zznm {
     private zzie() {
+        throw null;
     }
 
-    public static zzid zzd() {
-        return (zzid) zzb.zzcg();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzie(byte[] bArr) {
+        super(zzig.zzc());
     }
 
-    public static /* synthetic */ void zzg(zzie zzieVar, Iterable iterable) {
-        zzmi zzmiVar = zzieVar.zzf;
-        if (!zzmiVar.zzc()) {
-            zzieVar.zzf = zzmd.zzcm(zzmiVar);
-        }
-        zzko.zzcc(iterable, zzieVar.zzf);
-    }
-
-    public static /* synthetic */ void zzh(zzie zzieVar, int i) {
-        zzieVar.zzd |= 1;
-        zzieVar.zze = i;
-    }
-
-    public final int zza() {
-        return this.zzf.size();
-    }
-
-    public final int zzb() {
-        return this.zze;
-    }
-
-    public final long zzc(int i) {
-        return this.zzf.zza(i);
-    }
-
-    public final List zzf() {
-        return this.zzf;
-    }
-
-    public final boolean zzi() {
-        return (this.zzd & 1) != 0;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzmd
-    public final Object zzl(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 != 0) {
-            if (i2 == 2) {
-                return zzcq(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001င\u0000\u0002\u0014", new Object[]{"zzd", "zze", "zzf"});
-            } else if (i2 != 3) {
-                if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzb;
-                    }
-                    throw null;
-                }
-                return new zzid(null);
-            } else {
-                return new zzie();
-            }
-        }
-        return (byte) 1;
+    public final zzie zza(zzht zzhtVar) {
+        zzaX();
+        ((zzig) this.zza).zzb((zzhu) zzhtVar.zzbc());
+        return this;
     }
 }

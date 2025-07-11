@@ -8,18 +8,20 @@ import com.google.android.gms.common.internal.Preconditions;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzz {
-    final /* synthetic */ zzae zza;
-    private com.google.android.gms.internal.measurement.zzhm zzb;
+    final /* synthetic */ zzad zza;
+    private com.google.android.gms.internal.measurement.zzhs zzb;
     private Long zzc;
     private long zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zzz(zzae zzaeVar, zzad zzadVar) {
-        this.zza = zzaeVar;
+    public /* synthetic */ zzz(zzad zzadVar, byte[] bArr) {
+        Objects.requireNonNull(zzadVar);
+        this.zza = zzadVar;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -67,27 +69,27 @@ public final class zzz {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final com.google.android.gms.internal.measurement.zzhm zza(String str, com.google.android.gms.internal.measurement.zzhm zzhmVar) {
-        zzaw zzj;
-        com.google.android.gms.internal.measurement.zzhm zzhmVar2;
+    public final com.google.android.gms.internal.measurement.zzhs zza(String str, com.google.android.gms.internal.measurement.zzhs zzhsVar) {
+        zzav zzj;
+        com.google.android.gms.internal.measurement.zzhs zzhsVar2;
         long j;
         Pair pair;
         long j2;
         ArrayList arrayList;
         ?? longValue;
-        String zzh = zzhmVar.zzh();
-        List zzi = zzhmVar.zzi();
-        zzae zzaeVar = this.zza;
-        zzpv zzpvVar = zzaeVar.zzg;
-        zzpvVar.zzA();
-        Long l = (Long) zzqa.zzH(zzhmVar, "_eid");
+        String zzd = zzhsVar.zzd();
+        List zza = zzhsVar.zza();
+        zzad zzadVar = this.zza;
+        zzpf zzpfVar = zzadVar.zzg;
+        zzpfVar.zzp();
+        Long l = (Long) zzpj.zzI(zzhsVar, "_eid");
         if (l != null) {
-            if (zzh.equals("_ep")) {
+            if (zzd.equals("_ep")) {
                 Preconditions.checkNotNull(l);
-                zzpvVar.zzA();
-                String str2 = (String) zzqa.zzH(zzhmVar, "_en");
+                zzpfVar.zzp();
+                String str2 = (String) zzpj.zzI(zzhsVar, "_en");
                 if (TextUtils.isEmpty(str2)) {
-                    zzaeVar.zzu.zzaW().zzh().zzb("Extra parameter without an event name. eventId", l);
+                    zzadVar.zzu.zzaV().zzc().zzb("Extra parameter without an event name. eventId", l);
                     return null;
                 }
                 try {
@@ -98,39 +100,39 @@ public final class zzz {
                             j2 = this.zzd - 1;
                             this.zzd = j2;
                             if (j2 > j) {
-                                zzaw zzj2 = this.zza.zzg.zzj();
+                                zzav zzj2 = this.zza.zzg.zzj();
                                 zzj2.zzg();
-                                zzj2.zzu.zzaW().zzj().zzb("Clearing complex main event info. appId", str);
+                                zzj2.zzu.zzaV().zzk().zzb("Clearing complex main event info. appId", str);
                                 try {
-                                    zzj2.zzj().execSQL("delete from main_event_params where app_id=?", new String[]{str});
+                                    zzj2.zze().execSQL("delete from main_event_params where app_id=?", new String[]{str});
                                 } catch (SQLiteException e) {
-                                    zzj2.zzu.zzaW().zze().zzb("Error clearing complex main event", e);
+                                    zzj2.zzu.zzaV().zzb().zzb("Error clearing complex main event", e);
                                 }
                             } else {
-                                this.zza.zzg.zzj().zzaf(str, l, this.zzd, this.zzb);
+                                this.zza.zzg.zzj().zzV(str, l, this.zzd, this.zzb);
                             }
                             arrayList = new ArrayList();
-                            for (com.google.android.gms.internal.measurement.zzhq zzhqVar : this.zzb.zzi()) {
-                                this.zza.zzg.zzA();
-                                if (zzqa.zzG(zzhmVar, zzhqVar.zzg()) == null) {
-                                    arrayList.add(zzhqVar);
+                            for (com.google.android.gms.internal.measurement.zzhw zzhwVar : this.zzb.zza()) {
+                                this.zza.zzg.zzp();
+                                if (zzpj.zzF(zzhsVar, zzhwVar.zzb()) == null) {
+                                    arrayList.add(zzhwVar);
                                 }
                             }
                             if (arrayList.isEmpty()) {
-                                arrayList.addAll(zzi);
-                                zzi = arrayList;
+                                arrayList.addAll(zza);
+                                zza = arrayList;
                             } else {
-                                this.zza.zzu.zzaW().zzh().zzb("No unique parameters in main event. eventName", str2);
+                                this.zza.zzu.zzaV().zzc().zzb("No unique parameters in main event. eventName", str2);
                             }
-                            zzh = str2;
+                            zzd = str2;
                         }
                     }
-                    Cursor cursor = zzj.zzj().rawQuery("select main_event, children_to_process from main_event_params where app_id=? and event_id=?", new String[]{str, l.toString()});
+                    Cursor cursor = zzj.zze().rawQuery("select main_event, children_to_process from main_event_params where app_id=? and event_id=?", new String[]{str, l.toString()});
                     if (cursor.moveToFirst()) {
-                        zzhmVar2 = null;
+                        zzhsVar2 = null;
                         try {
                             try {
-                                Pair create = Pair.create((com.google.android.gms.internal.measurement.zzhm) ((com.google.android.gms.internal.measurement.zzhl) zzqa.zzp(com.google.android.gms.internal.measurement.zzhm.zze(), cursor.getBlob(0))).zzba(), Long.valueOf(cursor.getLong(1)));
+                                Pair create = Pair.create((com.google.android.gms.internal.measurement.zzhs) ((com.google.android.gms.internal.measurement.zzhr) zzpj.zzw(com.google.android.gms.internal.measurement.zzhs.zzk(), cursor.getBlob(0))).zzbc(), Long.valueOf(cursor.getLong(1)));
                                 pair = create;
                                 if (cursor != null) {
                                     cursor.close();
@@ -139,35 +141,35 @@ public final class zzz {
                             } catch (IOException e2) {
                                 j = 0;
                                 try {
-                                    zzj.zzu.zzaW().zze().zzd("Failed to merge main event. appId, eventId", zzhe.zzn(str), l, e2);
+                                    zzj.zzu.zzaV().zzb().zzd("Failed to merge main event. appId, eventId", zzgt.zzl(str), l, e2);
                                 } catch (SQLiteException e3) {
                                     e = e3;
-                                    zzj.zzu.zzaW().zze().zzb("Error selecting main event", e);
+                                    zzj.zzu.zzaV().zzb().zzb("Error selecting main event", e);
                                 }
                             }
                         } catch (SQLiteException e4) {
                             e = e4;
                             j = 0;
-                            zzj.zzu.zzaW().zze().zzb("Error selecting main event", e);
+                            zzj.zzu.zzaV().zzb().zzb("Error selecting main event", e);
                         }
                     } else {
-                        zzj.zzu.zzaW().zzj().zza("Main event not found");
+                        zzj.zzu.zzaV().zzk().zza("Main event not found");
                         if (cursor != null) {
                             cursor.close();
                         }
                         pair = null;
-                        zzhmVar2 = null;
+                        zzhsVar2 = null;
                     }
                     j = 0;
                     Pair pair2 = pair;
                     if (pair2 == 0 || pair2.first == null) {
-                        this.zza.zzu.zzaW().zzh().zzc("Extra parameter without existing main event. eventName, eventId", str2, l);
-                        return zzhmVar2;
+                        this.zza.zzu.zzaV().zzc().zzc("Extra parameter without existing main event. eventName, eventId", str2, l);
+                        return zzhsVar2;
                     }
-                    this.zzb = (com.google.android.gms.internal.measurement.zzhm) pair2.first;
+                    this.zzb = (com.google.android.gms.internal.measurement.zzhs) pair2.first;
                     this.zzd = ((Long) pair2.second).longValue();
-                    this.zza.zzg.zzA();
-                    this.zzc = (Long) zzqa.zzH(this.zzb, "_eid");
+                    this.zza.zzg.zzp();
+                    this.zzc = (Long) zzpj.zzI(this.zzb, "_eid");
                     j2 = this.zzd - 1;
                     this.zzd = j2;
                     if (j2 > j) {
@@ -177,7 +179,7 @@ public final class zzz {
                     }
                     if (arrayList.isEmpty()) {
                     }
-                    zzh = str2;
+                    zzd = str2;
                 } catch (Throwable th) {
                     th = th;
                     Cursor cursor2 = longValue;
@@ -186,26 +188,26 @@ public final class zzz {
                     }
                     throw th;
                 }
-                zzj = zzpvVar.zzj();
+                zzj = zzpfVar.zzj();
                 zzj.zzg();
-                zzj.zzav();
+                zzj.zzay();
             } else {
                 this.zzc = l;
-                this.zzb = zzhmVar;
-                zzpvVar.zzA();
-                long longValue2 = ((Long) zzqa.zzI(zzhmVar, "_epc", 0L)).longValue();
+                this.zzb = zzhsVar;
+                zzpfVar.zzp();
+                long longValue2 = ((Long) zzpj.zzJ(zzhsVar, "_epc", 0L)).longValue();
                 this.zzd = longValue2;
                 if (longValue2 <= 0) {
-                    zzaeVar.zzu.zzaW().zzh().zzb("Complex event with zero extra param count. eventName", zzh);
+                    zzadVar.zzu.zzaV().zzc().zzb("Complex event with zero extra param count. eventName", zzd);
                 } else {
-                    zzpvVar.zzj().zzaf(str, (Long) Preconditions.checkNotNull(l), this.zzd, zzhmVar);
+                    zzpfVar.zzj().zzV(str, (Long) Preconditions.checkNotNull(l), this.zzd, zzhsVar);
                 }
             }
         }
-        com.google.android.gms.internal.measurement.zzhl zzhlVar = (com.google.android.gms.internal.measurement.zzhl) zzhmVar.zzch();
-        zzhlVar.zzi(zzh);
-        zzhlVar.zzg();
-        zzhlVar.zzd(zzi);
-        return (com.google.android.gms.internal.measurement.zzhm) zzhlVar.zzba();
+        com.google.android.gms.internal.measurement.zzhr zzhrVar = (com.google.android.gms.internal.measurement.zzhr) zzhsVar.zzcl();
+        zzhrVar.zzl(zzd);
+        zzhrVar.zzi();
+        zzhrVar.zzh(zza);
+        return (com.google.android.gms.internal.measurement.zzhs) zzhrVar.zzbc();
     }
 }

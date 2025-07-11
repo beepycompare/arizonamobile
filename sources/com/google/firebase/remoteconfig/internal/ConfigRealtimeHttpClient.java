@@ -204,14 +204,14 @@ public class ConfigRealtimeHttpClient {
         return Tasks.whenAllComplete(token, id).continueWithTask(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigRealtimeHttpClient$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task) {
-                return ConfigRealtimeHttpClient.this.m8289xad28ecdf(token, id, task);
+                return ConfigRealtimeHttpClient.this.m8288xad28ecdf(token, id, task);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$createRealtimeConnection$0$com-google-firebase-remoteconfig-internal-ConfigRealtimeHttpClient  reason: not valid java name */
-    public /* synthetic */ Task m8289xad28ecdf(Task task, Task task2, Task task3) throws Exception {
+    public /* synthetic */ Task m8288xad28ecdf(Task task, Task task2, Task task3) throws Exception {
         if (!task.isSuccessful()) {
             return Tasks.forException(new FirebaseRemoteConfigClientException("Firebase Installations failed to get installation auth token for config update listener connection.", task.getException()));
         }
@@ -326,7 +326,7 @@ public class ConfigRealtimeHttpClient {
             Tasks.whenAllComplete(createRealtimeConnection).continueWith(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigRealtimeHttpClient$$ExternalSyntheticLambda1
                 @Override // com.google.android.gms.tasks.Continuation
                 public final Object then(Task task) {
-                    return ConfigRealtimeHttpClient.this.m8288x5fb1dc1(createRealtimeConnection, task);
+                    return ConfigRealtimeHttpClient.this.m8287x5fb1dc1(createRealtimeConnection, task);
                 }
             });
         }
@@ -355,7 +355,7 @@ public class ConfigRealtimeHttpClient {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ Task m8288x5fb1dc1(Task task, Task task2) throws Exception {
+    public /* synthetic */ Task m8287x5fb1dc1(Task task, Task task2) throws Exception {
         InputStream inputStream;
         Integer num;
         Throwable th;

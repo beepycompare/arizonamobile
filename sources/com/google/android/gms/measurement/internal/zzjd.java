@@ -1,30 +1,56 @@
 package com.google.android.gms.measurement.internal;
 
-import java.util.concurrent.Callable;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import android.content.Context;
+import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.common.util.Clock;
+import org.checkerframework.dataflow.qual.Pure;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzjd implements Callable {
-    final /* synthetic */ String zza;
-    final /* synthetic */ String zzb;
-    final /* synthetic */ String zzc;
-    final /* synthetic */ zzjp zzd;
+public class zzjd implements zzjf {
+    protected final zzib zzu;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzjd(zzjp zzjpVar, String str, String str2, String str3) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = str3;
-        this.zzd = zzjpVar;
+    public zzjd(zzib zzibVar) {
+        Preconditions.checkNotNull(zzibVar);
+        this.zzu = zzibVar;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final /* bridge */ /* synthetic */ Object call() throws Exception {
-        zzpv zzpvVar;
-        zzpv zzpvVar2;
-        zzjp zzjpVar = this.zzd;
-        zzpvVar = zzjpVar.zza;
-        zzpvVar.zzL();
-        zzpvVar2 = zzjpVar.zza;
-        return zzpvVar2.zzj().zzB(this.zza, this.zzb, this.zzc);
+    @Override // com.google.android.gms.measurement.internal.zzjf
+    @Pure
+    public final zzae zzaU() {
+        throw null;
+    }
+
+    @Override // com.google.android.gms.measurement.internal.zzjf
+    @Pure
+    public final zzgt zzaV() {
+        throw null;
+    }
+
+    @Override // com.google.android.gms.measurement.internal.zzjf
+    @Pure
+    public final zzhy zzaW() {
+        throw null;
+    }
+
+    public void zzaX() {
+        this.zzu.zzaW().zzaX();
+    }
+
+    @Override // com.google.android.gms.measurement.internal.zzjf
+    @Pure
+    public final Context zzaY() {
+        throw null;
+    }
+
+    @Override // com.google.android.gms.measurement.internal.zzjf
+    @Pure
+    public final Clock zzaZ() {
+        throw null;
+    }
+
+    public void zzg() {
+        this.zzu.zzaW().zzg();
     }
 }

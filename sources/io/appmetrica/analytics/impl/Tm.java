@@ -8,7 +8,7 @@ public final class Tm extends Z2 {
     }
 
     public final int b() {
-        return this.f730a;
+        return this.f731a;
     }
 
     public Tm(int i, String str, PublicLogger publicLogger) {
@@ -19,10 +19,10 @@ public final class Tm extends Z2 {
     public final String a(String str) {
         if (str != null) {
             int length = str.length();
-            int i = this.f730a;
+            int i = this.f731a;
             if (length > i) {
                 String substring = str.substring(0, i);
-                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f730a));
+                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f731a));
                 return substring;
             }
         }

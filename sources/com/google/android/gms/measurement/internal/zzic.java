@@ -1,28 +1,24 @@
 package com.google.android.gms.measurement.internal;
 
-import androidx.collection.LruCache;
-import com.google.android.gms.common.internal.Preconditions;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import java.util.Objects;
+import java.util.concurrent.Callable;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzic extends LruCache {
-    final /* synthetic */ zzif zza;
+final class zzic implements Callable {
+    final /* synthetic */ String zza;
+    final /* synthetic */ zzjc zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzic(zzif zzifVar, int i) {
-        super(20);
-        this.zza = zzifVar;
+    public zzic(zzjc zzjcVar, String str) {
+        this.zza = str;
+        Objects.requireNonNull(zzjcVar);
+        this.zzb = zzjcVar;
     }
 
-    @Override // androidx.collection.LruCache
-    protected final /* bridge */ /* synthetic */ Object create(Object obj) {
-        String str = (String) obj;
-        Preconditions.checkNotEmpty(str);
-        zzif zzifVar = this.zza;
-        if (zzifVar.zzu.zzf().zzx(null, zzgi.zzbn)) {
-            return zzif.zze(zzifVar, str);
-        }
-        return zzif.zzd(zzifVar, str);
+    @Override // java.util.concurrent.Callable
+    public final /* bridge */ /* synthetic */ Object call() throws Exception {
+        zzjc zzjcVar = this.zzb;
+        zzjcVar.zzL().zzY();
+        return zzjcVar.zzL().zzj().zzn(this.zza);
     }
 }

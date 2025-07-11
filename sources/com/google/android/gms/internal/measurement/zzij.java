@@ -1,23 +1,25 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzij {
-    public static int zza(int i) {
-        if (i != 0) {
-            if (i != 1) {
-                if (i != 2) {
-                    if (i != 3) {
-                        if (i != 4) {
-                            return i != 5 ? 0 : 6;
-                        }
-                        return 5;
-                    }
-                    return 4;
-                }
-                return 3;
-            }
-            return 2;
-        }
-        return 1;
+public final class zzij extends zzma implements zznm {
+    private zzij() {
+        throw null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzij(byte[] bArr) {
+        super(zzik.zzi());
+    }
+
+    public final zzij zza(int i) {
+        zzaX();
+        ((zzik) this.zza).zzg(i);
+        return this;
+    }
+
+    public final zzij zzb(Iterable iterable) {
+        zzaX();
+        ((zzik) this.zza).zzh(iterable);
+        return this;
     }
 }

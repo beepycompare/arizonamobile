@@ -71,7 +71,7 @@ public final class DelayKt {
         cancellableContinuationImpl.initCancellability();
         CancellableContinuationImpl cancellableContinuationImpl2 = cancellableContinuationImpl;
         if (j < Long.MAX_VALUE) {
-            getDelay(cancellableContinuationImpl2.getContext()).mo10020scheduleResumeAfterDelay(j, cancellableContinuationImpl2);
+            getDelay(cancellableContinuationImpl2.getContext()).mo10051scheduleResumeAfterDelay(j, cancellableContinuationImpl2);
         }
         Object result = cancellableContinuationImpl.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
@@ -81,8 +81,8 @@ public final class DelayKt {
     }
 
     /* renamed from: delay-VtjQ1oo  reason: not valid java name */
-    public static final Object m9939delayVtjQ1oo(long j, Continuation<? super Unit> continuation) {
-        Object delay = delay(m9940toDelayMillisLRDsOJo(j), continuation);
+    public static final Object m9970delayVtjQ1oo(long j, Continuation<? super Unit> continuation) {
+        Object delay = delay(m9971toDelayMillisLRDsOJo(j), continuation);
         return delay == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? delay : Unit.INSTANCE;
     }
 
@@ -93,12 +93,12 @@ public final class DelayKt {
     }
 
     /* renamed from: toDelayMillis-LRDsOJo  reason: not valid java name */
-    public static final long m9940toDelayMillisLRDsOJo(long j) {
-        boolean m9817isPositiveimpl = Duration.m9817isPositiveimpl(j);
-        if (m9817isPositiveimpl) {
+    public static final long m9971toDelayMillisLRDsOJo(long j) {
+        boolean m9850isPositiveimpl = Duration.m9850isPositiveimpl(j);
+        if (m9850isPositiveimpl) {
             Duration.Companion companion = Duration.Companion;
-            return Duration.m9801getInWholeMillisecondsimpl(Duration.m9819plusLRDsOJo(j, DurationKt.toDuration(999999L, DurationUnit.NANOSECONDS)));
-        } else if (m9817isPositiveimpl) {
+            return Duration.m9834getInWholeMillisecondsimpl(Duration.m9852plusLRDsOJo(j, DurationKt.toDuration(999999L, DurationUnit.NANOSECONDS)));
+        } else if (m9850isPositiveimpl) {
             throw new NoWhenBranchMatchedException();
         } else {
             return 0L;

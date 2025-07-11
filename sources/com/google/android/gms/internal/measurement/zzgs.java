@@ -1,41 +1,19 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzgs extends zzmd implements zzni {
-    private static final zzgs zzb;
-    private int zzd;
-    private int zze = 14;
-    private int zzf = 11;
-    private int zzg = 60;
-
-    static {
-        zzgs zzgsVar = new zzgs();
-        zzb = zzgsVar;
-        zzmd.zzct(zzgs.class, zzgsVar);
-    }
-
+public final class zzgs extends zzma implements zznm {
     private zzgs() {
+        throw null;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.gms.internal.measurement.zzmd
-    public final Object zzl(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 != 0) {
-            if (i2 == 2) {
-                return zzcq(zzb, "\u0004\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001င\u0000\u0002င\u0001\u0003င\u0002", new Object[]{"zzd", "zze", "zzf", "zzg"});
-            } else if (i2 != 3) {
-                if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzb;
-                    }
-                    throw null;
-                }
-                return new zzgr(null);
-            } else {
-                return new zzgs();
-            }
-        }
-        return (byte) 1;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ zzgs(byte[] bArr) {
+        super(r1);
+        zzgt zzgtVar;
+        zzgtVar = zzgt.zzf;
     }
 }

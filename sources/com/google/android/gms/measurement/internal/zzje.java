@@ -1,30 +1,50 @@
 package com.google.android.gms.measurement.internal;
-
-import java.util.concurrent.Callable;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzje implements Callable {
-    final /* synthetic */ String zza;
-    final /* synthetic */ String zzb;
-    final /* synthetic */ String zzc;
-    final /* synthetic */ zzjp zzd;
+public abstract class zzje extends zzjd {
+    private boolean zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzje(zzjp zzjpVar, String str, String str2, String str3) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = str3;
-        this.zzd = zzjpVar;
+    public zzje(zzib zzibVar) {
+        super(zzibVar);
+        this.zzu.zzF();
     }
 
-    @Override // java.util.concurrent.Callable
-    public final /* bridge */ /* synthetic */ Object call() throws Exception {
-        zzpv zzpvVar;
-        zzpv zzpvVar2;
-        zzjp zzjpVar = this.zzd;
-        zzpvVar = zzjpVar.zza;
-        zzpvVar.zzL();
-        zzpvVar2 = zzjpVar.zza;
-        return zzpvVar2.zzj().zzB(this.zza, this.zzb, this.zzc);
+    protected abstract boolean zza();
+
+    protected void zzba() {
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final boolean zzv() {
+        return this.zza;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final void zzw() {
+        if (!zzv()) {
+            throw new IllegalStateException("Not initialized");
+        }
+    }
+
+    public final void zzx() {
+        if (this.zza) {
+            throw new IllegalStateException("Can't initialize twice");
+        }
+        if (zza()) {
+            return;
+        }
+        this.zzu.zzG();
+        this.zza = true;
+    }
+
+    public final void zzy() {
+        if (this.zza) {
+            throw new IllegalStateException("Can't initialize twice");
+        }
+        zzba();
+        this.zzu.zzG();
+        this.zza = true;
     }
 }

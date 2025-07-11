@@ -24,7 +24,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NewsContent.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a)\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"NewsContent", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "onClickNews", "Lkotlin/Function1;", "", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "home_release_web"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a)\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"NewsContent", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "onClickNews", "Lkotlin/Function1;", "", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "home_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class NewsContentKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -47,7 +47,9 @@ public final class NewsContentKt {
         if ((i & 48) == 0) {
             i2 |= startRestartGroup.changedInstance(onClickNews) ? 32 : 16;
         }
-        if ((i2 & 19) != 18 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1833928254, i2, -1, "com.miami.game.feature.home.ui.compose.NewsContent (NewsContent.kt:20)");
             }
@@ -55,8 +57,7 @@ public final class NewsContentKt {
             Arrangement.HorizontalOrVertical m619spacedBy0680j_4 = Arrangement.INSTANCE.m619spacedBy0680j_4(Dp.m6684constructorimpl(8));
             Modifier m698offsetVpY3zN4$default = OffsetKt.m698offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m6684constructorimpl(-Dp.m6684constructorimpl(4)), 1, null);
             Arrangement.HorizontalOrVertical horizontalOrVertical = m619spacedBy0680j_4;
-            startRestartGroup.startReplaceGroup(-1633490746);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):NewsContent.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468470925, "CC(remember):NewsContent.kt#9igjgp");
             boolean z = ((i2 & 14) == 4) | ((i2 & 112) == 32);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (z || rememberedValue == Composer.Companion.getEmpty()) {
@@ -70,13 +71,11 @@ public final class NewsContentKt {
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             LazyDslKt.LazyColumn(m698offsetVpY3zN4$default, rememberLazyListState, null, false, horizontalOrVertical, null, null, false, null, (Function1) rememberedValue, startRestartGroup, 24582, 492);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {

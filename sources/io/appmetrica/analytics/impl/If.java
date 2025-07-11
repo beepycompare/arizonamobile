@@ -8,8 +8,8 @@ public final class If extends Ha {
     }
 
     @Override // io.appmetrica.analytics.impl.Ha
-    public final void a(List<AbstractC0193ch> list) {
-        list.add(this.f458a.n);
-        list.add(this.f458a.h);
+    public final void a(List<AbstractC0185ch> list) {
+        list.add(this.f459a.n);
+        list.add(this.f459a.h);
     }
 }

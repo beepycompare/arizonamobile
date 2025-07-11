@@ -250,7 +250,7 @@ public final class MouseWheelScrollingLogic {
     private final boolean m473onMouseWheelO0kMr_c(PointerEvent pointerEvent, long j) {
         long mo411calculateMouseWheelScroll8xgXZGE = this.mouseWheelScrollConfig.mo411calculateMouseWheelScroll8xgXZGE(this.density, pointerEvent, j);
         if (m472canConsumeDeltaUv8p0NA(this.scrollingLogic, mo411calculateMouseWheelScroll8xgXZGE)) {
-            return ChannelResult.m9976isSuccessimpl(this.channel.mo7544trySendJP2dKIU(new MouseWheelScrollDelta(mo411calculateMouseWheelScroll8xgXZGE, ((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges())).getUptimeMillis(), !this.mouseWheelScrollConfig.isSmoothScrollingEnabled() || this.mouseWheelScrollConfig.isPreciseWheelScroll(pointerEvent), null)));
+            return ChannelResult.m10007isSuccessimpl(this.channel.mo7544trySendJP2dKIU(new MouseWheelScrollDelta(mo411calculateMouseWheelScroll8xgXZGE, ((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges())).getUptimeMillis(), !this.mouseWheelScrollConfig.isSmoothScrollingEnabled() || this.mouseWheelScrollConfig.isPreciseWheelScroll(pointerEvent), null)));
         }
         return this.isScrolling;
     }
@@ -268,7 +268,7 @@ public final class MouseWheelScrollingLogic {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final MouseWheelScrollingLogic.MouseWheelScrollDelta invoke() {
-                return (MouseWheelScrollingLogic.MouseWheelScrollDelta) ChannelResult.m9971getOrNullimpl(channel.mo9959tryReceivePtdJZtk());
+                return (MouseWheelScrollingLogic.MouseWheelScrollDelta) ChannelResult.m10002getOrNullimpl(channel.mo9990tryReceivePtdJZtk());
             }
         })) {
             mouseWheelScrollDelta = mouseWheelScrollDelta == null ? mouseWheelScrollDelta2 : mouseWheelScrollDelta.plus(mouseWheelScrollDelta2);

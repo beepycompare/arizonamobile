@@ -57,7 +57,7 @@ public abstract class EnhancedIntentService extends Service {
         this.executor.execute(new Runnable() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                EnhancedIntentService.this.m8257x624ce8b2(intent, taskCompletionSource);
+                EnhancedIntentService.this.m8256x624ce8b2(intent, taskCompletionSource);
             }
         });
         return taskCompletionSource.getTask();
@@ -65,7 +65,7 @@ public abstract class EnhancedIntentService extends Service {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$processIntent$0$com-google-firebase-messaging-EnhancedIntentService  reason: not valid java name */
-    public /* synthetic */ void m8257x624ce8b2(Intent intent, TaskCompletionSource taskCompletionSource) {
+    public /* synthetic */ void m8256x624ce8b2(Intent intent, TaskCompletionSource taskCompletionSource) {
         try {
             handleIntent(intent);
         } finally {
@@ -92,7 +92,7 @@ public abstract class EnhancedIntentService extends Service {
         processIntent.addOnCompleteListener(new DefaultDownloaderFactory$$ExternalSyntheticLambda0(), new OnCompleteListener() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task) {
-                EnhancedIntentService.this.m8256x83fa35aa(intent, task);
+                EnhancedIntentService.this.m8255x83fa35aa(intent, task);
             }
         });
         return 3;
@@ -100,7 +100,7 @@ public abstract class EnhancedIntentService extends Service {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onStartCommand$1$com-google-firebase-messaging-EnhancedIntentService  reason: not valid java name */
-    public /* synthetic */ void m8256x83fa35aa(Intent intent, Task task) {
+    public /* synthetic */ void m8255x83fa35aa(Intent intent, Task task) {
         finishTask(intent);
     }
 

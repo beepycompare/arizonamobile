@@ -1,6 +1,5 @@
 package kotlin.text;
 
-import com.google.android.vending.licensing.Policy;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import kotlin.Metadata;
@@ -10,17 +9,20 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.sequences.SequenceScope;
+import ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Regex.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlin/sequences/SequenceScope;", ""}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlin.text.Regex$splitToSequence$1", f = "Regex.kt", i = {1, 1, 1}, l = {279, 287, Policy.RETRY}, m = "invokeSuspend", n = {"$this$sequence", "matcher", "splitCount"}, s = {"L$0", "L$1", "I$0"})
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlin/sequences/SequenceScope;", ""}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlin.text.Regex$splitToSequence$1", f = "Regex.kt", i = {0, 0, 1, 1, 1, 1, 2, 2, 2, 2}, l = {RouletteView.DEFAULT_ROULETTE_WIDTH, 288, 292}, m = "invokeSuspend", n = {"$this$sequence", "matcher", "$this$sequence", "matcher", "nextStart", "splitCount", "$this$sequence", "matcher", "nextStart", "splitCount"}, s = {"L$0", "L$1", "L$0", "L$1", "I$0", "I$1", "L$0", "L$1", "I$0", "I$1"})
 /* loaded from: classes5.dex */
 public final class Regex$splitToSequence$1 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super String>, Continuation<? super Unit>, Object> {
     final /* synthetic */ CharSequence $input;
     final /* synthetic */ int $limit;
     int I$0;
+    int I$1;
     private /* synthetic */ Object L$0;
     Object L$1;
     int label;
@@ -47,19 +49,14 @@ public final class Regex$splitToSequence$1 extends RestrictedSuspendLambda imple
         return ((Regex$splitToSequence$1) create(sequenceScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0071, code lost:
-        if (r6.yield(r9.$input.subSequence(r5, r10.start()).toString(), r9) != r0) goto L13;
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x00b6, code lost:
+        if (r0.yield(r4.subSequence(r11, r4.length()).toString(), r10) != r1) goto L7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x00a0, code lost:
-        if (r6.yield(r10.subSequence(r5, r10.length()).toString(), r9) == r0) goto L19;
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x00d7, code lost:
+        if (r0.yield(r10.$input.toString(), r10) == r1) goto L21;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00b5, code lost:
-        if (r10.yield(r9.$input.toString(), r9) == r0) goto L19;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x00b7, code lost:
-        return r0;
-     */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0071 -> B:21:0x0074). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0079  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0079 -> B:22:0x007a). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -67,53 +64,76 @@ public final class Regex$splitToSequence$1 extends RestrictedSuspendLambda imple
     public final Object invokeSuspend(Object obj) {
         Pattern pattern;
         int i;
-        SequenceScope sequenceScope;
         Matcher matcher;
         int i2;
+        SequenceScope sequenceScope = (SequenceScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i3 = this.label;
         if (i3 == 0) {
             ResultKt.throwOnFailure(obj);
-            SequenceScope sequenceScope2 = (SequenceScope) this.L$0;
             pattern = this.this$0.nativePattern;
             Matcher matcher2 = pattern.matcher(this.$input);
-            if (this.$limit == 1 || !matcher2.find()) {
-                this.label = 1;
-            } else {
+            if (this.$limit != 1 && matcher2.find()) {
                 i = 0;
-                sequenceScope = sequenceScope2;
                 matcher = matcher2;
                 i2 = 0;
                 this.L$0 = sequenceScope;
                 this.L$1 = matcher;
-                this.I$0 = i2;
+                this.I$0 = i;
+                this.I$1 = i2;
                 this.label = 2;
+                if (sequenceScope.yield(this.$input.subSequence(i, matcher.start()).toString(), this) != coroutine_suspended) {
+                }
+                return coroutine_suspended;
             }
+            this.L$0 = SpillingKt.nullOutSpilledVariable(sequenceScope);
+            this.L$1 = SpillingKt.nullOutSpilledVariable(matcher2);
+            this.label = 1;
         } else if (i3 == 1) {
+            Matcher matcher3 = (Matcher) this.L$1;
             ResultKt.throwOnFailure(obj);
         } else if (i3 != 2) {
             if (i3 == 3) {
+                Matcher matcher4 = (Matcher) this.L$1;
                 ResultKt.throwOnFailure(obj);
                 return Unit.INSTANCE;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
-            i2 = this.I$0;
-            sequenceScope = (SequenceScope) this.L$0;
-            ResultKt.throwOnFailure(obj);
+            int i4 = this.I$1;
             matcher = (Matcher) this.L$1;
-            i = matcher.end();
-            i2++;
-            if (i2 == this.$limit - 1 || !matcher.find()) {
-                CharSequence charSequence = this.$input;
-                this.L$0 = null;
-                this.L$1 = null;
-                this.label = 3;
+            ResultKt.throwOnFailure(obj);
+            int end = matcher.end();
+            int i5 = i4 + 1;
+            if (i5 == this.$limit - 1 && matcher.find()) {
+                i = end;
+                i2 = i5;
+                this.L$0 = sequenceScope;
+                this.L$1 = matcher;
+                this.I$0 = i;
+                this.I$1 = i2;
+                this.label = 2;
+                if (sequenceScope.yield(this.$input.subSequence(i, matcher.start()).toString(), this) != coroutine_suspended) {
+                    i4 = i2;
+                    int end2 = matcher.end();
+                    int i52 = i4 + 1;
+                    if (i52 == this.$limit - 1) {
+                    }
+                    CharSequence charSequence = this.$input;
+                    this.L$0 = SpillingKt.nullOutSpilledVariable(sequenceScope);
+                    this.L$1 = SpillingKt.nullOutSpilledVariable(matcher);
+                    this.I$0 = end2;
+                    this.I$1 = i52;
+                    this.label = 3;
+                }
+                return coroutine_suspended;
             }
-            this.L$0 = sequenceScope;
-            this.L$1 = matcher;
-            this.I$0 = i2;
-            this.label = 2;
+            CharSequence charSequence2 = this.$input;
+            this.L$0 = SpillingKt.nullOutSpilledVariable(sequenceScope);
+            this.L$1 = SpillingKt.nullOutSpilledVariable(matcher);
+            this.I$0 = end2;
+            this.I$1 = i52;
+            this.label = 3;
         }
         return Unit.INSTANCE;
     }

@@ -11,11 +11,10 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
-import ru.mrlargha.arizonaui.family.FamilyApi;
 import ru.mrlargha.arizonaui.family.data.RatingItem;
 /* compiled from: FamilyScreen.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "Lru/mrlargha/arizonaui/family/data/RatingItem;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.arizonaui.family.FamilyScreen$requestRating$1$1$list$1", f = "FamilyScreen.kt", i = {}, l = {557}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "Lru/mrlargha/arizonaui/family/data/RatingItem;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.arizonaui.family.FamilyScreen$requestRating$1$1$list$1", f = "FamilyScreen.kt", i = {}, l = {565}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes5.dex */
 final class FamilyScreen$requestRating$1$1$list$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends RatingItem>>, Object> {
     final /* synthetic */ int $page;
@@ -68,7 +67,7 @@ final class FamilyScreen$requestRating$1$1$list$1 extends SuspendLambda implemen
         i = this.this$0.serverId;
         token = this.this$0.getToken();
         this.label = 1;
-        Object rating$default = FamilyApi.DefaultImpls.getRating$default(familyApi, token, null, i, this.$page, this, 2, null);
+        Object rating$default = FamilyApi.getRating$default(familyApi, token, null, i, this.$page, this, 2, null);
         return rating$default == coroutine_suspended ? coroutine_suspended : rating$default;
     }
 }

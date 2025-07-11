@@ -495,21 +495,6 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
 
     public native boolean keyEvent(int i, int i2, int i3, int i4, KeyEvent keyEvent);
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0036, code lost:
-        if (r2 != null) goto L10;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0038, code lost:
-        r2.close();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0042, code lost:
-        if (r2 != null) goto L10;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0045, code lost:
-        return r1;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public RawData loadFile(String str) {
         RawData rawData = new RawData();
         FileInputStream fileInputStream = null;
@@ -527,13 +512,27 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
                 rawData.length = available;
                 rawData.data = new byte[available];
                 fileInputStream.read(rawData.data);
-            } catch (IOException unused3) {
+                if (fileInputStream != null) {
+                    try {
+                        fileInputStream.close();
+                    } catch (Exception unused3) {
+                        return rawData;
+                    }
+                }
+            } catch (IOException unused4) {
+                if (fileInputStream != null) {
+                    try {
+                        fileInputStream.close();
+                    } catch (Exception unused5) {
+                    }
+                }
             }
+            return rawData;
         } catch (Throwable th) {
             if (fileInputStream != null) {
                 try {
                     fileInputStream.close();
-                } catch (Exception unused4) {
+                } catch (Exception unused6) {
                 }
             }
             throw th;

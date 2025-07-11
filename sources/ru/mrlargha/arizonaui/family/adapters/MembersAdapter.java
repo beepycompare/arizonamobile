@@ -24,7 +24,7 @@ import ru.mrlargha.arizonaui.R;
 import ru.mrlargha.arizonaui.databinding.FamilyMembersItemBinding;
 import ru.mrlargha.arizonaui.family.data.MemberItem;
 /* compiled from: MembersAdapter.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\b\u0007\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B/\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004\u0012\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\t\u0010\nJ\u0018\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\bH\u0016J\u0018\u0010\u0017\u001a\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u00022\u0006\u0010\u0019\u001a\u00020\bH\u0016J\b\u0010\u001a\u001a\u00020\bH\u0016J\u0014\u0010\u001b\u001a\u00020\u00062\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00050\u001dJ\u000e\u0010\u001e\u001a\u00020\u00062\u0006\u0010\u001f\u001a\u00020\u0010J\u000e\u0010 \u001a\u00020\u00062\u0006\u0010!\u001a\u00020\u0010J\u000e\u0010\"\u001a\u00020\u00062\u0006\u0010!\u001a\u00020\u0010J\u0006\u0010#\u001a\u00020\u0006R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00050\f¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lru/mrlargha/arizonaui/family/adapters/MembersAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/arizonaui/family/adapters/MembersViewHolder;", "onClick", "Lkotlin/Function1;", "Lru/mrlargha/arizonaui/family/data/MemberItem;", "", "onScrollFinish", "", "<init>", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "itemsList", "", "getItemsList", "()Ljava/util/List;", "isRequestSend", "", "page", "_isManager", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "getItemCount", "addAllItems", FirebaseAnalytics.Param.ITEMS, "", "setManager", "isManager", "sort1", RemoteConfigConstants.ResponseFieldKey.STATE, "sort2", "clearList", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\b\u0007\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B/\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004\u0012\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\t\u0010\nJ\u0018\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\bH\u0016J\u0018\u0010\u0017\u001a\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u00022\u0006\u0010\u0019\u001a\u00020\bH\u0016J\b\u0010\u001a\u001a\u00020\bH\u0016J\u0014\u0010\u001b\u001a\u00020\u00062\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00050\u001dJ\u000e\u0010\u001e\u001a\u00020\u00062\u0006\u0010\u001f\u001a\u00020\u0010J\u000e\u0010 \u001a\u00020\u00062\u0006\u0010!\u001a\u00020\u0010J\u000e\u0010\"\u001a\u00020\u00062\u0006\u0010!\u001a\u00020\u0010J\u0006\u0010#\u001a\u00020\u0006R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00050\f¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lru/mrlargha/arizonaui/family/adapters/MembersAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/arizonaui/family/adapters/MembersViewHolder;", "onClick", "Lkotlin/Function1;", "Lru/mrlargha/arizonaui/family/data/MemberItem;", "", "onScrollFinish", "", "<init>", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "itemsList", "", "getItemsList", "()Ljava/util/List;", "isRequestSend", "", "page", "_isManager", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "getItemCount", "addAllItems", FirebaseAnalytics.Param.ITEMS, "", "setManager", "isManager", "sort1", RemoteConfigConstants.ResponseFieldKey.STATE, "sort2", "clearList", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class MembersAdapter extends RecyclerView.Adapter<MembersViewHolder> {
     private boolean _isManager;
@@ -35,7 +35,7 @@ public final class MembersAdapter extends RecyclerView.Adapter<MembersViewHolder
     private int page;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$2$lambda$1(View view) {
+    public static final void onBindViewHolder$lambda$3$lambda$2(View view) {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -89,6 +89,12 @@ public final class MembersAdapter extends RecyclerView.Adapter<MembersViewHolder
             str2 = memberItem.isDeputy() ? "Заместитель" : "";
         }
         textView2.setText(str2);
+        binding.memberOffileTime.setVisibility(8);
+        String dateOfflineString = memberItem.getDateOfflineString();
+        if (dateOfflineString != null) {
+            binding.memberOffileTime.setVisibility(0);
+            binding.memberOffileTime.setText(dateOfflineString);
+        }
         binding.rank.setText(String.valueOf(memberItem.getFamilyRank()));
         binding.warns.setText(String.valueOf(memberItem.getWarns()));
         binding.tasks.setText(String.valueOf(memberItem.getQuests()));
@@ -97,14 +103,14 @@ public final class MembersAdapter extends RecyclerView.Adapter<MembersViewHolder
             binding.actions.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.MembersAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MembersAdapter.onBindViewHolder$lambda$2$lambda$0(MembersAdapter.this, memberItem, view);
+                    MembersAdapter.onBindViewHolder$lambda$3$lambda$1(MembersAdapter.this, memberItem, view);
                 }
             });
         } else {
             binding.actions.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.MembersAdapter$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MembersAdapter.onBindViewHolder$lambda$2$lambda$1(view);
+                    MembersAdapter.onBindViewHolder$lambda$3$lambda$2(view);
                 }
             });
             binding.actions.setVisibility(8);
@@ -119,7 +125,7 @@ public final class MembersAdapter extends RecyclerView.Adapter<MembersViewHolder
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$2$lambda$0(MembersAdapter membersAdapter, MemberItem memberItem, View view) {
+    public static final void onBindViewHolder$lambda$3$lambda$1(MembersAdapter membersAdapter, MemberItem memberItem, View view) {
         membersAdapter.onClick.invoke(memberItem);
     }
 

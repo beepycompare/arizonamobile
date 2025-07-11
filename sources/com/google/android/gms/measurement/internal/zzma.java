@@ -1,259 +1,373 @@
 package com.google.android.gms.measurement.internal;
 
+import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.common.net.HttpHeaders;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.List;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.Map;
-import java.util.zip.GZIPOutputStream;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzma implements Runnable {
-    final /* synthetic */ zzmb zza;
-    private final URL zzb;
-    private final byte[] zzc;
-    private final zzly zzd;
-    private final String zze;
-    private final Map zzf;
+public final class zzma extends zzg {
+    protected zzlt zza;
+    private volatile zzlt zzb;
+    private volatile zzlt zzc;
+    private final Map zzd;
+    private com.google.android.gms.internal.measurement.zzdf zze;
+    private volatile boolean zzf;
+    private volatile zzlt zzg;
+    private zzlt zzh;
+    private boolean zzi;
+    private final Object zzj;
 
-    public zzma(zzmb zzmbVar, String str, URL url, byte[] bArr, Map map, zzly zzlyVar) {
-        this.zza = zzmbVar;
-        Preconditions.checkNotEmpty(str);
-        Preconditions.checkNotNull(url);
-        Preconditions.checkNotNull(zzlyVar);
-        this.zzb = url;
-        this.zzc = bArr;
-        this.zzd = zzlyVar;
-        this.zze = str;
-        this.zzf = map;
+    public zzma(zzib zzibVar) {
+        super(zzibVar);
+        this.zzj = new Object();
+        this.zzd = new ConcurrentHashMap();
     }
 
-    private final void zzb(final int i, final Exception exc, final byte[] bArr, final Map map) {
-        this.zza.zzu.zzaX().zzq(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzlz
-            @Override // java.lang.Runnable
-            public final void run() {
-                r0.zzd.zza(zzma.this.zze, i, exc, bArr, map);
-            }
-        });
+    private final void zzA(zzlt zzltVar, boolean z, long j) {
+        zzib zzibVar = this.zzu;
+        zzib zzibVar2 = this.zzu;
+        zzibVar2.zzw().zzc(zzibVar.zzaZ().elapsedRealtime());
+        if (!zzibVar2.zzh().zzb.zzd(zzltVar != null && zzltVar.zzd, z, j) || zzltVar == null) {
+            return;
+        }
+        zzltVar.zzd = false;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x014a  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0173  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x012e A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0157 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r5v12 */
-    /* JADX WARN: Type inference failed for: r5v21 */
-    /* JADX WARN: Type inference failed for: r5v24 */
-    /* JADX WARN: Type inference failed for: r5v25 */
-    /* JADX WARN: Type inference failed for: r5v27 */
-    /* JADX WARN: Type inference failed for: r5v28 */
-    /* JADX WARN: Type inference failed for: r5v30 */
-    /* JADX WARN: Type inference failed for: r5v4, types: [java.io.OutputStream] */
-    /* JADX WARN: Type inference failed for: r5v6, types: [java.io.OutputStream] */
-    @Override // java.lang.Runnable
+    private final zzlt zzB(com.google.android.gms.internal.measurement.zzdf zzdfVar) {
+        Preconditions.checkNotNull(zzdfVar);
+        Integer valueOf = Integer.valueOf(zzdfVar.zza);
+        Map map = this.zzd;
+        zzlt zzltVar = (zzlt) map.get(valueOf);
+        if (zzltVar == null) {
+            zzlt zzltVar2 = new zzlt(null, zzi(zzdfVar.zzb, "Activity"), this.zzu.zzk().zzd());
+            map.put(valueOf, zzltVar2);
+            zzltVar = zzltVar2;
+        }
+        return this.zzg != null ? this.zzg : zzltVar;
+    }
+
+    private final void zzy(String str, zzlt zzltVar, boolean z) {
+        zzlt zzltVar2;
+        zzlt zzltVar3 = this.zzb == null ? this.zzc : this.zzb;
+        if (zzltVar.zzb == null) {
+            zzltVar2 = new zzlt(zzltVar.zza, str != null ? zzi(str, "Activity") : null, zzltVar.zzc, zzltVar.zze, zzltVar.zzf);
+        } else {
+            zzltVar2 = zzltVar;
+        }
+        this.zzc = this.zzb;
+        this.zzb = zzltVar2;
+        zzib zzibVar = this.zzu;
+        zzibVar.zzaW().zzj(new zzlv(this, zzltVar2, zzltVar3, zzibVar.zzaZ().elapsedRealtime(), z));
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00cc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        HttpURLConnection httpURLConnection;
-        Map map;
-        Map map2;
-        Map map3;
-        Map map4;
-        OutputStream outputStream;
-        OutputStream outputStream2;
-        int responseCode;
-        InputStream inputStream;
-        zzmb zzmbVar = this.zza;
-        zzmbVar.zzaY();
-        int i = 0;
-        try {
-            URL url = this.zzb;
-            int i2 = com.google.android.gms.internal.measurement.zzcm.zzb;
-            URLConnection openConnection = url.openConnection();
-            if (!(openConnection instanceof HttpURLConnection)) {
-                throw new IOException("Failed to obtain HTTP connection");
+    private final void zzz(zzlt zzltVar, zzlt zzltVar2, long j, boolean z, Bundle bundle) {
+        boolean z2;
+        long j2;
+        zzg();
+        boolean z3 = false;
+        if (zzltVar2 != null) {
+            if (zzltVar2.zzc == zzltVar.zzc && Objects.equals(zzltVar2.zzb, zzltVar.zzb) && Objects.equals(zzltVar2.zza, zzltVar.zza)) {
+                z2 = false;
+                if (z && this.zza != null) {
+                    z3 = true;
+                }
+                if (z2) {
+                    Bundle bundle2 = bundle != null ? new Bundle(bundle) : new Bundle();
+                    zzpo.zzav(zzltVar, bundle2, true);
+                    if (zzltVar2 != null) {
+                        String str = zzltVar2.zza;
+                        if (str != null) {
+                            bundle2.putString("_pn", str);
+                        }
+                        String str2 = zzltVar2.zzb;
+                        if (str2 != null) {
+                            bundle2.putString("_pc", str2);
+                        }
+                        bundle2.putLong("_pi", zzltVar2.zzc);
+                    }
+                    if (z3) {
+                        zznz zznzVar = this.zzu.zzh().zzb;
+                        long j3 = j - zznzVar.zzb;
+                        zznzVar.zzb = j;
+                        if (j3 > 0) {
+                            this.zzu.zzk().zzak(bundle2, j3);
+                        }
+                    }
+                    zzib zzibVar = this.zzu;
+                    if (!zzibVar.zzc().zzv()) {
+                        bundle2.putLong("_mst", 1L);
+                    }
+                    boolean z4 = zzltVar.zze;
+                    String str3 = true != z4 ? "auto" : "app";
+                    long currentTimeMillis = zzibVar.zzaZ().currentTimeMillis();
+                    if (z4) {
+                        long j4 = zzltVar.zzf;
+                        if (j4 != 0) {
+                            j2 = j4;
+                            this.zzu.zzj().zzG(str3, "_vs", j2, bundle2);
+                        }
+                    }
+                    j2 = currentTimeMillis;
+                    this.zzu.zzj().zzG(str3, "_vs", j2, bundle2);
+                }
+                if (z3) {
+                    zzA(this.zza, true, j);
+                }
+                this.zza = zzltVar;
+                if (zzltVar.zze) {
+                    this.zzh = zzltVar;
+                }
+                this.zzu.zzt().zzG(zzltVar);
             }
-            httpURLConnection = (HttpURLConnection) openConnection;
-            httpURLConnection.setDefaultUseCaches(false);
-            zzio zzioVar = zzmbVar.zzu;
-            zzioVar.zzf();
-            httpURLConnection.setConnectTimeout(60000);
-            zzioVar.zzf();
-            httpURLConnection.setReadTimeout(61000);
-            httpURLConnection.setInstanceFollowRedirects(false);
-            ?? r5 = 1;
-            httpURLConnection.setDoInput(true);
-            try {
-                try {
-                    Map map5 = this.zzf;
-                    if (map5 != null) {
-                        for (Map.Entry entry : map5.entrySet()) {
-                            httpURLConnection.addRequestProperty((String) entry.getKey(), (String) entry.getValue());
-                        }
-                    }
-                    byte[] bArr = this.zzc;
-                    if (bArr != null) {
-                        try {
-                            zzioVar.zzaV();
-                            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                            GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(byteArrayOutputStream);
-                            gZIPOutputStream.write(bArr);
-                            gZIPOutputStream.close();
-                            byteArrayOutputStream.close();
-                            byte[] byteArray = byteArrayOutputStream.toByteArray();
-                            zzhc zzj = this.zza.zzu.zzaW().zzj();
-                            int length = byteArray.length;
-                            zzj.zzb("Uploading data. size", Integer.valueOf(length));
-                            httpURLConnection.setDoOutput(true);
-                            httpURLConnection.addRequestProperty(HttpHeaders.CONTENT_ENCODING, "gzip");
-                            httpURLConnection.setFixedLengthStreamingMode(length);
-                            httpURLConnection.connect();
-                            OutputStream outputStream3 = httpURLConnection.getOutputStream();
-                            try {
-                                outputStream3.write(byteArray);
-                                outputStream3.close();
-                                r5 = outputStream3;
-                            } catch (IOException e) {
-                                e = e;
-                                map4 = null;
-                                outputStream2 = outputStream3;
-                                if (outputStream2 != 0) {
-                                }
-                                if (httpURLConnection != null) {
-                                }
-                                zzb(i, e, null, map4);
-                            } catch (Throwable th) {
-                                th = th;
-                                map3 = null;
-                                outputStream = outputStream3;
-                                if (outputStream != 0) {
-                                }
-                                if (httpURLConnection != null) {
-                                }
-                                zzb(i, null, null, map3);
-                                throw th;
-                            }
-                        } catch (IOException e2) {
-                            this.zza.zzu.zzaW().zze().zzb("Failed to gzip post request content", e2);
-                            throw e2;
-                        }
-                    }
-                    responseCode = httpURLConnection.getResponseCode();
-                } catch (Throwable th2) {
-                    th = th2;
-                }
-            } catch (IOException e3) {
-                e = e3;
-            }
-            try {
-                try {
-                    Map<String, List<String>> headerFields = httpURLConnection.getHeaderFields();
-                    try {
-                        ByteArrayOutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
-                        inputStream = httpURLConnection.getInputStream();
-                        try {
-                            byte[] bArr2 = new byte[1024];
-                            while (true) {
-                                int read = inputStream.read(bArr2);
-                                if (read <= 0) {
-                                    break;
-                                }
-                                byteArrayOutputStream2.write(bArr2, 0, read);
-                            }
-                            byte[] byteArray2 = byteArrayOutputStream2.toByteArray();
-                            if (inputStream != null) {
-                                inputStream.close();
-                            }
-                            if (httpURLConnection != null) {
-                                httpURLConnection.disconnect();
-                            }
-                            zzb(responseCode, null, byteArray2, headerFields);
-                        } catch (Throwable th3) {
-                            th = th3;
-                            if (inputStream != null) {
-                                inputStream.close();
-                            }
-                            throw th;
-                        }
-                    } catch (Throwable th4) {
-                        th = th4;
-                        inputStream = null;
-                    }
-                } catch (IOException e4) {
-                    i = responseCode;
-                    e = e4;
-                    map4 = r5;
-                    outputStream2 = 0;
-                    if (outputStream2 != 0) {
-                        try {
-                            outputStream2.close();
-                        } catch (IOException e5) {
-                            this.zza.zzu.zzaW().zze().zzc("Error closing HTTP compressed POST connection output stream. appId", zzhe.zzn(this.zze), e5);
-                        }
-                    }
-                    if (httpURLConnection != null) {
-                        httpURLConnection.disconnect();
-                    }
-                    zzb(i, e, null, map4);
-                } catch (Throwable th5) {
-                    i = responseCode;
-                    th = th5;
-                    map3 = r5;
-                    outputStream = 0;
-                    if (outputStream != 0) {
-                        try {
-                            outputStream.close();
-                        } catch (IOException e6) {
-                            this.zza.zzu.zzaW().zze().zzc("Error closing HTTP compressed POST connection output stream. appId", zzhe.zzn(this.zze), e6);
-                        }
-                    }
-                    if (httpURLConnection != null) {
-                        httpURLConnection.disconnect();
-                    }
-                    zzb(i, null, null, map3);
-                    throw th;
-                }
-            } catch (IOException e7) {
-                i = responseCode;
-                e = e7;
-                map2 = null;
-                map4 = map2;
-                outputStream2 = map2;
-                if (outputStream2 != 0) {
-                }
-                if (httpURLConnection != null) {
-                }
-                zzb(i, e, null, map4);
-            } catch (Throwable th6) {
-                i = responseCode;
-                th = th6;
-                map = null;
-                map3 = map;
-                outputStream = map;
-                if (outputStream != 0) {
-                }
-                if (httpURLConnection != null) {
-                }
-                zzb(i, null, null, map3);
-                throw th;
-            }
-        } catch (IOException e8) {
-            e = e8;
-            httpURLConnection = null;
-            map2 = null;
-        } catch (Throwable th7) {
-            th = th7;
-            httpURLConnection = null;
-            map = null;
         }
+        z2 = true;
+        if (z) {
+            z3 = true;
+        }
+        if (z2) {
+        }
+        if (z3) {
+        }
+        this.zza = zzltVar;
+        if (zzltVar.zze) {
+        }
+        this.zzu.zzt().zzG(zzltVar);
+    }
+
+    @Override // com.google.android.gms.measurement.internal.zzg
+    protected final boolean zze() {
+        return false;
+    }
+
+    public final zzlt zzh(boolean z) {
+        zzb();
+        zzg();
+        if (z) {
+            zzlt zzltVar = this.zza;
+            return zzltVar != null ? zzltVar : this.zzh;
+        }
+        return this.zza;
+    }
+
+    final String zzi(String str, String str2) {
+        String str3;
+        if (str == null) {
+            return "Activity";
+        }
+        String[] split = str.split("\\.");
+        int length = split.length;
+        if (length > 0) {
+            str3 = split[length - 1];
+        } else {
+            str3 = "";
+        }
+        zzib zzibVar = this.zzu;
+        return str3.length() > zzibVar.zzc().zze(null, false) ? str3.substring(0, zzibVar.zzc().zze(null, false)) : str3;
+    }
+
+    public final void zzj(Bundle bundle, long j) {
+        synchronized (this.zzj) {
+            if (!this.zzi) {
+                this.zzu.zzaV().zzh().zza("Cannot log screen view event when the app is in the background.");
+                return;
+            }
+            String string = bundle.getString(FirebaseAnalytics.Param.SCREEN_NAME);
+            if (string == null || (string.length() > 0 && string.length() <= this.zzu.zzc().zze(null, false))) {
+                String string2 = bundle.getString(FirebaseAnalytics.Param.SCREEN_CLASS);
+                if (string2 == null || (string2.length() > 0 && string2.length() <= this.zzu.zzc().zze(null, false))) {
+                    if (string2 == null) {
+                        com.google.android.gms.internal.measurement.zzdf zzdfVar = this.zze;
+                        if (zzdfVar != null) {
+                            string2 = zzi(zzdfVar.zzb, "Activity");
+                        } else {
+                            string2 = "Activity";
+                        }
+                    }
+                    zzlt zzltVar = this.zzb;
+                    if (this.zzf && zzltVar != null) {
+                        this.zzf = false;
+                        boolean equals = Objects.equals(zzltVar.zzb, string2);
+                        boolean equals2 = Objects.equals(zzltVar.zza, string);
+                        if (equals && equals2) {
+                            this.zzu.zzaV().zzh().zza("Ignoring call to log screen view event with duplicate parameters.");
+                            return;
+                        }
+                    }
+                    zzib zzibVar = this.zzu;
+                    zzibVar.zzaV().zzk().zzc("Logging screen view with name, class", string == null ? AbstractJsonLexerKt.NULL : string, string2 == null ? AbstractJsonLexerKt.NULL : string2);
+                    zzlt zzltVar2 = this.zzb == null ? this.zzc : this.zzb;
+                    zzlt zzltVar3 = new zzlt(string, string2, zzibVar.zzk().zzd(), true, j);
+                    this.zzb = zzltVar3;
+                    this.zzc = zzltVar2;
+                    this.zzg = zzltVar3;
+                    zzibVar.zzaW().zzj(new zzlu(this, bundle, zzltVar3, zzltVar2, zzibVar.zzaZ().elapsedRealtime()));
+                    return;
+                }
+                this.zzu.zzaV().zzh().zzb("Invalid screen class length for screen view. Length", Integer.valueOf(string2.length()));
+                return;
+            }
+            this.zzu.zzaV().zzh().zzb("Invalid screen name length for screen view. Length", Integer.valueOf(string.length()));
+        }
+    }
+
+    @Deprecated
+    public final void zzk(com.google.android.gms.internal.measurement.zzdf zzdfVar, String str, String str2) {
+        zzib zzibVar = this.zzu;
+        if (!zzibVar.zzc().zzv()) {
+            zzibVar.zzaV().zzh().zza("setCurrentScreen cannot be called while screen reporting is disabled.");
+            return;
+        }
+        zzlt zzltVar = this.zzb;
+        if (zzltVar == null) {
+            zzibVar.zzaV().zzh().zza("setCurrentScreen cannot be called while no activity active");
+            return;
+        }
+        Map map = this.zzd;
+        Integer valueOf = Integer.valueOf(zzdfVar.zza);
+        if (map.get(valueOf) == null) {
+            zzibVar.zzaV().zzh().zza("setCurrentScreen must be called with an activity in the activity lifecycle");
+            return;
+        }
+        if (str2 == null) {
+            str2 = zzi(zzdfVar.zzb, "Activity");
+        }
+        String str3 = zzltVar.zzb;
+        String str4 = zzltVar.zza;
+        boolean equals = Objects.equals(str3, str2);
+        boolean equals2 = Objects.equals(str4, str);
+        if (!equals || !equals2) {
+            if (str == null || (str.length() > 0 && str.length() <= zzibVar.zzc().zze(null, false))) {
+                if (str2 == null || (str2.length() > 0 && str2.length() <= zzibVar.zzc().zze(null, false))) {
+                    zzibVar.zzaV().zzk().zzc("Setting current screen to name, class", str == null ? AbstractJsonLexerKt.NULL : str, str2);
+                    zzlt zzltVar2 = new zzlt(str, str2, zzibVar.zzk().zzd());
+                    map.put(valueOf, zzltVar2);
+                    zzy(zzdfVar.zzb, zzltVar2, true);
+                    return;
+                }
+                zzibVar.zzaV().zzh().zzb("Invalid class name length in setCurrentScreen. Length", Integer.valueOf(str2.length()));
+                return;
+            }
+            zzibVar.zzaV().zzh().zzb("Invalid screen name length in setCurrentScreen. Length", Integer.valueOf(str.length()));
+            return;
+        }
+        zzibVar.zzaV().zzh().zza("setCurrentScreen cannot be called with the same class and name");
+    }
+
+    public final zzlt zzl() {
+        return this.zzb;
+    }
+
+    public final void zzm(com.google.android.gms.internal.measurement.zzdf zzdfVar, Bundle bundle) {
+        Bundle bundle2;
+        if (!this.zzu.zzc().zzv() || bundle == null || (bundle2 = bundle.getBundle("com.google.app_measurement.screen_service")) == null) {
+            return;
+        }
+        this.zzd.put(Integer.valueOf(zzdfVar.zza), new zzlt(bundle2.getString("name"), bundle2.getString("referrer_name"), bundle2.getLong("id")));
+    }
+
+    public final void zzn(com.google.android.gms.internal.measurement.zzdf zzdfVar) {
+        Object obj = this.zzj;
+        synchronized (obj) {
+            this.zzi = true;
+            if (!Objects.equals(zzdfVar, this.zze)) {
+                synchronized (obj) {
+                    this.zze = zzdfVar;
+                    this.zzf = false;
+                    zzib zzibVar = this.zzu;
+                    if (zzibVar.zzc().zzv()) {
+                        this.zzg = null;
+                        zzibVar.zzaW().zzj(new zzlz(this));
+                    }
+                }
+            }
+        }
+        zzib zzibVar2 = this.zzu;
+        if (!zzibVar2.zzc().zzv()) {
+            this.zzb = this.zzg;
+            zzibVar2.zzaW().zzj(new zzlw(this));
+            return;
+        }
+        zzy(zzdfVar.zzb, zzB(zzdfVar), false);
+        zzd zzw = this.zzu.zzw();
+        zzib zzibVar3 = zzw.zzu;
+        zzibVar3.zzaW().zzj(new zzc(zzw, zzibVar3.zzaZ().elapsedRealtime()));
+    }
+
+    public final void zzp(com.google.android.gms.internal.measurement.zzdf zzdfVar) {
+        synchronized (this.zzj) {
+            this.zzi = false;
+            this.zzf = true;
+        }
+        zzib zzibVar = this.zzu;
+        long elapsedRealtime = zzibVar.zzaZ().elapsedRealtime();
+        if (!zzibVar.zzc().zzv()) {
+            this.zzb = null;
+            zzibVar.zzaW().zzj(new zzlx(this, elapsedRealtime));
+            return;
+        }
+        zzlt zzB = zzB(zzdfVar);
+        this.zzc = this.zzb;
+        this.zzb = null;
+        zzibVar.zzaW().zzj(new zzly(this, zzB, elapsedRealtime));
+    }
+
+    public final void zzq(com.google.android.gms.internal.measurement.zzdf zzdfVar, Bundle bundle) {
+        zzlt zzltVar;
+        if (!this.zzu.zzc().zzv() || bundle == null || (zzltVar = (zzlt) this.zzd.get(Integer.valueOf(zzdfVar.zza))) == null) {
+            return;
+        }
+        Bundle bundle2 = new Bundle();
+        bundle2.putLong("id", zzltVar.zzc);
+        bundle2.putString("name", zzltVar.zza);
+        bundle2.putString("referrer_name", zzltVar.zzb);
+        bundle.putBundle("com.google.app_measurement.screen_service", bundle2);
+    }
+
+    public final void zzs(com.google.android.gms.internal.measurement.zzdf zzdfVar) {
+        synchronized (this.zzj) {
+            if (Objects.equals(this.zze, zzdfVar)) {
+                this.zze = null;
+            }
+        }
+        if (this.zzu.zzc().zzv()) {
+            this.zzd.remove(Integer.valueOf(zzdfVar.zza));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzt(Bundle bundle, zzlt zzltVar, zzlt zzltVar2, long j) {
+        bundle.remove(FirebaseAnalytics.Param.SCREEN_NAME);
+        bundle.remove(FirebaseAnalytics.Param.SCREEN_CLASS);
+        zzz(zzltVar, zzltVar2, j, true, this.zzu.zzk().zzF(null, FirebaseAnalytics.Event.SCREEN_VIEW, bundle, null, false));
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzu(zzlt zzltVar, zzlt zzltVar2, long j, boolean z, Bundle bundle) {
+        zzz(zzltVar, zzltVar2, j, z, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzv(zzlt zzltVar, boolean z, long j) {
+        zzA(zzltVar, false, j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ zzlt zzw() {
+        return this.zzh;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzx(zzlt zzltVar) {
+        this.zzh = null;
     }
 }

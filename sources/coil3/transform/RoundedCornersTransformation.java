@@ -58,25 +58,25 @@ public final class RoundedCornersTransformation extends Transformation {
 
     @Override // coil3.transform.Transformation
     public Object transform(Bitmap bitmap, Size size, Continuation<? super Bitmap> continuation) {
-        long m7821calculateOutputSizenmZnaPc = m7821calculateOutputSizenmZnaPc(bitmap, size);
-        int m7829getFirstimpl = IntPair.m7829getFirstimpl(m7821calculateOutputSizenmZnaPc);
-        int m7830getSecondimpl = IntPair.m7830getSecondimpl(m7821calculateOutputSizenmZnaPc);
-        Bitmap createBitmap = Bitmap.createBitmap(m7829getFirstimpl, m7830getSecondimpl, BitmapsKt.getSafeConfig(bitmap));
+        long m7822calculateOutputSizenmZnaPc = m7822calculateOutputSizenmZnaPc(bitmap, size);
+        int m7830getFirstimpl = IntPair.m7830getFirstimpl(m7822calculateOutputSizenmZnaPc);
+        int m7831getSecondimpl = IntPair.m7831getSecondimpl(m7822calculateOutputSizenmZnaPc);
+        Bitmap createBitmap = Bitmap.createBitmap(m7830getFirstimpl, m7831getSecondimpl, BitmapsKt.getSafeConfig(bitmap));
         Canvas canvas = new Canvas(createBitmap);
-        Paint newScaledShaderPaint = TransformationsKt.newScaledShaderPaint(bitmap, m7829getFirstimpl, m7830getSecondimpl);
+        Paint newScaledShaderPaint = TransformationsKt.newScaledShaderPaint(bitmap, m7830getFirstimpl, m7831getSecondimpl);
         float f = this.topLeft;
         float f2 = this.topRight;
         if (f == f2) {
             float f3 = this.bottomLeft;
             if (f2 == f3 && f3 == this.bottomRight) {
-                canvas.drawRoundRect(0.0f, 0.0f, m7829getFirstimpl, m7830getSecondimpl, f, f, newScaledShaderPaint);
+                canvas.drawRoundRect(0.0f, 0.0f, m7830getFirstimpl, m7831getSecondimpl, f, f, newScaledShaderPaint);
                 return createBitmap;
             }
         }
         float f4 = this.bottomRight;
         float f5 = this.bottomLeft;
         float[] fArr = {f, f, f2, f2, f4, f4, f5, f5};
-        RectF rectF = new RectF(0.0f, 0.0f, m7829getFirstimpl, m7830getSecondimpl);
+        RectF rectF = new RectF(0.0f, 0.0f, m7830getFirstimpl, m7831getSecondimpl);
         Path path = new Path();
         path.addRoundRect(rectF, fArr, Path.Direction.CW);
         canvas.drawPath(path, newScaledShaderPaint);
@@ -84,21 +84,21 @@ public final class RoundedCornersTransformation extends Transformation {
     }
 
     /* renamed from: calculateOutputSize-nmZnaPc  reason: not valid java name */
-    private final long m7821calculateOutputSizenmZnaPc(Bitmap bitmap, Size size) {
+    private final long m7822calculateOutputSizenmZnaPc(Bitmap bitmap, Size size) {
         if (SizeKt.isOriginal(size)) {
-            return IntPair.m7825constructorimpl(bitmap.getWidth(), bitmap.getHeight());
+            return IntPair.m7826constructorimpl(bitmap.getWidth(), bitmap.getHeight());
         }
         Dimension component1 = size.component1();
         Dimension component2 = size.component2();
         if ((component1 instanceof Dimension.Pixels) && (component2 instanceof Dimension.Pixels)) {
-            return IntPair.m7825constructorimpl(((Dimension.Pixels) component1).m7820unboximpl(), ((Dimension.Pixels) component2).m7820unboximpl());
+            return IntPair.m7826constructorimpl(((Dimension.Pixels) component1).m7821unboximpl(), ((Dimension.Pixels) component2).m7821unboximpl());
         }
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
         Dimension width2 = size.getWidth();
-        int m7820unboximpl = width2 instanceof Dimension.Pixels ? ((Dimension.Pixels) width2).m7820unboximpl() : Integer.MIN_VALUE;
+        int m7821unboximpl = width2 instanceof Dimension.Pixels ? ((Dimension.Pixels) width2).m7821unboximpl() : Integer.MIN_VALUE;
         Dimension height2 = size.getHeight();
-        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, height, m7820unboximpl, height2 instanceof Dimension.Pixels ? ((Dimension.Pixels) height2).m7820unboximpl() : Integer.MIN_VALUE, Scale.FILL);
-        return IntPair.m7825constructorimpl(MathKt.roundToInt(bitmap.getWidth() * computeSizeMultiplier), MathKt.roundToInt(computeSizeMultiplier * bitmap.getHeight()));
+        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, height, m7821unboximpl, height2 instanceof Dimension.Pixels ? ((Dimension.Pixels) height2).m7821unboximpl() : Integer.MIN_VALUE, Scale.FILL);
+        return IntPair.m7826constructorimpl(MathKt.roundToInt(bitmap.getWidth() * computeSizeMultiplier), MathKt.roundToInt(computeSizeMultiplier * bitmap.getHeight()));
     }
 }

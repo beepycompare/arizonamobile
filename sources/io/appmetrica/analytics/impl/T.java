@@ -16,7 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class T implements Ta {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f631a;
+    public final Context f632a;
     public final ICommonExecutor b;
     public FutureTask i;
     public final I j;
@@ -29,14 +29,14 @@ public final class T implements Ta {
     public volatile AdvertisingIdsHolder k = new AdvertisingIdsHolder();
     public F l = new F(4, 4, 4);
 
-    public T(Context context, ICommonExecutor iCommonExecutor, C0198cm c0198cm) {
-        this.f631a = context;
+    public T(Context context, ICommonExecutor iCommonExecutor, C0190cm c0190cm) {
+        this.f632a = context;
         this.b = iCommonExecutor;
-        this.j = new I(c0198cm);
+        this.j = new I(c0190cm);
     }
 
     public static final Void e(T t) {
-        t.k = new AdvertisingIdsHolder(t.a(t.l.f417a, new P(t)), t.a(t.l.b, new Q(t)), t.a(t.l.c, new S(t, new C0390ke())));
+        t.k = new AdvertisingIdsHolder(t.a(t.l.f418a, new P(t)), t.a(t.l.b, new Q(t)), t.a(t.l.c, new S(t, new C0382ke())));
         return null;
     }
 
@@ -60,16 +60,16 @@ public final class T implements Ta {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.Ta, io.appmetrica.analytics.impl.InterfaceC0324hm
-    public final synchronized void a(C0198cm c0198cm) {
-        this.j.a(c0198cm);
-        a((Qi) new C0390ke(), false);
+    @Override // io.appmetrica.analytics.impl.Ta, io.appmetrica.analytics.impl.InterfaceC0316hm
+    public final synchronized void a(C0190cm c0190cm) {
+        this.j.a(c0190cm);
+        a((Qi) new C0382ke(), false);
     }
 
     @Override // io.appmetrica.analytics.impl.Ta
     public final synchronized void b(boolean z) {
         this.j.b.update(z);
-        a((Qi) new C0390ke(), false);
+        a((Qi) new C0382ke(), false);
     }
 
     @Override // io.appmetrica.analytics.impl.Ta
@@ -88,7 +88,7 @@ public final class T implements Ta {
 
     @Override // io.appmetrica.analytics.impl.Ta
     public final synchronized AdvertisingIdsHolder a() {
-        return a(new C0390ke());
+        return a(new C0382ke());
     }
 
     @Override // io.appmetrica.analytics.impl.Ta
@@ -121,7 +121,7 @@ public final class T implements Ta {
     public static final Void a(boolean z, F f, T t, Qi qi) {
         if (z || !Intrinsics.areEqual(f, t.l)) {
             AdvertisingIdsHolder advertisingIdsHolder = t.k;
-            AdTrackingInfoResult a2 = t.a(f.f417a, new P(t));
+            AdTrackingInfoResult a2 = t.a(f.f418a, new P(t));
             AdTrackingInfoResult google = advertisingIdsHolder.getGoogle();
             IdentifierStatus identifierStatus = a2.mStatus;
             IdentifierStatus identifierStatus2 = IdentifierStatus.UNKNOWN;

@@ -9,10 +9,10 @@ public final class Qm extends Mi {
 
     @Override // io.appmetrica.analytics.impl.Mi
     public final Object a(int i) {
-        return this.f538a.getResources().getStringArray(i);
+        return this.f539a.getResources().getStringArray(i);
     }
 
     public final String[] b(int i) {
-        return this.f538a.getResources().getStringArray(i);
+        return this.f539a.getResources().getStringArray(i);
     }
 }

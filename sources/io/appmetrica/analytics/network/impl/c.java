@@ -19,12 +19,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class c implements Call {
 
     /* renamed from: a  reason: collision with root package name */
-    public final NetworkClient f1219a;
+    public final NetworkClient f1220a;
     public final Request b;
     public final d c;
 
     public c(NetworkClient networkClient, Request request, d dVar) {
-        this.f1219a = networkClient;
+        this.f1220a = networkClient;
         this.b = request;
         this.c = dVar;
     }
@@ -35,24 +35,24 @@ public final class c implements Call {
             Map.Entry entry = (Map.Entry) it.next();
             httpsURLConnection.addRequestProperty((String) entry.getKey(), (String) entry.getValue());
         }
-        Integer readTimeout = this.f1219a.getReadTimeout();
+        Integer readTimeout = this.f1220a.getReadTimeout();
         if (readTimeout != null) {
             httpsURLConnection.setReadTimeout(readTimeout.intValue());
         }
-        Integer connectTimeout = this.f1219a.getConnectTimeout();
+        Integer connectTimeout = this.f1220a.getConnectTimeout();
         if (connectTimeout != null) {
             httpsURLConnection.setConnectTimeout(connectTimeout.intValue());
         }
-        Boolean useCaches = this.f1219a.getUseCaches();
+        Boolean useCaches = this.f1220a.getUseCaches();
         if (useCaches != null) {
             httpsURLConnection.setUseCaches(useCaches.booleanValue());
         }
-        Boolean instanceFollowRedirects = this.f1219a.getInstanceFollowRedirects();
+        Boolean instanceFollowRedirects = this.f1220a.getInstanceFollowRedirects();
         if (instanceFollowRedirects != null) {
             httpsURLConnection.setInstanceFollowRedirects(instanceFollowRedirects.booleanValue());
         }
         httpsURLConnection.setRequestMethod(this.b.getMethod());
-        SSLSocketFactory sslSocketFactory = this.f1219a.getSslSocketFactory();
+        SSLSocketFactory sslSocketFactory = this.f1220a.getSslSocketFactory();
         if (sslSocketFactory != null) {
             httpsURLConnection.setSSLSocketFactory(sslSocketFactory);
         }
@@ -120,8 +120,8 @@ public final class c implements Call {
                 i = 0;
             }
             try {
-                bArr = e.a(this.f1219a.getMaxResponseSize(), new a(httpsURLConnection));
-                bArr2 = e.a(this.f1219a.getMaxResponseSize(), new b(httpsURLConnection));
+                bArr = e.a(this.f1220a.getMaxResponseSize(), new a(httpsURLConnection));
+                bArr2 = e.a(this.f1220a.getMaxResponseSize(), new b(httpsURLConnection));
                 z = true;
                 map2 = headerFields;
             } catch (Throwable th4) {

@@ -1,21 +1,31 @@
 package com.google.android.gms.internal.measurement;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
+import android.os.RemoteException;
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzeg implements ThreadFactory {
-    private final ThreadFactory zza = Executors.defaultThreadFactory();
+public final class zzeg extends zzeq {
+    final /* synthetic */ zzco zza;
+    final /* synthetic */ zzfb zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzeg(zzff zzffVar) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzeg(zzfb zzfbVar, zzco zzcoVar) {
+        super(zzfbVar, true);
+        this.zza = zzcoVar;
+        Objects.requireNonNull(zzfbVar);
+        this.zzb = zzfbVar;
     }
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        Thread newThread = this.zza.newThread(runnable);
-        newThread.setName("ScionFrontendApi");
-        return newThread;
+    @Override // com.google.android.gms.internal.measurement.zzeq
+    final void zza() throws RemoteException {
+        ((zzcr) Preconditions.checkNotNull(this.zzb.zzQ())).getAppInstanceId(this.zza);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzeq
+    protected final void zzb() {
+        this.zza.zzb(null);
     }
 }

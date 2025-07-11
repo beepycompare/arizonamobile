@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Lambda;
 public final class k extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f262a;
+    public final /* synthetic */ Context f263a;
     public final /* synthetic */ ComponentName b;
     public final /* synthetic */ int c;
     public final /* synthetic */ int d;
@@ -17,7 +17,7 @@ public final class k extends Lambda implements Function0 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public k(Context context, ComponentName componentName, int i, int i2) {
         super(0);
-        this.f262a = context;
+        this.f263a = context;
         this.b = componentName;
         this.c = i;
         this.d = i2;
@@ -25,7 +25,7 @@ public final class k extends Lambda implements Function0 {
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        this.f262a.getPackageManager().setComponentEnabledSetting(this.b, this.c, this.d);
+        this.f263a.getPackageManager().setComponentEnabledSetting(this.b, this.c, this.d);
         return Unit.INSTANCE;
     }
 }

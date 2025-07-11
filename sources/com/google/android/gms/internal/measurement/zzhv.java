@@ -1,124 +1,91 @@
 package com.google.android.gms.internal.measurement;
-
-import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzhv extends zzmd implements zzni {
-    private static final zzhv zzb;
-    private int zzd;
-    private zzmj zze = zzcn();
-    private String zzf = "";
-    private String zzg = "";
-    private int zzh;
-
-    static {
-        zzhv zzhvVar = new zzhv();
-        zzb = zzhvVar;
-        zzmd.zzct(zzhv.class, zzhvVar);
-    }
-
+public final class zzhv extends zzma implements zznm {
     private zzhv() {
-    }
-
-    public static zzht zzb() {
-        return (zzht) zzb.zzcg();
-    }
-
-    public static zzht zzc(zzhv zzhvVar) {
-        zzlz zzcg = zzb.zzcg();
-        zzcg.zzaY(zzhvVar);
-        return (zzht) zzcg;
+        throw null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void zzi(zzhv zzhvVar, Iterable iterable) {
-        zzhvVar.zzr();
-        zzko.zzcc(iterable, zzhvVar.zze);
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ zzhv(byte[] bArr) {
+        super(r1);
+        zzhw zzhwVar;
+        zzhwVar = zzhw.zzj;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void zzj(zzhv zzhvVar, zzhx zzhxVar) {
-        zzhxVar.getClass();
-        zzhvVar.zzr();
-        zzhvVar.zze.add(zzhxVar);
+    public final String zza() {
+        return ((zzhw) this.zza).zzb();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void zzm(zzhv zzhvVar, int i, zzhx zzhxVar) {
-        zzhxVar.getClass();
-        zzhvVar.zzr();
-        zzhvVar.zze.set(i, zzhxVar);
+    public final zzhv zzb(String str) {
+        zzaX();
+        ((zzhw) this.zza).zzo(str);
+        return this;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void zzn(zzhv zzhvVar, String str) {
-        str.getClass();
-        zzhvVar.zzd |= 1;
-        zzhvVar.zzf = str;
+    public final String zzc() {
+        return ((zzhw) this.zza).zzd();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void zzo(zzhv zzhvVar, String str) {
-        str.getClass();
-        zzhvVar.zzd |= 2;
-        zzhvVar.zzg = str;
+    public final zzhv zzd(String str) {
+        zzaX();
+        ((zzhw) this.zza).zzp(str);
+        return this;
     }
 
-    private final void zzr() {
-        zzmj zzmjVar = this.zze;
-        if (zzmjVar.zzc()) {
-            return;
-        }
-        this.zze = zzmd.zzco(zzmjVar);
+    public final zzhv zze() {
+        zzaX();
+        ((zzhw) this.zza).zzq();
+        return this;
     }
 
-    public final int zza() {
-        return this.zze.size();
+    public final zzhv zzf(long j) {
+        zzaX();
+        ((zzhw) this.zza).zzr(j);
+        return this;
     }
 
-    public final zzhx zze(int i) {
-        return (zzhx) this.zze.get(i);
+    public final zzhv zzg() {
+        zzaX();
+        ((zzhw) this.zza).zzs();
+        return this;
     }
 
-    public final String zzf() {
-        return this.zzf;
+    public final zzhv zzh(double d) {
+        zzaX();
+        ((zzhw) this.zza).zzt(d);
+        return this;
     }
 
-    public final String zzg() {
-        return this.zzg;
+    public final zzhv zzi() {
+        zzaX();
+        ((zzhw) this.zza).zzu();
+        return this;
     }
 
-    public final List zzh() {
-        return this.zze;
+    public final int zzj() {
+        return ((zzhw) this.zza).zzm();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.gms.internal.measurement.zzmd
-    public final Object zzl(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 != 0) {
-            if (i2 == 2) {
-                return zzcq(zzb, "\u0004\u0004\u0000\u0001\u0001\t\u0004\u0000\u0001\u0000\u0001\u001b\u0007ဈ\u0000\bဈ\u0001\t᠌\u0002", new Object[]{"zzd", "zze", zzhx.class, "zzf", "zzg", "zzh", zzhu.zza});
-            } else if (i2 != 3) {
-                if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzb;
-                    }
-                    throw null;
-                }
-                return new zzht(null);
-            } else {
-                return new zzhv();
-            }
-        }
-        return (byte) 1;
+    public final zzhv zzk(zzhv zzhvVar) {
+        zzaX();
+        ((zzhw) this.zza).zzv((zzhw) zzhvVar.zzbc());
+        return this;
     }
 
-    public final boolean zzp() {
-        return (this.zzd & 1) != 0;
+    public final zzhv zzl(Iterable iterable) {
+        zzaX();
+        ((zzhw) this.zza).zzw(iterable);
+        return this;
     }
 
-    public final boolean zzq() {
-        return (this.zzd & 2) != 0;
+    public final zzhv zzm() {
+        zzaX();
+        ((zzhw) this.zza).zzx();
+        return this;
     }
 }

@@ -6,6 +6,6 @@ public final /* synthetic */ class MaterialCheckBox$$ExternalSyntheticLambda0 im
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f$0.m8093xdf87d0bf();
+        this.f$0.m8092xdf87d0bf();
     }
 }

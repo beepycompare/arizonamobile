@@ -424,7 +424,6 @@ public class CachedContentIndex {
                 DataOutputStream dataOutputStream2 = new DataOutputStream(reusableBufferedOutputStream2);
                 try {
                     dataOutputStream2.writeInt(2);
-                    int i = 0;
                     dataOutputStream2.writeInt(this.encrypt ? 1 : 0);
                     if (this.encrypt) {
                         byte[] bArr = new byte[16];
@@ -443,6 +442,7 @@ public class CachedContentIndex {
                         }
                     }
                     dataOutputStream2.writeInt(hashMap.size());
+                    int i = 0;
                     for (CachedContent cachedContent : hashMap.values()) {
                         writeCachedContent(cachedContent, dataOutputStream2);
                         i += hashCachedContent(cachedContent, 2);

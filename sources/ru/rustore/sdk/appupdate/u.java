@@ -17,13 +17,13 @@ public interface u extends IInterface {
 
         /* renamed from: ru.rustore.sdk.appupdate.u$a$a  reason: collision with other inner class name */
         /* loaded from: classes5.dex */
-        public static class C0114a implements u {
+        public static class C0106a implements u {
 
             /* renamed from: a  reason: collision with root package name */
-            public final IBinder f1363a;
+            public final IBinder f1364a;
 
-            public C0114a(IBinder iBinder) {
-                this.f1363a = iBinder;
+            public C0106a(IBinder iBinder) {
+                this.f1364a = iBinder;
             }
 
             @Override // ru.rustore.sdk.appupdate.u
@@ -34,7 +34,7 @@ public interface u extends IInterface {
                     obtain.writeInterfaceToken("ru.vk.store.provider.appupdate.AppUpdateProvider");
                     obtain.writeString(str);
                     obtain.writeStrongInterface(aVar);
-                    this.f1363a.transact(3, obtain, obtain2, 0);
+                    this.f1364a.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -44,7 +44,7 @@ public interface u extends IInterface {
 
             @Override // android.os.IInterface
             public final IBinder asBinder() {
-                return this.f1363a;
+                return this.f1364a;
             }
 
             @Override // ru.rustore.sdk.appupdate.u
@@ -61,7 +61,7 @@ public interface u extends IInterface {
                         obtain.writeInt(0);
                     }
                     obtain.writeStrongInterface(aVar);
-                    this.f1363a.transact(1, obtain, obtain2, 0);
+                    this.f1364a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -77,7 +77,7 @@ public interface u extends IInterface {
                     obtain.writeInterfaceToken("ru.vk.store.provider.appupdate.AppUpdateProvider");
                     obtain.writeString(str);
                     obtain.writeStrongInterface(aVar);
-                    this.f1363a.transact(2, obtain, obtain2, 0);
+                    this.f1364a.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -93,7 +93,7 @@ public interface u extends IInterface {
                     obtain.writeInterfaceToken("ru.vk.store.provider.appupdate.AppUpdateProvider");
                     obtain.writeString(str);
                     obtain.writeStrongInterface(aVar);
-                    this.f1363a.transact(4, obtain, obtain2, 0);
+                    this.f1364a.transact(4, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -107,7 +107,7 @@ public interface u extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("ru.vk.store.provider.appupdate.AppUpdateProvider");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof u)) ? new C0114a(iBinder) : (u) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof u)) ? new C0106a(iBinder) : (u) queryLocalInterface;
         }
     }
 

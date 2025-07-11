@@ -1,15 +1,12 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+
+import android.net.Uri;
+import java.util.regex.Pattern;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzjg extends Exception {
-    public zzjg() {
-    }
-
-    public zzjg(String str) {
-        super(str);
-    }
-
-    public zzjg(String str, Throwable th) {
-        super("ContentProvider query failed", th);
-    }
+public final class zzjg {
+    public static final Uri zza = Uri.parse("content://com.google.android.gsf.gservices");
+    public static final Uri zzb = Uri.parse("content://com.google.android.gsf.gservices/prefix");
+    public static final Pattern zzc = Pattern.compile("^(1|true|t|on|yes|y)$", 2);
+    public static final Pattern zzd = Pattern.compile("^(0|false|f|off|no|n)$", 2);
 }

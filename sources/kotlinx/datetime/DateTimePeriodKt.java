@@ -11,7 +11,7 @@ import kotlin.time.Duration;
 import kotlinx.datetime.internal.MathJvmKt;
 import kotlinx.datetime.internal.MathKt;
 /* compiled from: DateTimePeriod.kt */
-@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aL\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\t\u001a\u00020\n\u001a$\u0010\u000b\u001a\u00020\u00012\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\nH\u0000\u001a\u0018\u0010\f\u001a\u00020\u00032\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0003H\u0002\u001a(\u0010\r\u001a\u00020\n2\u0006\u0010\u0006\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\u00032\u0006\u0010\b\u001a\u00020\u00032\u0006\u0010\t\u001a\u00020\nH\u0002\u001a\u0015\u0010\u000e\u001a\u00020\u000f*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000fH\u0087\u0002\u001a\u0015\u0010\u000e\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0010\u001a\u00020\u0001H\u0087\u0002\u001a\f\u0010\u0011\u001a\u00020\u000f*\u00020\u0012H\u0007\u001a\f\u0010\u0013\u001a\u00020\u0001*\u00020\u0012H\u0007\u001a\u0014\u0010\u0013\u001a\u00020\u0001*\u00020\u0014ø\u0001\u0000¢\u0006\u0004\b\u0015\u0010\u0016\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u0017"}, d2 = {"DateTimePeriod", "Lkotlinx/datetime/DateTimePeriod;", "years", "", "months", "days", "hours", "minutes", "seconds", "nanoseconds", "", "buildDateTimePeriod", "totalMonths", "totalNanoseconds", "plus", "Lkotlinx/datetime/DatePeriod;", "other", "toDatePeriod", "", "toDateTimePeriod", "Lkotlin/time/Duration;", "toDateTimePeriod-LRDsOJo", "(J)Lkotlinx/datetime/DateTimePeriod;", "kotlinx-datetime"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0007\u001a\f\u0010\u0003\u001a\u00020\u0004*\u00020\u0002H\u0007\u001a\u0018\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\bH\u0002\u001a(\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\b2\u0006\u0010\f\u001a\u00020\b2\u0006\u0010\r\u001a\u00020\b2\u0006\u0010\u000e\u001a\u00020\u0006H\u0002\u001a$\u0010\u000f\u001a\u00020\u00012\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0010\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\u0006H\u0000\u001aL\u0010\u0011\u001a\u00020\u00012\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\b2\b\b\u0002\u0010\u0010\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\b2\b\b\u0002\u0010\f\u001a\u00020\b2\b\b\u0002\u0010\r\u001a\u00020\b2\b\b\u0002\u0010\u000e\u001a\u00020\u0006\u001a\u0011\u0010\u0000\u001a\u00020\u0001*\u00020\u0012¢\u0006\u0004\b\u0013\u0010\u0014\u001a\u0015\u0010\u0015\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0016\u001a\u00020\u0001H\u0087\u0002\u001a\u0015\u0010\u0015\u001a\u00020\u0004*\u00020\u00042\u0006\u0010\u0016\u001a\u00020\u0004H\u0087\u0002¨\u0006\u0017"}, d2 = {"toDateTimePeriod", "Lkotlinx/datetime/DateTimePeriod;", "", "toDatePeriod", "Lkotlinx/datetime/DatePeriod;", "totalMonths", "", "years", "", "months", "totalNanoseconds", "hours", "minutes", "seconds", "nanoseconds", "buildDateTimePeriod", "days", "DateTimePeriod", "Lkotlin/time/Duration;", "toDateTimePeriod-LRDsOJo", "(J)Lkotlinx/datetime/DateTimePeriod;", "plus", "other", "kotlinx-datetime"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DateTimePeriodKt {
     @Deprecated(level = DeprecationLevel.WARNING, message = "Removed to support more idiomatic code. See https://github.com/Kotlin/kotlinx-datetime/issues/339", replaceWith = @ReplaceWith(expression = "DateTimePeriod.parse(this)", imports = {}))
@@ -27,12 +27,14 @@ public final class DateTimePeriodKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int totalMonths(int i, int i2) {
-        long j = (i * 12) + i2;
-        if (SieveCacheKt.NodeMetaAndPreviousMask > j || j > SieveCacheKt.NodeLinkMask) {
-            throw new IllegalArgumentException("The total number of months in " + i + " years and " + i2 + " months overflows an Int");
+    public static final long totalMonths(int i, int i2) {
+        long j = 12;
+        long j2 = (i * j) + i2;
+        long j3 = j2 / j;
+        if (SieveCacheKt.NodeMetaAndPreviousMask > j3 || j3 > SieveCacheKt.NodeLinkMask) {
+            throw new IllegalArgumentException(("The total number of years in " + i + " years and " + i2 + " months overflows an Int").toString());
         }
-        return (int) j;
+        return j2;
     }
 
     private static final long totalNanoseconds(int i, int i2, int i3, long j) {
@@ -46,21 +48,21 @@ public final class DateTimePeriodKt {
         }
     }
 
-    public static /* synthetic */ DateTimePeriod buildDateTimePeriod$default(int i, int i2, long j, int i3, Object obj) {
-        if ((i3 & 1) != 0) {
+    public static /* synthetic */ DateTimePeriod buildDateTimePeriod$default(long j, int i, long j2, int i2, Object obj) {
+        if ((i2 & 1) != 0) {
+            j = 0;
+        }
+        if ((i2 & 2) != 0) {
             i = 0;
         }
-        if ((i3 & 2) != 0) {
-            i2 = 0;
-        }
-        return buildDateTimePeriod(i, i2, j);
+        return buildDateTimePeriod(j, i, j2);
     }
 
-    public static final DateTimePeriod buildDateTimePeriod(int i, int i2, long j) {
-        if (j != 0) {
-            return new DateTimePeriodImpl(i, i2, j);
+    public static final DateTimePeriod buildDateTimePeriod(long j, int i, long j2) {
+        if (j2 != 0) {
+            return new DateTimePeriodImpl(j, i, j2);
         }
-        return new DatePeriod(i, i2);
+        return new DatePeriod(j, i);
     }
 
     public static /* synthetic */ DateTimePeriod DateTimePeriod$default(int i, int i2, int i3, int i4, int i5, int i6, long j, int i7, Object obj) {
@@ -93,8 +95,8 @@ public final class DateTimePeriodKt {
     }
 
     /* renamed from: toDateTimePeriod-LRDsOJo  reason: not valid java name */
-    public static final DateTimePeriod m10048toDateTimePeriodLRDsOJo(long j) {
-        return buildDateTimePeriod$default(0, 0, Duration.m9803getInWholeNanosecondsimpl(j), 3, null);
+    public static final DateTimePeriod m10079toDateTimePeriodLRDsOJo(long j) {
+        return buildDateTimePeriod$default(0L, 0, Duration.m9836getInWholeNanosecondsimpl(j), 3, null);
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Adding periods is not a well-defined operation. See https://github.com/Kotlin/kotlinx-datetime/issues/381")

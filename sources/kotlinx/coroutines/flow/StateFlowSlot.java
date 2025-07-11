@@ -67,7 +67,7 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
                 symbol4 = StateFlowKt.NONE;
                 if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference3, value, symbol4)) {
                     Result.Companion companion = Result.Companion;
-                    ((CancellableContinuationImpl) value).resumeWith(Result.m8443constructorimpl(Unit.INSTANCE));
+                    ((CancellableContinuationImpl) value).resumeWith(Result.m8471constructorimpl(Unit.INSTANCE));
                     return;
                 }
             }
@@ -108,7 +108,7 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
                 }
             }
             Result.Companion companion = Result.Companion;
-            cancellableContinuationImpl2.resumeWith(Result.m8443constructorimpl(Unit.INSTANCE));
+            cancellableContinuationImpl2.resumeWith(Result.m8471constructorimpl(Unit.INSTANCE));
         }
         Object result = cancellableContinuationImpl.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {

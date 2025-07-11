@@ -3,7 +3,6 @@ package androidx.paging;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.paging.LoadState;
 import androidx.paging.PageEvent;
-import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measurement.dynamite.ModuleDescriptor;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -73,7 +72,7 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* compiled from: PagingDataPresenter.kt */
                 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\u00020\u0004H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-                @DebugMetadata(c = "androidx.paging.PagingDataPresenter$collectFrom$2$1$2", f = "PagingDataPresenter.kt", i = {}, l = {ModuleDescriptor.MODULE_VERSION, 158, 170, 173, 225, 228}, m = "invokeSuspend", n = {}, s = {})
+                @DebugMetadata(c = "androidx.paging.PagingDataPresenter$collectFrom$2$1$2", f = "PagingDataPresenter.kt", i = {}, l = {141, 158, 170, 173, 225, 228}, m = "invokeSuspend", n = {}, s = {})
                 /* renamed from: androidx.paging.PagingDataPresenter$collectFrom$2$1$2  reason: invalid class name */
                 /* loaded from: classes3.dex */
                 public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

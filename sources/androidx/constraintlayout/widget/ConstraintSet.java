@@ -287,7 +287,7 @@ public class ConstraintSet {
         sMapToConstant.append(R.styleable.Constraint_barrierMargin, BARRIER_MARGIN);
         sMapToConstant.append(R.styleable.Constraint_constraint_referenced_ids, CONSTRAINT_REFERENCED_IDS);
         sMapToConstant.append(R.styleable.Constraint_barrierAllowsGoneWidgets, 75);
-        sMapToConstant.append(R.styleable.Constraint_pathMotionArc, 76);
+        sMapToConstant.append(R.styleable.Constraint_pathMotionArc, PATH_MOTION_ARC);
         sMapToConstant.append(R.styleable.Constraint_layout_constraintTag, CONSTRAINT_TAG);
         sMapToConstant.append(R.styleable.Constraint_visibilityMode, 78);
         sMapToConstant.append(R.styleable.Constraint_layout_constrainedWidth, CONSTRAINED_WIDTH);
@@ -364,7 +364,7 @@ public class ConstraintSet {
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_barrierMargin, BARRIER_MARGIN);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_constraint_referenced_ids, CONSTRAINT_REFERENCED_IDS);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_barrierAllowsGoneWidgets, 75);
-        sOverrideMapToConstant.append(R.styleable.ConstraintOverride_pathMotionArc, 76);
+        sOverrideMapToConstant.append(R.styleable.ConstraintOverride_pathMotionArc, PATH_MOTION_ARC);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintTag, CONSTRAINT_TAG);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_visibilityMode, 78);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constrainedWidth, CONSTRAINED_WIDTH);
@@ -1033,7 +1033,7 @@ public class ConstraintSet {
             sMapToConstant.append(R.styleable.Layout_layout_constraintHeight, 42);
             sMapToConstant.append(R.styleable.Layout_layout_constrainedWidth, CONSTRAINED_WIDTH);
             sMapToConstant.append(R.styleable.Layout_layout_constrainedHeight, CONSTRAINED_HEIGHT);
-            sMapToConstant.append(R.styleable.Layout_layout_wrapBehaviorInParent, 76);
+            sMapToConstant.append(R.styleable.Layout_layout_wrapBehaviorInParent, LAYOUT_WRAP_BEHAVIOR);
             sMapToConstant.append(R.styleable.Layout_layout_constraintCircle, 61);
             sMapToConstant.append(R.styleable.Layout_layout_constraintCircleRadius, CIRCLE_RADIUS);
             sMapToConstant.append(R.styleable.Layout_layout_constraintCircleAngle, 63);
@@ -1222,7 +1222,7 @@ public class ConstraintSet {
                                     case 75:
                                         this.mBarrierAllowsGoneWidgets = obtainStyledAttributes.getBoolean(index, this.mBarrierAllowsGoneWidgets);
                                         continue;
-                                    case 76:
+                                    case LAYOUT_WRAP_BEHAVIOR /* 76 */:
                                         this.mWrapBehavior = obtainStyledAttributes.getInt(index, this.mWrapBehavior);
                                         continue;
                                     case BASELINE_TO_TOP /* 77 */:
@@ -3622,8 +3622,8 @@ public class ConstraintSet {
                 case 75:
                     delta.add(75, typedArray.getBoolean(index, constraint.layout.mBarrierAllowsGoneWidgets));
                     break;
-                case 76:
-                    delta.add(76, typedArray.getInt(index, constraint.motion.mPathMotionArc));
+                case PATH_MOTION_ARC /* 76 */:
+                    delta.add(PATH_MOTION_ARC, typedArray.getInt(index, constraint.motion.mPathMotionArc));
                     break;
                 case CONSTRAINT_TAG /* 77 */:
                     delta.add(CONSTRAINT_TAG, typedArray.getString(index));
@@ -3870,7 +3870,7 @@ public class ConstraintSet {
                 case 66:
                     constraint.motion.mDrawPath = i2;
                     return;
-                case 76:
+                case PATH_MOTION_ARC /* 76 */:
                     constraint.motion.mPathMotionArc = i2;
                     return;
                 case 78:
@@ -4237,7 +4237,7 @@ public class ConstraintSet {
                 case 75:
                     constraint.layout.mBarrierAllowsGoneWidgets = typedArray.getBoolean(index, constraint.layout.mBarrierAllowsGoneWidgets);
                     break;
-                case 76:
+                case PATH_MOTION_ARC /* 76 */:
                     constraint.motion.mPathMotionArc = typedArray.getInt(index, constraint.motion.mPathMotionArc);
                     break;
                 case CONSTRAINT_TAG /* 77 */:

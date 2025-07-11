@@ -143,7 +143,7 @@ import ru.rustore.sdk.core.tasks.OnFailureListener;
 import ru.rustore.sdk.core.tasks.OnSuccessListener;
 import timber.log.Timber;
 /* compiled from: MainEntrench.kt */
-@Metadata(d1 = {"\u0000\u008d\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0005*\u0001Z\b\u0007\u0018\u0000 \\2\u00020\u0001:\u0002\\]B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010%\u001a\u00020&2\b\u0010'\u001a\u0004\u0018\u00010(H\u0015J\b\u0010)\u001a\u00020&H\u0014J\r\u0010*\u001a\u00020&H\u0007¢\u0006\u0002\u0010+J\u0010\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0018H\u0002J\u001e\u0010/\u001a\u00020&2\u0014\u00100\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010-\u0012\u0004\u0012\u00020&01H\u0002J\b\u00102\u001a\u00020&H\u0002J\b\u00103\u001a\u00020&H\u0002J\b\u00104\u001a\u00020&H\u0002J\b\u00105\u001a\u00020&H\u0002J\b\u00106\u001a\u00020&H\u0002J\u0010\u00107\u001a\u00020\u00152\u0006\u00108\u001a\u000209H\u0002J\u0010\u0010:\u001a\u00020&2\u0006\u00108\u001a\u000209H\u0002J\b\u0010;\u001a\u00020&H\u0002J\b\u0010<\u001a\u00020&H\u0002J\b\u0010=\u001a\u00020&H\u0002J\u0018\u0010>\u001a\u00020&2\u0006\u0010?\u001a\u00020-2\u0006\u0010@\u001a\u00020-H\u0002J\b\u0010A\u001a\u00020&H\u0002J\b\u0010B\u001a\u00020&H\u0014J\b\u0010C\u001a\u00020&H\u0014J\b\u0010D\u001a\u00020&H\u0014J\b\u0010E\u001a\u00020&H\u0002J\b\u0010F\u001a\u00020&H\u0002J\b\u0010G\u001a\u00020\u0015H\u0002J\b\u0010H\u001a\u00020&H\u0002J\u000e\u0010I\u001a\u00020\u00152\u0006\u00108\u001a\u000209J\u0010\u0010J\u001a\u00020&2\u0006\u0010K\u001a\u00020\u0015H\u0002J\b\u0010L\u001a\u00020&H\u0002J\b\u0010M\u001a\u00020&H\u0002J\b\u0010N\u001a\u00020&H\u0002J\b\u0010O\u001a\u00020&H\u0002J\b\u0010P\u001a\u00020&H\u0002J&\u0010Q\u001a\u00020R*\u00020S2\u0006\u0010@\u001a\u00020-2\u0006\u0010T\u001a\u00020U2\b\b\u0002\u0010V\u001a\u00020WH\u0002J\b\u0010X\u001a\u00020&H\u0002R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u0007\u001a\u00020\b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000b\u0010\f\u001a\u0004\b\t\u0010\nR\u001b\u0010\r\u001a\u00020\u000e8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0011\u0010\f\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u0019\u001a\u00020\u001a8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR\u001e\u0010\u001f\u001a\u00020 8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u0010\u0010Y\u001a\u00020ZX\u0082\u0004¢\u0006\u0004\n\u0002\u0010[¨\u0006^"}, d2 = {"Lcom/arizona/launcher/MainEntrench;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "mService", "Landroid/os/Messenger;", "mMessenger", "mainViewModel", "Lcom/arizona/launcher/MainViewModel;", "getMainViewModel", "()Lcom/arizona/launcher/MainViewModel;", "mainViewModel$delegate", "Lkotlin/Lazy;", "notificationsViewModel", "Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "getNotificationsViewModel", "()Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "notificationsViewModel$delegate", "referrerClient", "Lcom/android/installreferrer/api/InstallReferrerClient;", "isStartApp", "", "permissionAsk", "lastStartGameTime", "", "rootFactory", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "getRootFactory", "()Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "setRootFactory", "(Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;)V", "notificationStateHolder", "Lcom/miami/game/feature/notifications/NotificationStateHolder;", "getNotificationStateHolder", "()Lcom/miami/game/feature/notifications/NotificationStateHolder;", "setNotificationStateHolder", "(Lcom/miami/game/feature/notifications/NotificationStateHolder;)V", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onStart", "GLView", "(Landroidx/compose/runtime/Composer;I)V", "convertBytesToHumanReadable", "", "bytes", "getCurrentToken", "callback", "Lkotlin/Function1;", "checkRUStoreUpdate", "saveGameType", "getBuildType", "initTracking", "obtainReferrerDetails", "checkNotificationPermission", "context", "Landroid/content/Context;", "openNotificationSettings", "askPermission", "checkUpdate", "observeData", "createDialog", "message", "url", "startApp", "onResume", "onPause", "onDestroy", "check", "checkLauncherUpdate", "getFirstOpen", "checkGameUpdate", "isOnline", "setProgressVisible", "visible", "showDialog", "hideDialog", "checkGame", "connectToTestServer", "shareLogs", "sendRequests", "Lkotlinx/coroutines/Job;", "Landroidx/activity/ComponentActivity;", "iterations", "", "queue", "Lcom/android/volley/RequestQueue;", "startGame", "mConnection", "com/arizona/launcher/MainEntrench$mConnection$1", "Lcom/arizona/launcher/MainEntrench$mConnection$1;", "Companion", "IncomingHandler", "app_arizonaRelease_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u008d\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0005*\u0001Z\b\u0007\u0018\u0000 \\2\u00020\u0001:\u0002\\]B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010%\u001a\u00020&2\b\u0010'\u001a\u0004\u0018\u00010(H\u0015J\b\u0010)\u001a\u00020&H\u0014J\r\u0010*\u001a\u00020&H\u0007¢\u0006\u0002\u0010+J\u0010\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0018H\u0002J\u001e\u0010/\u001a\u00020&2\u0014\u00100\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010-\u0012\u0004\u0012\u00020&01H\u0002J\b\u00102\u001a\u00020&H\u0002J\b\u00103\u001a\u00020&H\u0002J\b\u00104\u001a\u00020&H\u0002J\b\u00105\u001a\u00020&H\u0002J\b\u00106\u001a\u00020&H\u0002J\u0010\u00107\u001a\u00020\u00152\u0006\u00108\u001a\u000209H\u0002J\u0010\u0010:\u001a\u00020&2\u0006\u00108\u001a\u000209H\u0002J\b\u0010;\u001a\u00020&H\u0002J\b\u0010<\u001a\u00020&H\u0002J\b\u0010=\u001a\u00020&H\u0002J\u0018\u0010>\u001a\u00020&2\u0006\u0010?\u001a\u00020-2\u0006\u0010@\u001a\u00020-H\u0002J\b\u0010A\u001a\u00020&H\u0002J\b\u0010B\u001a\u00020&H\u0014J\b\u0010C\u001a\u00020&H\u0014J\b\u0010D\u001a\u00020&H\u0014J\b\u0010E\u001a\u00020&H\u0002J\b\u0010F\u001a\u00020&H\u0002J\b\u0010G\u001a\u00020\u0015H\u0002J\b\u0010H\u001a\u00020&H\u0002J\u000e\u0010I\u001a\u00020\u00152\u0006\u00108\u001a\u000209J\u0010\u0010J\u001a\u00020&2\u0006\u0010K\u001a\u00020\u0015H\u0002J\b\u0010L\u001a\u00020&H\u0002J\b\u0010M\u001a\u00020&H\u0002J\b\u0010N\u001a\u00020&H\u0002J\b\u0010O\u001a\u00020&H\u0002J\b\u0010P\u001a\u00020&H\u0002J&\u0010Q\u001a\u00020R*\u00020S2\u0006\u0010@\u001a\u00020-2\u0006\u0010T\u001a\u00020U2\b\b\u0002\u0010V\u001a\u00020WH\u0002J\b\u0010X\u001a\u00020&H\u0002R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u0007\u001a\u00020\b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000b\u0010\f\u001a\u0004\b\t\u0010\nR\u001b\u0010\r\u001a\u00020\u000e8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0011\u0010\f\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u0019\u001a\u00020\u001a8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR\u001e\u0010\u001f\u001a\u00020 8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u0010\u0010Y\u001a\u00020ZX\u0082\u0004¢\u0006\u0004\n\u0002\u0010[¨\u0006^"}, d2 = {"Lcom/arizona/launcher/MainEntrench;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "mService", "Landroid/os/Messenger;", "mMessenger", "mainViewModel", "Lcom/arizona/launcher/MainViewModel;", "getMainViewModel", "()Lcom/arizona/launcher/MainViewModel;", "mainViewModel$delegate", "Lkotlin/Lazy;", "notificationsViewModel", "Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "getNotificationsViewModel", "()Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "notificationsViewModel$delegate", "referrerClient", "Lcom/android/installreferrer/api/InstallReferrerClient;", "isStartApp", "", "permissionAsk", "lastStartGameTime", "", "rootFactory", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "getRootFactory", "()Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "setRootFactory", "(Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;)V", "notificationStateHolder", "Lcom/miami/game/feature/notifications/NotificationStateHolder;", "getNotificationStateHolder", "()Lcom/miami/game/feature/notifications/NotificationStateHolder;", "setNotificationStateHolder", "(Lcom/miami/game/feature/notifications/NotificationStateHolder;)V", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onStart", "GLView", "(Landroidx/compose/runtime/Composer;I)V", "convertBytesToHumanReadable", "", "bytes", "getCurrentToken", "callback", "Lkotlin/Function1;", "checkRUStoreUpdate", "saveGameType", "getBuildType", "initTracking", "obtainReferrerDetails", "checkNotificationPermission", "context", "Landroid/content/Context;", "openNotificationSettings", "askPermission", "checkUpdate", "observeData", "createDialog", "message", "url", "startApp", "onResume", "onPause", "onDestroy", "check", "checkLauncherUpdate", "getFirstOpen", "checkGameUpdate", "isOnline", "setProgressVisible", "visible", "showDialog", "hideDialog", "checkGame", "connectToTestServer", "shareLogs", "sendRequests", "Lkotlinx/coroutines/Job;", "Landroidx/activity/ComponentActivity;", "iterations", "", "queue", "Lcom/android/volley/RequestQueue;", "startGame", "mConnection", "com/arizona/launcher/MainEntrench$mConnection$1", "Lcom/arizona/launcher/MainEntrench$mConnection$1;", "Companion", "IncomingHandler", "app_arizonaRelease_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class MainEntrench extends Hilt_MainEntrench {
@@ -179,9 +179,9 @@ public final class MainEntrench extends Hilt_MainEntrench {
     };
 
     /* compiled from: MainEntrench.kt */
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -199,19 +199,19 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final GLSurfaceViewForExtensions GLView$lambda$13$lambda$12(GLSurfaceViewForExtensions gLSurfaceViewForExtensions, Context it) {
+    public static final GLSurfaceViewForExtensions GLView$lambda$16$lambda$15(GLSurfaceViewForExtensions gLSurfaceViewForExtensions, Context it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return gLSurfaceViewForExtensions;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit GLView$lambda$14(MainEntrench mainEntrench, int i, Composer composer, int i2) {
+    public static final Unit GLView$lambda$17(MainEntrench mainEntrench, int i, Composer composer, int i2) {
         mainEntrench.GLView(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* compiled from: MainEntrench.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcom/arizona/launcher/MainEntrench$Companion;", "", "<init>", "()V", "TAG", "", "app_arizonaRelease_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcom/arizona/launcher/MainEntrench$Companion;", "", "<init>", "()V", "TAG", "", "app_arizonaRelease_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -405,7 +405,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(this, str + " v16.3.7 release_web", 1).show();
+            Toast.makeText(this, str + " v16.4.0 release_web", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -428,89 +428,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         MainEntrench mainEntrench = this;
         final MainComponent mainComponent = (MainComponent) RetainedComponentKt.retainedComponent$default((ComponentActivity) mainEntrench, (String) null, false, false, (Function0) null, (Function1) new MainEntrench$onCreate$root$1(getRootFactory()), 15, (Object) null);
-        ComponentActivityKt.setContent$default(mainEntrench, null, ComposableLambdaKt.composableLambdaInstance(1553775207, true, new Function2<Composer, Integer, Unit>() { // from class: com.arizona.launcher.MainEntrench$onCreate$8
+        ComponentActivityKt.setContent$default(mainEntrench, null, ComposableLambdaKt.composableLambdaInstance(1553775207, true, new Function2() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda25
             @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
-                invoke(composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "C240@9266L269,240@9247L288:MainEntrench.kt#5ji0rp");
-                if ((i & 3) != 2 || !composer.getSkipping()) {
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:240)");
-                    }
-                    final MainEntrench mainEntrench2 = MainEntrench.this;
-                    final MainComponent mainComponent2 = mainComponent;
-                    ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(783987227, true, new Function2<Composer, Integer, Unit>() { // from class: com.arizona.launcher.MainEntrench$onCreate$8.1
-                        @Override // kotlin.jvm.functions.Function2
-                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                            invoke(composer2, num.intValue());
-                            return Unit.INSTANCE;
-                        }
-
-                        public final void invoke(Composer composer2, int i2) {
-                            ComposerKt.sourceInformation(composer2, "C241@9284L237:MainEntrench.kt#5ji0rp");
-                            if ((i2 & 3) != 2 || !composer2.getSkipping()) {
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(783987227, i2, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:241)");
-                                }
-                                MainEntrench mainEntrench3 = MainEntrench.this;
-                                MainComponent mainComponent3 = mainComponent2;
-                                ComposerKt.sourceInformationMarkerStart(composer2, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
-                                MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer2, 0);
-                                ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
-                                int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
-                                CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, Modifier.Companion);
-                                Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
-                                if (!(composer2.getApplier() instanceof Applier)) {
-                                    ComposablesKt.invalidApplier();
-                                }
-                                composer2.startReusableNode();
-                                if (composer2.getInserting()) {
-                                    composer2.createNode(constructor);
-                                } else {
-                                    composer2.useNode();
-                                }
-                                Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                                Updater.m3527setimpl(m3520constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
-                                }
-                                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                ComposerKt.sourceInformationMarkerStart(composer2, -384672921, "C89@4556L9:Column.kt#2w3rfo");
-                                ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-                                ComposerKt.sourceInformationMarkerStart(composer2, 1707295508, "C242@9313L8,246@9438L43,244@9343L160:MainEntrench.kt#5ji0rp");
-                                mainEntrench3.GLView(composer2, 0);
-                                MainRouteKt.MainRoute(mainComponent3, AndroidWindowSizeClass_androidKt.calculateWindowSizeClass(mainEntrench3, composer2, 0), composer2, MainComponent.$stable);
-                                ComposerKt.sourceInformationMarkerEnd(composer2);
-                                ComposerKt.sourceInformationMarkerEnd(composer2);
-                                composer2.endNode();
-                                ComposerKt.sourceInformationMarkerEnd(composer2);
-                                ComposerKt.sourceInformationMarkerEnd(composer2);
-                                ComposerKt.sourceInformationMarkerEnd(composer2);
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventEnd();
-                                    return;
-                                }
-                                return;
-                            }
-                            composer2.skipToGroupEnd();
-                        }
-                    }, composer, 54), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 3);
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventEnd();
-                        return;
-                    }
-                    return;
-                }
-                composer.skipToGroupEnd();
+            public final Object invoke(Object obj, Object obj2) {
+                Unit onCreate$lambda$9;
+                onCreate$lambda$9 = MainEntrench.onCreate$lambda$9(MainEntrench.this, mainComponent, (Composer) obj, ((Integer) obj2).intValue());
+                return onCreate$lambda$9;
             }
         }), 1, null);
         File externalFilesDir = getExternalFilesDir(null);
@@ -569,6 +492,83 @@ public final class MainEntrench extends Hilt_MainEntrench {
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit onCreate$lambda$9(final MainEntrench mainEntrench, final MainComponent mainComponent, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C245@9341L269,245@9322L288:MainEntrench.kt#5ji0rp");
+        if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
+            composer.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:245)");
+            }
+            ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(783987227, true, new Function2() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda18
+                @Override // kotlin.jvm.functions.Function2
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit onCreate$lambda$9$lambda$8;
+                    onCreate$lambda$9$lambda$8 = MainEntrench.onCreate$lambda$9$lambda$8(MainEntrench.this, mainComponent, (Composer) obj, ((Integer) obj2).intValue());
+                    return onCreate$lambda$9$lambda$8;
+                }
+            }, composer, 54), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 3);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit onCreate$lambda$9$lambda$8(MainEntrench mainEntrench, MainComponent mainComponent, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C246@9359L237:MainEntrench.kt#5ji0rp");
+        if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
+            composer.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:246)");
+            }
+            ComposerKt.sourceInformationMarkerStart(composer, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
+            MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer, 0);
+            ComposerKt.sourceInformationMarkerStart(composer, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
+            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer, 0);
+            CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, Modifier.Companion);
+            Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
+            ComposerKt.sourceInformationMarkerStart(composer, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+            if (!(composer.getApplier() instanceof Applier)) {
+                ComposablesKt.invalidApplier();
+            }
+            composer.startReusableNode();
+            if (composer.getInserting()) {
+                composer.createNode(constructor);
+            } else {
+                composer.useNode();
+            }
+            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer);
+            Updater.m3527setimpl(m3520constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
+            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            }
+            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            ComposerKt.sourceInformationMarkerStart(composer, -384672921, "C89@4556L9:Column.kt#2w3rfo");
+            ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
+            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C247@9388L8,251@9513L43,249@9418L160:MainEntrench.kt#5ji0rp");
+            mainEntrench.GLView(composer, 0);
+            MainRouteKt.MainRoute(mainComponent, AndroidWindowSizeClass_androidKt.calculateWindowSizeClass(mainEntrench, composer, 0), composer, MainComponent.$stable);
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            composer.endNode();
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+        return Unit.INSTANCE;
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onStart() {
@@ -577,13 +577,16 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v6 */
+    /* JADX WARN: Type inference failed for: r0v7 */
     public final void GLView(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(163249873);
-        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)268@9943L7,269@10000L7,271@10030L48,273@10121L464,273@10088L497,288@10630L10,287@10595L150:MainEntrench.kt#5ji0rp");
-        if ((i & 1) != 0 || !startRestartGroup.getSkipping()) {
+        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)273@10018L7,274@10075L7,276@10105L48,278@10196L464,278@10163L497,293@10705L10,292@10670L150:MainEntrench.kt#5ji0rp");
+        int i2 = i & 1;
+        if (!startRestartGroup.shouldExecute(i2 != 0, i2)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:267)");
+                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:272)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
@@ -593,79 +596,74 @@ public final class MainEntrench extends Hilt_MainEntrench {
             Object consume2 = startRestartGroup.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             final LifecycleOwner lifecycleOwner = (LifecycleOwner) consume2;
-            startRestartGroup.startReplaceGroup(1849434622);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):MainEntrench.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2030657055, "CC(remember):MainEntrench.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new GLSurfaceViewForExtensions(context);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             final GLSurfaceViewForExtensions gLSurfaceViewForExtensions = (GLSurfaceViewForExtensions) rememberedValue;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(-1633490746);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):MainEntrench.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2030653727, "CC(remember):MainEntrench.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(gLSurfaceViewForExtensions) | startRestartGroup.changedInstance(lifecycleOwner);
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
-                rememberedValue2 = new Function1() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda10
+                rememberedValue2 = new Function1() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda9
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        DisposableEffectResult GLView$lambda$11$lambda$10;
-                        GLView$lambda$11$lambda$10 = MainEntrench.GLView$lambda$11$lambda$10(LifecycleOwner.this, gLSurfaceViewForExtensions, (DisposableEffectScope) obj);
-                        return GLView$lambda$11$lambda$10;
+                        DisposableEffectResult GLView$lambda$14$lambda$13;
+                        GLView$lambda$14$lambda$13 = MainEntrench.GLView$lambda$14$lambda$13(LifecycleOwner.this, gLSurfaceViewForExtensions, (DisposableEffectScope) obj);
+                        return GLView$lambda$14$lambda$13;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             EffectsKt.DisposableEffect(lifecycleOwner, (Function1) rememberedValue2, startRestartGroup, 0);
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):MainEntrench.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2030637893, "CC(remember):MainEntrench.kt#9igjgp");
             boolean changedInstance2 = startRestartGroup.changedInstance(gLSurfaceViewForExtensions);
             Object rememberedValue3 = startRestartGroup.rememberedValue();
             if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                rememberedValue3 = new Function1() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda12
+                rememberedValue3 = new Function1() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda10
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        GLSurfaceViewForExtensions GLView$lambda$13$lambda$12;
-                        GLView$lambda$13$lambda$12 = MainEntrench.GLView$lambda$13$lambda$12(GLSurfaceViewForExtensions.this, (Context) obj);
-                        return GLView$lambda$13$lambda$12;
+                        GLSurfaceViewForExtensions GLView$lambda$16$lambda$15;
+                        GLView$lambda$16$lambda$15 = MainEntrench.GLView$lambda$16$lambda$15(GLSurfaceViewForExtensions.this, (Context) obj);
+                        return GLView$lambda$16$lambda$15;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m771height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m6684constructorimpl(1)), null, startRestartGroup, 48, 4);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda13
+            endRestartGroup.updateScope(new Function2() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda12
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit GLView$lambda$14;
-                    GLView$lambda$14 = MainEntrench.GLView$lambda$14(MainEntrench.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return GLView$lambda$14;
+                    Unit GLView$lambda$17;
+                    GLView$lambda$17 = MainEntrench.GLView$lambda$17(MainEntrench.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return GLView$lambda$17;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DisposableEffectResult GLView$lambda$11$lambda$10(final LifecycleOwner lifecycleOwner, final GLSurfaceViewForExtensions gLSurfaceViewForExtensions, DisposableEffectScope DisposableEffect) {
+    public static final DisposableEffectResult GLView$lambda$14$lambda$13(final LifecycleOwner lifecycleOwner, final GLSurfaceViewForExtensions gLSurfaceViewForExtensions, DisposableEffectScope DisposableEffect) {
         Intrinsics.checkNotNullParameter(DisposableEffect, "$this$DisposableEffect");
         final LifecycleEventObserver lifecycleEventObserver = new LifecycleEventObserver() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner2, Lifecycle.Event event) {
-                MainEntrench.GLView$lambda$11$lambda$10$lambda$8(GLSurfaceViewForExtensions.this, lifecycleOwner2, event);
+                MainEntrench.GLView$lambda$14$lambda$13$lambda$11(GLSurfaceViewForExtensions.this, lifecycleOwner2, event);
             }
         };
         lifecycleOwner.getLifecycle().addObserver(lifecycleEventObserver);
-        return new DisposableEffectResult() { // from class: com.arizona.launcher.MainEntrench$GLView$lambda$11$lambda$10$$inlined$onDispose$1
+        return new DisposableEffectResult() { // from class: com.arizona.launcher.MainEntrench$GLView$lambda$14$lambda$13$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
                 LifecycleOwner.this.getLifecycle().removeObserver(lifecycleEventObserver);
@@ -674,7 +672,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void GLView$lambda$11$lambda$10$lambda$8(GLSurfaceViewForExtensions gLSurfaceViewForExtensions, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+    public static final void GLView$lambda$14$lambda$13$lambda$11(GLSurfaceViewForExtensions gLSurfaceViewForExtensions, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<unused var>");
         Intrinsics.checkNotNullParameter(event, "event");
         int i = WhenMappings.$EnumSwitchMapping$0[event.ordinal()];
@@ -709,16 +707,16 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     private final void getCurrentToken(final Function1<? super String, Unit> function1) {
-        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda14
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda15
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task) {
-                MainEntrench.getCurrentToken$lambda$15(Function1.this, task);
+                MainEntrench.getCurrentToken$lambda$18(Function1.this, task);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getCurrentToken$lambda$15(Function1 function1, Task task) {
+    public static final void getCurrentToken$lambda$18(Function1 function1, Task task) {
         Intrinsics.checkNotNullParameter(task, "task");
         if (!task.isSuccessful()) {
             function1.invoke(null);
@@ -728,39 +726,39 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     private final void checkRUStoreUpdate() {
-        RuStoreAppUpdateManagerFactory.create$default(RuStoreAppUpdateManagerFactory.INSTANCE, this, null, 2, null).getAppUpdateInfo().addOnSuccessListener(new OnSuccessListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda6
+        RuStoreAppUpdateManagerFactory.create$default(RuStoreAppUpdateManagerFactory.INSTANCE, this, null, 2, null).getAppUpdateInfo().addOnSuccessListener(new OnSuccessListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda5
             @Override // ru.rustore.sdk.core.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
-                MainEntrench.checkRUStoreUpdate$lambda$19(MainEntrench.this, (AppUpdateInfo) obj);
+                MainEntrench.checkRUStoreUpdate$lambda$22(MainEntrench.this, (AppUpdateInfo) obj);
             }
-        }).addOnFailureListener(new OnFailureListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda7
+        }).addOnFailureListener(new OnFailureListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda6
             @Override // ru.rustore.sdk.core.tasks.OnFailureListener
             public final void onFailure(Throwable th) {
-                MainEntrench.checkRUStoreUpdate$lambda$20(MainEntrench.this, th);
+                MainEntrench.checkRUStoreUpdate$lambda$23(MainEntrench.this, th);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void checkRUStoreUpdate$lambda$19(final MainEntrench mainEntrench, AppUpdateInfo info) {
+    public static final void checkRUStoreUpdate$lambda$22(final MainEntrench mainEntrench, AppUpdateInfo info) {
         Intrinsics.checkNotNullParameter(info, "info");
         if (info.getUpdateAvailability() == 2) {
             mainEntrench.setProgressVisible(false);
             mainEntrench.showDialog();
-            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda8
+            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit checkRUStoreUpdate$lambda$19$lambda$16;
-                    checkRUStoreUpdate$lambda$19$lambda$16 = MainEntrench.checkRUStoreUpdate$lambda$19$lambda$16(MainEntrench.this);
-                    return checkRUStoreUpdate$lambda$19$lambda$16;
+                    Unit checkRUStoreUpdate$lambda$22$lambda$19;
+                    checkRUStoreUpdate$lambda$22$lambda$19 = MainEntrench.checkRUStoreUpdate$lambda$22$lambda$19(MainEntrench.this);
+                    return checkRUStoreUpdate$lambda$22$lambda$19;
                 }
             });
-            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda9
+            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit checkRUStoreUpdate$lambda$19$lambda$17;
-                    checkRUStoreUpdate$lambda$19$lambda$17 = MainEntrench.checkRUStoreUpdate$lambda$19$lambda$17(MainEntrench.this);
-                    return checkRUStoreUpdate$lambda$19$lambda$17;
+                    Unit checkRUStoreUpdate$lambda$22$lambda$20;
+                    checkRUStoreUpdate$lambda$22$lambda$20 = MainEntrench.checkRUStoreUpdate$lambda$22$lambda$20(MainEntrench.this);
+                    return checkRUStoreUpdate$lambda$22$lambda$20;
                 }
             });
             MutableStateFlow<ErrorDialogExternalUiState> stateStore = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
@@ -773,14 +771,14 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit checkRUStoreUpdate$lambda$19$lambda$16(MainEntrench mainEntrench) {
+    public static final Unit checkRUStoreUpdate$lambda$22$lambda$19(MainEntrench mainEntrench) {
         mainEntrench.finishAffinity();
         System.exit(0);
         throw new RuntimeException("System.exit returned normally, while it was supposed to halt JVM.");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit checkRUStoreUpdate$lambda$19$lambda$17(MainEntrench mainEntrench) {
+    public static final Unit checkRUStoreUpdate$lambda$22$lambda$20(MainEntrench mainEntrench) {
         if (FlavorUtilKt.isArizona()) {
             mainEntrench.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://apps.rustore.ru/app/com.arizona21.game.ru")));
         } else {
@@ -792,7 +790,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void checkRUStoreUpdate$lambda$20(MainEntrench mainEntrench, Throwable it) {
+    public static final void checkRUStoreUpdate$lambda$23(MainEntrench mainEntrench, Throwable it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (mainEntrench.isStartApp) {
             return;
@@ -825,6 +823,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     private final void initTracking() {
         try {
             InstallReferrerClient build = InstallReferrerClient.newBuilder(this).build();
+            Intrinsics.checkNotNullExpressionValue(build, "build(...)");
             this.referrerClient = build;
             if (build == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("referrerClient");
@@ -908,20 +907,20 @@ public final class MainEntrench extends Hilt_MainEntrench {
         }
         setProgressVisible(false);
         showDialog();
-        ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda1
+        ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda26
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit askPermission$lambda$21;
-                askPermission$lambda$21 = MainEntrench.askPermission$lambda$21(MainEntrench.this);
-                return askPermission$lambda$21;
+                Unit askPermission$lambda$24;
+                askPermission$lambda$24 = MainEntrench.askPermission$lambda$24(MainEntrench.this);
+                return askPermission$lambda$24;
             }
         });
-        ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda2
+        ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit askPermission$lambda$22;
-                askPermission$lambda$22 = MainEntrench.askPermission$lambda$22(MainEntrench.this);
-                return askPermission$lambda$22;
+                Unit askPermission$lambda$25;
+                askPermission$lambda$25 = MainEntrench.askPermission$lambda$25(MainEntrench.this);
+                return askPermission$lambda$25;
             }
         });
         MutableStateFlow<ErrorDialogExternalUiState> stateStore = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
@@ -931,7 +930,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit askPermission$lambda$21(MainEntrench mainEntrench) {
+    public static final Unit askPermission$lambda$24(MainEntrench mainEntrench) {
         mainEntrench.hideDialog();
         mainEntrench.permissionAsk = false;
         mainEntrench.getBuildType();
@@ -939,7 +938,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit askPermission$lambda$22(MainEntrench mainEntrench) {
+    public static final Unit askPermission$lambda$25(MainEntrench mainEntrench) {
         Context applicationContext = mainEntrench.getApplicationContext();
         Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
         mainEntrench.openNotificationSettings(applicationContext);
@@ -954,46 +953,46 @@ public final class MainEntrench extends Hilt_MainEntrench {
         Intrinsics.checkNotNullExpressionValue(create, "create(...)");
         Task<com.google.android.play.core.appupdate.AppUpdateInfo> appUpdateInfo = create.getAppUpdateInfo();
         Intrinsics.checkNotNullExpressionValue(appUpdateInfo, "getAppUpdateInfo(...)");
-        final Function1 function1 = new Function1() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda3
+        final Function1 function1 = new Function1() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit checkUpdate$lambda$27;
-                checkUpdate$lambda$27 = MainEntrench.checkUpdate$lambda$27(MainEntrench.this, (com.google.android.play.core.appupdate.AppUpdateInfo) obj);
-                return checkUpdate$lambda$27;
+                Unit checkUpdate$lambda$30;
+                checkUpdate$lambda$30 = MainEntrench.checkUpdate$lambda$30(MainEntrench.this, (com.google.android.play.core.appupdate.AppUpdateInfo) obj);
+                return checkUpdate$lambda$30;
             }
         };
-        appUpdateInfo.addOnSuccessListener(new com.google.android.gms.tasks.OnSuccessListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda4
+        appUpdateInfo.addOnSuccessListener(new com.google.android.gms.tasks.OnSuccessListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda3
             @Override // com.google.android.gms.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
                 Function1.this.invoke(obj);
             }
-        }).addOnFailureListener(new com.google.android.gms.tasks.OnFailureListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda5
+        }).addOnFailureListener(new com.google.android.gms.tasks.OnFailureListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda4
             @Override // com.google.android.gms.tasks.OnFailureListener
             public final void onFailure(Exception exc) {
-                MainEntrench.checkUpdate$lambda$29(MainEntrench.this, exc);
+                MainEntrench.checkUpdate$lambda$32(MainEntrench.this, exc);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit checkUpdate$lambda$27(final MainEntrench mainEntrench, com.google.android.play.core.appupdate.AppUpdateInfo appUpdateInfo) {
+    public static final Unit checkUpdate$lambda$30(final MainEntrench mainEntrench, com.google.android.play.core.appupdate.AppUpdateInfo appUpdateInfo) {
         if (appUpdateInfo.updateAvailability() == 2) {
             mainEntrench.setProgressVisible(false);
             mainEntrench.showDialog();
-            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda18
+            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda13
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit checkUpdate$lambda$27$lambda$24;
-                    checkUpdate$lambda$27$lambda$24 = MainEntrench.checkUpdate$lambda$27$lambda$24(MainEntrench.this);
-                    return checkUpdate$lambda$27$lambda$24;
+                    Unit checkUpdate$lambda$30$lambda$27;
+                    checkUpdate$lambda$30$lambda$27 = MainEntrench.checkUpdate$lambda$30$lambda$27(MainEntrench.this);
+                    return checkUpdate$lambda$30$lambda$27;
                 }
             });
-            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda19
+            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda14
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit checkUpdate$lambda$27$lambda$25;
-                    checkUpdate$lambda$27$lambda$25 = MainEntrench.checkUpdate$lambda$27$lambda$25(MainEntrench.this);
-                    return checkUpdate$lambda$27$lambda$25;
+                    Unit checkUpdate$lambda$30$lambda$28;
+                    checkUpdate$lambda$30$lambda$28 = MainEntrench.checkUpdate$lambda$30$lambda$28(MainEntrench.this);
+                    return checkUpdate$lambda$30$lambda$28;
                 }
             });
             MutableStateFlow<ErrorDialogExternalUiState> stateStore = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
@@ -1006,14 +1005,14 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit checkUpdate$lambda$27$lambda$24(MainEntrench mainEntrench) {
+    public static final Unit checkUpdate$lambda$30$lambda$27(MainEntrench mainEntrench) {
         mainEntrench.finishAffinity();
         System.exit(0);
         throw new RuntimeException("System.exit returned normally, while it was supposed to halt JVM.");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit checkUpdate$lambda$27$lambda$25(MainEntrench mainEntrench) {
+    public static final Unit checkUpdate$lambda$30$lambda$28(MainEntrench mainEntrench) {
         if (FlavorUtilKt.isArizona()) {
             mainEntrench.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://play.google.com/store/apps/details?id=com.arizona21.game&hl=ru&gl=US")));
         } else {
@@ -1025,7 +1024,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void checkUpdate$lambda$29(MainEntrench mainEntrench, Exception it) {
+    public static final void checkUpdate$lambda$32(MainEntrench mainEntrench, Exception it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (mainEntrench.isStartApp) {
             return;
@@ -1045,13 +1044,13 @@ public final class MainEntrench extends Hilt_MainEntrench {
         MaterialAlertDialogBuilder positiveButton = new MaterialAlertDialogBuilder(this).setMessage((CharSequence) str).setPositiveButton((CharSequence) getString(R.string.open_website), new DialogInterface.OnClickListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda11
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                MainEntrench.createDialog$lambda$30(MainEntrench.this, str, str2, dialogInterface, i);
+                MainEntrench.createDialog$lambda$33(MainEntrench.this, str, str2, dialogInterface, i);
             }
         });
-        positiveButton.setNegativeButton(R.string.exit, new DialogInterface.OnClickListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda17
+        positiveButton.setNegativeButton(R.string.exit, new DialogInterface.OnClickListener() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda19
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                MainEntrench.createDialog$lambda$32$lambda$31(MainEntrench.this, dialogInterface, i);
+                MainEntrench.createDialog$lambda$35$lambda$34(MainEntrench.this, dialogInterface, i);
             }
         });
         AlertDialog create = positiveButton.create();
@@ -1061,13 +1060,13 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void createDialog$lambda$30(MainEntrench mainEntrench, String str, String str2, DialogInterface dialogInterface, int i) {
+    public static final void createDialog$lambda$33(MainEntrench mainEntrench, String str, String str2, DialogInterface dialogInterface, int i) {
         mainEntrench.createDialog(str, str2);
         mainEntrench.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(str2)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void createDialog$lambda$32$lambda$31(MainEntrench mainEntrench, DialogInterface dialogInterface, int i) {
+    public static final void createDialog$lambda$35$lambda$34(MainEntrench mainEntrench, DialogInterface dialogInterface, int i) {
         mainEntrench.finishAffinity();
         System.exit(0);
         throw new RuntimeException("System.exit returned normally, while it was supposed to halt JVM.");
@@ -1076,13 +1075,6 @@ public final class MainEntrench extends Hilt_MainEntrench {
     private final void startApp() {
         this.isStartApp = true;
         bindService(new Intent(this, UpdateService.class), this.mConnection, 1);
-        try {
-            com.arizona.launcher.util.UtilsKt.sendDataAnalytics(this, "launch", 3);
-        } catch (Exception e) {
-            Log.e("sendDataAnalytics", "ERROR");
-            FirebaseCrashlytics.getInstance().recordException(e);
-            e.printStackTrace();
-        }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -1125,20 +1117,20 @@ public final class MainEntrench extends Hilt_MainEntrench {
         }
         setProgressVisible(false);
         showDialog();
-        ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda15
+        ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda16
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit check$lambda$34;
-                check$lambda$34 = MainEntrench.check$lambda$34(MainEntrench.this);
-                return check$lambda$34;
+                Unit check$lambda$37;
+                check$lambda$37 = MainEntrench.check$lambda$37(MainEntrench.this);
+                return check$lambda$37;
             }
         });
-        ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda16
+        ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda17
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit check$lambda$35;
-                check$lambda$35 = MainEntrench.check$lambda$35(MainEntrench.this);
-                return check$lambda$35;
+                Unit check$lambda$38;
+                check$lambda$38 = MainEntrench.check$lambda$38(MainEntrench.this);
+                return check$lambda$38;
             }
         });
         MutableStateFlow<ErrorDialogExternalUiState> stateStore = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
@@ -1147,14 +1139,14 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit check$lambda$34(MainEntrench mainEntrench) {
+    public static final Unit check$lambda$37(MainEntrench mainEntrench) {
         mainEntrench.finishAffinity();
         System.exit(0);
         throw new RuntimeException("System.exit returned normally, while it was supposed to halt JVM.");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit check$lambda$35(MainEntrench mainEntrench) {
+    public static final Unit check$lambda$38(MainEntrench mainEntrench) {
         mainEntrench.hideDialog();
         mainEntrench.check();
         return Unit.INSTANCE;
@@ -1232,15 +1224,15 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* compiled from: MainEntrench.kt */
-    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0016R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00030\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/arizona/launcher/MainEntrench$IncomingHandler;", "Landroid/os/Handler;", "ref", "Lcom/arizona/launcher/MainEntrench;", "<init>", "(Lcom/arizona/launcher/MainEntrench;)V", "activityRef", "Ljava/lang/ref/WeakReference;", "handleMessage", "", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "app_arizonaRelease_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0016R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00030\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/arizona/launcher/MainEntrench$IncomingHandler;", "Landroid/os/Handler;", "ref", "Lcom/arizona/launcher/MainEntrench;", "<init>", "(Lcom/arizona/launcher/MainEntrench;)V", "activityRef", "Ljava/lang/ref/WeakReference;", "handleMessage", "", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "app_arizonaRelease_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     private static final class IncomingHandler extends Handler {
         private final WeakReference<MainEntrench> activityRef;
 
         /* compiled from: MainEntrench.kt */
-        @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
         /* loaded from: classes3.dex */
-        public /* synthetic */ class WhenMappings {
+        public static final /* synthetic */ class WhenMappings {
             public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
             static {
@@ -1463,13 +1455,6 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final Unit handleMessage$lambda$10(MainEntrench mainEntrench) {
-            try {
-                com.arizona.launcher.util.UtilsKt.sendDataAnalytics(mainEntrench, "start_download", 3);
-            } catch (Exception e) {
-                Log.e("sendDataAnalytics", "ERROR");
-                FirebaseCrashlytics.getInstance().recordException(e);
-                e.printStackTrace();
-            }
             Intent intent = new Intent(mainEntrench, UpdateActivity.class);
             intent.putExtra(UpdateActivity.UPDATE_MODE, "GameUpdate");
             mainEntrench.startActivity(intent);
@@ -1595,6 +1580,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     static /* synthetic */ Job sendRequests$default(MainEntrench mainEntrench, ComponentActivity componentActivity, String str, int i, RequestQueue requestQueue, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             requestQueue = Volley.newRequestQueue(componentActivity.getApplicationContext());
+            Intrinsics.checkNotNullExpressionValue(requestQueue, "newRequestQueue(...)");
         }
         return mainEntrench.sendRequests(componentActivity, str, i, requestQueue);
     }
@@ -1653,15 +1639,6 @@ public final class MainEntrench extends Hilt_MainEntrench {
         MainEntrench mainEntrench2 = this;
         sendRequests$default(this, mainEntrench2, "http://" + ConnectionHolder.INSTANCE.getSelectedServer().getIp() + ":825/", nextInt, null, 4, null);
         sendRequests$default(this, mainEntrench2, "http://" + ConnectionHolder.INSTANCE.getSelectedServer().getIp() + RemoteSettings.FORWARD_SLASH_STRING, nextInt, null, 4, null);
-        try {
-            Context applicationContext = getApplicationContext();
-            Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
-            com.arizona.launcher.util.UtilsKt.sendDataAnalytics(applicationContext, "try_connecting", 3);
-        } catch (Exception e3) {
-            Log.e("sendDataAnalytics", "ERROR");
-            FirebaseCrashlytics.getInstance().recordException(e3);
-            e3.printStackTrace();
-        }
         getMainViewModel().setNotFirstRun();
         startActivity(new Intent(mainEntrench, GTASA.class));
     }

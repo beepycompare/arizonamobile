@@ -1,161 +1,67 @@
 package com.google.android.gms.internal.measurement;
 
-import java.util.Iterator;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzbh extends zzaw {
+public final class zzbh extends zzav {
     /* JADX INFO: Access modifiers changed from: protected */
     public zzbh() {
-        this.zza.add(zzbl.FOR_IN);
-        this.zza.add(zzbl.FOR_IN_CONST);
-        this.zza.add(zzbl.FOR_IN_LET);
-        this.zza.add(zzbl.FOR_LET);
-        this.zza.add(zzbl.FOR_OF);
-        this.zza.add(zzbl.FOR_OF_CONST);
-        this.zza.add(zzbl.FOR_OF_LET);
-        this.zza.add(zzbl.WHILE);
+        this.zza.add(zzbk.ADD);
+        this.zza.add(zzbk.DIVIDE);
+        this.zza.add(zzbk.MODULUS);
+        this.zza.add(zzbk.MULTIPLY);
+        this.zza.add(zzbk.NEGATE);
+        this.zza.add(zzbk.POST_DECREMENT);
+        this.zza.add(zzbk.POST_INCREMENT);
+        this.zza.add(zzbk.PRE_DECREMENT);
+        this.zza.add(zzbk.PRE_INCREMENT);
+        this.zza.add(zzbk.SUBTRACT);
     }
 
-    private static zzap zzc(zzbf zzbfVar, Iterator it, zzap zzapVar) {
-        if (it != null) {
-            while (it.hasNext()) {
-                zzap zzc = zzbfVar.zza((zzap) it.next()).zzc((zzae) zzapVar);
-                if (zzc instanceof zzag) {
-                    zzag zzagVar = (zzag) zzc;
-                    if ("break".equals(zzagVar.zzc())) {
-                        return zzap.zzf;
-                    }
-                    if ("return".equals(zzagVar.zzc())) {
-                        return zzagVar;
-                    }
-                }
-            }
-        }
-        return zzap.zzf;
-    }
-
-    private static zzap zzd(zzbf zzbfVar, zzap zzapVar, zzap zzapVar2) {
-        return zzc(zzbfVar, zzapVar.zzl(), zzapVar2);
-    }
-
-    private static zzap zze(zzbf zzbfVar, zzap zzapVar, zzap zzapVar2) {
-        if (zzapVar instanceof Iterable) {
-            return zzc(zzbfVar, ((Iterable) zzapVar).iterator(), zzapVar2);
-        }
-        throw new IllegalArgumentException("Non-iterable type in for...of loop.");
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzaw
-    public final zzap zza(String str, zzg zzgVar, List list) {
-        zzbl zzblVar = zzbl.ADD;
+    @Override // com.google.android.gms.internal.measurement.zzav
+    public final zzao zza(String str, zzg zzgVar, List list) {
+        zzbk zzbkVar = zzbk.ADD;
         int ordinal = zzh.zze(str).ordinal();
-        if (ordinal != 65) {
+        if (ordinal == 0) {
+            zzh.zza(zzbk.ADD.name(), 2, list);
+            zzao zza = zzgVar.zza((zzao) list.get(0));
+            zzao zza2 = zzgVar.zza((zzao) list.get(1));
+            if ((zza instanceof zzak) || (zza instanceof zzas) || (zza2 instanceof zzak) || (zza2 instanceof zzas)) {
+                String zzc = zza.zzc();
+                String zzc2 = zza2.zzc();
+                String.valueOf(zzc);
+                String.valueOf(zzc2);
+                return new zzas(String.valueOf(zzc).concat(String.valueOf(zzc2)));
+            }
+            return new zzah(Double.valueOf(zza.zzd().doubleValue() + zza2.zzd().doubleValue()));
+        } else if (ordinal == 21) {
+            zzh.zza(zzbk.DIVIDE.name(), 2, list);
+            return new zzah(Double.valueOf(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue() / zzgVar.zza((zzao) list.get(1)).zzd().doubleValue()));
+        } else if (ordinal == 59) {
+            zzh.zza(zzbk.SUBTRACT.name(), 2, list);
+            return new zzah(Double.valueOf(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue() + new zzah(Double.valueOf(-zzgVar.zza((zzao) list.get(1)).zzd().doubleValue())).zzd().doubleValue()));
+        } else if (ordinal == 52 || ordinal == 53) {
+            zzh.zza(str, 2, list);
+            zzao zza3 = zzgVar.zza((zzao) list.get(0));
+            zzgVar.zza((zzao) list.get(1));
+            return zza3;
+        } else if (ordinal != 55 && ordinal != 56) {
             switch (ordinal) {
-                case 26:
-                    zzh.zzh(zzbl.FOR_IN.name(), 3, list);
-                    if (!(list.get(0) instanceof zzat)) {
-                        throw new IllegalArgumentException("Variable name in FOR_IN must be a string");
-                    }
-                    return zzd(new zzbg(zzgVar, ((zzap) list.get(0)).zzi()), zzgVar.zzb((zzap) list.get(1)), zzgVar.zzb((zzap) list.get(2)));
-                case 27:
-                    zzh.zzh(zzbl.FOR_IN_CONST.name(), 3, list);
-                    if (!(list.get(0) instanceof zzat)) {
-                        throw new IllegalArgumentException("Variable name in FOR_IN_CONST must be a string");
-                    }
-                    return zzd(new zzbd(zzgVar, ((zzap) list.get(0)).zzi()), zzgVar.zzb((zzap) list.get(1)), zzgVar.zzb((zzap) list.get(2)));
-                case 28:
-                    zzh.zzh(zzbl.FOR_IN_LET.name(), 3, list);
-                    if (!(list.get(0) instanceof zzat)) {
-                        throw new IllegalArgumentException("Variable name in FOR_IN_LET must be a string");
-                    }
-                    return zzd(new zzbe(zzgVar, ((zzap) list.get(0)).zzi()), zzgVar.zzb((zzap) list.get(1)), zzgVar.zzb((zzap) list.get(2)));
-                case 29:
-                    zzh.zzh(zzbl.FOR_LET.name(), 4, list);
-                    zzap zzb = zzgVar.zzb((zzap) list.get(0));
-                    if (!(zzb instanceof zzae)) {
-                        throw new IllegalArgumentException("Initializer variables in FOR_LET must be an ArrayList");
-                    }
-                    zzae zzaeVar = (zzae) zzb;
-                    zzap zzapVar = (zzap) list.get(1);
-                    zzap zzapVar2 = (zzap) list.get(2);
-                    zzap zzb2 = zzgVar.zzb((zzap) list.get(3));
-                    zzg zza = zzgVar.zza();
-                    for (int i = 0; i < zzaeVar.zzc(); i++) {
-                        String zzi = zzaeVar.zze(i).zzi();
-                        zza.zzg(zzi, zzgVar.zzd(zzi));
-                    }
-                    while (zzgVar.zzb(zzapVar).zzg().booleanValue()) {
-                        zzap zzc = zzgVar.zzc((zzae) zzb2);
-                        if (zzc instanceof zzag) {
-                            zzag zzagVar = (zzag) zzc;
-                            if ("break".equals(zzagVar.zzc())) {
-                                return zzap.zzf;
-                            }
-                            if ("return".equals(zzagVar.zzc())) {
-                                return zzagVar;
-                            }
-                        }
-                        zzg zza2 = zzgVar.zza();
-                        for (int i2 = 0; i2 < zzaeVar.zzc(); i2++) {
-                            String zzi2 = zzaeVar.zze(i2).zzi();
-                            zza2.zzg(zzi2, zza.zzd(zzi2));
-                        }
-                        zza2.zzb(zzapVar2);
-                        zza = zza2;
-                    }
-                    return zzap.zzf;
-                case 30:
-                    zzh.zzh(zzbl.FOR_OF.name(), 3, list);
-                    if (!(list.get(0) instanceof zzat)) {
-                        throw new IllegalArgumentException("Variable name in FOR_OF must be a string");
-                    }
-                    return zze(new zzbg(zzgVar, ((zzap) list.get(0)).zzi()), zzgVar.zzb((zzap) list.get(1)), zzgVar.zzb((zzap) list.get(2)));
-                case 31:
-                    zzh.zzh(zzbl.FOR_OF_CONST.name(), 3, list);
-                    if (!(list.get(0) instanceof zzat)) {
-                        throw new IllegalArgumentException("Variable name in FOR_OF_CONST must be a string");
-                    }
-                    return zze(new zzbd(zzgVar, ((zzap) list.get(0)).zzi()), zzgVar.zzb((zzap) list.get(1)), zzgVar.zzb((zzap) list.get(2)));
-                case 32:
-                    zzh.zzh(zzbl.FOR_OF_LET.name(), 3, list);
-                    if (!(list.get(0) instanceof zzat)) {
-                        throw new IllegalArgumentException("Variable name in FOR_OF_LET must be a string");
-                    }
-                    return zze(new zzbe(zzgVar, ((zzap) list.get(0)).zzi()), zzgVar.zzb((zzap) list.get(1)), zzgVar.zzb((zzap) list.get(2)));
+                case 44:
+                    zzh.zza(zzbk.MODULUS.name(), 2, list);
+                    return new zzah(Double.valueOf(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue() % zzgVar.zza((zzao) list.get(1)).zzd().doubleValue()));
+                case 45:
+                    zzh.zza(zzbk.MULTIPLY.name(), 2, list);
+                    return new zzah(Double.valueOf(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue() * zzgVar.zza((zzao) list.get(1)).zzd().doubleValue()));
+                case 46:
+                    zzh.zza(zzbk.NEGATE.name(), 1, list);
+                    return new zzah(Double.valueOf(-zzgVar.zza((zzao) list.get(0)).zzd().doubleValue()));
                 default:
                     return super.zzb(str);
             }
+        } else {
+            zzh.zza(str, 1, list);
+            return zzgVar.zza((zzao) list.get(0));
         }
-        zzh.zzh(zzbl.WHILE.name(), 4, list);
-        zzap zzapVar3 = (zzap) list.get(0);
-        zzap zzapVar4 = (zzap) list.get(1);
-        zzap zzb3 = zzgVar.zzb((zzap) list.get(3));
-        if (zzgVar.zzb((zzap) list.get(2)).zzg().booleanValue()) {
-            zzap zzc2 = zzgVar.zzc((zzae) zzb3);
-            if (zzc2 instanceof zzag) {
-                zzag zzagVar2 = (zzag) zzc2;
-                if ("break".equals(zzagVar2.zzc())) {
-                    return zzap.zzf;
-                }
-                if ("return".equals(zzagVar2.zzc())) {
-                    return zzagVar2;
-                }
-            }
-        }
-        while (zzgVar.zzb(zzapVar3).zzg().booleanValue()) {
-            zzap zzc3 = zzgVar.zzc((zzae) zzb3);
-            if (zzc3 instanceof zzag) {
-                zzag zzagVar3 = (zzag) zzc3;
-                if ("break".equals(zzagVar3.zzc())) {
-                    return zzap.zzf;
-                }
-                if ("return".equals(zzagVar3.zzc())) {
-                    return zzagVar3;
-                }
-            }
-            zzgVar.zzb(zzapVar4);
-        }
-        return zzap.zzf;
     }
 }

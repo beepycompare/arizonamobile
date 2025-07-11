@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: SetupDialog.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "uiAction", "Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogUiAction;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "uiAction", "Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogUiAction;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$SetupDialogRoute$1$1", f = "SetupDialog.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes4.dex */
 final class SetupDialogKt$SetupDialogRoute$1$1 extends SuspendLambda implements Function3<CoroutineScope, CommonDialogUiAction, Continuation<? super Unit>, Object> {
@@ -40,12 +40,12 @@ final class SetupDialogKt$SetupDialogRoute$1$1 extends SuspendLambda implements 
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        CommonDialogUiAction commonDialogUiAction = (CommonDialogUiAction) this.L$0;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label != 0) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        CommonDialogUiAction commonDialogUiAction = (CommonDialogUiAction) this.L$0;
         if (Intrinsics.areEqual(commonDialogUiAction, CommonDialogUiAction.Cancel.INSTANCE)) {
             this.$onBackClick.invoke();
         } else if (!Intrinsics.areEqual(commonDialogUiAction, CommonDialogUiAction.Confirm.INSTANCE)) {

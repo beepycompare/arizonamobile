@@ -12,7 +12,7 @@ import java.util.Locale;
 public abstract class Se {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SafePackageManager f625a = new SafePackageManager();
+    public static final SafePackageManager f626a = new SafePackageManager();
     public static final Ne b = new Ne();
     public static final Oe c = new Oe();
     public static final Pe d = new Pe(2);
@@ -40,7 +40,7 @@ public abstract class Se {
         }
         NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork);
         if (networkCapabilities != null) {
-            for (Integer num : c.f686a.keySet()) {
+            for (Integer num : c.f687a.keySet()) {
                 if (networkCapabilities.hasTransport(num.intValue())) {
                     return (Re) c.a(num);
                 }

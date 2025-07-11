@@ -92,7 +92,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T sizeMultiplier(float f) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().sizeMultiplier(f);
+            return (T) mo8056clone().sizeMultiplier(f);
         }
         if (f < 0.0f || f > 1.0f) {
             throw new IllegalArgumentException("sizeMultiplier must be between 0 and 1");
@@ -104,7 +104,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T useUnlimitedSourceGeneratorsPool(boolean z) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().useUnlimitedSourceGeneratorsPool(z);
+            return (T) mo8056clone().useUnlimitedSourceGeneratorsPool(z);
         }
         this.useUnlimitedSourceGeneratorsPool = z;
         this.fields |= 262144;
@@ -113,7 +113,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T useAnimationPool(boolean z) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().useAnimationPool(z);
+            return (T) mo8056clone().useAnimationPool(z);
         }
         this.useAnimationPool = z;
         this.fields |= 1048576;
@@ -122,7 +122,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T onlyRetrieveFromCache(boolean z) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().onlyRetrieveFromCache(z);
+            return (T) mo8056clone().onlyRetrieveFromCache(z);
         }
         this.onlyRetrieveFromCache = z;
         this.fields |= 524288;
@@ -131,7 +131,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T diskCacheStrategy(DiskCacheStrategy diskCacheStrategy) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().diskCacheStrategy(diskCacheStrategy);
+            return (T) mo8056clone().diskCacheStrategy(diskCacheStrategy);
         }
         this.diskCacheStrategy = (DiskCacheStrategy) Preconditions.checkNotNull(diskCacheStrategy);
         this.fields |= 4;
@@ -140,7 +140,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T priority(Priority priority) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().priority(priority);
+            return (T) mo8056clone().priority(priority);
         }
         this.priority = (Priority) Preconditions.checkNotNull(priority);
         this.fields |= 8;
@@ -149,7 +149,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T placeholder(Drawable drawable) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().placeholder(drawable);
+            return (T) mo8056clone().placeholder(drawable);
         }
         this.placeholderDrawable = drawable;
         this.placeholderId = 0;
@@ -159,7 +159,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T placeholder(int i) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().placeholder(i);
+            return (T) mo8056clone().placeholder(i);
         }
         this.placeholderId = i;
         this.placeholderDrawable = null;
@@ -169,7 +169,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T fallback(Drawable drawable) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().fallback(drawable);
+            return (T) mo8056clone().fallback(drawable);
         }
         this.fallbackDrawable = drawable;
         this.fallbackId = 0;
@@ -179,7 +179,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T fallback(int i) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().fallback(i);
+            return (T) mo8056clone().fallback(i);
         }
         this.fallbackId = i;
         this.fallbackDrawable = null;
@@ -189,7 +189,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T error(Drawable drawable) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().error(drawable);
+            return (T) mo8056clone().error(drawable);
         }
         this.errorPlaceholder = drawable;
         this.errorId = 0;
@@ -199,7 +199,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T error(int i) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().error(i);
+            return (T) mo8056clone().error(i);
         }
         this.errorId = i;
         this.errorPlaceholder = null;
@@ -209,7 +209,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T theme(Resources.Theme theme) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().theme(theme);
+            return (T) mo8056clone().theme(theme);
         }
         this.theme = theme;
         if (theme != null) {
@@ -222,7 +222,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T skipMemoryCache(boolean z) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().skipMemoryCache(true);
+            return (T) mo8056clone().skipMemoryCache(true);
         }
         this.isCacheable = !z;
         this.fields |= 256;
@@ -231,7 +231,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T override(int i, int i2) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().override(i, i2);
+            return (T) mo8056clone().override(i, i2);
         }
         this.overrideWidth = i;
         this.overrideHeight = i2;
@@ -245,7 +245,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T signature(Key key) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().signature(key);
+            return (T) mo8056clone().signature(key);
         }
         this.signature = (Key) Preconditions.checkNotNull(key);
         this.fields |= 1024;
@@ -254,7 +254,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     @Override // 
     /* renamed from: clone */
-    public T mo8057clone() {
+    public T mo8056clone() {
         try {
             T t = (T) super.clone();
             Options options = new Options();
@@ -273,7 +273,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public <Y> T set(Option<Y> option, Y y) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().set(option, y);
+            return (T) mo8056clone().set(option, y);
         }
         Preconditions.checkNotNull(option);
         Preconditions.checkNotNull(y);
@@ -283,7 +283,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     T removeOption(Option<?> option) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().removeOption(option);
+            return (T) mo8056clone().removeOption(option);
         }
         this.options.remove(option);
         return selfOrThrowIfLocked();
@@ -291,7 +291,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T decode(Class<?> cls) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().decode(cls);
+            return (T) mo8056clone().decode(cls);
         }
         this.resourceClass = (Class) Preconditions.checkNotNull(cls);
         this.fields |= 4096;
@@ -373,7 +373,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     final T optionalTransform(DownsampleStrategy downsampleStrategy, Transformation<Bitmap> transformation) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().optionalTransform(downsampleStrategy, transformation);
+            return (T) mo8056clone().optionalTransform(downsampleStrategy, transformation);
         }
         downsample(downsampleStrategy);
         return transform(transformation, false);
@@ -381,7 +381,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     final T transform(DownsampleStrategy downsampleStrategy, Transformation<Bitmap> transformation) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().transform(downsampleStrategy, transformation);
+            return (T) mo8056clone().transform(downsampleStrategy, transformation);
         }
         downsample(downsampleStrategy);
         return transform(transformation);
@@ -432,7 +432,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
     /* JADX WARN: Multi-variable type inference failed */
     T transform(Transformation<Bitmap> transformation, boolean z) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().transform(transformation, z);
+            return (T) mo8056clone().transform(transformation, z);
         }
         DrawableTransformation drawableTransformation = new DrawableTransformation(transformation, z);
         transform(Bitmap.class, transformation, z);
@@ -448,7 +448,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     <Y> T transform(Class<Y> cls, Transformation<Y> transformation, boolean z) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().transform(cls, transformation, z);
+            return (T) mo8056clone().transform(cls, transformation, z);
         }
         Preconditions.checkNotNull(cls);
         Preconditions.checkNotNull(transformation);
@@ -470,7 +470,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T dontTransform() {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().dontTransform();
+            return (T) mo8056clone().dontTransform();
         }
         this.transformations.clear();
         int i = this.fields;
@@ -487,7 +487,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
     public T apply(BaseRequestOptions<?> baseRequestOptions) {
         if (this.isAutoCloneEnabled) {
-            return (T) mo8057clone().apply(baseRequestOptions);
+            return (T) mo8056clone().apply(baseRequestOptions);
         }
         if (isSet(baseRequestOptions.fields, 2)) {
             this.sizeMultiplier = baseRequestOptions.sizeMultiplier;

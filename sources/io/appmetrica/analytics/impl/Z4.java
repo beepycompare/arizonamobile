@@ -5,7 +5,7 @@ public final class Z4 extends S2 {
         super(of, s4);
     }
 
-    public final boolean a(C0333i6 c0333i6, P4 p4) {
-        return a(c0333i6, new Y4(p4));
+    public final boolean a(C0325i6 c0325i6, P4 p4) {
+        return a(c0325i6, new Y4(p4));
     }
 }

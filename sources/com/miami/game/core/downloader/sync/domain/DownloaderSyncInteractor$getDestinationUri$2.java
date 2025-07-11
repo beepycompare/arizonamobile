@@ -1,6 +1,7 @@
 package com.miami.game.core.downloader.sync.domain;
 
 import android.net.Uri;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import com.miami.game.core.downloader.sync.data.DownloaderSyncRepository;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -14,8 +15,8 @@ import kotlinx.coroutines.CoroutineScope;
 import timber.log.Timber;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DownloaderSyncInteractor.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroid/net/Uri;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.downloader.sync.domain.DownloaderSyncInteractor$getDestinationUri$2", f = "DownloaderSyncInteractor.kt", i = {}, l = {72}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroid/net/Uri;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.downloader.sync.domain.DownloaderSyncInteractor$getDestinationUri$2", f = "DownloaderSyncInteractor.kt", i = {}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_GONE_MARGIN_BASELINE}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes4.dex */
 public final class DownloaderSyncInteractor$getDestinationUri$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Uri>, Object> {
     final /* synthetic */ String $url;

@@ -1,23 +1,24 @@
 package com.google.android.gms.measurement.internal;
 
-import java.util.Map;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import com.google.android.gms.common.internal.Preconditions;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzpm implements zzhg {
-    final /* synthetic */ String zza;
-    final /* synthetic */ zzpz zzb;
-    final /* synthetic */ zzpv zzc;
+final class zzpm {
+    final String zza;
+    final String zzb;
+    final String zzc;
+    final long zzd;
+    final Object zze;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzpm(zzpv zzpvVar, String str, zzpz zzpzVar) {
+    public zzpm(String str, String str2, String str3, long j, Object obj) {
+        Preconditions.checkNotEmpty(str);
+        Preconditions.checkNotEmpty(str3);
+        Preconditions.checkNotNull(obj);
         this.zza = str;
-        this.zzb = zzpzVar;
-        this.zzc = zzpvVar;
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzhg
-    public final void zza(String str, int i, Throwable th, byte[] bArr, Map map) {
-        this.zzc.zzZ(this.zza, i, th, bArr, this.zzb);
+        this.zzb = str2;
+        this.zzc = str3;
+        this.zzd = j;
+        this.zze = obj;
     }
 }

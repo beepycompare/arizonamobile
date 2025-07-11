@@ -16,7 +16,7 @@ public class CounterConfiguration implements Parcelable {
     public static final Parcelable.Creator<CounterConfiguration> CREATOR = new b();
 
     /* renamed from: a  reason: collision with root package name */
-    private final ContentValues f1175a;
+    private final ContentValues f1176a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public /* synthetic */ CounterConfiguration(ContentValues contentValues, int i) {
@@ -39,7 +39,7 @@ public class CounterConfiguration implements Parcelable {
 
     private void c(Integer num) {
         if (fo.a(num)) {
-            this.f1175a.put("MAX_REPORTS_IN_DB_COUNT", num);
+            this.f1176a.put("MAX_REPORTS_IN_DB_COUNT", num);
         }
     }
 
@@ -90,7 +90,7 @@ public class CounterConfiguration implements Parcelable {
         c(appMetricaConfig.maxReportsInDatabaseCount);
         Boolean bool = appMetricaConfig.nativeCrashReporting;
         if (fo.a(bool)) {
-            this.f1175a.put("CFG_NATIVE_CRASHES_ENABLED", bool);
+            this.f1176a.put("CFG_NATIVE_CRASHES_ENABLED", bool);
         }
         if (fo.a(appMetricaConfig.revenueAutoTrackingEnabled)) {
             setRevenueAutoTrackingEnabled(appMetricaConfig.revenueAutoTrackingEnabled.booleanValue());
@@ -103,102 +103,102 @@ public class CounterConfiguration implements Parcelable {
     }
 
     public String getApiKey() {
-        return this.f1175a.getAsString("CFG_API_KEY");
+        return this.f1176a.getAsString("CFG_API_KEY");
     }
 
     public String getAppBuildNumber() {
-        return this.f1175a.getAsString("CFG_APP_VERSION_CODE");
+        return this.f1176a.getAsString("CFG_APP_VERSION_CODE");
     }
 
     public String getAppVersion() {
-        return this.f1175a.getAsString("CFG_APP_VERSION");
+        return this.f1176a.getAsString("CFG_APP_VERSION");
     }
 
     public Boolean getDataSendingEnabled() {
-        return this.f1175a.getAsBoolean("CFG_DATA_SENDING_ENABLED");
+        return this.f1176a.getAsBoolean("CFG_DATA_SENDING_ENABLED");
     }
 
     public String getDeviceType() {
-        return this.f1175a.getAsString("CFG_DEVICE_SIZE_TYPE");
+        return this.f1176a.getAsString("CFG_DEVICE_SIZE_TYPE");
     }
 
     public Integer getDispatchPeriod() {
-        return this.f1175a.getAsInteger("CFG_DISPATCH_PERIOD");
+        return this.f1176a.getAsInteger("CFG_DISPATCH_PERIOD");
     }
 
     public Location getManualLocation() {
-        if (this.f1175a.containsKey("CFG_MANUAL_LOCATION")) {
-            return LocationUtils.bytesToLocation(this.f1175a.getAsByteArray("CFG_MANUAL_LOCATION"));
+        if (this.f1176a.containsKey("CFG_MANUAL_LOCATION")) {
+            return LocationUtils.bytesToLocation(this.f1176a.getAsByteArray("CFG_MANUAL_LOCATION"));
         }
         return null;
     }
 
     public Integer getMaxReportsCount() {
-        return this.f1175a.getAsInteger("CFG_MAX_REPORTS_COUNT");
+        return this.f1176a.getAsInteger("CFG_MAX_REPORTS_COUNT");
     }
 
     public Integer getMaxReportsInDbCount() {
-        return this.f1175a.getAsInteger("MAX_REPORTS_IN_DB_COUNT");
+        return this.f1176a.getAsInteger("MAX_REPORTS_IN_DB_COUNT");
     }
 
     public Boolean getReportNativeCrashesEnabled() {
-        return this.f1175a.getAsBoolean("CFG_NATIVE_CRASHES_ENABLED");
+        return this.f1176a.getAsBoolean("CFG_NATIVE_CRASHES_ENABLED");
     }
 
     public CounterConfigurationReporterType getReporterType() {
-        return CounterConfigurationReporterType.fromStringValue(this.f1175a.getAsString("CFG_REPORTER_TYPE"));
+        return CounterConfigurationReporterType.fromStringValue(this.f1176a.getAsString("CFG_REPORTER_TYPE"));
     }
 
     public Integer getSessionTimeout() {
-        return this.f1175a.getAsInteger("CFG_SESSION_TIMEOUT");
+        return this.f1176a.getAsInteger("CFG_SESSION_TIMEOUT");
     }
 
     public String getUuid() {
-        return this.f1175a.getAsString("CFG_UUID");
+        return this.f1176a.getAsString("CFG_UUID");
     }
 
     public Boolean isAdvIdentifiersTrackingEnabled() {
-        return this.f1175a.getAsBoolean("CFG_ADV_IDENTIFIERS_TRACKING_ENABLED");
+        return this.f1176a.getAsBoolean("CFG_ADV_IDENTIFIERS_TRACKING_ENABLED");
     }
 
     public Boolean isFirstActivationAsUpdate() {
-        return this.f1175a.getAsBoolean("CFG_IS_FIRST_ACTIVATION_AS_UPDATE");
+        return this.f1176a.getAsBoolean("CFG_IS_FIRST_ACTIVATION_AS_UPDATE");
     }
 
     public Boolean isLocationTrackingEnabled() {
-        return this.f1175a.getAsBoolean("CFG_LOCATION_TRACKING");
+        return this.f1176a.getAsBoolean("CFG_LOCATION_TRACKING");
     }
 
     public Boolean isLogEnabled() {
-        return this.f1175a.getAsBoolean("CFG_IS_LOG_ENABLED");
+        return this.f1176a.getAsBoolean("CFG_IS_LOG_ENABLED");
     }
 
     public synchronized Boolean isRevenueAutoTrackingEnabled() {
-        return this.f1175a.getAsBoolean("CFG_REVENUE_AUTO_TRACKING_ENABLED");
+        return this.f1176a.getAsBoolean("CFG_REVENUE_AUTO_TRACKING_ENABLED");
     }
 
     public synchronized void setAdvIdentifiersTracking(boolean z) {
-        this.f1175a.put("CFG_ADV_IDENTIFIERS_TRACKING_ENABLED", Boolean.valueOf(z));
+        this.f1176a.put("CFG_ADV_IDENTIFIERS_TRACKING_ENABLED", Boolean.valueOf(z));
     }
 
     public synchronized void setApiKey(String str) {
-        this.f1175a.put("CFG_API_KEY", str);
+        this.f1176a.put("CFG_API_KEY", str);
     }
 
     public synchronized void setAppBuildNumber(int i) {
-        this.f1175a.put("CFG_APP_VERSION_CODE", String.valueOf(i));
+        this.f1176a.put("CFG_APP_VERSION_CODE", String.valueOf(i));
     }
 
     public final synchronized void setCustomAppVersion(String str) {
-        this.f1175a.put("CFG_APP_VERSION", str);
+        this.f1176a.put("CFG_APP_VERSION", str);
     }
 
     public final synchronized void setDataSendingEnabled(boolean z) {
-        this.f1175a.put("CFG_DATA_SENDING_ENABLED", Boolean.valueOf(z));
+        this.f1176a.put("CFG_DATA_SENDING_ENABLED", Boolean.valueOf(z));
     }
 
     public final synchronized void setDeviceType(String str) {
-        ContentValues contentValues = this.f1175a;
+        ContentValues contentValues = this.f1176a;
         if (TextUtils.isEmpty(str)) {
             str = null;
         }
@@ -206,27 +206,27 @@ public class CounterConfiguration implements Parcelable {
     }
 
     public synchronized void setDispatchPeriod(int i) {
-        this.f1175a.put("CFG_DISPATCH_PERIOD", Integer.valueOf(i));
+        this.f1176a.put("CFG_DISPATCH_PERIOD", Integer.valueOf(i));
     }
 
     public final synchronized void setFirstActivationAsUpdate(boolean z) {
-        this.f1175a.put("CFG_IS_FIRST_ACTIVATION_AS_UPDATE", Boolean.valueOf(z));
+        this.f1176a.put("CFG_IS_FIRST_ACTIVATION_AS_UPDATE", Boolean.valueOf(z));
     }
 
     public synchronized void setLocationTracking(boolean z) {
-        this.f1175a.put("CFG_LOCATION_TRACKING", Boolean.valueOf(z));
+        this.f1176a.put("CFG_LOCATION_TRACKING", Boolean.valueOf(z));
     }
 
     public synchronized void setLogEnabled(boolean z) {
-        this.f1175a.put("CFG_IS_LOG_ENABLED", Boolean.valueOf(z));
+        this.f1176a.put("CFG_IS_LOG_ENABLED", Boolean.valueOf(z));
     }
 
     public final synchronized void setManualLocation(Location location) {
-        this.f1175a.put("CFG_MANUAL_LOCATION", LocationUtils.locationToBytes(location));
+        this.f1176a.put("CFG_MANUAL_LOCATION", LocationUtils.locationToBytes(location));
     }
 
     public synchronized void setMaxReportsCount(int i) {
-        ContentValues contentValues = this.f1175a;
+        ContentValues contentValues = this.f1176a;
         if (i <= 0) {
             i = Integer.MAX_VALUE;
         }
@@ -234,23 +234,23 @@ public class CounterConfiguration implements Parcelable {
     }
 
     public void setMaxReportsInDbCount(int i) {
-        this.f1175a.put("MAX_REPORTS_IN_DB_COUNT", Integer.valueOf(i));
+        this.f1176a.put("MAX_REPORTS_IN_DB_COUNT", Integer.valueOf(i));
     }
 
     public synchronized void setReporterType(CounterConfigurationReporterType counterConfigurationReporterType) {
-        this.f1175a.put("CFG_REPORTER_TYPE", counterConfigurationReporterType.getStringValue());
+        this.f1176a.put("CFG_REPORTER_TYPE", counterConfigurationReporterType.getStringValue());
     }
 
     public synchronized void setRevenueAutoTrackingEnabled(boolean z) {
-        this.f1175a.put("CFG_REVENUE_AUTO_TRACKING_ENABLED", Boolean.valueOf(z));
+        this.f1176a.put("CFG_REVENUE_AUTO_TRACKING_ENABLED", Boolean.valueOf(z));
     }
 
     public synchronized void setSessionTimeout(int i) {
-        this.f1175a.put("CFG_SESSION_TIMEOUT", Integer.valueOf(i));
+        this.f1176a.put("CFG_SESSION_TIMEOUT", Integer.valueOf(i));
     }
 
     public synchronized void setUuid(String str) {
-        this.f1175a.put("CFG_UUID", str);
+        this.f1176a.put("CFG_UUID", str);
     }
 
     public synchronized void toBundle(Bundle bundle) {
@@ -258,19 +258,19 @@ public class CounterConfiguration implements Parcelable {
     }
 
     public synchronized String toString() {
-        return "CounterConfiguration{mParamsMapping=" + this.f1175a + AbstractJsonLexerKt.END_OBJ;
+        return "CounterConfiguration{mParamsMapping=" + this.f1176a + AbstractJsonLexerKt.END_OBJ;
     }
 
     @Override // android.os.Parcelable
     public synchronized void writeToParcel(Parcel parcel, int i) {
         Bundle bundle = new Bundle();
-        bundle.putParcelable("io.appmetrica.analytics.internal.CounterConfiguration.data", this.f1175a);
+        bundle.putParcelable("io.appmetrica.analytics.internal.CounterConfiguration.data", this.f1176a);
         parcel.writeBundle(bundle);
     }
 
     public CounterConfiguration(CounterConfiguration counterConfiguration) {
         synchronized (counterConfiguration) {
-            this.f1175a = new ContentValues(counterConfiguration.f1175a);
+            this.f1176a = new ContentValues(counterConfiguration.f1176a);
         }
     }
 
@@ -293,7 +293,7 @@ public class CounterConfiguration implements Parcelable {
     }
 
     public CounterConfiguration() {
-        this.f1175a = new ContentValues();
+        this.f1176a = new ContentValues();
     }
 
     private void b(Boolean bool) {
@@ -339,6 +339,6 @@ public class CounterConfiguration implements Parcelable {
     }
 
     private CounterConfiguration(ContentValues contentValues) {
-        this.f1175a = contentValues;
+        this.f1176a = contentValues;
     }
 }

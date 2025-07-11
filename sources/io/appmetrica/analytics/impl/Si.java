@@ -13,7 +13,7 @@ public final class Si extends MessageNano {
     public static volatile Si[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f628a;
+    public long f629a;
     public Ti b;
     public int c;
     public byte[] d;
@@ -34,7 +34,7 @@ public final class Si extends MessageNano {
     }
 
     public final Si a() {
-        this.f628a = 0L;
+        this.f629a = 0L;
         this.b = null;
         this.c = 0;
         this.d = WireFormatNano.EMPTY_BYTES;
@@ -45,7 +45,7 @@ public final class Si extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        long j = this.f628a;
+        long j = this.f629a;
         if (j != 0) {
             computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(1, j);
         }
@@ -62,7 +62,7 @@ public final class Si extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        long j = this.f628a;
+        long j = this.f629a;
         if (j != 0) {
             codedOutputByteBufferNano.writeInt64(1, j);
         }
@@ -88,7 +88,7 @@ public final class Si extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 8) {
-                this.f628a = codedInputByteBufferNano.readInt64();
+                this.f629a = codedInputByteBufferNano.readInt64();
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new Ti();

@@ -1,8 +1,5 @@
 package okhttp3;
 
-import androidx.collection.SieveCacheKt;
-import com.google.common.net.HttpHeaders;
-import io.appmetrica.analytics.BuildConfig;
 import java.util.concurrent.TimeUnit;
 import kotlin.Deprecated;
 import kotlin.DeprecationLevel;
@@ -11,12 +8,15 @@ import kotlin.ReplaceWith;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt;
-import okhttp3.internal.Util;
+import kotlin.time.Duration;
+import okhttp3.internal._CacheControlCommonKt;
 /* compiled from: CacheControl.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\n\n\u0002\u0010\u000e\n\u0002\b\u0011\u0018\u0000 !2\u00020\u0001:\u0002 !Bq\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\u0006\u0010\n\u001a\u00020\u0003\u0012\u0006\u0010\u000b\u001a\u00020\u0006\u0012\u0006\u0010\f\u001a\u00020\u0006\u0012\u0006\u0010\r\u001a\u00020\u0003\u0012\u0006\u0010\u000e\u001a\u00020\u0003\u0012\u0006\u0010\u000f\u001a\u00020\u0003\u0012\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011¢\u0006\u0002\u0010\u0012J\r\u0010\u000f\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u0015J\r\u0010\u0005\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u0016J\r\u0010\u000b\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u0017J\r\u0010\f\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u0018J\r\u0010\n\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u0019J\r\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001aJ\r\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001bJ\r\u0010\u000e\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001cJ\r\u0010\r\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001dJ\r\u0010\u0007\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u001eJ\b\u0010\u001f\u001a\u00020\u0011H\u0016R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0013\u0010\u000f\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0013R\u0011\u0010\b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0013R\u0011\u0010\t\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0013R\u0013\u0010\u0005\u001a\u00020\u00068\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0014R\u0013\u0010\u000b\u001a\u00020\u00068\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\u0014R\u0013\u0010\f\u001a\u00020\u00068\u0007¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u0014R\u0013\u0010\n\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u0013R\u0013\u0010\u0002\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u0013R\u0013\u0010\u0004\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\u0013R\u0013\u0010\u000e\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u0013R\u0013\u0010\r\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u0013R\u0013\u0010\u0007\u001a\u00020\u00068\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\u0014¨\u0006\""}, d2 = {"Lokhttp3/CacheControl;", "", "noCache", "", "noStore", "maxAgeSeconds", "", "sMaxAgeSeconds", "isPrivate", "isPublic", "mustRevalidate", "maxStaleSeconds", "minFreshSeconds", "onlyIfCached", "noTransform", "immutable", "headerValue", "", "(ZZIIZZZIIZZZLjava/lang/String;)V", "()Z", "()I", "-deprecated_immutable", "-deprecated_maxAgeSeconds", "-deprecated_maxStaleSeconds", "-deprecated_minFreshSeconds", "-deprecated_mustRevalidate", "-deprecated_noCache", "-deprecated_noStore", "-deprecated_noTransform", "-deprecated_onlyIfCached", "-deprecated_sMaxAgeSeconds", "toString", "Builder", "Companion", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\n\n\u0002\u0010\u000e\n\u0002\b\u0016\u0018\u0000 &2\u00020\u0001:\u0002%&Bs\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\u0006\u0010\n\u001a\u00020\u0003\u0012\u0006\u0010\u000b\u001a\u00020\u0006\u0012\u0006\u0010\f\u001a\u00020\u0006\u0012\u0006\u0010\r\u001a\u00020\u0003\u0012\u0006\u0010\u000e\u001a\u00020\u0003\u0012\u0006\u0010\u000f\u001a\u00020\u0003\u0012\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011¢\u0006\u0004\b\u0012\u0010\u0013J\r\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001aJ\r\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001bJ\r\u0010\u0005\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u001cJ\r\u0010\u0007\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u001dJ\r\u0010\n\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\u001eJ\r\u0010\u000b\u001a\u00020\u0006H\u0007¢\u0006\u0002\b\u001fJ\r\u0010\f\u001a\u00020\u0006H\u0007¢\u0006\u0002\b J\r\u0010\r\u001a\u00020\u0003H\u0007¢\u0006\u0002\b!J\r\u0010\u000e\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\"J\r\u0010\u000f\u001a\u00020\u0003H\u0007¢\u0006\u0002\b#J\b\u0010$\u001a\u00020\u0011H\u0016R\u0013\u0010\u0002\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u0014R\u0013\u0010\u0004\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\u0014R\u0013\u0010\u0005\u001a\u00020\u00068G¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0015R\u0013\u0010\u0007\u001a\u00020\u00068G¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\u0015R\u0011\u0010\b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0014R\u0011\u0010\t\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0014R\u0013\u0010\n\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u0014R\u0013\u0010\u000b\u001a\u00020\u00068G¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\u0015R\u0013\u0010\f\u001a\u00020\u00068G¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u0015R\u0013\u0010\r\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u0014R\u0013\u0010\u000e\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u0014R\u0013\u0010\u000f\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0014R\u001c\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019¨\u0006'"}, d2 = {"Lokhttp3/CacheControl;", "", "noCache", "", "noStore", "maxAgeSeconds", "", "sMaxAgeSeconds", "isPrivate", "isPublic", "mustRevalidate", "maxStaleSeconds", "minFreshSeconds", "onlyIfCached", "noTransform", "immutable", "headerValue", "", "<init>", "(ZZIIZZZIIZZZLjava/lang/String;)V", "()Z", "()I", "getHeaderValue$okhttp", "()Ljava/lang/String;", "setHeaderValue$okhttp", "(Ljava/lang/String;)V", "-deprecated_noCache", "-deprecated_noStore", "-deprecated_maxAgeSeconds", "-deprecated_sMaxAgeSeconds", "-deprecated_mustRevalidate", "-deprecated_maxStaleSeconds", "-deprecated_minFreshSeconds", "-deprecated_onlyIfCached", "-deprecated_noTransform", "-deprecated_immutable", "toString", "Builder", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class CacheControl {
+    public static final Companion Companion;
+    public static final CacheControl FORCE_CACHE;
+    public static final CacheControl FORCE_NETWORK;
     private String headerValue;
     private final boolean immutable;
     private final boolean isPrivate;
@@ -30,20 +30,13 @@ public final class CacheControl {
     private final boolean noTransform;
     private final boolean onlyIfCached;
     private final int sMaxAgeSeconds;
-    public static final Companion Companion = new Companion(null);
-    public static final CacheControl FORCE_NETWORK = new Builder().noCache().build();
-    public static final CacheControl FORCE_CACHE = new Builder().onlyIfCached().maxStale(Integer.MAX_VALUE, TimeUnit.SECONDS).build();
-
-    public /* synthetic */ CacheControl(boolean z, boolean z2, int i, int i2, boolean z3, boolean z4, boolean z5, int i3, int i4, boolean z6, boolean z7, boolean z8, String str, DefaultConstructorMarker defaultConstructorMarker) {
-        this(z, z2, i, i2, z3, z4, z5, i3, i4, z6, z7, z8, str);
-    }
 
     @JvmStatic
     public static final CacheControl parse(Headers headers) {
         return Companion.parse(headers);
     }
 
-    private CacheControl(boolean z, boolean z2, int i, int i2, boolean z3, boolean z4, boolean z5, int i3, int i4, boolean z6, boolean z7, boolean z8, String str) {
+    public CacheControl(boolean z, boolean z2, int i, int i2, boolean z3, boolean z4, boolean z5, int i3, int i4, boolean z6, boolean z7, boolean z8, String str) {
         this.noCache = z;
         this.noStore = z2;
         this.maxAgeSeconds = i;
@@ -107,120 +100,80 @@ public final class CacheControl {
         return this.immutable;
     }
 
+    public final String getHeaderValue$okhttp() {
+        return this.headerValue;
+    }
+
+    public final void setHeaderValue$okhttp(String str) {
+        this.headerValue = str;
+    }
+
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "noCache", imports = {}))
     /* renamed from: -deprecated_noCache  reason: not valid java name */
-    public final boolean m10178deprecated_noCache() {
+    public final boolean m10243deprecated_noCache() {
         return this.noCache;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "noStore", imports = {}))
     /* renamed from: -deprecated_noStore  reason: not valid java name */
-    public final boolean m10179deprecated_noStore() {
+    public final boolean m10244deprecated_noStore() {
         return this.noStore;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "maxAgeSeconds", imports = {}))
     /* renamed from: -deprecated_maxAgeSeconds  reason: not valid java name */
-    public final int m10174deprecated_maxAgeSeconds() {
+    public final int m10239deprecated_maxAgeSeconds() {
         return this.maxAgeSeconds;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "sMaxAgeSeconds", imports = {}))
     /* renamed from: -deprecated_sMaxAgeSeconds  reason: not valid java name */
-    public final int m10182deprecated_sMaxAgeSeconds() {
+    public final int m10247deprecated_sMaxAgeSeconds() {
         return this.sMaxAgeSeconds;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "mustRevalidate", imports = {}))
     /* renamed from: -deprecated_mustRevalidate  reason: not valid java name */
-    public final boolean m10177deprecated_mustRevalidate() {
+    public final boolean m10242deprecated_mustRevalidate() {
         return this.mustRevalidate;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "maxStaleSeconds", imports = {}))
     /* renamed from: -deprecated_maxStaleSeconds  reason: not valid java name */
-    public final int m10175deprecated_maxStaleSeconds() {
+    public final int m10240deprecated_maxStaleSeconds() {
         return this.maxStaleSeconds;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "minFreshSeconds", imports = {}))
     /* renamed from: -deprecated_minFreshSeconds  reason: not valid java name */
-    public final int m10176deprecated_minFreshSeconds() {
+    public final int m10241deprecated_minFreshSeconds() {
         return this.minFreshSeconds;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "onlyIfCached", imports = {}))
     /* renamed from: -deprecated_onlyIfCached  reason: not valid java name */
-    public final boolean m10181deprecated_onlyIfCached() {
+    public final boolean m10246deprecated_onlyIfCached() {
         return this.onlyIfCached;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "noTransform", imports = {}))
     /* renamed from: -deprecated_noTransform  reason: not valid java name */
-    public final boolean m10180deprecated_noTransform() {
+    public final boolean m10245deprecated_noTransform() {
         return this.noTransform;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "immutable", imports = {}))
     /* renamed from: -deprecated_immutable  reason: not valid java name */
-    public final boolean m10173deprecated_immutable() {
+    public final boolean m10238deprecated_immutable() {
         return this.immutable;
     }
 
     public String toString() {
-        String str = this.headerValue;
-        if (str == null) {
-            StringBuilder sb = new StringBuilder();
-            if (this.noCache) {
-                sb.append("no-cache, ");
-            }
-            if (this.noStore) {
-                sb.append("no-store, ");
-            }
-            if (this.maxAgeSeconds != -1) {
-                sb.append("max-age=").append(this.maxAgeSeconds).append(", ");
-            }
-            if (this.sMaxAgeSeconds != -1) {
-                sb.append("s-maxage=").append(this.sMaxAgeSeconds).append(", ");
-            }
-            if (this.isPrivate) {
-                sb.append("private, ");
-            }
-            if (this.isPublic) {
-                sb.append("public, ");
-            }
-            if (this.mustRevalidate) {
-                sb.append("must-revalidate, ");
-            }
-            if (this.maxStaleSeconds != -1) {
-                sb.append("max-stale=").append(this.maxStaleSeconds).append(", ");
-            }
-            if (this.minFreshSeconds != -1) {
-                sb.append("min-fresh=").append(this.minFreshSeconds).append(", ");
-            }
-            if (this.onlyIfCached) {
-                sb.append("only-if-cached, ");
-            }
-            if (this.noTransform) {
-                sb.append("no-transform, ");
-            }
-            if (this.immutable) {
-                sb.append("immutable, ");
-            }
-            if (sb.length() == 0) {
-                return "";
-            }
-            sb.delete(sb.length() - 2, sb.length());
-            String sb2 = sb.toString();
-            Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder().apply(builderAction).toString()");
-            this.headerValue = sb2;
-            return sb2;
-        }
-        return str;
+        return _CacheControlCommonKt.commonToString(this);
     }
 
     /* compiled from: CacheControl.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\u0006\u0010\r\u001a\u00020\u000eJ\u0006\u0010\u0003\u001a\u00020\u0000J\u0016\u0010\u000f\u001a\u00020\u00002\u0006\u0010\u000f\u001a\u00020\u00062\u0006\u0010\u0010\u001a\u00020\u0011J\u0016\u0010\u0012\u001a\u00020\u00002\u0006\u0010\u0012\u001a\u00020\u00062\u0006\u0010\u0010\u001a\u00020\u0011J\u0016\u0010\u0013\u001a\u00020\u00002\u0006\u0010\u0013\u001a\u00020\u00062\u0006\u0010\u0010\u001a\u00020\u0011J\u0006\u0010\t\u001a\u00020\u0000J\u0006\u0010\n\u001a\u00020\u0000J\u0006\u0010\u000b\u001a\u00020\u0000J\u0006\u0010\f\u001a\u00020\u0000J\f\u0010\u0014\u001a\u00020\u0006*\u00020\u0015H\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lokhttp3/CacheControl$Builder;", "", "()V", "immutable", "", "maxAgeSeconds", "", "maxStaleSeconds", "minFreshSeconds", "noCache", "noStore", "noTransform", "onlyIfCached", "build", "Lokhttp3/CacheControl;", "maxAge", "timeUnit", "Ljava/util/concurrent/TimeUnit;", "maxStale", "minFresh", "clampToInt", "", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0000J\u0006\u0010\n\u001a\u00020\u0000J\u0006\u0010\u0019\u001a\u00020\u0000J\u0006\u0010\u001c\u001a\u00020\u0000J\u0006\u0010\u001f\u001a\u00020\u0000J\u0015\u0010\"\u001a\u00020\u00002\u0006\u0010\"\u001a\u00020#¢\u0006\u0004\b$\u0010%J\u0015\u0010&\u001a\u00020\u00002\u0006\u0010&\u001a\u00020#¢\u0006\u0004\b'\u0010%J\u0015\u0010(\u001a\u00020\u00002\u0006\u0010(\u001a\u00020#¢\u0006\u0004\b)\u0010%J\u0016\u0010\"\u001a\u00020\u00002\u0006\u0010\"\u001a\u00020\u000e2\u0006\u0010*\u001a\u00020+J\u0016\u0010&\u001a\u00020\u00002\u0006\u0010&\u001a\u00020\u000e2\u0006\u0010*\u001a\u00020+J\u0016\u0010(\u001a\u00020\u00002\u0006\u0010(\u001a\u00020\u000e2\u0006\u0010*\u001a\u00020+J\u0006\u0010,\u001a\u00020-R\u001a\u0010\u0004\u001a\u00020\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u000eX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u001a\u0010\u0013\u001a\u00020\u000eX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0010\"\u0004\b\u0015\u0010\u0012R\u001a\u0010\u0016\u001a\u00020\u000eX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0010\"\u0004\b\u0018\u0010\u0012R\u001a\u0010\u0019\u001a\u00020\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u0007\"\u0004\b\u001b\u0010\tR\u001a\u0010\u001c\u001a\u00020\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001d\u0010\u0007\"\u0004\b\u001e\u0010\tR\u001a\u0010\u001f\u001a\u00020\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b \u0010\u0007\"\u0004\b!\u0010\t¨\u0006."}, d2 = {"Lokhttp3/CacheControl$Builder;", "", "<init>", "()V", "noCache", "", "getNoCache$okhttp", "()Z", "setNoCache$okhttp", "(Z)V", "noStore", "getNoStore$okhttp", "setNoStore$okhttp", "maxAgeSeconds", "", "getMaxAgeSeconds$okhttp", "()I", "setMaxAgeSeconds$okhttp", "(I)V", "maxStaleSeconds", "getMaxStaleSeconds$okhttp", "setMaxStaleSeconds$okhttp", "minFreshSeconds", "getMinFreshSeconds$okhttp", "setMinFreshSeconds$okhttp", "onlyIfCached", "getOnlyIfCached$okhttp", "setOnlyIfCached$okhttp", "noTransform", "getNoTransform$okhttp", "setNoTransform$okhttp", "immutable", "getImmutable$okhttp", "setImmutable$okhttp", "maxAge", "Lkotlin/time/Duration;", "maxAge-LRDsOJo", "(J)Lokhttp3/CacheControl$Builder;", "maxStale", "maxStale-LRDsOJo", "minFresh", "minFresh-LRDsOJo", "timeUnit", "Ljava/util/concurrent/TimeUnit;", "build", "Lokhttp3/CacheControl;", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Builder {
         private boolean immutable;
@@ -232,20 +185,117 @@ public final class CacheControl {
         private boolean noTransform;
         private boolean onlyIfCached;
 
-        private final int clampToInt(long j) {
-            if (j > SieveCacheKt.NodeLinkMask) {
-                return Integer.MAX_VALUE;
-            }
-            return (int) j;
+        public final boolean getNoCache$okhttp() {
+            return this.noCache;
+        }
+
+        public final void setNoCache$okhttp(boolean z) {
+            this.noCache = z;
+        }
+
+        public final boolean getNoStore$okhttp() {
+            return this.noStore;
+        }
+
+        public final void setNoStore$okhttp(boolean z) {
+            this.noStore = z;
+        }
+
+        public final int getMaxAgeSeconds$okhttp() {
+            return this.maxAgeSeconds;
+        }
+
+        public final void setMaxAgeSeconds$okhttp(int i) {
+            this.maxAgeSeconds = i;
+        }
+
+        public final int getMaxStaleSeconds$okhttp() {
+            return this.maxStaleSeconds;
+        }
+
+        public final void setMaxStaleSeconds$okhttp(int i) {
+            this.maxStaleSeconds = i;
+        }
+
+        public final int getMinFreshSeconds$okhttp() {
+            return this.minFreshSeconds;
+        }
+
+        public final void setMinFreshSeconds$okhttp(int i) {
+            this.minFreshSeconds = i;
+        }
+
+        public final boolean getOnlyIfCached$okhttp() {
+            return this.onlyIfCached;
+        }
+
+        public final void setOnlyIfCached$okhttp(boolean z) {
+            this.onlyIfCached = z;
+        }
+
+        public final boolean getNoTransform$okhttp() {
+            return this.noTransform;
+        }
+
+        public final void setNoTransform$okhttp(boolean z) {
+            this.noTransform = z;
+        }
+
+        public final boolean getImmutable$okhttp() {
+            return this.immutable;
+        }
+
+        public final void setImmutable$okhttp(boolean z) {
+            this.immutable = z;
         }
 
         public final Builder noCache() {
-            this.noCache = true;
-            return this;
+            return _CacheControlCommonKt.commonNoCache(this);
         }
 
         public final Builder noStore() {
-            this.noStore = true;
+            return _CacheControlCommonKt.commonNoStore(this);
+        }
+
+        public final Builder onlyIfCached() {
+            return _CacheControlCommonKt.commonOnlyIfCached(this);
+        }
+
+        public final Builder noTransform() {
+            return _CacheControlCommonKt.commonNoTransform(this);
+        }
+
+        public final Builder immutable() {
+            return _CacheControlCommonKt.commonImmutable(this);
+        }
+
+        /* renamed from: maxAge-LRDsOJo  reason: not valid java name */
+        public final Builder m10248maxAgeLRDsOJo(long j) {
+            long m9837getInWholeSecondsimpl = Duration.m9837getInWholeSecondsimpl(j);
+            if (m9837getInWholeSecondsimpl < 0) {
+                throw new IllegalArgumentException(("maxAge < 0: " + m9837getInWholeSecondsimpl).toString());
+            }
+            this.maxAgeSeconds = _CacheControlCommonKt.commonClampToInt(m9837getInWholeSecondsimpl);
+            return this;
+        }
+
+        /* renamed from: maxStale-LRDsOJo  reason: not valid java name */
+        public final Builder m10249maxStaleLRDsOJo(long j) {
+            long m9837getInWholeSecondsimpl = Duration.m9837getInWholeSecondsimpl(j);
+            if (m9837getInWholeSecondsimpl < 0) {
+                throw new IllegalArgumentException(("maxStale < 0: " + m9837getInWholeSecondsimpl).toString());
+            }
+            this.maxStaleSeconds = _CacheControlCommonKt.commonClampToInt(m9837getInWholeSecondsimpl);
+            return this;
+        }
+
+        /* renamed from: minFresh-LRDsOJo  reason: not valid java name */
+        public final Builder m10250minFreshLRDsOJo(long j) {
+            long m9837getInWholeSecondsimpl = Duration.m9837getInWholeSecondsimpl(j);
+            if (m9837getInWholeSecondsimpl < 0) {
+                throw new IllegalArgumentException(("minFresh < 0: " + m9837getInWholeSecondsimpl).toString());
+            }
+            this.minFreshSeconds = _CacheControlCommonKt.commonClampToInt(m9837getInWholeSecondsimpl);
             return this;
         }
 
@@ -254,7 +304,7 @@ public final class CacheControl {
             if (i < 0) {
                 throw new IllegalArgumentException(("maxAge < 0: " + i).toString());
             }
-            this.maxAgeSeconds = clampToInt(timeUnit.toSeconds(i));
+            this.maxAgeSeconds = _CacheControlCommonKt.commonClampToInt(timeUnit.toSeconds(i));
             return this;
         }
 
@@ -263,7 +313,7 @@ public final class CacheControl {
             if (i < 0) {
                 throw new IllegalArgumentException(("maxStale < 0: " + i).toString());
             }
-            this.maxStaleSeconds = clampToInt(timeUnit.toSeconds(i));
+            this.maxStaleSeconds = _CacheControlCommonKt.commonClampToInt(timeUnit.toSeconds(i));
             return this;
         }
 
@@ -272,32 +322,17 @@ public final class CacheControl {
             if (i < 0) {
                 throw new IllegalArgumentException(("minFresh < 0: " + i).toString());
             }
-            this.minFreshSeconds = clampToInt(timeUnit.toSeconds(i));
-            return this;
-        }
-
-        public final Builder onlyIfCached() {
-            this.onlyIfCached = true;
-            return this;
-        }
-
-        public final Builder noTransform() {
-            this.noTransform = true;
-            return this;
-        }
-
-        public final Builder immutable() {
-            this.immutable = true;
+            this.minFreshSeconds = _CacheControlCommonKt.commonClampToInt(timeUnit.toSeconds(i));
             return this;
         }
 
         public final CacheControl build() {
-            return new CacheControl(this.noCache, this.noStore, this.maxAgeSeconds, -1, false, false, false, this.maxStaleSeconds, this.minFreshSeconds, this.onlyIfCached, this.noTransform, this.immutable, null, null);
+            return _CacheControlCommonKt.commonBuild(this);
         }
     }
 
     /* compiled from: CacheControl.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0006\u001a\u00020\u00042\u0006\u0010\u0007\u001a\u00020\bH\u0007J\u001e\u0010\t\u001a\u00020\n*\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\b\b\u0002\u0010\r\u001a\u00020\nH\u0002R\u0010\u0010\u0003\u001a\u00020\u00048\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0005\u001a\u00020\u00048\u0006X\u0087\u0004¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lokhttp3/CacheControl$Companion;", "", "()V", "FORCE_CACHE", "Lokhttp3/CacheControl;", "FORCE_NETWORK", "parse", "headers", "Lokhttp3/Headers;", "indexOfElement", "", "", "characters", "startIndex", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0007\u001a\u00020\u00052\u0006\u0010\b\u001a\u00020\tH\u0007R\u0010\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0006\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0002\n\u0000¨\u0006\n"}, d2 = {"Lokhttp3/CacheControl$Companion;", "", "<init>", "()V", "FORCE_NETWORK", "Lokhttp3/CacheControl;", "FORCE_CACHE", "parse", "headers", "Lokhttp3/Headers;", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -307,155 +342,17 @@ public final class CacheControl {
         private Companion() {
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:15:0x004a  */
-        /* JADX WARN: Removed duplicated region for block: B:32:0x00dd  */
-        /* JADX WARN: Removed duplicated region for block: B:34:0x00e5  */
         @JvmStatic
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
         public final CacheControl parse(Headers headers) {
-            int i;
-            int i2;
-            int i3;
-            String str;
-            Headers headers2 = headers;
-            Intrinsics.checkNotNullParameter(headers2, "headers");
-            int size = headers2.size();
-            boolean z = true;
-            boolean z2 = true;
-            int i4 = 0;
-            String str2 = null;
-            boolean z3 = false;
-            boolean z4 = false;
-            int i5 = -1;
-            int i6 = -1;
-            boolean z5 = false;
-            boolean z6 = false;
-            boolean z7 = false;
-            int i7 = -1;
-            int i8 = -1;
-            boolean z8 = false;
-            boolean z9 = false;
-            boolean z10 = false;
-            while (i4 < size) {
-                String name = headers2.name(i4);
-                String value = headers2.value(i4);
-                if (StringsKt.equals(name, "Cache-Control", z)) {
-                    if (str2 == null) {
-                        str2 = value;
-                        i = 0;
-                        while (i < value.length()) {
-                            int indexOfElement = indexOfElement(value, "=,;", i);
-                            String substring = value.substring(i, indexOfElement);
-                            boolean z11 = z;
-                            Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
-                            String obj = StringsKt.trim((CharSequence) substring).toString();
-                            if (indexOfElement != value.length()) {
-                                i2 = size;
-                                if (value.charAt(indexOfElement) != ',' && value.charAt(indexOfElement) != ';') {
-                                    int indexOfNonWhitespace = Util.indexOfNonWhitespace(value, indexOfElement + 1);
-                                    if (indexOfNonWhitespace < value.length() && value.charAt(indexOfNonWhitespace) == '\"') {
-                                        int i9 = indexOfNonWhitespace + 1;
-                                        int indexOf$default = StringsKt.indexOf$default((CharSequence) value, '\"', i9, false, 4, (Object) null);
-                                        str = value.substring(i9, indexOf$default);
-                                        Intrinsics.checkNotNullExpressionValue(str, "this as java.lang.String…ing(startIndex, endIndex)");
-                                        i3 = indexOf$default + 1;
-                                    } else {
-                                        int indexOfElement2 = indexOfElement(value, ",;", indexOfNonWhitespace);
-                                        String substring2 = value.substring(indexOfNonWhitespace, indexOfElement2);
-                                        Intrinsics.checkNotNullExpressionValue(substring2, "this as java.lang.String…ing(startIndex, endIndex)");
-                                        str = StringsKt.trim((CharSequence) substring2).toString();
-                                        i3 = indexOfElement2;
-                                    }
-                                    z = z11;
-                                    if (!StringsKt.equals("no-cache", obj, z)) {
-                                        i = i3;
-                                        z3 = z;
-                                    } else if (StringsKt.equals("no-store", obj, z)) {
-                                        i = i3;
-                                        z4 = z;
-                                    } else {
-                                        if (StringsKt.equals("max-age", obj, z)) {
-                                            i5 = Util.toNonNegativeInt(str, -1);
-                                        } else if (StringsKt.equals("s-maxage", obj, z)) {
-                                            i6 = Util.toNonNegativeInt(str, -1);
-                                        } else if (StringsKt.equals("private", obj, z)) {
-                                            i = i3;
-                                            z5 = z;
-                                        } else if (StringsKt.equals(BuildConfig.SDK_BUILD_FLAVOR, obj, z)) {
-                                            i = i3;
-                                            z6 = z;
-                                        } else if (StringsKt.equals("must-revalidate", obj, z)) {
-                                            i = i3;
-                                            z7 = z;
-                                        } else if (StringsKt.equals("max-stale", obj, z)) {
-                                            i7 = Util.toNonNegativeInt(str, Integer.MAX_VALUE);
-                                        } else if (StringsKt.equals("min-fresh", obj, z)) {
-                                            i8 = Util.toNonNegativeInt(str, -1);
-                                        } else if (StringsKt.equals("only-if-cached", obj, z)) {
-                                            i = i3;
-                                            z8 = z;
-                                        } else if (StringsKt.equals("no-transform", obj, z)) {
-                                            i = i3;
-                                            z9 = z;
-                                        } else {
-                                            boolean equals = StringsKt.equals("immutable", obj, z);
-                                            i = i3;
-                                            if (equals) {
-                                                z10 = z;
-                                            }
-                                        }
-                                        i = i3;
-                                    }
-                                    size = i2;
-                                }
-                            } else {
-                                i2 = size;
-                            }
-                            i3 = indexOfElement + 1;
-                            str = null;
-                            z = z11;
-                            if (!StringsKt.equals("no-cache", obj, z)) {
-                            }
-                            size = i2;
-                        }
-                        i4++;
-                        headers2 = headers;
-                        size = size;
-                    }
-                } else if (!StringsKt.equals(name, HttpHeaders.PRAGMA, z)) {
-                    i4++;
-                    headers2 = headers;
-                    size = size;
-                }
-                z2 = false;
-                i = 0;
-                while (i < value.length()) {
-                }
-                i4++;
-                headers2 = headers;
-                size = size;
-            }
-            return new CacheControl(z3, z4, i5, i6, z5, z6, z7, i7, i8, z8, z9, z10, !z2 ? null : str2, null);
+            Intrinsics.checkNotNullParameter(headers, "headers");
+            return _CacheControlCommonKt.commonParse(this, headers);
         }
+    }
 
-        static /* synthetic */ int indexOfElement$default(Companion companion, String str, String str2, int i, int i2, Object obj) {
-            if ((i2 & 2) != 0) {
-                i = 0;
-            }
-            return companion.indexOfElement(str, str2, i);
-        }
-
-        private final int indexOfElement(String str, String str2, int i) {
-            int length = str.length();
-            while (i < length) {
-                if (StringsKt.contains$default((CharSequence) str2, str.charAt(i), false, 2, (Object) null)) {
-                    return i;
-                }
-                i++;
-            }
-            return str.length();
-        }
+    static {
+        Companion companion = new Companion(null);
+        Companion = companion;
+        FORCE_NETWORK = _CacheControlCommonKt.commonForceNetwork(companion);
+        FORCE_CACHE = _CacheControlCommonKt.commonForceCache(companion);
     }
 }

@@ -10,23 +10,23 @@ import java.util.concurrent.Executor;
 public final class R9 implements ExecutorProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0496ok f605a;
+    public final C0488ok f606a;
     public final IHandlerExecutor b;
 
     public R9() {
-        C0496ok w = Ga.j().w();
-        this.f605a = w;
+        C0488ok w = Ga.j().w();
+        this.f606a = w;
         this.b = w.c();
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
     public final IHandlerExecutor getDefaultExecutor() {
-        return this.f605a.a();
+        return this.f606a.a();
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
     public final InterruptionSafeThread getInterruptionThread(String str, String str2, Runnable runnable) {
-        return new InterruptionSafeThread(runnable, (str + '-' + str2) + Constants.FILENAME_SEQUENCE_SEPARATOR + Md.f535a.incrementAndGet());
+        return new InterruptionSafeThread(runnable, (str + '-' + str2) + Constants.FILENAME_SEQUENCE_SEPARATOR + Md.f536a.incrementAndGet());
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
@@ -36,21 +36,21 @@ public final class R9 implements ExecutorProvider {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
     public final IHandlerExecutor getSupportIOExecutor() {
-        C0496ok c0496ok = this.f605a;
-        if (c0496ok.f == null) {
-            synchronized (c0496ok) {
-                if (c0496ok.f == null) {
-                    c0496ok.f977a.getClass();
-                    HandlerThreadC0661vb a2 = S9.a("IAA-SIO");
-                    c0496ok.f = new S9(a2, a2.getLooper(), new Handler(a2.getLooper()));
+        C0488ok c0488ok = this.f606a;
+        if (c0488ok.f == null) {
+            synchronized (c0488ok) {
+                if (c0488ok.f == null) {
+                    c0488ok.f978a.getClass();
+                    HandlerThreadC0653vb a2 = S9.a("IAA-SIO");
+                    c0488ok.f = new S9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
             }
         }
-        return c0496ok.f;
+        return c0488ok.f;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
     public final Executor getUiExecutor() {
-        return this.f605a.f();
+        return this.f606a.f();
     }
 }

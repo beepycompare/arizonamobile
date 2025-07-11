@@ -1,5 +1,18 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzmu {
+public final class zzmu extends zzmv {
+    @Override // com.google.android.gms.internal.measurement.zzmv
+    public final boolean equals(Object obj) {
+        throw null;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzmv
+    public final int hashCode() {
+        throw null;
+    }
+
+    public final String toString() {
+        throw null;
+    }
 }

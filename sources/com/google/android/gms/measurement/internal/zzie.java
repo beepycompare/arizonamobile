@@ -1,26 +1,23 @@
 package com.google.android.gms.measurement.internal;
 
-import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzie implements com.google.android.gms.internal.measurement.zzo {
-    final /* synthetic */ String zza;
-    final /* synthetic */ zzif zzb;
+final class zzie implements Runnable {
+    final /* synthetic */ zzr zza;
+    final /* synthetic */ zzjc zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzie(zzif zzifVar, String str) {
-        this.zza = str;
-        this.zzb = zzifVar;
+    public zzie(zzjc zzjcVar, zzr zzrVar) {
+        this.zza = zzrVar;
+        Objects.requireNonNull(zzjcVar);
+        this.zzb = zzjcVar;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzo
-    public final String zza(String str) {
-        Map map;
-        map = this.zzb.zzf;
-        Map map2 = (Map) map.get(this.zza);
-        if (map2 == null || !map2.containsKey(str)) {
-            return null;
-        }
-        return (String) map2.get(str);
+    @Override // java.lang.Runnable
+    public final void run() {
+        zzjc zzjcVar = this.zzb;
+        zzjcVar.zzL().zzY();
+        zzjcVar.zzL().zzah(this.zza);
     }
 }

@@ -4,6 +4,7 @@ import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import coil3.network.internal.UtilsKt;
 import com.android.volley.toolbox.HttpClientStack;
+import com.google.common.net.HttpHeaders;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.liulishuo.okdownload.core.Util;
 import java.net.URL;
@@ -17,33 +18,44 @@ import kotlin.Pair;
 import kotlin.ReplaceWith;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
+import kotlin.jvm.JvmClassMappingKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
+import kotlin.jvm.internal.TypeIntrinsics;
+import kotlin.reflect.KClass;
+import kotlin.reflect.KClasses;
 import kotlin.text.StringsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okhttp3.Headers;
 import okhttp3.HttpUrl;
+import okhttp3.internal._UtilCommonKt;
+import okhttp3.internal.http.GzipRequestBody;
 import okhttp3.internal.http.HttpMethod;
 /* compiled from: Request.kt */
-@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u000b\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u00002\u00020\u0001:\u0001*BA\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\t\u0012\u0016\u0010\n\u001a\u0012\u0012\b\u0012\u0006\u0012\u0002\b\u00030\f\u0012\u0004\u0012\u00020\u00010\u000b¢\u0006\u0002\u0010\rJ\u000f\u0010\b\u001a\u0004\u0018\u00010\tH\u0007¢\u0006\u0002\b\u001bJ\r\u0010\u000f\u001a\u00020\u0010H\u0007¢\u0006\u0002\b\u001cJ\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u001e\u001a\u00020\u0005J\r\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\b\u001fJ\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00050 2\u0006\u0010\u001e\u001a\u00020\u0005J\r\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\b!J\u0006\u0010\"\u001a\u00020#J\b\u0010$\u001a\u0004\u0018\u00010\u0001J#\u0010$\u001a\u0004\u0018\u0001H%\"\u0004\b\u0000\u0010%2\u000e\u0010&\u001a\n\u0012\u0006\b\u0001\u0012\u0002H%0\f¢\u0006\u0002\u0010'J\b\u0010(\u001a\u00020\u0005H\u0016J\r\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\b)R\u0015\u0010\b\u001a\u0004\u0018\u00010\t8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u000eR\u0011\u0010\u000f\u001a\u00020\u00108G¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0011R\u0013\u0010\u0006\u001a\u00020\u00078\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0012R\u0011\u0010\u0013\u001a\u00020\u00148F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0015R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0013\u0010\u0004\u001a\u00020\u00058\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\u0017R$\u0010\n\u001a\u0012\u0012\b\u0012\u0006\u0012\u0002\b\u00030\f\u0012\u0004\u0012\u00020\u00010\u000bX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u0013\u0010\u0002\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u001a¨\u0006+"}, d2 = {"Lokhttp3/Request;", "", "url", "Lokhttp3/HttpUrl;", FirebaseAnalytics.Param.METHOD, "", "headers", "Lokhttp3/Headers;", TtmlNode.TAG_BODY, "Lokhttp3/RequestBody;", "tags", "", "Ljava/lang/Class;", "(Lokhttp3/HttpUrl;Ljava/lang/String;Lokhttp3/Headers;Lokhttp3/RequestBody;Ljava/util/Map;)V", "()Lokhttp3/RequestBody;", "cacheControl", "Lokhttp3/CacheControl;", "()Lokhttp3/CacheControl;", "()Lokhttp3/Headers;", "isHttps", "", "()Z", "lazyCacheControl", "()Ljava/lang/String;", "getTags$okhttp", "()Ljava/util/Map;", "()Lokhttp3/HttpUrl;", "-deprecated_body", "-deprecated_cacheControl", "header", "name", "-deprecated_headers", "", "-deprecated_method", "newBuilder", "Lokhttp3/Request$Builder;", "tag", ExifInterface.GPS_DIRECTION_TRUE, "type", "(Ljava/lang/Class;)Ljava/lang/Object;", "toString", "-deprecated_url", "Builder", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\f\u0018\u00002\u00020\u0001:\u00012B\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B1\b\u0016\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u000b\u0012\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\r¢\u0006\u0004\b\u0004\u0010\u000eJ\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u000b2\u0006\u0010\u001f\u001a\u00020\u000bJ\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u000b0 2\u0006\u0010\u001f\u001a\u00020\u000bJ\u001e\u0010!\u001a\u0004\u0018\u0001H\"\"\n\b\u0000\u0010\"\u0018\u0001*\u00020\u0001H\u0087\b¢\u0006\u0004\b#\u0010$J%\u0010!\u001a\u0004\u0018\u0001H\"\"\b\b\u0000\u0010\"*\u00020\u00012\f\u0010%\u001a\b\u0012\u0004\u0012\u0002H\"0\u0016¢\u0006\u0002\u0010&J\b\u0010!\u001a\u0004\u0018\u00010\u0001J#\u0010!\u001a\u0004\u0018\u0001H\"\"\u0004\b\u0000\u0010\"2\u000e\u0010%\u001a\n\u0012\u0006\b\u0001\u0012\u0002H\"0'¢\u0006\u0002\u0010(J\u0006\u0010)\u001a\u00020\u0003J\r\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\b,J\r\u0010\n\u001a\u00020\u000bH\u0007¢\u0006\u0002\b-J\r\u0010\b\u001a\u00020\tH\u0007¢\u0006\u0002\b.J\u000f\u0010\f\u001a\u0004\u0018\u00010\rH\u0007¢\u0006\u0002\b/J\r\u0010*\u001a\u00020\u001aH\u0007¢\u0006\u0002\b0J\b\u00101\u001a\u00020\u000bH\u0016R\u0013\u0010\u0006\u001a\u00020\u00078G¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u000fR\u0013\u0010\n\u001a\u00020\u000b8G¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u0010R\u0013\u0010\b\u001a\u00020\t8G¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0011R\u0015\u0010\f\u001a\u0004\u0018\u00010\r8G¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u0012R\u0015\u0010\u0013\u001a\u0004\u0018\u00010\u00078G¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u000fR$\u0010\u0014\u001a\u0012\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0016\u0012\u0004\u0012\u00020\u00010\u0015X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001b\u001a\u00020\u001c8F¢\u0006\u0006\u001a\u0004\b\u001b\u0010\u001dR\u0011\u0010*\u001a\u00020\u001a8G¢\u0006\u0006\u001a\u0004\b*\u0010+¨\u00063"}, d2 = {"Lokhttp3/Request;", "", "builder", "Lokhttp3/Request$Builder;", "<init>", "(Lokhttp3/Request$Builder;)V", "url", "Lokhttp3/HttpUrl;", "headers", "Lokhttp3/Headers;", FirebaseAnalytics.Param.METHOD, "", TtmlNode.TAG_BODY, "Lokhttp3/RequestBody;", "(Lokhttp3/HttpUrl;Lokhttp3/Headers;Ljava/lang/String;Lokhttp3/RequestBody;)V", "()Lokhttp3/HttpUrl;", "()Ljava/lang/String;", "()Lokhttp3/Headers;", "()Lokhttp3/RequestBody;", "cacheUrlOverride", "tags", "", "Lkotlin/reflect/KClass;", "getTags$okhttp", "()Ljava/util/Map;", "lazyCacheControl", "Lokhttp3/CacheControl;", "isHttps", "", "()Z", "header", "name", "", "tag", ExifInterface.GPS_DIRECTION_TRUE, "reifiedTag", "()Ljava/lang/Object;", "type", "(Lkotlin/reflect/KClass;)Ljava/lang/Object;", "Ljava/lang/Class;", "(Ljava/lang/Class;)Ljava/lang/Object;", "newBuilder", "cacheControl", "()Lokhttp3/CacheControl;", "-deprecated_url", "-deprecated_method", "-deprecated_headers", "-deprecated_body", "-deprecated_cacheControl", "toString", "Builder", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class Request {
     private final RequestBody body;
+    private final HttpUrl cacheUrlOverride;
     private final Headers headers;
     private CacheControl lazyCacheControl;
     private final String method;
-    private final Map<Class<?>, Object> tags;
+    private final Map<KClass<?>, Object> tags;
     private final HttpUrl url;
 
-    public Request(HttpUrl url, String method, Headers headers, RequestBody requestBody, Map<Class<?>, ? extends Object> tags) {
-        Intrinsics.checkNotNullParameter(url, "url");
-        Intrinsics.checkNotNullParameter(method, "method");
-        Intrinsics.checkNotNullParameter(headers, "headers");
-        Intrinsics.checkNotNullParameter(tags, "tags");
-        this.url = url;
-        this.method = method;
-        this.headers = headers;
-        this.body = requestBody;
-        this.tags = tags;
+    public Request(Builder builder) {
+        Intrinsics.checkNotNullParameter(builder, "builder");
+        HttpUrl url$okhttp = builder.getUrl$okhttp();
+        if (url$okhttp == null) {
+            throw new IllegalStateException("url == null".toString());
+        }
+        this.url = url$okhttp;
+        this.method = builder.getMethod$okhttp();
+        this.headers = builder.getHeaders$okhttp().build();
+        this.body = builder.getBody$okhttp();
+        this.cacheUrlOverride = builder.getCacheUrlOverride$okhttp();
+        this.tags = MapsKt.toMap(builder.getTags$okhttp());
     }
 
     public final HttpUrl url() {
@@ -62,12 +74,39 @@ public final class Request {
         return this.body;
     }
 
-    public final Map<Class<?>, Object> getTags$okhttp() {
+    public final HttpUrl cacheUrlOverride() {
+        return this.cacheUrlOverride;
+    }
+
+    public final Map<KClass<?>, Object> getTags$okhttp() {
         return this.tags;
     }
 
     public final boolean isHttps() {
         return this.url.isHttps();
+    }
+
+    public /* synthetic */ Request(HttpUrl httpUrl, Headers headers, String str, RequestBody requestBody, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(httpUrl, (i & 2) != 0 ? Headers.Companion.of(new String[0]) : headers, (i & 4) != 0 ? "\u0000" : str, (i & 8) != 0 ? null : requestBody);
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public Request(HttpUrl url, Headers headers, String method, RequestBody requestBody) {
+        this(r2.method(method, requestBody));
+        Intrinsics.checkNotNullParameter(url, "url");
+        Intrinsics.checkNotNullParameter(headers, "headers");
+        Intrinsics.checkNotNullParameter(method, "method");
+        Builder headers2 = new Builder().url(url).headers(headers);
+        if (Intrinsics.areEqual(method, "\u0000")) {
+            if (requestBody != null) {
+                method = "POST";
+            } else {
+                method = UtilsKt.HTTP_METHOD_GET;
+            }
+        }
     }
 
     public final String header(String name) {
@@ -80,13 +119,19 @@ public final class Request {
         return this.headers.values(name);
     }
 
-    public final Object tag() {
-        return tag(Object.class);
+    public final /* synthetic */ <T> T reifiedTag() {
+        Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
+        return (T) tag(Reflection.getOrCreateKotlinClass(Object.class));
+    }
+
+    public final <T> T tag(KClass<T> type) {
+        Intrinsics.checkNotNullParameter(type, "type");
+        return (T) JvmClassMappingKt.getJavaClass((KClass) type).cast(this.tags.get(type));
     }
 
     public final <T> T tag(Class<? extends T> type) {
         Intrinsics.checkNotNullParameter(type, "type");
-        return type.cast(this.tags.get(type));
+        return (T) tag(JvmClassMappingKt.getKotlinClass(type));
     }
 
     public final Builder newBuilder() {
@@ -105,36 +150,37 @@ public final class Request {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "url", imports = {}))
     /* renamed from: -deprecated_url  reason: not valid java name */
-    public final HttpUrl m10277deprecated_url() {
+    public final HttpUrl m10352deprecated_url() {
         return this.url;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = FirebaseAnalytics.Param.METHOD, imports = {}))
     /* renamed from: -deprecated_method  reason: not valid java name */
-    public final String m10276deprecated_method() {
+    public final String m10351deprecated_method() {
         return this.method;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "headers", imports = {}))
     /* renamed from: -deprecated_headers  reason: not valid java name */
-    public final Headers m10275deprecated_headers() {
+    public final Headers m10350deprecated_headers() {
         return this.headers;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = TtmlNode.TAG_BODY, imports = {}))
     /* renamed from: -deprecated_body  reason: not valid java name */
-    public final RequestBody m10273deprecated_body() {
+    public final RequestBody m10348deprecated_body() {
         return this.body;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "cacheControl", imports = {}))
     /* renamed from: -deprecated_cacheControl  reason: not valid java name */
-    public final CacheControl m10274deprecated_cacheControl() {
+    public final CacheControl m10349deprecated_cacheControl() {
         return cacheControl();
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder("Request{method=");
+        StringBuilder sb = new StringBuilder(32);
+        sb.append("Request{method=");
         sb.append(this.method);
         sb.append(", url=");
         sb.append(this.url);
@@ -154,6 +200,9 @@ public final class Request {
                 }
                 sb.append(component1);
                 sb.append(AbstractJsonLexerKt.COLON);
+                if (_UtilCommonKt.isSensitiveHeader(component1)) {
+                    component2 = "██";
+                }
                 sb.append(component2);
                 i = i2;
             }
@@ -164,19 +213,18 @@ public final class Request {
             sb.append(this.tags);
         }
         sb.append(AbstractJsonLexerKt.END_OBJ);
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder().apply(builderAction).toString()");
-        return sb2;
+        return sb.toString();
     }
 
     /* compiled from: Request.kt */
-    @Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\b\u0016\u0018\u00002\u00020\u0001B\u0007\b\u0016¢\u0006\u0002\u0010\u0002B\u000f\b\u0010\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0002\u0010\u0005J\u0018\u0010%\u001a\u00020\u00002\u0006\u0010&\u001a\u00020\u00132\u0006\u0010'\u001a\u00020\u0013H\u0016J\b\u0010(\u001a\u00020\u0004H\u0016J\u0010\u0010)\u001a\u00020\u00002\u0006\u0010)\u001a\u00020*H\u0016J\u0014\u0010+\u001a\u00020\u00002\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0017J\b\u0010,\u001a\u00020\u0000H\u0016J\b\u0010-\u001a\u00020\u0000H\u0016J\u0018\u0010.\u001a\u00020\u00002\u0006\u0010&\u001a\u00020\u00132\u0006\u0010'\u001a\u00020\u0013H\u0016J\u0010\u0010\f\u001a\u00020\u00002\u0006\u0010\f\u001a\u00020/H\u0016J\u001a\u0010\u0012\u001a\u00020\u00002\u0006\u0010\u0012\u001a\u00020\u00132\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0016J\u0010\u00100\u001a\u00020\u00002\u0006\u0010\u0006\u001a\u00020\u0007H\u0016J\u0010\u00101\u001a\u00020\u00002\u0006\u0010\u0006\u001a\u00020\u0007H\u0016J\u0010\u00102\u001a\u00020\u00002\u0006\u0010\u0006\u001a\u00020\u0007H\u0016J\u0010\u00103\u001a\u00020\u00002\u0006\u0010&\u001a\u00020\u0013H\u0016J-\u00104\u001a\u00020\u0000\"\u0004\b\u0000\u001052\u000e\u00106\u001a\n\u0012\u0006\b\u0000\u0012\u0002H50\u001a2\b\u00104\u001a\u0004\u0018\u0001H5H\u0016¢\u0006\u0002\u00107J\u0012\u00104\u001a\u00020\u00002\b\u00104\u001a\u0004\u0018\u00010\u0001H\u0016J\u0010\u0010\u001f\u001a\u00020\u00002\u0006\u0010\u001f\u001a\u000208H\u0016J\u0010\u0010\u001f\u001a\u00020\u00002\u0006\u0010\u001f\u001a\u00020\u0013H\u0016J\u0010\u0010\u001f\u001a\u00020\u00002\u0006\u0010\u001f\u001a\u00020 H\u0016R\u001c\u0010\u0006\u001a\u0004\u0018\u00010\u0007X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\rX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u000f\"\u0004\b\u0010\u0010\u0011R\u001a\u0010\u0012\u001a\u00020\u0013X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R*\u0010\u0018\u001a\u0012\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u001a\u0012\u0004\u0012\u00020\u00010\u0019X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR\u001c\u0010\u001f\u001a\u0004\u0018\u00010 X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$¨\u00069"}, d2 = {"Lokhttp3/Request$Builder;", "", "()V", "request", "Lokhttp3/Request;", "(Lokhttp3/Request;)V", TtmlNode.TAG_BODY, "Lokhttp3/RequestBody;", "getBody$okhttp", "()Lokhttp3/RequestBody;", "setBody$okhttp", "(Lokhttp3/RequestBody;)V", "headers", "Lokhttp3/Headers$Builder;", "getHeaders$okhttp", "()Lokhttp3/Headers$Builder;", "setHeaders$okhttp", "(Lokhttp3/Headers$Builder;)V", FirebaseAnalytics.Param.METHOD, "", "getMethod$okhttp", "()Ljava/lang/String;", "setMethod$okhttp", "(Ljava/lang/String;)V", "tags", "", "Ljava/lang/Class;", "getTags$okhttp", "()Ljava/util/Map;", "setTags$okhttp", "(Ljava/util/Map;)V", "url", "Lokhttp3/HttpUrl;", "getUrl$okhttp", "()Lokhttp3/HttpUrl;", "setUrl$okhttp", "(Lokhttp3/HttpUrl;)V", "addHeader", "name", "value", "build", "cacheControl", "Lokhttp3/CacheControl;", "delete", "get", TtmlNode.TAG_HEAD, "header", "Lokhttp3/Headers;", "patch", "post", "put", "removeHeader", "tag", ExifInterface.GPS_DIRECTION_TRUE, "type", "(Ljava/lang/Class;Ljava/lang/Object;)Lokhttp3/Request$Builder;", "Ljava/net/URL;", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0016\u0018\u00002\u00020\u0001B\t\b\u0016¢\u0006\u0004\b\u0002\u0010\u0003B\u0011\b\u0010\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0002\u0010\u0006J\u0010\u0010\u0007\u001a\u00020\u00002\u0006\u0010\u0007\u001a\u00020\bH\u0016J\u0010\u0010\u0007\u001a\u00020\u00002\u0006\u0010\u0007\u001a\u00020\u000eH\u0016J\u0010\u0010)\u001a\u00020\u000e2\u0006\u0010\u0007\u001a\u00020\u000eH\u0002J\u0010\u0010\u0007\u001a\u00020\u00002\u0006\u0010\u0007\u001a\u00020*H\u0016J\u0018\u0010+\u001a\u00020\u00002\u0006\u0010,\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020\u000eH\u0016J\u0018\u0010.\u001a\u00020\u00002\u0006\u0010,\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020\u000eH\u0016J\u0010\u0010/\u001a\u00020\u00002\u0006\u0010,\u001a\u00020\u000eH\u0016J\u0010\u0010\u0013\u001a\u00020\u00002\u0006\u0010\u0013\u001a\u000200H\u0016J\u0010\u00101\u001a\u00020\u00002\u0006\u00101\u001a\u000202H\u0016J\b\u00103\u001a\u00020\u0000H\u0016J\b\u00104\u001a\u00020\u0000H\u0016J\u0010\u00105\u001a\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u001aH\u0016J\u0014\u00106\u001a\u00020\u00002\n\b\u0002\u0010\u0019\u001a\u0004\u0018\u00010\u001aH\u0017J\u0010\u00107\u001a\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u001aH\u0016J\u0010\u00108\u001a\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u001aH\u0016J\u001a\u0010\r\u001a\u00020\u00002\u0006\u0010\r\u001a\u00020\u000e2\b\u0010\u0019\u001a\u0004\u0018\u00010\u001aH\u0016J&\u00109\u001a\u00020\u0000\"\n\b\u0000\u0010:\u0018\u0001*\u00020\u00012\b\u00109\u001a\u0004\u0018\u0001H:H\u0087\b¢\u0006\u0004\b;\u0010<J-\u00109\u001a\u00020\u0000\"\b\b\u0000\u0010:*\u00020\u00012\f\u0010=\u001a\b\u0012\u0004\u0012\u0002H:0$2\b\u00109\u001a\u0004\u0018\u0001H:¢\u0006\u0002\u0010>J\u0012\u00109\u001a\u00020\u00002\b\u00109\u001a\u0004\u0018\u00010\u0001H\u0016J-\u00109\u001a\u00020\u0000\"\u0004\b\u0000\u0010:2\u000e\u0010=\u001a\n\u0012\u0006\b\u0000\u0012\u0002H:0?2\b\u00109\u001a\u0004\u0018\u0001H:H\u0016¢\u0006\u0002\u0010@J\u0010\u0010\u001f\u001a\u00020\u00002\b\u0010\u001f\u001a\u0004\u0018\u00010\bJ\u0006\u0010A\u001a\u00020\u0000J\b\u0010B\u001a\u00020\u0005H\u0016R\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR\u001a\u0010\r\u001a\u00020\u000eX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u001a\u0010\u0013\u001a\u00020\u0014X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u001c\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR\u001c\u0010\u001f\u001a\u0004\u0018\u00010\bX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b \u0010\n\"\u0004\b!\u0010\fR*\u0010\"\u001a\u0012\u0012\b\u0012\u0006\u0012\u0002\b\u00030$\u0012\u0004\u0012\u00020\u00010#X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b%\u0010&\"\u0004\b'\u0010(¨\u0006C"}, d2 = {"Lokhttp3/Request$Builder;", "", "<init>", "()V", "request", "Lokhttp3/Request;", "(Lokhttp3/Request;)V", "url", "Lokhttp3/HttpUrl;", "getUrl$okhttp", "()Lokhttp3/HttpUrl;", "setUrl$okhttp", "(Lokhttp3/HttpUrl;)V", FirebaseAnalytics.Param.METHOD, "", "getMethod$okhttp", "()Ljava/lang/String;", "setMethod$okhttp", "(Ljava/lang/String;)V", "headers", "Lokhttp3/Headers$Builder;", "getHeaders$okhttp", "()Lokhttp3/Headers$Builder;", "setHeaders$okhttp", "(Lokhttp3/Headers$Builder;)V", TtmlNode.TAG_BODY, "Lokhttp3/RequestBody;", "getBody$okhttp", "()Lokhttp3/RequestBody;", "setBody$okhttp", "(Lokhttp3/RequestBody;)V", "cacheUrlOverride", "getCacheUrlOverride$okhttp", "setCacheUrlOverride$okhttp", "tags", "", "Lkotlin/reflect/KClass;", "getTags$okhttp", "()Ljava/util/Map;", "setTags$okhttp", "(Ljava/util/Map;)V", "canonicalUrl", "Ljava/net/URL;", "header", "name", "value", "addHeader", "removeHeader", "Lokhttp3/Headers;", "cacheControl", "Lokhttp3/CacheControl;", "get", TtmlNode.TAG_HEAD, "post", "delete", "put", "patch", "tag", ExifInterface.GPS_DIRECTION_TRUE, "reifiedTag", "(Ljava/lang/Object;)Lokhttp3/Request$Builder;", "type", "(Lkotlin/reflect/KClass;Ljava/lang/Object;)Lokhttp3/Request$Builder;", "Ljava/lang/Class;", "(Ljava/lang/Class;Ljava/lang/Object;)Lokhttp3/Request$Builder;", "gzip", "build", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static class Builder {
         private RequestBody body;
+        private HttpUrl cacheUrlOverride;
         private Headers.Builder headers;
         private String method;
-        private Map<Class<?>, Object> tags;
+        private Map<KClass<?>, ? extends Object> tags;
         private HttpUrl url;
 
         public final Builder delete() {
@@ -217,35 +265,38 @@ public final class Request {
             this.body = requestBody;
         }
 
-        public final Map<Class<?>, Object> getTags$okhttp() {
+        public final HttpUrl getCacheUrlOverride$okhttp() {
+            return this.cacheUrlOverride;
+        }
+
+        public final void setCacheUrlOverride$okhttp(HttpUrl httpUrl) {
+            this.cacheUrlOverride = httpUrl;
+        }
+
+        public final Map<KClass<?>, Object> getTags$okhttp() {
             return this.tags;
         }
 
-        public final void setTags$okhttp(Map<Class<?>, Object> map) {
+        public final void setTags$okhttp(Map<KClass<?>, ? extends Object> map) {
             Intrinsics.checkNotNullParameter(map, "<set-?>");
             this.tags = map;
         }
 
         public Builder() {
-            this.tags = new LinkedHashMap();
+            this.tags = MapsKt.emptyMap();
             this.method = UtilsKt.HTTP_METHOD_GET;
             this.headers = new Headers.Builder();
         }
 
         public Builder(Request request) {
-            LinkedHashMap mutableMap;
             Intrinsics.checkNotNullParameter(request, "request");
-            this.tags = new LinkedHashMap();
+            this.tags = MapsKt.emptyMap();
             this.url = request.url();
             this.method = request.method();
             this.body = request.body();
-            if (request.getTags$okhttp().isEmpty()) {
-                mutableMap = new LinkedHashMap();
-            } else {
-                mutableMap = MapsKt.toMutableMap(request.getTags$okhttp());
-            }
-            this.tags = mutableMap;
+            this.tags = request.getTags$okhttp().isEmpty() ? MapsKt.emptyMap() : MapsKt.toMutableMap(request.getTags$okhttp());
             this.headers = request.headers().newBuilder();
+            this.cacheUrlOverride = request.cacheUrlOverride();
         }
 
         public Builder url(HttpUrl url) {
@@ -256,25 +307,30 @@ public final class Request {
 
         public Builder url(String url) {
             Intrinsics.checkNotNullParameter(url, "url");
-            if (StringsKt.startsWith(url, "ws:", true)) {
+            return url(HttpUrl.Companion.get(canonicalUrl(url)));
+        }
+
+        private final String canonicalUrl(String str) {
+            if (StringsKt.startsWith(str, "ws:", true)) {
                 StringBuilder sb = new StringBuilder("http:");
-                String substring = url.substring(3);
-                Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String).substring(startIndex)");
-                url = sb.append(substring).toString();
-            } else if (StringsKt.startsWith(url, "wss:", true)) {
+                String substring = str.substring(3);
+                Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
+                return sb.append(substring).toString();
+            } else if (StringsKt.startsWith(str, "wss:", true)) {
                 StringBuilder sb2 = new StringBuilder("https:");
-                String substring2 = url.substring(4);
-                Intrinsics.checkNotNullExpressionValue(substring2, "this as java.lang.String).substring(startIndex)");
-                url = sb2.append(substring2).toString();
+                String substring2 = str.substring(4);
+                Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
+                return sb2.append(substring2).toString();
+            } else {
+                return str;
             }
-            return url(HttpUrl.Companion.get(url));
         }
 
         public Builder url(URL url) {
             Intrinsics.checkNotNullParameter(url, "url");
             HttpUrl.Companion companion = HttpUrl.Companion;
             String url2 = url.toString();
-            Intrinsics.checkNotNullExpressionValue(url2, "url.toString()");
+            Intrinsics.checkNotNullExpressionValue(url2, "toString(...)");
             return url(companion.get(url2));
         }
 
@@ -326,7 +382,7 @@ public final class Request {
         public static /* synthetic */ Builder delete$default(Builder builder, RequestBody requestBody, int i, Object obj) {
             if (obj == null) {
                 if ((i & 1) != 0) {
-                    requestBody = okhttp3.internal.Util.EMPTY_REQUEST;
+                    requestBody = RequestBody.EMPTY;
                 }
                 return builder.delete(requestBody);
             }
@@ -364,32 +420,68 @@ public final class Request {
             return this;
         }
 
+        public final /* synthetic */ <T> Builder reifiedTag(T t) {
+            Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
+            return tag((KClass<KClass<T>>) Reflection.getOrCreateKotlinClass(Object.class), (KClass<T>) t);
+        }
+
+        public final <T> Builder tag(KClass<T> type, T t) {
+            LinkedHashMap asMutableMap;
+            Intrinsics.checkNotNullParameter(type, "type");
+            if (t == null) {
+                if (!this.tags.isEmpty()) {
+                    Map<KClass<?>, ? extends Object> map = this.tags;
+                    Intrinsics.checkNotNull(map, "null cannot be cast to non-null type kotlin.collections.MutableMap<kotlin.reflect.KClass<*>, kotlin.Any>");
+                    TypeIntrinsics.asMutableMap(map).remove(type);
+                }
+                return this;
+            }
+            if (this.tags.isEmpty()) {
+                asMutableMap = new LinkedHashMap();
+                this.tags = asMutableMap;
+            } else {
+                Map<KClass<?>, ? extends Object> map2 = this.tags;
+                Intrinsics.checkNotNull(map2, "null cannot be cast to non-null type kotlin.collections.MutableMap<kotlin.reflect.KClass<*>, kotlin.Any>");
+                asMutableMap = TypeIntrinsics.asMutableMap(map2);
+            }
+            asMutableMap.put(type, KClasses.cast(type, t));
+            return this;
+        }
+
         public Builder tag(Object obj) {
-            return tag(Object.class, obj);
+            return tag((KClass<KClass>) Reflection.getOrCreateKotlinClass(Object.class), (KClass) obj);
         }
 
         public <T> Builder tag(Class<? super T> type, T t) {
             Intrinsics.checkNotNullParameter(type, "type");
-            if (t == null) {
-                this.tags.remove(type);
-                return this;
+            return tag((KClass<KClass<T>>) JvmClassMappingKt.getKotlinClass(type), (KClass<T>) t);
+        }
+
+        public final Builder cacheUrlOverride(HttpUrl httpUrl) {
+            this.cacheUrlOverride = httpUrl;
+            return this;
+        }
+
+        public final Builder gzip() {
+            RequestBody requestBody = this.body;
+            if (requestBody == null) {
+                throw new IllegalStateException("cannot gzip a request that has no body");
             }
-            if (this.tags.isEmpty()) {
-                this.tags = new LinkedHashMap();
+            String str = this.headers.get(HttpHeaders.CONTENT_ENCODING);
+            if (str != null) {
+                throw new IllegalStateException(("Content-Encoding already set: " + str).toString());
             }
-            Map<Class<?>, Object> map = this.tags;
-            T cast = type.cast(t);
-            Intrinsics.checkNotNull(cast);
-            map.put(type, cast);
+            this.headers.add(HttpHeaders.CONTENT_ENCODING, "gzip");
+            this.body = new GzipRequestBody(requestBody);
             return this;
         }
 
         public Request build() {
-            HttpUrl httpUrl = this.url;
-            if (httpUrl != null) {
-                return new Request(httpUrl, this.method, this.headers.build(), this.body, okhttp3.internal.Util.toImmutableMap(this.tags));
-            }
-            throw new IllegalStateException("url == null".toString());
+            return new Request(this);
         }
+    }
+
+    public final Object tag() {
+        return tag(Reflection.getOrCreateKotlinClass(Object.class));
     }
 }

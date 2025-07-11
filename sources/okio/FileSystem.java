@@ -127,7 +127,7 @@ public abstract class FileSystem implements Closeable {
     /* JADX WARN: Type inference failed for: r3v3, types: [java.lang.Throwable] */
     /* JADX WARN: Type inference failed for: r3v7 */
     /* renamed from: -write$default  reason: not valid java name */
-    public static /* synthetic */ Object m10308write$default(FileSystem fileSystem, Path file, boolean z, Function1 writerAction, int i, Object obj) throws IOException {
+    public static /* synthetic */ Object m10398write$default(FileSystem fileSystem, Path file, boolean z, Function1 writerAction, int i, Object obj) throws IOException {
         if (obj == null) {
             if ((i & 2) != 0) {
                 z = false;
@@ -297,7 +297,7 @@ public abstract class FileSystem implements Closeable {
     /* JADX WARN: Type inference failed for: r5v2, types: [java.lang.Throwable] */
     /* JADX WARN: Type inference failed for: r5v4 */
     /* renamed from: -read  reason: not valid java name */
-    public final <T> T m10309read(Path file, Function1<? super BufferedSource, ? extends T> readerAction) throws IOException {
+    public final <T> T m10399read(Path file, Function1<? super BufferedSource, ? extends T> readerAction) throws IOException {
         Intrinsics.checkNotNullParameter(file, "file");
         Intrinsics.checkNotNullParameter(readerAction, "readerAction");
         BufferedSource buffer = Okio.buffer(source(file));
@@ -335,7 +335,7 @@ public abstract class FileSystem implements Closeable {
     /* JADX WARN: Type inference failed for: r5v2, types: [java.lang.Throwable] */
     /* JADX WARN: Type inference failed for: r5v4 */
     /* renamed from: -write  reason: not valid java name */
-    public final <T> T m10310write(Path file, boolean z, Function1<? super BufferedSink, ? extends T> writerAction) throws IOException {
+    public final <T> T m10400write(Path file, boolean z, Function1<? super BufferedSink, ? extends T> writerAction) throws IOException {
         Intrinsics.checkNotNullParameter(file, "file");
         Intrinsics.checkNotNullParameter(writerAction, "writerAction");
         BufferedSink buffer = Okio.buffer(sink(file, z));

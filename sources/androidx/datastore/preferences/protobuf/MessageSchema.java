@@ -6042,6 +6042,7 @@ public final class MessageSchema<T> implements Schema<T> {
     }
 
     private boolean isFieldPresent(T message, int pos) {
+        boolean equals;
         int presenceMaskAndOffsetAt = presenceMaskAndOffsetAt(pos);
         long j = 1048575 & presenceMaskAndOffsetAt;
         if (j != 1048575) {
@@ -6069,16 +6070,19 @@ public final class MessageSchema<T> implements Schema<T> {
             case 8:
                 Object object = UnsafeUtil.getObject(message, offset);
                 if (object instanceof String) {
-                    return !((String) object).isEmpty();
+                    equals = ((String) object).isEmpty();
+                    break;
+                } else if (object instanceof ByteString) {
+                    equals = ByteString.EMPTY.equals(object);
+                    break;
+                } else {
+                    throw new IllegalArgumentException();
                 }
-                if (object instanceof ByteString) {
-                    return !ByteString.EMPTY.equals(object);
-                }
-                throw new IllegalArgumentException();
             case 9:
                 return UnsafeUtil.getObject(message, offset) != null;
             case 10:
-                return !ByteString.EMPTY.equals(UnsafeUtil.getObject(message, offset));
+                equals = ByteString.EMPTY.equals(UnsafeUtil.getObject(message, offset));
+                break;
             case 11:
                 return UnsafeUtil.getInt(message, offset) != 0;
             case 12:
@@ -6096,6 +6100,7 @@ public final class MessageSchema<T> implements Schema<T> {
             default:
                 throw new IllegalArgumentException();
         }
+        return !equals;
     }
 
     private void setFieldPresent(T message, int pos) {

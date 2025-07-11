@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="65dp" android:width="380dp" android:viewportWidth="380" android:viewportHeight="65">
-    <path android:fillColor="#eb8bd3" android:pathData="M12,0L368,0A12,12 0,0 1,380 12L380,53A12,12 0,0 1,368 65L12,65A12,12 0,0 1,0 53L0,12A12,12 0,0 1,12 0z"/>
-    <path android:fillColor="@drawable/res_0x7f0800b6_button_background_buyprem__0" android:pathData="M12,0L368,0A12,12 0,0 1,380 12L380,53A12,12 0,0 1,368 65L12,65A12,12 0,0 1,0 53L0,12A12,12 0,0 1,12 0z"/>
-    <path android:fillColor="@drawable/res_0x7f0800b7_button_background_buyprem__1" android:pathData="M12,0L368,0A12,12 0,0 1,380 12L380,53A12,12 0,0 1,368 65L12,65A12,12 0,0 1,0 53L0,12A12,12 0,0 1,12 0z"/>
-    <path android:fillColor="@drawable/res_0x7f0800b8_button_background_buyprem__2" android:pathData="M12,0L368,0A12,12 0,0 1,380 12L380,53A12,12 0,0 1,368 65L12,65A12,12 0,0 1,0 53L0,12A12,12 0,0 1,12 0z"/>
-    <path android:fillColor="@drawable/res_0x7f0800b9_button_background_buyprem__3" android:pathData="M12,0L368,0A12,12 0,0 1,380 12L380,53A12,12 0,0 1,368 65L12,65A12,12 0,0 1,0 53L0,12A12,12 0,0 1,12 0z"/>
-    <path android:fillColor="@drawable/res_0x7f0800ba_button_background_buyprem__4" android:pathData="M12,0L368,0A12,12 0,0 1,380 12L380,53A12,12 0,0 1,368 65L12,65A12,12 0,0 1,0 53L0,12A12,12 0,0 1,12 0z"/>
+    <path android:fillColor="@color/battlepass5" android:pathData="M12,0L368,0A12,12 0,0 1,380 12L380,53A12,12 0,0 1,368 65L12,65A12,12 0,0 1,0 53L0,12A12,12 0,0 1,12 0z"/>
+    <path android:fillColor="@drawable/res_0x7f0800bb_button_background_buyprem__0" android:pathData="M12,0L368,0A12,12 0,0 1,380 12L380,53A12,12 0,0 1,368 65L12,65A12,12 0,0 1,0 53L0,12A12,12 0,0 1,12 0z"/>
+    <path android:fillColor="@drawable/res_0x7f0800bc_button_background_buyprem__1" android:pathData="M12,0L368,0A12,12 0,0 1,380 12L380,53A12,12 0,0 1,368 65L12,65A12,12 0,0 1,0 53L0,12A12,12 0,0 1,12 0z"/>
+    <path android:fillColor="@drawable/res_0x7f0800bd_button_background_buyprem__2" android:pathData="M12,0L368,0A12,12 0,0 1,380 12L380,53A12,12 0,0 1,368 65L12,65A12,12 0,0 1,0 53L0,12A12,12 0,0 1,12 0z"/>
+    <path android:fillColor="@drawable/res_0x7f0800be_button_background_buyprem__3" android:pathData="M12,0L368,0A12,12 0,0 1,380 12L380,53A12,12 0,0 1,368 65L12,65A12,12 0,0 1,0 53L0,12A12,12 0,0 1,12 0z"/>
+    <path android:fillColor="@drawable/res_0x7f0800bf_button_background_buyprem__4" android:pathData="M12,0L368,0A12,12 0,0 1,380 12L380,53A12,12 0,0 1,368 65L12,65A12,12 0,0 1,0 53L0,12A12,12 0,0 1,12 0z"/>
 </vector>

@@ -17,7 +17,7 @@ public final class TimeProviderImpl implements TimeProvider {
 
     @Override // com.google.firebase.sessions.TimeProvider
     /* renamed from: elapsedRealtime-UwyO8pc */
-    public long mo8292elapsedRealtimeUwyO8pc() {
+    public long mo8291elapsedRealtimeUwyO8pc() {
         Duration.Companion companion = Duration.Companion;
         return DurationKt.toDuration(SystemClock.elapsedRealtime(), DurationUnit.MILLISECONDS);
     }

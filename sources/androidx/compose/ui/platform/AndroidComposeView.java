@@ -1818,7 +1818,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
             }
             long m5804convertMeasureSpecI7RO_PI = m5804convertMeasureSpecI7RO_PI(i);
             long m5804convertMeasureSpecI7RO_PI2 = m5804convertMeasureSpecI7RO_PI(i2);
-            long m6645fitPrioritizingHeightZbe2FdA = Constraints.Companion.m6645fitPrioritizingHeightZbe2FdA((int) ULong.m8619constructorimpl(m5804convertMeasureSpecI7RO_PI >>> 32), (int) ULong.m8619constructorimpl(m5804convertMeasureSpecI7RO_PI & 4294967295L), (int) ULong.m8619constructorimpl(m5804convertMeasureSpecI7RO_PI2 >>> 32), (int) ULong.m8619constructorimpl(4294967295L & m5804convertMeasureSpecI7RO_PI2));
+            long m6645fitPrioritizingHeightZbe2FdA = Constraints.Companion.m6645fitPrioritizingHeightZbe2FdA((int) ULong.m8650constructorimpl(m5804convertMeasureSpecI7RO_PI >>> 32), (int) ULong.m8650constructorimpl(m5804convertMeasureSpecI7RO_PI & 4294967295L), (int) ULong.m8650constructorimpl(m5804convertMeasureSpecI7RO_PI2 >>> 32), (int) ULong.m8650constructorimpl(4294967295L & m5804convertMeasureSpecI7RO_PI2));
             Constraints constraints = this.onMeasureConstraints;
             boolean z = false;
             if (constraints == null) {
@@ -1846,17 +1846,17 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
     /* renamed from: component1-VKZWuLQ  reason: not valid java name */
     private final int m5802component1VKZWuLQ(long j) {
-        return (int) ULong.m8619constructorimpl(j >>> 32);
+        return (int) ULong.m8650constructorimpl(j >>> 32);
     }
 
     /* renamed from: component2-VKZWuLQ  reason: not valid java name */
     private final int m5803component2VKZWuLQ(long j) {
-        return (int) ULong.m8619constructorimpl(j & 4294967295L);
+        return (int) ULong.m8650constructorimpl(j & 4294967295L);
     }
 
     /* renamed from: pack-ZIaKswc  reason: not valid java name */
     private final long m5808packZIaKswc(int i, int i2) {
-        return ULong.m8619constructorimpl(ULong.m8619constructorimpl(i2) | ULong.m8619constructorimpl(ULong.m8619constructorimpl(i) << 32));
+        return ULong.m8650constructorimpl(ULong.m8650constructorimpl(i2) | ULong.m8650constructorimpl(ULong.m8650constructorimpl(i) << 32));
     }
 
     /* renamed from: convertMeasureSpec-I7RO_PI  reason: not valid java name */

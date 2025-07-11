@@ -11,12 +11,12 @@ public class AESEncrypter implements Encrypter {
     public static final String TAG = "[AESEncrypter]";
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f271a;
+    private final String f272a;
     private final byte[] b;
     private final byte[] c;
 
     public AESEncrypter(String str, byte[] bArr, byte[] bArr2) {
-        this.f271a = str;
+        this.f272a = str;
         this.b = bArr;
         this.c = bArr2;
     }
@@ -29,7 +29,7 @@ public class AESEncrypter implements Encrypter {
     public byte[] encrypt(byte[] bArr) {
         try {
             SecretKeySpec secretKeySpec = new SecretKeySpec(this.b, "AES");
-            Cipher cipher = Cipher.getInstance(this.f271a);
+            Cipher cipher = Cipher.getInstance(this.f272a);
             cipher.init(1, secretKeySpec, new IvParameterSpec(this.c));
             return cipher.doFinal(bArr);
         } catch (Throwable unused) {
@@ -38,7 +38,7 @@ public class AESEncrypter implements Encrypter {
     }
 
     public String getAlgorithm() {
-        return this.f271a;
+        return this.f272a;
     }
 
     public byte[] getIV() {
@@ -52,7 +52,7 @@ public class AESEncrypter implements Encrypter {
     public byte[] decrypt(byte[] bArr, int i, int i2) {
         try {
             SecretKeySpec secretKeySpec = new SecretKeySpec(this.b, "AES");
-            Cipher cipher = Cipher.getInstance(this.f271a);
+            Cipher cipher = Cipher.getInstance(this.f272a);
             cipher.init(2, secretKeySpec, new IvParameterSpec(this.c));
             return cipher.doFinal(bArr, i, i2);
         } catch (Throwable unused) {

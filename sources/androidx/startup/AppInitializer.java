@@ -92,11 +92,11 @@ public final class AppInitializer {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public void discoverAndInitialize() {
+    public void discoverAndInitialize(Class<? extends InitializationProvider> cls) {
         try {
             try {
                 Trace.beginSection(SECTION_NAME);
-                discoverAndInitialize(this.mContext.getPackageManager().getProviderInfo(new ComponentName(this.mContext.getPackageName(), InitializationProvider.class.getName()), 128).metaData);
+                discoverAndInitialize(this.mContext.getPackageManager().getProviderInfo(new ComponentName(this.mContext, cls), 128).metaData);
             } catch (PackageManager.NameNotFoundException e) {
                 throw new StartupException(e);
             }

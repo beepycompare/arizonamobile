@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class raw {
-        public static int firebase_common_keep = 0x7f120012;
+        public static int firebase_common_keep = 0x7f120013;
 
         private raw() {
         }

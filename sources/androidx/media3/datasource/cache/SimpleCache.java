@@ -341,8 +341,8 @@ public final class SimpleCache implements Cache {
         removeSpanInternal(cacheSpan);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x0017, code lost:
-        if (r4.getCachedBytesLength(r5, r7) >= r7) goto L8;
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x0016, code lost:
+        if (r3.getCachedBytesLength(r4, r6) >= r6) goto L8;
      */
     @Override // androidx.media3.datasource.cache.Cache
     /*

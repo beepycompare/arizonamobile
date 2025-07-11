@@ -46,7 +46,6 @@ public class SharedPreferencesManager {
             try {
                 return sharedPreferences2.getBoolean(str, z);
             } catch (ClassCastException unused) {
-                return z;
             }
         }
         return z;
@@ -69,7 +68,6 @@ public class SharedPreferencesManager {
             try {
                 return sharedPreferences2.getLong(str, j);
             } catch (ClassCastException unused) {
-                return j;
             }
         }
         return j;
@@ -253,12 +251,9 @@ public class SharedPreferencesManager {
     }
 
     public synchronized void removeRawReferrer(String str, long j) {
+        int rawReferrerIndex;
         if (str != null) {
-            if (str.length() != 0) {
-                int rawReferrerIndex = getRawReferrerIndex(str, j);
-                if (rawReferrerIndex < 0) {
-                    return;
-                }
+            if (str.length() != 0 && (rawReferrerIndex = getRawReferrerIndex(str, j)) >= 0) {
                 JSONArray rawReferrerArray = getRawReferrerArray();
                 JSONArray jSONArray = new JSONArray();
                 for (int i = 0; i < rawReferrerArray.length(); i++) {
@@ -282,18 +277,16 @@ public class SharedPreferencesManager {
     }
 
     public synchronized void saveDeeplink(AdjustDeeplink adjustDeeplink, long j) {
-        if (adjustDeeplink == null) {
-            return;
-        }
-        Uri uri = adjustDeeplink.url;
-        if (uri == null) {
-            return;
-        }
-        saveString(PREFS_KEY_DEEPLINK_URL, uri.toString());
-        saveLong(PREFS_KEY_DEEPLINK_CLICK_TIME, j);
-        Uri uri2 = adjustDeeplink.referrer;
-        if (uri2 != null) {
-            saveString(PREFS_KEY_DEEPLINK_REFERRER, uri2.toString());
+        if (adjustDeeplink != null) {
+            Uri uri = adjustDeeplink.url;
+            if (uri != null) {
+                saveString(PREFS_KEY_DEEPLINK_URL, uri.toString());
+                saveLong(PREFS_KEY_DEEPLINK_CLICK_TIME, j);
+                Uri uri2 = adjustDeeplink.referrer;
+                if (uri2 != null) {
+                    saveString(PREFS_KEY_DEEPLINK_REFERRER, uri2.toString());
+                }
+            }
         }
     }
 
@@ -306,19 +299,20 @@ public class SharedPreferencesManager {
     }
 
     public synchronized void saveRawReferrer(String str, long j) {
-        if (getRawReferrer(str, j) != null) {
-            return;
+        try {
+            if (getRawReferrer(str, j) == null) {
+                JSONArray rawReferrerArray = getRawReferrerArray();
+                if (rawReferrerArray.length() != 10) {
+                    JSONArray jSONArray = new JSONArray();
+                    jSONArray.put(0, str);
+                    jSONArray.put(1, j);
+                    jSONArray.put(2, 0);
+                    rawReferrerArray.put(jSONArray);
+                    saveRawReferrerArray(rawReferrerArray);
+                }
+            }
+        } catch (JSONException unused) {
         }
-        JSONArray rawReferrerArray = getRawReferrerArray();
-        if (rawReferrerArray.length() == 10) {
-            return;
-        }
-        JSONArray jSONArray = new JSONArray();
-        jSONArray.put(0, str);
-        jSONArray.put(1, j);
-        jSONArray.put(2, 0);
-        rawReferrerArray.put(jSONArray);
-        saveRawReferrerArray(rawReferrerArray);
     }
 
     public synchronized void saveRawReferrerArray(JSONArray jSONArray) {

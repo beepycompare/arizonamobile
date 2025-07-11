@@ -43,7 +43,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DialogFrame.kt */
-@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a:\u0010\u0000\u001a\u00020\u00012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0011\u0010\u0006\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\b¨\u0006\t"}, d2 = {"DialogFrame", "", "backgroundImageId", "", "onDismiss", "Lkotlin/Function0;", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "(Ljava/lang/Integer;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "design-system_release_web"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a:\u0010\u0000\u001a\u00020\u00012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0011\u0010\u0006\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\b¨\u0006\t"}, d2 = {"DialogFrame", "", "backgroundImageId", "", "onDismiss", "Lkotlin/Function0;", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "(Ljava/lang/Integer;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "design-system_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DialogFrameKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -55,13 +55,13 @@ public final class DialogFrameKt {
     public static final void DialogFrame(Integer num, final Function0<Unit> onDismiss, final Function2<? super Composer, ? super Integer, Unit> content, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
+        final Integer num2;
         int i4;
         String str;
+        Object obj2;
         String str2;
         String str3;
-        String str4;
         float f;
-        final Integer num2;
         Intrinsics.checkNotNullParameter(onDismiss, "onDismiss");
         Intrinsics.checkNotNullParameter(content, "content");
         Composer startRestartGroup = composer.startRestartGroup(468851715);
@@ -77,29 +77,28 @@ public final class DialogFrameKt {
             obj = num;
             i3 = i;
         }
-        if ((i2 & 4) != 0) {
-            i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
-        } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i3 |= startRestartGroup.changedInstance(content) ? 256 : 128;
         }
         int i6 = i3;
-        if ((i6 & 131) != 130 || !startRestartGroup.getSkipping()) {
-            Object obj2 = i5 != 0 ? null : obj;
+        if (!startRestartGroup.shouldExecute((i6 & 131) != 130, i6 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+            num2 = obj;
+        } else {
+            Integer num3 = i5 != 0 ? null : obj;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(468851715, i6, -1, "com.miami.game.core.design.system.component.dialog_frame.DialogFrame (DialogFrame.kt:50)");
             }
             Modifier m247backgroundbw27NRU$default = BackgroundKt.m247backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.m4077copywmQWz5c$default(Color.Companion.m4104getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, 2, null);
-            startRestartGroup.startReplaceGroup(1849434622);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):DialogFrame.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -405052982, "CC(remember):DialogFrame.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = InteractionSourceKt.MutableInteractionSource();
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             MutableInteractionSource mutableInteractionSource = (MutableInteractionSource) rememberedValue;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(1849434622);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):DialogFrame.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -405054171, "CC(remember):DialogFrame.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new Function0() { // from class: com.miami.game.core.design.system.component.dialog_frame.DialogFrameKt$$ExternalSyntheticLambda0
@@ -112,7 +111,7 @@ public final class DialogFrameKt {
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Modifier m279clickableO2vRcR0$default = ClickableKt.m279clickableO2vRcR0$default(m247backgroundbw27NRU$default, mutableInteractionSource, null, false, null, null, (Function0) rememberedValue2, 28, null);
             Alignment center = Alignment.Companion.getCenter();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
@@ -144,7 +143,7 @@ public final class DialogFrameKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 17078808, "C66@2639L2242:DialogFrame.kt#x951st");
-            Integer num3 = obj2;
+            Integer num4 = num3;
             Modifier clip = ClipKt.clip(BorderKt.m260borderziNgDLE(SizeKt.m790width3ABfNKs(SizeKt.m771height3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(300)), Dp.m6684constructorimpl(600)), Dp.m6684constructorimpl(2), Brush.Companion.m4035verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4068boximpl(Color.m4077copywmQWz5c$default(Color.Companion.m4110getLightGray0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4068boximpl(Color.Companion.m4113getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramShape(0.0f, 0.0f, 3, null));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
@@ -175,42 +174,42 @@ public final class DialogFrameKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -192394474, "C101@3777L1094:DialogFrame.kt#x951st");
-            startRestartGroup.startReplaceGroup(-1668775366);
-            ComposerKt.sourceInformation(startRestartGroup, "91@3412L80,90@3386L364");
-            if (num3 != null) {
-                str3 = "C72@3468L9:Box.kt#2w3rfo";
-                str = "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp";
-                i4 = 1;
+            if (num4 != null) {
+                startRestartGroup.startReplaceGroup(-192399001);
+                ComposerKt.sourceInformation(startRestartGroup, "91@3412L80,90@3386L364");
+                str3 = "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo";
                 str2 = "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh";
                 f = 0.0f;
-                str4 = "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo";
-                IconKt.m1953Iconww6aTOc(PainterResources_androidKt.painterResource(num3.intValue(), startRestartGroup, i6 & 14), (String) null, boxScopeInstance2.align(SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), Alignment.Companion.getCenterEnd()), Color.m4077copywmQWz5c$default(Color.Companion.m4115getWhite0d7_KjU(), 0.7f, 0.0f, 0.0f, 0.0f, 14, null), startRestartGroup, 3120, 0);
+                i4 = 1;
+                str = "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp";
+                obj2 = null;
+                IconKt.m1953Iconww6aTOc(PainterResources_androidKt.painterResource(num4.intValue(), startRestartGroup, i6 & 14), (String) null, boxScopeInstance2.align(SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), Alignment.Companion.getCenterEnd()), Color.m4077copywmQWz5c$default(Color.Companion.m4115getWhite0d7_KjU(), 0.7f, 0.0f, 0.0f, 0.0f, 14, null), startRestartGroup, 3120, 0);
             } else {
                 i4 = 1;
                 str = "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp";
+                obj2 = null;
                 str2 = "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh";
-                str3 = "C72@3468L9:Box.kt#2w3rfo";
-                str4 = "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo";
+                str3 = "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo";
                 f = 0.0f;
+                startRestartGroup.startReplaceGroup(-195753325);
             }
             startRestartGroup.endReplaceGroup();
-            Modifier fillMaxSize$default = SizeKt.fillMaxSize$default(Modifier.Companion, f, i4, null);
+            Modifier fillMaxSize$default = SizeKt.fillMaxSize$default(Modifier.Companion, f, i4, obj2);
             Brush.Companion companion = Brush.Companion;
             Color[] colorArr = new Color[2];
             colorArr[0] = Color.m4068boximpl(ColorKt.Color(4279508784L));
             colorArr[i4] = Color.m4068boximpl(ColorKt.Color(3489660928L));
             Modifier background$default = BackgroundKt.background$default(fillMaxSize$default, Brush.Companion.m4029linearGradientmHitzGk$default(companion, CollectionsKt.listOf((Object[]) colorArr), 0L, 0L, 0, 14, (Object) null), null, 0.0f, 6, null);
             Alignment center2 = Alignment.Companion.getCenter();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, str4);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, str3);
             MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(center2, false);
-            String str5 = str2;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, str5);
+            String str4 = str2;
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, str4);
             int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap3 = startRestartGroup.getCurrentCompositionLocalMap();
             Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(startRestartGroup, background$default);
             Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-            String str6 = str;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, str6);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, str);
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -229,7 +228,7 @@ public final class DialogFrameKt {
                 m3520constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
             }
             Updater.m3527setimpl(m3520constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, str3);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1467119516, "C125@4623L21,122@4495L362:DialogFrame.kt#x951st");
             float f2 = 10;
@@ -237,12 +236,12 @@ public final class DialogFrameKt {
             Alignment.Horizontal centerHorizontally = Alignment.Companion.getCenterHorizontally();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.m619spacedBy0680j_4(Dp.m6684constructorimpl(f2)), centerHorizontally, startRestartGroup, 54);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, str5);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, str4);
             int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap4 = startRestartGroup.getCurrentCompositionLocalMap();
             Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(startRestartGroup, verticalScroll$default);
             Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, str6);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, str);
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -292,10 +291,7 @@ public final class DialogFrameKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-            num2 = num3;
-        } else {
-            startRestartGroup.skipToGroupEnd();
-            num2 = obj;
+            num2 = num4;
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {

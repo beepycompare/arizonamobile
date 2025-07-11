@@ -1,46 +1,33 @@
 package com.google.android.gms.internal.measurement;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+import android.os.RemoteException;
+import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.dynamic.ObjectWrapper;
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzdh extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<zzdh> CREATOR = new zzdi();
-    public final long zza;
-    public final long zzb;
-    public final boolean zzc;
-    public final String zzd;
-    public final String zze;
-    public final String zzf;
-    public final Bundle zzg;
-    public final String zzh;
+public final class zzdh extends zzeq {
+    final /* synthetic */ String zza;
+    final /* synthetic */ String zzb;
+    final /* synthetic */ Object zzc;
+    final /* synthetic */ boolean zzd;
+    final /* synthetic */ zzfb zze;
 
-    public zzdh(long j, long j2, boolean z, String str, String str2, String str3, Bundle bundle, String str4) {
-        this.zza = j;
-        this.zzb = j2;
-        this.zzc = z;
-        this.zzd = str;
-        this.zze = str2;
-        this.zzf = str3;
-        this.zzg = bundle;
-        this.zzh = str4;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzdh(zzfb zzfbVar, String str, String str2, Object obj, boolean z) {
+        super(zzfbVar, true);
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = obj;
+        this.zzd = z;
+        Objects.requireNonNull(zzfbVar);
+        this.zze = zzfbVar;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        long j = this.zza;
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeLong(parcel, 1, j);
-        SafeParcelWriter.writeLong(parcel, 2, this.zzb);
-        SafeParcelWriter.writeBoolean(parcel, 3, this.zzc);
-        SafeParcelWriter.writeString(parcel, 4, this.zzd, false);
-        SafeParcelWriter.writeString(parcel, 5, this.zze, false);
-        SafeParcelWriter.writeString(parcel, 6, this.zzf, false);
-        SafeParcelWriter.writeBundle(parcel, 7, this.zzg, false);
-        SafeParcelWriter.writeString(parcel, 8, this.zzh, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    @Override // com.google.android.gms.internal.measurement.zzeq
+    final void zza() throws RemoteException {
+        ((zzcr) Preconditions.checkNotNull(this.zze.zzQ())).setUserProperty(this.zza, this.zzb, ObjectWrapper.wrap(this.zzc), this.zzd, this.zzh);
     }
 }

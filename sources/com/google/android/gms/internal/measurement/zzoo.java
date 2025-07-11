@@ -1,226 +1,324 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.common.base.Ascii;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+import java.lang.reflect.Field;
+import java.nio.Buffer;
+import java.nio.ByteOrder;
+import java.security.AccessController;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import libcore.io.Memory;
+import sun.misc.Unsafe;
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzoo {
-    public static final /* synthetic */ int zza = 0;
+final class zzoo {
+    static final long zza;
+    static final boolean zzb;
+    private static final Unsafe zzc;
+    private static final Class zzd;
+    private static final boolean zze;
+    private static final zzon zzf;
+    private static final boolean zzg;
+    private static final boolean zzh;
 
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0154  */
     static {
-        if (zzol.zzx() && zzol.zzy()) {
-            int i = zzkr.zza;
+        boolean z;
+        zzon zzonVar;
+        boolean z2;
+        Field zzB;
+        zzon zzonVar2;
+        Unsafe zzq = zzq();
+        zzc = zzq;
+        int i = zzku.zza;
+        zzd = Memory.class;
+        boolean zzr = zzr(Long.TYPE);
+        zze = zzr;
+        boolean zzr2 = zzr(Integer.TYPE);
+        zzon zzonVar3 = null;
+        if (zzq != null) {
+            if (zzr) {
+                zzonVar3 = new zzom(zzq);
+            } else if (zzr2) {
+                zzonVar3 = new zzol(zzq);
+            }
         }
-    }
-
-    static /* bridge */ /* synthetic */ int zza(byte[] bArr, int i, int i2) {
-        int i3 = i2 - i;
-        byte b = bArr[i - 1];
-        if (i3 == 0) {
-            if (b <= -12) {
-                return b;
+        zzf = zzonVar3;
+        if (zzonVar3 != null) {
+            try {
+                Class<?> cls = zzonVar3.zza.getClass();
+                cls.getMethod("objectFieldOffset", Field.class);
+                cls.getMethod("getLong", Object.class, Long.TYPE);
+            } catch (Throwable th) {
+                zzy(th);
             }
-            return -1;
-        } else if (i3 == 1) {
-            byte b2 = bArr[i];
-            if (b > -12 || b2 > -65) {
-                return -1;
-            }
-            return (b2 << 8) ^ b;
-        } else if (i3 == 2) {
-            byte b3 = bArr[i];
-            byte b4 = bArr[i + 1];
-            if (b > -12 || b3 > -65 || b4 > -65) {
-                return -1;
-            }
-            return (b4 << Ascii.DLE) ^ ((b3 << 8) ^ b);
-        } else {
-            throw new AssertionError();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x001e, code lost:
-        return r10 + r0;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int zzb(String str, byte[] bArr, int i, int i2) {
-        int i3;
-        int i4;
-        int i5;
-        char charAt;
-        int length = str.length();
-        int i6 = 0;
-        while (true) {
-            i3 = i + i2;
-            if (i6 >= length || (i5 = i6 + i) >= i3 || (charAt = str.charAt(i6)) >= 128) {
-                break;
-            }
-            bArr[i5] = (byte) charAt;
-            i6++;
-        }
-        int i7 = i + i6;
-        while (i6 < length) {
-            char charAt2 = str.charAt(i6);
-            if (charAt2 < 128 && i7 < i3) {
-                bArr[i7] = (byte) charAt2;
-                i7++;
-            } else if (charAt2 < 2048 && i7 <= i3 - 2) {
-                bArr[i7] = (byte) ((charAt2 >>> 6) | 960);
-                bArr[i7 + 1] = (byte) ((charAt2 & '?') | 128);
-                i7 += 2;
-            } else if ((charAt2 >= 55296 && charAt2 <= 57343) || i7 > i3 - 3) {
-                if (i7 <= i3 - 4) {
-                    int i8 = i6 + 1;
-                    if (i8 != str.length()) {
-                        char charAt3 = str.charAt(i8);
-                        if (Character.isSurrogatePair(charAt2, charAt3)) {
-                            int i9 = i7 + 3;
-                            int codePoint = Character.toCodePoint(charAt2, charAt3);
-                            bArr[i7] = (byte) ((codePoint >>> 18) | 240);
-                            bArr[i7 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
-                            bArr[i7 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
-                            i7 += 4;
-                            bArr[i9] = (byte) ((codePoint & 63) | 128);
-                            i6 = i8;
-                        } else {
-                            i6 = i8;
-                        }
+            if (zzB() != null) {
+                z = true;
+                zzg = z;
+                zzonVar = zzf;
+                if (zzonVar != null) {
+                    try {
+                        Class<?> cls2 = zzonVar.zza.getClass();
+                        cls2.getMethod("objectFieldOffset", Field.class);
+                        cls2.getMethod("arrayBaseOffset", Class.class);
+                        cls2.getMethod("arrayIndexScale", Class.class);
+                        cls2.getMethod("getInt", Object.class, Long.TYPE);
+                        cls2.getMethod("putInt", Object.class, Long.TYPE, Integer.TYPE);
+                        cls2.getMethod("getLong", Object.class, Long.TYPE);
+                        cls2.getMethod("putLong", Object.class, Long.TYPE, Long.TYPE);
+                        cls2.getMethod("getObject", Object.class, Long.TYPE);
+                        cls2.getMethod("putObject", Object.class, Long.TYPE, Object.class);
+                        z2 = true;
+                    } catch (Throwable th2) {
+                        zzy(th2);
                     }
-                    throw new zzon(i6 - 1, length);
-                } else if (charAt2 < 55296 || charAt2 > 57343 || ((i4 = i6 + 1) != str.length() && Character.isSurrogatePair(charAt2, str.charAt(i4)))) {
-                    throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt2 + " at index " + i7);
-                } else {
-                    throw new zzon(i6, length);
-                }
-            } else {
-                bArr[i7] = (byte) ((charAt2 >>> '\f') | 480);
-                bArr[i7 + 1] = (byte) (((charAt2 >>> 6) & 63) | 128);
-                bArr[i7 + 2] = (byte) ((charAt2 & '?') | 128);
-                i7 += 3;
-            }
-            i6++;
-        }
-        return i7;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static int zzc(String str) {
-        int length = str.length();
-        int i = 0;
-        int i2 = 0;
-        while (i2 < length && str.charAt(i2) < 128) {
-            i2++;
-        }
-        int i3 = length;
-        while (true) {
-            if (i2 >= length) {
-                break;
-            }
-            char charAt = str.charAt(i2);
-            if (charAt < 2048) {
-                i3 += (127 - charAt) >>> 31;
-                i2++;
-            } else {
-                int length2 = str.length();
-                while (i2 < length2) {
-                    char charAt2 = str.charAt(i2);
-                    if (charAt2 < 2048) {
-                        i += (127 - charAt2) >>> 31;
-                    } else {
-                        i += 2;
-                        if (charAt2 >= 55296 && charAt2 <= 57343) {
-                            if (Character.codePointAt(str, i2) < 65536) {
-                                throw new zzon(i2, length2);
-                            }
-                            i2++;
-                        }
+                    zzh = z2;
+                    zza = zzz(byte[].class);
+                    zzz(boolean[].class);
+                    zzA(boolean[].class);
+                    zzz(int[].class);
+                    zzA(int[].class);
+                    zzz(long[].class);
+                    zzA(long[].class);
+                    zzz(float[].class);
+                    zzA(float[].class);
+                    zzz(double[].class);
+                    zzA(double[].class);
+                    zzz(Object[].class);
+                    zzA(Object[].class);
+                    zzB = zzB();
+                    if (zzB != null && (zzonVar2 = zzf) != null) {
+                        zzonVar2.zza.objectFieldOffset(zzB);
                     }
-                    i2++;
+                    zzb = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
                 }
-                i3 += i;
+                z2 = false;
+                zzh = z2;
+                zza = zzz(byte[].class);
+                zzz(boolean[].class);
+                zzA(boolean[].class);
+                zzz(int[].class);
+                zzA(int[].class);
+                zzz(long[].class);
+                zzA(long[].class);
+                zzz(float[].class);
+                zzA(float[].class);
+                zzz(double[].class);
+                zzA(double[].class);
+                zzz(Object[].class);
+                zzA(Object[].class);
+                zzB = zzB();
+                if (zzB != null) {
+                    zzonVar2.zza.objectFieldOffset(zzB);
+                }
+                zzb = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
             }
         }
-        if (i3 >= length) {
-            return i3;
+        z = false;
+        zzg = z;
+        zzonVar = zzf;
+        if (zzonVar != null) {
         }
-        throw new IllegalArgumentException("UTF-8 length does not fit in int: " + (i3 + 4294967296L));
+        z2 = false;
+        zzh = z2;
+        zza = zzz(byte[].class);
+        zzz(boolean[].class);
+        zzA(boolean[].class);
+        zzz(int[].class);
+        zzA(int[].class);
+        zzz(long[].class);
+        zzA(long[].class);
+        zzz(float[].class);
+        zzA(float[].class);
+        zzz(double[].class);
+        zzA(double[].class);
+        zzz(Object[].class);
+        zzA(Object[].class);
+        zzB = zzB();
+        if (zzB != null) {
+        }
+        zzb = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
+    }
+
+    private zzoo() {
+    }
+
+    private static int zzA(Class cls) {
+        if (zzh) {
+            return zzf.zza.arrayIndexScale(cls);
+        }
+        return -1;
+    }
+
+    private static Field zzB() {
+        int i = zzku.zza;
+        Field zzC = zzC(Buffer.class, "effectiveDirectAddress");
+        if (zzC == null) {
+            Field zzC2 = zzC(Buffer.class, "address");
+            if (zzC2 == null || zzC2.getType() != Long.TYPE) {
+                return null;
+            }
+            return zzC2;
+        }
+        return zzC;
+    }
+
+    private static Field zzC(Class cls, String str) {
+        try {
+            return cls.getDeclaredField(str);
+        } catch (Throwable unused) {
+            return null;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void zzD(Object obj, long j, byte b) {
+        Unsafe unsafe = zzf.zza;
+        long j2 = (-4) & j;
+        int i = unsafe.getInt(obj, j2);
+        int i2 = ((~((int) j)) & 3) << 3;
+        unsafe.putInt(obj, j2, ((255 & b) << i2) | (i & (~(255 << i2))));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void zzE(Object obj, long j, byte b) {
+        Unsafe unsafe = zzf.zza;
+        long j2 = (-4) & j;
+        int i = (((int) j) & 3) << 3;
+        unsafe.putInt(obj, j2, ((255 & b) << i) | (unsafe.getInt(obj, j2) & (~(255 << i))));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    public static boolean zza() {
+        return zzh;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static boolean zzb() {
+        return zzg;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static Object zzc(Class cls) {
+        try {
+            return zzc.allocateInstance(cls);
+        } catch (InstantiationException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static int zzd(Object obj, long j) {
+        return zzf.zza.getInt(obj, j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static void zze(Object obj, long j, int i) {
+        zzf.zza.putInt(obj, j, i);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static long zzf(Object obj, long j) {
+        return zzf.zza.getLong(obj, j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static void zzg(Object obj, long j, long j2) {
+        zzf.zza.putLong(obj, j, j2);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static boolean zzh(Object obj, long j) {
+        return zzf.zzb(obj, j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static void zzi(Object obj, long j, boolean z) {
+        zzf.zzc(obj, j, z);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static float zzj(Object obj, long j) {
+        return zzf.zzd(obj, j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static void zzk(Object obj, long j, float f) {
+        zzf.zze(obj, j, f);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static double zzl(Object obj, long j) {
+        return zzf.zzf(obj, j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static void zzm(Object obj, long j, double d) {
+        zzf.zzg(obj, j, d);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static Object zzn(Object obj, long j) {
+        return zzf.zza.getObject(obj, j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static void zzo(Object obj, long j, Object obj2) {
+        zzf.zza.putObject(obj, j, obj2);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static void zzp(byte[] bArr, long j, byte b) {
+        zzf.zza(bArr, zza + j, b);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static Unsafe zzq() {
+        try {
+            return (Unsafe) AccessController.doPrivileged(new zzok());
+        } catch (Throwable unused) {
+            return null;
+        }
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0076 A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x007a A[ORIG_RETURN, RETURN] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static boolean zzd(byte[] bArr, int i, int i2) {
-        while (i < i2 && bArr[i] >= 0) {
-            i++;
-        }
-        if (i >= i2) {
+    static boolean zzr(Class cls) {
+        int i = zzku.zza;
+        try {
+            Class cls2 = zzd;
+            cls2.getMethod("peekLong", cls, Boolean.TYPE);
+            cls2.getMethod("pokeLong", cls, Long.TYPE, Boolean.TYPE);
+            cls2.getMethod("pokeInt", cls, Integer.TYPE, Boolean.TYPE);
+            cls2.getMethod("peekInt", cls, Boolean.TYPE);
+            cls2.getMethod("pokeByte", cls, Byte.TYPE);
+            cls2.getMethod("peekByte", cls);
+            cls2.getMethod("pokeByteArray", cls, byte[].class, Integer.TYPE, Integer.TYPE);
+            cls2.getMethod("peekByteArray", cls, byte[].class, Integer.TYPE, Integer.TYPE);
             return true;
+        } catch (Throwable unused) {
+            return false;
         }
-        while (i < i2) {
-            int i3 = i + 1;
-            int i4 = bArr[i];
-            if (i4 >= 0) {
-                i = i3;
-            } else if (i4 < -32) {
-                if (i3 >= i2) {
-                    return i4 == 0;
-                } else if (i4 < -62) {
-                    return false;
-                } else {
-                    i += 2;
-                    if (bArr[i3] > -65) {
-                        return false;
-                    }
-                }
-            } else if (i4 < -16) {
-                if (i3 < i2 - 1) {
-                    int i5 = i + 2;
-                    char c = bArr[i3];
-                    if (c > -65) {
-                        return false;
-                    }
-                    if (i4 == -32 && c < -96) {
-                        return false;
-                    }
-                    if (i4 == -19 && c >= -96) {
-                        return false;
-                    }
-                    i += 3;
-                    if (bArr[i5] > -65) {
-                        return false;
-                    }
-                } else {
-                    i4 = zza(bArr, i3, i2);
-                    if (i4 == 0) {
-                    }
-                }
-            } else if (i3 < i2 - 2) {
-                int i6 = i + 2;
-                int i7 = bArr[i3];
-                if (i7 > -65 || (((i4 << 28) + (i7 + 112)) >> 30) != 0) {
-                    return false;
-                }
-                int i8 = i + 3;
-                if (bArr[i6] > -65) {
-                    return false;
-                }
-                i += 4;
-                if (bArr[i8] > -65) {
-                    return false;
-                }
-            } else {
-                i4 = zza(bArr, i3, i2);
-                if (i4 == 0) {
-                }
-            }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ boolean zzu(Object obj, long j) {
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & 255)) != 0;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ boolean zzv(Object obj, long j) {
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & 255)) != 0;
+    }
+
+    static /* synthetic */ void zzy(Throwable th) {
+        Logger.getLogger(zzoo.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th.toString()));
+    }
+
+    private static int zzz(Class cls) {
+        if (zzh) {
+            return zzf.zza.arrayBaseOffset(cls);
         }
-        return true;
+        return -1;
     }
 }

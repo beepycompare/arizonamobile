@@ -398,7 +398,7 @@ public class LottieAnimationView extends AppCompatImageView {
             return new LottieTask<>(new Callable() { // from class: com.airbnb.lottie.LottieAnimationView$$ExternalSyntheticLambda2
                 @Override // java.util.concurrent.Callable
                 public final Object call() {
-                    return LottieAnimationView.this.m7880lambda$fromRawRes$1$comairbnblottieLottieAnimationView(i);
+                    return LottieAnimationView.this.m7881lambda$fromRawRes$1$comairbnblottieLottieAnimationView(i);
                 }
             }, true);
         }
@@ -407,7 +407,7 @@ public class LottieAnimationView extends AppCompatImageView {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$fromRawRes$1$com-airbnb-lottie-LottieAnimationView  reason: not valid java name */
-    public /* synthetic */ LottieResult m7880lambda$fromRawRes$1$comairbnblottieLottieAnimationView(int i) throws Exception {
+    public /* synthetic */ LottieResult m7881lambda$fromRawRes$1$comairbnblottieLottieAnimationView(int i) throws Exception {
         return this.cacheComposition ? LottieCompositionFactory.fromRawResSync(getContext(), i) : LottieCompositionFactory.fromRawResSync(getContext(), i, null);
     }
 
@@ -422,7 +422,7 @@ public class LottieAnimationView extends AppCompatImageView {
             return new LottieTask<>(new Callable() { // from class: com.airbnb.lottie.LottieAnimationView$$ExternalSyntheticLambda0
                 @Override // java.util.concurrent.Callable
                 public final Object call() {
-                    return LottieAnimationView.this.m7879lambda$fromAssets$2$comairbnblottieLottieAnimationView(str);
+                    return LottieAnimationView.this.m7880lambda$fromAssets$2$comairbnblottieLottieAnimationView(str);
                 }
             }, true);
         }
@@ -431,7 +431,7 @@ public class LottieAnimationView extends AppCompatImageView {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$fromAssets$2$com-airbnb-lottie-LottieAnimationView  reason: not valid java name */
-    public /* synthetic */ LottieResult m7879lambda$fromAssets$2$comairbnblottieLottieAnimationView(String str) throws Exception {
+    public /* synthetic */ LottieResult m7880lambda$fromAssets$2$comairbnblottieLottieAnimationView(String str) throws Exception {
         return this.cacheComposition ? LottieCompositionFactory.fromAssetSync(getContext(), str) : LottieCompositionFactory.fromAssetSync(getContext(), str, null);
     }
 

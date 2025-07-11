@@ -125,30 +125,30 @@ public class DeviceProfileWriter {
 
     private DexProfileData[] readProfileInternal(InputStream inputStream) {
         try {
-        } catch (IOException e) {
-            this.mDiagnostics.onResultReceived(7, e);
-        }
-        try {
             try {
                 DexProfileData[] readProfile = ProfileTranscoder.readProfile(inputStream, ProfileTranscoder.readHeader(inputStream, ProfileTranscoder.MAGIC_PROF), this.mApkName);
                 try {
                     inputStream.close();
                     return readProfile;
-                } catch (IOException e2) {
-                    this.mDiagnostics.onResultReceived(7, e2);
+                } catch (IOException e) {
+                    this.mDiagnostics.onResultReceived(7, e);
                     return readProfile;
                 }
             } catch (Throwable th) {
                 try {
                     inputStream.close();
-                } catch (IOException e3) {
-                    this.mDiagnostics.onResultReceived(7, e3);
+                } catch (IOException e2) {
+                    this.mDiagnostics.onResultReceived(7, e2);
                 }
                 throw th;
             }
-        } catch (IOException e4) {
-            this.mDiagnostics.onResultReceived(7, e4);
-            inputStream.close();
+        } catch (IOException e3) {
+            this.mDiagnostics.onResultReceived(7, e3);
+            try {
+                inputStream.close();
+            } catch (IOException e4) {
+                this.mDiagnostics.onResultReceived(7, e4);
+            }
             return null;
         } catch (IllegalStateException e5) {
             this.mDiagnostics.onResultReceived(8, e5);
@@ -229,7 +229,7 @@ public class DeviceProfileWriter {
         return this;
     }
 
-    /* JADX WARN: Type inference failed for: r2v0, types: [androidx.profileinstaller.DexProfileData[], byte[]] */
+    /* JADX WARN: Type inference failed for: r2v0, types: [byte[], androidx.profileinstaller.DexProfileData[]] */
     public boolean write() {
         byte[] bArr = this.mTranscodedProfile;
         if (bArr == null) {

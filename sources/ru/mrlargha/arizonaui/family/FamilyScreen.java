@@ -96,7 +96,7 @@ import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceControl
 import ru.mrlargha.commonui.utils.FirebaseConfigHelper;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: FamilyScreen.kt */
-@Metadata(d1 = {"\u0000\u0080\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u001b\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u00012\u00020\u0002:\u0004\u0093\u0001\u0094\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010A\u001a\u00020B2\u0006\u0010C\u001a\u00020\u001dH\u0016J\u0018\u0010D\u001a\u00020B2\u0006\u0010E\u001a\u00020\u00162\u0006\u0010F\u001a\u00020\u0006H\u0016J\b\u0010G\u001a\u00020BH\u0002J\u0010\u0010H\u001a\u00020B2\u0006\u0010I\u001a\u00020&H\u0002J\u0010\u0010J\u001a\u00020B2\u0006\u0010I\u001a\u00020KH\u0002J\u0010\u0010L\u001a\u00020B2\u0006\u0010I\u001a\u00020MH\u0002J\u0010\u0010N\u001a\u00020B2\u0006\u0010I\u001a\u00020OH\u0002J\u0010\u0010P\u001a\u00020B2\u0006\u0010I\u001a\u00020QH\u0002J\u0016\u0010R\u001a\u00020B2\f\u0010I\u001a\b\u0012\u0004\u0012\u00020\u00060SH\u0002J\u0010\u0010T\u001a\u00020B2\u0006\u0010I\u001a\u00020$H\u0002J\b\u0010U\u001a\u00020BH\u0002J\b\u0010V\u001a\u00020BH\u0002J\b\u0010W\u001a\u00020BH\u0002J\u0010\u0010X\u001a\u00020B2\u0006\u0010Y\u001a\u00020\u0006H\u0002J\u0010\u0010Z\u001a\u00020B2\u0006\u0010[\u001a\u00020\u0016H\u0002J\u0010\u0010\\\u001a\u00020B2\u0006\u0010Y\u001a\u00020\u0006H\u0002J\u0010\u0010]\u001a\u00020B2\u0006\u0010[\u001a\u00020\u0016H\u0002J\u0010\u0010^\u001a\u00020B2\u0006\u0010Y\u001a\u00020\u0006H\u0002J\b\u0010_\u001a\u00020BH\u0002J\b\u0010`\u001a\u00020BH\u0002J\b\u0010a\u001a\u00020BH\u0002J\b\u0010b\u001a\u00020BH\u0002J\u0016\u0010c\u001a\u00020B2\f\u0010E\u001a\b\u0012\u0004\u0012\u00020d0SH\u0002J\b\u0010e\u001a\u00020BH\u0002J\u0010\u0010f\u001a\u00020B2\u0006\u0010E\u001a\u00020gH\u0002J\u0010\u0010h\u001a\u00020B2\u0006\u0010i\u001a\u00020jH\u0002J\u0018\u0010k\u001a\u00020B2\u0006\u0010l\u001a\u00020\u00062\u0006\u0010[\u001a\u00020\u0016H\u0002J\b\u0010m\u001a\u00020BH\u0002J\b\u0010n\u001a\u00020BH\u0002J\b\u0010o\u001a\u00020BH\u0002J\u0010\u0010p\u001a\u00020B2\u0006\u0010i\u001a\u00020\u0006H\u0002J\u0010\u0010q\u001a\u00020B2\u0006\u0010i\u001a\u00020\u0006H\u0002J\u0010\u0010r\u001a\u00020B2\u0006\u0010i\u001a\u00020\u0006H\u0002J\u0010\u0010s\u001a\u00020B2\u0006\u0010i\u001a\u00020\u0006H\u0002J\u0010\u0010t\u001a\u00020B2\u0006\u0010i\u001a\u00020\u0006H\u0002J\u0010\u0010u\u001a\u00020B2\u0006\u0010i\u001a\u00020vH\u0002J\u0010\u0010w\u001a\u00020B2\u0006\u0010i\u001a\u00020jH\u0002J\b\u0010x\u001a\u00020BH\u0002J\u0010\u0010y\u001a\u00020B2\u0006\u0010i\u001a\u00020gH\u0002J\b\u0010z\u001a\u00020BH\u0002J\b\u0010{\u001a\u00020BH\u0002J\b\u0010|\u001a\u00020BH\u0002J\b\u0010}\u001a\u00020BH\u0002J\b\u0010\u007f\u001a\u00020BH\u0002J\t\u0010\u0081\u0001\u001a\u00020BH\u0002J\t\u0010\u0083\u0001\u001a\u00020BH\u0002J\t\u0010\u0085\u0001\u001a\u00020BH\u0002J\t\u0010\u0087\u0001\u001a\u00020BH\u0002J\t\u0010\u0089\u0001\u001a\u00020BH\u0002J\t\u0010\u008b\u0001\u001a\u00020BH\u0002J\t\u0010\u008d\u0001\u001a\u00020BH\u0002J\t\u0010\u008f\u0001\u001a\u00020BH\u0002J\u0013\u0010\u0090\u0001\u001a\u00020B2\b\u0010\u0091\u0001\u001a\u00030\u0092\u0001H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u000b*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0017\u001a\u00020\u00168BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019R\u000e\u0010\u001a\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010%\u001a\u0004\u0018\u00010&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u00020:X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010;\u001a\u00020<X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020>X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010?\u001a\u00020@X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010~\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0080\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0082\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0084\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0086\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0088\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u008a\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u008c\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u008e\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0095\u0001"}, d2 = {"Lru/mrlargha/arizonaui/family/FamilyScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/arizonaui/databinding/FamilyMainBinding;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "sharedPref", "Landroid/content/SharedPreferences;", "serverId", "_token", "", "token", "getToken", "()Ljava/lang/String;", "createSelectedImage", "createSelectedImageMax", "createIsTitleDone", "", "createIsSloganDone", "mapCells", "xMargin", "", "yMargin", "familyData", "Lru/mrlargha/arizonaui/family/data/FamilyData;", "createInfo", "Lru/mrlargha/arizonaui/family/data/FamilyCreateData;", "colorsAdapter", "Lru/mrlargha/arizonaui/family/adapters/CreateClanColorAdapter;", "mainMenuItemsAdapter", "Lru/mrlargha/arizonaui/family/adapters/MainMenuAdapter;", "settingsAdapter", "Lru/mrlargha/arizonaui/family/adapters/SettingsAdapter;", "estateAdapter", "Lru/mrlargha/arizonaui/family/adapters/EstateAdapter;", "charterAdapter", "Lru/mrlargha/arizonaui/family/adapters/CharterAdapter;", "warAdapter", "Lru/mrlargha/arizonaui/family/adapters/WarsAdapter;", "membersAdapter", "Lru/mrlargha/arizonaui/family/adapters/MembersAdapter;", "charterMembersAdapter", "Lru/mrlargha/arizonaui/family/adapters/CharterMembersAdapter;", "ratingAdapter", "Lru/mrlargha/arizonaui/family/adapters/RatingAdapter;", "territoryAdapter", "Lru/mrlargha/arizonaui/family/adapters/TerritoryAdapter;", "meetingsAdapter", "Lru/mrlargha/arizonaui/family/adapters/MeetingsAdapter;", "retrofit", "Lretrofit2/Retrofit;", "api", "Lru/mrlargha/arizonaui/family/FamilyApi;", "setVisible", "", "visible", "onBackendMessage", "data", "subId", "initRetrofit", "setCreateInfo", "info", "setWarInfo", "Lru/mrlargha/arizonaui/family/data/FamilyWarData;", "setCharterInfo", "Lru/mrlargha/arizonaui/family/data/FamilyCharterData;", "setSettingsInfo", "Lru/mrlargha/arizonaui/family/data/FamilySettingsData;", "setEstateInfo", "Lru/mrlargha/arizonaui/family/data/FamilyEstateData;", "setMainMenu", "", "setFamilyInfo", "setupAdapters", "clearAdapters", "setupNavigation", "requestMembers", "page", "requestMembersName", "name", "requestCharterMembers", "requestCharterMembersName", "requestRating", "requestTerritories", "requestTopTerritories", "requestMeetings", "loadMapRetrofit", "setUniqCells", "Lru/mrlargha/arizonaui/family/data/UniqCellItem;", "setMap", "setFrameMap", "Lru/mrlargha/arizonaui/family/data/FrameMapData;", "setFrameCharter", "item", "Lru/mrlargha/arizonaui/family/data/CharterItem;", "setFrameMember", "id", "onClickMembersFrame", "setupCreateClanPage", "checkCreateBntState", "selectMenuItem", "selectSettingsItem", "selectEstateItem", "selectCharterItem", "selectWarItem", "selectMemberItem", "Lru/mrlargha/arizonaui/family/data/MemberItem;", "selectCharterMemberItem", "selectRatingItem", "selectTerritoryItem", "setupSort", "sortTerritory1", "sortTerritory2", "sortTerritory3", "sortcharter1state", "sortcharter1", "sortcharter2state", "sortcharter2", "sortcharter3state", "sortcharter3", "sortcharter4state", "sortcharter4", "sortMeetings1state", "sortMeetings1", "sortMeetings2state", "sortMeetings2", "sortMeetings3state", "sortMeetings3", "sortMembers1state", "sortMembers1", "sortMembers2state", "sortMembers2", "navigateTo", "nav", "Lru/mrlargha/arizonaui/family/FamilyScreen$Navigation;", "Navigation", "Spawner", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0080\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u001b\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u00012\u00020\u0002:\u0004\u0094\u0001\u0095\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010A\u001a\u00020B2\u0006\u0010C\u001a\u00020\u001dH\u0016J\u0018\u0010D\u001a\u00020B2\u0006\u0010E\u001a\u00020\u00162\u0006\u0010F\u001a\u00020\u0006H\u0016J\b\u0010G\u001a\u00020BH\u0002J\u0010\u0010H\u001a\u00020B2\u0006\u0010I\u001a\u00020&H\u0002J\u0010\u0010J\u001a\u00020B2\u0006\u0010I\u001a\u00020KH\u0002J\u0010\u0010L\u001a\u00020B2\u0006\u0010I\u001a\u00020MH\u0002J\u0010\u0010N\u001a\u00020B2\u0006\u0010I\u001a\u00020OH\u0002J\u0010\u0010P\u001a\u00020B2\u0006\u0010I\u001a\u00020QH\u0002J\u0016\u0010R\u001a\u00020B2\f\u0010I\u001a\b\u0012\u0004\u0012\u00020\u00060SH\u0002J\u0010\u0010T\u001a\u00020B2\u0006\u0010I\u001a\u00020$H\u0002J\b\u0010U\u001a\u00020BH\u0002J\b\u0010V\u001a\u00020BH\u0002J\b\u0010W\u001a\u00020BH\u0002J\u0010\u0010X\u001a\u00020B2\u0006\u0010Y\u001a\u00020\u0006H\u0002J\u0010\u0010Z\u001a\u00020B2\u0006\u0010[\u001a\u00020\u0016H\u0002J\u0010\u0010\\\u001a\u00020B2\u0006\u0010Y\u001a\u00020\u0006H\u0002J\u0010\u0010]\u001a\u00020B2\u0006\u0010[\u001a\u00020\u0016H\u0002J\u0010\u0010^\u001a\u00020B2\u0006\u0010Y\u001a\u00020\u0006H\u0002J\b\u0010_\u001a\u00020BH\u0002J\b\u0010`\u001a\u00020BH\u0002J\b\u0010a\u001a\u00020BH\u0002J\b\u0010b\u001a\u00020BH\u0002J\b\u0010c\u001a\u00020BH\u0002J\u0016\u0010d\u001a\u00020B2\f\u0010E\u001a\b\u0012\u0004\u0012\u00020e0SH\u0002J\b\u0010f\u001a\u00020BH\u0002J\u0010\u0010g\u001a\u00020B2\u0006\u0010E\u001a\u00020hH\u0002J\u0010\u0010i\u001a\u00020B2\u0006\u0010j\u001a\u00020kH\u0002J\u0018\u0010l\u001a\u00020B2\u0006\u0010m\u001a\u00020\u00062\u0006\u0010[\u001a\u00020\u0016H\u0002J\b\u0010n\u001a\u00020BH\u0002J\b\u0010o\u001a\u00020BH\u0002J\b\u0010p\u001a\u00020BH\u0002J\u0010\u0010q\u001a\u00020B2\u0006\u0010j\u001a\u00020\u0006H\u0002J\u0010\u0010r\u001a\u00020B2\u0006\u0010j\u001a\u00020\u0006H\u0002J\u0010\u0010s\u001a\u00020B2\u0006\u0010j\u001a\u00020\u0006H\u0002J\u0010\u0010t\u001a\u00020B2\u0006\u0010j\u001a\u00020\u0006H\u0002J\u0010\u0010u\u001a\u00020B2\u0006\u0010j\u001a\u00020\u0006H\u0002J\u0010\u0010v\u001a\u00020B2\u0006\u0010j\u001a\u00020wH\u0002J\u0010\u0010x\u001a\u00020B2\u0006\u0010j\u001a\u00020kH\u0002J\b\u0010y\u001a\u00020BH\u0002J\u0010\u0010z\u001a\u00020B2\u0006\u0010j\u001a\u00020hH\u0002J\b\u0010{\u001a\u00020BH\u0002J\b\u0010|\u001a\u00020BH\u0002J\b\u0010}\u001a\u00020BH\u0002J\b\u0010~\u001a\u00020BH\u0002J\t\u0010\u0080\u0001\u001a\u00020BH\u0002J\t\u0010\u0082\u0001\u001a\u00020BH\u0002J\t\u0010\u0084\u0001\u001a\u00020BH\u0002J\t\u0010\u0086\u0001\u001a\u00020BH\u0002J\t\u0010\u0088\u0001\u001a\u00020BH\u0002J\t\u0010\u008a\u0001\u001a\u00020BH\u0002J\t\u0010\u008c\u0001\u001a\u00020BH\u0002J\t\u0010\u008e\u0001\u001a\u00020BH\u0002J\t\u0010\u0090\u0001\u001a\u00020BH\u0002J\u0013\u0010\u0091\u0001\u001a\u00020B2\b\u0010\u0092\u0001\u001a\u00030\u0093\u0001H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u000b*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0017\u001a\u00020\u00168BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019R\u000e\u0010\u001a\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010%\u001a\u0004\u0018\u00010&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u00020:X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010;\u001a\u00020<X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020>X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010?\u001a\u00020@X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u007f\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0081\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0083\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0085\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0087\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0089\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u008b\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u008d\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u008f\u0001\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0096\u0001"}, d2 = {"Lru/mrlargha/arizonaui/family/FamilyScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/arizonaui/databinding/FamilyMainBinding;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "sharedPref", "Landroid/content/SharedPreferences;", "serverId", "_token", "", "token", "getToken", "()Ljava/lang/String;", "createSelectedImage", "createSelectedImageMax", "createIsTitleDone", "", "createIsSloganDone", "mapCells", "xMargin", "", "yMargin", "familyData", "Lru/mrlargha/arizonaui/family/data/FamilyData;", "createInfo", "Lru/mrlargha/arizonaui/family/data/FamilyCreateData;", "colorsAdapter", "Lru/mrlargha/arizonaui/family/adapters/CreateClanColorAdapter;", "mainMenuItemsAdapter", "Lru/mrlargha/arizonaui/family/adapters/MainMenuAdapter;", "settingsAdapter", "Lru/mrlargha/arizonaui/family/adapters/SettingsAdapter;", "estateAdapter", "Lru/mrlargha/arizonaui/family/adapters/EstateAdapter;", "charterAdapter", "Lru/mrlargha/arizonaui/family/adapters/CharterAdapter;", "warAdapter", "Lru/mrlargha/arizonaui/family/adapters/WarsAdapter;", "membersAdapter", "Lru/mrlargha/arizonaui/family/adapters/MembersAdapter;", "charterMembersAdapter", "Lru/mrlargha/arizonaui/family/adapters/CharterMembersAdapter;", "ratingAdapter", "Lru/mrlargha/arizonaui/family/adapters/RatingAdapter;", "territoryAdapter", "Lru/mrlargha/arizonaui/family/adapters/TerritoryAdapter;", "meetingsAdapter", "Lru/mrlargha/arizonaui/family/adapters/MeetingsAdapter;", "retrofit", "Lretrofit2/Retrofit;", "api", "Lru/mrlargha/arizonaui/family/FamilyApi;", "setVisible", "", "visible", "onBackendMessage", "data", "subId", "initRetrofit", "setCreateInfo", "info", "setWarInfo", "Lru/mrlargha/arizonaui/family/data/FamilyWarData;", "setCharterInfo", "Lru/mrlargha/arizonaui/family/data/FamilyCharterData;", "setSettingsInfo", "Lru/mrlargha/arizonaui/family/data/FamilySettingsData;", "setEstateInfo", "Lru/mrlargha/arizonaui/family/data/FamilyEstateData;", "setMainMenu", "", "setFamilyInfo", "setupAdapters", "clearAdapters", "setupNavigation", "requestMembers", "page", "requestMembersName", "name", "requestCharterMembers", "requestCharterMembersName", "requestRating", "requestTerritories", "requestTopTerritories", "requestMeetings", "loadMapRetrofit", "loadMembersCount", "setUniqCells", "Lru/mrlargha/arizonaui/family/data/UniqCellItem;", "setMap", "setFrameMap", "Lru/mrlargha/arizonaui/family/data/FrameMapData;", "setFrameCharter", "item", "Lru/mrlargha/arizonaui/family/data/CharterItem;", "setFrameMember", "id", "onClickMembersFrame", "setupCreateClanPage", "checkCreateBntState", "selectMenuItem", "selectSettingsItem", "selectEstateItem", "selectCharterItem", "selectWarItem", "selectMemberItem", "Lru/mrlargha/arizonaui/family/data/MemberItem;", "selectCharterMemberItem", "selectRatingItem", "selectTerritoryItem", "setupSort", "sortTerritory1", "sortTerritory2", "sortTerritory3", "sortcharter1state", "sortcharter1", "sortcharter2state", "sortcharter2", "sortcharter3state", "sortcharter3", "sortcharter4state", "sortcharter4", "sortMeetings1state", "sortMeetings1", "sortMeetings2state", "sortMeetings2", "sortMeetings3state", "sortMeetings3", "sortMembers1state", "sortMembers1", "sortMembers2state", "sortMembers2", "navigateTo", "nav", "Lru/mrlargha/arizonaui/family/FamilyScreen$Navigation;", "Navigation", "Spawner", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FamilyScreen extends SAMPUIElement implements InterfaceController {
     private final String _token;
@@ -139,9 +139,9 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     private float yMargin;
 
     /* compiled from: FamilyScreen.kt */
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -214,7 +214,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$19(View view) {
+    public static final void setupNavigation$lambda$20(View view) {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -505,13 +505,16 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         Retrofit build = new Retrofit.Builder().baseUrl(FirebaseConfigHelper.INSTANCE.getServerApiUrl() + "client/family/").client(new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()).addConverterFactory(GsonConverterFactory.create()).build();
+        Intrinsics.checkNotNullExpressionValue(build, "build(...)");
         this.retrofit = build;
         if (build == null) {
             Intrinsics.throwUninitializedPropertyAccessException("retrofit");
         } else {
             retrofit = build;
         }
-        this.api = (FamilyApi) retrofit.create(FamilyApi.class);
+        Object create = retrofit.create(FamilyApi.class);
+        Intrinsics.checkNotNullExpressionValue(create, "create(...)");
+        this.api = (FamilyApi) create;
     }
 
     private final void setCreateInfo(FamilyCreateData familyCreateData) {
@@ -595,7 +598,10 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyTopbarBinding.messageContainer.setVisibility(0);
         }
         familyTopbarBinding.textRep.setText(familyData.getReputation() + " очк");
-        familyTopbarBinding.textDevil.setText(familyData.getEvil() + " очк");
+        Integer members = familyData.getMembers();
+        if (members != null) {
+            familyTopbarBinding.textDevil.setText(members.intValue() + " человек");
+        }
         familyTopbarBinding.textMoney.setText("$ " + familyData.getMoney());
         familyTopbarBinding.textCoins.setText(familyData.getCoins() + " шт");
         if (familyData.getBg() == -1) {
@@ -665,14 +671,14 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         }
         int hasEstate = familyData.getHasEstate();
         if (hasEstate == 0) {
-            Intrinsics.areEqual(familyHomePageBinding.apartTitle.getText(), "Осутствует");
+            familyHomePageBinding.apartTitle.setText("Осутствует");
             familyHomePageBinding.cardApart.setAlpha(0.2f);
         } else if (hasEstate == 1) {
-            Intrinsics.areEqual(familyHomePageBinding.apartTitle.getText(), "Семейная квартира");
+            familyHomePageBinding.apartTitle.setText("Семейная квартира");
             familyHomePageBinding.imageApart.setImageResource(R.drawable.family_menu_ic_apart2);
             familyHomePageBinding.cardApart.setAlpha(1.0f);
         } else if (hasEstate == 2) {
-            Intrinsics.areEqual(familyHomePageBinding.apartTitle.getText(), "Семейное поместье");
+            familyHomePageBinding.apartTitle.setText("Семейное поместье");
             familyHomePageBinding.imageApart.setImageResource(R.drawable.family_menu_ic_estate2);
             familyHomePageBinding.cardApart.setAlpha(1.0f);
         }
@@ -765,91 +771,85 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         this.binding.familyOverlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda34
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$19(view);
+                FamilyScreen.setupNavigation$lambda$20(view);
             }
         });
         FamilyHomePageBinding familyHomePageBinding = this.binding.home;
-        familyHomePageBinding.buttonPayday.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda40
+        familyHomePageBinding.buttonPayday.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda39
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$23$lambda$20(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$24$lambda$21(FamilyScreen.this, view);
             }
         });
-        familyHomePageBinding.buttonAlliance.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda41
+        familyHomePageBinding.buttonAlliance.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda40
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$23$lambda$21(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$24$lambda$22(FamilyScreen.this, view);
             }
         });
-        familyHomePageBinding.buttonCopyDisc.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda42
+        familyHomePageBinding.buttonCopyDisc.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda41
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$23$lambda$22(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$24$lambda$23(FamilyScreen.this, view);
             }
         });
         FamilyTopbarBinding familyTopbarBinding = this.binding.topbar;
-        familyTopbarBinding.closeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda43
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$32$lambda$24(FamilyScreen.this, view);
-            }
-        });
-        familyTopbarBinding.buttonRep.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda45
+        familyTopbarBinding.closeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda42
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$32$lambda$25(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.buttonDevil.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda46
+        familyTopbarBinding.buttonRep.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda43
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$32$lambda$26(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.buttonMoney.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda47
+        familyTopbarBinding.buttonMoney.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda45
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$32$lambda$27(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.buttonCoins.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda48
+        familyTopbarBinding.buttonCoins.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda46
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$32$lambda$28(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.inviteBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda49
+        familyTopbarBinding.inviteBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda47
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$32$lambda$29(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.kickBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda35
+        familyTopbarBinding.kickBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda48
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$32$lambda$30(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.ratingBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda36
+        familyTopbarBinding.ratingBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda35
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$32$lambda$31(FamilyScreen.this, view);
             }
         });
         FamilyMainBinding familyMainBinding = this.binding;
-        familyMainBinding.frameMap.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda37
+        familyMainBinding.frameMap.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda36
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$36$lambda$33(FamilyScreen.this, view);
             }
         });
-        familyMainBinding.frameMember.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda38
+        familyMainBinding.frameMember.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda37
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$36$lambda$34(FamilyScreen.this, view);
             }
         });
-        familyMainBinding.frameCharter.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda39
+        familyMainBinding.frameCharter.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda38
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$36$lambda$35(FamilyScreen.this, view);
@@ -858,17 +858,17 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$23$lambda$20(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$24$lambda$21(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 1, 4, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$23$lambda$21(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$24$lambda$22(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 1, 5, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$23$lambda$22(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$24$lambda$23(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 1, 6, null, 4, null);
         Object systemService = familyScreen.getTargetActivity().getSystemService("clipboard");
         Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.content.ClipboardManager");
@@ -878,19 +878,14 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$32$lambda$24(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$32$lambda$25(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 9, 0, null, 4, null);
         familyScreen.getNotifier().setUIElementVisible(familyScreen.getBackendID(), false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$32$lambda$25(FamilyScreen familyScreen, View view) {
-        SAMPUIElement.notifyClick$default(familyScreen, 1, 0, null, 4, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public static final void setupNavigation$lambda$32$lambda$26(FamilyScreen familyScreen, View view) {
-        SAMPUIElement.notifyClick$default(familyScreen, 1, 1, null, 4, null);
+        SAMPUIElement.notifyClick$default(familyScreen, 1, 0, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -988,6 +983,10 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
 
     private final void loadMapRetrofit() {
         BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new FamilyScreen$loadMapRetrofit$1(this, null), 3, null);
+    }
+
+    private final void loadMembersCount() {
+        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new FamilyScreen$loadMembersCount$1(this, null), 3, null);
     }
 
     private final void setUniqCells(List<UniqCellItem> list) {
@@ -1251,19 +1250,19 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 FamilyScreen.setupCreateClanPage$lambda$68$lambda$59(FamilyScreen.this, familyCreateClanBinding, view);
             }
         });
-        familyCreateClanBinding.logoRightArrow.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda70
+        familyCreateClanBinding.logoRightArrow.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda69
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupCreateClanPage$lambda$68$lambda$60(FamilyScreen.this, familyCreateClanBinding, view);
             }
         });
-        familyCreateClanBinding.colorLeftArrow.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda71
+        familyCreateClanBinding.colorLeftArrow.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda70
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupCreateClanPage$lambda$68$lambda$61(FamilyCreateClanBinding.this, view);
             }
         });
-        familyCreateClanBinding.colorRightArrow.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda72
+        familyCreateClanBinding.colorRightArrow.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda71
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupCreateClanPage$lambda$68$lambda$62(FamilyCreateClanBinding.this, view);
@@ -1443,7 +1442,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyCreateClanBinding.buttonTitle.setText("Создать семью");
             familyCreateClanBinding.loaderBar.setVisibility(8);
             familyCreateClanBinding.buttonCreateFamily.setAlpha(1.0f);
-            familyCreateClanBinding.buttonCreateFamily.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda50
+            familyCreateClanBinding.buttonCreateFamily.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda49
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     FamilyScreen.checkCreateBntState$lambda$70$lambda$69(FamilyScreen.this, view);
@@ -1845,7 +1844,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 FamilyTopbarBinding familyTopbarBinding2 = this.binding.topbar;
                 familyTopbarBinding2.title.setVisibility(8);
                 familyTopbarBinding2.titleCreate.setVisibility(0);
-                familyTopbarBinding2.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda51
+                familyTopbarBinding2.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda50
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$101$lambda$100(view);
@@ -1858,7 +1857,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             case 2:
                 this.binding.menu.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding3 = this.binding.topbar;
-                familyTopbarBinding3.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda60
+                familyTopbarBinding3.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda59
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$103$lambda$102(view);
@@ -1872,7 +1871,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 this.binding.settings.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding4 = this.binding.topbar;
                 familyTopbarBinding4.title.setText("Управление семьей");
-                familyTopbarBinding4.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda61
+                familyTopbarBinding4.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda60
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$105$lambda$104(FamilyScreen.this, view);
@@ -1891,7 +1890,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 if (familyData == null || familyData.getHasEstate() != 1) {
                 }
                 textView.setText(str);
-                familyTopbarBinding5.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda62
+                familyTopbarBinding5.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda61
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$107$lambda$106(FamilyScreen.this, view);
@@ -1903,7 +1902,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 this.binding.charter.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding6 = this.binding.topbar;
                 familyTopbarBinding6.title.setText("Частная фракция");
-                familyTopbarBinding6.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda63
+                familyTopbarBinding6.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda62
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$109$lambda$108(FamilyScreen.this, view);
@@ -1916,7 +1915,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 FamilyTopbarBinding familyTopbarBinding7 = this.binding.topbar;
                 familyTopbarBinding7.title.setVisibility(0);
                 familyTopbarBinding7.title.setText("Войны за территории");
-                familyTopbarBinding7.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda64
+                familyTopbarBinding7.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda63
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$111$lambda$110(FamilyScreen.this, view);
@@ -1929,19 +1928,19 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 this.binding.home.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding8 = this.binding.topbar;
                 familyTopbarBinding8.title.setText("Настройки");
-                familyTopbarBinding8.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda65
+                familyTopbarBinding8.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda64
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$113$lambda$112(FamilyScreen.this, view);
                     }
                 });
                 familyTopbarBinding8.homeContainer.setVisibility(0);
-                Intrinsics.checkNotNull(familyTopbarBinding8);
+                loadMembersCount();
                 return;
             case 8:
                 this.binding.members.getRoot().setVisibility(0);
                 final FamilyTopbarBinding familyTopbarBinding9 = this.binding.topbar;
-                familyTopbarBinding9.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda67
+                familyTopbarBinding9.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda65
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$118$lambda$114(FamilyScreen.this, view);
@@ -1949,7 +1948,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 });
                 familyTopbarBinding9.searchContainer.setVisibility(0);
                 familyTopbarBinding9.ratingBtn.setVisibility(0);
-                familyTopbarBinding9.editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda68
+                familyTopbarBinding9.editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda67
                     @Override // android.widget.TextView.OnEditorActionListener
                     public final boolean onEditorAction(TextView textView2, int i, KeyEvent keyEvent) {
                         boolean navigateTo$lambda$118$lambda$115;
@@ -1974,7 +1973,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                         }
                     }
                 });
-                familyTopbarBinding9.searchBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda69
+                familyTopbarBinding9.searchBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda68
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$118$lambda$117(FamilyScreen.this, familyTopbarBinding9, view);
@@ -1991,7 +1990,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 this.binding.charterMembers.getRoot().setVisibility(0);
                 final FamilyTopbarBinding familyTopbarBinding10 = this.binding.topbar;
                 familyTopbarBinding10.title.setText("Состав организации");
-                familyTopbarBinding10.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda52
+                familyTopbarBinding10.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda51
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$124$lambda$120(FamilyScreen.this, view);
@@ -1999,7 +1998,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 });
                 familyTopbarBinding10.searchContainer.setVisibility(0);
                 familyTopbarBinding10.ratingBtn.setVisibility(8);
-                familyTopbarBinding10.editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda53
+                familyTopbarBinding10.editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda52
                     @Override // android.widget.TextView.OnEditorActionListener
                     public final boolean onEditorAction(TextView textView2, int i, KeyEvent keyEvent) {
                         boolean navigateTo$lambda$124$lambda$121;
@@ -2024,7 +2023,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                         }
                     }
                 });
-                familyTopbarBinding10.searchBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda54
+                familyTopbarBinding10.searchBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda53
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$124$lambda$123(FamilyScreen.this, familyTopbarBinding10, view);
@@ -2042,7 +2041,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 FamilyTopbarBinding familyTopbarBinding11 = this.binding.topbar;
                 familyTopbarBinding11.title.setText("Рейтинг семей сервера ");
                 familyTopbarBinding11.serverName.setText(ServersKt.familyServers(this.serverId));
-                familyTopbarBinding11.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda56
+                familyTopbarBinding11.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda54
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$127$lambda$126(FamilyScreen.this, view);
@@ -2061,7 +2060,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 this.binding.map.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding12 = this.binding.topbar;
                 familyTopbarBinding12.title.setText("Семейные войны");
-                familyTopbarBinding12.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda57
+                familyTopbarBinding12.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda56
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$130$lambda$129(FamilyScreen.this, view);
@@ -2073,7 +2072,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 this.binding.territories.getRoot().setVisibility(0);
                 FamilyTopbarBinding familyTopbarBinding13 = this.binding.topbar;
                 familyTopbarBinding13.title.setText("Наши территории");
-                familyTopbarBinding13.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda58
+                familyTopbarBinding13.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda57
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$132$lambda$131(FamilyScreen.this, view);
@@ -2091,7 +2090,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 FamilyTopbarBinding familyTopbarBinding14 = this.binding.topbar;
                 familyTopbarBinding14.title.setVisibility(0);
                 familyTopbarBinding14.title.setText("Список встреч");
-                familyTopbarBinding14.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda59
+                familyTopbarBinding14.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda58
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FamilyScreen.navigateTo$lambda$135$lambda$134(FamilyScreen.this, view);
@@ -2217,7 +2216,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: FamilyScreen.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0010\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010¨\u0006\u0011"}, d2 = {"Lru/mrlargha/arizonaui/family/FamilyScreen$Navigation;", "", "<init>", "(Ljava/lang/String;I)V", "Create", "Menu", "Settings", "Members", "Rating", "Map", "Estate", "Charter", "War", "Home", "CharterMembers", "Territories", "Meetings", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0010\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010¨\u0006\u0011"}, d2 = {"Lru/mrlargha/arizonaui/family/FamilyScreen$Navigation;", "", "<init>", "(Ljava/lang/String;I)V", "Create", "Menu", "Settings", "Members", "Rating", "Map", "Estate", "Charter", "War", "Home", "CharterMembers", "Territories", "Meetings", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Navigation {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -2244,6 +2243,14 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             return $ENTRIES;
         }
 
+        public static Navigation valueOf(String str) {
+            return (Navigation) Enum.valueOf(Navigation.class, str);
+        }
+
+        public static Navigation[] values() {
+            return (Navigation[]) $VALUES.clone();
+        }
+
         private Navigation(String str, int i) {
         }
 
@@ -2252,18 +2259,10 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
         }
-
-        public static Navigation valueOf(String str) {
-            return (Navigation) Enum.valueOf(Navigation.class, str);
-        }
-
-        public static Navigation[] values() {
-            return (Navigation[]) $VALUES.clone();
-        }
     }
 
     /* compiled from: FamilyScreen.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/arizonaui/family/FamilyScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/arizonaui/family/FamilyScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner

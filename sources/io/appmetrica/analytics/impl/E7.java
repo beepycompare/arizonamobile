@@ -7,7 +7,7 @@ import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 public final class E7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f403a;
+    public final String f404a;
     public final String b;
     public final String c;
     public final String d;
@@ -22,31 +22,31 @@ public final class E7 {
     public final String m;
     public final String n;
 
-    public E7(C0736yb c0736yb) {
-        this.f403a = c0736yb.b("dId");
-        this.b = c0736yb.b("uId");
-        this.c = c0736yb.b("analyticsSdkVersionName");
-        this.d = c0736yb.b("kitBuildNumber");
-        this.e = c0736yb.b("kitBuildType");
-        this.f = c0736yb.b("appVer");
-        this.g = c0736yb.optString("app_debuggable", "0");
-        this.h = c0736yb.b(RemoteConfigConstants.RequestFieldKey.APP_BUILD);
-        this.i = c0736yb.b("osVer");
-        this.k = c0736yb.b("lang");
-        this.l = c0736yb.b("root");
-        this.m = c0736yb.optString(CommonUrlParts.APP_FRAMEWORK, FrameworkDetector.framework());
-        int optInt = c0736yb.optInt("osApiLev", -1);
+    public E7(C0728yb c0728yb) {
+        this.f404a = c0728yb.b("dId");
+        this.b = c0728yb.b("uId");
+        this.c = c0728yb.b("analyticsSdkVersionName");
+        this.d = c0728yb.b("kitBuildNumber");
+        this.e = c0728yb.b("kitBuildType");
+        this.f = c0728yb.b("appVer");
+        this.g = c0728yb.optString("app_debuggable", "0");
+        this.h = c0728yb.b(RemoteConfigConstants.RequestFieldKey.APP_BUILD);
+        this.i = c0728yb.b("osVer");
+        this.k = c0728yb.b("lang");
+        this.l = c0728yb.b("root");
+        this.m = c0728yb.optString(CommonUrlParts.APP_FRAMEWORK, FrameworkDetector.framework());
+        int optInt = c0728yb.optInt("osApiLev", -1);
         this.j = optInt == -1 ? null : String.valueOf(optInt);
-        int optInt2 = c0736yb.optInt("attribution_id", 0);
+        int optInt2 = c0728yb.optInt("attribution_id", 0);
         this.n = optInt2 > 0 ? String.valueOf(optInt2) : null;
     }
 
     public final String toString() {
-        return "DbNetworkTaskConfig{deviceId='" + this.f403a + "', uuid='" + this.b + "', analyticsSdkVersionName='" + this.c + "', kitBuildNumber='" + this.d + "', kitBuildType='" + this.e + "', appVersion='" + this.f + "', appDebuggable='" + this.g + "', appBuildNumber='" + this.h + "', osVersion='" + this.i + "', osApiLevel='" + this.j + "', locale='" + this.k + "', deviceRootStatus='" + this.l + "', appFramework='" + this.m + "', attributionId='" + this.n + "'}";
+        return "DbNetworkTaskConfig{deviceId='" + this.f404a + "', uuid='" + this.b + "', analyticsSdkVersionName='" + this.c + "', kitBuildNumber='" + this.d + "', kitBuildType='" + this.e + "', appVersion='" + this.f + "', appDebuggable='" + this.g + "', appBuildNumber='" + this.h + "', osVersion='" + this.i + "', osApiLevel='" + this.j + "', locale='" + this.k + "', deviceRootStatus='" + this.l + "', appFramework='" + this.m + "', attributionId='" + this.n + "'}";
     }
 
     public E7() {
-        this.f403a = null;
+        this.f404a = null;
         this.b = null;
         this.c = null;
         this.d = null;

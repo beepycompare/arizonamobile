@@ -70,11 +70,12 @@ public class Redrawer implements Runnable {
                     }
                 }
             } catch (InterruptedException unused) {
-                return;
-            } finally {
+            } catch (Throwable th) {
                 Log.d(TAG, "Redrawer thread exited.");
+                throw th;
             }
         }
+        Log.d(TAG, "Redrawer thread exited.");
     }
 
     public void setMaxRefreshRate(float f) {

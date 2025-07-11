@@ -153,7 +153,7 @@ public final class SessionLifecycleService extends Service {
         }
 
         private final boolean isSessionRestart(long j) {
-            return j - this.lastMsgTimeMs > Duration.m9801getInWholeMillisecondsimpl(SessionsSettings.Companion.getInstance().m8295getSessionRestartTimeoutUwyO8pc());
+            return j - this.lastMsgTimeMs > Duration.m9834getInWholeMillisecondsimpl(SessionsSettings.Companion.getInstance().m8294getSessionRestartTimeoutUwyO8pc());
         }
     }
 

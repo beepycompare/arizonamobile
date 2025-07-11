@@ -1,30 +1,43 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-import java.util.ArrayList;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import com.google.android.gms.common.internal.Preconditions;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzpd implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        ArrayList<Integer> arrayList = null;
-        while (parcel.dataPosition() < validateObjectHeader) {
-            int readHeader = SafeParcelReader.readHeader(parcel);
-            if (SafeParcelReader.getFieldId(readHeader) == 1) {
-                arrayList = SafeParcelReader.createIntegerList(parcel, readHeader);
-            } else {
-                SafeParcelReader.skipUnknownField(parcel, readHeader);
-            }
-        }
-        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zzpc(arrayList);
+public final class zzpd {
+    private final zzpf zza;
+    private int zzb = 1;
+    private long zzc = zzd();
+
+    public zzpd(zzpf zzpfVar) {
+        this.zza = zzpfVar;
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new zzpc[i];
+    private final long zzd() {
+        zzpf zzpfVar = this.zza;
+        Preconditions.checkNotNull(zzpfVar);
+        long longValue = ((Long) zzfx.zzu.zzb(null)).longValue();
+        long longValue2 = ((Long) zzfx.zzv.zzb(null)).longValue();
+        for (int i = 1; i < this.zzb; i++) {
+            longValue += longValue;
+            if (longValue >= longValue2) {
+                break;
+            }
+        }
+        return zzpfVar.zzaZ().currentTimeMillis() + Math.min(longValue, longValue2);
+    }
+
+    public final void zza() {
+        this.zzb++;
+        this.zzc = zzd();
+    }
+
+    public final boolean zzb() {
+        return this.zza.zzaZ().currentTimeMillis() >= this.zzc;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ long zzc() {
+        return this.zzc;
     }
 }

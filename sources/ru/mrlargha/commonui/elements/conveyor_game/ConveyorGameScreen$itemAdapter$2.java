@@ -6,9 +6,9 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ConveyorGameScreen.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
-public /* synthetic */ class ConveyorGameScreen$itemAdapter$2 extends FunctionReferenceImpl implements Function0<Unit> {
+public final /* synthetic */ class ConveyorGameScreen$itemAdapter$2 extends FunctionReferenceImpl implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public ConveyorGameScreen$itemAdapter$2(Object obj) {
         super(0, obj, ConveyorGameScreen.class, "refreshItems", "refreshItems()V", 0);

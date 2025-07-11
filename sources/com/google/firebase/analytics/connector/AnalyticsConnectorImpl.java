@@ -3,10 +3,10 @@ package com.google.firebase.analytics.connector;
 import android.content.Context;
 import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.internal.measurement.zzff;
+import com.google.android.gms.internal.measurement.zzfb;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
-import com.google.android.gms.measurement.internal.zzjt;
-import com.google.android.gms.measurement.internal.zzmg;
+import com.google.android.gms.measurement.internal.zzjg;
+import com.google.android.gms.measurement.internal.zzls;
 import com.google.firebase.DataCollectionDefaultChange;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.analytics.connector.AnalyticsConnector;
@@ -14,15 +14,14 @@ import com.google.firebase.analytics.connector.internal.zzc;
 import com.google.firebase.analytics.connector.internal.zze;
 import com.google.firebase.analytics.connector.internal.zzg;
 import com.google.firebase.events.Event;
-import com.google.firebase.events.EventHandler;
 import com.google.firebase.events.Subscriber;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.Executor;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
 /* loaded from: classes4.dex */
 public class AnalyticsConnectorImpl implements AnalyticsConnector {
     private static volatile AnalyticsConnector zzc;
@@ -48,7 +47,8 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final boolean zzc(String str) {
+    /* renamed from: zzc */
+    public final boolean zzb(String str) {
         if (str.isEmpty()) {
             return false;
         }
@@ -70,21 +70,21 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
             int i = zzc.zza;
             Preconditions.checkNotNull(bundle);
             AnalyticsConnector.ConditionalUserProperty conditionalUserProperty = new AnalyticsConnector.ConditionalUserProperty();
-            conditionalUserProperty.origin = (String) Preconditions.checkNotNull((String) zzjt.zza(bundle, "origin", String.class, null));
-            conditionalUserProperty.name = (String) Preconditions.checkNotNull((String) zzjt.zza(bundle, "name", String.class, null));
-            conditionalUserProperty.value = zzjt.zza(bundle, "value", Object.class, null);
-            conditionalUserProperty.triggerEventName = (String) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, String.class, null);
-            conditionalUserProperty.triggerTimeout = ((Long) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT, Long.class, 0L)).longValue();
-            conditionalUserProperty.timedOutEventName = (String) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_NAME, String.class, null);
-            conditionalUserProperty.timedOutEventParams = (Bundle) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_PARAMS, Bundle.class, null);
-            conditionalUserProperty.triggeredEventName = (String) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_NAME, String.class, null);
-            conditionalUserProperty.triggeredEventParams = (Bundle) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_PARAMS, Bundle.class, null);
-            conditionalUserProperty.timeToLive = ((Long) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE, Long.class, 0L)).longValue();
-            conditionalUserProperty.expiredEventName = (String) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_NAME, String.class, null);
-            conditionalUserProperty.expiredEventParams = (Bundle) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_PARAMS, Bundle.class, null);
-            conditionalUserProperty.active = ((Boolean) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.ACTIVE, Boolean.class, false)).booleanValue();
-            conditionalUserProperty.creationTimestamp = ((Long) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, Long.class, 0L)).longValue();
-            conditionalUserProperty.triggeredTimestamp = ((Long) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP, Long.class, 0L)).longValue();
+            conditionalUserProperty.origin = (String) Preconditions.checkNotNull((String) zzjg.zzb(bundle, "origin", String.class, null));
+            conditionalUserProperty.name = (String) Preconditions.checkNotNull((String) zzjg.zzb(bundle, "name", String.class, null));
+            conditionalUserProperty.value = zzjg.zzb(bundle, "value", Object.class, null);
+            conditionalUserProperty.triggerEventName = (String) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, String.class, null);
+            conditionalUserProperty.triggerTimeout = ((Long) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT, Long.class, 0L)).longValue();
+            conditionalUserProperty.timedOutEventName = (String) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_NAME, String.class, null);
+            conditionalUserProperty.timedOutEventParams = (Bundle) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_PARAMS, Bundle.class, null);
+            conditionalUserProperty.triggeredEventName = (String) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_NAME, String.class, null);
+            conditionalUserProperty.triggeredEventParams = (Bundle) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_PARAMS, Bundle.class, null);
+            conditionalUserProperty.timeToLive = ((Long) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE, Long.class, 0L)).longValue();
+            conditionalUserProperty.expiredEventName = (String) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_NAME, String.class, null);
+            conditionalUserProperty.expiredEventParams = (Bundle) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_PARAMS, Bundle.class, null);
+            conditionalUserProperty.active = ((Boolean) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.ACTIVE, Boolean.class, false)).booleanValue();
+            conditionalUserProperty.creationTimestamp = ((Long) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, Long.class, 0L)).longValue();
+            conditionalUserProperty.triggeredTimestamp = ((Long) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP, Long.class, 0L)).longValue();
             arrayList.add(conditionalUserProperty);
         }
         return arrayList;
@@ -105,7 +105,7 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
         if (bundle == null) {
             bundle = new Bundle();
         }
-        if (zzc.zzd(str) && zzc.zzb(str2, bundle) && zzc.zza(str, str2, bundle)) {
+        if (zzc.zza(str) && zzc.zzb(str2, bundle) && zzc.zze(str, str2, bundle)) {
             if ("clx".equals(str) && "_ae".equals(str2)) {
                 bundle.putLong("_r", 1L);
             }
@@ -117,7 +117,7 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
     public AnalyticsConnector.AnalyticsConnectorHandle registerAnalyticsConnectorListener(final String str, AnalyticsConnector.AnalyticsConnectorListener analyticsConnectorListener) {
         com.google.firebase.analytics.connector.internal.zza zzgVar;
         Preconditions.checkNotNull(analyticsConnectorListener);
-        if (zzc.zzd(str) && !zzc(str)) {
+        if (zzc.zza(str) && !zzb(str)) {
             AppMeasurementSdk appMeasurementSdk = this.zza;
             if ("fiam".equals(str)) {
                 zzgVar = new zze(appMeasurementSdk, analyticsConnectorListener);
@@ -130,6 +130,7 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
                     final /* synthetic */ AnalyticsConnectorImpl zzb;
 
                     {
+                        Objects.requireNonNull(this);
                         this.zzb = this;
                     }
 
@@ -137,7 +138,7 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
                     public void registerEventNames(Set<String> set) {
                         AnalyticsConnectorImpl analyticsConnectorImpl = this.zzb;
                         String str2 = str;
-                        if (!analyticsConnectorImpl.zzc(str2) || !str2.equals("fiam") || set == null || set.isEmpty()) {
+                        if (!analyticsConnectorImpl.zzb(str2) || !str2.equals("fiam") || set == null || set.isEmpty()) {
                             return;
                         }
                         ((com.google.firebase.analytics.connector.internal.zza) analyticsConnectorImpl.zzb.get(str2)).zzb(set);
@@ -147,7 +148,7 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
                     public final void unregister() {
                         AnalyticsConnectorImpl analyticsConnectorImpl = this.zzb;
                         String str2 = str;
-                        if (analyticsConnectorImpl.zzc(str2)) {
+                        if (analyticsConnectorImpl.zzb(str2)) {
                             Map map = analyticsConnectorImpl.zzb;
                             AnalyticsConnector.AnalyticsConnectorListener zza = ((com.google.firebase.analytics.connector.internal.zza) map.get(str2)).zza();
                             if (zza != null) {
@@ -161,7 +162,7 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
                     public void unregisterEventNames() {
                         AnalyticsConnectorImpl analyticsConnectorImpl = this.zzb;
                         String str2 = str;
-                        if (analyticsConnectorImpl.zzc(str2) && str2.equals("fiam")) {
+                        if (analyticsConnectorImpl.zzb(str2) && str2.equals("fiam")) {
                             ((com.google.firebase.analytics.connector.internal.zza) analyticsConnectorImpl.zzb.get(str2)).zzc();
                         }
                     }
@@ -178,10 +179,10 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
         if (conditionalUserProperty == null || (str = conditionalUserProperty.origin) == null || str.isEmpty()) {
             return;
         }
-        if ((conditionalUserProperty.value == null || zzmg.zza(conditionalUserProperty.value) != null) && zzc.zzd(str) && zzc.zze(str, conditionalUserProperty.name)) {
-            if (conditionalUserProperty.expiredEventName == null || (zzc.zzb(conditionalUserProperty.expiredEventName, conditionalUserProperty.expiredEventParams) && zzc.zza(str, conditionalUserProperty.expiredEventName, conditionalUserProperty.expiredEventParams))) {
-                if (conditionalUserProperty.triggeredEventName == null || (zzc.zzb(conditionalUserProperty.triggeredEventName, conditionalUserProperty.triggeredEventParams) && zzc.zza(str, conditionalUserProperty.triggeredEventName, conditionalUserProperty.triggeredEventParams))) {
-                    if (conditionalUserProperty.timedOutEventName == null || (zzc.zzb(conditionalUserProperty.timedOutEventName, conditionalUserProperty.timedOutEventParams) && zzc.zza(str, conditionalUserProperty.timedOutEventName, conditionalUserProperty.timedOutEventParams))) {
+        if ((conditionalUserProperty.value == null || zzls.zzb(conditionalUserProperty.value) != null) && zzc.zza(str) && zzc.zzd(str, conditionalUserProperty.name)) {
+            if (conditionalUserProperty.expiredEventName == null || (zzc.zzb(conditionalUserProperty.expiredEventName, conditionalUserProperty.expiredEventParams) && zzc.zze(str, conditionalUserProperty.expiredEventName, conditionalUserProperty.expiredEventParams))) {
+                if (conditionalUserProperty.triggeredEventName == null || (zzc.zzb(conditionalUserProperty.triggeredEventName, conditionalUserProperty.triggeredEventParams) && zzc.zze(str, conditionalUserProperty.triggeredEventName, conditionalUserProperty.triggeredEventParams))) {
+                    if (conditionalUserProperty.timedOutEventName == null || (zzc.zzb(conditionalUserProperty.timedOutEventName, conditionalUserProperty.timedOutEventParams) && zzc.zze(str, conditionalUserProperty.timedOutEventName, conditionalUserProperty.timedOutEventParams))) {
                         AppMeasurementSdk appMeasurementSdk = this.zza;
                         Bundle bundle = new Bundle();
                         if (conditionalUserProperty.origin != null) {
@@ -191,7 +192,7 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
                             bundle.putString("name", conditionalUserProperty.name);
                         }
                         if (conditionalUserProperty.value != null) {
-                            zzjt.zzb(bundle, conditionalUserProperty.value);
+                            zzjg.zza(bundle, conditionalUserProperty.value);
                         }
                         if (conditionalUserProperty.triggerEventName != null) {
                             bundle.putString(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, conditionalUserProperty.triggerEventName);
@@ -228,7 +229,7 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
 
     @Override // com.google.firebase.analytics.connector.AnalyticsConnector
     public void setUserProperty(String str, String str2, Object obj) {
-        if (zzc.zzd(str) && zzc.zze(str, str2)) {
+        if (zzc.zza(str) && zzc.zzd(str, str2)) {
             this.zza.setUserProperty(str, str2, obj);
         }
     }
@@ -247,20 +248,10 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
                 if (zzc == null) {
                     Bundle bundle = new Bundle(1);
                     if (firebaseApp.isDefaultApp()) {
-                        subscriber.subscribe(DataCollectionDefaultChange.class, new Executor() { // from class: com.google.firebase.analytics.connector.zza
-                            @Override // java.util.concurrent.Executor
-                            public final void execute(Runnable runnable) {
-                                runnable.run();
-                            }
-                        }, new EventHandler() { // from class: com.google.firebase.analytics.connector.zzb
-                            @Override // com.google.firebase.events.EventHandler
-                            public final void handle(Event event) {
-                                AnalyticsConnectorImpl.zza(event);
-                            }
-                        });
+                        subscriber.subscribe(DataCollectionDefaultChange.class, zzb.zza, zza.zza);
                         bundle.putBoolean("dataCollectionDefaultEnabled", firebaseApp.isDataCollectionDefaultEnabled());
                     }
-                    zzc = new AnalyticsConnectorImpl(zzff.zzg(context, null, null, null, bundle).zzd());
+                    zzc = new AnalyticsConnectorImpl(zzfb.zza(context, bundle).zzb());
                 }
             }
         }

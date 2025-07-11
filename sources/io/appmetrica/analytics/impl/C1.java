@@ -6,16 +6,16 @@ import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 public final class C1 extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Intent f363a;
+    public final /* synthetic */ Intent f364a;
     public final /* synthetic */ I1 b;
 
     public C1(I1 i1, Intent intent) {
         this.b = i1;
-        this.f363a = intent;
+        this.f364a = intent;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        this.b.b.a(this.f363a);
+        this.b.b.a(this.f364a);
     }
 }

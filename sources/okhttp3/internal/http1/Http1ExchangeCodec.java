@@ -16,9 +16,10 @@ import okhttp3.Headers;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
-import okhttp3.internal.Util;
-import okhttp3.internal.connection.RealConnection;
+import okhttp3.internal._UtilCommonKt;
+import okhttp3.internal._UtilJvmKt;
 import okhttp3.internal.http.ExchangeCodec;
 import okhttp3.internal.http.HttpHeaders;
 import okhttp3.internal.http.RequestLine;
@@ -31,10 +32,9 @@ import okio.Sink;
 import okio.Source;
 import okio.Timeout;
 /* compiled from: Http1ExchangeCodec.kt */
-@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\t\u0018\u0000 ?2\u00020\u0001:\u0007<=>?@ABB'\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0002\u0010\nJ\b\u0010\u001b\u001a\u00020\u001cH\u0016J\u0018\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\u00172\u0006\u0010 \u001a\u00020!H\u0016J\u0010\u0010\"\u001a\u00020\u001c2\u0006\u0010#\u001a\u00020$H\u0002J\b\u0010%\u001a\u00020\u001cH\u0016J\b\u0010&\u001a\u00020\u001cH\u0016J\b\u0010'\u001a\u00020\u001eH\u0002J\u0010\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+H\u0002J\u0010\u0010,\u001a\u00020)2\u0006\u0010-\u001a\u00020!H\u0002J\b\u0010.\u001a\u00020\u001eH\u0002J\b\u0010/\u001a\u00020)H\u0002J\u0010\u00100\u001a\u00020)2\u0006\u00101\u001a\u00020\u0019H\u0016J\u0012\u00102\u001a\u0004\u0018\u0001032\u0006\u00104\u001a\u00020\u0010H\u0016J\u0010\u00105\u001a\u00020!2\u0006\u00101\u001a\u00020\u0019H\u0016J\u000e\u00106\u001a\u00020\u001c2\u0006\u00101\u001a\u00020\u0019J\b\u0010\u0014\u001a\u00020\u0015H\u0016J\u0016\u00107\u001a\u00020\u001c2\u0006\u00108\u001a\u00020\u00152\u0006\u00109\u001a\u00020:J\u0010\u0010;\u001a\u00020\u001c2\u0006\u0010\u001f\u001a\u00020\u0017H\u0016R\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000f\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0011R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0014\u001a\u0004\u0018\u00010\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010\u0016\u001a\u00020\u0010*\u00020\u00178BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0018R\u0018\u0010\u0016\u001a\u00020\u0010*\u00020\u00198BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u001a¨\u0006C"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec;", "Lokhttp3/internal/http/ExchangeCodec;", "client", "Lokhttp3/OkHttpClient;", "connection", "Lokhttp3/internal/connection/RealConnection;", "source", "Lokio/BufferedSource;", "sink", "Lokio/BufferedSink;", "(Lokhttp3/OkHttpClient;Lokhttp3/internal/connection/RealConnection;Lokio/BufferedSource;Lokio/BufferedSink;)V", "getConnection", "()Lokhttp3/internal/connection/RealConnection;", "headersReader", "Lokhttp3/internal/http1/HeadersReader;", "isClosed", "", "()Z", RemoteConfigConstants.ResponseFieldKey.STATE, "", "trailers", "Lokhttp3/Headers;", "isChunked", "Lokhttp3/Request;", "(Lokhttp3/Request;)Z", "Lokhttp3/Response;", "(Lokhttp3/Response;)Z", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "createRequestBody", "Lokio/Sink;", "request", "contentLength", "", "detachTimeout", "timeout", "Lokio/ForwardingTimeout;", "finishRequest", "flushRequest", "newChunkedSink", "newChunkedSource", "Lokio/Source;", "url", "Lokhttp3/HttpUrl;", "newFixedLengthSource", "length", "newKnownLengthSink", "newUnknownLengthSource", "openResponseBodySource", "response", "readResponseHeaders", "Lokhttp3/Response$Builder;", "expectContinue", "reportedContentLength", "skipConnectBody", "writeRequest", "headers", "requestLine", "", "writeRequestHeaders", "AbstractSource", "ChunkedSink", "ChunkedSource", "Companion", "FixedLengthSource", "KnownLengthSink", "UnknownLengthSource", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 D2\u00020\u0001:\u0007>?@ABCDB)\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\u0018\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u00162\u0006\u0010\u001f\u001a\u00020 H\u0016J\b\u0010!\u001a\u00020\"H\u0016J\u0010\u0010#\u001a\u00020\"2\u0006\u0010\u001e\u001a\u00020\u0016H\u0016J\u0010\u0010$\u001a\u00020 2\u0006\u0010%\u001a\u00020\u0014H\u0016J\u0010\u0010&\u001a\u00020'2\u0006\u0010%\u001a\u00020\u0014H\u0016J\n\u0010(\u001a\u0004\u0018\u00010\u0019H\u0016J\b\u0010)\u001a\u00020\"H\u0016J\b\u0010*\u001a\u00020\"H\u0016J\u0016\u0010+\u001a\u00020\"2\u0006\u0010,\u001a\u00020\u00192\u0006\u0010-\u001a\u00020.J\u0012\u0010/\u001a\u0004\u0018\u0001002\u0006\u00101\u001a\u00020\u0013H\u0016J\b\u00102\u001a\u00020\u001dH\u0002J\b\u00103\u001a\u00020\u001dH\u0002J\u0018\u00104\u001a\u00020'2\u0006\u00105\u001a\u0002062\u0006\u00107\u001a\u00020 H\u0002J\u0010\u00108\u001a\u00020'2\u0006\u00105\u001a\u000206H\u0002J\u0010\u00109\u001a\u00020'2\u0006\u00105\u001a\u000206H\u0002J\u0010\u0010:\u001a\u00020\"2\u0006\u0010;\u001a\u00020<H\u0002J\u000e\u0010=\u001a\u00020\"2\u0006\u0010%\u001a\u00020\u0014R\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u0012\u001a\u00020\u0013*\u00020\u00148BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0015R\u0018\u0010\u0012\u001a\u00020\u0013*\u00020\u00168BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0017R\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001a\u001a\u00020\u00138VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001b¨\u0006E"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec;", "Lokhttp3/internal/http/ExchangeCodec;", "client", "Lokhttp3/OkHttpClient;", "carrier", "Lokhttp3/internal/http/ExchangeCodec$Carrier;", "source", "Lokio/BufferedSource;", "sink", "Lokio/BufferedSink;", "<init>", "(Lokhttp3/OkHttpClient;Lokhttp3/internal/http/ExchangeCodec$Carrier;Lokio/BufferedSource;Lokio/BufferedSink;)V", "getCarrier", "()Lokhttp3/internal/http/ExchangeCodec$Carrier;", RemoteConfigConstants.ResponseFieldKey.STATE, "", "headersReader", "Lokhttp3/internal/http1/HeadersReader;", "isChunked", "", "Lokhttp3/Response;", "(Lokhttp3/Response;)Z", "Lokhttp3/Request;", "(Lokhttp3/Request;)Z", "trailers", "Lokhttp3/Headers;", "isResponseComplete", "()Z", "createRequestBody", "Lokio/Sink;", "request", "contentLength", "", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "writeRequestHeaders", "reportedContentLength", "response", "openResponseBodySource", "Lokio/Source;", "peekTrailers", "flushRequest", "finishRequest", "writeRequest", "headers", "requestLine", "", "readResponseHeaders", "Lokhttp3/Response$Builder;", "expectContinue", "newChunkedSink", "newKnownLengthSink", "newFixedLengthSource", "url", "Lokhttp3/HttpUrl;", "length", "newChunkedSource", "newUnknownLengthSource", "detachTimeout", "timeout", "Lokio/ForwardingTimeout;", "skipConnectBody", "KnownLengthSink", "ChunkedSink", "AbstractSource", "FixedLengthSource", "ChunkedSource", "UnknownLengthSource", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class Http1ExchangeCodec implements ExchangeCodec {
-    public static final Companion Companion = new Companion(null);
     private static final long NO_CHUNK_YET = -1;
     private static final int STATE_CLOSED = 6;
     private static final int STATE_IDLE = 0;
@@ -43,28 +43,30 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
     private static final int STATE_READING_RESPONSE_BODY = 5;
     private static final int STATE_READ_RESPONSE_HEADERS = 3;
     private static final int STATE_WRITING_REQUEST_BODY = 2;
+    private final ExchangeCodec.Carrier carrier;
     private final OkHttpClient client;
-    private final RealConnection connection;
     private final HeadersReader headersReader;
     private final BufferedSink sink;
     private final BufferedSource source;
     private int state;
     private Headers trailers;
+    public static final Companion Companion = new Companion(null);
+    private static final Headers TRAILERS_RESPONSE_BODY_TRUNCATED = Headers.Companion.of("OkHttp-Response-Body", "Truncated");
 
-    public Http1ExchangeCodec(OkHttpClient okHttpClient, RealConnection connection, BufferedSource source, BufferedSink sink) {
-        Intrinsics.checkNotNullParameter(connection, "connection");
+    public Http1ExchangeCodec(OkHttpClient okHttpClient, ExchangeCodec.Carrier carrier, BufferedSource source, BufferedSink sink) {
+        Intrinsics.checkNotNullParameter(carrier, "carrier");
         Intrinsics.checkNotNullParameter(source, "source");
         Intrinsics.checkNotNullParameter(sink, "sink");
         this.client = okHttpClient;
-        this.connection = connection;
+        this.carrier = carrier;
         this.source = source;
         this.sink = sink;
         this.headersReader = new HeadersReader(source);
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec
-    public RealConnection getConnection() {
-        return this.connection;
+    public ExchangeCodec.Carrier getCarrier() {
+        return this.carrier;
     }
 
     private final boolean isChunked(Response response) {
@@ -75,14 +77,16 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
         return StringsKt.equals("chunked", request.header("Transfer-Encoding"), true);
     }
 
-    public final boolean isClosed() {
+    @Override // okhttp3.internal.http.ExchangeCodec
+    public boolean isResponseComplete() {
         return this.state == 6;
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec
     public Sink createRequestBody(Request request, long j) {
         Intrinsics.checkNotNullParameter(request, "request");
-        if (request.body() != null && request.body().isDuplex()) {
+        RequestBody body = request.body();
+        if (body != null && body.isDuplex()) {
             throw new ProtocolException("Duplex connections are not supported for HTTP/1");
         }
         if (isChunked(request)) {
@@ -96,15 +100,15 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     @Override // okhttp3.internal.http.ExchangeCodec
     public void cancel() {
-        getConnection().cancel();
+        getCarrier().mo10373cancel();
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec
     public void writeRequestHeaders(Request request) {
         Intrinsics.checkNotNullParameter(request, "request");
         RequestLine requestLine = RequestLine.INSTANCE;
-        Proxy.Type type = getConnection().route().proxy().type();
-        Intrinsics.checkNotNullExpressionValue(type, "connection.route().proxy.type()");
+        Proxy.Type type = getCarrier().getRoute().proxy().type();
+        Intrinsics.checkNotNullExpressionValue(type, "type(...)");
         writeRequest(request.headers(), requestLine.get(request, type));
     }
 
@@ -115,7 +119,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             if (isChunked(response)) {
                 return -1L;
             }
-            return Util.headersContentLength(response);
+            return _UtilJvmKt.headersContentLength(response);
         }
         return 0L;
     }
@@ -127,22 +131,26 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             if (isChunked(response)) {
                 return newChunkedSource(response.request().url());
             }
-            long headersContentLength = Util.headersContentLength(response);
+            long headersContentLength = _UtilJvmKt.headersContentLength(response);
             if (headersContentLength != -1) {
-                return newFixedLengthSource(headersContentLength);
+                return newFixedLengthSource(response.request().url(), headersContentLength);
             }
-            return newUnknownLengthSource();
+            return newUnknownLengthSource(response.request().url());
         }
-        return newFixedLengthSource(0L);
+        return newFixedLengthSource(response.request().url(), 0L);
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec
-    public Headers trailers() {
-        if (this.state != 6) {
-            throw new IllegalStateException("too early; can't read the trailers yet".toString());
-        }
+    public Headers peekTrailers() {
         Headers headers = this.trailers;
-        return headers == null ? Util.EMPTY_HEADERS : headers;
+        if (headers == TRAILERS_RESPONSE_BODY_TRUNCATED) {
+            throw new IOException("Trailers cannot be read because the response body was truncated");
+        }
+        int i = this.state;
+        if (i == 5 || i == 6) {
+            return headers;
+        }
+        throw new IllegalStateException(("Trailers cannot be read because the state is " + this.state).toString());
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec
@@ -173,7 +181,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
     @Override // okhttp3.internal.http.ExchangeCodec
     public Response.Builder readResponseHeaders(boolean z) {
         int i = this.state;
-        if (i != 1 && i != 2 && i != 3) {
+        if (i != 0 && i != 1 && i != 2 && i != 3) {
             throw new IllegalStateException(("state: " + this.state).toString());
         }
         try {
@@ -194,7 +202,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             this.state = 4;
             return headers;
         } catch (EOFException e) {
-            throw new IOException("unexpected end of stream on " + getConnection().route().address().url().redact(), e);
+            throw new IOException("unexpected end of stream on " + getCarrier().getRoute().address().url().redact(), e);
         }
     }
 
@@ -214,12 +222,12 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
         return new KnownLengthSink();
     }
 
-    private final Source newFixedLengthSource(long j) {
+    private final Source newFixedLengthSource(HttpUrl httpUrl, long j) {
         if (this.state != 4) {
             throw new IllegalStateException(("state: " + this.state).toString());
         }
         this.state = 5;
-        return new FixedLengthSource(j);
+        return new FixedLengthSource(this, httpUrl, j);
     }
 
     private final Source newChunkedSource(HttpUrl httpUrl) {
@@ -230,13 +238,13 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
         return new ChunkedSource(this, httpUrl);
     }
 
-    private final Source newUnknownLengthSource() {
+    private final Source newUnknownLengthSource(HttpUrl httpUrl) {
         if (this.state != 4) {
             throw new IllegalStateException(("state: " + this.state).toString());
         }
         this.state = 5;
-        getConnection().noNewExchanges$okhttp();
-        return new UnknownLengthSource();
+        getCarrier().noNewExchanges();
+        return new UnknownLengthSource(this, httpUrl);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -249,18 +257,18 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     public final void skipConnectBody(Response response) {
         Intrinsics.checkNotNullParameter(response, "response");
-        long headersContentLength = Util.headersContentLength(response);
+        long headersContentLength = _UtilJvmKt.headersContentLength(response);
         if (headersContentLength == -1) {
             return;
         }
-        Source newFixedLengthSource = newFixedLengthSource(headersContentLength);
-        Util.skipAll(newFixedLengthSource, Integer.MAX_VALUE, TimeUnit.MILLISECONDS);
+        Source newFixedLengthSource = newFixedLengthSource(response.request().url(), headersContentLength);
+        _UtilJvmKt.skipAll(newFixedLengthSource, Integer.MAX_VALUE, TimeUnit.MILLISECONDS);
         newFixedLengthSource.close();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Http1ExchangeCodec.kt */
-    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\b\u0010\u0007\u001a\u00020\bH\u0016J\b\u0010\t\u001a\u00020\bH\u0016J\b\u0010\u0005\u001a\u00020\nH\u0016J\u0018\u0010\u000b\u001a\u00020\b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$KnownLengthSink;", "Lokio/Sink;", "(Lokhttp3/internal/http1/Http1ExchangeCodec;)V", "closed", "", "timeout", "Lokio/ForwardingTimeout;", "close", "", "flush", "Lokio/Timeout;", "write", "source", "Lokio/Buffer;", "byteCount", "", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0004\u001a\u00020\bH\u0016J\u0018\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0016J\b\u0010\u000f\u001a\u00020\nH\u0016J\b\u0010\u0010\u001a\u00020\nH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$KnownLengthSink;", "Lokio/Sink;", "<init>", "(Lokhttp3/internal/http1/Http1ExchangeCodec;)V", "timeout", "Lokio/ForwardingTimeout;", "closed", "", "Lokio/Timeout;", "write", "", "source", "Lokio/Buffer;", "byteCount", "", "flush", "close", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public final class KnownLengthSink implements Sink {
         private boolean closed;
@@ -281,7 +289,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             if (this.closed) {
                 throw new IllegalStateException("closed".toString());
             }
-            Util.checkOffsetAndCount(source.size(), 0L, j);
+            _UtilCommonKt.checkOffsetAndCount(source.size(), 0L, j);
             Http1ExchangeCodec.this.sink.write(source, j);
         }
 
@@ -306,7 +314,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Http1ExchangeCodec.kt */
-    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\b\u0010\u0007\u001a\u00020\bH\u0016J\b\u0010\t\u001a\u00020\bH\u0016J\b\u0010\u0005\u001a\u00020\nH\u0016J\u0018\u0010\u000b\u001a\u00020\b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$ChunkedSink;", "Lokio/Sink;", "(Lokhttp3/internal/http1/Http1ExchangeCodec;)V", "closed", "", "timeout", "Lokio/ForwardingTimeout;", "close", "", "flush", "Lokio/Timeout;", "write", "source", "Lokio/Buffer;", "byteCount", "", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0004\u001a\u00020\bH\u0016J\u0018\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0016J\b\u0010\u000f\u001a\u00020\nH\u0016J\b\u0010\u0010\u001a\u00020\nH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$ChunkedSink;", "Lokio/Sink;", "<init>", "(Lokhttp3/internal/http1/Http1ExchangeCodec;)V", "timeout", "Lokio/ForwardingTimeout;", "closed", "", "Lokio/Timeout;", "write", "", "source", "Lokio/Buffer;", "byteCount", "", "flush", "close", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public final class ChunkedSink implements Sink {
         private boolean closed;
@@ -358,14 +366,23 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Http1ExchangeCodec.kt */
-    @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\b¢\u0004\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\u0018\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u000eH\u0016J\u0006\u0010\u0012\u001a\u00020\u0013J\b\u0010\t\u001a\u00020\u0014H\u0016R\u001a\u0010\u0003\u001a\u00020\u0004X\u0084\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0006\"\u0004\b\u0007\u0010\bR\u0014\u0010\t\u001a\u00020\nX\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006\u0015"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;", "Lokio/Source;", "(Lokhttp3/internal/http1/Http1ExchangeCodec;)V", "closed", "", "getClosed", "()Z", "setClosed", "(Z)V", "timeout", "Lokio/ForwardingTimeout;", "getTimeout", "()Lokio/ForwardingTimeout;", "read", "", "sink", "Lokio/Buffer;", "byteCount", "responseBodyComplete", "", "Lokio/Timeout;", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b¢\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\b\u001a\u00020\u0012H\u0016J\u0018\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0014H\u0016J\u000e\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\tX\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\rX\u0084\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u000f\"\u0004\b\u0010\u0010\u0011¨\u0006\u001c"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;", "Lokio/Source;", "url", "Lokhttp3/HttpUrl;", "<init>", "(Lokhttp3/internal/http1/Http1ExchangeCodec;Lokhttp3/HttpUrl;)V", "getUrl", "()Lokhttp3/HttpUrl;", "timeout", "Lokio/ForwardingTimeout;", "getTimeout", "()Lokio/ForwardingTimeout;", "closed", "", "getClosed", "()Z", "setClosed", "(Z)V", "Lokio/Timeout;", "read", "", "sink", "Lokio/Buffer;", "byteCount", "responseBodyComplete", "", "trailers", "Lokhttp3/Headers;", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public abstract class AbstractSource implements Source {
         private boolean closed;
+        final /* synthetic */ Http1ExchangeCodec this$0;
         private final ForwardingTimeout timeout;
+        private final HttpUrl url;
 
-        public AbstractSource() {
-            this.timeout = new ForwardingTimeout(Http1ExchangeCodec.this.source.timeout());
+        public AbstractSource(Http1ExchangeCodec http1ExchangeCodec, HttpUrl url) {
+            Intrinsics.checkNotNullParameter(url, "url");
+            this.this$0 = http1ExchangeCodec;
+            this.url = url;
+            this.timeout = new ForwardingTimeout(http1ExchangeCodec.source.timeout());
+        }
+
+        public final HttpUrl getUrl() {
+            return this.url;
         }
 
         protected final ForwardingTimeout getTimeout() {
@@ -389,39 +406,51 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
         public long read(Buffer sink, long j) {
             Intrinsics.checkNotNullParameter(sink, "sink");
             try {
-                return Http1ExchangeCodec.this.source.read(sink, j);
+                return this.this$0.source.read(sink, j);
             } catch (IOException e) {
-                Http1ExchangeCodec.this.getConnection().noNewExchanges$okhttp();
-                responseBodyComplete();
+                this.this$0.getCarrier().noNewExchanges();
+                responseBodyComplete(Http1ExchangeCodec.TRAILERS_RESPONSE_BODY_TRUNCATED);
                 throw e;
             }
         }
 
-        public final void responseBodyComplete() {
-            if (Http1ExchangeCodec.this.state == 6) {
+        public final void responseBodyComplete(Headers trailers) {
+            OkHttpClient okHttpClient;
+            CookieJar cookieJar;
+            Intrinsics.checkNotNullParameter(trailers, "trailers");
+            if (this.this$0.state == 6) {
                 return;
             }
-            if (Http1ExchangeCodec.this.state == 5) {
-                Http1ExchangeCodec.this.detachTimeout(this.timeout);
-                Http1ExchangeCodec.this.state = 6;
+            if (this.this$0.state == 5) {
+                this.this$0.detachTimeout(this.timeout);
+                this.this$0.trailers = trailers;
+                this.this$0.state = 6;
+                if (trailers.size() <= 0 || (okHttpClient = this.this$0.client) == null || (cookieJar = okHttpClient.cookieJar()) == null) {
+                    return;
+                }
+                HttpHeaders.receiveHeaders(cookieJar, this.url, trailers);
                 return;
             }
-            throw new IllegalStateException("state: " + Http1ExchangeCodec.this.state);
+            throw new IllegalStateException("state: " + this.this$0.state);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Http1ExchangeCodec.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0082\u0004\u0018\u00002\u00060\u0001R\u00020\u0002B\r\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0002\u0010\u0005J\b\u0010\u0006\u001a\u00020\u0007H\u0016J\u0018\u0010\b\u001a\u00020\u00042\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\u0004H\u0016R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$FixedLengthSource;", "Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;", "Lokhttp3/internal/http1/Http1ExchangeCodec;", "bytesRemaining", "", "(Lokhttp3/internal/http1/Http1ExchangeCodec;J)V", "close", "", "read", "sink", "Lokio/Buffer;", "byteCount", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\b\u0082\u0004\u0018\u00002\u00060\u0001R\u00020\u0002B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u0006H\u0016J\b\u0010\r\u001a\u00020\u000eH\u0016R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$FixedLengthSource;", "Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;", "Lokhttp3/internal/http1/Http1ExchangeCodec;", "url", "Lokhttp3/HttpUrl;", "bytesRemaining", "", "<init>", "(Lokhttp3/internal/http1/Http1ExchangeCodec;Lokhttp3/HttpUrl;J)V", "read", "sink", "Lokio/Buffer;", "byteCount", "close", "", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public final class FixedLengthSource extends AbstractSource {
         private long bytesRemaining;
+        final /* synthetic */ Http1ExchangeCodec this$0;
 
-        public FixedLengthSource(long j) {
-            super();
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public FixedLengthSource(Http1ExchangeCodec http1ExchangeCodec, HttpUrl url, long j) {
+            super(http1ExchangeCodec, url);
+            Intrinsics.checkNotNullParameter(url, "url");
+            this.this$0 = http1ExchangeCodec;
             this.bytesRemaining = j;
             if (j == 0) {
-                responseBodyComplete();
+                responseBodyComplete(Headers.EMPTY);
             }
         }
 
@@ -440,15 +469,15 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             }
             long read = super.read(sink, Math.min(j2, j));
             if (read == -1) {
-                Http1ExchangeCodec.this.getConnection().noNewExchanges$okhttp();
+                this.this$0.getCarrier().noNewExchanges();
                 ProtocolException protocolException = new ProtocolException("unexpected end of stream");
-                responseBodyComplete();
+                responseBodyComplete(Http1ExchangeCodec.TRAILERS_RESPONSE_BODY_TRUNCATED);
                 throw protocolException;
             }
             long j3 = this.bytesRemaining - read;
             this.bytesRemaining = j3;
             if (j3 == 0) {
-                responseBodyComplete();
+                responseBodyComplete(Headers.EMPTY);
             }
             return read;
         }
@@ -458,9 +487,9 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             if (getClosed()) {
                 return;
             }
-            if (this.bytesRemaining != 0 && !Util.discard(this, 100, TimeUnit.MILLISECONDS)) {
-                Http1ExchangeCodec.this.getConnection().noNewExchanges$okhttp();
-                responseBodyComplete();
+            if (this.bytesRemaining != 0 && !_UtilJvmKt.discard(this, 100, TimeUnit.MILLISECONDS)) {
+                this.this$0.getCarrier().noNewExchanges();
+                responseBodyComplete(Http1ExchangeCodec.TRAILERS_RESPONSE_BODY_TRUNCATED);
             }
             setClosed(true);
         }
@@ -468,20 +497,18 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Http1ExchangeCodec.kt */
-    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0082\u0004\u0018\u00002\u00060\u0001R\u00020\u0002B\r\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0002\u0010\u0005J\b\u0010\n\u001a\u00020\u000bH\u0016J\u0018\u0010\f\u001a\u00020\u00072\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0007H\u0016J\b\u0010\u0010\u001a\u00020\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$ChunkedSource;", "Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;", "Lokhttp3/internal/http1/Http1ExchangeCodec;", "url", "Lokhttp3/HttpUrl;", "(Lokhttp3/internal/http1/Http1ExchangeCodec;Lokhttp3/HttpUrl;)V", "bytesRemainingInChunk", "", "hasMoreChunks", "", "close", "", "read", "sink", "Lokio/Buffer;", "byteCount", "readChunkSize", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\b\u0082\u0004\u0018\u00002\u00060\u0001R\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0018\u0010\u000b\u001a\u00020\b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\bH\u0016J\b\u0010\u000f\u001a\u00020\u0010H\u0002J\b\u0010\u0011\u001a\u00020\u0010H\u0016R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$ChunkedSource;", "Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;", "Lokhttp3/internal/http1/Http1ExchangeCodec;", "url", "Lokhttp3/HttpUrl;", "<init>", "(Lokhttp3/internal/http1/Http1ExchangeCodec;Lokhttp3/HttpUrl;)V", "bytesRemainingInChunk", "", "hasMoreChunks", "", "read", "sink", "Lokio/Buffer;", "byteCount", "readChunkSize", "", "close", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public final class ChunkedSource extends AbstractSource {
         private long bytesRemainingInChunk;
         private boolean hasMoreChunks;
         final /* synthetic */ Http1ExchangeCodec this$0;
-        private final HttpUrl url;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ChunkedSource(Http1ExchangeCodec http1ExchangeCodec, HttpUrl url) {
-            super();
+            super(http1ExchangeCodec, url);
             Intrinsics.checkNotNullParameter(url, "url");
             this.this$0 = http1ExchangeCodec;
-            this.url = url;
             this.bytesRemainingInChunk = -1L;
             this.hasMoreChunks = true;
         }
@@ -505,9 +532,9 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                 }
                 long read = super.read(sink, Math.min(j, this.bytesRemainingInChunk));
                 if (read == -1) {
-                    this.this$0.getConnection().noNewExchanges$okhttp();
+                    this.this$0.getCarrier().noNewExchanges();
                     ProtocolException protocolException = new ProtocolException("unexpected end of stream");
-                    responseBodyComplete();
+                    responseBodyComplete(Http1ExchangeCodec.TRAILERS_RESPONSE_BODY_TRUNCATED);
                     throw protocolException;
                 }
                 this.bytesRemainingInChunk -= read;
@@ -527,16 +554,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                     throw new ProtocolException("expected chunk size and optional extensions but was \"" + this.bytesRemainingInChunk + obj + '\"');
                 } else if (this.bytesRemainingInChunk == 0) {
                     this.hasMoreChunks = false;
-                    Http1ExchangeCodec http1ExchangeCodec = this.this$0;
-                    http1ExchangeCodec.trailers = http1ExchangeCodec.headersReader.readHeaders();
-                    OkHttpClient okHttpClient = this.this$0.client;
-                    Intrinsics.checkNotNull(okHttpClient);
-                    CookieJar cookieJar = okHttpClient.cookieJar();
-                    HttpUrl httpUrl = this.url;
-                    Headers headers = this.this$0.trailers;
-                    Intrinsics.checkNotNull(headers);
-                    HttpHeaders.receiveHeaders(cookieJar, httpUrl, headers);
-                    responseBodyComplete();
+                    responseBodyComplete(this.this$0.headersReader.readHeaders());
                 }
             } catch (NumberFormatException e) {
                 throw new ProtocolException(e.getMessage());
@@ -548,9 +566,9 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             if (getClosed()) {
                 return;
             }
-            if (this.hasMoreChunks && !Util.discard(this, 100, TimeUnit.MILLISECONDS)) {
-                this.this$0.getConnection().noNewExchanges$okhttp();
-                responseBodyComplete();
+            if (this.hasMoreChunks && !_UtilJvmKt.discard(this, 100, TimeUnit.MILLISECONDS)) {
+                this.this$0.getCarrier().noNewExchanges();
+                responseBodyComplete(Http1ExchangeCodec.TRAILERS_RESPONSE_BODY_TRUNCATED);
             }
             setClosed(true);
         }
@@ -558,13 +576,17 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Http1ExchangeCodec.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0082\u0004\u0018\u00002\u00060\u0001R\u00020\u0002B\u0005¢\u0006\u0002\u0010\u0003J\b\u0010\u0006\u001a\u00020\u0007H\u0016J\u0018\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\tH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$UnknownLengthSource;", "Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;", "Lokhttp3/internal/http1/Http1ExchangeCodec;", "(Lokhttp3/internal/http1/Http1ExchangeCodec;)V", "inputExhausted", "", "close", "", "read", "", "sink", "Lokio/Buffer;", "byteCount", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\b\u0082\u0004\u0018\u00002\u00060\u0001R\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0018\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\nH\u0016J\b\u0010\u000e\u001a\u00020\u000fH\u0016R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$UnknownLengthSource;", "Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;", "Lokhttp3/internal/http1/Http1ExchangeCodec;", "url", "Lokhttp3/HttpUrl;", "<init>", "(Lokhttp3/internal/http1/Http1ExchangeCodec;Lokhttp3/HttpUrl;)V", "inputExhausted", "", "read", "", "sink", "Lokio/Buffer;", "byteCount", "close", "", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public final class UnknownLengthSource extends AbstractSource {
         private boolean inputExhausted;
+        final /* synthetic */ Http1ExchangeCodec this$0;
 
-        public UnknownLengthSource() {
-            super();
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public UnknownLengthSource(Http1ExchangeCodec http1ExchangeCodec, HttpUrl url) {
+            super(http1ExchangeCodec, url);
+            Intrinsics.checkNotNullParameter(url, "url");
+            this.this$0 = http1ExchangeCodec;
         }
 
         @Override // okhttp3.internal.http1.Http1ExchangeCodec.AbstractSource, okio.Source
@@ -582,7 +604,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             long read = super.read(sink, j);
             if (read == -1) {
                 this.inputExhausted = true;
-                responseBodyComplete();
+                responseBodyComplete(Headers.EMPTY);
                 return -1L;
             }
             return read;
@@ -594,14 +616,14 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                 return;
             }
             if (!this.inputExhausted) {
-                responseBodyComplete();
+                responseBodyComplete(Http1ExchangeCodec.TRAILERS_RESPONSE_BODY_TRUNCATED);
             }
             setClosed(true);
         }
     }
 
     /* compiled from: Http1ExchangeCodec.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$Companion;", "", "()V", "NO_CHUNK_YET", "", "STATE_CLOSED", "", "STATE_IDLE", "STATE_OPEN_REQUEST_BODY", "STATE_OPEN_RESPONSE_BODY", "STATE_READING_RESPONSE_BODY", "STATE_READ_RESPONSE_HEADERS", "STATE_WRITING_REQUEST_BODY", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lokhttp3/internal/http1/Http1ExchangeCodec$Companion;", "", "<init>", "()V", "NO_CHUNK_YET", "", "STATE_IDLE", "", "STATE_OPEN_REQUEST_BODY", "STATE_WRITING_REQUEST_BODY", "STATE_READ_RESPONSE_HEADERS", "STATE_OPEN_RESPONSE_BODY", "STATE_READING_RESPONSE_BODY", "STATE_CLOSED", "TRAILERS_RESPONSE_BODY_TRUNCATED", "Lokhttp3/Headers;", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

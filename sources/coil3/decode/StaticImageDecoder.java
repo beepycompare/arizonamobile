@@ -101,12 +101,12 @@ public final class StaticImageDecoder implements Decoder {
                             options2 = StaticImageDecoder.this.options;
                             Scale scale = options2.getScale();
                             options3 = StaticImageDecoder.this.options;
-                            long m7771computeDstSizesEdh43o = DecodeUtils.m7771computeDstSizesEdh43o(width, height, size2, scale, ImageRequestsKt.getMaxBitmapSize(options3));
-                            int m7829getFirstimpl = IntPair.m7829getFirstimpl(m7771computeDstSizesEdh43o);
-                            int m7830getSecondimpl = IntPair.m7830getSecondimpl(m7771computeDstSizesEdh43o);
-                            if (width > 0 && height > 0 && (width != m7829getFirstimpl || height != m7830getSecondimpl)) {
+                            long m7772computeDstSizesEdh43o = DecodeUtils.m7772computeDstSizesEdh43o(width, height, size2, scale, ImageRequestsKt.getMaxBitmapSize(options3));
+                            int m7830getFirstimpl = IntPair.m7830getFirstimpl(m7772computeDstSizesEdh43o);
+                            int m7831getSecondimpl = IntPair.m7831getSecondimpl(m7772computeDstSizesEdh43o);
+                            if (width > 0 && height > 0 && (width != m7830getFirstimpl || height != m7831getSecondimpl)) {
                                 options4 = StaticImageDecoder.this.options;
-                                double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, height, m7829getFirstimpl, m7830getSecondimpl, options4.getScale());
+                                double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, height, m7830getFirstimpl, m7831getSecondimpl, options4.getScale());
                                 booleanRef.element = computeSizeMultiplier < 1.0d;
                                 if (!booleanRef.element) {
                                     options5 = StaticImageDecoder.this.options;
@@ -144,12 +144,12 @@ public final class StaticImageDecoder implements Decoder {
                     options2 = StaticImageDecoder.this.options;
                     Scale scale = options2.getScale();
                     options3 = StaticImageDecoder.this.options;
-                    long m7771computeDstSizesEdh43o = DecodeUtils.m7771computeDstSizesEdh43o(width, height, size2, scale, ImageRequestsKt.getMaxBitmapSize(options3));
-                    int m7829getFirstimpl = IntPair.m7829getFirstimpl(m7771computeDstSizesEdh43o);
-                    int m7830getSecondimpl = IntPair.m7830getSecondimpl(m7771computeDstSizesEdh43o);
-                    if (width > 0 && height > 0 && (width != m7829getFirstimpl || height != m7830getSecondimpl)) {
+                    long m7772computeDstSizesEdh43o = DecodeUtils.m7772computeDstSizesEdh43o(width, height, size2, scale, ImageRequestsKt.getMaxBitmapSize(options3));
+                    int m7830getFirstimpl = IntPair.m7830getFirstimpl(m7772computeDstSizesEdh43o);
+                    int m7831getSecondimpl = IntPair.m7831getSecondimpl(m7772computeDstSizesEdh43o);
+                    if (width > 0 && height > 0 && (width != m7830getFirstimpl || height != m7831getSecondimpl)) {
                         options4 = StaticImageDecoder.this.options;
-                        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, height, m7829getFirstimpl, m7830getSecondimpl, options4.getScale());
+                        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, height, m7830getFirstimpl, m7831getSecondimpl, options4.getScale());
                         booleanRef2.element = computeSizeMultiplier < 1.0d;
                         if (!booleanRef2.element) {
                             options5 = StaticImageDecoder.this.options;

@@ -28,7 +28,7 @@ import com.miami.game.core.fonts.resources.R;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Type.kt */
-@Metadata(d1 = {"\u0000\u0018\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0017\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0004\b\b\u0010\t\"\u0011\u0010\u0000\u001a\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u0003¨\u0006\n"}, d2 = {"Typography", "Landroidx/compose/material3/Typography;", "getTypography", "()Landroidx/compose/material3/Typography;", "dpToSp", "Landroidx/compose/ui/unit/TextUnit;", "dp", "Landroidx/compose/ui/unit/Dp;", "dpToSp-8Feqmps", "(FLandroidx/compose/runtime/Composer;I)J", "design-system_release_web"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0018\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0017\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0004\b\b\u0010\t\"\u0011\u0010\u0000\u001a\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u0003¨\u0006\n"}, d2 = {"Typography", "Landroidx/compose/material3/Typography;", "getTypography", "()Landroidx/compose/material3/Typography;", "dpToSp", "Landroidx/compose/ui/unit/TextUnit;", "dp", "Landroidx/compose/ui/unit/Dp;", "dpToSp-8Feqmps", "(FLandroidx/compose/runtime/Composer;I)J", "design-system_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class TypeKt {
     private static final Typography Typography;
@@ -60,9 +60,8 @@ public final class TypeKt {
     }
 
     /* renamed from: dpToSp-8Feqmps  reason: not valid java name */
-    public static final long m8401dpToSp8Feqmps(float f, Composer composer, int i) {
-        composer.startReplaceGroup(927535330);
-        ComposerKt.sourceInformation(composer, "C(dpToSp)P(0:c#ui.unit.Dp)73@2421L7:Type.kt#3dgxrl");
+    public static final long m8428dpToSp8Feqmps(float f, Composer composer, int i) {
+        ComposerKt.sourceInformationMarkerStart(composer, 927535330, "C(dpToSp)P(0:c#ui.unit.Dp)73@2421L7:Type.kt#3dgxrl");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(927535330, i, -1, "com.miami.game.ui.theme.dpToSp (Type.kt:73)");
         }
@@ -73,7 +72,7 @@ public final class TypeKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
-        composer.endReplaceGroup();
+        ComposerKt.sourceInformationMarkerEnd(composer);
         return j;
     }
 }

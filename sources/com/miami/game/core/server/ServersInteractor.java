@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.miami.game.core.api.model.response.servers.ServersApiModelItem;
 import com.miami.game.core.api.network.NetworkDataSource;
 import com.miami.game.core.build.config.BuildConfigRepository;
+import com.miami.game.core.local.repository.common.IKeyValueRepository;
 import com.miami.game.core.local.repository.common.LocalRepository;
 import com.miami.game.core.server.data.FavoriteServerDao;
 import com.miami.game.core.server.data.FavoriteServerDatabase;
@@ -27,6 +28,7 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.io.CloseableKt;
 import kotlin.io.TextStreamsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -45,7 +47,7 @@ import kotlinx.coroutines.flow.StateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 /* compiled from: ServersInteractor.kt */
 @Singleton
-@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\b\u0007\u0018\u0000 32\u00020\u0001:\u00013B)\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\b\u0010\u0015\u001a\u00020\u0016H\u0002J\u0006\u0010\u0017\u001a\u00020\u0016J\u0018\u0010\u0018\u001a\n\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00192\u0006\u0010\u001b\u001a\u00020\u001cH\u0002J\b\u0010\u001d\u001a\u00020\u0016H\u0002J\u000e\u0010\u001e\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u000e\u0010 \u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u0016\u0010!\u001a\u00020\u00162\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020#0\u0019H\u0002J\u0016\u0010$\u001a\u00020%2\f\u0010&\u001a\b\u0012\u0004\u0012\u00020'0\u0019H\u0002J\u000e\u0010(\u001a\u00020\u00162\u0006\u0010)\u001a\u00020'J\u000e\u0010*\u001a\u00020\u00162\u0006\u0010)\u001a\u00020'J\u000e\u0010+\u001a\u00020\u00162\u0006\u0010)\u001a\u00020'J\b\u0010,\u001a\u00020\u0016H\u0002J\u0016\u0010-\u001a\u00020\u00162\f\u0010&\u001a\b\u0012\u0004\u0012\u00020'0\u0019H\u0002J\u0006\u0010.\u001a\u00020\u0016J\u0006\u0010/\u001a\u00020\u0016J\u0006\u00100\u001a\u00020\u0016J\u000e\u00101\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u000e\u00102\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014¨\u00064"}, d2 = {"Lcom/miami/game/core/server/ServersInteractor;", "", "buildConfig", "Lcom/miami/game/core/build/config/BuildConfigRepository;", "dataSource", "Lcom/miami/game/core/api/network/NetworkDataSource;", "localRepository", "Lcom/miami/game/core/local/repository/common/LocalRepository;", "favoriteServerDatabase", "Lcom/miami/game/core/server/data/FavoriteServerDatabase;", "<init>", "(Lcom/miami/game/core/build/config/BuildConfigRepository;Lcom/miami/game/core/api/network/NetworkDataSource;Lcom/miami/game/core/local/repository/common/LocalRepository;Lcom/miami/game/core/server/data/FavoriteServerDatabase;)V", "scope", "Lkotlinx/coroutines/CoroutineScope;", "stateStore", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/core/server/model/ServersState;", "interactorStateFlow", "Lkotlinx/coroutines/flow/StateFlow;", "getInteractorStateFlow", "()Lkotlinx/coroutines/flow/StateFlow;", "initial", "", "retry", "readDataAssets", "", "Lcom/miami/game/core/api/model/response/servers/ServersApiModelItem;", "fileName", "", "observeFavorite", "checkFavorite", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "firstLaunch", "updateFavorites", "favoritesList", "Lcom/miami/game/core/server/data/FavoriteServerEntity;", "getDonateMultiple", "", "list", "Lcom/miami/game/core/server/model/ServerModel;", "selectServer", "serverModel", "favoriteServer", "favoriteServerStartGame", "getCurrentServer", "getCurrentServerLocal", "filterMobileList", "filterDesktopList", "filterFavoriteList", "getServersMobileList", "getServersDesktopList", "Companion", "server_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\b\u0007\u0018\u0000 32\u00020\u0001:\u00013B)\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\b\u0010\u0015\u001a\u00020\u0016H\u0002J\u0006\u0010\u0017\u001a\u00020\u0016J\u0018\u0010\u0018\u001a\n\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00192\u0006\u0010\u001b\u001a\u00020\u001cH\u0002J\b\u0010\u001d\u001a\u00020\u0016H\u0002J\u000e\u0010\u001e\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u000e\u0010 \u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u0016\u0010!\u001a\u00020\u00162\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020#0\u0019H\u0002J\u0016\u0010$\u001a\u00020%2\f\u0010&\u001a\b\u0012\u0004\u0012\u00020'0\u0019H\u0002J\u000e\u0010(\u001a\u00020\u00162\u0006\u0010)\u001a\u00020'J\u000e\u0010*\u001a\u00020\u00162\u0006\u0010)\u001a\u00020'J\u000e\u0010+\u001a\u00020\u00162\u0006\u0010)\u001a\u00020'J\b\u0010,\u001a\u00020\u0016H\u0002J\u0016\u0010-\u001a\u00020\u00162\f\u0010&\u001a\b\u0012\u0004\u0012\u00020'0\u0019H\u0002J\u0006\u0010.\u001a\u00020\u0016J\u0006\u0010/\u001a\u00020\u0016J\u0006\u00100\u001a\u00020\u0016J\u000e\u00101\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u000e\u00102\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014¨\u00064"}, d2 = {"Lcom/miami/game/core/server/ServersInteractor;", "", "buildConfig", "Lcom/miami/game/core/build/config/BuildConfigRepository;", "dataSource", "Lcom/miami/game/core/api/network/NetworkDataSource;", "localRepository", "Lcom/miami/game/core/local/repository/common/LocalRepository;", "favoriteServerDatabase", "Lcom/miami/game/core/server/data/FavoriteServerDatabase;", "<init>", "(Lcom/miami/game/core/build/config/BuildConfigRepository;Lcom/miami/game/core/api/network/NetworkDataSource;Lcom/miami/game/core/local/repository/common/LocalRepository;Lcom/miami/game/core/server/data/FavoriteServerDatabase;)V", "scope", "Lkotlinx/coroutines/CoroutineScope;", "stateStore", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/core/server/model/ServersState;", "interactorStateFlow", "Lkotlinx/coroutines/flow/StateFlow;", "getInteractorStateFlow", "()Lkotlinx/coroutines/flow/StateFlow;", "initial", "", "retry", "readDataAssets", "", "Lcom/miami/game/core/api/model/response/servers/ServersApiModelItem;", "fileName", "", "observeFavorite", "checkFavorite", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "firstLaunch", "updateFavorites", "favoritesList", "Lcom/miami/game/core/server/data/FavoriteServerEntity;", "getDonateMultiple", "", "list", "Lcom/miami/game/core/server/model/ServerModel;", "selectServer", "serverModel", "favoriteServer", "favoriteServerStartGame", "getCurrentServer", "getCurrentServerLocal", "filterMobileList", "filterDesktopList", "filterFavoriteList", "getServersMobileList", "getServersDesktopList", "Companion", "server_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ServersInteractor {
     public static final String CURRENT_SERVER_KEY = "CURRENT_SERVER";
@@ -290,33 +292,33 @@ public final class ServersInteractor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Can't wrap try/catch for region: R(16:1|(2:3|(14:5|6|7|(1:(1:(1:(1:(3:13|14|15)(2:17|18))(6:19|20|21|(1:22)|24|25))(5:29|30|(4:32|(2:35|33)|36|37)(1:44)|(5:39|(2:41|(2:43|27))|21|(1:22)|24)|25))(1:45))(3:97|98|(2:100|27))|46|47|(2:49|(3:51|(2:52|(1:55)(1:54))|56)(2:76|(6:80|(2:83|81)|84|85|(5:86|(2:89|87)|90|91|(1:94)(1:93))|95)))(1:96)|(5:62|(2:65|63)|66|67|(2:68|(1:71)(1:70)))(0)|73|(2:75|27)|30|(0)(0)|(0)|25))|105|6|7|(0)(0)|46|47|(0)(0)|(7:58|60|62|(1:63)|66|67|(3:68|(0)(0)|70))(0)|73|(0)|30|(0)(0)|(0)|25) */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0056, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(16:1|(2:3|(14:5|6|7|(1:(1:(1:(1:(3:13|14|15)(2:17|18))(6:19|20|21|(1:22)|24|25))(5:29|30|(4:32|(2:35|33)|36|37)(1:44)|(5:39|(2:41|(2:43|27))|21|(1:22)|24)|25))(2:45|46))(3:98|99|(2:101|27))|47|48|(2:50|(3:52|(2:53|(1:56)(1:55))|57)(2:77|(6:81|(2:84|82)|85|86|(5:87|(2:90|88)|91|92|(1:95)(1:94))|96)))(1:97)|(5:63|(2:66|64)|67|68|(2:69|(1:72)(1:71)))(0)|74|(2:76|27)|30|(0)(0)|(0)|25))|106|6|7|(0)(0)|47|48|(0)(0)|(7:59|61|63|(1:64)|67|68|(3:69|(0)(0)|71))(0)|74|(0)|30|(0)(0)|(0)|25) */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x005c, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x01d4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x01f2, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x01d5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x01f3, code lost:
         timber.log.Timber.Forest.tag("ServersInteractor").d(java.lang.String.valueOf(r0.getMessage()), new java.lang.Object[0]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:94:0x0270, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x0298, code lost:
         timber.log.Timber.Forest.tag("ServersInteractor").d(java.lang.String.valueOf(r0.getMessage()), new java.lang.Object[0]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:96:0x028d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x02b7, code lost:
         if (checkFavorite(r2) != r3) goto L14;
      */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x01e8 A[EDGE_INSN: B:107:0x01e8->B:73:0x01e8 ?: BREAK  , SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0206 A[EDGE_INSN: B:108:0x0206->B:74:0x0206 ?: BREAK  , SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0033  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0081 A[Catch: Exception -> 0x01d4, TRY_ENTER, TryCatch #1 {Exception -> 0x01d4, blocks: (B:23:0x0059, B:29:0x007b, B:32:0x0081, B:34:0x008a, B:35:0x008f, B:58:0x016b, B:60:0x0171, B:62:0x017a, B:63:0x018b, B:65:0x0191, B:66:0x01a5, B:67:0x01ac, B:39:0x00cb, B:41:0x00d3, B:43:0x00dc, B:44:0x00ee, B:46:0x00f4, B:47:0x0109, B:48:0x0110, B:49:0x012a, B:51:0x0130, B:52:0x0145, B:26:0x0060), top: B:100:0x0031 }] */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0167  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0191 A[Catch: Exception -> 0x01d4, LOOP:3: B:63:0x018b->B:65:0x0191, LOOP_END, TryCatch #1 {Exception -> 0x01d4, blocks: (B:23:0x0059, B:29:0x007b, B:32:0x0081, B:34:0x008a, B:35:0x008f, B:58:0x016b, B:60:0x0171, B:62:0x017a, B:63:0x018b, B:65:0x0191, B:66:0x01a5, B:67:0x01ac, B:39:0x00cb, B:41:0x00d3, B:43:0x00dc, B:44:0x00ee, B:46:0x00f4, B:47:0x0109, B:48:0x0110, B:49:0x012a, B:51:0x0130, B:52:0x0145, B:26:0x0060), top: B:100:0x0031 }] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01d1 A[LOOP:4: B:67:0x01ac->B:70:0x01d1, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x01f3  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x01f9 A[Catch: Exception -> 0x0056, TryCatch #0 {Exception -> 0x0056, blocks: (B:18:0x004c, B:90:0x0244, B:91:0x0246, B:19:0x0051, B:76:0x01f5, B:78:0x01f9, B:79:0x020a, B:81:0x0210, B:82:0x0224, B:85:0x022a, B:87:0x0236, B:73:0x01e8), top: B:100:0x0031 }] */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0227  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x022a A[Catch: Exception -> 0x0056, TryCatch #0 {Exception -> 0x0056, blocks: (B:18:0x004c, B:90:0x0244, B:91:0x0246, B:19:0x0051, B:76:0x01f5, B:78:0x01f9, B:79:0x020a, B:81:0x0210, B:82:0x0224, B:85:0x022a, B:87:0x0236, B:73:0x01e8), top: B:100:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x009f A[Catch: Exception -> 0x01f2, TRY_ENTER, TryCatch #1 {Exception -> 0x01f2, blocks: (B:24:0x0069, B:30:0x0099, B:33:0x009f, B:35:0x00a8, B:36:0x00ad, B:59:0x0189, B:61:0x018f, B:63:0x0198, B:64:0x01a9, B:66:0x01af, B:67:0x01c3, B:68:0x01ca, B:40:0x00e9, B:42:0x00f1, B:44:0x00fa, B:45:0x010c, B:47:0x0112, B:48:0x0127, B:49:0x012e, B:50:0x0148, B:52:0x014e, B:53:0x0163, B:27:0x0070), top: B:101:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0185  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x01af A[Catch: Exception -> 0x01f2, LOOP:3: B:64:0x01a9->B:66:0x01af, LOOP_END, TryCatch #1 {Exception -> 0x01f2, blocks: (B:24:0x0069, B:30:0x0099, B:33:0x009f, B:35:0x00a8, B:36:0x00ad, B:59:0x0189, B:61:0x018f, B:63:0x0198, B:64:0x01a9, B:66:0x01af, B:67:0x01c3, B:68:0x01ca, B:40:0x00e9, B:42:0x00f1, B:44:0x00fa, B:45:0x010c, B:47:0x0112, B:48:0x0127, B:49:0x012e, B:50:0x0148, B:52:0x014e, B:53:0x0163, B:27:0x0070), top: B:101:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x01ef A[LOOP:4: B:68:0x01ca->B:71:0x01ef, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0216  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x021c A[Catch: Exception -> 0x005c, TryCatch #0 {Exception -> 0x005c, blocks: (B:18:0x0052, B:91:0x026f, B:92:0x0271, B:19:0x0057, B:77:0x0218, B:79:0x021c, B:80:0x022d, B:82:0x0233, B:83:0x0247, B:86:0x024d, B:88:0x0259, B:74:0x0206), top: B:101:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x024a  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x024d A[Catch: Exception -> 0x005c, TryCatch #0 {Exception -> 0x005c, blocks: (B:18:0x0052, B:91:0x026f, B:92:0x0271, B:19:0x0057, B:77:0x0218, B:79:0x021c, B:80:0x022d, B:82:0x0233, B:83:0x0247, B:86:0x024d, B:88:0x0259, B:74:0x0206), top: B:101:0x0031 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -345,12 +347,19 @@ public final class ServersInteractor {
                 i = serversInteractor$getServersMobileList$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
+                    LocalRepository localRepository = this.localRepository;
+                    serversInteractor$getServersMobileList$1.L$0 = SpillingKt.nullOutSpilledVariable(localRepository);
+                    serversInteractor$getServersMobileList$1.L$1 = SpillingKt.nullOutSpilledVariable(MOBILE_LIST_KEY);
+                    serversInteractor$getServersMobileList$1.I$0 = 0;
                     serversInteractor$getServersMobileList$1.label = 1;
-                    obj = BuildersKt.withContext(Dispatchers.getIO(), new ServersInteractor$getServersMobileList$$inlined$getSuspend$1(this.localRepository, MOBILE_LIST_KEY, null), serversInteractor$getServersMobileList$1);
+                    obj = BuildersKt.withContext(Dispatchers.getIO(), new ServersInteractor$getServersMobileList$$inlined$getSuspend$1(localRepository, MOBILE_LIST_KEY, null), serversInteractor$getServersMobileList$1);
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i == 1) {
+                    int i2 = serversInteractor$getServersMobileList$1.I$0;
+                    String str = (String) serversInteractor$getServersMobileList$1.L$1;
+                    IKeyValueRepository iKeyValueRepository = (IKeyValueRepository) serversInteractor$getServersMobileList$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 } else if (i == 2) {
                     ResultKt.throwOnFailure(obj);
@@ -368,10 +377,12 @@ public final class ServersInteractor {
                     if (arrayList != null) {
                         getCurrentServer();
                         if (!arrayList.isEmpty()) {
-                            LocalRepository localRepository = this.localRepository;
+                            LocalRepository localRepository2 = this.localRepository;
                             serversInteractor$getServersMobileList$1.L$0 = arrayList;
+                            serversInteractor$getServersMobileList$1.L$1 = SpillingKt.nullOutSpilledVariable(arrayList);
+                            serversInteractor$getServersMobileList$1.I$0 = 0;
                             serversInteractor$getServersMobileList$1.label = 3;
-                            if (localRepository.save2(MOBILE_LIST_KEY, (String) arrayList, (Continuation<? super Unit>) serversInteractor$getServersMobileList$1) == coroutine_suspended) {
+                            if (localRepository2.save2(MOBILE_LIST_KEY, (String) arrayList, (Continuation<? super Unit>) serversInteractor$getServersMobileList$1) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         }
@@ -381,6 +392,7 @@ public final class ServersInteractor {
                         } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, CollectionsKt.toList(arrayList), null, null, null, false, 0, 125, null)));
                     }
                     serversInteractor$getServersMobileList$1.L$0 = null;
+                    serversInteractor$getServersMobileList$1.L$1 = null;
                     serversInteractor$getServersMobileList$1.label = 4;
                 } else if (i != 3) {
                     if (i == 4) {
@@ -389,6 +401,8 @@ public final class ServersInteractor {
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
+                    int i3 = serversInteractor$getServersMobileList$1.I$0;
+                    List list7 = (List) serversInteractor$getServersMobileList$1.L$1;
                     arrayList = (List) serversInteractor$getServersMobileList$1.L$0;
                     ResultKt.throwOnFailure(obj);
                     mutableStateFlow = this.stateStore;
@@ -396,6 +410,7 @@ public final class ServersInteractor {
                         value = mutableStateFlow.getValue();
                     } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, CollectionsKt.toList(arrayList), null, null, null, false, 0, 125, null)));
                     serversInteractor$getServersMobileList$1.L$0 = null;
+                    serversInteractor$getServersMobileList$1.L$1 = null;
                     serversInteractor$getServersMobileList$1.label = 4;
                 }
                 list2 = (List) obj;
@@ -417,9 +432,9 @@ public final class ServersInteractor {
                         list3 = list2;
                         List<ServersApiModelItem> readDataAssets2 = readDataAssets("server_mobile.json");
                         if (readDataAssets2 != null && !readDataAssets2.isEmpty()) {
-                            List<ServersApiModelItem> list7 = readDataAssets2;
-                            List<ServerModel> arrayList3 = new ArrayList<>(CollectionsKt.collectionSizeOrDefault(list7, 10));
-                            for (ServersApiModelItem serversApiModelItem2 : list7) {
+                            List<ServersApiModelItem> list8 = readDataAssets2;
+                            List<ServerModel> arrayList3 = new ArrayList<>(CollectionsKt.collectionSizeOrDefault(list8, 10));
+                            for (ServersApiModelItem serversApiModelItem2 : list8) {
                                 arrayList3.add(ServerModelKt.toDomain(serversApiModelItem2, true, this.buildConfig.isArizona()));
                             }
                             getCurrentServerLocal(arrayList3);
@@ -427,9 +442,9 @@ public final class ServersInteractor {
                             while (true) {
                                 ServersState value4 = mutableStateFlow5.getValue();
                                 ServersState serversState = value4;
-                                List<ServersApiModelItem> list8 = readDataAssets2;
-                                ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list8, 10));
-                                for (ServersApiModelItem serversApiModelItem3 : list8) {
+                                List<ServersApiModelItem> list9 = readDataAssets2;
+                                ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list9, 10));
+                                for (ServersApiModelItem serversApiModelItem3 : list9) {
                                     arrayList4.add(ServerModelKt.toDomain(serversApiModelItem3, true, this.buildConfig.isArizona()));
                                 }
                                 if (mutableStateFlow5.compareAndSet(value4, ServersState.copy$default(serversState, null, arrayList4, null, null, null, false, 0, 125, null))) {
@@ -442,9 +457,9 @@ public final class ServersInteractor {
                     list3 = list2;
                 }
                 if (list3 == null && (readDataAssets = readDataAssets("server_mobile.json")) != null && !readDataAssets.isEmpty()) {
-                    List<ServersApiModelItem> list9 = readDataAssets;
-                    List<ServerModel> arrayList5 = new ArrayList<>(CollectionsKt.collectionSizeOrDefault(list9, 10));
-                    for (ServersApiModelItem serversApiModelItem4 : list9) {
+                    List<ServersApiModelItem> list10 = readDataAssets;
+                    List<ServerModel> arrayList5 = new ArrayList<>(CollectionsKt.collectionSizeOrDefault(list10, 10));
+                    for (ServersApiModelItem serversApiModelItem4 : list10) {
                         arrayList5.add(ServerModelKt.toDomain(serversApiModelItem4, false, this.buildConfig.isArizona()));
                     }
                     list4 = arrayList5;
@@ -460,6 +475,8 @@ public final class ServersInteractor {
                     }
                 }
                 NetworkDataSource networkDataSource = this.dataSource;
+                serversInteractor$getServersMobileList$1.L$0 = null;
+                serversInteractor$getServersMobileList$1.L$1 = null;
                 serversInteractor$getServersMobileList$1.label = 2;
                 obj = networkDataSource.getServersMobile(serversInteractor$getServersMobileList$1);
                 if (obj == coroutine_suspended) {
@@ -471,6 +488,7 @@ public final class ServersInteractor {
                 if (arrayList != null) {
                 }
                 serversInteractor$getServersMobileList$1.L$0 = null;
+                serversInteractor$getServersMobileList$1.L$1 = null;
                 serversInteractor$getServersMobileList$1.label = 4;
             }
         }
@@ -484,8 +502,8 @@ public final class ServersInteractor {
         if (list2 == null) {
         }
         if (list3 == null) {
-            List<ServersApiModelItem> list92 = readDataAssets;
-            List<ServerModel> arrayList52 = new ArrayList<>(CollectionsKt.collectionSizeOrDefault(list92, 10));
+            List<ServersApiModelItem> list102 = readDataAssets;
+            List<ServerModel> arrayList52 = new ArrayList<>(CollectionsKt.collectionSizeOrDefault(list102, 10));
             while (r0.hasNext()) {
             }
             list4 = arrayList52;
@@ -500,6 +518,8 @@ public final class ServersInteractor {
             }
         }
         NetworkDataSource networkDataSource2 = this.dataSource;
+        serversInteractor$getServersMobileList$1.L$0 = null;
+        serversInteractor$getServersMobileList$1.L$1 = null;
         serversInteractor$getServersMobileList$1.label = 2;
         obj = networkDataSource2.getServersMobile(serversInteractor$getServersMobileList$1);
         if (obj == coroutine_suspended) {
@@ -510,37 +530,38 @@ public final class ServersInteractor {
         if (arrayList != null) {
         }
         serversInteractor$getServersMobileList$1.L$0 = null;
+        serversInteractor$getServersMobileList$1.L$1 = null;
         serversInteractor$getServersMobileList$1.label = 4;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Can't wrap try/catch for region: R(16:1|(2:3|(14:5|6|7|(1:(1:(1:(1:(3:13|14|15)(2:17|18))(6:19|20|21|(1:22)|24|25))(5:29|30|(4:32|(2:35|33)|36|37)(1:44)|(5:39|(2:41|(2:43|27))|21|(1:22)|24)|25))(1:45))(3:92|93|(2:95|27))|46|47|(2:49|(3:51|(2:52|(1:55)(1:54))|56)(2:76|(6:80|(2:83|81)|84|85|(2:86|(1:89)(1:88))|90)))(1:91)|(5:62|(2:65|63)|66|67|(2:68|(1:71)(1:70)))(0)|73|(2:75|27)|30|(0)(0)|(0)|25))|100|6|7|(0)(0)|46|47|(0)(0)|(7:58|60|62|(1:63)|66|67|(3:68|(0)(0)|70))(0)|73|(0)|30|(0)(0)|(0)|25) */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0056, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(16:1|(2:3|(14:5|6|7|(1:(1:(1:(1:(3:13|14|15)(2:17|18))(6:19|20|21|(1:22)|24|25))(5:29|30|(4:32|(2:35|33)|36|37)(1:44)|(5:39|(2:41|(2:43|27))|21|(1:22)|24)|25))(2:45|46))(3:93|94|(2:96|27))|47|48|(2:50|(3:52|(2:53|(1:56)(1:55))|57)(2:77|(6:81|(2:84|82)|85|86|(2:87|(1:90)(1:89))|91)))(1:92)|(5:63|(2:66|64)|67|68|(2:69|(1:72)(1:71)))(0)|74|(2:76|27)|30|(0)(0)|(0)|25))|101|6|7|(0)(0)|47|48|(0)(0)|(7:59|61|63|(1:64)|67|68|(3:69|(0)(0)|71))(0)|74|(0)|30|(0)(0)|(0)|25) */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x005c, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x0195, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x01b3, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x0196, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x01b4, code lost:
         timber.log.Timber.Forest.tag("ServersInteractor").d(java.lang.String.valueOf(r0.getMessage()), new java.lang.Object[0]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x0228, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:91:0x0252, code lost:
         timber.log.Timber.Forest.tag("ServersInteractor").d(java.lang.String.valueOf(r0.getMessage()), new java.lang.Object[0]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x0243, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x026f, code lost:
         if (checkFavorite(r2) != r3) goto L14;
      */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x01a9 A[EDGE_INSN: B:103:0x01a9->B:69:0x01a9 ?: BREAK  , SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x01c7 A[EDGE_INSN: B:104:0x01c7->B:70:0x01c7 ?: BREAK  , SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0033  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0081 A[Catch: Exception -> 0x0195, TRY_ENTER, TryCatch #1 {Exception -> 0x0195, blocks: (B:23:0x0059, B:29:0x007b, B:32:0x0081, B:34:0x008a, B:35:0x008f, B:54:0x012e, B:56:0x0134, B:58:0x013d, B:59:0x014e, B:61:0x0154, B:62:0x0168, B:63:0x016f, B:39:0x00bf, B:41:0x00c7, B:43:0x00d0, B:44:0x00e1, B:46:0x00e7, B:47:0x00fb, B:48:0x0102, B:26:0x0060), top: B:96:0x0031 }] */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x012a  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0154 A[Catch: Exception -> 0x0195, LOOP:3: B:59:0x014e->B:61:0x0154, LOOP_END, TryCatch #1 {Exception -> 0x0195, blocks: (B:23:0x0059, B:29:0x007b, B:32:0x0081, B:34:0x008a, B:35:0x008f, B:54:0x012e, B:56:0x0134, B:58:0x013d, B:59:0x014e, B:61:0x0154, B:62:0x0168, B:63:0x016f, B:39:0x00bf, B:41:0x00c7, B:43:0x00d0, B:44:0x00e1, B:46:0x00e7, B:47:0x00fb, B:48:0x0102, B:26:0x0060), top: B:96:0x0031 }] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0192 A[LOOP:4: B:63:0x016f->B:66:0x0192, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x01b3  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01b9 A[Catch: Exception -> 0x0056, TryCatch #0 {Exception -> 0x0056, blocks: (B:18:0x004c, B:86:0x0200, B:87:0x0207, B:19:0x0051, B:72:0x01b5, B:74:0x01b9, B:75:0x01ca, B:77:0x01d0, B:78:0x01e4, B:81:0x01ea, B:83:0x01f3, B:69:0x01a9), top: B:96:0x0031 }] */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x01e7  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x01ea A[Catch: Exception -> 0x0056, TryCatch #0 {Exception -> 0x0056, blocks: (B:18:0x004c, B:86:0x0200, B:87:0x0207, B:19:0x0051, B:72:0x01b5, B:74:0x01b9, B:75:0x01ca, B:77:0x01d0, B:78:0x01e4, B:81:0x01ea, B:83:0x01f3, B:69:0x01a9), top: B:96:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x009f A[Catch: Exception -> 0x01b3, TRY_ENTER, TryCatch #1 {Exception -> 0x01b3, blocks: (B:24:0x0069, B:30:0x0099, B:33:0x009f, B:35:0x00a8, B:36:0x00ad, B:55:0x014c, B:57:0x0152, B:59:0x015b, B:60:0x016c, B:62:0x0172, B:63:0x0186, B:64:0x018d, B:40:0x00dd, B:42:0x00e5, B:44:0x00ee, B:45:0x00ff, B:47:0x0105, B:48:0x0119, B:49:0x0120, B:27:0x0070), top: B:97:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0148  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0172 A[Catch: Exception -> 0x01b3, LOOP:3: B:60:0x016c->B:62:0x0172, LOOP_END, TryCatch #1 {Exception -> 0x01b3, blocks: (B:24:0x0069, B:30:0x0099, B:33:0x009f, B:35:0x00a8, B:36:0x00ad, B:55:0x014c, B:57:0x0152, B:59:0x015b, B:60:0x016c, B:62:0x0172, B:63:0x0186, B:64:0x018d, B:40:0x00dd, B:42:0x00e5, B:44:0x00ee, B:45:0x00ff, B:47:0x0105, B:48:0x0119, B:49:0x0120, B:27:0x0070), top: B:97:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x01b0 A[LOOP:4: B:64:0x018d->B:67:0x01b0, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01d5  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x01db A[Catch: Exception -> 0x005c, TryCatch #0 {Exception -> 0x005c, blocks: (B:18:0x0052, B:87:0x022a, B:88:0x0231, B:19:0x0057, B:73:0x01d7, B:75:0x01db, B:76:0x01ec, B:78:0x01f2, B:79:0x0206, B:82:0x020c, B:84:0x0215, B:70:0x01c7), top: B:97:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0209  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x020c A[Catch: Exception -> 0x005c, TryCatch #0 {Exception -> 0x005c, blocks: (B:18:0x0052, B:87:0x022a, B:88:0x0231, B:19:0x0057, B:73:0x01d7, B:75:0x01db, B:76:0x01ec, B:78:0x01f2, B:79:0x0206, B:82:0x020c, B:84:0x0215, B:70:0x01c7), top: B:97:0x0031 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -570,12 +591,19 @@ public final class ServersInteractor {
                 i = serversInteractor$getServersDesktopList$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
+                    LocalRepository localRepository = this.localRepository;
+                    serversInteractor$getServersDesktopList$1.L$0 = SpillingKt.nullOutSpilledVariable(localRepository);
+                    serversInteractor$getServersDesktopList$1.L$1 = SpillingKt.nullOutSpilledVariable(DESKTOP_LIST_KEY);
+                    serversInteractor$getServersDesktopList$1.I$0 = 0;
                     serversInteractor$getServersDesktopList$1.label = 1;
-                    obj = BuildersKt.withContext(Dispatchers.getIO(), new ServersInteractor$getServersDesktopList$$inlined$getSuspend$1(this.localRepository, DESKTOP_LIST_KEY, null), serversInteractor$getServersDesktopList$1);
+                    obj = BuildersKt.withContext(Dispatchers.getIO(), new ServersInteractor$getServersDesktopList$$inlined$getSuspend$1(localRepository, DESKTOP_LIST_KEY, null), serversInteractor$getServersDesktopList$1);
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i == 1) {
+                    int i2 = serversInteractor$getServersDesktopList$1.I$0;
+                    String str = (String) serversInteractor$getServersDesktopList$1.L$1;
+                    IKeyValueRepository iKeyValueRepository = (IKeyValueRepository) serversInteractor$getServersDesktopList$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 } else if (i == 2) {
                     ResultKt.throwOnFailure(obj);
@@ -592,10 +620,12 @@ public final class ServersInteractor {
                     }
                     if (arrayList != null) {
                         if (!arrayList.isEmpty()) {
-                            LocalRepository localRepository = this.localRepository;
+                            LocalRepository localRepository2 = this.localRepository;
                             serversInteractor$getServersDesktopList$1.L$0 = arrayList;
+                            serversInteractor$getServersDesktopList$1.L$1 = SpillingKt.nullOutSpilledVariable(arrayList);
+                            serversInteractor$getServersDesktopList$1.I$0 = 0;
                             serversInteractor$getServersDesktopList$1.label = 3;
-                            if (localRepository.save2(DESKTOP_LIST_KEY, (String) arrayList, (Continuation<? super Unit>) serversInteractor$getServersDesktopList$1) == coroutine_suspended) {
+                            if (localRepository2.save2(DESKTOP_LIST_KEY, (String) arrayList, (Continuation<? super Unit>) serversInteractor$getServersDesktopList$1) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         }
@@ -607,6 +637,7 @@ public final class ServersInteractor {
                         } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, list2, null, null, false, 0, 123, null)));
                     }
                     serversInteractor$getServersDesktopList$1.L$0 = null;
+                    serversInteractor$getServersDesktopList$1.L$1 = null;
                     serversInteractor$getServersDesktopList$1.label = 4;
                 } else if (i != 3) {
                     if (i == 4) {
@@ -615,6 +646,8 @@ public final class ServersInteractor {
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
+                    int i3 = serversInteractor$getServersDesktopList$1.I$0;
+                    List list8 = (List) serversInteractor$getServersDesktopList$1.L$1;
                     arrayList = (List) serversInteractor$getServersDesktopList$1.L$0;
                     ResultKt.throwOnFailure(obj);
                     list2 = arrayList;
@@ -624,6 +657,7 @@ public final class ServersInteractor {
                         value = mutableStateFlow.getValue();
                     } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, list2, null, null, false, 0, 123, null)));
                     serversInteractor$getServersDesktopList$1.L$0 = null;
+                    serversInteractor$getServersDesktopList$1.L$1 = null;
                     serversInteractor$getServersDesktopList$1.label = 4;
                 }
                 list3 = (List) obj;
@@ -644,28 +678,28 @@ public final class ServersInteractor {
                     list4 = list3;
                     List<ServersApiModelItem> readDataAssets2 = readDataAssets("server_desktop.json");
                     if (readDataAssets2 != null && !readDataAssets2.isEmpty()) {
-                        List<ServersApiModelItem> list8 = readDataAssets2;
-                        List<ServerModel> arrayList3 = new ArrayList<>(CollectionsKt.collectionSizeOrDefault(list8, 10));
-                        for (ServersApiModelItem serversApiModelItem2 : list8) {
+                        List<ServersApiModelItem> list9 = readDataAssets2;
+                        List<ServerModel> arrayList3 = new ArrayList<>(CollectionsKt.collectionSizeOrDefault(list9, 10));
+                        for (ServersApiModelItem serversApiModelItem2 : list9) {
                             arrayList3.add(ServerModelKt.toDomain(serversApiModelItem2, false, this.buildConfig.isArizona()));
                         }
-                        List<ServerModel> list9 = arrayList3;
-                        getCurrentServerLocal(list9);
+                        List<ServerModel> list10 = arrayList3;
+                        getCurrentServerLocal(list10);
                         MutableStateFlow<ServersState> mutableStateFlow4 = this.stateStore;
                         while (true) {
                             ServersState value4 = mutableStateFlow4.getValue();
-                            List<ServerModel> list10 = list9;
-                            if (mutableStateFlow4.compareAndSet(value4, ServersState.copy$default(value4, null, null, list10, null, null, false, 0, 123, null))) {
+                            List<ServerModel> list11 = list10;
+                            if (mutableStateFlow4.compareAndSet(value4, ServersState.copy$default(value4, null, null, list11, null, null, false, 0, 123, null))) {
                                 break;
                             }
-                            list9 = list10;
+                            list10 = list11;
                         }
                     }
                 }
                 if (list4 == null && (readDataAssets = readDataAssets("server_desktop.json")) != null && !readDataAssets.isEmpty()) {
-                    List<ServersApiModelItem> list11 = readDataAssets;
-                    List<ServerModel> arrayList4 = new ArrayList<>(CollectionsKt.collectionSizeOrDefault(list11, 10));
-                    for (ServersApiModelItem serversApiModelItem3 : list11) {
+                    List<ServersApiModelItem> list12 = readDataAssets;
+                    List<ServerModel> arrayList4 = new ArrayList<>(CollectionsKt.collectionSizeOrDefault(list12, 10));
+                    for (ServersApiModelItem serversApiModelItem3 : list12) {
                         arrayList4.add(ServerModelKt.toDomain(serversApiModelItem3, false, this.buildConfig.isArizona()));
                     }
                     list5 = arrayList4;
@@ -681,6 +715,8 @@ public final class ServersInteractor {
                     }
                 }
                 NetworkDataSource networkDataSource = this.dataSource;
+                serversInteractor$getServersDesktopList$1.L$0 = null;
+                serversInteractor$getServersDesktopList$1.L$1 = null;
                 serversInteractor$getServersDesktopList$1.label = 2;
                 obj = networkDataSource.getServersDesktop(serversInteractor$getServersDesktopList$1);
                 if (obj == coroutine_suspended) {
@@ -692,6 +728,7 @@ public final class ServersInteractor {
                 if (arrayList != null) {
                 }
                 serversInteractor$getServersDesktopList$1.L$0 = null;
+                serversInteractor$getServersDesktopList$1.L$1 = null;
                 serversInteractor$getServersDesktopList$1.label = 4;
             }
         }
@@ -705,8 +742,8 @@ public final class ServersInteractor {
         if (list3 != null) {
         }
         if (list4 == null) {
-            List<ServersApiModelItem> list112 = readDataAssets;
-            List<ServerModel> arrayList42 = new ArrayList<>(CollectionsKt.collectionSizeOrDefault(list112, 10));
+            List<ServersApiModelItem> list122 = readDataAssets;
+            List<ServerModel> arrayList42 = new ArrayList<>(CollectionsKt.collectionSizeOrDefault(list122, 10));
             while (r0.hasNext()) {
             }
             list5 = arrayList42;
@@ -721,6 +758,8 @@ public final class ServersInteractor {
             }
         }
         NetworkDataSource networkDataSource2 = this.dataSource;
+        serversInteractor$getServersDesktopList$1.L$0 = null;
+        serversInteractor$getServersDesktopList$1.L$1 = null;
         serversInteractor$getServersDesktopList$1.label = 2;
         obj = networkDataSource2.getServersDesktop(serversInteractor$getServersDesktopList$1);
         if (obj == coroutine_suspended) {
@@ -731,11 +770,12 @@ public final class ServersInteractor {
         if (arrayList != null) {
         }
         serversInteractor$getServersDesktopList$1.L$0 = null;
+        serversInteractor$getServersDesktopList$1.L$1 = null;
         serversInteractor$getServersDesktopList$1.label = 4;
     }
 
     /* compiled from: ServersInteractor.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lcom/miami/game/core/server/ServersInteractor$Companion;", "", "<init>", "()V", "CURRENT_SERVER_KEY", "", "MOBILE_LIST_KEY", "DESKTOP_LIST_KEY", "server_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lcom/miami/game/core/server/ServersInteractor$Companion;", "", "<init>", "()V", "CURRENT_SERVER_KEY", "", "MOBILE_LIST_KEY", "DESKTOP_LIST_KEY", "server_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

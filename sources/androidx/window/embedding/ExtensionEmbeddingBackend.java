@@ -191,14 +191,14 @@ public final class ExtensionEmbeddingBackend implements EmbeddingBackend {
             this.executor.execute(new Runnable() { // from class: androidx.window.embedding.ExtensionEmbeddingBackend$SplitListenerWrapper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ExtensionEmbeddingBackend.SplitListenerWrapper.m7718accept$lambda1(ExtensionEmbeddingBackend.SplitListenerWrapper.this, arrayList2);
+                    ExtensionEmbeddingBackend.SplitListenerWrapper.m7719accept$lambda1(ExtensionEmbeddingBackend.SplitListenerWrapper.this, arrayList2);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: accept$lambda-1  reason: not valid java name */
-        public static final void m7718accept$lambda1(SplitListenerWrapper this$0, List splitsWithActivity) {
+        public static final void m7719accept$lambda1(SplitListenerWrapper this$0, List splitsWithActivity) {
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(splitsWithActivity, "$splitsWithActivity");
             this$0.callback.accept(splitsWithActivity);

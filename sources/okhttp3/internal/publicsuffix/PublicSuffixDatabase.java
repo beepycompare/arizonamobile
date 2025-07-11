@@ -1,50 +1,39 @@
 package okhttp3.internal.publicsuffix;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InterruptedIOException;
 import java.net.IDN;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicBoolean;
 import kotlin.Metadata;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
-import kotlin.io.CloseableKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.Ref;
 import kotlin.sequences.SequencesKt;
+import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
-import okhttp3.internal.Util;
-import okhttp3.internal.platform.Platform;
-import okio.BufferedSource;
-import okio.GzipSource;
-import okio.Okio;
+import okhttp3.internal._UtilCommonKt;
+import okio.ByteString;
 /* compiled from: PublicSuffixDatabase.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0005\u0018\u0000 \u00152\u00020\u0001:\u0001\u0015B\u0005¢\u0006\u0002\u0010\u0002J\u001c\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b2\f\u0010\r\u001a\b\u0012\u0004\u0012\u00020\f0\u000bH\u0002J\u0010\u0010\u000e\u001a\u0004\u0018\u00010\f2\u0006\u0010\u000f\u001a\u00020\fJ\b\u0010\u0010\u001a\u00020\u0011H\u0002J\b\u0010\u0012\u001a\u00020\u0011H\u0002J\u0016\u0010\u0013\u001a\u00020\u00112\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\u0005\u001a\u00020\u0006J\u0016\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\f0\u000b2\u0006\u0010\u000f\u001a\u00020\fH\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0006X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lokhttp3/internal/publicsuffix/PublicSuffixDatabase;", "", "()V", "listRead", "Ljava/util/concurrent/atomic/AtomicBoolean;", "publicSuffixExceptionListBytes", "", "publicSuffixListBytes", "readCompleteLatch", "Ljava/util/concurrent/CountDownLatch;", "findMatchingRule", "", "", "domainLabels", "getEffectiveTldPlusOne", "domain", "readTheList", "", "readTheListUninterruptibly", "setListBytes", "splitDomain", "Companion", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0004\u0018\u0000 \r2\u00020\u0001:\u0001\rB\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0006\u001a\u0004\u0018\u00010\u00072\u0006\u0010\b\u001a\u00020\u0007J\u0016\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00070\n2\u0006\u0010\b\u001a\u00020\u0007H\u0002J\u001c\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00070\n2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00070\nH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lokhttp3/internal/publicsuffix/PublicSuffixDatabase;", "", "publicSuffixList", "Lokhttp3/internal/publicsuffix/PublicSuffixList;", "<init>", "(Lokhttp3/internal/publicsuffix/PublicSuffixList;)V", "getEffectiveTldPlusOne", "", "domain", "splitDomain", "", "findMatchingRule", "domainLabels", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class PublicSuffixDatabase {
     private static final char EXCEPTION_MARKER = '!';
-    public static final String PUBLIC_SUFFIX_RESOURCE = "publicsuffixes.gz";
-    private byte[] publicSuffixExceptionListBytes;
-    private byte[] publicSuffixListBytes;
+    private final PublicSuffixList publicSuffixList;
     public static final Companion Companion = new Companion(null);
-    private static final byte[] WILDCARD_LABEL = {42};
+    private static final ByteString WILDCARD_LABEL = ByteString.Companion.of(42);
     private static final List<String> PREVAILING_RULE = CollectionsKt.listOf("*");
-    private static final PublicSuffixDatabase instance = new PublicSuffixDatabase();
-    private final AtomicBoolean listRead = new AtomicBoolean(false);
-    private final CountDownLatch readCompleteLatch = new CountDownLatch(1);
+    private static final PublicSuffixDatabase instance = new PublicSuffixDatabase(PublicSuffixList_androidKt.getDefault(PublicSuffixList.Companion));
+
+    public PublicSuffixDatabase(PublicSuffixList publicSuffixList) {
+        Intrinsics.checkNotNullParameter(publicSuffixList, "publicSuffixList");
+        this.publicSuffixList = publicSuffixList;
+    }
 
     public final String getEffectiveTldPlusOne(String domain) {
         int size;
         int size2;
         Intrinsics.checkNotNullParameter(domain, "domain");
-        String unicodeDomain = IDN.toUnicode(domain);
-        Intrinsics.checkNotNullExpressionValue(unicodeDomain, "unicodeDomain");
-        List<String> splitDomain = splitDomain(unicodeDomain);
+        String unicode = IDN.toUnicode(domain);
+        Intrinsics.checkNotNull(unicode);
+        List<String> splitDomain = splitDomain(unicode);
         List<String> findMatchingRule = findMatchingRule(splitDomain);
         if (splitDomain.size() != findMatchingRule.size() || findMatchingRule.get(0).charAt(0) == '!') {
             if (findMatchingRule.get(0).charAt(0) == '!') {
@@ -70,60 +59,31 @@ public final class PublicSuffixDatabase {
         String str3;
         List<String> emptyList;
         List<String> emptyList2;
-        if (!this.listRead.get() && this.listRead.compareAndSet(false, true)) {
-            readTheListUninterruptibly();
-        } else {
-            try {
-                this.readCompleteLatch.await();
-            } catch (InterruptedException unused) {
-                Thread.currentThread().interrupt();
-            }
-        }
-        if (this.publicSuffixListBytes == null) {
-            throw new IllegalStateException("Unable to load publicsuffixes.gz resource from the classpath.".toString());
-        }
+        this.publicSuffixList.ensureLoaded();
         int size = list.size();
-        byte[][] bArr = new byte[size];
+        ByteString[] byteStringArr = new ByteString[size];
         for (int i = 0; i < size; i++) {
-            Charset UTF_8 = StandardCharsets.UTF_8;
-            Intrinsics.checkNotNullExpressionValue(UTF_8, "UTF_8");
-            byte[] bytes = list.get(i).getBytes(UTF_8);
-            Intrinsics.checkNotNullExpressionValue(bytes, "this as java.lang.String).getBytes(charset)");
-            bArr[i] = bytes;
+            byteStringArr[i] = ByteString.Companion.encodeUtf8(list.get(i));
         }
-        byte[][] bArr2 = bArr;
-        int length = bArr2.length;
         int i2 = 0;
         while (true) {
             str = null;
-            if (i2 >= length) {
+            if (i2 >= size) {
                 str2 = null;
                 break;
             }
-            Companion companion = Companion;
-            byte[] bArr3 = this.publicSuffixListBytes;
-            if (bArr3 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("publicSuffixListBytes");
-                bArr3 = null;
-            }
-            str2 = companion.binarySearch(bArr3, bArr, i2);
+            str2 = Companion.binarySearch(this.publicSuffixList.getBytes(), byteStringArr, i2);
             if (str2 != null) {
                 break;
             }
             i2++;
         }
-        if (bArr2.length > 1) {
-            byte[][] bArr4 = (byte[][]) bArr2.clone();
-            int length2 = bArr4.length - 1;
-            for (int i3 = 0; i3 < length2; i3++) {
-                bArr4[i3] = WILDCARD_LABEL;
-                Companion companion2 = Companion;
-                byte[] bArr5 = this.publicSuffixListBytes;
-                if (bArr5 == null) {
-                    Intrinsics.throwUninitializedPropertyAccessException("publicSuffixListBytes");
-                    bArr5 = null;
-                }
-                str3 = companion2.binarySearch(bArr5, bArr4, i3);
+        if (size > 1) {
+            ByteString[] byteStringArr2 = (ByteString[]) byteStringArr.clone();
+            int length = byteStringArr2.length - 1;
+            for (int i3 = 0; i3 < length; i3++) {
+                byteStringArr2[i3] = WILDCARD_LABEL;
+                str3 = Companion.binarySearch(this.publicSuffixList.getBytes(), byteStringArr2, i3);
                 if (str3 != null) {
                     break;
                 }
@@ -131,24 +91,18 @@ public final class PublicSuffixDatabase {
         }
         str3 = null;
         if (str3 != null) {
-            int length3 = bArr2.length - 1;
-            int i4 = 0;
+            int i4 = size - 1;
+            int i5 = 0;
             while (true) {
-                if (i4 >= length3) {
+                if (i5 >= i4) {
                     break;
                 }
-                Companion companion3 = Companion;
-                byte[] bArr6 = this.publicSuffixExceptionListBytes;
-                if (bArr6 == null) {
-                    Intrinsics.throwUninitializedPropertyAccessException("publicSuffixExceptionListBytes");
-                    bArr6 = null;
-                }
-                String binarySearch = companion3.binarySearch(bArr6, bArr, i4);
+                String binarySearch = Companion.binarySearch(this.publicSuffixList.getExceptionBytes(), byteStringArr, i5);
                 if (binarySearch != null) {
                     str = binarySearch;
                     break;
                 }
-                i4++;
+                i5++;
             }
         }
         if (str != null) {
@@ -166,70 +120,8 @@ public final class PublicSuffixDatabase {
         return emptyList.size() > emptyList2.size() ? emptyList : emptyList2;
     }
 
-    private final void readTheListUninterruptibly() {
-        boolean z = false;
-        while (true) {
-            try {
-                try {
-                    readTheList();
-                    break;
-                } catch (InterruptedIOException unused) {
-                    Thread.interrupted();
-                    z = true;
-                } catch (IOException e) {
-                    Platform.Companion.get().log("Failed to read public suffix list", 5, e);
-                    if (!z) {
-                        return;
-                    }
-                }
-            } finally {
-                if (z) {
-                    Thread.currentThread().interrupt();
-                }
-            }
-        }
-    }
-
-    /* JADX WARN: Type inference failed for: r3v5, types: [T, byte[]] */
-    /* JADX WARN: Type inference failed for: r4v2, types: [T, byte[]] */
-    private final void readTheList() throws IOException {
-        try {
-            Ref.ObjectRef objectRef = new Ref.ObjectRef();
-            Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
-            InputStream resourceAsStream = PublicSuffixDatabase.class.getResourceAsStream(PUBLIC_SUFFIX_RESOURCE);
-            if (resourceAsStream != null) {
-                BufferedSource buffer = Okio.buffer(new GzipSource(Okio.source(resourceAsStream)));
-                BufferedSource bufferedSource = buffer;
-                objectRef.element = bufferedSource.readByteArray(bufferedSource.readInt());
-                objectRef2.element = bufferedSource.readByteArray(bufferedSource.readInt());
-                Unit unit = Unit.INSTANCE;
-                CloseableKt.closeFinally(buffer, null);
-                synchronized (this) {
-                    T t = objectRef.element;
-                    Intrinsics.checkNotNull(t);
-                    this.publicSuffixListBytes = (byte[]) t;
-                    T t2 = objectRef2.element;
-                    Intrinsics.checkNotNull(t2);
-                    this.publicSuffixExceptionListBytes = (byte[]) t2;
-                    Unit unit2 = Unit.INSTANCE;
-                }
-            }
-        } finally {
-            this.readCompleteLatch.countDown();
-        }
-    }
-
-    public final void setListBytes(byte[] publicSuffixListBytes, byte[] publicSuffixExceptionListBytes) {
-        Intrinsics.checkNotNullParameter(publicSuffixListBytes, "publicSuffixListBytes");
-        Intrinsics.checkNotNullParameter(publicSuffixExceptionListBytes, "publicSuffixExceptionListBytes");
-        this.publicSuffixListBytes = publicSuffixListBytes;
-        this.publicSuffixExceptionListBytes = publicSuffixExceptionListBytes;
-        this.listRead.set(true);
-        this.readCompleteLatch.countDown();
-    }
-
     /* compiled from: PublicSuffixDatabase.kt */
-    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\f\n\u0000\n\u0002\u0010 \n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0006\u0010\r\u001a\u00020\fJ)\u0010\u000e\u001a\u0004\u0018\u00010\u0007*\u00020\n2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\n0\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002¢\u0006\u0002\u0010\u0013R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lokhttp3/internal/publicsuffix/PublicSuffixDatabase$Companion;", "", "()V", "EXCEPTION_MARKER", "", "PREVAILING_RULE", "", "", "PUBLIC_SUFFIX_RESOURCE", "WILDCARD_LABEL", "", "instance", "Lokhttp3/internal/publicsuffix/PublicSuffixDatabase;", "get", "binarySearch", "labels", "", "labelIndex", "", "([B[[BI)Ljava/lang/String;", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\f\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\r\u001a\u00020\fJ)\u0010\u000e\u001a\u0004\u0018\u00010\b*\u00020\u00052\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00050\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002¢\u0006\u0002\u0010\u0013R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lokhttp3/internal/publicsuffix/PublicSuffixDatabase$Companion;", "", "<init>", "()V", "WILDCARD_LABEL", "Lokio/ByteString;", "PREVAILING_RULE", "", "", "EXCEPTION_MARKER", "", "instance", "Lokhttp3/internal/publicsuffix/PublicSuffixDatabase;", "get", "binarySearch", "labels", "", "labelIndex", "", "(Lokio/ByteString;[Lokio/ByteString;I)Ljava/lang/String;", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -244,23 +136,23 @@ public final class PublicSuffixDatabase {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public final String binarySearch(byte[] bArr, byte[][] bArr2, int i) {
+        public final String binarySearch(ByteString byteString, ByteString[] byteStringArr, int i) {
             int i2;
-            boolean z;
             int and;
+            boolean z;
             int and2;
-            int length = bArr.length;
+            int size = byteString.size();
             int i3 = 0;
-            while (i3 < length) {
-                int i4 = (i3 + length) / 2;
-                while (i4 > -1 && bArr[i4] != 10) {
+            while (i3 < size) {
+                int i4 = (i3 + size) / 2;
+                while (i4 > -1 && byteString.getByte(i4) != 10) {
                     i4--;
                 }
                 int i5 = i4 + 1;
                 int i6 = 1;
                 while (true) {
                     i2 = i5 + i6;
-                    if (bArr[i2] == 10) {
+                    if (byteString.getByte(i2) == 10) {
                         break;
                     }
                     i6++;
@@ -275,10 +167,11 @@ public final class PublicSuffixDatabase {
                         and = 46;
                         z = false;
                     } else {
-                        z = z2;
-                        and = Util.and(bArr2[i8][i9], 255);
+                        boolean z3 = z2;
+                        and = _UtilCommonKt.and(byteStringArr[i8].getByte(i9), 255);
+                        z = z3;
                     }
-                    and2 = and - Util.and(bArr[i5 + i10], 255);
+                    and2 = and - _UtilCommonKt.and(byteString.getByte(i5 + i10), 255);
                     if (and2 != 0) {
                         break;
                     }
@@ -286,35 +179,33 @@ public final class PublicSuffixDatabase {
                     i9++;
                     if (i10 == i7) {
                         break;
-                    } else if (bArr2[i8].length != i9) {
+                    } else if (byteStringArr[i8].size() != i9) {
                         z2 = z;
-                    } else if (i8 == bArr2.length - 1) {
+                    } else if (i8 == byteStringArr.length - 1) {
                         break;
                     } else {
                         i8++;
-                        i9 = -1;
                         z2 = true;
+                        i9 = -1;
                     }
                 }
                 if (and2 >= 0) {
                     if (and2 <= 0) {
                         int i11 = i7 - i10;
-                        int length2 = bArr2[i8].length - i9;
-                        int length3 = bArr2.length;
-                        for (int i12 = i8 + 1; i12 < length3; i12++) {
-                            length2 += bArr2[i12].length;
+                        int size2 = byteStringArr[i8].size() - i9;
+                        int length = byteStringArr.length;
+                        for (int i12 = i8 + 1; i12 < length; i12++) {
+                            size2 += byteStringArr[i12].size();
                         }
-                        if (length2 >= i11) {
-                            if (length2 <= i11) {
-                                Charset UTF_8 = StandardCharsets.UTF_8;
-                                Intrinsics.checkNotNullExpressionValue(UTF_8, "UTF_8");
-                                return new String(bArr, i5, i7, UTF_8);
+                        if (size2 >= i11) {
+                            if (size2 <= i11) {
+                                return byteString.substring(i5, i7 + i5).string(Charsets.UTF_8);
                             }
                         }
                     }
                     i3 = i2 + 1;
                 }
-                length = i4;
+                size = i4;
             }
             return null;
         }

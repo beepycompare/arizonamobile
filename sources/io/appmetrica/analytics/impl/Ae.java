@@ -10,15 +10,15 @@ public final class Ae extends ECommerceEvent {
     public static final int e = 7;
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f335a;
+    public final int f336a;
     public final Ce b;
-    public final InterfaceC0583s8 c;
+    public final InterfaceC0575s8 c;
 
     public Ae(int i, ECommerceOrder eCommerceOrder) {
         this(i, new Ce(eCommerceOrder), new Be());
     }
 
-    public final InterfaceC0583s8 a() {
+    public final InterfaceC0575s8 a() {
         return this.c;
     }
 
@@ -33,12 +33,12 @@ public final class Ae extends ECommerceEvent {
     }
 
     public final String toString() {
-        return "OrderInfoEvent{eventType=" + this.f335a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "OrderInfoEvent{eventType=" + this.f336a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public Ae(int i, Ce ce, InterfaceC0583s8 interfaceC0583s8) {
-        this.f335a = i;
+    public Ae(int i, Ce ce, InterfaceC0575s8 interfaceC0575s8) {
+        this.f336a = i;
         this.b = ce;
-        this.c = interfaceC0583s8;
+        this.c = interfaceC0575s8;
     }
 }

@@ -1,28 +1,47 @@
 package com.google.android.gms.internal.measurement;
-
-import android.app.Activity;
-import android.os.RemoteException;
-import com.google.android.gms.common.internal.Preconditions;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzfc extends zzeu {
-    final /* synthetic */ Activity zza;
-    final /* synthetic */ zzcs zzb;
-    final /* synthetic */ zzfe zzc;
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfc(zzfe zzfeVar, Activity activity, zzcs zzcsVar) {
-        super(zzfeVar.zza, true);
-        this.zza = activity;
-        this.zzb = zzcsVar;
-        this.zzc = zzfeVar;
+public final class zzfc extends zzma implements zznm {
+    private zzfc() {
+        throw null;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeu
-    final void zza() throws RemoteException {
-        zzcv zzcvVar;
-        zzcvVar = this.zzc.zza.zzj;
-        ((zzcv) Preconditions.checkNotNull(zzcvVar)).onActivitySaveInstanceStateByScionActivityInfo(zzdj.zza(this.zza), this.zzb, this.zzi);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ zzfc(byte[] bArr) {
+        super(r1);
+        zzfd zzfdVar;
+        zzfdVar = zzfd.zzi;
+    }
+
+    public final int zza() {
+        return ((zzfd) this.zza).zzd();
+    }
+
+    public final zzfn zzb(int i) {
+        return ((zzfd) this.zza).zze(i);
+    }
+
+    public final zzfc zzc(int i, zzfm zzfmVar) {
+        zzaX();
+        ((zzfd) this.zza).zzi(i, (zzfn) zzfmVar.zzbc());
+        return this;
+    }
+
+    public final int zzd() {
+        return ((zzfd) this.zza).zzg();
+    }
+
+    public final zzff zze(int i) {
+        return ((zzfd) this.zza).zzh(i);
+    }
+
+    public final zzfc zzf(int i, zzfe zzfeVar) {
+        zzaX();
+        ((zzfd) this.zza).zzj(i, (zzff) zzfeVar.zzbc());
+        return this;
     }
 }

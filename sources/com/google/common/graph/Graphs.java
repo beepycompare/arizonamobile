@@ -223,14 +223,14 @@ public final class Graphs extends GraphsBridgeMethods {
                 return Iterators.transform(TransposedGraph.this.delegate().incidentEdges(this.node).iterator(), new Function() { // from class: com.google.common.graph.Graphs$TransposedGraph$1$$ExternalSyntheticLambda0
                     @Override // com.google.common.base.Function
                     public final Object apply(Object obj) {
-                        return Graphs.TransposedGraph.AnonymousClass1.this.m8194x5749e417((EndpointPair) obj);
+                        return Graphs.TransposedGraph.AnonymousClass1.this.m8193x5749e417((EndpointPair) obj);
                     }
                 });
             }
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: lambda$iterator$0$com-google-common-graph-Graphs$TransposedGraph$1  reason: not valid java name */
-            public /* synthetic */ EndpointPair m8194x5749e417(EndpointPair endpointPair) {
+            public /* synthetic */ EndpointPair m8193x5749e417(EndpointPair endpointPair) {
                 return EndpointPair.of((Graph<?>) TransposedGraph.this.delegate(), endpointPair.nodeV(), endpointPair.nodeU());
             }
         }

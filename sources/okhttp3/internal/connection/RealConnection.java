@@ -1,121 +1,121 @@
 package okhttp3.internal.connection;
 
 import androidx.core.app.NotificationCompat;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.facebook.widget.FacebookDialog;
-import com.google.common.net.HttpHeaders;
 import java.io.IOException;
 import java.lang.ref.Reference;
-import java.net.ConnectException;
-import java.net.ProtocolException;
 import java.net.Proxy;
 import java.net.Socket;
 import java.net.SocketException;
-import java.net.UnknownServiceException;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLPeerUnverifiedException;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocket;
-import javax.net.ssl.SSLSocketFactory;
 import kotlin.Metadata;
-import kotlin.collections.CollectionsKt;
-import kotlin.jvm.functions.Function0;
+import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okhttp3.Address;
-import okhttp3.Call;
 import okhttp3.CertificatePinner;
 import okhttp3.Connection;
-import okhttp3.ConnectionSpec;
-import okhttp3.EventListener;
 import okhttp3.Handshake;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Protocol;
-import okhttp3.Request;
-import okhttp3.Response;
 import okhttp3.Route;
-import okhttp3.internal.Util;
+import okhttp3.internal._UtilJvmKt;
+import okhttp3.internal.concurrent.Lockable;
 import okhttp3.internal.concurrent.TaskRunner;
 import okhttp3.internal.http.ExchangeCodec;
 import okhttp3.internal.http.RealInterceptorChain;
 import okhttp3.internal.http1.Http1ExchangeCodec;
 import okhttp3.internal.http2.ConnectionShutdownException;
 import okhttp3.internal.http2.ErrorCode;
+import okhttp3.internal.http2.FlowControlListener;
 import okhttp3.internal.http2.Http2Connection;
 import okhttp3.internal.http2.Http2ExchangeCodec;
 import okhttp3.internal.http2.Http2Stream;
 import okhttp3.internal.http2.Settings;
 import okhttp3.internal.http2.StreamResetException;
-import okhttp3.internal.platform.Platform;
-import okhttp3.internal.tls.CertificateChainCleaner;
 import okhttp3.internal.tls.OkHostnameVerifier;
 import okhttp3.internal.ws.RealWebSocket;
+import okio.Buffer;
 import okio.BufferedSink;
 import okio.BufferedSource;
 import okio.Okio;
+import okio.Sink;
+import okio.Source;
+import okio.Timeout;
 /* compiled from: RealConnection.kt */
-@Metadata(d1 = {"\u0000ì\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0005\u0018\u0000 {2\u00020\u00012\u00020\u0002:\u0001{B\u0015\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0002\u0010\u0007J\u0006\u00105\u001a\u000206J\u0018\u00107\u001a\u00020\u001d2\u0006\u00108\u001a\u0002092\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J>\u0010:\u001a\u0002062\u0006\u0010;\u001a\u00020\t2\u0006\u0010<\u001a\u00020\t2\u0006\u0010=\u001a\u00020\t2\u0006\u0010>\u001a\u00020\t2\u0006\u0010?\u001a\u00020\u001d2\u0006\u0010@\u001a\u00020A2\u0006\u0010B\u001a\u00020CJ%\u0010D\u001a\u0002062\u0006\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020\u00062\u0006\u0010H\u001a\u00020IH\u0000¢\u0006\u0002\bJJ(\u0010K\u001a\u0002062\u0006\u0010;\u001a\u00020\t2\u0006\u0010<\u001a\u00020\t2\u0006\u0010@\u001a\u00020A2\u0006\u0010B\u001a\u00020CH\u0002J\u0010\u0010L\u001a\u0002062\u0006\u0010M\u001a\u00020NH\u0002J0\u0010O\u001a\u0002062\u0006\u0010;\u001a\u00020\t2\u0006\u0010<\u001a\u00020\t2\u0006\u0010=\u001a\u00020\t2\u0006\u0010@\u001a\u00020A2\u0006\u0010B\u001a\u00020CH\u0002J*\u0010P\u001a\u0004\u0018\u00010Q2\u0006\u0010<\u001a\u00020\t2\u0006\u0010=\u001a\u00020\t2\u0006\u0010R\u001a\u00020Q2\u0006\u00108\u001a\u000209H\u0002J\b\u0010S\u001a\u00020QH\u0002J(\u0010T\u001a\u0002062\u0006\u0010M\u001a\u00020N2\u0006\u0010>\u001a\u00020\t2\u0006\u0010@\u001a\u00020A2\u0006\u0010B\u001a\u00020CH\u0002J\n\u0010\u0012\u001a\u0004\u0018\u00010\u0013H\u0016J\r\u0010U\u001a\u000206H\u0000¢\u0006\u0002\bVJ%\u0010W\u001a\u00020\u001d2\u0006\u0010X\u001a\u00020Y2\u000e\u0010Z\u001a\n\u0012\u0004\u0012\u00020\u0006\u0018\u00010[H\u0000¢\u0006\u0002\b\\J\u000e\u0010]\u001a\u00020\u001d2\u0006\u0010^\u001a\u00020\u001dJ\u001d\u0010_\u001a\u00020`2\u0006\u0010E\u001a\u00020F2\u0006\u0010a\u001a\u00020bH\u0000¢\u0006\u0002\bcJ\u0015\u0010d\u001a\u00020e2\u0006\u0010f\u001a\u00020gH\u0000¢\u0006\u0002\bhJ\r\u0010 \u001a\u000206H\u0000¢\u0006\u0002\biJ\r\u0010!\u001a\u000206H\u0000¢\u0006\u0002\bjJ\u0018\u0010k\u001a\u0002062\u0006\u0010l\u001a\u00020\u00152\u0006\u0010m\u001a\u00020nH\u0016J\u0010\u0010o\u001a\u0002062\u0006\u0010p\u001a\u00020qH\u0016J\b\u0010%\u001a\u00020&H\u0016J\b\u0010\u0005\u001a\u00020\u0006H\u0016J\u0016\u0010r\u001a\u00020\u001d2\f\u0010s\u001a\b\u0012\u0004\u0012\u00020\u00060[H\u0002J\b\u00101\u001a\u00020(H\u0016J\u0010\u0010t\u001a\u0002062\u0006\u0010>\u001a\u00020\tH\u0002J\u0010\u0010u\u001a\u00020\u001d2\u0006\u00108\u001a\u000209H\u0002J\b\u0010v\u001a\u00020wH\u0016J\u001f\u0010x\u001a\u0002062\u0006\u0010@\u001a\u00020\r2\b\u0010y\u001a\u0004\u0018\u00010IH\u0000¢\u0006\u0002\bzR\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u001d\u0010\n\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\f0\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0014\u001a\u0004\u0018\u00010\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0016\u001a\u00020\u0017X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\u001d8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001e\u0010\u001fR\u000e\u0010 \u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010!\u001a\u00020\u001dX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\"\u0010\u001f\"\u0004\b#\u0010$R\u0010\u0010%\u001a\u0004\u0018\u00010&X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010'\u001a\u0004\u0018\u00010(X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010*\u001a\u00020\tX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b+\u0010,\"\u0004\b-\u0010.R\u0010\u0010/\u001a\u0004\u0018\u000100X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00101\u001a\u0004\u0018\u00010(X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00102\u001a\u0004\u0018\u000103X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006|"}, d2 = {"Lokhttp3/internal/connection/RealConnection;", "Lokhttp3/internal/http2/Http2Connection$Listener;", "Lokhttp3/Connection;", "connectionPool", "Lokhttp3/internal/connection/RealConnectionPool;", "route", "Lokhttp3/Route;", "(Lokhttp3/internal/connection/RealConnectionPool;Lokhttp3/Route;)V", "allocationLimit", "", "calls", "", "Ljava/lang/ref/Reference;", "Lokhttp3/internal/connection/RealCall;", "getCalls", "()Ljava/util/List;", "getConnectionPool", "()Lokhttp3/internal/connection/RealConnectionPool;", "handshake", "Lokhttp3/Handshake;", "http2Connection", "Lokhttp3/internal/http2/Http2Connection;", "idleAtNs", "", "getIdleAtNs$okhttp", "()J", "setIdleAtNs$okhttp", "(J)V", "isMultiplexed", "", "isMultiplexed$okhttp", "()Z", "noCoalescedConnections", "noNewExchanges", "getNoNewExchanges", "setNoNewExchanges", "(Z)V", "protocol", "Lokhttp3/Protocol;", "rawSocket", "Ljava/net/Socket;", "refusedStreamCount", "routeFailureCount", "getRouteFailureCount$okhttp", "()I", "setRouteFailureCount$okhttp", "(I)V", "sink", "Lokio/BufferedSink;", "socket", "source", "Lokio/BufferedSource;", "successCount", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "certificateSupportHost", "url", "Lokhttp3/HttpUrl;", "connect", "connectTimeout", "readTimeout", "writeTimeout", "pingIntervalMillis", "connectionRetryEnabled", NotificationCompat.CATEGORY_CALL, "Lokhttp3/Call;", "eventListener", "Lokhttp3/EventListener;", "connectFailed", "client", "Lokhttp3/OkHttpClient;", "failedRoute", "failure", "Ljava/io/IOException;", "connectFailed$okhttp", "connectSocket", "connectTls", "connectionSpecSelector", "Lokhttp3/internal/connection/ConnectionSpecSelector;", "connectTunnel", "createTunnel", "Lokhttp3/Request;", "tunnelRequest", "createTunnelRequest", "establishProtocol", "incrementSuccessCount", "incrementSuccessCount$okhttp", "isEligible", "address", "Lokhttp3/Address;", "routes", "", "isEligible$okhttp", "isHealthy", "doExtensiveChecks", "newCodec", "Lokhttp3/internal/http/ExchangeCodec;", "chain", "Lokhttp3/internal/http/RealInterceptorChain;", "newCodec$okhttp", "newWebSocketStreams", "Lokhttp3/internal/ws/RealWebSocket$Streams;", "exchange", "Lokhttp3/internal/connection/Exchange;", "newWebSocketStreams$okhttp", "noCoalescedConnections$okhttp", "noNewExchanges$okhttp", "onSettings", "connection", "settings", "Lokhttp3/internal/http2/Settings;", "onStream", "stream", "Lokhttp3/internal/http2/Http2Stream;", "routeMatchesAny", "candidates", "startHttp2", "supportsUrl", "toString", "", "trackFailure", "e", "trackFailure$okhttp", "Companion", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Ü\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0010\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0002\u0018\u0000 w2\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u0001wBc\b\u0000\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\f\u0012\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\u0006\u0010\u0012\u001a\u00020\u0013\u0012\u0006\u0010\u0014\u001a\u00020\u0015\u0012\u0006\u0010\u0016\u001a\u00020\u0017\u0012\u0006\u0010\u0018\u001a\u00020\u0019¢\u0006\u0004\b\u001a\u0010\u001bJ\b\u0010&\u001a\u00020EH\u0016J\r\u0010,\u001a\u00020EH\u0000¢\u0006\u0002\bFJ\r\u0010G\u001a\u00020EH\u0000¢\u0006\u0002\bHJ\u0006\u0010I\u001a\u00020EJ\b\u0010J\u001a\u00020EH\u0002J%\u0010K\u001a\u00020'2\u0006\u0010L\u001a\u00020M2\u000e\u0010N\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010OH\u0000¢\u0006\u0002\bPJ\u0016\u0010Q\u001a\u00020'2\f\u0010R\u001a\b\u0012\u0004\u0012\u00020\n0OH\u0002J\u0010\u0010S\u001a\u00020'2\u0006\u0010T\u001a\u00020UH\u0002J\u0018\u0010V\u001a\u00020'2\u0006\u0010T\u001a\u00020U2\u0006\u0010\u000e\u001a\u00020\u000fH\u0002J\u001d\u0010W\u001a\u00020X2\u0006\u0010Y\u001a\u00020Z2\u0006\u0010[\u001a\u00020\\H\u0000¢\u0006\u0002\b]J\u0015\u0010^\u001a\u00020_2\u0006\u0010`\u001a\u00020aH\u0000¢\u0006\u0002\bbJ\b\u0010\t\u001a\u00020\nH\u0016J\b\u0010c\u001a\u00020EH\u0016J\b\u0010\r\u001a\u00020\fH\u0016J\u000e\u0010d\u001a\u00020'2\u0006\u0010e\u001a\u00020'J\u0010\u0010f\u001a\u00020E2\u0006\u0010g\u001a\u00020hH\u0016J\u0018\u0010i\u001a\u00020E2\u0006\u0010j\u001a\u00020%2\u0006\u0010k\u001a\u00020lH\u0016J\n\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0016J%\u0010m\u001a\u00020E2\u0006\u0010Y\u001a\u00020Z2\u0006\u0010n\u001a\u00020\n2\u0006\u0010o\u001a\u00020pH\u0000¢\u0006\u0002\bqJ\u001a\u0010r\u001a\u00020E2\u0006\u0010s\u001a\u00020:2\b\u0010t\u001a\u0004\u0018\u00010pH\u0016J\b\u0010\u0010\u001a\u00020\u0011H\u0016J\b\u0010u\u001a\u00020vH\u0016R\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010\t\u001a\u00020\nX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\u00020\u0019X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#R\u0010\u0010$\u001a\u0004\u0018\u00010%X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010&\u001a\u00020'X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b(\u0010)\"\u0004\b*\u0010+R\u000e\u0010,\u001a\u00020'X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010-\u001a\u00020\u0017X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b.\u0010/\"\u0004\b0\u00101R\u000e\u00102\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u00105\u001a\u00020\u00172\u0006\u00104\u001a\u00020\u0017@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b6\u0010/R\u001d\u00107\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020:0908¢\u0006\b\n\u0000\u001a\u0004\b;\u0010<R\u001a\u0010=\u001a\u00020>X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b?\u0010@\"\u0004\bA\u0010BR\u0014\u0010C\u001a\u00020'8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bD\u0010)¨\u0006x"}, d2 = {"Lokhttp3/internal/connection/RealConnection;", "Lokhttp3/internal/http2/Http2Connection$Listener;", "Lokhttp3/Connection;", "Lokhttp3/internal/http/ExchangeCodec$Carrier;", "Lokhttp3/internal/concurrent/Lockable;", "taskRunner", "Lokhttp3/internal/concurrent/TaskRunner;", "connectionPool", "Lokhttp3/internal/connection/RealConnectionPool;", "route", "Lokhttp3/Route;", "rawSocket", "Ljava/net/Socket;", "socket", "handshake", "Lokhttp3/Handshake;", "protocol", "Lokhttp3/Protocol;", "source", "Lokio/BufferedSource;", "sink", "Lokio/BufferedSink;", "pingIntervalMillis", "", "connectionListener", "Lokhttp3/internal/connection/ConnectionListener;", "<init>", "(Lokhttp3/internal/concurrent/TaskRunner;Lokhttp3/internal/connection/RealConnectionPool;Lokhttp3/Route;Ljava/net/Socket;Ljava/net/Socket;Lokhttp3/Handshake;Lokhttp3/Protocol;Lokio/BufferedSource;Lokio/BufferedSink;ILokhttp3/internal/connection/ConnectionListener;)V", "getTaskRunner", "()Lokhttp3/internal/concurrent/TaskRunner;", "getConnectionPool", "()Lokhttp3/internal/connection/RealConnectionPool;", "getRoute", "()Lokhttp3/Route;", "getConnectionListener$okhttp", "()Lokhttp3/internal/connection/ConnectionListener;", "http2Connection", "Lokhttp3/internal/http2/Http2Connection;", "noNewExchanges", "", "getNoNewExchanges", "()Z", "setNoNewExchanges", "(Z)V", "noCoalescedConnections", "routeFailureCount", "getRouteFailureCount$okhttp", "()I", "setRouteFailureCount$okhttp", "(I)V", "successCount", "refusedStreamCount", "value", "allocationLimit", "getAllocationLimit$okhttp", "calls", "", "Ljava/lang/ref/Reference;", "Lokhttp3/internal/connection/RealCall;", "getCalls", "()Ljava/util/List;", "idleAtNs", "", "getIdleAtNs", "()J", "setIdleAtNs", "(J)V", "isMultiplexed", "isMultiplexed$okhttp", "", "noCoalescedConnections$okhttp", "incrementSuccessCount", "incrementSuccessCount$okhttp", TtmlNode.START, "startHttp2", "isEligible", "address", "Lokhttp3/Address;", "routes", "", "isEligible$okhttp", "routeMatchesAny", "candidates", "supportsUrl", "url", "Lokhttp3/HttpUrl;", "certificateSupportHost", "newCodec", "Lokhttp3/internal/http/ExchangeCodec;", "client", "Lokhttp3/OkHttpClient;", "chain", "Lokhttp3/internal/http/RealInterceptorChain;", "newCodec$okhttp", "newWebSocketStreams", "Lokhttp3/internal/ws/RealWebSocket$Streams;", "exchange", "Lokhttp3/internal/connection/Exchange;", "newWebSocketStreams$okhttp", FacebookDialog.COMPLETION_GESTURE_CANCEL, "isHealthy", "doExtensiveChecks", "onStream", "stream", "Lokhttp3/internal/http2/Http2Stream;", "onSettings", "connection", "settings", "Lokhttp3/internal/http2/Settings;", "connectFailed", "failedRoute", "failure", "Ljava/io/IOException;", "connectFailed$okhttp", "trackFailure", NotificationCompat.CATEGORY_CALL, "e", "toString", "", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
-public final class RealConnection extends Http2Connection.Listener implements Connection {
+public final class RealConnection extends Http2Connection.Listener implements Connection, ExchangeCodec.Carrier, Lockable {
     public static final Companion Companion = new Companion(null);
     public static final long IDLE_CONNECTION_HEALTHY_NS = 10000000000L;
-    private static final int MAX_TUNNEL_ATTEMPTS = 21;
-    private static final String NPE_THROW_WITH_NULL = "throw with null exception";
     private int allocationLimit;
     private final List<Reference<RealCall>> calls;
+    private final ConnectionListener connectionListener;
     private final RealConnectionPool connectionPool;
-    private Handshake handshake;
+    private final Handshake handshake;
     private Http2Connection http2Connection;
     private long idleAtNs;
     private boolean noCoalescedConnections;
     private boolean noNewExchanges;
-    private Protocol protocol;
-    private Socket rawSocket;
+    private final int pingIntervalMillis;
+    private final Protocol protocol;
+    private final Socket rawSocket;
     private int refusedStreamCount;
     private final Route route;
     private int routeFailureCount;
-    private BufferedSink sink;
-    private Socket socket;
-    private BufferedSource source;
+    private final BufferedSink sink;
+    private final Socket socket;
+    private final BufferedSource source;
     private int successCount;
+    private final TaskRunner taskRunner;
 
-    /* compiled from: RealConnection.kt */
-    @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-    /* loaded from: classes5.dex */
-    public /* synthetic */ class WhenMappings {
-        public static final /* synthetic */ int[] $EnumSwitchMapping$0;
-
-        static {
-            int[] iArr = new int[Proxy.Type.values().length];
-            try {
-                iArr[Proxy.Type.DIRECT.ordinal()] = 1;
-            } catch (NoSuchFieldError unused) {
-            }
-            try {
-                iArr[Proxy.Type.HTTP.ordinal()] = 2;
-            } catch (NoSuchFieldError unused2) {
-            }
-            $EnumSwitchMapping$0 = iArr;
-        }
+    public final TaskRunner getTaskRunner() {
+        return this.taskRunner;
     }
 
     public final RealConnectionPool getConnectionPool() {
         return this.connectionPool;
     }
 
-    public RealConnection(RealConnectionPool connectionPool, Route route) {
+    @Override // okhttp3.internal.http.ExchangeCodec.Carrier
+    public Route getRoute() {
+        return this.route;
+    }
+
+    public final ConnectionListener getConnectionListener$okhttp() {
+        return this.connectionListener;
+    }
+
+    public RealConnection(TaskRunner taskRunner, RealConnectionPool connectionPool, Route route, Socket rawSocket, Socket socket, Handshake handshake, Protocol protocol, BufferedSource source, BufferedSink sink, int i, ConnectionListener connectionListener) {
+        Intrinsics.checkNotNullParameter(taskRunner, "taskRunner");
         Intrinsics.checkNotNullParameter(connectionPool, "connectionPool");
         Intrinsics.checkNotNullParameter(route, "route");
+        Intrinsics.checkNotNullParameter(rawSocket, "rawSocket");
+        Intrinsics.checkNotNullParameter(socket, "socket");
+        Intrinsics.checkNotNullParameter(protocol, "protocol");
+        Intrinsics.checkNotNullParameter(source, "source");
+        Intrinsics.checkNotNullParameter(sink, "sink");
+        Intrinsics.checkNotNullParameter(connectionListener, "connectionListener");
+        this.taskRunner = taskRunner;
         this.connectionPool = connectionPool;
         this.route = route;
+        this.rawSocket = rawSocket;
+        this.socket = socket;
+        this.handshake = handshake;
+        this.protocol = protocol;
+        this.source = source;
+        this.sink = sink;
+        this.pingIntervalMillis = i;
+        this.connectionListener = connectionListener;
         this.allocationLimit = 1;
         this.calls = new ArrayList();
         this.idleAtNs = Long.MAX_VALUE;
@@ -137,15 +137,19 @@ public final class RealConnection extends Http2Connection.Listener implements Co
         this.routeFailureCount = i;
     }
 
+    public final int getAllocationLimit$okhttp() {
+        return this.allocationLimit;
+    }
+
     public final List<Reference<RealCall>> getCalls() {
         return this.calls;
     }
 
-    public final long getIdleAtNs$okhttp() {
+    public final long getIdleAtNs() {
         return this.idleAtNs;
     }
 
-    public final void setIdleAtNs$okhttp(long j) {
+    public final void setIdleAtNs(long j) {
         this.idleAtNs = j;
     }
 
@@ -153,537 +157,53 @@ public final class RealConnection extends Http2Connection.Listener implements Co
         return this.http2Connection != null;
     }
 
-    public final synchronized void noNewExchanges$okhttp() {
-        this.noNewExchanges = true;
+    @Override // okhttp3.internal.http.ExchangeCodec.Carrier
+    public void noNewExchanges() {
+        synchronized (this) {
+            this.noNewExchanges = true;
+            Unit unit = Unit.INSTANCE;
+        }
+        this.connectionListener.noNewExchanges(this);
     }
 
-    public final synchronized void noCoalescedConnections$okhttp() {
-        this.noCoalescedConnections = true;
+    public final void noCoalescedConnections$okhttp() {
+        synchronized (this) {
+            this.noCoalescedConnections = true;
+            Unit unit = Unit.INSTANCE;
+        }
     }
 
-    public final synchronized void incrementSuccessCount$okhttp() {
-        this.successCount++;
+    public final void incrementSuccessCount$okhttp() {
+        synchronized (this) {
+            this.successCount++;
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00fd  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x012a  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0130  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void connect(int i, int i2, int i3, int i4, boolean z, Call call, EventListener eventListener) {
-        Socket socket;
-        Socket socket2;
-        Call call2 = call;
-        EventListener eventListener2 = eventListener;
-        Intrinsics.checkNotNullParameter(call2, "call");
-        Intrinsics.checkNotNullParameter(eventListener2, "eventListener");
-        if (this.protocol != null) {
-            throw new IllegalStateException("already connected".toString());
-        }
-        List<ConnectionSpec> connectionSpecs = this.route.address().connectionSpecs();
-        ConnectionSpecSelector connectionSpecSelector = new ConnectionSpecSelector(connectionSpecs);
-        if (this.route.address().sslSocketFactory() == null) {
-            if (!connectionSpecs.contains(ConnectionSpec.CLEARTEXT)) {
-                throw new RouteException(new UnknownServiceException("CLEARTEXT communication not enabled for client"));
-            }
-            String host = this.route.address().url().host();
-            if (!Platform.Companion.get().isCleartextTrafficPermitted(host)) {
-                throw new RouteException(new UnknownServiceException("CLEARTEXT communication to " + host + " not permitted by network security policy"));
-            }
-        } else if (this.route.address().protocols().contains(Protocol.H2_PRIOR_KNOWLEDGE)) {
-            throw new RouteException(new UnknownServiceException("H2_PRIOR_KNOWLEDGE cannot be used with HTTPS"));
-        }
-        RouteException routeException = null;
-        while (true) {
-            try {
-                try {
-                    if (this.route.requiresTunnel()) {
-                        EventListener eventListener3 = eventListener2;
-                        Call call3 = call2;
-                        try {
-                            connectTunnel(i, i2, i3, call3, eventListener3);
-                            call2 = call3;
-                            eventListener2 = eventListener3;
-                            if (this.rawSocket == null) {
-                                break;
-                            }
-                        } catch (IOException e) {
-                            e = e;
-                            call2 = call3;
-                            eventListener2 = eventListener3;
-                            IOException iOException = e;
-                            socket = this.socket;
-                            if (socket != null) {
-                            }
-                            socket2 = this.rawSocket;
-                            if (socket2 != null) {
-                            }
-                            this.socket = null;
-                            this.rawSocket = null;
-                            this.source = null;
-                            this.sink = null;
-                            this.handshake = null;
-                            this.protocol = null;
-                            this.http2Connection = null;
-                            this.allocationLimit = 1;
-                            eventListener2.connectFailed(call2, this.route.socketAddress(), this.route.proxy(), null, iOException);
-                            if (routeException != null) {
-                            }
-                            if (!z) {
-                                break;
-                            }
-                            break;
-                            throw routeException;
-                        }
-                    } else {
-                        connectSocket(i, i2, call2, eventListener2);
-                    }
-                } catch (IOException e2) {
-                    e = e2;
-                }
-            } catch (IOException e3) {
-                e = e3;
-            }
-            try {
-                establishProtocol(connectionSpecSelector, i4, call2, eventListener2);
-                eventListener2.connectEnd(call2, this.route.socketAddress(), this.route.proxy(), this.protocol);
-                break;
-            } catch (IOException e4) {
-                e = e4;
-                IOException iOException2 = e;
-                socket = this.socket;
-                if (socket != null) {
-                    Util.closeQuietly(socket);
-                }
-                socket2 = this.rawSocket;
-                if (socket2 != null) {
-                    Util.closeQuietly(socket2);
-                }
-                this.socket = null;
-                this.rawSocket = null;
-                this.source = null;
-                this.sink = null;
-                this.handshake = null;
-                this.protocol = null;
-                this.http2Connection = null;
-                this.allocationLimit = 1;
-                eventListener2.connectFailed(call2, this.route.socketAddress(), this.route.proxy(), null, iOException2);
-                if (routeException != null) {
-                    routeException = new RouteException(iOException2);
-                } else {
-                    routeException.addConnectException(iOException2);
-                }
-                if (!z || !connectionSpecSelector.connectionFailed(iOException2)) {
-                    throw routeException;
-                }
-                call2 = call;
-                eventListener2 = eventListener;
-            }
-            call2 = call;
-            eventListener2 = eventListener;
-        }
-        if (this.route.requiresTunnel() && this.rawSocket == null) {
-            throw new RouteException(new ProtocolException("Too many tunnel connections attempted: 21"));
-        }
+    public final void start() throws IOException {
         this.idleAtNs = System.nanoTime();
-    }
-
-    private final void connectTunnel(int i, int i2, int i3, Call call, EventListener eventListener) throws IOException {
-        Request createTunnelRequest = createTunnelRequest();
-        HttpUrl url = createTunnelRequest.url();
-        for (int i4 = 0; i4 < 21; i4++) {
-            connectSocket(i, i2, call, eventListener);
-            createTunnelRequest = createTunnel(i2, i3, createTunnelRequest, url);
-            if (createTunnelRequest == null) {
-                return;
-            }
-            Socket socket = this.rawSocket;
-            if (socket != null) {
-                Util.closeQuietly(socket);
-            }
-            this.rawSocket = null;
-            this.sink = null;
-            this.source = null;
-            eventListener.connectEnd(call, this.route.socketAddress(), this.route.proxy(), null);
+        if (this.protocol == Protocol.HTTP_2 || this.protocol == Protocol.H2_PRIOR_KNOWLEDGE) {
+            startHttp2();
         }
     }
 
-    private final void connectSocket(int i, int i2, Call call, EventListener eventListener) throws IOException {
-        Socket createSocket;
-        Proxy proxy = this.route.proxy();
-        Address address = this.route.address();
-        Proxy.Type type = proxy.type();
-        int i3 = type == null ? -1 : WhenMappings.$EnumSwitchMapping$0[type.ordinal()];
-        if (i3 == 1 || i3 == 2) {
-            createSocket = address.socketFactory().createSocket();
-            Intrinsics.checkNotNull(createSocket);
-        } else {
-            createSocket = new Socket(proxy);
+    private final void startHttp2() throws IOException {
+        this.socket.setSoTimeout(0);
+        ConnectionListener connectionListener = this.connectionListener;
+        FlowControlListener.None none = connectionListener instanceof FlowControlListener ? (FlowControlListener) connectionListener : null;
+        if (none == null) {
+            none = FlowControlListener.None.INSTANCE;
         }
-        this.rawSocket = createSocket;
-        eventListener.connectStart(call, this.route.socketAddress(), proxy);
-        createSocket.setSoTimeout(i2);
-        try {
-            Platform.Companion.get().connectSocket(createSocket, this.route.socketAddress(), i);
-            try {
-                this.source = Okio.buffer(Okio.source(createSocket));
-                this.sink = Okio.buffer(Okio.sink(createSocket));
-            } catch (NullPointerException e) {
-                if (Intrinsics.areEqual(e.getMessage(), NPE_THROW_WITH_NULL)) {
-                    throw new IOException(e);
-                }
-            }
-        } catch (ConnectException e2) {
-            ConnectException connectException = new ConnectException("Failed to connect to " + this.route.socketAddress());
-            connectException.initCause(e2);
-            throw connectException;
-        }
-    }
-
-    private final void establishProtocol(ConnectionSpecSelector connectionSpecSelector, int i, Call call, EventListener eventListener) throws IOException {
-        if (this.route.address().sslSocketFactory() == null) {
-            if (this.route.address().protocols().contains(Protocol.H2_PRIOR_KNOWLEDGE)) {
-                this.socket = this.rawSocket;
-                this.protocol = Protocol.H2_PRIOR_KNOWLEDGE;
-                startHttp2(i);
-                return;
-            }
-            this.socket = this.rawSocket;
-            this.protocol = Protocol.HTTP_1_1;
-            return;
-        }
-        eventListener.secureConnectStart(call);
-        connectTls(connectionSpecSelector);
-        eventListener.secureConnectEnd(call, this.handshake);
-        if (this.protocol == Protocol.HTTP_2) {
-            startHttp2(i);
-        }
-    }
-
-    private final void startHttp2(int i) throws IOException {
-        Socket socket = this.socket;
-        Intrinsics.checkNotNull(socket);
-        BufferedSource bufferedSource = this.source;
-        Intrinsics.checkNotNull(bufferedSource);
-        BufferedSink bufferedSink = this.sink;
-        Intrinsics.checkNotNull(bufferedSink);
-        socket.setSoTimeout(0);
-        Http2Connection build = new Http2Connection.Builder(true, TaskRunner.INSTANCE).socket(socket, this.route.address().url().host(), bufferedSource, bufferedSink).listener(this).pingIntervalMillis(i).build();
+        Http2Connection build = new Http2Connection.Builder(true, this.taskRunner).socket(this.socket, getRoute().address().url().host(), this.source, this.sink).listener(this).pingIntervalMillis(this.pingIntervalMillis).flowControlListener(none).build();
         this.http2Connection = build;
         this.allocationLimit = Http2Connection.Companion.getDEFAULT_SETTINGS().getMaxConcurrentStreams();
-        Http2Connection.start$default(build, false, null, 3, null);
-    }
-
-    private final void connectTls(ConnectionSpecSelector connectionSpecSelector) throws IOException {
-        final Address address = this.route.address();
-        SSLSocketFactory sslSocketFactory = address.sslSocketFactory();
-        SSLSocket sSLSocket = null;
-        try {
-            Intrinsics.checkNotNull(sslSocketFactory);
-            Socket createSocket = sslSocketFactory.createSocket(this.rawSocket, address.url().host(), address.url().port(), true);
-            Intrinsics.checkNotNull(createSocket, "null cannot be cast to non-null type javax.net.ssl.SSLSocket");
-            SSLSocket sSLSocket2 = (SSLSocket) createSocket;
-            try {
-                ConnectionSpec configureSecureSocket = connectionSpecSelector.configureSecureSocket(sSLSocket2);
-                if (configureSecureSocket.supportsTlsExtensions()) {
-                    Platform.Companion.get().configureTlsExtensions(sSLSocket2, address.url().host(), address.protocols());
-                }
-                sSLSocket2.startHandshake();
-                SSLSession sslSocketSession = sSLSocket2.getSession();
-                Handshake.Companion companion = Handshake.Companion;
-                Intrinsics.checkNotNullExpressionValue(sslSocketSession, "sslSocketSession");
-                final Handshake handshake = companion.get(sslSocketSession);
-                HostnameVerifier hostnameVerifier = address.hostnameVerifier();
-                Intrinsics.checkNotNull(hostnameVerifier);
-                if (!hostnameVerifier.verify(address.url().host(), sslSocketSession)) {
-                    List<Certificate> peerCertificates = handshake.peerCertificates();
-                    if (peerCertificates.isEmpty()) {
-                        throw new SSLPeerUnverifiedException("Hostname " + address.url().host() + " not verified (no certificates)");
-                    }
-                    Certificate certificate = peerCertificates.get(0);
-                    Intrinsics.checkNotNull(certificate, "null cannot be cast to non-null type java.security.cert.X509Certificate");
-                    X509Certificate x509Certificate = (X509Certificate) certificate;
-                    throw new SSLPeerUnverifiedException(StringsKt.trimMargin$default("\n              |Hostname " + address.url().host() + " not verified:\n              |    certificate: " + CertificatePinner.Companion.pin(x509Certificate) + "\n              |    DN: " + x509Certificate.getSubjectDN().getName() + "\n              |    subjectAltNames: " + OkHostnameVerifier.INSTANCE.allSubjectAltNames(x509Certificate) + "\n              ", null, 1, null));
-                }
-                final CertificatePinner certificatePinner = address.certificatePinner();
-                Intrinsics.checkNotNull(certificatePinner);
-                this.handshake = new Handshake(handshake.tlsVersion(), handshake.cipherSuite(), handshake.localCertificates(), new Function0<List<? extends Certificate>>() { // from class: okhttp3.internal.connection.RealConnection$connectTls$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(0);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function0
-                    public final List<? extends Certificate> invoke() {
-                        CertificateChainCleaner certificateChainCleaner$okhttp = CertificatePinner.this.getCertificateChainCleaner$okhttp();
-                        Intrinsics.checkNotNull(certificateChainCleaner$okhttp);
-                        return certificateChainCleaner$okhttp.clean(handshake.peerCertificates(), address.url().host());
-                    }
-                });
-                certificatePinner.check$okhttp(address.url().host(), new Function0<List<? extends X509Certificate>>() { // from class: okhttp3.internal.connection.RealConnection$connectTls$2
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    {
-                        super(0);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function0
-                    public final List<? extends X509Certificate> invoke() {
-                        Handshake handshake2;
-                        handshake2 = RealConnection.this.handshake;
-                        Intrinsics.checkNotNull(handshake2);
-                        List<Certificate> peerCertificates2 = handshake2.peerCertificates();
-                        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(peerCertificates2, 10));
-                        for (Certificate certificate2 : peerCertificates2) {
-                            Intrinsics.checkNotNull(certificate2, "null cannot be cast to non-null type java.security.cert.X509Certificate");
-                            arrayList.add((X509Certificate) certificate2);
-                        }
-                        return arrayList;
-                    }
-                });
-                String selectedProtocol = configureSecureSocket.supportsTlsExtensions() ? Platform.Companion.get().getSelectedProtocol(sSLSocket2) : null;
-                this.socket = sSLSocket2;
-                this.source = Okio.buffer(Okio.source(sSLSocket2));
-                this.sink = Okio.buffer(Okio.sink(sSLSocket2));
-                this.protocol = selectedProtocol != null ? Protocol.Companion.get(selectedProtocol) : Protocol.HTTP_1_1;
-                Platform.Companion.get().afterHandshake(sSLSocket2);
-            } catch (Throwable th) {
-                th = th;
-                sSLSocket = sSLSocket2;
-                if (sSLSocket != null) {
-                    Platform.Companion.get().afterHandshake(sSLSocket);
-                }
-                if (sSLSocket != null) {
-                    Util.closeQuietly((Socket) sSLSocket);
-                }
-                throw th;
-            }
-        } catch (Throwable th2) {
-            th = th2;
-        }
-    }
-
-    private final Request createTunnel(int i, int i2, Request request, HttpUrl httpUrl) throws IOException {
-        String str = "CONNECT " + Util.toHostHeader(httpUrl, true) + " HTTP/1.1";
-        while (true) {
-            BufferedSource bufferedSource = this.source;
-            Intrinsics.checkNotNull(bufferedSource);
-            BufferedSink bufferedSink = this.sink;
-            Intrinsics.checkNotNull(bufferedSink);
-            Http1ExchangeCodec http1ExchangeCodec = new Http1ExchangeCodec(null, this, bufferedSource, bufferedSink);
-            bufferedSource.timeout().timeout(i, TimeUnit.MILLISECONDS);
-            bufferedSink.timeout().timeout(i2, TimeUnit.MILLISECONDS);
-            http1ExchangeCodec.writeRequest(request.headers(), str);
-            http1ExchangeCodec.finishRequest();
-            Response.Builder readResponseHeaders = http1ExchangeCodec.readResponseHeaders(false);
-            Intrinsics.checkNotNull(readResponseHeaders);
-            Response build = readResponseHeaders.request(request).build();
-            http1ExchangeCodec.skipConnectBody(build);
-            int code = build.code();
-            if (code == 200) {
-                if (bufferedSource.getBuffer().exhausted() && bufferedSink.getBuffer().exhausted()) {
-                    return null;
-                }
-                throw new IOException("TLS tunnel buffered too many bytes!");
-            } else if (code == 407) {
-                Request authenticate = this.route.address().proxyAuthenticator().authenticate(this.route, build);
-                if (authenticate == null) {
-                    throw new IOException("Failed to authenticate with proxy");
-                }
-                if (StringsKt.equals("close", Response.header$default(build, HttpHeaders.CONNECTION, null, 2, null), true)) {
-                    return authenticate;
-                }
-                request = authenticate;
-            } else {
-                throw new IOException("Unexpected response code for CONNECT: " + build.code());
-            }
-        }
-    }
-
-    private final Request createTunnelRequest() throws IOException {
-        Request build = new Request.Builder().url(this.route.address().url()).method("CONNECT", null).header(HttpHeaders.HOST, Util.toHostHeader(this.route.address().url(), true)).header("Proxy-Connection", HttpHeaders.KEEP_ALIVE).header("User-Agent", Util.userAgent).build();
-        Request authenticate = this.route.address().proxyAuthenticator().authenticate(this.route, new Response.Builder().request(build).protocol(Protocol.HTTP_1_1).code(407).message("Preemptive Authenticate").body(Util.EMPTY_RESPONSE).sentRequestAtMillis(-1L).receivedResponseAtMillis(-1L).header(HttpHeaders.PROXY_AUTHENTICATE, "OkHttp-Preemptive").build());
-        return authenticate == null ? build : authenticate;
-    }
-
-    private final boolean routeMatchesAny(List<Route> list) {
-        List<Route> list2 = list;
-        if ((list2 instanceof Collection) && list2.isEmpty()) {
-            return false;
-        }
-        for (Route route : list2) {
-            if (route.proxy().type() == Proxy.Type.DIRECT && this.route.proxy().type() == Proxy.Type.DIRECT && Intrinsics.areEqual(this.route.socketAddress(), route.socketAddress())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private final boolean certificateSupportHost(HttpUrl httpUrl, Handshake handshake) {
-        List<Certificate> peerCertificates = handshake.peerCertificates();
-        if (!peerCertificates.isEmpty()) {
-            OkHostnameVerifier okHostnameVerifier = OkHostnameVerifier.INSTANCE;
-            String host = httpUrl.host();
-            Certificate certificate = peerCertificates.get(0);
-            Intrinsics.checkNotNull(certificate, "null cannot be cast to non-null type java.security.cert.X509Certificate");
-            if (okHostnameVerifier.verify(host, (X509Certificate) certificate)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final ExchangeCodec newCodec$okhttp(OkHttpClient client, RealInterceptorChain chain) throws SocketException {
-        Intrinsics.checkNotNullParameter(client, "client");
-        Intrinsics.checkNotNullParameter(chain, "chain");
-        Socket socket = this.socket;
-        Intrinsics.checkNotNull(socket);
-        BufferedSource bufferedSource = this.source;
-        Intrinsics.checkNotNull(bufferedSource);
-        BufferedSink bufferedSink = this.sink;
-        Intrinsics.checkNotNull(bufferedSink);
-        Http2Connection http2Connection = this.http2Connection;
-        if (http2Connection != null) {
-            return new Http2ExchangeCodec(client, this, chain, http2Connection);
-        }
-        socket.setSoTimeout(chain.readTimeoutMillis());
-        bufferedSource.timeout().timeout(chain.getReadTimeoutMillis$okhttp(), TimeUnit.MILLISECONDS);
-        bufferedSink.timeout().timeout(chain.getWriteTimeoutMillis$okhttp(), TimeUnit.MILLISECONDS);
-        return new Http1ExchangeCodec(client, this, bufferedSource, bufferedSink);
-    }
-
-    public final RealWebSocket.Streams newWebSocketStreams$okhttp(final Exchange exchange) throws SocketException {
-        Intrinsics.checkNotNullParameter(exchange, "exchange");
-        Socket socket = this.socket;
-        Intrinsics.checkNotNull(socket);
-        final BufferedSource bufferedSource = this.source;
-        Intrinsics.checkNotNull(bufferedSource);
-        final BufferedSink bufferedSink = this.sink;
-        Intrinsics.checkNotNull(bufferedSink);
-        socket.setSoTimeout(0);
-        noNewExchanges$okhttp();
-        return new RealWebSocket.Streams(bufferedSource, bufferedSink) { // from class: okhttp3.internal.connection.RealConnection$newWebSocketStreams$1
-            @Override // java.io.Closeable, java.lang.AutoCloseable
-            public void close() {
-                exchange.bodyComplete(-1L, true, true, null);
-            }
-        };
-    }
-
-    @Override // okhttp3.Connection
-    public Route route() {
-        return this.route;
-    }
-
-    public final void cancel() {
-        Socket socket = this.rawSocket;
-        if (socket != null) {
-            Util.closeQuietly(socket);
-        }
-    }
-
-    @Override // okhttp3.Connection
-    public Socket socket() {
-        Socket socket = this.socket;
-        Intrinsics.checkNotNull(socket);
-        return socket;
-    }
-
-    @Override // okhttp3.internal.http2.Http2Connection.Listener
-    public void onStream(Http2Stream stream) throws IOException {
-        Intrinsics.checkNotNullParameter(stream, "stream");
-        stream.close(ErrorCode.REFUSED_STREAM, null);
-    }
-
-    @Override // okhttp3.internal.http2.Http2Connection.Listener
-    public synchronized void onSettings(Http2Connection connection, Settings settings) {
-        Intrinsics.checkNotNullParameter(connection, "connection");
-        Intrinsics.checkNotNullParameter(settings, "settings");
-        this.allocationLimit = settings.getMaxConcurrentStreams();
-    }
-
-    @Override // okhttp3.Connection
-    public Handshake handshake() {
-        return this.handshake;
-    }
-
-    public final void connectFailed$okhttp(OkHttpClient client, Route failedRoute, IOException failure) {
-        Intrinsics.checkNotNullParameter(client, "client");
-        Intrinsics.checkNotNullParameter(failedRoute, "failedRoute");
-        Intrinsics.checkNotNullParameter(failure, "failure");
-        if (failedRoute.proxy().type() != Proxy.Type.DIRECT) {
-            Address address = failedRoute.address();
-            address.proxySelector().connectFailed(address.url().uri(), failedRoute.proxy().address(), failure);
-        }
-        client.getRouteDatabase().failed(failedRoute);
-    }
-
-    public final synchronized void trackFailure$okhttp(RealCall call, IOException iOException) {
-        Intrinsics.checkNotNullParameter(call, "call");
-        if (iOException instanceof StreamResetException) {
-            if (((StreamResetException) iOException).errorCode == ErrorCode.REFUSED_STREAM) {
-                int i = this.refusedStreamCount + 1;
-                this.refusedStreamCount = i;
-                if (i > 1) {
-                    this.noNewExchanges = true;
-                    this.routeFailureCount++;
-                }
-            } else if (((StreamResetException) iOException).errorCode != ErrorCode.CANCEL || !call.isCanceled()) {
-                this.noNewExchanges = true;
-                this.routeFailureCount++;
-            }
-        } else if (!isMultiplexed$okhttp() || (iOException instanceof ConnectionShutdownException)) {
-            this.noNewExchanges = true;
-            if (this.successCount == 0) {
-                if (iOException != null) {
-                    connectFailed$okhttp(call.getClient(), this.route, iOException);
-                }
-                this.routeFailureCount++;
-            }
-        }
-    }
-
-    @Override // okhttp3.Connection
-    public Protocol protocol() {
-        Protocol protocol = this.protocol;
-        Intrinsics.checkNotNull(protocol);
-        return protocol;
-    }
-
-    public String toString() {
-        StringBuilder append = new StringBuilder("Connection{").append(this.route.address().url().host()).append(AbstractJsonLexerKt.COLON).append(this.route.address().url().port()).append(", proxy=").append(this.route.proxy()).append(" hostAddress=").append(this.route.socketAddress()).append(" cipherSuite=");
-        Handshake handshake = this.handshake;
-        return append.append((handshake == null || (r1 = handshake.cipherSuite()) == null) ? "none" : "none").append(" protocol=").append(this.protocol).append(AbstractJsonLexerKt.END_OBJ).toString();
-    }
-
-    /* compiled from: RealConnection.kt */
-    @Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J&\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0004R\u000e\u0010\u0003\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Lokhttp3/internal/connection/RealConnection$Companion;", "", "()V", "IDLE_CONNECTION_HEALTHY_NS", "", "MAX_TUNNEL_ATTEMPTS", "", "NPE_THROW_WITH_NULL", "", "newTestConnection", "Lokhttp3/internal/connection/RealConnection;", "connectionPool", "Lokhttp3/internal/connection/RealConnectionPool;", "route", "Lokhttp3/Route;", "socket", "Ljava/net/Socket;", "idleAtNs", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
-    /* loaded from: classes5.dex */
-    public static final class Companion {
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        private Companion() {
-        }
-
-        public final RealConnection newTestConnection(RealConnectionPool connectionPool, Route route, Socket socket, long j) {
-            Intrinsics.checkNotNullParameter(connectionPool, "connectionPool");
-            Intrinsics.checkNotNullParameter(route, "route");
-            Intrinsics.checkNotNullParameter(socket, "socket");
-            RealConnection realConnection = new RealConnection(connectionPool, route);
-            realConnection.socket = socket;
-            realConnection.setIdleAtNs$okhttp(j);
-            return realConnection;
-        }
+        Http2Connection.start$default(build, false, 1, null);
     }
 
     public final boolean isEligible$okhttp(Address address, List<Route> list) {
         Intrinsics.checkNotNullParameter(address, "address");
-        if (!Util.assertionsEnabled || Thread.holdsLock(this)) {
-            if (this.calls.size() >= this.allocationLimit || this.noNewExchanges || !this.route.address().equalsNonHost$okhttp(address)) {
+        RealConnection realConnection = this;
+        if (!_UtilJvmKt.assertionsEnabled || Thread.holdsLock(realConnection)) {
+            if (this.calls.size() >= this.allocationLimit || this.noNewExchanges || !getRoute().address().equalsNonHost$okhttp(address)) {
                 return false;
             }
             if (Intrinsics.areEqual(address.url().host(), route().address().url().host())) {
@@ -704,55 +224,280 @@ public final class RealConnection extends Http2Connection.Listener implements Co
             }
             return false;
         }
-        throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST hold lock on " + this);
+        throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST hold lock on " + realConnection);
+    }
+
+    private final boolean routeMatchesAny(List<Route> list) {
+        List<Route> list2 = list;
+        if ((list2 instanceof Collection) && list2.isEmpty()) {
+            return false;
+        }
+        for (Route route : list2) {
+            if (route.proxy().type() == Proxy.Type.DIRECT && getRoute().proxy().type() == Proxy.Type.DIRECT && Intrinsics.areEqual(getRoute().socketAddress(), route.socketAddress())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private final boolean supportsUrl(HttpUrl httpUrl) {
         Handshake handshake;
-        if (!Util.assertionsEnabled || Thread.holdsLock(this)) {
-            HttpUrl url = this.route.address().url();
+        RealConnection realConnection = this;
+        if (!_UtilJvmKt.assertionsEnabled || Thread.holdsLock(realConnection)) {
+            HttpUrl url = getRoute().address().url();
             if (httpUrl.port() != url.port()) {
                 return false;
             }
             if (Intrinsics.areEqual(httpUrl.host(), url.host())) {
                 return true;
             }
-            if (!this.noCoalescedConnections && (handshake = this.handshake) != null) {
-                Intrinsics.checkNotNull(handshake);
-                if (certificateSupportHost(httpUrl, handshake)) {
-                    return true;
-                }
-            }
-            return false;
+            return (this.noCoalescedConnections || (handshake = this.handshake) == null || !certificateSupportHost(httpUrl, handshake)) ? false : true;
         }
-        throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST hold lock on " + this);
+        throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST hold lock on " + realConnection);
+    }
+
+    private final boolean certificateSupportHost(HttpUrl httpUrl, Handshake handshake) {
+        List<Certificate> peerCertificates = handshake.peerCertificates();
+        if (!peerCertificates.isEmpty()) {
+            OkHostnameVerifier okHostnameVerifier = OkHostnameVerifier.INSTANCE;
+            String host = httpUrl.host();
+            Certificate certificate = peerCertificates.get(0);
+            Intrinsics.checkNotNull(certificate, "null cannot be cast to non-null type java.security.cert.X509Certificate");
+            if (okHostnameVerifier.verify(host, (X509Certificate) certificate)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final ExchangeCodec newCodec$okhttp(OkHttpClient client, RealInterceptorChain chain) throws SocketException {
+        Intrinsics.checkNotNullParameter(client, "client");
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        Socket socket = this.socket;
+        BufferedSource bufferedSource = this.source;
+        BufferedSink bufferedSink = this.sink;
+        Http2Connection http2Connection = this.http2Connection;
+        if (http2Connection != null) {
+            return new Http2ExchangeCodec(client, this, chain, http2Connection);
+        }
+        socket.setSoTimeout(chain.readTimeoutMillis());
+        bufferedSource.timeout().timeout(chain.getReadTimeoutMillis$okhttp(), TimeUnit.MILLISECONDS);
+        bufferedSink.timeout().timeout(chain.getWriteTimeoutMillis$okhttp(), TimeUnit.MILLISECONDS);
+        return new Http1ExchangeCodec(client, this, bufferedSource, bufferedSink);
+    }
+
+    public final RealWebSocket.Streams newWebSocketStreams$okhttp(final Exchange exchange) throws SocketException {
+        Intrinsics.checkNotNullParameter(exchange, "exchange");
+        this.socket.setSoTimeout(0);
+        noNewExchanges();
+        final BufferedSource bufferedSource = this.source;
+        final BufferedSink bufferedSink = this.sink;
+        return new RealWebSocket.Streams(bufferedSource, bufferedSink) { // from class: okhttp3.internal.connection.RealConnection$newWebSocketStreams$1
+            @Override // java.io.Closeable, java.lang.AutoCloseable
+            public void close() {
+                Exchange.this.bodyComplete(-1L, true, true, null);
+            }
+
+            @Override // okhttp3.internal.ws.RealWebSocket.Streams
+            public void cancel() {
+                Exchange.this.cancel();
+            }
+        };
+    }
+
+    @Override // okhttp3.Connection
+    public Route route() {
+        return getRoute();
+    }
+
+    @Override // okhttp3.internal.http.ExchangeCodec.Carrier
+    /* renamed from: cancel */
+    public void mo10373cancel() {
+        _UtilJvmKt.closeQuietly(this.rawSocket);
+    }
+
+    @Override // okhttp3.Connection
+    public Socket socket() {
+        return this.socket;
     }
 
     public final boolean isHealthy(boolean z) {
         long j;
-        if (!Util.assertionsEnabled || !Thread.holdsLock(this)) {
+        RealConnection realConnection = this;
+        if (!_UtilJvmKt.assertionsEnabled || !Thread.holdsLock(realConnection)) {
             long nanoTime = System.nanoTime();
-            Socket socket = this.rawSocket;
-            Intrinsics.checkNotNull(socket);
-            Socket socket2 = this.socket;
-            Intrinsics.checkNotNull(socket2);
-            BufferedSource bufferedSource = this.source;
-            Intrinsics.checkNotNull(bufferedSource);
-            if (socket.isClosed() || socket2.isClosed() || socket2.isInputShutdown() || socket2.isOutputShutdown()) {
+            if (this.rawSocket.isClosed() || this.socket.isClosed() || this.socket.isInputShutdown() || this.socket.isOutputShutdown()) {
                 return false;
             }
             Http2Connection http2Connection = this.http2Connection;
             if (http2Connection != null) {
                 return http2Connection.isHealthy(nanoTime);
             }
-            synchronized (this) {
+            synchronized (realConnection) {
                 j = nanoTime - this.idleAtNs;
             }
             if (j < IDLE_CONNECTION_HEALTHY_NS || !z) {
                 return true;
             }
-            return Util.isHealthy(socket2, bufferedSource);
+            return _UtilJvmKt.isHealthy(this.socket, this.source);
         }
-        throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST NOT hold lock on " + this);
+        throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST NOT hold lock on " + realConnection);
+    }
+
+    @Override // okhttp3.internal.http2.Http2Connection.Listener
+    public void onStream(Http2Stream stream) throws IOException {
+        Intrinsics.checkNotNullParameter(stream, "stream");
+        stream.close(ErrorCode.REFUSED_STREAM, null);
+    }
+
+    @Override // okhttp3.internal.http2.Http2Connection.Listener
+    public void onSettings(Http2Connection connection, Settings settings) {
+        Intrinsics.checkNotNullParameter(connection, "connection");
+        Intrinsics.checkNotNullParameter(settings, "settings");
+        synchronized (this) {
+            int i = this.allocationLimit;
+            int maxConcurrentStreams = settings.getMaxConcurrentStreams();
+            this.allocationLimit = maxConcurrentStreams;
+            if (maxConcurrentStreams < i) {
+                this.connectionPool.scheduleOpener(getRoute().address());
+            } else if (maxConcurrentStreams > i) {
+                this.connectionPool.scheduleCloser();
+            }
+            Unit unit = Unit.INSTANCE;
+        }
+    }
+
+    @Override // okhttp3.Connection
+    public Handshake handshake() {
+        return this.handshake;
+    }
+
+    public final void connectFailed$okhttp(OkHttpClient client, Route failedRoute, IOException failure) {
+        Intrinsics.checkNotNullParameter(client, "client");
+        Intrinsics.checkNotNullParameter(failedRoute, "failedRoute");
+        Intrinsics.checkNotNullParameter(failure, "failure");
+        if (failedRoute.proxy().type() != Proxy.Type.DIRECT) {
+            Address address = failedRoute.address();
+            address.proxySelector().connectFailed(address.url().uri(), failedRoute.proxy().address(), failure);
+        }
+        client.getRouteDatabase$okhttp().failed(failedRoute);
+    }
+
+    @Override // okhttp3.internal.http.ExchangeCodec.Carrier
+    public void trackFailure(RealCall call, IOException iOException) {
+        boolean z;
+        Intrinsics.checkNotNullParameter(call, "call");
+        synchronized (this) {
+            if (iOException instanceof StreamResetException) {
+                if (((StreamResetException) iOException).errorCode == ErrorCode.REFUSED_STREAM) {
+                    int i = this.refusedStreamCount + 1;
+                    this.refusedStreamCount = i;
+                    if (i > 1) {
+                        z = !this.noNewExchanges;
+                        this.noNewExchanges = true;
+                        this.routeFailureCount++;
+                        Unit unit = Unit.INSTANCE;
+                    }
+                    z = false;
+                    Unit unit2 = Unit.INSTANCE;
+                } else {
+                    if (((StreamResetException) iOException).errorCode != ErrorCode.CANCEL || !call.isCanceled()) {
+                        z = !this.noNewExchanges;
+                        this.noNewExchanges = true;
+                        this.routeFailureCount++;
+                        Unit unit22 = Unit.INSTANCE;
+                    }
+                    z = false;
+                    Unit unit222 = Unit.INSTANCE;
+                }
+            } else {
+                if (isMultiplexed$okhttp()) {
+                    if (iOException instanceof ConnectionShutdownException) {
+                    }
+                    z = false;
+                    Unit unit2222 = Unit.INSTANCE;
+                }
+                boolean z2 = !this.noNewExchanges;
+                this.noNewExchanges = true;
+                if (this.successCount == 0) {
+                    if (iOException != null) {
+                        connectFailed$okhttp(call.getClient(), getRoute(), iOException);
+                    }
+                    this.routeFailureCount++;
+                }
+                z = z2;
+                Unit unit22222 = Unit.INSTANCE;
+            }
+        }
+        if (z) {
+            this.connectionListener.noNewExchanges(this);
+        }
+    }
+
+    @Override // okhttp3.Connection
+    public Protocol protocol() {
+        return this.protocol;
+    }
+
+    public String toString() {
+        StringBuilder append = new StringBuilder("Connection{").append(getRoute().address().url().host()).append(AbstractJsonLexerKt.COLON).append(getRoute().address().url().port()).append(", proxy=").append(getRoute().proxy()).append(" hostAddress=").append(getRoute().socketAddress()).append(" cipherSuite=");
+        Handshake handshake = this.handshake;
+        return append.append((handshake == null || (r1 = handshake.cipherSuite()) == null) ? "none" : "none").append(" protocol=").append(this.protocol).append(AbstractJsonLexerKt.END_OBJ).toString();
+    }
+
+    /* compiled from: RealConnection.kt */
+    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J.\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0005R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lokhttp3/internal/connection/RealConnection$Companion;", "", "<init>", "()V", "IDLE_CONNECTION_HEALTHY_NS", "", "newTestConnection", "Lokhttp3/internal/connection/RealConnection;", "taskRunner", "Lokhttp3/internal/concurrent/TaskRunner;", "connectionPool", "Lokhttp3/internal/connection/RealConnectionPool;", "route", "Lokhttp3/Route;", "socket", "Ljava/net/Socket;", "idleAtNs", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    /* loaded from: classes5.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+
+        public final RealConnection newTestConnection(TaskRunner taskRunner, RealConnectionPool connectionPool, Route route, Socket socket, long j) {
+            Intrinsics.checkNotNullParameter(taskRunner, "taskRunner");
+            Intrinsics.checkNotNullParameter(connectionPool, "connectionPool");
+            Intrinsics.checkNotNullParameter(route, "route");
+            Intrinsics.checkNotNullParameter(socket, "socket");
+            RealConnection realConnection = new RealConnection(taskRunner, connectionPool, route, new Socket(), socket, null, Protocol.HTTP_2, Okio.buffer(new Source() { // from class: okhttp3.internal.connection.RealConnection$Companion$newTestConnection$result$1
+                @Override // okio.Source, java.io.Closeable, java.lang.AutoCloseable
+                public void close() {
+                }
+
+                @Override // okio.Source
+                public long read(Buffer sink, long j2) {
+                    Intrinsics.checkNotNullParameter(sink, "sink");
+                    throw new UnsupportedOperationException();
+                }
+
+                @Override // okio.Source
+                public Timeout timeout() {
+                    return Timeout.NONE;
+                }
+            }), Okio.buffer(new Sink() { // from class: okhttp3.internal.connection.RealConnection$Companion$newTestConnection$result$2
+                @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
+                public void close() {
+                }
+
+                @Override // okio.Sink, java.io.Flushable
+                public void flush() {
+                }
+
+                @Override // okio.Sink
+                public Timeout timeout() {
+                    return Timeout.NONE;
+                }
+
+                @Override // okio.Sink
+                public void write(Buffer source, long j2) {
+                    Intrinsics.checkNotNullParameter(source, "source");
+                    throw new UnsupportedOperationException();
+                }
+            }), 0, ConnectionListener.Companion.getNONE());
+            realConnection.setIdleAtNs(j);
+            return realConnection;
+        }
     }
 }

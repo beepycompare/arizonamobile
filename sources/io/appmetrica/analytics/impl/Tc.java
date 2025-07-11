@@ -5,7 +5,7 @@ import java.util.Map;
 public final class Tc extends N2 {
     public static final Sc b = new Sc();
 
-    public Tc(EnumC0186ca enumC0186ca, Map<String, ? extends Object> map) {
-        super(Sc.a(b, enumC0186ca, map));
+    public Tc(EnumC0178ca enumC0178ca, Map<String, ? extends Object> map) {
+        super(Sc.a(b, enumC0178ca, map));
     }
 }

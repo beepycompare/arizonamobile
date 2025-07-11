@@ -2,36 +2,32 @@ package com.google.android.gms.internal.measurement;
 
 import android.os.RemoteException;
 import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzef extends zzeu {
+public final class zzef extends zzeq {
     final /* synthetic */ String zza;
-    final /* synthetic */ String zzb;
-    final /* synthetic */ boolean zzc;
-    final /* synthetic */ zzcs zzd;
-    final /* synthetic */ zzff zze;
+    final /* synthetic */ zzco zzb;
+    final /* synthetic */ zzfb zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzef(zzff zzffVar, String str, String str2, boolean z, zzcs zzcsVar) {
-        super(zzffVar, true);
+    public zzef(zzfb zzfbVar, String str, zzco zzcoVar) {
+        super(zzfbVar, true);
         this.zza = str;
-        this.zzb = str2;
-        this.zzc = z;
-        this.zzd = zzcsVar;
-        this.zze = zzffVar;
+        this.zzb = zzcoVar;
+        Objects.requireNonNull(zzfbVar);
+        this.zzc = zzfbVar;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeu
+    @Override // com.google.android.gms.internal.measurement.zzeq
     final void zza() throws RemoteException {
-        zzcv zzcvVar;
-        zzcvVar = this.zze.zzj;
-        ((zzcv) Preconditions.checkNotNull(zzcvVar)).getUserProperties(this.zza, this.zzb, this.zzc, this.zzd);
+        ((zzcr) Preconditions.checkNotNull(this.zzc.zzQ())).getMaxUserProperties(this.zza, this.zzb);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeu
+    @Override // com.google.android.gms.internal.measurement.zzeq
     protected final void zzb() {
-        this.zzd.zze(null);
+        this.zzb.zzb(null);
     }
 }

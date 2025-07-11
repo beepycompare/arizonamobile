@@ -9,7 +9,7 @@ import kotlin.Metadata;
 public final class ReporterExtensionClientModuleEntryPoint extends ModuleClientEntryPoint<Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final long f1268a = 10;
+    private final long f1269a = 10;
     private final String b = "reporter_extension";
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -31,7 +31,7 @@ public final class ReporterExtensionClientModuleEntryPoint extends ModuleClientE
                 public final void run() {
                     ReporterExtensionClientModuleEntryPoint.a(ClientContext.this);
                 }
-            }, this.f1268a, TimeUnit.SECONDS);
+            }, this.f1269a, TimeUnit.SECONDS);
         }
     }
 }

@@ -6,7 +6,7 @@ import kotlin.enums.EnumEntriesKt;
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* compiled from: Constants.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b4\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013j\u0002\b\u0014j\u0002\b\u0015j\u0002\b\u0016j\u0002\b\u0017j\u0002\b\u0018j\u0002\b\u0019j\u0002\b\u001aj\u0002\b\u001bj\u0002\b\u001cj\u0002\b\u001dj\u0002\b\u001ej\u0002\b\u001fj\u0002\b j\u0002\b!j\u0002\b\"j\u0002\b#j\u0002\b$j\u0002\b%j\u0002\b&j\u0002\b'j\u0002\b(j\u0002\b)j\u0002\b*j\u0002\b+j\u0002\b,j\u0002\b-j\u0002\b.j\u0002\b/j\u0002\b0j\u0002\b1j\u0002\b2j\u0002\b3j\u0002\b4j\u0002\b5j\u0002\b6¨\u00067"}, d2 = {"Lru/mrlargha/commonui/utils/ArizonaBlockType;", "", "id", "", "<init>", "(Ljava/lang/String;II)V", "getId", "()I", "BLOCK_TYPE_NONE", "BLOCK_TYPE_MENU", "BLOCK_TYPE_ATTACH", "BLOCK_TYPE_TRADE", "BLOCK_TYPE_FOR_TRADE", "BLOCK_TYPE_HOUSE", "BLOCK_TYPE_TRAILER", "BLOCK_TYPE_TRASH", "BLOCK_TYPE_TRUNK", "BLOCK_TYPE_CHEST", "BLOCK_TYPE_GUN", "BLOCK_TYPE_CRAFT", "BLOCK_TYPE_VISUAL_TUNING", "BLOCK_TYPE_SHOP_BUY", "BLOCK_TYPE_SELECT_SHOP", "BLOCK_TYPE_TUNING", "BLOCK_TYPE_STORE", "BLOCK_TYPE_IMPROV", "BLOCK_TYPE_VEH_SKIN", "BLOCK_TYPE_VEH_MODIFICATION", "BLOCK_TYPE_MOD_SKIN", "BLOCK_TYPE_WORKSHOP", "BLOCK_TYPE_SKIN", "BLOCK_TYPE_TECH_TUNING", "BLOCK_TYPE_WALLET", "BLOCK_TYPE_STOREHOUSE", "BLOCK_TYPE_HOTEL_BACKUP_ROOM", "BLOCK_TYPE_PAWNSHOP", "BLOCK_TYPE_SHOP_SELL", "BLOCK_TYPE_FAM_FLAT", "BLOCK_TYPE_ACTOR_ATTACH", "BLOCK_TYPE_PAINTING_ACS", "BLOCK_TYPE_ACTOR_WEAPON", "BLOCK_TYPE_ACTOR_INVENTORY", "BLOCK_TYPE_HOTEL_ROOM", "BLOCK_TYPE_FISHBAG", "BLOCK_TYPE_VEH_NUMBER", "BLOCK_TYPE_USER_PREVIEW_ATTACH", "BLOCK_TYPE_USER_PREVIEW_GUN_IMPROV", "BLOCK_TYPE_USER_PREVIEW_IMPROV", "BLOCK_TYPE_USER_PREVIEW_SKIN", "BLOCK_TYPE_VIEW_MOD_SKIN", "BLOCK_TYPE_STORE_SELL", "BLOCK_TYPE_TRASH_BAG", "BLOCK_TYPE_POTION", "BLOCK_TYPE_HOUSE_WARDROBE", "BLOCK_TYPE_ADMIN_FUND", "CommonUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b4\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013j\u0002\b\u0014j\u0002\b\u0015j\u0002\b\u0016j\u0002\b\u0017j\u0002\b\u0018j\u0002\b\u0019j\u0002\b\u001aj\u0002\b\u001bj\u0002\b\u001cj\u0002\b\u001dj\u0002\b\u001ej\u0002\b\u001fj\u0002\b j\u0002\b!j\u0002\b\"j\u0002\b#j\u0002\b$j\u0002\b%j\u0002\b&j\u0002\b'j\u0002\b(j\u0002\b)j\u0002\b*j\u0002\b+j\u0002\b,j\u0002\b-j\u0002\b.j\u0002\b/j\u0002\b0j\u0002\b1j\u0002\b2j\u0002\b3j\u0002\b4j\u0002\b5j\u0002\b6¨\u00067"}, d2 = {"Lru/mrlargha/commonui/utils/ArizonaBlockType;", "", "id", "", "<init>", "(Ljava/lang/String;II)V", "getId", "()I", "BLOCK_TYPE_NONE", "BLOCK_TYPE_MENU", "BLOCK_TYPE_ATTACH", "BLOCK_TYPE_TRADE", "BLOCK_TYPE_FOR_TRADE", "BLOCK_TYPE_HOUSE", "BLOCK_TYPE_TRAILER", "BLOCK_TYPE_TRASH", "BLOCK_TYPE_TRUNK", "BLOCK_TYPE_CHEST", "BLOCK_TYPE_GUN", "BLOCK_TYPE_CRAFT", "BLOCK_TYPE_VISUAL_TUNING", "BLOCK_TYPE_SHOP_BUY", "BLOCK_TYPE_SELECT_SHOP", "BLOCK_TYPE_TUNING", "BLOCK_TYPE_STORE", "BLOCK_TYPE_IMPROV", "BLOCK_TYPE_VEH_SKIN", "BLOCK_TYPE_VEH_MODIFICATION", "BLOCK_TYPE_MOD_SKIN", "BLOCK_TYPE_WORKSHOP", "BLOCK_TYPE_SKIN", "BLOCK_TYPE_TECH_TUNING", "BLOCK_TYPE_WALLET", "BLOCK_TYPE_STOREHOUSE", "BLOCK_TYPE_HOTEL_BACKUP_ROOM", "BLOCK_TYPE_PAWNSHOP", "BLOCK_TYPE_SHOP_SELL", "BLOCK_TYPE_FAM_FLAT", "BLOCK_TYPE_ACTOR_ATTACH", "BLOCK_TYPE_PAINTING_ACS", "BLOCK_TYPE_ACTOR_WEAPON", "BLOCK_TYPE_ACTOR_INVENTORY", "BLOCK_TYPE_HOTEL_ROOM", "BLOCK_TYPE_FISHBAG", "BLOCK_TYPE_VEH_NUMBER", "BLOCK_TYPE_USER_PREVIEW_ATTACH", "BLOCK_TYPE_USER_PREVIEW_GUN_IMPROV", "BLOCK_TYPE_USER_PREVIEW_IMPROV", "BLOCK_TYPE_USER_PREVIEW_SKIN", "BLOCK_TYPE_VIEW_MOD_SKIN", "BLOCK_TYPE_STORE_SELL", "BLOCK_TYPE_TRASH_BAG", "BLOCK_TYPE_POTION", "BLOCK_TYPE_HOUSE_WARDROBE", "BLOCK_TYPE_ADMIN_FUND", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ArizonaBlockType {
     private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -68,6 +68,14 @@ public final class ArizonaBlockType {
         return $ENTRIES;
     }
 
+    public static ArizonaBlockType valueOf(String str) {
+        return (ArizonaBlockType) Enum.valueOf(ArizonaBlockType.class, str);
+    }
+
+    public static ArizonaBlockType[] values() {
+        return (ArizonaBlockType[]) $VALUES.clone();
+    }
+
     private ArizonaBlockType(String str, int i, int i2) {
         this.id = i2;
     }
@@ -80,13 +88,5 @@ public final class ArizonaBlockType {
         ArizonaBlockType[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static ArizonaBlockType valueOf(String str) {
-        return (ArizonaBlockType) Enum.valueOf(ArizonaBlockType.class, str);
-    }
-
-    public static ArizonaBlockType[] values() {
-        return (ArizonaBlockType[]) $VALUES.clone();
     }
 }

@@ -5,9 +5,9 @@ import io.appmetrica.analytics.billinginterface.internal.ProductInfo;
 public final class Rf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ProductInfo f610a;
+    public final ProductInfo f611a;
 
     public Rf(ProductInfo productInfo) {
-        this.f610a = productInfo;
+        this.f611a = productInfo;
     }
 }

@@ -14,23 +14,23 @@ import java.util.Map;
 public class Signer {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f183a = false;
+    public boolean f184a = false;
     public d b;
     public a c;
     public c d;
 
     public static String getVersion() {
-        return "3.35.2";
+        return "3.47.0";
     }
 
     public final synchronized void a() {
-        if (this.f183a) {
+        if (this.f184a) {
             return;
         }
         this.b = new d();
         this.d = new c(Build.VERSION.SDK_INT);
         this.c = new NativeLibHelper();
-        this.f183a = true;
+        this.f184a = true;
     }
 
     public synchronized void onResume() {
@@ -38,7 +38,7 @@ public class Signer {
         d dVar = this.b;
         a aVar = this.c;
         dVar.getClass();
-        if (!d.f185a) {
+        if (!d.f186a) {
             ((NativeLibHelper) aVar).a();
         }
     }

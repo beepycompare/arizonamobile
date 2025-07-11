@@ -1,21 +1,20 @@
 package com.google.firebase.analytics;
 
-import com.google.android.gms.internal.measurement.zzff;
+import java.util.Objects;
 import java.util.concurrent.Callable;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
 /* loaded from: classes4.dex */
 final class zzc implements Callable {
     final /* synthetic */ FirebaseAnalytics zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzc(FirebaseAnalytics firebaseAnalytics) {
+        Objects.requireNonNull(firebaseAnalytics);
         this.zza = firebaseAnalytics;
     }
 
     @Override // java.util.concurrent.Callable
     public final /* bridge */ /* synthetic */ Object call() throws Exception {
-        zzff zzffVar;
-        zzffVar = this.zza.zzb;
-        return zzffVar.zzh();
+        return this.zza.zza().zzH();
     }
 }

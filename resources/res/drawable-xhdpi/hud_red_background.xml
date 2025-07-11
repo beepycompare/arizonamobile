@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="80dp" android:width="80dp" android:viewportWidth="80" android:viewportHeight="80">
-    <path android:fillColor="@drawable/res_0x7f080117_hud_red_background__0" android:pathData="M15,0L65,0A15,15 0,0 1,80 15L80,65A15,15 0,0 1,65 80L15,80A15,15 0,0 1,0 65L0,15A15,15 0,0 1,15 0z" android:fillAlpha="0.9"/>
-    <path android:fillColor="#00000000" android:pathData="M15,2.5L65,2.5A12.5,12.5 0,0 1,77.5 15L77.5,65A12.5,12.5 0,0 1,65 77.5L15,77.5A12.5,12.5 0,0 1,2.5 65L2.5,15A12.5,12.5 0,0 1,15 2.5z" android:strokeColor="@drawable/res_0x7f080118_hud_red_background__1" android:strokeWidth="5" android:strokeAlpha="0.25"/>
+    <path android:fillColor="@drawable/res_0x7f08011b_hud_red_background__0" android:pathData="M15,0L65,0A15,15 0,0 1,80 15L80,65A15,15 0,0 1,65 80L15,80A15,15 0,0 1,0 65L0,15A15,15 0,0 1,15 0z" android:fillAlpha="0.9"/>
+    <path android:fillColor="#00000000" android:pathData="M15,2.5L65,2.5A12.5,12.5 0,0 1,77.5 15L77.5,65A12.5,12.5 0,0 1,65 77.5L15,77.5A12.5,12.5 0,0 1,2.5 65L2.5,15A12.5,12.5 0,0 1,15 2.5z" android:strokeColor="@drawable/res_0x7f08011c_hud_red_background__1" android:strokeWidth="5" android:strokeAlpha="0.25"/>
 </vector>

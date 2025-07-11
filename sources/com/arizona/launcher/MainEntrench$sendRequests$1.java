@@ -11,13 +11,14 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.DelayKt;
 /* compiled from: MainEntrench.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.MainEntrench$sendRequests$1", f = "MainEntrench.kt", i = {}, l = {1084}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "com.arizona.launcher.MainEntrench$sendRequests$1", f = "MainEntrench.kt", i = {0, 0, 0}, l = {1073}, m = "invokeSuspend", n = {"request", "it", "$i$a$-repeat-MainEntrench$sendRequests$1$1"}, s = {"L$2", "I$2", "I$3"})
 /* loaded from: classes3.dex */
 final class MainEntrench$sendRequests$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $iterations;
@@ -25,8 +26,11 @@ final class MainEntrench$sendRequests$1 extends SuspendLambda implements Functio
     final /* synthetic */ String $url;
     int I$0;
     int I$1;
+    int I$2;
+    int I$3;
     Object L$0;
     Object L$1;
+    Object L$2;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -48,9 +52,9 @@ final class MainEntrench$sendRequests$1 extends SuspendLambda implements Functio
         return ((MainEntrench$sendRequests$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0033  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x005c  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0057 -> B:13:0x005a). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x006b  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0066 -> B:13:0x0069). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -76,12 +80,13 @@ final class MainEntrench$sendRequests$1 extends SuspendLambda implements Functio
         } else {
             i = this.I$1;
             i2 = this.I$0;
+            StringRequest stringRequest = (StringRequest) this.L$2;
             requestQueue = (RequestQueue) this.L$1;
             str = (String) this.L$0;
             ResultKt.throwOnFailure(obj);
             i++;
             if (i < i2) {
-                requestQueue.add(new StringRequest(0, str, new Response.Listener() { // from class: com.arizona.launcher.MainEntrench$sendRequests$1$$ExternalSyntheticLambda0
+                StringRequest stringRequest2 = new StringRequest(0, str, new Response.Listener() { // from class: com.arizona.launcher.MainEntrench$sendRequests$1$$ExternalSyntheticLambda0
                     @Override // com.android.volley.Response.Listener
                     public final void onResponse(Object obj2) {
                         String str2 = (String) obj2;
@@ -92,11 +97,15 @@ final class MainEntrench$sendRequests$1 extends SuspendLambda implements Functio
                     public final void onErrorResponse(VolleyError volleyError) {
                         Log.w("MainEntrench", "PRE-Check LOG – NOT OK");
                     }
-                }));
+                });
+                requestQueue.add(stringRequest2);
                 this.L$0 = str;
                 this.L$1 = requestQueue;
+                this.L$2 = SpillingKt.nullOutSpilledVariable(stringRequest2);
                 this.I$0 = i2;
                 this.I$1 = i;
+                this.I$2 = i;
+                this.I$3 = 0;
                 this.label = 1;
                 if (DelayKt.delay(300L, this) == coroutine_suspended) {
                     return coroutine_suspended;

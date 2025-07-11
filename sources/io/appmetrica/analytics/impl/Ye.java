@@ -5,18 +5,18 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 public final class Ye implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f722a;
+    public final /* synthetic */ PluginErrorDetails f723a;
     public final /* synthetic */ String b;
-    public final /* synthetic */ C0139af c;
+    public final /* synthetic */ C0131af c;
 
-    public Ye(C0139af c0139af, PluginErrorDetails pluginErrorDetails, String str) {
-        this.c = c0139af;
-        this.f722a = pluginErrorDetails;
+    public Ye(C0131af c0131af, PluginErrorDetails pluginErrorDetails, String str) {
+        this.c = c0131af;
+        this.f723a = pluginErrorDetails;
         this.b = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        ((InterfaceC0387kb) this.c.d.get()).getPluginExtension().reportError(this.f722a, this.b);
+        ((InterfaceC0379kb) this.c.d.get()).getPluginExtension().reportError(this.f723a, this.b);
     }
 }

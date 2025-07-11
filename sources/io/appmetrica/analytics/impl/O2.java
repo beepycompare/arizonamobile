@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public abstract class O2 implements Ma {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f561a;
+    public final int f562a;
 
     public O2(int i) {
-        this.f561a = i;
+        this.f562a = i;
     }
 
     public final int a() {
-        return this.f561a;
+        return this.f562a;
     }
 
     @Override // io.appmetrica.analytics.impl.Ma

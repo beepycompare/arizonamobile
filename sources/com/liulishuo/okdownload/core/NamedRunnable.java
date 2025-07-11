@@ -18,10 +18,12 @@ public abstract class NamedRunnable implements Runnable {
         String name = Thread.currentThread().getName();
         Thread.currentThread().setName(this.name);
         try {
-            execute();
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            interrupted(e);
+            try {
+                execute();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                interrupted(e);
+            }
         } finally {
             Thread.currentThread().setName(name);
             finished();

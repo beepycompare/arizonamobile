@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="65dp" android:width="65dp" android:viewportWidth="65" android:viewportHeight="65">
-    <path android:fillColor="@drawable/res_0x7f080211_mp_sound_settings_ic__0" android:pathData="M15,0L50,0A15,15 0,0 1,65 15L65,50A15,15 0,0 1,50 65L15,65A15,15 0,0 1,0 50L0,15A15,15 0,0 1,15 0z"/>
+    <path android:fillColor="@drawable/res_0x7f080215_mp_sound_settings_ic__0" android:pathData="M15,0L50,0A15,15 0,0 1,65 15L65,50A15,15 0,0 1,50 65L15,65A15,15 0,0 1,0 50L0,15A15,15 0,0 1,15 0z"/>
     <group>
         <clip-path android:pathData="M15,0L50,0A15,15 0,0 1,65 15L65,50A15,15 0,0 1,50 65L15,65A15,15 0,0 1,0 50L0,15A15,15 0,0 1,15 0z"/>
         <path android:fillColor="#ffffff" android:pathData="M39.881,23.715C10.495,3.767 44.563,-10.407 65.27,-15H-1.174C-2.47,-15 -13.598,75.116 -19,120.174C20.074,126.08 87.958,134.348 46.904,120.174C-4.415,102.457 30.698,91.302 70.132,68.992C109.566,46.681 76.614,48.65 39.881,23.715Z" android:fillAlpha="0.1"/>

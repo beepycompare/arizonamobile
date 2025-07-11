@@ -16,15 +16,15 @@ import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: EasyAnimation.kt */
-@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\bÆ\u0002\u0018\u00002\u00020\u0001:\u0001\u000fB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J8\u0010\u0004\u001a\u00020\u0005*\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b2\u0010\b\u0002\u0010\t\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\n2\u0010\b\u0002\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\nJ@\u0010\f\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u0007\u001a\u00020\b2\u0010\b\u0002\u0010\t\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\n2\u0010\b\u0002\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\n¨\u0006\u0010"}, d2 = {"Lcom/arizona/common/utils/EasyAnimation;", "", "<init>", "()V", "animateClick", "", "Landroid/view/View;", TypedValues.TransitionType.S_DURATION, "", "withStartAction", "Lkotlin/Function0;", "withEndAction", "slideWithFade", "direction", "Lcom/arizona/common/utils/EasyAnimation$SlideDirection;", "SlideDirection", "CommonLibs_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\bÆ\u0002\u0018\u00002\u00020\u0001:\u0001\u000fB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J8\u0010\u0004\u001a\u00020\u0005*\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b2\u0010\b\u0002\u0010\t\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\n2\u0010\b\u0002\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\nJ@\u0010\f\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u0007\u001a\u00020\b2\u0010\b\u0002\u0010\t\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\n2\u0010\b\u0002\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\n¨\u0006\u0010"}, d2 = {"Lcom/arizona/common/utils/EasyAnimation;", "", "<init>", "()V", "animateClick", "", "Landroid/view/View;", TypedValues.TransitionType.S_DURATION, "", "withStartAction", "Lkotlin/Function0;", "withEndAction", "slideWithFade", "direction", "Lcom/arizona/common/utils/EasyAnimation$SlideDirection;", "SlideDirection", "CommonLibs_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class EasyAnimation {
     public static final EasyAnimation INSTANCE = new EasyAnimation();
 
     /* compiled from: EasyAnimation.kt */
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -205,7 +205,7 @@ public final class EasyAnimation {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: EasyAnimation.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\f\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\f¨\u0006\r"}, d2 = {"Lcom/arizona/common/utils/EasyAnimation$SlideDirection;", "", "<init>", "(Ljava/lang/String;I)V", "TOP_TO_BOTTOM", "BOTTOM_TO_TOP", "LEFT_TO_RIGHT", "RIGHT_TO_LEFT", "OUT_SCREEN_DOWN", "OUT_SCREEN_LEFT", "OUT_SCREEN_RIGHT", "OUT_SCREEN_UP", "SCREEN_TO_DEFAULT", "CommonLibs_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\f\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\f¨\u0006\r"}, d2 = {"Lcom/arizona/common/utils/EasyAnimation$SlideDirection;", "", "<init>", "(Ljava/lang/String;I)V", "TOP_TO_BOTTOM", "BOTTOM_TO_TOP", "LEFT_TO_RIGHT", "RIGHT_TO_LEFT", "OUT_SCREEN_DOWN", "OUT_SCREEN_LEFT", "OUT_SCREEN_RIGHT", "OUT_SCREEN_UP", "SCREEN_TO_DEFAULT", "CommonLibs_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class SlideDirection {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -228,6 +228,14 @@ public final class EasyAnimation {
             return $ENTRIES;
         }
 
+        public static SlideDirection valueOf(String str) {
+            return (SlideDirection) Enum.valueOf(SlideDirection.class, str);
+        }
+
+        public static SlideDirection[] values() {
+            return (SlideDirection[]) $VALUES.clone();
+        }
+
         private SlideDirection(String str, int i) {
         }
 
@@ -235,14 +243,6 @@ public final class EasyAnimation {
             SlideDirection[] $values = $values();
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
-        }
-
-        public static SlideDirection valueOf(String str) {
-            return (SlideDirection) Enum.valueOf(SlideDirection.class, str);
-        }
-
-        public static SlideDirection[] values() {
-            return (SlideDirection[]) $VALUES.clone();
         }
     }
 }

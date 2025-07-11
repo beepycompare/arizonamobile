@@ -1,25 +1,20 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzhj extends zzlz implements zzni {
-    private zzhj() {
-        throw null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zzhj(zzip zzipVar) {
-        super(zzhk.zzd());
-    }
-
-    public final zzhj zza(long j) {
-        zzbe();
-        zzhk.zze((zzhk) this.zza, j);
-        return this;
-    }
-
-    public final zzhj zzb(int i) {
-        zzbe();
-        zzhk.zzf((zzhk) this.zza, i);
-        return this;
+public final class zzhj {
+    public static int zza(int i) {
+        if (i != 0) {
+            if (i != 1) {
+                if (i != 2) {
+                    if (i != 3) {
+                        return i != 4 ? 0 : 5;
+                    }
+                    return 4;
+                }
+                return 3;
+            }
+            return 2;
+        }
+        return 1;
     }
 }

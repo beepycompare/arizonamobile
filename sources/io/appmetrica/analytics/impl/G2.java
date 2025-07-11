@@ -14,18 +14,18 @@ import kotlin.jvm.JvmStatic;
 public final class G2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final G2 f435a = new G2();
+    public static final G2 f436a = new G2();
 
     private G2() {
     }
 
     @JvmStatic
-    public static final J2 a(Context context, final C0329i2 c0329i2) {
+    public static final J2 a(Context context, final C0321i2 c0321i2) {
         return new J2((I2) SystemServiceUtils.accessSystemServiceByNameSafely(context, "usagestats", "getting app standby bucket", "usageStatsManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.impl.G2$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
             public final Object apply(Object obj) {
                 I2 a2;
-                a2 = G2.a(C0329i2.this, (UsageStatsManager) obj);
+                a2 = G2.a(C0321i2.this, (UsageStatsManager) obj);
                 return a2;
             }
         }), (Boolean) SystemServiceUtils.accessSystemServiceByNameSafely(context, "activity", "getting is background restricted", "activityManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.impl.G2$$ExternalSyntheticLambda1
@@ -39,9 +39,9 @@ public final class G2 {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final I2 a(C0329i2 c0329i2, UsageStatsManager usageStatsManager) {
+    public static final I2 a(C0321i2 c0321i2, UsageStatsManager usageStatsManager) {
         int appStandbyBucket = usageStatsManager.getAppStandbyBucket();
-        c0329i2.getClass();
+        c0321i2.getClass();
         if (AndroidUtils.isApiAchieved(28)) {
             if (AndroidUtils.isApiAchieved(30) && appStandbyBucket == 45) {
                 return I2.RESTRICTED;

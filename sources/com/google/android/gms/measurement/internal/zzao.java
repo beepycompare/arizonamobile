@@ -1,80 +1,25 @@
 package com.google.android.gms.measurement.internal;
 
-import java.util.EnumMap;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzao {
-    private final EnumMap zza;
+public final class zzao extends AbstractSafeParcelable {
+    public static final Parcelable.Creator<zzao> CREATOR = new zzap();
+    public final Bundle zza;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzao() {
-        this.zza = new EnumMap(zzjw.class);
+    public zzao(Bundle bundle) {
+        this.zza = bundle;
     }
 
-    public static zzao zzb(String str) {
-        EnumMap enumMap = new EnumMap(zzjw.class);
-        if (str.length() >= zzjw.values().length) {
-            int i = 0;
-            if (str.charAt(0) == '1') {
-                zzjw[] values = zzjw.values();
-                int length = values.length;
-                int i2 = 1;
-                while (i < length) {
-                    enumMap.put((EnumMap) values[i], (zzjw) zzan.zzb(str.charAt(i2)));
-                    i++;
-                    i2++;
-                }
-                return new zzao(enumMap);
-            }
-        }
-        return new zzao();
-    }
-
-    public final String toString() {
-        char c;
-        StringBuilder sb = new StringBuilder("1");
-        for (zzjw zzjwVar : zzjw.values()) {
-            zzan zzanVar = (zzan) this.zza.get(zzjwVar);
-            if (zzanVar == null) {
-                zzanVar = zzan.UNSET;
-            }
-            c = zzanVar.zzl;
-            sb.append(c);
-        }
-        return sb.toString();
-    }
-
-    public final zzan zza(zzjw zzjwVar) {
-        zzan zzanVar = (zzan) this.zza.get(zzjwVar);
-        return zzanVar == null ? zzan.UNSET : zzanVar;
-    }
-
-    public final void zzc(zzjw zzjwVar, int i) {
-        zzan zzanVar = zzan.UNSET;
-        if (i != -30) {
-            if (i != -20) {
-                if (i == -10) {
-                    zzanVar = zzan.MANIFEST;
-                } else if (i != 0) {
-                    if (i == 30) {
-                        zzanVar = zzan.INITIALIZATION;
-                    }
-                }
-            }
-            zzanVar = zzan.API;
-        } else {
-            zzanVar = zzan.TCF;
-        }
-        this.zza.put((EnumMap) zzjwVar, (zzjw) zzanVar);
-    }
-
-    public final void zzd(zzjw zzjwVar, zzan zzanVar) {
-        this.zza.put((EnumMap) zzjwVar, (zzjw) zzanVar);
-    }
-
-    private zzao(EnumMap enumMap) {
-        EnumMap enumMap2 = new EnumMap(zzjw.class);
-        this.zza = enumMap2;
-        enumMap2.putAll(enumMap);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        Bundle bundle = this.zza;
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeBundle(parcel, 1, bundle, false);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 }

@@ -1,12 +1,14 @@
 package com.google.android.gms.internal.measurement;
-
-import android.net.Uri;
-import java.util.regex.Pattern;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzjc {
-    public static final Uri zza = Uri.parse("content://com.google.android.gsf.gservices");
-    public static final Uri zzb = Uri.parse("content://com.google.android.gsf.gservices/prefix");
-    public static final Pattern zzc = Pattern.compile("^(1|true|t|on|yes|y)$", 2);
-    public static final Pattern zzd = Pattern.compile("^(0|false|f|off|no|n)$", 2);
+final class zzjc implements zzmj {
+    static final zzmj zza = new zzjc();
+
+    private zzjc() {
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzmj
+    public final boolean zza(int i) {
+        return zzjd.zza(i) != 0;
+    }
 }

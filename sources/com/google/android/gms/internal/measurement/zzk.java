@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzk extends zzai {
     private final zzab zza;
@@ -14,18 +14,18 @@ public final class zzk extends zzai {
     }
 
     @Override // com.google.android.gms.internal.measurement.zzai
-    public final zzap zza(zzg zzgVar, List list) {
+    public final zzao zza(zzg zzgVar, List list) {
         Map hashMap;
-        zzh.zzh(this.zzd, 3, list);
-        String zzi = zzgVar.zzb((zzap) list.get(0)).zzi();
-        long zza = (long) zzh.zza(zzgVar.zzb((zzap) list.get(1)).zzh().doubleValue());
-        zzap zzb = zzgVar.zzb((zzap) list.get(2));
-        if (zzb instanceof zzam) {
-            hashMap = zzh.zzg((zzam) zzb);
+        zzh.zza(this.zzd, 3, list);
+        String zzc = zzgVar.zza((zzao) list.get(0)).zzc();
+        long zzi = (long) zzh.zzi(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue());
+        zzao zza = zzgVar.zza((zzao) list.get(2));
+        if (zza instanceof zzal) {
+            hashMap = zzh.zzk((zzal) zza);
         } else {
             hashMap = new HashMap();
         }
-        this.zza.zze(zzi, zza, hashMap);
-        return zzap.zzf;
+        this.zza.zze(zzc, zzi, hashMap);
+        return zzao.zzf;
     }
 }

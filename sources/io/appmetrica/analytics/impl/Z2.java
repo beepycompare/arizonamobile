@@ -5,12 +5,12 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public abstract class Z2 implements Fn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f730a;
+    public final int f731a;
     public final String b;
     protected final PublicLogger c;
 
     public Z2(int i, String str, PublicLogger publicLogger) {
-        this.f730a = i;
+        this.f731a = i;
         this.b = str;
         this.c = publicLogger;
     }

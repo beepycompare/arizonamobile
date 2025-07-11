@@ -21,6 +21,7 @@ import java.security.MessageDigest;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import kotlin.UByte$$ExternalSyntheticBackport0;
 /* loaded from: classes3.dex */
 public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
     public static final long DEFAULT_FRAME = -1;
@@ -117,7 +118,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
             try {
                 Bitmap decodeFrame = decodeFrame(t, build, longValue, num.intValue(), i, i2, downsampleStrategy2);
                 if (Build.VERSION.SDK_INT >= 29) {
-                    build.close();
+                    UByte$$ExternalSyntheticBackport0.m8544m((Object) build);
                 } else {
                     build.release();
                 }
@@ -126,7 +127,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
                 th = th;
                 Throwable th2 = th;
                 if (Build.VERSION.SDK_INT >= 29) {
-                    build.close();
+                    UByte$$ExternalSyntheticBackport0.m8544m((Object) build);
                 } else {
                     build.release();
                 }

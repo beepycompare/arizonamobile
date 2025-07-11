@@ -4,7 +4,6 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.io.Closeable;
 import java.io.EOFException;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.Flushable;
 import java.io.IOException;
@@ -13,45 +12,49 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
+import kotlin.ExceptionsKt;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.Unit;
-import kotlin.io.CloseableKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-import okhttp3.internal.Util;
+import okhttp3.internal._UtilCommonKt;
+import okhttp3.internal._UtilJvmKt;
 import okhttp3.internal.cache.DiskLruCache;
+import okhttp3.internal.concurrent.Lockable;
 import okhttp3.internal.concurrent.Task;
 import okhttp3.internal.concurrent.TaskQueue;
 import okhttp3.internal.concurrent.TaskRunner;
-import okhttp3.internal.io.FileSystem;
 import okhttp3.internal.platform.Platform;
 import okio.BufferedSink;
 import okio.BufferedSource;
+import okio.FileSystem;
+import okio.ForwardingFileSystem;
 import okio.ForwardingSource;
 import okio.Okio;
+import okio.Path;
 import okio.Sink;
 import okio.Source;
 /* compiled from: DiskLruCache.kt */
-@Metadata(d1 = {"\u0000y\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010)\n\u0002\b\u0007*\u0001\u0014\u0018\u0000 [2\u00020\u00012\u00020\u0002:\u0004[\\]^B7\b\u0000\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\b\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r¢\u0006\u0002\u0010\u000eJ\b\u00108\u001a\u000209H\u0002J\b\u0010:\u001a\u000209H\u0016J!\u0010;\u001a\u0002092\n\u0010<\u001a\u00060=R\u00020\u00002\u0006\u0010>\u001a\u00020\u0010H\u0000¢\u0006\u0002\b?J\u0006\u0010@\u001a\u000209J \u0010A\u001a\b\u0018\u00010=R\u00020\u00002\u0006\u0010B\u001a\u00020(2\b\b\u0002\u0010C\u001a\u00020\u000bH\u0007J\u0006\u0010D\u001a\u000209J\b\u0010E\u001a\u000209H\u0016J\u0017\u0010F\u001a\b\u0018\u00010GR\u00020\u00002\u0006\u0010B\u001a\u00020(H\u0086\u0002J\u0006\u0010H\u001a\u000209J\u0006\u0010I\u001a\u00020\u0010J\b\u0010J\u001a\u00020\u0010H\u0002J\b\u0010K\u001a\u00020%H\u0002J\b\u0010L\u001a\u000209H\u0002J\b\u0010M\u001a\u000209H\u0002J\u0010\u0010N\u001a\u0002092\u0006\u0010O\u001a\u00020(H\u0002J\r\u0010P\u001a\u000209H\u0000¢\u0006\u0002\bQJ\u000e\u0010R\u001a\u00020\u00102\u0006\u0010B\u001a\u00020(J\u0019\u0010S\u001a\u00020\u00102\n\u0010T\u001a\u00060)R\u00020\u0000H\u0000¢\u0006\u0002\bUJ\b\u0010V\u001a\u00020\u0010H\u0002J\u0006\u00105\u001a\u00020\u000bJ\u0010\u0010W\u001a\f\u0012\b\u0012\u00060GR\u00020\u00000XJ\u0006\u0010Y\u001a\u000209J\u0010\u0010Z\u001a\u0002092\u0006\u0010B\u001a\u00020(H\u0002R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0015R\u001a\u0010\u0016\u001a\u00020\u0010X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u0014\u0010\u0003\u001a\u00020\u0004X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001eR\u000e\u0010\u001f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u0004\u0018\u00010%X\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010&\u001a\u0012\u0012\u0004\u0012\u00020(\u0012\b\u0012\u00060)R\u00020\u00000'X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b*\u0010+R&\u0010\n\u001a\u00020\u000b2\u0006\u0010,\u001a\u00020\u000b8F@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b-\u0010.\"\u0004\b/\u00100R\u000e\u00101\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\u00020\bX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b6\u00107¨\u0006_"}, d2 = {"Lokhttp3/internal/cache/DiskLruCache;", "Ljava/io/Closeable;", "Ljava/io/Flushable;", "fileSystem", "Lokhttp3/internal/io/FileSystem;", "directory", "Ljava/io/File;", RemoteConfigConstants.RequestFieldKey.APP_VERSION, "", "valueCount", "maxSize", "", "taskRunner", "Lokhttp3/internal/concurrent/TaskRunner;", "(Lokhttp3/internal/io/FileSystem;Ljava/io/File;IIJLokhttp3/internal/concurrent/TaskRunner;)V", "civilizedFileSystem", "", "cleanupQueue", "Lokhttp3/internal/concurrent/TaskQueue;", "cleanupTask", "okhttp3/internal/cache/DiskLruCache$cleanupTask$1", "Lokhttp3/internal/cache/DiskLruCache$cleanupTask$1;", "closed", "getClosed$okhttp", "()Z", "setClosed$okhttp", "(Z)V", "getDirectory", "()Ljava/io/File;", "getFileSystem$okhttp", "()Lokhttp3/internal/io/FileSystem;", "hasJournalErrors", "initialized", "journalFile", "journalFileBackup", "journalFileTmp", "journalWriter", "Lokio/BufferedSink;", "lruEntries", "Ljava/util/LinkedHashMap;", "", "Lokhttp3/internal/cache/DiskLruCache$Entry;", "getLruEntries$okhttp", "()Ljava/util/LinkedHashMap;", "value", "getMaxSize", "()J", "setMaxSize", "(J)V", "mostRecentRebuildFailed", "mostRecentTrimFailed", "nextSequenceNumber", "redundantOpCount", "size", "getValueCount$okhttp", "()I", "checkNotClosed", "", "close", "completeEdit", "editor", "Lokhttp3/internal/cache/DiskLruCache$Editor;", FirebaseAnalytics.Param.SUCCESS, "completeEdit$okhttp", "delete", "edit", "key", "expectedSequenceNumber", "evictAll", "flush", "get", "Lokhttp3/internal/cache/DiskLruCache$Snapshot;", "initialize", "isClosed", "journalRebuildRequired", "newJournalWriter", "processJournal", "readJournal", "readJournalLine", "line", "rebuildJournal", "rebuildJournal$okhttp", "remove", "removeEntry", "entry", "removeEntry$okhttp", "removeOldestEntry", "snapshots", "", "trimToSize", "validateKey", "Companion", "Editor", "Entry", "Snapshot", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0083\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0010)\n\u0002\b\u0005*\u00019\u0018\u0000 a2\u00020\u00012\u00020\u00022\u00020\u0003:\u0004^_`aB7\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\t\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u000e¢\u0006\u0004\b\u000f\u0010\u0010J\u0006\u0010;\u001a\u00020<J\b\u0010=\u001a\u00020<H\u0002J\b\u0010>\u001a\u00020!H\u0002J\u0010\u0010?\u001a\u00020<2\u0006\u0010@\u001a\u00020$H\u0002J\b\u0010A\u001a\u00020<H\u0002J\r\u0010B\u001a\u00020<H\u0000¢\u0006\u0002\bCJ\u0017\u0010D\u001a\b\u0018\u00010ER\u00020\u00002\u0006\u0010F\u001a\u00020$H\u0086\u0002J \u0010G\u001a\b\u0018\u00010HR\u00020\u00002\u0006\u0010F\u001a\u00020$2\b\b\u0002\u0010I\u001a\u00020\fH\u0007J\u0006\u0010\u001f\u001a\u00020\fJ!\u0010J\u001a\u00020<2\n\u0010K\u001a\u00060HR\u00020\u00002\u0006\u0010L\u001a\u00020+H\u0000¢\u0006\u0002\bMJ\b\u0010N\u001a\u00020+H\u0002J\u000e\u0010O\u001a\u00020+2\u0006\u0010F\u001a\u00020$J\u0019\u0010P\u001a\u00020+2\n\u0010Q\u001a\u00060%R\u00020\u0000H\u0000¢\u0006\u0002\bRJ\b\u0010S\u001a\u00020<H\u0002J\b\u0010T\u001a\u00020<H\u0016J\u0006\u0010U\u001a\u00020+J\b\u0010V\u001a\u00020<H\u0016J\u0006\u0010W\u001a\u00020<J\b\u0010X\u001a\u00020+H\u0002J\u0006\u0010Y\u001a\u00020<J\u0006\u0010Z\u001a\u00020<J\u0010\u0010[\u001a\u00020<2\u0006\u0010F\u001a\u00020$H\u0002J\u0010\u0010\\\u001a\f\u0012\b\u0012\u00060ER\u00020\u00000]R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\u00020\tX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0014\u0010\u0004\u001a\u00020\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R$\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0017\u001a\u00020\f@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR\u000e\u0010\u001c\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010!X\u0082\u000e¢\u0006\u0002\n\u0000R8\u0010\"\u001a&\u0012\u0004\u0012\u00020$\u0012\b\u0012\u00060%R\u00020\u00000#j\u0012\u0012\u0004\u0012\u00020$\u0012\b\u0012\u00060%R\u00020\u0000`&X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b'\u0010(R\u000e\u0010)\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020+X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020+X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020+X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010.\u001a\u00020+X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b/\u00100\"\u0004\b1\u00102R\u000e\u00103\u001a\u00020+X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020+X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00106\u001a\u000207X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u00108\u001a\u000209X\u0082\u0004¢\u0006\u0004\n\u0002\u0010:¨\u0006b"}, d2 = {"Lokhttp3/internal/cache/DiskLruCache;", "Ljava/io/Closeable;", "Ljava/io/Flushable;", "Lokhttp3/internal/concurrent/Lockable;", "fileSystem", "Lokio/FileSystem;", "directory", "Lokio/Path;", RemoteConfigConstants.RequestFieldKey.APP_VERSION, "", "valueCount", "maxSize", "", "taskRunner", "Lokhttp3/internal/concurrent/TaskRunner;", "<init>", "(Lokio/FileSystem;Lokio/Path;IIJLokhttp3/internal/concurrent/TaskRunner;)V", "getDirectory", "()Lokio/Path;", "getValueCount$okhttp", "()I", "getFileSystem$okhttp", "()Lokio/FileSystem;", "value", "getMaxSize", "()J", "setMaxSize", "(J)V", "journalFile", "journalFileTmp", "journalFileBackup", "size", "journalWriter", "Lokio/BufferedSink;", "lruEntries", "Ljava/util/LinkedHashMap;", "", "Lokhttp3/internal/cache/DiskLruCache$Entry;", "Lkotlin/collections/LinkedHashMap;", "getLruEntries$okhttp", "()Ljava/util/LinkedHashMap;", "redundantOpCount", "hasJournalErrors", "", "civilizedFileSystem", "initialized", "closed", "getClosed$okhttp", "()Z", "setClosed$okhttp", "(Z)V", "mostRecentTrimFailed", "mostRecentRebuildFailed", "nextSequenceNumber", "cleanupQueue", "Lokhttp3/internal/concurrent/TaskQueue;", "cleanupTask", "okhttp3/internal/cache/DiskLruCache$cleanupTask$1", "Lokhttp3/internal/cache/DiskLruCache$cleanupTask$1;", "initialize", "", "readJournal", "newJournalWriter", "readJournalLine", "line", "processJournal", "rebuildJournal", "rebuildJournal$okhttp", "get", "Lokhttp3/internal/cache/DiskLruCache$Snapshot;", "key", "edit", "Lokhttp3/internal/cache/DiskLruCache$Editor;", "expectedSequenceNumber", "completeEdit", "editor", FirebaseAnalytics.Param.SUCCESS, "completeEdit$okhttp", "journalRebuildRequired", "remove", "removeEntry", "entry", "removeEntry$okhttp", "checkNotClosed", "flush", "isClosed", "close", "trimToSize", "removeOldestEntry", "delete", "evictAll", "validateKey", "snapshots", "", "Snapshot", "Editor", "Entry", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
-public final class DiskLruCache implements Closeable, Flushable {
+public final class DiskLruCache implements Closeable, Flushable, Lockable {
     private final int appVersion;
     private boolean civilizedFileSystem;
     private final TaskQueue cleanupQueue;
     private final DiskLruCache$cleanupTask$1 cleanupTask;
     private boolean closed;
-    private final File directory;
+    private final Path directory;
     private final FileSystem fileSystem;
     private boolean hasJournalErrors;
     private boolean initialized;
-    private final File journalFile;
-    private final File journalFileBackup;
-    private final File journalFileTmp;
+    private final Path journalFile;
+    private final Path journalFileBackup;
+    private final Path journalFileTmp;
     private BufferedSink journalWriter;
     private final LinkedHashMap<String, Entry> lruEntries;
     private long maxSize;
@@ -79,22 +82,33 @@ public final class DiskLruCache implements Closeable, Flushable {
         return edit$default(this, key, 0L, 2, null);
     }
 
-    /* JADX WARN: Type inference failed for: r5v4, types: [okhttp3.internal.cache.DiskLruCache$cleanupTask$1] */
-    public DiskLruCache(FileSystem fileSystem, File directory, int i, int i2, long j, TaskRunner taskRunner) {
+    /* JADX WARN: Type inference failed for: r5v6, types: [okhttp3.internal.cache.DiskLruCache$cleanupTask$1] */
+    public DiskLruCache(FileSystem fileSystem, Path directory, int i, int i2, long j, TaskRunner taskRunner) {
         Intrinsics.checkNotNullParameter(fileSystem, "fileSystem");
         Intrinsics.checkNotNullParameter(directory, "directory");
         Intrinsics.checkNotNullParameter(taskRunner, "taskRunner");
-        this.fileSystem = fileSystem;
         this.directory = directory;
         this.appVersion = i;
         this.valueCount = i2;
+        this.fileSystem = new ForwardingFileSystem(fileSystem) { // from class: okhttp3.internal.cache.DiskLruCache$fileSystem$1
+            @Override // okio.ForwardingFileSystem, okio.FileSystem
+            public Sink sink(Path file, boolean z) {
+                Intrinsics.checkNotNullParameter(file, "file");
+                Path parent = file.parent();
+                if (parent != null) {
+                    createDirectories(parent);
+                }
+                return super.sink(file, z);
+            }
+        };
         this.maxSize = j;
         this.lruEntries = new LinkedHashMap<>(0, 0.75f, true);
         this.cleanupQueue = taskRunner.newQueue();
-        this.cleanupTask = new Task(Util.okHttpName + " Cache") { // from class: okhttp3.internal.cache.DiskLruCache$cleanupTask$1
+        this.cleanupTask = new Task(_UtilJvmKt.okHttpName + " Cache") { // from class: okhttp3.internal.cache.DiskLruCache$cleanupTask$1
             @Override // okhttp3.internal.concurrent.Task
             public long runOnce() {
                 boolean z;
+                BufferedSink bufferedSink;
                 boolean journalRebuildRequired;
                 DiskLruCache diskLruCache = DiskLruCache.this;
                 synchronized (diskLruCache) {
@@ -115,6 +129,10 @@ public final class DiskLruCache implements Closeable, Flushable {
                         }
                     } catch (IOException unused2) {
                         diskLruCache.mostRecentRebuildFailed = true;
+                        bufferedSink = diskLruCache.journalWriter;
+                        if (bufferedSink != null) {
+                            _UtilCommonKt.closeQuietly(bufferedSink);
+                        }
                         diskLruCache.journalWriter = Okio.buffer(Okio.blackhole());
                     }
                     return -1L;
@@ -127,21 +145,21 @@ public final class DiskLruCache implements Closeable, Flushable {
         if (i2 <= 0) {
             throw new IllegalArgumentException("valueCount <= 0".toString());
         }
-        this.journalFile = new File(directory, JOURNAL_FILE);
-        this.journalFileTmp = new File(directory, JOURNAL_FILE_TEMP);
-        this.journalFileBackup = new File(directory, JOURNAL_FILE_BACKUP);
+        this.journalFile = directory.resolve(JOURNAL_FILE);
+        this.journalFileTmp = directory.resolve(JOURNAL_FILE_TEMP);
+        this.journalFileBackup = directory.resolve(JOURNAL_FILE_BACKUP);
     }
 
-    public final FileSystem getFileSystem$okhttp() {
-        return this.fileSystem;
-    }
-
-    public final File getDirectory() {
+    public final Path getDirectory() {
         return this.directory;
     }
 
     public final int getValueCount$okhttp() {
         return this.valueCount;
+    }
+
+    public final FileSystem getFileSystem$okhttp() {
+        return this.fileSystem;
     }
 
     public final synchronized long getMaxSize() {
@@ -167,6 +185,43 @@ public final class DiskLruCache implements Closeable, Flushable {
         this.closed = z;
     }
 
+    public final synchronized void initialize() throws IOException {
+        DiskLruCache diskLruCache = this;
+        if (_UtilJvmKt.assertionsEnabled && !Thread.holdsLock(diskLruCache)) {
+            throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST hold lock on " + diskLruCache);
+        }
+        if (this.initialized) {
+            return;
+        }
+        if (this.fileSystem.exists(this.journalFileBackup)) {
+            if (this.fileSystem.exists(this.journalFile)) {
+                this.fileSystem.delete(this.journalFileBackup);
+            } else {
+                this.fileSystem.atomicMove(this.journalFileBackup, this.journalFile);
+            }
+        }
+        this.civilizedFileSystem = _UtilCommonKt.isCivilized(this.fileSystem, this.journalFileBackup);
+        if (this.fileSystem.exists(this.journalFile)) {
+            try {
+                readJournal();
+                processJournal();
+                this.initialized = true;
+                return;
+            } catch (IOException e) {
+                Platform.Companion.get().log("DiskLruCache " + this.directory + " is corrupt: " + e.getMessage() + ", removing", 5, e);
+                delete();
+                this.closed = false;
+            }
+        }
+        rebuildJournal$okhttp();
+        this.initialized = true;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00d2 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x00d3  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private final void readJournal() throws IOException {
         BufferedSource buffer = Okio.buffer(this.fileSystem.source(this.journalFile));
         try {
@@ -186,44 +241,63 @@ public final class DiskLruCache implements Closeable, Flushable {
                     i++;
                 } catch (EOFException unused) {
                     this.redundantOpCount = i - this.lruEntries.size();
-                    if (bufferedSource.exhausted()) {
-                        this.journalWriter = newJournalWriter();
-                    } else {
+                    if (!bufferedSource.exhausted()) {
                         rebuildJournal$okhttp();
+                    } else {
+                        BufferedSink bufferedSink = this.journalWriter;
+                        if (bufferedSink != null) {
+                            _UtilCommonKt.closeQuietly(bufferedSink);
+                        }
+                        this.journalWriter = newJournalWriter();
                     }
                     Unit unit = Unit.INSTANCE;
-                    CloseableKt.closeFinally(buffer, null);
-                    return;
+                    if (buffer != null) {
+                        try {
+                            buffer.close();
+                        } catch (Throwable th) {
+                            th = th;
+                            if (th == null) {
+                                throw th;
+                            }
+                            return;
+                        }
+                    }
+                    th = null;
+                    if (th == null) {
+                    }
                 }
             }
-        } finally {
+        } catch (Throwable th2) {
+            th = th2;
+            if (buffer != null) {
+                try {
+                    buffer.close();
+                } catch (Throwable th3) {
+                    ExceptionsKt.addSuppressed(th, th3);
+                }
+            }
         }
     }
 
     private final BufferedSink newJournalWriter() throws FileNotFoundException {
-        return Okio.buffer(new FaultHidingSink(this.fileSystem.appendingSink(this.journalFile), new Function1<IOException, Unit>() { // from class: okhttp3.internal.cache.DiskLruCache$newJournalWriter$faultHidingSink$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        return Okio.buffer(new FaultHidingSink(this.fileSystem.appendingSink(this.journalFile), new Function1() { // from class: okhttp3.internal.cache.DiskLruCache$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(IOException iOException) {
-                invoke2(iOException);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(IOException it) {
-                Intrinsics.checkNotNullParameter(it, "it");
-                DiskLruCache diskLruCache = DiskLruCache.this;
-                if (!Util.assertionsEnabled || Thread.holdsLock(diskLruCache)) {
-                    DiskLruCache.this.hasJournalErrors = true;
-                    return;
-                }
-                throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST hold lock on " + diskLruCache);
+            public final Object invoke(Object obj) {
+                Unit newJournalWriter$lambda$3;
+                newJournalWriter$lambda$3 = DiskLruCache.newJournalWriter$lambda$3(DiskLruCache.this, (IOException) obj);
+                return newJournalWriter$lambda$3;
             }
         }));
+    }
+
+    public static final Unit newJournalWriter$lambda$3(DiskLruCache diskLruCache, IOException it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        DiskLruCache diskLruCache2 = diskLruCache;
+        if (!_UtilJvmKt.assertionsEnabled || Thread.holdsLock(diskLruCache2)) {
+            diskLruCache.hasJournalErrors = true;
+            return Unit.INSTANCE;
+        }
+        throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST hold lock on " + diskLruCache2);
     }
 
     private final void readJournalLine(String str) throws IOException {
@@ -237,7 +311,7 @@ public final class DiskLruCache implements Closeable, Flushable {
         int indexOf$default2 = StringsKt.indexOf$default((CharSequence) str2, ' ', i, false, 4, (Object) null);
         if (indexOf$default2 == -1) {
             substring = str.substring(i);
-            Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String).substring(startIndex)");
+            Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
             String str3 = REMOVE;
             if (indexOf$default == str3.length() && StringsKt.startsWith$default(str, str3, false, 2, (Object) null)) {
                 this.lruEntries.remove(substring);
@@ -245,7 +319,7 @@ public final class DiskLruCache implements Closeable, Flushable {
             }
         } else {
             substring = str.substring(i, indexOf$default2);
-            Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+            Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
         }
         Entry entry = this.lruEntries.get(substring);
         if (entry == null) {
@@ -256,7 +330,7 @@ public final class DiskLruCache implements Closeable, Flushable {
             String str4 = CLEAN;
             if (indexOf$default == str4.length() && StringsKt.startsWith$default(str, str4, false, 2, (Object) null)) {
                 String substring2 = str.substring(indexOf$default2 + 1);
-                Intrinsics.checkNotNullExpressionValue(substring2, "this as java.lang.String).substring(startIndex)");
+                Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
                 List<String> split$default = StringsKt.split$default((CharSequence) substring2, new char[]{' '}, false, 0, 6, (Object) null);
                 entry.setReadable$okhttp(true);
                 entry.setCurrentEditor$okhttp(null);
@@ -281,11 +355,11 @@ public final class DiskLruCache implements Closeable, Flushable {
     }
 
     private final void processJournal() throws IOException {
-        this.fileSystem.delete(this.journalFileTmp);
+        _UtilCommonKt.deleteIfExists(this.fileSystem, this.journalFileTmp);
         Iterator<Entry> it = this.lruEntries.values().iterator();
         while (it.hasNext()) {
             Entry next = it.next();
-            Intrinsics.checkNotNullExpressionValue(next, "i.next()");
+            Intrinsics.checkNotNullExpressionValue(next, "next(...)");
             Entry entry = next;
             int i = 0;
             if (entry.getCurrentEditor$okhttp() == null) {
@@ -298,8 +372,8 @@ public final class DiskLruCache implements Closeable, Flushable {
                 entry.setCurrentEditor$okhttp(null);
                 int i3 = this.valueCount;
                 while (i < i3) {
-                    this.fileSystem.delete(entry.getCleanFiles$okhttp().get(i));
-                    this.fileSystem.delete(entry.getDirtyFiles$okhttp().get(i));
+                    _UtilCommonKt.deleteIfExists(this.fileSystem, entry.getCleanFiles$okhttp().get(i));
+                    _UtilCommonKt.deleteIfExists(this.fileSystem, entry.getDirtyFiles$okhttp().get(i));
                     i++;
                 }
                 it.remove();
@@ -312,7 +386,7 @@ public final class DiskLruCache implements Closeable, Flushable {
         if (bufferedSink != null) {
             bufferedSink.close();
         }
-        BufferedSink buffer = Okio.buffer(this.fileSystem.sink(this.journalFileTmp));
+        BufferedSink buffer = Okio.buffer(this.fileSystem.sink(this.journalFileTmp, false));
         BufferedSink bufferedSink2 = buffer;
         bufferedSink2.writeUtf8(MAGIC).writeByte(10);
         bufferedSink2.writeUtf8(VERSION_1).writeByte(10);
@@ -320,27 +394,46 @@ public final class DiskLruCache implements Closeable, Flushable {
         bufferedSink2.writeDecimalLong(this.valueCount).writeByte(10);
         bufferedSink2.writeByte(10);
         for (Entry entry : this.lruEntries.values()) {
-            if (entry.getCurrentEditor$okhttp() != null) {
+            Intrinsics.checkNotNullExpressionValue(entry, "next(...)");
+            Entry entry2 = entry;
+            if (entry2.getCurrentEditor$okhttp() != null) {
                 bufferedSink2.writeUtf8(DIRTY).writeByte(32);
-                bufferedSink2.writeUtf8(entry.getKey$okhttp());
+                bufferedSink2.writeUtf8(entry2.getKey$okhttp());
                 bufferedSink2.writeByte(10);
             } else {
                 bufferedSink2.writeUtf8(CLEAN).writeByte(32);
-                bufferedSink2.writeUtf8(entry.getKey$okhttp());
-                entry.writeLengths$okhttp(bufferedSink2);
+                bufferedSink2.writeUtf8(entry2.getKey$okhttp());
+                entry2.writeLengths$okhttp(bufferedSink2);
                 bufferedSink2.writeByte(10);
             }
         }
         Unit unit = Unit.INSTANCE;
-        CloseableKt.closeFinally(buffer, null);
-        if (this.fileSystem.exists(this.journalFile)) {
-            this.fileSystem.rename(this.journalFile, this.journalFileBackup);
+        if (buffer != null) {
+            try {
+                buffer.close();
+            } catch (Throwable th) {
+                th = th;
+            }
         }
-        this.fileSystem.rename(this.journalFileTmp, this.journalFile);
-        this.fileSystem.delete(this.journalFileBackup);
-        this.journalWriter = newJournalWriter();
-        this.hasJournalErrors = false;
-        this.mostRecentRebuildFailed = false;
+        th = null;
+        if (th == null) {
+            if (this.fileSystem.exists(this.journalFile)) {
+                this.fileSystem.atomicMove(this.journalFile, this.journalFileBackup);
+                this.fileSystem.atomicMove(this.journalFileTmp, this.journalFile);
+                _UtilCommonKt.deleteIfExists(this.fileSystem, this.journalFileBackup);
+            } else {
+                this.fileSystem.atomicMove(this.journalFileTmp, this.journalFile);
+            }
+            BufferedSink bufferedSink3 = this.journalWriter;
+            if (bufferedSink3 != null) {
+                _UtilCommonKt.closeQuietly(bufferedSink3);
+            }
+            this.journalWriter = newJournalWriter();
+            this.hasJournalErrors = false;
+            this.mostRecentRebuildFailed = false;
+        } else {
+            throw th;
+        }
     }
 
     public final synchronized Snapshot get(String key) throws IOException {
@@ -417,7 +510,7 @@ public final class DiskLruCache implements Closeable, Flushable {
         Intrinsics.checkNotNullParameter(editor, "editor");
         Entry entry$okhttp = editor.getEntry$okhttp();
         if (!Intrinsics.areEqual(entry$okhttp.getCurrentEditor$okhttp(), editor)) {
-            throw new IllegalStateException("Check failed.".toString());
+            throw new IllegalStateException("Check failed.");
         }
         if (z && !entry$okhttp.getReadable$okhttp()) {
             int i = this.valueCount;
@@ -435,18 +528,19 @@ public final class DiskLruCache implements Closeable, Flushable {
         }
         int i3 = this.valueCount;
         for (int i4 = 0; i4 < i3; i4++) {
-            File file = entry$okhttp.getDirtyFiles$okhttp().get(i4);
+            Path path = entry$okhttp.getDirtyFiles$okhttp().get(i4);
             if (z && !entry$okhttp.getZombie$okhttp()) {
-                if (this.fileSystem.exists(file)) {
-                    File file2 = entry$okhttp.getCleanFiles$okhttp().get(i4);
-                    this.fileSystem.rename(file, file2);
+                if (this.fileSystem.exists(path)) {
+                    Path path2 = entry$okhttp.getCleanFiles$okhttp().get(i4);
+                    this.fileSystem.atomicMove(path, path2);
                     long j = entry$okhttp.getLengths$okhttp()[i4];
-                    long size = this.fileSystem.size(file2);
-                    entry$okhttp.getLengths$okhttp()[i4] = size;
-                    this.size = (this.size - j) + size;
+                    Long size = this.fileSystem.metadata(path2).getSize();
+                    long longValue = size != null ? size.longValue() : 0L;
+                    entry$okhttp.getLengths$okhttp()[i4] = longValue;
+                    this.size = (this.size - j) + longValue;
                 }
             } else {
-                this.fileSystem.delete(file);
+                _UtilCommonKt.deleteIfExists(this.fileSystem, path);
             }
         }
         entry$okhttp.setCurrentEditor$okhttp(null);
@@ -526,7 +620,7 @@ public final class DiskLruCache implements Closeable, Flushable {
         }
         int i = this.valueCount;
         for (int i2 = 0; i2 < i; i2++) {
-            this.fileSystem.delete(entry.getCleanFiles$okhttp().get(i2));
+            _UtilCommonKt.deleteIfExists(this.fileSystem, entry.getCleanFiles$okhttp().get(i2));
             this.size -= entry.getLengths$okhttp()[i2];
             entry.getLengths$okhttp()[i2] = 0;
         }
@@ -572,16 +666,18 @@ public final class DiskLruCache implements Closeable, Flushable {
         Editor currentEditor$okhttp;
         if (this.initialized && !this.closed) {
             Collection<Entry> values = this.lruEntries.values();
-            Intrinsics.checkNotNullExpressionValue(values, "lruEntries.values");
+            Intrinsics.checkNotNullExpressionValue(values, "<get-values>(...)");
             for (Entry entry : (Entry[]) values.toArray(new Entry[0])) {
+                Intrinsics.checkNotNull(entry);
                 if (entry.getCurrentEditor$okhttp() != null && (currentEditor$okhttp = entry.getCurrentEditor$okhttp()) != null) {
                     currentEditor$okhttp.detach$okhttp();
                 }
             }
             trimToSize();
             BufferedSink bufferedSink = this.journalWriter;
-            Intrinsics.checkNotNull(bufferedSink);
-            bufferedSink.close();
+            if (bufferedSink != null) {
+                _UtilCommonKt.closeQuietly(bufferedSink);
+            }
             this.journalWriter = null;
             this.closed = true;
             return;
@@ -599,10 +695,11 @@ public final class DiskLruCache implements Closeable, Flushable {
     }
 
     private final boolean removeOldestEntry() {
-        for (Entry toEvict : this.lruEntries.values()) {
-            if (!toEvict.getZombie$okhttp()) {
-                Intrinsics.checkNotNullExpressionValue(toEvict, "toEvict");
-                removeEntry$okhttp(toEvict);
+        for (Entry entry : this.lruEntries.values()) {
+            Intrinsics.checkNotNullExpressionValue(entry, "next(...)");
+            Entry entry2 = entry;
+            if (!entry2.getZombie$okhttp()) {
+                removeEntry$okhttp(entry2);
                 return true;
             }
         }
@@ -611,16 +708,16 @@ public final class DiskLruCache implements Closeable, Flushable {
 
     public final void delete() throws IOException {
         close();
-        this.fileSystem.deleteContents(this.directory);
+        _UtilCommonKt.deleteContents(this.fileSystem, this.directory);
     }
 
     public final synchronized void evictAll() throws IOException {
         Entry[] entryArr;
         initialize();
         Collection<Entry> values = this.lruEntries.values();
-        Intrinsics.checkNotNullExpressionValue(values, "lruEntries.values");
+        Intrinsics.checkNotNullExpressionValue(values, "<get-values>(...)");
         for (Entry entry : (Entry[]) values.toArray(new Entry[0])) {
-            Intrinsics.checkNotNullExpressionValue(entry, "entry");
+            Intrinsics.checkNotNull(entry);
             removeEntry$okhttp(entry);
         }
         this.mostRecentTrimFailed = false;
@@ -638,7 +735,7 @@ public final class DiskLruCache implements Closeable, Flushable {
     }
 
     /* compiled from: DiskLruCache.kt */
-    @Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0016\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0004\u0018\u00002\u00020\u0001B-\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\u0006\u0010\t\u001a\u00020\n¢\u0006\u0002\u0010\u000bJ\b\u0010\f\u001a\u00020\rH\u0016J\f\u0010\u000e\u001a\b\u0018\u00010\u000fR\u00020\u0010J\u000e\u0010\u0011\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u0013J\u000e\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0012\u001a\u00020\u0013J\u0006\u0010\u0002\u001a\u00020\u0003R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lokhttp3/internal/cache/DiskLruCache$Snapshot;", "Ljava/io/Closeable;", "key", "", "sequenceNumber", "", "sources", "", "Lokio/Source;", "lengths", "", "(Lokhttp3/internal/cache/DiskLruCache;Ljava/lang/String;JLjava/util/List;[J)V", "close", "", "edit", "Lokhttp3/internal/cache/DiskLruCache$Editor;", "Lokhttp3/internal/cache/DiskLruCache;", "getLength", FirebaseAnalytics.Param.INDEX, "", "getSource", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0016\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B/\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\u0006\u0010\t\u001a\u00020\n¢\u0006\u0004\b\u000b\u0010\fJ\u0006\u0010\u0002\u001a\u00020\u0003J\f\u0010\r\u001a\b\u0018\u00010\u000eR\u00020\u000fJ\u000e\u0010\u0010\u001a\u00020\b2\u0006\u0010\u0011\u001a\u00020\u0012J\u000e\u0010\u0013\u001a\u00020\u00052\u0006\u0010\u0011\u001a\u00020\u0012J\b\u0010\u0014\u001a\u00020\u0015H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lokhttp3/internal/cache/DiskLruCache$Snapshot;", "Ljava/io/Closeable;", "key", "", "sequenceNumber", "", "sources", "", "Lokio/Source;", "lengths", "", "<init>", "(Lokhttp3/internal/cache/DiskLruCache;Ljava/lang/String;JLjava/util/List;[J)V", "edit", "Lokhttp3/internal/cache/DiskLruCache$Editor;", "Lokhttp3/internal/cache/DiskLruCache;", "getSource", FirebaseAnalytics.Param.INDEX, "", "getLength", "close", "", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public final class Snapshot implements Closeable {
         private final String key;
@@ -678,13 +775,13 @@ public final class DiskLruCache implements Closeable, Flushable {
         @Override // java.io.Closeable, java.lang.AutoCloseable
         public void close() {
             for (Source source : this.sources) {
-                Util.closeQuietly(source);
+                _UtilCommonKt.closeQuietly(source);
             }
         }
     }
 
     /* compiled from: DiskLruCache.kt */
-    @Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0018\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0013\b\u0000\u0012\n\u0010\u0002\u001a\u00060\u0003R\u00020\u0004¢\u0006\u0002\u0010\u0005J\u0006\u0010\u000e\u001a\u00020\u000fJ\u0006\u0010\u0010\u001a\u00020\u000fJ\r\u0010\u0011\u001a\u00020\u000fH\u0000¢\u0006\u0002\b\u0012J\u000e\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016J\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u00182\u0006\u0010\u0015\u001a\u00020\u0016R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010\u0002\u001a\u00060\u0003R\u00020\u0004X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0016\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006\u0019"}, d2 = {"Lokhttp3/internal/cache/DiskLruCache$Editor;", "", "entry", "Lokhttp3/internal/cache/DiskLruCache$Entry;", "Lokhttp3/internal/cache/DiskLruCache;", "(Lokhttp3/internal/cache/DiskLruCache;Lokhttp3/internal/cache/DiskLruCache$Entry;)V", "done", "", "getEntry$okhttp", "()Lokhttp3/internal/cache/DiskLruCache$Entry;", "written", "", "getWritten$okhttp", "()[Z", "abort", "", "commit", "detach", "detach$okhttp", "newSink", "Lokio/Sink;", FirebaseAnalytics.Param.INDEX, "", "newSource", "Lokio/Source;", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0018\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0015\b\u0000\u0012\n\u0010\u0002\u001a\u00060\u0003R\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\r\u0010\u000f\u001a\u00020\u0010H\u0000¢\u0006\u0002\b\u0011J\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u00132\u0006\u0010\u0014\u001a\u00020\u0015J\u000e\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0014\u001a\u00020\u0015J\u0006\u0010\u0018\u001a\u00020\u0010J\u0006\u0010\u0019\u001a\u00020\u0010R\u0018\u0010\u0002\u001a\u00060\u0003R\u00020\u0004X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0016\u0010\t\u001a\u0004\u0018\u00010\nX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Lokhttp3/internal/cache/DiskLruCache$Editor;", "", "entry", "Lokhttp3/internal/cache/DiskLruCache$Entry;", "Lokhttp3/internal/cache/DiskLruCache;", "<init>", "(Lokhttp3/internal/cache/DiskLruCache;Lokhttp3/internal/cache/DiskLruCache$Entry;)V", "getEntry$okhttp", "()Lokhttp3/internal/cache/DiskLruCache$Entry;", "written", "", "getWritten$okhttp", "()[Z", "done", "", "detach", "", "detach$okhttp", "newSource", "Lokio/Source;", FirebaseAnalytics.Param.INDEX, "", "newSink", "Lokio/Sink;", "commit", "abort", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public final class Editor {
         private boolean done;
@@ -721,7 +818,7 @@ public final class DiskLruCache implements Closeable, Flushable {
             DiskLruCache diskLruCache = this.this$0;
             synchronized (diskLruCache) {
                 if (this.done) {
-                    throw new IllegalStateException("Check failed.".toString());
+                    throw new IllegalStateException("Check failed.");
                 }
                 Source source = null;
                 if (this.entry.getReadable$okhttp() && Intrinsics.areEqual(this.entry.getCurrentEditor$okhttp(), this) && !this.entry.getZombie$okhttp()) {
@@ -739,7 +836,7 @@ public final class DiskLruCache implements Closeable, Flushable {
             final DiskLruCache diskLruCache = this.this$0;
             synchronized (diskLruCache) {
                 if (this.done) {
-                    throw new IllegalStateException("Check failed.".toString());
+                    throw new IllegalStateException("Check failed.");
                 }
                 if (!Intrinsics.areEqual(this.entry.getCurrentEditor$okhttp(), this)) {
                     return Okio.blackhole();
@@ -750,28 +847,12 @@ public final class DiskLruCache implements Closeable, Flushable {
                     zArr[i] = true;
                 }
                 try {
-                    return new FaultHidingSink(diskLruCache.getFileSystem$okhttp().sink(this.entry.getDirtyFiles$okhttp().get(i)), new Function1<IOException, Unit>() { // from class: okhttp3.internal.cache.DiskLruCache$Editor$newSink$1$1
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        {
-                            super(1);
-                        }
-
+                    return new FaultHidingSink(diskLruCache.getFileSystem$okhttp().sink(this.entry.getDirtyFiles$okhttp().get(i)), new Function1() { // from class: okhttp3.internal.cache.DiskLruCache$Editor$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(IOException iOException) {
-                            invoke2(iOException);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(IOException it) {
-                            Intrinsics.checkNotNullParameter(it, "it");
-                            DiskLruCache diskLruCache2 = DiskLruCache.this;
-                            DiskLruCache.Editor editor = this;
-                            synchronized (diskLruCache2) {
-                                editor.detach$okhttp();
-                                Unit unit = Unit.INSTANCE;
-                            }
+                        public final Object invoke(Object obj) {
+                            Unit newSink$lambda$3$lambda$2;
+                            newSink$lambda$3$lambda$2 = DiskLruCache.Editor.newSink$lambda$3$lambda$2(DiskLruCache.this, this, (IOException) obj);
+                            return newSink$lambda$3$lambda$2;
                         }
                     });
                 } catch (FileNotFoundException unused) {
@@ -780,11 +861,20 @@ public final class DiskLruCache implements Closeable, Flushable {
             }
         }
 
+        public static final Unit newSink$lambda$3$lambda$2(DiskLruCache diskLruCache, Editor editor, IOException it) {
+            Intrinsics.checkNotNullParameter(it, "it");
+            synchronized (diskLruCache) {
+                editor.detach$okhttp();
+                Unit unit = Unit.INSTANCE;
+            }
+            return Unit.INSTANCE;
+        }
+
         public final void commit() throws IOException {
             DiskLruCache diskLruCache = this.this$0;
             synchronized (diskLruCache) {
                 if (this.done) {
-                    throw new IllegalStateException("Check failed.".toString());
+                    throw new IllegalStateException("Check failed.");
                 }
                 if (Intrinsics.areEqual(this.entry.getCurrentEditor$okhttp(), this)) {
                     diskLruCache.completeEdit$okhttp(this, true);
@@ -798,7 +888,7 @@ public final class DiskLruCache implements Closeable, Flushable {
             DiskLruCache diskLruCache = this.this$0;
             synchronized (diskLruCache) {
                 if (this.done) {
-                    throw new IllegalStateException("Check failed.".toString());
+                    throw new IllegalStateException("Check failed.");
                 }
                 if (Intrinsics.areEqual(this.entry.getCurrentEditor$okhttp(), this)) {
                     diskLruCache.completeEdit$okhttp(this, false);
@@ -810,12 +900,12 @@ public final class DiskLruCache implements Closeable, Flushable {
     }
 
     /* compiled from: DiskLruCache.kt */
-    @Metadata(d1 = {"\u0000v\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0016\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\b\n\u0002\u0010\u0001\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0080\u0004\u0018\u00002\u00020\u0001B\u000f\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u0016\u0010.\u001a\u00020/2\f\u00100\u001a\b\u0012\u0004\u0012\u00020\u000301H\u0002J\u0010\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u001aH\u0002J\u001b\u00105\u001a\u0002062\f\u00100\u001a\b\u0012\u0004\u0012\u00020\u000301H\u0000¢\u0006\u0002\b7J\u0013\u00108\u001a\b\u0018\u000109R\u00020\fH\u0000¢\u0006\u0002\b:J\u0015\u0010;\u001a\u0002062\u0006\u0010<\u001a\u00020=H\u0000¢\u0006\u0002\b>R\u001a\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR \u0010\n\u001a\b\u0018\u00010\u000bR\u00020\fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\tR\u0014\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0014\u0010\u0015\u001a\u00020\u0016X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u001a\u0010\u0019\u001a\u00020\u001aX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR\u001a\u0010\u001f\u001a\u00020 X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u001a\u0010%\u001a\u00020&X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010(\"\u0004\b)\u0010*R\u001a\u0010+\u001a\u00020 X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b,\u0010\"\"\u0004\b-\u0010$¨\u0006?"}, d2 = {"Lokhttp3/internal/cache/DiskLruCache$Entry;", "", "key", "", "(Lokhttp3/internal/cache/DiskLruCache;Ljava/lang/String;)V", "cleanFiles", "", "Ljava/io/File;", "getCleanFiles$okhttp", "()Ljava/util/List;", "currentEditor", "Lokhttp3/internal/cache/DiskLruCache$Editor;", "Lokhttp3/internal/cache/DiskLruCache;", "getCurrentEditor$okhttp", "()Lokhttp3/internal/cache/DiskLruCache$Editor;", "setCurrentEditor$okhttp", "(Lokhttp3/internal/cache/DiskLruCache$Editor;)V", "dirtyFiles", "getDirtyFiles$okhttp", "getKey$okhttp", "()Ljava/lang/String;", "lengths", "", "getLengths$okhttp", "()[J", "lockingSourceCount", "", "getLockingSourceCount$okhttp", "()I", "setLockingSourceCount$okhttp", "(I)V", "readable", "", "getReadable$okhttp", "()Z", "setReadable$okhttp", "(Z)V", "sequenceNumber", "", "getSequenceNumber$okhttp", "()J", "setSequenceNumber$okhttp", "(J)V", "zombie", "getZombie$okhttp", "setZombie$okhttp", "invalidLengths", "", "strings", "", "newSource", "Lokio/Source;", FirebaseAnalytics.Param.INDEX, "setLengths", "", "setLengths$okhttp", "snapshot", "Lokhttp3/internal/cache/DiskLruCache$Snapshot;", "snapshot$okhttp", "writeLengths", "writer", "Lokio/BufferedSink;", "writeLengths$okhttp", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000v\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u0016\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0080\u0004\u0018\u00002\u00020\u0001B\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001b\u0010/\u001a\u0002002\f\u00101\u001a\b\u0012\u0004\u0012\u00020\u000302H\u0000¢\u0006\u0002\b3J\u0015\u00104\u001a\u0002002\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\b7J\u0016\u00108\u001a\u0002092\f\u00101\u001a\b\u0012\u0004\u0012\u00020\u000302H\u0002J\u0013\u0010:\u001a\b\u0018\u00010;R\u00020\u001eH\u0000¢\u0006\u0002\b<J\u0010\u0010=\u001a\u00020>2\u0006\u0010?\u001a\u00020$H\u0002R\u0014\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\tX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0010R\u001a\u0010\u0013\u001a\u00020\u0014X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u001a\u0010\u0019\u001a\u00020\u0014X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u0016\"\u0004\b\u001b\u0010\u0018R \u0010\u001c\u001a\b\u0018\u00010\u001dR\u00020\u001eX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010 \"\u0004\b!\u0010\"R\u001a\u0010#\u001a\u00020$X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b%\u0010&\"\u0004\b'\u0010(R\u001a\u0010)\u001a\u00020*X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b+\u0010,\"\u0004\b-\u0010.¨\u0006@"}, d2 = {"Lokhttp3/internal/cache/DiskLruCache$Entry;", "", "key", "", "<init>", "(Lokhttp3/internal/cache/DiskLruCache;Ljava/lang/String;)V", "getKey$okhttp", "()Ljava/lang/String;", "lengths", "", "getLengths$okhttp", "()[J", "cleanFiles", "", "Lokio/Path;", "getCleanFiles$okhttp", "()Ljava/util/List;", "dirtyFiles", "getDirtyFiles$okhttp", "readable", "", "getReadable$okhttp", "()Z", "setReadable$okhttp", "(Z)V", "zombie", "getZombie$okhttp", "setZombie$okhttp", "currentEditor", "Lokhttp3/internal/cache/DiskLruCache$Editor;", "Lokhttp3/internal/cache/DiskLruCache;", "getCurrentEditor$okhttp", "()Lokhttp3/internal/cache/DiskLruCache$Editor;", "setCurrentEditor$okhttp", "(Lokhttp3/internal/cache/DiskLruCache$Editor;)V", "lockingSourceCount", "", "getLockingSourceCount$okhttp", "()I", "setLockingSourceCount$okhttp", "(I)V", "sequenceNumber", "", "getSequenceNumber$okhttp", "()J", "setSequenceNumber$okhttp", "(J)V", "setLengths", "", "strings", "", "setLengths$okhttp", "writeLengths", "writer", "Lokio/BufferedSink;", "writeLengths$okhttp", "invalidLengths", "", "snapshot", "Lokhttp3/internal/cache/DiskLruCache$Snapshot;", "snapshot$okhttp", "newSource", "Lokio/Source;", FirebaseAnalytics.Param.INDEX, "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public final class Entry {
-        private final List<File> cleanFiles;
+        private final List<Path> cleanFiles;
         private Editor currentEditor;
-        private final List<File> dirtyFiles;
+        private final List<Path> dirtyFiles;
         private final String key;
         private final long[] lengths;
         private int lockingSourceCount;
@@ -836,9 +926,15 @@ public final class DiskLruCache implements Closeable, Flushable {
             int valueCount$okhttp = diskLruCache.getValueCount$okhttp();
             for (int i = 0; i < valueCount$okhttp; i++) {
                 append.append(i);
-                this.cleanFiles.add(new File(this.this$0.getDirectory(), append.toString()));
+                Path directory = this.this$0.getDirectory();
+                String sb = append.toString();
+                Intrinsics.checkNotNullExpressionValue(sb, "toString(...)");
+                this.cleanFiles.add(directory.resolve(sb));
                 append.append(".tmp");
-                this.dirtyFiles.add(new File(this.this$0.getDirectory(), append.toString()));
+                Path directory2 = this.this$0.getDirectory();
+                String sb2 = append.toString();
+                Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+                this.dirtyFiles.add(directory2.resolve(sb2));
                 append.setLength(length);
             }
         }
@@ -851,11 +947,11 @@ public final class DiskLruCache implements Closeable, Flushable {
             return this.lengths;
         }
 
-        public final List<File> getCleanFiles$okhttp() {
+        public final List<Path> getCleanFiles$okhttp() {
             return this.cleanFiles;
         }
 
-        public final List<File> getDirtyFiles$okhttp() {
+        public final List<Path> getDirtyFiles$okhttp() {
             return this.dirtyFiles;
         }
 
@@ -929,7 +1025,7 @@ public final class DiskLruCache implements Closeable, Flushable {
 
         public final Snapshot snapshot$okhttp() {
             DiskLruCache diskLruCache = this.this$0;
-            if (!Util.assertionsEnabled || Thread.holdsLock(diskLruCache)) {
+            if (!_UtilJvmKt.assertionsEnabled || Thread.holdsLock(diskLruCache)) {
                 if (this.readable) {
                     if (this.this$0.civilizedFileSystem || (this.currentEditor == null && !this.zombie)) {
                         ArrayList<Source> arrayList = new ArrayList();
@@ -942,7 +1038,7 @@ public final class DiskLruCache implements Closeable, Flushable {
                             return new Snapshot(this.this$0, this.key, this.sequenceNumber, arrayList, jArr);
                         } catch (FileNotFoundException unused) {
                             for (Source source : arrayList) {
-                                Util.closeQuietly(source);
+                                _UtilCommonKt.closeQuietly(source);
                             }
                             try {
                                 this.this$0.removeEntry$okhttp(this);
@@ -990,7 +1086,7 @@ public final class DiskLruCache implements Closeable, Flushable {
     }
 
     /* compiled from: DiskLruCache.kt */
-    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0010\u0010\u0003\u001a\u00020\u00048\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\u0005\u001a\u00020\u00068\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u00020\u00068\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u00020\u00068\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\t\u001a\u00020\u00068\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u00020\u00068\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u00020\f8\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u00020\u00068\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u00020\u00068\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u00020\u00068\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u00020\u00068\u0006X\u0087D¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lokhttp3/internal/cache/DiskLruCache$Companion;", "", "()V", "ANY_SEQUENCE_NUMBER", "", "CLEAN", "", "DIRTY", "JOURNAL_FILE", "JOURNAL_FILE_BACKUP", "JOURNAL_FILE_TEMP", "LEGAL_KEY_PATTERN", "Lkotlin/text/Regex;", "MAGIC", "READ", "REMOVE", "VERSION_1", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0010\u0010\u0004\u001a\u00020\u00058\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\u0006\u001a\u00020\u00058\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u00020\u00058\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u00020\u00058\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\t\u001a\u00020\u00058\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u00020\u000b8\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u00020\r8\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u00020\u00058\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u00020\u00058\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u00020\u00058\u0006X\u0087D¢\u0006\u0002\n\u0000R\u0010\u0010\u0011\u001a\u00020\u00058\u0006X\u0087D¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Lokhttp3/internal/cache/DiskLruCache$Companion;", "", "<init>", "()V", "JOURNAL_FILE", "", "JOURNAL_FILE_TEMP", "JOURNAL_FILE_BACKUP", "MAGIC", "VERSION_1", "ANY_SEQUENCE_NUMBER", "", "LEGAL_KEY_PATTERN", "Lkotlin/text/Regex;", "CLEAN", "DIRTY", "REMOVE", "READ", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -999,36 +1095,5 @@ public final class DiskLruCache implements Closeable, Flushable {
 
         private Companion() {
         }
-    }
-
-    public final synchronized void initialize() throws IOException {
-        if (Util.assertionsEnabled && !Thread.holdsLock(this)) {
-            throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST hold lock on " + this);
-        }
-        if (this.initialized) {
-            return;
-        }
-        if (this.fileSystem.exists(this.journalFileBackup)) {
-            if (this.fileSystem.exists(this.journalFile)) {
-                this.fileSystem.delete(this.journalFileBackup);
-            } else {
-                this.fileSystem.rename(this.journalFileBackup, this.journalFile);
-            }
-        }
-        this.civilizedFileSystem = Util.isCivilized(this.fileSystem, this.journalFileBackup);
-        if (this.fileSystem.exists(this.journalFile)) {
-            try {
-                readJournal();
-                processJournal();
-                this.initialized = true;
-                return;
-            } catch (IOException e) {
-                Platform.Companion.get().log("DiskLruCache " + this.directory + " is corrupt: " + e.getMessage() + ", removing", 5, e);
-                delete();
-                this.closed = false;
-            }
-        }
-        rebuildJournal$okhttp();
-        this.initialized = true;
     }
 }

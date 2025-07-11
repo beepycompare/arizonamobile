@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
 public class ExponentialBackoffDataHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TimePassedChecker f1235a;
+    private final TimePassedChecker f1236a;
     private final TimeProvider b;
     private final HostRetryInfoProvider c;
     private long d;
@@ -37,7 +37,7 @@ public class ExponentialBackoffDataHolder {
         if (retryPolicyConfig != null) {
             long j = this.d;
             if (j != 0) {
-                TimePassedChecker timePassedChecker = this.f1235a;
+                TimePassedChecker timePassedChecker = this.f1236a;
                 int i = ((1 << (this.e - 1)) - 1) * retryPolicyConfig.exponentialMultiplier;
                 int i2 = retryPolicyConfig.maxIntervalSeconds;
                 if (i > i2) {
@@ -52,7 +52,7 @@ public class ExponentialBackoffDataHolder {
     ExponentialBackoffDataHolder(HostRetryInfoProvider hostRetryInfoProvider, SystemTimeProvider systemTimeProvider, TimePassedChecker timePassedChecker, String str) {
         this.c = hostRetryInfoProvider;
         this.b = systemTimeProvider;
-        this.f1235a = timePassedChecker;
+        this.f1236a = timePassedChecker;
         this.d = hostRetryInfoProvider.getLastAttemptTimeSeconds();
         this.e = hostRetryInfoProvider.getNextSendAttemptNumber();
         this.f = String.format("[ExponentialBackoffDataHolder-%s]", str);

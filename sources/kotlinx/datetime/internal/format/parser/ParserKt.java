@@ -11,7 +11,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Parser.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0016\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003H\u0002\u001a$\u0010\u0005\u001a\b\u0012\u0004\u0012\u0002H\u00070\u0006\"\u0004\b\u0000\u0010\u0007*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00070\u00060\u0003H\u0000¨\u0006\b"}, d2 = {"formatError", "", "errors", "", "Lkotlinx/datetime/internal/format/parser/ParseError;", "concat", "Lkotlinx/datetime/internal/format/parser/ParserStructure;", ExifInterface.GPS_DIRECTION_TRUE, "kotlinx-datetime"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a$\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00010\u0003H\u0000\u001a\u0016\u0010\u0004\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00070\u0003H\u0002¨\u0006\b"}, d2 = {"concat", "Lkotlinx/datetime/internal/format/parser/ParserStructure;", ExifInterface.GPS_DIRECTION_TRUE, "", "formatError", "", "errors", "Lkotlinx/datetime/internal/format/parser/ParseError;", "kotlinx-datetime"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ParserKt {
     private static final <T> ParserStructure<T> concat$append(ParserStructure<? super T> parserStructure, ParserStructure<? super T> parserStructure2) {
@@ -113,19 +113,24 @@ public final class ParserKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final String formatError(List<ParseError> list) {
-        Appendable joinTo;
         if (list.size() == 1) {
             return "Position " + list.get(0).getPosition() + ": " + list.get(0).getMessage().invoke();
         }
-        joinTo = CollectionsKt.joinTo(list, new StringBuilder(list.size() * 33), (r14 & 2) != 0 ? ", " : ", ", (r14 & 4) != 0 ? "" : "Errors: ", (r14 & 8) != 0 ? "" : null, (r14 & 16) != 0 ? -1 : 0, (r14 & 32) != 0 ? "..." : null, (r14 & 64) != 0 ? null : new Function1<ParseError, CharSequence>() { // from class: kotlinx.datetime.internal.format.parser.ParserKt$formatError$1
+        String sb = ((StringBuilder) CollectionsKt.joinTo$default(list, new StringBuilder(list.size() * 33), ", ", "Errors: ", null, 0, null, new Function1() { // from class: kotlinx.datetime.internal.format.parser.ParserKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public final CharSequence invoke(ParseError it) {
-                Intrinsics.checkNotNullParameter(it, "it");
-                return "position " + it.getPosition() + ": '" + it.getMessage().invoke() + '\'';
+            public final Object invoke(Object obj) {
+                CharSequence formatError$lambda$8;
+                formatError$lambda$8 = ParserKt.formatError$lambda$8((ParseError) obj);
+                return formatError$lambda$8;
             }
-        });
-        String sb = ((StringBuilder) joinTo).toString();
+        }, 56, null)).toString();
         Intrinsics.checkNotNullExpressionValue(sb, "toString(...)");
         return sb;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final CharSequence formatError$lambda$8(ParseError it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        return "position " + it.getPosition() + ": '" + it.getMessage().invoke() + '\'';
     }
 }

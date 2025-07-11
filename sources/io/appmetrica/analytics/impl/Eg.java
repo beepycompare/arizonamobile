@@ -8,17 +8,17 @@ import com.adjust.sdk.Constants;
 public final class Eg extends ResultReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0542qg f409a;
+    public final InterfaceC0534qg f410a;
 
-    public Eg(Handler handler, InterfaceC0542qg interfaceC0542qg) {
+    public Eg(Handler handler, InterfaceC0534qg interfaceC0534qg) {
         super(handler);
-        this.f409a = interfaceC0542qg;
+        this.f410a = interfaceC0534qg;
     }
 
-    public static void a(ResultReceiver resultReceiver, C0741yg c0741yg) {
+    public static void a(ResultReceiver resultReceiver, C0733yg c0733yg) {
         if (resultReceiver != null) {
             Bundle bundle = new Bundle();
-            bundle.putByteArray(Constants.REFERRER, c0741yg == null ? null : c0741yg.a());
+            bundle.putByteArray(Constants.REFERRER, c0733yg == null ? null : c0733yg.a());
             resultReceiver.send(1, bundle);
         }
     }
@@ -26,15 +26,15 @@ public final class Eg extends ResultReceiver {
     @Override // android.os.ResultReceiver
     public final void onReceiveResult(int i, Bundle bundle) {
         if (i == 1) {
-            C0741yg c0741yg = null;
+            C0733yg c0733yg = null;
             try {
                 byte[] byteArray = bundle.getByteArray(Constants.REFERRER);
                 if (byteArray != null && byteArray.length != 0) {
-                    c0741yg = new C0741yg(byteArray);
+                    c0733yg = new C0733yg(byteArray);
                 }
             } catch (Throwable unused) {
             }
-            this.f409a.a(c0741yg);
+            this.f410a.a(c0733yg);
         }
     }
 }

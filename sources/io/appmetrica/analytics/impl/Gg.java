@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 /* loaded from: classes4.dex */
 public final class Gg {
-    public Gg(InterfaceC0313hb interfaceC0313hb) {
+    public Gg(InterfaceC0305hb interfaceC0305hb) {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
@@ -13,17 +13,17 @@ public final class Gg {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static InterfaceC0313hb a(Context context, IHandlerExecutor iHandlerExecutor) {
-        C0616tg c0616tg;
+    public static InterfaceC0305hb a(Context context, IHandlerExecutor iHandlerExecutor) {
+        C0608tg c0608tg;
         if (ReflectionUtils.detectClassExists("com.android.installreferrer.api.InstallReferrerClient")) {
             try {
-                c0616tg = new C0616tg(context, iHandlerExecutor);
+                c0608tg = new C0608tg(context, iHandlerExecutor);
             } catch (Throwable unused) {
             }
-            return c0616tg != null ? new Fg() : c0616tg;
+            return c0608tg != null ? new Fg() : c0608tg;
         }
-        c0616tg = null;
-        if (c0616tg != null) {
+        c0608tg = null;
+        if (c0608tg != null) {
         }
     }
 }

@@ -3,7 +3,7 @@ package kotlinx.datetime.internal;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: toKotlinCode.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000e\n\u0002\u0010\f\n\u0000\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0000\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0001H\u0000¨\u0006\u0003"}, d2 = {"toKotlinCode", "", "", "kotlinx-datetime"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000e\n\u0002\u0010\f\n\u0000\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0001H\u0000\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0000¨\u0006\u0003"}, d2 = {"toKotlinCode", "", "", "kotlinx-datetime"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ToKotlinCodeKt {
     public static final String toKotlinCode(String str) {
@@ -12,26 +12,31 @@ public final class ToKotlinCodeKt {
         int length = str.length();
         for (int i = 0; i < length; i++) {
             char charAt = str.charAt(i);
-            if (charAt == '\"') {
+            if (charAt == '\r') {
+                sb.append("\\r");
+            } else if (charAt == '\"') {
                 sb.append("\\\"");
             } else if (charAt == '\\') {
                 sb.append("\\\\");
-            } else if (charAt == '\b') {
-                sb.append("\\b");
-            } else if (charAt == '\t') {
-                sb.append("\\t");
-            } else if (charAt == '\n') {
-                sb.append("\\n");
-            } else if (charAt == '\r') {
-                sb.append("\\r");
             } else {
-                sb.append(charAt);
+                switch (charAt) {
+                    case '\b':
+                        sb.append("\\b");
+                        continue;
+                    case '\t':
+                        sb.append("\\t");
+                        continue;
+                    case '\n':
+                        sb.append("\\n");
+                        continue;
+                    default:
+                        sb.append(charAt);
+                        continue;
+                }
             }
         }
         sb.append('\"');
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-        return sb2;
+        return sb.toString();
     }
 
     public static final String toKotlinCode(char c) {

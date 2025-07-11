@@ -6,7 +6,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: FormatStructure.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 /* synthetic */ class SignedFormatStructure$formatter$1<T> extends FunctionReferenceImpl implements Function1<T, Boolean> {
     final /* synthetic */ SignedFormatStructure<T> this$0;

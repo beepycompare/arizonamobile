@@ -22,7 +22,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KClass;
 import kotlinx.coroutines.flow.Flow;
 /* compiled from: DownloaderInfoDao_Impl.kt */
-@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010 \n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\u0018\u0000 #2\u00020\u0001:\u0001#B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010\fJ\u0018\u0010\r\u001a\u0004\u0018\u00010\b2\u0006\u0010\u000e\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010\u000fJ\u001e\u0010\u0010\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0096@¢\u0006\u0002\u0010\u0014J\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\b0\u0011H\u0096@¢\u0006\u0002\u0010\u0016J\u0014\u0010\u0017\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00110\u0018H\u0016J\u000e\u0010\u0019\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010\u0016J\u001e\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u000e\u001a\u00020\n2\u0006\u0010\u0012\u001a\u00020\u0013H\u0096@¢\u0006\u0002\u0010\u001cJ\u000e\u0010\u001d\u001a\u00020\u001eH\u0096@¢\u0006\u0002\u0010\u0016J\u0016\u0010\u001f\u001a\u00020\u001b2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lcom/miami/game/core/downloader/database/dao/DownloaderInfoDao_Impl;", "Lcom/miami/game/core/downloader/database/dao/DownloaderInfoDao;", "__db", "Landroidx/room/RoomDatabase;", "<init>", "(Landroidx/room/RoomDatabase;)V", "__insertAdapterOfDownloaderInfoDbModel", "Landroidx/room/EntityInsertAdapter;", "Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;", "insert", "", "data", "(Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "get", "id", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllNotCompletedTasks", "", "isCompleted", "", "(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAll", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllFlow", "Lkotlinx/coroutines/flow/Flow;", "getCountAllTasks", "updateCompleted", "", "(JZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "wipeData", "", "deleteDownloaderInfo", "name", "", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "downloader-database_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010 \n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\u0018\u0000 #2\u00020\u0001:\u0001#B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010\fJ\u0018\u0010\r\u001a\u0004\u0018\u00010\b2\u0006\u0010\u000e\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010\u000fJ\u001e\u0010\u0010\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0096@¢\u0006\u0002\u0010\u0014J\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\b0\u0011H\u0096@¢\u0006\u0002\u0010\u0016J\u0014\u0010\u0017\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00110\u0018H\u0016J\u000e\u0010\u0019\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010\u0016J\u001e\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u000e\u001a\u00020\n2\u0006\u0010\u0012\u001a\u00020\u0013H\u0096@¢\u0006\u0002\u0010\u001cJ\u000e\u0010\u001d\u001a\u00020\u001eH\u0096@¢\u0006\u0002\u0010\u0016J\u0016\u0010\u001f\u001a\u00020\u001b2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lcom/miami/game/core/downloader/database/dao/DownloaderInfoDao_Impl;", "Lcom/miami/game/core/downloader/database/dao/DownloaderInfoDao;", "__db", "Landroidx/room/RoomDatabase;", "<init>", "(Landroidx/room/RoomDatabase;)V", "__insertAdapterOfDownloaderInfoDbModel", "Landroidx/room/EntityInsertAdapter;", "Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;", "insert", "", "data", "(Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "get", "id", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllNotCompletedTasks", "", "isCompleted", "", "(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAll", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllFlow", "Lkotlinx/coroutines/flow/Flow;", "getCountAllTasks", "updateCompleted", "", "(JZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "wipeData", "", "deleteDownloaderInfo", "name", "", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "downloader-database_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
     public static final Companion Companion = new Companion(null);
@@ -43,61 +43,61 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
             public void bind(SQLiteStatement statement, DownloaderInfoDbModel entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo7567bindLong(1, entity.getId());
+                statement.mo7568bindLong(1, entity.getId());
                 String path = entity.getPath();
                 if (path == null) {
-                    statement.mo7568bindNull(2);
+                    statement.mo7569bindNull(2);
                 } else {
-                    statement.mo7569bindText(2, path);
+                    statement.mo7570bindText(2, path);
                 }
                 String nameFromGameInfoFile = entity.getNameFromGameInfoFile();
                 if (nameFromGameInfoFile == null) {
-                    statement.mo7568bindNull(3);
+                    statement.mo7569bindNull(3);
                 } else {
-                    statement.mo7569bindText(3, nameFromGameInfoFile);
+                    statement.mo7570bindText(3, nameFromGameInfoFile);
                 }
                 Long sizeFromGameInfoFile = entity.getSizeFromGameInfoFile();
                 if (sizeFromGameInfoFile == null) {
-                    statement.mo7568bindNull(4);
+                    statement.mo7569bindNull(4);
                 } else {
-                    statement.mo7567bindLong(4, sizeFromGameInfoFile.longValue());
+                    statement.mo7568bindLong(4, sizeFromGameInfoFile.longValue());
                 }
                 String hashFromGameInfoFile = entity.getHashFromGameInfoFile();
                 if (hashFromGameInfoFile == null) {
-                    statement.mo7568bindNull(5);
+                    statement.mo7569bindNull(5);
                 } else {
-                    statement.mo7569bindText(5, hashFromGameInfoFile);
+                    statement.mo7570bindText(5, hashFromGameInfoFile);
                 }
                 Long dateChangeFromGameInfoFile = entity.getDateChangeFromGameInfoFile();
                 if (dateChangeFromGameInfoFile == null) {
-                    statement.mo7568bindNull(6);
+                    statement.mo7569bindNull(6);
                 } else {
-                    statement.mo7567bindLong(6, dateChangeFromGameInfoFile.longValue());
+                    statement.mo7568bindLong(6, dateChangeFromGameInfoFile.longValue());
                 }
                 String gpuTypeFromGameInfoFile = entity.getGpuTypeFromGameInfoFile();
                 if (gpuTypeFromGameInfoFile == null) {
-                    statement.mo7568bindNull(7);
+                    statement.mo7569bindNull(7);
                 } else {
-                    statement.mo7569bindText(7, gpuTypeFromGameInfoFile);
+                    statement.mo7570bindText(7, gpuTypeFromGameInfoFile);
                 }
-                statement.mo7567bindLong(8, entity.isCompletedDownload() ? 1L : 0L);
+                statement.mo7568bindLong(8, entity.isCompletedDownload() ? 1L : 0L);
                 Long downloadStartAt = entity.getDownloadStartAt();
                 if (downloadStartAt == null) {
-                    statement.mo7568bindNull(9);
+                    statement.mo7569bindNull(9);
                 } else {
-                    statement.mo7567bindLong(9, downloadStartAt.longValue());
+                    statement.mo7568bindLong(9, downloadStartAt.longValue());
                 }
                 Long downloadFinishAt = entity.getDownloadFinishAt();
                 if (downloadFinishAt == null) {
-                    statement.mo7568bindNull(10);
+                    statement.mo7569bindNull(10);
                 } else {
-                    statement.mo7567bindLong(10, downloadFinishAt.longValue());
+                    statement.mo7568bindLong(10, downloadFinishAt.longValue());
                 }
                 Long createdAt = entity.getCreatedAt();
                 if (createdAt == null) {
-                    statement.mo7568bindNull(11);
+                    statement.mo7569bindNull(11);
                 } else {
-                    statement.mo7567bindLong(11, createdAt.longValue());
+                    statement.mo7568bindLong(11, createdAt.longValue());
                 }
             }
         };
@@ -139,7 +139,7 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         SQLiteStatement prepare = _connection.prepare(str);
         boolean z = true;
         try {
-            prepare.mo7567bindLong(1, j);
+            prepare.mo7568bindLong(1, j);
             int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "id");
             int columnIndexOrThrow2 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "path");
             int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "name_from_game_info_file");
@@ -188,7 +188,7 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            prepare.mo7567bindLong(1, z ? 1L : 0L);
+            prepare.mo7568bindLong(1, z ? 1L : 0L);
             ArrayList arrayList = new ArrayList();
             while (prepare.step()) {
                 arrayList.add(Long.valueOf(prepare.getLong(0)));
@@ -316,8 +316,8 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            prepare.mo7567bindLong(1, z ? 1L : 0L);
-            prepare.mo7567bindLong(2, j);
+            prepare.mo7568bindLong(1, z ? 1L : 0L);
+            prepare.mo7568bindLong(2, j);
             prepare.step();
             prepare.close();
             return Unit.INSTANCE;
@@ -369,7 +369,7 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            prepare.mo7569bindText(1, str2);
+            prepare.mo7570bindText(1, str2);
             prepare.step();
             prepare.close();
             return Unit.INSTANCE;
@@ -380,7 +380,7 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
     }
 
     /* compiled from: DownloaderInfoDao_Impl.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00060\u0005¨\u0006\u0007"}, d2 = {"Lcom/miami/game/core/downloader/database/dao/DownloaderInfoDao_Impl$Companion;", "", "<init>", "()V", "getRequiredConverters", "", "Lkotlin/reflect/KClass;", "downloader-database_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00060\u0005¨\u0006\u0007"}, d2 = {"Lcom/miami/game/core/downloader/database/dao/DownloaderInfoDao_Impl$Companion;", "", "<init>", "()V", "getRequiredConverters", "", "Lkotlin/reflect/KClass;", "downloader-database_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

@@ -8,10 +8,10 @@ import kotlin.jvm.functions.Function0;
 /* loaded from: classes3.dex */
 public final class DimensionKt {
     public static final int Dimension(int i) {
-        return Dimension.Pixels.m7815constructorimpl(i);
+        return Dimension.Pixels.m7816constructorimpl(i);
     }
 
     public static final int pxOrElse(Dimension dimension, Function0<Integer> function0) {
-        return dimension instanceof Dimension.Pixels ? ((Dimension.Pixels) dimension).m7820unboximpl() : function0.invoke().intValue();
+        return dimension instanceof Dimension.Pixels ? ((Dimension.Pixels) dimension).m7821unboximpl() : function0.invoke().intValue();
     }
 }

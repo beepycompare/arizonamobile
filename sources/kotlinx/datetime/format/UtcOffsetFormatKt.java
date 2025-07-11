@@ -4,6 +4,7 @@ import androidx.exifinterface.media.ExifInterface;
 import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
@@ -11,183 +12,37 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.datetime.format.DateTimeFormatBuilder;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: UtcOffsetFormat.kt */
-@Metadata(d1 = {"\u0000>\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a,\u0010\u000e\u001a\u00020\u000f*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00122\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0015H\u0000\u001a<\u0010\u0017\u001a\u00020\u000f\"\b\b\u0000\u0010\u0018*\u00020\u0019*\u0002H\u00182\u0006\u0010\u001a\u001a\u00020\u00152\u0017\u0010\u001b\u001a\u0013\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u000f0\u001c¢\u0006\u0002\b\u001dH\u0000¢\u0006\u0002\u0010\u001e\"\u001b\u0010\u0000\u001a\u00020\u00018@X\u0080\u0084\u0002¢\u0006\f\n\u0004\b\u0004\u0010\u0005\u001a\u0004\b\u0002\u0010\u0003\"\u001b\u0010\u0006\u001a\u00020\u00018@X\u0080\u0084\u0002¢\u0006\f\n\u0004\b\b\u0010\u0005\u001a\u0004\b\u0007\u0010\u0003\"\u001b\u0010\t\u001a\u00020\u00018@X\u0080\u0084\u0002¢\u0006\f\n\u0004\b\u000b\u0010\u0005\u001a\u0004\b\n\u0010\u0003\"\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"FOUR_DIGIT_OFFSET", "Lkotlinx/datetime/format/UtcOffsetFormat;", "getFOUR_DIGIT_OFFSET", "()Lkotlinx/datetime/format/UtcOffsetFormat;", "FOUR_DIGIT_OFFSET$delegate", "Lkotlin/Lazy;", "ISO_OFFSET", "getISO_OFFSET", "ISO_OFFSET$delegate", "ISO_OFFSET_BASIC", "getISO_OFFSET_BASIC", "ISO_OFFSET_BASIC$delegate", "emptyIncompleteUtcOffset", "Lkotlinx/datetime/format/IncompleteUtcOffset;", "isoOffset", "", "Lkotlinx/datetime/format/DateTimeFormatBuilder$WithUtcOffset;", "zOnZero", "", "useSeparator", "outputMinute", "Lkotlinx/datetime/format/WhenToOutput;", "outputSecond", "outputIfNeeded", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/datetime/format/DateTimeFormatBuilder;", "whenToOutput", "format", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "(Lkotlinx/datetime/format/DateTimeFormatBuilder;Lkotlinx/datetime/format/WhenToOutput;Lkotlin/jvm/functions/Function1;)V", "kotlinx-datetime"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\u001a<\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\u0002H\u00022\u0006\u0010\u0004\u001a\u00020\u00052\u0017\u0010\u0006\u001a\u0013\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\bH\u0000¢\u0006\u0002\u0010\t\u001a,\u0010\n\u001a\u00020\u0001*\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u00052\u0006\u0010\u0010\u001a\u00020\u0005H\u0000\"\u001b\u0010\u0011\u001a\u00020\u00128@X\u0080\u0084\u0002¢\u0006\f\n\u0004\b\u0015\u0010\u0016\u001a\u0004\b\u0013\u0010\u0014\"\u001b\u0010\u0017\u001a\u00020\u00128@X\u0080\u0084\u0002¢\u0006\f\n\u0004\b\u0019\u0010\u0016\u001a\u0004\b\u0018\u0010\u0014\"\u001b\u0010\u001a\u001a\u00020\u00128@X\u0080\u0084\u0002¢\u0006\f\n\u0004\b\u001c\u0010\u0016\u001a\u0004\b\u001b\u0010\u0014\"\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"outputIfNeeded", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/datetime/format/DateTimeFormatBuilder;", "whenToOutput", "Lkotlinx/datetime/format/WhenToOutput;", "format", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "(Lkotlinx/datetime/format/DateTimeFormatBuilder;Lkotlinx/datetime/format/WhenToOutput;Lkotlin/jvm/functions/Function1;)V", "isoOffset", "Lkotlinx/datetime/format/DateTimeFormatBuilder$WithUtcOffset;", "zOnZero", "", "useSeparator", "outputMinute", "outputSecond", "ISO_OFFSET", "Lkotlinx/datetime/format/UtcOffsetFormat;", "getISO_OFFSET", "()Lkotlinx/datetime/format/UtcOffsetFormat;", "ISO_OFFSET$delegate", "Lkotlin/Lazy;", "ISO_OFFSET_BASIC", "getISO_OFFSET_BASIC", "ISO_OFFSET_BASIC$delegate", "FOUR_DIGIT_OFFSET", "getFOUR_DIGIT_OFFSET", "FOUR_DIGIT_OFFSET$delegate", "emptyIncompleteUtcOffset", "Lkotlinx/datetime/format/IncompleteUtcOffset;", "kotlinx-datetime"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class UtcOffsetFormatKt {
-    private static final Lazy ISO_OFFSET$delegate = LazyKt.lazy(new Function0<UtcOffsetFormat>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$ISO_OFFSET$2
+    private static final Lazy ISO_OFFSET$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda5
         @Override // kotlin.jvm.functions.Function0
-        public final UtcOffsetFormat invoke() {
-            return UtcOffsetFormat.Companion.build(new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$ISO_OFFSET$2.1
-                @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset) {
-                    invoke2(withUtcOffset);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(DateTimeFormatBuilder.WithUtcOffset build) {
-                    Intrinsics.checkNotNullParameter(build, "$this$build");
-                    DateTimeFormatBuilderKt.alternativeParsing(build, new Function1[]{new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt.ISO_OFFSET.2.1.1
-                        @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset) {
-                            invoke2(withUtcOffset);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
-                            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                            alternativeParsing.chars("z");
-                        }
-                    }}, new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt.ISO_OFFSET.2.1.2
-                        @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset) {
-                            invoke2(withUtcOffset);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
-                            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                            DateTimeFormatBuilderKt.optional(alternativeParsing, "Z", new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt.ISO_OFFSET.2.1.2.1
-                                @Override // kotlin.jvm.functions.Function1
-                                public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset) {
-                                    invoke2(withUtcOffset);
-                                    return Unit.INSTANCE;
-                                }
-
-                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                public final void invoke2(DateTimeFormatBuilder.WithUtcOffset optional) {
-                                    Intrinsics.checkNotNullParameter(optional, "$this$optional");
-                                    DateTimeFormatBuilder.WithUtcOffset.DefaultImpls.offsetHours$default(optional, null, 1, null);
-                                    DateTimeFormatBuilder.WithUtcOffset withUtcOffset = optional;
-                                    DateTimeFormatBuilderKt.m10056char(withUtcOffset, AbstractJsonLexerKt.COLON);
-                                    DateTimeFormatBuilder.WithUtcOffset.DefaultImpls.offsetMinutesOfHour$default(optional, null, 1, null);
-                                    DateTimeFormatBuilderKt.optional$default(withUtcOffset, null, new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt.ISO_OFFSET.2.1.2.1.1
-                                        @Override // kotlin.jvm.functions.Function1
-                                        public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset2) {
-                                            invoke2(withUtcOffset2);
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                        public final void invoke2(DateTimeFormatBuilder.WithUtcOffset optional2) {
-                                            Intrinsics.checkNotNullParameter(optional2, "$this$optional");
-                                            DateTimeFormatBuilderKt.m10056char(optional2, AbstractJsonLexerKt.COLON);
-                                            DateTimeFormatBuilder.WithUtcOffset.DefaultImpls.offsetSecondsOfMinute$default(optional2, null, 1, null);
-                                        }
-                                    }, 1, null);
-                                }
-                            });
-                        }
-                    });
-                }
-            });
+        public final Object invoke() {
+            UtcOffsetFormat ISO_OFFSET_delegate$lambda$12;
+            ISO_OFFSET_delegate$lambda$12 = UtcOffsetFormatKt.ISO_OFFSET_delegate$lambda$12();
+            return ISO_OFFSET_delegate$lambda$12;
         }
     });
-    private static final Lazy ISO_OFFSET_BASIC$delegate = LazyKt.lazy(new Function0<UtcOffsetFormat>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$ISO_OFFSET_BASIC$2
+    private static final Lazy ISO_OFFSET_BASIC$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda6
         @Override // kotlin.jvm.functions.Function0
-        public final UtcOffsetFormat invoke() {
-            return UtcOffsetFormat.Companion.build(new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$ISO_OFFSET_BASIC$2.1
-                @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset) {
-                    invoke2(withUtcOffset);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(DateTimeFormatBuilder.WithUtcOffset build) {
-                    Intrinsics.checkNotNullParameter(build, "$this$build");
-                    DateTimeFormatBuilderKt.alternativeParsing(build, new Function1[]{new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt.ISO_OFFSET_BASIC.2.1.1
-                        @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset) {
-                            invoke2(withUtcOffset);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
-                            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                            alternativeParsing.chars("z");
-                        }
-                    }}, new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt.ISO_OFFSET_BASIC.2.1.2
-                        @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset) {
-                            invoke2(withUtcOffset);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
-                            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                            DateTimeFormatBuilderKt.optional(alternativeParsing, "Z", new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt.ISO_OFFSET_BASIC.2.1.2.1
-                                @Override // kotlin.jvm.functions.Function1
-                                public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset) {
-                                    invoke2(withUtcOffset);
-                                    return Unit.INSTANCE;
-                                }
-
-                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                public final void invoke2(DateTimeFormatBuilder.WithUtcOffset optional) {
-                                    Intrinsics.checkNotNullParameter(optional, "$this$optional");
-                                    DateTimeFormatBuilder.WithUtcOffset.DefaultImpls.offsetHours$default(optional, null, 1, null);
-                                    DateTimeFormatBuilderKt.optional$default(optional, null, new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt.ISO_OFFSET_BASIC.2.1.2.1.1
-                                        @Override // kotlin.jvm.functions.Function1
-                                        public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset) {
-                                            invoke2(withUtcOffset);
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                        public final void invoke2(DateTimeFormatBuilder.WithUtcOffset optional2) {
-                                            Intrinsics.checkNotNullParameter(optional2, "$this$optional");
-                                            DateTimeFormatBuilder.WithUtcOffset.DefaultImpls.offsetMinutesOfHour$default(optional2, null, 1, null);
-                                            DateTimeFormatBuilderKt.optional$default(optional2, null, new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt.ISO_OFFSET_BASIC.2.1.2.1.1.1
-                                                @Override // kotlin.jvm.functions.Function1
-                                                public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset) {
-                                                    invoke2(withUtcOffset);
-                                                    return Unit.INSTANCE;
-                                                }
-
-                                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                                public final void invoke2(DateTimeFormatBuilder.WithUtcOffset optional3) {
-                                                    Intrinsics.checkNotNullParameter(optional3, "$this$optional");
-                                                    DateTimeFormatBuilder.WithUtcOffset.DefaultImpls.offsetSecondsOfMinute$default(optional3, null, 1, null);
-                                                }
-                                            }, 1, null);
-                                        }
-                                    }, 1, null);
-                                }
-                            });
-                        }
-                    });
-                }
-            });
+        public final Object invoke() {
+            UtcOffsetFormat ISO_OFFSET_BASIC_delegate$lambda$19;
+            ISO_OFFSET_BASIC_delegate$lambda$19 = UtcOffsetFormatKt.ISO_OFFSET_BASIC_delegate$lambda$19();
+            return ISO_OFFSET_BASIC_delegate$lambda$19;
         }
     });
-    private static final Lazy FOUR_DIGIT_OFFSET$delegate = LazyKt.lazy(new Function0<UtcOffsetFormat>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$FOUR_DIGIT_OFFSET$2
+    private static final Lazy FOUR_DIGIT_OFFSET$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda7
         @Override // kotlin.jvm.functions.Function0
-        public final UtcOffsetFormat invoke() {
-            return UtcOffsetFormat.Companion.build(new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$FOUR_DIGIT_OFFSET$2.1
-                @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset) {
-                    invoke2(withUtcOffset);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(DateTimeFormatBuilder.WithUtcOffset build) {
-                    Intrinsics.checkNotNullParameter(build, "$this$build");
-                    DateTimeFormatBuilder.WithUtcOffset.DefaultImpls.offsetHours$default(build, null, 1, null);
-                    DateTimeFormatBuilder.WithUtcOffset.DefaultImpls.offsetMinutesOfHour$default(build, null, 1, null);
-                }
-            });
+        public final Object invoke() {
+            UtcOffsetFormat FOUR_DIGIT_OFFSET_delegate$lambda$21;
+            FOUR_DIGIT_OFFSET_delegate$lambda$21 = UtcOffsetFormatKt.FOUR_DIGIT_OFFSET_delegate$lambda$21();
+            return FOUR_DIGIT_OFFSET_delegate$lambda$21;
         }
     });
     private static final IncompleteUtcOffset emptyIncompleteUtcOffset = new IncompleteUtcOffset(null, null, null, null, 15, null);
 
     /* compiled from: UtcOffsetFormat.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -215,31 +70,29 @@ public final class UtcOffsetFormatKt {
         Intrinsics.checkNotNullParameter(whenToOutput, "whenToOutput");
         Intrinsics.checkNotNullParameter(format, "format");
         int i = WhenMappings.$EnumSwitchMapping$0[whenToOutput.ordinal()];
-        if (i == 2) {
-            DateTimeFormatBuilderKt.optional$default(t, null, new Function1<T, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$outputIfNeeded$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(1);
-                }
-
-                @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(Object obj) {
-                    invoke((DateTimeFormatBuilder) obj);
-                    return Unit.INSTANCE;
-                }
-
-                /* JADX WARN: Incorrect types in method signature: (TT;)V */
-                public final void invoke(DateTimeFormatBuilder optional) {
-                    Intrinsics.checkNotNullParameter(optional, "$this$optional");
-                    format.invoke(optional);
-                }
-            }, 1, null);
-        } else if (i != 3) {
-        } else {
-            format.invoke(t);
+        if (i != 1) {
+            if (i == 2) {
+                DateTimeFormatBuilderKt.optional$default(t, null, new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda0
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj) {
+                        Unit outputIfNeeded$lambda$0;
+                        outputIfNeeded$lambda$0 = UtcOffsetFormatKt.outputIfNeeded$lambda$0(Function1.this, (DateTimeFormatBuilder) obj);
+                        return outputIfNeeded$lambda$0;
+                    }
+                }, 1, null);
+            } else if (i != 3) {
+                throw new NoWhenBranchMatchedException();
+            } else {
+                format.invoke(t);
+            }
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit outputIfNeeded$lambda$0(Function1 function1, DateTimeFormatBuilder optional) {
+        Intrinsics.checkNotNullParameter(optional, "$this$optional");
+        function1.invoke(optional);
+        return Unit.INSTANCE;
     }
 
     public static final void isoOffset(DateTimeFormatBuilder.WithUtcOffset withUtcOffset, boolean z, final boolean z2, final WhenToOutput outputMinute, final WhenToOutput outputSecond) {
@@ -250,56 +103,12 @@ public final class UtcOffsetFormatKt {
             throw new IllegalArgumentException("Seconds cannot be included without minutes".toString());
         }
         if (z) {
-            DateTimeFormatBuilderKt.optional(withUtcOffset, "Z", new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$isoOffset$2
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(1);
-                }
-
+            DateTimeFormatBuilderKt.optional(withUtcOffset, "Z", new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset2) {
-                    invoke2(withUtcOffset2);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(DateTimeFormatBuilder.WithUtcOffset optional) {
-                    Intrinsics.checkNotNullParameter(optional, "$this$optional");
-                    Function1[] function1Arr = {new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$isoOffset$2.1
-                        @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset2) {
-                            invoke2(withUtcOffset2);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
-                            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                            DateTimeFormatBuilderKt.m10056char(alternativeParsing, 'z');
-                        }
-                    }};
-                    final WhenToOutput whenToOutput = WhenToOutput.this;
-                    final boolean z3 = z2;
-                    final WhenToOutput whenToOutput2 = outputSecond;
-                    DateTimeFormatBuilderKt.alternativeParsing(optional, function1Arr, new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$isoOffset$2.2
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        {
-                            super(1);
-                        }
-
-                        @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset2) {
-                            invoke2(withUtcOffset2);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
-                            Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-                            UtcOffsetFormatKt.isoOffset$appendIsoOffsetWithoutZOnZero(alternativeParsing, WhenToOutput.this, z3, whenToOutput2);
-                        }
-                    });
+                public final Object invoke(Object obj) {
+                    Unit isoOffset$lambda$6;
+                    isoOffset$lambda$6 = UtcOffsetFormatKt.isoOffset$lambda$6(WhenToOutput.this, z2, outputSecond, (DateTimeFormatBuilder.WithUtcOffset) obj);
+                    return isoOffset$lambda$6;
                 }
             });
         } else {
@@ -307,65 +116,281 @@ public final class UtcOffsetFormatKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void isoOffset$appendIsoOffsetWithoutZOnZero(DateTimeFormatBuilder.WithUtcOffset withUtcOffset, WhenToOutput whenToOutput, final boolean z, final WhenToOutput whenToOutput2) {
-        DateTimeFormatBuilder.WithUtcOffset.DefaultImpls.offsetHours$default(withUtcOffset, null, 1, null);
-        outputIfNeeded(withUtcOffset, whenToOutput, new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$isoOffset$appendIsoOffsetWithoutZOnZero$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+    private static final void isoOffset$appendIsoOffsetWithoutZOnZero(DateTimeFormatBuilder.WithUtcOffset withUtcOffset, WhenToOutput whenToOutput, final boolean z, final WhenToOutput whenToOutput2) {
+        DateTimeFormatBuilder.WithUtcOffset.offsetHours$default(withUtcOffset, null, 1, null);
+        outputIfNeeded(withUtcOffset, whenToOutput, new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset2) {
-                invoke2(withUtcOffset2);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(DateTimeFormatBuilder.WithUtcOffset outputIfNeeded) {
-                Intrinsics.checkNotNullParameter(outputIfNeeded, "$this$outputIfNeeded");
-                if (z) {
-                    DateTimeFormatBuilderKt.m10056char(outputIfNeeded, AbstractJsonLexerKt.COLON);
-                }
-                DateTimeFormatBuilder.WithUtcOffset.DefaultImpls.offsetMinutesOfHour$default(outputIfNeeded, null, 1, null);
-                WhenToOutput whenToOutput3 = whenToOutput2;
-                final boolean z2 = z;
-                UtcOffsetFormatKt.outputIfNeeded(outputIfNeeded, whenToOutput3, new Function1<DateTimeFormatBuilder.WithUtcOffset, Unit>() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$isoOffset$appendIsoOffsetWithoutZOnZero$1.1
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(1);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(DateTimeFormatBuilder.WithUtcOffset withUtcOffset2) {
-                        invoke2(withUtcOffset2);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(DateTimeFormatBuilder.WithUtcOffset outputIfNeeded2) {
-                        Intrinsics.checkNotNullParameter(outputIfNeeded2, "$this$outputIfNeeded");
-                        if (z2) {
-                            DateTimeFormatBuilderKt.m10056char(outputIfNeeded2, AbstractJsonLexerKt.COLON);
-                        }
-                        DateTimeFormatBuilder.WithUtcOffset.DefaultImpls.offsetSecondsOfMinute$default(outputIfNeeded2, null, 1, null);
-                    }
-                });
+            public final Object invoke(Object obj) {
+                Unit isoOffset$appendIsoOffsetWithoutZOnZero$lambda$3;
+                isoOffset$appendIsoOffsetWithoutZOnZero$lambda$3 = UtcOffsetFormatKt.isoOffset$appendIsoOffsetWithoutZOnZero$lambda$3(z, whenToOutput2, (DateTimeFormatBuilder.WithUtcOffset) obj);
+                return isoOffset$appendIsoOffsetWithoutZOnZero$lambda$3;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit isoOffset$appendIsoOffsetWithoutZOnZero$lambda$3(final boolean z, WhenToOutput whenToOutput, DateTimeFormatBuilder.WithUtcOffset outputIfNeeded) {
+        Intrinsics.checkNotNullParameter(outputIfNeeded, "$this$outputIfNeeded");
+        if (z) {
+            DateTimeFormatBuilderKt.m10098char(outputIfNeeded, AbstractJsonLexerKt.COLON);
+        }
+        DateTimeFormatBuilder.WithUtcOffset.offsetMinutesOfHour$default(outputIfNeeded, null, 1, null);
+        outputIfNeeded(outputIfNeeded, whenToOutput, new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda16
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit isoOffset$appendIsoOffsetWithoutZOnZero$lambda$3$lambda$2;
+                isoOffset$appendIsoOffsetWithoutZOnZero$lambda$3$lambda$2 = UtcOffsetFormatKt.isoOffset$appendIsoOffsetWithoutZOnZero$lambda$3$lambda$2(z, (DateTimeFormatBuilder.WithUtcOffset) obj);
+                return isoOffset$appendIsoOffsetWithoutZOnZero$lambda$3$lambda$2;
+            }
+        });
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit isoOffset$appendIsoOffsetWithoutZOnZero$lambda$3$lambda$2(boolean z, DateTimeFormatBuilder.WithUtcOffset outputIfNeeded) {
+        Intrinsics.checkNotNullParameter(outputIfNeeded, "$this$outputIfNeeded");
+        if (z) {
+            DateTimeFormatBuilderKt.m10098char(outputIfNeeded, AbstractJsonLexerKt.COLON);
+        }
+        DateTimeFormatBuilder.WithUtcOffset.offsetSecondsOfMinute$default(outputIfNeeded, null, 1, null);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit isoOffset$lambda$6(final WhenToOutput whenToOutput, final boolean z, final WhenToOutput whenToOutput2, DateTimeFormatBuilder.WithUtcOffset optional) {
+        Intrinsics.checkNotNullParameter(optional, "$this$optional");
+        DateTimeFormatBuilderKt.alternativeParsing(optional, new Function1[]{new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda3
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit isoOffset$lambda$6$lambda$4;
+                isoOffset$lambda$6$lambda$4 = UtcOffsetFormatKt.isoOffset$lambda$6$lambda$4((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return isoOffset$lambda$6$lambda$4;
+            }
+        }}, new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda4
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit isoOffset$lambda$6$lambda$5;
+                isoOffset$lambda$6$lambda$5 = UtcOffsetFormatKt.isoOffset$lambda$6$lambda$5(WhenToOutput.this, z, whenToOutput2, (DateTimeFormatBuilder.WithUtcOffset) obj);
+                return isoOffset$lambda$6$lambda$5;
+            }
+        });
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit isoOffset$lambda$6$lambda$4(DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
+        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+        DateTimeFormatBuilderKt.m10098char(alternativeParsing, 'z');
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit isoOffset$lambda$6$lambda$5(WhenToOutput whenToOutput, boolean z, WhenToOutput whenToOutput2, DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
+        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+        isoOffset$appendIsoOffsetWithoutZOnZero(alternativeParsing, whenToOutput, z, whenToOutput2);
+        return Unit.INSTANCE;
     }
 
     public static final UtcOffsetFormat getISO_OFFSET() {
         return (UtcOffsetFormat) ISO_OFFSET$delegate.getValue();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final UtcOffsetFormat ISO_OFFSET_delegate$lambda$12() {
+        return UtcOffsetFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda19
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit ISO_OFFSET_delegate$lambda$12$lambda$11;
+                ISO_OFFSET_delegate$lambda$12$lambda$11 = UtcOffsetFormatKt.ISO_OFFSET_delegate$lambda$12$lambda$11((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return ISO_OFFSET_delegate$lambda$12$lambda$11;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ISO_OFFSET_delegate$lambda$12$lambda$11(DateTimeFormatBuilder.WithUtcOffset build) {
+        Intrinsics.checkNotNullParameter(build, "$this$build");
+        DateTimeFormatBuilderKt.alternativeParsing(build, new Function1[]{new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda14
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$7;
+                ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$7 = UtcOffsetFormatKt.ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$7((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$7;
+            }
+        }}, new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda15
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10;
+                ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10 = UtcOffsetFormatKt.ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10;
+            }
+        });
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$7(DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
+        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+        alternativeParsing.chars("z");
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10(DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
+        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+        DateTimeFormatBuilderKt.optional(alternativeParsing, "Z", new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda13
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10$lambda$9;
+                ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10$lambda$9 = UtcOffsetFormatKt.ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10$lambda$9((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10$lambda$9;
+            }
+        });
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10$lambda$9(DateTimeFormatBuilder.WithUtcOffset optional) {
+        Intrinsics.checkNotNullParameter(optional, "$this$optional");
+        DateTimeFormatBuilder.WithUtcOffset.offsetHours$default(optional, null, 1, null);
+        DateTimeFormatBuilder.WithUtcOffset withUtcOffset = optional;
+        DateTimeFormatBuilderKt.m10098char(withUtcOffset, AbstractJsonLexerKt.COLON);
+        DateTimeFormatBuilder.WithUtcOffset.offsetMinutesOfHour$default(optional, null, 1, null);
+        DateTimeFormatBuilderKt.optional$default(withUtcOffset, null, new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda8
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10$lambda$9$lambda$8;
+                ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10$lambda$9$lambda$8 = UtcOffsetFormatKt.ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10$lambda$9$lambda$8((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10$lambda$9$lambda$8;
+            }
+        }, 1, null);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10$lambda$9$lambda$8(DateTimeFormatBuilder.WithUtcOffset optional) {
+        Intrinsics.checkNotNullParameter(optional, "$this$optional");
+        DateTimeFormatBuilderKt.m10098char(optional, AbstractJsonLexerKt.COLON);
+        DateTimeFormatBuilder.WithUtcOffset.offsetSecondsOfMinute$default(optional, null, 1, null);
+        return Unit.INSTANCE;
+    }
+
     public static final UtcOffsetFormat getISO_OFFSET_BASIC() {
         return (UtcOffsetFormat) ISO_OFFSET_BASIC$delegate.getValue();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final UtcOffsetFormat ISO_OFFSET_BASIC_delegate$lambda$19() {
+        return UtcOffsetFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18;
+                ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18 = UtcOffsetFormatKt.ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18(DateTimeFormatBuilder.WithUtcOffset build) {
+        Intrinsics.checkNotNullParameter(build, "$this$build");
+        DateTimeFormatBuilderKt.alternativeParsing(build, new Function1[]{new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda17
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$13;
+                ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$13 = UtcOffsetFormatKt.ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$13((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$13;
+            }
+        }}, new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda18
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17;
+                ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17 = UtcOffsetFormatKt.ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17;
+            }
+        });
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$13(DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
+        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+        alternativeParsing.chars("z");
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17(DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
+        Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
+        DateTimeFormatBuilderKt.optional(alternativeParsing, "Z", new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda12
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16;
+                ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16 = UtcOffsetFormatKt.ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16;
+            }
+        });
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16(DateTimeFormatBuilder.WithUtcOffset optional) {
+        Intrinsics.checkNotNullParameter(optional, "$this$optional");
+        DateTimeFormatBuilder.WithUtcOffset.offsetHours$default(optional, null, 1, null);
+        DateTimeFormatBuilderKt.optional$default(optional, null, new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda2
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16$lambda$15;
+                ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16$lambda$15 = UtcOffsetFormatKt.ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16$lambda$15((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16$lambda$15;
+            }
+        }, 1, null);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16$lambda$15(DateTimeFormatBuilder.WithUtcOffset optional) {
+        Intrinsics.checkNotNullParameter(optional, "$this$optional");
+        DateTimeFormatBuilder.WithUtcOffset.offsetMinutesOfHour$default(optional, null, 1, null);
+        DateTimeFormatBuilderKt.optional$default(optional, null, new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda11
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16$lambda$15$lambda$14;
+                ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16$lambda$15$lambda$14 = UtcOffsetFormatKt.ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16$lambda$15$lambda$14((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16$lambda$15$lambda$14;
+            }
+        }, 1, null);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ISO_OFFSET_BASIC_delegate$lambda$19$lambda$18$lambda$17$lambda$16$lambda$15$lambda$14(DateTimeFormatBuilder.WithUtcOffset optional) {
+        Intrinsics.checkNotNullParameter(optional, "$this$optional");
+        DateTimeFormatBuilder.WithUtcOffset.offsetSecondsOfMinute$default(optional, null, 1, null);
+        return Unit.INSTANCE;
+    }
+
     public static final UtcOffsetFormat getFOUR_DIGIT_OFFSET() {
         return (UtcOffsetFormat) FOUR_DIGIT_OFFSET$delegate.getValue();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final UtcOffsetFormat FOUR_DIGIT_OFFSET_delegate$lambda$21() {
+        return UtcOffsetFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda20
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit FOUR_DIGIT_OFFSET_delegate$lambda$21$lambda$20;
+                FOUR_DIGIT_OFFSET_delegate$lambda$21$lambda$20 = UtcOffsetFormatKt.FOUR_DIGIT_OFFSET_delegate$lambda$21$lambda$20((DateTimeFormatBuilder.WithUtcOffset) obj);
+                return FOUR_DIGIT_OFFSET_delegate$lambda$21$lambda$20;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit FOUR_DIGIT_OFFSET_delegate$lambda$21$lambda$20(DateTimeFormatBuilder.WithUtcOffset build) {
+        Intrinsics.checkNotNullParameter(build, "$this$build");
+        DateTimeFormatBuilder.WithUtcOffset.offsetHours$default(build, null, 1, null);
+        DateTimeFormatBuilder.WithUtcOffset.offsetMinutesOfHour$default(build, null, 1, null);
+        return Unit.INSTANCE;
     }
 }

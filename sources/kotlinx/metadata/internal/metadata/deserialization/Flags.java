@@ -47,11 +47,11 @@ public class Flags {
     public static final BooleanFlagField SUSPEND_TYPE;
     public static final FlagField<ProtoBuf.Visibility> VISIBILITY;
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x003b  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0040  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x004a  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0041  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x004b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

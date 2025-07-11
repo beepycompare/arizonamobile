@@ -46,10 +46,11 @@ public class ServerManagedPolicy implements Policy {
             for (NameValuePair nameValuePair : URLEncodedUtils.parse(new URI("?" + str), "UTF-8")) {
                 hashMap.put(nameValuePair.getName(), nameValuePair.getValue());
             }
+            return hashMap;
         } catch (URISyntaxException unused) {
             Log.w(TAG, "Invalid syntax error while decoding extras data from server.");
+            return hashMap;
         }
-        return hashMap;
     }
 
     private void setLastResponse(int i) {

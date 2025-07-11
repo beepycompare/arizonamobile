@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="320dp" android:width="252dp" android:viewportWidth="252" android:viewportHeight="320">
-    <path android:fillColor="#67ffeefc" android:pathData="M20,0L232,0A20,20 0,0 1,252 20L252,300A20,20 0,0 1,232 320L20,320A20,20 0,0 1,0 300L0,20A20,20 0,0 1,20 0z" android:fillAlpha="0.4"/>
-    <path android:fillColor="#00000000" android:pathData="M20,1L232,1A19,19 0,0 1,251 20L251,300A19,19 0,0 1,232 319L20,319A19,19 0,0 1,1 300L1,20A19,19 0,0 1,20 1z" android:strokeColor="#ffeefc" android:strokeWidth="2" android:strokeAlpha="0.4"/>
+    <path android:fillColor="@color/battlepass4" android:pathData="M20,0L232,0A20,20 0,0 1,252 20L252,300A20,20 0,0 1,232 320L20,320A20,20 0,0 1,0 300L0,20A20,20 0,0 1,20 0z" android:fillAlpha="0.4"/>
+    <path android:fillColor="#00000000" android:pathData="M20,1L232,1A19,19 0,0 1,251 20L251,300A19,19 0,0 1,232 319L20,319A19,19 0,0 1,1 300L1,20A19,19 0,0 1,20 1z" android:strokeColor="@color/battlepass4" android:strokeWidth="2" android:strokeAlpha="0.4"/>
 </vector>

@@ -348,11 +348,10 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r2v0, types: [T, java.lang.Boolean] */
     /* JADX WARN: Type inference failed for: r4v1, types: [T, java.lang.Boolean] */
     /* JADX WARN: Type inference failed for: r4v2, types: [T, java.lang.Boolean] */
     /* JADX WARN: Type inference failed for: r4v3, types: [T, java.lang.Boolean] */
-    /* JADX WARN: Type inference failed for: r4v4, types: [T, java.lang.Boolean] */
-    /* JADX WARN: Type inference failed for: r4v5, types: [T, java.lang.Boolean] */
     private static final void processInputCommands$applyToState(TextInputCommand textInputCommand, Ref.ObjectRef<Boolean> objectRef, Ref.ObjectRef<Boolean> objectRef2) {
         int i = WhenMappings.$EnumSwitchMapping$0[textInputCommand.ordinal()];
         if (i == 1) {

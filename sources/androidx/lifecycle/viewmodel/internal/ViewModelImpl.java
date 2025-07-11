@@ -6,6 +6,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 import kotlin.Metadata;
+import kotlin.UByte$$ExternalSyntheticBackport0;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
@@ -109,7 +110,7 @@ public final class ViewModelImpl {
     public final void closeWithRuntimeException(AutoCloseable autoCloseable) {
         if (autoCloseable != null) {
             try {
-                autoCloseable.close();
+                UByte$$ExternalSyntheticBackport0.m8544m((Object) autoCloseable);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

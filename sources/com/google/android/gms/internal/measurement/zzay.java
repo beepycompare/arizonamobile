@@ -1,126 +1,161 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import java.util.ArrayList;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzay extends zzaw {
+public final class zzay extends zzav {
+    /* JADX INFO: Access modifiers changed from: protected */
     public zzay() {
-        this.zza.add(zzbl.EQUALS);
-        this.zza.add(zzbl.GREATER_THAN);
-        this.zza.add(zzbl.GREATER_THAN_EQUALS);
-        this.zza.add(zzbl.IDENTITY_EQUALS);
-        this.zza.add(zzbl.IDENTITY_NOT_EQUALS);
-        this.zza.add(zzbl.LESS_THAN);
-        this.zza.add(zzbl.LESS_THAN_EQUALS);
-        this.zza.add(zzbl.NOT_EQUALS);
+        this.zza.add(zzbk.APPLY);
+        this.zza.add(zzbk.BLOCK);
+        this.zza.add(zzbk.BREAK);
+        this.zza.add(zzbk.CASE);
+        this.zza.add(zzbk.DEFAULT);
+        this.zza.add(zzbk.CONTINUE);
+        this.zza.add(zzbk.DEFINE_FUNCTION);
+        this.zza.add(zzbk.FN);
+        this.zza.add(zzbk.IF);
+        this.zza.add(zzbk.QUOTE);
+        this.zza.add(zzbk.RETURN);
+        this.zza.add(zzbk.SWITCH);
+        this.zza.add(zzbk.TERNARY);
     }
 
-    private static boolean zzc(zzap zzapVar, zzap zzapVar2) {
-        if (zzapVar.getClass().equals(zzapVar2.getClass())) {
-            if ((zzapVar instanceof zzau) || (zzapVar instanceof zzan)) {
-                return true;
-            }
-            if (zzapVar instanceof zzah) {
-                return (Double.isNaN(zzapVar.zzh().doubleValue()) || Double.isNaN(zzapVar2.zzh().doubleValue()) || zzapVar.zzh().doubleValue() != zzapVar2.zzh().doubleValue()) ? false : true;
-            } else if (zzapVar instanceof zzat) {
-                return zzapVar.zzi().equals(zzapVar2.zzi());
-            } else {
-                if (zzapVar instanceof zzaf) {
-                    return zzapVar.zzg().equals(zzapVar2.zzg());
-                }
-                return zzapVar == zzapVar2;
-            }
-        } else if (((zzapVar instanceof zzau) || (zzapVar instanceof zzan)) && ((zzapVar2 instanceof zzau) || (zzapVar2 instanceof zzan))) {
-            return true;
-        } else {
-            boolean z = zzapVar instanceof zzah;
-            if (!z || !(zzapVar2 instanceof zzat)) {
-                boolean z2 = zzapVar instanceof zzat;
-                if (!z2 || !(zzapVar2 instanceof zzah)) {
-                    if (zzapVar instanceof zzaf) {
-                        return zzc(new zzah(zzapVar.zzh()), zzapVar2);
-                    }
-                    if (zzapVar2 instanceof zzaf) {
-                        return zzc(zzapVar, new zzah(zzapVar2.zzh()));
-                    }
-                    if ((z2 || z) && (zzapVar2 instanceof zzal)) {
-                        return zzc(zzapVar, new zzat(zzapVar2.zzi()));
-                    }
-                    if ((zzapVar instanceof zzal) && ((zzapVar2 instanceof zzat) || (zzapVar2 instanceof zzah))) {
-                        return zzc(new zzat(zzapVar.zzi()), zzapVar2);
-                    }
-                    return false;
-                }
-                return zzc(new zzah(zzapVar.zzh()), zzapVar2);
-            }
-            return zzc(zzapVar, new zzah(zzapVar2.zzh()));
+    private static zzao zzc(zzg zzgVar, List list) {
+        zzh.zzb(zzbk.FN.name(), 2, list);
+        zzao zza = zzgVar.zza((zzao) list.get(0));
+        zzao zza2 = zzgVar.zza((zzao) list.get(1));
+        if (!(zza2 instanceof zzae)) {
+            throw new IllegalArgumentException(String.format("FN requires an ArrayValue of parameter names found %s", zza2.getClass().getCanonicalName()));
         }
+        List zzb = ((zzae) zza2).zzb();
+        List arrayList = new ArrayList();
+        if (list.size() > 2) {
+            arrayList = list.subList(2, list.size());
+        }
+        return new zzan(zza.zzc(), zzb, arrayList, zzgVar);
     }
 
-    private static boolean zzd(zzap zzapVar, zzap zzapVar2) {
-        int i;
-        if (zzapVar instanceof zzal) {
-            zzapVar = new zzat(zzapVar.zzi());
-        }
-        if (zzapVar2 instanceof zzal) {
-            zzapVar2 = new zzat(zzapVar2.zzi());
-        }
-        if ((zzapVar instanceof zzat) && (zzapVar2 instanceof zzat)) {
-            return zzapVar.zzi().compareTo(zzapVar2.zzi()) < 0;
-        }
-        double doubleValue = zzapVar.zzh().doubleValue();
-        double doubleValue2 = zzapVar2.zzh().doubleValue();
-        return (Double.isNaN(doubleValue) || Double.isNaN(doubleValue2) || (doubleValue == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE && doubleValue2 == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) || ((i == 0 && doubleValue2 == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) || Double.compare(doubleValue, doubleValue2) >= 0)) ? false : true;
-    }
-
-    private static boolean zze(zzap zzapVar, zzap zzapVar2) {
-        if (zzapVar instanceof zzal) {
-            zzapVar = new zzat(zzapVar.zzi());
-        }
-        if (zzapVar2 instanceof zzal) {
-            zzapVar2 = new zzat(zzapVar2.zzi());
-        }
-        return (((zzapVar instanceof zzat) && (zzapVar2 instanceof zzat)) || !(Double.isNaN(zzapVar.zzh().doubleValue()) || Double.isNaN(zzapVar2.zzh().doubleValue()))) && !zzd(zzapVar2, zzapVar);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzaw
-    public final zzap zza(String str, zzg zzgVar, List list) {
-        boolean zzc;
-        boolean zzc2;
-        zzh.zzh(zzh.zze(str).name(), 2, list);
-        zzap zzb = zzgVar.zzb((zzap) list.get(0));
-        zzap zzb2 = zzgVar.zzb((zzap) list.get(1));
+    @Override // com.google.android.gms.internal.measurement.zzav
+    public final zzao zza(String str, zzg zzgVar, List list) {
+        zzao zzb;
+        zzbk zzbkVar = zzbk.ADD;
         int ordinal = zzh.zze(str).ordinal();
-        if (ordinal != 23) {
-            if (ordinal == 48) {
-                zzc2 = zzc(zzb, zzb2);
-            } else if (ordinal == 42) {
-                zzc = zzd(zzb, zzb2);
-            } else if (ordinal == 43) {
-                zzc = zze(zzb, zzb2);
-            } else {
-                switch (ordinal) {
-                    case 37:
-                        zzc = zzd(zzb2, zzb);
-                        break;
-                    case 38:
-                        zzc = zze(zzb2, zzb);
-                        break;
-                    case 39:
-                        zzc = zzh.zzl(zzb, zzb2);
-                        break;
-                    case 40:
-                        zzc2 = zzh.zzl(zzb, zzb2);
-                        break;
-                    default:
-                        return super.zzb(str);
-                }
+        if (ordinal == 2) {
+            zzh.zza(zzbk.APPLY.name(), 3, list);
+            zzao zza = zzgVar.zza((zzao) list.get(0));
+            String zzc = zzgVar.zza((zzao) list.get(1)).zzc();
+            zzao zza2 = zzgVar.zza((zzao) list.get(2));
+            if (!(zza2 instanceof zzae)) {
+                throw new IllegalArgumentException(String.format("Function arguments for Apply are not a list found %s", zza2.getClass().getCanonicalName()));
             }
-            zzc = !zzc2;
+            if (zzc.isEmpty()) {
+                throw new IllegalArgumentException("Function name for apply is undefined");
+            }
+            return zza.zzcA(zzc, zzgVar, ((zzae) zza2).zzb());
+        } else if (ordinal == 15) {
+            zzh.zza(zzbk.BREAK.name(), 0, list);
+            return zzao.zzh;
+        } else if (ordinal != 25) {
+            if (ordinal == 41) {
+                zzh.zzb(zzbk.IF.name(), 2, list);
+                zzao zza3 = zzgVar.zza((zzao) list.get(0));
+                zzao zza4 = zzgVar.zza((zzao) list.get(1));
+                zzao zza5 = list.size() > 2 ? zzgVar.zza((zzao) list.get(2)) : null;
+                zzao zzaoVar = zzao.zzf;
+                if (zza3.zze().booleanValue()) {
+                    zzb = zzgVar.zzb((zzae) zza4);
+                } else {
+                    zzb = zza5 != null ? zzgVar.zzb((zzae) zza5) : zzaoVar;
+                }
+                return true != (zzb instanceof zzag) ? zzaoVar : zzb;
+            } else if (ordinal != 54) {
+                if (ordinal != 57) {
+                    if (ordinal != 19) {
+                        if (ordinal == 20) {
+                            zzh.zzb(zzbk.DEFINE_FUNCTION.name(), 2, list);
+                            zzan zzanVar = (zzan) zzc(zzgVar, list);
+                            if (zzanVar.zzg() == null) {
+                                zzgVar.zze("", zzanVar);
+                                return zzanVar;
+                            }
+                            zzgVar.zze(zzanVar.zzg(), zzanVar);
+                            return zzanVar;
+                        } else if (ordinal == 60) {
+                            zzh.zza(zzbk.SWITCH.name(), 3, list);
+                            zzao zza6 = zzgVar.zza((zzao) list.get(0));
+                            zzao zza7 = zzgVar.zza((zzao) list.get(1));
+                            zzao zza8 = zzgVar.zza((zzao) list.get(2));
+                            if (zza7 instanceof zzae) {
+                                if (!(zza8 instanceof zzae)) {
+                                    throw new IllegalArgumentException("Malformed SWITCH statement, case statements are not a list");
+                                }
+                                zzae zzaeVar = (zzae) zza7;
+                                zzae zzaeVar2 = (zzae) zza8;
+                                boolean z = false;
+                                for (int i = 0; i < zzaeVar.zzh(); i++) {
+                                    if (z || zza6.equals(zzgVar.zza(zzaeVar.zzl(i)))) {
+                                        zzao zza9 = zzgVar.zza(zzaeVar2.zzl(i));
+                                        if (zza9 instanceof zzag) {
+                                            return ((zzag) zza9).zzg().equals("break") ? zzao.zzf : zza9;
+                                        }
+                                        z = true;
+                                    } else {
+                                        z = false;
+                                    }
+                                }
+                                if (zzaeVar.zzh() + 1 == zzaeVar2.zzh()) {
+                                    zzao zza10 = zzgVar.zza(zzaeVar2.zzl(zzaeVar.zzh()));
+                                    if (zza10 instanceof zzag) {
+                                        String zzg = ((zzag) zza10).zzg();
+                                        if (zzg.equals("return") || zzg.equals("continue")) {
+                                            return zza10;
+                                        }
+                                    }
+                                }
+                                return zzao.zzf;
+                            }
+                            throw new IllegalArgumentException("Malformed SWITCH statement, cases are not a list");
+                        } else if (ordinal != 61) {
+                            switch (ordinal) {
+                                case 11:
+                                    return zzgVar.zzc().zzb(new zzae(list));
+                                case 12:
+                                    zzh.zza(zzbk.BREAK.name(), 0, list);
+                                    return zzao.zzi;
+                                case 13:
+                                    break;
+                                default:
+                                    return super.zzb(str);
+                            }
+                        } else {
+                            zzh.zza(zzbk.TERNARY.name(), 3, list);
+                            if (zzgVar.zza((zzao) list.get(0)).zze().booleanValue()) {
+                                return zzgVar.zza((zzao) list.get(1));
+                            }
+                            return zzgVar.zza((zzao) list.get(2));
+                        }
+                    }
+                    if (list.isEmpty()) {
+                        return zzao.zzf;
+                    }
+                    zzao zza11 = zzgVar.zza((zzao) list.get(0));
+                    if (zza11 instanceof zzae) {
+                        return zzgVar.zzb((zzae) zza11);
+                    }
+                    return zzao.zzf;
+                } else if (list.isEmpty()) {
+                    return zzao.zzj;
+                } else {
+                    zzh.zza(zzbk.RETURN.name(), 1, list);
+                    return new zzag("return", zzgVar.zza((zzao) list.get(0)));
+                }
+            } else {
+                return new zzae(list);
+            }
         } else {
-            zzc = zzc(zzb, zzb2);
+            return zzc(zzgVar, list);
         }
-        return zzc ? zzap.zzk : zzap.zzl;
     }
 }

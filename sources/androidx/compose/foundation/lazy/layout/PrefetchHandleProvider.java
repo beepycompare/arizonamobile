@@ -72,7 +72,7 @@ public final class PrefetchHandleProvider {
             this.index = i;
             this.constraints = j;
             this.prefetchMetrics = prefetchMetrics;
-            this.startTime = TimeSource.Monotonic.INSTANCE.m9905markNowz9LOYto();
+            this.startTime = TimeSource.Monotonic.INSTANCE.m9936markNowz9LOYto();
         }
 
         private final boolean isComposed() {
@@ -103,16 +103,16 @@ public final class PrefetchHandleProvider {
 
         private final void resetAvailableTimeTo(long j) {
             this.availableTimeNanos = j;
-            this.startTime = TimeSource.Monotonic.INSTANCE.m9905markNowz9LOYto();
+            this.startTime = TimeSource.Monotonic.INSTANCE.m9936markNowz9LOYto();
             this.elapsedTimeNanos = 0L;
         }
 
         private final void updateElapsedAndAvailableTime() {
-            long m9905markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m9905markNowz9LOYto();
-            long m9803getInWholeNanosecondsimpl = Duration.m9803getInWholeNanosecondsimpl(TimeSource.Monotonic.ValueTimeMark.m9916minus6eNON_k(m9905markNowz9LOYto, this.startTime));
-            this.elapsedTimeNanos = m9803getInWholeNanosecondsimpl;
-            this.availableTimeNanos -= m9803getInWholeNanosecondsimpl;
-            this.startTime = m9905markNowz9LOYto;
+            long m9936markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m9936markNowz9LOYto();
+            long m9836getInWholeNanosecondsimpl = Duration.m9836getInWholeNanosecondsimpl(TimeSource.Monotonic.ValueTimeMark.m9947minus6eNON_k(m9936markNowz9LOYto, this.startTime));
+            this.elapsedTimeNanos = m9836getInWholeNanosecondsimpl;
+            this.availableTimeNanos -= m9836getInWholeNanosecondsimpl;
+            this.startTime = m9936markNowz9LOYto;
         }
 
         @Override // androidx.compose.foundation.lazy.layout.PrefetchRequest

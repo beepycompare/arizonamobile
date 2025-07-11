@@ -31,6 +31,7 @@
     <string name="accept">Принять</string>
     <string name="action">Действия</string>
     <string name="actually_version">Актуальная версия</string>
+    <string name="all_list">ВЕсь список</string>
     <string name="already_registered">Уже зарегистрированы?</string>
     <string name="androidx_startup">androidx.startup</string>
     <string name="another_variant">Другой вариант</string>
@@ -73,7 +74,7 @@
     <string name="close_drawer">Close navigation menu</string>
     <string name="close_sheet">Close sheet</string>
     <string name="close_txt">Закрыто</string>
-    <string name="res_0x7f130049_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
+    <string name="res_0x7f13004a_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
     <string name="common_google_play_services_enable_button">Enable</string>
     <string name="common_google_play_services_enable_text">%1$s won\'t work unless you enable Google Play services.</string>
     <string name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -209,6 +210,7 @@
     <string name="google_storage_bucket">arizona-21.appspot.com</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hide_bottom_view_on_scroll_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
+    <string name="hide_list">скрыть список</string>
     <string name="history">История</string>
     <string name="how_hear">Откуда узнали о проекте?</string>
     <string name="icon_content_description">Dialog Icon</string>
@@ -427,6 +429,7 @@
     <string name="not_in_fraction">Вы не состоите во фракции</string>
     <string name="not_selected">Not selected</string>
     <string name="not_set">Not set</string>
+    <string name="numbering">№%1d</string>
     <string name="of_these">Из них</string>
     <string name="official_site">Официальный сайт</string>
     <string name="ok">Ok</string>
@@ -521,6 +524,8 @@
     <string name="tell_us">Расскажите откуда вы узнали о проекте Arizona?</string>
     <string name="template_percent">%1$d percent.</string>
     <string name="test_server">Тестовый сервер</string>
+    <string name="time_hour_minute">15ч. 15м.</string>
+    <string name="time_minute">02:14</string>
     <string name="title">title</string>
     <string name="today_time">Сегодня, 18:30</string>
     <string name="tooltip_description">tooltip</string>

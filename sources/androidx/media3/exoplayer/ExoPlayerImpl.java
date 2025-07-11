@@ -2369,13 +2369,13 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
     /* JADX INFO: Access modifiers changed from: private */
     public void updateWakeAndWifiLock() {
         int playbackState = getPlaybackState();
-        boolean z = true;
+        boolean z = false;
         if (playbackState != 1) {
             if (playbackState == 2 || playbackState == 3) {
                 boolean isSleepingForOffload = isSleepingForOffload();
                 WakeLockManager wakeLockManager = this.wakeLockManager;
-                if (!getPlayWhenReady() || isSleepingForOffload) {
-                    z = false;
+                if (getPlayWhenReady() && !isSleepingForOffload) {
+                    z = true;
                 }
                 wakeLockManager.setStayAwake(z);
                 this.wifiLockManager.setStayAwake(getPlayWhenReady());

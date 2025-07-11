@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -13,12 +12,10 @@ import ru.mrlargha.commonui.R;
 public final class DonateBottomItemsListBinding implements ViewBinding {
     private final FrameLayout rootView;
     public final RecyclerView rvBottomItems;
-    public final TextView tvId;
 
-    private DonateBottomItemsListBinding(FrameLayout rootView, RecyclerView rvBottomItems, TextView tvId) {
+    private DonateBottomItemsListBinding(FrameLayout rootView, RecyclerView rvBottomItems) {
         this.rootView = rootView;
         this.rvBottomItems = rvBottomItems;
-        this.tvId = tvId;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -42,11 +39,7 @@ public final class DonateBottomItemsListBinding implements ViewBinding {
         int i = R.id.rv_bottom_items;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
         if (recyclerView != null) {
-            i = R.id.tv_id;
-            TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-            if (textView != null) {
-                return new DonateBottomItemsListBinding((FrameLayout) rootView, recyclerView, textView);
-            }
+            return new DonateBottomItemsListBinding((FrameLayout) rootView, recyclerView);
         }
         throw new NullPointerException("Missing required view with ID: ".concat(rootView.getResources().getResourceName(i)));
     }

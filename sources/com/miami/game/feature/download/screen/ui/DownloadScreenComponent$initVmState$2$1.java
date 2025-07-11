@@ -1,6 +1,7 @@
 package com.miami.game.feature.download.screen.ui;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.miami.game.core.local.repository.common.IKeyValueRepository;
 import com.miami.game.core.local.repository.common.LocalRepository;
 import com.miami.game.feature.download.screen.ui.model.DownloadScreenUiState;
 import kotlin.Metadata;
@@ -9,6 +10,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.BuildersKt;
@@ -16,10 +18,13 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.flow.MutableStateFlow;
 /* compiled from: DownloadScreenComponent.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.feature.download.screen.ui.DownloadScreenComponent$initVmState$2$1", f = "DownloadScreenComponent.kt", i = {}, l = {180}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.feature.download.screen.ui.DownloadScreenComponent$initVmState$2$1", f = "DownloadScreenComponent.kt", i = {0, 0, 0}, l = {180}, m = "invokeSuspend", n = {"$this$getSuspend$iv", "key$iv", "$i$f$getSuspend"}, s = {"L$0", "L$1", "I$0"})
 /* loaded from: classes4.dex */
 final class DownloadScreenComponent$initVmState$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    int I$0;
+    Object L$0;
+    Object L$1;
     int label;
     final /* synthetic */ DownloadScreenComponent this$0;
 
@@ -51,14 +56,20 @@ final class DownloadScreenComponent$initVmState$2$1 extends SuspendLambda implem
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             localRepository = this.this$0.localRepository;
+            LocalRepository localRepository2 = localRepository;
+            this.L$0 = SpillingKt.nullOutSpilledVariable(localRepository2);
+            this.L$1 = SpillingKt.nullOutSpilledVariable("sound_key");
+            this.I$0 = 0;
             this.label = 1;
-            withContext = BuildersKt.withContext(Dispatchers.getIO(), new DownloadScreenComponent$initVmState$2$1$invokeSuspend$$inlined$getSuspend$1(localRepository, "sound_key", null), this);
+            withContext = BuildersKt.withContext(Dispatchers.getIO(), new DownloadScreenComponent$initVmState$2$1$invokeSuspend$$inlined$getSuspend$1(localRepository2, "sound_key", null), this);
             if (withContext == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
+            String str = (String) this.L$1;
+            IKeyValueRepository iKeyValueRepository = (IKeyValueRepository) this.L$0;
             ResultKt.throwOnFailure(obj);
             withContext = obj;
         }

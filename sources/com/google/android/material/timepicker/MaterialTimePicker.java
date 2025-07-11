@@ -246,7 +246,7 @@ public final class MaterialTimePicker extends DialogFragment implements TimePick
             view.postDelayed(new Runnable() { // from class: com.google.android.material.timepicker.MaterialTimePicker$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MaterialTimePicker.this.m8177xac73da03();
+                    MaterialTimePicker.this.m8176xac73da03();
                 }
             }, 100L);
         }
@@ -254,7 +254,7 @@ public final class MaterialTimePicker extends DialogFragment implements TimePick
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onViewCreated$0$com-google-android-material-timepicker-MaterialTimePicker  reason: not valid java name */
-    public /* synthetic */ void m8177xac73da03() {
+    public /* synthetic */ void m8176xac73da03() {
         TimePickerPresenter timePickerPresenter = this.activePresenter;
         if (timePickerPresenter instanceof TimePickerTextInputPresenter) {
             ((TimePickerTextInputPresenter) timePickerPresenter).resetChecked();

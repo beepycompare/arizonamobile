@@ -7,8 +7,8 @@ public final class Hn extends Ih {
     public final int e;
     public final Bundle f;
 
-    public Hn(C0426m0 c0426m0, Wk wk, int i, Bundle bundle) {
-        super(c0426m0, wk);
+    public Hn(C0418m0 c0418m0, Wk wk, int i, Bundle bundle) {
+        super(c0418m0, wk);
         this.e = i;
         this.f = bundle;
     }

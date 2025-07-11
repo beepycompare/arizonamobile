@@ -70,19 +70,18 @@ public class WarHttp {
         while (true) {
             try {
                 try {
-                    try {
-                        String readLine = bufferedReader.readLine();
-                        if (readLine == null) {
-                            break;
-                        }
+                    String readLine = bufferedReader.readLine();
+                    if (readLine != null) {
                         sb.append(readLine);
                         if (AddLineFeeds) {
                             sb.append("\n");
                         }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        inputStream.close();
                     }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    break;
                 } catch (IOException e2) {
                     e2.printStackTrace();
                 }

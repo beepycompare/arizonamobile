@@ -85,8 +85,8 @@ public final class FlowKt__DelayKt$timeoutInternal$1<T> extends SuspendLambda im
             kotlinx.coroutines.flow.FlowCollector r1 = (kotlinx.coroutines.flow.FlowCollector) r1
             long r4 = r10.$timeout
             kotlin.time.Duration$Companion r6 = kotlin.time.Duration.Companion
-            long r6 = r6.m9881getZEROUwyO8pc()
-            int r4 = kotlin.time.Duration.m9789compareToLRDsOJo(r4, r6)
+            long r6 = r6.m9914getZEROUwyO8pc()
+            int r4 = kotlin.time.Duration.m9822compareToLRDsOJo(r4, r6)
             if (r4 <= 0) goto L89
             kotlinx.coroutines.flow.Flow<T> r4 = r10.$this_timeoutInternal
             r5 = 0
@@ -110,7 +110,7 @@ public final class FlowKt__DelayKt$timeoutInternal$1<T> extends SuspendLambda im
             kotlinx.coroutines.flow.FlowKt__DelayKt$timeoutInternal$1$1$2 r8 = new kotlinx.coroutines.flow.FlowKt__DelayKt$timeoutInternal$1$1$2
             r8.<init>(r4, r3)
             kotlin.jvm.functions.Function1 r8 = (kotlin.jvm.functions.Function1) r8
-            kotlinx.coroutines.selects.OnTimeoutKt.m10046onTimeout8Mi8wO0(r7, r4, r8)
+            kotlinx.coroutines.selects.OnTimeoutKt.m10077onTimeout8Mi8wO0(r7, r4, r8)
             r10.L$0 = r6
             r10.L$1 = r1
             r10.J$0 = r4

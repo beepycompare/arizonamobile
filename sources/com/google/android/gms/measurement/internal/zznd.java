@@ -1,36 +1,47 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.RemoteException;
-import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.common.ConnectionResult;
+import java.util.Objects;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zznd implements Runnable {
-    final /* synthetic */ zzr zza;
-    final /* synthetic */ zzny zzb;
+    final /* synthetic */ ConnectionResult zza;
+    final /* synthetic */ zzne zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zznd(zzny zznyVar, zzr zzrVar) {
-        this.zza = zzrVar;
-        this.zzb = zznyVar;
+    public zznd(zzne zzneVar, ConnectionResult connectionResult) {
+        this.zza = connectionResult;
+        Objects.requireNonNull(zzneVar);
+        this.zzb = zzneVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zzgl zzglVar;
-        zzny zznyVar = this.zzb;
-        zzglVar = zznyVar.zzb;
-        if (zzglVar == null) {
-            zznyVar.zzu.zzaW().zzk().zza("Failed to send app backgrounded");
+        zznk zznkVar = this.zzb.zza;
+        zznkVar.zzaa(null);
+        if (this.zza.getErrorCode() == 7777) {
+            if (zznkVar.zzab() == null) {
+                zznkVar.zzac(Executors.newScheduledThreadPool(1));
+            }
+            zznkVar.zzab().schedule(new Runnable() { // from class: com.google.android.gms.measurement.internal.zznb
+                @Override // java.lang.Runnable
+                public final /* synthetic */ void run() {
+                    final zznk zznkVar2 = zznd.this.zzb.zza;
+                    zzhy zzaW = zznkVar2.zzu.zzaW();
+                    Objects.requireNonNull(zznkVar2);
+                    zzaW.zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zznc
+                        @Override // java.lang.Runnable
+                        public final /* synthetic */ void run() {
+                            zznk.this.zzI();
+                        }
+                    });
+                }
+            }, ((Long) zzfx.zzZ.zzb(null)).longValue(), TimeUnit.MILLISECONDS);
             return;
         }
-        try {
-            zzr zzrVar = this.zza;
-            Preconditions.checkNotNull(zzrVar);
-            zzglVar.zzm(zzrVar);
-            zznyVar.zzag();
-        } catch (RemoteException e) {
-            this.zzb.zzu.zzaW().zze().zzb("Failed to send app backgrounded to the service", e);
-        }
+        zznkVar.zzX();
     }
 }

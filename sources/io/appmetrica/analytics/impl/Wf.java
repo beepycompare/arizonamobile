@@ -10,10 +10,10 @@ public final class Wf implements no, O8 {
     }
 
     @Override // io.appmetrica.analytics.impl.no
-    public final byte[] a(C0211d9 c0211d9, C0667vh c0667vh) {
-        if (TextUtils.isEmpty(c0211d9.b)) {
+    public final byte[] a(C0203d9 c0203d9, C0659vh c0659vh) {
+        if (TextUtils.isEmpty(c0203d9.b)) {
             return new byte[0];
         }
-        return Base64.decode(c0211d9.b, 0);
+        return Base64.decode(c0203d9.b, 0);
     }
 }

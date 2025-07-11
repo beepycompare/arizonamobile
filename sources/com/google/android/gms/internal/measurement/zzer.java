@@ -1,26 +1,23 @@
 package com.google.android.gms.internal.measurement;
 
-import android.os.RemoteException;
-import com.google.android.gms.common.internal.Preconditions;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.4.0 */
+import android.os.Bundle;
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzer extends zzeu {
-    final /* synthetic */ zzew zza;
-    final /* synthetic */ zzff zzb;
+final class zzer extends zzcz {
+    private final com.google.android.gms.measurement.internal.zzjo zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzer(zzff zzffVar, zzew zzewVar) {
-        super(zzffVar, true);
-        this.zza = zzewVar;
-        this.zzb = zzffVar;
+    public zzer(com.google.android.gms.measurement.internal.zzjo zzjoVar) {
+        this.zza = zzjoVar;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeu
-    final void zza() throws RemoteException {
-        zzcv zzcvVar;
-        zzcvVar = this.zzb.zzj;
-        ((zzcv) Preconditions.checkNotNull(zzcvVar)).registerOnMeasurementEventListener(this.zza);
+    @Override // com.google.android.gms.internal.measurement.zzda
+    public final void zze(String str, String str2, Bundle bundle, long j) {
+        this.zza.interceptEvent(str, str2, bundle, j);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzda
+    public final int zzf() {
+        return System.identityHashCode(this.zza);
     }
 }

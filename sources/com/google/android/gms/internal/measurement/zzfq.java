@@ -1,19 +1,25 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzfq extends zzlz implements zzni {
-    private zzfq() {
-        throw null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zzfq(zzfw zzfwVar) {
-        super(zzfr.zzd());
-    }
-
-    public final zzfq zza(String str) {
-        zzbe();
-        zzfr.zzf((zzfr) this.zza, str);
-        return this;
+public final class zzfq {
+    public static int zza(int i) {
+        switch (i) {
+            case 0:
+                return 1;
+            case 1:
+                return 2;
+            case 2:
+                return 3;
+            case 3:
+                return 4;
+            case 4:
+                return 5;
+            case 5:
+                return 6;
+            case 6:
+                return 7;
+            default:
+                return 0;
+        }
     }
 }

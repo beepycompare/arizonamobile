@@ -1,50 +1,35 @@
 package com.google.android.gms.measurement.internal;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+
+import android.content.Context;
+import android.os.Bundle;
+import com.google.android.gms.common.internal.Preconditions;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public abstract class zzjr extends zzjq {
-    private boolean zza;
+public final class zzjr {
+    final Context zza;
+    Boolean zzb;
+    long zzc;
+    com.google.android.gms.internal.measurement.zzdd zzd;
+    boolean zze;
+    final Long zzf;
+    String zzg;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzjr(zzio zzioVar) {
-        super(zzioVar);
-        this.zzu.zzE();
-    }
-
-    protected void zzaZ() {
-    }
-
-    protected abstract boolean zzc();
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void zzv() {
-        if (!zzy()) {
-            throw new IllegalStateException("Not initialized");
+    public zzjr(Context context, com.google.android.gms.internal.measurement.zzdd zzddVar, Long l) {
+        this.zze = true;
+        Preconditions.checkNotNull(context);
+        Context applicationContext = context.getApplicationContext();
+        Preconditions.checkNotNull(applicationContext);
+        this.zza = applicationContext;
+        this.zzf = l;
+        if (zzddVar != null) {
+            this.zzd = zzddVar;
+            this.zze = zzddVar.zzc;
+            this.zzc = zzddVar.zzb;
+            this.zzg = zzddVar.zze;
+            Bundle bundle = zzddVar.zzd;
+            if (bundle != null) {
+                this.zzb = Boolean.valueOf(bundle.getBoolean("dataCollectionDefaultEnabled", true));
+            }
         }
-    }
-
-    public final void zzw() {
-        if (this.zza) {
-            throw new IllegalStateException("Can't initialize twice");
-        }
-        if (zzc()) {
-            return;
-        }
-        this.zzu.zzD();
-        this.zza = true;
-    }
-
-    public final void zzx() {
-        if (this.zza) {
-            throw new IllegalStateException("Can't initialize twice");
-        }
-        zzaZ();
-        this.zzu.zzD();
-        this.zza = true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzy() {
-        return this.zza;
     }
 }

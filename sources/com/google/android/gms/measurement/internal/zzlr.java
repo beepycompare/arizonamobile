@@ -1,26 +1,31 @@
 package com.google.android.gms.measurement.internal;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzlr implements Runnable {
-    final /* synthetic */ zzjx zza;
-    final /* synthetic */ long zzb;
-    final /* synthetic */ boolean zzc;
-    final /* synthetic */ zzlw zzd;
+public enum zzlr {
+    GOOGLE_ANALYTICS(0),
+    GOOGLE_SIGNAL(1),
+    SGTM(2),
+    SGTM_CLIENT(3),
+    GOOGLE_SIGNAL_PENDING(4),
+    UNKNOWN(99);
+    
+    private final int zzg;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzlr(zzlw zzlwVar, zzjx zzjxVar, long j, boolean z) {
-        this.zza = zzjxVar;
-        this.zzb = j;
-        this.zzc = z;
-        this.zzd = zzlwVar;
+    zzlr(int i) {
+        this.zzg = i;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        zzlw zzlwVar = this.zzd;
-        zzjx zzjxVar = this.zza;
-        zzlwVar.zzaj(zzjxVar);
-        zzlw.zzD(zzlwVar, zzjxVar, this.zzb, true, this.zzc);
+    public static zzlr zzb(int i) {
+        zzlr[] values;
+        for (zzlr zzlrVar : values()) {
+            if (zzlrVar.zzg == i) {
+                return zzlrVar;
+            }
+        }
+        return UNKNOWN;
+    }
+
+    public final int zza() {
+        return this.zzg;
     }
 }

@@ -7,13 +7,13 @@ public final class L4 extends M4 {
         super(bi);
     }
 
-    public final void a(EnumC0636ub enumC0636ub, List<AbstractC0193ch> list) {
-        if (!O9.h.contains(enumC0636ub)) {
-            list.add(this.f528a.s);
+    public final void a(EnumC0628ub enumC0628ub, List<AbstractC0185ch> list) {
+        if (!O9.h.contains(enumC0628ub)) {
+            list.add(this.f529a.s);
         }
-        if (O9.b.contains(enumC0636ub)) {
+        if (O9.b.contains(enumC0628ub)) {
             return;
         }
-        list.add(this.f528a.c);
+        list.add(this.f529a.c);
     }
 }

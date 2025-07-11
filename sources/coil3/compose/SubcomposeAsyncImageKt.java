@@ -58,12 +58,12 @@ public final class SubcomposeAsyncImageKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit SubcomposeAsyncImage_gl8XCv8$lambda$1(AsyncImageState asyncImageState, String str, Modifier modifier, Function1 function1, Function1 function12, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Function3 function3, int i2, int i3, int i4, Composer composer, int i5) {
-        m7759SubcomposeAsyncImagegl8XCv8(asyncImageState, str, modifier, function1, function12, alignment, contentScale, f, colorFilter, i, z, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m7760SubcomposeAsyncImagegl8XCv8(asyncImageState, str, modifier, function1, function12, alignment, contentScale, f, colorFilter, i, z, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
     /* renamed from: SubcomposeAsyncImage-MokUVwQ  reason: not valid java name */
-    public static final void m7757SubcomposeAsyncImageMokUVwQ(Object obj, String str, ImageLoader imageLoader, Modifier modifier, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Loading, ? super Composer, ? super Integer, Unit> function4, Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Success, ? super Composer, ? super Integer, Unit> function42, Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Error, ? super Composer, ? super Integer, Unit> function43, Function1<? super AsyncImagePainter.State.Loading, Unit> function12, Function1<? super AsyncImagePainter.State.Success, Unit> function13, Function1<? super AsyncImagePainter.State.Error, Unit> function14, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Composer composer, int i2, int i3, int i4) {
+    public static final void m7758SubcomposeAsyncImageMokUVwQ(Object obj, String str, ImageLoader imageLoader, Modifier modifier, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Loading, ? super Composer, ? super Integer, Unit> function4, Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Success, ? super Composer, ? super Integer, Unit> function42, Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Error, ? super Composer, ? super Integer, Unit> function43, Function1<? super AsyncImagePainter.State.Loading, Unit> function12, Function1<? super AsyncImagePainter.State.Success, Unit> function13, Function1<? super AsyncImagePainter.State.Error, Unit> function14, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Composer composer, int i2, int i3, int i4) {
         Modifier modifier2;
         ComposerKt.sourceInformationMarkerStart(composer, 831032125, "C(SubcomposeAsyncImage)P(10,4,8,11,16,9,15,6,13,14,12!1,5!1,3,7:c#ui.graphics.FilterQuality)83@4395L35,82@4361L453:SubcomposeAsyncImage.kt#8xxpns");
         Modifier.Companion companion = (i4 & 8) != 0 ? Modifier.Companion : modifier;
@@ -98,7 +98,7 @@ public final class SubcomposeAsyncImageKt {
         Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function18 = defaultTransform;
         Alignment alignment2 = center;
         Modifier modifier3 = modifier2;
-        m7759SubcomposeAsyncImagegl8XCv8(asyncImageState, str, modifier3, function18, UtilsKt.onStateOf(function15, function16, function17), alignment2, fit, f2, colorFilter2, m4643getDefaultFilterQualityfv9h1I, z2, contentOf(function44, function45, function46), composer, i6 | (458752 & i7) | (3670016 & i7) | (29360128 & i7) | (234881024 & i7) | (i7 & 1879048192), (i3 >> 18) & 14, 0);
+        m7760SubcomposeAsyncImagegl8XCv8(asyncImageState, str, modifier3, function18, UtilsKt.onStateOf(function15, function16, function17), alignment2, fit, f2, colorFilter2, m4643getDefaultFilterQualityfv9h1I, z2, contentOf(function44, function45, function46), composer, i6 | (458752 & i7) | (3670016 & i7) | (29360128 & i7) | (234881024 & i7) | (i7 & 1879048192), (i3 >> 18) & 14, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -106,7 +106,7 @@ public final class SubcomposeAsyncImageKt {
     }
 
     /* renamed from: SubcomposeAsyncImage-QgsmV_s  reason: not valid java name */
-    public static final void m7758SubcomposeAsyncImageQgsmV_s(Object obj, String str, ImageLoader imageLoader, Modifier modifier, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Function3<? super SubcomposeAsyncImageScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, int i2, int i3, int i4) {
+    public static final void m7759SubcomposeAsyncImageQgsmV_s(Object obj, String str, ImageLoader imageLoader, Modifier modifier, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Function3<? super SubcomposeAsyncImageScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, int i2, int i3, int i4) {
         ComposerKt.sourceInformationMarkerStart(composer, -734720902, "C(SubcomposeAsyncImage)P(9,5,8,10,12,11!1,6!1,3,7:c#ui.graphics.FilterQuality)142@7300L35,141@7266L393:SubcomposeAsyncImage.kt#8xxpns");
         Modifier.Companion companion = (i4 & 8) != 0 ? Modifier.Companion : modifier;
         Function1<AsyncImagePainter.State, AsyncImagePainter.State> defaultTransform = (i4 & 16) != 0 ? AsyncImagePainter.Companion.getDefaultTransform() : function1;
@@ -127,7 +127,7 @@ public final class SubcomposeAsyncImageKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
         AsyncImageState asyncImageState = new AsyncImageState(obj, (AsyncImageModelEqualityDelegate) consume, imageLoader);
         ComposerKt.sourceInformationMarkerEnd(composer);
-        m7759SubcomposeAsyncImagegl8XCv8(asyncImageState, str, companion, defaultTransform, function13, center, fit, f2, colorFilter2, m4643getDefaultFilterQualityfv9h1I, z2, function3, composer, ((i3 << 27) & 1879048192) | (i5 & 234881024) | (i2 & 112) | (i5 & 896) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | (29360128 & i5), (i3 >> 3) & WebSocketProtocol.PAYLOAD_SHORT, 0);
+        m7760SubcomposeAsyncImagegl8XCv8(asyncImageState, str, companion, defaultTransform, function13, center, fit, f2, colorFilter2, m4643getDefaultFilterQualityfv9h1I, z2, function3, composer, ((i3 << 27) & 1879048192) | (i5 & 234881024) | (i2 & 112) | (i5 & 896) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | (29360128 & i5), (i3 >> 3) & WebSocketProtocol.PAYLOAD_SHORT, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -165,7 +165,7 @@ public final class SubcomposeAsyncImageKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static final void m7759SubcomposeAsyncImagegl8XCv8(final AsyncImageState asyncImageState, final String str, Modifier modifier, final Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, final Function1<? super AsyncImagePainter.State, Unit> function12, final Alignment alignment, final ContentScale contentScale, final float f, final ColorFilter colorFilter, final int i, final boolean z, final Function3<? super SubcomposeAsyncImageScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i2, final int i3, final int i4) {
+    private static final void m7760SubcomposeAsyncImagegl8XCv8(final AsyncImageState asyncImageState, final String str, Modifier modifier, final Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, final Function1<? super AsyncImagePainter.State, Unit> function12, final Alignment alignment, final ContentScale contentScale, final float f, final ColorFilter colorFilter, final int i, final boolean z, final Function3<? super SubcomposeAsyncImageScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i2, final int i3, final int i4) {
         AsyncImageState asyncImageState2;
         int i5;
         Object obj;
@@ -255,7 +255,7 @@ public final class SubcomposeAsyncImageKt {
                                     Modifier modifier4 = companion;
                                     int i9 = i5 >> 6;
                                     int i10 = i5 >> 12;
-                                    final AsyncImagePainter m7740rememberAsyncImagePainter5jETZwI = AsyncImagePainterKt.m7740rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i10 & 458752) | ((i5 >> 3) & 8064) | (i9 & 57344), 0);
+                                    final AsyncImagePainter m7741rememberAsyncImagePainter5jETZwI = AsyncImagePainterKt.m7741rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i10 & 458752) | ((i5 >> 3) & 8064) | (i9 & 57344), 0);
                                     sizeResolver = requestOfWithSizeResolver.getSizeResolver();
                                     if (sizeResolver instanceof ConstraintsSizeResolver) {
                                         startRestartGroup.startReplaceGroup(-1470550590);
@@ -278,8 +278,8 @@ public final class SubcomposeAsyncImageKt {
                                                     if (ComposerKt.isTraceInProgress()) {
                                                         ComposerKt.traceEventStart(-374957172, i11, -1, "coil3.compose.SubcomposeAsyncImage.<anonymous> (SubcomposeAsyncImage.kt:215)");
                                                     }
-                                                    ((ConstraintsSizeResolver) SizeResolver.this).m7743setConstraintsBRTryo0(boxWithConstraintsScope.mo643getConstraintsmsEJaDk());
-                                                    function3.invoke(new RealSubcomposeAsyncImageScope(boxWithConstraintsScope, m7740rememberAsyncImagePainter5jETZwI, str, alignment, contentScale, f, colorFilter, z), composer2, 0);
+                                                    ((ConstraintsSizeResolver) SizeResolver.this).m7744setConstraintsBRTryo0(boxWithConstraintsScope.mo643getConstraintsmsEJaDk());
+                                                    function3.invoke(new RealSubcomposeAsyncImageScope(boxWithConstraintsScope, m7741rememberAsyncImagePainter5jETZwI, str, alignment, contentScale, f, colorFilter, z), composer2, 0);
                                                     if (ComposerKt.isTraceInProgress()) {
                                                         ComposerKt.traceEventEnd();
                                                         return;
@@ -321,7 +321,7 @@ public final class SubcomposeAsyncImageKt {
                                         Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -293812529, "C202@9219L9:SubcomposeAsyncImage.kt#8xxpns");
-                                        function3.invoke(new RealSubcomposeAsyncImageScope(BoxScopeInstance.INSTANCE, m7740rememberAsyncImagePainter5jETZwI, obj, alignment, contentScale, f, colorFilter, z), startRestartGroup, Integer.valueOf(i8 & 112));
+                                        function3.invoke(new RealSubcomposeAsyncImageScope(BoxScopeInstance.INSTANCE, m7741rememberAsyncImagePainter5jETZwI, obj, alignment, contentScale, f, colorFilter, z), startRestartGroup, Integer.valueOf(i8 & 112));
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                         startRestartGroup.endNode();
@@ -369,7 +369,7 @@ public final class SubcomposeAsyncImageKt {
                             Modifier modifier42 = companion;
                             int i92 = i5 >> 6;
                             int i102 = i5 >> 12;
-                            final AsyncImagePainter m7740rememberAsyncImagePainter5jETZwI2 = AsyncImagePainterKt.m7740rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver2, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i102 & 458752) | ((i5 >> 3) & 8064) | (i92 & 57344), 0);
+                            final AsyncImagePainter m7741rememberAsyncImagePainter5jETZwI2 = AsyncImagePainterKt.m7741rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver2, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i102 & 458752) | ((i5 >> 3) & 8064) | (i92 & 57344), 0);
                             sizeResolver = requestOfWithSizeResolver2.getSizeResolver();
                             if (sizeResolver instanceof ConstraintsSizeResolver) {
                             }
@@ -397,7 +397,7 @@ public final class SubcomposeAsyncImageKt {
                         Modifier modifier422 = companion;
                         int i922 = i5 >> 6;
                         int i1022 = i5 >> 12;
-                        final AsyncImagePainter m7740rememberAsyncImagePainter5jETZwI22 = AsyncImagePainterKt.m7740rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver22, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i1022 & 458752) | ((i5 >> 3) & 8064) | (i922 & 57344), 0);
+                        final AsyncImagePainter m7741rememberAsyncImagePainter5jETZwI22 = AsyncImagePainterKt.m7741rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver22, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i1022 & 458752) | ((i5 >> 3) & 8064) | (i922 & 57344), 0);
                         sizeResolver = requestOfWithSizeResolver22.getSizeResolver();
                         if (sizeResolver instanceof ConstraintsSizeResolver) {
                         }
@@ -427,7 +427,7 @@ public final class SubcomposeAsyncImageKt {
                     Modifier modifier4222 = companion;
                     int i9222 = i5 >> 6;
                     int i10222 = i5 >> 12;
-                    final AsyncImagePainter m7740rememberAsyncImagePainter5jETZwI222 = AsyncImagePainterKt.m7740rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver222, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i10222 & 458752) | ((i5 >> 3) & 8064) | (i9222 & 57344), 0);
+                    final AsyncImagePainter m7741rememberAsyncImagePainter5jETZwI222 = AsyncImagePainterKt.m7741rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver222, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i10222 & 458752) | ((i5 >> 3) & 8064) | (i9222 & 57344), 0);
                     sizeResolver = requestOfWithSizeResolver222.getSizeResolver();
                     if (sizeResolver instanceof ConstraintsSizeResolver) {
                     }
@@ -463,7 +463,7 @@ public final class SubcomposeAsyncImageKt {
                 Modifier modifier42222 = companion;
                 int i92222 = i5 >> 6;
                 int i102222 = i5 >> 12;
-                final AsyncImagePainter m7740rememberAsyncImagePainter5jETZwI2222 = AsyncImagePainterKt.m7740rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver2222, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i102222 & 458752) | ((i5 >> 3) & 8064) | (i92222 & 57344), 0);
+                final AsyncImagePainter m7741rememberAsyncImagePainter5jETZwI2222 = AsyncImagePainterKt.m7741rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver2222, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i102222 & 458752) | ((i5 >> 3) & 8064) | (i92222 & 57344), 0);
                 sizeResolver = requestOfWithSizeResolver2222.getSizeResolver();
                 if (sizeResolver instanceof ConstraintsSizeResolver) {
                 }
@@ -501,7 +501,7 @@ public final class SubcomposeAsyncImageKt {
             Modifier modifier422222 = companion;
             int i922222 = i5 >> 6;
             int i1022222 = i5 >> 12;
-            final AsyncImagePainter m7740rememberAsyncImagePainter5jETZwI22222 = AsyncImagePainterKt.m7740rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver22222, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i1022222 & 458752) | ((i5 >> 3) & 8064) | (i922222 & 57344), 0);
+            final AsyncImagePainter m7741rememberAsyncImagePainter5jETZwI22222 = AsyncImagePainterKt.m7741rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver22222, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i1022222 & 458752) | ((i5 >> 3) & 8064) | (i922222 & 57344), 0);
             sizeResolver = requestOfWithSizeResolver22222.getSizeResolver();
             if (sizeResolver instanceof ConstraintsSizeResolver) {
             }
@@ -542,7 +542,7 @@ public final class SubcomposeAsyncImageKt {
         Modifier modifier4222222 = companion;
         int i9222222 = i5 >> 6;
         int i10222222 = i5 >> 12;
-        final AsyncImagePainter m7740rememberAsyncImagePainter5jETZwI222222 = AsyncImagePainterKt.m7740rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver222222, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i10222222 & 458752) | ((i5 >> 3) & 8064) | (i9222222 & 57344), 0);
+        final AsyncImagePainter m7741rememberAsyncImagePainter5jETZwI222222 = AsyncImagePainterKt.m7741rememberAsyncImagePainter5jETZwI(requestOfWithSizeResolver222222, asyncImageState2.getImageLoader(), function1, function12, contentScale, i, startRestartGroup, (i10222222 & 458752) | ((i5 >> 3) & 8064) | (i9222222 & 57344), 0);
         sizeResolver = requestOfWithSizeResolver222222.getSizeResolver();
         if (sizeResolver instanceof ConstraintsSizeResolver) {
         }

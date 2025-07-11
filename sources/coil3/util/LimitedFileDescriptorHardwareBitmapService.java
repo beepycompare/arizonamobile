@@ -19,9 +19,9 @@ final class LimitedFileDescriptorHardwareBitmapService implements HardwareBitmap
     @Override // coil3.util.HardwareBitmapService
     public boolean allowHardwareMainThread(Size size) {
         Dimension width = size.getWidth();
-        if ((width instanceof Dimension.Pixels ? ((Dimension.Pixels) width).m7820unboximpl() : Integer.MAX_VALUE) > 100) {
+        if ((width instanceof Dimension.Pixels ? ((Dimension.Pixels) width).m7821unboximpl() : Integer.MAX_VALUE) > 100) {
             Dimension height = size.getHeight();
-            return (height instanceof Dimension.Pixels ? ((Dimension.Pixels) height).m7820unboximpl() : Integer.MAX_VALUE) > 100;
+            return (height instanceof Dimension.Pixels ? ((Dimension.Pixels) height).m7821unboximpl() : Integer.MAX_VALUE) > 100;
         }
         return false;
     }

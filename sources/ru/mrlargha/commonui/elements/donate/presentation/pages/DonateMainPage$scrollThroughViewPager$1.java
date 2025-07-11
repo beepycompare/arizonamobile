@@ -1,6 +1,7 @@
 package ru.mrlargha.commonui.elements.donate.presentation.pages;
 
-import androidx.media3.common.C;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.media3.exoplayer.Renderer;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 import kotlin.Metadata;
@@ -15,8 +16,8 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.DelayKt;
 /* compiled from: DonateMainPage.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateMainPage$scrollThroughViewPager$1", f = "DonateMainPage.kt", i = {0}, l = {38}, m = "invokeSuspend", n = {"$this$launch"}, s = {"L$0"})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateMainPage$scrollThroughViewPager$1", f = "DonateMainPage.kt", i = {0}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_WRAP_BEHAVIOR_IN_PARENT}, m = "invokeSuspend", n = {"$this$launch"}, s = {"L$0"})
 /* loaded from: classes5.dex */
 final class DonateMainPage$scrollThroughViewPager$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ViewPager2 $viewPager;
@@ -42,28 +43,26 @@ final class DonateMainPage$scrollThroughViewPager$1 extends SuspendLambda implem
         return ((DonateMainPage$scrollThroughViewPager$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0029  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0063  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0066  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x0036 -> B:14:0x0039). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0024  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x005e  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0061  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x0031 -> B:14:0x0034). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        CoroutineScope coroutineScope;
+        CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            coroutineScope = (CoroutineScope) this.L$0;
             if (!CoroutineScopeKt.isActive(coroutineScope)) {
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
-            coroutineScope = (CoroutineScope) this.L$0;
             ResultKt.throwOnFailure(obj);
             RecyclerView.Adapter adapter = this.$viewPager.getAdapter();
             if (adapter == null) {
@@ -77,7 +76,7 @@ final class DonateMainPage$scrollThroughViewPager$1 extends SuspendLambda implem
             if (!CoroutineScopeKt.isActive(coroutineScope)) {
                 this.L$0 = coroutineScope;
                 this.label = 1;
-                if (DelayKt.delay(C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS, this) == coroutine_suspended) {
+                if (DelayKt.delay(Renderer.DEFAULT_DURATION_TO_PROGRESS_US, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 RecyclerView.Adapter adapter2 = this.$viewPager.getAdapter();

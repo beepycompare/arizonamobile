@@ -5,11 +5,11 @@ import io.appmetrica.analytics.AppMetrica;
 public abstract class P5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Boolean f574a = Boolean.FALSE;
+    public static final Boolean f575a = Boolean.FALSE;
     public static final int b = AppMetrica.getLibraryApiLevel();
-    public static final C0234e7 c = new C0234e7(new C0483o7(), new N7(), new C0225dn());
+    public static final C0226e7 c = new C0226e7(new C0475o7(), new N7(), new C0217dn());
 
-    public static C0234e7 a() {
+    public static C0226e7 a() {
         return c;
     }
 }

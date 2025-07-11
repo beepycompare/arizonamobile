@@ -6,23 +6,23 @@ import java.util.Iterator;
 public final class Yb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0153b3 f719a;
-    public final C0428m2 b;
+    public final C0145b3 f720a;
+    public final C0420m2 b;
     public final ArrayList c;
 
-    public Yb(C0153b3 c0153b3, C0428m2 c0428m2) {
+    public Yb(C0145b3 c0145b3, C0420m2 c0420m2) {
         ArrayList arrayList = new ArrayList();
         this.c = arrayList;
-        this.f719a = c0153b3;
-        arrayList.add(c0153b3);
-        this.b = c0428m2;
-        arrayList.add(c0428m2);
+        this.f720a = c0145b3;
+        arrayList.add(c0145b3);
+        this.b = c0420m2;
+        arrayList.add(c0420m2);
     }
 
     public final synchronized void a() {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
-            ((InterfaceC0521pk) it.next()).onCreate();
+            ((InterfaceC0513pk) it.next()).onCreate();
         }
     }
 

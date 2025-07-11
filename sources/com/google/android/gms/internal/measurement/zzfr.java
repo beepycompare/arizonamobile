@@ -1,81 +1,79 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+
+import java.util.List;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzfr extends zzmd implements zzni {
-    private static final zzfr zzb;
+public final class zzfr extends zzme implements zznm {
+    private static final zzfr zzh;
+    private int zzb;
     private int zzd;
-    private int zze;
-    private String zzf = "";
-    private zzfl zzg;
-    private boolean zzh;
-    private boolean zzi;
-    private boolean zzj;
+    private boolean zzf;
+    private String zze = "";
+    private zzmn zzg = zzme.zzcv();
 
     static {
         zzfr zzfrVar = new zzfr();
-        zzb = zzfrVar;
-        zzmd.zzct(zzfr.class, zzfrVar);
+        zzh = zzfrVar;
+        zzme.zzcp(zzfr.class, zzfrVar);
     }
 
     private zzfr() {
     }
 
-    public static zzfq zzc() {
-        return (zzfq) zzb.zzcg();
+    public static zzfr zzh() {
+        return zzh;
     }
 
-    public static /* synthetic */ void zzf(zzfr zzfrVar, String str) {
-        zzfrVar.zzd |= 2;
-        zzfrVar.zzf = str;
+    public final boolean zza() {
+        return (this.zzb & 1) != 0;
     }
 
-    public final int zza() {
+    public final boolean zzb() {
+        return (this.zzb & 2) != 0;
+    }
+
+    public final String zzc() {
         return this.zze;
     }
 
-    public final zzfl zzb() {
-        zzfl zzflVar = this.zzg;
-        return zzflVar == null ? zzfl.zzb() : zzflVar;
+    public final boolean zzd() {
+        return (this.zzb & 4) != 0;
     }
 
-    public final String zze() {
+    public final boolean zze() {
         return this.zzf;
     }
 
-    public final boolean zzg() {
-        return this.zzh;
+    public final List zzf() {
+        return this.zzg;
     }
 
-    public final boolean zzh() {
-        return this.zzi;
+    public final int zzg() {
+        return this.zzg.size();
     }
 
-    public final boolean zzi() {
-        return this.zzj;
+    public final int zzj() {
+        int zza = zzfq.zza(this.zzd);
+        if (zza == 0) {
+            return 1;
+        }
+        return zza;
     }
 
-    public final boolean zzj() {
-        return (this.zzd & 1) != 0;
-    }
-
-    public final boolean zzk() {
-        return (this.zzd & 32) != 0;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzmd
+    @Override // com.google.android.gms.internal.measurement.zzme
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {
             if (i2 == 2) {
-                return zzcq(zzb, "\u0004\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001င\u0000\u0002ဈ\u0001\u0003ဉ\u0002\u0004ဇ\u0003\u0005ဇ\u0004\u0006ဇ\u0005", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi", "zzj"});
+                return zzcq(zzh, "\u0004\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0001\u0000\u0001᠌\u0000\u0002ဈ\u0001\u0003ဇ\u0002\u0004\u001a", new Object[]{"zzb", "zzd", zzfp.zza, "zze", "zzf", "zzg"});
             } else if (i2 != 3) {
                 if (i2 != 4) {
                     if (i2 == 5) {
-                        return zzb;
+                        return zzh;
                     }
                     throw null;
                 }
-                return new zzfq(null);
+                return new zzfo(null);
             } else {
                 return new zzfr();
             }

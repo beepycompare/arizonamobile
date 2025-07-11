@@ -8,6 +8,6 @@ public final class Bl extends Ha {
     }
 
     @Override // io.appmetrica.analytics.impl.Ha
-    public final void a(List<AbstractC0193ch> list) {
+    public final void a(List<AbstractC0185ch> list) {
     }
 }

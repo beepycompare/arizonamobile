@@ -1,44 +1,24 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Bundle;
-import java.util.List;
-import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public interface zzlx {
-    int zza(String str);
+public final class zzlx implements Runnable {
+    final /* synthetic */ long zza;
+    final /* synthetic */ zzma zzb;
 
-    long zzb();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzlx(zzma zzmaVar, long j) {
+        this.zza = j;
+        Objects.requireNonNull(zzmaVar);
+        this.zzb = zzmaVar;
+    }
 
-    Object zzg(int i);
-
-    String zzh();
-
-    String zzi();
-
-    String zzj();
-
-    String zzk();
-
-    List zzm(String str, String str2);
-
-    Map zzo(String str, String str2, boolean z);
-
-    void zzp(String str);
-
-    void zzq(String str, String str2, Bundle bundle);
-
-    void zzr(String str);
-
-    void zzs(String str, String str2, Bundle bundle);
-
-    void zzt(String str, String str2, Bundle bundle, long j);
-
-    void zzu(zzkc zzkcVar);
-
-    void zzv(Bundle bundle);
-
-    void zzw(zzkb zzkbVar);
-
-    void zzx(zzkc zzkcVar);
+    @Override // java.lang.Runnable
+    public final void run() {
+        zzma zzmaVar = this.zzb;
+        zzmaVar.zzu.zzw().zzc(this.zza);
+        zzmaVar.zza = null;
+    }
 }

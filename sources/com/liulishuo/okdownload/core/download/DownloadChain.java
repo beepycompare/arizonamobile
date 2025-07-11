@@ -215,10 +215,13 @@ public class DownloadChain implements Runnable {
         try {
             start();
         } catch (IOException unused) {
-        } finally {
+        } catch (Throwable th) {
             this.finished.set(true);
             releaseConnectionAsync();
+            throw th;
         }
+        this.finished.set(true);
+        releaseConnectionAsync();
     }
 
     void releaseConnectionAsync() {

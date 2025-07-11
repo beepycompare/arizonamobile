@@ -2,9 +2,10 @@ package com.google.common.collect;
 
 import com.google.common.base.Preconditions;
 import java.util.NoSuchElementException;
+/* JADX INFO: Access modifiers changed from: package-private */
 @ElementTypesAreNonnullByDefault
 /* loaded from: classes4.dex */
-abstract class AbstractIndexedListIterator<E> extends UnmodifiableListIterator<E> {
+public abstract class AbstractIndexedListIterator<E> extends UnmodifiableListIterator<E> {
     private int position;
     private final int size;
 

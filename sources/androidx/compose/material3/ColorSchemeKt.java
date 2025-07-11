@@ -192,7 +192,7 @@ public final class ColorSchemeKt {
         }
     }
 
-    /* renamed from: lightColorScheme-C-Xl9yA$default  reason: not valid java name */
+    /* renamed from: lightColorScheme-C-Xl9yA$default */
     public static /* synthetic */ ColorScheme m1739lightColorSchemeCXl9yA$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
         long m2915getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m2915getPrimary0d7_KjU() : j;
         long m2899getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m2899getOnPrimary0d7_KjU() : j2;
@@ -236,12 +236,12 @@ public final class ColorSchemeKt {
         return m1738lightColorSchemeCXl9yA(j37, m2899getOnPrimary0d7_KjU, m2916getPrimaryContainer0d7_KjU, m2900getOnPrimaryContainer0d7_KjU, m2894getInversePrimary0d7_KjU, m2920getSecondary0d7_KjU, m2903getOnSecondary0d7_KjU, m2921getSecondaryContainer0d7_KjU, m2904getOnSecondaryContainer0d7_KjU, m2934getTertiary0d7_KjU, m2909getOnTertiary0d7_KjU, m2935getTertiaryContainer0d7_KjU, m2910getOnTertiaryContainer0d7_KjU, m2890getBackground0d7_KjU, m2896getOnBackground0d7_KjU, m2924getSurface0d7_KjU, m2907getOnSurface0d7_KjU, m2933getSurfaceVariant0d7_KjU, m2908getOnSurfaceVariant0d7_KjU, j38, m2895getInverseSurface0d7_KjU, m2893getInverseOnSurface0d7_KjU, m2891getError0d7_KjU, m2897getOnError0d7_KjU, m2892getErrorContainer0d7_KjU, m2898getOnErrorContainer0d7_KjU, m2913getOutline0d7_KjU, m2914getOutlineVariant0d7_KjU, m2919getScrim0d7_KjU, m2925getSurfaceBright0d7_KjU, m2926getSurfaceContainer0d7_KjU, m2927getSurfaceContainerHigh0d7_KjU, m2928getSurfaceContainerHighest0d7_KjU, m2929getSurfaceContainerLow0d7_KjU, m2930getSurfaceContainerLowest0d7_KjU, j36);
     }
 
-    /* renamed from: lightColorScheme-C-Xl9yA  reason: not valid java name */
+    /* renamed from: lightColorScheme-C-Xl9yA */
     public static final ColorScheme m1738lightColorSchemeCXl9yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36) {
         return new ColorScheme(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j36, j31, j32, j33, j34, j35, null);
     }
 
-    /* renamed from: lightColorScheme-G1PFc-w$default  reason: not valid java name */
+    /* renamed from: lightColorScheme-G1PFc-w$default */
     public static /* synthetic */ ColorScheme m1741lightColorSchemeG1PFcw$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
         long m2915getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m2915getPrimary0d7_KjU() : j;
         long m2899getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m2899getOnPrimary0d7_KjU() : j2;
@@ -278,7 +278,7 @@ public final class ColorSchemeKt {
         return m1739lightColorSchemeCXl9yA$default(j30, m2899getOnPrimary0d7_KjU, m2916getPrimaryContainer0d7_KjU, m2900getOnPrimaryContainer0d7_KjU, m2894getInversePrimary0d7_KjU, m2920getSecondary0d7_KjU, m2903getOnSecondary0d7_KjU, m2921getSecondaryContainer0d7_KjU, m2904getOnSecondaryContainer0d7_KjU, m2934getTertiary0d7_KjU, m2909getOnTertiary0d7_KjU, m2935getTertiaryContainer0d7_KjU, m2910getOnTertiaryContainer0d7_KjU, m2890getBackground0d7_KjU, m2896getOnBackground0d7_KjU, m2924getSurface0d7_KjU, m2907getOnSurface0d7_KjU, m2933getSurfaceVariant0d7_KjU, m2908getOnSurfaceVariant0d7_KjU, j31, m2895getInverseSurface0d7_KjU, m2893getInverseOnSurface0d7_KjU, m2891getError0d7_KjU, m2897getOnError0d7_KjU, m2892getErrorContainer0d7_KjU, m2898getOnErrorContainer0d7_KjU, m2913getOutline0d7_KjU, m2914getOutlineVariant0d7_KjU, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 15, null);
     }
 
-    /* renamed from: darkColorScheme-C-Xl9yA$default  reason: not valid java name */
+    /* renamed from: darkColorScheme-C-Xl9yA$default */
     public static /* synthetic */ ColorScheme m1735darkColorSchemeCXl9yA$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
         long m2867getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m2867getPrimary0d7_KjU() : j;
         long m2851getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m2851getOnPrimary0d7_KjU() : j2;
@@ -322,12 +322,12 @@ public final class ColorSchemeKt {
         return m1734darkColorSchemeCXl9yA(j37, m2851getOnPrimary0d7_KjU, m2868getPrimaryContainer0d7_KjU, m2852getOnPrimaryContainer0d7_KjU, m2846getInversePrimary0d7_KjU, m2872getSecondary0d7_KjU, m2855getOnSecondary0d7_KjU, m2873getSecondaryContainer0d7_KjU, m2856getOnSecondaryContainer0d7_KjU, m2886getTertiary0d7_KjU, m2861getOnTertiary0d7_KjU, m2887getTertiaryContainer0d7_KjU, m2862getOnTertiaryContainer0d7_KjU, m2842getBackground0d7_KjU, m2848getOnBackground0d7_KjU, m2876getSurface0d7_KjU, m2859getOnSurface0d7_KjU, m2885getSurfaceVariant0d7_KjU, m2860getOnSurfaceVariant0d7_KjU, j38, m2847getInverseSurface0d7_KjU, m2845getInverseOnSurface0d7_KjU, m2843getError0d7_KjU, m2849getOnError0d7_KjU, m2844getErrorContainer0d7_KjU, m2850getOnErrorContainer0d7_KjU, m2865getOutline0d7_KjU, m2866getOutlineVariant0d7_KjU, m2871getScrim0d7_KjU, m2877getSurfaceBright0d7_KjU, m2878getSurfaceContainer0d7_KjU, m2879getSurfaceContainerHigh0d7_KjU, m2880getSurfaceContainerHighest0d7_KjU, m2881getSurfaceContainerLow0d7_KjU, m2882getSurfaceContainerLowest0d7_KjU, j36);
     }
 
-    /* renamed from: darkColorScheme-C-Xl9yA  reason: not valid java name */
+    /* renamed from: darkColorScheme-C-Xl9yA */
     public static final ColorScheme m1734darkColorSchemeCXl9yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36) {
         return new ColorScheme(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j36, j31, j32, j33, j34, j35, null);
     }
 
-    /* renamed from: darkColorScheme-G1PFc-w$default  reason: not valid java name */
+    /* renamed from: darkColorScheme-G1PFc-w$default */
     public static /* synthetic */ ColorScheme m1737darkColorSchemeG1PFcw$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
         long m2867getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m2867getPrimary0d7_KjU() : j;
         long m2851getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m2851getOnPrimary0d7_KjU() : j2;
@@ -364,7 +364,7 @@ public final class ColorSchemeKt {
         return m1735darkColorSchemeCXl9yA$default(j30, m2851getOnPrimary0d7_KjU, m2868getPrimaryContainer0d7_KjU, m2852getOnPrimaryContainer0d7_KjU, m2846getInversePrimary0d7_KjU, m2872getSecondary0d7_KjU, m2855getOnSecondary0d7_KjU, m2873getSecondaryContainer0d7_KjU, m2856getOnSecondaryContainer0d7_KjU, m2886getTertiary0d7_KjU, m2861getOnTertiary0d7_KjU, m2887getTertiaryContainer0d7_KjU, m2862getOnTertiaryContainer0d7_KjU, m2842getBackground0d7_KjU, m2848getOnBackground0d7_KjU, m2876getSurface0d7_KjU, m2859getOnSurface0d7_KjU, m2885getSurfaceVariant0d7_KjU, m2860getOnSurfaceVariant0d7_KjU, j31, m2847getInverseSurface0d7_KjU, m2845getInverseOnSurface0d7_KjU, m2843getError0d7_KjU, m2849getOnError0d7_KjU, m2844getErrorContainer0d7_KjU, m2850getOnErrorContainer0d7_KjU, m2865getOutline0d7_KjU, m2866getOutlineVariant0d7_KjU, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 15, null);
     }
 
-    /* renamed from: contentColorFor-4WTKRHQ  reason: not valid java name */
+    /* renamed from: contentColorFor-4WTKRHQ */
     public static final long m1732contentColorFor4WTKRHQ(ColorScheme colorScheme, long j) {
         if (Color.m4079equalsimpl0(j, colorScheme.m1714getPrimary0d7_KjU())) {
             return colorScheme.m1704getOnPrimary0d7_KjU();
@@ -408,7 +408,7 @@ public final class ColorSchemeKt {
         return colorScheme.m1708getOnSurface0d7_KjU();
     }
 
-    /* renamed from: contentColorFor-ek8zF_U  reason: not valid java name */
+    /* renamed from: contentColorFor-ek8zF_U */
     public static final long m1733contentColorForek8zF_U(long j, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, 509589638, "C(contentColorFor)P(0:c#ui.graphics.Color):ColorScheme.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
@@ -431,7 +431,7 @@ public final class ColorSchemeKt {
         return m1732contentColorFor4WTKRHQ;
     }
 
-    /* renamed from: applyTonalElevation-RFCenO8  reason: not valid java name */
+    /* renamed from: applyTonalElevation-RFCenO8 */
     public static final long m1731applyTonalElevationRFCenO8(ColorScheme colorScheme, long j, float f, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, -1610977682, "C(applyTonalElevation)P(0:c#ui.graphics.Color,1:c#ui.unit.Dp)896@40465L7:ColorScheme.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
@@ -555,7 +555,7 @@ public final class ColorSchemeKt {
         return fromToken;
     }
 
-    /* renamed from: surfaceColorAtElevation-3ABfNKs  reason: not valid java name */
+    /* renamed from: surfaceColorAtElevation-3ABfNKs */
     public static final long m1742surfaceColorAtElevation3ABfNKs(ColorScheme colorScheme, float f) {
         if (Dp.m6689equalsimpl0(f, Dp.m6684constructorimpl(0))) {
             return colorScheme.m1719getSurface0d7_KjU();

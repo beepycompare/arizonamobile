@@ -1,21 +1,19 @@
 package com.google.android.gms.internal.measurement;
-
-import java.io.IOException;
-import java.util.Locale;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzli extends IOException {
-    zzli() {
-        super("CodedOutputStream was writing to a flat byte array and ran out of space.");
-    }
+public class zzli {
+    public static final /* synthetic */ int zza = 0;
+    private static volatile int zzb = 100;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzli(long j, long j2, int i, Throwable th) {
-        super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(String.valueOf(String.format(Locale.US, "Pos: %d, limit: %d, len: %d", Long.valueOf(j), Long.valueOf(j2), Integer.valueOf(i)))), th);
+    public /* synthetic */ zzli(byte[] bArr) {
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzli(Throwable th) {
-        super("CodedOutputStream was writing to a flat byte array and ran out of space.", th);
+    public static int zzb(int i) {
+        return (i >>> 1) ^ (-(i & 1));
+    }
+
+    public static long zzc(long j) {
+        return (j >>> 1) ^ (-(1 & j));
     }
 }

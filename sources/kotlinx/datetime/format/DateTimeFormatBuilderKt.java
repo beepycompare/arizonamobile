@@ -25,7 +25,7 @@ import kotlinx.datetime.internal.format.NonConcatenatedFormatStructure;
 import kotlinx.datetime.internal.format.OptionalFormatStructure;
 import kotlinx.datetime.internal.format.SignedFormatStructure;
 /* compiled from: DateTimeFormatBuilder.kt */
-@Metadata(d1 = {"\u0000P\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\f\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\u001ah\u0010\u0002\u001a\u00020\u0003\"\b\b\u0000\u0010\u0004*\u00020\u0005*\u0002H\u000424\u0010\u0006\u001a\u001b\u0012\u0017\b\u0001\u0012\u0013\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u00020\u00030\b¢\u0006\u0002\b\t0\u0007\"\u0013\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u00020\u00030\b¢\u0006\u0002\b\t2\u0017\u0010\n\u001a\u0013\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u00020\u00030\b¢\u0006\u0002\b\t¢\u0006\u0002\u0010\u000b\u001a6\u0010\f\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0004*\b\u0012\u0004\u0012\u0002H\u00040\r2\u001c\u0010\u000e\u001a\u0018\u0012\u0014\u0012\u0012\u0012\u0004\u0012\u00020\u0001\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00110\u00100\u000fH\u0000\u001a\u0012\u0010\u0012\u001a\u00020\u0003*\u00020\u00052\u0006\u0010\u0013\u001a\u00020\u0014\u001a<\u0010\u0015\u001a\u00020\u0003\"\b\b\u0000\u0010\u0004*\u00020\u0005*\u0002H\u00042\b\b\u0002\u0010\u0016\u001a\u00020\u00012\u0017\u0010\u0017\u001a\u0013\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u00020\u00030\b¢\u0006\u0002\b\t¢\u0006\u0002\u0010\u0018\u001a*\u0010\u0019\u001a\u00020\u0003*\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001c2\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u001c0\u000fH\u0000\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"CODE_INDENT", "", "alternativeParsing", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/datetime/format/DateTimeFormatBuilder;", "alternativeFormats", "", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "primaryFormat", "(Lkotlinx/datetime/format/DateTimeFormatBuilder;[Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "builderString", "Lkotlinx/datetime/internal/format/FormatStructure;", "constants", "", "Lkotlin/Pair;", "Lkotlinx/datetime/internal/format/CachedFormatStructure;", "char", "value", "", "optional", "ifZero", "format", "(Lkotlinx/datetime/format/DateTimeFormatBuilder;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V", "secondFractionInternal", "Lkotlinx/datetime/format/DateTimeFormatBuilder$WithTime;", "minLength", "", "maxLength", "grouping", "kotlinx-datetime"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000R\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\f\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a*\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00042\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00040\u0007H\u0000\u001ah\u0010\b\u001a\u00020\u0001\"\b\b\u0000\u0010\t*\u00020\n*\u0002H\t24\u0010\u000b\u001a\u001b\u0012\u0017\b\u0001\u0012\u0013\u0012\u0004\u0012\u0002H\t\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000e0\f\"\u0013\u0012\u0004\u0012\u0002H\t\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000e2\u0017\u0010\u000f\u001a\u0013\u0012\u0004\u0012\u0002H\t\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000e¢\u0006\u0002\u0010\u0010\u001a<\u0010\u0011\u001a\u00020\u0001\"\b\b\u0000\u0010\t*\u00020\n*\u0002H\t2\b\b\u0002\u0010\u0012\u001a\u00020\u00132\u0017\u0010\u0014\u001a\u0013\u0012\u0004\u0012\u0002H\t\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000e¢\u0006\u0002\u0010\u0015\u001a\u0012\u0010\u0016\u001a\u00020\u0001*\u00020\n2\u0006\u0010\u0017\u001a\u00020\u0018\u001a6\u0010\u0019\u001a\u00020\u0013\"\u0004\b\u0000\u0010\t*\b\u0012\u0004\u0012\u0002H\t0\u001a2\u001c\u0010\u001b\u001a\u0018\u0012\u0014\u0012\u0012\u0012\u0004\u0012\u00020\u0013\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u001d0\u001c0\u0007H\u0000\"\u000e\u0010\u001e\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"secondFractionInternal", "", "Lkotlinx/datetime/format/DateTimeFormatBuilder$WithTime;", "minLength", "", "maxLength", "grouping", "", "alternativeParsing", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/datetime/format/DateTimeFormatBuilder;", "alternativeFormats", "", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "primaryFormat", "(Lkotlinx/datetime/format/DateTimeFormatBuilder;[Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "optional", "ifZero", "", "format", "(Lkotlinx/datetime/format/DateTimeFormatBuilder;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V", "char", "value", "", "builderString", "Lkotlinx/datetime/internal/format/FormatStructure;", "constants", "Lkotlin/Pair;", "Lkotlinx/datetime/internal/format/CachedFormatStructure;", "CODE_INDENT", "kotlinx-datetime"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DateTimeFormatBuilderKt {
     private static final String CODE_INDENT = "    ";
@@ -67,8 +67,8 @@ public final class DateTimeFormatBuilderKt {
         throw new IllegalStateException("impossible");
     }
 
-    /* renamed from: char */
-    public static final void m10056char(DateTimeFormatBuilder dateTimeFormatBuilder, char c) {
+    /* renamed from: char  reason: not valid java name */
+    public static final void m10098char(DateTimeFormatBuilder dateTimeFormatBuilder, char c) {
         Intrinsics.checkNotNullParameter(dateTimeFormatBuilder, "<this>");
         dateTimeFormatBuilder.chars(String.valueOf(c));
     }
@@ -88,80 +88,55 @@ public final class DateTimeFormatBuilderKt {
         } else if (formatStructure instanceof SignedFormatStructure) {
             SignedFormatStructure signedFormatStructure = (SignedFormatStructure) formatStructure;
             if ((signedFormatStructure.getFormat() instanceof BasicFormatStructure) && (((BasicFormatStructure) signedFormatStructure.getFormat()).getDirective() instanceof UtcOffsetWholeHoursDirective)) {
-                return ((BasicFormatStructure) signedFormatStructure.getFormat()).getDirective().getBuilderRepresentation();
+                return ((UtcOffsetWholeHoursDirective) ((BasicFormatStructure) signedFormatStructure.getFormat()).getDirective()).getBuilderRepresentation();
             }
             StringBuilder sb = new StringBuilder();
             if (signedFormatStructure.getWithPlusSign()) {
-                StringBuilder append = sb.append("withSharedSign(outputPlus = true) {");
-                Intrinsics.checkNotNullExpressionValue(append, "append(...)");
-                Intrinsics.checkNotNullExpressionValue(append.append('\n'), "append(...)");
+                sb.append("withSharedSign(outputPlus = true) {\n");
             } else {
-                StringBuilder append2 = sb.append("withSharedSign {");
-                Intrinsics.checkNotNullExpressionValue(append2, "append(...)");
-                Intrinsics.checkNotNullExpressionValue(append2.append('\n'), "append(...)");
+                sb.append("withSharedSign {\n");
             }
-            StringBuilder append3 = sb.append(StringsKt.prependIndent(builderString(signedFormatStructure.getFormat(), constants), CODE_INDENT));
-            Intrinsics.checkNotNullExpressionValue(append3, "append(...)");
-            Intrinsics.checkNotNullExpressionValue(append3.append('\n'), "append(...)");
-            sb.append("}");
-            String sb2 = sb.toString();
-            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-            return sb2;
+            sb.append(StringsKt.prependIndent(builderString(signedFormatStructure.getFormat(), constants), CODE_INDENT)).append("\n}");
+            return sb.toString();
         } else if (formatStructure instanceof OptionalFormatStructure) {
-            StringBuilder sb3 = new StringBuilder();
+            StringBuilder sb2 = new StringBuilder();
             OptionalFormatStructure optionalFormatStructure = (OptionalFormatStructure) formatStructure;
             if (Intrinsics.areEqual(optionalFormatStructure.getOnZero(), "")) {
-                StringBuilder append4 = sb3.append("optional {");
-                Intrinsics.checkNotNullExpressionValue(append4, "append(...)");
-                Intrinsics.checkNotNullExpressionValue(append4.append('\n'), "append(...)");
+                sb2.append("optional {\n");
             } else {
-                StringBuilder append5 = sb3.append("optional(" + ToKotlinCodeKt.toKotlinCode(optionalFormatStructure.getOnZero()) + ") {");
-                Intrinsics.checkNotNullExpressionValue(append5, "append(...)");
-                Intrinsics.checkNotNullExpressionValue(append5.append('\n'), "append(...)");
+                sb2.append("optional(" + ToKotlinCodeKt.toKotlinCode(optionalFormatStructure.getOnZero()) + ") {").append('\n');
             }
             String builderString = builderString(optionalFormatStructure.getFormat(), constants);
             if (builderString.length() > 0) {
-                StringBuilder append6 = sb3.append(StringsKt.prependIndent(builderString, CODE_INDENT));
-                Intrinsics.checkNotNullExpressionValue(append6, "append(...)");
-                Intrinsics.checkNotNullExpressionValue(append6.append('\n'), "append(...)");
+                sb2.append(StringsKt.prependIndent(builderString, CODE_INDENT)).append('\n');
             }
-            sb3.append("}");
-            String sb4 = sb3.toString();
-            Intrinsics.checkNotNullExpressionValue(sb4, "toString(...)");
-            return sb4;
+            sb2.append("}");
+            return sb2.toString();
         } else if (formatStructure instanceof AlternativesParsingFormatStructure) {
-            StringBuilder sb5 = new StringBuilder();
-            sb5.append("alternativeParsing(");
+            StringBuilder sb3 = new StringBuilder();
+            sb3.append("alternativeParsing(");
             AlternativesParsingFormatStructure alternativesParsingFormatStructure = (AlternativesParsingFormatStructure) formatStructure;
             for (FormatStructure<T> formatStructure2 : alternativesParsingFormatStructure.getFormats()) {
-                StringBuilder append7 = sb5.append("{");
-                Intrinsics.checkNotNullExpressionValue(append7, "append(...)");
-                Intrinsics.checkNotNullExpressionValue(append7.append('\n'), "append(...)");
+                sb3.append("{\n");
                 String builderString2 = builderString(formatStructure2, constants);
                 if (builderString2.length() > 0) {
-                    StringBuilder append8 = sb5.append(StringsKt.prependIndent(builderString2, CODE_INDENT));
-                    Intrinsics.checkNotNullExpressionValue(append8, "append(...)");
-                    Intrinsics.checkNotNullExpressionValue(append8.append('\n'), "append(...)");
+                    sb3.append(StringsKt.prependIndent(builderString2, CODE_INDENT)).append('\n');
                 }
-                sb5.append("}, ");
+                sb3.append("}, ");
             }
-            if (sb5.charAt(sb5.length() - 2) == ',') {
+            if (sb3.charAt(sb3.length() - 2) == ',') {
                 for (int i = 0; i < 2; i++) {
-                    Intrinsics.checkNotNullExpressionValue(sb5.deleteCharAt(sb5.length() - 1), "deleteCharAt(...)");
+                    Intrinsics.checkNotNullExpressionValue(sb3.deleteCharAt(sb3.length() - 1), "deleteCharAt(...)");
                 }
             }
-            StringBuilder append9 = sb5.append(") {");
-            Intrinsics.checkNotNullExpressionValue(append9, "append(...)");
-            Intrinsics.checkNotNullExpressionValue(append9.append('\n'), "append(...)");
-            StringBuilder append10 = sb5.append(StringsKt.prependIndent(builderString(alternativesParsingFormatStructure.getMainFormat(), constants), CODE_INDENT));
-            Intrinsics.checkNotNullExpressionValue(append10, "append(...)");
-            Intrinsics.checkNotNullExpressionValue(append10.append('\n'), "append(...)");
-            sb5.append("}");
-            String sb6 = sb5.toString();
-            Intrinsics.checkNotNullExpressionValue(sb6, "toString(...)");
-            return sb6;
-        } else if (formatStructure instanceof ConcatenatedFormatStructure) {
-            StringBuilder sb7 = new StringBuilder();
+            sb3.append(") {").append('\n');
+            sb3.append(StringsKt.prependIndent(builderString(alternativesParsingFormatStructure.getMainFormat(), constants), CODE_INDENT)).append('\n');
+            sb3.append("}");
+            return sb3.toString();
+        } else if (!(formatStructure instanceof ConcatenatedFormatStructure)) {
+            throw new NoWhenBranchMatchedException();
+        } else {
+            StringBuilder sb4 = new StringBuilder();
             ConcatenatedFormatStructure concatenatedFormatStructure = (ConcatenatedFormatStructure) formatStructure;
             if (!concatenatedFormatStructure.getFormats().isEmpty()) {
                 int i2 = 0;
@@ -178,30 +153,24 @@ public final class DateTimeFormatBuilderKt {
                                         break;
                                     }
                                 }
-                                sb7.append(next.getFirst());
+                                sb4.append(next.getFirst());
                                 i2 += formats.size();
                                 if (i2 < concatenatedFormatStructure.getFormats().size()) {
-                                    Intrinsics.checkNotNullExpressionValue(sb7.append('\n'), "append(...)");
+                                    sb4.append('\n');
                                 }
                             }
                         } else {
                             if (i2 == concatenatedFormatStructure.getFormats().size() - 1) {
-                                sb7.append(builderString((FormatStructure) CollectionsKt.last((List<? extends Object>) concatenatedFormatStructure.getFormats()), constants));
+                                sb4.append(builderString((FormatStructure) CollectionsKt.last((List<? extends Object>) concatenatedFormatStructure.getFormats()), constants));
                             } else {
-                                StringBuilder append11 = sb7.append(builderString(concatenatedFormatStructure.getFormats().get(i2), constants));
-                                Intrinsics.checkNotNullExpressionValue(append11, "append(...)");
-                                Intrinsics.checkNotNullExpressionValue(append11.append('\n'), "append(...)");
+                                sb4.append(builderString(concatenatedFormatStructure.getFormats().get(i2), constants)).append('\n');
                             }
                             i2++;
                         }
                     }
                 }
             }
-            String sb8 = sb7.toString();
-            Intrinsics.checkNotNullExpressionValue(sb8, "toString(...)");
-            return sb8;
-        } else {
-            throw new NoWhenBranchMatchedException();
+            return sb4.toString();
         }
     }
 }

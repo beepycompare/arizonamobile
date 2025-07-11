@@ -16,10 +16,10 @@ public final class Zn extends MessageNano {
     public static volatile Zn[] i;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f744a;
+    public byte[] f745a;
     public int b;
-    public C0148ao c;
-    public C0174bo d;
+    public C0140ao c;
+    public C0166bo d;
 
     public Zn() {
         a();
@@ -37,7 +37,7 @@ public final class Zn extends MessageNano {
     }
 
     public final Zn a() {
-        this.f744a = WireFormatNano.EMPTY_BYTES;
+        this.f745a = WireFormatNano.EMPTY_BYTES;
         this.b = 0;
         this.c = null;
         this.d = null;
@@ -47,26 +47,26 @@ public final class Zn extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeInt32Size = CodedOutputByteBufferNano.computeInt32Size(2, this.b) + CodedOutputByteBufferNano.computeBytesSize(1, this.f744a) + super.computeSerializedSize();
-        C0148ao c0148ao = this.c;
-        if (c0148ao != null) {
-            computeInt32Size += CodedOutputByteBufferNano.computeMessageSize(3, c0148ao);
+        int computeInt32Size = CodedOutputByteBufferNano.computeInt32Size(2, this.b) + CodedOutputByteBufferNano.computeBytesSize(1, this.f745a) + super.computeSerializedSize();
+        C0140ao c0140ao = this.c;
+        if (c0140ao != null) {
+            computeInt32Size += CodedOutputByteBufferNano.computeMessageSize(3, c0140ao);
         }
-        C0174bo c0174bo = this.d;
-        return c0174bo != null ? CodedOutputByteBufferNano.computeMessageSize(4, c0174bo) + computeInt32Size : computeInt32Size;
+        C0166bo c0166bo = this.d;
+        return c0166bo != null ? CodedOutputByteBufferNano.computeMessageSize(4, c0166bo) + computeInt32Size : computeInt32Size;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeBytes(1, this.f744a);
+        codedOutputByteBufferNano.writeBytes(1, this.f745a);
         codedOutputByteBufferNano.writeInt32(2, this.b);
-        C0148ao c0148ao = this.c;
-        if (c0148ao != null) {
-            codedOutputByteBufferNano.writeMessage(3, c0148ao);
+        C0140ao c0140ao = this.c;
+        if (c0140ao != null) {
+            codedOutputByteBufferNano.writeMessage(3, c0140ao);
         }
-        C0174bo c0174bo = this.d;
-        if (c0174bo != null) {
-            codedOutputByteBufferNano.writeMessage(4, c0174bo);
+        C0166bo c0166bo = this.d;
+        if (c0166bo != null) {
+            codedOutputByteBufferNano.writeMessage(4, c0166bo);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -79,7 +79,7 @@ public final class Zn extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f744a = codedInputByteBufferNano.readBytes();
+                this.f745a = codedInputByteBufferNano.readBytes();
             } else if (readTag == 16) {
                 int readInt32 = codedInputByteBufferNano.readInt32();
                 if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2 || readInt32 == 3) {
@@ -87,7 +87,7 @@ public final class Zn extends MessageNano {
                 }
             } else if (readTag == 26) {
                 if (this.c == null) {
-                    this.c = new C0148ao();
+                    this.c = new C0140ao();
                 }
                 codedInputByteBufferNano.readMessage(this.c);
             } else if (readTag != 34) {
@@ -96,7 +96,7 @@ public final class Zn extends MessageNano {
                 }
             } else {
                 if (this.d == null) {
-                    this.d = new C0174bo();
+                    this.d = new C0166bo();
                 }
                 codedInputByteBufferNano.readMessage(this.d);
             }

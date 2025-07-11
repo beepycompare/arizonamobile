@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NewsInteractor.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.news.domain.NewsInteractor", f = "NewsInteractor.kt", i = {}, l = {56}, m = "getNews", n = {}, s = {})
 /* loaded from: classes4.dex */
 public final class NewsInteractor$getNews$1 extends ContinuationImpl {

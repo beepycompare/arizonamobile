@@ -5,18 +5,18 @@ import android.content.Context;
 public abstract class Mi {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f538a;
+    protected final Context f539a;
     public final String b;
     public final String c;
 
     public Mi(Context context, String str, String str2) {
-        this.f538a = context;
+        this.f539a = context;
         this.b = str;
         this.c = str2;
     }
 
     public final Object a() {
-        int identifier = this.f538a.getResources().getIdentifier(this.b, this.c, this.f538a.getPackageName());
+        int identifier = this.f539a.getResources().getIdentifier(this.b, this.c, this.f539a.getPackageName());
         if (identifier != 0) {
             try {
                 return a(identifier);

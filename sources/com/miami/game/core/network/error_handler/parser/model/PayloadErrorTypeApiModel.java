@@ -8,7 +8,7 @@ import kotlin.enums.EnumEntriesKt;
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* compiled from: PayloadErrorTypeApiModel.kt */
-@Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\f\b\u0080\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\f¨\u0006\r"}, d2 = {"Lcom/miami/game/core/network/error_handler/parser/model/PayloadErrorTypeApiModel;", "", "<init>", "(Ljava/lang/String;I)V", "EMAIL", "PASSWORD", "REFRESH_TOKEN", "TOKEN", "PREFERRED_CURRENCY", "REFERRAL", "REGISTRATION_SOURCE_ID", "OLD_PASSWORD", "NEW_PASSWORD", "network_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\f\b\u0080\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\f¨\u0006\r"}, d2 = {"Lcom/miami/game/core/network/error_handler/parser/model/PayloadErrorTypeApiModel;", "", "<init>", "(Ljava/lang/String;I)V", "EMAIL", "PASSWORD", "REFRESH_TOKEN", "TOKEN", "PREFERRED_CURRENCY", "REFERRAL", "REGISTRATION_SOURCE_ID", "OLD_PASSWORD", "NEW_PASSWORD", "network_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class PayloadErrorTypeApiModel {
     private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -40,6 +40,14 @@ public final class PayloadErrorTypeApiModel {
         return $ENTRIES;
     }
 
+    public static PayloadErrorTypeApiModel valueOf(String str) {
+        return (PayloadErrorTypeApiModel) Enum.valueOf(PayloadErrorTypeApiModel.class, str);
+    }
+
+    public static PayloadErrorTypeApiModel[] values() {
+        return (PayloadErrorTypeApiModel[]) $VALUES.clone();
+    }
+
     private PayloadErrorTypeApiModel(String str, int i) {
     }
 
@@ -47,13 +55,5 @@ public final class PayloadErrorTypeApiModel {
         PayloadErrorTypeApiModel[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static PayloadErrorTypeApiModel valueOf(String str) {
-        return (PayloadErrorTypeApiModel) Enum.valueOf(PayloadErrorTypeApiModel.class, str);
-    }
-
-    public static PayloadErrorTypeApiModel[] values() {
-        return (PayloadErrorTypeApiModel[]) $VALUES.clone();
     }
 }

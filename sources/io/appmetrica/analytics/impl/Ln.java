@@ -7,66 +7,66 @@ import java.util.List;
 public final class Ln implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0773zn f523a;
+    public final C0765zn f524a;
     public final V b;
     public final A6 c;
-    public final C0746yl d;
+    public final C0738yl d;
     public final Te e;
     public final Ue f;
 
     public Ln() {
-        this(new C0773zn(), new V(new C0573rn()), new A6(), new C0746yl(), new Te(), new Ue());
+        this(new C0765zn(), new V(new C0565rn()), new A6(), new C0738yl(), new Te(), new Ue());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0482o6 fromModel(Kn kn) {
-        C0482o6 c0482o6 = new C0482o6();
-        An an = kn.f509a;
+    public final C0474o6 fromModel(Kn kn) {
+        C0474o6 c0474o6 = new C0474o6();
+        An an = kn.f510a;
         if (an != null) {
-            c0482o6.f968a = this.f523a.fromModel(an);
+            c0474o6.f969a = this.f524a.fromModel(an);
         }
         U u = kn.b;
         if (u != null) {
-            c0482o6.b = this.b.fromModel(u);
+            c0474o6.b = this.b.fromModel(u);
         }
         List<Al> list = kn.c;
         if (list != null) {
-            c0482o6.e = this.d.fromModel(list);
+            c0474o6.e = this.d.fromModel(list);
         }
         String str = kn.g;
         if (str != null) {
-            c0482o6.c = str;
+            c0474o6.c = str;
         }
-        c0482o6.d = this.c.a(kn.h);
+        c0474o6.d = this.c.a(kn.h);
         if (!TextUtils.isEmpty(kn.d)) {
-            c0482o6.h = this.e.fromModel(kn.d);
+            c0474o6.h = this.e.fromModel(kn.d);
         }
         if (!TextUtils.isEmpty(kn.e)) {
-            c0482o6.i = kn.e.getBytes();
+            c0474o6.i = kn.e.getBytes();
         }
         if (!fo.a(kn.f)) {
-            c0482o6.j = this.f.fromModel(kn.f);
+            c0474o6.j = this.f.fromModel(kn.f);
         }
-        return c0482o6;
+        return c0474o6;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        C0482o6 c0482o6 = (C0482o6) obj;
+        C0474o6 c0474o6 = (C0474o6) obj;
         throw new UnsupportedOperationException();
     }
 
-    public Ln(C0773zn c0773zn, V v, A6 a6, C0746yl c0746yl, Te te, Ue ue) {
+    public Ln(C0765zn c0765zn, V v, A6 a6, C0738yl c0738yl, Te te, Ue ue) {
         this.b = v;
-        this.f523a = c0773zn;
+        this.f524a = c0765zn;
         this.c = a6;
-        this.d = c0746yl;
+        this.d = c0738yl;
         this.e = te;
         this.f = ue;
     }
 
-    public final Kn a(C0482o6 c0482o6) {
+    public final Kn a(C0474o6 c0474o6) {
         throw new UnsupportedOperationException();
     }
 }

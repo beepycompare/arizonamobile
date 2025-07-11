@@ -10,10 +10,10 @@ import kotlin.collections.CollectionsKt;
 public final class Ve {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0262fa f673a;
+    public final C0254fa f674a;
 
-    public Ve(C0262fa c0262fa) {
-        this.f673a = c0262fa;
+    public Ve(C0254fa c0254fa) {
+        this.f674a = c0254fa;
     }
 
     public final Kn a(PluginErrorDetails pluginErrorDetails) {
@@ -24,8 +24,8 @@ public final class Ve {
         String platform = pluginErrorDetails.getPlatform();
         String virtualMachineVersion = pluginErrorDetails.getVirtualMachineVersion();
         Map<String, String> pluginEnvironment = pluginErrorDetails.getPluginEnvironment();
-        String str = (String) this.f673a.b.a();
-        Boolean bool = (Boolean) this.f673a.c.a();
+        String str = (String) this.f674a.b.a();
+        Boolean bool = (Boolean) this.f674a.c.a();
         if (stacktrace != null) {
             arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(stacktrace, 10));
             for (StackTraceItem stackTraceItem : stacktrace) {

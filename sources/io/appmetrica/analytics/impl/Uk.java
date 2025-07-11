@@ -7,30 +7,30 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListe
 public final class Uk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0450n f662a;
+    public final C0442n f663a;
     public final F5 b;
     public final ActivityLifecycleListener c;
     public final ActivityLifecycleListener d;
-    public final C0500p e;
-    public final C0400l f;
+    public final C0492p e;
+    public final C0392l f;
     public boolean g;
 
-    public Uk(C0450n c0450n, C0400l c0400l) {
-        this(c0450n, c0400l, new F5(), new C0500p());
+    public Uk(C0442n c0442n, C0392l c0392l) {
+        this(c0442n, c0392l, new F5(), new C0492p());
     }
 
     public final void a(final Activity activity, ActivityEvent activityEvent) {
         synchronized (this) {
             if (this.g) {
                 F5 f5 = this.b;
-                InterfaceC0465ne interfaceC0465ne = new InterfaceC0465ne() { // from class: io.appmetrica.analytics.impl.Uk$$ExternalSyntheticLambda1
-                    @Override // io.appmetrica.analytics.impl.InterfaceC0465ne
+                InterfaceC0457ne interfaceC0457ne = new InterfaceC0457ne() { // from class: io.appmetrica.analytics.impl.Uk$$ExternalSyntheticLambda1
+                    @Override // io.appmetrica.analytics.impl.InterfaceC0457ne
                     public final void consume(Object obj) {
                         Uk.this.a(activity, (Ac) obj);
                     }
                 };
                 f5.getClass();
-                C0704x4.l().c.a().execute(new E5(f5, interfaceC0465ne));
+                C0696x4.l().c.a().execute(new E5(f5, interfaceC0457ne));
             }
         }
     }
@@ -39,24 +39,24 @@ public final class Uk {
         synchronized (this) {
             if (this.g) {
                 F5 f5 = this.b;
-                InterfaceC0465ne interfaceC0465ne = new InterfaceC0465ne() { // from class: io.appmetrica.analytics.impl.Uk$$ExternalSyntheticLambda0
-                    @Override // io.appmetrica.analytics.impl.InterfaceC0465ne
+                InterfaceC0457ne interfaceC0457ne = new InterfaceC0457ne() { // from class: io.appmetrica.analytics.impl.Uk$$ExternalSyntheticLambda0
+                    @Override // io.appmetrica.analytics.impl.InterfaceC0457ne
                     public final void consume(Object obj) {
                         Uk.this.b(activity, (Ac) obj);
                     }
                 };
                 f5.getClass();
-                C0704x4.l().c.a().execute(new E5(f5, interfaceC0465ne));
+                C0696x4.l().c.a().execute(new E5(f5, interfaceC0457ne));
             }
         }
     }
 
-    public Uk(C0450n c0450n, C0400l c0400l, F5 f5, C0500p c0500p) {
+    public Uk(C0442n c0442n, C0392l c0392l, F5 f5, C0492p c0492p) {
         this.g = false;
-        this.f662a = c0450n;
-        this.f = c0400l;
+        this.f663a = c0442n;
+        this.f = c0392l;
         this.b = f5;
-        this.e = c0500p;
+        this.e = c0492p;
         this.c = new ActivityLifecycleListener() { // from class: io.appmetrica.analytics.impl.Uk$$ExternalSyntheticLambda2
             @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
             public final void onEvent(Activity activity, ActivityEvent activityEvent) {
@@ -72,22 +72,22 @@ public final class Uk {
     }
 
     public final void b(Activity activity, Ac ac) {
-        if (this.e.a(activity, EnumC0475o.PAUSED)) {
+        if (this.e.a(activity, EnumC0467o.PAUSED)) {
             ac.b(activity);
         }
     }
 
-    public final synchronized EnumC0425m a() {
+    public final synchronized EnumC0417m a() {
         if (!this.g) {
-            this.f662a.registerListener(this.c, ActivityEvent.RESUMED);
-            this.f662a.registerListener(this.d, ActivityEvent.PAUSED);
+            this.f663a.registerListener(this.c, ActivityEvent.RESUMED);
+            this.f663a.registerListener(this.d, ActivityEvent.PAUSED);
             this.g = true;
         }
-        return this.f662a.b;
+        return this.f663a.b;
     }
 
     public final void a(Activity activity, Ac ac) {
-        if (this.e.a(activity, EnumC0475o.RESUMED)) {
+        if (this.e.a(activity, EnumC0467o.RESUMED)) {
             ac.a(activity);
         }
     }

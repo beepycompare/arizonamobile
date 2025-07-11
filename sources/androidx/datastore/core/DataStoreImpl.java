@@ -340,7 +340,7 @@ public final class DataStoreImpl<T> implements DataStore<T> {
     public final Object handleUpdate(Message.Update<T> update, Continuation<? super Unit> continuation) {
         DataStoreImpl$handleUpdate$1 dataStoreImpl$handleUpdate$1;
         int i;
-        Object m8443constructorimpl;
+        Object m8471constructorimpl;
         CompletableDeferred<T> completableDeferred;
         CompletableDeferred<T> ack;
         State<T> currentState;
@@ -367,9 +367,9 @@ public final class DataStoreImpl<T> implements DataStore<T> {
                         th = th;
                         update = ack;
                         Result.Companion companion2 = Result.Companion;
-                        m8443constructorimpl = Result.m8443constructorimpl(ResultKt.createFailure(th));
+                        m8471constructorimpl = Result.m8471constructorimpl(ResultKt.createFailure(th));
                         completableDeferred = update;
-                        CompletableDeferredKt.completeWith(completableDeferred, m8443constructorimpl);
+                        CompletableDeferredKt.completeWith(completableDeferred, m8471constructorimpl);
                         return Unit.INSTANCE;
                     }
                     if (currentState instanceof Data) {
@@ -383,9 +383,9 @@ public final class DataStoreImpl<T> implements DataStore<T> {
                         CompletableDeferred<T> completableDeferred2 = ack;
                         obj = transformAndWrite;
                         update = completableDeferred2;
-                        m8443constructorimpl = Result.m8443constructorimpl(obj);
+                        m8471constructorimpl = Result.m8471constructorimpl(obj);
                         completableDeferred = update;
-                        CompletableDeferredKt.completeWith(completableDeferred, m8443constructorimpl);
+                        CompletableDeferredKt.completeWith(completableDeferred, m8471constructorimpl);
                         return Unit.INSTANCE;
                     }
                     if (!(currentState instanceof ReadException)) {
@@ -428,9 +428,9 @@ public final class DataStoreImpl<T> implements DataStore<T> {
                 }
                 ResultKt.throwOnFailure(obj);
                 update = update3;
-                m8443constructorimpl = Result.m8443constructorimpl(obj);
+                m8471constructorimpl = Result.m8471constructorimpl(obj);
                 completableDeferred = update;
-                CompletableDeferredKt.completeWith(completableDeferred, m8443constructorimpl);
+                CompletableDeferredKt.completeWith(completableDeferred, m8471constructorimpl);
                 return Unit.INSTANCE;
                 Function2<T, Continuation<? super T>, Object> transform2 = update2.getTransform();
                 CoroutineContext callerContext2 = update2.getCallerContext();
@@ -711,27 +711,27 @@ public final class DataStoreImpl<T> implements DataStore<T> {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't wrap try/catch for region: R(7:1|(2:3|(4:5|6|7|8))|83|6|7|8|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0091, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0090, code lost:
         r11 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x0092, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x0091, code lost:
         r7 = r2;
      */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x002f  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0043  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0073  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0086  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0095  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x002e  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0042  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x005c  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0094  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x00b2  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00ca  */
     /* JADX WARN: Removed duplicated region for block: B:58:0x010d  */
     /* JADX WARN: Removed duplicated region for block: B:66:0x012e  */
     /* JADX WARN: Removed duplicated region for block: B:71:0x0151  */
     /* JADX WARN: Removed duplicated region for block: B:74:0x015b  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x00ab A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x00ab A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r2v0, types: [int] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

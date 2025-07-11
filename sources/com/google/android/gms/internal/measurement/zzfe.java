@@ -1,56 +1,37 @@
 package com.google.android.gms.internal.measurement;
-
-import android.app.Activity;
-import android.app.Application;
-import android.os.Bundle;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzfe implements Application.ActivityLifecycleCallbacks {
-    final /* synthetic */ zzff zza;
+public final class zzfe extends zzma implements zznm {
+    private zzfe() {
+        throw null;
+    }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzfe(zzff zzffVar) {
-        this.zza = zzffVar;
+    public /* synthetic */ zzfe(byte[] bArr) {
+        super(zzff.zzq());
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityCreated(Activity activity, Bundle bundle) {
-        this.zza.zzW(new zzex(this, bundle, activity));
+    public final String zza() {
+        return ((zzff) this.zza).zzc();
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityDestroyed(Activity activity) {
-        this.zza.zzW(new zzfd(this, activity));
+    public final zzfe zzb(String str) {
+        zzaX();
+        ((zzff) this.zza).zzo(str);
+        return this;
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityPaused(Activity activity) {
-        this.zza.zzW(new zzfa(this, activity));
+    public final int zzc() {
+        return ((zzff) this.zza).zze();
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityResumed(Activity activity) {
-        this.zza.zzW(new zzez(this, activity));
+    public final zzfh zzd(int i) {
+        return ((zzff) this.zza).zzf(i);
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
-        zzcs zzcsVar = new zzcs();
-        this.zza.zzW(new zzfc(this, activity, zzcsVar));
-        Bundle zzb = zzcsVar.zzb(50L);
-        if (zzb != null) {
-            bundle.putAll(zzb);
-        }
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityStarted(Activity activity) {
-        this.zza.zzW(new zzey(this, activity));
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityStopped(Activity activity) {
-        this.zza.zzW(new zzfb(this, activity));
+    public final zzfe zze(int i, zzfh zzfhVar) {
+        zzaX();
+        ((zzff) this.zza).zzp(i, zzfhVar);
+        return this;
     }
 }

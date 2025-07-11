@@ -40,14 +40,14 @@ public class LimitedConcurrencyExecutor implements Executor {
         return new Runnable() { // from class: com.google.firebase.concurrent.LimitedConcurrencyExecutor$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                LimitedConcurrencyExecutor.this.m8221x96c64136(runnable);
+                LimitedConcurrencyExecutor.this.m8220x96c64136(runnable);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$decorate$0$com-google-firebase-concurrent-LimitedConcurrencyExecutor  reason: not valid java name */
-    public /* synthetic */ void m8221x96c64136(Runnable runnable) {
+    public /* synthetic */ void m8220x96c64136(Runnable runnable) {
         try {
             runnable.run();
         } finally {

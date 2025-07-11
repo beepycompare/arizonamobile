@@ -2,10 +2,10 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public abstract class Nd implements Yn, InterfaceC0478o2 {
+public abstract class Nd implements Yn, InterfaceC0470o2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f552a;
+    public final String f553a;
     public final int b;
     public final mo c;
     public final W2 d;
@@ -13,7 +13,7 @@ public abstract class Nd implements Yn, InterfaceC0478o2 {
 
     public Nd(int i, String str, mo moVar, W2 w2) {
         this.b = i;
-        this.f552a = str;
+        this.f553a = str;
         this.c = moVar;
         this.d = w2;
     }
@@ -21,9 +21,9 @@ public abstract class Nd implements Yn, InterfaceC0478o2 {
     public final Zn a() {
         Zn zn = new Zn();
         zn.b = this.b;
-        zn.f744a = this.f552a.getBytes();
-        zn.d = new C0174bo();
-        zn.c = new C0148ao();
+        zn.f745a = this.f553a.getBytes();
+        zn.d = new C0166bo();
+        zn.c = new C0140ao();
         return zn;
     }
 
@@ -35,7 +35,7 @@ public abstract class Nd implements Yn, InterfaceC0478o2 {
     }
 
     public final String c() {
-        return this.f552a;
+        return this.f553a;
     }
 
     public final mo d() {
@@ -47,11 +47,11 @@ public abstract class Nd implements Yn, InterfaceC0478o2 {
     }
 
     public final boolean f() {
-        ko a2 = this.c.a(this.f552a);
-        if (a2.f912a) {
+        ko a2 = this.c.a(this.f553a);
+        if (a2.f913a) {
             return true;
         }
-        this.e.warning("Attribute " + this.f552a + " of type " + ((String) In.f481a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
+        this.e.warning("Attribute " + this.f553a + " of type " + ((String) In.f482a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
         return false;
     }
 

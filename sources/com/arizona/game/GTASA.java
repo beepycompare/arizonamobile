@@ -104,6 +104,9 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     private native void viewShownStatusChanged(int viewBackendID, boolean shown);
 
+    public void SetDonateJsonURL(String text) {
+    }
+
     public native void initSAMP();
 
     public void removePLayerFromList(int id) {
@@ -183,7 +186,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         this.soundChecker = new SoundChecker(this);
         this.notifyChecker = new NotifyChecker(this);
         hideSystemUI();
-        getWindow().getDecorView().setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda29
+        getWindow().getDecorView().setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda28
             @Override // android.view.View.OnSystemUiVisibilityChangeListener
             public final void onSystemUiVisibilityChange(int i) {
                 GTASA.this.lambda$onCreate$0(i);
@@ -259,7 +262,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void destroyDialog() {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda40
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda39
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$destroyDialog$1();
@@ -309,7 +312,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     private void OnInputEndWrapper(final String str) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda27
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda26
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$OnInputEndWrapper$2(str);
@@ -330,8 +333,8 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         try {
             String channelsState = FirebaseConfigHelper.INSTANCE.getChannelsState();
             String str = Build.MANUFACTURER + StringUtils.PROCESS_POSTFIX_DELIMITER + Build.MODEL + StringUtils.PROCESS_POSTFIX_DELIMITER + getUniqueID() + StringUtils.PROCESS_POSTFIX_DELIMITER + (this.notifyChecker.isNotificationEnabled() ? "notify_on" : "notify_off");
-            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false) + "\n5. Version: (release_web) 2.1 - v16.3.7\n6. Last element ID: " + UIElementID.getLastUIElementID() + "\n7. Device name: " + str + "\n8. Token: " + getSettingsPreferences().getString("token", "") + "\n9. Channels state: " + channelsState);
-            InitSetting(true, show_fps, true, PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false), "(release_web) 2.1 - v16.3.7", UIElementID.getLastUIElementID(), str, getSettingsPreferences().getString("token", ""), channelsState);
+            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false) + "\n5. Version: (release_web) 2.1 - v16.4.0\n6. Last element ID: " + UIElementID.getLastUIElementID() + "\n7. Device name: " + str + "\n8. Token: " + getSettingsPreferences().getString("token", "") + "\n9. Channels state: " + channelsState);
+            InitSetting(true, show_fps, true, PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false), "(release_web) 2.1 - v16.4.0", UIElementID.getLastUIElementID(), str, getSettingsPreferences().getString("token", ""), channelsState);
             FirebaseCrashlytics.getInstance().setUserId(getUniqueID());
         } catch (LinkageError e) {
             Log.w(TAG, "Unable to call native method", e);
@@ -339,7 +342,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void initSAMPWrapper() {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda28
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$initSAMPWrapper$3();
@@ -375,7 +378,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void OnOnKeyboardClosedWrapper() {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda18
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$OnOnKeyboardClosedWrapper$5();
@@ -394,7 +397,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void sliderValueChangedWrapper(final int viewBackendID, final int elementID, final int value) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda8
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$sliderValueChangedWrapper$6(viewBackendID, elementID, value);
@@ -413,7 +416,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void onDialogResponseWrapper(final int dialogID, final int responseButtonID, final int listItemID, final byte[] inputText) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda39
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda38
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$onDialogResponseWrapper$7(dialogID, responseButtonID, listItemID, inputText);
@@ -432,7 +435,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void clickedWrapper(final int viewBackendID, final int elementID, final int subID, final byte[] payload) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda43
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda42
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$clickedWrapper$8(payload, viewBackendID, elementID, subID);
@@ -456,7 +459,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void clickedWrapper(final int viewBackendID, final int elementID, final int subID) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda16
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$clickedWrapper$9(viewBackendID, elementID, subID);
@@ -480,7 +483,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void switchStatusChangedWrapper(final int viewBackendID, final int elementID, final boolean state) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda44
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda43
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$switchStatusChangedWrapper$10(viewBackendID, elementID, state);
@@ -499,7 +502,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void viewShownStatusChangedWrapper(final int viewBackendID, final boolean shown) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda23
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda21
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$viewShownStatusChangedWrapper$11(viewBackendID, shown);
@@ -526,7 +529,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     public void clearPlayersList() {
         final LinkedList<Player> linkedList = this.playerLinkedList;
         Objects.requireNonNull(linkedList);
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda10
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 linkedList.clear();
@@ -540,7 +543,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void addPlayerToList(final int id, final byte[] name, final int level, final int ping, final int color) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda19
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda18
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$addPlayerToList$12(id, name, level, ping, color);
@@ -549,7 +552,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void submitPlayersList(final byte[] serverName) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda36
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$submitPlayersList$13(serverName);
@@ -564,7 +567,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void setPlayerListDialogServerName(final byte[] serverName) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda46
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda45
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$setPlayerListDialogServerName$14(serverName);
@@ -607,7 +610,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void notifySubscribe(final boolean subscribe, final byte[] topic) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda45
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda44
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.lambda$notifySubscribe$17(subscribe, topic);
@@ -618,14 +621,14 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void lambda$notifySubscribe$17(boolean z, byte[] bArr) {
         if (z) {
-            FirebaseMessaging.getInstance().subscribeToTopic(new String(bArr)).addOnCompleteListener(new OnCompleteListener() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda6
+            FirebaseMessaging.getInstance().subscribeToTopic(new String(bArr)).addOnCompleteListener(new OnCompleteListener() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda5
                 @Override // com.google.android.gms.tasks.OnCompleteListener
                 public final void onComplete(Task task) {
                     Log.d("notifySubscribe", r1.isSuccessful() ? "successfully" : "not successful");
                 }
             });
         } else {
-            FirebaseMessaging.getInstance().unsubscribeFromTopic(new String(bArr)).addOnCompleteListener(new OnCompleteListener() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda7
+            FirebaseMessaging.getInstance().unsubscribeFromTopic(new String(bArr)).addOnCompleteListener(new OnCompleteListener() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda6
                 @Override // com.google.android.gms.tasks.OnCompleteListener
                 public final void onComplete(Task task) {
                     Log.d("unsubscribeFromTopic", r1.isSuccessful() ? "successfully" : "not successful");
@@ -635,7 +638,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void sendAnalytics(final byte[] data, final int type) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda26
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda25
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$sendAnalytics$18(data, type);
@@ -649,7 +652,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void updateLocation(final byte[] location) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda25
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$updateLocation$19(location);
@@ -670,7 +673,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void OnUpdateData(final int data, final int value) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda3
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$OnUpdateData$20(data, value);
@@ -700,7 +703,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void SetInputLayout(final int type, final boolean is_chat) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda17
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$SetInputLayout$21(type, is_chat);
@@ -778,7 +781,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void setBinderState(final int index_binder, final boolean state) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda15
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$setBinderState$23(index_binder, state);
@@ -793,7 +796,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void setBinderName(final int index_binder, final byte[] name) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda2
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$setBinderName$24(index_binder, name);
@@ -808,7 +811,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void ShowMobileToolTip(final byte[] name, final int type) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda41
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda40
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$ShowMobileToolTip$25(name, type);
@@ -822,7 +825,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void addKeyboardHistory(final byte[] str) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda31
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda30
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$addKeyboardHistory$26(str);
@@ -903,7 +906,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void setUIElementVisible(final int elementId, final boolean visibility) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda30
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda29
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$setUIElementVisible$27(elementId, visibility);
@@ -974,7 +977,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void InstallHud(final int playerId, final int serverId, final int serverType, final int isStreamerMode) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda38
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda37
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$InstallHud$28(playerId, serverId, serverType, isStreamerMode);
@@ -997,7 +1000,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void InstallAuthorization() {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda12
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$InstallAuthorization$30();
@@ -1011,7 +1014,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void UpdateOnline(final int currentOnline) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda13
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$UpdateOnline$31(currentOnline);
@@ -1025,7 +1028,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void OnPlayerState(int currentState, int oldState) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda20
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda19
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.lambda$OnPlayerState$32();
@@ -1034,7 +1037,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void UpdateMoney(final int money) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda34
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda32
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$UpdateMoney$33(money);
@@ -1051,57 +1054,43 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$SetDonateJsonURL$34(String str) {
-        this.uiElementStore.getOrCreateDefault(UIElementID.ARIZONA_DONATE_SHOP).onBackendMessage(str, 1);
-    }
-
-    public void SetDonateJsonURL(final String text) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                GTASA.this.lambda$SetDonateJsonURL$34(text);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$SetAuthAwaitText$35(String str) {
+    public /* synthetic */ void lambda$SetAuthAwaitText$34(String str) {
         this.uiElementStore.getOrCreateDefault(UIElementID.AUTHORIZATION).onBackendMessage(str, 10);
     }
 
     public void SetAuthAwaitText(final String text) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda37
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$SetAuthAwaitText$35(text);
+                GTASA.this.lambda$SetAuthAwaitText$34(text);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setAutocompleteState$36(boolean z) {
+    public /* synthetic */ void lambda$setAutocompleteState$35(boolean z) {
         this.isAutocompleteEnabled = z;
     }
 
     public void setAutocompleteState(final boolean state) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda35
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$setAutocompleteState$36(state);
+                GTASA.this.lambda$setAutocompleteState$35(state);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$addSliderToAzVoiceSettings$37(byte[] bArr, int i, int i2, int i3) {
+    public /* synthetic */ void lambda$addSliderToAzVoiceSettings$36(byte[] bArr, int i, int i2, int i3) {
         ((AzVoiceSettings) this.uiElementStore.getOrCreate(UIElementID.VOICE_SETTINGS)).addSlider(new SoundSliderData(new String(bArr), i, i2, i3, -1, -1));
     }
 
     public int addSliderToAzVoiceSettings(final int minValue, final int maxValue, final int currentValue, final byte[] name) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda24
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$addSliderToAzVoiceSettings$37(name, maxValue, minValue, currentValue);
+                GTASA.this.lambda$addSliderToAzVoiceSettings$36(name, maxValue, minValue, currentValue);
             }
         });
         int i = this.voiceSettingPagination;
@@ -1110,35 +1099,35 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$removeAllSlidersFormPlayersVoiceSettings$38() {
+    public /* synthetic */ void lambda$removeAllSlidersFormPlayersVoiceSettings$37() {
         ((AzVoiceUserSettings) this.uiElementStore.getOrCreate(UIElementID.VOICE_PLAYERS_SETTINGS)).clearSliders();
     }
 
     public void removeAllSlidersFormPlayersVoiceSettings() {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda32
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda31
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$removeAllSlidersFormPlayersVoiceSettings$38();
+                GTASA.this.lambda$removeAllSlidersFormPlayersVoiceSettings$37();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$addSliderToAzVoicePlayersSettings$39(byte[] bArr, int i, int i2, int i3, int i4) {
+    public /* synthetic */ void lambda$addSliderToAzVoicePlayersSettings$38(byte[] bArr, int i, int i2, int i3, int i4) {
         ((AzVoiceUserSettings) this.uiElementStore.getOrCreate(UIElementID.VOICE_PLAYERS_SETTINGS)).addSlider(new SoundSliderData(new String(bArr), i, i2, i3, i4, -1));
     }
 
     public void addSliderToAzVoicePlayersSettings(final int minValue, final int maxValue, final int currentValue, final byte[] playerName, final int playerId) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda4
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$addSliderToAzVoicePlayersSettings$39(playerName, maxValue, minValue, currentValue, playerId);
+                GTASA.this.lambda$addSliderToAzVoicePlayersSettings$38(playerName, maxValue, minValue, currentValue, playerId);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$removeSliderFromAzVoicePlayerSettingsByPlayerId$40(int i) {
+    public /* synthetic */ void lambda$removeSliderFromAzVoicePlayerSettingsByPlayerId$39(int i) {
         ((AzVoiceUserSettings) this.uiElementStore.getOrCreate(UIElementID.VOICE_PLAYERS_SETTINGS)).removeSliderByPlayerId(i);
     }
 
@@ -1146,36 +1135,36 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$removeSliderFromAzVoicePlayerSettingsByPlayerId$40(id);
+                GTASA.this.lambda$removeSliderFromAzVoicePlayerSettingsByPlayerId$39(id);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$removeSliderFromAzVoiceSettingsBySliderId$41(int i) {
+    public /* synthetic */ void lambda$removeSliderFromAzVoiceSettingsBySliderId$40(int i) {
         ((AzVoiceSettings) this.uiElementStore.getOrCreate(UIElementID.VOICE_SETTINGS)).removeSlider(i);
     }
 
     public void removeSliderFromAzVoiceSettingsBySliderId(final int id) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda14
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$removeSliderFromAzVoiceSettingsBySliderId$41(id);
+                GTASA.this.lambda$removeSliderFromAzVoiceSettingsBySliderId$40(id);
             }
         });
     }
 
     public void setAzVoiceUserSliders(final byte[][] names, final int[] playerIDs, final int[] values, final int maxVal, final int minVal) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda21
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$setAzVoiceUserSliders$42(names, playerIDs, values, maxVal, minVal);
+                GTASA.this.lambda$setAzVoiceUserSliders$41(names, playerIDs, values, maxVal, minVal);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setAzVoiceUserSliders$42(byte[][] bArr, int[] iArr, int[] iArr2, int i, int i2) {
+    public /* synthetic */ void lambda$setAzVoiceUserSliders$41(byte[][] bArr, int[] iArr, int[] iArr2, int i, int i2) {
         if (bArr.length != iArr.length || iArr.length != iArr2.length) {
             throw new IllegalArgumentException("Arrays must have same size");
         }
@@ -1187,30 +1176,30 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showMessageFromNotification$43(Integer num) {
+    public /* synthetic */ void lambda$showMessageFromNotification$42(Integer num) {
         this.uiElementStore.getOrCreateDefault(UIElementID.ARIZONA_MOBILE_PHONE).onBackendMessage(num.toString(), 50);
     }
 
     public void showMessageFromNotification(final Integer notificationId) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda9
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$showMessageFromNotification$43(notificationId);
+                GTASA.this.lambda$showMessageFromNotification$42(notificationId);
             }
         });
     }
 
     public void showPlayerDialog(final int sampDialogID, final int style, final byte[] caption, final byte[] infoText, final byte[] leftButton, final byte[] rightButton) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda42
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda41
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$showPlayerDialog$44(sampDialogID, style, caption, infoText, leftButton, rightButton);
+                GTASA.this.lambda$showPlayerDialog$43(sampDialogID, style, caption, infoText, leftButton, rightButton);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPlayerDialog$44(int i, int i2, byte[] bArr, byte[] bArr2, byte[] bArr3, byte[] bArr4) {
+    public /* synthetic */ void lambda$showPlayerDialog$43(int i, int i2, byte[] bArr, byte[] bArr2, byte[] bArr3, byte[] bArr4) {
         destroyDialog();
         this.uiElements.put(Integer.valueOf(UIElementID.DIALOG.getId()), DialogFactory.INSTANCE.createDialog(this, i, i2, new String(bArr), new String(bArr2), new String(bArr3), new String(bArr4), UIElementID.DIALOG.getId()));
     }
@@ -1226,16 +1215,16 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void sendFrontendMessage(final int frontendID, final int subID, final String message) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda5
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$sendFrontendMessage$45(frontendID, subID, message);
+                GTASA.this.lambda$sendFrontendMessage$44(frontendID, subID, message);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendFrontendMessage$45(int i, int i2, String str) {
+    public /* synthetic */ void lambda$sendFrontendMessage$44(int i, int i2, String str) {
         UIElementID uIElementID = UIElementID.getUIElementID(i, FlavorUtilKt.getProjectType());
         Log.i(TAG, "sendFrontendMessage: name:" + uIElementID.name() + ", id:" + i + ", subID:" + i2 + "\nJSON: " + str);
         FirebaseCrashlytics.getInstance().setCustomKeys(new CustomKeysAndValues.Builder().putInt("sendFrontendMessage_frontendID", i).putInt("sendFrontendMessage_subID", i2).putString("sendFrontendMessage_message", str).build());

@@ -1,20 +1,20 @@
 package kotlinx.datetime.format;
 
-import java.util.Set;
 import kotlin.Metadata;
-import kotlin.jvm.internal.Intrinsics;
-import kotlinx.datetime.internal.format.StringFieldFormatDirective;
+import kotlin.collections.CollectionsKt;
+import kotlinx.datetime.internal.format.FieldFormatDirective;
+import kotlinx.datetime.internal.format.FieldSpec;
+import kotlinx.datetime.internal.format.formatter.FormatterStructure;
+import kotlinx.datetime.internal.format.formatter.StringFormatterStructure;
+import kotlinx.datetime.internal.format.parser.ParserStructure;
+import kotlinx.datetime.internal.format.parser.TimeZoneParserOperation;
 /* compiled from: DateTimeComponents.kt */
-@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\"\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\b\u0000\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0013\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\u0010\u0006J\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\rH\u0096\u0002J\b\u0010\u000e\u001a\u00020\u000fH\u0016R\u0014\u0010\u0007\u001a\u00020\u00058VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\tR\u0014\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lkotlinx/datetime/format/TimeZoneIdDirective;", "Lkotlinx/datetime/internal/format/StringFieldFormatDirective;", "Lkotlinx/datetime/format/DateTimeComponentsContents;", "knownZones", "", "", "(Ljava/util/Set;)V", "builderRepresentation", "getBuilderRepresentation", "()Ljava/lang/String;", "equals", "", "other", "", "hashCode", "", "kotlinx-datetime"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0000\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000e\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00020\u000eH\u0016J\u000e\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00020\u0010H\u0016R \u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00070\u00068VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u00020\u00078VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000b\u0010\f¨\u0006\u0011"}, d2 = {"Lkotlinx/datetime/format/TimeZoneIdDirective;", "Lkotlinx/datetime/internal/format/FieldFormatDirective;", "Lkotlinx/datetime/format/DateTimeComponentsContents;", "<init>", "()V", "field", "Lkotlinx/datetime/internal/format/FieldSpec;", "", "getField", "()Lkotlinx/datetime/internal/format/FieldSpec;", "builderRepresentation", "getBuilderRepresentation", "()Ljava/lang/String;", "formatter", "Lkotlinx/datetime/internal/format/formatter/FormatterStructure;", "parser", "Lkotlinx/datetime/internal/format/parser/ParserStructure;", "kotlinx-datetime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
-public final class TimeZoneIdDirective extends StringFieldFormatDirective<DateTimeComponentsContents> {
-    private final Set<String> knownZones;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public TimeZoneIdDirective(Set<String> knownZones) {
-        super(DateTimeComponentsKt.getTimeZoneField(), knownZones);
-        Intrinsics.checkNotNullParameter(knownZones, "knownZones");
-        this.knownZones = knownZones;
+public final class TimeZoneIdDirective implements FieldFormatDirective<DateTimeComponentsContents> {
+    @Override // kotlinx.datetime.internal.format.FieldFormatDirective
+    public FieldSpec<DateTimeComponentsContents, ?> getField() {
+        return DateTimeComponentsKt.getTimeZoneField();
     }
 
     @Override // kotlinx.datetime.internal.format.FieldFormatDirective
@@ -22,11 +22,13 @@ public final class TimeZoneIdDirective extends StringFieldFormatDirective<DateTi
         return "timeZoneId()";
     }
 
-    public boolean equals(Object obj) {
-        return (obj instanceof TimeZoneIdDirective) && Intrinsics.areEqual(((TimeZoneIdDirective) obj).knownZones, this.knownZones);
+    @Override // kotlinx.datetime.internal.format.FieldFormatDirective
+    public FormatterStructure<DateTimeComponentsContents> formatter() {
+        return new StringFormatterStructure(new TimeZoneIdDirective$formatter$1(getField().getAccessor()));
     }
 
-    public int hashCode() {
-        return this.knownZones.hashCode();
+    @Override // kotlinx.datetime.internal.format.FieldFormatDirective
+    public ParserStructure<DateTimeComponentsContents> parser() {
+        return new ParserStructure<>(CollectionsKt.listOf(new TimeZoneParserOperation(DateTimeComponentsKt.getTimeZoneField().getAccessor())), CollectionsKt.emptyList());
     }
 }

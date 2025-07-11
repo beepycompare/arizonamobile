@@ -6,8 +6,8 @@ import io.appmetrica.analytics.internal.IAppMetricaService;
 public final class De extends Ih {
     public final Nf e;
 
-    public De(C0426m0 c0426m0, Wk wk, Nf nf) {
-        super(c0426m0, wk);
+    public De(C0418m0 c0418m0, Wk wk, Nf nf) {
+        super(c0418m0, wk);
         this.e = nf;
     }
 

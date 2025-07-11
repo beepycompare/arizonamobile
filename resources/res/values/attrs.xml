@@ -1215,6 +1215,8 @@
     </attr>
     <attr name="enabled" format="boolean">
     </attr>
+    <attr name="endColor" format="color">
+    </attr>
     <attr name="endIconCheckable" format="boolean">
     </attr>
     <attr name="endIconContentDescription" format="string">
@@ -3418,6 +3420,8 @@
     <attr name="stackFromEnd" format="boolean">
     </attr>
     <attr name="staggered" format="float">
+    </attr>
+    <attr name="startColor" format="color">
     </attr>
     <attr name="startDestination" format="reference">
     </attr>

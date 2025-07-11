@@ -43,7 +43,7 @@ public final class PersistentVector<E> extends AbstractPersistentList<E> impleme
         if (size() <= 32) {
             throw new IllegalArgumentException(("Trie-based persistent vector should have at least 33 elements, got " + size()).toString());
         }
-        CommonFunctionsKt.m9935assert(size() - UtilsKt.rootSize(size()) <= RangesKt.coerceAtMost(tail.length, 32));
+        CommonFunctionsKt.m9966assert(size() - UtilsKt.rootSize(size()) <= RangesKt.coerceAtMost(tail.length, 32));
     }
 
     private final int rootSize() {
@@ -170,7 +170,7 @@ public final class PersistentVector<E> extends AbstractPersistentList<E> impleme
 
     private final PersistentList<E> removeFromTailAt(Object[] objArr, int i, int i2, int i3) {
         int size = size() - i;
-        CommonFunctionsKt.m9935assert(i3 < size);
+        CommonFunctionsKt.m9966assert(i3 < size);
         if (size == 1) {
             return pullLastBufferFromRoot(objArr, i, i2);
         }

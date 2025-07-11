@@ -1,112 +1,115 @@
 package com.google.android.gms.measurement.internal;
 
+import com.google.android.gms.internal.measurement.zzpq;
+import java.util.Objects;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzac extends zzab {
-    final /* synthetic */ zzae zza;
-    private final com.google.android.gms.internal.measurement.zzfr zzh;
+    final /* synthetic */ zzad zza;
+    private final com.google.android.gms.internal.measurement.zzfn zzh;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzac(zzae zzaeVar, String str, int i, com.google.android.gms.internal.measurement.zzfr zzfrVar) {
+    public zzac(zzad zzadVar, String str, int i, com.google.android.gms.internal.measurement.zzfn zzfnVar) {
         super(str, i);
-        this.zza = zzaeVar;
-        this.zzh = zzfrVar;
+        Objects.requireNonNull(zzadVar);
+        this.zza = zzadVar;
+        this.zzh = zzfnVar;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.gms.measurement.internal.zzab
     public final int zza() {
-        return this.zzh.zza();
+        return this.zzh.zzb();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.gms.measurement.internal.zzab
     public final boolean zzb() {
-        return false;
+        return true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.gms.measurement.internal.zzab
     public final boolean zzc() {
-        return true;
+        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzd(Long l, Long l2, com.google.android.gms.internal.measurement.zzio zzioVar, boolean z) {
-        com.google.android.gms.internal.measurement.zzpq.zzb();
-        zzio zzioVar2 = this.zza.zzu;
-        boolean zzx = zzioVar2.zzf().zzx(this.zzb, zzgi.zzaC);
-        com.google.android.gms.internal.measurement.zzfr zzfrVar = this.zzh;
-        boolean zzg = zzfrVar.zzg();
-        boolean zzh = zzfrVar.zzh();
-        boolean zzi = zzfrVar.zzi();
-        Object[] objArr = (zzg || zzh || zzi) ? 1 : null;
+    public final boolean zzd(Long l, Long l2, com.google.android.gms.internal.measurement.zziu zziuVar, boolean z) {
+        zzpq.zza();
+        zzib zzibVar = this.zza.zzu;
+        boolean zzp = zzibVar.zzc().zzp(this.zzb, zzfx.zzaD);
+        com.google.android.gms.internal.measurement.zzfn zzfnVar = this.zzh;
+        boolean zze = zzfnVar.zze();
+        boolean zzf = zzfnVar.zzf();
+        boolean zzh = zzfnVar.zzh();
+        Object[] objArr = (zze || zzf || zzh) ? 1 : null;
         Boolean bool = null;
         bool = null;
         bool = null;
         bool = null;
         bool = null;
         if (!z || objArr != null) {
-            com.google.android.gms.internal.measurement.zzfl zzb = zzfrVar.zzb();
-            boolean zzg2 = zzb.zzg();
-            if (zzioVar.zzt()) {
-                if (!zzb.zzi()) {
-                    zzioVar2.zzaW().zzk().zzb("No number filter for long property. property", zzioVar2.zzj().zzf(zzioVar.zzg()));
+            com.google.android.gms.internal.measurement.zzfh zzd = zzfnVar.zzd();
+            boolean zzf2 = zzd.zzf();
+            if (zziuVar.zzf()) {
+                if (!zzd.zzc()) {
+                    zzibVar.zzaV().zze().zzb("No number filter for long property. property", zzibVar.zzl().zzc(zziuVar.zzc()));
                 } else {
-                    bool = zzj(zzh(zzioVar.zzc(), zzb.zzc()), zzg2);
+                    bool = zze(zzg(zziuVar.zzg(), zzd.zzd()), zzf2);
                 }
-            } else if (zzioVar.zzr()) {
-                if (!zzb.zzi()) {
-                    zzioVar2.zzaW().zzk().zzb("No number filter for double property. property", zzioVar2.zzj().zzf(zzioVar.zzg()));
+            } else if (zziuVar.zzj()) {
+                if (!zzd.zzc()) {
+                    zzibVar.zzaV().zze().zzb("No number filter for double property. property", zzibVar.zzl().zzc(zziuVar.zzc()));
                 } else {
-                    bool = zzj(zzg(zzioVar.zza(), zzb.zzc()), zzg2);
+                    bool = zze(zzh(zziuVar.zzk(), zzd.zzd()), zzf2);
                 }
-            } else if (zzioVar.zzv()) {
-                if (!zzb.zzk()) {
-                    if (!zzb.zzi()) {
-                        zzioVar2.zzaW().zzk().zzb("No string or number filter defined. property", zzioVar2.zzj().zzf(zzioVar.zzg()));
-                    } else if (zzqa.zzA(zzioVar.zzh())) {
-                        bool = zzj(zzi(zzioVar.zzh(), zzb.zzc()), zzg2);
+            } else if (zziuVar.zzd()) {
+                if (!zzd.zza()) {
+                    if (!zzd.zzc()) {
+                        zzibVar.zzaV().zze().zzb("No string or number filter defined. property", zzibVar.zzl().zzc(zziuVar.zzc()));
+                    } else if (zzpj.zzm(zziuVar.zze())) {
+                        bool = zze(zzi(zziuVar.zze(), zzd.zzd()), zzf2);
                     } else {
-                        zzioVar2.zzaW().zzk().zzc("Invalid user property value for Numeric number filter. property, value", zzioVar2.zzj().zzf(zzioVar.zzg()), zzioVar.zzh());
+                        zzibVar.zzaV().zze().zzc("Invalid user property value for Numeric number filter. property, value", zzibVar.zzl().zzc(zziuVar.zzc()), zziuVar.zze());
                     }
                 } else {
-                    bool = zzj(zzf(zzioVar.zzh(), zzb.zzd(), zzioVar2.zzaW()), zzg2);
+                    bool = zze(zzf(zziuVar.zze(), zzd.zzb(), zzibVar.zzaV()), zzf2);
                 }
             } else {
-                zzioVar2.zzaW().zzk().zzb("User property has no value, property", zzioVar2.zzj().zzf(zzioVar.zzg()));
+                zzibVar.zzaV().zze().zzb("User property has no value, property", zzibVar.zzl().zzc(zziuVar.zzc()));
             }
-            zzioVar2.zzaW().zzj().zzb("Property filter result", bool == null ? AbstractJsonLexerKt.NULL : bool);
+            zzibVar.zzaV().zzk().zzb("Property filter result", bool == null ? AbstractJsonLexerKt.NULL : bool);
             if (bool == null) {
                 return false;
             }
             this.zzd = true;
-            if (!zzi || bool.booleanValue()) {
-                if (!z || zzfrVar.zzg()) {
+            if (!zzh || bool.booleanValue()) {
+                if (!z || zzfnVar.zze()) {
                     this.zze = bool;
                 }
-                if (bool.booleanValue() && objArr != null && zzioVar.zzu()) {
-                    long zzd = zzioVar.zzd();
+                if (bool.booleanValue() && objArr != null && zziuVar.zza()) {
+                    long zzb = zziuVar.zzb();
                     if (l != null) {
-                        zzd = l.longValue();
+                        zzb = l.longValue();
                     }
-                    if (zzx && zzfrVar.zzg() && !zzfrVar.zzh() && l2 != null) {
-                        zzd = l2.longValue();
+                    if (zzp && zzfnVar.zze() && !zzfnVar.zzf() && l2 != null) {
+                        zzb = l2.longValue();
                     }
-                    if (zzfrVar.zzh()) {
-                        this.zzg = Long.valueOf(zzd);
+                    if (zzfnVar.zzf()) {
+                        this.zzg = Long.valueOf(zzb);
                     } else {
-                        this.zzf = Long.valueOf(zzd);
+                        this.zzf = Long.valueOf(zzb);
                     }
                 }
                 return true;
             }
             return true;
         }
-        zzioVar2.zzaW().zzj().zzc("Property filter already evaluated true and it is not associated with an enhanced audience. audience ID, filter ID", Integer.valueOf(this.zzc), zzfrVar.zzj() ? Integer.valueOf(zzfrVar.zza()) : null);
+        zzibVar.zzaV().zzk().zzc("Property filter already evaluated true and it is not associated with an enhanced audience. audience ID, filter ID", Integer.valueOf(this.zzc), zzfnVar.zza() ? Integer.valueOf(zzfnVar.zzb()) : null);
         return true;
     }
 }

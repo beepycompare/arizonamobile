@@ -54,7 +54,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NotificationItem.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004\"\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"NotificationItem", "", "notificationModel", "Lcom/miami/game/feature/notifications/NotificationModel;", "(Lcom/miami/game/feature/notifications/NotificationModel;Landroidx/compose/runtime/Composer;I)V", "path", "Landroidx/compose/ui/graphics/Path;", "notifications_release_web"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004\"\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"NotificationItem", "", "notificationModel", "Lcom/miami/game/feature/notifications/NotificationModel;", "(Lcom/miami/game/feature/notifications/NotificationModel;Landroidx/compose/runtime/Composer;I)V", "path", "Landroidx/compose/ui/graphics/Path;", "notifications_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class NotificationItemKt {
     private static final Path path = PathParser.toPath$default(new PathParser().parsePathString("M997.9,14.8C995.6,6.1 987.7,0 978.6,0H20.1C6.9,0 -2.6,12.5 0.8,25.2L92.1,364.2C94.4,372.9 102.3,379 111.4,379H1069.9C1083.1,379 1092.6,366.5 1089.2,353.8L997.9,14.8Z"), null, 1, null);
@@ -72,26 +72,22 @@ public final class NotificationItemKt {
         Composer startRestartGroup = composer.startRestartGroup(-753000446);
         ComposerKt.sourceInformation(startRestartGroup, "C(NotificationItem)43@1811L32,44@1848L2433:NotificationItem.kt#21zkme");
         if ((i & 6) == 0) {
-            i2 = i | (startRestartGroup.changedInstance(notificationModel) ? 4 : 2);
+            i2 = (startRestartGroup.changedInstance(notificationModel) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
-        if ((i2 & 3) == 2 && startRestartGroup.getSkipping()) {
-            startRestartGroup.skipToGroupEnd();
-            composer2 = startRestartGroup;
-        } else {
+        if (startRestartGroup.shouldExecute((i2 & 3) != 2, i2 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-753000446, i2, -1, "com.miami.game.feature.notifications.presentation.NotificationItem (NotificationItem.kt:42)");
             }
-            startRestartGroup.startReplaceGroup(1849434622);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):NotificationItem.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2078919806, "CC(remember):NotificationItem.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new NotificationShape();
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             NotificationShape notificationShape = (NotificationShape) rememberedValue;
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -124,8 +120,7 @@ public final class NotificationItemKt {
             float f = 114;
             float f2 = 330;
             Modifier m790width3ABfNKs = SizeKt.m790width3ABfNKs(SizeKt.m771height3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(f)), Dp.m6684constructorimpl(f2));
-            startRestartGroup.startReplaceGroup(1849434622);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):NotificationItem.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1124470972, "CC(remember):NotificationItem.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new Function1() { // from class: com.miami.game.feature.notifications.presentation.NotificationItemKt$$ExternalSyntheticLambda0
@@ -138,7 +133,7 @@ public final class NotificationItemKt {
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Modifier drawWithContent = DrawModifierKt.drawWithContent(m790width3ABfNKs, (Function1) rememberedValue2);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
@@ -171,7 +166,7 @@ public final class NotificationItemKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1889896846, "C56@2172L78,57@2264L255:NotificationItem.kt#21zkme");
             float f3 = 32;
             AnimatedLoadingKt.m8316AnimatedLoadinguFdPcIQ(true, Dp.m6684constructorimpl(40), OffsetKt.m697offsetVpY3zN4(Modifier.Companion, Dp.m6684constructorimpl(f3), Dp.m6684constructorimpl(f3)), startRestartGroup, 438, 0);
-            SingletonAsyncImageKt.m7751AsyncImage10Xjiaw(notificationModel.getImageUrl(), null, SizeKt.m785size3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(160)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+            SingletonAsyncImageKt.m7752AsyncImage10Xjiaw(notificationModel.getImageUrl(), null, SizeKt.m785size3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(160)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -270,9 +265,9 @@ public final class NotificationItemKt {
             SpacerKt.Spacer(SizeKt.m771height3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(2)), startRestartGroup, 6);
             float f4 = 24;
             composer2 = startRestartGroup;
-            TextKt.m2497Text4IGK_g(notificationModel.getTitle(), (Modifier) null, ColorKt.Color(4294046193L), TypeKt.m8401dpToSp8Feqmps(Dp.m6684constructorimpl(f4), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m8401dpToSp8Feqmps(Dp.m6684constructorimpl(f4), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
+            TextKt.m2497Text4IGK_g(notificationModel.getTitle(), (Modifier) null, ColorKt.Color(4294046193L), TypeKt.m8428dpToSp8Feqmps(Dp.m6684constructorimpl(f4), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m8428dpToSp8Feqmps(Dp.m6684constructorimpl(f4), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
             float f5 = 11;
-            TextKt.m2497Text4IGK_g(notificationModel.getText(), (Modifier) null, ColorKt.Color(4291150552L), TypeKt.m8401dpToSp8Feqmps(Dp.m6684constructorimpl(f5), composer2, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m8401dpToSp8Feqmps(Dp.m6684constructorimpl(f5), composer2, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
+            TextKt.m2497Text4IGK_g(notificationModel.getText(), (Modifier) null, ColorKt.Color(4291150552L), TypeKt.m8428dpToSp8Feqmps(Dp.m6684constructorimpl(f5), composer2, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m8428dpToSp8Feqmps(Dp.m6684constructorimpl(f5), composer2, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
@@ -300,6 +295,9 @@ public final class NotificationItemKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
+        } else {
+            composer2 = startRestartGroup;
+            composer2.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {

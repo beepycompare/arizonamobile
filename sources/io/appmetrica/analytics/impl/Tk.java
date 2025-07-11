@@ -6,9 +6,9 @@ public enum Tk {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f646a;
+    public final int f647a;
 
     Tk(int i) {
-        this.f646a = i;
+        this.f647a = i;
     }
 }

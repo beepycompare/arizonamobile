@@ -15,7 +15,7 @@ public final class CellularNetworkTypeExtractor {
     public static final String UNKNOWN_NETWORK_TYPE_VALUE = "unknown";
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f292a;
+    private final Context f293a;
     private final FunctionWithThrowable b;
 
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001R\u0014\u0010\u0003\u001a\u00020\u00028\u0006X\u0086T¢\u0006\u0006\n\u0004\b\u0003\u0010\u0004¨\u0006\u0005"}, d2 = {"Lio/appmetrica/analytics/coreutils/internal/services/telephony/CellularNetworkTypeExtractor$Companion;", "", "", "UNKNOWN_NETWORK_TYPE_VALUE", "Ljava/lang/String;", "core-utils_release"}, k = 1, mv = {1, 6, 0})
@@ -51,7 +51,7 @@ public final class CellularNetworkTypeExtractor {
 
     public CellularNetworkTypeExtractor(Context context) {
         FunctionWithThrowable bVar;
-        this.f292a = context;
+        this.f293a = context;
         if (AndroidUtils.isApiAchieved(24)) {
             bVar = new a();
         } else {
@@ -61,10 +61,10 @@ public final class CellularNetworkTypeExtractor {
     }
 
     public final Context getContext() {
-        return this.f292a;
+        return this.f293a;
     }
 
     public final String getNetworkType() {
-        return CellularNetworkTypeConverter.convert((Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f292a, "phone", "Extracting cellular networkType", "TelephonyManager", this.b));
+        return CellularNetworkTypeConverter.convert((Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f293a, "phone", "Extracting cellular networkType", "TelephonyManager", this.b));
     }
 }

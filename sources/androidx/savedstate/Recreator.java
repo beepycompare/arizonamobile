@@ -47,11 +47,11 @@ public final class Recreator implements LifecycleEventObserver {
         if (consumeRestoredStateForKey == null) {
             return;
         }
-        List<String> m7654getStringListOrNullimpl = SavedStateReader.m7654getStringListOrNullimpl(SavedStateReader.m7579constructorimpl(consumeRestoredStateForKey), CLASSES_KEY);
-        if (m7654getStringListOrNullimpl == null) {
+        List<String> m7655getStringListOrNullimpl = SavedStateReader.m7655getStringListOrNullimpl(SavedStateReader.m7580constructorimpl(consumeRestoredStateForKey), CLASSES_KEY);
+        if (m7655getStringListOrNullimpl == null) {
             throw new IllegalStateException("SavedState with restored state for the component \"androidx.savedstate.Restarter\" must contain list of strings by the key \"classes_to_restore\"".toString());
         }
-        for (String str : m7654getStringListOrNullimpl) {
+        for (String str : m7655getStringListOrNullimpl) {
             reflectiveNew(str);
         }
     }
@@ -109,7 +109,7 @@ public final class Recreator implements LifecycleEventObserver {
                 pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
             }
             Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-            SavedStateWriter.m7700putStringListimpl(SavedStateWriter.m7665constructorimpl(bundleOf), Recreator.CLASSES_KEY, CollectionsKt.toList(this.classes));
+            SavedStateWriter.m7701putStringListimpl(SavedStateWriter.m7666constructorimpl(bundleOf), Recreator.CLASSES_KEY, CollectionsKt.toList(this.classes));
             return bundleOf;
         }
     }

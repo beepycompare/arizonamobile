@@ -1,89 +1,33 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+
+import java.util.Map;
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-public class zzms {
-    protected volatile zznh zza;
-    private volatile zzld zzb;
-    private volatile boolean zzc;
+final class zzms implements Map.Entry {
+    private final Map.Entry zza;
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof zzms) {
-            zzms zzmsVar = (zzms) obj;
-            zznh zznhVar = this.zza;
-            zznh zznhVar2 = zzmsVar.zza;
-            if (zznhVar == null && zznhVar2 == null) {
-                return zzb().equals(zzmsVar.zzb());
-            }
-            if (zznhVar == null || zznhVar2 == null) {
-                if (zznhVar != null) {
-                    zzmsVar.zzd(zznhVar.zzcC());
-                    return zznhVar.equals(zzmsVar.zza);
-                }
-                zzd(zznhVar2.zzcC());
-                return this.zza.equals(zznhVar2);
-            }
-            return zznhVar.equals(zznhVar2);
-        }
-        return false;
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.zza.getKey();
     }
 
-    public int hashCode() {
-        return 1;
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        if (((zzmu) this.zza.getValue()) == null) {
+            return null;
+        }
+        throw null;
     }
 
-    public final int zza() {
-        if (this.zzb != null) {
-            return ((zzlb) this.zzb).zza.length;
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        if (!(obj instanceof zznl)) {
+            throw new IllegalArgumentException("LazyField now only used for MessageSet, and the value of MessageSet must be an instance of MessageLite");
         }
-        if (this.zza != null) {
-            return this.zza.zzcf();
-        }
-        return 0;
+        return ((zzmu) this.zza.getValue()).zza((zznl) obj);
     }
 
-    public final zzld zzb() {
-        if (this.zzb != null) {
-            return this.zzb;
-        }
-        synchronized (this) {
-            if (this.zzb != null) {
-                return this.zzb;
-            }
-            if (this.zza == null) {
-                this.zzb = zzld.zzb;
-            } else {
-                this.zzb = this.zza.zzcb();
-            }
-            return this.zzb;
-        }
-    }
-
-    public final zznh zzc(zznh zznhVar) {
-        zznh zznhVar2 = this.zza;
-        this.zzb = null;
-        this.zza = zznhVar;
-        return zznhVar2;
-    }
-
-    protected final void zzd(zznh zznhVar) {
-        if (this.zza != null) {
-            return;
-        }
-        synchronized (this) {
-            if (this.zza != null) {
-                return;
-            }
-            try {
-                this.zza = zznhVar;
-                this.zzb = zzld.zzb;
-            } catch (zzmm unused) {
-                this.zzc = true;
-                this.zza = zznhVar;
-                this.zzb = zzld.zzb;
-            }
-        }
+    public final zzmu zza() {
+        return (zzmu) this.zza.getValue();
     }
 }

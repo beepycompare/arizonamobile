@@ -32,11 +32,11 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: MenuContent.kt */
-@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a[\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00010\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00010\b2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00010\b2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\bH\u0001¢\u0006\u0002\u0010\f¨\u0006\r"}, d2 = {"MenuContent", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "notificationState", "Landroidx/compose/runtime/State;", "", "onClickAccount", "Lkotlin/Function0;", "onClickForum", "onClickSettings", "onClickNotificaions", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Landroidx/compose/runtime/State;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "home_release_web"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a[\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00010\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00010\b2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00010\b2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\bH\u0001¢\u0006\u0002\u0010\f¨\u0006\r"}, d2 = {"MenuContent", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "notificationState", "Landroidx/compose/runtime/State;", "", "onClickAccount", "Lkotlin/Function0;", "onClickForum", "onClickSettings", "onClickNotificaions", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Landroidx/compose/runtime/State;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "home_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class MenuContentKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit MenuContent$lambda$2(HomeUiState homeUiState, State state, Function0 function0, Function0 function02, Function0 function03, Function0 function04, int i, Composer composer, int i2) {
+    public static final Unit MenuContent$lambda$3(HomeUiState homeUiState, State state, Function0 function0, Function0 function02, Function0 function03, Function0 function04, int i, Composer composer, int i2) {
         MenuContent(homeUiState, state, function0, function02, function03, function04, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -69,16 +69,17 @@ public final class MenuContentKt {
             i2 |= startRestartGroup.changedInstance(onClickNotificaions) ? 131072 : 65536;
         }
         int i3 = i2;
-        if ((74897 & i3) != 74896 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((74897 & i3) != 74896, i3 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1146511910, i3, -1, "com.miami.game.feature.home.ui.compose.MenuContent (MenuContent.kt:24)");
             }
             float f = 24;
             Modifier m742paddingqDBjuR0$default = PaddingKt.m742paddingqDBjuR0$default(Modifier.Companion, 0.0f, 0.0f, Dp.m6684constructorimpl(f), 0.0f, 11, null);
             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
-            Arrangement.HorizontalOrVertical m619spacedBy0680j_4 = Arrangement.INSTANCE.m619spacedBy0680j_4(Dp.m6684constructorimpl(4));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
-            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(m619spacedBy0680j_4, centerVertically, startRestartGroup, 54);
+            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m619spacedBy0680j_4(Dp.m6684constructorimpl(4)), centerVertically, startRestartGroup, 54);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
@@ -108,9 +109,8 @@ public final class MenuContentKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1874684794, "C32@1089L499,48@1597L99:MenuContent.kt#dswm0d");
             Modifier m740paddingVpY3zN4$default = PaddingKt.m740paddingVpY3zN4$default(Modifier.Companion, 0.0f, 0.0f, 3, null);
             Alignment.Vertical centerVertically2 = Alignment.Companion.getCenterVertically();
-            Arrangement.HorizontalOrVertical m619spacedBy0680j_42 = Arrangement.INSTANCE.m619spacedBy0680j_4(Dp.m6684constructorimpl(-Dp.m6684constructorimpl(f)));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
-            MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(m619spacedBy0680j_42, centerVertically2, startRestartGroup, 54);
+            MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m619spacedBy0680j_4(Dp.m6684constructorimpl(-Dp.m6684constructorimpl(f))), centerVertically2, startRestartGroup, 54);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
             int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
@@ -138,33 +138,17 @@ public final class MenuContentKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1720621375, "C38@1335L69,38@1300L104,41@1417L76,44@1506L72:MenuContent.kt#dswm0d");
-            ScalingButtonKt.ScalingButton(onClickNotificaions, null, ComposableLambdaKt.rememberComposableLambda(2120753955, true, new Function3<BoxScope, Composer, Integer, Unit>() { // from class: com.miami.game.feature.home.ui.compose.MenuContentKt$MenuContent$1$1$1
+            ScalingButtonKt.ScalingButton(onClickNotificaions, null, ComposableLambdaKt.rememberComposableLambda(2120753955, true, new Function3() { // from class: com.miami.game.feature.home.ui.compose.MenuContentKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
-                public /* bridge */ /* synthetic */ Unit invoke(BoxScope boxScope, Composer composer2, Integer num) {
-                    invoke(boxScope, composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(BoxScope ScalingButton, Composer composer2, int i4) {
-                    Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-                    ComposerKt.sourceInformation(composer2, "C39@1353L37:MenuContent.kt#dswm0d");
-                    if ((i4 & 17) != 16 || !composer2.getSkipping()) {
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(2120753955, i4, -1, "com.miami.game.feature.home.ui.compose.MenuContent.<anonymous>.<anonymous>.<anonymous> (MenuContent.kt:39)");
-                        }
-                        ImagesKt.NotificationsImage(notificationState, composer2, 0);
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventEnd();
-                            return;
-                        }
-                        return;
-                    }
-                    composer2.skipToGroupEnd();
+                public final Object invoke(Object obj, Object obj2, Object obj3) {
+                    Unit MenuContent$lambda$2$lambda$1$lambda$0;
+                    MenuContent$lambda$2$lambda$1$lambda$0 = MenuContentKt.MenuContent$lambda$2$lambda$1$lambda$0(State.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return MenuContent$lambda$2$lambda$1$lambda$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i3 >> 15) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             startRestartGroup = startRestartGroup;
-            ScalingButtonKt.ScalingButton(onClickAccount, null, ComposableSingletons$MenuContentKt.INSTANCE.m8364getLambda$432014182$home_release_web(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
-            ScalingButtonKt.ScalingButton(onClickForum, null, ComposableSingletons$MenuContentKt.INSTANCE.m8365getLambda$989998245$home_release_web(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onClickAccount, null, ComposableSingletons$MenuContentKt.INSTANCE.m8382getLambda$432014182$home_release_web(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onClickForum, null, ComposableSingletons$MenuContentKt.INSTANCE.m8383getLambda$989998245$home_release_web(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -181,19 +165,35 @@ public final class MenuContentKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.MenuContentKt$$ExternalSyntheticLambda0
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.MenuContentKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit MenuContent$lambda$2;
-                    MenuContent$lambda$2 = MenuContentKt.MenuContent$lambda$2(HomeUiState.this, notificationState, onClickAccount, onClickForum, onClickSettings, onClickNotificaions, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return MenuContent$lambda$2;
+                    Unit MenuContent$lambda$3;
+                    MenuContent$lambda$3 = MenuContentKt.MenuContent$lambda$3(HomeUiState.this, notificationState, onClickAccount, onClickForum, onClickSettings, onClickNotificaions, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return MenuContent$lambda$3;
                 }
             });
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit MenuContent$lambda$2$lambda$1$lambda$0(State state, BoxScope ScalingButton, Composer composer, int i) {
+        Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
+        ComposerKt.sourceInformation(composer, "C39@1353L37:MenuContent.kt#dswm0d");
+        if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
+            composer.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(2120753955, i, -1, "com.miami.game.feature.home.ui.compose.MenuContent.<anonymous>.<anonymous>.<anonymous> (MenuContent.kt:39)");
+            }
+            ImagesKt.NotificationsImage(state, composer, 0);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+        return Unit.INSTANCE;
     }
 }

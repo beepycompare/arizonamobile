@@ -1,92 +1,41 @@
 package com.google.android.gms.measurement.internal;
 
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.net.Uri;
-import android.text.TextUtils;
+import android.content.Context;
+import android.content.Intent;
 import com.google.android.gms.common.internal.Preconditions;
-import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzhk extends zzpg {
-    public zzhk(zzpv zzpvVar) {
-        super(zzpvVar);
+public final class zzhk {
+    private final zza zza;
+
+    /* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+    /* loaded from: classes3.dex */
+    public interface zza {
+        void doStartService(Context context, Intent intent);
     }
 
-    public final void zza(zzh zzhVar, Map map, zzhg zzhgVar) {
-        zzhk zzhkVar;
-        URL url;
-        zzg();
-        zzav();
-        Preconditions.checkNotNull(zzhVar);
-        Preconditions.checkNotNull(zzhgVar);
-        zzpi zzy = this.zzg.zzy();
-        Uri.Builder builder = new Uri.Builder();
-        String zzH = zzhVar.zzH();
-        if (TextUtils.isEmpty(zzH)) {
-            zzH = zzhVar.zzA();
-        }
-        Uri.Builder appendQueryParameter = builder.scheme((String) zzgi.zze.zza(null)).encodedAuthority((String) zzgi.zzf.zza(null)).path("config/app/".concat(String.valueOf(zzH))).appendQueryParameter("platform", ConstantDeviceInfo.APP_PLATFORM);
-        zzy.zzu.zzf().zzj();
-        appendQueryParameter.appendQueryParameter("gmp_version", String.valueOf(119002L)).appendQueryParameter("runtime_version", "0");
-        String uri = builder.build().toString();
-        try {
-            url = new URI(uri).toURL();
-            zzhkVar = this;
-        } catch (IllegalArgumentException | MalformedURLException | URISyntaxException unused) {
-            zzhkVar = this;
-        }
-        try {
-            this.zzu.zzaX().zzp(new zzhi(zzhkVar, zzhVar.zzC(), url, null, map, zzhgVar));
-        } catch (IllegalArgumentException | MalformedURLException | URISyntaxException unused2) {
-            zzhkVar.zzu.zzaW().zze().zzc("Failed to parse config URL. Not fetching. appId", zzhe.zzn(zzhVar.zzC()), uri);
-        }
+    public zzhk(zza zzaVar) {
+        Preconditions.checkNotNull(zzaVar);
+        this.zza = zzaVar;
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzpg
-    protected final boolean zzb() {
-        return false;
-    }
-
-    public final void zzc(String str, zzph zzphVar, com.google.android.gms.internal.measurement.zzhv zzhvVar, zzhg zzhgVar) {
-        zzhk zzhkVar;
-        String str2;
-        URL url;
-        byte[] zzcd;
-        zzg();
-        zzav();
-        try {
-            url = new URI(zzphVar.zzc()).toURL();
-            this.zzg.zzA();
-            zzcd = zzhvVar.zzcd();
-            zzhkVar = this;
-            str2 = str;
-        } catch (IllegalArgumentException | MalformedURLException | URISyntaxException unused) {
-            zzhkVar = this;
-            str2 = str;
+    public final void zza(Context context, Intent intent) {
+        zzib zzy = zzib.zzy(context, null, null);
+        zzgt zzaV = zzy.zzaV();
+        if (intent == null) {
+            zzaV.zze().zza("Receiver called with null intent");
+            return;
         }
-        try {
-            this.zzu.zzaX().zzp(new zzhi(zzhkVar, str2, url, zzcd, zzphVar.zzd(), zzhgVar));
-        } catch (IllegalArgumentException | MalformedURLException | URISyntaxException unused2) {
-            zzhkVar.zzu.zzaW().zze().zzc("Failed to parse URL. Not uploading MeasurementBatch. appId", zzhe.zzn(str2), zzphVar.zzc());
+        zzy.zzaU();
+        String action = intent.getAction();
+        zzaV.zzk().zzb("Local receiver got", action);
+        if ("com.google.android.gms.measurement.UPLOAD".equals(action)) {
+            Intent className = new Intent().setClassName(context, "com.google.android.gms.measurement.AppMeasurementService");
+            className.setAction("com.google.android.gms.measurement.UPLOAD");
+            zzaV.zzk().zza("Starting wakeful intent.");
+            this.zza.doStartService(context, className);
+        } else if ("com.android.vending.INSTALL_REFERRER".equals(action)) {
+            zzaV.zze().zza("Install Referrer Broadcasts are deprecated");
         }
-    }
-
-    public final boolean zzd() {
-        zzav();
-        ConnectivityManager connectivityManager = (ConnectivityManager) this.zzu.zzaT().getSystemService("connectivity");
-        NetworkInfo networkInfo = null;
-        if (connectivityManager != null) {
-            try {
-                networkInfo = connectivityManager.getActiveNetworkInfo();
-            } catch (SecurityException unused) {
-            }
-        }
-        return networkInfo != null && networkInfo.isConnected();
     }
 }

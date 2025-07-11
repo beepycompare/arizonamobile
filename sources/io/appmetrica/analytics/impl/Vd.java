@@ -6,28 +6,28 @@ import kotlin.jvm.functions.Function1;
 public final class Vd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Function1 f672a;
+    public final Function1 f673a;
 
-    public Vd(C0138ae c0138ae) {
-        this.f672a = c0138ae;
+    public Vd(C0130ae c0130ae) {
+        this.f673a = c0130ae;
     }
 
-    public final Wd a(Context context, C0219dh c0219dh) {
-        return new Wd(context, c0219dh, this.f672a, new InterfaceC0241ee() { // from class: io.appmetrica.analytics.impl.Vd$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.impl.InterfaceC0241ee
+    public final Wd a(Context context, C0211dh c0211dh) {
+        return new Wd(context, c0211dh, this.f673a, new InterfaceC0233ee() { // from class: io.appmetrica.analytics.impl.Vd$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.impl.InterfaceC0233ee
             public final Xk a(B0 b0) {
                 return Vd.a(b0);
             }
-        }, EnumC0636ub.EVENT_TYPE_CURRENT_SESSION_NATIVE_CRASH_PROTOBUF, "actual");
+        }, EnumC0628ub.EVENT_TYPE_CURRENT_SESSION_NATIVE_CRASH_PROTOBUF, "actual");
     }
 
-    public final Wd b(Context context, C0219dh c0219dh) {
-        return new Wd(context, c0219dh, this.f672a, new InterfaceC0241ee() { // from class: io.appmetrica.analytics.impl.Vd$$ExternalSyntheticLambda1
-            @Override // io.appmetrica.analytics.impl.InterfaceC0241ee
+    public final Wd b(Context context, C0211dh c0211dh) {
+        return new Wd(context, c0211dh, this.f673a, new InterfaceC0233ee() { // from class: io.appmetrica.analytics.impl.Vd$$ExternalSyntheticLambda1
+            @Override // io.appmetrica.analytics.impl.InterfaceC0233ee
             public final Xk a(B0 b0) {
                 return Vd.b(b0);
             }
-        }, EnumC0636ub.EVENT_TYPE_PREV_SESSION_NATIVE_CRASH_PROTOBUF, "prev session");
+        }, EnumC0628ub.EVENT_TYPE_PREV_SESSION_NATIVE_CRASH_PROTOBUF, "prev session");
     }
 
     public static final Xk a(B0 b0) {

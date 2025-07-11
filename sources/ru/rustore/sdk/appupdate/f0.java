@@ -10,7 +10,7 @@ public final class f0 {
     public static final TimeZone c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Calendar f1347a = Calendar.getInstance();
+    public final Calendar f1348a = Calendar.getInstance();
 
     static {
         TimeZone timeZone = TimeZone.getTimeZone("UTC");

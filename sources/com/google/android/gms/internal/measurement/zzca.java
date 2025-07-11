@@ -1,15 +1,40 @@
 package com.google.android.gms.internal.measurement;
-
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public abstract class zzca extends SQLiteOpenHelper {
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzca(Context context, String str, SQLiteDatabase.CursorFactory cursorFactory, int i) {
-        super(context, true == str.equals("") ? null : str, (SQLiteDatabase.CursorFactory) null, 1);
-        int i2 = zzcc.zzb;
-        zzbx.zza();
+public abstract class zzca {
+    static final zzca zza;
+    public static final /* synthetic */ int zzb = 0;
+
+    static {
+        zzbt zzbtVar = new zzbt();
+        zzbtVar.zza("");
+        zzbtVar.zzb(false);
+        zzbtVar.zzd(1);
+        zzbtVar.zze(1);
+        zzbtVar.zzc();
+        zzbt zzbtVar2 = new zzbt();
+        zzbtVar2.zza("");
+        zzbtVar2.zzb(false);
+        zzbtVar2.zzd(4);
+        zzbtVar2.zze(1);
+        zza = zzbtVar2.zzc();
+        zzbt zzbtVar3 = new zzbt();
+        zzbtVar3.zza("");
+        zzbtVar3.zzb(false);
+        zzbtVar3.zzd(2);
+        zzbtVar3.zze(1);
+        zzbtVar3.zzc();
     }
+
+    public abstract String zza();
+
+    public abstract boolean zzb();
+
+    public abstract zzbr zzc();
+
+    public abstract zzbs zzd();
+
+    public abstract int zze();
+
+    public abstract int zzf();
 }

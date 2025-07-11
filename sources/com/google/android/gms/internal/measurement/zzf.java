@@ -1,42 +1,36 @@
 package com.google.android.gms.internal.measurement;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import java.util.concurrent.Callable;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzf {
-    final zzax zza;
+    final zzaw zza;
     final zzg zzb;
     final zzg zzc;
     final zzj zzd;
 
     public zzf() {
-        zzax zzaxVar = new zzax();
-        this.zza = zzaxVar;
-        zzg zzgVar = new zzg(null, zzaxVar);
+        zzaw zzawVar = new zzaw();
+        this.zza = zzawVar;
+        zzg zzgVar = new zzg(null, zzawVar);
         this.zzc = zzgVar;
-        this.zzb = zzgVar.zza();
+        this.zzb = zzgVar.zzc();
         zzj zzjVar = new zzj();
         this.zzd = zzjVar;
-        zzgVar.zzg("require", new zzw(zzjVar));
-        zzjVar.zza("internal.platform", new Callable() { // from class: com.google.android.gms.internal.measurement.zze
-            @Override // java.util.concurrent.Callable
-            public final Object call() {
-                return new zzy();
-            }
-        });
-        zzgVar.zzg("runtime.counter", new zzah(Double.valueOf((double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE)));
+        zzgVar.zze("require", new zzw(zzjVar));
+        zzjVar.zza("internal.platform", zze.zza);
+        zzgVar.zze("runtime.counter", new zzah(Double.valueOf((double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE)));
     }
 
-    public final zzap zza(zzg zzgVar, zziz... zzizVarArr) {
-        zzap zzapVar = zzap.zzf;
-        for (zziz zzizVar : zzizVarArr) {
-            zzapVar = zzi.zza(zzizVar);
-            zzh.zzc(this.zzc);
-            if ((zzapVar instanceof zzaq) || (zzapVar instanceof zzao)) {
-                zzapVar = this.zza.zza(zzgVar, zzapVar);
+    public final zzao zza(zzg zzgVar, zzje... zzjeVarArr) {
+        zzao zzaoVar = zzao.zzf;
+        for (zzje zzjeVar : zzjeVarArr) {
+            zzaoVar = zzi.zzb(zzjeVar);
+            zzh.zzl(this.zzc);
+            if ((zzaoVar instanceof zzap) || (zzaoVar instanceof zzan)) {
+                zzaoVar = this.zza.zzb(zzgVar, zzaoVar);
             }
         }
-        return zzapVar;
+        return zzaoVar;
     }
 }

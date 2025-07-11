@@ -3,7 +3,6 @@ package androidx.compose.foundation.text.input.internal;
 import androidx.compose.foundation.text.handwriting.StylusHandwriting_androidKt;
 import androidx.compose.foundation.text.input.internal.LegacyPlatformTextInputServiceAdapter;
 import androidx.compose.ui.platform.PlatformTextInputSession;
-import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measurement.dynamite.ModuleDescriptor;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -125,7 +124,7 @@ public final class AndroidLegacyPlatformTextInputServiceAdapter$startInput$2 ext
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: LegacyPlatformTextInputServiceAdapter.android.kt */
         @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-        @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$startInput$2$1$1", f = "LegacyPlatformTextInputServiceAdapter.android.kt", i = {}, l = {140, ModuleDescriptor.MODULE_VERSION}, m = "invokeSuspend", n = {}, s = {})
+        @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$startInput$2$1$1", f = "LegacyPlatformTextInputServiceAdapter.android.kt", i = {}, l = {140, 141}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$startInput$2$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes.dex */
         public static final class C00221 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

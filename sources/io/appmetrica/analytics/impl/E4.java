@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class E4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f400a = F4.f422a;
+    public boolean f401a = F4.f423a;
     public boolean b = F4.b;
     public boolean c = F4.c;
     public boolean d = F4.d;

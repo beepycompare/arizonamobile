@@ -4,7 +4,7 @@ import java.util.Comparator;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 /* compiled from: Comparisons.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 176)
 /* loaded from: classes5.dex */
 public final class ComparisonsKt__ComparisonsKt$compareBy$2<T> implements Comparator {
     final /* synthetic */ Function1<T, Comparable<?>> $selector;

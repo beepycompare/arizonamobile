@@ -65,7 +65,7 @@ public final class EditProcessor {
         StringBuilder append = sb.append("Error while applying EditCommand batch to buffer (length=" + this.mBuffer.getLength$ui_text_release() + ", composition=" + this.mBuffer.m6308getCompositionMzsxiRA$ui_text_release() + ", selection=" + ((Object) TextRange.m6150toStringimpl(this.mBuffer.m6309getSelectiond9O1mEE$ui_text_release())) + "):");
         Intrinsics.checkNotNullExpressionValue(append, "append(...)");
         Intrinsics.checkNotNullExpressionValue(append.append('\n'), "append(...)");
-        CollectionsKt.joinTo(list, sb, (r14 & 2) != 0 ? ", " : "\n", (r14 & 4) != 0 ? "" : null, (r14 & 8) != 0 ? "" : null, (r14 & 16) != 0 ? -1 : 0, (r14 & 32) != 0 ? "..." : null, (r14 & 64) != 0 ? null : new Function1<EditCommand, CharSequence>() { // from class: androidx.compose.ui.text.input.EditProcessor$generateBatchErrorMessage$1$1
+        CollectionsKt.joinTo$default(list, sb, "\n", null, null, 0, null, new Function1<EditCommand, CharSequence>() { // from class: androidx.compose.ui.text.input.EditProcessor$generateBatchErrorMessage$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -79,7 +79,7 @@ public final class EditProcessor {
                 stringForLog = this.toStringForLog(editCommand2);
                 return append2.append(stringForLog).toString();
             }
-        });
+        }, 60, null);
         String sb2 = sb.toString();
         Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
         return sb2;

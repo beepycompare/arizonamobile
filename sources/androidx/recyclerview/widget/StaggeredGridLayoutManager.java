@@ -204,12 +204,17 @@ public class StaggeredGridLayoutManager extends RecyclerView.LayoutManager imple
     }
 
     private boolean checkSpanForGap(Span span) {
+        boolean z;
         if (this.mShouldReverseLayout) {
             if (span.getEndLine() < this.mPrimaryOrientation.getEndAfterPadding()) {
-                return !span.getLayoutParams(span.mViews.get(span.mViews.size() - 1)).mFullSpan;
+                z = span.getLayoutParams(span.mViews.get(span.mViews.size() - 1)).mFullSpan;
+                return !z;
             }
-        } else if (span.getStartLine() > this.mPrimaryOrientation.getStartAfterPadding()) {
-            return !span.getLayoutParams(span.mViews.get(0)).mFullSpan;
+            return false;
+        }
+        if (span.getStartLine() > this.mPrimaryOrientation.getStartAfterPadding()) {
+            z = span.getLayoutParams(span.mViews.get(0)).mFullSpan;
+            return !z;
         }
         return false;
     }
@@ -1065,7 +1070,7 @@ public class StaggeredGridLayoutManager extends RecyclerView.LayoutManager imple
     }
 
     /* JADX WARN: Type inference failed for: r8v0 */
-    /* JADX WARN: Type inference failed for: r8v1, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r8v1, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r8v5 */
     private int fill(RecyclerView.Recycler recycler, LayoutState layoutState, RecyclerView.State state) {
         int i;

@@ -1,62 +1,64 @@
 package com.google.android.gms.internal.measurement;
 
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+import java.util.AbstractSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzoc {
+public final class zzoc extends AbstractSet {
+    final /* synthetic */ zzod zza;
+
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static String zza(zzld zzldVar) {
-        StringBuilder sb = new StringBuilder(zzldVar.zzd());
-        for (int i = 0; i < zzldVar.zzd(); i++) {
-            byte zza = zzldVar.zza(i);
-            if (zza != 34) {
-                if (zza != 39) {
-                    if (zza == 92) {
-                        sb.append("\\\\");
-                    } else {
-                        switch (zza) {
-                            case 7:
-                                sb.append("\\a");
-                                continue;
-                            case 8:
-                                sb.append("\\b");
-                                continue;
-                            case 9:
-                                sb.append("\\t");
-                                continue;
-                            case 10:
-                                sb.append("\\n");
-                                continue;
-                            case 11:
-                                sb.append("\\v");
-                                continue;
-                            case 12:
-                                sb.append("\\f");
-                                continue;
-                            case 13:
-                                sb.append("\\r");
-                                continue;
-                            default:
-                                if (zza < 32 || zza > 126) {
-                                    sb.append(AbstractJsonLexerKt.STRING_ESC);
-                                    sb.append((char) (((zza >>> 6) & 3) + 48));
-                                    sb.append((char) (((zza >>> 3) & 7) + 48));
-                                    sb.append((char) ((zza & 7) + 48));
-                                    break;
-                                } else {
-                                    sb.append((char) zza);
-                                    continue;
-                                }
-                                break;
-                        }
-                    }
-                } else {
-                    sb.append("\\'");
-                }
-            } else {
-                sb.append("\\\"");
-            }
+    public /* synthetic */ zzoc(zzod zzodVar, byte[] bArr) {
+        Objects.requireNonNull(zzodVar);
+        this.zza = zzodVar;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
+        Map.Entry entry = (Map.Entry) obj;
+        if (contains(entry)) {
+            return false;
         }
-        return sb.toString();
+        this.zza.put((Comparable) entry.getKey(), entry.getValue());
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final void clear() {
+        this.zza.clear();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        Map.Entry entry = (Map.Entry) obj;
+        Object obj2 = this.zza.get(entry.getKey());
+        Object value = entry.getValue();
+        if (obj2 != value) {
+            return obj2 != null && obj2.equals(value);
+        }
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        return new zzob(this.zza, null);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean remove(Object obj) {
+        Map.Entry entry = (Map.Entry) obj;
+        if (contains(entry)) {
+            this.zza.remove(entry.getKey());
+            return true;
+        }
+        return false;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.zza.size();
     }
 }

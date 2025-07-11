@@ -15,6 +15,7 @@ public final class BuiltInsProtoBuf {
     public static final int PACKAGE_FQ_NAME_FIELD_NUMBER = 151;
     public static final int PARAMETER_ANNOTATION_FIELD_NUMBER = 150;
     public static final int PROPERTY_ANNOTATION_FIELD_NUMBER = 150;
+    public static final int PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER = 152;
     public static final int TYPE_ANNOTATION_FIELD_NUMBER = 150;
     public static final int TYPE_PARAMETER_ANNOTATION_FIELD_NUMBER = 150;
     public static final GeneratedMessageLite.GeneratedExtension<ProtoBuf.Package, Integer> packageFqName = GeneratedMessageLite.newSingularGeneratedExtension(ProtoBuf.Package.getDefaultInstance(), 0, null, null, 151, WireFormat.FieldType.INT32, Integer.class);
@@ -22,8 +23,7 @@ public final class BuiltInsProtoBuf {
     public static final GeneratedMessageLite.GeneratedExtension<ProtoBuf.Constructor, List<ProtoBuf.Annotation>> constructorAnnotation = GeneratedMessageLite.newRepeatedGeneratedExtension(ProtoBuf.Constructor.getDefaultInstance(), ProtoBuf.Annotation.getDefaultInstance(), null, 150, WireFormat.FieldType.MESSAGE, false, ProtoBuf.Annotation.class);
     public static final GeneratedMessageLite.GeneratedExtension<ProtoBuf.Function, List<ProtoBuf.Annotation>> functionAnnotation = GeneratedMessageLite.newRepeatedGeneratedExtension(ProtoBuf.Function.getDefaultInstance(), ProtoBuf.Annotation.getDefaultInstance(), null, 150, WireFormat.FieldType.MESSAGE, false, ProtoBuf.Annotation.class);
     public static final GeneratedMessageLite.GeneratedExtension<ProtoBuf.Property, List<ProtoBuf.Annotation>> propertyAnnotation = GeneratedMessageLite.newRepeatedGeneratedExtension(ProtoBuf.Property.getDefaultInstance(), ProtoBuf.Annotation.getDefaultInstance(), null, 150, WireFormat.FieldType.MESSAGE, false, ProtoBuf.Annotation.class);
-    public static final int PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER = 152;
-    public static final GeneratedMessageLite.GeneratedExtension<ProtoBuf.Property, List<ProtoBuf.Annotation>> propertyGetterAnnotation = GeneratedMessageLite.newRepeatedGeneratedExtension(ProtoBuf.Property.getDefaultInstance(), ProtoBuf.Annotation.getDefaultInstance(), null, PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER, WireFormat.FieldType.MESSAGE, false, ProtoBuf.Annotation.class);
+    public static final GeneratedMessageLite.GeneratedExtension<ProtoBuf.Property, List<ProtoBuf.Annotation>> propertyGetterAnnotation = GeneratedMessageLite.newRepeatedGeneratedExtension(ProtoBuf.Property.getDefaultInstance(), ProtoBuf.Annotation.getDefaultInstance(), null, 152, WireFormat.FieldType.MESSAGE, false, ProtoBuf.Annotation.class);
     public static final int PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER = 153;
     public static final GeneratedMessageLite.GeneratedExtension<ProtoBuf.Property, List<ProtoBuf.Annotation>> propertySetterAnnotation = GeneratedMessageLite.newRepeatedGeneratedExtension(ProtoBuf.Property.getDefaultInstance(), ProtoBuf.Annotation.getDefaultInstance(), null, PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER, WireFormat.FieldType.MESSAGE, false, ProtoBuf.Annotation.class);
     public static final GeneratedMessageLite.GeneratedExtension<ProtoBuf.Property, ProtoBuf.Annotation.Argument.Value> compileTimeValue = GeneratedMessageLite.newSingularGeneratedExtension(ProtoBuf.Property.getDefaultInstance(), ProtoBuf.Annotation.Argument.Value.getDefaultInstance(), ProtoBuf.Annotation.Argument.Value.getDefaultInstance(), null, 151, WireFormat.FieldType.MESSAGE, ProtoBuf.Annotation.Argument.Value.class);

@@ -6,8 +6,8 @@ import io.appmetrica.analytics.internal.IAppMetricaService;
 public final class Oi extends Ih {
     public final Nf e;
 
-    public Oi(C0426m0 c0426m0, Wk wk, Nf nf) {
-        super(c0426m0, wk);
+    public Oi(C0418m0 c0418m0, Wk wk, Nf nf) {
+        super(c0418m0, wk);
         this.e = nf;
     }
 

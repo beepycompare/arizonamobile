@@ -16,7 +16,7 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Properties;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-import okhttp3.HttpUrl;
+import okhttp3.internal.url._UrlKt;
 /* loaded from: classes4.dex */
 public final class GsonTypes {
     static final /* synthetic */ boolean $assertionsDisabled = false;
@@ -440,7 +440,7 @@ public final class GsonTypes {
         }
 
         public String toString() {
-            return GsonTypes.typeToString(this.componentType) + HttpUrl.PATH_SEGMENT_ENCODE_SET_URI;
+            return GsonTypes.typeToString(this.componentType) + _UrlKt.PATH_SEGMENT_ENCODE_SET_URI;
         }
     }
 

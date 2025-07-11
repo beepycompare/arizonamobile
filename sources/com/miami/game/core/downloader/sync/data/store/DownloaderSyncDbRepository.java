@@ -16,6 +16,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.Dispatchers;
@@ -23,7 +24,7 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: DownloaderSyncDbRepository.kt */
 @Singleton
-@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001B\u0011\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\u0006\u001a\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007H\u0086@¢\u0006\u0002\u0010\tJ\u0018\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\rH\u0086@¢\u0006\u0002\u0010\u000eJ\u0018\u0010\u000f\u001a\u0004\u0018\u00010\u00102\u0006\u0010\u0011\u001a\u00020\bH\u0086@¢\u0006\u0002\u0010\u0012J\u001e\u0010\u0013\u001a\u00020\u000b2\u0006\u0010\u0011\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\u0015H\u0086@¢\u0006\u0002\u0010\u0016J\u0012\u0010\u0017\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u00070\u0018J\u000e\u0010\u0019\u001a\u00020\u001aH\u0086@¢\u0006\u0002\u0010\tJ\u0018\u0010\u001b\u001a\u00020\u000b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001dH\u0086@¢\u0006\u0002\u0010\u001eR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lcom/miami/game/core/downloader/sync/data/store/DownloaderSyncDbRepository;", "", "database", "Lcom/miami/game/core/downloader/database/DownloaderInfoDatabase;", "<init>", "(Lcom/miami/game/core/downloader/database/DownloaderInfoDatabase;)V", "getAllNotCompletedTasks", "", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "saveDownloaderInfoDbModel", "", "data", "Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;", "(Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getTask", "Lcom/miami/game/core/domain/model/DownloaderInfo;", "id", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updateCompleted", "isCompleted", "", "(JZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllFlow", "Lkotlinx/coroutines/flow/Flow;", "wipeData", "", "deleteDownloaderInfo", "name", "", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "downloader-sync_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001B\u0011\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\u0006\u001a\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007H\u0086@¢\u0006\u0002\u0010\tJ\u0018\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\rH\u0086@¢\u0006\u0002\u0010\u000eJ\u0018\u0010\u000f\u001a\u0004\u0018\u00010\u00102\u0006\u0010\u0011\u001a\u00020\bH\u0086@¢\u0006\u0002\u0010\u0012J\u001e\u0010\u0013\u001a\u00020\u000b2\u0006\u0010\u0011\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\u0015H\u0086@¢\u0006\u0002\u0010\u0016J\u0012\u0010\u0017\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u00070\u0018J\u000e\u0010\u0019\u001a\u00020\u001aH\u0086@¢\u0006\u0002\u0010\tJ\u0018\u0010\u001b\u001a\u00020\u000b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001dH\u0086@¢\u0006\u0002\u0010\u001eR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lcom/miami/game/core/downloader/sync/data/store/DownloaderSyncDbRepository;", "", "database", "Lcom/miami/game/core/downloader/database/DownloaderInfoDatabase;", "<init>", "(Lcom/miami/game/core/downloader/database/DownloaderInfoDatabase;)V", "getAllNotCompletedTasks", "", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "saveDownloaderInfoDbModel", "", "data", "Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;", "(Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getTask", "Lcom/miami/game/core/domain/model/DownloaderInfo;", "id", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updateCompleted", "isCompleted", "", "(JZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllFlow", "Lkotlinx/coroutines/flow/Flow;", "wipeData", "", "deleteDownloaderInfo", "name", "", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "downloader-sync_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DownloaderSyncDbRepository {
     private final DownloaderInfoDatabase database;
@@ -44,9 +45,9 @@ public final class DownloaderSyncDbRepository {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0048  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x004d A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0051 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -65,6 +66,7 @@ public final class DownloaderSyncDbRepository {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     DownloaderInfoDao downloaderInfoDao = this.database.downloaderInfoDao();
+                    downloaderSyncDbRepository$getTask$1.J$0 = j;
                     downloaderSyncDbRepository$getTask$1.label = 1;
                     obj = downloaderInfoDao.get(j, downloaderSyncDbRepository$getTask$1);
                     if (obj == coroutine_suspended) {
@@ -73,6 +75,7 @@ public final class DownloaderSyncDbRepository {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
+                    long j2 = downloaderSyncDbRepository$getTask$1.J$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 downloaderInfoDbModel = (DownloaderInfoDbModel) obj;
@@ -104,18 +107,22 @@ public final class DownloaderSyncDbRepository {
         return (Flow) new Flow<List<? extends DownloaderInfo>>() { // from class: com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository$getAllFlow$$inlined$map$1
 
             /* compiled from: Emitters.kt */
-            @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
             /* renamed from: com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository$getAllFlow$$inlined$map$1$2  reason: invalid class name */
             /* loaded from: classes4.dex */
             public static final class AnonymousClass2<T> implements FlowCollector {
                 final /* synthetic */ FlowCollector $this_unsafeFlow;
 
-                @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-                @DebugMetadata(c = "com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository$getAllFlow$$inlined$map$1$2", f = "DownloaderSyncDbRepository.kt", i = {}, l = {50}, m = "emit", n = {}, s = {})
+                @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+                @DebugMetadata(c = "com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository$getAllFlow$$inlined$map$1$2", f = "DownloaderSyncDbRepository.kt", i = {0, 0, 0, 0, 0}, l = {50}, m = "emit", n = {"value", "$completion", "value", "$this$map_u24lambda_u245", "$i$a$-unsafeTransform-FlowKt__TransformKt$map$1"}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"})
                 /* renamed from: com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository$getAllFlow$$inlined$map$1$2$1  reason: invalid class name */
                 /* loaded from: classes4.dex */
                 public static final class AnonymousClass1 extends ContinuationImpl {
+                    int I$0;
                     Object L$0;
+                    Object L$1;
+                    Object L$2;
+                    Object L$3;
                     int label;
                     /* synthetic */ Object result;
 
@@ -136,7 +143,7 @@ public final class DownloaderSyncDbRepository {
                 }
 
                 /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-                /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
+                /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
                 @Override // kotlinx.coroutines.flow.FlowCollector
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
@@ -161,6 +168,11 @@ public final class DownloaderSyncDbRepository {
                                     domain = DownloaderSyncDbRepositoryKt.toDomain(downloaderInfoDbModel);
                                     arrayList.add(domain);
                                 }
+                                anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(obj);
+                                anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass1);
+                                anonymousClass1.L$2 = SpillingKt.nullOutSpilledVariable(obj);
+                                anonymousClass1.L$3 = SpillingKt.nullOutSpilledVariable(flowCollector);
+                                anonymousClass1.I$0 = 0;
                                 anonymousClass1.label = 1;
                                 if (flowCollector.emit(arrayList, anonymousClass1) == coroutine_suspended) {
                                     return coroutine_suspended;
@@ -168,6 +180,11 @@ public final class DownloaderSyncDbRepository {
                             } else if (i != 1) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             } else {
+                                int i2 = anonymousClass1.I$0;
+                                FlowCollector flowCollector2 = (FlowCollector) anonymousClass1.L$3;
+                                Object obj3 = anonymousClass1.L$2;
+                                AnonymousClass1 anonymousClass12 = (AnonymousClass1) anonymousClass1.L$1;
+                                Object obj4 = anonymousClass1.L$0;
                                 ResultKt.throwOnFailure(obj2);
                             }
                             return Unit.INSTANCE;

@@ -963,12 +963,12 @@ public final class DownloadTaskExtensionKt {
                 Intrinsics.checkParameterIsNotNull(cause, "cause");
                 if (exc != null) {
                     Result.Companion companion = Result.Companion;
-                    CancellableContinuation.this.resumeWith(Result.m8443constructorimpl(ResultKt.createFailure(exc)));
+                    CancellableContinuation.this.resumeWith(Result.m8471constructorimpl(ResultKt.createFailure(exc)));
                     return;
                 }
                 DownloadResult downloadResult = new DownloadResult(cause);
                 Result.Companion companion2 = Result.Companion;
-                CancellableContinuation.this.resumeWith(Result.m8443constructorimpl(downloadResult));
+                CancellableContinuation.this.resumeWith(Result.m8471constructorimpl(downloadResult));
             }
         }));
         function0.invoke();

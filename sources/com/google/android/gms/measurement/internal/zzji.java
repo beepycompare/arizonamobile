@@ -1,27 +1,22 @@
 package com.google.android.gms.measurement.internal;
-
-import java.util.concurrent.Callable;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzji implements Callable {
-    final /* synthetic */ zzr zza;
-    final /* synthetic */ zzjp zzb;
+public enum zzji {
+    STORAGE(zzjj.AD_STORAGE, zzjj.ANALYTICS_STORAGE),
+    DMA(zzjj.AD_USER_DATA);
+    
+    private final zzjj[] zzc;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzji(zzjp zzjpVar, zzr zzrVar) {
-        this.zza = zzrVar;
-        this.zzb = zzjpVar;
+    zzji(zzjj... zzjjVarArr) {
+        this.zzc = zzjjVarArr;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final /* bridge */ /* synthetic */ Object call() throws Exception {
-        zzpv zzpvVar;
-        zzpv zzpvVar2;
-        zzjp zzjpVar = this.zzb;
-        zzpvVar = zzjpVar.zza;
-        zzpvVar.zzL();
-        zzr zzrVar = this.zza;
-        zzpvVar2 = zzjpVar.zza;
-        return new zzap(zzpvVar2.zzd(zzrVar.zza));
+    public final zzjj[] zza() {
+        return this.zzc;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ zzjj[] zzb() {
+        return this.zzc;
     }
 }

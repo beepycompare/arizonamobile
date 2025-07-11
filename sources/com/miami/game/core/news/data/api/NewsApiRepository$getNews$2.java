@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NewsApiRepository.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\n\u0012\u0004\u0012\u00020\u0002\u0018\u00010\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "Lcom/miami/game/core/api/model/response/news/NewsApiModelItem;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\n\u0012\u0004\u0012\u00020\u0002\u0018\u00010\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "Lcom/miami/game/core/api/model/response/news/NewsApiModelItem;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.news.data.api.NewsApiRepository$getNews$2", f = "NewsApiRepository.kt", i = {}, l = {14}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes4.dex */
 public final class NewsApiRepository$getNews$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends NewsApiModelItem>>, Object> {

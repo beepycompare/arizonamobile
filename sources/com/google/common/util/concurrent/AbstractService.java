@@ -134,17 +134,13 @@ public abstract class AbstractService implements Service {
                 this.snapshot = new StateSnapshot(Service.State.STARTING);
                 enqueueStartingEvent();
                 doStart();
-                return this;
-            } catch (Throwable th) {
+            } finally {
                 try {
-                    Platform.restoreInterruptIfIsInterruptedException(th);
-                    notifyFailed(th);
                     return this;
                 } finally {
-                    this.monitor.leave();
-                    dispatchListenerEvents();
                 }
             }
+            return this;
         }
         throw new IllegalStateException("Service " + this + " has already been started");
     }
@@ -174,16 +170,13 @@ public abstract class AbstractService implements Service {
                     case 6:
                         throw new AssertionError("isStoppable is incorrectly implemented, saw: " + state);
                 }
-                return this;
-            } catch (Throwable th) {
+            } finally {
                 try {
-                    Platform.restoreInterruptIfIsInterruptedException(th);
-                    notifyFailed(th);
+                    return this;
                 } finally {
-                    this.monitor.leave();
-                    dispatchListenerEvents();
                 }
             }
+            return this;
         }
         return this;
     }

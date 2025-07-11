@@ -1241,7 +1241,7 @@ public abstract class Transition implements Cloneable {
 
     @Override // 
     /* renamed from: clone */
-    public Transition mo7710clone() {
+    public Transition mo7711clone() {
         try {
             Transition transition = (Transition) super.clone();
             transition.mAnimators = new ArrayList<>();
@@ -1623,14 +1623,14 @@ public abstract class Transition implements Cloneable {
             this.mSpringAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: androidx.transition.Transition$SeekController$$ExternalSyntheticLambda0
                 @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                 public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                    Transition.SeekController.this.m7711x76b2d240(dynamicAnimation, z, f, f2);
+                    Transition.SeekController.this.m7712x76b2d240(dynamicAnimation, z, f, f2);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$ensureAnimation$0$androidx-transition-Transition$SeekController  reason: not valid java name */
-        public /* synthetic */ void m7711x76b2d240(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+        public /* synthetic */ void m7712x76b2d240(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
             if (z) {
                 return;
             }

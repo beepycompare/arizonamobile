@@ -1,10 +1,10 @@
 package com.google.android.gms.internal.measurement;
-
-import java.io.IOException;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-public class zzmm extends IOException {
-    public zzmm(String str) {
-        super(str);
-    }
+public interface zzmm extends zzmn {
+    long zzc(int i);
+
+    @Override // com.google.android.gms.internal.measurement.zzmn, com.google.android.gms.internal.measurement.zzmg
+    /* renamed from: zzd */
+    zzmm zzg(int i);
 }

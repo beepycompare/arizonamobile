@@ -49,18 +49,18 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DownloadContent.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a#\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"DownloadContent", "", "uiState", "Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;", "onSoundClick", "Lkotlin/Function0;", "(Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "download-screen_release_web"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a#\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"DownloadContent", "", "uiState", "Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;", "onSoundClick", "Lkotlin/Function0;", "(Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "download-screen_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DownloadContentKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit DownloadContent$lambda$4(DownloadScreenUiState downloadScreenUiState, Function0 function0, int i, Composer composer, int i2) {
+    public static final Unit DownloadContent$lambda$5(DownloadScreenUiState downloadScreenUiState, Function0 function0, int i, Composer composer, int i2) {
         DownloadContent(downloadScreenUiState, function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Type inference failed for: r2v37 */
-    /* JADX WARN: Type inference failed for: r2v8 */
-    /* JADX WARN: Type inference failed for: r2v9, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r2v10, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r2v39 */
+    /* JADX WARN: Type inference failed for: r2v9 */
     /* JADX WARN: Type inference failed for: r6v0 */
     /* JADX WARN: Type inference failed for: r6v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r6v17 */
@@ -86,7 +86,9 @@ public final class DownloadContentKt {
         if ((i & 48) == 0) {
             i2 |= startRestartGroup.changedInstance(onSoundClick) ? 32 : 16;
         }
-        if ((i2 & 19) != 18 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-321713629, i2, -1, "com.miami.game.feature.download.screen.ui.compose.DownloadContent (DownloadContent.kt:25)");
             }
@@ -137,48 +139,27 @@ public final class DownloadContentKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 246913741, "C63@2450L773:DownloadContent.kt#k3v2wi");
-            startRestartGroup.startReplaceGroup(-1377509145);
-            ComposerKt.sourceInformation(startRestartGroup, "47@1921L509,43@1771L659");
             if (uiState.isLauncherUpdate()) {
                 i3 = r2;
                 i4 = i2;
                 i5 = 4;
                 i6 = 0;
                 i7 = 32;
+                startRestartGroup.startReplaceGroup(245154149);
             } else {
+                startRestartGroup.startReplaceGroup(246919258);
+                ComposerKt.sourceInformation(startRestartGroup, "47@1921L509,43@1771L659");
                 i3 = r2;
                 i4 = i2;
                 i5 = 4;
                 i6 = 0;
                 i7 = 32;
-                ScalingButtonKt.ScalingButton(onSoundClick, boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getTopEnd()), ComposableLambdaKt.rememberComposableLambda(-2005235955, r2, new Function3<BoxScope, Composer, Integer, Unit>() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$DownloadContent$1$1
+                ScalingButtonKt.ScalingButton(onSoundClick, boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getTopEnd()), ComposableLambdaKt.rememberComposableLambda(-2005235955, r2, new Function3() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function3
-                    public /* bridge */ /* synthetic */ Unit invoke(BoxScope boxScope, Composer composer2, Integer num) {
-                        invoke(boxScope, composer2, num.intValue());
-                        return Unit.INSTANCE;
-                    }
-
-                    public final void invoke(BoxScope ScalingButton, Composer composer2, int i8) {
-                        int i9;
-                        Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-                        ComposerKt.sourceInformation(composer2, "C54@2181L25,53@2154L262:DownloadContent.kt#k3v2wi");
-                        if ((i8 & 17) != 16 || !composer2.getSkipping()) {
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(-2005235955, i8, -1, "com.miami.game.feature.download.screen.ui.compose.DownloadContent.<anonymous>.<anonymous> (DownloadContent.kt:48)");
-                            }
-                            if (DownloadScreenUiState.this.getSoundOn()) {
-                                i9 = R.drawable.download_screen_sound_btn;
-                            } else {
-                                i9 = R.drawable.download_screen_sound_btn_off;
-                            }
-                            ImageKt.Image(PainterResources_androidKt.painterResource(i9, composer2, 0), (String) null, PaddingKt.m742paddingqDBjuR0$default(SizeKt.m771height3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(80)), 0.0f, Dp.m6684constructorimpl(24), 0.0f, 0.0f, 13, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer2, 25008, 104);
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventEnd();
-                                return;
-                            }
-                            return;
-                        }
-                        composer2.skipToGroupEnd();
+                    public final Object invoke(Object obj, Object obj2, Object obj3) {
+                        Unit DownloadContent$lambda$4$lambda$0;
+                        DownloadContent$lambda$4$lambda$0 = DownloadContentKt.DownloadContent$lambda$4$lambda$0(DownloadScreenUiState.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                        return DownloadContent$lambda$4$lambda$0;
                     }
                 }, startRestartGroup, 54), startRestartGroup, ((i2 >> 3) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
             }
@@ -220,22 +201,21 @@ public final class DownloadContentKt {
             TextKt.m2497Text4IGK_g("Осталось времени: " + uiState.getTimeRemainingString(), (Modifier) null, Color.m4077copywmQWz5c$default(Color.Companion.m4115getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TextUnitKt.getSp(10), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 3456, 0, 65522);
             startRestartGroup = startRestartGroup;
             Modifier m739paddingVpY3zN4 = PaddingKt.m739paddingVpY3zN4(Modifier.Companion, Dp.m6684constructorimpl(i7), Dp.m6684constructorimpl(28));
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):DownloadContent.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1873812849, "CC(remember):DownloadContent.kt#9igjgp");
             int i10 = (i4 & 14) == i9 ? i3 : i8;
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (i10 != 0 || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = new Function0() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$$ExternalSyntheticLambda0
+                rememberedValue = new Function0() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        float DownloadContent$lambda$3$lambda$2$lambda$1$lambda$0;
-                        DownloadContent$lambda$3$lambda$2$lambda$1$lambda$0 = DownloadContentKt.DownloadContent$lambda$3$lambda$2$lambda$1$lambda$0(DownloadScreenUiState.this);
-                        return Float.valueOf(DownloadContent$lambda$3$lambda$2$lambda$1$lambda$0);
+                        float DownloadContent$lambda$4$lambda$3$lambda$2$lambda$1;
+                        DownloadContent$lambda$4$lambda$3$lambda$2$lambda$1 = DownloadContentKt.DownloadContent$lambda$4$lambda$3$lambda$2$lambda$1(DownloadScreenUiState.this);
+                        return Float.valueOf(DownloadContent$lambda$4$lambda$3$lambda$2$lambda$1);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ProgressBarKt.CustomLinerProgressBar((Function0) rememberedValue, m739paddingVpY3zN4, startRestartGroup, 48, i8);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -252,24 +232,46 @@ public final class DownloadContentKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$$ExternalSyntheticLambda1
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DownloadContent$lambda$4;
-                    DownloadContent$lambda$4 = DownloadContentKt.DownloadContent$lambda$4(DownloadScreenUiState.this, onSoundClick, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DownloadContent$lambda$4;
+                    Unit DownloadContent$lambda$5;
+                    DownloadContent$lambda$5 = DownloadContentKt.DownloadContent$lambda$5(DownloadScreenUiState.this, onSoundClick, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return DownloadContent$lambda$5;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final float DownloadContent$lambda$3$lambda$2$lambda$1$lambda$0(DownloadScreenUiState downloadScreenUiState) {
+    public static final Unit DownloadContent$lambda$4$lambda$0(DownloadScreenUiState downloadScreenUiState, BoxScope ScalingButton, Composer composer, int i) {
+        int i2;
+        Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
+        ComposerKt.sourceInformation(composer, "C54@2181L25,53@2154L262:DownloadContent.kt#k3v2wi");
+        if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
+            composer.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-2005235955, i, -1, "com.miami.game.feature.download.screen.ui.compose.DownloadContent.<anonymous>.<anonymous> (DownloadContent.kt:48)");
+            }
+            if (downloadScreenUiState.getSoundOn()) {
+                i2 = R.drawable.download_screen_sound_btn;
+            } else {
+                i2 = R.drawable.download_screen_sound_btn_off;
+            }
+            ImageKt.Image(PainterResources_androidKt.painterResource(i2, composer, 0), (String) null, PaddingKt.m742paddingqDBjuR0$default(SizeKt.m771height3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(80)), 0.0f, Dp.m6684constructorimpl(24), 0.0f, 0.0f, 13, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final float DownloadContent$lambda$4$lambda$3$lambda$2$lambda$1(DownloadScreenUiState downloadScreenUiState) {
         return (float) downloadScreenUiState.getPercentageProgress();
     }
 }

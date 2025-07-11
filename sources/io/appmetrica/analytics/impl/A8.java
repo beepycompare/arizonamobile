@@ -12,7 +12,7 @@ public final class A8 extends MessageNano {
     public static volatile A8[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0733y8 f332a;
+    public C0725y8 f333a;
 
     public A8() {
         a();
@@ -30,7 +30,7 @@ public final class A8 extends MessageNano {
     }
 
     public final A8 a() {
-        this.f332a = null;
+        this.f333a = null;
         this.cachedSize = -1;
         return this;
     }
@@ -38,15 +38,15 @@ public final class A8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0733y8 c0733y8 = this.f332a;
-        return c0733y8 != null ? CodedOutputByteBufferNano.computeMessageSize(1, c0733y8) + computeSerializedSize : computeSerializedSize;
+        C0725y8 c0725y8 = this.f333a;
+        return c0725y8 != null ? CodedOutputByteBufferNano.computeMessageSize(1, c0725y8) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0733y8 c0733y8 = this.f332a;
-        if (c0733y8 != null) {
-            codedOutputByteBufferNano.writeMessage(1, c0733y8);
+        C0725y8 c0725y8 = this.f333a;
+        if (c0725y8 != null) {
+            codedOutputByteBufferNano.writeMessage(1, c0725y8);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -63,10 +63,10 @@ public final class A8 extends MessageNano {
                     break;
                 }
             } else {
-                if (this.f332a == null) {
-                    this.f332a = new C0733y8();
+                if (this.f333a == null) {
+                    this.f333a = new C0725y8();
                 }
-                codedInputByteBufferNano.readMessage(this.f332a);
+                codedInputByteBufferNano.readMessage(this.f333a);
             }
         }
         return this;

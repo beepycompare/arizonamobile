@@ -5,11 +5,10 @@ import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
-import kotlin.io.encoding.Base64;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FlowExt.kt */
 @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.FlowExtKt$simpleRunningReduce$1$1", f = "FlowExt.kt", i = {0}, l = {73, Base64.mimeLineLength}, m = "emit", n = {"this"}, s = {"L$0"})
+@DebugMetadata(c = "androidx.paging.FlowExtKt$simpleRunningReduce$1$1", f = "FlowExt.kt", i = {0}, l = {73, 76}, m = "emit", n = {"this"}, s = {"L$0"})
 /* loaded from: classes3.dex */
 public final class FlowExtKt$simpleRunningReduce$1$1$emit$1 extends ContinuationImpl {
     Object L$0;

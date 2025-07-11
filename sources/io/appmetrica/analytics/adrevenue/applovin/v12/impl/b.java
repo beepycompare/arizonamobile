@@ -26,11 +26,11 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class b implements ModuleAdRevenueProcessor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final a f210a;
+    public final a f211a;
     public final ClientContext b;
 
     public b(a aVar, ClientContext clientContext) {
-        this.f210a = aVar;
+        this.f211a = aVar;
         this.b = clientContext;
     }
 
@@ -50,7 +50,7 @@ public final class b implements ModuleAdRevenueProcessor {
                 Object orNull2 = ArraysKt.getOrNull(objArr, 1);
                 if (orNull2 != null) {
                     AppLovinSdk appLovinSdk = (AppLovinSdk) orNull2;
-                    this.f210a.getClass();
+                    this.f211a.getClass();
                     MaxAdFormat format = maxAd.getFormat();
                     if (format == null) {
                         moduleAdType = null;

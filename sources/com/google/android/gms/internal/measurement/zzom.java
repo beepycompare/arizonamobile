@@ -1,56 +1,57 @@
 package com.google.android.gms.internal.measurement;
 
-import androidx.media3.exoplayer.analytics.AnalyticsListener;
-import com.google.common.base.Ascii;
-import okio.Utf8;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+import sun.misc.Unsafe;
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzom {
+final class zzom extends zzon {
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* bridge */ /* synthetic */ void zza(byte b, byte b2, byte b3, byte b4, char[] cArr, int i) {
-        if (zze(b2) || (((b << Ascii.FS) + (b2 + 112)) >> 30) != 0 || zze(b3) || zze(b4)) {
-            throw new zzmm("Protocol message had invalid UTF-8.");
+    public zzom(Unsafe unsafe) {
+        super(unsafe);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzon
+    public final void zza(Object obj, long j, byte b) {
+        if (zzoo.zzb) {
+            zzoo.zzD(obj, j, b);
+        } else {
+            zzoo.zzE(obj, j, b);
         }
-        int i2 = ((b & 7) << 18) | ((b2 & Utf8.REPLACEMENT_BYTE) << 12) | ((b3 & Utf8.REPLACEMENT_BYTE) << 6) | (b4 & Utf8.REPLACEMENT_BYTE);
-        cArr[i] = (char) ((i2 >>> 10) + Utf8.HIGH_SURROGATE_HEADER);
-        cArr[i + 1] = (char) ((i2 & AnalyticsListener.EVENT_DRM_KEYS_LOADED) + Utf8.LOG_SURROGATE_HEADER);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* bridge */ /* synthetic */ void zzc(byte b, byte b2, char[] cArr, int i) {
-        if (b < -62 || zze(b2)) {
-            throw new zzmm("Protocol message had invalid UTF-8.");
+    @Override // com.google.android.gms.internal.measurement.zzon
+    public final boolean zzb(Object obj, long j) {
+        if (zzoo.zzb) {
+            return zzoo.zzu(obj, j);
         }
-        cArr[i] = (char) (((b & Ascii.US) << 6) | (b2 & Utf8.REPLACEMENT_BYTE));
+        return zzoo.zzv(obj, j);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* bridge */ /* synthetic */ boolean zzd(byte b) {
-        return b >= 0;
-    }
-
-    private static boolean zze(byte b) {
-        return b > -65;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* bridge */ /* synthetic */ void zzb(byte b, byte b2, byte b3, char[] cArr, int i) {
-        if (!zze(b2)) {
-            if (b == -32) {
-                if (b2 >= -96) {
-                    b = -32;
-                }
-            }
-            if (b == -19) {
-                if (b2 < -96) {
-                    b = -19;
-                }
-            }
-            if (!zze(b3)) {
-                cArr[i] = (char) (((b & Ascii.SI) << 12) | ((b2 & Utf8.REPLACEMENT_BYTE) << 6) | (b3 & Utf8.REPLACEMENT_BYTE));
-                return;
-            }
+    @Override // com.google.android.gms.internal.measurement.zzon
+    public final void zzc(Object obj, long j, boolean z) {
+        if (zzoo.zzb) {
+            zzoo.zzD(obj, j, r3 ? (byte) 1 : (byte) 0);
+        } else {
+            zzoo.zzE(obj, j, r3 ? (byte) 1 : (byte) 0);
         }
-        throw new zzmm("Protocol message had invalid UTF-8.");
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzon
+    public final float zzd(Object obj, long j) {
+        return Float.intBitsToFloat(this.zza.getInt(obj, j));
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzon
+    public final void zze(Object obj, long j, float f) {
+        this.zza.putInt(obj, j, Float.floatToIntBits(f));
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzon
+    public final double zzf(Object obj, long j) {
+        return Double.longBitsToDouble(this.zza.getLong(obj, j));
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzon
+    public final void zzg(Object obj, long j, double d) {
+        this.zza.putLong(obj, j, Double.doubleToLongBits(d));
     }
 }

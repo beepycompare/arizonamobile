@@ -149,7 +149,7 @@ public final class NavTypeKt {
         Intrinsics.checkNotNullParameter(navType, "<this>");
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        if (SavedStateReader.m7580containsimpl(SavedStateReader.m7579constructorimpl(bundle), key)) {
+        if (SavedStateReader.m7581containsimpl(SavedStateReader.m7580constructorimpl(bundle), key)) {
             if (str != null) {
                 T parseValue = navType.parseValue(str, t);
                 navType.put(bundle, key, parseValue);

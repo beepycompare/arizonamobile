@@ -2,36 +2,34 @@ package com.google.android.gms.internal.measurement;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
 final class zzar implements Iterator {
-    final /* synthetic */ zzat zza;
-    private int zzb = 0;
+    final /* synthetic */ zzas zza;
+    private int zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzar(zzat zzatVar) {
-        this.zza = zzatVar;
+    public zzar(zzas zzasVar) {
+        Objects.requireNonNull(zzasVar);
+        this.zza = zzasVar;
+        this.zzb = 0;
     }
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
-        String str;
-        zzat zzatVar = this.zza;
-        int i = this.zzb;
-        str = zzatVar.zza;
-        return i < str.length();
+        return this.zzb < this.zza.zzb().length();
     }
 
     @Override // java.util.Iterator
     public final /* bridge */ /* synthetic */ Object next() {
-        String str;
-        zzat zzatVar = this.zza;
+        zzas zzasVar = this.zza;
+        String zzb = zzasVar.zzb();
         int i = this.zzb;
-        str = zzatVar.zza;
-        if (i >= str.length()) {
+        if (i >= zzb.length()) {
             throw new NoSuchElementException();
         }
         this.zzb = i + 1;
-        return new zzat(String.valueOf(i));
+        return new zzas(String.valueOf(zzasVar.zzb().charAt(i)));
     }
 }

@@ -9,14 +9,14 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 public class WaitForActivationDelayBarrier implements ActivationBarrier {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f285a;
+    private long f286a;
     private final SystemTimeProvider b;
 
     /* loaded from: classes4.dex */
     public static class ActivationBarrierHelper {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f286a = false;
+        private boolean f287a = false;
         private final a b;
         private final WaitForActivationDelayBarrier c;
 
@@ -26,7 +26,7 @@ public class WaitForActivationDelayBarrier implements ActivationBarrier {
         }
 
         public void subscribeIfNeeded(long j, ICommonExecutor iCommonExecutor) {
-            if (!this.f286a) {
+            if (!this.f287a) {
                 this.c.subscribe(j, iCommonExecutor, this.b);
             } else {
                 iCommonExecutor.execute(new b(this));
@@ -39,12 +39,12 @@ public class WaitForActivationDelayBarrier implements ActivationBarrier {
     }
 
     public void activate() {
-        this.f285a = this.b.currentTimeMillis();
+        this.f286a = this.b.currentTimeMillis();
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrier
     public void subscribe(long j, ICommonExecutor iCommonExecutor, ActivationBarrierCallback activationBarrierCallback) {
-        iCommonExecutor.executeDelayed(new m(activationBarrierCallback), Math.max(j - (this.b.currentTimeMillis() - this.f285a), 0L));
+        iCommonExecutor.executeDelayed(new m(activationBarrierCallback), Math.max(j - (this.b.currentTimeMillis() - this.f286a), 0L));
     }
 
     WaitForActivationDelayBarrier(SystemTimeProvider systemTimeProvider) {

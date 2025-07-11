@@ -11,23 +11,23 @@ import kotlinx.datetime.internal.DateCalculationsKt;
 import kotlinx.datetime.internal.format.parser.Copyable;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: UtcOffsetFormat.kt */
-@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0013\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0000\u0018\u00002\u00020\u00012\b\u0012\u0004\u0012\u00020\u00000\u0002B5\u0012\n\b\u0002\u0010\u0003\u001a\u0004\u0018\u00010\u0004\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u0006¢\u0006\u0002\u0010\tJ\b\u0010\u0017\u001a\u00020\u0000H\u0016J\u0013\u0010\u0018\u001a\u00020\u00042\b\u0010\u0019\u001a\u0004\u0018\u00010\u001aH\u0096\u0002J\b\u0010\u001b\u001a\u00020\u0006H\u0016J\u000e\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001fJ\b\u0010 \u001a\u00020!H\u0016J\u0006\u0010\"\u001a\u00020\u001fR\u001e\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0096\u000e¢\u0006\u0010\n\u0002\u0010\r\u001a\u0004\b\u0003\u0010\n\"\u0004\b\u000b\u0010\fR\u001e\u0010\u0007\u001a\u0004\u0018\u00010\u0006X\u0096\u000e¢\u0006\u0010\n\u0002\u0010\u0012\u001a\u0004\b\u000e\u0010\u000f\"\u0004\b\u0010\u0010\u0011R\u001e\u0010\b\u001a\u0004\u0018\u00010\u0006X\u0096\u000e¢\u0006\u0010\n\u0002\u0010\u0012\u001a\u0004\b\u0013\u0010\u000f\"\u0004\b\u0014\u0010\u0011R\u001e\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0096\u000e¢\u0006\u0010\n\u0002\u0010\u0012\u001a\u0004\b\u0015\u0010\u000f\"\u0004\b\u0016\u0010\u0011¨\u0006#"}, d2 = {"Lkotlinx/datetime/format/IncompleteUtcOffset;", "Lkotlinx/datetime/format/UtcOffsetFieldContainer;", "Lkotlinx/datetime/internal/format/parser/Copyable;", "isNegative", "", "totalHoursAbs", "", "minutesOfHour", "secondsOfMinute", "(Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)V", "()Ljava/lang/Boolean;", "setNegative", "(Ljava/lang/Boolean;)V", "Ljava/lang/Boolean;", "getMinutesOfHour", "()Ljava/lang/Integer;", "setMinutesOfHour", "(Ljava/lang/Integer;)V", "Ljava/lang/Integer;", "getSecondsOfMinute", "setSecondsOfMinute", "getTotalHoursAbs", "setTotalHoursAbs", "copy", "equals", "other", "", "hashCode", "populateFrom", "", TypedValues.CycleType.S_WAVE_OFFSET, "Lkotlinx/datetime/UtcOffset;", "toString", "", "toUtcOffset", "kotlinx-datetime"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0000\u0018\u00002\u00020\u00012\b\u0012\u0004\u0012\u00020\u00000\u0002B7\u0012\n\b\u0002\u0010\u0003\u001a\u0004\u0018\u00010\u0004\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u0006¢\u0006\u0004\b\t\u0010\nJ\u0006\u0010\u0019\u001a\u00020\u001aJ\u000e\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001aJ\u0013\u0010\u001e\u001a\u00020\u00042\b\u0010\u001f\u001a\u0004\u0018\u00010 H\u0096\u0002J\b\u0010!\u001a\u00020\u0006H\u0016J\b\u0010\"\u001a\u00020\u0000H\u0016J\b\u0010#\u001a\u00020$H\u0016R\u001e\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0096\u000e¢\u0006\u0010\n\u0002\u0010\u000f\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001e\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0096\u000e¢\u0006\u0010\n\u0002\u0010\u0014\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u001e\u0010\u0007\u001a\u0004\u0018\u00010\u0006X\u0096\u000e¢\u0006\u0010\n\u0002\u0010\u0014\u001a\u0004\b\u0015\u0010\u0011\"\u0004\b\u0016\u0010\u0013R\u001e\u0010\b\u001a\u0004\u0018\u00010\u0006X\u0096\u000e¢\u0006\u0010\n\u0002\u0010\u0014\u001a\u0004\b\u0017\u0010\u0011\"\u0004\b\u0018\u0010\u0013¨\u0006%"}, d2 = {"Lkotlinx/datetime/format/IncompleteUtcOffset;", "Lkotlinx/datetime/format/UtcOffsetFieldContainer;", "Lkotlinx/datetime/internal/format/parser/Copyable;", "offsetIsNegative", "", "offsetHours", "", "offsetMinutesOfHour", "offsetSecondsOfMinute", "<init>", "(Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)V", "getOffsetIsNegative", "()Ljava/lang/Boolean;", "setOffsetIsNegative", "(Ljava/lang/Boolean;)V", "Ljava/lang/Boolean;", "getOffsetHours", "()Ljava/lang/Integer;", "setOffsetHours", "(Ljava/lang/Integer;)V", "Ljava/lang/Integer;", "getOffsetMinutesOfHour", "setOffsetMinutesOfHour", "getOffsetSecondsOfMinute", "setOffsetSecondsOfMinute", "toUtcOffset", "Lkotlinx/datetime/UtcOffset;", "populateFrom", "", TypedValues.CycleType.S_WAVE_OFFSET, "equals", "other", "", "hashCode", "copy", "toString", "", "kotlinx-datetime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class IncompleteUtcOffset implements UtcOffsetFieldContainer, Copyable<IncompleteUtcOffset> {
-    private Boolean isNegative;
-    private Integer minutesOfHour;
-    private Integer secondsOfMinute;
-    private Integer totalHoursAbs;
+    private Integer offsetHours;
+    private Boolean offsetIsNegative;
+    private Integer offsetMinutesOfHour;
+    private Integer offsetSecondsOfMinute;
 
     public IncompleteUtcOffset() {
         this(null, null, null, null, 15, null);
     }
 
     public IncompleteUtcOffset(Boolean bool, Integer num, Integer num2, Integer num3) {
-        this.isNegative = bool;
-        this.totalHoursAbs = num;
-        this.minutesOfHour = num2;
-        this.secondsOfMinute = num3;
+        this.offsetIsNegative = bool;
+        this.offsetHours = num;
+        this.offsetMinutesOfHour = num2;
+        this.offsetSecondsOfMinute = num3;
     }
 
     public /* synthetic */ IncompleteUtcOffset(Boolean bool, Integer num, Integer num2, Integer num3, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -35,103 +35,103 @@ public final class IncompleteUtcOffset implements UtcOffsetFieldContainer, Copya
     }
 
     @Override // kotlinx.datetime.format.UtcOffsetFieldContainer
-    public Boolean isNegative() {
-        return this.isNegative;
+    public Boolean getOffsetIsNegative() {
+        return this.offsetIsNegative;
     }
 
     @Override // kotlinx.datetime.format.UtcOffsetFieldContainer
-    public void setNegative(Boolean bool) {
-        this.isNegative = bool;
+    public void setOffsetIsNegative(Boolean bool) {
+        this.offsetIsNegative = bool;
     }
 
     @Override // kotlinx.datetime.format.UtcOffsetFieldContainer
-    public Integer getTotalHoursAbs() {
-        return this.totalHoursAbs;
+    public Integer getOffsetHours() {
+        return this.offsetHours;
     }
 
     @Override // kotlinx.datetime.format.UtcOffsetFieldContainer
-    public void setTotalHoursAbs(Integer num) {
-        this.totalHoursAbs = num;
+    public void setOffsetHours(Integer num) {
+        this.offsetHours = num;
     }
 
     @Override // kotlinx.datetime.format.UtcOffsetFieldContainer
-    public Integer getMinutesOfHour() {
-        return this.minutesOfHour;
+    public Integer getOffsetMinutesOfHour() {
+        return this.offsetMinutesOfHour;
     }
 
     @Override // kotlinx.datetime.format.UtcOffsetFieldContainer
-    public void setMinutesOfHour(Integer num) {
-        this.minutesOfHour = num;
+    public void setOffsetMinutesOfHour(Integer num) {
+        this.offsetMinutesOfHour = num;
     }
 
     @Override // kotlinx.datetime.format.UtcOffsetFieldContainer
-    public Integer getSecondsOfMinute() {
-        return this.secondsOfMinute;
+    public Integer getOffsetSecondsOfMinute() {
+        return this.offsetSecondsOfMinute;
     }
 
     @Override // kotlinx.datetime.format.UtcOffsetFieldContainer
-    public void setSecondsOfMinute(Integer num) {
-        this.secondsOfMinute = num;
+    public void setOffsetSecondsOfMinute(Integer num) {
+        this.offsetSecondsOfMinute = num;
     }
 
     public final UtcOffset toUtcOffset() {
-        int i = Intrinsics.areEqual((Object) isNegative(), (Object) true) ? -1 : 1;
-        Integer totalHoursAbs = getTotalHoursAbs();
-        Integer valueOf = totalHoursAbs != null ? Integer.valueOf(totalHoursAbs.intValue() * i) : null;
-        Integer minutesOfHour = getMinutesOfHour();
-        Integer valueOf2 = minutesOfHour != null ? Integer.valueOf(minutesOfHour.intValue() * i) : null;
-        Integer secondsOfMinute = getSecondsOfMinute();
-        return UtcOffsetJvmKt.UtcOffset(valueOf, valueOf2, secondsOfMinute != null ? Integer.valueOf(secondsOfMinute.intValue() * i) : null);
+        int i = Intrinsics.areEqual((Object) getOffsetIsNegative(), (Object) true) ? -1 : 1;
+        Integer offsetHours = getOffsetHours();
+        Integer valueOf = offsetHours != null ? Integer.valueOf(offsetHours.intValue() * i) : null;
+        Integer offsetMinutesOfHour = getOffsetMinutesOfHour();
+        Integer valueOf2 = offsetMinutesOfHour != null ? Integer.valueOf(offsetMinutesOfHour.intValue() * i) : null;
+        Integer offsetSecondsOfMinute = getOffsetSecondsOfMinute();
+        return UtcOffsetJvmKt.UtcOffset(valueOf, valueOf2, offsetSecondsOfMinute != null ? Integer.valueOf(offsetSecondsOfMinute.intValue() * i) : null);
     }
 
     public final void populateFrom(UtcOffset offset) {
         Intrinsics.checkNotNullParameter(offset, "offset");
-        setNegative(Boolean.valueOf(offset.getTotalSeconds() < 0));
+        setOffsetIsNegative(Boolean.valueOf(offset.getTotalSeconds() < 0));
         int abs = Math.abs(offset.getTotalSeconds());
-        setTotalHoursAbs(Integer.valueOf(abs / DateCalculationsKt.SECONDS_PER_HOUR));
-        setMinutesOfHour(Integer.valueOf((abs / 60) % 60));
-        setSecondsOfMinute(Integer.valueOf(abs % 60));
+        setOffsetHours(Integer.valueOf(abs / DateCalculationsKt.SECONDS_PER_HOUR));
+        setOffsetMinutesOfHour(Integer.valueOf((abs / 60) % 60));
+        setOffsetSecondsOfMinute(Integer.valueOf(abs % 60));
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof IncompleteUtcOffset) {
             IncompleteUtcOffset incompleteUtcOffset = (IncompleteUtcOffset) obj;
-            return Intrinsics.areEqual(isNegative(), incompleteUtcOffset.isNegative()) && Intrinsics.areEqual(getTotalHoursAbs(), incompleteUtcOffset.getTotalHoursAbs()) && Intrinsics.areEqual(getMinutesOfHour(), incompleteUtcOffset.getMinutesOfHour()) && Intrinsics.areEqual(getSecondsOfMinute(), incompleteUtcOffset.getSecondsOfMinute());
+            return Intrinsics.areEqual(getOffsetIsNegative(), incompleteUtcOffset.getOffsetIsNegative()) && Intrinsics.areEqual(getOffsetHours(), incompleteUtcOffset.getOffsetHours()) && Intrinsics.areEqual(getOffsetMinutesOfHour(), incompleteUtcOffset.getOffsetMinutesOfHour()) && Intrinsics.areEqual(getOffsetSecondsOfMinute(), incompleteUtcOffset.getOffsetSecondsOfMinute());
         }
         return false;
     }
 
     public int hashCode() {
-        Boolean isNegative = isNegative();
-        int hashCode = isNegative != null ? isNegative.hashCode() : 0;
-        Integer totalHoursAbs = getTotalHoursAbs();
-        int hashCode2 = hashCode + (totalHoursAbs != null ? totalHoursAbs.hashCode() : 0);
-        Integer minutesOfHour = getMinutesOfHour();
-        int hashCode3 = hashCode2 + (minutesOfHour != null ? minutesOfHour.hashCode() : 0);
-        Integer secondsOfMinute = getSecondsOfMinute();
-        return hashCode3 + (secondsOfMinute != null ? secondsOfMinute.hashCode() : 0);
+        Boolean offsetIsNegative = getOffsetIsNegative();
+        int hashCode = offsetIsNegative != null ? offsetIsNegative.hashCode() : 0;
+        Integer offsetHours = getOffsetHours();
+        int hashCode2 = hashCode + (offsetHours != null ? offsetHours.hashCode() : 0);
+        Integer offsetMinutesOfHour = getOffsetMinutesOfHour();
+        int hashCode3 = hashCode2 + (offsetMinutesOfHour != null ? offsetMinutesOfHour.hashCode() : 0);
+        Integer offsetSecondsOfMinute = getOffsetSecondsOfMinute();
+        return hashCode3 + (offsetSecondsOfMinute != null ? offsetSecondsOfMinute.hashCode() : 0);
     }
 
     @Override // kotlinx.datetime.internal.format.parser.Copyable
     public IncompleteUtcOffset copy() {
-        return new IncompleteUtcOffset(isNegative(), getTotalHoursAbs(), getMinutesOfHour(), getSecondsOfMinute());
+        return new IncompleteUtcOffset(getOffsetIsNegative(), getOffsetHours(), getOffsetMinutesOfHour(), getOffsetSecondsOfMinute());
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        Boolean isNegative = isNegative();
-        StringBuilder append = sb.append(isNegative != null ? isNegative.booleanValue() ? Constants.FILENAME_SEQUENCE_SEPARATOR : "+" : " ");
-        Integer totalHoursAbs = getTotalHoursAbs();
-        if (totalHoursAbs == null) {
-            totalHoursAbs = "??";
+        Boolean offsetIsNegative = getOffsetIsNegative();
+        StringBuilder append = sb.append(offsetIsNegative != null ? offsetIsNegative.booleanValue() ? Constants.FILENAME_SEQUENCE_SEPARATOR : "+" : " ");
+        Integer offsetHours = getOffsetHours();
+        if (offsetHours == null) {
+            offsetHours = "??";
         }
-        StringBuilder append2 = append.append(totalHoursAbs).append(AbstractJsonLexerKt.COLON);
-        Integer minutesOfHour = getMinutesOfHour();
-        if (minutesOfHour == null) {
-            minutesOfHour = "??";
+        StringBuilder append2 = append.append(offsetHours).append(AbstractJsonLexerKt.COLON);
+        Integer offsetMinutesOfHour = getOffsetMinutesOfHour();
+        if (offsetMinutesOfHour == null) {
+            offsetMinutesOfHour = "??";
         }
-        StringBuilder append3 = append2.append(minutesOfHour).append(AbstractJsonLexerKt.COLON);
-        Integer secondsOfMinute = getSecondsOfMinute();
-        return append3.append(secondsOfMinute != null ? secondsOfMinute : "??").toString();
+        StringBuilder append3 = append2.append(offsetMinutesOfHour).append(AbstractJsonLexerKt.COLON);
+        Integer offsetSecondsOfMinute = getOffsetSecondsOfMinute();
+        return append3.append(offsetSecondsOfMinute != null ? offsetSecondsOfMinute : "??").toString();
     }
 }

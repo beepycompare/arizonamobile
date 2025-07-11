@@ -42,6 +42,6 @@ final class FlowKt__DelayKt$timeoutInternal$1$1$2 extends SuspendLambda implemen
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        throw new TimeoutCancellationException("Timed out waiting for " + ((Object) Duration.m9830toStringimpl(this.$timeout)));
+        throw new TimeoutCancellationException("Timed out waiting for " + ((Object) Duration.m9863toStringimpl(this.$timeout)));
     }
 }

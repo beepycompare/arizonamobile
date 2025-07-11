@@ -95,6 +95,7 @@ public class NewThreadWorker extends Scheduler.Worker implements Disposable {
                     disposableContainer.remove(scheduledRunnable);
                 }
                 RxJavaPlugins.onError(e);
+                return scheduledRunnable;
             }
         }
         return scheduledRunnable;

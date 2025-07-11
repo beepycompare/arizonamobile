@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public abstract class Cn {
     public static long a() {
         long j;
-        C0247ek c0247ek = AbstractC0222dk.f808a;
-        synchronized (c0247ek) {
-            j = c0247ek.f823a;
+        C0239ek c0239ek = AbstractC0214dk.f809a;
+        synchronized (c0239ek) {
+            j = c0239ek.f824a;
         }
         return j;
     }

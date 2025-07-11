@@ -11,7 +11,7 @@ import kotlin.reflect.KType;
 /* loaded from: classes5.dex */
 public interface ParametrizedSerializerCache<T> {
     /* renamed from: get-gIAlu-s */
-    Object mo10108getgIAlus(KClass<Object> kClass, List<? extends KType> list);
+    Object mo10173getgIAlus(KClass<Object> kClass, List<? extends KType> list);
 
     /* compiled from: Platform.common.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
@@ -19,12 +19,12 @@ public interface ParametrizedSerializerCache<T> {
     public static final class DefaultImpls {
         /* JADX WARN: Multi-variable type inference failed */
         /* renamed from: get-gIAlu-s$default  reason: not valid java name */
-        public static /* synthetic */ Object m10115getgIAlus$default(ParametrizedSerializerCache parametrizedSerializerCache, KClass kClass, List list, int i, Object obj) {
+        public static /* synthetic */ Object m10180getgIAlus$default(ParametrizedSerializerCache parametrizedSerializerCache, KClass kClass, List list, int i, Object obj) {
             if (obj == null) {
                 if ((i & 2) != 0) {
                     list = CollectionsKt.emptyList();
                 }
-                return parametrizedSerializerCache.mo10108getgIAlus(kClass, list);
+                return parametrizedSerializerCache.mo10173getgIAlus(kClass, list);
             }
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: get-gIAlu-s");
         }

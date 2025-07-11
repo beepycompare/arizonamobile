@@ -76,36 +76,37 @@ public class NetworkFetcher {
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x004c, code lost:
+        if (r2 != null) goto L13;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private LottieResult<LottieComposition> fetchFromNetwork(Context context, String str, String str2) {
+        LottieResult<LottieComposition> lottieResult;
         Logger.debug("Fetching " + str);
         LottieFetchResult lottieFetchResult = null;
         try {
             try {
                 LottieFetchResult fetchSync = this.fetcher.fetchSync(str);
-                if (!fetchSync.isSuccessful()) {
-                    LottieResult<LottieComposition> lottieResult = new LottieResult<>(new IllegalArgumentException(fetchSync.error()));
-                    if (fetchSync != null) {
-                        try {
-                            fetchSync.close();
-                            return lottieResult;
-                        } catch (IOException e) {
-                            Logger.warning("LottieFetchResult close failed ", e);
-                        }
+                if (fetchSync.isSuccessful()) {
+                    lottieResult = fromInputStream(context, str, fetchSync.bodyByteStream(), fetchSync.contentType(), str2);
+                    Logger.debug("Completed fetch from network. Success: " + (lottieResult.getValue() != null));
+                } else {
+                    lottieResult = new LottieResult<>(new IllegalArgumentException(fetchSync.error()));
+                    if (fetchSync == null) {
+                        return lottieResult;
                     }
+                }
+                try {
+                    fetchSync.close();
+                    return lottieResult;
+                } catch (IOException e) {
+                    Logger.warning("LottieFetchResult close failed ", e);
                     return lottieResult;
                 }
-                LottieResult<LottieComposition> fromInputStream = fromInputStream(context, str, fetchSync.bodyByteStream(), fetchSync.contentType(), str2);
-                Logger.debug("Completed fetch from network. Success: " + (fromInputStream.getValue() != null));
-                if (fetchSync != null) {
-                    try {
-                        fetchSync.close();
-                        return fromInputStream;
-                    } catch (IOException e2) {
-                        Logger.warning("LottieFetchResult close failed ", e2);
-                    }
-                }
-                return fromInputStream;
-            } catch (Throwable th) {
+            } catch (Exception e2) {
+                LottieResult<LottieComposition> lottieResult2 = new LottieResult<>(e2);
                 if (0 != 0) {
                     try {
                         lottieFetchResult.close();
@@ -113,18 +114,17 @@ public class NetworkFetcher {
                         Logger.warning("LottieFetchResult close failed ", e3);
                     }
                 }
-                throw th;
+                return lottieResult2;
             }
-        } catch (Exception e4) {
-            LottieResult<LottieComposition> lottieResult2 = new LottieResult<>(e4);
+        } catch (Throwable th) {
             if (0 != 0) {
                 try {
                     lottieFetchResult.close();
-                } catch (IOException e5) {
-                    Logger.warning("LottieFetchResult close failed ", e5);
+                } catch (IOException e4) {
+                    Logger.warning("LottieFetchResult close failed ", e4);
                 }
             }
-            return lottieResult2;
+            throw th;
         }
     }
 

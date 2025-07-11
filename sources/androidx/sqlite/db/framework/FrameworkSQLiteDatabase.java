@@ -173,7 +173,7 @@ public final class FrameworkSQLiteDatabase implements SupportSQLiteDatabase {
     }
 
     /* renamed from: setMaximumSize  reason: collision with other method in class */
-    public void m7707setMaximumSize(long j) {
+    public void m7708setMaximumSize(long j) {
         this.delegate.setMaximumSize(j);
     }
 

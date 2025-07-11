@@ -10,13 +10,13 @@ import java.util.HashMap;
 public final class Ak implements ServiceWakeLock {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f339a;
-    public final C0770zk b;
+    public final Context f340a;
+    public final C0762zk b;
     public final HashMap c = new HashMap();
 
-    public Ak(Context context, C0770zk c0770zk) {
-        this.f339a = context;
-        this.b = c0770zk;
+    public Ak(Context context, C0762zk c0762zk) {
+        this.f340a = context;
+        this.b = c0762zk;
     }
 
     public final String a(String str) {
@@ -27,19 +27,19 @@ public final class Ak implements ServiceWakeLock {
     public final synchronized boolean acquireWakeLock(String str) {
         if (this.c.get(str) == null) {
             HashMap hashMap = this.c;
-            C0770zk c0770zk = this.b;
-            Context context = this.f339a;
+            C0762zk c0762zk = this.b;
+            Context context = this.f340a;
             String a2 = a(str);
-            c0770zk.f1170a.getClass();
+            c0762zk.f1171a.getClass();
             Intent intent = new Intent(context, AppMetricaService.class);
             intent.setAction(a2);
-            ServiceConnectionC0745yk serviceConnectionC0745yk = new ServiceConnectionC0745yk();
+            ServiceConnectionC0737yk serviceConnectionC0737yk = new ServiceConnectionC0737yk();
             try {
-                context.bindService(intent, serviceConnectionC0745yk, 1);
+                context.bindService(intent, serviceConnectionC0737yk, 1);
             } catch (Throwable unused) {
-                serviceConnectionC0745yk = null;
+                serviceConnectionC0737yk = null;
             }
-            hashMap.put(str, serviceConnectionC0745yk);
+            hashMap.put(str, serviceConnectionC0737yk);
         }
         return this.c.get(str) != null;
     }
@@ -48,10 +48,10 @@ public final class Ak implements ServiceWakeLock {
     public final synchronized void releaseWakeLock(String str) {
         ServiceConnection serviceConnection = (ServiceConnection) this.c.get(str);
         if (serviceConnection != null) {
-            C0770zk c0770zk = this.b;
+            C0762zk c0762zk = this.b;
             a(str);
-            Context context = this.f339a;
-            c0770zk.getClass();
+            Context context = this.f340a;
+            c0762zk.getClass();
             try {
                 context.unbindService(serviceConnection);
             } catch (Throwable unused) {

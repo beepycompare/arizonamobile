@@ -8,20 +8,20 @@ import kotlin.jvm.internal.Lambda;
 public final class a extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f252a;
+    public final /* synthetic */ Context f253a;
     public final /* synthetic */ ComponentName b;
     public final /* synthetic */ int c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a(Context context, ComponentName componentName, int i) {
         super(0);
-        this.f252a = context;
+        this.f253a = context;
         this.b = componentName;
         this.c = i;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        return this.f252a.getPackageManager().getActivityInfo(this.b, this.c);
+        return this.f253a.getPackageManager().getActivityInfo(this.b, this.c);
     }
 }

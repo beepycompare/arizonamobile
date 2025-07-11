@@ -3,7 +3,6 @@ package com.arizona.launcher;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import androidx.appcompat.app.ActionBar;
 import androidx.navigation.ActivityKt;
@@ -13,12 +12,11 @@ import com.arizona.game.R;
 import com.arizona.game.databinding.ActivityMainBinding;
 import com.arizona.launcher.util.FlavorUtilKt;
 import com.arizona.launcher.util.UtilsKt;
-import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import dagger.hilt.android.AndroidEntryPoint;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: MainActivity.kt */
-@Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0015J\b\u0010\f\u001a\u00020\tH\u0002J\b\u0010\r\u001a\u00020\tH\u0002J\b\u0010\u000e\u001a\u00020\tH\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082.¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lcom/arizona/launcher/MainActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "navController", "Landroidx/navigation/NavController;", "binding", "Lcom/arizona/game/databinding/ActivityMainBinding;", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "navigateToMain", "navigateToServers", "navigateToSettings", "app_arizonaRelease_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0015J\b\u0010\f\u001a\u00020\tH\u0002J\b\u0010\r\u001a\u00020\tH\u0002J\b\u0010\u000e\u001a\u00020\tH\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082.¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lcom/arizona/launcher/MainActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "navController", "Landroidx/navigation/NavController;", "binding", "Lcom/arizona/game/databinding/ActivityMainBinding;", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "navigateToMain", "navigateToServers", "navigateToSettings", "app_arizonaRelease_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class MainActivity extends Hilt_MainActivity {
@@ -35,6 +33,7 @@ public final class MainActivity extends Hilt_MainActivity {
         super.onCreate(bundle);
         requestWindowFeature(1);
         ActivityMainBinding inflate = ActivityMainBinding.inflate(getLayoutInflater());
+        Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
         this.binding = inflate;
         ActivityMainBinding activityMainBinding = null;
         if (inflate == null) {
@@ -74,15 +73,6 @@ public final class MainActivity extends Hilt_MainActivity {
         Context applicationContext = getApplicationContext();
         Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
         UtilsKt.checkItemsName(applicationContext, FlavorUtilKt.isArizona());
-        try {
-            Context applicationContext2 = getApplicationContext();
-            Intrinsics.checkNotNullExpressionValue(applicationContext2, "getApplicationContext(...)");
-            UtilsKt.sendDataAnalytics(applicationContext2, "end_download", 3);
-        } catch (Exception e) {
-            Log.e("sendDataAnalytics", "ERROR");
-            FirebaseCrashlytics.getInstance().recordException(e);
-            e.printStackTrace();
-        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -1,22 +1,28 @@
 package com.google.android.gms.measurement.internal;
 
-import com.google.android.gms.common.internal.Preconditions;
-import java.lang.Thread;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import java.util.Objects;
+import java.util.concurrent.Callable;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzii implements Thread.UncaughtExceptionHandler {
-    final /* synthetic */ zzil zza;
-    private final String zzb;
+final class zzii implements Callable {
+    final /* synthetic */ String zza;
+    final /* synthetic */ String zzb;
+    final /* synthetic */ String zzc;
+    final /* synthetic */ zzjc zzd;
 
-    public zzii(zzil zzilVar, String str) {
-        this.zza = zzilVar;
-        Preconditions.checkNotNull(str);
-        this.zzb = str;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzii(zzjc zzjcVar, String str, String str2, String str3) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = str3;
+        Objects.requireNonNull(zzjcVar);
+        this.zzd = zzjcVar;
     }
 
-    @Override // java.lang.Thread.UncaughtExceptionHandler
-    public final synchronized void uncaughtException(Thread thread, Throwable th) {
-        this.zza.zzu.zzaW().zze().zzb(this.zzb, th);
+    @Override // java.util.concurrent.Callable
+    public final /* bridge */ /* synthetic */ Object call() throws Exception {
+        zzjc zzjcVar = this.zzd;
+        zzjcVar.zzL().zzY();
+        return zzjcVar.zzL().zzj().zzo(this.zza, this.zzb, this.zzc);
     }
 }

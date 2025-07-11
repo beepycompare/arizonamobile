@@ -4,8 +4,13 @@ import androidx.collection.SieveCacheKt;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import com.adjust.sdk.Constants;
 import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.random.Random;
+import kotlin.random.RandomKt;
+import kotlin.ranges.LongProgression;
+import kotlin.ranges.LongRange;
 /* compiled from: math.kt */
-@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\u0015\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a\u0011\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u0082\b\u001a\u0019\u0010\u0007\u001a\u00020\u00052\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\nH\u0082\b\u001a\u0011\u0010\u000b\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u0082\b\u001a(\u0010\f\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u00052\u0006\u0010\u000f\u001a\u00020\u00052\u0006\u0010\u0010\u001a\u00020\u0005H\u0000\u001a \u0010\u0011\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u00052\u0006\u0010\u000f\u001a\u00020\u0005H\u0000\u001a \u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u0005H\u0000\u001a\u0018\u0010\u0017\u001a\u00020\u00052\u0006\u0010\u0014\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u0005H\u0000\u001a\f\u0010\u0018\u001a\u00020\n*\u00020\u0005H\u0000\"\u0014\u0010\u0000\u001a\u00020\u0001X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u0003¨\u0006\u0019"}, d2 = {"POWERS_OF_TEN", "", "getPOWERS_OF_TEN", "()[I", Constants.HIGH, "", "x", "indexBit", "value", "bit", "", Constants.LOW, "multiplyAddAndDivide", "d", "n", "r", CmcdData.OBJECT_TYPE_MANIFEST, "multiplyAndAdd", "multiplyAndDivide", "Lkotlinx/datetime/internal/DivRemResult;", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "c", "safeMultiplyOrZero", "clampToInt", "kotlinx-datetime"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0010\b\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u0015\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0000\u001a\u0018\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0004\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0002H\u0002\u001a\u0018\u0010\u0006\u001a\u00020\u00022\u0006\u0010\u0004\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0002H\u0000\u001a \u0010\u0007\u001a\u00020\b2\u0006\u0010\u0004\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u00022\u0006\u0010\t\u001a\u00020\u0002H\u0000\u001a\u0011\u0010\n\u001a\u00020\u00022\u0006\u0010\u000b\u001a\u00020\u0002H\u0082\b\u001a\u0011\u0010\f\u001a\u00020\u00022\u0006\u0010\u000b\u001a\u00020\u0002H\u0082\b\u001a\u0019\u0010\r\u001a\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u00022\u0006\u0010\u000f\u001a\u00020\u0001H\u0082\b\u001a(\u0010\u0010\u001a\u00020\u00022\u0006\u0010\u0011\u001a\u00020\u00022\u0006\u0010\u0012\u001a\u00020\u00022\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u0002H\u0000\u001a \u0010\u0015\u001a\u00020\u00022\u0006\u0010\u0011\u001a\u00020\u00022\u0006\u0010\u0012\u001a\u00020\u00022\u0006\u0010\u0013\u001a\u00020\u0002H\u0000\u001a\u0016\u0010\u001a\u001a\u00020\u0002*\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001dH\u0000\u001a\u001d\u0010\u001e\u001a\u0004\u0018\u00010\u0002*\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001dH\u0000¢\u0006\u0002\u0010\u001f\u001a\u0014\u0010 \u001a\u00020!*\u00020\u001b2\u0006\u0010\u000e\u001a\u00020\u0002H\u0000\"\u0014\u0010\u0016\u001a\u00020\u0017X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"\u0018\u0010\"\u001a\u00020\u0001*\u00020\u001b8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b#\u0010$¨\u0006%"}, d2 = {"clampToInt", "", "", "safeMultiplyOrZero", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "safeMultiplyOrClamp", "multiplyAndDivide", "Lkotlinx/datetime/internal/DivRemResult;", "c", Constants.LOW, "x", Constants.HIGH, "indexBit", "value", "bit", "multiplyAddAndDivide", "d", "n", "r", CmcdData.OBJECT_TYPE_MANIFEST, "multiplyAndAdd", "POWERS_OF_TEN", "", "getPOWERS_OF_TEN", "()[I", "randomUnsafe", "Lkotlin/ranges/LongProgression;", "random", "Lkotlin/random/Random;", "randomUnsafeOrNull", "(Lkotlin/ranges/LongProgression;Lkotlin/random/Random;)Ljava/lang/Long;", "containsUnsafe", "", "sizeUnsafe", "getSizeUnsafe", "(Lkotlin/ranges/LongProgression;)I", "kotlinx-datetime"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class MathKt {
     private static final int[] POWERS_OF_TEN = {1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000};
@@ -32,7 +37,7 @@ public final class MathKt {
         return j & 4294967295L;
     }
 
-    public static final long safeMultiplyOrZero(long j, long j2) {
+    private static final long safeMultiplyOrZero(long j, long j2) {
         if (j2 == -1) {
             if (j == Long.MIN_VALUE) {
                 return 0L;
@@ -44,6 +49,23 @@ public final class MathKt {
             long j3 = j * j2;
             if (j3 / j2 != j) {
                 return 0L;
+            }
+            return j3;
+        }
+    }
+
+    public static final long safeMultiplyOrClamp(long j, long j2) {
+        if (j2 == -1) {
+            if (j == Long.MIN_VALUE) {
+                return Long.MAX_VALUE;
+            }
+            return -j;
+        } else if (j2 == 1) {
+            return j;
+        } else {
+            long j3 = j * j2;
+            if (j3 / j2 != j) {
+                return ((j > 0L ? 1 : (j == 0L ? 0 : -1)) > 0) == (j2 > 0) ? Long.MAX_VALUE : Long.MIN_VALUE;
             }
             return j3;
         }
@@ -139,5 +161,52 @@ public final class MathKt {
 
     public static final int[] getPOWERS_OF_TEN() {
         return POWERS_OF_TEN;
+    }
+
+    public static /* synthetic */ long randomUnsafe$default(LongProgression longProgression, Random random, int i, Object obj) {
+        if ((i & 1) != 0) {
+            random = Random.Default;
+        }
+        return randomUnsafe(longProgression, random);
+    }
+
+    public static final long randomUnsafe(LongProgression longProgression, Random random) {
+        Intrinsics.checkNotNullParameter(longProgression, "<this>");
+        Intrinsics.checkNotNullParameter(random, "random");
+        return (RandomKt.nextLong(random, new LongRange(0L, (longProgression.getLast() - longProgression.getFirst()) / longProgression.getStep())) * longProgression.getStep()) + longProgression.getFirst();
+    }
+
+    public static /* synthetic */ Long randomUnsafeOrNull$default(LongProgression longProgression, Random random, int i, Object obj) {
+        if ((i & 1) != 0) {
+            random = Random.Default;
+        }
+        return randomUnsafeOrNull(longProgression, random);
+    }
+
+    public static final Long randomUnsafeOrNull(LongProgression longProgression, Random random) {
+        Intrinsics.checkNotNullParameter(longProgression, "<this>");
+        Intrinsics.checkNotNullParameter(random, "random");
+        if (longProgression.isEmpty()) {
+            return null;
+        }
+        return Long.valueOf(randomUnsafe(longProgression, random));
+    }
+
+    public static final boolean containsUnsafe(LongProgression longProgression, long j) {
+        Intrinsics.checkNotNullParameter(longProgression, "<this>");
+        LongRange longRange = longProgression.getStep() > 0 ? new LongRange(longProgression.getFirst(), longProgression.getLast()) : new LongRange(longProgression.getLast(), longProgression.getFirst());
+        return j <= longRange.getLast() && longRange.getFirst() <= j && (j - longProgression.getFirst()) % longProgression.getStep() == 0;
+    }
+
+    public static final int getSizeUnsafe(LongProgression longProgression) {
+        Intrinsics.checkNotNullParameter(longProgression, "<this>");
+        if (longProgression.isEmpty()) {
+            return 0;
+        }
+        try {
+            return clampToInt((MathJvmKt.safeAdd(longProgression.getLast(), -longProgression.getFirst()) / longProgression.getStep()) + 1);
+        } catch (ArithmeticException unused) {
+            return Integer.MAX_VALUE;
+        }
     }
 }

@@ -1,29 +1,29 @@
 package com.google.android.gms.measurement;
 
-import com.google.android.gms.measurement.internal.zzlx;
+import com.google.android.gms.measurement.internal.zzlj;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-abstract class zzc implements zzlx {
+abstract class zzc implements zzlj {
     /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zzc(zzd zzdVar) {
+    public /* synthetic */ zzc(byte[] bArr) {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract Boolean zzc();
+    public abstract Map zzc(boolean z);
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract Double zzd();
+    public abstract Boolean zzs();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract Integer zze();
+    public abstract Integer zzt();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract Long zzf();
+    public abstract String zzu();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract String zzl();
+    public abstract Long zzv();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract Map zzn(boolean z);
+    public abstract Double zzw();
 }

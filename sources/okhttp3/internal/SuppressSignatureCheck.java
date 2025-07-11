@@ -10,7 +10,7 @@ import kotlin.annotation.AnnotationRetention;
 import kotlin.annotation.AnnotationTarget;
 /* compiled from: SuppressSignatureCheck.kt */
 @Target({ElementType.TYPE, ElementType.METHOD, ElementType.CONSTRUCTOR})
-@Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\b\u0087\u0002\u0018\u00002\u00020\u0001B\u0000¨\u0006\u0002"}, d2 = {"Lokhttp3/internal/SuppressSignatureCheck;", "", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\b\u0081\u0002\u0018\u00002\u00020\u0001B\u0000¨\u0006\u0002"}, d2 = {"Lokhttp3/internal/SuppressSignatureCheck;", "", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.CONSTRUCTOR, AnnotationTarget.CLASS, AnnotationTarget.FUNCTION})
 @Documented
 @Retention(RetentionPolicy.CLASS)

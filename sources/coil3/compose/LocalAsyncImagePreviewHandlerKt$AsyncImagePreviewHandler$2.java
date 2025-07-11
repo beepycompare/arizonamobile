@@ -53,7 +53,7 @@ public final class LocalAsyncImagePreviewHandlerKt$AsyncImagePreviewHandler$2 im
                     ResultKt.throwOnFailure(obj);
                 }
                 Image image = (Image) obj;
-                return new AsyncImagePainter.State.Loading(image != null ? ImagePainter_androidKt.m7748asPainter55t9rM$default(image, imageRequest.getContext(), 0, 2, null) : null);
+                return new AsyncImagePainter.State.Loading(image != null ? ImagePainter_androidKt.m7749asPainter55t9rM$default(image, imageRequest.getContext(), 0, 2, null) : null);
             }
         }
         localAsyncImagePreviewHandlerKt$AsyncImagePreviewHandler$2$handle$1 = new LocalAsyncImagePreviewHandlerKt$AsyncImagePreviewHandler$2$handle$1(this, continuation);
@@ -63,12 +63,12 @@ public final class LocalAsyncImagePreviewHandlerKt$AsyncImagePreviewHandler$2 im
         if (i != 0) {
         }
         Image image2 = (Image) obj2;
-        return new AsyncImagePainter.State.Loading(image2 != null ? ImagePainter_androidKt.m7748asPainter55t9rM$default(image2, imageRequest.getContext(), 0, 2, null) : null);
+        return new AsyncImagePainter.State.Loading(image2 != null ? ImagePainter_androidKt.m7749asPainter55t9rM$default(image2, imageRequest.getContext(), 0, 2, null) : null);
     }
 
     public final Object handle$$forInline(ImageLoader imageLoader, ImageRequest imageRequest, Continuation<? super AsyncImagePainter.State> continuation) {
         new LocalAsyncImagePreviewHandlerKt$AsyncImagePreviewHandler$2$handle$1(this, continuation);
         Image image = (Image) this.$image.invoke(imageRequest, continuation);
-        return new AsyncImagePainter.State.Loading(image != null ? ImagePainter_androidKt.m7748asPainter55t9rM$default(image, imageRequest.getContext(), 0, 2, null) : null);
+        return new AsyncImagePainter.State.Loading(image != null ? ImagePainter_androidKt.m7749asPainter55t9rM$default(image, imageRequest.getContext(), 0, 2, null) : null);
     }
 }

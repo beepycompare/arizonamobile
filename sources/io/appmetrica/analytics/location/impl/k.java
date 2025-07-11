@@ -16,7 +16,7 @@ import java.util.HashMap;
 public final class k implements ILastKnownUpdater, LocationControllerObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1187a;
+    public final Context f1188a;
     public final PermissionExtractor b;
     public final p c;
     public final IHandlerExecutor d;
@@ -28,7 +28,7 @@ public final class k implements ILastKnownUpdater, LocationControllerObserver {
     public Location j;
 
     public k(Context context, PermissionExtractor permissionExtractor, IHandlerExecutor iHandlerExecutor, p pVar) {
-        this.f1187a = context;
+        this.f1188a = context;
         this.c = pVar;
         this.b = permissionExtractor;
         this.d = iHandlerExecutor;
@@ -105,7 +105,7 @@ public final class k implements ILastKnownUpdater, LocationControllerObserver {
     }
 
     public final synchronized void a(LastKnownLocationExtractorProvider lastKnownLocationExtractorProvider) {
-        LastKnownLocationExtractor extractor = lastKnownLocationExtractorProvider.getExtractor(this.f1187a, this.b, this.d, this.e);
+        LastKnownLocationExtractor extractor = lastKnownLocationExtractorProvider.getExtractor(this.f1188a, this.b, this.d, this.e);
         this.h.put(lastKnownLocationExtractorProvider.getIdentifier(), extractor);
         if (this.g) {
             extractor.updateLastKnownLocation();
@@ -117,7 +117,7 @@ public final class k implements ILastKnownUpdater, LocationControllerObserver {
     }
 
     public final synchronized void a(LocationReceiverProvider locationReceiverProvider) {
-        LocationReceiver locationReceiver = locationReceiverProvider.getLocationReceiver(this.f1187a, this.b, this.d, this.e);
+        LocationReceiver locationReceiver = locationReceiverProvider.getLocationReceiver(this.f1188a, this.b, this.d, this.e);
         LocationReceiver locationReceiver2 = (LocationReceiver) this.i.put(locationReceiverProvider.getIdentifier(), locationReceiver);
         if (this.g) {
             if (locationReceiver2 != null) {

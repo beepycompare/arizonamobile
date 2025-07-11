@@ -158,7 +158,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                             long m3841minusMKHz9U = Offset.m3841minusMKHz9U(pointerInputChange2.m5313getPositionF1C5BW0(), j);
                             channel = DragGestureNode.this.channel;
                             if (channel != null) {
-                                ChannelResult.m9966boximpl(channel.mo7544trySendJP2dKIU(new DragEvent.DragStarted(m3841minusMKHz9U, null)));
+                                ChannelResult.m9997boximpl(channel.mo7544trySendJP2dKIU(new DragEvent.DragStarted(m3841minusMKHz9U, null)));
                             }
                         }
                     }
@@ -186,7 +186,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                         channel = dragGestureNode2.channel;
                         if (channel != null) {
                             m466toValidVelocityTH1AsA0 = DraggableKt.m466toValidVelocityTH1AsA0(m5411calculateVelocityAH228Gc);
-                            ChannelResult.m9966boximpl(channel.mo7544trySendJP2dKIU(new DragEvent.DragStopped(m466toValidVelocityTH1AsA0, null)));
+                            ChannelResult.m9997boximpl(channel.mo7544trySendJP2dKIU(new DragEvent.DragStopped(m466toValidVelocityTH1AsA0, null)));
                         }
                     }
                 }, new Function0<Unit>() { // from class: androidx.compose.foundation.gestures.DragGestureNode$initializePointerInputNode$1$onDragCancel$1
@@ -206,7 +206,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                         Channel channel;
                         channel = DragGestureNode.this.channel;
                         if (channel != null) {
-                            ChannelResult.m9966boximpl(channel.mo7544trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
+                            ChannelResult.m9997boximpl(channel.mo7544trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
                         }
                     }
                 }, new Function0<Boolean>() { // from class: androidx.compose.foundation.gestures.DragGestureNode$initializePointerInputNode$1$shouldAwaitTouchSlop$1
@@ -239,7 +239,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                         VelocityTrackerKt.addPointerInputChange(VelocityTracker.this, pointerInputChange);
                         channel = dragGestureNode5.channel;
                         if (channel != null) {
-                            ChannelResult.m9966boximpl(channel.mo7544trySendJP2dKIU(new DragEvent.DragDelta(j, null)));
+                            ChannelResult.m9997boximpl(channel.mo7544trySendJP2dKIU(new DragEvent.DragDelta(j, null)));
                         }
                     }
                 }, null), continuation);
@@ -320,7 +320,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                     } catch (CancellationException e) {
                         channel = this.this$0.channel;
                         if (channel != null) {
-                            ChannelResult.m9966boximpl(channel.mo7544trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
+                            ChannelResult.m9997boximpl(channel.mo7544trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
                         }
                         if (!CoroutineScopeKt.isActive(r1)) {
                             throw e;

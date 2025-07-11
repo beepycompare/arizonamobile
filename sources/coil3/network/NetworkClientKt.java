@@ -8,10 +8,10 @@ import okio.ByteString;
 /* loaded from: classes3.dex */
 public final class NetworkClientKt {
     public static final NetworkRequestBody NetworkRequestBody(ByteString byteString) {
-        return ByteStringNetworkRequestBody.m7776boximpl(ByteStringNetworkRequestBody.m7777constructorimpl(byteString));
+        return ByteStringNetworkRequestBody.m7777boximpl(ByteStringNetworkRequestBody.m7778constructorimpl(byteString));
     }
 
     public static final NetworkResponseBody NetworkResponseBody(BufferedSource bufferedSource) {
-        return SourceResponseBody.m7785boximpl(SourceResponseBody.m7787constructorimpl(bufferedSource));
+        return SourceResponseBody.m7786boximpl(SourceResponseBody.m7788constructorimpl(bufferedSource));
     }
 }

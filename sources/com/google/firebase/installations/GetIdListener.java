@@ -2,9 +2,8 @@ package com.google.firebase.installations;
 
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.installations.local.PersistedInstallationEntry;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
-public class GetIdListener implements StateListener {
+class GetIdListener implements StateListener {
     final TaskCompletionSource<String> taskCompletionSource;
 
     @Override // com.google.firebase.installations.StateListener

@@ -6,14 +6,14 @@ import io.appmetrica.analytics.impl.Yn;
 public class UserProfileUpdate<T extends Yn> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Yn f1260a;
+    private final Yn f1261a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public UserProfileUpdate(Nd nd) {
-        this.f1260a = nd;
+        this.f1261a = nd;
     }
 
     public T getUserProfileUpdatePatcher() {
-        return (T) this.f1260a;
+        return (T) this.f1261a;
     }
 }

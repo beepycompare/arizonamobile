@@ -57,7 +57,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KFunction;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: SettingsScreen.kt */
-@Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0002\b\u000f\u001ag\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0018\u0010\t\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u0005\u0012\u0004\u0012\u00020\u00010\nH\u0007¢\u0006\u0002\u0010\u000b\u001a×\u0001\u0010\f\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0012\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00010\n2\u0012\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00010\n2\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u001d\u001a\u0015\u0010\u001e\u001a\u00020\u00012\u0006\u0010\u001f\u001a\u00020\u0013H\u0001¢\u0006\u0002\u0010 \u001a×\u0001\u0010!\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0012\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00010\n2\u0012\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00010\n2\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u001d¨\u0006\"²\u0006\n\u0010\r\u001a\u00020\u000eX\u008a\u0084\u0002"}, d2 = {"SettingsRoute", "", "component", "Lcom/miami/game/feature/settings/ui/SettingsComponent;", "onBackClick", "Lkotlin/Function0;", "onRepairGameSuccess", "onRepairGameError", "onNavigateDownload", "onRepairGameDialog", "Lkotlin/Function1;", "(Lcom/miami/game/feature/settings/ui/SettingsComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "SettingsScreen", "uiState", "Lcom/miami/game/feature/settings/ui/model/SettingsUiState;", "onRepairGame", "onFontSize", "", "onPageSize", "", "onFullScreen", "onShowFPS", "onShowChatTime", "onBugsReport", "onShareLogs", "onPrivacyPolicy", "onTech", "onKeyboard", "onStreamer", "(Lcom/miami/game/feature/settings/ui/model/SettingsUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V", "BackgroundImage", "backGroundId", "(ILandroidx/compose/runtime/Composer;I)V", "SettingsContent", "settings_release_web"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0002\b\u000f\u001ag\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0018\u0010\t\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u0005\u0012\u0004\u0012\u00020\u00010\nH\u0007¢\u0006\u0002\u0010\u000b\u001a×\u0001\u0010\f\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0012\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00010\n2\u0012\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00010\n2\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u001d\u001a\u0015\u0010\u001e\u001a\u00020\u00012\u0006\u0010\u001f\u001a\u00020\u0013H\u0001¢\u0006\u0002\u0010 \u001a×\u0001\u0010!\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0012\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00010\n2\u0012\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00010\n2\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u001d¨\u0006\"²\u0006\n\u0010\r\u001a\u00020\u000eX\u008a\u0084\u0002"}, d2 = {"SettingsRoute", "", "component", "Lcom/miami/game/feature/settings/ui/SettingsComponent;", "onBackClick", "Lkotlin/Function0;", "onRepairGameSuccess", "onRepairGameError", "onNavigateDownload", "onRepairGameDialog", "Lkotlin/Function1;", "(Lcom/miami/game/feature/settings/ui/SettingsComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "SettingsScreen", "uiState", "Lcom/miami/game/feature/settings/ui/model/SettingsUiState;", "onRepairGame", "onFontSize", "", "onPageSize", "", "onFullScreen", "onShowFPS", "onShowChatTime", "onBugsReport", "onShareLogs", "onPrivacyPolicy", "onTech", "onKeyboard", "onStreamer", "(Lcom/miami/game/feature/settings/ui/model/SettingsUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V", "BackgroundImage", "backGroundId", "(ILandroidx/compose/runtime/Composer;I)V", "SettingsContent", "settings_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class SettingsScreenKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -84,15 +84,8 @@ public final class SettingsScreenKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x02f0, code lost:
-        if (r8 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L106;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public static final void SettingsRoute(final SettingsComponent component, final Function0<Unit> onBackClick, final Function0<Unit> onRepairGameSuccess, final Function0<Unit> onRepairGameError, final Function0<Unit> onNavigateDownload, final Function1<? super Function0<Unit>, Unit> onRepairGameDialog, Composer composer, final int i) {
         int i2;
-        KFunction kFunction;
         Intrinsics.checkNotNullParameter(component, "component");
         Intrinsics.checkNotNullParameter(onBackClick, "onBackClick");
         Intrinsics.checkNotNullParameter(onRepairGameSuccess, "onRepairGameSuccess");
@@ -100,7 +93,7 @@ public final class SettingsScreenKt {
         Intrinsics.checkNotNullParameter(onNavigateDownload, "onNavigateDownload");
         Intrinsics.checkNotNullParameter(onRepairGameDialog, "onRepairGameDialog");
         Composer startRestartGroup = composer.startRestartGroup(-681024813);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SettingsRoute)P(!2,5,4)40@1788L33,42@1860L29,44@1951L227,44@1914L264,52@2218L34,56@2324L28,58@2410L25,59@2458L25,60@2508L23,61@2553L16,62@2596L21,63@2642L23,64@2693L26,65@2743L22,66@2784L17,67@2824L21,68@2868L21,54@2258L637,74@3042L20,75@3088L24,72@2949L173:SettingsScreen.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SettingsRoute)P(!2,5,4)40@1788L33,42@1860L29,44@1951L227,44@1914L264,52@2218L34,56@2324L28,58@2410L25,59@2458L25,60@2508L23,61@2553L16,62@2596L21,63@2642L23,64@2693L26,65@2743L22,66@2784L17,67@2824L21,68@2868L21,54@2258L637:SettingsScreen.kt#1gr92h");
         if ((i & 6) == 0) {
             i2 = i | (startRestartGroup.changedInstance(component) ? 4 : 2);
         } else {
@@ -113,177 +106,160 @@ public final class SettingsScreenKt {
             i2 |= startRestartGroup.changedInstance(onRepairGameDialog) ? 131072 : 65536;
         }
         int i3 = i2;
-        if ((65555 & i3) != 65554 || !startRestartGroup.getSkipping()) {
+        if (startRestartGroup.shouldExecute((65555 & i3) != 65554, i3 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-681024813, i3, -1, "com.miami.game.feature.settings.ui.compose.SettingsRoute (SettingsScreen.kt:39)");
             }
             BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i3 & 112, 1);
-            boolean z = true;
             State collectAsStateWithLifecycle = FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7);
             SharedEventFlow<SettingsUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
-            startRestartGroup.startReplaceGroup(-1633490746);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
-            if ((458752 & i3) != 131072) {
-                z = false;
-            }
-            boolean changedInstance = z | startRestartGroup.changedInstance(component);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629802762, "CC(remember):SettingsScreen.kt#9igjgp");
+            boolean changedInstance = ((458752 & i3) == 131072) | startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new SettingsScreenKt$SettingsRoute$1$1(onRepairGameDialog, component, null);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, startRestartGroup, 0, 6);
             ObserveExternalNavigationActionsKt.observeExternalNavigationActions(component.getExternalNavigationAction(), startRestartGroup, 0);
             SettingsUiState SettingsRoute$lambda$0 = SettingsRoute$lambda$0(collectAsStateWithLifecycle);
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629791025, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance2 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
             if (changedInstance2 || rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new SettingsScreenKt$SettingsRoute$2$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
-            KFunction kFunction2 = (KFunction) rememberedValue2;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+            KFunction kFunction = (KFunction) rememberedValue2;
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629788276, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance3 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
             if (changedInstance3 || rememberedValue3 == Composer.Companion.getEmpty()) {
                 rememberedValue3 = new SettingsScreenKt$SettingsRoute$3$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
-            KFunction kFunction3 = (KFunction) rememberedValue3;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+            KFunction kFunction2 = (KFunction) rememberedValue3;
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629786740, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance4 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$4$1 rememberedValue4 = startRestartGroup.rememberedValue();
             if (changedInstance4 || rememberedValue4 == Composer.Companion.getEmpty()) {
                 rememberedValue4 = new SettingsScreenKt$SettingsRoute$4$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue4);
             }
-            KFunction kFunction4 = (KFunction) rememberedValue4;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+            KFunction kFunction3 = (KFunction) rememberedValue4;
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629785142, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance5 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$5$1 rememberedValue5 = startRestartGroup.rememberedValue();
             if (changedInstance5 || rememberedValue5 == Composer.Companion.getEmpty()) {
                 rememberedValue5 = new SettingsScreenKt$SettingsRoute$5$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue5);
             }
-            KFunction kFunction5 = (KFunction) rememberedValue5;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+            KFunction kFunction4 = (KFunction) rememberedValue5;
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629783709, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance6 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$6$1 rememberedValue6 = startRestartGroup.rememberedValue();
             if (changedInstance6 || rememberedValue6 == Composer.Companion.getEmpty()) {
                 rememberedValue6 = new SettingsScreenKt$SettingsRoute$6$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue6);
             }
-            KFunction kFunction6 = (KFunction) rememberedValue6;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+            KFunction kFunction5 = (KFunction) rememberedValue6;
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629782328, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance7 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$7$1 rememberedValue7 = startRestartGroup.rememberedValue();
             if (changedInstance7 || rememberedValue7 == Composer.Companion.getEmpty()) {
                 rememberedValue7 = new SettingsScreenKt$SettingsRoute$7$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue7);
             }
-            KFunction kFunction7 = (KFunction) rememberedValue7;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+            KFunction kFunction6 = (KFunction) rememberedValue7;
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629780854, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance8 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$8$1 rememberedValue8 = startRestartGroup.rememberedValue();
             if (changedInstance8 || rememberedValue8 == Composer.Companion.getEmpty()) {
                 rememberedValue8 = new SettingsScreenKt$SettingsRoute$8$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue8);
             }
-            KFunction kFunction8 = (KFunction) rememberedValue8;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+            KFunction kFunction7 = (KFunction) rememberedValue8;
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629779219, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance9 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$9$1 rememberedValue9 = startRestartGroup.rememberedValue();
             if (changedInstance9 || rememberedValue9 == Composer.Companion.getEmpty()) {
                 rememberedValue9 = new SettingsScreenKt$SettingsRoute$9$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue9);
             }
-            KFunction kFunction9 = (KFunction) rememberedValue9;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+            KFunction kFunction8 = (KFunction) rememberedValue9;
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629777623, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance10 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$10$1 rememberedValue10 = startRestartGroup.rememberedValue();
             if (changedInstance10 || rememberedValue10 == Composer.Companion.getEmpty()) {
                 rememberedValue10 = new SettingsScreenKt$SettingsRoute$10$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue10);
             }
-            KFunction kFunction10 = (KFunction) rememberedValue10;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+            KFunction kFunction9 = (KFunction) rememberedValue10;
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629776316, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance11 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$11$1 rememberedValue11 = startRestartGroup.rememberedValue();
             if (changedInstance11 || rememberedValue11 == Composer.Companion.getEmpty()) {
                 rememberedValue11 = new SettingsScreenKt$SettingsRoute$11$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue11);
             }
-            KFunction kFunction11 = (KFunction) rememberedValue11;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+            KFunction kFunction10 = (KFunction) rememberedValue11;
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629775032, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance12 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$12$1 rememberedValue12 = startRestartGroup.rememberedValue();
             if (changedInstance12 || rememberedValue12 == Composer.Companion.getEmpty()) {
                 rememberedValue12 = new SettingsScreenKt$SettingsRoute$12$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue12);
             }
-            KFunction kFunction12 = (KFunction) rememberedValue12;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+            KFunction kFunction11 = (KFunction) rememberedValue12;
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629773624, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance13 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$13$1 rememberedValue13 = startRestartGroup.rememberedValue();
-            if (changedInstance13) {
-                kFunction = kFunction12;
-            } else {
-                kFunction = kFunction12;
+            if (changedInstance13 || rememberedValue13 == Composer.Companion.getEmpty()) {
+                rememberedValue13 = new SettingsScreenKt$SettingsRoute$13$1(component);
+                startRestartGroup.updateRememberedValue(rememberedValue13);
             }
-            rememberedValue13 = new SettingsScreenKt$SettingsRoute$13$1(component);
-            startRestartGroup.updateRememberedValue(rememberedValue13);
-            startRestartGroup.endReplaceGroup();
-            SettingsScreen(SettingsRoute$lambda$0, (Function0) kFunction2, onBackClick, (Function1) kFunction3, (Function1) kFunction4, (Function0) kFunction5, (Function0) kFunction6, (Function0) kFunction7, (Function0) kFunction8, (Function0) kFunction10, (Function0) kFunction9, (Function0) kFunction11, (Function0) kFunction, (Function0) ((KFunction) rememberedValue13), startRestartGroup, (i3 << 3) & 896, 0);
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            SettingsScreen(SettingsRoute$lambda$0, (Function0) kFunction, onBackClick, (Function1) kFunction2, (Function1) kFunction3, (Function0) kFunction4, (Function0) kFunction5, (Function0) kFunction6, (Function0) kFunction7, (Function0) kFunction9, (Function0) kFunction8, (Function0) kFunction10, (Function0) kFunction11, (Function0) ((KFunction) rememberedValue13), startRestartGroup, (i3 << 3) & 896, 0);
             startRestartGroup = startRestartGroup;
             if (SettingsRoute$lambda$0(collectAsStateWithLifecycle).isConnectionDialogVisible()) {
+                startRestartGroup.startReplaceGroup(1016700850);
+                ComposerKt.sourceInformation(startRestartGroup, "74@3042L20,75@3088L24,72@2949L173");
                 ConnectionData connectionData = SettingsRoute$lambda$0(collectAsStateWithLifecycle).getConnectionData();
-                startRestartGroup.startReplaceGroup(5004770);
-                ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629768057, "CC(remember):SettingsScreen.kt#9igjgp");
                 boolean changedInstance14 = startRestartGroup.changedInstance(component);
                 SettingsScreenKt$SettingsRoute$14$1 rememberedValue14 = startRestartGroup.rememberedValue();
                 if (changedInstance14 || rememberedValue14 == Composer.Companion.getEmpty()) {
                     rememberedValue14 = new SettingsScreenKt$SettingsRoute$14$1(component);
                     startRestartGroup.updateRememberedValue(rememberedValue14);
                 }
-                startRestartGroup.endReplaceGroup();
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 Function0 function0 = (Function0) ((KFunction) rememberedValue14);
-                startRestartGroup.startReplaceGroup(5004770);
-                ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsScreen.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629766581, "CC(remember):SettingsScreen.kt#9igjgp");
                 boolean changedInstance15 = startRestartGroup.changedInstance(component);
                 SettingsScreenKt$SettingsRoute$15$1 rememberedValue15 = startRestartGroup.rememberedValue();
                 if (changedInstance15 || rememberedValue15 == Composer.Companion.getEmpty()) {
                     rememberedValue15 = new SettingsScreenKt$SettingsRoute$15$1(component);
                     startRestartGroup.updateRememberedValue(rememberedValue15);
                 }
-                startRestartGroup.endReplaceGroup();
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ConnectionDialogKt.ConnectionDialog(connectionData, function0, (Function1) ((KFunction) rememberedValue15), startRestartGroup, ConnectionData.$stable);
+            } else {
+                startRestartGroup.startReplaceGroup(1013778511);
             }
+            startRestartGroup.endReplaceGroup();
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -377,7 +353,10 @@ public final class SettingsScreenKt {
         } else {
             i6 = i8;
         }
-        if ((i3 & 306783379) != 306783378 || (i6 & 1171) != 1170 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute(((i3 & 306783379) == 306783378 && (i6 & 1171) == 1170) ? false : true, i3 & 1)) {
+            composer2 = startRestartGroup;
+            composer2.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(361824365, i3, i6, "com.miami.game.feature.settings.ui.compose.SettingsScreen (SettingsScreen.kt:100)");
             }
@@ -423,9 +402,6 @@ public final class SettingsScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
-            composer2 = startRestartGroup;
         }
         ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
@@ -449,7 +425,9 @@ public final class SettingsScreenKt {
         } else {
             i3 = i2;
         }
-        if ((i3 & 3) != 2 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i3 & 3) != 2, i3 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1060762892, i3, -1, "com.miami.game.feature.settings.ui.compose.BackgroundImage (SettingsScreen.kt:128)");
             }
@@ -457,8 +435,6 @@ public final class SettingsScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
@@ -541,7 +517,11 @@ public final class SettingsScreenKt {
             i4 |= startRestartGroup.changedInstance(onStreamer) ? 2048 : 1024;
         }
         int i6 = i4;
-        if ((i5 & 306783379) != 306783378 || (i6 & 1043) != 1042 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute(((i5 & 306783379) == 306783378 && (i6 & 1043) == 1042) ? false : true, i5 & 1)) {
+            composer2 = startRestartGroup;
+            function03 = onBugsReport;
+            composer2.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1619461762, i5, i6, "com.miami.game.feature.settings.ui.compose.SettingsContent (SettingsScreen.kt:155)");
             }
@@ -707,10 +687,6 @@ public final class SettingsScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
-            composer2 = startRestartGroup;
-            function03 = onBugsReport;
         }
         ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {

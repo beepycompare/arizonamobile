@@ -25,7 +25,31 @@ class CrashlyticsUncaughtExceptionHandler implements Thread.UncaughtExceptionHan
         this.nativeComponent = crashlyticsNativeComponent;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
+        com.google.firebase.crashlytics.internal.Logger.getLogger().d("Completed exception processing, but no default exception handler.");
+        java.lang.System.exit(1);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x003d, code lost:
+        r7.isHandlingException.set(false);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0042, code lost:
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0051, code lost:
+        if (r7.defaultHandler == null) goto L12;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0024, code lost:
+        if (r7.defaultHandler != null) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0026, code lost:
+        com.google.firebase.crashlytics.internal.Logger.getLogger().d("Completed exception processing. Invoking default exception handler.");
+        r7.defaultHandler.uncaughtException(r8, r9);
+     */
+    /* JADX WARN: Finally extract failed */
     @Override // java.lang.Thread.UncaughtExceptionHandler
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void uncaughtException(Thread thread, Throwable th) {
         this.isHandlingException.set(true);
         try {
@@ -35,24 +59,8 @@ class CrashlyticsUncaughtExceptionHandler implements Thread.UncaughtExceptionHan
                 } else {
                     Logger.getLogger().d("Uncaught exception will not be recorded by Crashlytics.");
                 }
-                if (this.defaultHandler != null) {
-                    Logger.getLogger().d("Completed exception processing. Invoking default exception handler.");
-                    this.defaultHandler.uncaughtException(thread, th);
-                } else {
-                    Logger.getLogger().d("Completed exception processing, but no default exception handler.");
-                    System.exit(1);
-                }
-                this.isHandlingException.set(false);
             } catch (Exception e) {
                 Logger.getLogger().e("An error occurred in the uncaught exception handler", e);
-                if (this.defaultHandler != null) {
-                    Logger.getLogger().d("Completed exception processing. Invoking default exception handler.");
-                    this.defaultHandler.uncaughtException(thread, th);
-                } else {
-                    Logger.getLogger().d("Completed exception processing, but no default exception handler.");
-                    System.exit(1);
-                }
-                this.isHandlingException.set(false);
             }
         } catch (Throwable th2) {
             if (this.defaultHandler != null) {

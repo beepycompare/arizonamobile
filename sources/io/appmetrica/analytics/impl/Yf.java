@@ -12,27 +12,27 @@ public final class Yf implements no {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final byte[] a(C0211d9 c0211d9, C0667vh c0667vh) {
-        C0741yg c0741yg;
+    public final byte[] a(C0203d9 c0203d9, C0659vh c0659vh) {
+        C0733yg c0733yg;
         String str;
         byte[] bytes;
         int ordinal;
-        if (!TextUtils.isEmpty(c0211d9.b)) {
+        if (!TextUtils.isEmpty(c0203d9.b)) {
             try {
-                byte[] decode = Base64.decode(c0211d9.b, 0);
+                byte[] decode = Base64.decode(c0203d9.b, 0);
                 if (decode != null && decode.length != 0) {
-                    c0741yg = new C0741yg(decode);
-                    C0293gg c0293gg = new C0293gg();
-                    str = c0741yg.f1146a;
+                    c0733yg = new C0733yg(decode);
+                    C0285gg c0285gg = new C0285gg();
+                    str = c0733yg.f1147a;
                     if (str != null) {
                         bytes = new byte[0];
                     } else {
                         bytes = str.getBytes();
                     }
-                    c0293gg.f855a = bytes;
-                    c0293gg.c = c0741yg.b;
-                    c0293gg.b = c0741yg.c;
-                    ordinal = c0741yg.d.ordinal();
+                    c0285gg.f856a = bytes;
+                    c0285gg.c = c0733yg.b;
+                    c0285gg.b = c0733yg.c;
+                    ordinal = c0733yg.d.ordinal();
                     int i = 1;
                     if (ordinal != 1) {
                         i = 2;
@@ -40,23 +40,23 @@ public final class Yf implements no {
                             i = 0;
                         }
                     }
-                    c0293gg.d = i;
-                    return MessageNano.toByteArray(c0293gg);
+                    c0285gg.d = i;
+                    return MessageNano.toByteArray(c0285gg);
                 }
-                c0741yg = null;
-                C0293gg c0293gg2 = new C0293gg();
-                str = c0741yg.f1146a;
+                c0733yg = null;
+                C0285gg c0285gg2 = new C0285gg();
+                str = c0733yg.f1147a;
                 if (str != null) {
                 }
-                c0293gg2.f855a = bytes;
-                c0293gg2.c = c0741yg.b;
-                c0293gg2.b = c0741yg.c;
-                ordinal = c0741yg.d.ordinal();
+                c0285gg2.f856a = bytes;
+                c0285gg2.c = c0733yg.b;
+                c0285gg2.b = c0733yg.c;
+                ordinal = c0733yg.d.ordinal();
                 int i2 = 1;
                 if (ordinal != 1) {
                 }
-                c0293gg2.d = i2;
-                return MessageNano.toByteArray(c0293gg2);
+                c0285gg2.d = i2;
+                return MessageNano.toByteArray(c0285gg2);
             } catch (Throwable unused) {
             }
         }

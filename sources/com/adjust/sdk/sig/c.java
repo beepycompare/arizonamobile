@@ -21,10 +21,10 @@ import javax.security.auth.x500.X500Principal;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f184a;
+    public final int f185a;
 
     public c(int i) {
-        this.f184a = i;
+        this.f185a = i;
     }
 
     public final void a(Context context) {
@@ -35,7 +35,7 @@ public final class c {
     }
 
     public final void b(Context context) {
-        int i = this.f184a;
+        int i = this.f185a;
         if (i >= 23) {
             KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
             keyStore.load(null);
@@ -54,7 +54,7 @@ public final class c {
             Calendar calendar = Calendar.getInstance();
             calendar.add(1, 1);
             KeyPairGeneratorSpec.Builder endDate = new KeyPairGeneratorSpec.Builder(context).setAlias("key2").setSubject(new X500Principal("CN=key2")).setSerialNumber(BigInteger.TEN).setStartDate(time).setEndDate(calendar.getTime());
-            if (this.f184a >= 19) {
+            if (this.f185a >= 19) {
                 endDate.setKeySize(1024);
             }
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA", "AndroidKeyStore");
@@ -78,7 +78,7 @@ public final class c {
     public final byte[] a(Context context, byte[] bArr) {
         Key secretKeySpec;
         Mac mac = Mac.getInstance("HmacSHA256");
-        int i = this.f184a;
+        int i = this.f185a;
         if (i >= 23) {
             KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
             keyStore.load(null);

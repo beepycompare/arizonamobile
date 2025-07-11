@@ -9,29 +9,29 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Z {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0625u0 f727a;
+    public final C0617u0 f728a;
     public final Uk b;
-    public final C0455n4 c;
+    public final C0447n4 c;
 
-    public Z(C0625u0 c0625u0, Uk uk, C0455n4 c0455n4) {
-        this.f727a = c0625u0;
+    public Z(C0617u0 c0617u0, Uk uk, C0447n4 c0447n4) {
+        this.f728a = c0617u0;
         this.b = uk;
-        this.c = c0455n4;
+        this.c = c0447n4;
     }
 
     public final void a(final Context context, final AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         boolean z;
         PublicLogger mainPublicOrAnonymousLogger = LoggerStorage.getMainPublicOrAnonymousLogger();
-        this.f727a.getClass();
-        synchronized (C0600t0.class) {
-            z = C0600t0.f;
+        this.f728a.getClass();
+        synchronized (C0592t0.class) {
+            z = C0592t0.f;
         }
         if (!z) {
             mainPublicOrAnonymousLogger.info("Session autotracking enabled", new Object[0]);
             this.b.a();
         }
-        this.f727a.getClass();
-        C0600t0 a2 = C0600t0.a(context);
+        this.f728a.getClass();
+        C0592t0 a2 = C0592t0.a(context);
         a2.d.a(null, a2);
         IHandlerExecutor a3 = this.c.a();
         ((S9) a3).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.Z$$ExternalSyntheticLambda0
@@ -40,14 +40,14 @@ public final class Z {
                 Z.a(Z.this, context, appMetricaLibraryAdapterConfig);
             }
         });
-        this.f727a.getClass();
-        C0625u0.a();
+        this.f728a.getClass();
+        C0617u0.a();
     }
 
     public static final void a(Z z, Context context, AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
-        z.f727a.getClass();
-        C0600t0 a2 = C0600t0.a(context);
+        z.f728a.getClass();
+        C0592t0 a2 = C0592t0.a(context);
         a2.f().a(appMetricaLibraryAdapterConfig);
-        C0704x4.l().c.a().execute(new RunnableC0576s1(a2.f1052a));
+        C0696x4.l().c.a().execute(new RunnableC0568s1(a2.f1053a));
     }
 }

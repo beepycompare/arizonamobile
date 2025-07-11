@@ -1,7 +1,7 @@
 package io.appmetrica.analytics;
 
-import io.appmetrica.analytics.impl.C0490oe;
-import io.appmetrica.analytics.impl.C0748yn;
+import io.appmetrica.analytics.impl.C0482oe;
+import io.appmetrica.analytics.impl.C0740yn;
 import java.util.Currency;
 /* loaded from: classes4.dex */
 public class Revenue {
@@ -14,10 +14,10 @@ public class Revenue {
 
     /* loaded from: classes4.dex */
     public static class Builder {
-        private static final C0748yn g = new C0748yn(new C0490oe("revenue currency"));
+        private static final C0740yn g = new C0740yn(new C0482oe("revenue currency"));
 
         /* renamed from: a  reason: collision with root package name */
-        final long f204a;
+        final long f205a;
         final Currency b;
         Integer c;
         String d;
@@ -54,7 +54,7 @@ public class Revenue {
 
         private Builder(long j, Currency currency) {
             g.a(currency);
-            this.f204a = j;
+            this.f205a = j;
             this.b = currency;
         }
     }
@@ -68,7 +68,7 @@ public class Revenue {
         public static class Builder {
 
             /* renamed from: a  reason: collision with root package name */
-            private String f205a;
+            private String f206a;
             private String b;
 
             /* synthetic */ Builder(int i) {
@@ -80,7 +80,7 @@ public class Revenue {
             }
 
             public Builder withData(String str) {
-                this.f205a = str;
+                this.f206a = str;
                 return this;
             }
 
@@ -102,7 +102,7 @@ public class Revenue {
         }
 
         private Receipt(Builder builder) {
-            this.data = builder.f205a;
+            this.data = builder.f206a;
             this.signature = builder.b;
         }
     }
@@ -116,7 +116,7 @@ public class Revenue {
     }
 
     private Revenue(Builder builder) {
-        this.priceMicros = builder.f204a;
+        this.priceMicros = builder.f205a;
         this.currency = builder.b;
         this.quantity = builder.c;
         this.productID = builder.d;

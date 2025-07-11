@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -45,7 +46,7 @@ import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: EmploymentTaskScreen.kt */
-@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u00012\u00020\u0002:\u00012B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u0017H\u0016J\b\u0010\u001f\u001a\u00020\u001dH\u0002J\u0010\u0010 \u001a\u00020\u001d2\u0006\u0010!\u001a\u00020\u0006H\u0002J\b\u0010\"\u001a\u00020\u001dH\u0002J\u0018\u0010#\u001a\u00020\u001d2\u0006\u0010$\u001a\u00020\u001b2\u0006\u0010%\u001a\u00020\u0006H\u0016J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0002J\u0010\u0010*\u001a\u00020\u001d2\u0006\u0010+\u001a\u00020\u0017H\u0002J\u0010\u0010,\u001a\u00020\u001d2\u0006\u0010-\u001a\u00020.H\u0002J\u0010\u0010/\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u0017H\u0002J\u0018\u00100\u001a\u00020\u001d2\u0006\u0010$\u001a\u00020\u001b2\u0006\u0010%\u001a\u00020\u0006H\u0002J\b\u00101\u001a\u00020\u001dH\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u00063"}, d2 = {"Lru/mrlargha/commonui/elements/employmentNote/presentation/EmploymentTaskScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/EmploymentTasksScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "taskAdapter", "Lru/mrlargha/commonui/elements/employmentNote/presentation/adapter/TaskAdapter;", "employmentHistoryAdapter", "Lru/mrlargha/commonui/elements/employmentNote/presentation/adapter/EmploymentHistoryAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "isEmptyTasks", "isEmptyHistory", "currentMemberName", "", "setVisible", "", "visible", "initAdapters", "screenButtonStatus", "btnType", "showDefaultEmptyFractionView", "onBackendMessage", "data", "subId", "showTaskStats", "Lru/mrlargha/commonui/databinding/LayoutEmploymentInfoBinding;", "taskStats", "Lru/mrlargha/commonui/elements/employmentNote/domain/TaskStats;", "blockClickable", "isBlock", "showTasksUi", "response", "Lru/mrlargha/commonui/elements/employmentNote/domain/TaskListResponse;", "isVisibleHistoryLayout", "sendData", "closeScreen", "Spawner", "CommonUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u00012\u00020\u0002:\u00012B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u0017H\u0016J\b\u0010\u001f\u001a\u00020\u001dH\u0002J\u0010\u0010 \u001a\u00020\u001d2\u0006\u0010!\u001a\u00020\u0006H\u0002J\b\u0010\"\u001a\u00020\u001dH\u0002J\u0018\u0010#\u001a\u00020\u001d2\u0006\u0010$\u001a\u00020\u001b2\u0006\u0010%\u001a\u00020\u0006H\u0016J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0002J\u0010\u0010*\u001a\u00020\u001d2\u0006\u0010+\u001a\u00020\u0017H\u0002J\u0010\u0010,\u001a\u00020\u001d2\u0006\u0010-\u001a\u00020.H\u0002J\u0010\u0010/\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u0017H\u0002J\u0018\u00100\u001a\u00020\u001d2\u0006\u0010$\u001a\u00020\u001b2\u0006\u0010%\u001a\u00020\u0006H\u0002J\b\u00101\u001a\u00020\u001dH\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u00063"}, d2 = {"Lru/mrlargha/commonui/elements/employmentNote/presentation/EmploymentTaskScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/EmploymentTasksScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "taskAdapter", "Lru/mrlargha/commonui/elements/employmentNote/presentation/adapter/TaskAdapter;", "employmentHistoryAdapter", "Lru/mrlargha/commonui/elements/employmentNote/presentation/adapter/EmploymentHistoryAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "isEmptyTasks", "isEmptyHistory", "currentMemberName", "", "setVisible", "", "visible", "initAdapters", "screenButtonStatus", "btnType", "showDefaultEmptyFractionView", "onBackendMessage", "data", "subId", "showTaskStats", "Lru/mrlargha/commonui/databinding/LayoutEmploymentInfoBinding;", "taskStats", "Lru/mrlargha/commonui/elements/employmentNote/domain/TaskStats;", "blockClickable", "isBlock", "showTasksUi", "response", "Lru/mrlargha/commonui/elements/employmentNote/domain/TaskListResponse;", "isVisibleHistoryLayout", "sendData", "closeScreen", "Spawner", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class EmploymentTaskScreen extends SAMPUIElement implements InterfaceController {
     private final EmploymentTasksScreenBinding binding;
@@ -203,9 +204,9 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
         employmentTaskScreen.isVisibleHistoryLayout(true);
         employmentTaskScreen.binding.tvTitleTable.setText(activity.getResources().getString(R.string.history));
         employmentTaskScreen.sendData(StringKt.toStringJson(""), 0);
-        ProgressBar progressBar = employmentTaskScreen.binding.progressBar;
-        Intrinsics.checkNotNullExpressionValue(progressBar, "progressBar");
-        progressBar.setVisibility(0);
+        ProgressBar progressBarAllTasks = employmentTaskScreen.binding.progressBarAllTasks;
+        Intrinsics.checkNotNullExpressionValue(progressBarAllTasks, "progressBarAllTasks");
+        progressBarAllTasks.setVisibility(0);
         TextView tvTitleTable = employmentTaskScreen.binding.tvTitleTable;
         Intrinsics.checkNotNullExpressionValue(tvTitleTable, "tvTitleTable");
         tvTitleTable.setVisibility(0);
@@ -429,10 +430,20 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
         ivNoFraction.setVisibility(0);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0144  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x014d  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0176  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0199  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01a2  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x01bd  */
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void onBackendMessage(String data, int i) {
-        ArrayList arrayList;
+        int i2;
         List<TaskInfo> tasks;
+        List<TaskInfo> tasks2;
         TaskStats taskStats;
         Intrinsics.checkNotNullParameter(data, "data");
         Log.d("TAG_EMPL", "subiD: " + i + " ==== data: " + data);
@@ -456,19 +467,19 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
             }
             this.isEmptyHistory = false;
             List list = listModel;
-            ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
             for (Object obj : list) {
-                int i2 = r6 + 1;
+                int i3 = r6 + 1;
                 if (r6 < 0) {
                     CollectionsKt.throwIndexOverflow();
                 }
-                arrayList2.add(TaskHistory.copy$default((TaskHistory) obj, Integer.valueOf(i2), null, null, null, null, null, null, WebSocketProtocol.PAYLOAD_SHORT, null));
-                r6 = i2;
+                arrayList.add(TaskHistory.copy$default((TaskHistory) obj, Integer.valueOf(i3), null, null, null, null, null, null, WebSocketProtocol.PAYLOAD_SHORT, null));
+                r6 = i3;
             }
-            ProgressBar progressBar = this.binding.progressBar;
-            Intrinsics.checkNotNullExpressionValue(progressBar, "progressBar");
-            progressBar.setVisibility(8);
-            this.employmentHistoryAdapter.submitList(arrayList2);
+            ProgressBar progressBarAllTasks = this.binding.progressBarAllTasks;
+            Intrinsics.checkNotNullExpressionValue(progressBarAllTasks, "progressBarAllTasks");
+            progressBarAllTasks.setVisibility(8);
+            this.employmentHistoryAdapter.submitList(arrayList);
             return;
         }
         Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) TaskListResponse.class);
@@ -479,26 +490,40 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
             screenButtonStatus(0);
             isVisibleHistoryLayout(false);
             showTasksUi(taskListResponse);
-            List<TaskInfo> tasks2 = taskListResponse.getTasks();
-            if (tasks2 != null) {
-                ArrayList arrayList3 = new ArrayList();
-                for (Object obj2 : tasks2) {
-                    if (((TaskInfo) obj2).getCompleted() == 1) {
-                        arrayList3.add(obj2);
-                    }
-                }
-                arrayList = arrayList3;
-            } else {
-                arrayList = null;
-            }
-            this.binding.tvTasksDone.setText(String.valueOf(arrayList != null ? Integer.valueOf(arrayList.size()) : null));
-            this.binding.tvTasksRemain.setText("/ " + (taskListResponse.getTasks() != null ? Integer.valueOf(tasks.size()) : null));
-            ProgressBar progressBar2 = this.binding.progressBar;
             List<TaskInfo> tasks3 = taskListResponse.getTasks();
-            progressBar2.setMax(tasks3 != null ? tasks3.size() : 0);
-            this.binding.progressBar.setProgress(arrayList != null ? arrayList.size() : 0);
-            String backgroundImage = taskListResponse.getBackgroundImage();
-            this.binding.parentLayout.setBackgroundResource(getTargetActivity().getResources().getIdentifier(backgroundImage != null ? StringsKt.substringBeforeLast$default(backgroundImage, ".", (String) null, 2, (Object) null) : null, "drawable", getTargetActivity().getPackageName()));
+            if (tasks3 != null) {
+                List<TaskInfo> list2 = tasks3;
+                if (!(list2 instanceof Collection) || !list2.isEmpty()) {
+                    i2 = 0;
+                    for (TaskInfo taskInfo : list2) {
+                        if (taskInfo.getCompleted() == 1 && (i2 = i2 + 1) < 0) {
+                            CollectionsKt.throwCountOverflow();
+                        }
+                    }
+                    Log.d("frontend", "onBackendMessage: " + i2 + " " + (taskListResponse.getTasks() == null ? Integer.valueOf(tasks.size()) : null));
+                    EmploymentTasksScreenBinding employmentTasksScreenBinding = this.binding;
+                    ProgressBar progressBar = employmentTasksScreenBinding.progressBarAllTasks;
+                    List<TaskInfo> tasks4 = taskListResponse.getTasks();
+                    progressBar.setMax(tasks4 != null ? tasks4.size() : 0);
+                    employmentTasksScreenBinding.progressBarAllTasks.setProgress(i2);
+                    this.binding.tvTasksDone.setText(String.valueOf(i2));
+                    this.binding.tvTasksRemain.setText("/ " + (taskListResponse.getTasks() == null ? Integer.valueOf(tasks2.size()) : null));
+                    String backgroundImage = taskListResponse.getBackgroundImage();
+                    this.binding.parentLayout.setBackgroundResource(getTargetActivity().getResources().getIdentifier(backgroundImage != null ? StringsKt.substringBeforeLast$default(backgroundImage, ".", (String) null, 2, (Object) null) : null, "drawable", getTargetActivity().getPackageName()));
+                    return;
+                }
+            }
+            i2 = 0;
+            Log.d("frontend", "onBackendMessage: " + i2 + " " + (taskListResponse.getTasks() == null ? Integer.valueOf(tasks.size()) : null));
+            EmploymentTasksScreenBinding employmentTasksScreenBinding2 = this.binding;
+            ProgressBar progressBar2 = employmentTasksScreenBinding2.progressBarAllTasks;
+            List<TaskInfo> tasks42 = taskListResponse.getTasks();
+            progressBar2.setMax(tasks42 != null ? tasks42.size() : 0);
+            employmentTasksScreenBinding2.progressBarAllTasks.setProgress(i2);
+            this.binding.tvTasksDone.setText(String.valueOf(i2));
+            this.binding.tvTasksRemain.setText("/ " + (taskListResponse.getTasks() == null ? Integer.valueOf(tasks2.size()) : null));
+            String backgroundImage2 = taskListResponse.getBackgroundImage();
+            this.binding.parentLayout.setBackgroundResource(getTargetActivity().getResources().getIdentifier(backgroundImage2 != null ? StringsKt.substringBeforeLast$default(backgroundImage2, ".", (String) null, 2, (Object) null) : null, "drawable", getTargetActivity().getPackageName()));
             return;
         }
         showDefaultEmptyFractionView();
@@ -670,7 +695,7 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
     }
 
     /* compiled from: EmploymentTaskScreen.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/employmentNote/presentation/EmploymentTaskScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "CommonUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/employmentNote/presentation/EmploymentTaskScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner

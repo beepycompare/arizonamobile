@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Q1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ia f588a = new Ia();
+    public final Ia f589a = new Ia();
     public final LinkedHashMap b = new LinkedHashMap();
     public final LinkedHashMap c = new LinkedHashMap();
 
@@ -36,7 +36,7 @@ public final class Q1 {
         if (intent != null) {
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                this.f588a.a(action, Integer.valueOf(a(intent)));
+                this.f589a.a(action, Integer.valueOf(a(intent)));
             }
             for (Map.Entry entry : this.b.entrySet()) {
                 P1 p1 = (P1) entry.getKey();
@@ -51,12 +51,12 @@ public final class Q1 {
         if (intent != null) {
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                Ia ia = this.f588a;
+                Ia ia = this.f589a;
                 Integer valueOf = Integer.valueOf(a(intent));
-                Collection collection = (Collection) ia.f473a.get(action);
+                Collection collection = (Collection) ia.f474a.get(action);
                 if (collection != null && collection.remove(valueOf)) {
                     if (collection.isEmpty() && ia.b) {
-                        ia.f473a.remove(action);
+                        ia.f474a.remove(action);
                     }
                     new ArrayList(collection);
                 }
@@ -74,7 +74,7 @@ public final class Q1 {
         if (intent != null) {
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                this.f588a.a(action, Integer.valueOf(a(intent)));
+                this.f589a.a(action, Integer.valueOf(a(intent)));
             }
             for (Map.Entry entry : this.b.entrySet()) {
                 P1 p1 = (P1) entry.getKey();
@@ -97,7 +97,7 @@ public final class Q1 {
     public static final boolean a(Q1 q1, Intent intent) {
         q1.getClass();
         if (Intrinsics.areEqual("io.appmetrica.analytics.IAppMetricaService", intent.getAction())) {
-            Collection collection = (Collection) q1.f588a.f473a.get("io.appmetrica.analytics.IAppMetricaService");
+            Collection collection = (Collection) q1.f589a.f474a.get("io.appmetrica.analytics.IAppMetricaService");
             return collection == null || collection.size() == 0;
         }
         return false;
@@ -143,6 +143,6 @@ public final class Q1 {
     public static final boolean b(Q1 q1, Intent intent) {
         Collection collection;
         q1.getClass();
-        return Intrinsics.areEqual("io.appmetrica.analytics.IAppMetricaService", intent.getAction()) && (collection = (Collection) q1.f588a.f473a.get("io.appmetrica.analytics.IAppMetricaService")) != null && collection.size() == 1;
+        return Intrinsics.areEqual("io.appmetrica.analytics.IAppMetricaService", intent.getAction()) && (collection = (Collection) q1.f589a.f474a.get("io.appmetrica.analytics.IAppMetricaService")) != null && collection.size() == 1;
     }
 }

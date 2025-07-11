@@ -116,11 +116,9 @@ public final class OfflineLicenseHelper {
     public /* synthetic */ void m7387xc6195285(SettableFuture settableFuture, DrmSession drmSession) {
         try {
             settableFuture.set((Pair) Assertions.checkNotNull(WidevineUtil.getLicenseDurationRemainingSec(drmSession)));
-        } catch (Throwable th) {
+        } finally {
             try {
-                settableFuture.setException(th);
             } finally {
-                drmSession.release(this.eventDispatcher);
             }
         }
     }
@@ -154,11 +152,9 @@ public final class OfflineLicenseHelper {
     public /* synthetic */ void m7386x4ec00c9e(SettableFuture settableFuture, DrmSession drmSession) {
         try {
             settableFuture.set(drmSession.getOfflineLicenseKeySetId());
-        } catch (Throwable th) {
+        } finally {
             try {
-                settableFuture.setException(th);
             } finally {
-                drmSession.release(this.eventDispatcher);
             }
         }
     }

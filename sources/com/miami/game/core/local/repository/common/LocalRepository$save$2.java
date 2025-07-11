@@ -12,17 +12,19 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LocalRepository.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroidx/datastore/preferences/core/Preferences;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.local.repository.common.LocalRepository$save$2", f = "LocalRepository.kt", i = {}, l = {37}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroidx/datastore/preferences/core/Preferences;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.local.repository.common.LocalRepository$save$2", f = "LocalRepository.kt", i = {0}, l = {37}, m = "invokeSuspend", n = {"jsonValue"}, s = {"L$0"})
 /* loaded from: classes4.dex */
 public final class LocalRepository$save$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Preferences>, Object> {
     final /* synthetic */ String $key;
     final /* synthetic */ V $value;
+    Object L$0;
     int label;
     final /* synthetic */ LocalRepository this$0;
 
@@ -53,6 +55,7 @@ public final class LocalRepository$save$2 extends SuspendLambda implements Funct
         int i = this.label;
         if (i != 0) {
             if (i == 1) {
+                String str = (String) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 return obj;
             }
@@ -63,6 +66,7 @@ public final class LocalRepository$save$2 extends SuspendLambda implements Funct
             gson = this.this$0.gson;
             String json = gson.toJson(this.$value);
             dataStore = this.this$0.dataStorePreferences;
+            this.L$0 = SpillingKt.nullOutSpilledVariable(json);
             this.label = 1;
             Object edit = PreferencesKt.edit(dataStore, new AnonymousClass1(this.$key, json, null), this);
             return edit == coroutine_suspended ? coroutine_suspended : edit;
@@ -73,7 +77,7 @@ public final class LocalRepository$save$2 extends SuspendLambda implements Funct
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: LocalRepository.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", "Landroidx/datastore/preferences/core/MutablePreferences;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", "Landroidx/datastore/preferences/core/MutablePreferences;"}, k = 3, mv = {2, 2, 0}, xi = 48)
     @DebugMetadata(c = "com.miami.game.core.local.repository.common.LocalRepository$save$2$1", f = "LocalRepository.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: com.miami.game.core.local.repository.common.LocalRepository$save$2$1  reason: invalid class name */
     /* loaded from: classes4.dex */
@@ -104,12 +108,13 @@ public final class LocalRepository$save$2 extends SuspendLambda implements Funct
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
+            MutablePreferences mutablePreferences = (MutablePreferences) this.L$0;
             IntrinsicsKt.getCOROUTINE_SUSPENDED();
             if (this.label != 0) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             ResultKt.throwOnFailure(obj);
-            ((MutablePreferences) this.L$0).set(PreferencesKeys.stringKey(this.$key), this.$jsonValue);
+            mutablePreferences.set(PreferencesKeys.stringKey(this.$key), this.$jsonValue);
             return Unit.INSTANCE;
         }
     }

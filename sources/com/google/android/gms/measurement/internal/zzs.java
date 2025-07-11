@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 import java.util.ArrayList;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzs implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
@@ -33,12 +33,10 @@ public final class zzs implements Parcelable.Creator {
         String str8 = null;
         String str9 = null;
         String str10 = null;
-        String str11 = null;
         Boolean bool = null;
         ArrayList<String> arrayList = null;
+        String str11 = null;
         String str12 = null;
-        String str13 = null;
-        String str14 = null;
         int i4 = 100;
         boolean z4 = true;
         boolean z5 = true;
@@ -81,7 +79,9 @@ public final class zzs implements Parcelable.Creator {
                     break;
                 case 13:
                 case 17:
+                case 19:
                 case 20:
+                case 24:
                 case 33:
                 default:
                     SafeParcelReader.skipUnknownField(parcel, readHeader);
@@ -98,9 +98,6 @@ public final class zzs implements Parcelable.Creator {
                 case 18:
                     z2 = SafeParcelReader.readBoolean(parcel, readHeader);
                     break;
-                case 19:
-                    str11 = SafeParcelReader.createString(parcel, readHeader);
-                    break;
                 case 21:
                     bool = SafeParcelReader.readBooleanObject(parcel, readHeader);
                     break;
@@ -110,9 +107,6 @@ public final class zzs implements Parcelable.Creator {
                 case 23:
                     arrayList = SafeParcelReader.createStringList(parcel, readHeader);
                     break;
-                case 24:
-                    str12 = SafeParcelReader.createString(parcel, readHeader);
-                    break;
                 case 25:
                     str = SafeParcelReader.createString(parcel, readHeader);
                     break;
@@ -120,7 +114,7 @@ public final class zzs implements Parcelable.Creator {
                     str2 = SafeParcelReader.createString(parcel, readHeader);
                     break;
                 case 27:
-                    str13 = SafeParcelReader.createString(parcel, readHeader);
+                    str11 = SafeParcelReader.createString(parcel, readHeader);
                     break;
                 case 28:
                     z3 = SafeParcelReader.readBoolean(parcel, readHeader);
@@ -141,7 +135,7 @@ public final class zzs implements Parcelable.Creator {
                     j6 = SafeParcelReader.readLong(parcel, readHeader);
                     break;
                 case 35:
-                    str14 = SafeParcelReader.createString(parcel, readHeader);
+                    str12 = SafeParcelReader.createString(parcel, readHeader);
                     break;
                 case 36:
                     str4 = SafeParcelReader.createString(parcel, readHeader);
@@ -155,7 +149,7 @@ public final class zzs implements Parcelable.Creator {
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zzr(str5, str6, str7, str8, j, j2, str9, z4, z, j8, str10, j3, i, z5, z2, str11, bool, j4, arrayList, str12, str, str2, str13, z3, j5, i4, str3, i2, j6, str14, str4, j7, i3);
+        return new zzr(str5, str6, str7, str8, j, j2, str9, z4, z, j8, str10, j3, i, z5, z2, bool, j4, arrayList, str, str2, str11, z3, j5, i4, str3, i2, j6, str12, str4, j7, i3);
     }
 
     @Override // android.os.Parcelable.Creator

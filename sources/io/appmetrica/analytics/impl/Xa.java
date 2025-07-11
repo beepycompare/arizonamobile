@@ -6,7 +6,7 @@ import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 public interface Xa {
     void a(J4 j4);
 
-    /* synthetic */ C0406l5 b();
+    /* synthetic */ C0398l5 b();
 
     CounterConfigurationReporterType c();
 

@@ -1,28 +1,24 @@
 package com.google.android.gms.measurement.internal;
 
-import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.common.util.Clock;
+import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzou {
-    private final Clock zza;
-    private long zzb;
+public final class zzou implements Runnable {
+    final /* synthetic */ zzpg zza;
+    final /* synthetic */ zzpf zzb;
 
-    public zzou(Clock clock) {
-        Preconditions.checkNotNull(clock);
-        this.zza = clock;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzou(zzpf zzpfVar, zzpg zzpgVar) {
+        this.zza = zzpgVar;
+        Objects.requireNonNull(zzpfVar);
+        this.zzb = zzpfVar;
     }
 
-    public final void zza() {
-        this.zzb = 0L;
-    }
-
-    public final void zzb() {
-        this.zzb = this.zza.elapsedRealtime();
-    }
-
-    public final boolean zzc(long j) {
-        return this.zzb == 0 || this.zza.elapsedRealtime() - this.zzb >= 3600000;
+    @Override // java.lang.Runnable
+    public final void run() {
+        zzpf zzpfVar = this.zzb;
+        zzpfVar.zzat(this.zza);
+        zzpfVar.zzc();
     }
 }

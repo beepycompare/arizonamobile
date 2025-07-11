@@ -10,7 +10,7 @@ public final class Rm extends Z2 {
     }
 
     public final int b() {
-        return this.f730a;
+        return this.f731a;
     }
 
     public Rm(int i, String str, PublicLogger publicLogger) {
@@ -29,11 +29,11 @@ public final class Rm extends Z2 {
         try {
             byte[] bytes = str.getBytes("UTF-8");
             int length = bytes.length;
-            int i = this.f730a;
+            int i = this.f731a;
             if (length > i) {
                 String str2 = new String(bytes, 0, i, "UTF-8");
                 try {
-                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f730a));
+                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f731a));
                 } catch (UnsupportedEncodingException unused) {
                 }
                 return str2;

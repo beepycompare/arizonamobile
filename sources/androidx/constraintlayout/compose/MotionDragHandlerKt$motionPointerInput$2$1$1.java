@@ -85,8 +85,8 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
             ResultKt.throwOnFailure(obj);
             i = i3;
             coroutineScope = coroutineScope3;
-            obj2 = this.$dragChannel.mo9959tryReceivePtdJZtk();
-            if (ChannelResult.m9976isSuccessimpl(obj2)) {
+            obj2 = this.$dragChannel.mo9990tryReceivePtdJZtk();
+            if (ChannelResult.m10007isSuccessimpl(obj2)) {
             }
             if (JobKt.isActive(coroutineScope.getCoroutineContext())) {
             }
@@ -99,9 +99,9 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
                 coroutineScope = coroutineScope2;
                 i = i2;
                 motionDragState = null;
-                obj2 = this.$dragChannel.mo9959tryReceivePtdJZtk();
-                if (ChannelResult.m9976isSuccessimpl(obj2)) {
-                    motionDragState = (MotionDragState) ChannelResult.m9972getOrThrowimpl(obj2);
+                obj2 = this.$dragChannel.mo9990tryReceivePtdJZtk();
+                if (ChannelResult.m10007isSuccessimpl(obj2)) {
+                    motionDragState = (MotionDragState) ChannelResult.m10003getOrThrowimpl(obj2);
                     if (motionDragState.isDragging()) {
                         i = 0;
                     }
@@ -117,8 +117,8 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
                             i3 = i;
                             i = i3;
                             coroutineScope = coroutineScope3;
-                            obj2 = this.$dragChannel.mo9959tryReceivePtdJZtk();
-                            if (ChannelResult.m9976isSuccessimpl(obj2)) {
+                            obj2 = this.$dragChannel.mo9990tryReceivePtdJZtk();
+                            if (ChannelResult.m10007isSuccessimpl(obj2)) {
                             }
                             if (JobKt.isActive(coroutineScope.getCoroutineContext())) {
                             }
@@ -146,8 +146,8 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
                                 coroutineScope = coroutineScope2;
                                 i = i2;
                                 motionDragState = null;
-                                obj2 = this.$dragChannel.mo9959tryReceivePtdJZtk();
-                                if (ChannelResult.m9976isSuccessimpl(obj2)) {
+                                obj2 = this.$dragChannel.mo9990tryReceivePtdJZtk();
+                                if (ChannelResult.m10007isSuccessimpl(obj2)) {
                                 }
                                 if (JobKt.isActive(coroutineScope.getCoroutineContext())) {
                                 }
@@ -157,8 +157,8 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
                             coroutineScope = coroutineScope2;
                             i = i2;
                             motionDragState = null;
-                            obj2 = this.$dragChannel.mo9959tryReceivePtdJZtk();
-                            if (ChannelResult.m9976isSuccessimpl(obj2)) {
+                            obj2 = this.$dragChannel.mo9990tryReceivePtdJZtk();
+                            if (ChannelResult.m10007isSuccessimpl(obj2)) {
                             }
                             if (JobKt.isActive(coroutineScope.getCoroutineContext())) {
                             }

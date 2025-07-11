@@ -44,7 +44,7 @@ public final class IntNavType extends NavType<Integer> {
     public void put(Bundle bundle, String key, int i) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        SavedStateWriter.m7682putIntimpl(SavedStateWriter.m7665constructorimpl(bundle), key, i);
+        SavedStateWriter.m7683putIntimpl(SavedStateWriter.m7666constructorimpl(bundle), key, i);
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
@@ -52,6 +52,6 @@ public final class IntNavType extends NavType<Integer> {
     public Integer get(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        return Integer.valueOf(SavedStateReader.m7610getIntimpl(SavedStateReader.m7579constructorimpl(bundle), key));
+        return Integer.valueOf(SavedStateReader.m7611getIntimpl(SavedStateReader.m7580constructorimpl(bundle), key));
     }
 }

@@ -46,7 +46,7 @@ public class AdjustSigner {
                 Reflection.invokeInstanceMethod(signerInstance, "sign", new Class[]{Context.class, Map.class, Map.class, Map.class}, context, map, map2, hashMap);
                 return hashMap;
             } catch (Exception e) {
-                iLogger.warn("Invoking Signer sign() for %s received an error [%s]", e.getMessage());
+                iLogger.warn("Invoking Signer sign() received an error [%s]", e.getMessage());
             }
         }
         return hashMap;

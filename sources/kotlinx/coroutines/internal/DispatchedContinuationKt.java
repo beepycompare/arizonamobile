@@ -32,7 +32,7 @@ public final class DispatchedContinuationKt {
 
     public static final void safeDispatch(CoroutineDispatcher coroutineDispatcher, CoroutineContext coroutineContext, Runnable runnable) {
         try {
-            coroutineDispatcher.mo10019dispatch(coroutineContext, runnable);
+            coroutineDispatcher.mo10050dispatch(coroutineContext, runnable);
         } catch (Throwable th) {
             throw new DispatchException(th, coroutineDispatcher, coroutineContext);
         }
@@ -75,7 +75,7 @@ public final class DispatchedContinuationKt {
                 CancellationException cancellationException = job.getCancellationException();
                 dispatchedContinuation.cancelCompletedResult$kotlinx_coroutines_core(state, cancellationException);
                 Result.Companion companion = Result.Companion;
-                dispatchedContinuation.resumeWith(Result.m8443constructorimpl(ResultKt.createFailure(cancellationException)));
+                dispatchedContinuation.resumeWith(Result.m8471constructorimpl(ResultKt.createFailure(cancellationException)));
             } else {
                 Continuation<T> continuation2 = dispatchedContinuation.continuation;
                 Object obj2 = dispatchedContinuation.countOrElement;

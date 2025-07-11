@@ -183,7 +183,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
             this.inOutAnimation.addUpdateListener(new BaseKeyframeAnimation.AnimationListener() { // from class: com.airbnb.lottie.model.layer.BaseLayer$$ExternalSyntheticLambda0
                 @Override // com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation.AnimationListener
                 public final void onValueChanged() {
-                    BaseLayer.this.m7900xf49bd987();
+                    BaseLayer.this.m7901xf49bd987();
                 }
             });
             setVisible(this.inOutAnimation.getValue().floatValue() == 1.0f);
@@ -195,7 +195,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setupInOutAnimations$0$com-airbnb-lottie-model-layer-BaseLayer  reason: not valid java name */
-    public /* synthetic */ void m7900xf49bd987() {
+    public /* synthetic */ void m7901xf49bd987() {
         setVisible(this.inOutAnimation.getFloatValue() == 1.0f);
     }
 

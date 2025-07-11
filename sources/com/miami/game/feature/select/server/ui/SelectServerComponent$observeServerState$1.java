@@ -17,7 +17,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.flow.MutableStateFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SelectServerComponent.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "serverState", "Lcom/miami/game/core/server/model/ServersState;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "serverState", "Lcom/miami/game/core/server/model/ServersState;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.feature.select.server.ui.SelectServerComponent$observeServerState$1", f = "SelectServerComponent.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes4.dex */
 public final class SelectServerComponent$observeServerState$1 extends SuspendLambda implements Function2<ServersState, Continuation<? super Unit>, Object> {
@@ -26,9 +26,9 @@ public final class SelectServerComponent$observeServerState$1 extends SuspendLam
     final /* synthetic */ SelectServerComponent this$0;
 
     /* compiled from: SelectServerComponent.kt */
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes4.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -74,10 +74,10 @@ public final class SelectServerComponent$observeServerState$1 extends SuspendLam
         Object value;
         SelectServerUiState selectServerUiState;
         List<ServerModel> serverListMobile;
+        ServersState serversState = (ServersState) this.L$0;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label == 0) {
             ResultKt.throwOnFailure(obj);
-            ServersState serversState = (ServersState) this.L$0;
             mutableStateFlow = this.this$0.stateStore;
             do {
                 value = mutableStateFlow.getValue();

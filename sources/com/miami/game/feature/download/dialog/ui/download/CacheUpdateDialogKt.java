@@ -1,17 +1,47 @@
 package com.miami.game.feature.download.dialog.ui.download;
 
 import androidx.activity.compose.BackHandlerKt;
+import androidx.compose.foundation.ImageKt;
+import androidx.compose.foundation.layout.Arrangement;
+import androidx.compose.foundation.layout.RowKt;
+import androidx.compose.foundation.layout.RowScopeInstance;
+import androidx.compose.foundation.layout.SizeKt;
+import androidx.compose.material3.MaterialTheme;
+import androidx.compose.material3.MenuKt;
+import androidx.compose.material3.TextKt;
+import androidx.compose.runtime.Applier;
+import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
+import androidx.compose.runtime.CompositionLocalMap;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.State;
+import androidx.compose.runtime.Updater;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
+import androidx.compose.ui.Alignment;
+import androidx.compose.ui.ComposedModifierKt;
+import androidx.compose.ui.Modifier;
+import androidx.compose.ui.graphics.ColorFilter;
+import androidx.compose.ui.layout.ContentScale;
+import androidx.compose.ui.layout.MeasurePolicy;
+import androidx.compose.ui.node.ComposeUiNode;
+import androidx.compose.ui.res.PainterResources_androidKt;
+import androidx.compose.ui.text.TextLayoutResult;
+import androidx.compose.ui.text.font.FontFamily;
+import androidx.compose.ui.text.font.FontStyle;
+import androidx.compose.ui.text.font.FontWeight;
+import androidx.compose.ui.text.style.TextAlign;
+import androidx.compose.ui.text.style.TextDecoration;
+import androidx.compose.ui.unit.Dp;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.compose.FlowExtKt;
 import androidx.media3.exoplayer.RendererCapabilities;
+import androidx.media3.extractor.WavUtil;
 import com.miami.game.core.decompose.utils.SharedEventFlow;
+import com.miami.game.core.design.system.component.button.DialogButtonKt;
+import com.miami.game.core.design.system.component.dialog_frame.DialogDescriptionTextKt;
 import com.miami.game.core.design.system.component.dialog_frame.DialogFrameKt;
 import com.miami.game.core.drawable.resources.R;
 import com.miami.game.core.ui.utils.extensions.FlowExtensionsKt;
@@ -22,16 +52,17 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KFunction;
 /* compiled from: CacheUpdateDialog.kt */
-@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a1\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0007\u001a1\u0010\b\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\r\u001a1\u0010\u000e\u001a\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u00102\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u0011¨\u0006\u0012²\u0006\n\u0010\t\u001a\u00020\nX\u008a\u0084\u0002"}, d2 = {"CacheUpdateDialogRoute", "", "component", "Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;", "onBackClick", "Lkotlin/Function0;", "navigateToDownloadScreen", "(Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "CacheUpdateDialogScreen", "uiState", "Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogUiState;", "onConfirm", "onDismiss", "(Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "CacheUpdateDialogContent", "updateSize", "", "(Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "dialogs_release_web"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a1\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0007\u001a1\u0010\b\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\r\u001a1\u0010\u000e\u001a\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u00102\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u0011¨\u0006\u0012²\u0006\n\u0010\t\u001a\u00020\nX\u008a\u0084\u0002"}, d2 = {"CacheUpdateDialogRoute", "", "component", "Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;", "onBackClick", "Lkotlin/Function0;", "navigateToDownloadScreen", "(Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "CacheUpdateDialogScreen", "uiState", "Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogUiState;", "onConfirm", "onDismiss", "(Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "CacheUpdateDialogContent", "updateSize", "", "(Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "dialogs_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class CacheUpdateDialogKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CacheUpdateDialogContent$lambda$6(String str, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
+    public static final Unit CacheUpdateDialogContent$lambda$12(String str, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
         CacheUpdateDialogContent(str, function0, function02, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -66,7 +97,9 @@ public final class CacheUpdateDialogKt {
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(navigateToDownloadScreen) ? 256 : 128;
         }
-        if ((i2 & 147) != 146 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 147) != 146, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(101938191, i2, -1, "com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogRoute (CacheUpdateDialog.kt:30)");
             }
@@ -74,47 +107,42 @@ public final class CacheUpdateDialogKt {
             BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i3, 1);
             SharedEventFlow<CommonDialogUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
-            startRestartGroup.startReplaceGroup(-1633490746);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):CacheUpdateDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821637995, "CC(remember):CacheUpdateDialog.kt#9igjgp");
             boolean z = (i3 == 32) | ((i2 & 896) == 256);
             CacheUpdateDialogKt$CacheUpdateDialogRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (z || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new CacheUpdateDialogKt$CacheUpdateDialogRoute$1$1(onBackClick, navigateToDownloadScreen, null);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, startRestartGroup, 0, 6);
             startRestartGroup = startRestartGroup;
             CommonDialogUiState CacheUpdateDialogRoute$lambda$1 = CacheUpdateDialogRoute$lambda$1(FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7));
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):CacheUpdateDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821627165, "CC(remember):CacheUpdateDialog.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(component);
             CacheUpdateDialogKt$CacheUpdateDialogRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new CacheUpdateDialogKt$CacheUpdateDialogRoute$2$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Function0 function0 = (Function0) ((KFunction) rememberedValue2);
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):CacheUpdateDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821625821, "CC(remember):CacheUpdateDialog.kt#9igjgp");
             boolean changedInstance2 = startRestartGroup.changedInstance(component);
             CacheUpdateDialogKt$CacheUpdateDialogRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
             if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
                 rememberedValue3 = new CacheUpdateDialogKt$CacheUpdateDialogRoute$3$1(component);
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             CacheUpdateDialogScreen(CacheUpdateDialogRoute$lambda$1, function0, (Function0) ((KFunction) rememberedValue3), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda1
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     Unit CacheUpdateDialogRoute$lambda$4;
@@ -143,7 +171,9 @@ public final class CacheUpdateDialogKt {
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(onDismiss) ? 256 : 128;
         }
-        if ((i2 & 147) != 146 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 147) != 146, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1364349116, i2, -1, "com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogScreen (CacheUpdateDialog.kt:56)");
             }
@@ -151,8 +181,6 @@ public final class CacheUpdateDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
@@ -167,7 +195,7 @@ public final class CacheUpdateDialogKt {
         }
     }
 
-    public static final void CacheUpdateDialogContent(final String updateSize, final Function0<Unit> onConfirm, Function0<Unit> onDismiss, Composer composer, final int i) {
+    public static final void CacheUpdateDialogContent(final String updateSize, final Function0<Unit> onConfirm, final Function0<Unit> onDismiss, Composer composer, final int i) {
         int i2;
         final Function0<Unit> function0;
         Intrinsics.checkNotNullParameter(updateSize, "updateSize");
@@ -186,30 +214,135 @@ public final class CacheUpdateDialogKt {
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(onDismiss) ? 256 : 128;
         }
-        if ((i2 & 147) != 146 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 147) != 146, i2 & 1)) {
+            function0 = onDismiss;
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(352303246, i2, -1, "com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogContent (CacheUpdateDialog.kt:70)");
             }
             function0 = onDismiss;
-            DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_background_download_icon), function0, ComposableLambdaKt.rememberComposableLambda(-1885731162, true, new CacheUpdateDialogKt$CacheUpdateDialogContent$1(updateSize, onDismiss, onConfirm), startRestartGroup, 54), startRestartGroup, ((i2 >> 3) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+            DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_background_download_icon), function0, ComposableLambdaKt.rememberComposableLambda(-1885731162, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda4
+                @Override // kotlin.jvm.functions.Function2
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit CacheUpdateDialogContent$lambda$11;
+                    CacheUpdateDialogContent$lambda$11 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$11(updateSize, onDismiss, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
+                    return CacheUpdateDialogContent$lambda$11;
+                }
+            }, startRestartGroup, 54), startRestartGroup, ((i2 >> 3) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+        ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
+        if (endRestartGroup != null) {
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda5
+                @Override // kotlin.jvm.functions.Function2
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit CacheUpdateDialogContent$lambda$12;
+                    CacheUpdateDialogContent$lambda$12 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$12(updateSize, onConfirm, function0, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return CacheUpdateDialogContent$lambda$12;
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit CacheUpdateDialogContent$lambda$11(String str, final Function0 function0, final Function0 function02, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C72@2640L10,72@2613L87,75@2728L85,74@2709L217,82@2935L97,83@3041L419:CacheUpdateDialog.kt#as3uag");
+        if (composer.shouldExecute((i & 3) != 2, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-1885731162, i, -1, "com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogContent.<anonymous> (CacheUpdateDialog.kt:72)");
+            }
+            TextKt.m2497Text4IGK_g("ОБНОВЛЕНИЕ КЭША", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodyMedium(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_download_image, composer, 0), (String) null, SizeKt.m785size3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(100)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, 432, (int) MenuKt.InTransitionDuration);
+            DialogDescriptionTextKt.DialogDescriptionText("Данная версия устарела, необходимо загрузить версию 4.3.1az0 " + str, composer, 0);
+            ComposerKt.sourceInformationMarkerStart(composer, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
+            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), composer, 0);
+            ComposerKt.sourceInformationMarkerStart(composer, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
+            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer, 0);
+            CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, Modifier.Companion);
+            Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
+            ComposerKt.sourceInformationMarkerStart(composer, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+            if (!(composer.getApplier() instanceof Applier)) {
+                ComposablesKt.invalidApplier();
+            }
+            composer.startReusableNode();
+            if (composer.getInserting()) {
+                composer.createNode(constructor);
+            } else {
+                composer.useNode();
+            }
+            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer);
+            Updater.m3527setimpl(m3520constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
+            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            }
+            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            ComposerKt.sourceInformationMarkerStart(composer, -407735110, "C101@5232L9:Row.kt#2w3rfo");
+            RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
+            ComposerKt.sourceInformationMarkerStart(composer, -1035232358, "C84@3084L43,84@3059L187,90@3285L43,90@3259L191:CacheUpdateDialog.kt#as3uag");
+            ComposerKt.sourceInformationMarkerStart(composer, 1352079181, "CC(remember):CacheUpdateDialog.kt#9igjgp");
+            boolean changed = composer.changed(function0);
+            Object rememberedValue = composer.rememberedValue();
+            if (changed || rememberedValue == Composer.Companion.getEmpty()) {
+                rememberedValue = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda1
+                    @Override // kotlin.jvm.functions.Function0
+                    public final Object invoke() {
+                        Unit CacheUpdateDialogContent$lambda$11$lambda$10$lambda$7$lambda$6;
+                        CacheUpdateDialogContent$lambda$11$lambda$10$lambda$7$lambda$6 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$11$lambda$10$lambda$7$lambda$6(Function0.this);
+                        return CacheUpdateDialogContent$lambda$11$lambda$10$lambda$7$lambda$6;
+                    }
+                };
+                composer.updateRememberedValue(rememberedValue);
+            }
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$CacheUpdateDialogKt.INSTANCE.getLambda$2143907042$dialogs_release_web(), composer, 48);
+            ComposerKt.sourceInformationMarkerStart(composer, 1352085613, "CC(remember):CacheUpdateDialog.kt#9igjgp");
+            boolean changed2 = composer.changed(function02);
+            Object rememberedValue2 = composer.rememberedValue();
+            if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
+                rememberedValue2 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda2
+                    @Override // kotlin.jvm.functions.Function0
+                    public final Object invoke() {
+                        Unit CacheUpdateDialogContent$lambda$11$lambda$10$lambda$9$lambda$8;
+                        CacheUpdateDialogContent$lambda$11$lambda$10$lambda$9$lambda$8 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$11$lambda$10$lambda$9$lambda$8(Function0.this);
+                        return CacheUpdateDialogContent$lambda$11$lambda$10$lambda$9$lambda$8;
+                    }
+                };
+                composer.updateRememberedValue(rememberedValue2);
+            }
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$CacheUpdateDialogKt.INSTANCE.getLambda$1292262873$dialogs_release_web(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            composer.endNode();
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            ComposerKt.sourceInformationMarkerEnd(composer);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         } else {
-            startRestartGroup.skipToGroupEnd();
-            function0 = onDismiss;
+            composer.skipToGroupEnd();
         }
-        ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
-        if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda2
-                @Override // kotlin.jvm.functions.Function2
-                public final Object invoke(Object obj, Object obj2) {
-                    Unit CacheUpdateDialogContent$lambda$6;
-                    CacheUpdateDialogContent$lambda$6 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$6(updateSize, onConfirm, function0, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return CacheUpdateDialogContent$lambda$6;
-                }
-            });
-        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit CacheUpdateDialogContent$lambda$11$lambda$10$lambda$7$lambda$6(Function0 function0) {
+        function0.invoke();
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit CacheUpdateDialogContent$lambda$11$lambda$10$lambda$9$lambda$8(Function0 function0) {
+        function0.invoke();
+        return Unit.INSTANCE;
     }
 
     private static final CommonDialogUiState CacheUpdateDialogRoute$lambda$1(State<CommonDialogUiState> state) {

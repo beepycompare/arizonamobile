@@ -21,7 +21,7 @@ public enum CounterConfigurationReporterType {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f1176a;
+    private final String f1177a;
 
     @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001J\u0012\u0010\u0005\u001a\u00020\u00042\b\u0010\u0003\u001a\u0004\u0018\u00010\u0002H\u0007¨\u0006\u0006"}, d2 = {"Lio/appmetrica/analytics/internal/CounterConfigurationReporterType$Companion;", "", "", "value", "Lio/appmetrica/analytics/internal/CounterConfigurationReporterType;", "fromStringValue", "analytics_binaryProdRelease"}, k = 1, mv = {1, 6, 0})
     /* loaded from: classes4.dex */
@@ -55,7 +55,7 @@ public enum CounterConfigurationReporterType {
     }
 
     CounterConfigurationReporterType(String str) {
-        this.f1176a = str;
+        this.f1177a = str;
     }
 
     @JvmStatic
@@ -64,6 +64,6 @@ public enum CounterConfigurationReporterType {
     }
 
     public final String getStringValue() {
-        return this.f1176a;
+        return this.f1177a;
     }
 }

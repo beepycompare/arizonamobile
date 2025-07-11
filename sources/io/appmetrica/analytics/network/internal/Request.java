@@ -10,7 +10,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class Request {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f1222a;
+    private final String f1223a;
     private final String b;
     private final byte[] c;
     private final Map d;
@@ -19,13 +19,13 @@ public class Request {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f1223a;
+        private final String f1224a;
         private String b;
         private byte[] c = new byte[0];
         private final HashMap d = new HashMap();
 
         public Builder(String str) {
-            this.f1223a = str;
+            this.f1224a = str;
         }
 
         public Builder addHeader(String str, String str2) {
@@ -34,7 +34,7 @@ public class Request {
         }
 
         public Request build() {
-            return new Request(this.f1223a, this.b, this.c, this.d, 0);
+            return new Request(this.f1224a, this.b, this.c, this.d, 0);
         }
 
         public Builder post(byte[] bArr) {
@@ -65,15 +65,15 @@ public class Request {
     }
 
     public String getUrl() {
-        return this.f1222a;
+        return this.f1223a;
     }
 
     public String toString() {
-        return "Request{url=" + this.f1222a + ", method='" + this.b + "', bodyLength=" + this.c.length + ", headers=" + this.d + AbstractJsonLexerKt.END_OBJ;
+        return "Request{url=" + this.f1223a + ", method='" + this.b + "', bodyLength=" + this.c.length + ", headers=" + this.d + AbstractJsonLexerKt.END_OBJ;
     }
 
     private Request(String str, String str2, byte[] bArr, HashMap hashMap) {
-        this.f1222a = str;
+        this.f1223a = str;
         this.b = TextUtils.isEmpty(str2) ? UtilsKt.HTTP_METHOD_GET : str2;
         this.c = bArr;
         this.d = e.a(hashMap);

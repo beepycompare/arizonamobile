@@ -18,7 +18,7 @@ import kotlin.Metadata;
 /* loaded from: classes3.dex */
 public final class ImagePainter_androidKt {
     /* renamed from: asPainter-55t9-rM */
-    public static final Painter m7747asPainter55t9rM(Image image, Context context, int i) {
+    public static final Painter m7748asPainter55t9rM(Image image, Context context, int i) {
         if (image instanceof BitmapImage) {
             return BitmapPainterKt.m4764BitmapPainterQZhYCtY$default(AndroidImageBitmap_androidKt.asImageBitmap(((BitmapImage) image).getBitmap()), 0L, 0L, i, 6, null);
         }
@@ -33,10 +33,10 @@ public final class ImagePainter_androidKt {
     }
 
     /* renamed from: asPainter-55t9-rM$default */
-    public static /* synthetic */ Painter m7748asPainter55t9rM$default(Image image, Context context, int i, int i2, Object obj) {
+    public static /* synthetic */ Painter m7749asPainter55t9rM$default(Image image, Context context, int i, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             i = DrawScope.Companion.m4643getDefaultFilterQualityfv9h1I();
         }
-        return m7747asPainter55t9rM(image, context, i);
+        return m7748asPainter55t9rM(image, context, i);
     }
 }

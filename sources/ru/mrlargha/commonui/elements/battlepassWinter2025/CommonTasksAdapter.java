@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.battlepassWinter2025;
 
 import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +23,7 @@ import ru.mrlargha.commonui.databinding.WinterBattlepassCommonTaskItemBinding;
 import ru.mrlargha.commonui.elements.battlepassWinter2025.data.CategoryType;
 import ru.mrlargha.commonui.elements.battlepassWinter2025.data.CommonTaskInfo;
 /* compiled from: CommonTasksAdapter.kt */
-@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B+\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u001a\b\u0002\u0010\u0005\u001a\u0014\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0006¢\u0006\u0004\b\n\u0010\u000bJ\u0018\u0010\u0014\u001a\u00020\u00022\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\bH\u0016J\u0018\u0010\u0018\u001a\u00020\t2\u0006\u0010\u0019\u001a\u00020\u00022\u0006\u0010\u001a\u001a\u00020\bH\u0016J\b\u0010\u001b\u001a\u00020\bH\u0016J\u000e\u0010\u001c\u001a\u00020\t2\u0006\u0010\u001d\u001a\u00020\u001eJ\u000e\u0010\u001f\u001a\u00020\t2\u0006\u0010\u001a\u001a\u00020\bJ\u0014\u0010 \u001a\u00020\t2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u00070\"J\u0006\u0010#\u001a\u00020\tR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0005\u001a\u0014\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R!\u0010\f\u001a\u0012\u0012\u0004\u0012\u00020\u00070\rj\b\u0012\u0004\u0012\u00020\u0007`\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R!\u0010\u0011\u001a\u0012\u0012\u0004\u0012\u00020\u00070\rj\b\u0012\u0004\u0012\u00020\u0007`\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0010R\u000e\u0010\u0013\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lru/mrlargha/commonui/elements/battlepassWinter2025/CommonTasksAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/battlepassWinter2025/RodinaBattlePassCommonTaskViewHolder;", "isArizona", "", "onSelectTask", "Lkotlin/Function2;", "Lru/mrlargha/commonui/elements/battlepassWinter2025/data/CommonTaskInfo;", "", "", "<init>", "(ZLkotlin/jvm/functions/Function2;)V", "allTasksList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "getAllTasksList", "()Ljava/util/ArrayList;", "currentTasksList", "getCurrentTasksList", "colorMaxProgress", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "getItemCount", "filterList", "categoryType", "Lru/mrlargha/commonui/elements/battlepassWinter2025/data/CategoryType;", "selectTask", "addAllTasks", "tasks", "", "clearAllTasksList", "CommonUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B3\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u001a\b\u0002\u0010\u0007\u001a\u0014\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\n0\b¢\u0006\u0004\b\u000b\u0010\fJ\u0018\u0010\u0014\u001a\u00020\u00022\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0006H\u0016J\u0018\u0010\u0018\u001a\u00020\n2\u0006\u0010\u0019\u001a\u00020\u00022\u0006\u0010\u001a\u001a\u00020\u0006H\u0016J\b\u0010\u001b\u001a\u00020\u0006H\u0016J\u000e\u0010\u001c\u001a\u00020\n2\u0006\u0010\u001d\u001a\u00020\u001eJ\u000e\u0010\u001f\u001a\u00020\n2\u0006\u0010\u001a\u001a\u00020\u0006J\u0014\u0010 \u001a\u00020\n2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\t0\"J\u0006\u0010#\u001a\u00020\nR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0007\u001a\u0014\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\n0\bX\u0082\u0004¢\u0006\u0002\n\u0000R!\u0010\r\u001a\u0012\u0012\u0004\u0012\u00020\t0\u000ej\b\u0012\u0004\u0012\u00020\t`\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R!\u0010\u0012\u001a\u0012\u0012\u0004\u0012\u00020\t0\u000ej\b\u0012\u0004\u0012\u00020\t`\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0011¨\u0006$"}, d2 = {"Lru/mrlargha/commonui/elements/battlepassWinter2025/CommonTasksAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/battlepassWinter2025/RodinaBattlePassCommonTaskViewHolder;", "isArizona", "", "colorMaxProgress", "", "onSelectTask", "Lkotlin/Function2;", "Lru/mrlargha/commonui/elements/battlepassWinter2025/data/CommonTaskInfo;", "", "<init>", "(ZILkotlin/jvm/functions/Function2;)V", "allTasksList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "getAllTasksList", "()Ljava/util/ArrayList;", "currentTasksList", "getCurrentTasksList", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "getItemCount", "filterList", "categoryType", "Lru/mrlargha/commonui/elements/battlepassWinter2025/data/CategoryType;", "selectTask", "addAllTasks", "tasks", "", "clearAllTasksList", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class CommonTasksAdapter extends RecyclerView.Adapter<RodinaBattlePassCommonTaskViewHolder> {
     private final ArrayList<CommonTaskInfo> allTasksList;
@@ -33,8 +32,8 @@ public final class CommonTasksAdapter extends RecyclerView.Adapter<RodinaBattleP
     private final boolean isArizona;
     private final Function2<CommonTaskInfo, Integer, Unit> onSelectTask;
 
-    public /* synthetic */ CommonTasksAdapter(boolean z, Function2 function2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(z, (i & 2) != 0 ? new Function2() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.CommonTasksAdapter$$ExternalSyntheticLambda1
+    public /* synthetic */ CommonTasksAdapter(boolean z, int i, Function2 function2, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(z, i, (i2 & 4) != 0 ? new Function2() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.CommonTasksAdapter$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 Unit _init_$lambda$0;
@@ -51,13 +50,13 @@ public final class CommonTasksAdapter extends RecyclerView.Adapter<RodinaBattleP
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public CommonTasksAdapter(boolean z, Function2<? super CommonTaskInfo, ? super Integer, Unit> onSelectTask) {
+    public CommonTasksAdapter(boolean z, int i, Function2<? super CommonTaskInfo, ? super Integer, Unit> onSelectTask) {
         Intrinsics.checkNotNullParameter(onSelectTask, "onSelectTask");
         this.isArizona = z;
+        this.colorMaxProgress = i;
         this.onSelectTask = onSelectTask;
         this.allTasksList = new ArrayList<>();
         this.currentTasksList = new ArrayList<>();
-        this.colorMaxProgress = Color.parseColor("#EB8BD3");
     }
 
     public final ArrayList<CommonTaskInfo> getAllTasksList() {

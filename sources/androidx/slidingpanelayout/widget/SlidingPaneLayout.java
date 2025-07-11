@@ -323,7 +323,7 @@ public class SlidingPaneLayout extends ViewGroup implements Openable {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:22:0x0087, code lost:
-        if (r8.width == 0) goto L15;
+        if (r7.width == 0) goto L15;
      */
     @Override // android.view.View
     /*
@@ -419,7 +419,7 @@ public class SlidingPaneLayout extends ViewGroup implements Openable {
                         i5 = i11 - (layoutParams2.leftMargin + layoutParams2.rightMargin);
                         i6 = View.MeasureSpec.makeMeasureSpec(i5, 1073741824);
                     } else if (layoutParams2.weight > 0.0f) {
-                        i5 = measuredWidth2 + ((int) ((layoutParams2.weight * Math.max(0, i9)) / f));
+                        i5 = ((int) ((layoutParams2.weight * Math.max(0, i9)) / f)) + measuredWidth2;
                         i6 = View.MeasureSpec.makeMeasureSpec(i5, 1073741824);
                     } else {
                         i5 = measuredWidth2;

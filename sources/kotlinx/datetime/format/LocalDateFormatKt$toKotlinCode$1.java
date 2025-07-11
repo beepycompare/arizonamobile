@@ -6,7 +6,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.datetime.internal.ToKotlinCodeKt;
 /* compiled from: LocalDateFormat.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 /* synthetic */ class LocalDateFormatKt$toKotlinCode$1 extends FunctionReferenceImpl implements Function1<String, String> {
     public static final LocalDateFormatKt$toKotlinCode$1 INSTANCE = new LocalDateFormatKt$toKotlinCode$1();

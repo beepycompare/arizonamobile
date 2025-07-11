@@ -22,7 +22,7 @@ public final class PausingDispatcher extends CoroutineDispatcher {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo10019dispatch(CoroutineContext context, Runnable block) {
+    public void mo10050dispatch(CoroutineContext context, Runnable block) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(block, "block");
         this.dispatchQueue.dispatchAndEnqueue(context, block);

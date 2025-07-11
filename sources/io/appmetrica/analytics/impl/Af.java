@@ -1,22 +1,22 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Af implements InterfaceC0195cj {
+public final class Af implements InterfaceC0187cj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0416lf f336a;
+    public final C0408lf f337a;
 
-    public Af(C0416lf c0416lf) {
-        this.f336a = c0416lf;
+    public Af(C0408lf c0408lf) {
+        this.f337a = c0408lf;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0195cj
+    @Override // io.appmetrica.analytics.impl.InterfaceC0187cj
     public final boolean a() {
-        return this.f336a.i();
+        return this.f337a.i();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0195cj
+    @Override // io.appmetrica.analytics.impl.InterfaceC0187cj
     public final void b() {
-        this.f336a.h().b();
+        this.f337a.h().b();
     }
 
     public Af() {

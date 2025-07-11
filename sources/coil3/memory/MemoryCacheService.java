@@ -148,13 +148,13 @@ public final class MemoryCacheService {
                 size2 = Size.ORIGINAL;
             }
             Dimension width2 = size.getWidth();
-            int m7820unboximpl = width2 instanceof Dimension.Pixels ? ((Dimension.Pixels) width2).m7820unboximpl() : Integer.MAX_VALUE;
+            int m7821unboximpl = width2 instanceof Dimension.Pixels ? ((Dimension.Pixels) width2).m7821unboximpl() : Integer.MAX_VALUE;
             Dimension width3 = size2.getWidth();
-            int min = Math.min(m7820unboximpl, width3 instanceof Dimension.Pixels ? ((Dimension.Pixels) width3).m7820unboximpl() : Integer.MAX_VALUE);
+            int min = Math.min(m7821unboximpl, width3 instanceof Dimension.Pixels ? ((Dimension.Pixels) width3).m7821unboximpl() : Integer.MAX_VALUE);
             Dimension height2 = size.getHeight();
-            int m7820unboximpl2 = height2 instanceof Dimension.Pixels ? ((Dimension.Pixels) height2).m7820unboximpl() : Integer.MAX_VALUE;
+            int m7821unboximpl2 = height2 instanceof Dimension.Pixels ? ((Dimension.Pixels) height2).m7821unboximpl() : Integer.MAX_VALUE;
             Dimension height3 = size2.getHeight();
-            int min2 = Math.min(m7820unboximpl2, height3 instanceof Dimension.Pixels ? ((Dimension.Pixels) height3).m7820unboximpl() : Integer.MAX_VALUE);
+            int min2 = Math.min(m7821unboximpl2, height3 instanceof Dimension.Pixels ? ((Dimension.Pixels) height3).m7821unboximpl() : Integer.MAX_VALUE);
             double d = min / width;
             double d2 = min2 / height;
             int i = WhenMappings.$EnumSwitchMapping$0[((min == Integer.MAX_VALUE || min2 == Integer.MAX_VALUE) ? Scale.FIT : scale).ordinal()];

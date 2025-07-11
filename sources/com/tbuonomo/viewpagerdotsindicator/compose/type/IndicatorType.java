@@ -13,5 +13,5 @@ public abstract class IndicatorType {
     public static final int $stable = 0;
 
     /* renamed from: IndicatorTypeComposable--jt2gSs */
-    public abstract void mo8424IndicatorTypeComposablejt2gSs(Function0<Float> function0, Modifier modifier, int i, float f, Function1<? super Integer, Unit> function1, Composer composer, int i2);
+    public abstract void mo8452IndicatorTypeComposablejt2gSs(Function0<Float> function0, Modifier modifier, int i, float f, Function1<? super Integer, Unit> function1, Composer composer, int i2);
 }

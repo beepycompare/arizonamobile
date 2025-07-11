@@ -11,7 +11,6 @@ import androidx.sqlite.SQLiteConnection;
 import androidx.sqlite.SQLiteStatement;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.concurrent.atomic.AtomicBoolean;
-import kotlin.ExceptionsKt;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
@@ -171,27 +170,68 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Can't wrap try/catch for region: R(10:1|(2:3|(7:5|6|(1:(1:(1:(1:(1:(2:13|14)(4:16|17|18|19))(2:25|26))(2:27|28))(6:29|30|31|(1:33)|34|(1:37)(1:36)))(1:60))(5:68|(1:70)|71|(1:73)|37)|61|62|(4:64|(0)|34|(0))|37))|74|6|(0)(0)|61|62|(0)|37|(2:(1:56)|(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x00ab, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(10:1|(2:3|(7:5|6|(1:(1:(1:(2:25|26)(1:(2:13|14)(4:16|17|18|19)))(6:27|28|29|(1:31)|32|(1:35)(1:34)))(1:58))(5:66|(1:68)|69|(1:71)|35)|59|60|(4:62|(0)|32|(0))|35))|72|6|(0)(0)|59|60|(0)|35|(2:(1:54)|(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00a5, code lost:
         r13 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x00ac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x00a6, code lost:
         r13 = r12;
         r12 = r13;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x00d7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x00ad, code lost:
+        r12 = r12.getResult();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x00b3, code lost:
+        r0.L$0 = r12;
+        r0.L$1 = null;
+        r0.label = 4;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x00bd, code lost:
+        if (r13.endTransaction(false, r0) == r1) goto L35;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x00c0, code lost:
+        return r12;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x00c1, code lost:
+        throw r12;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x00c2, code lost:
+        r14 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00c3, code lost:
+        r8 = r12;
+        r12 = r14;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x00c7, code lost:
+        r0.L$0 = r8;
+        r0.L$1 = r12;
+        r0.label = 5;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00d1, code lost:
         if (r13.endTransaction(false, r0) != r1) goto L19;
      */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00d4, code lost:
+        r14 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x00d5, code lost:
+        r13 = r8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x00d8, code lost:
+        kotlin.ExceptionsKt.addSuppressed(r13, r14);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x00de, code lost:
+        throw r14;
+     */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x009a  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00aa A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00b3 A[Catch: all -> 0x00cc, TRY_LEAVE, TryCatch #5 {all -> 0x00cc, blocks: (B:51:0x00af, B:53:0x00b3), top: B:81:0x00af }] */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x00d9 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x006b  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00a4 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00ad A[Catch: all -> 0x00c6, TRY_LEAVE, TryCatch #3 {all -> 0x00c6, blocks: (B:49:0x00a9, B:51:0x00ad), top: B:75:0x00a9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x00d3 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00d8  */
     /* JADX WARN: Removed duplicated region for block: B:68:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00e4  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x00c7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00c1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -203,7 +243,6 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
         PooledConnectionImpl pooledConnectionImpl;
         PooledConnectionImpl pooledConnectionImpl2;
         int i2;
-        Throwable th;
         boolean z;
         if (continuation instanceof PooledConnectionImpl$transaction$1) {
             pooledConnectionImpl$transaction$1 = (PooledConnectionImpl$transaction$1) continuation;
@@ -225,74 +264,42 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
                         pooledConnectionImpl = this;
                     }
                 } else if (i != 1) {
-                    if (i != 2) {
-                        if (i == 3) {
-                            Object obj2 = pooledConnectionImpl$transaction$1.L$0;
-                            ResultKt.throwOnFailure(obj);
-                            return obj2;
-                        } else if (i == 4) {
-                            Object obj3 = pooledConnectionImpl$transaction$1.L$0;
-                            ResultKt.throwOnFailure(obj);
-                            return obj3;
-                        } else if (i != 5) {
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        } else {
-                            th = (Throwable) pooledConnectionImpl$transaction$1.L$1;
-                            th = (Throwable) pooledConnectionImpl$transaction$1.L$0;
-                            try {
-                                ResultKt.throwOnFailure(obj);
-                            } catch (SQLException e) {
-                                e = e;
-                                if (th == null) {
-                                    ExceptionsKt.addSuppressed(th, e);
-                                    throw th;
-                                }
-                                throw e;
-                            }
-                            throw th;
-                        }
-                    }
-                    i2 = pooledConnectionImpl$transaction$1.I$0;
-                    pooledConnectionImpl2 = (PooledConnectionImpl) pooledConnectionImpl$transaction$1.L$0;
-                    try {
-                        ResultKt.throwOnFailure(obj);
-                        z = i2 != 0;
-                        pooledConnectionImpl$transaction$1.L$0 = obj;
-                        pooledConnectionImpl$transaction$1.label = 3;
-                    } catch (Throwable th2) {
-                        ConnectionPool.RollbackException th3 = th2;
+                    if (i == 2) {
+                        i2 = pooledConnectionImpl$transaction$1.I$0;
+                        pooledConnectionImpl2 = (PooledConnectionImpl) pooledConnectionImpl$transaction$1.L$0;
                         try {
-                            if (!(th3 instanceof ConnectionPool.RollbackException)) {
-                                Object result = th3.getResult();
-                                pooledConnectionImpl$transaction$1.L$0 = result;
-                                pooledConnectionImpl$transaction$1.L$1 = null;
-                                pooledConnectionImpl$transaction$1.label = 4;
-                                if (pooledConnectionImpl2.endTransaction(false, pooledConnectionImpl$transaction$1) != coroutine_suspended) {
-                                    return result;
+                            ResultKt.throwOnFailure(obj);
+                            z = i2 != 0;
+                            pooledConnectionImpl$transaction$1.L$0 = obj;
+                            pooledConnectionImpl$transaction$1.label = 3;
+                        } catch (Throwable th) {
+                            ConnectionPool.RollbackException th2 = th;
+                            try {
+                                if (!(th2 instanceof ConnectionPool.RollbackException)) {
                                 }
-                            } else {
-                                try {
-                                    throw th3;
-                                } catch (Throwable th4) {
-                                    rollbackException = th3;
-                                    th = th4;
-                                    try {
-                                        pooledConnectionImpl$transaction$1.L$0 = rollbackException;
-                                        pooledConnectionImpl$transaction$1.L$1 = th;
-                                        pooledConnectionImpl$transaction$1.label = 5;
-                                    } catch (SQLException e2) {
-                                        e = e2;
-                                        th = rollbackException;
-                                        if (th == null) {
-                                        }
-                                    }
-                                }
+                            } catch (Throwable th3) {
+                                th = th3;
                             }
-                        } catch (Throwable th5) {
-                            th = th5;
                         }
+                        return pooledConnectionImpl2.endTransaction(z, pooledConnectionImpl$transaction$1) != coroutine_suspended ? coroutine_suspended : obj;
+                    } else if (i == 3 || i == 4) {
+                        Object obj2 = pooledConnectionImpl$transaction$1.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        return obj2;
+                    } else if (i != 5) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        th = (Throwable) pooledConnectionImpl$transaction$1.L$1;
+                        Throwable th4 = (Throwable) pooledConnectionImpl$transaction$1.L$0;
+                        try {
+                            ResultKt.throwOnFailure(obj);
+                        } catch (SQLException e) {
+                            e = e;
+                            if (th4 == null) {
+                            }
+                        }
+                        throw th;
                     }
-                    return pooledConnectionImpl2.endTransaction(z, pooledConnectionImpl$transaction$1) != coroutine_suspended ? coroutine_suspended : obj;
                 } else {
                     function2 = (Function2) pooledConnectionImpl$transaction$1.L$1;
                     pooledConnectionImpl = (PooledConnectionImpl) pooledConnectionImpl$transaction$1.L$0;
@@ -659,13 +666,13 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindBlob */
-        public void mo7565bindBlob(int i, byte[] value) {
+        public void mo7566bindBlob(int i, byte[] value) {
             Intrinsics.checkNotNullParameter(value, "value");
             if (this.this$0.isRecycled()) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo7565bindBlob(i, value);
+                this.delegate.mo7566bindBlob(i, value);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -674,12 +681,12 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindDouble */
-        public void mo7566bindDouble(int i, double d) {
+        public void mo7567bindDouble(int i, double d) {
             if (this.this$0.isRecycled()) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo7566bindDouble(i, d);
+                this.delegate.mo7567bindDouble(i, d);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -688,12 +695,12 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindLong */
-        public void mo7567bindLong(int i, long j) {
+        public void mo7568bindLong(int i, long j) {
             if (this.this$0.isRecycled()) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo7567bindLong(i, j);
+                this.delegate.mo7568bindLong(i, j);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -702,13 +709,13 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindText */
-        public void mo7569bindText(int i, String value) {
+        public void mo7570bindText(int i, String value) {
             Intrinsics.checkNotNullParameter(value, "value");
             if (this.this$0.isRecycled()) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo7569bindText(i, value);
+                this.delegate.mo7570bindText(i, value);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -717,12 +724,12 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindNull */
-        public void mo7568bindNull(int i) {
+        public void mo7569bindNull(int i) {
             if (this.this$0.isRecycled()) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo7568bindNull(i);
+                this.delegate.mo7569bindNull(i);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -861,12 +868,12 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: clearBindings */
-        public void mo7570clearBindings() {
+        public void mo7571clearBindings() {
             if (this.this$0.isRecycled()) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo7570clearBindings();
+                this.delegate.mo7571clearBindings();
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();

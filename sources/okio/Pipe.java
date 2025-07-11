@@ -517,13 +517,13 @@ public final class Pipe {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "sink", imports = {}))
     /* renamed from: -deprecated_sink  reason: not valid java name */
-    public final Sink m10318deprecated_sink() {
+    public final Sink m10408deprecated_sink() {
         return this.sink;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "source", imports = {}))
     /* renamed from: -deprecated_source  reason: not valid java name */
-    public final Source m10319deprecated_source() {
+    public final Source m10409deprecated_source() {
         return this.source;
     }
 

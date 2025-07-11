@@ -1,16 +1,31 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.4.0 */
+
+import android.os.RemoteException;
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzdy extends zzda {
-    final /* synthetic */ Runnable zza;
+public final class zzdy extends zzeq {
+    final /* synthetic */ zzco zza;
+    final /* synthetic */ zzfb zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzdy(zzdz zzdzVar, Runnable runnable) {
-        this.zza = runnable;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzdy(zzfb zzfbVar, zzco zzcoVar) {
+        super(zzfbVar, true);
+        this.zza = zzcoVar;
+        Objects.requireNonNull(zzfbVar);
+        this.zzb = zzfbVar;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzdb
-    public final void zze() {
-        this.zza.run();
+    @Override // com.google.android.gms.internal.measurement.zzeq
+    final void zza() throws RemoteException {
+        ((zzcr) Preconditions.checkNotNull(this.zzb.zzQ())).generateEventId(this.zza);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzeq
+    protected final void zzb() {
+        this.zza.zzb(null);
     }
 }

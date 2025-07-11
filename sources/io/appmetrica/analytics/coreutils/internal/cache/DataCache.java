@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreutils.internal.cache.CachedDataProvider;
 public abstract class DataCache<T> implements UpdateConditionsChecker {
 
     /* renamed from: a  reason: collision with root package name */
-    private CacheUpdateScheduler f267a;
+    private CacheUpdateScheduler f268a;
     protected final CachedDataProvider.CachedData<T> mCachedData;
 
     public DataCache(long j, long j2, String str) {
@@ -21,7 +21,7 @@ public abstract class DataCache<T> implements UpdateConditionsChecker {
 
     public T getData() {
         CacheUpdateScheduler cacheUpdateScheduler;
-        if (shouldUpdate() && (cacheUpdateScheduler = this.f267a) != null) {
+        if (shouldUpdate() && (cacheUpdateScheduler = this.f268a) != null) {
             cacheUpdateScheduler.scheduleUpdateIfNeededNow();
         }
         if (this.mCachedData.shouldClearData()) {
@@ -31,7 +31,7 @@ public abstract class DataCache<T> implements UpdateConditionsChecker {
     }
 
     public void setUpdateScheduler(CacheUpdateScheduler cacheUpdateScheduler) {
-        this.f267a = cacheUpdateScheduler;
+        this.f268a = cacheUpdateScheduler;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.cache.UpdateConditionsChecker
@@ -48,7 +48,7 @@ public abstract class DataCache<T> implements UpdateConditionsChecker {
     public void updateData(T t) {
         if (shouldUpdate(t)) {
             this.mCachedData.setData(t);
-            CacheUpdateScheduler cacheUpdateScheduler = this.f267a;
+            CacheUpdateScheduler cacheUpdateScheduler = this.f268a;
             if (cacheUpdateScheduler != null) {
                 cacheUpdateScheduler.onStateUpdated();
             }

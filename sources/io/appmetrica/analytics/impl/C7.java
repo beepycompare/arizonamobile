@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0739ye f368a;
+    public final C0731ye f369a;
 
     public C7() {
         this(null, 1, null);
@@ -17,9 +17,9 @@ public final class C7 implements Converter {
     /* renamed from: a */
     public final G7 fromModel(B7 b7) {
         G7 g7 = new G7();
-        Boolean bool = b7.f349a;
+        Boolean bool = b7.f350a;
         if (bool != null) {
-            g7.f440a = this.f368a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
+            g7.f441a = this.f369a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
         }
         Double d = b7.c;
         if (d != null) {
@@ -60,12 +60,12 @@ public final class C7 implements Converter {
         return g7;
     }
 
-    public C7(C0739ye c0739ye) {
-        this.f368a = c0739ye;
+    public C7(C0731ye c0731ye) {
+        this.f369a = c0731ye;
     }
 
-    public /* synthetic */ C7(C0739ye c0739ye, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? new C0739ye() : c0739ye);
+    public /* synthetic */ C7(C0731ye c0731ye, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? new C0731ye() : c0731ye);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -75,7 +75,7 @@ public final class C7 implements Converter {
             return new B7(null, null, null, null, null, null, null, null, null, null);
         }
         G7 g72 = new G7();
-        Boolean a2 = this.f368a.a(g7.f440a);
+        Boolean a2 = this.f369a.a(g7.f441a);
         Double valueOf = Double.valueOf(g7.c);
         if (valueOf.doubleValue() == g72.c) {
             valueOf = null;

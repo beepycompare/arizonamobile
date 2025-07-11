@@ -43,7 +43,7 @@ public abstract class ForwardingSource implements Source {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "delegate", imports = {}))
     /* renamed from: -deprecated_delegate  reason: not valid java name */
-    public final Source m10313deprecated_delegate() {
+    public final Source m10403deprecated_delegate() {
         return this.delegate;
     }
 }

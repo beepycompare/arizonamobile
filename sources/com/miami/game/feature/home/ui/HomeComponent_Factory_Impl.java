@@ -6,9 +6,9 @@ import dagger.internal.InstanceFactory;
 import javax.inject.Provider;
 /* loaded from: classes4.dex */
 public final class HomeComponent_Factory_Impl implements HomeComponent.Factory {
-    private final C0119HomeComponent_Factory delegateFactory;
+    private final C0111HomeComponent_Factory delegateFactory;
 
-    HomeComponent_Factory_Impl(C0119HomeComponent_Factory delegateFactory) {
+    HomeComponent_Factory_Impl(C0111HomeComponent_Factory delegateFactory) {
         this.delegateFactory = delegateFactory;
     }
 
@@ -17,11 +17,11 @@ public final class HomeComponent_Factory_Impl implements HomeComponent.Factory {
         return this.delegateFactory.get(componentContext);
     }
 
-    public static Provider<HomeComponent.Factory> create(C0119HomeComponent_Factory delegateFactory) {
+    public static Provider<HomeComponent.Factory> create(C0111HomeComponent_Factory delegateFactory) {
         return InstanceFactory.create(new HomeComponent_Factory_Impl(delegateFactory));
     }
 
-    public static dagger.internal.Provider<HomeComponent.Factory> createFactoryProvider(C0119HomeComponent_Factory delegateFactory) {
+    public static dagger.internal.Provider<HomeComponent.Factory> createFactoryProvider(C0111HomeComponent_Factory delegateFactory) {
         return InstanceFactory.create(new HomeComponent_Factory_Impl(delegateFactory));
     }
 }

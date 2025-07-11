@@ -11,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.arizona.common.utils.EasyAnimation;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -28,7 +29,7 @@ import ru.mrlargha.arizonaui.mobile.presentation.MobilePhone;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.UIElementID;
 /* compiled from: CatchApp.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015J\b\u0010\u0016\u001a\u00020\u0013H\u0016J\b\u0010\u0017\u001a\u00020\u0013H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/catch_app/CatchApp;", "Lru/mrlargha/arizonaui/mobile/presentation/MobileController;", "<init>", "()V", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "context", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneBinding;", "sendFrontedMessage", "Lru/mrlargha/commonui/core/IBackendNotifier;", TtmlNode.TAG_LAYOUT, "Landroidx/constraintlayout/widget/ConstraintLayout;", "timerr", "Landroid/os/CountDownTimer;", "binding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneCatchAppPageBinding;", "setCatchAppInfo", "", "info", "Lru/mrlargha/arizonaui/mobile/domain/obj/CatchAppInfo;", "renderPage", "removePage", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015J\b\u0010\u0016\u001a\u00020\u0013H\u0002J\u0010\u0010\u0017\u001a\u00020\u00132\u0006\u0010\u0018\u001a\u00020\u0015H\u0002J\u0010\u0010\u0019\u001a\u00020\u00132\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001c\u001a\u00020\u0013H\u0016J\b\u0010\u001d\u001a\u00020\u0013H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001e"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/catch_app/CatchApp;", "Lru/mrlargha/arizonaui/mobile/presentation/MobileController;", "<init>", "()V", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "context", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneBinding;", "sendFrontedMessage", "Lru/mrlargha/commonui/core/IBackendNotifier;", TtmlNode.TAG_LAYOUT, "Landroidx/constraintlayout/widget/ConstraintLayout;", "timerr", "Landroid/os/CountDownTimer;", "binding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneCatchAppPageBinding;", "setCatchAppInfo", "", "info", "Lru/mrlargha/arizonaui/mobile/domain/obj/CatchAppInfo;", "setDefaultScreens", "setBattleArmsInfo", CommonUrlParts.MODEL, "startTimer", "timeLeft", "", "renderPage", "removePage", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class CatchApp implements MobileController {
     private final MobilePhoneCatchAppPageBinding binding;
@@ -129,7 +130,6 @@ public final class CatchApp implements MobileController {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Type inference failed for: r3v6, types: [ru.mrlargha.arizonaui.mobile.presentation.page.catch_app.CatchApp$setCatchAppInfo$1$1] */
     public final void setCatchAppInfo(CatchAppInfo info) {
         Intrinsics.checkNotNullParameter(info, "info");
         CountDownTimer countDownTimer = this.timerr;
@@ -140,7 +140,8 @@ public final class CatchApp implements MobileController {
             }
             countDownTimer.cancel();
         }
-        final MobilePhoneCatchAppPageBinding mobilePhoneCatchAppPageBinding = this.binding;
+        MobilePhoneCatchAppPageBinding mobilePhoneCatchAppPageBinding = this.binding;
+        setDefaultScreens();
         mobilePhoneCatchAppPageBinding.bizCount.setText(String.valueOf(info.getBusinessesCount()));
         mobilePhoneCatchAppPageBinding.homeCount.setText(String.valueOf(info.getHousesCount()));
         if (info.getStatusButtonPermission() != 0) {
@@ -210,13 +211,66 @@ public final class CatchApp implements MobileController {
                     break;
                 }
                 break;
+            case 2053143151:
+                if (type.equals("battleArms")) {
+                    setBattleArmsInfo(info);
+                    break;
+                }
+                break;
         }
-        final long timeLeft = info.getTimeLeft() * 1000;
+        if (Intrinsics.areEqual(info.getType(), "battleArms")) {
+            return;
+        }
+        startTimer(info.getTimeLeft());
+    }
+
+    private final void setDefaultScreens() {
+        MobilePhoneCatchAppPageBinding mobilePhoneCatchAppPageBinding = this.binding;
+        ConstraintLayout permissionButton = mobilePhoneCatchAppPageBinding.permissionButton;
+        Intrinsics.checkNotNullExpressionValue(permissionButton, "permissionButton");
+        permissionButton.setVisibility(0);
+        mobilePhoneCatchAppPageBinding.seasonTitle.setText("СЕЗОН");
+        mobilePhoneCatchAppPageBinding.statTitle.setText("за текущий сезон поймано:");
+        mobilePhoneCatchAppPageBinding.catchText.setText("Ловить");
+        mobilePhoneCatchAppPageBinding.endOfSeasonTitle.setText("до конца сезона");
+        mobilePhoneCatchAppPageBinding.clockIc.setImageResource(R.drawable.catch_app_clock_ic);
+        mobilePhoneCatchAppPageBinding.homeIc.setImageResource(R.drawable.catch_app_home_ic);
+        mobilePhoneCatchAppPageBinding.bizIc.setImageResource(R.drawable.catch_app_biz_ic);
+    }
+
+    private final void setBattleArmsInfo(CatchAppInfo catchAppInfo) {
+        MobilePhoneCatchAppPageBinding mobilePhoneCatchAppPageBinding = this.binding;
+        mobilePhoneCatchAppPageBinding.seasonName.setText("«БИТВА ВООРУЖЕНИЙ»");
+        this.phoneBinding.phoneBackground.setBackground(ContextCompat.getDrawable(this.context, R.drawable.mobile_catch_app_fivth_type_bg));
+        mobilePhoneCatchAppPageBinding.seasonName.setTextColor(Color.parseColor("#FF7878"));
+        mobilePhoneCatchAppPageBinding.permissionButtonText.setTextColor(Color.parseColor("#FF7878"));
+        mobilePhoneCatchAppPageBinding.locationIc.setColorFilter(Color.parseColor("#FF7878"));
+        mobilePhoneCatchAppPageBinding.homeIc.setColorFilter(Color.parseColor("#FFFFFF"));
+        mobilePhoneCatchAppPageBinding.bizIc.setColorFilter(Color.parseColor("#FFFFFF"));
+        mobilePhoneCatchAppPageBinding.catchText.setTextColor(Color.parseColor("#000000"));
+        mobilePhoneCatchAppPageBinding.catchText.setText(catchAppInfo.getButtonText());
+        mobilePhoneCatchAppPageBinding.catchButton.setBackgroundResource(R.drawable.mobile_catch_app_button_fiveth_type_bg);
+        ConstraintLayout permissionButton = mobilePhoneCatchAppPageBinding.permissionButton;
+        Intrinsics.checkNotNullExpressionValue(permissionButton, "permissionButton");
+        permissionButton.setVisibility(8);
+        mobilePhoneCatchAppPageBinding.seasonTitle.setText("МЕРОПРИЯТИЕ");
+        mobilePhoneCatchAppPageBinding.statTitle.setText("прогресс за текущий день");
+        mobilePhoneCatchAppPageBinding.homeIc.setImageResource(R.drawable.mobile_catch_app_cursor_ic);
+        mobilePhoneCatchAppPageBinding.bizIc.setImageResource(R.drawable.mobile_catch_app_cup_ic);
+        mobilePhoneCatchAppPageBinding.endOfSeasonTitle.setText("Участников");
+        mobilePhoneCatchAppPageBinding.clockIc.setImageResource(R.drawable.mobile_catch_app_pepels_ic);
+        mobilePhoneCatchAppPageBinding.leftTime.setText(String.valueOf(catchAppInfo.getTotalCount()));
+    }
+
+    /* JADX WARN: Type inference failed for: r3v5, types: [ru.mrlargha.arizonaui.mobile.presentation.page.catch_app.CatchApp$startTimer$1$1] */
+    private final void startTimer(int i) {
+        final MobilePhoneCatchAppPageBinding mobilePhoneCatchAppPageBinding = this.binding;
+        final long j = i * 1000;
         final Ref.IntRef intRef = new Ref.IntRef();
-        intRef.element = (int) (timeLeft / 1000);
-        this.timerr = new CountDownTimer(timeLeft) { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.catch_app.CatchApp$setCatchAppInfo$1$1
+        intRef.element = (int) (j / 1000);
+        CountDownTimer start = new CountDownTimer(j) { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.catch_app.CatchApp$startTimer$1$1
             @Override // android.os.CountDownTimer
-            public void onTick(long j) {
+            public void onTick(long j2) {
                 if (intRef.element != 0) {
                     Ref.IntRef intRef2 = intRef;
                     intRef2.element -= 60;
@@ -230,6 +284,8 @@ public final class CatchApp implements MobileController {
                 cancel();
             }
         }.start();
+        Intrinsics.checkNotNullExpressionValue(start, "start(...)");
+        this.timerr = start;
     }
 
     @Override // ru.mrlargha.arizonaui.mobile.presentation.MobileController

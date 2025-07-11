@@ -26,14 +26,14 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.Route;
-import okhttp3.internal.Util;
+import okhttp3.internal._UtilCommonKt;
+import okhttp3.internal._UtilJvmKt;
 import okhttp3.internal.connection.Exchange;
 import okhttp3.internal.connection.RealCall;
 import okhttp3.internal.connection.RealConnection;
-import okhttp3.internal.connection.RouteException;
 import okhttp3.internal.http2.ConnectionShutdownException;
 /* compiled from: RetryAndFollowUpInterceptor.kt */
-@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\u0018\u0000 \u001e2\u00020\u0001:\u0001\u001eB\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u001a\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\nH\u0002J\u001c\u0010\u000b\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\u0010\f\u001a\u0004\u0018\u00010\rH\u0002J\u0010\u0010\u000e\u001a\u00020\b2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016J\u0018\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0012H\u0002J(\u0010\u0016\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u00062\u0006\u0010\u0015\u001a\u00020\u0012H\u0002J\u0018\u0010\u001a\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0019\u001a\u00020\u0006H\u0002J\u0018\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u001d\u001a\u00020\u001cH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lokhttp3/internal/http/RetryAndFollowUpInterceptor;", "Lokhttp3/Interceptor;", "client", "Lokhttp3/OkHttpClient;", "(Lokhttp3/OkHttpClient;)V", "buildRedirectRequest", "Lokhttp3/Request;", "userResponse", "Lokhttp3/Response;", FirebaseAnalytics.Param.METHOD, "", "followUpRequest", "exchange", "Lokhttp3/internal/connection/Exchange;", "intercept", "chain", "Lokhttp3/Interceptor$Chain;", "isRecoverable", "", "e", "Ljava/io/IOException;", "requestSendStarted", "recover", NotificationCompat.CATEGORY_CALL, "Lokhttp3/internal/connection/RealCall;", "userRequest", "requestIsOneShot", "retryAfter", "", "defaultDelay", "Companion", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\u0018\u0000 \u001f2\u00020\u0001:\u0001\u001fB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016J \u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0018\u0010\u0012\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0018\u0010\u0013\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u0014\u001a\u00020\u000bH\u0002J\u001c\u0010\u0015\u001a\u0004\u0018\u00010\u00112\u0006\u0010\u0016\u001a\u00020\u00072\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018H\u0002J\u001a\u0010\u0019\u001a\u0004\u0018\u00010\u00112\u0006\u0010\u0016\u001a\u00020\u00072\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0018\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u0016\u001a\u00020\u00072\u0006\u0010\u001e\u001a\u00020\u001dH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Lokhttp3/internal/http/RetryAndFollowUpInterceptor;", "Lokhttp3/Interceptor;", "client", "Lokhttp3/OkHttpClient;", "<init>", "(Lokhttp3/OkHttpClient;)V", "intercept", "Lokhttp3/Response;", "chain", "Lokhttp3/Interceptor$Chain;", "recover", "", "e", "Ljava/io/IOException;", NotificationCompat.CATEGORY_CALL, "Lokhttp3/internal/connection/RealCall;", "userRequest", "Lokhttp3/Request;", "requestIsOneShot", "isRecoverable", "requestSendStarted", "followUpRequest", "userResponse", "exchange", "Lokhttp3/internal/connection/Exchange;", "buildRedirectRequest", FirebaseAnalytics.Param.METHOD, "", "retryAfter", "", "defaultDelay", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class RetryAndFollowUpInterceptor implements Interceptor {
     public static final Companion Companion = new Companion(null);
@@ -45,67 +45,86 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
         this.client = client;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0040, code lost:
-        r7 = r0;
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0030, code lost:
+        r6 = okhttp3.internal.UnreadableResponseBodyKt.stripBody(r7);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0035, code lost:
+        r6 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0036, code lost:
+        r7 = r0.priorResponse(r6).build();
         r0 = r1.getInterceptorScopedExchange$okhttp();
         r6 = followUpRequest(r7, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0049, code lost:
-        if (r6 != null) goto L15;
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0046, code lost:
+        if (r6 != null) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x004b, code lost:
-        if (r0 == null) goto L37;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0048, code lost:
+        if (r0 == null) goto L38;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0051, code lost:
-        if (r0.isDuplex$okhttp() == false) goto L37;
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x004e, code lost:
+        if (r0.isDuplex$okhttp() == false) goto L38;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0053, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0050, code lost:
         r1.timeoutEarlyExit();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0056, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0053, code lost:
+        r1.getEventListener$okhttp().followUpDecision(r1, r7, null);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x005d, code lost:
         r1.exitNetworkInterceptorExchange$okhttp(false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0059, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0060, code lost:
         return r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x005a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0061, code lost:
+        r13 = th;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0064, code lost:
         r0 = r6.body();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x005e, code lost:
-        if (r0 == null) goto L23;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0064, code lost:
-        if (r0.isOneShot() == false) goto L23;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0066, code lost:
-        r1.exitNetworkInterceptorExchange$okhttp(false);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0069, code lost:
-        return r7;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x006a, code lost:
-        r0 = r7.body();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x006e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0068, code lost:
         if (r0 == null) goto L26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0070, code lost:
-        okhttp3.internal.Util.closeQuietly(r0);
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x006e, code lost:
+        if (r0.isOneShot() == false) goto L26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0075, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0070, code lost:
+        r1.getEventListener$okhttp().followUpDecision(r1, r7, null);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x007a, code lost:
+        r1.exitNetworkInterceptorExchange$okhttp(false);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x007d, code lost:
+        return r7;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x007e, code lost:
+        okhttp3.internal._UtilCommonKt.closeQuietly(r7.body());
         r8 = r8 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0079, code lost:
-        if (r8 > 20) goto L29;
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x008b, code lost:
+        if (r8 > 20) goto L30;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0098, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x008d, code lost:
+        r1.getEventListener$okhttp().followUpDecision(r1, r7, r6);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x009d, code lost:
+        r1.getEventListener$okhttp().followUpDecision(r1, r7, null);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x00bf, code lost:
         throw new java.net.ProtocolException("Too many follow-up requests: " + r8);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0026, code lost:
-        if (r7 == null) goto L13;
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00ee, code lost:
+        r1.exitNetworkInterceptorExchange$okhttp(r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0028, code lost:
-        r0 = r0.newBuilder().priorResponse(r7.newBuilder().body(null).build()).build();
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x00f1, code lost:
+        throw r13;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0026, code lost:
+        r0 = r13.proceed(r0).newBuilder().request(r0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x002e, code lost:
+        if (r7 == null) goto L44;
      */
     @Override // okhttp3.Interceptor
     /*
@@ -118,35 +137,32 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
         Request request$okhttp = realInterceptorChain.getRequest$okhttp();
         RealCall call$okhttp = realInterceptorChain.getCall$okhttp();
         List emptyList = CollectionsKt.emptyList();
+        boolean z = false;
         int i = 0;
         Response response = null;
         while (true) {
-            boolean z = true;
+            boolean z2 = true;
             while (true) {
-                call$okhttp.enterNetworkInterceptorExchange(request$okhttp, z);
+                call$okhttp.enterNetworkInterceptorExchange(request$okhttp, z2, realInterceptorChain);
                 try {
                     if (call$okhttp.isCanceled()) {
                         throw new IOException("Canceled");
                     }
                     try {
-                        Response proceed = realInterceptorChain.proceed(request$okhttp);
                         break;
                     } catch (IOException e) {
-                        if (!recover(e, call$okhttp, request$okhttp, !(e instanceof ConnectionShutdownException))) {
-                            throw Util.withSuppressed(e, emptyList);
+                        boolean recover = recover(e, call$okhttp, request$okhttp);
+                        call$okhttp.getEventListener$okhttp().retryDecision(call$okhttp, e, recover);
+                        if (!recover) {
+                            throw _UtilCommonKt.withSuppressed(e, emptyList);
                         }
                         emptyList = CollectionsKt.plus((Collection<? extends IOException>) emptyList, e);
-                    } catch (RouteException e2) {
-                        if (!recover(e2.getLastConnectException(), call$okhttp, request$okhttp, false)) {
-                            throw Util.withSuppressed(e2.getFirstConnectException(), emptyList);
-                        }
-                        emptyList = CollectionsKt.plus((Collection<? extends IOException>) emptyList, e2.getFirstConnectException());
+                        call$okhttp.exitNetworkInterceptorExchange$okhttp(true);
+                        z2 = false;
                     }
-                    call$okhttp.exitNetworkInterceptorExchange$okhttp(true);
-                    z = false;
                 } catch (Throwable th) {
-                    call$okhttp.exitNetworkInterceptorExchange$okhttp(true);
-                    throw th;
+                    th = th;
+                    z = true;
                 }
             }
             call$okhttp.exitNetworkInterceptorExchange$okhttp(true);
@@ -154,9 +170,11 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
         }
     }
 
-    private final boolean recover(IOException iOException, RealCall realCall, Request request, boolean z) {
+    private final boolean recover(IOException iOException, RealCall realCall, Request request) {
+        boolean z = iOException instanceof ConnectionShutdownException;
+        boolean z2 = !z;
         if (this.client.retryOnConnectionFailure()) {
-            return !(z && requestIsOneShot(iOException, request)) && isRecoverable(iOException, z) && realCall.retryAfterFailure();
+            return (z || !requestIsOneShot(iOException, request)) && isRecoverable(iOException, z2) && realCall.retryAfterFailure();
         }
         return false;
     }
@@ -252,7 +270,7 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
                     newBuilder.removeHeader("Content-Type");
                 }
             }
-            if (!Util.canReuseConnectionFor(response.request().url(), resolve)) {
+            if (!_UtilJvmKt.canReuseConnectionFor(response.request().url(), resolve)) {
                 newBuilder.removeHeader(com.google.common.net.HttpHeaders.AUTHORIZATION);
             }
             return newBuilder.url(resolve).build();
@@ -267,14 +285,14 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
         }
         if (new Regex("\\d+").matches(header$default)) {
             Integer valueOf = Integer.valueOf(header$default);
-            Intrinsics.checkNotNullExpressionValue(valueOf, "valueOf(header)");
+            Intrinsics.checkNotNullExpressionValue(valueOf, "valueOf(...)");
             return valueOf.intValue();
         }
         return Integer.MAX_VALUE;
     }
 
     /* compiled from: RetryAndFollowUpInterceptor.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0005"}, d2 = {"Lokhttp3/internal/http/RetryAndFollowUpInterceptor$Companion;", "", "()V", "MAX_FOLLOW_UPS", "", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lokhttp3/internal/http/RetryAndFollowUpInterceptor$Companion;", "", "<init>", "()V", "MAX_FOLLOW_UPS", "", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

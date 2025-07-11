@@ -1,22 +1,25 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
-/* loaded from: classes3.dex */
-final class zzks {
-    public int zza;
-    public long zzb;
-    public Object zzc;
-    public final zzlp zzd;
-    public int zze;
 
-    zzks() {
-        int i = zzlp.zzb;
-        int i2 = zznp.zza;
-        this.zzd = zzlp.zza;
+import java.io.IOException;
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* loaded from: classes3.dex */
+public abstract class zzks implements Cloneable, zznl {
+    public final /* synthetic */ Object clone() throws CloneNotSupportedException {
+        throw null;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzks(zzlp zzlpVar) {
-        zzlpVar.getClass();
-        this.zzd = zzlpVar;
+    @Override // com.google.android.gms.internal.measurement.zznl
+    public final void zzcB(zzll zzllVar) throws IOException {
+        throw null;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznl
+    public final zznk zzcC() {
+        throw null;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznl
+    public final zzlg zzcb() {
+        throw null;
     }
 }

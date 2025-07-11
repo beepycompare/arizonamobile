@@ -1,18 +1,36 @@
 package com.google.android.gms.measurement.internal;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
-/* loaded from: classes3.dex */
-final class zzoh implements Runnable {
-    final /* synthetic */ long zza;
-    final /* synthetic */ zzop zzb;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzoh(zzop zzopVar, long j) {
-        this.zza = j;
-        this.zzb = zzopVar;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* loaded from: classes3.dex */
+public final class zzoh implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
+        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        int i = 0;
+        long j = 0;
+        String str = null;
+        while (parcel.dataPosition() < validateObjectHeader) {
+            int readHeader = SafeParcelReader.readHeader(parcel);
+            int fieldId = SafeParcelReader.getFieldId(readHeader);
+            if (fieldId == 1) {
+                str = SafeParcelReader.createString(parcel, readHeader);
+            } else if (fieldId == 2) {
+                j = SafeParcelReader.readLong(parcel, readHeader);
+            } else if (fieldId == 3) {
+                i = SafeParcelReader.readInt(parcel, readHeader);
+            } else {
+                SafeParcelReader.skipUnknownField(parcel, readHeader);
+            }
+        }
+        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
+        return new zzog(str, j, i);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        zzop.zzl(this.zzb, this.zza);
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new zzog[i];
     }
 }

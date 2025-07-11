@@ -6,9 +6,9 @@ import dagger.internal.InstanceFactory;
 import javax.inject.Provider;
 /* loaded from: classes4.dex */
 public final class NotificationsComponent_Factory_Impl implements NotificationsComponent.Factory {
-    private final C0120NotificationsComponent_Factory delegateFactory;
+    private final C0112NotificationsComponent_Factory delegateFactory;
 
-    NotificationsComponent_Factory_Impl(C0120NotificationsComponent_Factory delegateFactory) {
+    NotificationsComponent_Factory_Impl(C0112NotificationsComponent_Factory delegateFactory) {
         this.delegateFactory = delegateFactory;
     }
 
@@ -17,11 +17,11 @@ public final class NotificationsComponent_Factory_Impl implements NotificationsC
         return this.delegateFactory.get(componentContext);
     }
 
-    public static Provider<NotificationsComponent.Factory> create(C0120NotificationsComponent_Factory delegateFactory) {
+    public static Provider<NotificationsComponent.Factory> create(C0112NotificationsComponent_Factory delegateFactory) {
         return InstanceFactory.create(new NotificationsComponent_Factory_Impl(delegateFactory));
     }
 
-    public static dagger.internal.Provider<NotificationsComponent.Factory> createFactoryProvider(C0120NotificationsComponent_Factory delegateFactory) {
+    public static dagger.internal.Provider<NotificationsComponent.Factory> createFactoryProvider(C0112NotificationsComponent_Factory delegateFactory) {
         return InstanceFactory.create(new NotificationsComponent_Factory_Impl(delegateFactory));
     }
 }

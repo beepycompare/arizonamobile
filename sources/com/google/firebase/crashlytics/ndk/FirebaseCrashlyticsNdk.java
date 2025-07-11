@@ -52,7 +52,7 @@ public class FirebaseCrashlyticsNdk implements CrashlyticsNativeComponent {
                 SignalHandlerInstaller signalHandlerInstaller = new SignalHandlerInstaller() { // from class: com.google.firebase.crashlytics.ndk.FirebaseCrashlyticsNdk$$ExternalSyntheticLambda0
                     @Override // com.google.firebase.crashlytics.ndk.FirebaseCrashlyticsNdk.SignalHandlerInstaller
                     public final void installHandler() {
-                        FirebaseCrashlyticsNdk.this.m8250x251e82b0(str, str2, j, staticSessionData);
+                        FirebaseCrashlyticsNdk.this.m8249x251e82b0(str, str2, j, staticSessionData);
                     }
                 };
                 this.signalHandlerInstaller = signalHandlerInstaller;
@@ -70,7 +70,7 @@ public class FirebaseCrashlyticsNdk implements CrashlyticsNativeComponent {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$prepareNativeSession$0$com-google-firebase-crashlytics-ndk-FirebaseCrashlyticsNdk  reason: not valid java name */
-    public /* synthetic */ void m8250x251e82b0(String str, String str2, long j, StaticSessionData staticSessionData) {
+    public /* synthetic */ void m8249x251e82b0(String str, String str2, long j, StaticSessionData staticSessionData) {
         Logger.getLogger().d("Initializing native session: " + str);
         if (this.controller.initialize(str, str2, j, staticSessionData)) {
             return;

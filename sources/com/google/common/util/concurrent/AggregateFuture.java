@@ -78,12 +78,12 @@ public abstract class AggregateFuture<InputT, OutputT> extends AggregateFutureSt
                 final ListenableFuture<? extends InputT> next = it.next();
                 int i2 = i + 1;
                 if (next.isDone()) {
-                    m8205lambda$init$0$comgooglecommonutilconcurrentAggregateFuture(i, next);
+                    m8204lambda$init$0$comgooglecommonutilconcurrentAggregateFuture(i, next);
                 } else {
                     next.addListener(new Runnable() { // from class: com.google.common.util.concurrent.AggregateFuture$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            AggregateFuture.this.m8205lambda$init$0$comgooglecommonutilconcurrentAggregateFuture(i, next);
+                            AggregateFuture.this.m8204lambda$init$0$comgooglecommonutilconcurrentAggregateFuture(i, next);
                         }
                     }, MoreExecutors.directExecutor());
                 }
@@ -94,14 +94,14 @@ public abstract class AggregateFuture<InputT, OutputT> extends AggregateFutureSt
             Runnable runnable = new Runnable() { // from class: com.google.common.util.concurrent.AggregateFuture$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AggregateFuture.this.m8206lambda$init$1$comgooglecommonutilconcurrentAggregateFuture(immutableCollection);
+                    AggregateFuture.this.m8205lambda$init$1$comgooglecommonutilconcurrentAggregateFuture(immutableCollection);
                 }
             };
             UnmodifiableIterator<? extends ListenableFuture<? extends InputT>> it2 = this.futures.iterator();
             while (it2.hasNext()) {
                 ListenableFuture<? extends InputT> next2 = it2.next();
                 if (next2.isDone()) {
-                    m8206lambda$init$1$comgooglecommonutilconcurrentAggregateFuture(immutableCollection);
+                    m8205lambda$init$1$comgooglecommonutilconcurrentAggregateFuture(immutableCollection);
                 } else {
                     next2.addListener(runnable, MoreExecutors.directExecutor());
                 }
@@ -111,7 +111,7 @@ public abstract class AggregateFuture<InputT, OutputT> extends AggregateFutureSt
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: processAllMustSucceedDoneFuture */
-    public void m8205lambda$init$0$comgooglecommonutilconcurrentAggregateFuture(int index, ListenableFuture<? extends InputT> future) {
+    public void m8204lambda$init$0$comgooglecommonutilconcurrentAggregateFuture(int index, ListenableFuture<? extends InputT> future) {
         try {
             if (future.isCancelled()) {
                 this.futures = null;
@@ -120,7 +120,7 @@ public abstract class AggregateFuture<InputT, OutputT> extends AggregateFutureSt
                 collectValueFromNonCancelledFuture(index, future);
             }
         } finally {
-            m8206lambda$init$1$comgooglecommonutilconcurrentAggregateFuture(null);
+            m8205lambda$init$1$comgooglecommonutilconcurrentAggregateFuture(null);
         }
     }
 
@@ -165,7 +165,7 @@ public abstract class AggregateFuture<InputT, OutputT> extends AggregateFutureSt
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: decrementCountAndMaybeComplete */
-    public void m8206lambda$init$1$comgooglecommonutilconcurrentAggregateFuture(@CheckForNull ImmutableCollection<? extends Future<? extends InputT>> futuresIfNeedToCollectAtCompletion) {
+    public void m8205lambda$init$1$comgooglecommonutilconcurrentAggregateFuture(@CheckForNull ImmutableCollection<? extends Future<? extends InputT>> futuresIfNeedToCollectAtCompletion) {
         int decrementRemainingAndGet = decrementRemainingAndGet();
         Preconditions.checkState(decrementRemainingAndGet >= 0, "Less than 0 remaining futures");
         if (decrementRemainingAndGet == 0) {

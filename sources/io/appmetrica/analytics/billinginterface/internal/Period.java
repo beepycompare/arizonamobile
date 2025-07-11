@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class Period {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f220a = Pattern.compile("P(\\d+)(\\S+)");
+    private static final Pattern f221a = Pattern.compile("P(\\d+)(\\S+)");
     public final int number;
     public final TimeUnit timeUnit;
 
@@ -26,7 +26,7 @@ public class Period {
 
     public static Period parse(String str) {
         TimeUnit timeUnit;
-        Matcher matcher = f220a.matcher(str);
+        Matcher matcher = f221a.matcher(str);
         if (matcher.find()) {
             String group = matcher.group(1);
             String group2 = matcher.group(2);

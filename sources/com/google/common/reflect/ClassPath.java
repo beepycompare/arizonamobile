@@ -278,13 +278,11 @@ public final class ClassPath {
                         }
                     }
                     scanJarFile(jarFile, builder);
-                    jarFile.close();
-                } catch (Throwable th) {
+                } finally {
                     try {
                         jarFile.close();
                     } catch (IOException unused) {
                     }
-                    throw th;
                 }
             } catch (IOException unused2) {
             }

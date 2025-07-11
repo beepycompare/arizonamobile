@@ -24,14 +24,14 @@ public class ParseUtils {
     }
 
     public static int parseInt(String str, int i) {
-        if (str != null) {
-            try {
-                return Integer.parseInt(str);
-            } catch (NumberFormatException unused) {
-                return i;
-            }
+        if (str == null) {
+            return i;
         }
-        return i;
+        try {
+            return Integer.parseInt(str);
+        } catch (NumberFormatException unused) {
+            return i;
+        }
     }
 
     public static int parseIntOrNegative(String str) {

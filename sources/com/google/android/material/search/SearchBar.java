@@ -85,7 +85,7 @@ public class SearchBar extends Toolbar {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-search-SearchBar  reason: not valid java name */
-    public /* synthetic */ void m8142lambda$new$0$comgoogleandroidmaterialsearchSearchBar(boolean z) {
+    public /* synthetic */ void m8141lambda$new$0$comgoogleandroidmaterialsearchSearchBar(boolean z) {
         setFocusableInTouchMode(z);
     }
 
@@ -108,7 +108,7 @@ public class SearchBar extends Toolbar {
         this.touchExplorationStateChangeListener = new AccessibilityManagerCompat.TouchExplorationStateChangeListener() { // from class: com.google.android.material.search.SearchBar$$ExternalSyntheticLambda1
             @Override // androidx.core.view.accessibility.AccessibilityManagerCompat.TouchExplorationStateChangeListener
             public final void onTouchExplorationStateChanged(boolean z) {
-                SearchBar.this.m8142lambda$new$0$comgoogleandroidmaterialsearchSearchBar(z);
+                SearchBar.this.m8141lambda$new$0$comgoogleandroidmaterialsearchSearchBar(z);
             }
         };
         Context context2 = getContext();
@@ -508,7 +508,7 @@ public class SearchBar extends Toolbar {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startOnLoadAnimation$1$com-google-android-material-search-SearchBar  reason: not valid java name */
-    public /* synthetic */ void m8143x58362b63() {
+    public /* synthetic */ void m8142x58362b63() {
         this.searchBarAnimationHelper.startOnLoadAnimation(this);
     }
 
@@ -516,7 +516,7 @@ public class SearchBar extends Toolbar {
         post(new Runnable() { // from class: com.google.android.material.search.SearchBar$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SearchBar.this.m8143x58362b63();
+                SearchBar.this.m8142x58362b63();
             }
         });
     }

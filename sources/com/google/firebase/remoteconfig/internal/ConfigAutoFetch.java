@@ -189,7 +189,7 @@ public class ConfigAutoFetch {
                 return Tasks.whenAllComplete(fetchNowWithTypeAndAttemptNumber, task).continueWithTask(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigAutoFetch$$ExternalSyntheticLambda0
                     @Override // com.google.android.gms.tasks.Continuation
                     public final Object then(Task task2) {
-                        return ConfigAutoFetch.this.m8281xc4c7076e(fetchNowWithTypeAndAttemptNumber, task, j, i2, task2);
+                        return ConfigAutoFetch.this.m8280xc4c7076e(fetchNowWithTypeAndAttemptNumber, task, j, i2, task2);
                     }
                 });
             } catch (Throwable th) {
@@ -204,7 +204,7 @@ public class ConfigAutoFetch {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$fetchLatestConfig$0$com-google-firebase-remoteconfig-internal-ConfigAutoFetch  reason: not valid java name */
-    public /* synthetic */ Task m8281xc4c7076e(Task task, Task task2, long j, int i, Task task3) throws Exception {
+    public /* synthetic */ Task m8280xc4c7076e(Task task, Task task2, long j, int i, Task task3) throws Exception {
         if (!task.isSuccessful()) {
             return Tasks.forException(new FirebaseRemoteConfigClientException("Failed to auto-fetch config update.", task.getException()));
         }

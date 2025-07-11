@@ -1,19 +1,45 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.ArrayList;
-import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import java.util.HashMap;
+import java.util.Map;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public abstract class zzaw {
-    final List zza = new ArrayList();
+public final class zzaw {
+    final Map zza = new HashMap();
+    final zzbi zzb = new zzbi();
 
-    public abstract zzap zza(String str, zzg zzgVar, List list);
+    public zzaw() {
+        zza(new zzau());
+        zza(new zzax());
+        zza(new zzay());
+        zza(new zzbb());
+        zza(new zzbg());
+        zza(new zzbh());
+        zza(new zzbj());
+    }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzap zzb(String str) {
-        if (this.zza.contains(zzh.zze(str))) {
-            throw new UnsupportedOperationException("Command not implemented: ".concat(String.valueOf(str)));
+    final void zza(zzav zzavVar) {
+        for (zzbk zzbkVar : zzavVar.zza) {
+            this.zza.put(zzbkVar.zzb().toString(), zzavVar);
         }
-        throw new IllegalArgumentException("Command not supported");
+    }
+
+    public final zzao zzb(zzg zzgVar, zzao zzaoVar) {
+        zzav zzavVar;
+        zzh.zzl(zzgVar);
+        if (zzaoVar instanceof zzap) {
+            zzap zzapVar = (zzap) zzaoVar;
+            ArrayList zzg = zzapVar.zzg();
+            String zzb = zzapVar.zzb();
+            Map map = this.zza;
+            if (map.containsKey(zzb)) {
+                zzavVar = (zzav) map.get(zzb);
+            } else {
+                zzavVar = this.zzb;
+            }
+            return zzavVar.zza(zzb, zzgVar, zzg);
+        }
+        return zzaoVar;
     }
 }

@@ -10,7 +10,7 @@ import java.util.Map;
 public class PluginErrorDetails {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f1247a;
+    private final String f1248a;
     private final String b;
     private final ArrayList c;
     private final String d;
@@ -21,7 +21,7 @@ public class PluginErrorDetails {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f1248a;
+        private String f1249a;
         private String b;
         private List c;
         private String d;
@@ -29,11 +29,11 @@ public class PluginErrorDetails {
         private Map f;
 
         public PluginErrorDetails build() {
-            return new PluginErrorDetails(this.f1248a, this.b, (List) WrapUtils.getOrDefault(this.c, new ArrayList()), this.d, this.e, (Map) WrapUtils.getOrDefault(this.f, new HashMap()), 0);
+            return new PluginErrorDetails(this.f1249a, this.b, (List) WrapUtils.getOrDefault(this.c, new ArrayList()), this.d, this.e, (Map) WrapUtils.getOrDefault(this.f, new HashMap()), 0);
         }
 
         public Builder withExceptionClass(String str) {
-            this.f1248a = str;
+            this.f1249a = str;
             return this;
         }
 
@@ -78,7 +78,7 @@ public class PluginErrorDetails {
     }
 
     public String getExceptionClass() {
-        return this.f1247a;
+        return this.f1248a;
     }
 
     public String getMessage() {
@@ -102,7 +102,7 @@ public class PluginErrorDetails {
     }
 
     private PluginErrorDetails(String str, String str2, List list, String str3, String str4, Map map) {
-        this.f1247a = str;
+        this.f1248a = str;
         this.b = str2;
         this.c = new ArrayList(list);
         this.d = str3;

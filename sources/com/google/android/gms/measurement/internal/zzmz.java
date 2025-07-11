@@ -1,36 +1,34 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.RemoteException;
-import com.google.android.gms.common.internal.Preconditions;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzmz implements Runnable {
-    final /* synthetic */ zzr zza;
-    final /* synthetic */ zzny zzb;
+final class zzmz implements Runnable {
+    final /* synthetic */ zzga zza;
+    final /* synthetic */ zzne zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzmz(zzny zznyVar, zzr zzrVar) {
-        this.zza = zzrVar;
-        this.zzb = zznyVar;
+    public zzmz(zzne zzneVar, zzga zzgaVar) {
+        this.zza = zzgaVar;
+        Objects.requireNonNull(zzneVar);
+        this.zzb = zzneVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zzgl zzglVar;
-        zzny zznyVar = this.zzb;
-        zzglVar = zznyVar.zzb;
-        if (zzglVar == null) {
-            zznyVar.zzu.zzaW().zze().zza("Failed to reset data on the service: not connected to service");
-            return;
+        zzne zzneVar = this.zzb;
+        synchronized (zzneVar) {
+            zzneVar.zzd(false);
+            zznk zznkVar = zzneVar.zza;
+            if (!zznkVar.zzh()) {
+                zznkVar.zzu.zzaV().zzj().zza("Connected to remote service");
+                zznkVar.zzL(this.zza);
+            }
         }
-        try {
-            zzr zzrVar = this.zza;
-            Preconditions.checkNotNull(zzrVar);
-            zzglVar.zzs(zzrVar);
-        } catch (RemoteException e) {
-            this.zzb.zzu.zzaW().zze().zzb("Failed to reset data on the service: remote exception", e);
+        zznk zznkVar2 = this.zzb.zza;
+        if (zznkVar2.zzab() != null) {
+            zznkVar2.zzab().shutdownNow();
+            zznkVar2.zzac(null);
         }
-        this.zzb.zzag();
     }
 }

@@ -3,8 +3,8 @@
     <path android:fillColor="#090e23" android:pathData="M10,0L240,0A10,10 0,0 1,250 10L250,190A10,10 0,0 1,240 200L10,200A10,10 0,0 1,0 190L0,10A10,10 0,0 1,10 0z" android:fillAlpha="0.75"/>
     <group>
         <clip-path android:pathData="M10,0L240,0A10,10 0,0 1,250 10L250,190A10,10 0,0 1,240 200L10,200A10,10 0,0 1,0 190L0,10A10,10 0,0 1,10 0z"/>
-        <path android:fillColor="@drawable/res_0x7f080252_rounded_dialog_bg__0" android:pathData="M50,205a174.5,180 0,1 0,349 0a174.5,180 0,1 0,-349 0z" android:fillAlpha="0.7"/>
-        <path android:fillColor="@drawable/res_0x7f080253_rounded_dialog_bg__1" android:pathData="M-181,7.5a186.5,180.5 0,1 0,373 0a186.5,180.5 0,1 0,-373 0z" android:fillAlpha="0.7"/>
+        <path android:fillColor="@drawable/res_0x7f080256_rounded_dialog_bg__0" android:pathData="M50,205a174.5,180 0,1 0,349 0a174.5,180 0,1 0,-349 0z" android:fillAlpha="0.7"/>
+        <path android:fillColor="@drawable/res_0x7f080257_rounded_dialog_bg__1" android:pathData="M-181,7.5a186.5,180.5 0,1 0,373 0a186.5,180.5 0,1 0,-373 0z" android:fillAlpha="0.7"/>
     </group>
     <group>
         <clip-path android:pathData="M10,0L240,0A10,10 0,0 1,250 10L250,190A10,10 0,0 1,240 200L10,200A10,10 0,0 1,0 190L0,10A10,10 0,0 1,10 0z"/>

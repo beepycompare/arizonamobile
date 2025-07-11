@@ -13,7 +13,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Ce {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f373a;
+    public final String f374a;
     public final String b;
     public final List c;
     public final Map d;
@@ -32,11 +32,11 @@ public final class Ce {
     }
 
     public final String toString() {
-        return "OrderWrapper{uuid='" + this.f373a + "', identifier='" + this.b + "', cartItems=" + this.c + ", payload=" + this.d + AbstractJsonLexerKt.END_OBJ;
+        return "OrderWrapper{uuid='" + this.f374a + "', identifier='" + this.b + "', cartItems=" + this.c + ", payload=" + this.d + AbstractJsonLexerKt.END_OBJ;
     }
 
     public Ce(String str, String str2, ArrayList arrayList, Map map) {
-        this.f373a = str;
+        this.f374a = str;
         this.b = str2;
         this.c = arrayList;
         this.d = map;

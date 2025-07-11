@@ -3,7 +3,6 @@ package okio;
 import java.io.File;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.Socket;
 import java.nio.file.OpenOption;
 import java.util.Arrays;
 import kotlin.Deprecated;
@@ -62,7 +61,7 @@ public final class DeprecatedOkio {
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "socket.sink()", imports = {"okio.sink"}))
-    public final Sink sink(Socket socket) {
+    public final Sink sink(java.net.Socket socket) {
         Intrinsics.checkNotNullParameter(socket, "socket");
         return Okio.sink(socket);
     }
@@ -87,7 +86,7 @@ public final class DeprecatedOkio {
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "socket.source()", imports = {"okio.source"}))
-    public final Source source(Socket socket) {
+    public final Source source(java.net.Socket socket) {
         Intrinsics.checkNotNullParameter(socket, "socket");
         return Okio.source(socket);
     }

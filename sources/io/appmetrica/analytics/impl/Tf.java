@@ -7,7 +7,7 @@ import java.util.List;
 public final class Tf implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ka f641a;
+    public final Ka f642a;
 
     public Tf() {
         this(new Ka(20, 100));
@@ -16,15 +16,15 @@ public final class Tf implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Ni fromModel(List<String> list) {
-        Gn a2 = this.f641a.a((List<Object>) list);
-        List list2 = (List) a2.f449a;
+        Gn a2 = this.f642a.a((List<Object>) list);
+        List list2 = (List) a2.f450a;
         F8[] f8Arr = new F8[0];
         if (list2 != null) {
             f8Arr = new F8[list2.size()];
             for (int i = 0; i < list2.size(); i++) {
                 F8 f8 = new F8();
                 f8Arr[i] = f8;
-                f8.f426a = StringUtils.getUTF8Bytes((String) list2.get(i));
+                f8.f427a = StringUtils.getUTF8Bytes((String) list2.get(i));
             }
         }
         a2.b.getBytesTruncated();
@@ -38,7 +38,7 @@ public final class Tf implements Converter {
     }
 
     public Tf(Ka ka) {
-        this.f641a = ka;
+        this.f642a = ka;
     }
 
     public final List<String> a(Ni ni) {

@@ -120,7 +120,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
                 this.components.put(component, new Lazy(new Provider() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda2
                     @Override // com.google.firebase.inject.Provider
                     public final Object get() {
-                        return ComponentRuntime.this.m8211xc080f8d8(component);
+                        return ComponentRuntime.this.m8210xc080f8d8(component);
                     }
                 }));
             }
@@ -136,7 +136,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$discoverComponents$0$com-google-firebase-components-ComponentRuntime  reason: not valid java name */
-    public /* synthetic */ Object m8211xc080f8d8(Component component) {
+    public /* synthetic */ Object m8210xc080f8d8(Component component) {
         return component.getFactory().create(new RestrictedComponentContainer(component, this));
     }
 

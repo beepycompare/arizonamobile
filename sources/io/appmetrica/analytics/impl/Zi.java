@@ -9,18 +9,18 @@ import java.util.ArrayList;
 public final class Zi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f739a;
+    public final Context f740a;
     public final SafePackageManager b;
 
     public Zi(Context context, SafePackageManager safePackageManager) {
-        this.f739a = context;
+        this.f740a = context;
         this.b = safePackageManager;
     }
 
     public final ArrayList a() {
         ArrayList arrayList = new ArrayList();
         SafePackageManager safePackageManager = this.b;
-        Context context = this.f739a;
+        Context context = this.f740a;
         PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 4096);
         if (packageInfo != null) {
             String[] strArr = packageInfo.requestedPermissions;

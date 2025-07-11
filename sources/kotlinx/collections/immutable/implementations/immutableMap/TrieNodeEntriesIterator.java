@@ -10,7 +10,7 @@ import kotlinx.collections.immutable.internal.CommonFunctionsKt;
 public final class TrieNodeEntriesIterator<K, V> extends TrieNodeBaseIterator<K, V, Map.Entry<? extends K, ? extends V>> {
     @Override // java.util.Iterator
     public Map.Entry<K, V> next() {
-        CommonFunctionsKt.m9935assert(hasNextKey());
+        CommonFunctionsKt.m9966assert(hasNextKey());
         setIndex(getIndex() + 2);
         return new MapEntry(getBuffer()[getIndex() - 2], getBuffer()[getIndex() - 1]);
     }

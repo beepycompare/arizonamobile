@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 /* JADX INFO: Add missing generic type declarations: [S] */
 /* compiled from: _Sequences.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.LATITUDE_SOUTH, "Lkotlin/sequences/SequenceScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.LATITUDE_SOUTH, "Lkotlin/sequences/SequenceScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "kotlin.sequences.SequencesKt___SequencesKt$runningReduceIndexed$1", f = "_Sequences.kt", i = {0, 0, 0, 1, 1, 1, 1}, l = {2509, 2513}, m = "invokeSuspend", n = {"$this$sequence", "iterator", "accumulator", "$this$sequence", "iterator", "accumulator", FirebaseAnalytics.Param.INDEX}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "I$0"})
 /* loaded from: classes5.dex */
 final class SequencesKt___SequencesKt$runningReduceIndexed$1<S> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super S>, Continuation<? super Unit>, Object> {
@@ -53,8 +53,8 @@ final class SequencesKt___SequencesKt$runningReduceIndexed$1<S> extends Restrict
         return ((SequencesKt___SequencesKt$runningReduceIndexed$1) create(sequenceScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x005e, code lost:
-        if (r5.yield(r1, r9) == r0) goto L16;
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0055, code lost:
+        if (r0.yield(r2, r9) == r1) goto L16;
      */
     /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -62,15 +62,14 @@ final class SequencesKt___SequencesKt$runningReduceIndexed$1<S> extends Restrict
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        SequenceScope sequenceScope;
         Iterator it;
         Object next;
+        SequenceScope sequenceScope = (SequenceScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         int i2 = 1;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            sequenceScope = (SequenceScope) this.L$0;
             it = this.$this_runningReduceIndexed.iterator();
             if (it.hasNext()) {
                 next = it.next();
@@ -83,7 +82,6 @@ final class SequencesKt___SequencesKt$runningReduceIndexed$1<S> extends Restrict
         } else if (i == 1) {
             next = this.L$2;
             it = (Iterator) this.L$1;
-            sequenceScope = (SequenceScope) this.L$0;
             ResultKt.throwOnFailure(obj);
         } else if (i != 2) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -91,7 +89,6 @@ final class SequencesKt___SequencesKt$runningReduceIndexed$1<S> extends Restrict
             int i3 = this.I$0;
             Object obj2 = this.L$2;
             it = (Iterator) this.L$1;
-            sequenceScope = (SequenceScope) this.L$0;
             ResultKt.throwOnFailure(obj);
             i2 = i3;
             next = obj2;

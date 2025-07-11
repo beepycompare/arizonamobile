@@ -121,7 +121,7 @@ public class ClockHandView extends View {
         this.rotationAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.timepicker.ClockHandView$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                ClockHandView.this.m8176xb17f7076(valueAnimator2);
+                ClockHandView.this.m8175xb17f7076(valueAnimator2);
             }
         });
         this.rotationAnimator.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.timepicker.ClockHandView.1
@@ -135,7 +135,7 @@ public class ClockHandView extends View {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setHandRotation$0$com-google-android-material-timepicker-ClockHandView  reason: not valid java name */
-    public /* synthetic */ void m8176xb17f7076(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8175xb17f7076(ValueAnimator valueAnimator) {
         setHandRotationInternal(((Float) valueAnimator.getAnimatedValue()).floatValue(), true);
     }
 

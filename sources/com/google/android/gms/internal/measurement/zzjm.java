@@ -1,178 +1,78 @@
 package com.google.android.gms.internal.measurement;
 
-import android.content.ContentProviderClient;
-import android.content.ContentResolver;
-import android.database.ContentObserver;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteException;
-import android.net.Uri;
-import android.os.RemoteException;
-import android.os.StrictMode;
+import android.content.Context;
+import android.os.UserManager;
 import android.util.Log;
-import androidx.collection.ArrayMap;
-import com.google.common.base.Preconditions;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzjm implements zzjr {
-    private final ContentResolver zzc;
-    private final Uri zzd;
-    private final Runnable zze;
-    private final ContentObserver zzf;
-    private volatile Map zzh;
-    private static final Map zzb = new ArrayMap();
-    public static final String[] zza = {"key", "value"};
-    private final Object zzg = new Object();
-    private final List zzi = new ArrayList();
+public final class zzjm {
+    private static UserManager zza;
+    private static volatile boolean zzb = !zza();
 
-    private zzjm(ContentResolver contentResolver, Uri uri, Runnable runnable) {
-        Preconditions.checkNotNull(contentResolver);
-        Preconditions.checkNotNull(uri);
-        this.zzc = contentResolver;
-        this.zzd = uri;
-        this.zze = runnable;
-        this.zzf = new zzjl(this, null);
+    private zzjm() {
     }
 
-    public static zzjm zza(ContentResolver contentResolver, Uri uri, Runnable runnable) {
-        zzjm zzjmVar;
+    public static boolean zza() {
+        return true;
+    }
+
+    public static boolean zzb(Context context) {
+        return zza() && !zzd(context);
+    }
+
+    public static boolean zzc(Context context) {
+        return !zza() || zzd(context);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0037, code lost:
+        if (r3.isUserRunning(android.os.Process.myUserHandle()) == false) goto L27;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0039, code lost:
+        r5 = true;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private static boolean zzd(Context context) {
+        boolean z;
+        if (zzb) {
+            return true;
+        }
         synchronized (zzjm.class) {
-            Map map = zzb;
-            zzjmVar = (zzjm) map.get(uri);
-            if (zzjmVar == null) {
+            if (zzb) {
+                return true;
+            }
+            int i = 1;
+            while (true) {
+                z = false;
+                if (i > 2) {
+                    break;
+                }
+                if (zza == null) {
+                    zza = (UserManager) context.getSystemService(UserManager.class);
+                }
+                UserManager userManager = zza;
+                if (userManager == null) {
+                    z = true;
+                    break;
+                }
                 try {
-                    zzjm zzjmVar2 = new zzjm(contentResolver, uri, runnable);
-                    try {
-                        contentResolver.registerContentObserver(uri, false, zzjmVar2.zzf);
-                        map.put(uri, zzjmVar2);
-                    } catch (SecurityException unused) {
+                    if (userManager.isUserUnlocked()) {
+                        break;
                     }
-                    zzjmVar = zzjmVar2;
-                } catch (SecurityException unused2) {
+                } catch (NullPointerException e) {
+                    Log.w("DirectBootUtils", "Failed to check if user is unlocked.", e);
+                    zza = null;
+                    i++;
                 }
             }
-        }
-        return zzjmVar;
-    }
-
-    public static /* synthetic */ Map zzc(zzjm zzjmVar) {
-        ContentResolver contentResolver = zzjmVar.zzc;
-        Uri uri = zzjmVar.zzd;
-        ContentProviderClient acquireUnstableContentProviderClient = contentResolver.acquireUnstableContentProviderClient(uri);
-        try {
-            if (acquireUnstableContentProviderClient == null) {
-                Log.w("ConfigurationContentLdr", "Unable to acquire ContentProviderClient, using default values");
-                return Collections.emptyMap();
+            if (z) {
+                zza = null;
             }
-            try {
-                Cursor query = acquireUnstableContentProviderClient.query(uri, zza, null, null, null);
-                try {
-                    if (query == null) {
-                        Log.w("ConfigurationContentLdr", "ContentProvider query returned null cursor, using default values");
-                        Map emptyMap = Collections.emptyMap();
-                        acquireUnstableContentProviderClient.release();
-                        return emptyMap;
-                    }
-                    int count = query.getCount();
-                    if (count == 0) {
-                        Map emptyMap2 = Collections.emptyMap();
-                        query.close();
-                        acquireUnstableContentProviderClient.release();
-                        return emptyMap2;
-                    }
-                    Map arrayMap = count <= 256 ? new ArrayMap(count) : new HashMap(count, 1.0f);
-                    while (query.moveToNext()) {
-                        arrayMap.put(query.getString(0), query.getString(1));
-                    }
-                    if (query.isAfterLast()) {
-                        query.close();
-                        acquireUnstableContentProviderClient.release();
-                        return arrayMap;
-                    }
-                    Log.w("ConfigurationContentLdr", "Cursor read incomplete (ContentProvider dead?), using default values");
-                    Map emptyMap3 = Collections.emptyMap();
-                    query.close();
-                    acquireUnstableContentProviderClient.release();
-                    return emptyMap3;
-                } catch (Throwable th) {
-                    if (query != null) {
-                        try {
-                            query.close();
-                        } catch (Throwable th2) {
-                            th.addSuppressed(th2);
-                        }
-                    }
-                    throw th;
-                }
-            } catch (RemoteException e) {
-                Log.w("ConfigurationContentLdr", "ContentProvider query failed, using default values", e);
-                Map emptyMap4 = Collections.emptyMap();
-                acquireUnstableContentProviderClient.release();
-                return emptyMap4;
+            if (z) {
+                zzb = true;
             }
-        } catch (Throwable th3) {
-            acquireUnstableContentProviderClient.release();
-            throw th3;
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static synchronized void zze() {
-        synchronized (zzjm.class) {
-            Map map = zzb;
-            for (zzjm zzjmVar : map.values()) {
-                zzjmVar.zzc.unregisterContentObserver(zzjmVar.zzf);
-            }
-            map.clear();
-        }
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzjr
-    public final /* bridge */ /* synthetic */ Object zzb(String str) {
-        return (String) zzd().get(str);
-    }
-
-    public final Map zzd() {
-        Map emptyMap;
-        Map map = this.zzh;
-        if (map == null) {
-            synchronized (this.zzg) {
-                map = this.zzh;
-                if (map == null) {
-                    StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
-                    try {
-                        emptyMap = (Map) zzjp.zza(new zzjq() { // from class: com.google.android.gms.internal.measurement.zzjk
-                            @Override // com.google.android.gms.internal.measurement.zzjq
-                            public final Object zza() {
-                                return zzjm.zzc(zzjm.this);
-                            }
-                        });
-                    } catch (SQLiteException | IllegalStateException | SecurityException e) {
-                        Log.w("ConfigurationContentLdr", "Unable to query ContentProvider, using default values", e);
-                        emptyMap = Collections.emptyMap();
-                    }
-                    StrictMode.setThreadPolicy(allowThreadDiskReads);
-                    this.zzh = emptyMap;
-                    map = emptyMap;
-                }
-            }
-        }
-        return map != null ? map : Collections.emptyMap();
-    }
-
-    public final void zzf() {
-        synchronized (this.zzg) {
-            this.zzh = null;
-            this.zze.run();
-        }
-        synchronized (this) {
-            for (zzjn zzjnVar : this.zzi) {
-                zzjnVar.zza();
-            }
+            return z;
         }
     }
 }

@@ -1,34 +1,6 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzmb implements zzlt {
-    @Override // java.lang.Comparable
-    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
-        throw null;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzlt
-    public final int zza() {
-        throw null;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzlt
-    public final zzop zzb() {
-        throw null;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzlt
-    public final zzoq zzc() {
-        throw null;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzlt
-    public final boolean zzd() {
-        throw null;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzlt
-    public final boolean zze() {
-        throw null;
-    }
+public abstract class zzmb extends zzme implements zznm {
+    protected final zzlv zzb = zzlv.zza();
 }

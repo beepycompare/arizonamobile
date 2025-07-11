@@ -9,7 +9,7 @@ import kotlin.ranges.RangesKt;
 import kotlin.text.StringsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: Duration.kt */
-@Metadata(d1 = {"\u0000:\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0006\n\u0002\b\t\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\f\n\u0002\b\u0015\u001a\u0019\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\u0005\u001a\u0019\u0010\u0000\u001a\u00020\u0001*\u00020\u00062\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\u0007\u001a\u0019\u0010\u0000\u001a\u00020\u0001*\u00020\b2\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\t\u001a\u001c\u0010\n\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u000b\u001a\u00020\u0001H\u0087\n¢\u0006\u0004\b\f\u0010\r\u001a\u001c\u0010\n\u001a\u00020\u0001*\u00020\b2\u0006\u0010\u000b\u001a\u00020\u0001H\u0087\n¢\u0006\u0004\b\u000e\u0010\u000f\u001a\u001d\u0010\u0010\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014H\u0002¢\u0006\u0002\u0010\u0015\u001a\u0010\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0011\u001a\u00020\u0012H\u0002\u001a)\u0010\u0017\u001a\u00020\u0012*\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u00022\u0012\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00140\u001aH\u0082\b\u001a)\u0010\u001c\u001a\u00020\u0002*\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u00022\u0012\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00140\u001aH\u0082\b\u001a\u0010\u0010!\u001a\u00020\u00062\u0006\u0010\"\u001a\u00020\u0006H\u0002\u001a\u0010\u0010#\u001a\u00020\u00062\u0006\u0010$\u001a\u00020\u0006H\u0002\u001a\u0015\u0010%\u001a\u00020\u00012\u0006\u0010&\u001a\u00020\u0006H\u0002¢\u0006\u0002\u0010'\u001a\u0015\u0010(\u001a\u00020\u00012\u0006\u0010)\u001a\u00020\u0006H\u0002¢\u0006\u0002\u0010'\u001a\u001d\u0010*\u001a\u00020\u00012\u0006\u0010+\u001a\u00020\u00062\u0006\u0010,\u001a\u00020\u0002H\u0002¢\u0006\u0002\u0010-\u001a\u0015\u0010.\u001a\u00020\u00012\u0006\u0010\"\u001a\u00020\u0006H\u0002¢\u0006\u0002\u0010'\u001a\u0015\u0010/\u001a\u00020\u00012\u0006\u0010$\u001a\u00020\u0006H\u0002¢\u0006\u0002\u0010'\"\u000e\u0010\u001d\u001a\u00020\u0002X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u001e\u001a\u00020\u0006X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u001f\u001a\u00020\u0006X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010 \u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000¨\u00060"}, d2 = {"toDuration", "Lkotlin/time/Duration;", "", "unit", "Lkotlin/time/DurationUnit;", "(ILkotlin/time/DurationUnit;)J", "", "(JLkotlin/time/DurationUnit;)J", "", "(DLkotlin/time/DurationUnit;)J", "times", TypedValues.TransitionType.S_DURATION, "times-mvk6XK0", "(IJ)J", "times-kIfJnKk", "(DJ)J", "parseDuration", "value", "", "strictIso", "", "(Ljava/lang/String;Z)J", "parseOverLongIsoComponent", "substringWhile", "startIndex", "predicate", "Lkotlin/Function1;", "", "skipWhile", "NANOS_IN_MILLIS", "MAX_NANOS", "MAX_MILLIS", "MAX_NANOS_IN_MILLIS", "nanosToMillis", "nanos", "millisToNanos", "millis", "durationOfNanos", "normalNanos", "(J)J", "durationOfMillis", "normalMillis", "durationOf", "normalValue", "unitDiscriminator", "(JI)J", "durationOfNanosNormalized", "durationOfMillisNormalized", "kotlin-stdlib"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0006\n\u0002\b\t\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\f\n\u0002\b\u0015\u001a\u0019\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\u0005\u001a\u0019\u0010\u0000\u001a\u00020\u0001*\u00020\u00062\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\u0007\u001a\u0019\u0010\u0000\u001a\u00020\u0001*\u00020\b2\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\t\u001a\u001c\u0010\n\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u000b\u001a\u00020\u0001H\u0087\n¢\u0006\u0004\b\f\u0010\r\u001a\u001c\u0010\n\u001a\u00020\u0001*\u00020\b2\u0006\u0010\u000b\u001a\u00020\u0001H\u0087\n¢\u0006\u0004\b\u000e\u0010\u000f\u001a\u001d\u0010\u0010\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014H\u0002¢\u0006\u0002\u0010\u0015\u001a\u0010\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0011\u001a\u00020\u0012H\u0002\u001a)\u0010\u0017\u001a\u00020\u0012*\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u00022\u0012\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00140\u001aH\u0082\b\u001a)\u0010\u001c\u001a\u00020\u0002*\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u00022\u0012\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00140\u001aH\u0082\b\u001a\u0010\u0010!\u001a\u00020\u00062\u0006\u0010\"\u001a\u00020\u0006H\u0002\u001a\u0010\u0010#\u001a\u00020\u00062\u0006\u0010$\u001a\u00020\u0006H\u0002\u001a\u0015\u0010%\u001a\u00020\u00012\u0006\u0010&\u001a\u00020\u0006H\u0002¢\u0006\u0002\u0010'\u001a\u0015\u0010(\u001a\u00020\u00012\u0006\u0010)\u001a\u00020\u0006H\u0002¢\u0006\u0002\u0010'\u001a\u001d\u0010*\u001a\u00020\u00012\u0006\u0010+\u001a\u00020\u00062\u0006\u0010,\u001a\u00020\u0002H\u0002¢\u0006\u0002\u0010-\u001a\u0015\u0010.\u001a\u00020\u00012\u0006\u0010\"\u001a\u00020\u0006H\u0002¢\u0006\u0002\u0010'\u001a\u0015\u0010/\u001a\u00020\u00012\u0006\u0010$\u001a\u00020\u0006H\u0002¢\u0006\u0002\u0010'\"\u000e\u0010\u001d\u001a\u00020\u0002X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u001e\u001a\u00020\u0006X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u001f\u001a\u00020\u0006X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010 \u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000¨\u00060"}, d2 = {"toDuration", "Lkotlin/time/Duration;", "", "unit", "Lkotlin/time/DurationUnit;", "(ILkotlin/time/DurationUnit;)J", "", "(JLkotlin/time/DurationUnit;)J", "", "(DLkotlin/time/DurationUnit;)J", "times", TypedValues.TransitionType.S_DURATION, "times-mvk6XK0", "(IJ)J", "times-kIfJnKk", "(DJ)J", "parseDuration", "value", "", "strictIso", "", "(Ljava/lang/String;Z)J", "parseOverLongIsoComponent", "substringWhile", "startIndex", "predicate", "Lkotlin/Function1;", "", "skipWhile", "NANOS_IN_MILLIS", "MAX_NANOS", "MAX_MILLIS", "MAX_NANOS_IN_MILLIS", "nanosToMillis", "nanos", "millisToNanos", "millis", "durationOfNanos", "normalNanos", "(J)J", "durationOfMillis", "normalMillis", "durationOf", "normalValue", "unitDiscriminator", "(JI)J", "durationOfNanosNormalized", "durationOfMillisNormalized", "kotlin-stdlib"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DurationKt {
     public static final long MAX_MILLIS = 4611686018427387903L;
@@ -52,13 +52,13 @@ public final class DurationKt {
     }
 
     /* renamed from: times-mvk6XK0 */
-    private static final long m9887timesmvk6XK0(int i, long j) {
-        return Duration.m9821timesUwyO8pc(j, i);
+    private static final long m9920timesmvk6XK0(int i, long j) {
+        return Duration.m9854timesUwyO8pc(j, i);
     }
 
     /* renamed from: times-kIfJnKk */
-    private static final long m9886timeskIfJnKk(double d, long j) {
-        return Duration.m9820timesUwyO8pc(j, d);
+    private static final long m9919timeskIfJnKk(double d, long j) {
+        return Duration.m9853timesUwyO8pc(j, d);
     }
 
     public static final long parseDuration(String str, boolean z) {
@@ -70,7 +70,7 @@ public final class DurationKt {
         if (length == 0) {
             throw new IllegalArgumentException("The string is empty");
         }
-        long m9881getZEROUwyO8pc = Duration.Companion.m9881getZEROUwyO8pc();
+        long m9914getZEROUwyO8pc = Duration.Companion.m9914getZEROUwyO8pc();
         char charAt3 = str.charAt(0);
         int i3 = (charAt3 == '+' || charAt3 == '-') ? 1 : 0;
         boolean z2 = i3 > 0;
@@ -134,13 +134,13 @@ public final class DurationKt {
                         Intrinsics.checkNotNull(substring, "null cannot be cast to non-null type java.lang.String");
                         String substring2 = substring.substring(0, indexOf$default);
                         Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
-                        long m9819plusLRDsOJo = Duration.m9819plusLRDsOJo(m9881getZEROUwyO8pc, toDuration(parseOverLongIsoComponent(substring2), durationUnitByIsoChar));
+                        long m9852plusLRDsOJo = Duration.m9852plusLRDsOJo(m9914getZEROUwyO8pc, toDuration(parseOverLongIsoComponent(substring2), durationUnitByIsoChar));
                         Intrinsics.checkNotNull(substring, "null cannot be cast to non-null type java.lang.String");
                         String substring3 = substring.substring(indexOf$default);
                         Intrinsics.checkNotNullExpressionValue(substring3, "substring(...)");
-                        m9881getZEROUwyO8pc = Duration.m9819plusLRDsOJo(m9819plusLRDsOJo, toDuration(Double.parseDouble(substring3), durationUnitByIsoChar));
+                        m9914getZEROUwyO8pc = Duration.m9852plusLRDsOJo(m9852plusLRDsOJo, toDuration(Double.parseDouble(substring3), durationUnitByIsoChar));
                     } else {
-                        m9881getZEROUwyO8pc = Duration.m9819plusLRDsOJo(m9881getZEROUwyO8pc, toDuration(parseOverLongIsoComponent(substring), durationUnitByIsoChar));
+                        m9914getZEROUwyO8pc = Duration.m9852plusLRDsOJo(m9914getZEROUwyO8pc, toDuration(parseOverLongIsoComponent(substring), durationUnitByIsoChar));
                     }
                     durationUnit2 = durationUnitByIsoChar;
                     length = i2;
@@ -158,7 +158,7 @@ public final class DurationKt {
             int max = Math.max(length - i3, "Infinity".length());
             char c3 = AbstractJsonLexerKt.COLON;
             if (StringsKt.regionMatches(str, i3, "Infinity", 0, max, true)) {
-                m9881getZEROUwyO8pc = Duration.Companion.m9879getINFINITEUwyO8pc();
+                m9914getZEROUwyO8pc = Duration.Companion.m9912getINFINITEUwyO8pc();
             } else {
                 boolean z5 = !z2;
                 if (z2 && str.charAt(i3) == '(' && StringsKt.last(str) == ')') {
@@ -208,16 +208,16 @@ public final class DurationKt {
                         Intrinsics.checkNotNull(substring4, "null cannot be cast to non-null type java.lang.String");
                         String substring6 = substring4.substring(0, indexOf$default2);
                         Intrinsics.checkNotNullExpressionValue(substring6, "substring(...)");
-                        long m9819plusLRDsOJo2 = Duration.m9819plusLRDsOJo(m9881getZEROUwyO8pc, toDuration(Long.parseLong(substring6), durationUnitByShortName));
+                        long m9852plusLRDsOJo2 = Duration.m9852plusLRDsOJo(m9914getZEROUwyO8pc, toDuration(Long.parseLong(substring6), durationUnitByShortName));
                         Intrinsics.checkNotNull(substring4, "null cannot be cast to non-null type java.lang.String");
                         String substring7 = substring4.substring(indexOf$default2);
                         Intrinsics.checkNotNullExpressionValue(substring7, "substring(...)");
-                        m9881getZEROUwyO8pc = Duration.m9819plusLRDsOJo(m9819plusLRDsOJo2, toDuration(Double.parseDouble(substring7), durationUnitByShortName));
+                        m9914getZEROUwyO8pc = Duration.m9852plusLRDsOJo(m9852plusLRDsOJo2, toDuration(Double.parseDouble(substring7), durationUnitByShortName));
                         if (i3 < i) {
                             throw new IllegalArgumentException("Fractional component must be last");
                         }
                     } else {
-                        m9881getZEROUwyO8pc = Duration.m9819plusLRDsOJo(m9881getZEROUwyO8pc, toDuration(Long.parseLong(substring4), durationUnitByShortName));
+                        m9914getZEROUwyO8pc = Duration.m9852plusLRDsOJo(m9914getZEROUwyO8pc, toDuration(Long.parseLong(substring4), durationUnitByShortName));
                     }
                     durationUnit = durationUnitByShortName;
                     z6 = true;
@@ -225,7 +225,7 @@ public final class DurationKt {
                 }
             }
         }
-        return z3 ? Duration.m9834unaryMinusUwyO8pc(m9881getZEROUwyO8pc) : m9881getZEROUwyO8pc;
+        return z3 ? Duration.m9867unaryMinusUwyO8pc(m9914getZEROUwyO8pc) : m9914getZEROUwyO8pc;
     }
 
     private static final long parseOverLongIsoComponent(String str) {
@@ -265,15 +265,15 @@ public final class DurationKt {
     }
 
     public static final long durationOfNanos(long j) {
-        return Duration.m9790constructorimpl(j << 1);
+        return Duration.m9823constructorimpl(j << 1);
     }
 
     public static final long durationOfMillis(long j) {
-        return Duration.m9790constructorimpl((j << 1) + 1);
+        return Duration.m9823constructorimpl((j << 1) + 1);
     }
 
     public static final long durationOf(long j, int i) {
-        return Duration.m9790constructorimpl((j << 1) + i);
+        return Duration.m9823constructorimpl((j << 1) + i);
     }
 
     public static final long durationOfNanosNormalized(long j) {

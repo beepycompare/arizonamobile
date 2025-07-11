@@ -3,7 +3,7 @@
     <group>
         <clip-path android:pathData="M0 0H540V270H0V0Z"/>
         <group android:pivotX="270" android:pivotY="135" android:scaleX="1.434" android:scaleY="1.98" android:rotation="90" android:translateX="0.995" android:translateY="-0.472">
-            <path android:fillColor="@drawable/res_0x7f080254_shadow__0" android:pathData="M0 0V270H540V0"/>
+            <path android:fillColor="@drawable/res_0x7f080258_shadow__0" android:pathData="M0 0V270H540V0"/>
         </group>
     </group>
 </vector>

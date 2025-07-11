@@ -11,53 +11,53 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Lc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f517a;
+    public final Context f518a;
     public final Gi b;
     public final Od c;
-    public final C0262fa d;
+    public final C0254fa d;
     public final T8 e;
     public final Qh f;
-    public final C0378k2 g;
+    public final C0370k2 g;
     public final J6 h;
-    public final C0500p i;
+    public final C0492p i;
     public final Ve j;
     public final Ln k;
     public final Pg l;
     public final N6 m;
-    public final C0150b0 n;
+    public final C0142b0 n;
 
     public Lc(Context context, Nf nf, Gi gi, Ll ll) {
-        this.f517a = context;
+        this.f518a = context;
         this.b = gi;
         this.c = new Od(nf);
-        C0262fa c0262fa = new C0262fa(context);
-        this.d = c0262fa;
-        T8 t8 = new T8(new C0497ol(LoggerStorage.getMainPublicOrAnonymousLogger(), "Crash Environment"));
+        C0254fa c0254fa = new C0254fa(context);
+        this.d = c0254fa;
+        T8 t8 = new T8(new C0489ol(LoggerStorage.getMainPublicOrAnonymousLogger(), "Crash Environment"));
         this.e = t8;
         this.f = new Qh(nf, new CounterConfiguration(CounterConfigurationReporterType.MAIN), t8);
-        this.g = new C0378k2();
-        this.h = C0704x4.l().n();
-        this.i = new C0500p();
-        this.j = new Ve(c0262fa);
+        this.g = new C0370k2();
+        this.h = C0696x4.l().n();
+        this.i = new C0492p();
+        this.j = new Ve(c0254fa);
         this.k = new Ln();
         this.l = new Pg();
         this.m = new N6();
-        this.n = new C0150b0();
+        this.n = new C0142b0();
     }
 
-    public final C0150b0 a() {
+    public final C0142b0 a() {
         return this.n;
     }
 
     public final Context b() {
-        return this.f517a;
+        return this.f518a;
     }
 
     public final N6 c() {
         return this.m;
     }
 
-    public final C0262fa d() {
+    public final C0254fa d() {
         return this.d;
     }
 

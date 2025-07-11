@@ -157,7 +157,7 @@ public class GmsRpc {
             Log.e("FirebaseMessaging", "Failed to get FIS auth token", e);
         }
         bundle.putString(PARAM_INSTANCE_ID, (String) Tasks.await(this.firebaseInstallations.getId()));
-        bundle.putString(PARAM_CLIENT_VER, "fcm-24.1.1");
+        bundle.putString(PARAM_CLIENT_VER, "fcm-24.1.2");
         HeartBeatInfo heartBeatInfo = this.heartbeatInfo.get();
         UserAgentPublisher userAgentPublisher = this.userAgentPublisher.get();
         if (heartBeatInfo == null || userAgentPublisher == null || (heartBeatCode = heartBeatInfo.getHeartBeatCode(FIREBASE_IID_HEARTBEAT_TAG)) == HeartBeatInfo.HeartBeat.NONE) {
@@ -194,14 +194,14 @@ public class GmsRpc {
         return task.continueWith(new DefaultDownloaderFactory$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                return GmsRpc.this.m8271xb80eb67f(task2);
+                return GmsRpc.this.m8270xb80eb67f(task2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$extractResponseWhenComplete$0$com-google-firebase-messaging-GmsRpc  reason: not valid java name */
-    public /* synthetic */ String m8271xb80eb67f(Task task) throws Exception {
+    public /* synthetic */ String m8270xb80eb67f(Task task) throws Exception {
         return handleResponse((Bundle) task.getResult(IOException.class));
     }
 

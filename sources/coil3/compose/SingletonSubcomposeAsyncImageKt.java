@@ -24,7 +24,7 @@ import okhttp3.internal.ws.WebSocketProtocol;
 /* loaded from: classes3.dex */
 public final class SingletonSubcomposeAsyncImageKt {
     /* renamed from: SubcomposeAsyncImage-nc27qi8  reason: not valid java name */
-    public static final void m7756SubcomposeAsyncImagenc27qi8(Object obj, String str, Modifier modifier, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Loading, ? super Composer, ? super Integer, Unit> function4, Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Success, ? super Composer, ? super Integer, Unit> function42, Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Error, ? super Composer, ? super Integer, Unit> function43, Function1<? super AsyncImagePainter.State.Loading, Unit> function12, Function1<? super AsyncImagePainter.State.Success, Unit> function13, Function1<? super AsyncImagePainter.State.Error, Unit> function14, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Composer composer, int i2, int i3, int i4) {
+    public static final void m7757SubcomposeAsyncImagenc27qi8(Object obj, String str, Modifier modifier, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Loading, ? super Composer, ? super Integer, Unit> function4, Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Success, ? super Composer, ? super Integer, Unit> function42, Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Error, ? super Composer, ? super Integer, Unit> function43, Function1<? super AsyncImagePainter.State.Loading, Unit> function12, Function1<? super AsyncImagePainter.State.Success, Unit> function13, Function1<? super AsyncImagePainter.State.Error, Unit> function14, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Composer composer, int i2, int i3, int i4) {
         int i5;
         ComposerKt.sourceInformationMarkerStart(composer, -982876954, "C(SubcomposeAsyncImage)P(9,4,10,15,8,14,6,12,13,11!1,5!1,3,7:c#ui.graphics.FilterQuality)68@3682L7,65@3532L533:SingletonSubcomposeAsyncImage.kt#8xxpns");
         Modifier.Companion companion = (i4 & 4) != 0 ? Modifier.Companion : modifier;
@@ -57,7 +57,7 @@ public final class SingletonSubcomposeAsyncImageKt {
         ColorFilter colorFilter3 = colorFilter2;
         Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function18 = defaultTransform;
         Function4<? super SubcomposeAsyncImageScope, ? super AsyncImagePainter.State.Success, ? super Composer, ? super Integer, Unit> function47 = function45;
-        SubcomposeAsyncImageKt.m7757SubcomposeAsyncImageMokUVwQ(obj, str, SingletonImageLoader.get((Context) consume), modifier2, function18, function44, function47, function46, function15, function16, function17, alignment2, fit, f2, colorFilter3, i5, z2, composer, (i6 & 7168) | (i2 & WebSocketProtocol.PAYLOAD_SHORT) | (i6 & 57344) | (i6 & 458752) | (i6 & 3670016) | (i6 & 29360128) | (i6 & 234881024) | (i6 & 1879048192), ((i2 >> 27) & 14) | (i7 & 112) | (i7 & 896) | (i7 & 7168) | (57344 & i7) | (i7 & 458752) | (i7 & 3670016), 0);
+        SubcomposeAsyncImageKt.m7758SubcomposeAsyncImageMokUVwQ(obj, str, SingletonImageLoader.get((Context) consume), modifier2, function18, function44, function47, function46, function15, function16, function17, alignment2, fit, f2, colorFilter3, i5, z2, composer, (i6 & 7168) | (i2 & WebSocketProtocol.PAYLOAD_SHORT) | (i6 & 57344) | (i6 & 458752) | (i6 & 3670016) | (i6 & 29360128) | (i6 & 234881024) | (i6 & 1879048192), ((i2 >> 27) & 14) | (i7 & 112) | (i7 & 896) | (i7 & 7168) | (57344 & i7) | (i7 & 458752) | (i7 & 3670016), 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -65,7 +65,7 @@ public final class SingletonSubcomposeAsyncImageKt {
     }
 
     /* renamed from: SubcomposeAsyncImage-gl8XCv8  reason: not valid java name */
-    public static final void m7755SubcomposeAsyncImagegl8XCv8(Object obj, String str, Modifier modifier, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Function3<? super SubcomposeAsyncImageScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, int i2, int i3, int i4) {
+    public static final void m7756SubcomposeAsyncImagegl8XCv8(Object obj, String str, Modifier modifier, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Function3<? super SubcomposeAsyncImageScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, int i2, int i3, int i4) {
         ComposerKt.sourceInformationMarkerStart(composer, 19935049, "C(SubcomposeAsyncImage)P(8,5,9,11,10!1,6!1,3,7:c#ui.graphics.FilterQuality)130@6555L7,127@6405L437:SingletonSubcomposeAsyncImage.kt#8xxpns");
         Modifier.Companion companion = (i4 & 4) != 0 ? Modifier.Companion : modifier;
         Function1<AsyncImagePainter.State, AsyncImagePainter.State> defaultTransform = (i4 & 8) != 0 ? AsyncImagePainter.Companion.getDefaultTransform() : function1;
@@ -84,7 +84,7 @@ public final class SingletonSubcomposeAsyncImageKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
         int i5 = i2 << 3;
         int i6 = i3 << 3;
-        SubcomposeAsyncImageKt.m7758SubcomposeAsyncImageQgsmV_s(obj, str, SingletonImageLoader.get((Context) consume), companion, defaultTransform, function13, center, fit, f2, colorFilter2, m4643getDefaultFilterQualityfv9h1I, z2, function3, composer, (i5 & 1879048192) | (i2 & WebSocketProtocol.PAYLOAD_SHORT) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | (29360128 & i5) | (234881024 & i5), ((i2 >> 27) & 14) | (i6 & 112) | (i6 & 896), 0);
+        SubcomposeAsyncImageKt.m7759SubcomposeAsyncImageQgsmV_s(obj, str, SingletonImageLoader.get((Context) consume), companion, defaultTransform, function13, center, fit, f2, colorFilter2, m4643getDefaultFilterQualityfv9h1I, z2, function3, composer, (i5 & 1879048192) | (i2 & WebSocketProtocol.PAYLOAD_SHORT) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | (29360128 & i5) | (234881024 & i5), ((i2 >> 27) & 14) | (i6 & 112) | (i6 & 896), 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

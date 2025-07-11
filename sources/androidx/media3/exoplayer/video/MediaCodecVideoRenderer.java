@@ -55,7 +55,6 @@ import io.appmetrica.analytics.BuildConfig;
 import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.PriorityQueue;
-import kotlin.io.encoding.Base64;
 import kotlin.text.Typography;
 import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
@@ -2883,7 +2882,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                             case 'I':
                             case 'J':
                             case 'K':
-                            case Base64.mimeLineLength /* 76 */:
+                            case 'L':
                             case 'M':
                             case MdtaMetadataEntry.TYPE_INDICATOR_UNSIGNED_INT64 /* 78 */:
                             case 'O':

@@ -70,7 +70,6 @@ public class DiskLruCacheWrapper implements DiskCache {
 
     @Override // com.bumptech.glide.load.engine.cache.DiskCache
     public void put(Key key, DiskCache.Writer writer) {
-        DiskLruCache diskCache;
         String safeKey = this.safeKeyGenerator.getSafeKey(key);
         this.writeLocker.acquire(safeKey);
         try {
@@ -78,27 +77,26 @@ public class DiskLruCacheWrapper implements DiskCache {
                 Log.v(TAG, "Put: Obtained: " + safeKey + " for for Key: " + key);
             }
             try {
-                diskCache = getDiskCache();
+                DiskLruCache diskCache = getDiskCache();
+                if (diskCache.get(safeKey) == null) {
+                    DiskLruCache.Editor edit = diskCache.edit(safeKey);
+                    if (edit == null) {
+                        throw new IllegalStateException("Had two simultaneous puts for: " + safeKey);
+                    }
+                    try {
+                        if (writer.write(edit.getFile(0))) {
+                            edit.commit();
+                        }
+                        edit.abortUnlessCommitted();
+                    } catch (Throwable th) {
+                        edit.abortUnlessCommitted();
+                        throw th;
+                    }
+                }
             } catch (IOException e) {
                 if (Log.isLoggable(TAG, 5)) {
                     Log.w(TAG, "Unable to put to disk cache", e);
                 }
-            }
-            if (diskCache.get(safeKey) != null) {
-                return;
-            }
-            DiskLruCache.Editor edit = diskCache.edit(safeKey);
-            if (edit == null) {
-                throw new IllegalStateException("Had two simultaneous puts for: " + safeKey);
-            }
-            try {
-                if (writer.write(edit.getFile(0))) {
-                    edit.commit();
-                }
-                edit.abortUnlessCommitted();
-            } catch (Throwable th) {
-                edit.abortUnlessCommitted();
-                throw th;
             }
         } finally {
             this.writeLocker.release(safeKey);

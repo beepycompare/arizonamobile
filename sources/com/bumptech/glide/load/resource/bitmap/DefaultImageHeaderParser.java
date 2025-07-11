@@ -98,7 +98,7 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
                 }
                 int i = uInt162 & 255;
                 if (i != VP8_HEADER_TYPE_EXTENDED) {
-                    if (i == 76) {
+                    if (i == VP8_HEADER_TYPE_LOSSLESS) {
                         reader.skip(4L);
                         return (reader.getUInt8() & 8) != 0 ? ImageHeaderParser.ImageType.WEBP_A : ImageHeaderParser.ImageType.WEBP;
                     }

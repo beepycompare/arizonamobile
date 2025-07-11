@@ -52,10 +52,11 @@ public class KeyParser {
                     }
                 }
             }
+            return typedBundle;
         } catch (CLParsingException e) {
             System.err.println(e.toString() + "\n" + Arrays.toString(e.getStackTrace()).replace("[", "   at ").replace(StringUtils.COMMA, "\n   at").replace("]", ""));
+            return typedBundle;
         }
-        return typedBundle;
     }
 
     public static TypedBundle parseAttributes(String str) {

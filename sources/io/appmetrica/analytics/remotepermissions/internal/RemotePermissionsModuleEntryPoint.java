@@ -26,7 +26,7 @@ import kotlin.collections.SetsKt;
 public final class RemotePermissionsModuleEntryPoint extends ModuleServiceEntryPoint<a> implements AskForPermissionStrategyModuleProvider, RemoteConfigUpdateListener<a> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final d f1266a = new d();
+    private final d f1267a = new d();
     private final b b = new b();
     private final RemotePermissionsModuleEntryPoint c = this;
     private final e d = new e();
@@ -45,7 +45,7 @@ public final class RemotePermissionsModuleEntryPoint extends ModuleServiceEntryP
         @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
         public JsonParser<a> getJsonParser() {
             JsonParser<a> jsonParser;
-            jsonParser = RemotePermissionsModuleEntryPoint.this.f1266a;
+            jsonParser = RemotePermissionsModuleEntryPoint.this.f1267a;
             return jsonParser;
         }
 
@@ -84,11 +84,11 @@ public final class RemotePermissionsModuleEntryPoint extends ModuleServiceEntryP
         Set emptySet;
         e eVar = this.d;
         a featuresConfig = moduleRemoteConfig.getFeaturesConfig();
-        if (featuresConfig == null || (emptySet = featuresConfig.f1261a) == null) {
+        if (featuresConfig == null || (emptySet = featuresConfig.f1262a) == null) {
             emptySet = SetsKt.emptySet();
         }
         synchronized (eVar) {
-            eVar.f1264a = emptySet;
+            eVar.f1265a = emptySet;
         }
     }
 
@@ -97,11 +97,11 @@ public final class RemotePermissionsModuleEntryPoint extends ModuleServiceEntryP
         Set emptySet;
         e eVar = this.d;
         a featuresConfig = moduleRemoteConfig.getFeaturesConfig();
-        if (featuresConfig == null || (emptySet = featuresConfig.f1261a) == null) {
+        if (featuresConfig == null || (emptySet = featuresConfig.f1262a) == null) {
             emptySet = SetsKt.emptySet();
         }
         synchronized (eVar) {
-            eVar.f1264a = emptySet;
+            eVar.f1265a = emptySet;
         }
     }
 }

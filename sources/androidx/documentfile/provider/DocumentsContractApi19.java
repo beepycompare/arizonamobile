@@ -7,6 +7,7 @@ import android.provider.DocumentsContract;
 import android.text.TextUtils;
 import android.util.Log;
 import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
+import kotlin.UByte$$ExternalSyntheticBackport0;
 /* loaded from: classes2.dex */
 class DocumentsContractApi19 {
     private static final int FLAG_VIRTUAL_DOCUMENT = 512;
@@ -147,7 +148,7 @@ class DocumentsContractApi19 {
     private static void closeQuietly(AutoCloseable autoCloseable) {
         if (autoCloseable != null) {
             try {
-                autoCloseable.close();
+                UByte$$ExternalSyntheticBackport0.m8544m((Object) autoCloseable);
             } catch (RuntimeException e) {
                 throw e;
             } catch (Exception unused) {

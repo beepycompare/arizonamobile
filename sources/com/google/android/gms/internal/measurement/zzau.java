@@ -1,45 +1,46 @@
 package com.google.android.gms.internal.measurement;
 
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import java.util.Iterator;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzau implements zzap {
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+public final class zzau extends zzav {
+    public zzau() {
+        this.zza.add(zzbk.BITWISE_AND);
+        this.zza.add(zzbk.BITWISE_LEFT_SHIFT);
+        this.zza.add(zzbk.BITWISE_NOT);
+        this.zza.add(zzbk.BITWISE_OR);
+        this.zza.add(zzbk.BITWISE_RIGHT_SHIFT);
+        this.zza.add(zzbk.BITWISE_UNSIGNED_RIGHT_SHIFT);
+        this.zza.add(zzbk.BITWISE_XOR);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzav
+    public final zzao zza(String str, zzg zzgVar, List list) {
+        zzbk zzbkVar = zzbk.ADD;
+        switch (zzh.zze(str).ordinal()) {
+            case 4:
+                zzh.zza(zzbk.BITWISE_AND.name(), 2, list);
+                return new zzah(Double.valueOf(zzh.zzg(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue()) & zzh.zzg(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue())));
+            case 5:
+                zzh.zza(zzbk.BITWISE_LEFT_SHIFT.name(), 2, list);
+                return new zzah(Double.valueOf(zzh.zzg(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue()) << ((int) (zzh.zzh(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue()) & 31))));
+            case 6:
+                zzh.zza(zzbk.BITWISE_NOT.name(), 1, list);
+                return new zzah(Double.valueOf(~zzh.zzg(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue())));
+            case 7:
+                zzh.zza(zzbk.BITWISE_OR.name(), 2, list);
+                return new zzah(Double.valueOf(zzh.zzg(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue()) | zzh.zzg(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue())));
+            case 8:
+                zzh.zza(zzbk.BITWISE_RIGHT_SHIFT.name(), 2, list);
+                return new zzah(Double.valueOf(zzh.zzg(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue()) >> ((int) (zzh.zzh(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue()) & 31))));
+            case 9:
+                zzh.zza(zzbk.BITWISE_UNSIGNED_RIGHT_SHIFT.name(), 2, list);
+                return new zzah(Double.valueOf(zzh.zzh(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue()) >>> ((int) (zzh.zzh(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue()) & 31))));
+            case 10:
+                zzh.zza(zzbk.BITWISE_XOR.name(), 2, list);
+                return new zzah(Double.valueOf(zzh.zzg(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue()) ^ zzh.zzg(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue())));
+            default:
+                return super.zzb(str);
         }
-        return obj instanceof zzau;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final zzap zzcz(String str, zzg zzgVar, List list) {
-        throw new IllegalStateException(String.format("Undefined has no function %s", str));
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final zzap zzd() {
-        return zzap.zzf;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final Boolean zzg() {
-        return false;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final Double zzh() {
-        return Double.valueOf(Double.NaN);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final String zzi() {
-        return StringUtils.UNDEFINED;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final Iterator zzl() {
-        return null;
     }
 }

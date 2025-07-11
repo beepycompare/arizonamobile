@@ -58,7 +58,7 @@ public final class LifecyclesKt {
                             @Override // androidx.lifecycle.DefaultLifecycleObserver
                             public void onStart(LifecycleOwner lifecycleOwner) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuationImpl2.resumeWith(Result.m8443constructorimpl(Unit.INSTANCE));
+                                cancellableContinuationImpl2.resumeWith(Result.m8471constructorimpl(Unit.INSTANCE));
                             }
                         };
                         T t = objectRef2.element;

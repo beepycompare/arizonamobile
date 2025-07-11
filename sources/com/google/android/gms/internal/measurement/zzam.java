@@ -1,105 +1,50 @@
 package com.google.android.gms.internal.measurement;
 
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import java.util.ArrayList;
-import java.util.HashMap;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public class zzam implements zzap, zzal {
-    final Map zza = new HashMap();
-
+public final class zzam implements zzao {
     public final boolean equals(Object obj) {
-        if (this == obj) {
+        if (obj == this) {
             return true;
         }
-        if (obj instanceof zzam) {
-            return this.zza.equals(((zzam) obj).zza);
-        }
-        return false;
+        return obj instanceof zzam;
     }
 
     public final int hashCode() {
-        return this.zza.hashCode();
+        return 1;
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("{");
-        Map map = this.zza;
-        if (!map.isEmpty()) {
-            for (String str : map.keySet()) {
-                sb.append(String.format("%s: %s,", str, map.get(str)));
-            }
-            sb.deleteCharAt(sb.lastIndexOf(StringUtils.COMMA));
-        }
-        sb.append("}");
-        return sb.toString();
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public final String zzc() {
+        return AbstractJsonLexerKt.NULL;
     }
 
-    public final List zzb() {
-        return new ArrayList(this.zza.keySet());
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public final zzao zzcA(String str, zzg zzgVar, List list) {
+        throw new IllegalStateException(String.format("null has no function %s", str));
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public zzap zzcz(String str, zzg zzgVar, List list) {
-        if ("toString".equals(str)) {
-            return new zzat(toString());
-        }
-        return zzaj.zza(this, new zzat(str), zzgVar, list);
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public final Double zzd() {
+        return Double.valueOf((double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final zzap zzd() {
-        zzam zzamVar = new zzam();
-        for (Map.Entry entry : this.zza.entrySet()) {
-            if (entry.getValue() instanceof zzal) {
-                zzamVar.zza.put((String) entry.getKey(), (zzap) entry.getValue());
-            } else {
-                zzamVar.zza.put((String) entry.getKey(), ((zzap) entry.getValue()).zzd());
-            }
-        }
-        return zzamVar;
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public final Boolean zze() {
+        return false;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzal
-    public final zzap zzf(String str) {
-        Map map = this.zza;
-        return map.containsKey(str) ? (zzap) map.get(str) : zzf;
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public final Iterator zzf() {
+        return null;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final Boolean zzg() {
-        return true;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final Double zzh() {
-        return Double.valueOf(Double.NaN);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final String zzi() {
-        return "[object Object]";
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final Iterator zzl() {
-        return zzaj.zzb(this.zza);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzal
-    public final void zzr(String str, zzap zzapVar) {
-        if (zzapVar == null) {
-            this.zza.remove(str);
-        } else {
-            this.zza.put(str, zzapVar);
-        }
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzal
-    public final boolean zzt(String str) {
-        return this.zza.containsKey(str);
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public final zzao zzt() {
+        return zzao.zzg;
     }
 }

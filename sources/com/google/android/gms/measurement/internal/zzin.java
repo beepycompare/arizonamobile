@@ -1,22 +1,23 @@
 package com.google.android.gms.measurement.internal;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzin implements Runnable {
-    final /* synthetic */ zzke zza;
-    final /* synthetic */ zzio zzb;
+final class zzin implements Runnable {
+    final /* synthetic */ zzr zza;
+    final /* synthetic */ zzjc zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzin(zzio zzioVar, zzke zzkeVar) {
-        this.zza = zzkeVar;
-        this.zzb = zzioVar;
+    public zzin(zzjc zzjcVar, zzr zzrVar) {
+        this.zza = zzrVar;
+        Objects.requireNonNull(zzjcVar);
+        this.zzb = zzjcVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zzio zzioVar = this.zzb;
-        zzke zzkeVar = this.zza;
-        zzio.zzC(zzioVar, zzkeVar);
-        zzioVar.zzH(zzkeVar.zzg);
+        zzjc zzjcVar = this.zzb;
+        zzjcVar.zzL().zzY();
+        zzjcVar.zzL().zzaa(this.zza);
     }
 }

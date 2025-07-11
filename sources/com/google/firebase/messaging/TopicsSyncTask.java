@@ -36,7 +36,6 @@ public class TopicsSyncTask implements Runnable {
 
     @Override // java.lang.Runnable
     public void run() {
-        PowerManager.WakeLock wakeLock;
         if (hasWakeLockPermission(this.context)) {
             this.syncWakeLock.acquire(Constants.WAKE_LOCK_ACQUIRE_TIMEOUT_MILLIS);
         }
@@ -46,43 +45,47 @@ public class TopicsSyncTask implements Runnable {
                     this.topicsSubscriber.setSyncScheduledOrRunning(true);
                     if (!this.metadata.isGmscorePresent()) {
                         this.topicsSubscriber.setSyncScheduledOrRunning(false);
-                        if (!hasWakeLockPermission(this.context)) {
-                            return;
+                        if (hasWakeLockPermission(this.context)) {
+                            try {
+                                this.syncWakeLock.release();
+                            } catch (RuntimeException unused) {
+                                Log.i(Constants.TAG, "TopicsSyncTask's wakelock was already released due to timeout.");
+                            }
                         }
-                        wakeLock = this.syncWakeLock;
                     } else if (!hasAccessNetworkStatePermission(this.context) || isDeviceConnected()) {
                         if (this.topicsSubscriber.syncTopics()) {
                             this.topicsSubscriber.setSyncScheduledOrRunning(false);
                         } else {
                             this.topicsSubscriber.syncWithDelaySecondsInternal(this.nextDelaySeconds);
                         }
-                        if (!hasWakeLockPermission(this.context)) {
-                            return;
+                        if (hasWakeLockPermission(this.context)) {
+                            this.syncWakeLock.release();
                         }
-                        wakeLock = this.syncWakeLock;
                     } else {
                         new ConnectivityChangeReceiver(this).registerReceiver();
-                        if (!hasWakeLockPermission(this.context)) {
-                            return;
+                        if (hasWakeLockPermission(this.context)) {
+                            try {
+                                this.syncWakeLock.release();
+                            } catch (RuntimeException unused2) {
+                                Log.i(Constants.TAG, "TopicsSyncTask's wakelock was already released due to timeout.");
+                            }
                         }
-                        wakeLock = this.syncWakeLock;
                     }
-                    wakeLock.release();
-                } catch (RuntimeException unused) {
-                    Log.i(Constants.TAG, "TopicsSyncTask's wakelock was already released due to timeout.");
+                } catch (IOException e) {
+                    Log.e(Constants.TAG, "Failed to sync topics. Won't retry sync. " + e.getMessage());
+                    this.topicsSubscriber.setSyncScheduledOrRunning(false);
+                    if (hasWakeLockPermission(this.context)) {
+                        this.syncWakeLock.release();
+                    }
                 }
-            } catch (IOException e) {
-                Log.e(Constants.TAG, "Failed to sync topics. Won't retry sync. " + e.getMessage());
-                this.topicsSubscriber.setSyncScheduledOrRunning(false);
-                if (hasWakeLockPermission(this.context)) {
-                    this.syncWakeLock.release();
-                }
+            } catch (RuntimeException unused3) {
+                Log.i(Constants.TAG, "TopicsSyncTask's wakelock was already released due to timeout.");
             }
         } catch (Throwable th) {
             if (hasWakeLockPermission(this.context)) {
                 try {
                     this.syncWakeLock.release();
-                } catch (RuntimeException unused2) {
+                } catch (RuntimeException unused4) {
                     Log.i(Constants.TAG, "TopicsSyncTask's wakelock was already released due to timeout.");
                 }
             }

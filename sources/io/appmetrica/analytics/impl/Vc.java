@@ -5,7 +5,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Vc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Tm f671a;
+    public final Tm f672a;
     public final Tm b;
     public final H4 c;
     public final PublicLogger d;
@@ -17,7 +17,7 @@ public final class Vc {
 
     public Vc(H4 h4, Tm tm, Tm tm2, String str, PublicLogger publicLogger) {
         this.c = h4;
-        this.f671a = tm;
+        this.f672a = tm;
         this.b = tm2;
         this.e = str;
         this.d = publicLogger;

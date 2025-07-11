@@ -6,10 +6,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: HomeComponent.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.feature.home.ui.HomeComponent", f = "HomeComponent.kt", i = {}, l = {107, 109}, m = "checkHwVersion", n = {}, s = {})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.feature.home.ui.HomeComponent", f = "HomeComponent.kt", i = {1}, l = {107, 109}, m = "checkHwVersion", n = {"hwVersion"}, s = {"L$0"})
 /* loaded from: classes4.dex */
 public final class HomeComponent$checkHwVersion$1 extends ContinuationImpl {
+    Object L$0;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ HomeComponent this$0;

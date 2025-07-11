@@ -3,18 +3,18 @@ package com.google.android.gms.measurement;
 import android.content.Context;
 import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.internal.measurement.zzdh;
+import com.google.android.gms.internal.measurement.zzdd;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
-import com.google.android.gms.measurement.internal.zzio;
-import com.google.android.gms.measurement.internal.zzjt;
-import com.google.android.gms.measurement.internal.zzkb;
-import com.google.android.gms.measurement.internal.zzkc;
-import com.google.android.gms.measurement.internal.zzlx;
-import com.google.android.gms.measurement.internal.zzmg;
+import com.google.android.gms.measurement.internal.zzib;
+import com.google.android.gms.measurement.internal.zzjg;
+import com.google.android.gms.measurement.internal.zzjo;
+import com.google.android.gms.measurement.internal.zzjp;
+import com.google.android.gms.measurement.internal.zzlj;
+import com.google.android.gms.measurement.internal.zzls;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 @Deprecated
 /* loaded from: classes3.dex */
 public class AppMeasurement {
@@ -24,39 +24,39 @@ public class AppMeasurement {
     private static volatile AppMeasurement zza;
     private final zzc zzb;
 
-    /* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
     /* loaded from: classes3.dex */
-    public interface EventInterceptor extends zzkb {
-        @Override // com.google.android.gms.measurement.internal.zzkb
+    public interface EventInterceptor extends zzjo {
+        @Override // com.google.android.gms.measurement.internal.zzjo
         void interceptEvent(String str, String str2, Bundle bundle, long j);
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
     /* loaded from: classes3.dex */
-    public interface OnEventListener extends zzkc {
-        @Override // com.google.android.gms.measurement.internal.zzkc
+    public interface OnEventListener extends zzjp {
+        @Override // com.google.android.gms.measurement.internal.zzjp
         void onEvent(String str, String str2, Bundle bundle, long j);
     }
 
-    public AppMeasurement(zzio zzioVar) {
-        this.zzb = new zza(zzioVar);
+    public AppMeasurement(zzib zzibVar) {
+        this.zzb = new zza(zzibVar);
     }
 
     @Deprecated
     public static AppMeasurement getInstance(Context context) {
-        zzlx zzlxVar;
+        zzlj zzljVar;
         if (zza == null) {
             synchronized (AppMeasurement.class) {
                 if (zza == null) {
                     try {
-                        zzlxVar = (zzlx) Class.forName("com.google.firebase.analytics.FirebaseAnalytics").getDeclaredMethod("getScionFrontendApiImplementation", Context.class, Bundle.class).invoke(null, context, null);
+                        zzljVar = (zzlj) Class.forName("com.google.firebase.analytics.FirebaseAnalytics").getDeclaredMethod("getScionFrontendApiImplementation", Context.class, Bundle.class).invoke(null, context, null);
                     } catch (ClassNotFoundException | Exception unused) {
-                        zzlxVar = null;
+                        zzljVar = null;
                     }
-                    if (zzlxVar == null) {
-                        zza = new AppMeasurement(zzio.zzp(context, new zzdh(0L, 0L, true, null, null, null, null, null), null));
+                    if (zzljVar == null) {
+                        zza = new AppMeasurement(zzib.zzy(context, new zzdd(0L, 0L, true, null, null), null));
                     } else {
-                        zza = new AppMeasurement(zzlxVar);
+                        zza = new AppMeasurement(zzljVar);
                     }
                 }
             }
@@ -65,33 +65,33 @@ public class AppMeasurement {
     }
 
     public void beginAdUnitExposure(String str) {
-        this.zzb.zzp(str);
+        this.zzb.zzm(str);
     }
 
     public void clearConditionalUserProperty(String str, String str2, Bundle bundle) {
-        this.zzb.zzq(str, str2, bundle);
+        this.zzb.zzp(str, str2, bundle);
     }
 
     public void endAdUnitExposure(String str) {
-        this.zzb.zzr(str);
+        this.zzb.zzn(str);
     }
 
     public long generateEventId() {
-        return this.zzb.zzb();
+        return this.zzb.zzl();
     }
 
     public String getAppInstanceId() {
-        return this.zzb.zzh();
+        return this.zzb.zzj();
     }
 
     public Boolean getBoolean() {
-        return this.zzb.zzc();
+        return this.zzb.zzs();
     }
 
     public List<ConditionalUserProperty> getConditionalUserProperties(String str, String str2) {
-        List<Bundle> zzm = this.zzb.zzm(str, str2);
-        ArrayList arrayList = new ArrayList(zzm == null ? 0 : zzm.size());
-        for (Bundle bundle : zzm) {
+        List<Bundle> zzq = this.zzb.zzq(str, str2);
+        ArrayList arrayList = new ArrayList(zzq == null ? 0 : zzq.size());
+        for (Bundle bundle : zzq) {
             arrayList.add(new ConditionalUserProperty(bundle));
         }
         return arrayList;
@@ -102,11 +102,11 @@ public class AppMeasurement {
     }
 
     public String getCurrentScreenName() {
-        return this.zzb.zzj();
+        return this.zzb.zzh();
     }
 
     public Double getDouble() {
-        return this.zzb.zzd();
+        return this.zzb.zzw();
     }
 
     public String getGmpAppId() {
@@ -114,35 +114,35 @@ public class AppMeasurement {
     }
 
     public Integer getInteger() {
-        return this.zzb.zze();
+        return this.zzb.zzt();
     }
 
     public Long getLong() {
-        return this.zzb.zzf();
+        return this.zzb.zzv();
     }
 
     public int getMaxUserProperties(String str) {
-        return this.zzb.zza(str);
+        return this.zzb.zzr(str);
     }
 
     public String getString() {
-        return this.zzb.zzl();
+        return this.zzb.zzu();
     }
 
     protected Map<String, Object> getUserProperties(String str, String str2, boolean z) {
-        return this.zzb.zzo(str, str2, z);
+        return this.zzb.zzd(str, str2, z);
     }
 
     public void logEventInternal(String str, String str2, Bundle bundle) {
-        this.zzb.zzs(str, str2, bundle);
+        this.zzb.zza(str, str2, bundle);
     }
 
     public void logEventInternalNoInterceptor(String str, String str2, Bundle bundle, long j) {
-        this.zzb.zzt(str, str2, bundle, j);
+        this.zzb.zzb(str, str2, bundle, j);
     }
 
     public void registerOnMeasurementEventListener(OnEventListener onEventListener) {
-        this.zzb.zzu(onEventListener);
+        this.zzb.zzf(onEventListener);
     }
 
     public void setConditionalUserProperty(ConditionalUserProperty conditionalUserProperty) {
@@ -162,7 +162,7 @@ public class AppMeasurement {
         }
         Object obj = conditionalUserProperty.mValue;
         if (obj != null) {
-            zzjt.zzb(bundle, obj);
+            zzjg.zza(bundle, obj);
         }
         String str4 = conditionalUserProperty.mTriggerEventName;
         if (str4 != null) {
@@ -198,26 +198,26 @@ public class AppMeasurement {
         bundle.putLong(AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, conditionalUserProperty.mCreationTimestamp);
         bundle.putBoolean(AppMeasurementSdk.ConditionalUserProperty.ACTIVE, conditionalUserProperty.mActive);
         bundle.putLong(AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP, conditionalUserProperty.mTriggeredTimestamp);
-        zzcVar.zzv(bundle);
+        zzcVar.zzo(bundle);
     }
 
     public void setEventInterceptor(EventInterceptor eventInterceptor) {
-        this.zzb.zzw(eventInterceptor);
+        this.zzb.zze(eventInterceptor);
     }
 
     public void unregisterOnMeasurementEventListener(OnEventListener onEventListener) {
-        this.zzb.zzx(onEventListener);
+        this.zzb.zzg(onEventListener);
     }
 
-    public AppMeasurement(zzlx zzlxVar) {
-        this.zzb = new zzb(zzlxVar);
+    public AppMeasurement(zzlj zzljVar) {
+        this.zzb = new zzb(zzljVar);
     }
 
     public Map<String, Object> getUserProperties(boolean z) {
-        return this.zzb.zzn(z);
+        return this.zzb.zzc(z);
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
     /* loaded from: classes3.dex */
     public static class ConditionalUserProperty {
         public boolean mActive;
@@ -242,22 +242,22 @@ public class AppMeasurement {
 
         ConditionalUserProperty(Bundle bundle) {
             Preconditions.checkNotNull(bundle);
-            this.mAppId = (String) zzjt.zza(bundle, "app_id", String.class, null);
-            this.mOrigin = (String) zzjt.zza(bundle, "origin", String.class, null);
-            this.mName = (String) zzjt.zza(bundle, "name", String.class, null);
-            this.mValue = zzjt.zza(bundle, "value", Object.class, null);
-            this.mTriggerEventName = (String) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, String.class, null);
-            this.mTriggerTimeout = ((Long) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT, Long.class, 0L)).longValue();
-            this.mTimedOutEventName = (String) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_NAME, String.class, null);
-            this.mTimedOutEventParams = (Bundle) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_PARAMS, Bundle.class, null);
-            this.mTriggeredEventName = (String) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_NAME, String.class, null);
-            this.mTriggeredEventParams = (Bundle) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_PARAMS, Bundle.class, null);
-            this.mTimeToLive = ((Long) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE, Long.class, 0L)).longValue();
-            this.mExpiredEventName = (String) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_NAME, String.class, null);
-            this.mExpiredEventParams = (Bundle) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_PARAMS, Bundle.class, null);
-            this.mActive = ((Boolean) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.ACTIVE, Boolean.class, false)).booleanValue();
-            this.mCreationTimestamp = ((Long) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, Long.class, 0L)).longValue();
-            this.mTriggeredTimestamp = ((Long) zzjt.zza(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP, Long.class, 0L)).longValue();
+            this.mAppId = (String) zzjg.zzb(bundle, "app_id", String.class, null);
+            this.mOrigin = (String) zzjg.zzb(bundle, "origin", String.class, null);
+            this.mName = (String) zzjg.zzb(bundle, "name", String.class, null);
+            this.mValue = zzjg.zzb(bundle, "value", Object.class, null);
+            this.mTriggerEventName = (String) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, String.class, null);
+            this.mTriggerTimeout = ((Long) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT, Long.class, 0L)).longValue();
+            this.mTimedOutEventName = (String) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_NAME, String.class, null);
+            this.mTimedOutEventParams = (Bundle) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_PARAMS, Bundle.class, null);
+            this.mTriggeredEventName = (String) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_NAME, String.class, null);
+            this.mTriggeredEventParams = (Bundle) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_PARAMS, Bundle.class, null);
+            this.mTimeToLive = ((Long) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE, Long.class, 0L)).longValue();
+            this.mExpiredEventName = (String) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_NAME, String.class, null);
+            this.mExpiredEventParams = (Bundle) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_PARAMS, Bundle.class, null);
+            this.mActive = ((Boolean) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.ACTIVE, Boolean.class, false)).booleanValue();
+            this.mCreationTimestamp = ((Long) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, Long.class, 0L)).longValue();
+            this.mTriggeredTimestamp = ((Long) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP, Long.class, 0L)).longValue();
         }
 
         public ConditionalUserProperty(ConditionalUserProperty conditionalUserProperty) {
@@ -268,9 +268,9 @@ public class AppMeasurement {
             this.mName = conditionalUserProperty.mName;
             Object obj = conditionalUserProperty.mValue;
             if (obj != null) {
-                Object zza = zzmg.zza(obj);
-                this.mValue = zza;
-                if (zza == null) {
+                Object zzb = zzls.zzb(obj);
+                this.mValue = zzb;
+                if (zzb == null) {
                     this.mValue = conditionalUserProperty.mValue;
                 }
             }

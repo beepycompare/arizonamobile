@@ -140,14 +140,14 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         super.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.google.android.material.chip.Chip$$ExternalSyntheticLambda0
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public final void onCheckedChanged(CompoundButton compoundButton, boolean z) {
-                Chip.this.m8094lambda$new$0$comgoogleandroidmaterialchipChip(compoundButton, z);
+                Chip.this.m8093lambda$new$0$comgoogleandroidmaterialchipChip(compoundButton, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-chip-Chip  reason: not valid java name */
-    public /* synthetic */ void m8094lambda$new$0$comgoogleandroidmaterialchipChip(CompoundButton compoundButton, boolean z) {
+    public /* synthetic */ void m8093lambda$new$0$comgoogleandroidmaterialchipChip(CompoundButton compoundButton, boolean z) {
         MaterialCheckable.OnCheckedChangeListener<Chip> onCheckedChangeListener = this.onCheckedChangeListenerInternal;
         if (onCheckedChangeListener != null) {
             onCheckedChangeListener.onCheckedChanged(this, z);

@@ -24,6 +24,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -37,7 +38,7 @@ import kotlinx.coroutines.flow.SharingStarted;
 import kotlinx.coroutines.flow.StateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 /* compiled from: ErrorDialogComponent.kt */
-@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u0000 72\u00020\u00012\u00020\u0002:\u000278B-\b\u0001\u0012\b\b\u0001\u0010\u0003\u001a\u00020\u0004\u0012\b\b\u0001\u0010\u0005\u001a\u00020\u0001\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\u0006\u0010\u001b\u001a\u00020\u001cJ\u0010\u0010\u001d\u001a\u00020\u001c2\u0006\u0010\u001e\u001a\u00020\u0018H\u0002R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0017\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0012\u0010\u001f\u001a\u00020 X\u0096\u0005¢\u0006\u0006\u001a\u0004\b!\u0010\"R\u0018\u0010#\u001a\b\u0012\u0004\u0012\u00020\u00010$X\u0096\u0005¢\u0006\u0006\u001a\u0004\b%\u0010&R\u0012\u0010'\u001a\u00020(X\u0096\u0005¢\u0006\u0006\u001a\u0004\b)\u0010*R\u0012\u0010+\u001a\u00020,X\u0096\u0005¢\u0006\u0006\u001a\u0004\b-\u0010.R\u0012\u0010/\u001a\u000200X\u0096\u0005¢\u0006\u0006\u001a\u0004\b1\u00102R\u0012\u00103\u001a\u000204X\u0096\u0005¢\u0006\u0006\u001a\u0004\b5\u00106¨\u00069"}, d2 = {"Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "Lcom/arkivanov/decompose/ComponentContext;", "Lcom/miami/game/core/decompose/utils/CoroutineFeature;", "errorMessage", "", "componentContext", "uiAssembler", "Lcom/miami/game/feature/download/dialog/ui/error/map/ErrorDialogUiAssembler;", "resources", "Landroid/content/res/Resources;", "<init>", "(Ljava/lang/String;Lcom/arkivanov/decompose/ComponentContext;Lcom/miami/game/feature/download/dialog/ui/error/map/ErrorDialogUiAssembler;Landroid/content/res/Resources;)V", "getErrorMessage", "()Ljava/lang/String;", "stateStore", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogVmState;", "uiState", "Lkotlinx/coroutines/flow/StateFlow;", "Lcom/miami/game/feature/download/dialog/ui/error/model/ErrorDialogUiState;", "getUiState", "()Lkotlinx/coroutines/flow/StateFlow;", "uiAction", "Lcom/miami/game/core/decompose/utils/SharedEventFlow;", "Lcom/miami/game/feature/download/dialog/ui/error/model/ErrorDialogUiAction;", "getUiAction", "()Lcom/miami/game/core/decompose/utils/SharedEventFlow;", "onRetryFun", "", "emitUiAction", "action", "backHandler", "Lcom/arkivanov/essenty/backhandler/BackHandler;", "getBackHandler", "()Lcom/arkivanov/essenty/backhandler/BackHandler;", "componentContextFactory", "Lcom/arkivanov/decompose/ComponentContextFactory;", "getComponentContextFactory", "()Lcom/arkivanov/decompose/ComponentContextFactory;", "instanceKeeper", "Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "getInstanceKeeper", "()Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "lifecycle", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "getLifecycle", "()Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "stateKeeper", "Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "getStateKeeper", "()Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "Companion", "Factory", "dialogs_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u0000 72\u00020\u00012\u00020\u0002:\u000278B-\b\u0001\u0012\b\b\u0001\u0010\u0003\u001a\u00020\u0004\u0012\b\b\u0001\u0010\u0005\u001a\u00020\u0001\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\u0006\u0010\u001b\u001a\u00020\u001cJ\u0010\u0010\u001d\u001a\u00020\u001c2\u0006\u0010\u001e\u001a\u00020\u0018H\u0002R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0017\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0012\u0010\u001f\u001a\u00020 X\u0096\u0005¢\u0006\u0006\u001a\u0004\b!\u0010\"R\u0018\u0010#\u001a\b\u0012\u0004\u0012\u00020\u00010$X\u0096\u0005¢\u0006\u0006\u001a\u0004\b%\u0010&R\u0012\u0010'\u001a\u00020(X\u0096\u0005¢\u0006\u0006\u001a\u0004\b)\u0010*R\u0012\u0010+\u001a\u00020,X\u0096\u0005¢\u0006\u0006\u001a\u0004\b-\u0010.R\u0012\u0010/\u001a\u000200X\u0096\u0005¢\u0006\u0006\u001a\u0004\b1\u00102R\u0012\u00103\u001a\u000204X\u0096\u0005¢\u0006\u0006\u001a\u0004\b5\u00106¨\u00069"}, d2 = {"Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "Lcom/arkivanov/decompose/ComponentContext;", "Lcom/miami/game/core/decompose/utils/CoroutineFeature;", "errorMessage", "", "componentContext", "uiAssembler", "Lcom/miami/game/feature/download/dialog/ui/error/map/ErrorDialogUiAssembler;", "resources", "Landroid/content/res/Resources;", "<init>", "(Ljava/lang/String;Lcom/arkivanov/decompose/ComponentContext;Lcom/miami/game/feature/download/dialog/ui/error/map/ErrorDialogUiAssembler;Landroid/content/res/Resources;)V", "getErrorMessage", "()Ljava/lang/String;", "stateStore", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogVmState;", "uiState", "Lkotlinx/coroutines/flow/StateFlow;", "Lcom/miami/game/feature/download/dialog/ui/error/model/ErrorDialogUiState;", "getUiState", "()Lkotlinx/coroutines/flow/StateFlow;", "uiAction", "Lcom/miami/game/core/decompose/utils/SharedEventFlow;", "Lcom/miami/game/feature/download/dialog/ui/error/model/ErrorDialogUiAction;", "getUiAction", "()Lcom/miami/game/core/decompose/utils/SharedEventFlow;", "onRetryFun", "", "emitUiAction", "action", "backHandler", "Lcom/arkivanov/essenty/backhandler/BackHandler;", "getBackHandler", "()Lcom/arkivanov/essenty/backhandler/BackHandler;", "componentContextFactory", "Lcom/arkivanov/decompose/ComponentContextFactory;", "getComponentContextFactory", "()Lcom/arkivanov/decompose/ComponentContextFactory;", "instanceKeeper", "Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "getInstanceKeeper", "()Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "lifecycle", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "getLifecycle", "()Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "stateKeeper", "Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "getStateKeeper", "()Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "Companion", "Factory", "dialogs_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ErrorDialogComponent implements ComponentContext, CoroutineFeature {
     private final /* synthetic */ ComponentContext $$delegate_0;
@@ -60,7 +61,7 @@ public final class ErrorDialogComponent implements ComponentContext, CoroutineFe
 
     /* compiled from: ErrorDialogComponent.kt */
     @AssistedFactory
-    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bç\u0080\u0001\u0018\u00002\u00020\u0001J\u0019\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H¦\u0002¨\u0006\b"}, d2 = {"Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent$Factory;", "", "invoke", "Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "componentContext", "Lcom/arkivanov/decompose/ComponentContext;", "errorMessage", "", "dialogs_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bç\u0080\u0001\u0018\u00002\u00020\u0001J\u0019\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H¦\u0002¨\u0006\bÀ\u0006\u0003"}, d2 = {"Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent$Factory;", "", "invoke", "Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "componentContext", "Lcom/arkivanov/decompose/ComponentContext;", "errorMessage", "", "dialogs_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public interface Factory {
         ErrorDialogComponent invoke(ComponentContext componentContext, String str);
@@ -112,19 +113,23 @@ public final class ErrorDialogComponent implements ComponentContext, CoroutineFe
         this.uiState = FlowKt.stateIn(new Flow<ErrorDialogUiState>() { // from class: com.miami.game.feature.download.dialog.ui.error.ErrorDialogComponent$special$$inlined$map$1
 
             /* compiled from: Emitters.kt */
-            @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
             /* renamed from: com.miami.game.feature.download.dialog.ui.error.ErrorDialogComponent$special$$inlined$map$1$2  reason: invalid class name */
             /* loaded from: classes4.dex */
             public static final class AnonymousClass2<T> implements FlowCollector {
                 final /* synthetic */ FlowCollector $this_unsafeFlow;
                 final /* synthetic */ ErrorDialogUiAssembler receiver$inlined;
 
-                @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-                @DebugMetadata(c = "com.miami.game.feature.download.dialog.ui.error.ErrorDialogComponent$special$$inlined$map$1$2", f = "ErrorDialogComponent.kt", i = {}, l = {50}, m = "emit", n = {}, s = {})
+                @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+                @DebugMetadata(c = "com.miami.game.feature.download.dialog.ui.error.ErrorDialogComponent$special$$inlined$map$1$2", f = "ErrorDialogComponent.kt", i = {0, 0, 0, 0, 0}, l = {50}, m = "emit", n = {"value", "$completion", "value", "$this$map_u24lambda_u245", "$i$a$-unsafeTransform-FlowKt__TransformKt$map$1"}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"})
                 /* renamed from: com.miami.game.feature.download.dialog.ui.error.ErrorDialogComponent$special$$inlined$map$1$2$1  reason: invalid class name */
                 /* loaded from: classes4.dex */
                 public static final class AnonymousClass1 extends ContinuationImpl {
+                    int I$0;
                     Object L$0;
+                    Object L$1;
+                    Object L$2;
+                    Object L$3;
                     int label;
                     /* synthetic */ Object result;
 
@@ -146,7 +151,7 @@ public final class ErrorDialogComponent implements ComponentContext, CoroutineFe
                 }
 
                 /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-                /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
+                /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
                 @Override // kotlinx.coroutines.flow.FlowCollector
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
@@ -165,6 +170,11 @@ public final class ErrorDialogComponent implements ComponentContext, CoroutineFe
                                 ResultKt.throwOnFailure(obj2);
                                 FlowCollector flowCollector = this.$this_unsafeFlow;
                                 ErrorDialogUiState assembleUiState = this.receiver$inlined.assembleUiState((CommonDialogVmState) obj);
+                                anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(obj);
+                                anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass1);
+                                anonymousClass1.L$2 = SpillingKt.nullOutSpilledVariable(obj);
+                                anonymousClass1.L$3 = SpillingKt.nullOutSpilledVariable(flowCollector);
+                                anonymousClass1.I$0 = 0;
                                 anonymousClass1.label = 1;
                                 if (flowCollector.emit(assembleUiState, anonymousClass1) == coroutine_suspended) {
                                     return coroutine_suspended;
@@ -172,6 +182,11 @@ public final class ErrorDialogComponent implements ComponentContext, CoroutineFe
                             } else if (i != 1) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             } else {
+                                int i2 = anonymousClass1.I$0;
+                                FlowCollector flowCollector2 = (FlowCollector) anonymousClass1.L$3;
+                                Object obj3 = anonymousClass1.L$2;
+                                AnonymousClass1 anonymousClass12 = (AnonymousClass1) anonymousClass1.L$1;
+                                Object obj4 = anonymousClass1.L$0;
                                 ResultKt.throwOnFailure(obj2);
                             }
                             return Unit.INSTANCE;
@@ -218,7 +233,7 @@ public final class ErrorDialogComponent implements ComponentContext, CoroutineFe
     }
 
     /* compiled from: ErrorDialogComponent.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R \u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent$Companion;", "", "<init>", "()V", "onRetry", "Lkotlin/Function0;", "", "getOnRetry", "()Lkotlin/jvm/functions/Function0;", "setOnRetry", "(Lkotlin/jvm/functions/Function0;)V", "dialogs_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R \u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent$Companion;", "", "<init>", "()V", "onRetry", "Lkotlin/Function0;", "", "getOnRetry", "()Lkotlin/jvm/functions/Function0;", "setOnRetry", "(Lkotlin/jvm/functions/Function0;)V", "dialogs_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

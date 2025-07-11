@@ -12,6 +12,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
@@ -21,7 +22,7 @@ import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.FlowKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LocalRepository.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.local.repository.common.LocalRepository$has$2", f = "LocalRepository.kt", i = {}, l = {67}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes4.dex */
 public final class LocalRepository$has$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Boolean>, Object> {
@@ -61,7 +62,7 @@ public final class LocalRepository$has$2 extends SuspendLambda implements Functi
             obj = FlowKt.firstOrNull(new Flow<Boolean>() { // from class: com.miami.game.core.local.repository.common.LocalRepository$has$2$invokeSuspend$$inlined$map$1
 
                 /* compiled from: Emitters.kt */
-                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0007\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u00032\u0006\u0010\u0004\u001a\u0002H\u0002H\u008a@¢\u0006\u0004\b\u0005\u0010\u0006¨\u0006\b"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "R", "value", "emit", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$unsafeTransform$1$1", "kotlinx/coroutines/flow/FlowKt__TransformKt$map$$inlined$unsafeTransform$1$2"}, k = 3, mv = {2, 1, 0}, xi = 48)
+                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0007\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u00032\u0006\u0010\u0004\u001a\u0002H\u0002H\u008a@¢\u0006\u0004\b\u0005\u0010\u0006¨\u0006\b"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "R", "value", "emit", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$unsafeTransform$1$1", "kotlinx/coroutines/flow/FlowKt__TransformKt$map$$inlined$unsafeTransform$1$2"}, k = 3, mv = {2, 2, 0}, xi = 48)
                 /* renamed from: com.miami.game.core.local.repository.common.LocalRepository$has$2$invokeSuspend$$inlined$map$1$2  reason: invalid class name */
                 /* loaded from: classes4.dex */
                 public static final class AnonymousClass2<T> implements FlowCollector {
@@ -69,12 +70,16 @@ public final class LocalRepository$has$2 extends SuspendLambda implements Functi
                     final /* synthetic */ FlowCollector $this_unsafeFlow;
 
                     /* compiled from: Emitters.kt */
-                    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-                    @DebugMetadata(c = "com.miami.game.core.local.repository.common.LocalRepository$has$2$invokeSuspend$$inlined$map$1$2", f = "LocalRepository.kt", i = {}, l = {223}, m = "emit", n = {}, s = {})
+                    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+                    @DebugMetadata(c = "com.miami.game.core.local.repository.common.LocalRepository$has$2$invokeSuspend$$inlined$map$1$2", f = "LocalRepository.kt", i = {0, 0, 0, 0, 0}, l = {223}, m = "emit", n = {"value", "$completion", "value", "$this$map_u24lambda_u245", "$i$a$-unsafeTransform-FlowKt__TransformKt$map$1"}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"})
                     /* renamed from: com.miami.game.core.local.repository.common.LocalRepository$has$2$invokeSuspend$$inlined$map$1$2$1  reason: invalid class name */
                     /* loaded from: classes4.dex */
                     public static final class AnonymousClass1 extends ContinuationImpl {
+                        int I$0;
                         Object L$0;
+                        Object L$1;
+                        Object L$2;
+                        Object L$3;
                         int label;
                         /* synthetic */ Object result;
 
@@ -96,7 +101,7 @@ public final class LocalRepository$has$2 extends SuspendLambda implements Functi
                     }
 
                     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-                    /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
+                    /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
                     @Override // kotlinx.coroutines.flow.FlowCollector
                     /*
                         Code decompiled incorrectly, please refer to instructions dump.
@@ -115,6 +120,11 @@ public final class LocalRepository$has$2 extends SuspendLambda implements Functi
                                     ResultKt.throwOnFailure(obj2);
                                     FlowCollector flowCollector = this.$this_unsafeFlow;
                                     Boolean boxBoolean = Boxing.boxBoolean(((Preferences) obj).contains(PreferencesKeys.stringKey(this.$key$inlined)));
+                                    anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(obj);
+                                    anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass1);
+                                    anonymousClass1.L$2 = SpillingKt.nullOutSpilledVariable(obj);
+                                    anonymousClass1.L$3 = SpillingKt.nullOutSpilledVariable(flowCollector);
+                                    anonymousClass1.I$0 = 0;
                                     anonymousClass1.label = 1;
                                     if (flowCollector.emit(boxBoolean, anonymousClass1) == coroutine_suspended) {
                                         return coroutine_suspended;
@@ -122,6 +132,11 @@ public final class LocalRepository$has$2 extends SuspendLambda implements Functi
                                 } else if (i != 1) {
                                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                                 } else {
+                                    int i2 = anonymousClass1.I$0;
+                                    FlowCollector flowCollector2 = (FlowCollector) anonymousClass1.L$3;
+                                    Object obj3 = anonymousClass1.L$2;
+                                    AnonymousClass1 anonymousClass12 = (AnonymousClass1) anonymousClass1.L$1;
+                                    Object obj4 = anonymousClass1.L$0;
                                     ResultKt.throwOnFailure(obj2);
                                 }
                                 return Unit.INSTANCE;

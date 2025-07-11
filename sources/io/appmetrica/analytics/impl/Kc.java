@@ -10,15 +10,15 @@ import java.util.Objects;
 import java.util.concurrent.Executor;
 import kotlin.text.StringsKt;
 /* loaded from: classes4.dex */
-public final class Kc extends C0705x5 {
-    public final C0496ok n;
+public final class Kc extends C0697x5 {
+    public final C0488ok n;
 
-    public Kc(Context context, C0406l5 c0406l5, J4 j4, AbstractC0531q5 abstractC0531q5, C0198cm c0198cm, InterfaceC0592sh interfaceC0592sh, ICommonExecutor iCommonExecutor, int i, C0496ok c0496ok, Yb yb, K9 k9) {
-        super(context, c0406l5, j4, abstractC0531q5, c0198cm, interfaceC0592sh, iCommonExecutor, i, yb, k9);
-        this.n = c0496ok;
+    public Kc(Context context, C0398l5 c0398l5, J4 j4, AbstractC0523q5 abstractC0523q5, C0190cm c0190cm, InterfaceC0584sh interfaceC0584sh, ICommonExecutor iCommonExecutor, int i, C0488ok c0488ok, Yb yb, K9 k9) {
+        super(context, c0398l5, j4, abstractC0523q5, c0190cm, interfaceC0584sh, iCommonExecutor, i, yb, k9);
+        this.n = c0488ok;
     }
 
-    public final C0454n3 a(Ic ic) {
+    public final C0446n3 a(Ic ic) {
         String str;
         BillingType billingType;
         Field field;
@@ -46,17 +46,17 @@ public final class Kc extends C0705x5 {
         } else {
             billingType = BillingType.NONE;
         }
-        return new C0454n3(context, a2, f, billingType, new C0354j3(Nm.a(C0677w2.class).a(this.c)), new C0330i3(ic, Ga.j().w().e()));
+        return new C0446n3(context, a2, f, billingType, new C0346j3(Nm.a(C0669w2.class).a(this.c)), new C0322i3(ic, Ga.j().w().e()));
     }
 
     public final Ag b(Ic ic) {
-        C0714xe c0714xe = new C0714xe(ic);
+        C0706xe c0706xe = new C0706xe(ic);
         Objects.requireNonNull(ic);
-        return new Ag(c0714xe, new Hc(ic), ic);
+        return new Ag(c0706xe, new Hc(ic), ic);
     }
 
-    @Override // io.appmetrica.analytics.impl.C0705x5
-    public final I9 a(N9 n9, C0209d7 c0209d7, C0167bh c0167bh, J4 j4, C0406l5 c0406l5, Cif cif) {
-        return this.l.a(n9, c0209d7, c0167bh, j4, c0406l5, cif).a();
+    @Override // io.appmetrica.analytics.impl.C0697x5
+    public final I9 a(N9 n9, C0201d7 c0201d7, C0159bh c0159bh, J4 j4, C0398l5 c0398l5, Cif cif) {
+        return this.l.a(n9, c0201d7, c0159bh, j4, c0398l5, cif).a();
     }
 }

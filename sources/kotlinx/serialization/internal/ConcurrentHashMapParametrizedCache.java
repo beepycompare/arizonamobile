@@ -30,8 +30,8 @@ final class ConcurrentHashMapParametrizedCache<T> implements ParametrizedSeriali
 
     @Override // kotlinx.serialization.internal.ParametrizedSerializerCache
     /* renamed from: get-gIAlu-s */
-    public Object mo10108getgIAlus(KClass<Object> key, List<? extends KType> types) {
-        Object m8443constructorimpl;
+    public Object mo10173getgIAlus(KClass<Object> key, List<? extends KType> types) {
+        Object m8471constructorimpl;
         ParametrizedCacheEntry<T> putIfAbsent;
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(types, "types");
@@ -53,16 +53,16 @@ final class ConcurrentHashMapParametrizedCache<T> implements ParametrizedSeriali
         if (obj == null) {
             try {
                 Result.Companion companion = Result.Companion;
-                m8443constructorimpl = Result.m8443constructorimpl(this.compute.invoke(key, types));
+                m8471constructorimpl = Result.m8471constructorimpl(this.compute.invoke(key, types));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m8443constructorimpl = Result.m8443constructorimpl(ResultKt.createFailure(th));
+                m8471constructorimpl = Result.m8471constructorimpl(ResultKt.createFailure(th));
             }
-            Result m8442boximpl = Result.m8442boximpl(m8443constructorimpl);
-            Object putIfAbsent2 = concurrentHashMap2.putIfAbsent(arrayList2, m8442boximpl);
-            obj = putIfAbsent2 == null ? m8442boximpl : putIfAbsent2;
+            Result m8470boximpl = Result.m8470boximpl(m8471constructorimpl);
+            Object putIfAbsent2 = concurrentHashMap2.putIfAbsent(arrayList2, m8470boximpl);
+            obj = putIfAbsent2 == null ? m8470boximpl : putIfAbsent2;
         }
         Intrinsics.checkNotNullExpressionValue(obj, "getOrPut(...)");
-        return ((Result) obj).m8452unboximpl();
+        return ((Result) obj).m8480unboximpl();
     }
 }

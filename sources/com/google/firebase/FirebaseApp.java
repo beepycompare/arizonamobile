@@ -230,14 +230,14 @@ public class FirebaseApp {
         this.dataCollectionConfigStorage = new Lazy<>(new Provider() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda0
             @Override // com.google.firebase.inject.Provider
             public final Object get() {
-                return FirebaseApp.this.m8208lambda$new$0$comgooglefirebaseFirebaseApp(context);
+                return FirebaseApp.this.m8207lambda$new$0$comgooglefirebaseFirebaseApp(context);
             }
         });
         this.defaultHeartBeatController = build.getProvider(DefaultHeartBeatController.class);
         addBackgroundStateChangeListener(new BackgroundStateChangeListener() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda1
             @Override // com.google.firebase.FirebaseApp.BackgroundStateChangeListener
             public final void onBackgroundStateChanged(boolean z) {
-                FirebaseApp.this.m8209lambda$new$1$comgooglefirebaseFirebaseApp(z);
+                FirebaseApp.this.m8208lambda$new$1$comgooglefirebaseFirebaseApp(z);
             }
         });
         FirebaseTrace.popTrace();
@@ -245,13 +245,13 @@ public class FirebaseApp {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-firebase-FirebaseApp  reason: not valid java name */
-    public /* synthetic */ DataCollectionConfigStorage m8208lambda$new$0$comgooglefirebaseFirebaseApp(Context context) {
+    public /* synthetic */ DataCollectionConfigStorage m8207lambda$new$0$comgooglefirebaseFirebaseApp(Context context) {
         return new DataCollectionConfigStorage(context, getPersistenceKey(), (Publisher) this.componentRuntime.get(Publisher.class));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$1$com-google-firebase-FirebaseApp  reason: not valid java name */
-    public /* synthetic */ void m8209lambda$new$1$comgooglefirebaseFirebaseApp(boolean z) {
+    public /* synthetic */ void m8208lambda$new$1$comgooglefirebaseFirebaseApp(boolean z) {
         if (z) {
             return;
         }

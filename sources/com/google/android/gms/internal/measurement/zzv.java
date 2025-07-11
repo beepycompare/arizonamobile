@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzv extends zzai {
     private final zzz zza;
@@ -12,22 +12,22 @@ public final class zzv extends zzai {
     }
 
     @Override // com.google.android.gms.internal.measurement.zzai
-    public final zzap zza(zzg zzgVar, List list) {
-        zzh.zzh(this.zzd, 3, list);
-        String zzi = zzgVar.zzb((zzap) list.get(0)).zzi();
-        zzap zzb = zzgVar.zzb((zzap) list.get(1));
-        if (!(zzb instanceof zzao)) {
+    public final zzao zza(zzg zzgVar, List list) {
+        zzh.zza(this.zzd, 3, list);
+        String zzc = zzgVar.zza((zzao) list.get(0)).zzc();
+        zzao zza = zzgVar.zza((zzao) list.get(1));
+        if (!(zza instanceof zzan)) {
             throw new IllegalArgumentException("Invalid callback type");
         }
-        zzap zzb2 = zzgVar.zzb((zzap) list.get(2));
-        if (!(zzb2 instanceof zzam)) {
+        zzao zza2 = zzgVar.zza((zzao) list.get(2));
+        if (!(zza2 instanceof zzal)) {
             throw new IllegalArgumentException("Invalid callback params");
         }
-        zzam zzamVar = (zzam) zzb2;
-        if (!zzamVar.zzt("type")) {
+        zzal zzalVar = (zzal) zza2;
+        if (!zzalVar.zzj("type")) {
             throw new IllegalArgumentException("Undefined rule type");
         }
-        this.zza.zza(zzi, zzamVar.zzt("priority") ? zzh.zzb(zzamVar.zzf("priority").zzh().doubleValue()) : 1000, (zzao) zzb, zzamVar.zzf("type").zzi());
-        return zzap.zzf;
+        this.zza.zza(zzc, zzalVar.zzj("priority") ? zzh.zzg(zzalVar.zzk("priority").zzd().doubleValue()) : 1000, (zzan) zza, zzalVar.zzk("type").zzc());
+        return zzao.zzf;
     }
 }

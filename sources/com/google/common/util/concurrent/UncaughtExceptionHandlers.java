@@ -26,12 +26,9 @@ public final class UncaughtExceptionHandlers {
         public void uncaughtException(Thread t, Throwable e) {
             try {
                 logger.get().log(Level.SEVERE, String.format(Locale.ROOT, "Caught an exception in %s.  Shutting down.", t), e);
-            } catch (Throwable th) {
+            } finally {
                 try {
-                    System.err.println(e.getMessage());
-                    System.err.println(th.getMessage());
                 } finally {
-                    this.runtime.exit(1);
                 }
             }
         }

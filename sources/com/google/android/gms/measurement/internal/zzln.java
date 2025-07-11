@@ -1,26 +1,14 @@
 package com.google.android.gms.measurement.internal;
-
-import java.util.concurrent.atomic.AtomicReference;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzln implements Runnable {
-    final /* synthetic */ AtomicReference zza;
-    final /* synthetic */ zzlw zzb;
-
+public final class zzln extends zzje {
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzln(zzlw zzlwVar, AtomicReference atomicReference) {
-        this.zza = atomicReference;
-        this.zzb = zzlwVar;
+    public zzln(zzib zzibVar) {
+        super(zzibVar);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        AtomicReference atomicReference = this.zza;
-        synchronized (atomicReference) {
-            zzlw zzlwVar = this.zzb;
-            atomicReference.set(Integer.valueOf(zzlwVar.zzu.zzf().zzh(zzlwVar.zzu.zzh().zzm(), zzgi.zzac)));
-            this.zza.notify();
-        }
+    @Override // com.google.android.gms.measurement.internal.zzje
+    protected final boolean zza() {
+        return false;
     }
 }

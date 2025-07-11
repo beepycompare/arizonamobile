@@ -7,8 +7,9 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okio.Buffer;
 import okio.BufferedSource;
 import okio.ByteString;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
-final class JsonUtf8Reader extends JsonReader {
+public final class JsonUtf8Reader extends JsonReader {
     private static final long MIN_INCOMPLETE_INTEGER = -922337203685477580L;
     private static final int NUMBER_CHAR_DECIMAL = 3;
     private static final int NUMBER_CHAR_DIGIT = 2;

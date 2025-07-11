@@ -23,7 +23,7 @@ import okhttp3.internal.ws.WebSocketProtocol;
 /* loaded from: classes3.dex */
 public final class SingletonAsyncImageKt {
     /* renamed from: AsyncImage-x1rPTaM  reason: not valid java name */
-    public static final void m7752AsyncImagex1rPTaM(Object obj, String str, Modifier modifier, Painter painter, Painter painter2, Painter painter3, Function1<? super AsyncImagePainter.State.Loading, Unit> function1, Function1<? super AsyncImagePainter.State.Success, Unit> function12, Function1<? super AsyncImagePainter.State.Error, Unit> function13, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Composer composer, int i2, int i3, int i4) {
+    public static final void m7753AsyncImagex1rPTaM(Object obj, String str, Modifier modifier, Painter painter, Painter painter2, Painter painter3, Function1<? super AsyncImagePainter.State.Loading, Unit> function1, Function1<? super AsyncImagePainter.State.Success, Unit> function12, Function1<? super AsyncImagePainter.State.Error, Unit> function13, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Composer composer, int i2, int i3, int i4) {
         Modifier modifier2;
         ComposerKt.sourceInformationMarkerStart(composer, -846727149, "C(AsyncImage)P(9,4,10,14,6,7,12,13,11!1,5!1,3,8:c#ui.graphics.FilterQuality)64@3265L7,61@3125L506:SingletonAsyncImage.kt#8xxpns");
         Modifier.Companion companion = (i4 & 4) != 0 ? Modifier.Companion : modifier;
@@ -58,7 +58,7 @@ public final class SingletonAsyncImageKt {
         Painter painter7 = painter4;
         Painter painter8 = painter6;
         Modifier modifier3 = modifier2;
-        AsyncImageKt.m7733AsyncImagenc27qi8(obj, str, imageLoader, modifier3, painter7, painter5, painter8, function14, function15, function16, alignment2, fit, f2, colorFilter3, m4643getDefaultFilterQualityfv9h1I, z2, composer, i6, i8, 0);
+        AsyncImageKt.m7734AsyncImagenc27qi8(obj, str, imageLoader, modifier3, painter7, painter5, painter8, function14, function15, function16, alignment2, fit, f2, colorFilter3, m4643getDefaultFilterQualityfv9h1I, z2, composer, i6, i8, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -66,7 +66,7 @@ public final class SingletonAsyncImageKt {
     }
 
     /* renamed from: AsyncImage-10Xjiaw  reason: not valid java name */
-    public static final void m7751AsyncImage10Xjiaw(Object obj, String str, Modifier modifier, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Composer composer, int i2, int i3, int i4) {
+    public static final void m7752AsyncImage10Xjiaw(Object obj, String str, Modifier modifier, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Composer composer, int i2, int i3, int i4) {
         ComposerKt.sourceInformationMarkerStart(composer, 1976030921, "C(AsyncImage)P(7,4,8,10,9!1,5!1,3,6:c#ui.graphics.FilterQuality)120@5795L7,117@5655L404:SingletonAsyncImage.kt#8xxpns");
         Modifier.Companion companion = (i4 & 4) != 0 ? Modifier.Companion : modifier;
         Function1<AsyncImagePainter.State, AsyncImagePainter.State> defaultTransform = (i4 & 8) != 0 ? AsyncImagePainter.Companion.getDefaultTransform() : function1;
@@ -84,7 +84,7 @@ public final class SingletonAsyncImageKt {
         Object consume = composer.consume(AndroidCompositionLocals_androidKt.getLocalContext());
         ComposerKt.sourceInformationMarkerEnd(composer);
         int i5 = i2 << 3;
-        AsyncImageKt.m7734AsyncImagesKDTAoQ(obj, str, SingletonImageLoader.get((Context) consume), companion, defaultTransform, function13, center, fit, f2, colorFilter2, m4643getDefaultFilterQualityfv9h1I, z2, composer, (i2 & WebSocketProtocol.PAYLOAD_SHORT) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | (29360128 & i5) | (234881024 & i5) | (i5 & 1879048192), ((i2 >> 27) & 14) | ((i3 << 3) & 112), 0);
+        AsyncImageKt.m7735AsyncImagesKDTAoQ(obj, str, SingletonImageLoader.get((Context) consume), companion, defaultTransform, function13, center, fit, f2, colorFilter2, m4643getDefaultFilterQualityfv9h1I, z2, composer, (i2 & WebSocketProtocol.PAYLOAD_SHORT) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | (29360128 & i5) | (234881024 & i5) | (i5 & 1879048192), ((i2 >> 27) & 14) | ((i3 << 3) & 112), 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

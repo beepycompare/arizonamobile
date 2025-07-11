@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes5.dex */
     public static final class string {
-        public static int default_open_error = 0x7f130069;
+        public static int default_open_error = 0x7f13006a;
 
         private string() {
         }

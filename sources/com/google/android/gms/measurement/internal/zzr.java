@@ -7,17 +7,15 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzr extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzr> CREATOR = new zzs();
-    public final String zzA;
-    public final int zzB;
-    public final long zzC;
-    public final String zzD;
-    public final String zzE;
-    public final long zzF;
-    public final int zzG;
+    public final long zzA;
+    public final String zzB;
+    public final String zzC;
+    public final long zzD;
+    public final int zzE;
     public final String zza;
     public final String zzb;
     public final String zzc;
@@ -33,20 +31,20 @@ public final class zzr extends AbstractSafeParcelable {
     public final int zzm;
     public final boolean zzn;
     public final boolean zzo;
-    public final String zzp;
-    public final Boolean zzq;
-    public final long zzr;
-    public final List zzs;
+    public final Boolean zzp;
+    public final long zzq;
+    public final List zzr;
+    public final String zzs;
     public final String zzt;
     public final String zzu;
-    public final String zzv;
-    public final String zzw;
-    public final boolean zzx;
-    public final long zzy;
+    public final boolean zzv;
+    public final long zzw;
+    public final int zzx;
+    public final String zzy;
     public final int zzz;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzr(String str, String str2, String str3, long j, String str4, long j2, long j3, String str5, boolean z, boolean z2, String str6, long j4, int i, boolean z3, boolean z4, String str7, Boolean bool, long j5, List list, String str8, String str9, String str10, String str11, boolean z5, long j6, int i2, String str12, int i3, long j7, String str13, String str14, long j8, int i4) {
+    public zzr(String str, String str2, String str3, long j, String str4, long j2, long j3, String str5, boolean z, boolean z2, String str6, long j4, int i, boolean z3, boolean z4, Boolean bool, long j5, List list, String str7, String str8, String str9, boolean z5, long j6, int i2, String str10, int i3, long j7, String str11, String str12, long j8, int i4) {
         Preconditions.checkNotEmpty(str);
         this.zza = str;
         this.zzb = true == TextUtils.isEmpty(str2) ? null : str2;
@@ -63,24 +61,22 @@ public final class zzr extends AbstractSafeParcelable {
         this.zzm = i;
         this.zzn = z3;
         this.zzo = z4;
-        this.zzp = str7;
-        this.zzq = bool;
-        this.zzr = j5;
-        this.zzs = list;
+        this.zzp = bool;
+        this.zzq = j5;
+        this.zzr = list;
+        this.zzs = str7;
         this.zzt = str8;
         this.zzu = str9;
-        this.zzv = str10;
-        this.zzw = str11;
-        this.zzx = z5;
-        this.zzy = j6;
-        this.zzz = i2;
-        this.zzA = str12;
-        this.zzB = i3;
-        this.zzC = j7;
-        this.zzD = str13;
-        this.zzE = str14;
-        this.zzF = j8;
-        this.zzG = i4;
+        this.zzv = z5;
+        this.zzw = j6;
+        this.zzx = i2;
+        this.zzy = str10;
+        this.zzz = i3;
+        this.zzA = j7;
+        this.zzB = str11;
+        this.zzC = str12;
+        this.zzD = j8;
+        this.zzE = i4;
     }
 
     @Override // android.os.Parcelable
@@ -102,29 +98,27 @@ public final class zzr extends AbstractSafeParcelable {
         SafeParcelWriter.writeInt(parcel, 15, this.zzm);
         SafeParcelWriter.writeBoolean(parcel, 16, this.zzn);
         SafeParcelWriter.writeBoolean(parcel, 18, this.zzo);
-        SafeParcelWriter.writeString(parcel, 19, this.zzp, false);
-        SafeParcelWriter.writeBooleanObject(parcel, 21, this.zzq, false);
-        SafeParcelWriter.writeLong(parcel, 22, this.zzr);
-        SafeParcelWriter.writeStringList(parcel, 23, this.zzs, false);
-        SafeParcelWriter.writeString(parcel, 24, this.zzt, false);
-        SafeParcelWriter.writeString(parcel, 25, this.zzu, false);
-        SafeParcelWriter.writeString(parcel, 26, this.zzv, false);
-        SafeParcelWriter.writeString(parcel, 27, this.zzw, false);
-        SafeParcelWriter.writeBoolean(parcel, 28, this.zzx);
-        SafeParcelWriter.writeLong(parcel, 29, this.zzy);
-        SafeParcelWriter.writeInt(parcel, 30, this.zzz);
-        SafeParcelWriter.writeString(parcel, 31, this.zzA, false);
-        SafeParcelWriter.writeInt(parcel, 32, this.zzB);
-        SafeParcelWriter.writeLong(parcel, 34, this.zzC);
-        SafeParcelWriter.writeString(parcel, 35, this.zzD, false);
-        SafeParcelWriter.writeString(parcel, 36, this.zzE, false);
-        SafeParcelWriter.writeLong(parcel, 37, this.zzF);
-        SafeParcelWriter.writeInt(parcel, 38, this.zzG);
+        SafeParcelWriter.writeBooleanObject(parcel, 21, this.zzp, false);
+        SafeParcelWriter.writeLong(parcel, 22, this.zzq);
+        SafeParcelWriter.writeStringList(parcel, 23, this.zzr, false);
+        SafeParcelWriter.writeString(parcel, 25, this.zzs, false);
+        SafeParcelWriter.writeString(parcel, 26, this.zzt, false);
+        SafeParcelWriter.writeString(parcel, 27, this.zzu, false);
+        SafeParcelWriter.writeBoolean(parcel, 28, this.zzv);
+        SafeParcelWriter.writeLong(parcel, 29, this.zzw);
+        SafeParcelWriter.writeInt(parcel, 30, this.zzx);
+        SafeParcelWriter.writeString(parcel, 31, this.zzy, false);
+        SafeParcelWriter.writeInt(parcel, 32, this.zzz);
+        SafeParcelWriter.writeLong(parcel, 34, this.zzA);
+        SafeParcelWriter.writeString(parcel, 35, this.zzB, false);
+        SafeParcelWriter.writeString(parcel, 36, this.zzC, false);
+        SafeParcelWriter.writeLong(parcel, 37, this.zzD);
+        SafeParcelWriter.writeInt(parcel, 38, this.zzE);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzr(String str, String str2, String str3, String str4, long j, long j2, String str5, boolean z, boolean z2, long j3, String str6, long j4, int i, boolean z3, boolean z4, String str7, Boolean bool, long j5, List list, String str8, String str9, String str10, String str11, boolean z5, long j6, int i2, String str12, int i3, long j7, String str13, String str14, long j8, int i4) {
+    public zzr(String str, String str2, String str3, String str4, long j, long j2, String str5, boolean z, boolean z2, long j3, String str6, long j4, int i, boolean z3, boolean z4, Boolean bool, long j5, List list, String str7, String str8, String str9, boolean z5, long j6, int i2, String str10, int i3, long j7, String str11, String str12, long j8, int i4) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = str3;
@@ -140,23 +134,21 @@ public final class zzr extends AbstractSafeParcelable {
         this.zzm = i;
         this.zzn = z3;
         this.zzo = z4;
-        this.zzp = str7;
-        this.zzq = bool;
-        this.zzr = j5;
-        this.zzs = list;
+        this.zzp = bool;
+        this.zzq = j5;
+        this.zzr = list;
+        this.zzs = str7;
         this.zzt = str8;
         this.zzu = str9;
-        this.zzv = str10;
-        this.zzw = str11;
-        this.zzx = z5;
-        this.zzy = j6;
-        this.zzz = i2;
-        this.zzA = str12;
-        this.zzB = i3;
-        this.zzC = j7;
-        this.zzD = str13;
-        this.zzE = str14;
-        this.zzF = j8;
-        this.zzG = i4;
+        this.zzv = z5;
+        this.zzw = j6;
+        this.zzx = i2;
+        this.zzy = str10;
+        this.zzz = i3;
+        this.zzA = j7;
+        this.zzB = str11;
+        this.zzC = str12;
+        this.zzD = j8;
+        this.zzE = i4;
     }
 }

@@ -233,7 +233,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
                 CancellationException cancellationException = job.getCancellationException();
                 cancelCompletedResult$kotlinx_coroutines_core(state, cancellationException);
                 Result.Companion companion = Result.Companion;
-                resumeWith(Result.m8443constructorimpl(ResultKt.createFailure(cancellationException)));
+                resumeWith(Result.m8471constructorimpl(ResultKt.createFailure(cancellationException)));
             } else {
                 Continuation<T> continuation = this.continuation;
                 Object obj2 = this.countOrElement;
@@ -263,7 +263,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
         CancellationException cancellationException = job.getCancellationException();
         cancelCompletedResult$kotlinx_coroutines_core(obj, cancellationException);
         Result.Companion companion = Result.Companion;
-        resumeWith(Result.m8443constructorimpl(ResultKt.createFailure(cancellationException)));
+        resumeWith(Result.m8471constructorimpl(ResultKt.createFailure(cancellationException)));
         return true;
     }
 

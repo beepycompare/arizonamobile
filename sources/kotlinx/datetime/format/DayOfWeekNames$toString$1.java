@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LocalDateFormat.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 /* synthetic */ class DayOfWeekNames$toString$1 extends FunctionReferenceImpl implements Function1<String, String> {
     public static final DayOfWeekNames$toString$1 INSTANCE = new DayOfWeekNames$toString$1();

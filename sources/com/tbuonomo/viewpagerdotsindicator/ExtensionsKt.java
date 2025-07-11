@@ -78,7 +78,7 @@ public final class ExtensionsKt {
     }
 
     /* renamed from: dpToPx-8Feqmps  reason: not valid java name */
-    public static final float m8410dpToPx8Feqmps(float f, Composer composer, int i) {
+    public static final float m8438dpToPx8Feqmps(float f, Composer composer, int i) {
         composer.startReplaceGroup(141686460);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(141686460, i, -1, "com.tbuonomo.viewpagerdotsindicator.dpToPx (Extensions.kt:50)");

@@ -17,7 +17,7 @@ import org.json.JSONObject;
 public final class P6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ql f575a = new Ql();
+    public final Ql f576a = new Ql();
     public Map b = MapsKt.emptyMap();
     public Map c = MapsKt.emptyMap();
     public IdentifiersResult d;
@@ -54,7 +54,7 @@ public final class P6 {
                 while (keys.hasNext()) {
                     String next = keys.next();
                     try {
-                        ArrayList a2 = AbstractC0761zb.a(new JSONArray(jSONObject.optString(next)));
+                        ArrayList a2 = AbstractC0753zb.a(new JSONArray(jSONObject.optString(next)));
                         if (a2 != null) {
                             hashMap.put(next, a2);
                         }
@@ -81,7 +81,7 @@ public final class P6 {
             String str4 = ((IdentifiersResult) entry2.getValue()).id;
             if (str4 != null) {
                 try {
-                    list = AbstractC0761zb.a(new JSONArray(str4));
+                    list = AbstractC0753zb.a(new JSONArray(str4));
                 } catch (Throwable unused3) {
                     list = null;
                 }
@@ -109,8 +109,8 @@ public final class P6 {
                 linkedHashMap.put(str, list2);
             }
         }
-        Ql ql = this.f575a;
-        String a2 = AbstractC0761zb.a((Map) linkedHashMap);
+        Ql ql = this.f576a;
+        String a2 = AbstractC0753zb.a((Map) linkedHashMap);
         IdentifiersResult identifiersResult = this.d;
         if (identifiersResult == null || (identifierStatus = identifiersResult.status) == null) {
             identifierStatus = IdentifierStatus.UNKNOWN;

@@ -5,23 +5,23 @@ import okhttp3.internal.connection.RealConnection;
 public final class Ok {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ro f568a;
+    public final ro f569a;
 
     public Ok(ro roVar) {
-        this.f568a = roVar;
+        this.f569a = roVar;
     }
 
     public final long a() {
         long optLong;
-        ro roVar = this.f568a;
+        ro roVar = this.f569a;
         synchronized (roVar) {
-            optLong = roVar.f1033a.a().optLong("session_id", -1L);
+            optLong = roVar.f1034a.a().optLong("session_id", -1L);
         }
         long j = RealConnection.IDLE_CONNECTION_HEALTHY_NS;
         if (optLong >= RealConnection.IDLE_CONNECTION_HEALTHY_NS) {
             j = 1 + optLong;
         }
-        this.f568a.c(j);
+        this.f569a.c(j);
         return j;
     }
 }

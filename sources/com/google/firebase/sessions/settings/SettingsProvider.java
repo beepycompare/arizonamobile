@@ -13,7 +13,7 @@ public interface SettingsProvider {
     Boolean getSessionEnabled();
 
     /* renamed from: getSessionRestartTimeout-FghU774 */
-    Duration mo8293getSessionRestartTimeoutFghU774();
+    Duration mo8292getSessionRestartTimeoutFghU774();
 
     boolean isSettingsStale();
 

@@ -1,252 +1,247 @@
 package com.google.android.gms.internal.measurement;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.RandomAccess;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+import com.google.android.gms.internal.measurement.zzma;
+import com.google.android.gms.internal.measurement.zzme;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzme extends zzkq implements RandomAccess, zzmh, zzno {
-    private static final int[] zza;
-    private static final zzme zzb;
-    private int[] zzc;
-    private int zzd;
+public abstract class zzme<MessageType extends zzme<MessageType, BuilderType>, BuilderType extends zzma<MessageType, BuilderType>> extends zzkr<MessageType, BuilderType> {
+    private static final Map zzd = new ConcurrentHashMap();
+    private int zzb = -1;
+    protected zzoi zzc = zzoi.zza();
 
-    static {
-        int[] iArr = new int[0];
-        zza = iArr;
-        zzb = new zzme(iArr, 0, false);
+    private final int zzc(zznw zznwVar) {
+        return zznt.zza().zzb(getClass()).zze(this);
     }
 
-    zzme() {
-        this(zza, 0, true);
-    }
-
-    public static zzme zzf() {
-        return zzb;
-    }
-
-    private static int zzj(int i) {
-        return Math.max(((i * 3) / 2) + 1, 10);
-    }
-
-    private final String zzk(int i) {
-        int i2 = this.zzd;
-        return "Index:" + i + ", Size:" + i2;
-    }
-
-    private final void zzl(int i) {
-        if (i < 0 || i >= this.zzd) {
-            throw new IndexOutOfBoundsException(zzk(i));
-        }
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzkq, java.util.AbstractList, java.util.List
-    public final /* synthetic */ void add(int i, Object obj) {
-        int i2;
-        int intValue = ((Integer) obj).intValue();
-        zzcE();
-        if (i < 0 || i > (i2 = this.zzd)) {
-            throw new IndexOutOfBoundsException(zzk(i));
-        }
-        int i3 = i + 1;
-        int[] iArr = this.zzc;
-        int length = iArr.length;
-        if (i2 < length) {
-            System.arraycopy(iArr, i, iArr, i3, i2 - i);
-        } else {
-            int[] iArr2 = new int[zzj(length)];
-            System.arraycopy(this.zzc, 0, iArr2, 0, i);
-            System.arraycopy(this.zzc, i, iArr2, i3, this.zzd - i);
-            this.zzc = iArr2;
-        }
-        this.zzc[i] = intValue;
-        this.zzd++;
-        this.modCount++;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzkq, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        zzcE();
-        byte[] bArr = zzmk.zzb;
-        collection.getClass();
-        if (!(collection instanceof zzme)) {
-            return super.addAll(collection);
-        }
-        zzme zzmeVar = (zzme) collection;
-        int i = zzmeVar.zzd;
-        if (i == 0) {
-            return false;
-        }
-        int i2 = this.zzd;
-        if (Integer.MAX_VALUE - i2 >= i) {
-            int i3 = i2 + i;
-            int[] iArr = this.zzc;
-            if (i3 > iArr.length) {
-                this.zzc = Arrays.copyOf(iArr, i3);
+    public static zzme zzco(Class cls) {
+        Map map = zzd;
+        zzme zzmeVar = (zzme) map.get(cls);
+        if (zzmeVar == null) {
+            try {
+                Class.forName(cls.getName(), true, cls.getClassLoader());
+                zzmeVar = (zzme) map.get(cls);
+            } catch (ClassNotFoundException e) {
+                throw new IllegalStateException("Class initialization cannot fail.", e);
             }
-            System.arraycopy(zzmeVar.zzc, 0, this.zzc, this.zzd, zzmeVar.zzd);
-            this.zzd = i3;
-            this.modCount++;
+        }
+        if (zzmeVar == null) {
+            zzme zzmeVar2 = (zzme) ((zzme) zzoo.zzc(cls)).zzl(6, null, null);
+            if (zzmeVar2 == null) {
+                throw new IllegalStateException();
+            }
+            map.put(cls, zzmeVar2);
+            return zzmeVar2;
+        }
+        return zzmeVar;
+    }
+
+    public static void zzcp(Class cls, zzme zzmeVar) {
+        zzmeVar.zzcg();
+        zzd.put(cls, zzmeVar);
+    }
+
+    public static Object zzcq(zznl zznlVar, String str, Object[] objArr) {
+        return new zznv(zznlVar, str, objArr);
+    }
+
+    public static Object zzcr(Method method, Object obj, Object... objArr) {
+        try {
+            return method.invoke(obj, objArr);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
+        } catch (InvocationTargetException e2) {
+            Throwable cause = e2.getCause();
+            if (cause instanceof RuntimeException) {
+                throw ((RuntimeException) cause);
+            }
+            if (cause instanceof Error) {
+                throw ((Error) cause);
+            }
+            throw new RuntimeException("Unexpected exception thrown by generated accessor method.", cause);
+        }
+    }
+
+    public static zzml zzcs() {
+        return zzmf.zzd();
+    }
+
+    public static zzmm zzct() {
+        return zzmz.zze();
+    }
+
+    public static zzmm zzcu(zzmm zzmmVar) {
+        int size = zzmmVar.size();
+        return zzmmVar.zzg(size + size);
+    }
+
+    public static zzmn zzcv() {
+        return zznu.zzd();
+    }
+
+    public static zzmn zzcw(zzmn zzmnVar) {
+        int size = zzmnVar.size();
+        return zzmnVar.zzg(size + size);
+    }
+
+    public static /* synthetic */ boolean zzcx(zzme zzmeVar, boolean z) {
+        return zzd(zzmeVar, false);
+    }
+
+    public static final boolean zzd(zzme zzmeVar, boolean z) {
+        byte byteValue = ((Byte) zzmeVar.zzl(1, null, null)).byteValue();
+        if (byteValue == 1) {
             return true;
         }
-        throw new OutOfMemoryError();
+        if (byteValue == 0) {
+            return false;
+        }
+        boolean zzk = zznt.zza().zzb(zzmeVar.getClass()).zzk(zzmeVar);
+        if (z) {
+            zzmeVar.zzl(2, true != zzk ? null : zzmeVar, null);
+        }
+        return zzk;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return indexOf(obj) != -1;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzkq, java.util.AbstractList, java.util.Collection, java.util.List
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof zzme) {
-            zzme zzmeVar = (zzme) obj;
-            if (this.zzd != zzmeVar.zzd) {
-                return false;
-            }
-            int[] iArr = zzmeVar.zzc;
-            for (int i = 0; i < this.zzd; i++) {
-                if (this.zzc[i] != iArr[i]) {
-                    return false;
-                }
-            }
-            return true;
+        if (obj != null && getClass() == obj.getClass()) {
+            return zznt.zza().zzb(getClass()).zzb(this, (zzme) obj);
         }
-        return super.equals(obj);
+        return false;
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i) {
-        zzl(i);
-        return Integer.valueOf(this.zzc[i]);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzkq, java.util.AbstractList, java.util.Collection, java.util.List
     public final int hashCode() {
-        int i = 1;
-        for (int i2 = 0; i2 < this.zzd; i2++) {
-            i = (i * 31) + this.zzc[i2];
+        if (zzcf()) {
+            return zzci();
+        }
+        int i = this.zza;
+        if (i == 0) {
+            int zzci = zzci();
+            this.zza = zzci;
+            return zzci;
         }
         return i;
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final int indexOf(Object obj) {
-        if (obj instanceof Integer) {
-            int intValue = ((Integer) obj).intValue();
-            int i = this.zzd;
-            for (int i2 = 0; i2 < i; i2++) {
-                if (this.zzc[i2] == intValue) {
-                    return i2;
-                }
+    public final String toString() {
+        return zznn.zza(this, super.toString());
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznl
+    public final void zzcB(zzll zzllVar) throws IOException {
+        zznt.zza().zzb(getClass()).zzf(this, zzlm.zza(zzllVar));
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznl
+    public final /* synthetic */ zznk zzcC() {
+        return (zzma) zzl(5, null, null);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznm
+    public final boolean zzcD() {
+        return zzd(this, true);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznm
+    public final /* synthetic */ zznl zzcE() {
+        return (zzme) zzl(6, null, null);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzkr
+    public final int zzcd(zznw zznwVar) {
+        if (zzcf()) {
+            int zze = zznwVar.zze(this);
+            if (zze >= 0) {
+                return zze;
             }
-            return -1;
+            StringBuilder sb = new StringBuilder(String.valueOf(zze).length() + 42);
+            sb.append("serialized size must be non-negative, was ");
+            sb.append(zze);
+            throw new IllegalStateException(sb.toString());
         }
-        return -1;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzkq, java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object remove(int i) {
-        int i2;
-        zzcE();
-        zzl(i);
-        int[] iArr = this.zzc;
-        int i3 = iArr[i];
-        if (i < this.zzd - 1) {
-            System.arraycopy(iArr, i + 1, iArr, i, (i2 - i) - 1);
-        }
-        this.zzd--;
-        this.modCount++;
-        return Integer.valueOf(i3);
-    }
-
-    @Override // java.util.AbstractList
-    protected final void removeRange(int i, int i2) {
-        zzcE();
-        if (i2 >= i) {
-            int[] iArr = this.zzc;
-            System.arraycopy(iArr, i2, iArr, i, this.zzd - i2);
-            this.zzd -= i2 - i;
-            this.modCount++;
-            return;
-        }
-        throw new IndexOutOfBoundsException("toIndex < fromIndex");
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzkq, java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object set(int i, Object obj) {
-        int intValue = ((Integer) obj).intValue();
-        zzcE();
-        zzl(i);
-        int[] iArr = this.zzc;
-        int i2 = iArr[i];
-        iArr[i] = intValue;
-        return Integer.valueOf(i2);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.zzd;
-    }
-
-    public final int zze(int i) {
-        zzl(i);
-        return this.zzc[i];
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzmj
-    /* renamed from: zzg */
-    public final zzmh zzd(int i) {
-        if (i < this.zzd) {
-            throw new IllegalArgumentException();
-        }
-        return new zzme(i == 0 ? zza : Arrays.copyOf(this.zzc, i), this.zzd, true);
-    }
-
-    public final void zzh(int i) {
-        zzcE();
-        int i2 = this.zzd;
-        int length = this.zzc.length;
-        if (i2 == length) {
-            int[] iArr = new int[zzj(length)];
-            System.arraycopy(this.zzc, 0, iArr, 0, this.zzd);
-            this.zzc = iArr;
-        }
-        int[] iArr2 = this.zzc;
-        int i3 = this.zzd;
-        this.zzd = i3 + 1;
-        iArr2[i3] = i;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzi(int i) {
-        int length = this.zzc.length;
-        if (i <= length) {
-            return;
-        }
-        if (length != 0) {
-            while (length < i) {
-                length = zzj(length);
+        int i = this.zzb & Integer.MAX_VALUE;
+        if (i == Integer.MAX_VALUE) {
+            int zze2 = zznwVar.zze(this);
+            if (zze2 >= 0) {
+                this.zzb = (this.zzb & Integer.MIN_VALUE) | zze2;
+                return zze2;
             }
-            this.zzc = Arrays.copyOf(this.zzc, length);
-            return;
+            StringBuilder sb2 = new StringBuilder(String.valueOf(zze2).length() + 42);
+            sb2.append("serialized size must be non-negative, was ");
+            sb2.append(zze2);
+            throw new IllegalStateException(sb2.toString());
         }
-        this.zzc = new int[Math.max(i, 10)];
+        return i;
     }
 
-    private zzme(int[] iArr, int i, boolean z) {
-        super(z);
-        this.zzc = iArr;
-        this.zzd = i;
+    public final boolean zzcf() {
+        return (this.zzb & Integer.MIN_VALUE) != 0;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzkq, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
-        zzh(((Integer) obj).intValue());
-        return true;
+    public final void zzcg() {
+        this.zzb &= Integer.MAX_VALUE;
+    }
+
+    public final zzme zzch() {
+        return (zzme) zzl(4, null, null);
+    }
+
+    final int zzci() {
+        return zznt.zza().zzb(getClass()).zzc(this);
+    }
+
+    public final void zzcj() {
+        zznt.zza().zzb(getClass()).zzj(this);
+        zzcg();
+    }
+
+    public final zzma zzck() {
+        return (zzma) zzl(5, null, null);
+    }
+
+    public final zzma zzcl() {
+        zzma zzmaVar = (zzma) zzl(5, null, null);
+        zzmaVar.zzbd(this);
+        return zzmaVar;
+    }
+
+    public final void zzcm(int i) {
+        this.zzb = (this.zzb & Integer.MIN_VALUE) | Integer.MAX_VALUE;
+    }
+
+    public abstract Object zzl(int i, Object obj, Object obj2);
+
+    @Override // com.google.android.gms.internal.measurement.zznl
+    public final int zzcn() {
+        if (zzcf()) {
+            int zzc = zzc(null);
+            if (zzc >= 0) {
+                return zzc;
+            }
+            StringBuilder sb = new StringBuilder(String.valueOf(zzc).length() + 42);
+            sb.append("serialized size must be non-negative, was ");
+            sb.append(zzc);
+            throw new IllegalStateException(sb.toString());
+        }
+        int i = this.zzb & Integer.MAX_VALUE;
+        if (i != Integer.MAX_VALUE) {
+            return i;
+        }
+        int zzc2 = zzc(null);
+        if (zzc2 >= 0) {
+            this.zzb = (this.zzb & Integer.MIN_VALUE) | zzc2;
+            return zzc2;
+        }
+        StringBuilder sb2 = new StringBuilder(String.valueOf(zzc2).length() + 42);
+        sb2.append("serialized size must be non-negative, was ");
+        sb2.append(zzc2);
+        throw new IllegalStateException(sb2.toString());
     }
 }

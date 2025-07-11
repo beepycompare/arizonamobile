@@ -13,7 +13,7 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
     private static volatile NetworkServiceLocator b;
 
     /* renamed from: a  reason: collision with root package name */
-    private final NetworkCore f1239a;
+    private final NetworkCore f1240a;
 
     @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001J\b\u0010\u0003\u001a\u00020\u0002H\u0007J\b\u0010\u0005\u001a\u00020\u0004H\u0007J\u0010\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0006\u001a\u00020\u0002H\u0007R\u0016\u0010\u0007\u001a\u00020\u00028\u0002@\u0002X\u0082.¢\u0006\u0006\n\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Lio/appmetrica/analytics/networktasks/internal/NetworkServiceLocator$Companion;", "", "Lio/appmetrica/analytics/networktasks/internal/NetworkServiceLocator;", "getInstance", "", "init", "networkServiceLocator", "instance", "Lio/appmetrica/analytics/networktasks/internal/NetworkServiceLocator;", "network-tasks_release"}, k = 1, mv = {1, 6, 0})
     /* loaded from: classes4.dex */
@@ -57,7 +57,7 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
         NetworkCore networkCore = new NetworkCore();
         networkCore.setName("IAA-NC");
         networkCore.start();
-        this.f1239a = networkCore;
+        this.f1240a = networkCore;
     }
 
     @JvmStatic
@@ -71,7 +71,7 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
     }
 
     public final NetworkCore getNetworkCore() {
-        return this.f1239a;
+        return this.f1240a;
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.NetworkServiceLifecycleObserver
@@ -80,7 +80,7 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
 
     @Override // io.appmetrica.analytics.networktasks.internal.NetworkServiceLifecycleObserver
     public void onDestroy() {
-        this.f1239a.stopTasks();
+        this.f1240a.stopTasks();
     }
 
     @JvmStatic

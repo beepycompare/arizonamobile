@@ -12,19 +12,19 @@ import ru.rustore.sdk.core.util.PrimitivesExtensionKt;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AppUpdateInfo.Factory f1326a;
+    public final AppUpdateInfo.Factory f1327a;
     public final f0 b;
 
     public a(AppUpdateInfo.Factory appUpdateInfoFactory, f0 timeProvider) {
         Intrinsics.checkNotNullParameter(appUpdateInfoFactory, "appUpdateInfoFactory");
         Intrinsics.checkNotNullParameter(timeProvider, "timeProvider");
-        this.f1326a = appUpdateInfoFactory;
+        this.f1327a = appUpdateInfoFactory;
         this.b = timeProvider;
     }
 
     public final AppUpdateInfo a(Bundle bundle) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
-        AppUpdateInfo.Factory factory = this.f1326a;
+        AppUpdateInfo.Factory factory = this.f1327a;
         long j = bundle.getLong("APPLICATION_ID", 0L);
         String string = bundle.getString("APP_NAME");
         if (string == null) {
@@ -44,7 +44,7 @@ public final class a {
         int i2 = bundle.getInt("UPDATE_AVAILABILITY", 0);
         String str = string;
         int coerceIn = RangesKt.coerceIn(bundle.getInt("UPDATE_PRIORITY", 0), (ClosedRange<Integer>) new IntRange(0, 5));
-        Date time = this.b.f1347a.getTime();
+        Date time = this.b.f1348a.getTime();
         Intrinsics.checkNotNullExpressionValue(time, "calendar.time");
         String string4 = bundle.getString("UPDATED_AT", time.toString());
         Intrinsics.checkNotNullExpressionValue(string4, "bundle.getString(\n      …w().toString(),\n        )");

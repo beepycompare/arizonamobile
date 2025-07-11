@@ -202,14 +202,14 @@ public final class FieldArray implements Cloneable {
     }
 
     /* renamed from: clone */
-    public final FieldArray m8437clone() {
+    public final FieldArray m8465clone() {
         int size = size();
         FieldArray fieldArray = new FieldArray(size);
         System.arraycopy(this.mFieldNumbers, 0, fieldArray.mFieldNumbers, 0, size);
         for (int i = 0; i < size; i++) {
             FieldData fieldData = this.mData[i];
             if (fieldData != null) {
-                fieldArray.mData[i] = fieldData.m8438clone();
+                fieldArray.mData[i] = fieldData.m8466clone();
             }
         }
         fieldArray.mSize = size;

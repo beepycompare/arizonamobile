@@ -10,11 +10,11 @@ import ru.rustore.sdk.appupdate.model.InstallState;
 public final class a0 extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final z f1327a;
+    public final z f1328a;
 
     public a0(z installStateProvider) {
         Intrinsics.checkNotNullParameter(installStateProvider, "installStateProvider");
-        this.f1327a = installStateProvider;
+        this.f1328a = installStateProvider;
     }
 
     @Override // android.content.BroadcastReceiver
@@ -26,9 +26,9 @@ public final class a0 extends BroadcastReceiver {
         if (extras == null || (state = InstallState.Companion.of$sdk_public_appupdate_release(extras)) == null) {
             return;
         }
-        z zVar = this.f1327a;
+        z zVar = this.f1328a;
         zVar.getClass();
         Intrinsics.checkNotNullParameter(state, "state");
-        zVar.f1368a.setValue(state);
+        zVar.f1369a.setValue(state);
     }
 }

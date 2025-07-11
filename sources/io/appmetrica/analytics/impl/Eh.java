@@ -7,12 +7,12 @@ import org.json.JSONObject;
 public final class Eh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f410a;
+    public final List f411a;
     public final List b;
     public final JSONObject c;
 
     public Eh(ArrayList arrayList, ArrayList arrayList2, JSONObject jSONObject) {
-        this.f410a = arrayList;
+        this.f411a = arrayList;
         this.b = arrayList2;
         this.c = jSONObject;
     }

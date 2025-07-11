@@ -1,27 +1,40 @@
 package com.google.android.gms.internal.measurement;
 
-import android.content.Intent;
 import android.os.RemoteException;
-import com.google.android.gms.common.internal.Preconditions;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.4.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzeq extends zzeu {
-    final /* synthetic */ Intent zza;
-    final /* synthetic */ zzff zzb;
+abstract class zzeq implements Runnable {
+    final long zzh;
+    final long zzi;
+    final boolean zzj;
+    final /* synthetic */ zzfb zzk;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzeq(zzff zzffVar, Intent intent) {
-        super(zzffVar, true);
-        this.zza = intent;
-        this.zzb = zzffVar;
+    public zzeq(zzfb zzfbVar, boolean z) {
+        Objects.requireNonNull(zzfbVar);
+        this.zzk = zzfbVar;
+        this.zzh = zzfbVar.zza.currentTimeMillis();
+        this.zzi = zzfbVar.zza.elapsedRealtime();
+        this.zzj = z;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeu
-    final void zza() throws RemoteException {
-        zzcv zzcvVar;
-        zzcvVar = this.zzb.zzj;
-        ((zzcv) Preconditions.checkNotNull(zzcvVar)).setSgtmDebugInfo(this.zza);
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (this.zzk.zzP()) {
+            zzb();
+            return;
+        }
+        try {
+            zza();
+        } catch (Exception e) {
+            this.zzk.zzN(e, false, this.zzj);
+            zzb();
+        }
+    }
+
+    abstract void zza() throws RemoteException;
+
+    protected void zzb() {
     }
 }

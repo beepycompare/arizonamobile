@@ -9,19 +9,19 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SdkIdentifiers {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f244a;
+    private final String f245a;
     private final String b;
     private final String c;
 
     public SdkIdentifiers(String str, String str2, String str3) {
-        this.f244a = str;
+        this.f245a = str;
         this.b = str2;
         this.c = str3;
     }
 
     public static /* synthetic */ SdkIdentifiers copy$default(SdkIdentifiers sdkIdentifiers, String str, String str2, String str3, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = sdkIdentifiers.f244a;
+            str = sdkIdentifiers.f245a;
         }
         if ((i & 2) != 0) {
             str2 = sdkIdentifiers.b;
@@ -33,7 +33,7 @@ public final class SdkIdentifiers {
     }
 
     public final String component1() {
-        return this.f244a;
+        return this.f245a;
     }
 
     public final String component2() {
@@ -54,7 +54,7 @@ public final class SdkIdentifiers {
         }
         if (obj instanceof SdkIdentifiers) {
             SdkIdentifiers sdkIdentifiers = (SdkIdentifiers) obj;
-            return Intrinsics.areEqual(this.f244a, sdkIdentifiers.f244a) && Intrinsics.areEqual(this.b, sdkIdentifiers.b) && Intrinsics.areEqual(this.c, sdkIdentifiers.c);
+            return Intrinsics.areEqual(this.f245a, sdkIdentifiers.f245a) && Intrinsics.areEqual(this.b, sdkIdentifiers.b) && Intrinsics.areEqual(this.c, sdkIdentifiers.c);
         }
         return false;
     }
@@ -68,11 +68,11 @@ public final class SdkIdentifiers {
     }
 
     public final String getUuid() {
-        return this.f244a;
+        return this.f245a;
     }
 
     public int hashCode() {
-        String str = this.f244a;
+        String str = this.f245a;
         int hashCode = (str == null ? 0 : str.hashCode()) * 31;
         String str2 = this.b;
         int hashCode2 = (hashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
@@ -81,6 +81,6 @@ public final class SdkIdentifiers {
     }
 
     public String toString() {
-        return "SdkIdentifiers(uuid=" + this.f244a + ", deviceId=" + this.b + ", deviceIdHash=" + this.c + ')';
+        return "SdkIdentifiers(uuid=" + this.f245a + ", deviceId=" + this.b + ", deviceIdHash=" + this.c + ')';
     }
 }

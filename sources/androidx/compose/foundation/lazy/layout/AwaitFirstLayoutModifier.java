@@ -65,7 +65,7 @@ public final class AwaitFirstLayoutModifier implements OnGloballyPositionedModif
                 }
                 if (continuation2 != null) {
                     Result.Companion companion = Result.Companion;
-                    continuation2.resumeWith(Result.m8443constructorimpl(Unit.INSTANCE));
+                    continuation2.resumeWith(Result.m8471constructorimpl(Unit.INSTANCE));
                 }
                 return Unit.INSTANCE;
             }
@@ -90,7 +90,7 @@ public final class AwaitFirstLayoutModifier implements OnGloballyPositionedModif
         Continuation<? super Unit> continuation = this.continuation;
         if (continuation != null) {
             Result.Companion companion = Result.Companion;
-            continuation.resumeWith(Result.m8443constructorimpl(Unit.INSTANCE));
+            continuation.resumeWith(Result.m8471constructorimpl(Unit.INSTANCE));
         }
         this.continuation = null;
     }

@@ -15,7 +15,6 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Level;
 import javax.annotation.CheckForNull;
 @ElementTypesAreNonnullByDefault
 /* loaded from: classes4.dex */
@@ -108,19 +107,9 @@ public abstract class AbstractScheduledService implements Service {
                     if (!((Cancellable) Objects.requireNonNull(ServiceDelegate.this.runningTask)).isCancelled()) {
                         AbstractScheduledService.this.runOneIteration();
                     }
-                } catch (Throwable th) {
+                } finally {
                     try {
-                        Platform.restoreInterruptIfIsInterruptedException(th);
-                        try {
-                            AbstractScheduledService.this.shutDown();
-                        } catch (Exception e) {
-                            Platform.restoreInterruptIfIsInterruptedException(e);
-                            AbstractScheduledService.logger.get().log(Level.WARNING, "Error while attempting to shut down the service after failure.", (Throwable) e);
-                        }
-                        ServiceDelegate.this.notifyFailed(th);
-                        ((Cancellable) Objects.requireNonNull(ServiceDelegate.this.runningTask)).cancel(false);
                     } finally {
-                        ServiceDelegate.this.lock.unlock();
                     }
                 }
             }
@@ -131,41 +120,35 @@ public abstract class AbstractScheduledService implements Service {
             this.executorService = MoreExecutors.renamingDecorator(AbstractScheduledService.this.executor(), (Supplier<String>) new Supplier() { // from class: com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$$ExternalSyntheticLambda0
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    return AbstractScheduledService.ServiceDelegate.this.m8202xcd8af3c3();
+                    return AbstractScheduledService.ServiceDelegate.this.m8201xcd8af3c3();
                 }
             });
             this.executorService.execute(new Runnable() { // from class: com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AbstractScheduledService.ServiceDelegate.this.m8203xfa22122();
+                    AbstractScheduledService.ServiceDelegate.this.m8202xfa22122();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$doStart$0$com-google-common-util-concurrent-AbstractScheduledService$ServiceDelegate  reason: not valid java name */
-        public /* synthetic */ String m8202xcd8af3c3() {
+        public /* synthetic */ String m8201xcd8af3c3() {
             return AbstractScheduledService.this.serviceName() + " " + state();
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$doStart$1$com-google-common-util-concurrent-AbstractScheduledService$ServiceDelegate  reason: not valid java name */
-        public /* synthetic */ void m8203xfa22122() {
+        public /* synthetic */ void m8202xfa22122() {
             this.lock.lock();
             try {
                 AbstractScheduledService.this.startUp();
                 Objects.requireNonNull(this.executorService);
                 this.runningTask = AbstractScheduledService.this.scheduler().schedule(AbstractScheduledService.this.delegate, this.executorService, this.task);
                 notifyStarted();
-            } catch (Throwable th) {
+            } finally {
                 try {
-                    Platform.restoreInterruptIfIsInterruptedException(th);
-                    notifyFailed(th);
-                    if (this.runningTask != null) {
-                        this.runningTask.cancel(false);
-                    }
                 } finally {
-                    this.lock.unlock();
                 }
             }
         }
@@ -178,14 +161,14 @@ public abstract class AbstractScheduledService implements Service {
             this.executorService.execute(new Runnable() { // from class: com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AbstractScheduledService.ServiceDelegate.this.m8204x2d03b891();
+                    AbstractScheduledService.ServiceDelegate.this.m8203x2d03b891();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$doStop$2$com-google-common-util-concurrent-AbstractScheduledService$ServiceDelegate  reason: not valid java name */
-        public /* synthetic */ void m8204x2d03b891() {
+        public /* synthetic */ void m8203x2d03b891() {
             try {
                 this.lock.lock();
                 if (state() == Service.State.STOPPING) {

@@ -1,20 +1,25 @@
 package com.google.android.gms.measurement.internal;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+
+import androidx.collection.LruCache;
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzhl implements Runnable {
-    final /* synthetic */ boolean zza;
-    final /* synthetic */ zzhm zzb;
+final class zzhl extends LruCache {
+    final /* synthetic */ zzhs zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzhl(zzhm zzhmVar, boolean z) {
-        this.zza = z;
-        this.zzb = zzhmVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzhl(zzhs zzhsVar, int i) {
+        super(20);
+        Objects.requireNonNull(zzhsVar);
+        this.zza = zzhsVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        zzpv zzpvVar;
-        zzpvVar = this.zzb.zza;
-        zzpvVar.zzX(this.zza);
+    @Override // androidx.collection.LruCache
+    protected final /* bridge */ /* synthetic */ Object create(Object obj) {
+        String str = (String) obj;
+        Preconditions.checkNotEmpty(str);
+        return this.zza.zzC(str);
     }
 }

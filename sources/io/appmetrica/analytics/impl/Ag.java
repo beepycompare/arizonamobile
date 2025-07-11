@@ -3,32 +3,32 @@ package io.appmetrica.analytics.impl;
 public class Ag {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0288gb f337a;
-    public final InterfaceC0666vg b;
-    public final InterfaceC0238eb c;
+    public final InterfaceC0280gb f338a;
+    public final InterfaceC0658vg b;
+    public final InterfaceC0230eb c;
 
-    public Ag(InterfaceC0288gb interfaceC0288gb, InterfaceC0666vg interfaceC0666vg, InterfaceC0238eb interfaceC0238eb) {
-        this.f337a = interfaceC0288gb;
-        this.b = interfaceC0666vg;
-        this.c = interfaceC0238eb;
+    public Ag(InterfaceC0280gb interfaceC0280gb, InterfaceC0658vg interfaceC0658vg, InterfaceC0230eb interfaceC0230eb) {
+        this.f338a = interfaceC0280gb;
+        this.b = interfaceC0658vg;
+        this.c = interfaceC0230eb;
     }
 
-    public final void a(C0741yg c0741yg) {
-        if (this.f337a.a(c0741yg)) {
-            this.b.a(c0741yg);
+    public final void a(C0733yg c0733yg) {
+        if (this.f338a.a(c0733yg)) {
+            this.b.a(c0733yg);
             this.c.a();
         }
     }
 
-    public final InterfaceC0666vg b() {
+    public final InterfaceC0658vg b() {
         return this.b;
     }
 
-    public final InterfaceC0238eb c() {
+    public final InterfaceC0230eb c() {
         return this.c;
     }
 
-    public final InterfaceC0288gb a() {
-        return this.f337a;
+    public final InterfaceC0280gb a() {
+        return this.f338a;
     }
 }

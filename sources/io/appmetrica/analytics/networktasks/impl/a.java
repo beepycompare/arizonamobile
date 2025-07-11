@@ -15,7 +15,7 @@ public final class a {
             withMethod.addHeader(HttpHeaders.IF_NONE_MATCH, str);
         }
         NetworkClient.Builder withSslSocketFactory = new NetworkClient.Builder().withInstanceFollowRedirects(true).withSslSocketFactory(sSLSocketFactory);
-        int i = b.f1225a;
+        int i = b.f1226a;
         return withSslSocketFactory.withConnectTimeout(i).withReadTimeout(i).build().newCall(withMethod.build()).execute();
     }
 }

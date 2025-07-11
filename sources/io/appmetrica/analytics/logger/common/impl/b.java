@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final e f1203a;
+    public final e f1204a;
 
     public b() {
         this(new e());
@@ -21,7 +21,7 @@ public final class b {
                 int i2 = i + 3800;
                 int min = Math.min(length, i2);
                 if (length > i2) {
-                    int a2 = e.a(this.f1203a.f1206a.matcher(str2), i, min);
+                    int a2 = e.a(this.f1204a.f1207a.matcher(str2), i, min);
                     length = a2 == -1 ? min : a2 + 1;
                 }
                 arrayList.add(str2.substring(i, length));
@@ -32,6 +32,6 @@ public final class b {
     }
 
     public b(e eVar) {
-        this.f1203a = eVar;
+        this.f1204a = eVar;
     }
 }

@@ -3,47 +3,15 @@ package com.google.android.gms.internal.measurement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzi {
-    public static zzap zza(zziz zzizVar) {
-        if (zzizVar == null) {
-            return zzap.zzf;
-        }
-        int zzj = zzizVar.zzj() - 1;
-        if (zzj == 1) {
-            if (zzizVar.zzi()) {
-                return new zzat(zzizVar.zzd());
-            }
-            return zzap.zzm;
-        } else if (zzj == 2) {
-            if (zzizVar.zzh()) {
-                return new zzah(Double.valueOf(zzizVar.zza()));
-            }
-            return new zzah(null);
-        } else if (zzj == 3) {
-            if (zzizVar.zzg()) {
-                return new zzaf(Boolean.valueOf(zzizVar.zzf()));
-            }
-            return new zzaf(null);
-        } else if (zzj == 4) {
-            List<zziz> zze = zzizVar.zze();
-            ArrayList arrayList = new ArrayList();
-            for (zziz zzizVar2 : zze) {
-                arrayList.add(zza(zzizVar2));
-            }
-            return new zzaq(zzizVar.zzc(), arrayList);
-        } else {
-            throw new IllegalArgumentException("Unknown type found. Cannot convert entity");
-        }
-    }
-
-    public static zzap zzb(Object obj) {
+    public static zzao zza(Object obj) {
         if (obj == null) {
-            return zzap.zzg;
+            return zzao.zzg;
         }
         if (obj instanceof String) {
-            return new zzat((String) obj);
+            return new zzas((String) obj);
         }
         if (obj instanceof Double) {
             return new zzah((Double) obj);
@@ -58,26 +26,58 @@ public final class zzi {
             return new zzaf((Boolean) obj);
         }
         if (obj instanceof Map) {
-            zzam zzamVar = new zzam();
+            zzal zzalVar = new zzal();
             Map map = (Map) obj;
             for (Object obj2 : map.keySet()) {
-                zzap zzb = zzb(map.get(obj2));
+                zzao zza = zza(map.get(obj2));
                 if (obj2 != null) {
                     if (!(obj2 instanceof String)) {
                         obj2 = obj2.toString();
                     }
-                    zzamVar.zzr((String) obj2, zzb);
+                    zzalVar.zzm((String) obj2, zza);
                 }
             }
-            return zzamVar;
+            return zzalVar;
         } else if (obj instanceof List) {
             zzae zzaeVar = new zzae();
             for (Object obj3 : (List) obj) {
-                zzaeVar.zzq(zzaeVar.zzc(), zzb(obj3));
+                zzaeVar.zzn(zzaeVar.zzh(), zza(obj3));
             }
             return zzaeVar;
         } else {
             throw new IllegalArgumentException("Invalid value type");
+        }
+    }
+
+    public static zzao zzb(zzje zzjeVar) {
+        if (zzjeVar == null) {
+            return zzao.zzf;
+        }
+        int zzj = zzjeVar.zzj() - 1;
+        if (zzj == 1) {
+            if (zzjeVar.zzc()) {
+                return new zzas(zzjeVar.zzd());
+            }
+            return zzao.zzm;
+        } else if (zzj == 2) {
+            if (zzjeVar.zzg()) {
+                return new zzah(Double.valueOf(zzjeVar.zzh()));
+            }
+            return new zzah(null);
+        } else if (zzj == 3) {
+            if (zzjeVar.zze()) {
+                return new zzaf(Boolean.valueOf(zzjeVar.zzf()));
+            }
+            return new zzaf(null);
+        } else if (zzj == 4) {
+            List<zzje> zza = zzjeVar.zza();
+            ArrayList arrayList = new ArrayList();
+            for (zzje zzjeVar2 : zza) {
+                arrayList.add(zzb(zzjeVar2));
+            }
+            return new zzap(zzjeVar.zzb(), arrayList);
+        } else {
+            throw new IllegalArgumentException("Unknown type found. Cannot convert entity");
         }
     }
 }

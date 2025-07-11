@@ -7,11 +7,11 @@ import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 public final class F6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Gi f424a;
+    public final Gi f425a;
     public final Qh b;
 
     public F6(Nf nf, T8 t8, Gi gi, AppMetricaConfig appMetricaConfig) {
-        this.f424a = gi;
+        this.f425a = gi;
         this.b = new Qh(nf, new CounterConfiguration(appMetricaConfig, CounterConfigurationReporterType.CRASH), t8, appMetricaConfig.userProfileID);
     }
 

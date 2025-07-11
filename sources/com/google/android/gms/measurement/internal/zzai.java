@@ -2,70 +2,71 @@ package com.google.android.gms.measurement.internal;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzai extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<zzai> CREATOR = new zzaj();
-    public String zza;
-    public String zzb;
-    public zzqb zzc;
-    public long zzd;
-    public boolean zze;
-    public String zzf;
-    public final zzbh zzg;
-    public long zzh;
-    public zzbh zzi;
-    public final long zzj;
-    public final zzbh zzk;
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzai(zzai zzaiVar) {
-        Preconditions.checkNotNull(zzaiVar);
-        this.zza = zzaiVar.zza;
-        this.zzb = zzaiVar.zzb;
-        this.zzc = zzaiVar.zzc;
-        this.zzd = zzaiVar.zzd;
-        this.zze = zzaiVar.zze;
-        this.zzf = zzaiVar.zzf;
-        this.zzg = zzaiVar.zzg;
-        this.zzh = zzaiVar.zzh;
-        this.zzi = zzaiVar.zzi;
-        this.zzj = zzaiVar.zzj;
-        this.zzk = zzaiVar.zzk;
+public final class zzai implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
+        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        String str = null;
+        String str2 = null;
+        zzpk zzpkVar = null;
+        String str3 = null;
+        zzbg zzbgVar = null;
+        zzbg zzbgVar2 = null;
+        zzbg zzbgVar3 = null;
+        long j = 0;
+        long j2 = 0;
+        long j3 = 0;
+        boolean z = false;
+        while (parcel.dataPosition() < validateObjectHeader) {
+            int readHeader = SafeParcelReader.readHeader(parcel);
+            switch (SafeParcelReader.getFieldId(readHeader)) {
+                case 2:
+                    str = SafeParcelReader.createString(parcel, readHeader);
+                    break;
+                case 3:
+                    str2 = SafeParcelReader.createString(parcel, readHeader);
+                    break;
+                case 4:
+                    zzpkVar = (zzpk) SafeParcelReader.createParcelable(parcel, readHeader, zzpk.CREATOR);
+                    break;
+                case 5:
+                    j = SafeParcelReader.readLong(parcel, readHeader);
+                    break;
+                case 6:
+                    z = SafeParcelReader.readBoolean(parcel, readHeader);
+                    break;
+                case 7:
+                    str3 = SafeParcelReader.createString(parcel, readHeader);
+                    break;
+                case 8:
+                    zzbgVar = (zzbg) SafeParcelReader.createParcelable(parcel, readHeader, zzbg.CREATOR);
+                    break;
+                case 9:
+                    j2 = SafeParcelReader.readLong(parcel, readHeader);
+                    break;
+                case 10:
+                    zzbgVar2 = (zzbg) SafeParcelReader.createParcelable(parcel, readHeader, zzbg.CREATOR);
+                    break;
+                case 11:
+                    j3 = SafeParcelReader.readLong(parcel, readHeader);
+                    break;
+                case 12:
+                    zzbgVar3 = (zzbg) SafeParcelReader.createParcelable(parcel, readHeader, zzbg.CREATOR);
+                    break;
+                default:
+                    SafeParcelReader.skipUnknownField(parcel, readHeader);
+                    break;
+            }
+        }
+        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
+        return new zzah(str, str2, zzpkVar, j, z, str3, zzbgVar, j2, zzbgVar2, j3, zzbgVar3);
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeString(parcel, 2, this.zza, false);
-        SafeParcelWriter.writeString(parcel, 3, this.zzb, false);
-        SafeParcelWriter.writeParcelable(parcel, 4, this.zzc, i, false);
-        SafeParcelWriter.writeLong(parcel, 5, this.zzd);
-        SafeParcelWriter.writeBoolean(parcel, 6, this.zze);
-        SafeParcelWriter.writeString(parcel, 7, this.zzf, false);
-        SafeParcelWriter.writeParcelable(parcel, 8, this.zzg, i, false);
-        SafeParcelWriter.writeLong(parcel, 9, this.zzh);
-        SafeParcelWriter.writeParcelable(parcel, 10, this.zzi, i, false);
-        SafeParcelWriter.writeLong(parcel, 11, this.zzj);
-        SafeParcelWriter.writeParcelable(parcel, 12, this.zzk, i, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzai(String str, String str2, zzqb zzqbVar, long j, boolean z, String str3, zzbh zzbhVar, long j2, zzbh zzbhVar2, long j3, zzbh zzbhVar3) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = zzqbVar;
-        this.zzd = j;
-        this.zze = z;
-        this.zzf = str3;
-        this.zzg = zzbhVar;
-        this.zzh = j2;
-        this.zzi = zzbhVar2;
-        this.zzj = j3;
-        this.zzk = zzbhVar3;
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new zzah[i];
     }
 }

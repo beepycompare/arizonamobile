@@ -3,13 +3,13 @@ package io.appmetrica.analytics.impl;
 public final class Dh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0734y9 f391a;
-    public final C0277g0 b;
+    public final C0726y9 f392a;
+    public final C0269g0 b;
     public final boolean c;
 
-    public Dh(C0734y9 c0734y9, C0277g0 c0277g0, boolean z) {
-        this.f391a = c0734y9;
-        this.b = c0277g0;
+    public Dh(C0726y9 c0726y9, C0269g0 c0269g0, boolean z) {
+        this.f392a = c0726y9;
+        this.b = c0269g0;
         this.c = z;
     }
 }

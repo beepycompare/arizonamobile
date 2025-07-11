@@ -1,41 +1,25 @@
 package com.google.android.gms.measurement.internal;
 
-import android.content.Context;
-import android.os.Bundle;
-import com.google.android.gms.common.internal.Preconditions;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzke {
-    final Context zza;
-    String zzb;
-    String zzc;
-    String zzd;
-    Boolean zze;
-    long zzf;
-    com.google.android.gms.internal.measurement.zzdh zzg;
-    boolean zzh;
-    final Long zzi;
-    String zzj;
+public final class zzke implements Runnable {
+    final /* synthetic */ AtomicReference zza;
+    final /* synthetic */ boolean zzb;
+    final /* synthetic */ zzli zzc;
 
-    public zzke(Context context, com.google.android.gms.internal.measurement.zzdh zzdhVar, Long l) {
-        this.zzh = true;
-        Preconditions.checkNotNull(context);
-        Context applicationContext = context.getApplicationContext();
-        Preconditions.checkNotNull(applicationContext);
-        this.zza = applicationContext;
-        this.zzi = l;
-        if (zzdhVar != null) {
-            this.zzg = zzdhVar;
-            this.zzb = zzdhVar.zzf;
-            this.zzc = zzdhVar.zze;
-            this.zzd = zzdhVar.zzd;
-            this.zzh = zzdhVar.zzc;
-            this.zzf = zzdhVar.zzb;
-            this.zzj = zzdhVar.zzh;
-            Bundle bundle = zzdhVar.zzg;
-            if (bundle != null) {
-                this.zze = Boolean.valueOf(bundle.getBoolean("dataCollectionDefaultEnabled", true));
-            }
-        }
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzke(zzli zzliVar, AtomicReference atomicReference, boolean z) {
+        this.zza = atomicReference;
+        this.zzb = z;
+        Objects.requireNonNull(zzliVar);
+        this.zzc = zzliVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.zzc.zzu.zzt().zzv(this.zza, this.zzb);
     }
 }

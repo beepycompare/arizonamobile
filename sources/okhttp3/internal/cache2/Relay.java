@@ -9,15 +9,16 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import okhttp3.internal.Util;
+import okhttp3.internal._UtilCommonKt;
+import okhttp3.internal.concurrent.Lockable;
 import okio.Buffer;
 import okio.ByteString;
 import okio.Source;
 import okio.Timeout;
 /* compiled from: Relay.kt */
-@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\b\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\t\u0018\u0000 :2\u00020\u0001:\u0002:;B3\b\u0002\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u0007¢\u0006\u0002\u0010\u000bJ\u000e\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u0007J\u0006\u0010\b\u001a\u00020\tJ\b\u00105\u001a\u0004\u0018\u00010\u0005J \u00106\u001a\u0002032\u0006\u00107\u001a\u00020\t2\u0006\u00104\u001a\u00020\u00072\u0006\u00108\u001a\u00020\u0007H\u0002J\u0010\u00109\u001a\u0002032\u0006\u00104\u001a\u00020\u0007H\u0002R\u0011\u0010\f\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\n\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u001a\u0010\u0012\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u001c\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR\u0011\u0010\u001c\u001a\u00020\u00138F¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u0015R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001d\u001a\u00020\u001eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010 \"\u0004\b!\u0010\"R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010$\"\u0004\b%\u0010&R\u0011\u0010'\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b(\u0010\u000fR\u001a\u0010\u0006\u001a\u00020\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010\u0011\"\u0004\b*\u0010+R\u001c\u0010,\u001a\u0004\u0018\u00010-X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b.\u0010/\"\u0004\b0\u00101¨\u0006<"}, d2 = {"Lokhttp3/internal/cache2/Relay;", "", "file", "Ljava/io/RandomAccessFile;", "upstream", "Lokio/Source;", "upstreamPos", "", TtmlNode.TAG_METADATA, "Lokio/ByteString;", "bufferMaxSize", "(Ljava/io/RandomAccessFile;Lokio/Source;JLokio/ByteString;J)V", "buffer", "Lokio/Buffer;", "getBuffer", "()Lokio/Buffer;", "getBufferMaxSize", "()J", "complete", "", "getComplete", "()Z", "setComplete", "(Z)V", "getFile", "()Ljava/io/RandomAccessFile;", "setFile", "(Ljava/io/RandomAccessFile;)V", "isClosed", "sourceCount", "", "getSourceCount", "()I", "setSourceCount", "(I)V", "getUpstream", "()Lokio/Source;", "setUpstream", "(Lokio/Source;)V", "upstreamBuffer", "getUpstreamBuffer", "getUpstreamPos", "setUpstreamPos", "(J)V", "upstreamReader", "Ljava/lang/Thread;", "getUpstreamReader", "()Ljava/lang/Thread;", "setUpstreamReader", "(Ljava/lang/Thread;)V", "commit", "", "upstreamSize", "newSource", "writeHeader", "prefix", "metadataSize", "writeMetadata", "Companion", "RelaySource", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\t\u0018\u0000 <2\u00020\u0001:\u0002;<B5\b\u0002\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u0007¢\u0006\u0004\b\u000b\u0010\fJ \u00103\u001a\u0002042\u0006\u00105\u001a\u00020\t2\u0006\u00106\u001a\u00020\u00072\u0006\u00107\u001a\u00020\u0007H\u0002J\u0010\u00108\u001a\u0002042\u0006\u00106\u001a\u00020\u0007H\u0002J\u000e\u00109\u001a\u0002042\u0006\u00106\u001a\u00020\u0007J\u0006\u0010\b\u001a\u00020\tJ\b\u0010:\u001a\u0004\u0018\u00010\u0005R\u001c\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u001a\u0010\u0006\u001a\u00020\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\n\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0016R\u001c\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR\u0011\u0010 \u001a\u00020!¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#R\u001a\u0010$\u001a\u00020%X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b&\u0010'\"\u0004\b(\u0010)R\u0011\u0010*\u001a\u00020!¢\u0006\b\n\u0000\u001a\u0004\b+\u0010#R\u001a\u0010,\u001a\u00020-X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b.\u0010/\"\u0004\b0\u00101R\u0011\u00102\u001a\u00020%8F¢\u0006\u0006\u001a\u0004\b2\u0010'¨\u0006="}, d2 = {"Lokhttp3/internal/cache2/Relay;", "Lokhttp3/internal/concurrent/Lockable;", "file", "Ljava/io/RandomAccessFile;", "upstream", "Lokio/Source;", "upstreamPos", "", TtmlNode.TAG_METADATA, "Lokio/ByteString;", "bufferMaxSize", "<init>", "(Ljava/io/RandomAccessFile;Lokio/Source;JLokio/ByteString;J)V", "getFile", "()Ljava/io/RandomAccessFile;", "setFile", "(Ljava/io/RandomAccessFile;)V", "getUpstream", "()Lokio/Source;", "setUpstream", "(Lokio/Source;)V", "getUpstreamPos", "()J", "setUpstreamPos", "(J)V", "getBufferMaxSize", "upstreamReader", "Ljava/lang/Thread;", "getUpstreamReader", "()Ljava/lang/Thread;", "setUpstreamReader", "(Ljava/lang/Thread;)V", "upstreamBuffer", "Lokio/Buffer;", "getUpstreamBuffer", "()Lokio/Buffer;", "complete", "", "getComplete", "()Z", "setComplete", "(Z)V", "buffer", "getBuffer", "sourceCount", "", "getSourceCount", "()I", "setSourceCount", "(I)V", "isClosed", "writeHeader", "", "prefix", "upstreamSize", "metadataSize", "writeMetadata", "commit", "newSource", "RelaySource", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
-public final class Relay {
+public final class Relay implements Lockable {
     private static final long FILE_HEADER_SIZE = 32;
     private static final int SOURCE_FILE = 2;
     private static final int SOURCE_UPSTREAM = 1;
@@ -126,7 +127,7 @@ public final class Relay {
         RandomAccessFile randomAccessFile = this.file;
         Intrinsics.checkNotNull(randomAccessFile);
         FileChannel channel = randomAccessFile.getChannel();
-        Intrinsics.checkNotNullExpressionValue(channel, "file!!.channel");
+        Intrinsics.checkNotNullExpressionValue(channel, "getChannel(...)");
         new FileOperator(channel).write(0L, buffer, 32L);
     }
 
@@ -136,7 +137,7 @@ public final class Relay {
         RandomAccessFile randomAccessFile = this.file;
         Intrinsics.checkNotNull(randomAccessFile);
         FileChannel channel = randomAccessFile.getChannel();
-        Intrinsics.checkNotNullExpressionValue(channel, "file!!.channel");
+        Intrinsics.checkNotNullExpressionValue(channel, "getChannel(...)");
         new FileOperator(channel).write(32 + j, buffer, this.metadata.size());
     }
 
@@ -155,7 +156,7 @@ public final class Relay {
         }
         Source source = this.upstream;
         if (source != null) {
-            Util.closeQuietly(source);
+            _UtilCommonKt.closeQuietly(source);
         }
         this.upstream = null;
     }
@@ -175,7 +176,7 @@ public final class Relay {
     }
 
     /* compiled from: Relay.kt */
-    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0080\u0004\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\b\u0010\t\u001a\u00020\nH\u0016J\u0018\u0010\u000b\u001a\u00020\u00062\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u0006H\u0016J\b\u0010\u0007\u001a\u00020\bH\u0016R\u0010\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lokhttp3/internal/cache2/Relay$RelaySource;", "Lokio/Source;", "(Lokhttp3/internal/cache2/Relay;)V", "fileOperator", "Lokhttp3/internal/cache2/FileOperator;", "sourcePos", "", "timeout", "Lokio/Timeout;", "close", "", "read", "sink", "Lokio/Buffer;", "byteCount", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\b\u0080\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\n\u001a\u00020\t2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\tH\u0016J\b\u0010\u0004\u001a\u00020\u0005H\u0016J\b\u0010\u000e\u001a\u00020\u000fH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0006\u001a\u0004\u0018\u00010\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lokhttp3/internal/cache2/Relay$RelaySource;", "Lokio/Source;", "<init>", "(Lokhttp3/internal/cache2/Relay;)V", "timeout", "Lokio/Timeout;", "fileOperator", "Lokhttp3/internal/cache2/FileOperator;", "sourcePos", "", "read", "sink", "Lokio/Buffer;", "byteCount", "close", "", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public final class RelaySource implements Source {
         private FileOperator fileOperator;
@@ -186,7 +187,7 @@ public final class Relay {
             RandomAccessFile file = Relay.this.getFile();
             Intrinsics.checkNotNull(file);
             FileChannel channel = file.getChannel();
-            Intrinsics.checkNotNullExpressionValue(channel, "file!!.channel");
+            Intrinsics.checkNotNullExpressionValue(channel, "getChannel(...)");
             this.fileOperator = new FileOperator(channel);
         }
 
@@ -223,17 +224,18 @@ public final class Relay {
          */
         /* JADX WARN: Code restructure failed: missing block: B:31:0x009d, code lost:
             r2.setUpstreamReader(null);
-            kotlin.jvm.internal.Intrinsics.checkNotNull(r2, "null cannot be cast to non-null type java.lang.Object");
-            r2.notifyAll();
+            r0 = r2;
+            kotlin.jvm.internal.Intrinsics.checkNotNull(r0, "null cannot be cast to non-null type java.lang.Object");
+            r0.notifyAll();
             r0 = kotlin.Unit.INSTANCE;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:32:0x00ad, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:32:0x00af, code lost:
             monitor-exit(r2);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:33:0x00ae, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:33:0x00b0, code lost:
             return -1;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:37:0x00b2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:37:0x00b4, code lost:
             r6 = java.lang.Math.min(r11, r21);
             r19.this$0.getUpstreamBuffer().copyTo(r20, 0, r6);
             r19.sourcePos += r6;
@@ -242,59 +244,61 @@ public final class Relay {
             r13.write(r19.this$0.getUpstreamPos() + 32, r19.this$0.getUpstreamBuffer().clone(), r11);
             r4 = r19.this$0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:38:0x00e8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:38:0x00ea, code lost:
             monitor-enter(r4);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:39:0x00e9, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:39:0x00eb, code lost:
             r4.getBuffer().write(r4.getUpstreamBuffer(), r11);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:40:0x0102, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:40:0x0104, code lost:
             if (r4.getBuffer().size() <= r4.getBufferMaxSize()) goto L40;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:41:0x0104, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:41:0x0106, code lost:
             r4.getBuffer().skip(r4.getBuffer().size() - r4.getBufferMaxSize());
          */
-        /* JADX WARN: Code restructure failed: missing block: B:42:0x0118, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:42:0x011a, code lost:
             r4.setUpstreamPos(r4.getUpstreamPos() + r11);
             r0 = kotlin.Unit.INSTANCE;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:43:0x0122, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:43:0x0124, code lost:
             monitor-exit(r4);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:44:0x0123, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:44:0x0125, code lost:
             r2 = r19.this$0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:45:0x0125, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:45:0x0127, code lost:
             monitor-enter(r2);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:46:0x0126, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:46:0x0128, code lost:
             r2.setUpstreamReader(null);
-            kotlin.jvm.internal.Intrinsics.checkNotNull(r2, "null cannot be cast to non-null type java.lang.Object");
-            r2.notifyAll();
+            r0 = r2;
+            kotlin.jvm.internal.Intrinsics.checkNotNull(r0, "null cannot be cast to non-null type java.lang.Object");
+            r0.notifyAll();
             r0 = kotlin.Unit.INSTANCE;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:47:0x0136, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:47:0x013a, code lost:
             monitor-exit(r2);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:48:0x0137, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:48:0x013b, code lost:
             return r6;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:55:0x013e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:55:0x0142, code lost:
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:56:0x013f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:56:0x0143, code lost:
             r2 = r19.this$0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:57:0x0141, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:57:0x0145, code lost:
             monitor-enter(r2);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:58:0x0142, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:58:0x0146, code lost:
             r2.setUpstreamReader(null);
-            kotlin.jvm.internal.Intrinsics.checkNotNull(r2, "null cannot be cast to non-null type java.lang.Object");
-            r2.notifyAll();
+            r3 = r2;
+            kotlin.jvm.internal.Intrinsics.checkNotNull(r3, "null cannot be cast to non-null type java.lang.Object");
+            r3.notifyAll();
             r3 = kotlin.Unit.INSTANCE;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:60:0x0150, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:60:0x0159, code lost:
             throw r0;
          */
         @Override // okio.Source
@@ -305,7 +309,7 @@ public final class Relay {
             boolean z;
             Intrinsics.checkNotNullParameter(sink, "sink");
             if (this.fileOperator == null) {
-                throw new IllegalStateException("Check failed.".toString());
+                throw new IllegalStateException("Check failed.");
             }
             Relay relay = Relay.this;
             synchronized (relay) {
@@ -356,13 +360,13 @@ public final class Relay {
                 Unit unit = Unit.INSTANCE;
             }
             if (randomAccessFile != null) {
-                Util.closeQuietly(randomAccessFile);
+                _UtilCommonKt.closeQuietly(randomAccessFile);
             }
         }
     }
 
     /* compiled from: Relay.kt */
-    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J&\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u0004J\u000e\u0010\u0013\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u0010\u0010\u0005\u001a\u00020\u00068\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u00020\u00068\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lokhttp3/internal/cache2/Relay$Companion;", "", "()V", "FILE_HEADER_SIZE", "", "PREFIX_CLEAN", "Lokio/ByteString;", "PREFIX_DIRTY", "SOURCE_FILE", "", "SOURCE_UPSTREAM", "edit", "Lokhttp3/internal/cache2/Relay;", "file", "Ljava/io/File;", "upstream", "Lokio/Source;", TtmlNode.TAG_METADATA, "bufferMaxSize", "read", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J&\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\b2\u0006\u0010\u0013\u001a\u00020\u000bJ\u000e\u0010\u0014\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u00020\b8\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\t\u001a\u00020\b8\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lokhttp3/internal/cache2/Relay$Companion;", "", "<init>", "()V", "SOURCE_UPSTREAM", "", "SOURCE_FILE", "PREFIX_CLEAN", "Lokio/ByteString;", "PREFIX_DIRTY", "FILE_HEADER_SIZE", "", "edit", "Lokhttp3/internal/cache2/Relay;", "file", "Ljava/io/File;", "upstream", "Lokio/Source;", TtmlNode.TAG_METADATA, "bufferMaxSize", "read", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -387,7 +391,7 @@ public final class Relay {
             Intrinsics.checkNotNullParameter(file, "file");
             RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
             FileChannel channel = randomAccessFile.getChannel();
-            Intrinsics.checkNotNullExpressionValue(channel, "randomAccessFile.channel");
+            Intrinsics.checkNotNullExpressionValue(channel, "getChannel(...)");
             FileOperator fileOperator = new FileOperator(channel);
             Buffer buffer = new Buffer();
             fileOperator.read(0L, buffer, 32L);

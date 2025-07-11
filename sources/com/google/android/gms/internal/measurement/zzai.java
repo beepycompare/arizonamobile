@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public abstract class zzai implements zzap, zzal {
+public abstract class zzai implements zzao, zzak {
     protected final String zzd;
     protected final Map zze = new HashMap();
 
@@ -37,62 +37,62 @@ public abstract class zzai implements zzap, zzal {
         return 0;
     }
 
-    public abstract zzap zza(zzg zzgVar, List list);
+    public abstract zzao zza(zzg zzgVar, List list);
 
+    @Override // com.google.android.gms.internal.measurement.zzao
     public final String zzc() {
         return this.zzd;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final zzap zzcz(String str, zzg zzgVar, List list) {
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public final zzao zzcA(String str, zzg zzgVar, List list) {
         if ("toString".equals(str)) {
-            return new zzat(this.zzd);
+            return new zzas(this.zzd);
         }
-        return zzaj.zza(this, new zzat(str), zzgVar, list);
+        return zzak.zzu(this, new zzas(str), zzgVar, list);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public zzap zzd() {
-        return this;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzal
-    public final zzap zzf(String str) {
-        Map map = this.zze;
-        return map.containsKey(str) ? (zzap) map.get(str) : zzf;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final Boolean zzg() {
-        return true;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final Double zzh() {
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public final Double zzd() {
         return Double.valueOf(Double.NaN);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final String zzi() {
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public final Boolean zze() {
+        return true;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public final Iterator zzf() {
+        return zzak.zzv(this.zze);
+    }
+
+    public final String zzg() {
         return this.zzd;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final Iterator zzl() {
-        return zzaj.zzb(this.zze);
+    @Override // com.google.android.gms.internal.measurement.zzak
+    public final boolean zzj(String str) {
+        return this.zze.containsKey(str);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzal
-    public final void zzr(String str, zzap zzapVar) {
-        if (zzapVar == null) {
+    @Override // com.google.android.gms.internal.measurement.zzak
+    public final zzao zzk(String str) {
+        Map map = this.zze;
+        return map.containsKey(str) ? (zzao) map.get(str) : zzf;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzak
+    public final void zzm(String str, zzao zzaoVar) {
+        if (zzaoVar == null) {
             this.zze.remove(str);
         } else {
-            this.zze.put(str, zzapVar);
+            this.zze.put(str, zzaoVar);
         }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzal
-    public final boolean zzt(String str) {
-        return this.zze.containsKey(str);
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public zzao zzt() {
+        return this;
     }
 }

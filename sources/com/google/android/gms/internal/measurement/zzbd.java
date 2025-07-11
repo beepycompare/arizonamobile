@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzbd implements zzbf {
+final class zzbd implements zzbe {
     private final zzg zza;
     private final String zzb;
 
@@ -10,10 +10,10 @@ final class zzbd implements zzbf {
         this.zzb = str;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzbf
-    public final zzg zza(zzap zzapVar) {
-        zzg zza = this.zza.zza();
-        zza.zzf(this.zzb, zzapVar);
-        return zza;
+    @Override // com.google.android.gms.internal.measurement.zzbe
+    public final zzg zza(zzao zzaoVar) {
+        zzg zzc = this.zza.zzc();
+        zzc.zzf(this.zzb, zzaoVar);
+        return zzc;
     }
 }

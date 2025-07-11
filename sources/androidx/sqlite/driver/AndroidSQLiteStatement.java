@@ -131,7 +131,7 @@ public abstract class AndroidSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindBlob */
-        public void mo7565bindBlob(int i, byte[] value) {
+        public void mo7566bindBlob(int i, byte[] value) {
             Intrinsics.checkNotNullParameter(value, "value");
             throwIfClosed();
             ensureCapacity(4, i);
@@ -141,7 +141,7 @@ public abstract class AndroidSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindDouble */
-        public void mo7566bindDouble(int i, double d) {
+        public void mo7567bindDouble(int i, double d) {
             throwIfClosed();
             ensureCapacity(2, i);
             this.bindingTypes[i] = 2;
@@ -150,7 +150,7 @@ public abstract class AndroidSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindLong */
-        public void mo7567bindLong(int i, long j) {
+        public void mo7568bindLong(int i, long j) {
             throwIfClosed();
             ensureCapacity(1, i);
             this.bindingTypes[i] = 1;
@@ -159,7 +159,7 @@ public abstract class AndroidSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindText */
-        public void mo7569bindText(int i, String value) {
+        public void mo7570bindText(int i, String value) {
             Intrinsics.checkNotNullParameter(value, "value");
             throwIfClosed();
             ensureCapacity(3, i);
@@ -169,7 +169,7 @@ public abstract class AndroidSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindNull */
-        public void mo7568bindNull(int i) {
+        public void mo7569bindNull(int i) {
             throwIfClosed();
             ensureCapacity(5, i);
             this.bindingTypes[i] = 5;
@@ -279,7 +279,7 @@ public abstract class AndroidSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: clearBindings */
-        public void mo7570clearBindings() {
+        public void mo7571clearBindings() {
             throwIfClosed();
             this.bindingTypes = new int[0];
             this.longBindings = new long[0];
@@ -448,7 +448,7 @@ public abstract class AndroidSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindBlob */
-        public void mo7565bindBlob(int i, byte[] value) {
+        public void mo7566bindBlob(int i, byte[] value) {
             Intrinsics.checkNotNullParameter(value, "value");
             throwIfClosed();
             this.delegate.bindBlob(i, value);
@@ -456,21 +456,21 @@ public abstract class AndroidSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindDouble */
-        public void mo7566bindDouble(int i, double d) {
+        public void mo7567bindDouble(int i, double d) {
             throwIfClosed();
             this.delegate.bindDouble(i, d);
         }
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindLong */
-        public void mo7567bindLong(int i, long j) {
+        public void mo7568bindLong(int i, long j) {
             throwIfClosed();
             this.delegate.bindLong(i, j);
         }
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindText */
-        public void mo7569bindText(int i, String value) {
+        public void mo7570bindText(int i, String value) {
             Intrinsics.checkNotNullParameter(value, "value");
             throwIfClosed();
             this.delegate.bindString(i, value);
@@ -478,7 +478,7 @@ public abstract class AndroidSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindNull */
-        public void mo7568bindNull(int i) {
+        public void mo7569bindNull(int i) {
             throwIfClosed();
             this.delegate.bindNull(i);
         }
@@ -547,7 +547,7 @@ public abstract class AndroidSQLiteStatement implements SQLiteStatement {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: clearBindings */
-        public void mo7570clearBindings() {
+        public void mo7571clearBindings() {
             throwIfClosed();
             this.delegate.clearBindings();
         }

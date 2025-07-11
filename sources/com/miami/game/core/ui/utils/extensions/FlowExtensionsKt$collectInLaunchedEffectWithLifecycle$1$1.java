@@ -9,6 +9,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
@@ -19,7 +20,7 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FlowExtensions.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1", f = "FlowExtensions.kt", i = {}, l = {41}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes4.dex */
 public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -52,7 +53,7 @@ public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 ext
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: FlowExtensions.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
     @DebugMetadata(c = "com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1$1", f = "FlowExtensions.kt", i = {}, l = {42}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1$1  reason: invalid class name */
     /* loaded from: classes4.dex */
@@ -85,11 +86,11 @@ public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 ext
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: FlowExtensions.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-        @DebugMetadata(c = "com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1$1$1", f = "FlowExtensions.kt", i = {}, l = {43}, m = "invokeSuspend", n = {}, s = {})
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+        @DebugMetadata(c = "com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1$1$1", f = "FlowExtensions.kt", i = {0}, l = {43}, m = "invokeSuspend", n = {"$this$repeatOnLifecycle"}, s = {"L$0"})
         /* renamed from: com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes4.dex */
-        public static final class C00911 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+        public static final class C00901 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ State<Function3<CoroutineScope, T, Continuation<? super Unit>, Object>> $currentCollector$delegate;
             final /* synthetic */ Flow<T> $flow;
             private /* synthetic */ Object L$0;
@@ -97,7 +98,7 @@ public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 ext
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
-            C00911(Flow<? extends T> flow, State<? extends Function3<? super CoroutineScope, ? super T, ? super Continuation<? super Unit>, ? extends Object>> state, Continuation<? super C00911> continuation) {
+            C00901(Flow<? extends T> flow, State<? extends Function3<? super CoroutineScope, ? super T, ? super Continuation<? super Unit>, ? extends Object>> state, Continuation<? super C00901> continuation) {
                 super(2, continuation);
                 this.$flow = flow;
                 this.$currentCollector$delegate = state;
@@ -105,25 +106,26 @@ public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 ext
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                C00911 c00911 = new C00911(this.$flow, this.$currentCollector$delegate, continuation);
-                c00911.L$0 = obj;
-                return c00911;
+                C00901 c00901 = new C00901(this.$flow, this.$currentCollector$delegate, continuation);
+                c00901.L$0 = obj;
+                return c00901;
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                return ((C00911) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00901) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Object invokeSuspend(Object obj) {
+                final CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 int i = this.label;
                 if (i == 0) {
                     ResultKt.throwOnFailure(obj);
-                    final CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
                     Flow<T> flow = this.$flow;
                     final State<Function3<CoroutineScope, T, Continuation<? super Unit>, Object>> state = this.$currentCollector$delegate;
+                    this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
                     this.label = 1;
                     if (flow.collect(new FlowCollector() { // from class: com.miami.game.core.ui.utils.extensions.FlowExtensionsKt.collectInLaunchedEffectWithLifecycle.1.1.1.1.1
                         @Override // kotlinx.coroutines.flow.FlowCollector
@@ -152,7 +154,7 @@ public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 ext
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 this.label = 1;
-                if (RepeatOnLifecycleKt.repeatOnLifecycle(this.$lifecycle, this.$minActiveState, new C00911(this.$flow, this.$currentCollector$delegate, null), this) == coroutine_suspended) {
+                if (RepeatOnLifecycleKt.repeatOnLifecycle(this.$lifecycle, this.$minActiveState, new C00901(this.$flow, this.$currentCollector$delegate, null), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {

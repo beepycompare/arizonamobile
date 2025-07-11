@@ -380,9 +380,8 @@ public final class Futures extends GwtFuturesCatchingSpecialization {
         future.addListener(new CallbackListener(future, callback), executor);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
-    public static final class CallbackListener<V> implements Runnable {
+    private static final class CallbackListener<V> implements Runnable {
         final FutureCallback<? super V> callback;
         final Future<V> future;
 

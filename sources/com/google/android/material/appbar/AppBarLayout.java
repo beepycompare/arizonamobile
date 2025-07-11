@@ -184,7 +184,7 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         this.liftOnScrollColorUpdateListener = new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.appbar.AppBarLayout$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                AppBarLayout.this.m8087x91f594d8(colorStateList, colorStateList2, materialShapeDrawable, colorOrNull, valueAnimator);
+                AppBarLayout.this.m8086x91f594d8(colorStateList, colorStateList2, materialShapeDrawable, colorOrNull, valueAnimator);
             }
         };
         ViewCompat.setBackground(this, materialShapeDrawable);
@@ -192,7 +192,7 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$initializeLiftOnScrollWithColor$0$com-google-android-material-appbar-AppBarLayout  reason: not valid java name */
-    public /* synthetic */ void m8087x91f594d8(ColorStateList colorStateList, ColorStateList colorStateList2, MaterialShapeDrawable materialShapeDrawable, Integer num, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8086x91f594d8(ColorStateList colorStateList, ColorStateList colorStateList2, MaterialShapeDrawable materialShapeDrawable, Integer num, ValueAnimator valueAnimator) {
         Integer num2;
         int layer = MaterialColors.layer(colorStateList.getDefaultColor(), colorStateList2.getDefaultColor(), ((Float) valueAnimator.getAnimatedValue()).floatValue());
         materialShapeDrawable.setFillColor(ColorStateList.valueOf(layer));
@@ -214,7 +214,7 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         this.liftOnScrollColorUpdateListener = new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.appbar.AppBarLayout$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                AppBarLayout.this.m8088x84b6053(materialShapeDrawable, valueAnimator);
+                AppBarLayout.this.m8087x84b6053(materialShapeDrawable, valueAnimator);
             }
         };
         ViewCompat.setBackground(this, materialShapeDrawable);
@@ -222,7 +222,7 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$initializeLiftOnScrollWithElevation$1$com-google-android-material-appbar-AppBarLayout  reason: not valid java name */
-    public /* synthetic */ void m8088x84b6053(MaterialShapeDrawable materialShapeDrawable, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8087x84b6053(MaterialShapeDrawable materialShapeDrawable, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         materialShapeDrawable.setElevation(floatValue);
         Drawable drawable = this.statusBarForeground;

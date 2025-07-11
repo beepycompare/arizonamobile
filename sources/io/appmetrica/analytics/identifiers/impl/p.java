@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 public final class p extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final p f321a = new p();
+    public static final p f322a = new p();
 
     public p() {
         super(1);
@@ -17,7 +17,7 @@ public final class p extends Lambda implements Function1 {
     @Override // kotlin.jvm.functions.Function1
     public final Object invoke(Object obj) {
         IBinder iBinder = (IBinder) obj;
-        int i = t.f325a;
+        int i = t.f326a;
         if (iBinder == null) {
             return null;
         }

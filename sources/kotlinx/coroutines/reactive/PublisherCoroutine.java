@@ -54,7 +54,7 @@ public final class PublisherCoroutine<T> extends AbstractCoroutine<Unit> impleme
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: invokeOnClose  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ void mo10035invokeOnClose(Function1 function1) {
+    public /* bridge */ /* synthetic */ void mo10066invokeOnClose(Function1 function1) {
         invokeOnClose((Function1<? super Throwable, Unit>) function1);
     }
 
@@ -123,13 +123,13 @@ public final class PublisherCoroutine<T> extends AbstractCoroutine<Unit> impleme
     /* renamed from: trySend-JP2dKIU */
     public Object mo7544trySendJP2dKIU(T t) {
         if (!Mutex.DefaultImpls.tryLock$default(this.mutex, null, 1, null)) {
-            return ChannelResult.Companion.m9980failurePtdJZtk();
+            return ChannelResult.Companion.m10011failurePtdJZtk();
         }
         Throwable doLockedNext = doLockedNext(t);
         if (doLockedNext == null) {
-            return ChannelResult.Companion.m9981successJP2dKIU(Unit.INSTANCE);
+            return ChannelResult.Companion.m10012successJP2dKIU(Unit.INSTANCE);
         }
-        return ChannelResult.Companion.m9979closedJP2dKIU(doLockedNext);
+        return ChannelResult.Companion.m10010closedJP2dKIU(doLockedNext);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -235,14 +235,14 @@ public final class PublisherCoroutine<T> extends AbstractCoroutine<Unit> impleme
         try {
             if (_nRequested$volatile$FU.get(this) != -2) {
                 _nRequested$volatile$FU.set(this, -2L);
-                if (!this.cancelled) {
-                    if (th == null) {
-                        this.subscriber.onComplete();
-                    } else {
-                        this.subscriber.onError(th);
+                if (this.cancelled) {
+                    if (th != null && !z) {
+                        this.exceptionOnCancelHandler.invoke(th, getContext());
                     }
-                } else if (th != null && !z) {
-                    this.exceptionOnCancelHandler.invoke(th, getContext());
+                } else if (th == null) {
+                    this.subscriber.onComplete();
+                } else {
+                    this.subscriber.onError(th);
                 }
             }
         } finally {

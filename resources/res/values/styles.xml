@@ -7418,6 +7418,14 @@
         <item name="android:shadowRadius">1.6</item>
         <item name="android:fontFamily">@font/gotham</item>
     </style>
+    <style name="hud_capt_text_style" parent="">
+        <item name="android:textSize">@dimen/_7sdp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/heading_now_65_medium</item>
+    </style>
     <style name="rodina_rectangle_button" parent="">
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>

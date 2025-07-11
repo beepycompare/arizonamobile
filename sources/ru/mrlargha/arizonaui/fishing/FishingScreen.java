@@ -30,7 +30,7 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: FishingScreen.kt */
-@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010#\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u0000 %2\u00020\u0001:\u0002%&B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014H\u0002J\b\u0010\u0015\u001a\u00020\u0005H\u0002J\b\u0010\u0016\u001a\u00020\u0005H\u0002J\b\u0010\u0017\u001a\u00020\u0005H\u0002J\b\u0010\u0018\u001a\u00020\u0005H\u0002J\b\u0010\u0019\u001a\u00020\u0005H\u0002J\b\u0010\u001a\u001a\u00020\u0005H\u0002J\b\u0010\u001b\u001a\u00020\u0005H\u0002J\b\u0010\u001c\u001a\u00020\u0005H\u0002J\b\u0010\u001d\u001a\u00020\u0005H\u0002J\b\u0010\u001e\u001a\u00020\u0005H\u0002J\b\u0010\u001f\u001a\u00020\u0005H\u0002J\b\u0010 \u001a\u00020\u0005H\u0002J\u0018\u0010!\u001a\u00020\u00122\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00050\u0010X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006'"}, d2 = {"Lru/mrlargha/arizonaui/fishing/FishingScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", TtmlNode.TAG_LAYOUT, "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/arizonaui/databinding/FishingLayoutBinding;", "fishingAdapter", "Lru/mrlargha/arizonaui/fishing/FishingAdapter;", "totalFishCount", "successIds", "", "setItems", "", "info", "Lru/mrlargha/arizonaui/fishing/FishingScreen$Companion$ScreenInfo;", "getRandomTrashImage", "getRandomFishImage", "getRandomFactoryTrashImage", "getRandomFactoryDetailsImage", "getRandomFarmHayImage", "getRandomFarmTrashImage", "getRandomSearchDocsImage", "getRandomSearchDocsTrashImage", "getRandomRoadRepairImage", "getRandomRoadRepairTrashImage", "getRandomRanchImage", "getRandomRanchTrashImage", "onBackendMessage", "data", "", "subId", "Companion", "Spawner", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010#\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u0000 %2\u00020\u0001:\u0002%&B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014H\u0002J\b\u0010\u0015\u001a\u00020\u0005H\u0002J\b\u0010\u0016\u001a\u00020\u0005H\u0002J\b\u0010\u0017\u001a\u00020\u0005H\u0002J\b\u0010\u0018\u001a\u00020\u0005H\u0002J\b\u0010\u0019\u001a\u00020\u0005H\u0002J\b\u0010\u001a\u001a\u00020\u0005H\u0002J\b\u0010\u001b\u001a\u00020\u0005H\u0002J\b\u0010\u001c\u001a\u00020\u0005H\u0002J\b\u0010\u001d\u001a\u00020\u0005H\u0002J\b\u0010\u001e\u001a\u00020\u0005H\u0002J\b\u0010\u001f\u001a\u00020\u0005H\u0002J\b\u0010 \u001a\u00020\u0005H\u0002J\u0018\u0010!\u001a\u00020\u00122\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00050\u0010X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006'"}, d2 = {"Lru/mrlargha/arizonaui/fishing/FishingScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", TtmlNode.TAG_LAYOUT, "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/arizonaui/databinding/FishingLayoutBinding;", "fishingAdapter", "Lru/mrlargha/arizonaui/fishing/FishingAdapter;", "totalFishCount", "successIds", "", "setItems", "", "info", "Lru/mrlargha/arizonaui/fishing/FishingScreen$Companion$ScreenInfo;", "getRandomTrashImage", "getRandomFishImage", "getRandomFactoryTrashImage", "getRandomFactoryDetailsImage", "getRandomFarmHayImage", "getRandomFarmTrashImage", "getRandomSearchDocsImage", "getRandomSearchDocsTrashImage", "getRandomRoadRepairImage", "getRandomRoadRepairTrashImage", "getRandomRanchImage", "getRandomRanchTrashImage", "onBackendMessage", "data", "", "subId", "Companion", "Spawner", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FishingScreen extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
@@ -102,29 +102,19 @@ public final class FishingScreen extends SAMPUIElement {
         int type = screenInfo.getType();
         if (type == Companion.FishingId.FISH.getId()) {
             this.binding.fishingLayout.setBackgroundResource(R.drawable.fishing_bg);
-            this.binding.mainTitle.setText("Ловля рыбы");
-            this.binding.description.setText("Нажмите на всех рыб, которые отображаются на экране");
         } else if (type == Companion.FishingId.FACTORY.getId()) {
             this.binding.fishingLayout.setBackgroundResource(R.drawable.fishing_factory_bg);
-            this.binding.mainTitle.setText("Завод");
-            this.binding.description.setText("Нажмите на все детали, которые отображаются на экране");
         } else if (type == Companion.FishingId.FARM.getId()) {
             this.binding.fishingLayout.setBackgroundResource(R.drawable.fishing_farm_bg);
-            this.binding.mainTitle.setText("Ферма");
-            this.binding.description.setText("Нажмите на всё сено, которые отображаются на экране");
         } else if (type == Companion.FishingId.SEARCH_DOCS.getId()) {
             this.binding.fishingLayout.setBackgroundResource(R.drawable.fishing_search_docs_bg);
-            this.binding.mainTitle.setText("Поиск документов");
-            this.binding.description.setText("Найди налоговые документы в конвертах");
         } else if (type == Companion.FishingId.ROAD_REPAIR.getId()) {
             this.binding.fishingLayout.setBackgroundResource(R.drawable.fishing_road_repair_bg);
-            this.binding.mainTitle.setText("Дорожные работы");
-            this.binding.description.setText("");
         } else if (type == Companion.FishingId.RANCH.getId()) {
             this.binding.fishingLayout.setBackgroundResource(R.drawable.fishing_ranch_bg);
-            this.binding.mainTitle.setText("Ферма");
-            this.binding.description.setText("Нажмите на всё сено, которые отображаются на экране");
         }
+        this.binding.mainTitle.setText(screenInfo.getName());
+        this.binding.description.setText(screenInfo.getDesc());
         this.successIds.clear();
         this.totalFishCount = screenInfo.getItemsCount();
         int itemsCount = (int) (screenInfo.getItemsCount() * 1.2f);
@@ -243,7 +233,7 @@ public final class FishingScreen extends SAMPUIElement {
     }
 
     /* compiled from: FishingScreen.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0003\b\t\nB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lru/mrlargha/arizonaui/fishing/FishingScreen$Companion;", "", "<init>", "()V", "RIGHT_ELEMENT", "", "TRASH_ELEMENT", "EMPTY_ELEMENT", "FishingId", "FishInfo", "ScreenInfo", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0003\b\t\nB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lru/mrlargha/arizonaui/fishing/FishingScreen$Companion;", "", "<init>", "()V", "RIGHT_ELEMENT", "", "TRASH_ELEMENT", "EMPTY_ELEMENT", "FishingId", "FishInfo", "ScreenInfo", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -257,7 +247,7 @@ public final class FishingScreen extends SAMPUIElement {
         /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
         /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
         /* compiled from: FishingScreen.kt */
-        @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\u000b\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\r¨\u0006\u000e"}, d2 = {"Lru/mrlargha/arizonaui/fishing/FishingScreen$Companion$FishingId;", "", "id", "", "<init>", "(Ljava/lang/String;II)V", "getId", "()I", "FISH", "FACTORY", "FARM", "SEARCH_DOCS", "ROAD_REPAIR", "RANCH", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\u000b\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\r¨\u0006\u000e"}, d2 = {"Lru/mrlargha/arizonaui/fishing/FishingScreen$Companion$FishingId;", "", "id", "", "<init>", "(Ljava/lang/String;II)V", "getId", "()I", "FISH", "FACTORY", "FARM", "SEARCH_DOCS", "ROAD_REPAIR", "RANCH", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
         /* loaded from: classes5.dex */
         public static final class FishingId {
             private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -278,6 +268,14 @@ public final class FishingScreen extends SAMPUIElement {
                 return $ENTRIES;
             }
 
+            public static FishingId valueOf(String str) {
+                return (FishingId) Enum.valueOf(FishingId.class, str);
+            }
+
+            public static FishingId[] values() {
+                return (FishingId[]) $VALUES.clone();
+            }
+
             private FishingId(String str, int i, int i2) {
                 this.id = i2;
             }
@@ -291,18 +289,10 @@ public final class FishingScreen extends SAMPUIElement {
                 $VALUES = $values;
                 $ENTRIES = EnumEntriesKt.enumEntries($values);
             }
-
-            public static FishingId valueOf(String str) {
-                return (FishingId) Enum.valueOf(FishingId.class, str);
-            }
-
-            public static FishingId[] values() {
-                return (FishingId[]) $VALUES.clone();
-            }
         }
 
         /* compiled from: FishingScreen.kt */
-        @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0018\b\u0086\b\u0018\u00002\u00020\u0001B)\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\t\u0010\u0017\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0018\u001a\u00020\u0005HÆ\u0003J\t\u0010\u0019\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001a\u001a\u00020\bHÆ\u0003J1\u0010\u001b\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\bHÆ\u0001J\u0013\u0010\u001c\u001a\u00020\b2\b\u0010\u001d\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u001e\u001a\u00020\u0003HÖ\u0001J\t\u0010\u001f\u001a\u00020\u0005HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0006\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\f\"\u0004\b\u0012\u0010\u0013R\u001a\u0010\u0007\u001a\u00020\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\u0014\"\u0004\b\u0015\u0010\u0016¨\u0006 "}, d2 = {"Lru/mrlargha/arizonaui/fishing/FishingScreen$Companion$FishInfo;", "", "id", "", "type", "", "img", "isPressed", "", "<init>", "(ILjava/lang/String;IZ)V", "getId", "()I", "getType", "()Ljava/lang/String;", "setType", "(Ljava/lang/String;)V", "getImg", "setImg", "(I)V", "()Z", "setPressed", "(Z)V", "component1", "component2", "component3", "component4", "copy", "equals", "other", "hashCode", "toString", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0018\b\u0086\b\u0018\u00002\u00020\u0001B)\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\t\u0010\u0017\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0018\u001a\u00020\u0005HÆ\u0003J\t\u0010\u0019\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001a\u001a\u00020\bHÆ\u0003J1\u0010\u001b\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\bHÆ\u0001J\u0013\u0010\u001c\u001a\u00020\b2\b\u0010\u001d\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u001e\u001a\u00020\u0003HÖ\u0001J\t\u0010\u001f\u001a\u00020\u0005HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0006\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\f\"\u0004\b\u0012\u0010\u0013R\u001a\u0010\u0007\u001a\u00020\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\u0014\"\u0004\b\u0015\u0010\u0016¨\u0006 "}, d2 = {"Lru/mrlargha/arizonaui/fishing/FishingScreen$Companion$FishInfo;", "", "id", "", "type", "", "img", "isPressed", "", "<init>", "(ILjava/lang/String;IZ)V", "getId", "()I", "getType", "()Ljava/lang/String;", "setType", "(Ljava/lang/String;)V", "getImg", "setImg", "(I)V", "()Z", "setPressed", "(Z)V", "component1", "component2", "component3", "component4", "copy", "equals", "other", "hashCode", "toString", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
         /* loaded from: classes5.dex */
         public static final class FishInfo {
             private final int id;
@@ -412,32 +402,50 @@ public final class FishingScreen extends SAMPUIElement {
         }
 
         /* compiled from: FishingScreen.kt */
-        @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\t\u0010\n\u001a\u00020\u0003HÆ\u0003J\t\u0010\u000b\u001a\u00020\u0003HÆ\u0003J\u001d\u0010\f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003HÆ\u0001J\u0013\u0010\r\u001a\u00020\u000e2\b\u0010\u000f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0010\u001a\u00020\u0003HÖ\u0001J\t\u0010\u0011\u001a\u00020\u0012HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\b¨\u0006\u0013"}, d2 = {"Lru/mrlargha/arizonaui/fishing/FishingScreen$Companion$ScreenInfo;", "", "itemsCount", "", "type", "<init>", "(II)V", "getItemsCount", "()I", "getType", "component1", "component2", "copy", "equals", "", "other", "hashCode", "toString", "", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006¢\u0006\u0004\b\b\u0010\tJ\t\u0010\u0010\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0011\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0012\u001a\u00020\u0006HÆ\u0003J\t\u0010\u0013\u001a\u00020\u0006HÆ\u0003J1\u0010\u0014\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\u0006HÆ\u0001J\u0013\u0010\u0015\u001a\u00020\u00162\b\u0010\u0017\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0018\u001a\u00020\u0006HÖ\u0001J\t\u0010\u0019\u001a\u00020\u0003HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u000bR\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0007\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000e¨\u0006\u001a"}, d2 = {"Lru/mrlargha/arizonaui/fishing/FishingScreen$Companion$ScreenInfo;", "", "name", "", "desc", "itemsCount", "", "type", "<init>", "(Ljava/lang/String;Ljava/lang/String;II)V", "getName", "()Ljava/lang/String;", "getDesc", "getItemsCount", "()I", "getType", "component1", "component2", "component3", "component4", "copy", "equals", "", "other", "hashCode", "toString", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
         /* loaded from: classes5.dex */
         public static final class ScreenInfo {
+            private final String desc;
             private final int itemsCount;
+            private final String name;
             private final int type;
 
-            public static /* synthetic */ ScreenInfo copy$default(ScreenInfo screenInfo, int i, int i2, int i3, Object obj) {
+            public static /* synthetic */ ScreenInfo copy$default(ScreenInfo screenInfo, String str, String str2, int i, int i2, int i3, Object obj) {
                 if ((i3 & 1) != 0) {
-                    i = screenInfo.itemsCount;
+                    str = screenInfo.name;
                 }
                 if ((i3 & 2) != 0) {
+                    str2 = screenInfo.desc;
+                }
+                if ((i3 & 4) != 0) {
+                    i = screenInfo.itemsCount;
+                }
+                if ((i3 & 8) != 0) {
                     i2 = screenInfo.type;
                 }
-                return screenInfo.copy(i, i2);
+                return screenInfo.copy(str, str2, i, i2);
             }
 
-            public final int component1() {
+            public final String component1() {
+                return this.name;
+            }
+
+            public final String component2() {
+                return this.desc;
+            }
+
+            public final int component3() {
                 return this.itemsCount;
             }
 
-            public final int component2() {
+            public final int component4() {
                 return this.type;
             }
 
-            public final ScreenInfo copy(int i, int i2) {
-                return new ScreenInfo(i, i2);
+            public final ScreenInfo copy(String name, String desc, int i, int i2) {
+                Intrinsics.checkNotNullParameter(name, "name");
+                Intrinsics.checkNotNullParameter(desc, "desc");
+                return new ScreenInfo(name, desc, i, i2);
             }
 
             public boolean equals(Object obj) {
@@ -446,27 +454,41 @@ public final class FishingScreen extends SAMPUIElement {
                 }
                 if (obj instanceof ScreenInfo) {
                     ScreenInfo screenInfo = (ScreenInfo) obj;
-                    return this.itemsCount == screenInfo.itemsCount && this.type == screenInfo.type;
+                    return Intrinsics.areEqual(this.name, screenInfo.name) && Intrinsics.areEqual(this.desc, screenInfo.desc) && this.itemsCount == screenInfo.itemsCount && this.type == screenInfo.type;
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (Integer.hashCode(this.itemsCount) * 31) + Integer.hashCode(this.type);
+                return (((((this.name.hashCode() * 31) + this.desc.hashCode()) * 31) + Integer.hashCode(this.itemsCount)) * 31) + Integer.hashCode(this.type);
             }
 
             public String toString() {
+                String str = this.name;
+                String str2 = this.desc;
                 int i = this.itemsCount;
-                return "ScreenInfo(itemsCount=" + i + ", type=" + this.type + ")";
+                return "ScreenInfo(name=" + str + ", desc=" + str2 + ", itemsCount=" + i + ", type=" + this.type + ")";
             }
 
-            public ScreenInfo(int i, int i2) {
+            public ScreenInfo(String name, String desc, int i, int i2) {
+                Intrinsics.checkNotNullParameter(name, "name");
+                Intrinsics.checkNotNullParameter(desc, "desc");
+                this.name = name;
+                this.desc = desc;
                 this.itemsCount = i;
                 this.type = i2;
             }
 
+            public final String getDesc() {
+                return this.desc;
+            }
+
             public final int getItemsCount() {
                 return this.itemsCount;
+            }
+
+            public final String getName() {
+                return this.name;
             }
 
             public final int getType() {
@@ -476,7 +498,7 @@ public final class FishingScreen extends SAMPUIElement {
     }
 
     /* compiled from: FishingScreen.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/arizonaui/fishing/FishingScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/arizonaui/fishing/FishingScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner

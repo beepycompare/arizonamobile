@@ -1,69 +1,25 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzhk extends zzmd implements zzni {
-    private static final zzhk zzb;
-    private int zzd;
-    private int zze;
-    private long zzf;
-
-    static {
-        zzhk zzhkVar = new zzhk();
-        zzb = zzhkVar;
-        zzmd.zzct(zzhk.class, zzhkVar);
-    }
-
+public final class zzhk extends zzma implements zznm {
     private zzhk() {
+        throw null;
     }
 
-    public static zzhj zzc() {
-        return (zzhj) zzb.zzcg();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzhk(byte[] bArr) {
+        super(zzhl.zzb());
     }
 
-    public static /* synthetic */ void zze(zzhk zzhkVar, long j) {
-        zzhkVar.zzd |= 2;
-        zzhkVar.zzf = j;
+    public final zzhk zza(int i) {
+        zzaX();
+        ((zzhl) this.zza).zze(i);
+        return this;
     }
 
-    public static /* synthetic */ void zzf(zzhk zzhkVar, int i) {
-        zzhkVar.zzd |= 1;
-        zzhkVar.zze = i;
-    }
-
-    public final int zza() {
-        return this.zze;
-    }
-
-    public final long zzb() {
-        return this.zzf;
-    }
-
-    public final boolean zzg() {
-        return (this.zzd & 2) != 0;
-    }
-
-    public final boolean zzh() {
-        return (this.zzd & 1) != 0;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzmd
-    public final Object zzl(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 != 0) {
-            if (i2 == 2) {
-                return zzcq(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001င\u0000\u0002ဂ\u0001", new Object[]{"zzd", "zze", "zzf"});
-            } else if (i2 != 3) {
-                if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzb;
-                    }
-                    throw null;
-                }
-                return new zzhj(null);
-            } else {
-                return new zzhk();
-            }
-        }
-        return (byte) 1;
+    public final zzhk zzb(int i) {
+        zzaX();
+        ((zzhl) this.zza).zzf(i);
+        return this;
     }
 }

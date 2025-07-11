@@ -74,7 +74,7 @@ public abstract class MessageNano {
 
     @Override // 
     /* renamed from: clone */
-    public MessageNano mo8436clone() throws CloneNotSupportedException {
+    public MessageNano mo8464clone() throws CloneNotSupportedException {
         return (MessageNano) super.clone();
     }
 

@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.Callable;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzc {
     final zzf zza;
@@ -16,61 +16,87 @@ public final class zzc {
     public zzc() {
         zzf zzfVar = new zzf();
         this.zza = zzfVar;
-        this.zzb = zzfVar.zzb.zza();
+        this.zzb = zzfVar.zzb.zzc();
         this.zzc = new zzab();
         this.zzd = new zzz();
-        zzfVar.zzd.zza("internal.registerCallback", new Callable() { // from class: com.google.android.gms.internal.measurement.zza
+        zzfVar.zzd.zza("internal.registerCallback", new Callable() { // from class: com.google.android.gms.internal.measurement.zzb
             @Override // java.util.concurrent.Callable
-            public final Object call() {
-                return zzc.zzb(zzc.this);
+            public final /* synthetic */ Object call() {
+                return zzc.this.zzg();
             }
         });
-        zzfVar.zzd.zza("internal.eventLogger", new Callable() { // from class: com.google.android.gms.internal.measurement.zzb
+        zzfVar.zzd.zza("internal.eventLogger", new Callable() { // from class: com.google.android.gms.internal.measurement.zza
             @Override // java.util.concurrent.Callable
-            public final Object call() {
+            public final /* synthetic */ Object call() {
                 return new zzk(zzc.this.zzc);
             }
         });
     }
 
-    public static /* synthetic */ zzai zzb(zzc zzcVar) {
-        return new zzv(zzcVar.zzd);
+    public final void zza(String str, Callable callable) {
+        this.zza.zzd.zza(str, callable);
     }
 
-    public final zzab zza() {
+    public final boolean zzb(zzaa zzaaVar) throws zzd {
+        try {
+            zzab zzabVar = this.zzc;
+            zzabVar.zzb(zzaaVar);
+            this.zza.zzc.zze("runtime.counter", new zzah(Double.valueOf((double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE)));
+            this.zzd.zzb(this.zzb.zzc(), zzabVar);
+            if (zzc()) {
+                return true;
+            }
+            return zzd();
+        } catch (Throwable th) {
+            throw new zzd(th);
+        }
+    }
+
+    public final boolean zzc() {
+        zzab zzabVar = this.zzc;
+        return !zzabVar.zzc().equals(zzabVar.zza());
+    }
+
+    public final boolean zzd() {
+        return !this.zzc.zzf().isEmpty();
+    }
+
+    public final zzab zze() {
         return this.zzc;
     }
 
-    public final void zzc(zziv zzivVar) throws zzd {
+    public final void zzf(zzja zzjaVar) throws zzd {
         zzai zzaiVar;
         try {
             zzf zzfVar = this.zza;
-            this.zzb = zzfVar.zzb.zza();
-            if (zzfVar.zza(this.zzb, (zziz[]) zzivVar.zzc().toArray(new zziz[0])) instanceof zzag) {
+            this.zzb = zzfVar.zzb.zzc();
+            if (zzfVar.zza(this.zzb, (zzje[]) zzjaVar.zza().toArray(new zzje[0])) instanceof zzag) {
                 throw new IllegalStateException("Program loading failed");
             }
-            for (zzit zzitVar : zzivVar.zza().zzd()) {
-                List zzc = zzitVar.zzc();
-                String zzb = zzitVar.zzb();
-                Iterator it = zzc.iterator();
+            for (zziy zziyVar : zzjaVar.zzb().zza()) {
+                List zzb = zziyVar.zzb();
+                String zza = zziyVar.zza();
+                Iterator it = zzb.iterator();
                 while (it.hasNext()) {
-                    zzap zza = zzfVar.zza(this.zzb, (zziz) it.next());
-                    if (zza instanceof zzam) {
+                    zzao zza2 = zzfVar.zza(this.zzb, (zzje) it.next());
+                    if (zza2 instanceof zzal) {
                         zzg zzgVar = this.zzb;
-                        if (zzgVar.zzh(zzb)) {
-                            zzap zzd = zzgVar.zzd(zzb);
-                            if (zzd instanceof zzai) {
-                                zzaiVar = (zzai) zzd;
+                        if (zzgVar.zzd(zza)) {
+                            zzao zzh = zzgVar.zzh(zza);
+                            if (zzh instanceof zzai) {
+                                zzaiVar = (zzai) zzh;
                             } else {
-                                throw new IllegalStateException("Invalid function name: ".concat(String.valueOf(zzb)));
+                                String.valueOf(zza);
+                                throw new IllegalStateException("Invalid function name: ".concat(String.valueOf(zza)));
                             }
                         } else {
                             zzaiVar = null;
                         }
                         if (zzaiVar != null) {
-                            zzaiVar.zza(this.zzb, Collections.singletonList(zza));
+                            zzaiVar.zza(this.zzb, Collections.singletonList(zza2));
                         } else {
-                            throw new IllegalStateException("Rule function is undefined: ".concat(String.valueOf(zzb)));
+                            String.valueOf(zza);
+                            throw new IllegalStateException("Rule function is undefined: ".concat(String.valueOf(zza)));
                         }
                     } else {
                         throw new IllegalArgumentException("Invalid rule definition");
@@ -82,31 +108,8 @@ public final class zzc {
         }
     }
 
-    public final void zzd(String str, Callable callable) {
-        this.zza.zzd.zza(str, callable);
-    }
-
-    public final boolean zze(zzaa zzaaVar) throws zzd {
-        try {
-            zzab zzabVar = this.zzc;
-            zzabVar.zzd(zzaaVar);
-            this.zza.zzc.zzg("runtime.counter", new zzah(Double.valueOf((double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE)));
-            this.zzd.zzb(this.zzb.zza(), zzabVar);
-            if (zzg()) {
-                return true;
-            }
-            return zzf();
-        } catch (Throwable th) {
-            throw new zzd(th);
-        }
-    }
-
-    public final boolean zzf() {
-        return !this.zzc.zzc().isEmpty();
-    }
-
-    public final boolean zzg() {
-        zzab zzabVar = this.zzc;
-        return !zzabVar.zzb().equals(zzabVar.zza());
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ zzai zzg() {
+        return new zzv(this.zzd);
     }
 }

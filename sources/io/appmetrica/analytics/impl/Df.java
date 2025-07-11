@@ -7,36 +7,36 @@ import org.json.JSONObject;
 public final class Df implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bf f390a = new Bf();
+    public final Bf f391a = new Bf();
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0715xf fromModel(Cf cf) {
-        C0715xf c0715xf = new C0715xf();
-        if (!TextUtils.isEmpty(cf.f374a)) {
-            c0715xf.f1125a = cf.f374a;
+    public final C0707xf fromModel(Cf cf) {
+        C0707xf c0707xf = new C0707xf();
+        if (!TextUtils.isEmpty(cf.f375a)) {
+            c0707xf.f1126a = cf.f375a;
         }
-        c0715xf.b = cf.b.toString();
-        c0715xf.c = cf.c;
-        c0715xf.d = cf.d;
-        c0715xf.e = this.f390a.fromModel(cf.e).intValue();
-        return c0715xf;
+        c0707xf.b = cf.b.toString();
+        c0707xf.c = cf.c;
+        c0707xf.d = cf.d;
+        c0707xf.e = this.f391a.fromModel(cf.e).intValue();
+        return c0707xf;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Cf toModel(C0715xf c0715xf) {
+    public final Cf toModel(C0707xf c0707xf) {
         JSONObject jSONObject;
-        String str = c0715xf.f1125a;
-        String str2 = c0715xf.b;
+        String str = c0707xf.f1126a;
+        String str2 = c0707xf.b;
         if (!TextUtils.isEmpty(str2)) {
             try {
                 jSONObject = new JSONObject(str2);
             } catch (Throwable unused) {
             }
-            return new Cf(str, jSONObject, c0715xf.c, c0715xf.d, this.f390a.toModel(Integer.valueOf(c0715xf.e)));
+            return new Cf(str, jSONObject, c0707xf.c, c0707xf.d, this.f391a.toModel(Integer.valueOf(c0707xf.e)));
         }
         jSONObject = new JSONObject();
-        return new Cf(str, jSONObject, c0715xf.c, c0715xf.d, this.f390a.toModel(Integer.valueOf(c0715xf.e)));
+        return new Cf(str, jSONObject, c0707xf.c, c0707xf.d, this.f391a.toModel(Integer.valueOf(c0707xf.e)));
     }
 }

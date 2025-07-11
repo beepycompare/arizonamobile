@@ -7,11 +7,11 @@ import org.json.JSONObject;
 public final class Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final HashSet f593a;
+    public static final HashSet f594a;
 
     static {
         HashSet hashSet = new HashSet();
-        f593a = hashSet;
+        f594a = hashSet;
         hashSet.add("get_ad");
         hashSet.add("report");
         hashSet.add("report_ad");
@@ -23,7 +23,7 @@ public final class Qa {
         try {
             JSONObject optJSONObject = jSONObject.optJSONObject(str);
             if (optJSONObject != null) {
-                return AbstractC0761zb.a(optJSONObject.getJSONArray("urls"));
+                return AbstractC0753zb.a(optJSONObject.getJSONArray("urls"));
             }
             return null;
         } catch (Throwable unused) {

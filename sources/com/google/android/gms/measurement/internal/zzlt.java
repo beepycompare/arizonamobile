@@ -1,16 +1,24 @@
 package com.google.android.gms.measurement.internal;
-
-import android.os.Bundle;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public interface zzlt {
-    void zza(com.google.android.gms.internal.measurement.zzdj zzdjVar, Bundle bundle);
+public final class zzlt {
+    public final String zza;
+    public final String zzb;
+    public final long zzc;
+    boolean zzd;
+    public final boolean zze;
+    public final long zzf;
 
-    void zzb(com.google.android.gms.internal.measurement.zzdj zzdjVar);
+    public zzlt(String str, String str2, long j) {
+        this(str, str2, j, false, 0L);
+    }
 
-    void zzc(com.google.android.gms.internal.measurement.zzdj zzdjVar);
-
-    void zzd(com.google.android.gms.internal.measurement.zzdj zzdjVar);
-
-    void zze(com.google.android.gms.internal.measurement.zzdj zzdjVar, Bundle bundle);
+    public zzlt(String str, String str2, long j, boolean z, long j2) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = j;
+        this.zzd = false;
+        this.zze = z;
+        this.zzf = j2;
+    }
 }

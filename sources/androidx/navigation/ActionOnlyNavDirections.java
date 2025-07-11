@@ -47,7 +47,7 @@ public final class ActionOnlyNavDirections implements NavDirections {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m7665constructorimpl(bundleOf);
+        SavedStateWriter.m7666constructorimpl(bundleOf);
         this.arguments = bundleOf;
     }
 

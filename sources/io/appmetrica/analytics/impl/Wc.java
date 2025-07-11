@@ -6,7 +6,7 @@ import java.util.Map;
 public class Wc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f686a;
+    public final Map f687a;
     public final Object b;
 
     public Wc(Object obj) {
@@ -14,16 +14,16 @@ public class Wc {
     }
 
     public final void a(Object obj, Object obj2) {
-        this.f686a.put(obj, obj2);
+        this.f687a.put(obj, obj2);
     }
 
     public Wc(HashMap hashMap, Object obj) {
-        this.f686a = hashMap;
+        this.f687a = hashMap;
         this.b = obj;
     }
 
     public final Object a(Object obj) {
-        Object obj2 = this.f686a.get(obj);
+        Object obj2 = this.f687a.get(obj);
         return obj2 == null ? this.b : obj2;
     }
 }

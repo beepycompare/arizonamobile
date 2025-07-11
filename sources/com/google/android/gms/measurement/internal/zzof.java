@@ -1,13 +1,27 @@
 package com.google.android.gms.measurement.internal;
 
-import android.app.job.JobParameters;
-import android.content.Intent;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.common.util.Clock;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public interface zzof {
-    void zza(Intent intent);
+final class zzof {
+    private final Clock zza;
+    private long zzb;
 
-    void zzb(JobParameters jobParameters, boolean z);
+    public zzof(Clock clock) {
+        Preconditions.checkNotNull(clock);
+        this.zza = clock;
+    }
 
-    boolean zzc(int i);
+    public final void zza() {
+        this.zzb = this.zza.elapsedRealtime();
+    }
+
+    public final void zzb() {
+        this.zzb = 0L;
+    }
+
+    public final boolean zzc(long j) {
+        return this.zzb == 0 || this.zza.elapsedRealtime() - this.zzb >= 3600000;
+    }
 }

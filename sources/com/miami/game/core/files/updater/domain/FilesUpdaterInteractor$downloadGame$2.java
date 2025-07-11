@@ -1,5 +1,6 @@
 package com.miami.game.core.files.updater.domain;
 
+import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -10,12 +11,10 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Job;
-import kotlinx.datetime.Clock;
-import kotlinx.datetime.Instant;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FilesUpdaterInteractor.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lkotlinx/coroutines/Job;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.files.updater.domain.FilesUpdaterInteractor$downloadGame$2", f = "FilesUpdaterInteractor.kt", i = {}, l = {214}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lkotlinx/coroutines/Job;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.files.updater.domain.FilesUpdaterInteractor$downloadGame$2", f = "FilesUpdaterInteractor.kt", i = {}, l = {AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes4.dex */
 public final class FilesUpdaterInteractor$downloadGame$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Job>, Object> {
     int label;
@@ -46,9 +45,8 @@ public final class FilesUpdaterInteractor$downloadGame$2 extends SuspendLambda i
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            Instant now = Clock.System.INSTANCE.now();
             this.label = 1;
-            downloadFiles = this.this$0.downloadFiles(now.toEpochMilliseconds(), this);
+            downloadFiles = this.this$0.downloadFiles(System.currentTimeMillis(), this);
             if (downloadFiles == coroutine_suspended) {
                 return coroutine_suspended;
             }

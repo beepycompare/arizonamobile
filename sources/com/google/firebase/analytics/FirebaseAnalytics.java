@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.internal.measurement.zzdj;
-import com.google.android.gms.internal.measurement.zzff;
-import com.google.android.gms.measurement.internal.zzlx;
+import com.google.android.gms.internal.measurement.zzdf;
+import com.google.android.gms.internal.measurement.zzfb;
+import com.google.android.gms.measurement.internal.zzlj;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.installations.FirebaseInstallations;
@@ -17,21 +17,21 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
 /* loaded from: classes4.dex */
 public final class FirebaseAnalytics {
     private static volatile FirebaseAnalytics zza;
-    private final zzff zzb;
+    private final zzfb zzb;
     private ExecutorService zzc;
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.4.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
     /* loaded from: classes4.dex */
     public enum ConsentStatus {
         GRANTED,
         DENIED
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.4.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
     /* loaded from: classes4.dex */
     public enum ConsentType {
         AD_STORAGE,
@@ -40,7 +40,7 @@ public final class FirebaseAnalytics {
         AD_PERSONALIZATION
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.4.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
     /* loaded from: classes4.dex */
     public static class Event {
         public static final String ADD_PAYMENT_INFO = "add_payment_info";
@@ -83,7 +83,7 @@ public final class FirebaseAnalytics {
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.4.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
     /* loaded from: classes4.dex */
     public static class Param {
         public static final String ACHIEVEMENT_ID = "achievement_id";
@@ -160,7 +160,7 @@ public final class FirebaseAnalytics {
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.4.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
     /* loaded from: classes4.dex */
     public static class UserProperty {
         public static final String ALLOW_AD_PERSONALIZATION_SIGNALS = "allow_personalized_ads";
@@ -170,28 +170,28 @@ public final class FirebaseAnalytics {
         }
     }
 
-    public FirebaseAnalytics(zzff zzffVar) {
-        Preconditions.checkNotNull(zzffVar);
-        this.zzb = zzffVar;
+    public FirebaseAnalytics(zzfb zzfbVar) {
+        Preconditions.checkNotNull(zzfbVar);
+        this.zzb = zzfbVar;
     }
 
     public static FirebaseAnalytics getInstance(Context context) {
         if (zza == null) {
             synchronized (FirebaseAnalytics.class) {
                 if (zza == null) {
-                    zza = new FirebaseAnalytics(zzff.zzg(context, null, null, null, null));
+                    zza = new FirebaseAnalytics(zzfb.zza(context, null));
                 }
             }
         }
         return zza;
     }
 
-    public static zzlx getScionFrontendApiImplementation(Context context, Bundle bundle) {
-        zzff zzg = zzff.zzg(context, null, null, null, bundle);
-        if (zzg == null) {
+    public static zzlj getScionFrontendApiImplementation(Context context, Bundle bundle) {
+        zzfb zza2 = zzfb.zza(context, bundle);
+        if (zza2 == null) {
             return null;
         }
-        return new zzd(zzg);
+        return new zzd(zza2);
     }
 
     @EnsuresNonNull({"this.executor"})
@@ -222,7 +222,7 @@ public final class FirebaseAnalytics {
         try {
             return Tasks.call(zzb(), new zzb(this));
         } catch (RuntimeException e) {
-            this.zzb.zzB(5, "Failed to schedule task for getAppInstanceId", null, null, null);
+            this.zzb.zzD(5, "Failed to schedule task for getAppInstanceId", null, null, null);
             return Tasks.forException(e);
         }
     }
@@ -243,21 +243,21 @@ public final class FirebaseAnalytics {
         try {
             return Tasks.call(zzb(), new zzc(this));
         } catch (RuntimeException e) {
-            this.zzb.zzB(5, "Failed to schedule task for getSessionId", null, null, null);
+            this.zzb.zzD(5, "Failed to schedule task for getSessionId", null, null, null);
             return Tasks.forException(e);
         }
     }
 
     public void logEvent(String str, Bundle bundle) {
-        this.zzb.zzy(str, bundle);
+        this.zzb.zzh(str, bundle);
     }
 
     public void resetAnalyticsData() {
-        this.zzb.zzD();
+        this.zzb.zzs();
     }
 
     public void setAnalyticsCollectionEnabled(boolean z) {
-        this.zzb.zzL(Boolean.valueOf(z));
+        this.zzb.zzq(Boolean.valueOf(z));
     }
 
     public void setConsent(Map<ConsentType, ConsentStatus> map) {
@@ -298,30 +298,35 @@ public final class FirebaseAnalytics {
                 bundle.putString("ad_personalization", "denied");
             }
         }
-        this.zzb.zzG(bundle);
+        this.zzb.zzr(bundle);
     }
 
     @Deprecated
     public void setCurrentScreen(Activity activity, String str, String str2) {
-        this.zzb.zzH(zzdj.zza(activity), str, str2);
+        this.zzb.zzp(zzdf.zza(activity), str, str2);
     }
 
     public void setDefaultEventParameters(Bundle bundle) {
         if (bundle != null) {
             bundle = new Bundle(bundle);
         }
-        this.zzb.zzJ(bundle);
+        this.zzb.zzL(bundle);
     }
 
     public void setSessionTimeoutDuration(long j) {
-        this.zzb.zzM(j);
+        this.zzb.zzt(j);
     }
 
     public void setUserId(String str) {
-        this.zzb.zzO(str);
+        this.zzb.zzo(str);
     }
 
     public void setUserProperty(String str, String str2) {
-        this.zzb.zzP(null, str, str2, false);
+        this.zzb.zzk(null, str, str2, false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ zzfb zza() {
+        return this.zzb;
     }
 }

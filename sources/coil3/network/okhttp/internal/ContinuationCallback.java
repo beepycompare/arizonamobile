@@ -34,7 +34,7 @@ public final class ContinuationCallback implements Callback, Function1<Throwable
     @Override // okhttp3.Callback
     public void onResponse(Call call, Response response) {
         Result.Companion companion = Result.Companion;
-        this.continuation.resumeWith(Result.m8443constructorimpl(response));
+        this.continuation.resumeWith(Result.m8471constructorimpl(response));
     }
 
     @Override // okhttp3.Callback
@@ -43,7 +43,7 @@ public final class ContinuationCallback implements Callback, Function1<Throwable
             return;
         }
         Result.Companion companion = Result.Companion;
-        this.continuation.resumeWith(Result.m8443constructorimpl(ResultKt.createFailure(iOException)));
+        this.continuation.resumeWith(Result.m8471constructorimpl(ResultKt.createFailure(iOException)));
     }
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */

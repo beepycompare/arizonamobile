@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import android.net.Uri;
 import com.google.common.base.Function;
 import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzkf {
     @Nullable
@@ -26,10 +26,6 @@ public final class zzkf {
     }
 
     public final zzkf zza() {
-        return new zzkf(null, this.zza, this.zzb, this.zzc, this.zzd, false, true, false, null);
-    }
-
-    public final zzkf zzb() {
         String str = this.zzb;
         if (str.isEmpty()) {
             return new zzkf(null, this.zza, str, this.zzc, true, false, this.zze, false, null);
@@ -37,26 +33,30 @@ public final class zzkf {
         throw new IllegalStateException("Cannot set GServices prefix and skip GServices");
     }
 
-    public final zzki zzc(String str, double d) {
-        Double valueOf = Double.valueOf(-3.0d);
-        int i = zzki.zzc;
-        return new zzkd(this, "measurement.test.double_flag", valueOf, true);
+    public final zzkf zzb() {
+        return new zzkf(null, this.zza, this.zzb, this.zzc, this.zzd, false, true, false, null);
     }
 
-    public final zzki zzd(String str, long j) {
+    public final zzkl zzc(String str, long j) {
         Long valueOf = Long.valueOf(j);
-        int i = zzki.zzc;
+        int i = zzkl.zzc;
         return new zzkb(this, str, valueOf, true);
     }
 
-    public final zzki zze(String str, String str2) {
-        int i = zzki.zzc;
-        return new zzke(this, str, str2, true);
+    public final zzkl zzd(String str, boolean z) {
+        Boolean valueOf = Boolean.valueOf(z);
+        int i = zzkl.zzc;
+        return new zzkc(this, str, valueOf, true);
     }
 
-    public final zzki zzf(String str, boolean z) {
-        Boolean valueOf = Boolean.valueOf(z);
-        int i = zzki.zzc;
-        return new zzkc(this, str, valueOf, true);
+    public final zzkl zze(String str, double d) {
+        Double valueOf = Double.valueOf(-3.0d);
+        int i = zzkl.zzc;
+        return new zzkd(this, "measurement.test.double_flag", valueOf, true);
+    }
+
+    public final zzkl zzf(String str, String str2) {
+        int i = zzkl.zzc;
+        return new zzke(this, str, str2, true);
     }
 }

@@ -14,7 +14,7 @@ public final class g extends e {
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
     public final boolean process(Object... objArr) {
         if (ReflectionUtils.isArgumentsOfClasses(objArr, AdValue.class, NativeAd.class)) {
-            this.f209a.getClass();
+            this.f210a.getClass();
             a(b.a((AdValue) objArr[0], ModuleAdType.NATIVE, "nativeAd", ((NativeAd) objArr[1]).getResponseInfo(), null));
             return true;
         }

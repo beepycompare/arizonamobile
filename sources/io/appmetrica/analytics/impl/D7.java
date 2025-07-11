@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class D7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0667vh f385a;
+    public final C0659vh f386a;
 
-    public D7(C0667vh c0667vh) {
-        this.f385a = c0667vh;
+    public D7(C0659vh c0659vh) {
+        this.f386a = c0659vh;
     }
 }

@@ -3,11 +3,11 @@ package io.appmetrica.analytics.impl;
 public final class M6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Og f530a;
+    public final Og f531a;
     public final String b;
 
     public M6(Og og, String str) {
-        this.f530a = og;
+        this.f531a = og;
         this.b = str;
     }
 }

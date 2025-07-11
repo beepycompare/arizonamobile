@@ -74,42 +74,42 @@ public final class FileSystem {
         return SequencesKt.sequence(new FileSystem$commonListRecursively$1(dir, fileSystem, z, null));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x009e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x009f, code lost:
         if (r15.yield(r1, r4) == r5) goto L31;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x00e3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x00e5, code lost:
         if (r0 != false) goto L67;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x00e5, code lost:
-        if (r7 != 0) goto L38;
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00e7, code lost:
+        if (r11 != 0) goto L38;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x00e7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x00e9, code lost:
         r6.addLast(r12);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00ea, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00ec, code lost:
         r3 = r3.iterator();
         r3 = r1;
         r1 = r2;
         r2 = r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x013d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x0140, code lost:
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x013e, code lost:
-        r7 = r6;
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x0141, code lost:
+        r9 = r6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x015b, code lost:
-        if (r11.yield(r1, r4) == r5) goto L31;
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x015e, code lost:
+        if (r10.yield(r1, r4) == r5) goto L31;
      */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x002d  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00b1  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00f8 A[Catch: all -> 0x013d, TRY_LEAVE, TryCatch #2 {all -> 0x013d, blocks: (B:48:0x00f2, B:50:0x00f8, B:47:0x00ea), top: B:77:0x00ea }] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0135  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x014a  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0161  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x012d -> B:19:0x005f). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00fa A[Catch: all -> 0x0140, TRY_LEAVE, TryCatch #0 {all -> 0x0140, blocks: (B:48:0x00f4, B:50:0x00fa, B:47:0x00ec), top: B:73:0x00ec }] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x014d  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0164  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x012f -> B:19:0x005e). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -138,7 +138,6 @@ public final class FileSystem {
                 Object obj = fileSystem$collectRecursively$1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = fileSystem$collectRecursively$1.label;
-                int i2 = 0;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     if (z7) {
@@ -183,14 +182,16 @@ public final class FileSystem {
                     Iterator<Path> it = (Iterator) fileSystem$collectRecursively$1.L$4;
                     Path path4 = (Path) fileSystem$collectRecursively$1.L$3;
                     ArrayDeque<Path> arrayDeque4 = (ArrayDeque) fileSystem$collectRecursively$1.L$2;
-                    fileSystem3 = (okio.FileSystem) fileSystem$collectRecursively$1.L$1;
-                    sequenceScope2 = (SequenceScope) fileSystem$collectRecursively$1.L$0;
+                    okio.FileSystem fileSystem5 = (okio.FileSystem) fileSystem$collectRecursively$1.L$1;
+                    SequenceScope<? super Path> sequenceScope4 = (SequenceScope) fileSystem$collectRecursively$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
                         boolean z12 = z10;
                         z4 = z11;
                         Path path5 = path4;
                         arrayDeque2 = arrayDeque4;
+                        fileSystem3 = fileSystem5;
+                        sequenceScope2 = sequenceScope4;
                         if (!it.hasNext()) {
                             try {
                                 Path next = it.next();
@@ -203,14 +204,16 @@ public final class FileSystem {
                                 fileSystem$collectRecursively$1.Z$1 = z12;
                                 fileSystem$collectRecursively$1.label = 2;
                                 Object collectRecursively = collectRecursively(sequenceScope3, fileSystem4, arrayDeque3, next, z5, z6, fileSystem$collectRecursively$12);
-                                sequenceScope2 = sequenceScope3;
-                                fileSystem3 = fileSystem4;
+                                sequenceScope4 = sequenceScope3;
+                                fileSystem5 = fileSystem4;
                                 arrayDeque4 = arrayDeque3;
                                 z12 = z6;
                                 if (collectRecursively != coroutine_suspended) {
                                     z4 = z5;
                                     fileSystem$collectRecursively$1 = fileSystem$collectRecursively$12;
                                     arrayDeque2 = arrayDeque4;
+                                    fileSystem3 = fileSystem5;
+                                    sequenceScope2 = sequenceScope4;
                                     if (!it.hasNext()) {
                                         arrayDeque2.removeLast();
                                         z7 = z12;
@@ -251,6 +254,7 @@ public final class FileSystem {
                     listOrNull = CollectionsKt.emptyList();
                 }
                 if (!listOrNull.isEmpty()) {
+                    int i2 = 0;
                     Path path6 = path2;
                     while (true) {
                         if (z4 && arrayDeque2.contains(path6)) {
@@ -272,7 +276,6 @@ public final class FileSystem {
         Object obj2 = fileSystem$collectRecursively$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = fileSystem$collectRecursively$1.label;
-        int i22 = 0;
         if (i != 0) {
         }
         listOrNull = fileSystem3.listOrNull(path2);

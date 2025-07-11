@@ -166,7 +166,7 @@ public final class NavBackStackEntryImpl {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m7669putAllimpl(SavedStateWriter.m7665constructorimpl(bundleOf), this.immutableArgs);
+        SavedStateWriter.m7670putAllimpl(SavedStateWriter.m7666constructorimpl(bundleOf), this.immutableArgs);
         return bundleOf;
     }
 
@@ -196,6 +196,7 @@ public final class NavBackStackEntryImpl {
 
     public final void handleLifecycleEvent$navigation_common_release(Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(event, "event");
+        this.entry.setHostLifecycleState$navigation_common_release(event.getTargetState());
         this.hostLifecycleState = event.getTargetState();
         updateState$navigation_common_release();
     }

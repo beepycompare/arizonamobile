@@ -2,9 +2,9 @@ package com.google.android.gms.internal.measurement;
 
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzl extends zzam {
+public final class zzl extends zzal {
     private final zzab zzb;
 
     public zzl(zzab zzabVar) {
@@ -12,8 +12,8 @@ public final class zzl extends zzam {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    @Override // com.google.android.gms.internal.measurement.zzam, com.google.android.gms.internal.measurement.zzap
-    public final zzap zzcz(String str, zzg zzgVar, List list) {
+    @Override // com.google.android.gms.internal.measurement.zzal, com.google.android.gms.internal.measurement.zzao
+    public final zzao zzcA(String str, zzg zzgVar, List list) {
         char c;
         switch (str.hashCode()) {
             case 21624207:
@@ -63,39 +63,39 @@ public final class zzl extends zzam {
                 break;
         }
         if (c == 0) {
-            zzh.zzh("getEventName", 0, list);
-            return new zzat(this.zzb.zzb().zze());
+            zzh.zza("getEventName", 0, list);
+            return new zzas(this.zzb.zzc().zzb());
         } else if (c == 1) {
-            zzh.zzh("getParamValue", 1, list);
-            return zzi.zzb(this.zzb.zzb().zzc(zzgVar.zzb((zzap) list.get(0)).zzi()));
+            zzh.zza("getParamValue", 1, list);
+            return zzi.zza(this.zzb.zzc().zze(zzgVar.zza((zzao) list.get(0)).zzc()));
         } else if (c == 2) {
-            zzh.zzh("getParams", 0, list);
-            Map zzf = this.zzb.zzb().zzf();
-            zzam zzamVar = new zzam();
+            zzh.zza("getParams", 0, list);
+            Map zzf = this.zzb.zzc().zzf();
+            zzal zzalVar = new zzal();
             for (String str2 : zzf.keySet()) {
-                zzamVar.zzr(str2, zzi.zzb(zzf.get(str2)));
+                zzalVar.zzm(str2, zzi.zza(zzf.get(str2)));
             }
-            return zzamVar;
+            return zzalVar;
         } else if (c == 3) {
-            zzh.zzh("getTimestamp", 0, list);
-            return new zzah(Double.valueOf(this.zzb.zzb().zza()));
+            zzh.zza("getTimestamp", 0, list);
+            return new zzah(Double.valueOf(this.zzb.zzc().zza()));
         } else if (c == 4) {
-            zzh.zzh("setEventName", 1, list);
-            zzap zzb = zzgVar.zzb((zzap) list.get(0));
-            if (zzf.equals(zzb) || zzg.equals(zzb)) {
+            zzh.zza("setEventName", 1, list);
+            zzao zza = zzgVar.zza((zzao) list.get(0));
+            if (zzf.equals(zza) || zzg.equals(zza)) {
                 throw new IllegalArgumentException("Illegal event name");
             }
-            this.zzb.zzb().zzg(zzb.zzi());
-            return new zzat(zzb.zzi());
+            this.zzb.zzc().zzc(zza.zzc());
+            return new zzas(zza.zzc());
         } else {
             if (c == 5) {
-                zzh.zzh("setParamValue", 2, list);
-                String zzi = zzgVar.zzb((zzap) list.get(0)).zzi();
-                zzap zzb2 = zzgVar.zzb((zzap) list.get(1));
-                this.zzb.zzb().zzh(zzi, zzh.zzf(zzb2));
-                return zzb2;
+                zzh.zza("setParamValue", 2, list);
+                String zzc = zzgVar.zza((zzao) list.get(0)).zzc();
+                zzao zza2 = zzgVar.zza((zzao) list.get(1));
+                this.zzb.zzc().zzd(zzc, zzh.zzj(zza2));
+                return zza2;
             }
-            return super.zzcz(str, zzgVar, list);
+            return super.zzcA(str, zzgVar, list);
         }
     }
 }

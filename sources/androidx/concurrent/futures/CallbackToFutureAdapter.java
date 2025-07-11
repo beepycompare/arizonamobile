@@ -26,12 +26,12 @@ public final class CallbackToFutureAdapter {
             Object attachCompleter = resolver.attachCompleter(completer);
             if (attachCompleter != null) {
                 completer.tag = attachCompleter;
-                return safeFuture;
             }
+            return safeFuture;
         } catch (Exception e) {
             safeFuture.setException(e);
+            return safeFuture;
         }
-        return safeFuture;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

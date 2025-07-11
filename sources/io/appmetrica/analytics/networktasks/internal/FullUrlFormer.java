@@ -8,7 +8,7 @@ import java.util.List;
 public class FullUrlFormer<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private List f1237a = new ArrayList();
+    private List f1238a = new ArrayList();
     private int b = -1;
     private String c;
     private final IParamsAppender d;
@@ -21,21 +21,21 @@ public class FullUrlFormer<T> {
 
     /* JADX WARN: Multi-variable type inference failed */
     public void buildAndSetFullHostUrl() {
-        Uri.Builder buildUpon = Uri.parse((String) this.f1237a.get(this.b)).buildUpon();
+        Uri.Builder buildUpon = Uri.parse((String) this.f1238a.get(this.b)).buildUpon();
         this.d.appendParams(buildUpon, this.e.getConfig());
         this.c = buildUpon.build().toString();
     }
 
     public List<String> getAllHosts() {
-        return this.f1237a;
+        return this.f1238a;
     }
 
     public String getUrl() {
-        return new c(this.c).f1226a;
+        return new c(this.c).f1227a;
     }
 
     public boolean hasMoreHosts() {
-        return this.b + 1 < this.f1237a.size();
+        return this.b + 1 < this.f1238a.size();
     }
 
     public void incrementAttemptNumber() {
@@ -46,6 +46,6 @@ public class FullUrlFormer<T> {
         if (list == null) {
             list = new ArrayList<>();
         }
-        this.f1237a = list;
+        this.f1238a = list;
     }
 }

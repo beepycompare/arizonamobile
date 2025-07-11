@@ -6,9 +6,9 @@ import dagger.internal.InstanceFactory;
 import javax.inject.Provider;
 /* loaded from: classes4.dex */
 public final class SettingsComponent_Factory_Impl implements SettingsComponent.Factory {
-    private final C0122SettingsComponent_Factory delegateFactory;
+    private final C0114SettingsComponent_Factory delegateFactory;
 
-    SettingsComponent_Factory_Impl(C0122SettingsComponent_Factory delegateFactory) {
+    SettingsComponent_Factory_Impl(C0114SettingsComponent_Factory delegateFactory) {
         this.delegateFactory = delegateFactory;
     }
 
@@ -17,11 +17,11 @@ public final class SettingsComponent_Factory_Impl implements SettingsComponent.F
         return this.delegateFactory.get(componentContext);
     }
 
-    public static Provider<SettingsComponent.Factory> create(C0122SettingsComponent_Factory delegateFactory) {
+    public static Provider<SettingsComponent.Factory> create(C0114SettingsComponent_Factory delegateFactory) {
         return InstanceFactory.create(new SettingsComponent_Factory_Impl(delegateFactory));
     }
 
-    public static dagger.internal.Provider<SettingsComponent.Factory> createFactoryProvider(C0122SettingsComponent_Factory delegateFactory) {
+    public static dagger.internal.Provider<SettingsComponent.Factory> createFactoryProvider(C0114SettingsComponent_Factory delegateFactory) {
         return InstanceFactory.create(new SettingsComponent_Factory_Impl(delegateFactory));
     }
 }

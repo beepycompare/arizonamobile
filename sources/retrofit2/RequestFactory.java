@@ -101,7 +101,7 @@ public final class RequestFactory {
             arrayList.add(objArr[i]);
             parameterHandlerArr[i].apply(requestBuilder, objArr[i]);
         }
-        return requestBuilder.get().tag(Invocation.class, new Invocation(this.service, obj, this.method, arrayList)).build();
+        return requestBuilder.get().tag((Class<? super Class>) Invocation.class, (Class) new Invocation(this.service, obj, this.method, arrayList)).build();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

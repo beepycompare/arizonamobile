@@ -6,7 +6,7 @@ import io.appmetrica.analytics.billinginterface.internal.ProductType;
 public abstract /* synthetic */ class Qf {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f595a;
+    public static final /* synthetic */ int[] f596a;
     public static final /* synthetic */ int[] b;
 
     static {
@@ -29,13 +29,13 @@ public abstract /* synthetic */ class Qf {
         } catch (NoSuchFieldError unused4) {
         }
         int[] iArr2 = new int[ProductType.values().length];
-        f595a = iArr2;
+        f596a = iArr2;
         try {
             iArr2[ProductType.INAPP.ordinal()] = 1;
         } catch (NoSuchFieldError unused5) {
         }
         try {
-            f595a[ProductType.SUBS.ordinal()] = 2;
+            f596a[ProductType.SUBS.ordinal()] = 2;
         } catch (NoSuchFieldError unused6) {
         }
     }

@@ -7,12 +7,12 @@ import io.appmetrica.analytics.modulesapi.internal.client.ModuleServiceConfig;
 import io.appmetrica.analytics.modulesapi.internal.client.ServiceConfigExtensionConfiguration;
 import io.appmetrica.analytics.modulesapi.internal.client.ServiceConfigUpdateListener;
 import io.appmetrica.analytics.screenshot.impl.B;
-import io.appmetrica.analytics.screenshot.impl.C0777d;
-import io.appmetrica.analytics.screenshot.impl.C0781h;
-import io.appmetrica.analytics.screenshot.impl.C0784k;
-import io.appmetrica.analytics.screenshot.impl.C0785l;
-import io.appmetrica.analytics.screenshot.impl.C0793u;
-import io.appmetrica.analytics.screenshot.impl.C0794v;
+import io.appmetrica.analytics.screenshot.impl.C0769d;
+import io.appmetrica.analytics.screenshot.impl.C0773h;
+import io.appmetrica.analytics.screenshot.impl.C0776k;
+import io.appmetrica.analytics.screenshot.impl.C0777l;
+import io.appmetrica.analytics.screenshot.impl.C0785u;
+import io.appmetrica.analytics.screenshot.impl.C0786v;
 import io.appmetrica.analytics.screenshot.impl.D;
 import io.appmetrica.analytics.screenshot.impl.P;
 import io.appmetrica.analytics.screenshot.impl.S;
@@ -26,16 +26,16 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoint<B> {
 
     /* renamed from: a  reason: collision with root package name */
-    private C0784k f1315a;
+    private C0776k f1316a;
     private S d;
-    private final C0781h b = new C0781h();
+    private final C0773h b = new C0773h();
     private final ScreenshotClientModuleEntryPoint$configUpdateListener$1 c = new ServiceConfigUpdateListener<B>() { // from class: io.appmetrica.analytics.screenshot.internal.ScreenshotClientModuleEntryPoint$configUpdateListener$1
         @Override // io.appmetrica.analytics.modulesapi.internal.client.ServiceConfigUpdateListener
         public void onServiceConfigUpdated(ModuleServiceConfig<B> moduleServiceConfig) {
-            C0784k c0784k;
+            C0776k c0776k;
             S s;
             S s2;
-            C0784k c0784k2;
+            C0776k c0776k2;
             ScreenshotClientModuleEntryPoint screenshotClientModuleEntryPoint = ScreenshotClientModuleEntryPoint.this;
             synchronized (screenshotClientModuleEntryPoint) {
                 B featuresConfig = moduleServiceConfig.getFeaturesConfig();
@@ -43,11 +43,11 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
                 if (featuresConfig != null) {
                     boolean b = featuresConfig.b();
                     D a2 = featuresConfig.a();
-                    c0784k = new C0784k(b, a2 != null ? new C0785l(a2) : null);
+                    c0776k = new C0776k(b, a2 != null ? new C0777l(a2) : null);
                 } else {
-                    c0784k = null;
+                    c0776k = null;
                 }
-                screenshotClientModuleEntryPoint.f1315a = c0784k;
+                screenshotClientModuleEntryPoint.f1316a = c0776k;
                 s = screenshotClientModuleEntryPoint.d;
                 if (s != null) {
                     s2 = screenshotClientModuleEntryPoint.d;
@@ -56,8 +56,8 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
                     } else {
                         s3 = s2;
                     }
-                    c0784k2 = screenshotClientModuleEntryPoint.f1315a;
-                    s3.a(c0784k2);
+                    c0776k2 = screenshotClientModuleEntryPoint.f1316a;
+                    s3.a(c0776k2);
                 }
                 Unit unit = Unit.INSTANCE;
             }
@@ -67,9 +67,9 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
     private final ScreenshotClientModuleEntryPoint$serviceConfigExtensionConfiguration$1 f = new ServiceConfigExtensionConfiguration<B>() { // from class: io.appmetrica.analytics.screenshot.internal.ScreenshotClientModuleEntryPoint$serviceConfigExtensionConfiguration$1
         @Override // io.appmetrica.analytics.modulesapi.internal.client.ServiceConfigExtensionConfiguration
         public BundleToServiceConfigConverter<B> getBundleConverter() {
-            C0781h c0781h;
-            c0781h = ScreenshotClientModuleEntryPoint.this.b;
-            return c0781h;
+            C0773h c0773h;
+            c0773h = ScreenshotClientModuleEntryPoint.this.b;
+            return c0773h;
         }
 
         @Override // io.appmetrica.analytics.modulesapi.internal.client.ServiceConfigExtensionConfiguration
@@ -93,8 +93,8 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
     public void initClientSide(ClientContext clientContext) {
         synchronized (this) {
-            C0794v c0794v = new C0794v(clientContext);
-            this.d = new S(CollectionsKt.listOf((Object[]) new P[]{new C0777d(clientContext, c0794v), new d0(clientContext, c0794v), new C0793u(clientContext, c0794v)}));
+            C0786v c0786v = new C0786v(clientContext);
+            this.d = new S(CollectionsKt.listOf((Object[]) new P[]{new C0769d(clientContext, c0786v), new d0(clientContext, c0786v), new C0785u(clientContext, c0786v)}));
             Unit unit = Unit.INSTANCE;
         }
     }
@@ -108,11 +108,11 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
                     Intrinsics.throwUninitializedPropertyAccessException("screenshotCaptorsController");
                     s = null;
                 }
-                C0784k c0784k = this.f1315a;
-                for (P p : s.f1281a) {
+                C0776k c0776k = this.f1316a;
+                for (P p : s.f1282a) {
                     p.a();
                 }
-                s.a(c0784k);
+                s.a(c0776k);
             }
             Unit unit = Unit.INSTANCE;
         }

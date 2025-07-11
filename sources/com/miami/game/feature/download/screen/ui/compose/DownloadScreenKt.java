@@ -28,7 +28,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KFunction;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: DownloadScreen.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004\u001a#\u0010\u0005\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\tH\u0007¢\u0006\u0002\u0010\n¨\u0006\u000b²\u0006\n\u0010\u0006\u001a\u00020\u0007X\u008a\u0084\u0002"}, d2 = {"DownloadScreenRoute", "", "component", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;Landroidx/compose/runtime/Composer;I)V", "DownloadScreen", "uiState", "Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;", "onSoundClick", "Lkotlin/Function0;", "(Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "download-screen_release_web"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004\u001a#\u0010\u0005\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\tH\u0007¢\u0006\u0002\u0010\n¨\u0006\u000b²\u0006\n\u0010\u0006\u001a\u00020\u0007X\u008a\u0084\u0002"}, d2 = {"DownloadScreenRoute", "", "component", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;Landroidx/compose/runtime/Composer;I)V", "DownloadScreen", "uiState", "Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;", "onSoundClick", "Lkotlin/Function0;", "(Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "download-screen_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DownloadScreenKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -48,18 +48,20 @@ public final class DownloadScreenKt {
         Composer composer2;
         Intrinsics.checkNotNullParameter(component, "component");
         Composer startRestartGroup = composer.startRestartGroup(-1785886338);
-        ComposerKt.sourceInformation(startRestartGroup, "C(DownloadScreenRoute)26@1179L2,25@1148L39,29@1249L260,29@1212L297,35@1541L7,36@1574L192,36@1553L213,45@1805L29,51@1985L23,47@1840L174,54@2100L2,54@2057L46:DownloadScreen.kt#k3v2wi");
+        ComposerKt.sourceInformation(startRestartGroup, "C(DownloadScreenRoute)26@1179L2,25@1148L39,29@1249L260,29@1212L297,35@1541L7,36@1574L192,36@1553L213,45@1805L29,51@1985L23,47@1840L174:DownloadScreen.kt#k3v2wi");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
-        if ((i2 & 3) != 2 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 3) != 2, i2 & 1)) {
+            composer2 = startRestartGroup;
+            composer2.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1785886338, i2, -1, "com.miami.game.feature.download.screen.ui.compose.DownloadScreenRoute (DownloadScreen.kt:23)");
             }
-            startRestartGroup.startReplaceGroup(1849434622);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):DownloadScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1750155456, "CC(remember):DownloadScreen.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadScreenKt$$ExternalSyntheticLambda1
@@ -72,49 +74,49 @@ public final class DownloadScreenKt {
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             BackHandlerKt.BackHandler(false, (Function0) rememberedValue, startRestartGroup, 48, 1);
             SharedEventFlow<DownloadScreenUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
-            startRestartGroup.startReplaceGroup(1849434622);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):DownloadScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1750157954, "CC(remember):DownloadScreen.kt#9igjgp");
             DownloadScreenKt$DownloadScreenRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new DownloadScreenKt$DownloadScreenRoute$2$1(null);
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue2, startRestartGroup, 0, 6);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Context context = (Context) consume;
             Unit unit = Unit.INSTANCE;
-            startRestartGroup.startReplaceGroup(1849434622);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):DownloadScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1750168286, "CC(remember):DownloadScreen.kt#9igjgp");
             DownloadScreenKt$DownloadScreenRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
             if (rememberedValue3 == Composer.Companion.getEmpty()) {
                 rememberedValue3 = new DownloadScreenKt$DownloadScreenRoute$3$1(null);
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             EffectsKt.LaunchedEffect(unit, (Function2) rememberedValue3, startRestartGroup, 6);
             State collectAsStateWithLifecycle = FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7);
             composer2 = startRestartGroup;
             DownloadScreenUiState DownloadScreenRoute$lambda$4 = DownloadScreenRoute$lambda$4(collectAsStateWithLifecycle);
-            composer2.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(composer2, "CC(remember):DownloadScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer2, 1750181269, "CC(remember):DownloadScreen.kt#9igjgp");
             boolean changedInstance = composer2.changedInstance(component);
             DownloadScreenKt$DownloadScreenRoute$4$1 rememberedValue4 = composer2.rememberedValue();
             if (changedInstance || rememberedValue4 == Composer.Companion.getEmpty()) {
                 rememberedValue4 = new DownloadScreenKt$DownloadScreenRoute$4$1(component);
                 composer2.updateRememberedValue(rememberedValue4);
             }
-            composer2.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(composer2);
             DownloadScreen(DownloadScreenRoute$lambda$4, (Function0) ((KFunction) rememberedValue4), composer2, 0);
-            if (DownloadScreenRoute$lambda$4(collectAsStateWithLifecycle).isDialogVisible()) {
-                composer2.startReplaceGroup(1849434622);
-                ComposerKt.sourceInformation(composer2, "CC(remember):DownloadScreen.kt#9igjgp");
+            if (!DownloadScreenRoute$lambda$4(collectAsStateWithLifecycle).isDialogVisible()) {
+                composer2.startReplaceGroup(-1580926332);
+            } else {
+                composer2.startReplaceGroup(-1578892794);
+                ComposerKt.sourceInformation(composer2, "54@2100L2,54@2057L46");
+                ComposerKt.sourceInformationMarkerStart(composer2, 1750184928, "CC(remember):DownloadScreen.kt#9igjgp");
                 Object rememberedValue5 = composer2.rememberedValue();
                 if (rememberedValue5 == Composer.Companion.getEmpty()) {
                     rememberedValue5 = new Function0() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadScreenKt$$ExternalSyntheticLambda2
@@ -127,16 +129,14 @@ public final class DownloadScreenKt {
                     };
                     composer2.updateRememberedValue(rememberedValue5);
                 }
-                composer2.endReplaceGroup();
+                ComposerKt.sourceInformationMarkerEnd(composer2);
                 ErrorDialogFromActivityKt.ErrorDialogFromActivityRoute(null, (Function0) rememberedValue5, null, composer2, 48, 5);
                 composer2 = composer2;
             }
+            composer2.endReplaceGroup();
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
-            composer2 = startRestartGroup;
         }
         ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
@@ -165,7 +165,9 @@ public final class DownloadScreenKt {
         if ((i & 48) == 0) {
             i2 |= startRestartGroup.changedInstance(onSoundClick) ? 32 : 16;
         }
-        if ((i2 & 19) != 18 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1958056837, i2, -1, "com.miami.game.feature.download.screen.ui.compose.DownloadScreen (DownloadScreen.kt:61)");
             }
@@ -173,8 +175,6 @@ public final class DownloadScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {

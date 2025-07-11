@@ -1,6 +1,5 @@
 package com.miami.game.core.design.system.component.button;
 
-import androidx.compose.foundation.gestures.TapGestureDetectorKt;
 import androidx.compose.runtime.MutableState;
 import androidx.compose.ui.input.pointer.AwaitPointerEventScope;
 import androidx.compose.ui.input.pointer.PointerInputEventHandler;
@@ -13,10 +12,11 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DialogButton.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DialogButtonKt$DialogButtonYes$2$1 implements PointerInputEventHandler {
     final /* synthetic */ MutableState<Boolean> $selected$delegate;
@@ -72,8 +72,8 @@ public final class DialogButtonKt$DialogButtonYes$2$1 implements PointerInputEve
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DialogButton.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-    @DebugMetadata(c = "com.miami.game.core.design.system.component.button.DialogButtonKt$DialogButtonYes$2$1$1", f = "DialogButton.kt", i = {0}, l = {87, TsExtractor.TS_STREAM_TYPE_DVBSUBS}, m = "invokeSuspend", n = {"$this$awaitPointerEventScope"}, s = {"L$0"})
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+    @DebugMetadata(c = "com.miami.game.core.design.system.component.button.DialogButtonKt$DialogButtonYes$2$1$1", f = "DialogButton.kt", i = {0, 1}, l = {87, TsExtractor.TS_STREAM_TYPE_DVBSUBS}, m = "invokeSuspend", n = {"$this$awaitPointerEventScope", "$this$awaitPointerEventScope"}, s = {"L$0", "L$0"})
     /* renamed from: com.miami.game.core.design.system.component.button.DialogButtonKt$DialogButtonYes$2$1$1  reason: invalid class name */
     /* loaded from: classes4.dex */
     public static final class AnonymousClass1 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
@@ -99,26 +99,27 @@ public final class DialogButtonKt$DialogButtonYes$2$1 implements PointerInputEve
             return ((AnonymousClass1) create(awaitPointerEventScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:15:0x004e, code lost:
-            if (androidx.compose.foundation.gestures.TapGestureDetectorKt.waitForUpOrCancellation$default(r1, null, r10, 1, null) == r0) goto L14;
+        /* JADX WARN: Code restructure failed: missing block: B:11:0x0035, code lost:
+            if (androidx.compose.foundation.gestures.TapGestureDetectorKt.awaitFirstDown$default(r1, false, null, r9, 2, null) == r0) goto L14;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:14:0x004d, code lost:
+            if (androidx.compose.foundation.gestures.TapGestureDetectorKt.waitForUpOrCancellation$default(r1, null, r9, 1, null) == r0) goto L14;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:15:0x004f, code lost:
+            return r0;
          */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public final Object invokeSuspend(Object obj) {
-            AwaitPointerEventScope awaitPointerEventScope;
+            AwaitPointerEventScope awaitPointerEventScope = (AwaitPointerEventScope) this.L$0;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                AwaitPointerEventScope awaitPointerEventScope2 = (AwaitPointerEventScope) this.L$0;
-                this.L$0 = awaitPointerEventScope2;
+                this.L$0 = awaitPointerEventScope;
                 this.label = 1;
-                if (TapGestureDetectorKt.awaitFirstDown$default(awaitPointerEventScope2, false, null, this, 2, null) != coroutine_suspended) {
-                    awaitPointerEventScope = awaitPointerEventScope2;
-                }
-                return coroutine_suspended;
             } else if (i != 1) {
                 if (i == 2) {
                     ResultKt.throwOnFailure(obj);
@@ -127,11 +128,10 @@ public final class DialogButtonKt$DialogButtonYes$2$1 implements PointerInputEve
                 }
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
-                awaitPointerEventScope = (AwaitPointerEventScope) this.L$0;
                 ResultKt.throwOnFailure(obj);
             }
             DialogButtonKt.DialogButtonYes$lambda$2(this.$selected$delegate, true);
-            this.L$0 = null;
+            this.L$0 = SpillingKt.nullOutSpilledVariable(awaitPointerEventScope);
             this.label = 2;
         }
     }

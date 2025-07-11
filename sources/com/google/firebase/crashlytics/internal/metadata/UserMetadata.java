@@ -59,7 +59,7 @@ public class UserMetadata {
             this.crashlyticsWorkers.diskWrite.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.metadata.UserMetadata$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    UserMetadata.this.m8239xeeb41fb7(str, keys, rolloutAssignmentList);
+                    UserMetadata.this.m8238xeeb41fb7(str, keys, rolloutAssignmentList);
                 }
             });
         }
@@ -67,7 +67,7 @@ public class UserMetadata {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setNewSession$0$com-google-firebase-crashlytics-internal-metadata-UserMetadata  reason: not valid java name */
-    public /* synthetic */ void m8239xeeb41fb7(String str, Map map, List list) {
+    public /* synthetic */ void m8238xeeb41fb7(String str, Map map, List list) {
         if (getUserId() != null) {
             this.metaDataStore.writeUserData(str, getUserId());
         }
@@ -151,7 +151,7 @@ public class UserMetadata {
                 this.crashlyticsWorkers.diskWrite.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.metadata.UserMetadata$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        UserMetadata.this.m8240x8982b7e8(rolloutAssignmentList);
+                        UserMetadata.this.m8239x8982b7e8(rolloutAssignmentList);
                     }
                 });
                 return true;
@@ -162,7 +162,7 @@ public class UserMetadata {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$updateRolloutsState$1$com-google-firebase-crashlytics-internal-metadata-UserMetadata  reason: not valid java name */
-    public /* synthetic */ void m8240x8982b7e8(List list) {
+    public /* synthetic */ void m8239x8982b7e8(List list) {
         this.metaDataStore.writeRolloutState(this.sessionIdentifier, list);
     }
 
@@ -226,7 +226,7 @@ public class UserMetadata {
             Runnable runnable = new Runnable() { // from class: com.google.firebase.crashlytics.internal.metadata.UserMetadata$SerializeableKeysMap$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    UserMetadata.SerializeableKeysMap.this.m8241xb9b680d3();
+                    UserMetadata.SerializeableKeysMap.this.m8240xb9b680d3();
                 }
             };
             if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.queuedSerializer, null, runnable)) {
@@ -236,7 +236,7 @@ public class UserMetadata {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$scheduleSerializationTaskIfNeeded$0$com-google-firebase-crashlytics-internal-metadata-UserMetadata$SerializeableKeysMap  reason: not valid java name */
-        public /* synthetic */ void m8241xb9b680d3() {
+        public /* synthetic */ void m8240xb9b680d3() {
             this.queuedSerializer.set(null);
             serializeIfMarked();
         }

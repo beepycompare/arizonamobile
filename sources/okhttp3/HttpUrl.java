@@ -1,19 +1,17 @@
 package okhttp3;
 
 import androidx.autofill.HintConstants;
+import androidx.compose.material3.MenuKt;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.adjust.sdk.Constants;
 import com.google.android.gms.actions.SearchIntents;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
-import com.google.common.base.Ascii;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.sessions.settings.RemoteSettings;
+import io.appmetrica.analytics.BuildConfig;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -35,28 +33,17 @@ import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import kotlin.text.Typography;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-import okhttp3.internal.HostnamesKt;
-import okhttp3.internal.Util;
+import okhttp3.internal._HostnamesCommonKt;
+import okhttp3.internal._UtilCommonKt;
 import okhttp3.internal.publicsuffix.PublicSuffixDatabase;
-import okio.Buffer;
+import okhttp3.internal.url._UrlKt;
 /* compiled from: HttpUrl.kt */
-@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\b\n\u0000\n\u0002\u0010 \n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 J2\u00020\u0001:\u0002IJBa\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00030\n\u0012\u0010\u0010\u000b\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0003\u0018\u00010\n\u0012\b\u0010\f\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\r\u001a\u00020\u0003¢\u0006\u0002\u0010\u000eJ\u000f\u0010\u000f\u001a\u0004\u0018\u00010\u0003H\u0007¢\u0006\u0002\b!J\r\u0010\u0011\u001a\u00020\u0003H\u0007¢\u0006\u0002\b\"J\r\u0010\u0012\u001a\u00020\u0003H\u0007¢\u0006\u0002\b#J\u0013\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00030\nH\u0007¢\u0006\u0002\b$J\u000f\u0010\u0015\u001a\u0004\u0018\u00010\u0003H\u0007¢\u0006\u0002\b%J\r\u0010\u0016\u001a\u00020\u0003H\u0007¢\u0006\u0002\b&J\u0013\u0010'\u001a\u00020\u00182\b\u0010(\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\u000f\u0010\f\u001a\u0004\u0018\u00010\u0003H\u0007¢\u0006\u0002\b)J\b\u0010*\u001a\u00020\bH\u0016J\r\u0010\u0006\u001a\u00020\u0003H\u0007¢\u0006\u0002\b+J\u0006\u0010,\u001a\u00020-J\u0010\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020\u0003J\r\u0010\u0005\u001a\u00020\u0003H\u0007¢\u0006\u0002\b/J\u0013\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00030\nH\u0007¢\u0006\u0002\b0J\r\u0010\u001a\u001a\u00020\bH\u0007¢\u0006\u0002\b1J\r\u0010\u0007\u001a\u00020\bH\u0007¢\u0006\u0002\b2J\u000f\u0010\u001c\u001a\u0004\u0018\u00010\u0003H\u0007¢\u0006\u0002\b3J\u0010\u00104\u001a\u0004\u0018\u00010\u00032\u0006\u00105\u001a\u00020\u0003J\u000e\u00106\u001a\u00020\u00032\u0006\u00107\u001a\u00020\bJ\u0013\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00030\u001eH\u0007¢\u0006\u0002\b8J\u0010\u00109\u001a\u0004\u0018\u00010\u00032\u0006\u00107\u001a\u00020\bJ\u0016\u0010:\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00030\n2\u0006\u00105\u001a\u00020\u0003J\r\u0010 \u001a\u00020\bH\u0007¢\u0006\u0002\b;J\u0006\u0010<\u001a\u00020\u0003J\u0010\u0010=\u001a\u0004\u0018\u00010\u00002\u0006\u0010.\u001a\u00020\u0003J\r\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\b>J\b\u0010?\u001a\u00020\u0003H\u0016J\r\u0010@\u001a\u00020AH\u0007¢\u0006\u0002\bBJ\r\u0010C\u001a\u00020DH\u0007¢\u0006\u0002\b\rJ\b\u0010E\u001a\u0004\u0018\u00010\u0003J\r\u0010B\u001a\u00020AH\u0007¢\u0006\u0002\bFJ\r\u0010\r\u001a\u00020DH\u0007¢\u0006\u0002\bGJ\r\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0002\bHR\u0013\u0010\u000f\u001a\u0004\u0018\u00010\u00038G¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0011\u001a\u00020\u00038G¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u0010R\u0011\u0010\u0012\u001a\u00020\u00038G¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0010R\u0017\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00030\n8G¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0014R\u0013\u0010\u0015\u001a\u0004\u0018\u00010\u00038G¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0010R\u0011\u0010\u0016\u001a\u00020\u00038G¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0010R\u0015\u0010\f\u001a\u0004\u0018\u00010\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u0010R\u0013\u0010\u0006\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0010R\u0011\u0010\u0017\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0019R\u0013\u0010\u0005\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0010R\u0019\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00030\n8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0014R\u0011\u0010\u001a\u001a\u00020\b8G¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0013\u0010\u0007\u001a\u00020\b8\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\u001bR\u0013\u0010\u001c\u001a\u0004\u0018\u00010\u00038G¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u0010R\u0018\u0010\u000b\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0003\u0018\u00010\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00030\u001e8G¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001fR\u0011\u0010 \u001a\u00020\b8G¢\u0006\u0006\u001a\u0004\b \u0010\u001bR\u0013\u0010\u0002\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u0010R\u000e\u0010\r\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0013\u0010\u0004\u001a\u00020\u00038\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\u0010¨\u0006K"}, d2 = {"Lokhttp3/HttpUrl;", "", "scheme", "", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "host", "port", "", "pathSegments", "", "queryNamesAndValues", "fragment", "url", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V", "encodedFragment", "()Ljava/lang/String;", "encodedPassword", "encodedPath", "encodedPathSegments", "()Ljava/util/List;", "encodedQuery", "encodedUsername", "isHttps", "", "()Z", "pathSize", "()I", SearchIntents.EXTRA_QUERY, "queryParameterNames", "", "()Ljava/util/Set;", "querySize", "-deprecated_encodedFragment", "-deprecated_encodedPassword", "-deprecated_encodedPath", "-deprecated_encodedPathSegments", "-deprecated_encodedQuery", "-deprecated_encodedUsername", "equals", "other", "-deprecated_fragment", "hashCode", "-deprecated_host", "newBuilder", "Lokhttp3/HttpUrl$Builder;", "link", "-deprecated_password", "-deprecated_pathSegments", "-deprecated_pathSize", "-deprecated_port", "-deprecated_query", "queryParameter", "name", "queryParameterName", FirebaseAnalytics.Param.INDEX, "-deprecated_queryParameterNames", "queryParameterValue", "queryParameterValues", "-deprecated_querySize", "redact", "resolve", "-deprecated_scheme", "toString", "toUri", "Ljava/net/URI;", "uri", "toUrl", "Ljava/net/URL;", "topPrivateDomain", "-deprecated_uri", "-deprecated_url", "-deprecated_username", "Builder", "Companion", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\b\n\u0000\n\u0002\u0010 \n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\"\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u001b\u0018\u0000 K2\u00020\u0001:\u0002JKBc\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00030\n\u0012\u0010\u0010\u000b\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0003\u0018\u00010\n\u0012\b\u0010\f\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\r\u001a\u00020\u0003¢\u0006\u0004\b\u000e\u0010\u000fJ\r\u0010\u0016\u001a\u00020\u0017H\u0007¢\u0006\u0002\b\rJ\r\u0010\u0018\u001a\u00020\u0019H\u0007¢\u0006\u0002\b\u001aJ\u0010\u0010#\u001a\u0004\u0018\u00010\u00032\u0006\u0010$\u001a\u00020\u0003J\u0016\u0010(\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00030\n2\u0006\u0010$\u001a\u00020\u0003J\u000e\u0010)\u001a\u00020\u00032\u0006\u0010*\u001a\u00020\bJ\u0010\u0010+\u001a\u0004\u0018\u00010\u00032\u0006\u0010*\u001a\u00020\bJ\u0006\u0010-\u001a\u00020\u0003J\u0010\u0010.\u001a\u0004\u0018\u00010\u00002\u0006\u0010/\u001a\u00020\u0003J\u0006\u00100\u001a\u000201J\u0010\u00100\u001a\u0004\u0018\u0001012\u0006\u0010/\u001a\u00020\u0003J\u0013\u00102\u001a\u00020\u00142\b\u00103\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u00104\u001a\u00020\bH\u0016J\b\u00105\u001a\u00020\u0003H\u0016J\b\u00106\u001a\u0004\u0018\u00010\u0003J\r\u0010\r\u001a\u00020\u0017H\u0007¢\u0006\u0002\b7J\r\u0010\u001a\u001a\u00020\u0019H\u0007¢\u0006\u0002\b8J\r\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\b9J\r\u0010\u001b\u001a\u00020\u0003H\u0007¢\u0006\u0002\b:J\r\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0002\b;J\r\u0010\u001c\u001a\u00020\u0003H\u0007¢\u0006\u0002\b<J\r\u0010\u0005\u001a\u00020\u0003H\u0007¢\u0006\u0002\b=J\r\u0010\u0006\u001a\u00020\u0003H\u0007¢\u0006\u0002\b>J\r\u0010\u0007\u001a\u00020\bH\u0007¢\u0006\u0002\b?J\r\u0010\u001d\u001a\u00020\bH\u0007¢\u0006\u0002\b@J\r\u0010\u001e\u001a\u00020\u0003H\u0007¢\u0006\u0002\bAJ\u0013\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u00030\nH\u0007¢\u0006\u0002\bBJ\u0013\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00030\nH\u0007¢\u0006\u0002\bCJ\u000f\u0010 \u001a\u0004\u0018\u00010\u0003H\u0007¢\u0006\u0002\bDJ\u000f\u0010!\u001a\u0004\u0018\u00010\u0003H\u0007¢\u0006\u0002\bEJ\r\u0010\"\u001a\u00020\bH\u0007¢\u0006\u0002\bFJ\u0013\u0010%\u001a\b\u0012\u0004\u0012\u00020\u00030&H\u0007¢\u0006\u0002\bGJ\u000f\u0010,\u001a\u0004\u0018\u00010\u0003H\u0007¢\u0006\u0002\bHJ\u000f\u0010\f\u001a\u0004\u0018\u00010\u0003H\u0007¢\u0006\u0002\bIR\u0013\u0010\u0002\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u0010R\u0013\u0010\u0004\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\u0010R\u0013\u0010\u0005\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0010R\u0013\u0010\u0006\u001a\u00020\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0010R\u0013\u0010\u0007\u001a\u00020\b8G¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\u0011R\u0019\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00030\n8G¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0012R\u0018\u0010\u000b\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0003\u0018\u00010\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0015\u0010\f\u001a\u0004\u0018\u00010\u00038G¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u0010R\u000e\u0010\r\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0013\u001a\u00020\u00148F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0015R\u0011\u0010\u001b\u001a\u00020\u00038G¢\u0006\u0006\u001a\u0004\b\u001b\u0010\u0010R\u0011\u0010\u001c\u001a\u00020\u00038G¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u0010R\u0011\u0010\u001d\u001a\u00020\b8G¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u0011R\u0011\u0010\u001e\u001a\u00020\u00038G¢\u0006\u0006\u001a\u0004\b\u001e\u0010\u0010R\u0017\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u00030\n8G¢\u0006\u0006\u001a\u0004\b\u001f\u0010\u0012R\u0013\u0010 \u001a\u0004\u0018\u00010\u00038G¢\u0006\u0006\u001a\u0004\b \u0010\u0010R\u0013\u0010!\u001a\u0004\u0018\u00010\u00038G¢\u0006\u0006\u001a\u0004\b!\u0010\u0010R\u0011\u0010\"\u001a\u00020\b8G¢\u0006\u0006\u001a\u0004\b\"\u0010\u0011R\u0017\u0010%\u001a\b\u0012\u0004\u0012\u00020\u00030&8G¢\u0006\u0006\u001a\u0004\b%\u0010'R\u0013\u0010,\u001a\u0004\u0018\u00010\u00038G¢\u0006\u0006\u001a\u0004\b,\u0010\u0010¨\u0006L"}, d2 = {"Lokhttp3/HttpUrl;", "", "scheme", "", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "host", "port", "", "pathSegments", "", "queryNamesAndValues", "fragment", "url", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V", "()Ljava/lang/String;", "()I", "()Ljava/util/List;", "isHttps", "", "()Z", "toUrl", "Ljava/net/URL;", "toUri", "Ljava/net/URI;", "uri", "encodedUsername", "encodedPassword", "pathSize", "encodedPath", "encodedPathSegments", "encodedQuery", SearchIntents.EXTRA_QUERY, "querySize", "queryParameter", "name", "queryParameterNames", "", "()Ljava/util/Set;", "queryParameterValues", "queryParameterName", FirebaseAnalytics.Param.INDEX, "queryParameterValue", "encodedFragment", "redact", "resolve", "link", "newBuilder", "Lokhttp3/HttpUrl$Builder;", "equals", "other", "hashCode", "toString", "topPrivateDomain", "-deprecated_url", "-deprecated_uri", "-deprecated_scheme", "-deprecated_encodedUsername", "-deprecated_username", "-deprecated_encodedPassword", "-deprecated_password", "-deprecated_host", "-deprecated_port", "-deprecated_pathSize", "-deprecated_encodedPath", "-deprecated_encodedPathSegments", "-deprecated_pathSegments", "-deprecated_encodedQuery", "-deprecated_query", "-deprecated_querySize", "-deprecated_queryParameterNames", "-deprecated_encodedFragment", "-deprecated_fragment", "Builder", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class HttpUrl {
-    public static final String FORM_ENCODE_SET = " \"':;<=>@[]^`{}|/\\?#&!$(),~";
-    public static final String FRAGMENT_ENCODE_SET = "";
-    public static final String FRAGMENT_ENCODE_SET_URI = " \"#<>\\^`{|}";
-    public static final String PASSWORD_ENCODE_SET = " \"':;<=>@[]^`{}|/\\?#";
-    public static final String PATH_SEGMENT_ENCODE_SET = " \"<>^`{}|/\\?#";
-    public static final String PATH_SEGMENT_ENCODE_SET_URI = "[]";
-    public static final String QUERY_COMPONENT_ENCODE_SET = " !\"#$&'(),/:;<=>?@[]\\^`{|}~";
-    public static final String QUERY_COMPONENT_ENCODE_SET_URI = "\\^`{|}";
-    public static final String QUERY_COMPONENT_REENCODE_SET = " \"'<>#&=";
-    public static final String QUERY_ENCODE_SET = " \"'<>#";
-    public static final String USERNAME_ENCODE_SET = " \"':;<=>@[]^`{}|/\\?#";
+    public static final Companion Companion = new Companion(null);
     private final String fragment;
     private final String host;
-    private final boolean isHttps;
     private final String password;
     private final List<String> pathSegments;
     private final int port;
@@ -64,8 +51,10 @@ public final class HttpUrl {
     private final String scheme;
     private final String url;
     private final String username;
-    public static final Companion Companion = new Companion(null);
-    private static final char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+
+    public /* synthetic */ HttpUrl(String str, String str2, String str3, String str4, int i, List list, List list2, String str5, String str6, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str, str2, str3, str4, i, list, list2, str5, str6);
+    }
 
     @JvmStatic
     public static final int defaultPort(String str) {
@@ -92,23 +81,16 @@ public final class HttpUrl {
         return Companion.parse(str);
     }
 
-    public HttpUrl(String scheme, String username, String password, String host, int i, List<String> pathSegments, List<String> list, String str, String url) {
-        Intrinsics.checkNotNullParameter(scheme, "scheme");
-        Intrinsics.checkNotNullParameter(username, "username");
-        Intrinsics.checkNotNullParameter(password, "password");
-        Intrinsics.checkNotNullParameter(host, "host");
-        Intrinsics.checkNotNullParameter(pathSegments, "pathSegments");
-        Intrinsics.checkNotNullParameter(url, "url");
-        this.scheme = scheme;
-        this.username = username;
-        this.password = password;
-        this.host = host;
+    private HttpUrl(String str, String str2, String str3, String str4, int i, List<String> list, List<String> list2, String str5, String str6) {
+        this.scheme = str;
+        this.username = str2;
+        this.password = str3;
+        this.host = str4;
         this.port = i;
-        this.pathSegments = pathSegments;
-        this.queryNamesAndValues = list;
-        this.fragment = str;
-        this.url = url;
-        this.isHttps = Intrinsics.areEqual(scheme, Constants.SCHEME);
+        this.pathSegments = list;
+        this.queryNamesAndValues = list2;
+        this.fragment = str5;
+        this.url = str6;
     }
 
     public final String scheme() {
@@ -140,7 +122,7 @@ public final class HttpUrl {
     }
 
     public final boolean isHttps() {
-        return this.isHttps;
+        return Intrinsics.areEqual(this.scheme, Constants.SCHEME);
     }
 
     public final URL url() {
@@ -158,7 +140,7 @@ public final class HttpUrl {
         } catch (URISyntaxException e) {
             try {
                 URI create = URI.create(new Regex("[\\u0000-\\u001F\\u007F-\\u009F\\p{javaWhitespace}]").replace(builder, ""));
-                Intrinsics.checkNotNullExpressionValue(create, "{\n      // Unlikely edge…Unexpected!\n      }\n    }");
+                Intrinsics.checkNotNull(create);
                 return create;
             } catch (Exception unused) {
                 throw new RuntimeException(e);
@@ -172,8 +154,8 @@ public final class HttpUrl {
         }
         int length = this.scheme.length() + 3;
         String str = this.url;
-        String substring = this.url.substring(length, Util.delimiterOffset(str, ":@", length, str.length()));
-        Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+        String substring = this.url.substring(length, _UtilCommonKt.delimiterOffset(str, ":@", length, str.length()));
+        Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
         return substring;
     }
 
@@ -183,7 +165,7 @@ public final class HttpUrl {
         }
         int indexOf$default = StringsKt.indexOf$default((CharSequence) this.url, '@', 0, false, 6, (Object) null);
         String substring = this.url.substring(StringsKt.indexOf$default((CharSequence) this.url, (char) AbstractJsonLexerKt.COLON, this.scheme.length() + 3, false, 4, (Object) null) + 1, indexOf$default);
-        Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+        Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
         return substring;
     }
 
@@ -194,21 +176,21 @@ public final class HttpUrl {
     public final String encodedPath() {
         int indexOf$default = StringsKt.indexOf$default((CharSequence) this.url, '/', this.scheme.length() + 3, false, 4, (Object) null);
         String str = this.url;
-        String substring = this.url.substring(indexOf$default, Util.delimiterOffset(str, "?#", indexOf$default, str.length()));
-        Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+        String substring = this.url.substring(indexOf$default, _UtilCommonKt.delimiterOffset(str, "?#", indexOf$default, str.length()));
+        Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
         return substring;
     }
 
     public final List<String> encodedPathSegments() {
         int indexOf$default = StringsKt.indexOf$default((CharSequence) this.url, '/', this.scheme.length() + 3, false, 4, (Object) null);
         String str = this.url;
-        int delimiterOffset = Util.delimiterOffset(str, "?#", indexOf$default, str.length());
+        int delimiterOffset = _UtilCommonKt.delimiterOffset(str, "?#", indexOf$default, str.length());
         ArrayList arrayList = new ArrayList();
         while (indexOf$default < delimiterOffset) {
             int i = indexOf$default + 1;
-            int delimiterOffset2 = Util.delimiterOffset(this.url, '/', i, delimiterOffset);
+            int delimiterOffset2 = _UtilCommonKt.delimiterOffset(this.url, '/', i, delimiterOffset);
             String substring = this.url.substring(i, delimiterOffset2);
-            Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+            Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
             arrayList.add(substring);
             indexOf$default = delimiterOffset2;
         }
@@ -221,8 +203,8 @@ public final class HttpUrl {
         }
         int indexOf$default = StringsKt.indexOf$default((CharSequence) this.url, '?', 0, false, 6, (Object) null) + 1;
         String str = this.url;
-        String substring = this.url.substring(indexOf$default, Util.delimiterOffset(str, '#', indexOf$default, str.length()));
-        Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+        String substring = this.url.substring(indexOf$default, _UtilCommonKt.delimiterOffset(str, '#', indexOf$default, str.length()));
+        Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
         return substring;
     }
 
@@ -231,7 +213,7 @@ public final class HttpUrl {
             return null;
         }
         StringBuilder sb = new StringBuilder();
-        Companion.toQueryString$okhttp(this.queryNamesAndValues, sb);
+        Companion.toQueryString(this.queryNamesAndValues, sb);
         return sb.toString();
     }
 
@@ -268,7 +250,7 @@ public final class HttpUrl {
         if (this.queryNamesAndValues == null) {
             return SetsKt.emptySet();
         }
-        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        LinkedHashSet linkedHashSet = new LinkedHashSet(this.queryNamesAndValues.size() / 2, 1.0f);
         IntProgression step = RangesKt.step(RangesKt.until(0, this.queryNamesAndValues.size()), 2);
         int first = step.getFirst();
         int last = step.getLast();
@@ -285,7 +267,7 @@ public final class HttpUrl {
             }
         }
         Set<String> unmodifiableSet = Collections.unmodifiableSet(linkedHashSet);
-        Intrinsics.checkNotNullExpressionValue(unmodifiableSet, "unmodifiableSet(result)");
+        Intrinsics.checkNotNullExpressionValue(unmodifiableSet, "unmodifiableSet(...)");
         return unmodifiableSet;
     }
 
@@ -294,7 +276,7 @@ public final class HttpUrl {
         if (this.queryNamesAndValues == null) {
             return CollectionsKt.emptyList();
         }
-        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList = new ArrayList(4);
         IntProgression step = RangesKt.step(RangesKt.until(0, this.queryNamesAndValues.size()), 2);
         int first = step.getFirst();
         int last = step.getLast();
@@ -311,7 +293,7 @@ public final class HttpUrl {
             }
         }
         List<String> unmodifiableList = Collections.unmodifiableList(arrayList);
-        Intrinsics.checkNotNullExpressionValue(unmodifiableList, "unmodifiableList(result)");
+        Intrinsics.checkNotNullExpressionValue(unmodifiableList, "unmodifiableList(...)");
         return unmodifiableList;
     }
 
@@ -338,7 +320,7 @@ public final class HttpUrl {
             return null;
         }
         String substring = this.url.substring(StringsKt.indexOf$default((CharSequence) this.url, '#', 0, false, 6, (Object) null) + 1);
-        Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String).substring(startIndex)");
+        Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
         return substring;
     }
 
@@ -393,7 +375,7 @@ public final class HttpUrl {
     }
 
     public final String topPrivateDomain() {
-        if (Util.canParseAsIpAddress(this.host)) {
+        if (_HostnamesCommonKt.canParseAsIpAddress(this.host)) {
             return null;
         }
         return PublicSuffixDatabase.Companion.get().getEffectiveTldPlusOne(this.host);
@@ -401,138 +383,130 @@ public final class HttpUrl {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to toUrl()", replaceWith = @ReplaceWith(expression = "toUrl()", imports = {}))
     /* renamed from: -deprecated_url  reason: not valid java name */
-    public final URL m10229deprecated_url() {
+    public final URL m10298deprecated_url() {
         return url();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to toUri()", replaceWith = @ReplaceWith(expression = "toUri()", imports = {}))
     /* renamed from: -deprecated_uri  reason: not valid java name */
-    public final URI m10228deprecated_uri() {
+    public final URI m10297deprecated_uri() {
         return uri();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "scheme", imports = {}))
     /* renamed from: -deprecated_scheme  reason: not valid java name */
-    public final String m10227deprecated_scheme() {
+    public final String m10296deprecated_scheme() {
         return this.scheme;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "encodedUsername", imports = {}))
     /* renamed from: -deprecated_encodedUsername  reason: not valid java name */
-    public final String m10217deprecated_encodedUsername() {
+    public final String m10286deprecated_encodedUsername() {
         return encodedUsername();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = HintConstants.AUTOFILL_HINT_USERNAME, imports = {}))
     /* renamed from: -deprecated_username  reason: not valid java name */
-    public final String m10230deprecated_username() {
+    public final String m10299deprecated_username() {
         return this.username;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "encodedPassword", imports = {}))
     /* renamed from: -deprecated_encodedPassword  reason: not valid java name */
-    public final String m10213deprecated_encodedPassword() {
+    public final String m10282deprecated_encodedPassword() {
         return encodedPassword();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = HintConstants.AUTOFILL_HINT_PASSWORD, imports = {}))
     /* renamed from: -deprecated_password  reason: not valid java name */
-    public final String m10220deprecated_password() {
+    public final String m10289deprecated_password() {
         return this.password;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "host", imports = {}))
     /* renamed from: -deprecated_host  reason: not valid java name */
-    public final String m10219deprecated_host() {
+    public final String m10288deprecated_host() {
         return this.host;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "port", imports = {}))
     /* renamed from: -deprecated_port  reason: not valid java name */
-    public final int m10223deprecated_port() {
+    public final int m10292deprecated_port() {
         return this.port;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "pathSize", imports = {}))
     /* renamed from: -deprecated_pathSize  reason: not valid java name */
-    public final int m10222deprecated_pathSize() {
+    public final int m10291deprecated_pathSize() {
         return pathSize();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "encodedPath", imports = {}))
     /* renamed from: -deprecated_encodedPath  reason: not valid java name */
-    public final String m10214deprecated_encodedPath() {
+    public final String m10283deprecated_encodedPath() {
         return encodedPath();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "encodedPathSegments", imports = {}))
     /* renamed from: -deprecated_encodedPathSegments  reason: not valid java name */
-    public final List<String> m10215deprecated_encodedPathSegments() {
+    public final List<String> m10284deprecated_encodedPathSegments() {
         return encodedPathSegments();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "pathSegments", imports = {}))
     /* renamed from: -deprecated_pathSegments  reason: not valid java name */
-    public final List<String> m10221deprecated_pathSegments() {
+    public final List<String> m10290deprecated_pathSegments() {
         return this.pathSegments;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "encodedQuery", imports = {}))
     /* renamed from: -deprecated_encodedQuery  reason: not valid java name */
-    public final String m10216deprecated_encodedQuery() {
+    public final String m10285deprecated_encodedQuery() {
         return encodedQuery();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = SearchIntents.EXTRA_QUERY, imports = {}))
     /* renamed from: -deprecated_query  reason: not valid java name */
-    public final String m10224deprecated_query() {
+    public final String m10293deprecated_query() {
         return query();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "querySize", imports = {}))
     /* renamed from: -deprecated_querySize  reason: not valid java name */
-    public final int m10226deprecated_querySize() {
+    public final int m10295deprecated_querySize() {
         return querySize();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "queryParameterNames", imports = {}))
     /* renamed from: -deprecated_queryParameterNames  reason: not valid java name */
-    public final Set<String> m10225deprecated_queryParameterNames() {
+    public final Set<String> m10294deprecated_queryParameterNames() {
         return queryParameterNames();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "encodedFragment", imports = {}))
     /* renamed from: -deprecated_encodedFragment  reason: not valid java name */
-    public final String m10212deprecated_encodedFragment() {
+    public final String m10281deprecated_encodedFragment() {
         return encodedFragment();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "fragment", imports = {}))
     /* renamed from: -deprecated_fragment  reason: not valid java name */
-    public final String m10218deprecated_fragment() {
+    public final String m10287deprecated_fragment() {
         return this.fragment;
     }
 
     /* compiled from: HttpUrl.kt */
-    @Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010!\n\u0002\b\r\n\u0002\u0010\b\n\u0002\b\u0012\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u0002\n\u0002\b\u0017\u0018\u0000 V2\u00020\u0001:\u0001VB\u0005¢\u0006\u0002\u0010\u0002J\u000e\u0010#\u001a\u00020\u00002\u0006\u0010$\u001a\u00020\u0004J\u000e\u0010%\u001a\u00020\u00002\u0006\u0010\f\u001a\u00020\u0004J\u0018\u0010&\u001a\u00020\u00002\u0006\u0010'\u001a\u00020\u00042\b\u0010(\u001a\u0004\u0018\u00010\u0004J\u000e\u0010)\u001a\u00020\u00002\u0006\u0010*\u001a\u00020\u0004J\u000e\u0010+\u001a\u00020\u00002\u0006\u0010,\u001a\u00020\u0004J\u0018\u0010+\u001a\u00020\u00002\u0006\u0010,\u001a\u00020\u00042\u0006\u0010-\u001a\u00020.H\u0002J\u0018\u0010/\u001a\u00020\u00002\u0006\u00100\u001a\u00020\u00042\b\u00101\u001a\u0004\u0018\u00010\u0004J\u0006\u00102\u001a\u000203J\b\u00104\u001a\u00020\u001bH\u0002J\u0010\u0010\u0003\u001a\u00020\u00002\b\u0010\u0003\u001a\u0004\u0018\u00010\u0004J\u000e\u0010\t\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\u0004J\u000e\u00105\u001a\u00020\u00002\u0006\u00105\u001a\u00020\u0004J\u0010\u00106\u001a\u00020\u00002\b\u00106\u001a\u0004\u0018\u00010\u0004J\u000e\u0010\u0014\u001a\u00020\u00002\u0006\u0010\u0014\u001a\u00020\u0004J\u0010\u00107\u001a\u00020\u00002\b\u00107\u001a\u0004\u0018\u00010\u0004J\u000e\u0010\u0017\u001a\u00020\u00002\u0006\u0010\u0017\u001a\u00020\u0004J\u0010\u00108\u001a\u00020.2\u0006\u00109\u001a\u00020\u0004H\u0002J\u0010\u0010:\u001a\u00020.2\u0006\u00109\u001a\u00020\u0004H\u0002J\u001f\u0010;\u001a\u00020\u00002\b\u0010<\u001a\u0004\u0018\u0001032\u0006\u00109\u001a\u00020\u0004H\u0000¢\u0006\u0002\b=J\u000e\u0010>\u001a\u00020\u00002\u0006\u0010>\u001a\u00020\u0004J\b\u0010?\u001a\u00020@H\u0002J\u000e\u0010\u001a\u001a\u00020\u00002\u0006\u0010\u001a\u001a\u00020\u001bJ0\u0010A\u001a\u00020@2\u0006\u00109\u001a\u00020\u00042\u0006\u0010B\u001a\u00020\u001b2\u0006\u0010C\u001a\u00020\u001b2\u0006\u0010D\u001a\u00020.2\u0006\u0010-\u001a\u00020.H\u0002J\u0010\u0010E\u001a\u00020\u00002\b\u0010E\u001a\u0004\u0018\u00010\u0004J\r\u0010F\u001a\u00020\u0000H\u0000¢\u0006\u0002\bGJ\u0010\u0010H\u001a\u00020@2\u0006\u0010I\u001a\u00020\u0004H\u0002J\u000e\u0010J\u001a\u00020\u00002\u0006\u0010'\u001a\u00020\u0004J\u000e\u0010K\u001a\u00020\u00002\u0006\u00100\u001a\u00020\u0004J\u000e\u0010L\u001a\u00020\u00002\u0006\u0010M\u001a\u00020\u001bJ \u0010N\u001a\u00020@2\u0006\u00109\u001a\u00020\u00042\u0006\u0010O\u001a\u00020\u001b2\u0006\u0010C\u001a\u00020\u001bH\u0002J\u000e\u0010 \u001a\u00020\u00002\u0006\u0010 \u001a\u00020\u0004J\u0016\u0010P\u001a\u00020\u00002\u0006\u0010M\u001a\u00020\u001b2\u0006\u0010$\u001a\u00020\u0004J\u0018\u0010Q\u001a\u00020\u00002\u0006\u0010'\u001a\u00020\u00042\b\u0010(\u001a\u0004\u0018\u00010\u0004J\u0016\u0010R\u001a\u00020\u00002\u0006\u0010M\u001a\u00020\u001b2\u0006\u0010*\u001a\u00020\u0004J\u0018\u0010S\u001a\u00020\u00002\u0006\u00100\u001a\u00020\u00042\b\u00101\u001a\u0004\u0018\u00010\u0004J\b\u0010T\u001a\u00020\u0004H\u0016J\u000e\u0010U\u001a\u00020\u00002\u0006\u0010U\u001a\u00020\u0004R\u001c\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0006\"\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\u0004X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u0006\"\u0004\b\u000b\u0010\bR\u001a\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00040\rX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR$\u0010\u0010\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0004\u0018\u00010\rX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u000f\"\u0004\b\u0012\u0010\u0013R\u001a\u0010\u0014\u001a\u00020\u0004X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0006\"\u0004\b\u0016\u0010\bR\u001c\u0010\u0017\u001a\u0004\u0018\u00010\u0004X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0006\"\u0004\b\u0019\u0010\bR\u001a\u0010\u001a\u001a\u00020\u001bX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR\u001c\u0010 \u001a\u0004\u0018\u00010\u0004X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\u0006\"\u0004\b\"\u0010\b¨\u0006W"}, d2 = {"Lokhttp3/HttpUrl$Builder;", "", "()V", "encodedFragment", "", "getEncodedFragment$okhttp", "()Ljava/lang/String;", "setEncodedFragment$okhttp", "(Ljava/lang/String;)V", "encodedPassword", "getEncodedPassword$okhttp", "setEncodedPassword$okhttp", "encodedPathSegments", "", "getEncodedPathSegments$okhttp", "()Ljava/util/List;", "encodedQueryNamesAndValues", "getEncodedQueryNamesAndValues$okhttp", "setEncodedQueryNamesAndValues$okhttp", "(Ljava/util/List;)V", "encodedUsername", "getEncodedUsername$okhttp", "setEncodedUsername$okhttp", "host", "getHost$okhttp", "setHost$okhttp", "port", "", "getPort$okhttp", "()I", "setPort$okhttp", "(I)V", "scheme", "getScheme$okhttp", "setScheme$okhttp", "addEncodedPathSegment", "encodedPathSegment", "addEncodedPathSegments", "addEncodedQueryParameter", "encodedName", "encodedValue", "addPathSegment", "pathSegment", "addPathSegments", "pathSegments", "alreadyEncoded", "", "addQueryParameter", "name", "value", "build", "Lokhttp3/HttpUrl;", "effectivePort", "encodedPath", "encodedQuery", "fragment", "isDot", "input", "isDotDot", "parse", TtmlNode.RUBY_BASE, "parse$okhttp", HintConstants.AUTOFILL_HINT_PASSWORD, "pop", "", Constants.PUSH, "pos", "limit", "addTrailingSlash", SearchIntents.EXTRA_QUERY, "reencodeForUri", "reencodeForUri$okhttp", "removeAllCanonicalQueryParameters", "canonicalName", "removeAllEncodedQueryParameters", "removeAllQueryParameters", "removePathSegment", FirebaseAnalytics.Param.INDEX, "resolvePath", "startPos", "setEncodedPathSegment", "setEncodedQueryParameter", "setPathSegment", "setQueryParameter", "toString", HintConstants.AUTOFILL_HINT_USERNAME, "Companion", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000e\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010!\n\u0002\b\u0013\n\u0002\u0010\u000b\n\u0002\b\u0012\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0013\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0004\u001a\u00020\u00002\u0006\u0010\u0004\u001a\u00020\u0005J\u000e\u0010$\u001a\u00020\u00002\u0006\u0010$\u001a\u00020\u0005J\u000e\u0010\n\u001a\u00020\u00002\u0006\u0010\n\u001a\u00020\u0005J\u000e\u0010%\u001a\u00020\u00002\u0006\u0010%\u001a\u00020\u0005J\u000e\u0010\r\u001a\u00020\u00002\u0006\u0010\r\u001a\u00020\u0005J\u000e\u0010\u0010\u001a\u00020\u00002\u0006\u0010\u0010\u001a\u00020\u0005J\u000e\u0010\u0013\u001a\u00020\u00002\u0006\u0010\u0013\u001a\u00020\u0014J\u000e\u0010&\u001a\u00020\u00002\u0006\u0010'\u001a\u00020\u0005J\u000e\u0010(\u001a\u00020\u00002\u0006\u0010)\u001a\u00020\u0005J\u000e\u0010*\u001a\u00020\u00002\u0006\u0010+\u001a\u00020\u0005J\u000e\u0010,\u001a\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u0005J\u0018\u0010(\u001a\u00020\u00002\u0006\u0010)\u001a\u00020\u00052\u0006\u0010-\u001a\u00020.H\u0002J\u0016\u0010/\u001a\u00020\u00002\u0006\u00100\u001a\u00020\u00142\u0006\u0010'\u001a\u00020\u0005J\u0016\u00101\u001a\u00020\u00002\u0006\u00100\u001a\u00020\u00142\u0006\u0010+\u001a\u00020\u0005J\u000e\u00102\u001a\u00020\u00002\u0006\u00100\u001a\u00020\u0014J\u000e\u00103\u001a\u00020\u00002\u0006\u00103\u001a\u00020\u0005J\u0010\u00104\u001a\u00020\u00002\b\u00104\u001a\u0004\u0018\u00010\u0005J\u0010\u00105\u001a\u00020\u00002\b\u00105\u001a\u0004\u0018\u00010\u0005J\u0018\u00106\u001a\u00020\u00002\u0006\u00107\u001a\u00020\u00052\b\u00108\u001a\u0004\u0018\u00010\u0005J\u0018\u00109\u001a\u00020\u00002\u0006\u0010:\u001a\u00020\u00052\b\u0010;\u001a\u0004\u0018\u00010\u0005J\u0018\u0010<\u001a\u00020\u00002\u0006\u00107\u001a\u00020\u00052\b\u00108\u001a\u0004\u0018\u00010\u0005J\u0018\u0010=\u001a\u00020\u00002\u0006\u0010:\u001a\u00020\u00052\b\u0010;\u001a\u0004\u0018\u00010\u0005J\u000e\u0010>\u001a\u00020\u00002\u0006\u00107\u001a\u00020\u0005J\u000e\u0010?\u001a\u00020\u00002\u0006\u0010:\u001a\u00020\u0005J\u0010\u0010@\u001a\u00020A2\u0006\u0010B\u001a\u00020\u0005H\u0002J\u0010\u0010C\u001a\u00020\u00002\b\u0010C\u001a\u0004\u0018\u00010\u0005J\u0010\u0010!\u001a\u00020\u00002\b\u0010!\u001a\u0004\u0018\u00010\u0005J\r\u0010D\u001a\u00020\u0000H\u0000¢\u0006\u0002\bEJ\u0006\u0010F\u001a\u00020GJ\b\u0010H\u001a\u00020\u0014H\u0002J\b\u0010I\u001a\u00020\u0005H\u0016J\u001e\u0010J\u001a\u00020A*\b\u0012\u0004\u0012\u00020\u00050K2\n\u0010L\u001a\u00060Mj\u0002`NH\u0002J\u001f\u0010O\u001a\u00020\u00002\b\u0010P\u001a\u0004\u0018\u00010G2\u0006\u0010Q\u001a\u00020\u0005H\u0000¢\u0006\u0002\bRJ \u0010S\u001a\u00020A2\u0006\u0010Q\u001a\u00020\u00052\u0006\u0010T\u001a\u00020\u00142\u0006\u0010U\u001a\u00020\u0014H\u0002J0\u0010V\u001a\u00020A2\u0006\u0010Q\u001a\u00020\u00052\u0006\u0010W\u001a\u00020\u00142\u0006\u0010U\u001a\u00020\u00142\u0006\u0010X\u001a\u00020.2\u0006\u0010-\u001a\u00020.H\u0002J\b\u0010Y\u001a\u00020AH\u0002J\u0010\u0010Z\u001a\u00020.2\u0006\u0010Q\u001a\u00020\u0005H\u0002J\u0010\u0010[\u001a\u00020.2\u0006\u0010Q\u001a\u00020\u0005H\u0002J\u0014\u0010\\\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00050\u001a*\u00020\u0005H\u0002J \u0010]\u001a\u00020\u00142\u0006\u0010Q\u001a\u00020\u00052\u0006\u0010W\u001a\u00020\u00142\u0006\u0010U\u001a\u00020\u0014H\u0002J\u001c\u0010^\u001a\u00020\u0014*\u00020\u00052\u0006\u0010W\u001a\u00020\u00142\u0006\u0010U\u001a\u00020\u0014H\u0002J \u0010_\u001a\u00020\u00142\u0006\u0010Q\u001a\u00020\u00052\u0006\u0010W\u001a\u00020\u00142\u0006\u0010U\u001a\u00020\u0014H\u0002J \u0010`\u001a\u00020\u00142\u0006\u0010Q\u001a\u00020\u00052\u0006\u0010W\u001a\u00020\u00142\u0006\u0010U\u001a\u00020\u0014H\u0002R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\tR\u001c\u0010\u0010\u001a\u0004\u0018\u00010\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0007\"\u0004\b\u0012\u0010\tR\u001a\u0010\u0013\u001a\u00020\u0014X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00050\u001aX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR$\u0010\u001d\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0005\u0018\u00010\u001aX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u001c\"\u0004\b\u001f\u0010 R\u001c\u0010!\u001a\u0004\u0018\u00010\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\"\u0010\u0007\"\u0004\b#\u0010\t¨\u0006a"}, d2 = {"Lokhttp3/HttpUrl$Builder;", "", "<init>", "()V", "scheme", "", "getScheme$okhttp", "()Ljava/lang/String;", "setScheme$okhttp", "(Ljava/lang/String;)V", "encodedUsername", "getEncodedUsername$okhttp", "setEncodedUsername$okhttp", "encodedPassword", "getEncodedPassword$okhttp", "setEncodedPassword$okhttp", "host", "getHost$okhttp", "setHost$okhttp", "port", "", "getPort$okhttp", "()I", "setPort$okhttp", "(I)V", "encodedPathSegments", "", "getEncodedPathSegments$okhttp", "()Ljava/util/List;", "encodedQueryNamesAndValues", "getEncodedQueryNamesAndValues$okhttp", "setEncodedQueryNamesAndValues$okhttp", "(Ljava/util/List;)V", "encodedFragment", "getEncodedFragment$okhttp", "setEncodedFragment$okhttp", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "addPathSegment", "pathSegment", "addPathSegments", "pathSegments", "addEncodedPathSegment", "encodedPathSegment", "addEncodedPathSegments", "alreadyEncoded", "", "setPathSegment", FirebaseAnalytics.Param.INDEX, "setEncodedPathSegment", "removePathSegment", "encodedPath", SearchIntents.EXTRA_QUERY, "encodedQuery", "addQueryParameter", "name", "value", "addEncodedQueryParameter", "encodedName", "encodedValue", "setQueryParameter", "setEncodedQueryParameter", "removeAllQueryParameters", "removeAllEncodedQueryParameters", "removeAllCanonicalQueryParameters", "", "canonicalName", "fragment", "reencodeForUri", "reencodeForUri$okhttp", "build", "Lokhttp3/HttpUrl;", "effectivePort", "toString", "toPathString", "", "out", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "parse", TtmlNode.RUBY_BASE, "input", "parse$okhttp", "resolvePath", "startPos", "limit", Constants.PUSH, "pos", "addTrailingSlash", "pop", "isDot", "isDotDot", "toQueryNamesAndValues", "schemeDelimiterOffset", "slashCount", "portColonOffset", "parsePort", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Builder {
-        public static final Companion Companion = new Companion(null);
-        public static final String INVALID_HOST = "Invalid URL host";
         private String encodedFragment;
-        private final List<String> encodedPathSegments;
         private List<String> encodedQueryNamesAndValues;
         private String host;
         private String scheme;
         private String encodedUsername = "";
         private String encodedPassword = "";
         private int port = -1;
-
-        public Builder() {
-            ArrayList arrayList = new ArrayList();
-            this.encodedPathSegments = arrayList;
-            arrayList.add("");
-        }
+        private final List<String> encodedPathSegments = CollectionsKt.mutableListOf("");
 
         public final String getScheme$okhttp() {
             return this.scheme;
@@ -611,31 +585,31 @@ public final class HttpUrl {
 
         public final Builder username(String username) {
             Intrinsics.checkNotNullParameter(username, "username");
-            this.encodedUsername = Companion.canonicalize$okhttp$default(HttpUrl.Companion, username, 0, 0, " \"':;<=>@[]^`{}|/\\?#", false, false, false, false, null, 251, null);
+            this.encodedUsername = _UrlKt.canonicalize$default(username, 0, 0, " \"':;<=>@[]^`{}|/\\?#", false, false, false, false, 123, null);
             return this;
         }
 
         public final Builder encodedUsername(String encodedUsername) {
             Intrinsics.checkNotNullParameter(encodedUsername, "encodedUsername");
-            this.encodedUsername = Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedUsername, 0, 0, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, 243, null);
+            this.encodedUsername = _UrlKt.canonicalize$default(encodedUsername, 0, 0, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, BuildConfig.API_LEVEL, null);
             return this;
         }
 
         public final Builder password(String password) {
             Intrinsics.checkNotNullParameter(password, "password");
-            this.encodedPassword = Companion.canonicalize$okhttp$default(HttpUrl.Companion, password, 0, 0, " \"':;<=>@[]^`{}|/\\?#", false, false, false, false, null, 251, null);
+            this.encodedPassword = _UrlKt.canonicalize$default(password, 0, 0, " \"':;<=>@[]^`{}|/\\?#", false, false, false, false, 123, null);
             return this;
         }
 
         public final Builder encodedPassword(String encodedPassword) {
             Intrinsics.checkNotNullParameter(encodedPassword, "encodedPassword");
-            this.encodedPassword = Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedPassword, 0, 0, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, 243, null);
+            this.encodedPassword = _UrlKt.canonicalize$default(encodedPassword, 0, 0, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, BuildConfig.API_LEVEL, null);
             return this;
         }
 
         public final Builder host(String host) {
             Intrinsics.checkNotNullParameter(host, "host");
-            String canonicalHost = HostnamesKt.toCanonicalHost(Companion.percentDecode$okhttp$default(HttpUrl.Companion, host, 0, 0, false, 7, null));
+            String canonicalHost = _HostnamesCommonKt.toCanonicalHost(_UrlKt.percentDecode$default(host, 0, 0, false, 7, null));
             if (canonicalHost == null) {
                 throw new IllegalArgumentException("unexpected host: " + host);
             }
@@ -649,17 +623,6 @@ public final class HttpUrl {
             }
             this.port = i;
             return this;
-        }
-
-        private final int effectivePort() {
-            int i = this.port;
-            if (i != -1) {
-                return i;
-            }
-            Companion companion = HttpUrl.Companion;
-            String str = this.scheme;
-            Intrinsics.checkNotNull(str);
-            return companion.defaultPort(str);
         }
 
         public final Builder addPathSegment(String pathSegment) {
@@ -691,7 +654,7 @@ public final class HttpUrl {
             boolean z3;
             int i = 0;
             while (true) {
-                int delimiterOffset = Util.delimiterOffset(str, "/\\", i, str.length());
+                int delimiterOffset = _UtilCommonKt.delimiterOffset(str, "/\\", i, str.length());
                 if (delimiterOffset < str.length()) {
                     z2 = true;
                     str2 = str;
@@ -715,19 +678,19 @@ public final class HttpUrl {
 
         public final Builder setPathSegment(int i, String pathSegment) {
             Intrinsics.checkNotNullParameter(pathSegment, "pathSegment");
-            String canonicalize$okhttp$default = Companion.canonicalize$okhttp$default(HttpUrl.Companion, pathSegment, 0, 0, HttpUrl.PATH_SEGMENT_ENCODE_SET, false, false, false, false, null, 251, null);
-            if (isDot(canonicalize$okhttp$default) || isDotDot(canonicalize$okhttp$default)) {
+            String canonicalize$default = _UrlKt.canonicalize$default(pathSegment, 0, 0, _UrlKt.PATH_SEGMENT_ENCODE_SET, false, false, false, false, 123, null);
+            if (isDot(canonicalize$default) || isDotDot(canonicalize$default)) {
                 throw new IllegalArgumentException(("unexpected path segment: " + pathSegment).toString());
             }
-            this.encodedPathSegments.set(i, canonicalize$okhttp$default);
+            this.encodedPathSegments.set(i, canonicalize$default);
             return this;
         }
 
         public final Builder setEncodedPathSegment(int i, String encodedPathSegment) {
             Intrinsics.checkNotNullParameter(encodedPathSegment, "encodedPathSegment");
-            String canonicalize$okhttp$default = Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedPathSegment, 0, 0, HttpUrl.PATH_SEGMENT_ENCODE_SET, true, false, false, false, null, 243, null);
-            this.encodedPathSegments.set(i, canonicalize$okhttp$default);
-            if (isDot(canonicalize$okhttp$default) || isDotDot(canonicalize$okhttp$default)) {
+            String canonicalize$default = _UrlKt.canonicalize$default(encodedPathSegment, 0, 0, _UrlKt.PATH_SEGMENT_ENCODE_SET, true, false, false, false, BuildConfig.API_LEVEL, null);
+            this.encodedPathSegments.set(i, canonicalize$default);
+            if (isDot(canonicalize$default) || isDotDot(canonicalize$default)) {
                 throw new IllegalArgumentException(("unexpected path segment: " + encodedPathSegment).toString());
             }
             return this;
@@ -751,14 +714,14 @@ public final class HttpUrl {
         }
 
         public final Builder query(String str) {
-            String canonicalize$okhttp$default;
-            this.encodedQueryNamesAndValues = (str == null || (canonicalize$okhttp$default = Companion.canonicalize$okhttp$default(HttpUrl.Companion, str, 0, 0, HttpUrl.QUERY_ENCODE_SET, false, false, true, false, null, 219, null)) == null) ? null : HttpUrl.Companion.toQueryNamesAndValues$okhttp(canonicalize$okhttp$default);
+            String canonicalize$default;
+            this.encodedQueryNamesAndValues = (str == null || (canonicalize$default = _UrlKt.canonicalize$default(str, 0, 0, _UrlKt.QUERY_ENCODE_SET, false, false, true, false, 91, null)) == null) ? null : toQueryNamesAndValues(canonicalize$default);
             return this;
         }
 
         public final Builder encodedQuery(String str) {
-            String canonicalize$okhttp$default;
-            this.encodedQueryNamesAndValues = (str == null || (canonicalize$okhttp$default = Companion.canonicalize$okhttp$default(HttpUrl.Companion, str, 0, 0, HttpUrl.QUERY_ENCODE_SET, true, false, true, false, null, 211, null)) == null) ? null : HttpUrl.Companion.toQueryNamesAndValues$okhttp(canonicalize$okhttp$default);
+            String canonicalize$default;
+            this.encodedQueryNamesAndValues = (str == null || (canonicalize$default = _UrlKt.canonicalize$default(str, 0, 0, _UrlKt.QUERY_ENCODE_SET, true, false, true, false, 83, null)) == null) ? null : toQueryNamesAndValues(canonicalize$default);
             return this;
         }
 
@@ -769,10 +732,10 @@ public final class HttpUrl {
             }
             List<String> list = this.encodedQueryNamesAndValues;
             Intrinsics.checkNotNull(list);
-            list.add(Companion.canonicalize$okhttp$default(HttpUrl.Companion, name, 0, 0, HttpUrl.QUERY_COMPONENT_ENCODE_SET, false, false, true, false, null, 219, null));
+            list.add(_UrlKt.canonicalize$default(name, 0, 0, _UrlKt.QUERY_COMPONENT_ENCODE_SET, false, false, true, false, 91, null));
             List<String> list2 = this.encodedQueryNamesAndValues;
             Intrinsics.checkNotNull(list2);
-            list2.add(str != null ? Companion.canonicalize$okhttp$default(HttpUrl.Companion, str, 0, 0, HttpUrl.QUERY_COMPONENT_ENCODE_SET, false, false, true, false, null, 219, null) : null);
+            list2.add(str != null ? _UrlKt.canonicalize$default(str, 0, 0, _UrlKt.QUERY_COMPONENT_ENCODE_SET, false, false, true, false, 91, null) : null);
             return this;
         }
 
@@ -783,10 +746,10 @@ public final class HttpUrl {
             }
             List<String> list = this.encodedQueryNamesAndValues;
             Intrinsics.checkNotNull(list);
-            list.add(Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedName, 0, 0, HttpUrl.QUERY_COMPONENT_REENCODE_SET, true, false, true, false, null, 211, null));
+            list.add(_UrlKt.canonicalize$default(encodedName, 0, 0, _UrlKt.QUERY_COMPONENT_REENCODE_SET, true, false, true, false, 83, null));
             List<String> list2 = this.encodedQueryNamesAndValues;
             Intrinsics.checkNotNull(list2);
-            list2.add(str != null ? Companion.canonicalize$okhttp$default(HttpUrl.Companion, str, 0, 0, HttpUrl.QUERY_COMPONENT_REENCODE_SET, true, false, true, false, null, 211, null) : null);
+            list2.add(str != null ? _UrlKt.canonicalize$default(str, 0, 0, _UrlKt.QUERY_COMPONENT_REENCODE_SET, true, false, true, false, 83, null) : null);
             return this;
         }
 
@@ -809,7 +772,7 @@ public final class HttpUrl {
             if (this.encodedQueryNamesAndValues == null) {
                 return this;
             }
-            removeAllCanonicalQueryParameters(Companion.canonicalize$okhttp$default(HttpUrl.Companion, name, 0, 0, HttpUrl.QUERY_COMPONENT_ENCODE_SET, false, false, true, false, null, 219, null));
+            removeAllCanonicalQueryParameters(_UrlKt.canonicalize$default(name, 0, 0, _UrlKt.QUERY_COMPONENT_ENCODE_SET, false, false, true, false, 91, null));
             return this;
         }
 
@@ -818,7 +781,7 @@ public final class HttpUrl {
             if (this.encodedQueryNamesAndValues == null) {
                 return this;
             }
-            removeAllCanonicalQueryParameters(Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedName, 0, 0, HttpUrl.QUERY_COMPONENT_REENCODE_SET, true, false, true, false, null, 211, null));
+            removeAllCanonicalQueryParameters(_UrlKt.canonicalize$default(encodedName, 0, 0, _UrlKt.QUERY_COMPONENT_REENCODE_SET, true, false, true, false, 83, null));
             return this;
         }
 
@@ -855,12 +818,12 @@ public final class HttpUrl {
         }
 
         public final Builder fragment(String str) {
-            this.encodedFragment = str != null ? Companion.canonicalize$okhttp$default(HttpUrl.Companion, str, 0, 0, "", false, false, false, true, null, 187, null) : null;
+            this.encodedFragment = str != null ? _UrlKt.canonicalize$default(str, 0, 0, "", false, false, false, true, 59, null) : null;
             return this;
         }
 
         public final Builder encodedFragment(String str) {
-            this.encodedFragment = str != null ? Companion.canonicalize$okhttp$default(HttpUrl.Companion, str, 0, 0, "", true, false, false, true, null, 179, null) : null;
+            this.encodedFragment = str != null ? _UrlKt.canonicalize$default(str, 0, 0, "", true, false, false, true, 51, null) : null;
             return this;
         }
 
@@ -869,18 +832,19 @@ public final class HttpUrl {
             this.host = str != null ? new Regex("[\"<>^`{|}]").replace(str, "") : null;
             int size = this.encodedPathSegments.size();
             for (int i = 0; i < size; i++) {
-                this.encodedPathSegments.set(i, Companion.canonicalize$okhttp$default(HttpUrl.Companion, this.encodedPathSegments.get(i), 0, 0, HttpUrl.PATH_SEGMENT_ENCODE_SET_URI, true, true, false, false, null, 227, null));
+                List<String> list = this.encodedPathSegments;
+                list.set(i, _UrlKt.canonicalize$default(list.get(i), 0, 0, _UrlKt.PATH_SEGMENT_ENCODE_SET_URI, true, true, false, false, 99, null));
             }
-            List<String> list = this.encodedQueryNamesAndValues;
-            if (list != null) {
-                int size2 = list.size();
+            List<String> list2 = this.encodedQueryNamesAndValues;
+            if (list2 != null) {
+                int size2 = list2.size();
                 for (int i2 = 0; i2 < size2; i2++) {
-                    String str2 = list.get(i2);
-                    list.set(i2, str2 != null ? Companion.canonicalize$okhttp$default(HttpUrl.Companion, str2, 0, 0, HttpUrl.QUERY_COMPONENT_ENCODE_SET_URI, true, true, true, false, null, DownloaderService.STATUS_WAITING_FOR_NETWORK, null) : null);
+                    String str2 = list2.get(i2);
+                    list2.set(i2, str2 != null ? _UrlKt.canonicalize$default(str2, 0, 0, _UrlKt.QUERY_COMPONENT_ENCODE_SET_URI, true, true, true, false, 67, null) : null);
                 }
             }
             String str3 = this.encodedFragment;
-            this.encodedFragment = str3 != null ? Companion.canonicalize$okhttp$default(HttpUrl.Companion, str3, 0, 0, HttpUrl.FRAGMENT_ENCODE_SET_URI, true, true, false, true, null, 163, null) : null;
+            this.encodedFragment = str3 != null ? _UrlKt.canonicalize$default(str3, 0, 0, _UrlKt.FRAGMENT_ENCODE_SET_URI, true, true, false, true, 35, null) : null;
             return this;
         }
 
@@ -890,8 +854,8 @@ public final class HttpUrl {
             if (str == null) {
                 throw new IllegalStateException("scheme == null");
             }
-            String percentDecode$okhttp$default = Companion.percentDecode$okhttp$default(HttpUrl.Companion, this.encodedUsername, 0, 0, false, 7, null);
-            String percentDecode$okhttp$default2 = Companion.percentDecode$okhttp$default(HttpUrl.Companion, this.encodedPassword, 0, 0, false, 7, null);
+            String percentDecode$default = _UrlKt.percentDecode$default(this.encodedUsername, 0, 0, false, 7, null);
+            String percentDecode$default2 = _UrlKt.percentDecode$default(this.encodedPassword, 0, 0, false, 7, null);
             String str2 = this.host;
             if (str2 == null) {
                 throw new IllegalStateException("host == null");
@@ -900,7 +864,7 @@ public final class HttpUrl {
             List<String> list = this.encodedPathSegments;
             ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
             for (String str3 : list) {
-                arrayList2.add(Companion.percentDecode$okhttp$default(HttpUrl.Companion, str3, 0, 0, false, 7, null));
+                arrayList2.add(_UrlKt.percentDecode$default(str3, 0, 0, false, 7, null));
             }
             ArrayList arrayList3 = arrayList2;
             List<String> list2 = this.encodedQueryNamesAndValues;
@@ -908,14 +872,25 @@ public final class HttpUrl {
                 List<String> list3 = list2;
                 ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list3, 10));
                 for (String str4 : list3) {
-                    arrayList4.add(str4 != null ? Companion.percentDecode$okhttp$default(HttpUrl.Companion, str4, 0, 0, true, 3, null) : null);
+                    arrayList4.add(str4 != null ? _UrlKt.percentDecode$default(str4, 0, 0, true, 3, null) : null);
                 }
                 arrayList = arrayList4;
             } else {
                 arrayList = null;
             }
             String str5 = this.encodedFragment;
-            return new HttpUrl(str, percentDecode$okhttp$default, percentDecode$okhttp$default2, str2, effectivePort, arrayList3, arrayList, str5 != null ? Companion.percentDecode$okhttp$default(HttpUrl.Companion, str5, 0, 0, false, 7, null) : null, toString());
+            return new HttpUrl(str, percentDecode$default, percentDecode$default2, str2, effectivePort, arrayList3, arrayList, str5 != null ? _UrlKt.percentDecode$default(str5, 0, 0, false, 7, null) : null, toString(), null);
+        }
+
+        private final int effectivePort() {
+            int i = this.port;
+            if (i != -1) {
+                return i;
+            }
+            Companion companion = HttpUrl.Companion;
+            String str = this.scheme;
+            Intrinsics.checkNotNull(str);
+            return companion.defaultPort(str);
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:28:0x008d, code lost:
@@ -962,44 +937,41 @@ public final class HttpUrl {
                 sb.append(AbstractJsonLexerKt.COLON);
                 sb.append(effectivePort);
             }
-            HttpUrl.Companion.toPathString$okhttp(this.encodedPathSegments, sb);
+            toPathString(this.encodedPathSegments, sb);
             if (this.encodedQueryNamesAndValues != null) {
                 sb.append('?');
                 Companion companion2 = HttpUrl.Companion;
                 List<String> list = this.encodedQueryNamesAndValues;
                 Intrinsics.checkNotNull(list);
-                companion2.toQueryString$okhttp(list, sb);
+                companion2.toQueryString(list, sb);
             }
             if (this.encodedFragment != null) {
                 sb.append('#');
                 sb.append(this.encodedFragment);
             }
-            String sb2 = sb.toString();
-            Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder().apply(builderAction).toString()");
-            return sb2;
+            return sb.toString();
+        }
+
+        private final void toPathString(List<String> list, StringBuilder sb) {
+            int size = list.size();
+            for (int i = 0; i < size; i++) {
+                sb.append('/');
+                sb.append(list.get(i));
+            }
         }
 
         public final Builder parse$okhttp(HttpUrl httpUrl, String str) {
             int delimiterOffset;
-            int i;
-            String str2;
-            int i2;
-            String str3;
             boolean z;
+            int i;
+            int i2;
             char c;
-            int i3;
-            int i4;
-            char c2;
-            int i5;
             String input = str;
             Intrinsics.checkNotNullParameter(input, "input");
-            int indexOfFirstNonAsciiWhitespace$default = Util.indexOfFirstNonAsciiWhitespace$default(input, 0, 0, 3, null);
-            int indexOfLastNonAsciiWhitespace$default = Util.indexOfLastNonAsciiWhitespace$default(input, indexOfFirstNonAsciiWhitespace$default, 0, 2, null);
-            Companion companion = Companion;
-            int schemeDelimiterOffset = companion.schemeDelimiterOffset(input, indexOfFirstNonAsciiWhitespace$default, indexOfLastNonAsciiWhitespace$default);
-            String str4 = "this as java.lang.String…ing(startIndex, endIndex)";
+            int indexOfFirstNonAsciiWhitespace$default = _UtilCommonKt.indexOfFirstNonAsciiWhitespace$default(input, 0, 0, 3, null);
+            int indexOfLastNonAsciiWhitespace$default = _UtilCommonKt.indexOfLastNonAsciiWhitespace$default(input, indexOfFirstNonAsciiWhitespace$default, 0, 2, null);
+            int schemeDelimiterOffset = schemeDelimiterOffset(input, indexOfFirstNonAsciiWhitespace$default, indexOfLastNonAsciiWhitespace$default);
             boolean z2 = true;
-            char c3 = 65535;
             if (schemeDelimiterOffset != -1) {
                 if (StringsKt.startsWith(input, "https:", indexOfFirstNonAsciiWhitespace$default, true)) {
                     this.scheme = Constants.SCHEME;
@@ -1010,95 +982,83 @@ public final class HttpUrl {
                 } else {
                     StringBuilder sb = new StringBuilder("Expected URL scheme 'http' or 'https' but was '");
                     String substring = input.substring(0, schemeDelimiterOffset);
-                    Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+                    Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
                     throw new IllegalArgumentException(sb.append(substring).append('\'').toString());
                 }
             } else if (httpUrl != null) {
                 this.scheme = httpUrl.scheme();
             } else {
-                throw new IllegalArgumentException("Expected URL scheme 'http' or 'https' but no scheme was found for " + (input.length() > 6 ? StringsKt.take(input, 6) + "..." : input));
+                if (input.length() > 6) {
+                    input = StringsKt.take(input, 6) + "...";
+                }
+                throw new IllegalArgumentException("Expected URL scheme 'http' or 'https' but no scheme was found for " + input);
             }
-            int slashCount = companion.slashCount(input, indexOfFirstNonAsciiWhitespace$default, indexOfLastNonAsciiWhitespace$default);
-            char c4 = '?';
-            char c5 = '#';
+            int slashCount = slashCount(input, indexOfFirstNonAsciiWhitespace$default, indexOfLastNonAsciiWhitespace$default);
+            char c2 = '?';
+            char c3 = '#';
             if (slashCount >= 2 || httpUrl == null || !Intrinsics.areEqual(httpUrl.scheme(), this.scheme)) {
-                int i6 = indexOfFirstNonAsciiWhitespace$default + slashCount;
                 boolean z3 = false;
                 boolean z4 = false;
+                int i3 = indexOfFirstNonAsciiWhitespace$default + slashCount;
                 while (true) {
-                    delimiterOffset = Util.delimiterOffset(input, "@/\\?#", i6, indexOfLastNonAsciiWhitespace$default);
-                    char charAt = delimiterOffset != indexOfLastNonAsciiWhitespace$default ? input.charAt(delimiterOffset) : c3;
-                    if (charAt == c3 || charAt == c5 || charAt == '/' || charAt == '\\' || charAt == c4) {
+                    delimiterOffset = _UtilCommonKt.delimiterOffset(input, "@/\\?#", i3, indexOfLastNonAsciiWhitespace$default);
+                    char charAt = delimiterOffset != indexOfLastNonAsciiWhitespace$default ? input.charAt(delimiterOffset) : (char) 65535;
+                    if (charAt == 65535 || charAt == c3 || charAt == '/' || charAt == '\\' || charAt == c2) {
                         break;
                     } else if (charAt == '@') {
-                        if (z3) {
-                            i2 = indexOfLastNonAsciiWhitespace$default;
-                            str3 = str4;
+                        if (!z3) {
+                            int delimiterOffset2 = _UtilCommonKt.delimiterOffset(input, (char) AbstractJsonLexerKt.COLON, i3, delimiterOffset);
                             z = z2;
-                            c = c3;
-                            input = str;
-                            i3 = delimiterOffset;
-                            this.encodedPassword += "%40" + Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, i6, delimiterOffset, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, 240, null);
-                        } else {
-                            int delimiterOffset2 = Util.delimiterOffset(input, (char) AbstractJsonLexerKt.COLON, i6, delimiterOffset);
-                            str3 = str4;
-                            c = c3;
-                            i2 = indexOfLastNonAsciiWhitespace$default;
-                            z = z2;
-                            String canonicalize$okhttp$default = Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, i6, delimiterOffset2, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, 240, null);
+                            String canonicalize$default = _UrlKt.canonicalize$default(input, i3, delimiterOffset2, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, 112, null);
                             if (z4) {
-                                canonicalize$okhttp$default = this.encodedUsername + "%40" + canonicalize$okhttp$default;
+                                canonicalize$default = this.encodedUsername + "%40" + canonicalize$default;
                             }
-                            this.encodedUsername = canonicalize$okhttp$default;
+                            this.encodedUsername = canonicalize$default;
                             if (delimiterOffset2 != delimiterOffset) {
-                                i4 = delimiterOffset;
-                                this.encodedPassword = Companion.canonicalize$okhttp$default(HttpUrl.Companion, str, delimiterOffset2 + 1, i4, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, 240, null);
+                                i2 = delimiterOffset;
+                                this.encodedPassword = _UrlKt.canonicalize$default(str, delimiterOffset2 + 1, i2, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, 112, null);
                                 z3 = z;
                             } else {
-                                i4 = delimiterOffset;
+                                i2 = delimiterOffset;
                             }
                             input = str;
-                            i3 = i4;
+                            i = i2;
                             z4 = z;
+                        } else {
+                            z = z2;
+                            input = str;
+                            i = delimiterOffset;
+                            this.encodedPassword += "%40" + _UrlKt.canonicalize$default(input, i3, delimiterOffset, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, 112, null);
                         }
-                        i6 = i3 + 1;
-                        c3 = c;
-                        indexOfLastNonAsciiWhitespace$default = i2;
-                        str4 = str3;
+                        i3 = i + 1;
                         z2 = z;
-                        c4 = '?';
-                        c5 = '#';
+                        c3 = '#';
+                        c2 = '?';
                     }
                 }
-                i = indexOfLastNonAsciiWhitespace$default;
-                String str5 = str4;
-                char c6 = c3;
-                Companion companion2 = Companion;
-                int portColonOffset = companion2.portColonOffset(input, i6, delimiterOffset);
-                int i7 = portColonOffset + 1;
-                if (i7 < delimiterOffset) {
-                    this.host = HostnamesKt.toCanonicalHost(Companion.percentDecode$okhttp$default(HttpUrl.Companion, input, i6, portColonOffset, false, 4, null));
-                    int parsePort = companion2.parsePort(input, i7, delimiterOffset);
+                int portColonOffset = portColonOffset(input, i3, delimiterOffset);
+                int i4 = portColonOffset + 1;
+                if (i4 < delimiterOffset) {
+                    this.host = _HostnamesCommonKt.toCanonicalHost(_UrlKt.percentDecode$default(input, i3, portColonOffset, false, 4, null));
+                    int parsePort = parsePort(input, i4, delimiterOffset);
                     this.port = parsePort;
-                    if (parsePort == c6) {
+                    if (parsePort == -1) {
                         StringBuilder sb2 = new StringBuilder("Invalid URL port: \"");
-                        String substring2 = input.substring(i7, delimiterOffset);
-                        Intrinsics.checkNotNullExpressionValue(substring2, str5);
+                        String substring2 = input.substring(i4, delimiterOffset);
+                        Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
                         throw new IllegalArgumentException(sb2.append(substring2).append('\"').toString().toString());
                     }
-                    str2 = str5;
                 } else {
-                    str2 = str5;
-                    this.host = HostnamesKt.toCanonicalHost(Companion.percentDecode$okhttp$default(HttpUrl.Companion, input, i6, portColonOffset, false, 4, null));
-                    Companion companion3 = HttpUrl.Companion;
-                    String str6 = this.scheme;
-                    Intrinsics.checkNotNull(str6);
-                    this.port = companion3.defaultPort(str6);
+                    this.host = _HostnamesCommonKt.toCanonicalHost(_UrlKt.percentDecode$default(input, i3, portColonOffset, false, 4, null));
+                    Companion companion = HttpUrl.Companion;
+                    String str2 = this.scheme;
+                    Intrinsics.checkNotNull(str2);
+                    this.port = companion.defaultPort(str2);
                 }
                 if (this.host == null) {
                     StringBuilder sb3 = new StringBuilder("Invalid URL host: \"");
-                    String substring3 = input.substring(i6, portColonOffset);
-                    Intrinsics.checkNotNullExpressionValue(substring3, str2);
+                    String substring3 = input.substring(i3, portColonOffset);
+                    Intrinsics.checkNotNullExpressionValue(substring3, "substring(...)");
                     throw new IllegalArgumentException(sb3.append(substring3).append('\"').toString().toString());
                 }
                 indexOfFirstNonAsciiWhitespace$default = delimiterOffset;
@@ -1112,22 +1072,19 @@ public final class HttpUrl {
                 if (indexOfFirstNonAsciiWhitespace$default == indexOfLastNonAsciiWhitespace$default || input.charAt(indexOfFirstNonAsciiWhitespace$default) == '#') {
                     encodedQuery(httpUrl.encodedQuery());
                 }
-                i = indexOfLastNonAsciiWhitespace$default;
             }
-            int i8 = i;
-            int delimiterOffset3 = Util.delimiterOffset(input, "?#", indexOfFirstNonAsciiWhitespace$default, i8);
+            int delimiterOffset3 = _UtilCommonKt.delimiterOffset(input, "?#", indexOfFirstNonAsciiWhitespace$default, indexOfLastNonAsciiWhitespace$default);
             resolvePath(input, indexOfFirstNonAsciiWhitespace$default, delimiterOffset3);
-            if (delimiterOffset3 >= i8 || input.charAt(delimiterOffset3) != '?') {
-                c2 = '#';
-                i5 = delimiterOffset3;
+            if (delimiterOffset3 >= indexOfLastNonAsciiWhitespace$default || input.charAt(delimiterOffset3) != '?') {
+                c = '#';
             } else {
-                c2 = '#';
-                int delimiterOffset4 = Util.delimiterOffset(input, '#', delimiterOffset3, i8);
-                this.encodedQueryNamesAndValues = HttpUrl.Companion.toQueryNamesAndValues$okhttp(Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, delimiterOffset3 + 1, delimiterOffset4, HttpUrl.QUERY_ENCODE_SET, true, false, true, false, null, 208, null));
-                i5 = delimiterOffset4;
+                c = '#';
+                int delimiterOffset4 = _UtilCommonKt.delimiterOffset(input, '#', delimiterOffset3, indexOfLastNonAsciiWhitespace$default);
+                this.encodedQueryNamesAndValues = toQueryNamesAndValues(_UrlKt.canonicalize$default(input, delimiterOffset3 + 1, delimiterOffset4, _UrlKt.QUERY_ENCODE_SET, true, false, true, false, 80, null));
+                delimiterOffset3 = delimiterOffset4;
             }
-            if (i5 < i8 && input.charAt(i5) == c2) {
-                this.encodedFragment = Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, i5 + 1, i8, "", true, false, false, true, null, 176, null);
+            if (delimiterOffset3 < indexOfLastNonAsciiWhitespace$default && input.charAt(delimiterOffset3) == c) {
+                this.encodedFragment = _UrlKt.canonicalize$default(input, delimiterOffset3 + 1, indexOfLastNonAsciiWhitespace$default, "", true, false, false, true, 48, null);
             }
             return this;
         }
@@ -1147,7 +1104,7 @@ public final class HttpUrl {
             }
             int i3 = i;
             while (i3 < i2) {
-                int delimiterOffset = Util.delimiterOffset(str, "/\\", i3, i2);
+                int delimiterOffset = _UtilCommonKt.delimiterOffset(str, "/\\", i3, i2);
                 boolean z = delimiterOffset < i2;
                 String str2 = str;
                 push(str2, i3, delimiterOffset, z, true);
@@ -1162,32 +1119,24 @@ public final class HttpUrl {
         }
 
         private final void push(String str, int i, int i2, boolean z, boolean z2) {
-            String canonicalize$okhttp$default = Companion.canonicalize$okhttp$default(HttpUrl.Companion, str, i, i2, HttpUrl.PATH_SEGMENT_ENCODE_SET, z2, false, false, false, null, 240, null);
-            if (isDot(canonicalize$okhttp$default)) {
+            String canonicalize$default = _UrlKt.canonicalize$default(str, i, i2, _UrlKt.PATH_SEGMENT_ENCODE_SET, z2, false, false, false, 112, null);
+            if (isDot(canonicalize$default)) {
                 return;
             }
-            if (isDotDot(canonicalize$okhttp$default)) {
+            if (isDotDot(canonicalize$default)) {
                 pop();
                 return;
             }
             List<String> list = this.encodedPathSegments;
             if (list.get(list.size() - 1).length() == 0) {
                 List<String> list2 = this.encodedPathSegments;
-                list2.set(list2.size() - 1, canonicalize$okhttp$default);
+                list2.set(list2.size() - 1, canonicalize$default);
             } else {
-                this.encodedPathSegments.add(canonicalize$okhttp$default);
+                this.encodedPathSegments.add(canonicalize$default);
             }
             if (z) {
                 this.encodedPathSegments.add("");
             }
-        }
-
-        private final boolean isDot(String str) {
-            return Intrinsics.areEqual(str, ".") || StringsKt.equals(str, "%2e", true);
-        }
-
-        private final boolean isDotDot(String str) {
-            return Intrinsics.areEqual(str, "..") || StringsKt.equals(str, "%2e.", true) || StringsKt.equals(str, ".%2e", true) || StringsKt.equals(str, "%2e%2e", true);
         }
 
         private final void pop() {
@@ -1200,95 +1149,116 @@ public final class HttpUrl {
             this.encodedPathSegments.add("");
         }
 
-        /* compiled from: HttpUrl.kt */
-        @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J \u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00042\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u0006H\u0002J \u0010\n\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00042\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u0006H\u0002J \u0010\u000b\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00042\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u0006H\u0002J\u001c\u0010\f\u001a\u00020\u0006*\u00020\u00042\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u0006H\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Lokhttp3/HttpUrl$Builder$Companion;", "", "()V", "INVALID_HOST", "", "parsePort", "", "input", "pos", "limit", "portColonOffset", "schemeDelimiterOffset", "slashCount", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
-        /* loaded from: classes5.dex */
-        public static final class Companion {
-            public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-                this();
-            }
+        private final boolean isDot(String str) {
+            return Intrinsics.areEqual(str, ".") || StringsKt.equals(str, "%2e", true);
+        }
 
-            private Companion() {
-            }
+        private final boolean isDotDot(String str) {
+            return Intrinsics.areEqual(str, "..") || StringsKt.equals(str, "%2e.", true) || StringsKt.equals(str, ".%2e", true) || StringsKt.equals(str, "%2e%2e", true);
+        }
 
-            /* JADX INFO: Access modifiers changed from: private */
-            public final int schemeDelimiterOffset(String str, int i, int i2) {
-                if (i2 - i < 2) {
-                    return -1;
+        private final List<String> toQueryNamesAndValues(String str) {
+            ArrayList arrayList = new ArrayList();
+            int i = 0;
+            while (i <= str.length()) {
+                String str2 = str;
+                int indexOf$default = StringsKt.indexOf$default((CharSequence) str2, (char) Typography.amp, i, false, 4, (Object) null);
+                if (indexOf$default == -1) {
+                    indexOf$default = str.length();
                 }
-                char charAt = str.charAt(i);
-                if ((Intrinsics.compare((int) charAt, 97) >= 0 && Intrinsics.compare((int) charAt, 122) <= 0) || (Intrinsics.compare((int) charAt, 65) >= 0 && Intrinsics.compare((int) charAt, 90) <= 0)) {
-                    while (true) {
-                        i++;
-                        if (i >= i2) {
-                            break;
-                        }
-                        char charAt2 = str.charAt(i);
-                        if ('a' > charAt2 || charAt2 >= '{') {
-                            if ('A' > charAt2 || charAt2 >= '[') {
-                                if ('0' > charAt2 || charAt2 >= ':') {
-                                    if (charAt2 != '+' && charAt2 != '-' && charAt2 != '.') {
-                                        if (charAt2 == ':') {
-                                            return i;
-                                        }
+                int indexOf$default2 = StringsKt.indexOf$default((CharSequence) str2, '=', i, false, 4, (Object) null);
+                if (indexOf$default2 == -1 || indexOf$default2 > indexOf$default) {
+                    String substring = str.substring(i, indexOf$default);
+                    Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
+                    arrayList.add(substring);
+                    arrayList.add(null);
+                } else {
+                    String substring2 = str.substring(i, indexOf$default2);
+                    Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
+                    arrayList.add(substring2);
+                    String substring3 = str.substring(indexOf$default2 + 1, indexOf$default);
+                    Intrinsics.checkNotNullExpressionValue(substring3, "substring(...)");
+                    arrayList.add(substring3);
+                }
+                i = indexOf$default + 1;
+            }
+            return arrayList;
+        }
+
+        private final int schemeDelimiterOffset(String str, int i, int i2) {
+            if (i2 - i < 2) {
+                return -1;
+            }
+            char charAt = str.charAt(i);
+            if ((Intrinsics.compare((int) charAt, 97) >= 0 && Intrinsics.compare((int) charAt, 122) <= 0) || (Intrinsics.compare((int) charAt, 65) >= 0 && Intrinsics.compare((int) charAt, 90) <= 0)) {
+                while (true) {
+                    i++;
+                    if (i >= i2) {
+                        break;
+                    }
+                    char charAt2 = str.charAt(i);
+                    if ('a' > charAt2 || charAt2 >= '{') {
+                        if ('A' > charAt2 || charAt2 >= '[') {
+                            if ('0' > charAt2 || charAt2 >= ':') {
+                                if (charAt2 != '+' && charAt2 != '-' && charAt2 != '.') {
+                                    if (charAt2 == ':') {
+                                        return i;
                                     }
                                 }
                             }
                         }
                     }
                 }
+            }
+            return -1;
+        }
+
+        private final int slashCount(String str, int i, int i2) {
+            int i3 = 0;
+            while (i < i2) {
+                char charAt = str.charAt(i);
+                if (charAt != '/' && charAt != '\\') {
+                    break;
+                }
+                i3++;
+                i++;
+            }
+            return i3;
+        }
+
+        private final int portColonOffset(String str, int i, int i2) {
+            while (i < i2) {
+                char charAt = str.charAt(i);
+                if (charAt == ':') {
+                    return i;
+                }
+                if (charAt == '[') {
+                    do {
+                        i++;
+                        if (i < i2) {
+                        }
+                    } while (str.charAt(i) != ']');
+                }
+                i++;
+            }
+            return i2;
+        }
+
+        private final int parsePort(String str, int i, int i2) {
+            int parseInt;
+            try {
+                parseInt = Integer.parseInt(_UrlKt.canonicalize$default(str, i, i2, "", false, false, false, false, MenuKt.InTransitionDuration, null));
+            } catch (NumberFormatException unused) {
+            }
+            if (1 > parseInt || parseInt >= 65536) {
                 return -1;
             }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public final int slashCount(String str, int i, int i2) {
-                int i3 = 0;
-                while (i < i2) {
-                    char charAt = str.charAt(i);
-                    if (charAt != '\\' && charAt != '/') {
-                        break;
-                    }
-                    i3++;
-                    i++;
-                }
-                return i3;
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public final int portColonOffset(String str, int i, int i2) {
-                while (i < i2) {
-                    char charAt = str.charAt(i);
-                    if (charAt == '[') {
-                        do {
-                            i++;
-                            if (i < i2) {
-                            }
-                        } while (str.charAt(i) != ']');
-                    } else if (charAt == ':') {
-                        return i;
-                    }
-                    i++;
-                }
-                return i2;
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public final int parsePort(String str, int i, int i2) {
-                int parseInt;
-                try {
-                    parseInt = Integer.parseInt(Companion.canonicalize$okhttp$default(HttpUrl.Companion, str, i, i2, "", false, false, false, false, null, 248, null));
-                } catch (NumberFormatException unused) {
-                }
-                if (1 > parseInt || parseInt >= 65536) {
-                    return -1;
-                }
-                return parseInt;
-            }
+            return parseInt;
         }
     }
 
     /* compiled from: HttpUrl.kt */
-    @Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0019\n\u0002\b\t\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0004H\u0007J\u0017\u0010\u0014\u001a\u0004\u0018\u00010\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0007¢\u0006\u0002\b\u0018J\u0017\u0010\u0014\u001a\u0004\u0018\u00010\u00152\u0006\u0010\u0019\u001a\u00020\u001aH\u0007¢\u0006\u0002\b\u0018J\u0015\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0019\u001a\u00020\u0004H\u0007¢\u0006\u0002\b\u0018J\u0017\u0010\u001b\u001a\u0004\u0018\u00010\u00152\u0006\u0010\u0019\u001a\u00020\u0004H\u0007¢\u0006\u0002\b\u001cJa\u0010\u001d\u001a\u00020\u0004*\u00020\u00042\b\b\u0002\u0010\u001e\u001a\u00020\u00122\b\b\u0002\u0010\u001f\u001a\u00020\u00122\u0006\u0010 \u001a\u00020\u00042\b\b\u0002\u0010!\u001a\u00020\"2\b\b\u0002\u0010#\u001a\u00020\"2\b\b\u0002\u0010$\u001a\u00020\"2\b\b\u0002\u0010%\u001a\u00020\"2\n\b\u0002\u0010&\u001a\u0004\u0018\u00010'H\u0000¢\u0006\u0002\b(J\u001c\u0010)\u001a\u00020\"*\u00020\u00042\u0006\u0010\u001e\u001a\u00020\u00122\u0006\u0010\u001f\u001a\u00020\u0012H\u0002J/\u0010*\u001a\u00020\u0004*\u00020\u00042\b\b\u0002\u0010\u001e\u001a\u00020\u00122\b\b\u0002\u0010\u001f\u001a\u00020\u00122\b\b\u0002\u0010$\u001a\u00020\"H\u0000¢\u0006\u0002\b+J\u0011\u0010,\u001a\u00020\u0015*\u00020\u0004H\u0007¢\u0006\u0002\b\u0014J\u0013\u0010-\u001a\u0004\u0018\u00010\u0015*\u00020\u0017H\u0007¢\u0006\u0002\b\u0014J\u0013\u0010-\u001a\u0004\u0018\u00010\u0015*\u00020\u001aH\u0007¢\u0006\u0002\b\u0014J\u0013\u0010-\u001a\u0004\u0018\u00010\u0015*\u00020\u0004H\u0007¢\u0006\u0002\b\u001bJ#\u0010.\u001a\u00020/*\b\u0012\u0004\u0012\u00020\u0004002\n\u00101\u001a\u000602j\u0002`3H\u0000¢\u0006\u0002\b4J\u0019\u00105\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000406*\u00020\u0004H\u0000¢\u0006\u0002\b7J%\u00108\u001a\u00020/*\n\u0012\u0006\u0012\u0004\u0018\u00010\u0004002\n\u00101\u001a\u000602j\u0002`3H\u0000¢\u0006\u0002\b9JV\u0010:\u001a\u00020/*\u00020;2\u0006\u0010<\u001a\u00020\u00042\u0006\u0010\u001e\u001a\u00020\u00122\u0006\u0010\u001f\u001a\u00020\u00122\u0006\u0010 \u001a\u00020\u00042\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020\"2\u0006\u0010$\u001a\u00020\"2\u0006\u0010%\u001a\u00020\"2\b\u0010&\u001a\u0004\u0018\u00010'H\u0002J,\u0010=\u001a\u00020/*\u00020;2\u0006\u0010>\u001a\u00020\u00042\u0006\u0010\u001e\u001a\u00020\u00122\u0006\u0010\u001f\u001a\u00020\u00122\u0006\u0010$\u001a\u00020\"H\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000¨\u0006?"}, d2 = {"Lokhttp3/HttpUrl$Companion;", "", "()V", "FORM_ENCODE_SET", "", "FRAGMENT_ENCODE_SET", "FRAGMENT_ENCODE_SET_URI", "HEX_DIGITS", "", "PASSWORD_ENCODE_SET", "PATH_SEGMENT_ENCODE_SET", "PATH_SEGMENT_ENCODE_SET_URI", "QUERY_COMPONENT_ENCODE_SET", "QUERY_COMPONENT_ENCODE_SET_URI", "QUERY_COMPONENT_REENCODE_SET", "QUERY_ENCODE_SET", "USERNAME_ENCODE_SET", "defaultPort", "", "scheme", "get", "Lokhttp3/HttpUrl;", "uri", "Ljava/net/URI;", "-deprecated_get", "url", "Ljava/net/URL;", "parse", "-deprecated_parse", "canonicalize", "pos", "limit", "encodeSet", "alreadyEncoded", "", "strict", "plusIsSpace", "unicodeAllowed", "charset", "Ljava/nio/charset/Charset;", "canonicalize$okhttp", "isPercentEncoded", "percentDecode", "percentDecode$okhttp", "toHttpUrl", "toHttpUrlOrNull", "toPathString", "", "", "out", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "toPathString$okhttp", "toQueryNamesAndValues", "", "toQueryNamesAndValues$okhttp", "toQueryString", "toQueryString$okhttp", "writeCanonicalized", "Lokio/Buffer;", "input", "writePercentDecoded", "encoded", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007J \u0010\b\u001a\u00020\t*\n\u0012\u0006\u0012\u0004\u0018\u00010\u00070\n2\n\u0010\u000b\u001a\u00060\fj\u0002`\rH\u0002J\u0011\u0010\u000e\u001a\u00020\u000f*\u00020\u0007H\u0007¢\u0006\u0002\b\u0010J\u0013\u0010\u0011\u001a\u0004\u0018\u00010\u000f*\u00020\u0007H\u0007¢\u0006\u0002\b\u0012J\u0013\u0010\u0011\u001a\u0004\u0018\u00010\u000f*\u00020\u0013H\u0007¢\u0006\u0002\b\u0010J\u0013\u0010\u0011\u001a\u0004\u0018\u00010\u000f*\u00020\u0014H\u0007¢\u0006\u0002\b\u0010J\u0015\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0015\u001a\u00020\u0007H\u0007¢\u0006\u0002\b\u0016J\u0017\u0010\u0012\u001a\u0004\u0018\u00010\u000f2\u0006\u0010\u0015\u001a\u00020\u0007H\u0007¢\u0006\u0002\b\u0017J\u0017\u0010\u0010\u001a\u0004\u0018\u00010\u000f2\u0006\u0010\u0015\u001a\u00020\u0013H\u0007¢\u0006\u0002\b\u0016J\u0017\u0010\u0010\u001a\u0004\u0018\u00010\u000f2\u0006\u0010\u0018\u001a\u00020\u0014H\u0007¢\u0006\u0002\b\u0016¨\u0006\u0019"}, d2 = {"Lokhttp3/HttpUrl$Companion;", "", "<init>", "()V", "defaultPort", "", "scheme", "", "toQueryString", "", "", "out", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "toHttpUrl", "Lokhttp3/HttpUrl;", "get", "toHttpUrlOrNull", "parse", "Ljava/net/URL;", "Ljava/net/URI;", "url", "-deprecated_get", "-deprecated_parse", "uri", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -1307,19 +1277,8 @@ public final class HttpUrl {
             return Intrinsics.areEqual(scheme, Constants.SCHEME) ? 443 : -1;
         }
 
-        public final void toPathString$okhttp(List<String> list, StringBuilder out) {
-            Intrinsics.checkNotNullParameter(list, "<this>");
-            Intrinsics.checkNotNullParameter(out, "out");
-            int size = list.size();
-            for (int i = 0; i < size; i++) {
-                out.append('/');
-                out.append(list.get(i));
-            }
-        }
-
-        public final void toQueryString$okhttp(List<String> list, StringBuilder out) {
-            Intrinsics.checkNotNullParameter(list, "<this>");
-            Intrinsics.checkNotNullParameter(out, "out");
+        /* JADX INFO: Access modifiers changed from: private */
+        public final void toQueryString(List<String> list, StringBuilder sb) {
             IntProgression step = RangesKt.step(RangesKt.until(0, list.size()), 2);
             int first = step.getFirst();
             int last = step.getLast();
@@ -1331,47 +1290,18 @@ public final class HttpUrl {
                 String str = list.get(first);
                 String str2 = list.get(first + 1);
                 if (first > 0) {
-                    out.append(Typography.amp);
+                    sb.append(Typography.amp);
                 }
-                out.append(str);
+                sb.append(str);
                 if (str2 != null) {
-                    out.append('=');
-                    out.append(str2);
+                    sb.append('=');
+                    sb.append(str2);
                 }
                 if (first == last) {
                     return;
                 }
                 first += step2;
             }
-        }
-
-        public final List<String> toQueryNamesAndValues$okhttp(String str) {
-            Intrinsics.checkNotNullParameter(str, "<this>");
-            ArrayList arrayList = new ArrayList();
-            int i = 0;
-            while (i <= str.length()) {
-                String str2 = str;
-                int indexOf$default = StringsKt.indexOf$default((CharSequence) str2, (char) Typography.amp, i, false, 4, (Object) null);
-                if (indexOf$default == -1) {
-                    indexOf$default = str.length();
-                }
-                int indexOf$default2 = StringsKt.indexOf$default((CharSequence) str2, '=', i, false, 4, (Object) null);
-                if (indexOf$default2 == -1 || indexOf$default2 > indexOf$default) {
-                    String substring = str.substring(i, indexOf$default);
-                    Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
-                    arrayList.add(substring);
-                    arrayList.add(null);
-                } else {
-                    String substring2 = str.substring(i, indexOf$default2);
-                    Intrinsics.checkNotNullExpressionValue(substring2, "this as java.lang.String…ing(startIndex, endIndex)");
-                    arrayList.add(substring2);
-                    String substring3 = str.substring(indexOf$default2 + 1, indexOf$default);
-                    Intrinsics.checkNotNullExpressionValue(substring3, "this as java.lang.String…ing(startIndex, endIndex)");
-                    arrayList.add(substring3);
-                }
-                i = indexOf$default + 1;
-            }
-            return arrayList;
         }
 
         @JvmStatic
@@ -1394,7 +1324,7 @@ public final class HttpUrl {
         public final HttpUrl get(URL url) {
             Intrinsics.checkNotNullParameter(url, "<this>");
             String url2 = url.toString();
-            Intrinsics.checkNotNullExpressionValue(url2, "toString()");
+            Intrinsics.checkNotNullExpressionValue(url2, "toString(...)");
             return parse(url2);
         }
 
@@ -1402,168 +1332,36 @@ public final class HttpUrl {
         public final HttpUrl get(URI uri) {
             Intrinsics.checkNotNullParameter(uri, "<this>");
             String uri2 = uri.toString();
-            Intrinsics.checkNotNullExpressionValue(uri2, "toString()");
+            Intrinsics.checkNotNullExpressionValue(uri2, "toString(...)");
             return parse(uri2);
         }
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "url.toHttpUrl()", imports = {"okhttp3.HttpUrl.Companion.toHttpUrl"}))
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final HttpUrl m10231deprecated_get(String url) {
+        public final HttpUrl m10300deprecated_get(String url) {
             Intrinsics.checkNotNullParameter(url, "url");
             return get(url);
         }
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "url.toHttpUrlOrNull()", imports = {"okhttp3.HttpUrl.Companion.toHttpUrlOrNull"}))
         /* renamed from: -deprecated_parse  reason: not valid java name */
-        public final HttpUrl m10234deprecated_parse(String url) {
+        public final HttpUrl m10303deprecated_parse(String url) {
             Intrinsics.checkNotNullParameter(url, "url");
             return parse(url);
         }
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "url.toHttpUrlOrNull()", imports = {"okhttp3.HttpUrl.Companion.toHttpUrlOrNull"}))
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final HttpUrl m10233deprecated_get(URL url) {
+        public final HttpUrl m10302deprecated_get(URL url) {
             Intrinsics.checkNotNullParameter(url, "url");
             return get(url);
         }
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "uri.toHttpUrlOrNull()", imports = {"okhttp3.HttpUrl.Companion.toHttpUrlOrNull"}))
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final HttpUrl m10232deprecated_get(URI uri) {
+        public final HttpUrl m10301deprecated_get(URI uri) {
             Intrinsics.checkNotNullParameter(uri, "uri");
             return get(uri);
-        }
-
-        public static /* synthetic */ String percentDecode$okhttp$default(Companion companion, String str, int i, int i2, boolean z, int i3, Object obj) {
-            if ((i3 & 1) != 0) {
-                i = 0;
-            }
-            if ((i3 & 2) != 0) {
-                i2 = str.length();
-            }
-            if ((i3 & 4) != 0) {
-                z = false;
-            }
-            return companion.percentDecode$okhttp(str, i, i2, z);
-        }
-
-        public final String percentDecode$okhttp(String str, int i, int i2, boolean z) {
-            Intrinsics.checkNotNullParameter(str, "<this>");
-            for (int i3 = i; i3 < i2; i3++) {
-                char charAt = str.charAt(i3);
-                if (charAt == '%' || (charAt == '+' && z)) {
-                    Buffer buffer = new Buffer();
-                    buffer.writeUtf8(str, i, i3);
-                    writePercentDecoded(buffer, str, i3, i2, z);
-                    return buffer.readUtf8();
-                }
-            }
-            String substring = str.substring(i, i2);
-            Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
-            return substring;
-        }
-
-        private final void writePercentDecoded(Buffer buffer, String str, int i, int i2, boolean z) {
-            int i3;
-            while (i < i2) {
-                int codePointAt = str.codePointAt(i);
-                if (codePointAt == 37 && (i3 = i + 2) < i2) {
-                    int parseHexDigit = Util.parseHexDigit(str.charAt(i + 1));
-                    int parseHexDigit2 = Util.parseHexDigit(str.charAt(i3));
-                    if (parseHexDigit != -1 && parseHexDigit2 != -1) {
-                        buffer.writeByte((parseHexDigit << 4) + parseHexDigit2);
-                        i = Character.charCount(codePointAt) + i3;
-                    }
-                    buffer.writeUtf8CodePoint(codePointAt);
-                    i += Character.charCount(codePointAt);
-                } else {
-                    if (codePointAt == 43 && z) {
-                        buffer.writeByte(32);
-                        i++;
-                    }
-                    buffer.writeUtf8CodePoint(codePointAt);
-                    i += Character.charCount(codePointAt);
-                }
-            }
-        }
-
-        private final boolean isPercentEncoded(String str, int i, int i2) {
-            int i3 = i + 2;
-            return i3 < i2 && str.charAt(i) == '%' && Util.parseHexDigit(str.charAt(i + 1)) != -1 && Util.parseHexDigit(str.charAt(i3)) != -1;
-        }
-
-        public static /* synthetic */ String canonicalize$okhttp$default(Companion companion, String str, int i, int i2, String str2, boolean z, boolean z2, boolean z3, boolean z4, Charset charset, int i3, Object obj) {
-            if ((i3 & 1) != 0) {
-                i = 0;
-            }
-            if ((i3 & 2) != 0) {
-                i2 = str.length();
-            }
-            if ((i3 & 8) != 0) {
-                z = false;
-            }
-            if ((i3 & 16) != 0) {
-                z2 = false;
-            }
-            if ((i3 & 32) != 0) {
-                z3 = false;
-            }
-            if ((i3 & 64) != 0) {
-                z4 = false;
-            }
-            if ((i3 & 128) != 0) {
-                charset = null;
-            }
-            return companion.canonicalize$okhttp(str, i, i2, str2, z, z2, z3, z4, charset);
-        }
-
-        public final String canonicalize$okhttp(String str, int i, int i2, String encodeSet, boolean z, boolean z2, boolean z3, boolean z4, Charset charset) {
-            Intrinsics.checkNotNullParameter(str, "<this>");
-            Intrinsics.checkNotNullParameter(encodeSet, "encodeSet");
-            int i3 = i;
-            while (i3 < i2) {
-                int codePointAt = str.codePointAt(i3);
-                if (codePointAt < 32 || codePointAt == 127 || ((codePointAt >= 128 && !z4) || StringsKt.contains$default((CharSequence) encodeSet, (char) codePointAt, false, 2, (Object) null) || ((codePointAt == 37 && (!z || (z2 && !isPercentEncoded(str, i3, i2)))) || (codePointAt == 43 && z3)))) {
-                    Buffer buffer = new Buffer();
-                    buffer.writeUtf8(str, i, i3);
-                    writeCanonicalized(buffer, str, i3, i2, encodeSet, z, z2, z3, z4, charset);
-                    return buffer.readUtf8();
-                }
-                i3 += Character.charCount(codePointAt);
-            }
-            String substring = str.substring(i, i2);
-            Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
-            return substring;
-        }
-
-        private final void writeCanonicalized(Buffer buffer, String str, int i, int i2, String str2, boolean z, boolean z2, boolean z3, boolean z4, Charset charset) {
-            Buffer buffer2 = null;
-            while (i < i2) {
-                int codePointAt = str.codePointAt(i);
-                if (!z || (codePointAt != 9 && codePointAt != 10 && codePointAt != 12 && codePointAt != 13)) {
-                    if (codePointAt == 43 && z3) {
-                        buffer.writeUtf8(z ? "+" : "%2B");
-                    } else if (codePointAt < 32 || codePointAt == 127 || ((codePointAt >= 128 && !z4) || StringsKt.contains$default((CharSequence) str2, (char) codePointAt, false, 2, (Object) null) || (codePointAt == 37 && (!z || (z2 && !isPercentEncoded(str, i, i2)))))) {
-                        if (buffer2 == null) {
-                            buffer2 = new Buffer();
-                        }
-                        if (charset == null || Intrinsics.areEqual(charset, StandardCharsets.UTF_8)) {
-                            buffer2.writeUtf8CodePoint(codePointAt);
-                        } else {
-                            buffer2.writeString(str, i, Character.charCount(codePointAt) + i, charset);
-                        }
-                        while (!buffer2.exhausted()) {
-                            byte readByte = buffer2.readByte();
-                            buffer.writeByte(37);
-                            buffer.writeByte((int) HttpUrl.HEX_DIGITS[((readByte & 255) >> 4) & 15]);
-                            buffer.writeByte((int) HttpUrl.HEX_DIGITS[readByte & Ascii.SI]);
-                        }
-                    } else {
-                        buffer.writeUtf8CodePoint(codePointAt);
-                    }
-                }
-                i += Character.charCount(codePointAt);
-            }
         }
     }
 }

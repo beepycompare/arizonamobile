@@ -7,7 +7,7 @@ import java.lang.Comparable;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import javax.annotation.CheckForNull;
-import okhttp3.HttpUrl;
+import okhttp3.internal.url._UrlKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 @ElementTypesAreNonnullByDefault
 /* loaded from: classes4.dex */
@@ -130,7 +130,7 @@ public final class EmptyContiguousSet<C extends Comparable> extends ContiguousSe
 
     @Override // com.google.common.collect.ContiguousSet, java.util.AbstractCollection
     public String toString() {
-        return HttpUrl.PATH_SEGMENT_ENCODE_SET_URI;
+        return _UrlKt.PATH_SEGMENT_ENCODE_SET_URI;
     }
 
     @Override // com.google.common.collect.ImmutableSet, java.util.Collection, java.util.Set

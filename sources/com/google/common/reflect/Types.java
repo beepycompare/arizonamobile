@@ -31,7 +31,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.CheckForNull;
 import kotlin.text.Typography;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-import okhttp3.HttpUrl;
+import okhttp3.internal.url._UrlKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 @ElementTypesAreNonnullByDefault
 /* loaded from: classes4.dex */
@@ -192,7 +192,7 @@ public final class Types {
         }
 
         public String toString() {
-            return Types.toString(this.componentType) + HttpUrl.PATH_SEGMENT_ENCODE_SET_URI;
+            return Types.toString(this.componentType) + _UrlKt.PATH_SEGMENT_ENCODE_SET_URI;
         }
 
         public int hashCode() {

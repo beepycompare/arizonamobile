@@ -1,8 +1,8 @@
 package io.appmetrica.analytics.ecommerce;
 
 import io.appmetrica.analytics.impl.Ae;
-import io.appmetrica.analytics.impl.C0145al;
-import io.appmetrica.analytics.impl.C0197cl;
+import io.appmetrica.analytics.impl.C0137al;
+import io.appmetrica.analytics.impl.C0189cl;
 import io.appmetrica.analytics.impl.D3;
 import io.appmetrica.analytics.impl.Vf;
 import io.appmetrica.analytics.impl.Yk;
@@ -30,11 +30,11 @@ public abstract class ECommerceEvent implements Vf {
     }
 
     public static ECommerceEvent showProductDetailsEvent(ECommerceProduct eCommerceProduct, ECommerceReferrer eCommerceReferrer) {
-        return new C0145al(eCommerceProduct, eCommerceReferrer);
+        return new C0137al(eCommerceProduct, eCommerceReferrer);
     }
 
     public static ECommerceEvent showScreenEvent(ECommerceScreen eCommerceScreen) {
-        return new C0197cl(eCommerceScreen);
+        return new C0189cl(eCommerceScreen);
     }
 
     public String getPublicDescription() {

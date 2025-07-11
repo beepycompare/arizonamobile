@@ -1,16 +1,31 @@
 package com.google.android.gms.measurement.internal;
 
+import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public class zzoz extends zzjq implements zzjs {
-    protected final zzpv zzg;
+final class zzoz implements Runnable {
+    final /* synthetic */ String zza;
+    final /* synthetic */ String zzb;
+    final /* synthetic */ Bundle zzc;
+    final /* synthetic */ zzpa zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzoz(zzpv zzpvVar) {
-        super(zzpvVar.zzt());
-        Preconditions.checkNotNull(zzpvVar);
-        this.zzg = zzpvVar;
+    public zzoz(zzpa zzpaVar, String str, String str2, Bundle bundle) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = bundle;
+        Objects.requireNonNull(zzpaVar);
+        this.zzd = zzpaVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        zzpf zzpfVar = this.zzd.zza;
+        zzpo zzt = zzpfVar.zzt();
+        long currentTimeMillis = zzpfVar.zzaZ().currentTimeMillis();
+        String str = this.zza;
+        zzpfVar.zzD((zzbg) Preconditions.checkNotNull(zzt.zzac(str, this.zzb, this.zzc, "auto", currentTimeMillis, false, true)), str);
     }
 }

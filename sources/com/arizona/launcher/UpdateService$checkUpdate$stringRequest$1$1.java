@@ -14,16 +14,18 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import org.json.JSONArray;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdateService.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1", f = "UpdateService.kt", i = {}, l = {347, 348}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {349, 350}, m = "invokeSuspend", n = {"gameDataInfo"}, s = {"L$0"})
 /* loaded from: classes3.dex */
 public final class UpdateService$checkUpdate$stringRequest$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    Object L$0;
     int label;
     final /* synthetic */ UpdateService this$0;
 
@@ -44,13 +46,13 @@ public final class UpdateService$checkUpdate$stringRequest$1$1 extends SuspendLa
         return ((UpdateService$checkUpdate$stringRequest$1$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0030, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0034, code lost:
         if (r7 == r0) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x004e, code lost:
-        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1.AnonymousClass1(r4, (kotlin.Pair) r7, null), r6) == r0) goto L14;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0058, code lost:
+        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1.AnonymousClass1(r6.this$0, r7, null), r6) == r0) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0050, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x005a, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -69,6 +71,7 @@ public final class UpdateService$checkUpdate$stringRequest$1$1 extends SuspendLa
             obj = updateService.checkGameDataUpdate(jSONArray, this);
         } else if (i != 1) {
             if (i == 2) {
+                Pair pair = (Pair) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 return Unit.INSTANCE;
             }
@@ -76,13 +79,14 @@ public final class UpdateService$checkUpdate$stringRequest$1$1 extends SuspendLa
         } else {
             ResultKt.throwOnFailure(obj);
         }
-        UpdateService updateService2 = this.this$0;
+        Pair pair2 = (Pair) obj;
+        this.L$0 = SpillingKt.nullOutSpilledVariable(pair2);
         this.label = 2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
     @DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1$1", f = "UpdateService.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */

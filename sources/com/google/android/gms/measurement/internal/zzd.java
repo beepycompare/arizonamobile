@@ -4,104 +4,49 @@ import android.os.Bundle;
 import androidx.collection.ArrayMap;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzd extends zzf {
     private final Map zza;
     private final Map zzb;
     private long zzc;
 
-    public zzd(zzio zzioVar) {
-        super(zzioVar);
+    public zzd(zzib zzibVar) {
+        super(zzibVar);
         this.zzb = new ArrayMap();
         this.zza = new ArrayMap();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void zza(zzd zzdVar, String str, long j) {
-        zzdVar.zzg();
-        Preconditions.checkNotEmpty(str);
-        Map map = zzdVar.zzb;
-        if (map.isEmpty()) {
-            zzdVar.zzc = j;
-        }
-        Integer num = (Integer) map.get(str);
-        if (num != null) {
-            map.put(str, Integer.valueOf(num.intValue() + 1));
-        } else if (map.size() >= 100) {
-            zzdVar.zzu.zzaW().zzk().zza("Too many ads visible");
-        } else {
-            map.put(str, 1);
-            zzdVar.zza.put(str, Long.valueOf(j));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void zzb(zzd zzdVar, String str, long j) {
-        zzdVar.zzg();
-        Preconditions.checkNotEmpty(str);
-        Map map = zzdVar.zzb;
-        Integer num = (Integer) map.get(str);
-        if (num == null) {
-            zzdVar.zzu.zzaW().zze().zzb("Call to endAdUnitExposure for unknown ad unit id", str);
-            return;
-        }
-        zzmh zzj = zzdVar.zzu.zzt().zzj(false);
-        int intValue = num.intValue() - 1;
-        if (intValue == 0) {
-            map.remove(str);
-            Map map2 = zzdVar.zza;
-            Long l = (Long) map2.get(str);
-            if (l == null) {
-                zzdVar.zzu.zzaW().zze().zza("First ad unit exposure time was never set");
-            } else {
-                map2.remove(str);
-                zzdVar.zzi(str, j - l.longValue(), zzj);
-            }
-            if (map.isEmpty()) {
-                long j2 = zzdVar.zzc;
-                if (j2 == 0) {
-                    zzdVar.zzu.zzaW().zze().zza("First ad exposure time was never set");
-                    return;
-                }
-                zzdVar.zzh(j - j2, zzj);
-                zzdVar.zzc = 0L;
-                return;
-            }
-            return;
-        }
-        map.put(str, Integer.valueOf(intValue));
-    }
-
-    private final void zzh(long j, zzmh zzmhVar) {
-        if (zzmhVar == null) {
-            this.zzu.zzaW().zzj().zza("Not logging ad exposure. No active activity");
+    private final void zzh(long j, zzlt zzltVar) {
+        if (zzltVar == null) {
+            this.zzu.zzaV().zzk().zza("Not logging ad exposure. No active activity");
         } else if (j < 1000) {
-            this.zzu.zzaW().zzj().zzb("Not logging ad exposure. Less than 1000 ms. exposure", Long.valueOf(j));
+            this.zzu.zzaV().zzk().zzb("Not logging ad exposure. Less than 1000 ms. exposure", Long.valueOf(j));
         } else {
             Bundle bundle = new Bundle();
             bundle.putLong("_xt", j);
-            zzqf.zzN(zzmhVar, bundle, true);
-            this.zzu.zzq().zzR("am", "_xa", bundle);
+            zzpo.zzav(zzltVar, bundle, true);
+            this.zzu.zzj().zzF("am", "_xa", bundle);
         }
     }
 
-    private final void zzi(String str, long j, zzmh zzmhVar) {
-        if (zzmhVar == null) {
-            this.zzu.zzaW().zzj().zza("Not logging ad unit exposure. No active activity");
+    private final void zzi(String str, long j, zzlt zzltVar) {
+        if (zzltVar == null) {
+            this.zzu.zzaV().zzk().zza("Not logging ad unit exposure. No active activity");
         } else if (j < 1000) {
-            this.zzu.zzaW().zzj().zzb("Not logging ad unit exposure. Less than 1000 ms. exposure", Long.valueOf(j));
+            this.zzu.zzaV().zzk().zzb("Not logging ad unit exposure. Less than 1000 ms. exposure", Long.valueOf(j));
         } else {
             Bundle bundle = new Bundle();
             bundle.putString("_ai", str);
             bundle.putLong("_xt", j);
-            zzqf.zzN(zzmhVar, bundle, true);
-            this.zzu.zzq().zzR("am", "_xu", bundle);
+            zzpo.zzav(zzltVar, bundle, true);
+            this.zzu.zzj().zzF("am", "_xu", bundle);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void zzj(long j) {
+    /* renamed from: zzj */
+    public final void zzf(long j) {
         Map map = this.zza;
         for (String str : map.keySet()) {
             map.put(str, Long.valueOf(j));
@@ -112,31 +57,87 @@ public final class zzd extends zzf {
         this.zzc = j;
     }
 
-    public final void zzd(String str, long j) {
+    public final void zza(String str, long j) {
         if (str == null || str.length() == 0) {
-            this.zzu.zzaW().zze().zza("Ad unit id must be a non-empty string");
+            this.zzu.zzaV().zzb().zza("Ad unit id must be a non-empty string");
         } else {
-            this.zzu.zzaX().zzq(new zza(this, str, j));
+            this.zzu.zzaW().zzj(new zza(this, str, j));
         }
     }
 
-    public final void zze(String str, long j) {
+    public final void zzb(String str, long j) {
         if (str == null || str.length() == 0) {
-            this.zzu.zzaW().zze().zza("Ad unit id must be a non-empty string");
+            this.zzu.zzaV().zzb().zza("Ad unit id must be a non-empty string");
         } else {
-            this.zzu.zzaX().zzq(new zzb(this, str, j));
+            this.zzu.zzaW().zzj(new zzb(this, str, j));
         }
     }
 
-    public final void zzf(long j) {
-        zzmh zzj = this.zzu.zzt().zzj(false);
+    public final void zzc(long j) {
+        zzlt zzh = this.zzu.zzs().zzh(false);
         Map map = this.zza;
         for (String str : map.keySet()) {
-            zzi(str, j - ((Long) map.get(str)).longValue(), zzj);
+            zzi(str, j - ((Long) map.get(str)).longValue(), zzh);
         }
         if (!map.isEmpty()) {
-            zzh(j - this.zzc, zzj);
+            zzh(j - this.zzc, zzh);
         }
-        zzj(j);
+        zzf(j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzd(String str, long j) {
+        zzg();
+        Preconditions.checkNotEmpty(str);
+        Map map = this.zzb;
+        if (map.isEmpty()) {
+            this.zzc = j;
+        }
+        Integer num = (Integer) map.get(str);
+        if (num != null) {
+            map.put(str, Integer.valueOf(num.intValue() + 1));
+        } else if (map.size() >= 100) {
+            this.zzu.zzaV().zze().zza("Too many ads visible");
+        } else {
+            map.put(str, 1);
+            this.zza.put(str, Long.valueOf(j));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zze(String str, long j) {
+        zzg();
+        Preconditions.checkNotEmpty(str);
+        Map map = this.zzb;
+        Integer num = (Integer) map.get(str);
+        if (num == null) {
+            this.zzu.zzaV().zzb().zzb("Call to endAdUnitExposure for unknown ad unit id", str);
+            return;
+        }
+        zzlt zzh = this.zzu.zzs().zzh(false);
+        int intValue = num.intValue() - 1;
+        if (intValue == 0) {
+            map.remove(str);
+            Map map2 = this.zza;
+            Long l = (Long) map2.get(str);
+            if (l == null) {
+                this.zzu.zzaV().zzb().zza("First ad unit exposure time was never set");
+            } else {
+                map2.remove(str);
+                zzi(str, j - l.longValue(), zzh);
+            }
+            if (map.isEmpty()) {
+                long j2 = this.zzc;
+                if (j2 == 0) {
+                    this.zzu.zzaV().zzb().zza("First ad exposure time was never set");
+                    return;
+                }
+                zzh(j - j2, zzh);
+                this.zzc = 0L;
+                return;
+            }
+            return;
+        }
+        map.put(str, Integer.valueOf(intValue));
     }
 }

@@ -7,12 +7,13 @@ import android.database.Cursor;
 import android.net.Uri;
 /* loaded from: classes3.dex */
 public class InitializationProvider extends ContentProvider {
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // android.content.ContentProvider
     public final boolean onCreate() {
         Context context = getContext();
         if (context != null) {
             if (context.getApplicationContext() != null) {
-                AppInitializer.getInstance(context).discoverAndInitialize();
+                AppInitializer.getInstance(context).discoverAndInitialize((Class<? extends InitializationProvider>) getClass());
                 return true;
             }
             StartupLogger.w("Deferring initialization because `applicationContext` is null.");

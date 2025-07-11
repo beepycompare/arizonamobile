@@ -1,134 +1,120 @@
 package com.google.android.gms.internal.measurement;
 
-import java.util.AbstractList;
+import com.google.android.gms.internal.measurement.zzkq;
+import com.google.android.gms.internal.measurement.zzkr;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-abstract class zzkq extends AbstractList implements zzmj {
-    private boolean zza;
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzkq(boolean z) {
-        this.zza = z;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public void add(int i, Object obj) {
-        zzcE();
-        super.add(i, obj);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final boolean addAll(int i, Collection collection) {
-        zzcE();
-        return super.addAll(i, collection);
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final void clear() {
-        zzcE();
-        super.clear();
-    }
-
-    @Override // java.util.AbstractList, java.util.Collection, java.util.List
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof List) {
-            if (!(obj instanceof RandomAccess)) {
-                return super.equals(obj);
+public abstract class zzkq<MessageType extends zzkr<MessageType, BuilderType>, BuilderType extends zzkq<MessageType, BuilderType>> implements zznk {
+    private static void zza(List list, int i) {
+        int size = list.size() - i;
+        StringBuilder sb = new StringBuilder(String.valueOf(size).length() + 26);
+        sb.append("Element at index ");
+        sb.append(size);
+        sb.append(" is null.");
+        String sb2 = sb.toString();
+        int size2 = list.size();
+        while (true) {
+            size2--;
+            if (size2 >= i) {
+                list.remove(size2);
+            } else {
+                throw new NullPointerException(sb2);
             }
-            List list = (List) obj;
-            int size = size();
-            if (size == list.size()) {
-                for (int i = 0; i < size; i++) {
-                    if (!get(i).equals(list.get(i))) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            return false;
         }
-        return false;
-    }
-
-    @Override // java.util.AbstractList, java.util.Collection, java.util.List
-    public int hashCode() {
-        int size = size();
-        int i = 1;
-        for (int i2 = 0; i2 < size; i2++) {
-            i = (i * 31) + get(i2).hashCode();
-        }
-        return i;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public Object remove(int i) {
-        zzcE();
-        return super.remove(i);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean removeAll(Collection collection) {
-        zzcE();
-        return super.removeAll(collection);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean retainAll(Collection collection) {
-        zzcE();
-        return super.retainAll(collection);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public Object set(int i, Object obj) {
-        zzcE();
-        return super.set(i, obj);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzmj
-    public final void zzb() {
-        if (this.zza) {
-            this.zza = false;
-        }
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzmj
-    public final boolean zzc() {
-        return this.zza;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public final void zzcE() {
-        if (!this.zza) {
-            throw new UnsupportedOperationException();
+    public static void zzaU(Iterable iterable, List list) {
+        byte[] bArr = zzmo.zzb;
+        iterable.getClass();
+        if (iterable instanceof zzmw) {
+            List zza = ((zzmw) iterable).zza();
+            zzmw zzmwVar = (zzmw) list;
+            int size = list.size();
+            for (Object obj : zza) {
+                if (obj == null) {
+                    int size2 = zzmwVar.size() - size;
+                    StringBuilder sb = new StringBuilder(String.valueOf(size2).length() + 26);
+                    sb.append("Element at index ");
+                    sb.append(size2);
+                    sb.append(" is null.");
+                    String sb2 = sb.toString();
+                    int size3 = zzmwVar.size();
+                    while (true) {
+                        size3--;
+                        if (size3 < size) {
+                            break;
+                        }
+                        zzmwVar.remove(size3);
+                    }
+                    throw new NullPointerException(sb2);
+                } else if (obj instanceof zzlg) {
+                    zzlg zzlgVar = (zzlg) obj;
+                    zzmwVar.zzb();
+                } else if (obj instanceof byte[]) {
+                    byte[] bArr2 = (byte[]) obj;
+                    zzlg.zzh(bArr2, 0, bArr2.length);
+                    zzmwVar.zzb();
+                } else {
+                    zzmwVar.add((String) obj);
+                }
+            }
+        } else if (!(iterable instanceof zzns)) {
+            if (iterable instanceof Collection) {
+                int size4 = ((Collection) iterable).size();
+                if (list instanceof ArrayList) {
+                    ((ArrayList) list).ensureCapacity(list.size() + size4);
+                } else if (list instanceof zznu) {
+                    ((zznu) list).zze(list.size() + size4);
+                }
+            }
+            int size5 = list.size();
+            if (!(iterable instanceof List) || !(iterable instanceof RandomAccess)) {
+                for (Object obj2 : iterable) {
+                    if (obj2 == null) {
+                        zza(list, size5);
+                    }
+                    list.add(obj2);
+                }
+                return;
+            }
+            List list2 = (List) iterable;
+            int size6 = list2.size();
+            for (int i = 0; i < size6; i++) {
+                Object obj3 = list2.get(i);
+                if (obj3 == null) {
+                    zza(list, size5);
+                }
+                list.add(obj3);
+            }
+        } else {
+            list.addAll((Collection) iterable);
         }
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean add(Object obj) {
-        zzcE();
-        return super.add(obj);
+    @Override // 
+    /* renamed from: zzaR */
+    public abstract zzkq clone();
+
+    public zzkq zzaS(byte[] bArr, int i, int i2) throws zzmq {
+        throw null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean addAll(Collection collection) {
-        zzcE();
-        return super.addAll(collection);
+    public zzkq zzaT(byte[] bArr, int i, int i2, zzlq zzlqVar) throws zzmq {
+        throw null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean remove(Object obj) {
-        zzcE();
-        int indexOf = indexOf(obj);
-        if (indexOf == -1) {
-            return false;
-        }
-        remove(indexOf);
-        return true;
+    @Override // com.google.android.gms.internal.measurement.zznk
+    public final /* synthetic */ zznk zzaV(byte[] bArr, zzlq zzlqVar) throws zzmq {
+        return zzaT(bArr, 0, bArr.length, zzlqVar);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznk
+    public final /* synthetic */ zznk zzaW(byte[] bArr) throws zzmq {
+        return zzaS(bArr, 0, bArr.length);
     }
 }

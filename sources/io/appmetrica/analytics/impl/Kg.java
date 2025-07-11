@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 public final class Kg implements J {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f505a;
+    public final String f506a;
     public final Jg b;
 
     public Kg(String str) {
@@ -21,13 +21,13 @@ public final class Kg implements J {
 
     @Override // io.appmetrica.analytics.impl.J
     public final AdTrackingInfoResult a(Context context) {
-        return a(context, new C0390ke());
+        return a(context, new C0382ke());
     }
 
     public final AdTrackingInfoResult b(Context context) {
         Method method = Class.forName("io.appmetrica.analytics.identifiers.internal.AdvIdentifiersProvider").getMethod("requestIdentifiers", Context.class, Bundle.class);
         Bundle bundle = new Bundle();
-        bundle.putString("io.appmetrica.analytics.identifiers.extra.PROVIDER", this.f505a);
+        bundle.putString("io.appmetrica.analytics.identifiers.extra.PROVIDER", this.f506a);
         Jg jg = this.b;
         Object[] objArr = {context, bundle};
         AdTrackingInfo adTrackingInfo = null;
@@ -36,7 +36,7 @@ public final class Kg implements J {
         if (bundle2 != null) {
             Bundle bundle3 = bundle2.getBundle("io.appmetrica.analytics.identifiers.extra.TRACKING_INFO");
             if (bundle3 != null) {
-                Object obj = O5.f563a.get(bundle3.getString("io.appmetrica.analytics.identifiers.extra.PROVIDER"));
+                Object obj = O5.f564a.get(bundle3.getString("io.appmetrica.analytics.identifiers.extra.PROVIDER"));
                 if (obj != null) {
                     adTrackingInfo = new AdTrackingInfo((AdTrackingInfo.Provider) obj, bundle3.getString("io.appmetrica.analytics.identifiers.extra.ID"), bundle3.containsKey("io.appmetrica.analytics.identifiers.extra.LIMITED") ? Boolean.valueOf(bundle3.getBoolean("io.appmetrica.analytics.identifiers.extra.LIMITED")) : null);
                 } else {
@@ -49,7 +49,7 @@ public final class Kg implements J {
     }
 
     public Kg(String str, Jg jg) {
-        this.f505a = str;
+        this.f506a = str;
         this.b = jg;
     }
 
@@ -65,14 +65,14 @@ public final class Kg implements J {
                 try {
                     return b(context);
                 } catch (InvocationTargetException e) {
-                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f505a + " adv_id: " + (e.getTargetException() != null ? e.getTargetException().getMessage() : null));
+                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f506a + " adv_id: " + (e.getTargetException() != null ? e.getTargetException().getMessage() : null));
                     adTrackingInfoResult = adTrackingInfoResult2;
                     try {
                         Thread.sleep(((Dn) qi).b);
                     } catch (InterruptedException unused) {
                     }
                 } catch (Throwable th) {
-                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f505a + " adv_id: " + th.getMessage());
+                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f506a + " adv_id: " + th.getMessage());
                     adTrackingInfoResult = adTrackingInfoResult2;
                     Thread.sleep(((Dn) qi).b);
                 }

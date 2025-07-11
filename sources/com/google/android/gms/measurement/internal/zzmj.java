@@ -1,25 +1,46 @@
 package com.google.android.gms.measurement.internal;
+
+import android.os.RemoteException;
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzmj implements Runnable {
-    final /* synthetic */ zzmh zza;
-    final /* synthetic */ zzmh zzb;
-    final /* synthetic */ long zzc;
-    final /* synthetic */ boolean zzd;
-    final /* synthetic */ zzmo zze;
+    final /* synthetic */ zzr zza;
+    final /* synthetic */ zznk zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzmj(zzmo zzmoVar, zzmh zzmhVar, zzmh zzmhVar2, long j, boolean z) {
-        this.zza = zzmhVar;
-        this.zzb = zzmhVar2;
-        this.zzc = j;
-        this.zzd = z;
-        this.zze = zzmoVar;
+    public zzmj(zznk zznkVar, zzr zzrVar, boolean z) {
+        this.zza = zzrVar;
+        Objects.requireNonNull(zznkVar);
+        this.zzb = zznkVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.zze.zzB(this.zza, this.zzb, this.zzc, this.zzd, null);
+        zznk zznkVar = this.zzb;
+        zzga zzZ = zznkVar.zzZ();
+        if (zzZ == null) {
+            zznkVar.zzu.zzaV().zzb().zza("Discarding data. Failed to send app launch");
+            return;
+        }
+        try {
+            zzr zzrVar = this.zza;
+            Preconditions.checkNotNull(zzrVar);
+            zzib zzibVar = zznkVar.zzu;
+            zzal zzc = zzibVar.zzc();
+            zzfw zzfwVar = zzfx.zzbc;
+            if (zzc.zzp(null, zzfwVar)) {
+                zznkVar.zzm(zzZ, null, zzrVar);
+            }
+            zzZ.zzg(zzrVar);
+            zznkVar.zzu.zzm().zzo();
+            zzibVar.zzc().zzp(null, zzfwVar);
+            zznkVar.zzm(zzZ, null, zzrVar);
+            zznkVar.zzV();
+        } catch (RemoteException e) {
+            this.zzb.zzu.zzaV().zzb().zzb("Failed to send app launch to the service", e);
+        }
     }
 }

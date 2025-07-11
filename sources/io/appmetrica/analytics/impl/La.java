@@ -10,13 +10,13 @@ public final class La extends O2 {
         int i = 0;
         if (str != null) {
             int length = str.length();
-            int i2 = this.f561a;
+            int i2 = this.f562a;
             if (length > i2) {
                 String substring = str.substring(0, i2);
                 i = str.getBytes().length - substring.getBytes().length;
                 str = substring;
             }
         }
-        return new Gn(str, new C0678w3(i));
+        return new Gn(str, new C0670w3(i));
     }
 }

@@ -18,7 +18,7 @@ public final class ClassMapperLite {
     public static final ClassMapperLite INSTANCE = new ClassMapperLite();
 
     /* renamed from: kotlin  reason: collision with root package name */
-    private static final String f1324kotlin = CollectionsKt.joinToString$default(CollectionsKt.listOf((Object[]) new Character[]{'k', 'o', 't', 'l', 'i', 'n'}), "", null, null, 0, null, null, 62, null);
+    private static final String f1325kotlin = CollectionsKt.joinToString$default(CollectionsKt.listOf((Object[]) new Character[]{'k', 'o', 't', 'l', 'i', 'n'}), "", null, null, 0, null, null, 62, null);
     private static final Map<String, String> map;
 
     private ClassMapperLite() {
@@ -42,7 +42,7 @@ public final class ClassMapperLite {
             while (true) {
                 StringBuilder sb = new StringBuilder();
                 c = c5;
-                String str = f1324kotlin;
+                String str = f1325kotlin;
                 c2 = c6;
                 c3 = c7;
                 c4 = c8;
@@ -63,7 +63,7 @@ public final class ClassMapperLite {
             c3 = 5;
             c4 = '\b';
         }
-        linkedHashMap.put(f1324kotlin + "/Unit", ExifInterface.GPS_MEASUREMENT_INTERRUPTED);
+        linkedHashMap.put(f1325kotlin + "/Unit", ExifInterface.GPS_MEASUREMENT_INTERRUPTED);
         map$lambda$0$add(linkedHashMap, "Any", "java/lang/Object");
         map$lambda$0$add(linkedHashMap, "Nothing", "java/lang/Void");
         map$lambda$0$add(linkedHashMap, "Annotation", "java/lang/annotation/Annotation");
@@ -95,7 +95,7 @@ public final class ClassMapperLite {
         map$lambda$0$add(linkedHashMap, "collections/MutableMap.MutableEntry", "java/util/Map$Entry");
         for (int i3 = 0; i3 < 23; i3++) {
             StringBuilder sb2 = new StringBuilder();
-            String str4 = f1324kotlin;
+            String str4 = f1325kotlin;
             map$lambda$0$add(linkedHashMap, "Function" + i3, sb2.append(str4).append("/jvm/functions/Function").append(i3).toString());
             map$lambda$0$add(linkedHashMap, "reflect/KFunction" + i3, str4 + "/reflect/KFunction");
         }
@@ -110,13 +110,13 @@ public final class ClassMapperLite {
         strArr3[7] = "String";
         strArr3[c4] = "Enum";
         for (String str5 : CollectionsKt.listOf((Object[]) strArr3)) {
-            map$lambda$0$add(linkedHashMap, str5 + ".Companion", f1324kotlin + "/jvm/internal/" + str5 + "CompanionObject");
+            map$lambda$0$add(linkedHashMap, str5 + ".Companion", f1325kotlin + "/jvm/internal/" + str5 + "CompanionObject");
         }
         map = linkedHashMap;
     }
 
     private static final void map$lambda$0$add(Map<String, String> map2, String str, String str2) {
-        map2.put(f1324kotlin + '/' + str, "L" + str2 + ';');
+        map2.put(f1325kotlin + '/' + str, "L" + str2 + ';');
     }
 
     @JvmStatic

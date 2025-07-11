@@ -19,7 +19,7 @@ import ru.mrlargha.commonui.databinding.WinterBattlepassTaskRewardItemBinding;
 import ru.mrlargha.commonui.elements.battlepassWinter2025.data.CommonTaskReward;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: RewardsTasksAdapter.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.battlepassWinter2025.RewardsTasksAdapter$onBindViewHolder$1$1", f = "RewardsTasksAdapter.kt", i = {}, l = {37}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes5.dex */
 final class RewardsTasksAdapter$onBindViewHolder$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

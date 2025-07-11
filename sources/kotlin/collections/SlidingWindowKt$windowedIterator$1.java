@@ -2,24 +2,20 @@ package kotlin.collections;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.exifinterface.media.ExifInterface;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.Metadata;
-import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function2;
-import kotlin.ranges.RangesKt;
 import kotlin.sequences.SequenceScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: SlidingWindow.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00040\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlin/sequences/SequenceScope;", ""}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlin.collections.SlidingWindowKt$windowedIterator$1", f = "SlidingWindow.kt", i = {0, 0, 0, 2, 2, 3, 3}, l = {34, 40, ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX, ConstraintLayout.LayoutParams.Table.LAYOUT_GONE_MARGIN_BASELINE, 58}, m = "invokeSuspend", n = {"$this$iterator", "buffer", "gap", "$this$iterator", "buffer", "$this$iterator", "buffer"}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "L$0", "L$1"})
+@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00040\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlin/sequences/SequenceScope;", ""}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlin.collections.SlidingWindowKt$windowedIterator$1", f = "SlidingWindow.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4}, l = {34, 40, ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX, ConstraintLayout.LayoutParams.Table.LAYOUT_GONE_MARGIN_BASELINE, 58}, m = "invokeSuspend", n = {"$this$iterator", "buffer", "e", "bufferInitialCapacity", "gap", "skip", "$this$iterator", "buffer", "bufferInitialCapacity", "gap", "skip", "$this$iterator", "buffer", "e", "bufferInitialCapacity", "gap", "$this$iterator", "buffer", "bufferInitialCapacity", "gap", "$this$iterator", "buffer", "bufferInitialCapacity", "gap"}, s = {"L$0", "L$1", "L$3", "I$0", "I$1", "I$2", "L$0", "L$1", "I$0", "I$1", "I$2", "L$0", "L$1", "L$3", "I$0", "I$1", "L$0", "L$1", "I$0", "I$1", "L$0", "L$1", "I$0", "I$1"})
 /* loaded from: classes5.dex */
 public final class SlidingWindowKt$windowedIterator$1<T> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super List<? extends T>>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Iterator<T> $iterator;
@@ -28,9 +24,12 @@ public final class SlidingWindowKt$windowedIterator$1<T> extends RestrictedSuspe
     final /* synthetic */ int $size;
     final /* synthetic */ int $step;
     int I$0;
+    int I$1;
+    int I$2;
     private /* synthetic */ Object L$0;
     Object L$1;
     Object L$2;
+    Object L$3;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -61,170 +60,30 @@ public final class SlidingWindowKt$windowedIterator$1<T> extends RestrictedSuspe
         return ((SlidingWindowKt$windowedIterator$1) create(sequenceScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0094, code lost:
-        r10.L$0 = r4;
-        r10.L$1 = r3;
-        r10.L$2 = r2;
-        r10.I$0 = r1;
-        r10.label = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x00a5, code lost:
-        if (r4.yield(r3, r10) != r0) goto L55;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x00df, code lost:
-        if (r4.yield(r3, r10) == r0) goto L20;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x012c, code lost:
-        if (r6.yield(r11, r10) == r0) goto L20;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x0164, code lost:
-        if (r4.yield(r11, r10) == r0) goto L20;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x0185, code lost:
-        if (r4.yield(r1, r10) == r0) goto L20;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0080  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0139  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0143  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x016d  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x00bb A[SYNTHETIC] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x00a5 -> B:16:0x0055). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:57:0x012c -> B:59:0x012f). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:70:0x0164 -> B:72:0x0167). Please submit an issue!!! */
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:56)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:30)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:18)
+        */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x016e  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x019e  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x00ca A[SYNTHETIC] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x00b4 -> B:17:0x005f). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:58:0x0156 -> B:60:0x015a). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:71:0x0195 -> B:73:0x0198). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object invokeSuspend(Object obj) {
-        RingBuffer ringBuffer;
-        Iterator<T> it;
-        SequenceScope sequenceScope;
-        SequenceScope sequenceScope2;
-        int i;
-        ArrayList arrayList;
-        Iterator<T> it2;
-        int i2;
-        RingBuffer ringBuffer2;
-        SequenceScope sequenceScope3;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i3 = this.label;
-        if (i3 == 0) {
-            ResultKt.throwOnFailure(obj);
-            SequenceScope sequenceScope4 = (SequenceScope) this.L$0;
-            int coerceAtMost = RangesKt.coerceAtMost(this.$size, 1024);
-            int i4 = this.$step - this.$size;
-            if (i4 >= 0) {
-                sequenceScope2 = sequenceScope4;
-                i = 0;
-                arrayList = new ArrayList(coerceAtMost);
-                it2 = this.$iterator;
-                i2 = i4;
-                while (true) {
-                    if (!it2.hasNext()) {
-                    }
-                }
-                return Unit.INSTANCE;
-            }
-            ringBuffer = new RingBuffer(coerceAtMost);
-            it = this.$iterator;
-            sequenceScope = sequenceScope4;
-            while (it.hasNext()) {
-            }
-            if (this.$partialWindows) {
-            }
-            return Unit.INSTANCE;
-        } else if (i3 == 1) {
-            i2 = this.I$0;
-            it2 = (Iterator) this.L$2;
-            arrayList = (ArrayList) this.L$1;
-            sequenceScope2 = (SequenceScope) this.L$0;
-            ResultKt.throwOnFailure(obj);
-            i = i2;
-            if (this.$reuseBuffer) {
-                arrayList.clear();
-            } else {
-                arrayList = new ArrayList(this.$size);
-            }
-            i2 = i;
-            while (true) {
-                if (!it2.hasNext()) {
-                    T next = it2.next();
-                    if (i > 0) {
-                        i--;
-                    } else {
-                        arrayList.add(next);
-                        if (arrayList.size() == this.$size) {
-                            break;
-                        }
-                    }
-                } else if (!arrayList.isEmpty() && (this.$partialWindows || arrayList.size() == this.$size)) {
-                    this.L$0 = null;
-                    this.L$1 = null;
-                    this.L$2 = null;
-                    this.label = 2;
-                }
-            }
-            return Unit.INSTANCE;
-        } else {
-            if (i3 != 2) {
-                if (i3 == 3) {
-                    it = (Iterator) this.L$2;
-                    ringBuffer = (RingBuffer) this.L$1;
-                    sequenceScope = (SequenceScope) this.L$0;
-                    ResultKt.throwOnFailure(obj);
-                    ringBuffer.removeFirst(this.$step);
-                    while (it.hasNext()) {
-                        ringBuffer.add((RingBuffer) it.next());
-                        if (ringBuffer.isFull()) {
-                            int size = ringBuffer.size();
-                            int i5 = this.$size;
-                            if (size >= i5) {
-                                List arrayList2 = this.$reuseBuffer ? ringBuffer : new ArrayList(ringBuffer);
-                                this.L$0 = sequenceScope;
-                                this.L$1 = ringBuffer;
-                                this.L$2 = it;
-                                this.label = 3;
-                            } else {
-                                ringBuffer = ringBuffer.expanded(i5);
-                            }
-                        }
-                    }
-                    if (this.$partialWindows) {
-                        ringBuffer2 = ringBuffer;
-                        sequenceScope3 = sequenceScope;
-                        if (ringBuffer2.size() > this.$step) {
-                        }
-                        return coroutine_suspended;
-                    }
-                    return Unit.INSTANCE;
-                } else if (i3 == 4) {
-                    ringBuffer2 = (RingBuffer) this.L$1;
-                    sequenceScope3 = (SequenceScope) this.L$0;
-                    ResultKt.throwOnFailure(obj);
-                    ringBuffer2.removeFirst(this.$step);
-                    if (ringBuffer2.size() > this.$step) {
-                        List arrayList3 = this.$reuseBuffer ? ringBuffer2 : new ArrayList(ringBuffer2);
-                        this.L$0 = sequenceScope3;
-                        this.L$1 = ringBuffer2;
-                        this.L$2 = null;
-                        this.label = 4;
-                    } else {
-                        if (!ringBuffer2.isEmpty()) {
-                            this.L$0 = null;
-                            this.L$1 = null;
-                            this.L$2 = null;
-                            this.label = 5;
-                        }
-                        return Unit.INSTANCE;
-                    }
-                    return coroutine_suspended;
-                } else if (i3 != 5) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                }
-            }
-            ResultKt.throwOnFailure(obj);
-            return Unit.INSTANCE;
-        }
+    public final java.lang.Object invokeSuspend(java.lang.Object r14) {
+        /*
+            Method dump skipped, instructions count: 458
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: kotlin.collections.SlidingWindowKt$windowedIterator$1.invokeSuspend(java.lang.Object):java.lang.Object");
     }
 }

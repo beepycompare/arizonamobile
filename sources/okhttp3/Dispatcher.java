@@ -20,10 +20,10 @@ import kotlin.ReplaceWith;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
-import okhttp3.internal.Util;
+import okhttp3.internal._UtilJvmKt;
 import okhttp3.internal.connection.RealCall;
 /* compiled from: Dispatcher.kt */
-@Metadata(d1 = {"\u0000\\\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u0001B\u000f\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004B\u0005¢\u0006\u0002\u0010\u0005J\u0006\u0010\u001e\u001a\u00020\u001fJ\u0019\u0010 \u001a\u00020\u001f2\n\u0010!\u001a\u00060\u001aR\u00020\u001bH\u0000¢\u0006\u0002\b\"J\u0015\u0010#\u001a\u00020\u001f2\u0006\u0010!\u001a\u00020\u001bH\u0000¢\u0006\u0002\b$J\r\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\b%J\u0016\u0010&\u001a\b\u0018\u00010\u001aR\u00020\u001b2\u0006\u0010'\u001a\u00020(H\u0002J)\u0010)\u001a\u00020\u001f\"\u0004\b\u0000\u0010*2\f\u0010+\u001a\b\u0012\u0004\u0012\u0002H*0,2\u0006\u0010!\u001a\u0002H*H\u0002¢\u0006\u0002\u0010-J\u0015\u0010)\u001a\u00020\u001f2\u0006\u0010!\u001a\u00020\u001bH\u0000¢\u0006\u0002\b.J\u0019\u0010)\u001a\u00020\u001f2\n\u0010!\u001a\u00060\u001aR\u00020\u001bH\u0000¢\u0006\u0002\b.J\b\u0010/\u001a\u000200H\u0002J\f\u00101\u001a\b\u0012\u0004\u0012\u00020302J\u0006\u00104\u001a\u00020\u0010J\f\u00105\u001a\b\u0012\u0004\u0012\u00020302J\u0006\u00106\u001a\u00020\u0010R\u0011\u0010\u0002\u001a\u00020\u00038G¢\u0006\u0006\u001a\u0004\b\u0002\u0010\u0006R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R*\u0010\n\u001a\u0004\u0018\u00010\t2\b\u0010\b\u001a\u0004\u0018\u00010\t8F@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR&\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u000f\u001a\u00020\u00108F@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R&\u0010\u0015\u001a\u00020\u00102\u0006\u0010\u0015\u001a\u00020\u00108F@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0012\"\u0004\b\u0017\u0010\u0014R\u0018\u0010\u0018\u001a\f\u0012\b\u0012\u00060\u001aR\u00020\u001b0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u001c\u001a\f\u0012\b\u0012\u00060\u001aR\u00020\u001b0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001b0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00067"}, d2 = {"Lokhttp3/Dispatcher;", "", "executorService", "Ljava/util/concurrent/ExecutorService;", "(Ljava/util/concurrent/ExecutorService;)V", "()V", "()Ljava/util/concurrent/ExecutorService;", "executorServiceOrNull", "<set-?>", "Ljava/lang/Runnable;", "idleCallback", "getIdleCallback", "()Ljava/lang/Runnable;", "setIdleCallback", "(Ljava/lang/Runnable;)V", "maxRequests", "", "getMaxRequests", "()I", "setMaxRequests", "(I)V", "maxRequestsPerHost", "getMaxRequestsPerHost", "setMaxRequestsPerHost", "readyAsyncCalls", "Ljava/util/ArrayDeque;", "Lokhttp3/internal/connection/RealCall$AsyncCall;", "Lokhttp3/internal/connection/RealCall;", "runningAsyncCalls", "runningSyncCalls", "cancelAll", "", "enqueue", NotificationCompat.CATEGORY_CALL, "enqueue$okhttp", "executed", "executed$okhttp", "-deprecated_executorService", "findExistingCallWithHost", "host", "", "finished", ExifInterface.GPS_DIRECTION_TRUE, "calls", "Ljava/util/Deque;", "(Ljava/util/Deque;Ljava/lang/Object;)V", "finished$okhttp", "promoteAndExecute", "", "queuedCalls", "", "Lokhttp3/Call;", "queuedCallsCount", "runningCalls", "runningCallsCount", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003B\u0013\b\u0016\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0002\u0010\u0006J\u0019\u0010\u001e\u001a\u00020\u001f2\n\u0010 \u001a\u00060\u001aR\u00020\u001bH\u0000¢\u0006\u0002\b!J\u0016\u0010\"\u001a\b\u0018\u00010\u001aR\u00020\u001b2\u0006\u0010#\u001a\u00020$H\u0002J\u0006\u0010%\u001a\u00020\u001fJ\b\u0010&\u001a\u00020'H\u0002J\u0015\u0010(\u001a\u00020'2\u0006\u0010 \u001a\u00020\u001bH\u0000¢\u0006\u0002\b)J\u0019\u0010*\u001a\u00020\u001f2\n\u0010 \u001a\u00060\u001aR\u00020\u001bH\u0000¢\u0006\u0002\b+J\u0015\u0010*\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020\u001bH\u0000¢\u0006\u0002\b+J)\u0010*\u001a\u00020\u001f\"\u0004\b\u0000\u0010,2\f\u0010-\u001a\b\u0012\u0004\u0012\u0002H,0.2\u0006\u0010 \u001a\u0002H,H\u0002¢\u0006\u0002\u0010/J\f\u00100\u001a\b\u0012\u0004\u0012\u00020201J\f\u00103\u001a\b\u0012\u0004\u0012\u00020201J\u0006\u00104\u001a\u00020\bJ\u0006\u00105\u001a\u00020\bJ\r\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\b6R$\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0007\u001a\u00020\b@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR$\u0010\r\u001a\u00020\b2\u0006\u0010\r\u001a\u00020\b@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\n\"\u0004\b\u000f\u0010\fR\u001c\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u0004\u001a\u00020\u00058G¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0017R\u0018\u0010\u0018\u001a\f\u0012\b\u0012\u00060\u001aR\u00020\u001b0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u001c\u001a\f\u0012\b\u0012\u00060\u001aR\u00020\u001b0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001b0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00067"}, d2 = {"Lokhttp3/Dispatcher;", "", "<init>", "()V", "executorService", "Ljava/util/concurrent/ExecutorService;", "(Ljava/util/concurrent/ExecutorService;)V", "maxRequests", "", "getMaxRequests", "()I", "setMaxRequests", "(I)V", "maxRequestsPerHost", "getMaxRequestsPerHost", "setMaxRequestsPerHost", "idleCallback", "Ljava/lang/Runnable;", "getIdleCallback", "()Ljava/lang/Runnable;", "setIdleCallback", "(Ljava/lang/Runnable;)V", "executorServiceOrNull", "()Ljava/util/concurrent/ExecutorService;", "readyAsyncCalls", "Ljava/util/ArrayDeque;", "Lokhttp3/internal/connection/RealCall$AsyncCall;", "Lokhttp3/internal/connection/RealCall;", "runningAsyncCalls", "runningSyncCalls", "enqueue", "", NotificationCompat.CATEGORY_CALL, "enqueue$okhttp", "findExistingCallWithHost", "host", "", "cancelAll", "promoteAndExecute", "", "executed", "executed$okhttp", "finished", "finished$okhttp", ExifInterface.GPS_DIRECTION_TRUE, "calls", "Ljava/util/Deque;", "(Ljava/util/Deque;Ljava/lang/Object;)V", "queuedCalls", "", "Lokhttp3/Call;", "runningCalls", "queuedCallsCount", "runningCallsCount", "-deprecated_executorService", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class Dispatcher {
     private ExecutorService executorServiceOrNull;
@@ -83,17 +83,15 @@ public final class Dispatcher {
     public final synchronized ExecutorService executorService() {
         ExecutorService executorService;
         if (this.executorServiceOrNull == null) {
-            this.executorServiceOrNull = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue(), Util.threadFactory(Util.okHttpName + " Dispatcher", false));
+            this.executorServiceOrNull = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue(), _UtilJvmKt.threadFactory(_UtilJvmKt.okHttpName + " Dispatcher", false));
         }
         executorService = this.executorServiceOrNull;
         Intrinsics.checkNotNull(executorService);
         return executorService;
     }
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public Dispatcher(ExecutorService executorService) {
         this();
-        Intrinsics.checkNotNullParameter(executorService, "executorService");
         this.executorServiceOrNull = executorService;
     }
 
@@ -112,6 +110,7 @@ public final class Dispatcher {
 
     private final RealCall.AsyncCall findExistingCallWithHost(String str) {
         Iterator<RealCall.AsyncCall> it = this.runningAsyncCalls.iterator();
+        Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
         while (it.hasNext()) {
             RealCall.AsyncCall next = it.next();
             if (Intrinsics.areEqual(next.getHost(), str)) {
@@ -119,6 +118,7 @@ public final class Dispatcher {
             }
         }
         Iterator<RealCall.AsyncCall> it2 = this.readyAsyncCalls.iterator();
+        Intrinsics.checkNotNullExpressionValue(it2, "iterator(...)");
         while (it2.hasNext()) {
             RealCall.AsyncCall next2 = it2.next();
             if (Intrinsics.areEqual(next2.getHost(), str)) {
@@ -130,22 +130,75 @@ public final class Dispatcher {
 
     public final synchronized void cancelAll() {
         Iterator<RealCall.AsyncCall> it = this.readyAsyncCalls.iterator();
+        Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
         while (it.hasNext()) {
             it.next().getCall().cancel();
         }
         Iterator<RealCall.AsyncCall> it2 = this.runningAsyncCalls.iterator();
+        Intrinsics.checkNotNullExpressionValue(it2, "iterator(...)");
         while (it2.hasNext()) {
             it2.next().getCall().cancel();
         }
         Iterator<RealCall> it3 = this.runningSyncCalls.iterator();
+        Intrinsics.checkNotNullExpressionValue(it3, "iterator(...)");
         while (it3.hasNext()) {
             it3.next().cancel();
         }
     }
 
-    public final synchronized void executed$okhttp(RealCall call) {
+    private final boolean promoteAndExecute() {
+        int i;
+        boolean z;
+        _UtilJvmKt.assertLockNotHeld(this);
+        ArrayList arrayList = new ArrayList();
+        synchronized (this) {
+            Iterator<RealCall.AsyncCall> it = this.readyAsyncCalls.iterator();
+            Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
+            while (it.hasNext()) {
+                RealCall.AsyncCall next = it.next();
+                if (this.runningAsyncCalls.size() >= this.maxRequests) {
+                    break;
+                } else if (next.getCallsPerHost().get() < this.maxRequestsPerHost) {
+                    it.remove();
+                    next.getCallsPerHost().incrementAndGet();
+                    Intrinsics.checkNotNull(next);
+                    arrayList.add(next);
+                    this.runningAsyncCalls.add(next);
+                }
+            }
+            i = 0;
+            z = runningCallsCount() > 0;
+            Unit unit = Unit.INSTANCE;
+        }
+        if (executorService().isShutdown()) {
+            int size = arrayList.size();
+            while (i < size) {
+                RealCall.AsyncCall asyncCall = (RealCall.AsyncCall) arrayList.get(i);
+                asyncCall.getCallsPerHost().decrementAndGet();
+                synchronized (this) {
+                    this.runningAsyncCalls.remove(asyncCall);
+                }
+                RealCall.AsyncCall.failRejected$okhttp$default(asyncCall, null, 1, null);
+                i++;
+            }
+            Runnable runnable = this.idleCallback;
+            if (runnable != null) {
+                runnable.run();
+                return z;
+            }
+        } else {
+            int size2 = arrayList.size();
+            while (i < size2) {
+                ((RealCall.AsyncCall) arrayList.get(i)).executeOn(executorService());
+                i++;
+            }
+        }
+        return z;
+    }
+
+    public final synchronized boolean executed$okhttp(RealCall call) {
         Intrinsics.checkNotNullParameter(call, "call");
-        this.runningSyncCalls.add(call);
+        return this.runningSyncCalls.add(call);
     }
 
     public final void finished$okhttp(RealCall.AsyncCall call) {
@@ -182,7 +235,7 @@ public final class Dispatcher {
             arrayList.add(asyncCall.getCall());
         }
         unmodifiableList = Collections.unmodifiableList(arrayList);
-        Intrinsics.checkNotNullExpressionValue(unmodifiableList, "unmodifiableList(readyAsyncCalls.map { it.call })");
+        Intrinsics.checkNotNullExpressionValue(unmodifiableList, "unmodifiableList(...)");
         return unmodifiableList;
     }
 
@@ -195,7 +248,7 @@ public final class Dispatcher {
             arrayList.add(asyncCall.getCall());
         }
         unmodifiableList = Collections.unmodifiableList(CollectionsKt.plus((Collection) arrayDeque, (Iterable) arrayList));
-        Intrinsics.checkNotNullExpressionValue(unmodifiableList, "unmodifiableList(running…yncCalls.map { it.call })");
+        Intrinsics.checkNotNullExpressionValue(unmodifiableList, "unmodifiableList(...)");
         return unmodifiableList;
     }
 
@@ -209,39 +262,7 @@ public final class Dispatcher {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "executorService", imports = {}))
     /* renamed from: -deprecated_executorService  reason: not valid java name */
-    public final ExecutorService m10200deprecated_executorService() {
+    public final ExecutorService m10268deprecated_executorService() {
         return executorService();
-    }
-
-    private final boolean promoteAndExecute() {
-        int i;
-        boolean z;
-        if (!Util.assertionsEnabled || !Thread.holdsLock(this)) {
-            ArrayList arrayList = new ArrayList();
-            synchronized (this) {
-                Iterator<RealCall.AsyncCall> it = this.readyAsyncCalls.iterator();
-                Intrinsics.checkNotNullExpressionValue(it, "readyAsyncCalls.iterator()");
-                while (it.hasNext()) {
-                    RealCall.AsyncCall asyncCall = it.next();
-                    if (this.runningAsyncCalls.size() >= this.maxRequests) {
-                        break;
-                    } else if (asyncCall.getCallsPerHost().get() < this.maxRequestsPerHost) {
-                        it.remove();
-                        asyncCall.getCallsPerHost().incrementAndGet();
-                        Intrinsics.checkNotNullExpressionValue(asyncCall, "asyncCall");
-                        arrayList.add(asyncCall);
-                        this.runningAsyncCalls.add(asyncCall);
-                    }
-                }
-                z = runningCallsCount() > 0;
-                Unit unit = Unit.INSTANCE;
-            }
-            int size = arrayList.size();
-            for (i = 0; i < size; i++) {
-                ((RealCall.AsyncCall) arrayList.get(i)).executeOn(executorService());
-            }
-            return z;
-        }
-        throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST NOT hold lock on " + this);
     }
 }

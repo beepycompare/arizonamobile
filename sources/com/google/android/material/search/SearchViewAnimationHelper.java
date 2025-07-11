@@ -122,14 +122,14 @@ public class SearchViewAnimationHelper {
         this.rootView.post(new Runnable() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                SearchViewAnimationHelper.this.m8154x94743afc();
+                SearchViewAnimationHelper.this.m8153x94743afc();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startShowAnimationExpand$0$com-google-android-material-search-SearchViewAnimationHelper  reason: not valid java name */
-    public /* synthetic */ void m8154x94743afc() {
+    public /* synthetic */ void m8153x94743afc() {
         AnimatorSet expandCollapseAnimatorSet = getExpandCollapseAnimatorSet(true);
         expandCollapseAnimatorSet.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.search.SearchViewAnimationHelper.1
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -188,14 +188,14 @@ public class SearchViewAnimationHelper {
         this.rootView.post(new Runnable() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                SearchViewAnimationHelper.this.m8155x4df249eb();
+                SearchViewAnimationHelper.this.m8154x4df249eb();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startShowAnimationTranslate$1$com-google-android-material-search-SearchViewAnimationHelper  reason: not valid java name */
-    public /* synthetic */ void m8155x4df249eb() {
+    public /* synthetic */ void m8154x4df249eb() {
         ClippableRoundedCornerLayout clippableRoundedCornerLayout = this.rootView;
         clippableRoundedCornerLayout.setTranslationY(clippableRoundedCornerLayout.getHeight());
         AnimatorSet translateAnimatorSet = getTranslateAnimatorSet(true);
@@ -318,7 +318,7 @@ public class SearchViewAnimationHelper {
         ofObject.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                SearchViewAnimationHelper.this.m8153xa183b80f(cornerSize, max, rect, valueAnimator);
+                SearchViewAnimationHelper.this.m8152xa183b80f(cornerSize, max, rect, valueAnimator);
             }
         });
         ofObject.setDuration(z ? 300L : 250L);
@@ -328,7 +328,7 @@ public class SearchViewAnimationHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getRootViewAnimator$2$com-google-android-material-search-SearchViewAnimationHelper  reason: not valid java name */
-    public /* synthetic */ void m8153xa183b80f(float f, float f2, Rect rect, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8152xa183b80f(float f, float f2, Rect rect, ValueAnimator valueAnimator) {
         this.rootView.updateClipBoundsAndCornerRadius(rect, AnimationUtils.lerp(f, f2, valueAnimator.getAnimatedFraction()));
     }
 

@@ -13,16 +13,16 @@ import org.json.JSONObject;
 public final class Ol implements NetworkResponseHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Vl f569a;
-    public final C0553r3 b;
+    public final Vl f570a;
+    public final C0545r3 b;
 
     public Ol() {
-        this(new Vl(), new C0553r3());
+        this(new Vl(), new C0545r3());
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.NetworkResponseHandler
     /* renamed from: a */
-    public final C0146am handle(ResponseDataHolder responseDataHolder) {
+    public final C0138am handle(ResponseDataHolder responseDataHolder) {
         String str;
         String str2;
         if (200 == responseDataHolder.getResponseCode()) {
@@ -33,13 +33,13 @@ public final class Ol implements NetworkResponseHandler {
                 responseData = this.b.a(responseDataHolder.getResponseData());
             }
             if (responseData != null) {
-                Vl vl = this.f569a;
+                Vl vl = this.f570a;
                 vl.getClass();
-                C0146am c0146am = new C0146am();
+                C0138am c0138am = new C0138am();
                 try {
                     vl.i.getClass();
-                    C0736yb c0736yb = new C0736yb(new String(responseData, "UTF-8"));
-                    JSONObject optJSONObject = c0736yb.optJSONObject("device_id");
+                    C0728yb c0728yb = new C0728yb(new String(responseData, "UTF-8"));
+                    JSONObject optJSONObject = c0728yb.optJSONObject("device_id");
                     if (optJSONObject == null) {
                         str = "";
                         str2 = "";
@@ -47,24 +47,24 @@ public final class Ol implements NetworkResponseHandler {
                         str = optJSONObject.optString("hash");
                         str2 = optJSONObject.optString("value");
                     }
-                    c0146am.h = str2;
-                    c0146am.i = str;
-                    vl.a(c0146am, c0736yb);
-                    c0146am.f757a = TextUtils.isEmpty(c0146am.i) ? 1 : 2;
+                    c0138am.h = str2;
+                    c0138am.i = str;
+                    vl.a(c0138am, c0728yb);
+                    c0138am.f758a = TextUtils.isEmpty(c0138am.i) ? 1 : 2;
                 } catch (Throwable unused) {
-                    c0146am = new C0146am();
-                    c0146am.f757a = 1;
+                    c0138am = new C0138am();
+                    c0138am.f758a = 1;
                 }
-                if (2 == c0146am.f757a) {
-                    return c0146am;
+                if (2 == c0138am.f758a) {
+                    return c0138am;
                 }
             }
         }
         return null;
     }
 
-    public Ol(Vl vl, C0553r3 c0553r3) {
-        this.f569a = vl;
-        this.b = c0553r3;
+    public Ol(Vl vl, C0545r3 c0545r3) {
+        this.f570a = vl;
+        this.b = c0545r3;
     }
 }

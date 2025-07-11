@@ -81,7 +81,7 @@ public final class RxConvertKt {
     }
 
     /* renamed from: from$default  reason: collision with other method in class */
-    public static /* synthetic */ Observable m10040from$default(Flow flow, CoroutineContext coroutineContext, int i, Object obj) {
+    public static /* synthetic */ Observable m10071from$default(Flow flow, CoroutineContext coroutineContext, int i, Object obj) {
         if ((i & 1) != 0) {
             coroutineContext = EmptyCoroutineContext.INSTANCE;
         }

@@ -12,7 +12,7 @@ import java.util.Iterator;
 public final class Y1 implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f714a = new ArrayList();
+    public final ArrayList f715a = new ArrayList();
     public volatile R7 b = null;
 
     public final void a(R7 r7) {
@@ -23,16 +23,16 @@ public final class Y1 implements ActivityLifecycleListener {
         }
         Iterator it = a2.iterator();
         while (it.hasNext()) {
-            ((InterfaceC0465ne) it.next()).consume(r7);
+            ((InterfaceC0457ne) it.next()).consume(r7);
         }
     }
 
     public final void b() {
-        C0704x4.l().e.registerListener(this, ActivityEvent.CREATED);
+        C0696x4.l().e.registerListener(this, ActivityEvent.CREATED);
     }
 
     public final void c() {
-        C0704x4.l().e.unregisterListener(this, ActivityEvent.CREATED);
+        C0696x4.l().e.unregisterListener(this, ActivityEvent.CREATED);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
@@ -46,17 +46,17 @@ public final class Y1 implements ActivityLifecycleListener {
         synchronized (this) {
             R7 r7 = this.b;
             if (r7 == null) {
-                this.f714a.add(x1);
+                this.f715a.add(x1);
             } else {
-                ((S9) C0704x4.l().c.a()).b.post(new V1(x1, r7));
+                ((S9) C0696x4.l().c.a()).b.post(new V1(x1, r7));
             }
         }
     }
 
     public final synchronized ArrayList a() {
         ArrayList arrayList;
-        arrayList = new ArrayList(this.f714a);
-        this.f714a.clear();
+        arrayList = new ArrayList(this.f715a);
+        this.f715a.clear();
         return arrayList;
     }
 }

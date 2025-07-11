@@ -10,13 +10,13 @@ import io.appmetrica.analytics.profile.UserProfile;
 import java.util.ArrayList;
 import java.util.Map;
 /* loaded from: classes4.dex */
-public final class Zj implements InterfaceC0387kb, IPluginReporter {
+public final class Zj implements InterfaceC0379kb, IPluginReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f740a = new ArrayList();
-    public volatile C0568ri b;
+    public final ArrayList f741a = new ArrayList();
+    public volatile C0560ri b;
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0387kb, io.appmetrica.analytics.impl.InterfaceC0462nb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0379kb, io.appmetrica.analytics.impl.InterfaceC0454nb
     public final void a(Kn kn) {
         a(new Jj(kn));
     }
@@ -58,7 +58,7 @@ public final class Zj implements InterfaceC0387kb, IPluginReporter {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportError(String str, Throwable th) {
-        a(new C0769zj(str, th));
+        a(new C0761zj(str, th));
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -106,7 +106,7 @@ public final class Zj implements InterfaceC0387kb, IPluginReporter {
         a(new Ej(str));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0387kb, io.appmetrica.analytics.impl.InterfaceC0227e0
+    @Override // io.appmetrica.analytics.impl.InterfaceC0379kb, io.appmetrica.analytics.impl.InterfaceC0219e0
     public final void a(U u) {
         a(new Sj(u));
     }
@@ -131,11 +131,11 @@ public final class Zj implements InterfaceC0387kb, IPluginReporter {
         a(new Lj(pluginErrorDetails));
     }
 
-    public final synchronized void a(InterfaceC0362jb interfaceC0362jb) {
+    public final synchronized void a(InterfaceC0354jb interfaceC0354jb) {
         if (this.b == null) {
-            this.f740a.add(interfaceC0362jb);
+            this.f741a.add(interfaceC0354jb);
         } else {
-            interfaceC0362jb.a(this.b);
+            interfaceC0354jb.a(this.b);
         }
     }
 

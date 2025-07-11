@@ -52,22 +52,17 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SettingsTopBar.kt */
-@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aU\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00072\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00010\u00072\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00010\u0007H\u0007¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"SettingsTopBar", "", "uiState", "Lcom/miami/game/feature/settings/ui/model/SettingsUiState;", "modifier", "Landroidx/compose/ui/Modifier;", "onRepairGame", "Lkotlin/Function0;", "onBack", "onSupport", "onTech", "(Lcom/miami/game/feature/settings/ui/model/SettingsUiState;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "settings_release_web"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aU\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00072\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00010\u00072\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00010\u0007H\u0007¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"SettingsTopBar", "", "uiState", "Lcom/miami/game/feature/settings/ui/model/SettingsUiState;", "modifier", "Landroidx/compose/ui/Modifier;", "onRepairGame", "Lkotlin/Function0;", "onBack", "onSupport", "onTech", "(Lcom/miami/game/feature/settings/ui/model/SettingsUiState;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "settings_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class SettingsTopBarKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsTopBar$lambda$10(SettingsUiState settingsUiState, Modifier modifier, Function0 function0, Function0 function02, Function0 function03, Function0 function04, int i, Composer composer, int i2) {
+    public static final Unit SettingsTopBar$lambda$13(SettingsUiState settingsUiState, Modifier modifier, Function0 function0, Function0 function02, Function0 function03, Function0 function04, int i, Composer composer, int i2) {
         SettingsTopBar(settingsUiState, modifier, function0, function02, function03, function04, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Type inference failed for: r9v10, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r9v11 */
-    /* JADX WARN: Type inference failed for: r9v9 */
     public static final void SettingsTopBar(final SettingsUiState uiState, final Modifier modifier, final Function0<Unit> onRepairGame, final Function0<Unit> onBack, final Function0<Unit> onSupport, final Function0<Unit> onTech, Composer composer, final int i) {
         int i2;
-        int i3;
-        ?? r9;
         Intrinsics.checkNotNullParameter(uiState, "uiState");
         Intrinsics.checkNotNullParameter(modifier, "modifier");
         Intrinsics.checkNotNullParameter(onRepairGame, "onRepairGame");
@@ -96,7 +91,9 @@ public final class SettingsTopBarKt {
         if ((196608 & i) == 0) {
             i2 |= startRestartGroup.changedInstance(onTech) ? 131072 : 65536;
         }
-        if ((74899 & i2) != 74898 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((74899 & i2) != 74898, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1535138134, i2, -1, "com.miami.game.feature.settings.ui.compose.SettingsTopBar (SettingsTopBar.kt:34)");
             }
@@ -167,7 +164,6 @@ public final class SettingsTopBarKt {
             CompositionLocalMap currentCompositionLocalMap3 = startRestartGroup.getCurrentCompositionLocalMap();
             Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(startRestartGroup, Modifier.Companion);
             Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-            int i4 = i2;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
@@ -190,12 +186,13 @@ public final class SettingsTopBarKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -782216321, "C45@1654L377,55@2075L42,54@2048L277,61@2342L28,64@2515L13,62@2387L159:SettingsTopBar.kt#1gr92h");
-            ScalingButtonKt.ScalingButton(onBack, null, ComposableSingletons$SettingsTopBarKt.INSTANCE.m8388getLambda$1729539213$settings_release_web(), startRestartGroup, ((i4 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            int i3 = i2;
+            ScalingButtonKt.ScalingButton(onBack, null, ComposableSingletons$SettingsTopBarKt.INSTANCE.m8416getLambda$1729539213$settings_release_web(), startRestartGroup, ((i2 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             float f = 36;
             float f2 = 12;
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.settings_label, startRestartGroup, 0), (String) null, OffsetKt.m698offsetVpY3zN4$default(SizeKt.m771height3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(f)), Dp.m6684constructorimpl(-Dp.m6684constructorimpl(f2)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
             SpacerKt.Spacer(SizeKt.m790width3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(6)), startRestartGroup, 6);
-            TextKt.m2497Text4IGK_g("ВЕРСИЯ " + uiState.getVersion(), (Modifier) Modifier.Companion, Color.Companion.m4115getWhite0d7_KjU(), TypeKt.m8401dpToSp8Feqmps(Dp.m6684constructorimpl(11), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, startRestartGroup, 432, 0, 131056);
+            TextKt.m2497Text4IGK_g("ВЕРСИЯ " + uiState.getVersion(), (Modifier) Modifier.Companion, Color.Companion.m4115getWhite0d7_KjU(), TypeKt.m8428dpToSp8Feqmps(Dp.m6684constructorimpl(11), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, startRestartGroup, 432, 0, 131056);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -233,134 +230,80 @@ public final class SettingsTopBarKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance3 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 424319151, "C81@3122L15,83@3197L130,80@3077L250,87@3389L18,89@3467L134,86@3344L257:SettingsTopBar.kt#1gr92h");
-            startRestartGroup.startReplaceGroup(1676255159);
-            ComposerKt.sourceInformation(startRestartGroup, "74@2827L12,76@2907L135,73@2778L264");
-            if (uiState.isDebug()) {
-                startRestartGroup.startReplaceGroup(5004770);
-                ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsTopBar.kt#9igjgp");
-                boolean z = (i4 & 458752) == 131072;
+            if (!uiState.isDebug()) {
+                startRestartGroup.startReplaceGroup(421579153);
+            } else {
+                startRestartGroup.startReplaceGroup(424322560);
+                ComposerKt.sourceInformation(startRestartGroup, "74@2827L12,76@2907L135,73@2778L264");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1676257821, "CC(remember):SettingsTopBar.kt#9igjgp");
+                boolean z = (458752 & i3) == 131072;
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (z || rememberedValue == Composer.Companion.getEmpty()) {
                     rememberedValue = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$2$lambda$1;
-                            SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$2$lambda$1 = SettingsTopBarKt.SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$2$lambda$1(Function0.this);
-                            return SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$2$lambda$1;
+                            Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$2$lambda$1;
+                            SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$2$lambda$1 = SettingsTopBarKt.SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$2$lambda$1(Function0.this);
+                            return SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$2$lambda$1;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
                 }
-                startRestartGroup.endReplaceGroup();
-                r9 = 1;
-                i3 = i4;
-                ScalingButtonKt.ScalingButton((Function0) rememberedValue, Modifier.Companion, ComposableLambdaKt.rememberComposableLambda(-708380511, true, new Function3<BoxScope, Composer, Integer, Unit>() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$SettingsTopBar$1$1$2$2
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ScalingButtonKt.ScalingButton((Function0) rememberedValue, Modifier.Companion, ComposableLambdaKt.rememberComposableLambda(-708380511, true, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function3
-                    public /* bridge */ /* synthetic */ Unit invoke(BoxScope boxScope, Composer composer2, Integer num) {
-                        invoke(boxScope, composer2, num.intValue());
-                        return Unit.INSTANCE;
-                    }
-
-                    public final void invoke(BoxScope ScalingButton, Composer composer2, int i5) {
-                        Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-                        ComposerKt.sourceInformation(composer2, "C77@2949L39,77@2933L87:SettingsTopBar.kt#1gr92h");
-                        if ((i5 & 17) != 16 || !composer2.getSkipping()) {
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(-708380511, i5, -1, "com.miami.game.feature.settings.ui.compose.SettingsTopBar.<anonymous>.<anonymous>.<anonymous>.<anonymous> (SettingsTopBar.kt:77)");
-                            }
-                            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.tech_button, composer2, 0), (String) null, SizeKt.fillMaxHeight$default(Modifier.this, 0.0f, 1, null), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer2, 48, (int) MenuKt.InTransitionDuration);
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventEnd();
-                                return;
-                            }
-                            return;
-                        }
-                        composer2.skipToGroupEnd();
+                    public final Object invoke(Object obj, Object obj2, Object obj3) {
+                        Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$3;
+                        SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$3 = SettingsTopBarKt.SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$3(Modifier.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                        return SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$3;
                     }
                 }, startRestartGroup, 54), startRestartGroup, 432, 0);
-            } else {
-                i3 = i4;
-                r9 = 1;
             }
             startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsTopBar.kt#9igjgp");
-            boolean z2 = (57344 & i3) == 16384 ? r9 : false;
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1676267264, "CC(remember):SettingsTopBar.kt#9igjgp");
+            boolean z2 = (57344 & i3) == 16384;
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (z2 || rememberedValue2 == Composer.Companion.getEmpty()) {
-                rememberedValue2 = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda1
+                rememberedValue2 = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$4$lambda$3;
-                        SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$4$lambda$3 = SettingsTopBarKt.SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$4$lambda$3(Function0.this);
-                        return SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$4$lambda$3;
+                        Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$5$lambda$4;
+                        SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$5$lambda$4 = SettingsTopBarKt.SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$5$lambda$4(Function0.this);
+                        return SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$5$lambda$4;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
-            startRestartGroup.endReplaceGroup();
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue2, Modifier.Companion, ComposableLambdaKt.rememberComposableLambda(1097723868, r9, new Function3<BoxScope, Composer, Integer, Unit>() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$SettingsTopBar$1$1$2$4
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue2, Modifier.Companion, ComposableLambdaKt.rememberComposableLambda(1097723868, true, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function3
-                public /* bridge */ /* synthetic */ Unit invoke(BoxScope boxScope, Composer composer2, Integer num) {
-                    invoke(boxScope, composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(BoxScope ScalingButton, Composer composer2, int i5) {
-                    Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-                    ComposerKt.sourceInformation(composer2, "C84@3235L42,84@3219L90:SettingsTopBar.kt#1gr92h");
-                    if ((i5 & 17) != 16 || !composer2.getSkipping()) {
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(1097723868, i5, -1, "com.miami.game.feature.settings.ui.compose.SettingsTopBar.<anonymous>.<anonymous>.<anonymous>.<anonymous> (SettingsTopBar.kt:84)");
-                        }
-                        ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.support_button, composer2, 0), (String) null, SizeKt.fillMaxHeight$default(Modifier.this, 0.0f, 1, null), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer2, 48, (int) MenuKt.InTransitionDuration);
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventEnd();
-                            return;
-                        }
-                        return;
-                    }
-                    composer2.skipToGroupEnd();
+                public final Object invoke(Object obj, Object obj2, Object obj3) {
+                    Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$6;
+                    SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$6 = SettingsTopBarKt.SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$6(Modifier.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$6;
                 }
             }, startRestartGroup, 54), startRestartGroup, 432, 0);
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):SettingsTopBar.kt#9igjgp");
-            boolean z3 = (i3 & 896) == 256 ? r9 : false;
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1676275811, "CC(remember):SettingsTopBar.kt#9igjgp");
+            boolean z3 = (i3 & 896) == 256;
             Object rememberedValue3 = startRestartGroup.rememberedValue();
             if (z3 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                rememberedValue3 = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda2
+                rememberedValue3 = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda4
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$6$lambda$5;
-                        SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$6$lambda$5 = SettingsTopBarKt.SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$6$lambda$5(Function0.this);
-                        return SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$6$lambda$5;
+                        Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$8$lambda$7;
+                        SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$8$lambda$7 = SettingsTopBarKt.SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$8$lambda$7(Function0.this);
+                        return SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$8$lambda$7;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
-            startRestartGroup.endReplaceGroup();
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue3, Modifier.Companion, ComposableLambdaKt.rememberComposableLambda(-1292796603, r9, new Function3<BoxScope, Composer, Integer, Unit>() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$SettingsTopBar$1$1$2$6
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue3, Modifier.Companion, ComposableLambdaKt.rememberComposableLambda(-1292796603, true, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function3
-                public /* bridge */ /* synthetic */ Unit invoke(BoxScope boxScope, Composer composer2, Integer num) {
-                    invoke(boxScope, composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(BoxScope ScalingButton, Composer composer2, int i5) {
-                    Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-                    ComposerKt.sourceInformation(composer2, "C90@3505L46,90@3489L94:SettingsTopBar.kt#1gr92h");
-                    if ((i5 & 17) != 16 || !composer2.getSkipping()) {
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(-1292796603, i5, -1, "com.miami.game.feature.settings.ui.compose.SettingsTopBar.<anonymous>.<anonymous>.<anonymous>.<anonymous> (SettingsTopBar.kt:90)");
-                        }
-                        ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.check_files_button, composer2, 0), (String) null, SizeKt.fillMaxHeight$default(Modifier.this, 0.0f, 1, null), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer2, 48, (int) MenuKt.InTransitionDuration);
-                        if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventEnd();
-                            return;
-                        }
-                        return;
-                    }
-                    composer2.skipToGroupEnd();
+                public final Object invoke(Object obj, Object obj2, Object obj3) {
+                    Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$9;
+                    SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$9 = SettingsTopBarKt.SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$9(Modifier.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$9;
                 }
             }, startRestartGroup, 54), startRestartGroup, 432, 0);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -375,7 +318,7 @@ public final class SettingsTopBarKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            CustomDividerKt.CustomDivider(OffsetKt.m698offsetVpY3zN4$default(boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getBottomCenter()), 0.0f, Dp.m6684constructorimpl(-Dp.m6684constructorimpl(f2)), r9, null), startRestartGroup, 0, 0);
+            CustomDividerKt.CustomDivider(OffsetKt.m698offsetVpY3zN4$default(boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getBottomCenter()), 0.0f, Dp.m6684constructorimpl(-Dp.m6684constructorimpl(f2)), 1, null), startRestartGroup, 0, 0);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -385,37 +328,89 @@ public final class SettingsTopBarKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda3
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SettingsTopBar$lambda$10;
-                    SettingsTopBar$lambda$10 = SettingsTopBarKt.SettingsTopBar$lambda$10(SettingsUiState.this, modifier, onRepairGame, onBack, onSupport, onTech, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SettingsTopBar$lambda$10;
+                    Unit SettingsTopBar$lambda$13;
+                    SettingsTopBar$lambda$13 = SettingsTopBarKt.SettingsTopBar$lambda$13(SettingsUiState.this, modifier, onRepairGame, onBack, onSupport, onTech, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return SettingsTopBar$lambda$13;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$2$lambda$1(Function0 function0) {
+    public static final Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$2$lambda$1(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$4$lambda$3(Function0 function0) {
+    public static final Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$3(Modifier modifier, BoxScope ScalingButton, Composer composer, int i) {
+        Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
+        ComposerKt.sourceInformation(composer, "C77@2949L39,77@2933L87:SettingsTopBar.kt#1gr92h");
+        if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
+            composer.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-708380511, i, -1, "com.miami.game.feature.settings.ui.compose.SettingsTopBar.<anonymous>.<anonymous>.<anonymous>.<anonymous> (SettingsTopBar.kt:77)");
+            }
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.tech_button, composer, 0), (String) null, SizeKt.fillMaxHeight$default(modifier, 0.0f, 1, null), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, 48, (int) MenuKt.InTransitionDuration);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$5$lambda$4(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsTopBar$lambda$9$lambda$8$lambda$7$lambda$6$lambda$5(Function0 function0) {
+    public static final Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$6(Modifier modifier, BoxScope ScalingButton, Composer composer, int i) {
+        Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
+        ComposerKt.sourceInformation(composer, "C84@3235L42,84@3219L90:SettingsTopBar.kt#1gr92h");
+        if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
+            composer.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(1097723868, i, -1, "com.miami.game.feature.settings.ui.compose.SettingsTopBar.<anonymous>.<anonymous>.<anonymous>.<anonymous> (SettingsTopBar.kt:84)");
+            }
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.support_button, composer, 0), (String) null, SizeKt.fillMaxHeight$default(modifier, 0.0f, 1, null), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, 48, (int) MenuKt.InTransitionDuration);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$8$lambda$7(Function0 function0) {
         function0.invoke();
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$9(Modifier modifier, BoxScope ScalingButton, Composer composer, int i) {
+        Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
+        ComposerKt.sourceInformation(composer, "C90@3505L46,90@3489L94:SettingsTopBar.kt#1gr92h");
+        if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
+            composer.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-1292796603, i, -1, "com.miami.game.feature.settings.ui.compose.SettingsTopBar.<anonymous>.<anonymous>.<anonymous>.<anonymous> (SettingsTopBar.kt:90)");
+            }
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.check_files_button, composer, 0), (String) null, SizeKt.fillMaxHeight$default(modifier, 0.0f, 1, null), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, 48, (int) MenuKt.InTransitionDuration);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
         return Unit.INSTANCE;
     }
 }

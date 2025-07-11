@@ -126,21 +126,21 @@ public final class DebugProbesImpl {
     }
 
     private final Function1<Boolean, Unit> getDynamicAttach() {
-        Object m8443constructorimpl;
+        Object m8471constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             DebugProbesImpl debugProbesImpl = this;
             Object newInstance = Class.forName("kotlinx.coroutines.debug.ByteBuddyDynamicAttach").getConstructors()[0].newInstance(new Object[0]);
             Intrinsics.checkNotNull(newInstance, "null cannot be cast to non-null type kotlin.Function1<kotlin.Boolean, kotlin.Unit>");
-            m8443constructorimpl = Result.m8443constructorimpl((Function1) TypeIntrinsics.beforeCheckcastToFunctionOfArity(newInstance, 1));
+            m8471constructorimpl = Result.m8471constructorimpl((Function1) TypeIntrinsics.beforeCheckcastToFunctionOfArity(newInstance, 1));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m8443constructorimpl = Result.m8443constructorimpl(ResultKt.createFailure(th));
+            m8471constructorimpl = Result.m8471constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m8449isFailureimpl(m8443constructorimpl)) {
-            m8443constructorimpl = null;
+        if (Result.m8477isFailureimpl(m8471constructorimpl)) {
+            m8471constructorimpl = null;
         }
-        return (Function1) m8443constructorimpl;
+        return (Function1) m8471constructorimpl;
     }
 
     public final void install$kotlinx_coroutines_core() {
@@ -373,20 +373,20 @@ public final class DebugProbesImpl {
     }
 
     private final List<StackTraceElement> enhanceStackTraceWithThreadDumpImpl(String str, Thread thread, List<StackTraceElement> list) {
-        Object m8443constructorimpl;
+        Object m8471constructorimpl;
         if (Intrinsics.areEqual(str, DebugCoroutineInfoImplKt.RUNNING) && thread != null) {
             try {
                 Result.Companion companion = Result.Companion;
                 DebugProbesImpl debugProbesImpl = this;
-                m8443constructorimpl = Result.m8443constructorimpl(thread.getStackTrace());
+                m8471constructorimpl = Result.m8471constructorimpl(thread.getStackTrace());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m8443constructorimpl = Result.m8443constructorimpl(ResultKt.createFailure(th));
+                m8471constructorimpl = Result.m8471constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m8449isFailureimpl(m8443constructorimpl)) {
-                m8443constructorimpl = null;
+            if (Result.m8477isFailureimpl(m8471constructorimpl)) {
+                m8471constructorimpl = null;
             }
-            StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) m8443constructorimpl;
+            StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) m8471constructorimpl;
             if (stackTraceElementArr != null) {
                 int length = stackTraceElementArr.length;
                 int i = 0;

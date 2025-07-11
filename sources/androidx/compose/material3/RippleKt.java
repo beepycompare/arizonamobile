@@ -40,7 +40,7 @@ public final class RippleKt {
     public static /* synthetic */ void getLocalUseFallbackRippleImplementation$annotations() {
     }
 
-    /* renamed from: ripple-H2RKhps$default  reason: not valid java name */
+    /* renamed from: ripple-H2RKhps$default */
     public static /* synthetic */ IndicationNodeFactory m2208rippleH2RKhps$default(boolean z, float f, long j, int i, Object obj) {
         if ((i & 1) != 0) {
             z = true;
@@ -54,7 +54,7 @@ public final class RippleKt {
         return m2207rippleH2RKhps(z, f, j);
     }
 
-    /* renamed from: ripple-H2RKhps  reason: not valid java name */
+    /* renamed from: ripple-H2RKhps */
     public static final IndicationNodeFactory m2207rippleH2RKhps(boolean z, float f, long j) {
         if (Dp.m6689equalsimpl0(f, Dp.Companion.m6704getUnspecifiedD9Ej5fM()) && Color.m4079equalsimpl0(j, Color.Companion.m4114getUnspecified0d7_KjU())) {
             return z ? DefaultBoundedRipple : DefaultUnboundedRipple;
@@ -62,7 +62,7 @@ public final class RippleKt {
         return new RippleNodeFactory(z, f, j, (DefaultConstructorMarker) null);
     }
 
-    /* renamed from: ripple-wH6b6FI$default  reason: not valid java name */
+    /* renamed from: ripple-wH6b6FI$default */
     public static /* synthetic */ IndicationNodeFactory m2210ripplewH6b6FI$default(ColorProducer colorProducer, boolean z, float f, int i, Object obj) {
         if ((i & 2) != 0) {
             z = true;
@@ -73,7 +73,7 @@ public final class RippleKt {
         return m2209ripplewH6b6FI(colorProducer, z, f);
     }
 
-    /* renamed from: ripple-wH6b6FI  reason: not valid java name */
+    /* renamed from: ripple-wH6b6FI */
     public static final IndicationNodeFactory m2209ripplewH6b6FI(ColorProducer colorProducer, boolean z, float f) {
         return new RippleNodeFactory(z, f, colorProducer, (DefaultConstructorMarker) null);
     }
@@ -86,7 +86,7 @@ public final class RippleKt {
         return LocalRippleConfiguration;
     }
 
-    /* renamed from: rippleOrFallbackImplementation-9IZ8Weo  reason: not valid java name */
+    /* renamed from: rippleOrFallbackImplementation-9IZ8Weo */
     public static final Indication m2211rippleOrFallbackImplementation9IZ8Weo(boolean z, float f, long j, Composer composer, int i, int i2) {
         Composer composer2;
         IndicationNodeFactory m2207rippleH2RKhps;

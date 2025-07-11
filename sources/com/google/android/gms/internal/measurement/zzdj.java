@@ -1,52 +1,31 @@
 package com.google.android.gms.internal.measurement;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import android.os.Bundle;
+import android.os.RemoteException;
+import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzdj extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<zzdj> CREATOR = new zzdk();
-    public final int zza;
-    public final String zzb;
-    public final Intent zzc;
+public final class zzdj extends zzeq {
+    final /* synthetic */ String zza;
+    final /* synthetic */ String zzb;
+    final /* synthetic */ Bundle zzc;
+    final /* synthetic */ zzfb zzd;
 
-    public zzdj(int i, String str, Intent intent) {
-        this.zza = i;
-        this.zzb = str;
-        this.zzc = intent;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzdj(zzfb zzfbVar, String str, String str2, Bundle bundle) {
+        super(zzfbVar, true);
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = bundle;
+        Objects.requireNonNull(zzfbVar);
+        this.zzd = zzfbVar;
     }
 
-    public static zzdj zza(Activity activity) {
-        return new zzdj(activity.hashCode(), activity.getClass().getCanonicalName(), activity.getIntent());
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof zzdj) {
-            zzdj zzdjVar = (zzdj) obj;
-            return this.zza == zzdjVar.zza && Objects.equals(this.zzb, zzdjVar.zzb) && Objects.equals(this.zzc, zzdjVar.zzc);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.zza;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int i2 = this.zza;
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, i2);
-        SafeParcelWriter.writeString(parcel, 2, this.zzb, false);
-        SafeParcelWriter.writeParcelable(parcel, 3, this.zzc, i, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    @Override // com.google.android.gms.internal.measurement.zzeq
+    final void zza() throws RemoteException {
+        ((zzcr) Preconditions.checkNotNull(this.zzd.zzQ())).clearConditionalUserProperty(this.zza, this.zzb, this.zzc);
     }
 }

@@ -19,14 +19,14 @@ import ru.mrlargha.arizonaui.R;
 import ru.mrlargha.arizonaui.databinding.MyHousesItemBinding;
 import ru.mrlargha.arizonaui.house.MyHouseScreen;
 /* compiled from: MyHousesListAdapter.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\u0004\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002\u001a\u001bB\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000e\u0010\u000b\u001a\u00020\f2\u0006\u0010\t\u001a\u00020\nJ\u0018\u0010\r\u001a\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\f2\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u0011H\u0016J\b\u0010\u0015\u001a\u00020\u0011H\u0016J\u0014\u0010\u0016\u001a\u00020\f2\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00070\u0018J\u0006\u0010\u0019\u001a\u00020\fR\u001e\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082.¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/arizonaui/house/MyHousesListAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/arizonaui/house/MyHousesListAdapter$ViewHolder;", "<init>", "()V", "houseItemInfoList", "Ljava/util/ArrayList;", "Lru/mrlargha/arizonaui/house/MyHouseScreen$Companion$HouseItemInfo;", "Lkotlin/collections/ArrayList;", "onHouseClickListener", "Lru/mrlargha/arizonaui/house/MyHousesListAdapter$OnHouseClickListener;", "setOnBizClickListener", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "addHouses", "infoList", "", "clearHouses", "OnHouseClickListener", "ViewHolder", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\u0004\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002\u001a\u001bB\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000e\u0010\u000b\u001a\u00020\f2\u0006\u0010\t\u001a\u00020\nJ\u0018\u0010\r\u001a\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\f2\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u0011H\u0016J\b\u0010\u0015\u001a\u00020\u0011H\u0016J\u0014\u0010\u0016\u001a\u00020\f2\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00070\u0018J\u0006\u0010\u0019\u001a\u00020\fR\u001e\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082.¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/arizonaui/house/MyHousesListAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/arizonaui/house/MyHousesListAdapter$ViewHolder;", "<init>", "()V", "houseItemInfoList", "Ljava/util/ArrayList;", "Lru/mrlargha/arizonaui/house/MyHouseScreen$Companion$HouseItemInfo;", "Lkotlin/collections/ArrayList;", "onHouseClickListener", "Lru/mrlargha/arizonaui/house/MyHousesListAdapter$OnHouseClickListener;", "setOnBizClickListener", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "addHouses", "infoList", "", "clearHouses", "OnHouseClickListener", "ViewHolder", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class MyHousesListAdapter extends RecyclerView.Adapter<ViewHolder> {
     private final ArrayList<MyHouseScreen.Companion.HouseItemInfo> houseItemInfoList = new ArrayList<>();
     private OnHouseClickListener onHouseClickListener;
 
     /* compiled from: MyHousesListAdapter.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&¨\u0006\u0006"}, d2 = {"Lru/mrlargha/arizonaui/house/MyHousesListAdapter$OnHouseClickListener;", "", "callback", "", "id", "", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&¨\u0006\u0006À\u0006\u0003"}, d2 = {"Lru/mrlargha/arizonaui/house/MyHousesListAdapter$OnHouseClickListener;", "", "callback", "", "id", "", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public interface OnHouseClickListener {
         void callback(int i);
@@ -52,6 +52,14 @@ public final class MyHousesListAdapter extends RecyclerView.Adapter<ViewHolder> 
         Intrinsics.checkNotNullExpressionValue(houseItemInfo, "get(...)");
         final MyHouseScreen.Companion.HouseItemInfo houseItemInfo2 = houseItemInfo;
         MyHousesItemBinding binding = holder.getBinding();
+        int i2 = 0;
+        if (Intrinsics.areEqual(houseItemInfo2.getType(), "social_house")) {
+            binding.houseNumber.setVisibility(8);
+            binding.fourthValue.setVisibility(8);
+        } else {
+            binding.houseNumber.setVisibility(0);
+            binding.fourthTitle.setVisibility(0);
+        }
         if (houseItemInfo2.getOpened() == 1) {
             binding.houseStatusContainer.setBackgroundResource(R.drawable.my_biz_status_close_ic);
             binding.houseStatus.setText("закрыт");
@@ -91,7 +99,6 @@ public final class MyHousesListAdapter extends RecyclerView.Adapter<ViewHolder> 
                 }
                 break;
         }
-        int i2 = 0;
         for (Object obj : houseItemInfo2.getStats()) {
             int i3 = i2 + 1;
             if (i2 < 0) {
@@ -111,17 +118,31 @@ public final class MyHousesListAdapter extends RecyclerView.Adapter<ViewHolder> 
             i2 = i3;
         }
         String type = houseItemInfo2.getType();
-        int hashCode = type.hashCode();
-        if (hashCode != -1067215565) {
-            if (hashCode != -993141291) {
-                if (hashCode == 1959548722 && type.equals("apartment")) {
+        switch (type.hashCode()) {
+            case -1578353714:
+                if (type.equals("social_house")) {
                     binding.houseTypeIc.setImageResource(R.drawable.my_houses_apartment_ic);
+                    break;
                 }
-            } else if (type.equals("property")) {
-                binding.houseTypeIc.setImageResource(R.drawable.my_houses_house_ic);
-            }
-        } else if (type.equals("trailer")) {
-            binding.houseTypeIc.setImageResource(R.drawable.my_houses_trailer_ic);
+                break;
+            case -1067215565:
+                if (type.equals("trailer")) {
+                    binding.houseTypeIc.setImageResource(R.drawable.my_houses_trailer_ic);
+                    break;
+                }
+                break;
+            case -993141291:
+                if (type.equals("property")) {
+                    binding.houseTypeIc.setImageResource(R.drawable.my_houses_house_ic);
+                    break;
+                }
+                break;
+            case 1959548722:
+                if (type.equals("apartment")) {
+                    binding.houseTypeIc.setImageResource(R.drawable.my_houses_apartment_ic);
+                    break;
+                }
+                break;
         }
         EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
         ConstraintLayout myHousesItem = binding.myHousesItem;
@@ -153,7 +174,7 @@ public final class MyHousesListAdapter extends RecyclerView.Adapter<ViewHolder> 
     }
 
     /* compiled from: MyHousesListAdapter.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lru/mrlargha/arizonaui/house/MyHousesListAdapter$ViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "view", "Landroid/view/View;", "<init>", "(Landroid/view/View;)V", "binding", "Lru/mrlargha/arizonaui/databinding/MyHousesItemBinding;", "getBinding", "()Lru/mrlargha/arizonaui/databinding/MyHousesItemBinding;", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lru/mrlargha/arizonaui/house/MyHousesListAdapter$ViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "view", "Landroid/view/View;", "<init>", "(Landroid/view/View;)V", "binding", "Lru/mrlargha/arizonaui/databinding/MyHousesItemBinding;", "getBinding", "()Lru/mrlargha/arizonaui/databinding/MyHousesItemBinding;", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class ViewHolder extends RecyclerView.ViewHolder {
         private final MyHousesItemBinding binding;

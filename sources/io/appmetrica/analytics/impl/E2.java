@@ -6,18 +6,18 @@ import android.content.Intent;
 public final class E2 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f398a;
+    public final /* synthetic */ Context f399a;
     public final /* synthetic */ Intent b;
     public final /* synthetic */ F2 c;
 
     public E2(F2 f2, Context context, Intent intent) {
         this.c = f2;
-        this.f398a = context;
+        this.f399a = context;
         this.b = intent;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.c.f420a.consume(this.f398a, this.b);
+        this.c.f421a.consume(this.f399a, this.b);
     }
 }

@@ -20,6 +20,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Pair;
+import kotlin.UByte$$ExternalSyntheticBackport0;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
@@ -104,7 +105,7 @@ public final class UtilsKt {
 
     public static final void closeQuietly(AutoCloseable autoCloseable) {
         try {
-            autoCloseable.close();
+            UByte$$ExternalSyntheticBackport0.m8544m((Object) autoCloseable);
         } catch (RuntimeException e) {
             throw e;
         } catch (Exception unused) {

@@ -1,13 +1,14 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zziq extends zzlz implements zzni {
+final class zziq implements zzmj {
+    static final zzmj zza = new zziq();
+
     private zziq() {
-        throw null;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zziq(zzja zzjaVar) {
-        super(zzir.zzb());
+    @Override // com.google.android.gms.internal.measurement.zzmj
+    public final boolean zza(int i) {
+        return zzir.zza(i) != 0;
     }
 }

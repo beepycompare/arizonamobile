@@ -18,18 +18,18 @@ public class GooglePlayServicesClient {
     public static final class GooglePlayServicesConnection implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        public final long f148a;
+        public final long f149a;
         public boolean b = false;
         public final LinkedBlockingQueue c = new LinkedBlockingQueue(1);
 
         public GooglePlayServicesConnection(long j) {
-            this.f148a = j;
+            this.f149a = j;
         }
 
         public final IBinder a() {
             if (!this.b) {
                 this.b = true;
-                return (IBinder) this.c.poll(this.f148a, TimeUnit.MILLISECONDS);
+                return (IBinder) this.c.poll(this.f149a, TimeUnit.MILLISECONDS);
             }
             throw new IllegalStateException();
         }
@@ -70,10 +70,10 @@ public class GooglePlayServicesClient {
     public static final class GooglePlayServicesInterface implements IInterface {
 
         /* renamed from: a  reason: collision with root package name */
-        public final IBinder f149a;
+        public final IBinder f150a;
 
         public GooglePlayServicesInterface(IBinder iBinder) {
-            this.f149a = iBinder;
+            this.f150a = iBinder;
         }
 
         public final String a() {
@@ -81,7 +81,7 @@ public class GooglePlayServicesClient {
             Parcel obtain2 = Parcel.obtain();
             try {
                 obtain.writeInterfaceToken("com.google.android.gms.ads.identifier.internal.IAdvertisingIdService");
-                this.f149a.transact(1, obtain, obtain2, 0);
+                this.f150a.transact(1, obtain, obtain2, 0);
                 obtain2.readException();
                 return obtain2.readString();
             } finally {
@@ -92,7 +92,7 @@ public class GooglePlayServicesClient {
 
         @Override // android.os.IInterface
         public final IBinder asBinder() {
-            return this.f149a;
+            return this.f150a;
         }
 
         public final Boolean b() {
@@ -101,7 +101,7 @@ public class GooglePlayServicesClient {
             try {
                 obtain.writeInterfaceToken("com.google.android.gms.ads.identifier.internal.IAdvertisingIdService");
                 obtain.writeInt(1);
-                this.f149a.transact(2, obtain, obtain2, 0);
+                this.f150a.transact(2, obtain, obtain2, 0);
                 obtain2.readException();
                 boolean z = obtain2.readInt() != 0;
                 obtain2.recycle();

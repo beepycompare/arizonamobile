@@ -1,44 +1,54 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+
+import java.util.Collections;
+import java.util.List;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzgk extends zzmd implements zzni {
-    private static final zzgk zzb;
-    private int zzd;
-    private String zze = "";
-    private zzmj zzf = zzcn();
-    private boolean zzg;
-
-    static {
-        zzgk zzgkVar = new zzgk();
-        zzb = zzgkVar;
-        zzmd.zzct(zzgk.class, zzgkVar);
-    }
-
+public final class zzgk extends zzma implements zznm {
     private zzgk() {
+        throw null;
     }
 
-    public final String zzb() {
-        return this.zze;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzgk(byte[] bArr) {
+        super(zzgl.zzw());
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzmd
-    public final Object zzl(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 != 0) {
-            if (i2 == 2) {
-                return zzcq(zzb, "\u0004\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0001\u0000\u0001ဈ\u0000\u0002\u001b\u0003ဇ\u0001", new Object[]{"zzd", "zze", "zzf", zzgu.class, "zzg"});
-            } else if (i2 != 3) {
-                if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzb;
-                    }
-                    throw null;
-                }
-                return new zzgj(null);
-            } else {
-                return new zzgk();
-            }
-        }
-        return (byte) 1;
+    public final int zza() {
+        return ((zzgl) this.zza).zzf();
+    }
+
+    public final zzgj zzb(int i) {
+        return ((zzgl) this.zza).zzg(i);
+    }
+
+    public final zzgk zzc(int i, zzgi zzgiVar) {
+        zzaX();
+        ((zzgl) this.zza).zzt(i, (zzgj) zzgiVar.zzbc());
+        return this;
+    }
+
+    public final List zzd() {
+        return Collections.unmodifiableList(((zzgl) this.zza).zzh());
+    }
+
+    public final zzgk zze() {
+        zzaX();
+        ((zzgl) this.zza).zzu();
+        return this;
+    }
+
+    public final zzgk zzf() {
+        zzaX();
+        ((zzgl) this.zza).zzv();
+        return this;
+    }
+
+    public final List zzg() {
+        return Collections.unmodifiableList(((zzgl) this.zza).zzk());
+    }
+
+    public final String zzh() {
+        return ((zzgl) this.zza).zzm();
     }
 }

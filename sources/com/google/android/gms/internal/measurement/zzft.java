@@ -1,14 +1,13 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-final class zzft implements zzmg {
-    static final zzmg zza = new zzft();
-
+public final class zzft extends zzma implements zznm {
     private zzft() {
+        throw null;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzmg
-    public final boolean zza(int i) {
-        return zzfu.zza(i) != 0;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzft(byte[] bArr) {
+        super(zzfu.zza());
     }
 }

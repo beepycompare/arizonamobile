@@ -16,8 +16,10 @@ import java.util.concurrent.TimeUnit;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Ref;
 import kotlin.ranges.IntRange;
 import kotlin.text.StringsKt;
 import okhttp3.Call;
@@ -29,7 +31,9 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;
-import okhttp3.internal.Util;
+import okhttp3.internal._UtilCommonKt;
+import okhttp3.internal._UtilJvmKt;
+import okhttp3.internal.concurrent.Lockable;
 import okhttp3.internal.concurrent.Task;
 import okhttp3.internal.concurrent.TaskQueue;
 import okhttp3.internal.concurrent.TaskRunner;
@@ -41,10 +45,10 @@ import okio.BufferedSink;
 import okio.BufferedSource;
 import okio.ByteString;
 /* compiled from: RealWebSocket.kt */
-@Metadata(d1 = {"\u0000¶\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u001c\u0018\u0000 `2\u00020\u00012\u00020\u0002:\u0005_`abcB?\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\b\u0010\r\u001a\u0004\u0018\u00010\u000e\u0012\u0006\u0010\u000f\u001a\u00020\f¢\u0006\u0002\u0010\u0010J\u0016\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\f2\u0006\u00105\u001a\u000206J\b\u00107\u001a\u000203H\u0016J\u001f\u00108\u001a\u0002032\u0006\u00109\u001a\u00020:2\b\u0010;\u001a\u0004\u0018\u00010<H\u0000¢\u0006\u0002\b=J\u001a\u0010>\u001a\u00020\u00122\u0006\u0010?\u001a\u00020%2\b\u0010@\u001a\u0004\u0018\u00010\u0018H\u0016J \u0010>\u001a\u00020\u00122\u0006\u0010?\u001a\u00020%2\b\u0010@\u001a\u0004\u0018\u00010\u00182\u0006\u0010A\u001a\u00020\fJ\u000e\u0010B\u001a\u0002032\u0006\u0010C\u001a\u00020DJ\u001c\u0010E\u001a\u0002032\n\u0010F\u001a\u00060Gj\u0002`H2\b\u00109\u001a\u0004\u0018\u00010:J\u0016\u0010I\u001a\u0002032\u0006\u0010\u001e\u001a\u00020\u00182\u0006\u0010*\u001a\u00020+J\u0006\u0010J\u001a\u000203J\u0018\u0010K\u001a\u0002032\u0006\u0010?\u001a\u00020%2\u0006\u0010@\u001a\u00020\u0018H\u0016J\u0010\u0010L\u001a\u0002032\u0006\u0010M\u001a\u00020\u0018H\u0016J\u0010\u0010L\u001a\u0002032\u0006\u0010N\u001a\u00020 H\u0016J\u0010\u0010O\u001a\u0002032\u0006\u0010P\u001a\u00020 H\u0016J\u0010\u0010Q\u001a\u0002032\u0006\u0010P\u001a\u00020 H\u0016J\u000e\u0010R\u001a\u00020\u00122\u0006\u0010P\u001a\u00020 J\u0006\u0010S\u001a\u00020\u0012J\b\u0010!\u001a\u00020\fH\u0016J\u0006\u0010'\u001a\u00020%J\u0006\u0010(\u001a\u00020%J\b\u0010T\u001a\u00020\u0006H\u0016J\b\u0010U\u001a\u000203H\u0002J\u0010\u0010V\u001a\u00020\u00122\u0006\u0010M\u001a\u00020\u0018H\u0016J\u0010\u0010V\u001a\u00020\u00122\u0006\u0010N\u001a\u00020 H\u0016J\u0018\u0010V\u001a\u00020\u00122\u0006\u0010W\u001a\u00020 2\u0006\u0010X\u001a\u00020%H\u0002J\u0006\u0010)\u001a\u00020%J\u0006\u0010Y\u001a\u000203J\r\u0010Z\u001a\u00020\u0012H\u0000¢\u0006\u0002\b[J\r\u0010\\\u001a\u000203H\u0000¢\u0006\u0002\b]J\f\u0010^\u001a\u00020\u0012*\u00020\u000eH\u0002R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0007\u001a\u00020\bX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0014\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020 0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\"\u001a\u0004\u0018\u00010#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020%X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010&\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020%X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020%X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020%X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010*\u001a\u0004\u0018\u00010+X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020-X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010.\u001a\u0004\u0018\u00010/X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00100\u001a\u0004\u0018\u000101X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006d"}, d2 = {"Lokhttp3/internal/ws/RealWebSocket;", "Lokhttp3/WebSocket;", "Lokhttp3/internal/ws/WebSocketReader$FrameCallback;", "taskRunner", "Lokhttp3/internal/concurrent/TaskRunner;", "originalRequest", "Lokhttp3/Request;", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lokhttp3/WebSocketListener;", "random", "Ljava/util/Random;", "pingIntervalMillis", "", "extensions", "Lokhttp3/internal/ws/WebSocketExtensions;", "minimumDeflateSize", "(Lokhttp3/internal/concurrent/TaskRunner;Lokhttp3/Request;Lokhttp3/WebSocketListener;Ljava/util/Random;JLokhttp3/internal/ws/WebSocketExtensions;J)V", "awaitingPong", "", NotificationCompat.CATEGORY_CALL, "Lokhttp3/Call;", "enqueuedClose", "failed", "key", "", "getListener$okhttp", "()Lokhttp3/WebSocketListener;", "messageAndCloseQueue", "Ljava/util/ArrayDeque;", "", "name", "pongQueue", "Lokio/ByteString;", "queueSize", "reader", "Lokhttp3/internal/ws/WebSocketReader;", "receivedCloseCode", "", "receivedCloseReason", "receivedPingCount", "receivedPongCount", "sentPingCount", "streams", "Lokhttp3/internal/ws/RealWebSocket$Streams;", "taskQueue", "Lokhttp3/internal/concurrent/TaskQueue;", "writer", "Lokhttp3/internal/ws/WebSocketWriter;", "writerTask", "Lokhttp3/internal/concurrent/Task;", "awaitTermination", "", "timeout", "timeUnit", "Ljava/util/concurrent/TimeUnit;", FacebookDialog.COMPLETION_GESTURE_CANCEL, "checkUpgradeSuccess", "response", "Lokhttp3/Response;", "exchange", "Lokhttp3/internal/connection/Exchange;", "checkUpgradeSuccess$okhttp", "close", "code", "reason", "cancelAfterCloseMillis", "connect", "client", "Lokhttp3/OkHttpClient;", "failWebSocket", "e", "Ljava/lang/Exception;", "Lkotlin/Exception;", "initReaderAndWriter", "loopReader", "onReadClose", "onReadMessage", "text", "bytes", "onReadPing", "payload", "onReadPong", "pong", "processNextFrame", "request", "runWriter", "send", "data", "formatOpcode", "tearDown", "writeOneFrame", "writeOneFrame$okhttp", "writePingFrame", "writePingFrame$okhttp", "isValid", "Close", "Companion", "Message", "Streams", "WriterTask", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000°\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u001c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 h2\u00020\u00012\u00020\u00022\u00020\u0003:\u0005defghBI\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f\u0012\u0006\u0010\u0010\u001a\u00020\r\u0012\u0006\u0010\u0011\u001a\u00020\r¢\u0006\u0004\b\u0012\u0010\u0013J\b\u00109\u001a\u00020\u0007H\u0016J\b\u0010.\u001a\u00020\rH\u0016J\b\u0010:\u001a\u00020;H\u0016J\u000e\u0010<\u001a\u00020;2\u0006\u0010=\u001a\u00020>J\f\u0010?\u001a\u000200*\u00020\u000fH\u0002J\u001f\u0010@\u001a\u00020;2\u0006\u0010A\u001a\u00020B2\b\u0010C\u001a\u0004\u0018\u00010DH\u0000¢\u0006\u0002\bEJ\u0016\u0010F\u001a\u00020;2\u0006\u0010&\u001a\u00020\u00172\u0006\u0010'\u001a\u00020(J\u000e\u0010G\u001a\u00020;2\u0006\u0010A\u001a\u00020BJ\u0006\u0010H\u001a\u000200J\u0006\u0010I\u001a\u00020;J\u0006\u0010J\u001a\u00020;J\u0006\u00105\u001a\u000202J\u0006\u00106\u001a\u000202J\u0006\u00107\u001a\u000202J\u0010\u0010K\u001a\u00020;2\u0006\u0010L\u001a\u00020\u0017H\u0016J\u0010\u0010K\u001a\u00020;2\u0006\u0010M\u001a\u00020+H\u0016J\u0010\u0010N\u001a\u00020;2\u0006\u0010O\u001a\u00020+H\u0016J\u0010\u0010P\u001a\u00020;2\u0006\u0010O\u001a\u00020+H\u0016J\u0018\u0010Q\u001a\u00020;2\u0006\u0010R\u001a\u0002022\u0006\u0010S\u001a\u00020\u0017H\u0016J\u0010\u0010T\u001a\u0002002\u0006\u0010L\u001a\u00020\u0017H\u0016J\u0010\u0010T\u001a\u0002002\u0006\u0010M\u001a\u00020+H\u0016J\u0018\u0010T\u001a\u0002002\u0006\u0010U\u001a\u00020+2\u0006\u0010V\u001a\u000202H\u0002J\u000e\u0010W\u001a\u0002002\u0006\u0010O\u001a\u00020+J\u001a\u0010X\u001a\u0002002\u0006\u0010R\u001a\u0002022\b\u0010S\u001a\u0004\u0018\u00010\u0017H\u0016J \u0010X\u001a\u0002002\u0006\u0010R\u001a\u0002022\b\u0010S\u001a\u0004\u0018\u00010\u00172\u0006\u0010Y\u001a\u00020\rJ\b\u0010Z\u001a\u00020;H\u0002J\r\u0010[\u001a\u000200H\u0000¢\u0006\u0002\b\\J\r\u0010]\u001a\u00020;H\u0000¢\u0006\u0002\b^J(\u0010_\u001a\u00020;2\n\u0010`\u001a\u00060aj\u0002`b2\n\b\u0002\u0010A\u001a\u0004\u0018\u00010B2\b\b\u0002\u0010c\u001a\u000200R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\b\u001a\u00020\tX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010!X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\"\u001a\u0004\u0018\u00010#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020%X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010&\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010'\u001a\u0004\u0018\u00010(X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010)\u001a\b\u0012\u0004\u0012\u00020+0*X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010,\u001a\b\u0012\u0004\u0012\u00020-0*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00103\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u000200X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00106\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u000200X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006i"}, d2 = {"Lokhttp3/internal/ws/RealWebSocket;", "Lokhttp3/WebSocket;", "Lokhttp3/internal/ws/WebSocketReader$FrameCallback;", "Lokhttp3/internal/concurrent/Lockable;", "taskRunner", "Lokhttp3/internal/concurrent/TaskRunner;", "originalRequest", "Lokhttp3/Request;", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lokhttp3/WebSocketListener;", "random", "Ljava/util/Random;", "pingIntervalMillis", "", "extensions", "Lokhttp3/internal/ws/WebSocketExtensions;", "minimumDeflateSize", "webSocketCloseTimeout", "<init>", "(Lokhttp3/internal/concurrent/TaskRunner;Lokhttp3/Request;Lokhttp3/WebSocketListener;Ljava/util/Random;JLokhttp3/internal/ws/WebSocketExtensions;JJ)V", "getListener$okhttp", "()Lokhttp3/WebSocketListener;", "key", "", NotificationCompat.CATEGORY_CALL, "Lokhttp3/Call;", "getCall$okhttp", "()Lokhttp3/Call;", "setCall$okhttp", "(Lokhttp3/Call;)V", "writerTask", "Lokhttp3/internal/concurrent/Task;", "reader", "Lokhttp3/internal/ws/WebSocketReader;", "writer", "Lokhttp3/internal/ws/WebSocketWriter;", "taskQueue", "Lokhttp3/internal/concurrent/TaskQueue;", "name", "streams", "Lokhttp3/internal/ws/RealWebSocket$Streams;", "pongQueue", "Ljava/util/ArrayDeque;", "Lokio/ByteString;", "messageAndCloseQueue", "", "queueSize", "enqueuedClose", "", "receivedCloseCode", "", "receivedCloseReason", "failed", "sentPingCount", "receivedPingCount", "receivedPongCount", "awaitingPong", "request", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "connect", "client", "Lokhttp3/OkHttpClient;", "isValid", "checkUpgradeSuccess", "response", "Lokhttp3/Response;", "exchange", "Lokhttp3/internal/connection/Exchange;", "checkUpgradeSuccess$okhttp", "initReaderAndWriter", "loopReader", "processNextFrame", "finishReader", "tearDown", "onReadMessage", "text", "bytes", "onReadPing", "payload", "onReadPong", "onReadClose", "code", "reason", "send", "data", "formatOpcode", "pong", "close", "cancelAfterCloseMillis", "runWriter", "writeOneFrame", "writeOneFrame$okhttp", "writePingFrame", "writePingFrame$okhttp", "failWebSocket", "e", "Ljava/lang/Exception;", "Lkotlin/Exception;", "isWriter", "Message", "Close", "Streams", "WriterTask", "Companion", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
-public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCallback {
-    private static final long CANCEL_AFTER_CLOSE_MILLIS = 60000;
+public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCallback, Lockable {
+    public static final long CANCEL_AFTER_CLOSE_MILLIS = 60000;
     public static final long DEFAULT_MINIMUM_DEFLATE_SIZE = 1024;
     private static final long MAX_QUEUE_SIZE = 16777216;
     private boolean awaitingPong;
@@ -70,12 +74,13 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     private int sentPingCount;
     private Streams streams;
     private TaskQueue taskQueue;
+    private final long webSocketCloseTimeout;
     private WebSocketWriter writer;
     private Task writerTask;
     public static final Companion Companion = new Companion(null);
     private static final List<Protocol> ONLY_HTTP1 = CollectionsKt.listOf(Protocol.HTTP_1_1);
 
-    public RealWebSocket(TaskRunner taskRunner, Request originalRequest, WebSocketListener listener, Random random, long j, WebSocketExtensions webSocketExtensions, long j2) {
+    public RealWebSocket(TaskRunner taskRunner, Request originalRequest, WebSocketListener listener, Random random, long j, WebSocketExtensions webSocketExtensions, long j2, long j3) {
         Intrinsics.checkNotNullParameter(taskRunner, "taskRunner");
         Intrinsics.checkNotNullParameter(originalRequest, "originalRequest");
         Intrinsics.checkNotNullParameter(listener, "listener");
@@ -86,6 +91,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
         this.pingIntervalMillis = j;
         this.extensions = webSocketExtensions;
         this.minimumDeflateSize = j2;
+        this.webSocketCloseTimeout = j3;
         this.taskQueue = taskRunner.newQueue();
         this.pongQueue = new ArrayDeque<>();
         this.messageAndCloseQueue = new ArrayDeque<>();
@@ -102,6 +108,14 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
 
     public final WebSocketListener getListener$okhttp() {
         return this.listener;
+    }
+
+    public final Call getCall$okhttp() {
+        return this.call;
+    }
+
+    public final void setCall$okhttp(Call call) {
+        this.call = call;
     }
 
     @Override // okhttp3.WebSocket
@@ -124,7 +138,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     public final void connect(OkHttpClient client) {
         Intrinsics.checkNotNullParameter(client, "client");
         if (this.originalRequest.header(HttpHeaders.SEC_WEBSOCKET_EXTENSIONS) != null) {
-            failWebSocket(new ProtocolException("Request header not permitted: 'Sec-WebSocket-Extensions'"), null);
+            failWebSocket$default(this, new ProtocolException("Request header not permitted: 'Sec-WebSocket-Extensions'"), null, false, 6, null);
             return;
         }
         OkHttpClient build = client.newBuilder().eventListener(EventListener.NONE).protocols(ONLY_HTTP1).build();
@@ -155,16 +169,11 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
                             realWebSocket.close(1010, "unexpected Sec-WebSocket-Extensions in response header");
                         }
                     }
-                    try {
-                        RealWebSocket.this.initReaderAndWriter(Util.okHttpName + " WebSocket " + build2.url().redact(), newWebSocketStreams);
-                        RealWebSocket.this.getListener$okhttp().onOpen(RealWebSocket.this, response);
-                        RealWebSocket.this.loopReader();
-                    } catch (Exception e) {
-                        RealWebSocket.this.failWebSocket(e, null);
-                    }
-                } catch (IOException e2) {
-                    RealWebSocket.this.failWebSocket(e2, response);
-                    Util.closeQuietly(response);
+                    RealWebSocket.this.initReaderAndWriter(_UtilJvmKt.okHttpName + " WebSocket " + build2.url().redact(), newWebSocketStreams);
+                    RealWebSocket.this.loopReader(response);
+                } catch (IOException e) {
+                    RealWebSocket.failWebSocket$default(RealWebSocket.this, e, response, false, 4, null);
+                    _UtilCommonKt.closeQuietly(response);
                     if (exchange != null) {
                         exchange.webSocketUpgradeFailed();
                     }
@@ -175,7 +184,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
             public void onFailure(Call call, IOException e) {
                 Intrinsics.checkNotNullParameter(call, "call");
                 Intrinsics.checkNotNullParameter(e, "e");
-                RealWebSocket.this.failWebSocket(e, null);
+                RealWebSocket.failWebSocket$default(RealWebSocket.this, e, null, false, 6, null);
             }
         });
     }
@@ -211,7 +220,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
         }
     }
 
-    public final void initReaderAndWriter(String name, Streams streams) throws IOException {
+    public final void initReaderAndWriter(String name, Streams streams) {
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(streams, "streams");
         WebSocketExtensions webSocketExtensions = this.extensions;
@@ -223,14 +232,12 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
             this.writerTask = new WriterTask();
             if (this.pingIntervalMillis != 0) {
                 final long nanos = TimeUnit.MILLISECONDS.toNanos(this.pingIntervalMillis);
-                final String str = name + " ping";
-                this.taskQueue.schedule(new Task(str) { // from class: okhttp3.internal.ws.RealWebSocket$initReaderAndWriter$lambda$3$$inlined$schedule$1
-                    @Override // okhttp3.internal.concurrent.Task
-                    public long runOnce() {
-                        this.writePingFrame$okhttp();
-                        return nanos;
+                this.taskQueue.schedule(name + " ping", nanos, new Function0() { // from class: okhttp3.internal.ws.RealWebSocket$$ExternalSyntheticLambda3
+                    @Override // kotlin.jvm.functions.Function0
+                    public final Object invoke() {
+                        return Long.valueOf(RealWebSocket.initReaderAndWriter$lambda$3$lambda$2(RealWebSocket.this, nanos));
                     }
-                }, nanos);
+                });
             }
             if (!this.messageAndCloseQueue.isEmpty()) {
                 runWriter();
@@ -240,11 +247,34 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
         this.reader = new WebSocketReader(streams.getClient(), streams.getSource(), this, webSocketExtensions.perMessageDeflate, webSocketExtensions.noContextTakeover(!streams.getClient()));
     }
 
-    public final void loopReader() throws IOException {
-        while (this.receivedCloseCode == -1) {
-            WebSocketReader webSocketReader = this.reader;
-            Intrinsics.checkNotNull(webSocketReader);
-            webSocketReader.processNextFrame();
+    /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
+        java.lang.NullPointerException
+        */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final long initReaderAndWriter$lambda$3$lambda$2(okhttp3.internal.ws.RealWebSocket r0, long r1) {
+        /*
+            r0.writePingFrame$okhttp()
+            return r1
+        */
+        throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.ws.RealWebSocket.initReaderAndWriter$lambda$3$lambda$2(okhttp3.internal.ws.RealWebSocket, long):long");
+    }
+
+    public final void loopReader(Response response) throws IOException {
+        Intrinsics.checkNotNullParameter(response, "response");
+        try {
+            try {
+                this.listener.onOpen(this, response);
+                while (this.receivedCloseCode == -1) {
+                    WebSocketReader webSocketReader = this.reader;
+                    Intrinsics.checkNotNull(webSocketReader);
+                    webSocketReader.processNextFrame();
+                }
+            } catch (Exception e) {
+                failWebSocket$default(this, e, null, false, 6, null);
+                finishReader();
+            }
+        } finally {
+            finishReader();
         }
     }
 
@@ -255,14 +285,57 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
             webSocketReader.processNextFrame();
             return this.receivedCloseCode == -1;
         } catch (Exception e) {
-            failWebSocket(e, null);
+            failWebSocket$default(this, e, null, false, 6, null);
             return false;
         }
     }
 
-    public final void awaitTermination(long j, TimeUnit timeUnit) throws InterruptedException {
-        Intrinsics.checkNotNullParameter(timeUnit, "timeUnit");
-        this.taskQueue.idleLatch().await(j, timeUnit);
+    public final void finishReader() {
+        boolean z;
+        int i;
+        String str;
+        WebSocketReader webSocketReader;
+        Streams streams;
+        synchronized (this) {
+            z = this.failed;
+            i = this.receivedCloseCode;
+            str = this.receivedCloseReason;
+            webSocketReader = this.reader;
+            this.reader = null;
+            if (this.enqueuedClose && this.messageAndCloseQueue.isEmpty()) {
+                final WebSocketWriter webSocketWriter = this.writer;
+                if (webSocketWriter != null) {
+                    this.writer = null;
+                    TaskQueue.execute$default(this.taskQueue, this.name + " writer close", 0L, false, new Function0() { // from class: okhttp3.internal.ws.RealWebSocket$$ExternalSyntheticLambda1
+                        @Override // kotlin.jvm.functions.Function0
+                        public final Object invoke() {
+                            Unit finishReader$lambda$5$lambda$4;
+                            finishReader$lambda$5$lambda$4 = RealWebSocket.finishReader$lambda$5$lambda$4(WebSocketWriter.this);
+                            return finishReader$lambda$5$lambda$4;
+                        }
+                    }, 2, null);
+                }
+                this.taskQueue.shutdown();
+            }
+            streams = this.writer == null ? this.streams : null;
+            Unit unit = Unit.INSTANCE;
+        }
+        if (!z && streams != null && this.receivedCloseCode != -1) {
+            Intrinsics.checkNotNull(str);
+            this.listener.onClosed(this, i, str);
+        }
+        if (webSocketReader != null) {
+            _UtilCommonKt.closeQuietly(webSocketReader);
+        }
+        if (streams != null) {
+            _UtilCommonKt.closeQuietly(streams);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit finishReader$lambda$5$lambda$4(WebSocketWriter webSocketWriter) {
+        _UtilCommonKt.closeQuietly(webSocketWriter);
+        return Unit.INSTANCE;
     }
 
     public final void tearDown() throws InterruptedException {
@@ -313,9 +386,6 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
 
     @Override // okhttp3.internal.ws.WebSocketReader.FrameCallback
     public void onReadClose(int i, String reason) {
-        Streams streams;
-        WebSocketReader webSocketReader;
-        WebSocketWriter webSocketWriter;
         Intrinsics.checkNotNullParameter(reason, "reason");
         if (i == -1) {
             throw new IllegalArgumentException("Failed requirement.".toString());
@@ -326,48 +396,9 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
             }
             this.receivedCloseCode = i;
             this.receivedCloseReason = reason;
-            streams = null;
-            if (this.enqueuedClose && this.messageAndCloseQueue.isEmpty()) {
-                Streams streams2 = this.streams;
-                this.streams = null;
-                webSocketReader = this.reader;
-                this.reader = null;
-                webSocketWriter = this.writer;
-                this.writer = null;
-                this.taskQueue.shutdown();
-                streams = streams2;
-            } else {
-                webSocketReader = null;
-                webSocketWriter = null;
-            }
             Unit unit = Unit.INSTANCE;
         }
-        try {
-            this.listener.onClosing(this, i, reason);
-            if (streams != null) {
-                this.listener.onClosed(this, i, reason);
-            }
-            if (streams != null) {
-                Util.closeQuietly(streams);
-            }
-            if (webSocketReader != null) {
-                Util.closeQuietly(webSocketReader);
-            }
-            if (webSocketWriter != null) {
-                Util.closeQuietly(webSocketWriter);
-            }
-        } catch (Throwable th) {
-            if (streams != null) {
-                Util.closeQuietly(streams);
-            }
-            if (webSocketReader != null) {
-                Util.closeQuietly(webSocketReader);
-            }
-            if (webSocketWriter != null) {
-                Util.closeQuietly(webSocketWriter);
-            }
-            throw th;
-        }
+        this.listener.onClosing(this, i, reason);
     }
 
     @Override // okhttp3.WebSocket
@@ -408,7 +439,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
 
     @Override // okhttp3.WebSocket
     public boolean close(int i, String str) {
-        return close(i, str, 60000L);
+        return close(i, str, this.webSocketCloseTimeout);
     }
 
     public final synchronized boolean close(int i, String str, long j) {
@@ -431,110 +462,136 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
         return false;
     }
 
+    private final void runWriter() {
+        RealWebSocket realWebSocket = this;
+        if (!_UtilJvmKt.assertionsEnabled || Thread.holdsLock(realWebSocket)) {
+            Task task = this.writerTask;
+            if (task != null) {
+                TaskQueue.schedule$default(this.taskQueue, task, 0L, 2, null);
+                return;
+            }
+            return;
+        }
+        throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST hold lock on " + realWebSocket);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0085 A[Catch: all -> 0x00ef, TRY_ENTER, TryCatch #2 {all -> 0x00ef, blocks: (B:32:0x0085, B:33:0x008e, B:35:0x0092, B:36:0x00a2, B:38:0x00b3, B:43:0x00b8, B:45:0x00bc, B:47:0x00ce, B:54:0x00e9, B:55:0x00ee, B:37:0x00a3), top: B:69:0x0083 }] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x008e A[Catch: all -> 0x00ef, TryCatch #2 {all -> 0x00ef, blocks: (B:32:0x0085, B:33:0x008e, B:35:0x0092, B:36:0x00a2, B:38:0x00b3, B:43:0x00b8, B:45:0x00bc, B:47:0x00ce, B:54:0x00e9, B:55:0x00ee, B:37:0x00a3), top: B:69:0x0083 }] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00db  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x00e3  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final boolean writeOneFrame$okhttp() throws IOException {
-        String str;
-        WebSocketReader webSocketReader;
-        WebSocketWriter webSocketWriter;
-        int i;
         Streams streams;
+        String str;
+        int i;
+        Object obj;
         synchronized (this) {
             if (this.failed) {
                 return false;
             }
-            WebSocketWriter webSocketWriter2 = this.writer;
+            WebSocketWriter webSocketWriter = this.writer;
             ByteString poll = this.pongQueue.poll();
-            Message message = null;
-            if (poll == null) {
-                Object poll2 = this.messageAndCloseQueue.poll();
-                if (poll2 instanceof Close) {
-                    i = this.receivedCloseCode;
-                    str = this.receivedCloseReason;
-                    if (i != -1) {
-                        streams = this.streams;
-                        this.streams = null;
-                        webSocketReader = this.reader;
-                        this.reader = null;
-                        webSocketWriter = this.writer;
-                        this.writer = null;
-                        this.taskQueue.shutdown();
-                    } else {
-                        long cancelAfterCloseMillis = ((Close) poll2).getCancelAfterCloseMillis();
-                        final String str2 = this.name + " cancel";
-                        this.taskQueue.schedule(new Task(str2, true) { // from class: okhttp3.internal.ws.RealWebSocket$writeOneFrame$lambda$8$$inlined$execute$default$1
-                            @Override // okhttp3.internal.concurrent.Task
-                            public long runOnce() {
-                                this.cancel();
-                                return -1L;
-                            }
-                        }, TimeUnit.MILLISECONDS.toNanos(cancelAfterCloseMillis));
-                        streams = null;
-                        webSocketReader = null;
-                        webSocketWriter = null;
-                    }
-                } else if (poll2 == null) {
-                    return false;
-                } else {
-                    str = null;
-                    webSocketReader = null;
-                    webSocketWriter = null;
-                    i = -1;
-                    streams = null;
-                }
-                message = poll2;
-            } else {
-                str = null;
-                webSocketReader = null;
-                webSocketWriter = null;
-                i = -1;
-                streams = null;
-            }
-            Unit unit = Unit.INSTANCE;
+            Streams streams2 = null;
             try {
-                if (poll != null) {
-                    Intrinsics.checkNotNull(webSocketWriter2);
-                    webSocketWriter2.writePong(poll);
-                } else if (message instanceof Message) {
-                    Message message2 = message;
-                    Intrinsics.checkNotNull(webSocketWriter2);
-                    webSocketWriter2.writeMessageFrame(message2.getFormatOpcode(), message2.getData());
-                    synchronized (this) {
-                        this.queueSize -= message2.getData().size();
-                        Unit unit2 = Unit.INSTANCE;
-                    }
-                } else if (message instanceof Close) {
-                    Close close = (Close) message;
-                    Intrinsics.checkNotNull(webSocketWriter2);
-                    webSocketWriter2.writeClose(close.getCode(), close.getReason());
-                    if (streams != null) {
-                        Intrinsics.checkNotNull(str);
-                        this.listener.onClosed(this, i, str);
+                if (poll == null) {
+                    Object poll2 = this.messageAndCloseQueue.poll();
+                    if (poll2 instanceof Close) {
+                        int i2 = this.receivedCloseCode;
+                        str = this.receivedCloseReason;
+                        if (i2 != -1) {
+                            obj = this.writer;
+                            this.writer = null;
+                            if (obj != null && this.reader == null) {
+                                streams2 = this.streams;
+                            }
+                            this.taskQueue.shutdown();
+                            i = i2;
+                            streams = streams2;
+                            streams2 = poll2;
+                        } else {
+                            TaskQueue.execute$default(this.taskQueue, this.name + " cancel", TimeUnit.MILLISECONDS.toNanos(((Close) poll2).getCancelAfterCloseMillis()), false, new Function0() { // from class: okhttp3.internal.ws.RealWebSocket$$ExternalSyntheticLambda0
+                                @Override // kotlin.jvm.functions.Function0
+                                public final Object invoke() {
+                                    Unit writeOneFrame$lambda$10$lambda$9;
+                                    writeOneFrame$lambda$10$lambda$9 = RealWebSocket.writeOneFrame$lambda$10$lambda$9(RealWebSocket.this);
+                                    return writeOneFrame$lambda$10$lambda$9;
+                                }
+                            }, 4, null);
+                            obj = null;
+                            streams2 = poll2;
+                            i = i2;
+                            streams = null;
+                        }
+                        Unit unit = Unit.INSTANCE;
+                        if (poll == null) {
+                            Intrinsics.checkNotNull(webSocketWriter);
+                            webSocketWriter.writePong(poll);
+                        } else if (streams2 instanceof Message) {
+                            Message message = (Message) streams2;
+                            Intrinsics.checkNotNull(webSocketWriter);
+                            webSocketWriter.writeMessageFrame(message.getFormatOpcode(), message.getData());
+                            synchronized (this) {
+                                this.queueSize -= message.getData().size();
+                                Unit unit2 = Unit.INSTANCE;
+                            }
+                        } else if (streams2 instanceof Close) {
+                            Close close = (Close) streams2;
+                            Intrinsics.checkNotNull(webSocketWriter);
+                            webSocketWriter.writeClose(close.getCode(), close.getReason());
+                            if (streams != null) {
+                                Intrinsics.checkNotNull(str);
+                                this.listener.onClosed(this, i, str);
+                            }
+                        } else {
+                            throw new AssertionError();
+                        }
+                        if (obj != null) {
+                            _UtilCommonKt.closeQuietly((Closeable) obj);
+                        }
+                        if (streams != null) {
+                            _UtilCommonKt.closeQuietly(streams);
+                        }
+                        return true;
+                    } else if (poll2 == null) {
+                        return false;
+                    } else {
+                        streams = null;
+                        str = null;
+                        streams2 = poll2;
                     }
                 } else {
-                    throw new AssertionError();
+                    streams = null;
+                    str = null;
+                }
+                if (poll == null) {
+                }
+                if (obj != null) {
                 }
                 if (streams != null) {
-                    Util.closeQuietly(streams);
-                }
-                if (webSocketReader != null) {
-                    Util.closeQuietly(webSocketReader);
-                }
-                if (webSocketWriter != null) {
-                    Util.closeQuietly(webSocketWriter);
                 }
                 return true;
             } catch (Throwable th) {
+                WebSocketWriter webSocketWriter2 = (WebSocketWriter) obj;
+                if (obj != null) {
+                    _UtilCommonKt.closeQuietly((Closeable) obj);
+                }
                 if (streams != null) {
-                    Util.closeQuietly(streams);
-                }
-                if (webSocketReader != null) {
-                    Util.closeQuietly(webSocketReader);
-                }
-                if (webSocketWriter != null) {
-                    Util.closeQuietly(webSocketWriter);
+                    _UtilCommonKt.closeQuietly(streams);
                 }
                 throw th;
             }
+            i = -1;
+            obj = str;
+            Unit unit3 = Unit.INSTANCE;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit writeOneFrame$lambda$10$lambda$9(RealWebSocket realWebSocket) {
+        realWebSocket.cancel();
+        return Unit.INSTANCE;
     }
 
     public final void writePingFrame$okhttp() {
@@ -551,60 +608,105 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
             this.awaitingPong = true;
             Unit unit = Unit.INSTANCE;
             if (i != -1) {
-                failWebSocket(new SocketTimeoutException("sent ping but didn't receive pong within " + this.pingIntervalMillis + "ms (after " + (i - 1) + " successful ping/pongs)"), null);
+                failWebSocket$default(this, new SocketTimeoutException("sent ping but didn't receive pong within " + this.pingIntervalMillis + "ms (after " + (i - 1) + " successful ping/pongs)"), null, true, 2, null);
                 return;
             }
             try {
                 webSocketWriter.writePing(ByteString.EMPTY);
             } catch (IOException e) {
-                failWebSocket(e, null);
+                failWebSocket$default(this, e, null, true, 2, null);
             }
         }
     }
 
-    public final void failWebSocket(Exception e, Response response) {
+    public static /* synthetic */ void failWebSocket$default(RealWebSocket realWebSocket, Exception exc, Response response, boolean z, int i, Object obj) {
+        if ((i & 2) != 0) {
+            response = null;
+        }
+        if ((i & 4) != 0) {
+            z = false;
+        }
+        realWebSocket.failWebSocket(exc, response, z);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v4, types: [T, okhttp3.internal.ws.WebSocketWriter] */
+    public final void failWebSocket(Exception e, Response response, boolean z) {
         Intrinsics.checkNotNullParameter(e, "e");
+        final Ref.ObjectRef objectRef = new Ref.ObjectRef();
+        final Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
         synchronized (this) {
             if (this.failed) {
                 return;
             }
             this.failed = true;
             Streams streams = this.streams;
-            this.streams = null;
-            WebSocketReader webSocketReader = this.reader;
-            this.reader = null;
-            WebSocketWriter webSocketWriter = this.writer;
+            objectRef2.element = this.writer;
+            T t = 0;
+            t = 0;
             this.writer = null;
+            if (objectRef2.element != 0 && this.reader == null) {
+                t = this.streams;
+            }
+            objectRef.element = t;
+            if (!z && objectRef2.element != 0) {
+                TaskQueue.execute$default(this.taskQueue, this.name + " writer close", 0L, false, new Function0() { // from class: okhttp3.internal.ws.RealWebSocket$$ExternalSyntheticLambda2
+                    @Override // kotlin.jvm.functions.Function0
+                    public final Object invoke() {
+                        Unit failWebSocket$lambda$14$lambda$13;
+                        failWebSocket$lambda$14$lambda$13 = RealWebSocket.failWebSocket$lambda$14$lambda$13(Ref.ObjectRef.this, objectRef);
+                        return failWebSocket$lambda$14$lambda$13;
+                    }
+                }, 2, null);
+            }
             this.taskQueue.shutdown();
             Unit unit = Unit.INSTANCE;
             try {
                 this.listener.onFailure(this, e, response);
                 if (streams != null) {
-                    Util.closeQuietly(streams);
+                    streams.cancel();
                 }
-                if (webSocketReader != null) {
-                    Util.closeQuietly(webSocketReader);
-                }
-                if (webSocketWriter != null) {
-                    Util.closeQuietly(webSocketWriter);
+                if (z) {
+                    WebSocketWriter webSocketWriter = (WebSocketWriter) objectRef2.element;
+                    if (webSocketWriter != null) {
+                        _UtilCommonKt.closeQuietly(webSocketWriter);
+                    }
+                    Streams streams2 = (Streams) objectRef.element;
+                    if (streams2 != null) {
+                        _UtilCommonKt.closeQuietly(streams2);
+                    }
                 }
             } catch (Throwable th) {
                 if (streams != null) {
-                    Util.closeQuietly(streams);
+                    streams.cancel();
                 }
-                if (webSocketReader != null) {
-                    Util.closeQuietly(webSocketReader);
-                }
-                if (webSocketWriter != null) {
-                    Util.closeQuietly(webSocketWriter);
+                if (z) {
+                    WebSocketWriter webSocketWriter2 = (WebSocketWriter) objectRef2.element;
+                    if (webSocketWriter2 != null) {
+                        _UtilCommonKt.closeQuietly(webSocketWriter2);
+                    }
+                    Streams streams3 = (Streams) objectRef.element;
+                    if (streams3 != null) {
+                        _UtilCommonKt.closeQuietly(streams3);
+                    }
                 }
                 throw th;
             }
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit failWebSocket$lambda$14$lambda$13(Ref.ObjectRef objectRef, Ref.ObjectRef objectRef2) {
+        _UtilCommonKt.closeQuietly((Closeable) objectRef.element);
+        Streams streams = (Streams) objectRef2.element;
+        if (streams != null) {
+            _UtilCommonKt.closeQuietly(streams);
+        }
+        return Unit.INSTANCE;
+    }
+
     /* compiled from: RealWebSocket.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0000\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0002\u0010\u0006R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"Lokhttp3/internal/ws/RealWebSocket$Message;", "", "formatOpcode", "", "data", "Lokio/ByteString;", "(ILokio/ByteString;)V", "getData", "()Lokio/ByteString;", "getFormatOpcode", "()I", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0000\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\f"}, d2 = {"Lokhttp3/internal/ws/RealWebSocket$Message;", "", "formatOpcode", "", "data", "Lokio/ByteString;", "<init>", "(ILokio/ByteString;)V", "getFormatOpcode", "()I", "getData", "()Lokio/ByteString;", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Message {
         private final ByteString data;
@@ -626,7 +728,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     }
 
     /* compiled from: RealWebSocket.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\b\b\u0000\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0002\u0010\bR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lokhttp3/internal/ws/RealWebSocket$Close;", "", "code", "", "reason", "Lokio/ByteString;", "cancelAfterCloseMillis", "", "(ILokio/ByteString;J)V", "getCancelAfterCloseMillis", "()J", "getCode", "()I", "getReason", "()Lokio/ByteString;", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\t\b\u0000\u0018\u00002\u00020\u0001B!\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000f¨\u0006\u0010"}, d2 = {"Lokhttp3/internal/ws/RealWebSocket$Close;", "", "code", "", "reason", "Lokio/ByteString;", "cancelAfterCloseMillis", "", "<init>", "(ILokio/ByteString;J)V", "getCode", "()I", "getReason", "()Lokio/ByteString;", "getCancelAfterCloseMillis", "()J", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Close {
         private final long cancelAfterCloseMillis;
@@ -653,12 +755,14 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     }
 
     /* compiled from: RealWebSocket.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\b&\u0018\u00002\u00020\u0001B\u001d\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0002\u0010\bR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lokhttp3/internal/ws/RealWebSocket$Streams;", "Ljava/io/Closeable;", "client", "", "source", "Lokio/BufferedSource;", "sink", "Lokio/BufferedSink;", "(ZLokio/BufferedSource;Lokio/BufferedSink;)V", "getClient", "()Z", "getSink", "()Lokio/BufferedSink;", "getSource", "()Lokio/BufferedSource;", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0002\n\u0000\b&\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\b\u0010\u0010\u001a\u00020\u0011H&R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000f¨\u0006\u0012"}, d2 = {"Lokhttp3/internal/ws/RealWebSocket$Streams;", "Ljava/io/Closeable;", "client", "", "source", "Lokio/BufferedSource;", "sink", "Lokio/BufferedSink;", "<init>", "(ZLokio/BufferedSource;Lokio/BufferedSink;)V", "getClient", "()Z", "getSource", "()Lokio/BufferedSource;", "getSink", "()Lokio/BufferedSink;", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static abstract class Streams implements Closeable {
         private final boolean client;
         private final BufferedSink sink;
         private final BufferedSource source;
+
+        public abstract void cancel();
 
         public Streams(boolean z, BufferedSource source, BufferedSink sink) {
             Intrinsics.checkNotNullParameter(source, "source");
@@ -682,7 +786,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     }
 
     /* compiled from: RealWebSocket.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0016¨\u0006\u0005"}, d2 = {"Lokhttp3/internal/ws/RealWebSocket$WriterTask;", "Lokhttp3/internal/concurrent/Task;", "(Lokhttp3/internal/ws/RealWebSocket;)V", "runOnce", "", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0004\u001a\u00020\u0005H\u0016¨\u0006\u0006"}, d2 = {"Lokhttp3/internal/ws/RealWebSocket$WriterTask;", "Lokhttp3/internal/concurrent/Task;", "<init>", "(Lokhttp3/internal/ws/RealWebSocket;)V", "runOnce", "", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     private final class WriterTask extends Task {
         public WriterTask() {
@@ -694,14 +798,14 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
             try {
                 return RealWebSocket.this.writeOneFrame$okhttp() ? 0L : -1L;
             } catch (IOException e) {
-                RealWebSocket.this.failWebSocket(e, null);
+                RealWebSocket.failWebSocket$default(RealWebSocket.this, e, null, true, 2, null);
                 return -1L;
             }
         }
     }
 
     /* compiled from: RealWebSocket.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u0014\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\n"}, d2 = {"Lokhttp3/internal/ws/RealWebSocket$Companion;", "", "()V", "CANCEL_AFTER_CLOSE_MILLIS", "", "DEFAULT_MINIMUM_DEFLATE_SIZE", "MAX_QUEUE_SIZE", "ONLY_HTTP1", "", "Lokhttp3/Protocol;", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lokhttp3/internal/ws/RealWebSocket$Companion;", "", "<init>", "()V", "ONLY_HTTP1", "", "Lokhttp3/Protocol;", "MAX_QUEUE_SIZE", "", "CANCEL_AFTER_CLOSE_MILLIS", "DEFAULT_MINIMUM_DEFLATE_SIZE", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -710,17 +814,5 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
 
         private Companion() {
         }
-    }
-
-    private final void runWriter() {
-        if (!Util.assertionsEnabled || Thread.holdsLock(this)) {
-            Task task = this.writerTask;
-            if (task != null) {
-                TaskQueue.schedule$default(this.taskQueue, task, 0L, 2, null);
-                return;
-            }
-            return;
-        }
-        throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST hold lock on " + this);
     }
 }

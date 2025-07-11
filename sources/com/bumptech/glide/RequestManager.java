@@ -86,7 +86,7 @@ public class RequestManager implements ComponentCallbacks2, LifecycleListener, M
     }
 
     protected synchronized void setRequestOptions(RequestOptions requestOptions) {
-        this.requestOptions = requestOptions.mo8057clone().autoClone();
+        this.requestOptions = requestOptions.mo8056clone().autoClone();
     }
 
     private synchronized void updateRequestOptions(RequestOptions requestOptions) {

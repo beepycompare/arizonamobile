@@ -7,13 +7,13 @@ import java.util.ArrayList;
 public final class Ao {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f343a = new ArrayList();
+    public final ArrayList f344a = new ArrayList();
     public PublicLogger b;
 
     public final synchronized void a(Consumer consumer) {
         PublicLogger publicLogger = this.b;
         if (publicLogger == null) {
-            this.f343a.add(consumer);
+            this.f344a.add(consumer);
         } else {
             consumer.consume(publicLogger);
         }

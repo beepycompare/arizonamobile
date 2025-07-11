@@ -6,10 +6,13 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NewsPrefRepository.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.news.data.store.NewsPrefRepository", f = "NewsPrefRepository.kt", i = {}, l = {43}, m = "getCache", n = {}, s = {})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.news.data.store.NewsPrefRepository", f = "NewsPrefRepository.kt", i = {0, 0, 0}, l = {43}, m = "getCache", n = {"$this$getSuspend$iv", "key$iv", "$i$f$getSuspend"}, s = {"L$0", "L$1", "I$0"})
 /* loaded from: classes4.dex */
 public final class NewsPrefRepository$getCache$1 extends ContinuationImpl {
+    int I$0;
+    Object L$0;
+    Object L$1;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ NewsPrefRepository this$0;

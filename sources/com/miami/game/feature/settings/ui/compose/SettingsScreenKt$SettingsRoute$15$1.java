@@ -8,9 +8,9 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SettingsScreen.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
-/* synthetic */ class SettingsScreenKt$SettingsRoute$15$1 extends FunctionReferenceImpl implements Function1<ConnectionData, Unit> {
+final /* synthetic */ class SettingsScreenKt$SettingsRoute$15$1 extends FunctionReferenceImpl implements Function1<ConnectionData, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public SettingsScreenKt$SettingsRoute$15$1(Object obj) {
         super(1, obj, SettingsComponent.class, "onConnectGame", "onConnectGame(Lcom/miami/game/feature/download/dialog/ui/connection/ConnectionData;)V", 0);

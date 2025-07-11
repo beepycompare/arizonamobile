@@ -17,14 +17,14 @@ public final class CrashlyticsNativeComponentDeferredProxy implements Crashlytic
         deferred.whenAvailable(new Deferred.DeferredHandler() { // from class: com.google.firebase.crashlytics.internal.CrashlyticsNativeComponentDeferredProxy$$ExternalSyntheticLambda0
             @Override // com.google.firebase.inject.Deferred.DeferredHandler
             public final void handle(Provider provider) {
-                CrashlyticsNativeComponentDeferredProxy.this.m8225x5c12a4b9(provider);
+                CrashlyticsNativeComponentDeferredProxy.this.m8224x5c12a4b9(provider);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-firebase-crashlytics-internal-CrashlyticsNativeComponentDeferredProxy  reason: not valid java name */
-    public /* synthetic */ void m8225x5c12a4b9(Provider provider) {
+    public /* synthetic */ void m8224x5c12a4b9(Provider provider) {
         Logger.getLogger().d("Crashlytics native component now available.");
         this.availableNativeComponent.set((CrashlyticsNativeComponent) provider.get());
     }

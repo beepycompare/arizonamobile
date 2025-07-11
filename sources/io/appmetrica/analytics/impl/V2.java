@@ -34,38 +34,38 @@ public abstract class V2 implements Wa {
     public static final T2 o = new T2();
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f667a;
+    protected final Context f668a;
     protected final Qh b;
     protected final PublicLogger c;
     protected final Ln d;
     protected final Pg e;
     protected final N6 f;
-    public final C0150b0 g;
+    public final C0142b0 g;
     protected final Gi h;
     public Hb i;
     public final J6 j;
-    public final C0262fa k;
+    public final C0254fa k;
     public final Ve l;
-    public final C0173bn m;
+    public final C0165bn m;
 
-    public V2(Context context, Gi gi, Qh qh, C0262fa c0262fa, J6 j6, Ln ln, Pg pg, N6 n6, C0150b0 c0150b0, Ve ve) {
+    public V2(Context context, Gi gi, Qh qh, C0254fa c0254fa, J6 j6, Ln ln, Pg pg, N6 n6, C0142b0 c0142b0, Ve ve) {
         Context applicationContext = context.getApplicationContext();
-        this.f667a = applicationContext;
+        this.f668a = applicationContext;
         this.h = gi;
         this.b = qh;
-        this.k = c0262fa;
+        this.k = c0254fa;
         this.d = ln;
         this.e = pg;
         this.f = n6;
-        this.g = c0150b0;
+        this.g = c0142b0;
         this.l = ve;
         PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(qh.b().getApiKey());
         this.c = orCreatePublicLogger;
-        if (AbstractC0628u3.a(qh.b().isLogEnabled())) {
+        if (AbstractC0620u3.a(qh.b().isLogEnabled())) {
             orCreatePublicLogger.setEnabled(true);
         }
         this.j = j6;
-        this.m = new C0173bn(applicationContext);
+        this.m = new C0165bn(applicationContext);
     }
 
     public void a(String str, String str2) {
@@ -77,7 +77,7 @@ public abstract class V2 implements Wa {
         Qh qh = this.b;
         synchronized (qh) {
             T8 t8 = qh.c;
-            t8.b.b(t8.f637a, str, str2);
+            t8.b.b(t8.f638a, str, str2);
         }
     }
 
@@ -96,16 +96,16 @@ public abstract class V2 implements Wa {
         }
         this.h.d.c();
         Hb hb = this.i;
-        hb.f459a.removeCallbacks(hb.c, hb.b.b.b.getApiKey());
+        hb.f460a.removeCallbacks(hb.c, hb.b.b.b.getApiKey());
         this.b.e = true;
         Gi gi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4("", str, 3, 0, publicLogger);
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4("", str, 3, 0, publicLogger);
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -115,8 +115,8 @@ public abstract class V2 implements Wa {
         Gi gi = this.h;
         Qh qh = this.b;
         gi.getClass();
-        C0333i6 n2 = C0331i4.n();
-        Nf nf = new Nf(qh.f796a);
+        C0325i6 n2 = C0323i4.n();
+        Nf nf = new Nf(qh.f797a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(qh.b);
         T8 t8 = qh.c;
         synchronized (qh) {
@@ -128,15 +128,15 @@ public abstract class V2 implements Wa {
     public final void d(String str) {
         this.h.d.b();
         Hb hb = this.i;
-        Hb.a(hb.f459a, hb.b, hb.c);
+        Hb.a(hb.f460a, hb.b, hb.c);
         Gi gi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4("", str, 6400, 0, publicLogger);
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4("", str, 6400, 0, publicLogger);
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
         this.b.e = false;
     }
 
@@ -160,19 +160,19 @@ public abstract class V2 implements Wa {
             str = qh.f;
         }
         PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(qh.b.getApiKey());
-        Set set = O9.f564a;
+        Set set = O9.f565a;
         JSONObject jSONObject = new JSONObject();
-        if (gf != null && (cf = gf.f444a) != null) {
+        if (gf != null && (cf = gf.f445a) != null) {
             try {
                 jSONObject.put("preloadInfo", cf.c());
             } catch (Throwable unused) {
             }
         }
         String jSONObject2 = jSONObject.toString();
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4(jSONObject2, "", 6144, 0, orCreatePublicLogger);
-        c0331i4.c(str);
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4(jSONObject2, "", 6144, 0, orCreatePublicLogger);
+        c0323i4.c(str);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -192,8 +192,8 @@ public abstract class V2 implements Wa {
         Gi gi = this.h;
         Qh qh = this.b;
         gi.getClass();
-        C0333i6 b = C0331i4.b(str, str2);
-        Nf nf = new Nf(qh.f796a);
+        C0325i6 b = C0323i4.b(str, str2);
+        Nf nf = new Nf(qh.f797a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(qh.b);
         T8 t8 = qh.c;
         synchronized (qh) {
@@ -210,13 +210,13 @@ public abstract class V2 implements Wa {
     @Override // io.appmetrica.analytics.IReporter
     public final void reportAnr(Map<Thread, StackTraceElement[]> map) {
         StackTraceElement[] stackTraceElementArr;
-        C0176c0 c0176c0 = new C0176c0(new C0202d0(this, map));
+        C0168c0 c0168c0 = new C0168c0(new C0194d0(this, map));
         Ea ea = new Ea();
-        J6 j6 = C0704x4.l().f1116a;
-        Thread a2 = c0176c0.a();
+        J6 j6 = C0696x4.l().f1117a;
+        Thread a2 = c0168c0.a();
         Map map2 = null;
         try {
-            stackTraceElementArr = c0176c0.b();
+            stackTraceElementArr = c0168c0.b();
             if (stackTraceElementArr == null) {
                 try {
                     stackTraceElementArr = a2.getStackTrace();
@@ -226,11 +226,11 @@ public abstract class V2 implements Wa {
         } catch (SecurityException unused2) {
             stackTraceElementArr = null;
         }
-        C0549qn c0549qn = (C0549qn) ea.apply(a2, stackTraceElementArr);
+        C0541qn c0541qn = (C0541qn) ea.apply(a2, stackTraceElementArr);
         ArrayList arrayList = new ArrayList();
-        TreeMap treeMap = new TreeMap(new C0673vn());
+        TreeMap treeMap = new TreeMap(new C0665vn());
         try {
-            map2 = c0176c0.c();
+            map2 = c0168c0.c();
         } catch (SecurityException unused3) {
         }
         if (map2 != null) {
@@ -239,10 +239,10 @@ public abstract class V2 implements Wa {
         for (Map.Entry entry : treeMap.entrySet()) {
             Thread thread = (Thread) entry.getKey();
             if (thread != a2 && thread != null) {
-                arrayList.add((C0549qn) ea.apply(thread, (StackTraceElement[]) entry.getValue()));
+                arrayList.add((C0541qn) ea.apply(thread, (StackTraceElement[]) entry.getValue()));
             }
         }
-        a(new U(c0549qn, arrayList, j6.b()));
+        a(new U(c0541qn, arrayList, j6.b()));
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -253,18 +253,18 @@ public abstract class V2 implements Wa {
         Qh qh = this.b;
         gi.getClass();
         for (Ni ni : eCommerceEvent.toProto()) {
-            C0331i4 c0331i4 = new C0331i4(LoggerStorage.getOrCreatePublicLogger(qh.b.getApiKey()));
-            EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-            c0331i4.d = 41000;
-            c0331i4.b = c0331i4.e(Base64Utils.compressBase64(MessageNano.toByteArray((MessageNano) ni.f556a)));
-            c0331i4.g = ni.b.getBytesTruncated();
-            Nf nf = new Nf(qh.f796a);
+            C0323i4 c0323i4 = new C0323i4(LoggerStorage.getOrCreatePublicLogger(qh.b.getApiKey()));
+            EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+            c0323i4.d = 41000;
+            c0323i4.b = c0323i4.e(Base64Utils.compressBase64(MessageNano.toByteArray((MessageNano) ni.f557a)));
+            c0323i4.g = ni.b.getBytesTruncated();
+            Nf nf = new Nf(qh.f797a);
             CounterConfiguration counterConfiguration = new CounterConfiguration(qh.b);
             T8 t8 = qh.c;
             synchronized (qh) {
                 str = qh.f;
             }
-            gi.a(new Gh(c0331i4, false, 1, null, new Qh(nf, counterConfiguration, t8, str)));
+            gi.a(new Gh(c0323i4, false, 1, null, new Qh(nf, counterConfiguration, t8, str)));
         }
     }
 
@@ -274,12 +274,12 @@ public abstract class V2 implements Wa {
         Gi gi = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.e.fromModel(og));
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4(byteArray, str, 5892, publicLogger);
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4(byteArray, str, 5892, publicLogger);
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
         this.c.info("Error received: %s", WrapUtils.wrapToTag(str));
     }
 
@@ -288,27 +288,27 @@ public abstract class V2 implements Wa {
         this.c.info("Event received: " + WrapUtils.wrapToTag(str), new Object[0]);
         Gi gi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4("", str, 1, 0, publicLogger);
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4("", str, 1, 0, publicLogger);
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportRevenue(Revenue revenue) {
         String str;
-        Xi xi = U2.f651a;
+        Xi xi = U2.f652a;
         xi.getClass();
         ko a2 = xi.a(revenue);
-        if (a2.f912a) {
+        if (a2.f913a) {
             Gi gi = this.h;
             Yi yi = new Yi(revenue, this.c);
             Qh qh = this.b;
             gi.getClass();
-            C0331i4 a3 = C0331i4.a(LoggerStorage.getOrCreatePublicLogger(qh.b.getApiKey()), yi);
-            Nf nf = new Nf(qh.f796a);
+            C0323i4 a3 = C0323i4.a(LoggerStorage.getOrCreatePublicLogger(qh.b.getApiKey()), yi);
+            Nf nf = new Nf(qh.f797a);
             CounterConfiguration counterConfiguration = new CounterConfiguration(qh.b);
             T8 t8 = qh.c;
             synchronized (qh) {
@@ -339,21 +339,21 @@ public abstract class V2 implements Wa {
             ((Nd) userProfileUpdatePatcher).e = this.c;
             userProfileUpdatePatcher.a(xn);
         }
-        C0200co c0200co = new C0200co();
+        C0192co c0192co = new C0192co();
         ArrayList arrayList = new ArrayList();
-        for (int i = 0; i < xn.f711a.size(); i++) {
-            SparseArray sparseArray = xn.f711a;
+        for (int i = 0; i < xn.f712a.size(); i++) {
+            SparseArray sparseArray = xn.f712a;
             for (Zn zn : ((HashMap) sparseArray.get(sparseArray.keyAt(i))).values()) {
                 arrayList.add(zn);
             }
         }
-        c0200co.f790a = (Zn[]) arrayList.toArray(new Zn[arrayList.size()]);
-        if (o.a(c0200co).f912a) {
+        c0192co.f791a = (Zn[]) arrayList.toArray(new Zn[arrayList.size()]);
+        if (o.a(c0192co).f913a) {
             Gi gi = this.h;
             Qh qh = this.b;
             gi.getClass();
-            C0333i6 a3 = C0331i4.a(c0200co);
-            Nf nf = new Nf(qh.f796a);
+            C0325i6 a3 = C0323i4.a(c0192co);
+            Nf nf = new Nf(qh.f797a);
             CounterConfiguration counterConfiguration = new CounterConfiguration(qh.b);
             T8 t8 = qh.c;
             synchronized (qh) {
@@ -376,13 +376,13 @@ public abstract class V2 implements Wa {
     public final void sendEventsBuffer() {
         this.c.info("Send event buffer", new Object[0]);
         Gi gi = this.h;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        C0331i4 c0331i4 = new C0331i4("", "", 256, 0, publicLogger);
+        Set set = O9.f565a;
+        C0323i4 c0323i4 = new C0323i4("", "", 256, 0, publicLogger);
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -395,16 +395,16 @@ public abstract class V2 implements Wa {
     public final void setSessionExtra(String str, byte[] bArr) {
         Gi gi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4("", null, 8193, 0, publicLogger);
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4("", null, 8193, 0, publicLogger);
         if (bArr == null) {
             bArr = new byte[0];
         }
-        c0331i4.p = Collections.singletonMap(str, bArr);
+        c0323i4.p = Collections.singletonMap(str, bArr);
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -413,18 +413,18 @@ public abstract class V2 implements Wa {
         Gi gi = this.h;
         Qh qh = this.b;
         gi.getClass();
-        C0331i4 c0331i4 = new C0331i4(LoggerStorage.getOrCreatePublicLogger(qh.b.getApiKey()));
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        c0331i4.d = 40962;
-        c0331i4.c(str);
-        c0331i4.b = c0331i4.e(str);
-        Nf nf = new Nf(qh.f796a);
+        C0323i4 c0323i4 = new C0323i4(LoggerStorage.getOrCreatePublicLogger(qh.b.getApiKey()));
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        c0323i4.d = 40962;
+        c0323i4.c(str);
+        c0323i4.b = c0323i4.e(str);
+        Nf nf = new Nf(qh.f797a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(qh.b);
         T8 t8 = qh.c;
         synchronized (qh) {
             str2 = qh.f;
         }
-        gi.a(new Gh(c0331i4, false, 1, null, new Qh(nf, counterConfiguration, t8, str2)));
+        gi.a(new Gh(c0323i4, false, 1, null, new Qh(nf, counterConfiguration, t8, str2)));
         this.c.info("Set user profile ID: " + WrapUtils.wrapToTag(str), new Object[0]);
     }
 
@@ -435,15 +435,15 @@ public abstract class V2 implements Wa {
         D d = new D(adRevenue, z, this.m, this.c);
         Qh qh = this.b;
         gi.getClass();
-        C0331i4 a2 = C0331i4.a(LoggerStorage.getOrCreatePublicLogger(qh.b.getApiKey()), d);
-        Nf nf = new Nf(qh.f796a);
+        C0323i4 a2 = C0323i4.a(LoggerStorage.getOrCreatePublicLogger(qh.b.getApiKey()), d);
+        Nf nf = new Nf(qh.f797a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(qh.b);
         T8 t8 = qh.c;
         synchronized (qh) {
             str = qh.f;
         }
         gi.a(new Gh(a2, false, 1, null, new Qh(nf, counterConfiguration, t8, str)));
-        this.c.info("AdRevenue Received: AdRevenue{adRevenue=" + adRevenue.adRevenue + ", currency='" + WrapUtils.wrapToTag(adRevenue.currency.getCurrencyCode()) + "', adType=" + WrapUtils.wrapToTag(adRevenue.adType) + ", adNetwork='" + WrapUtils.wrapToTag(adRevenue.adNetwork) + "', adUnitId='" + WrapUtils.wrapToTag(adRevenue.adUnitId) + "', adUnitName='" + WrapUtils.wrapToTag(adRevenue.adUnitName) + "', adPlacementId='" + WrapUtils.wrapToTag(adRevenue.adPlacementId) + "', adPlacementName='" + WrapUtils.wrapToTag(adRevenue.adPlacementName) + "', precision='" + WrapUtils.wrapToTag(adRevenue.precision) + "', payload=" + AbstractC0761zb.b(adRevenue.payload) + ", autoCollected=" + z + "}", new Object[0]);
+        this.c.info("AdRevenue Received: AdRevenue{adRevenue=" + adRevenue.adRevenue + ", currency='" + WrapUtils.wrapToTag(adRevenue.currency.getCurrencyCode()) + "', adType=" + WrapUtils.wrapToTag(adRevenue.adType) + ", adNetwork='" + WrapUtils.wrapToTag(adRevenue.adNetwork) + "', adUnitId='" + WrapUtils.wrapToTag(adRevenue.adUnitId) + "', adUnitName='" + WrapUtils.wrapToTag(adRevenue.adUnitName) + "', adPlacementId='" + WrapUtils.wrapToTag(adRevenue.adPlacementId) + "', adPlacementName='" + WrapUtils.wrapToTag(adRevenue.adPlacementName) + "', precision='" + WrapUtils.wrapToTag(adRevenue.precision) + "', payload=" + AbstractC0753zb.b(adRevenue.payload) + ", autoCollected=" + z + "}", new Object[0]);
     }
 
     @Override // io.appmetrica.analytics.impl.Wa
@@ -451,13 +451,13 @@ public abstract class V2 implements Wa {
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(str2), new Object[0]);
         Gi gi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4(str2, str, 1, 0, publicLogger);
-        c0331i4.l = E9.JS;
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4(str2, str, 1, 0, publicLogger);
+        c0323i4.l = E9.JS;
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
     }
 
     public final void a(Map<String, String> map) {
@@ -474,12 +474,12 @@ public abstract class V2 implements Wa {
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(str2), new Object[0]);
         Gi gi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4(str2, str, 1, 0, publicLogger);
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4(str2, str, 1, 0, publicLogger);
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -509,12 +509,12 @@ public abstract class V2 implements Wa {
         Gi gi = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.f.fromModel(m6));
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4(byteArray, str2, 5896, publicLogger);
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4(byteArray, str2, 5896, publicLogger);
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
         this.c.info("Error received: id: %s, message: %s", WrapUtils.wrapToTag(str), WrapUtils.wrapToTag(str2));
     }
 
@@ -527,16 +527,16 @@ public abstract class V2 implements Wa {
     public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
         Kn a2 = this.l.a(pluginErrorDetails);
         Gi gi = this.h;
-        An an = a2.f509a;
-        String str = an != null ? (String) WrapUtils.getOrDefault(an.f342a, "") : "";
+        An an = a2.f510a;
+        String str = an != null ? (String) WrapUtils.getOrDefault(an.f343a, "") : "";
         byte[] byteArray = MessageNano.toByteArray(this.d.fromModel(a2));
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4(byteArray, str, 5891, publicLogger);
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4(byteArray, str, 5891, publicLogger);
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
         this.c.info("Crash from plugin received: %s", WrapUtils.wrapToTag(pluginErrorDetails.getMessage()));
     }
 
@@ -544,13 +544,13 @@ public abstract class V2 implements Wa {
     public final void reportEvent(String str, Map<String, Object> map) {
         Gi gi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        gi.a(new C0331i4("", str, 1, 0, publicLogger), this.b, 1, map);
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        gi.a(new C0323i4("", str, 1, 0, publicLogger), this.b, 1, map);
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(map == null ? null : map.toString()), new Object[0]);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0387kb, io.appmetrica.analytics.impl.InterfaceC0462nb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0379kb, io.appmetrica.analytics.impl.InterfaceC0454nb
     public final void a(Kn kn) {
         Gi gi = this.h;
         Gh a2 = gi.a(kn, this.b);
@@ -579,12 +579,12 @@ public abstract class V2 implements Wa {
         Gi gi = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.e.fromModel(og));
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4(byteArray, str, 5896, publicLogger);
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4(byteArray, str, 5896, publicLogger);
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
         this.c.info("Error from plugin received: %s", WrapUtils.wrapToTag(str));
     }
 
@@ -595,12 +595,12 @@ public abstract class V2 implements Wa {
             return;
         }
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
+        Set set = O9.f565a;
         String value = moduleEvent.getValue();
         String name = moduleEvent.getName();
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4(value, name, 8192, moduleEvent.getType(), publicLogger);
-        int i = U8.f655a[moduleEvent.getCategory().ordinal()];
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4(value, name, 8192, moduleEvent.getType(), publicLogger);
+        int i = U8.f656a[moduleEvent.getCategory().ordinal()];
         if (i == 1) {
             e9 = E9.NATIVE;
         } else if (i != 2) {
@@ -608,30 +608,30 @@ public abstract class V2 implements Wa {
         } else {
             e9 = E9.SYSTEM;
         }
-        c0331i4.l = e9;
-        c0331i4.c = AbstractC0761zb.b(moduleEvent.getEnvironment());
+        c0323i4.l = e9;
+        c0323i4.c = AbstractC0753zb.b(moduleEvent.getEnvironment());
         if (moduleEvent.getExtras() != null) {
-            c0331i4.p = moduleEvent.getExtras();
+            c0323i4.p = moduleEvent.getExtras();
         }
-        this.h.a(c0331i4, this.b, moduleEvent.getServiceDataReporterType(), moduleEvent.getAttributes());
+        this.h.a(c0323i4, this.b, moduleEvent.getServiceDataReporterType(), moduleEvent.getAttributes());
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0387kb, io.appmetrica.analytics.impl.InterfaceC0227e0
+    @Override // io.appmetrica.analytics.impl.InterfaceC0379kb, io.appmetrica.analytics.impl.InterfaceC0219e0
     public final void a(U u) {
-        C0124a0 c0124a0 = new C0124a0(u, (String) this.k.b.a(), (Boolean) this.k.c.a());
+        C0116a0 c0116a0 = new C0116a0(u, (String) this.k.b.a(), (Boolean) this.k.c.a());
         Gi gi = this.h;
-        byte[] byteArray = MessageNano.toByteArray(this.g.fromModel(c0124a0));
+        byte[] byteArray = MessageNano.toByteArray(this.g.fromModel(c0116a0));
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4(byteArray, "", 5968, publicLogger);
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4(byteArray, "", 5968, publicLogger);
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
         PublicLogger publicLogger2 = this.c;
         StringBuilder sb = new StringBuilder("ANR was reported ");
-        C0549qn c0549qn = u.f648a;
-        publicLogger2.info(sb.append(c0549qn != null ? "Thread[name=" + c0549qn.f1011a + ",tid={" + c0549qn.c + ", priority=" + c0549qn.b + ", group=" + c0549qn.d + "}] at " + CollectionsKt.joinToString$default(c0549qn.f, "\n", null, null, 0, null, null, 62, null) : null).toString(), new Object[0]);
+        C0541qn c0541qn = u.f649a;
+        publicLogger2.info(sb.append(c0541qn != null ? "Thread[name=" + c0541qn.f1012a + ",tid={" + c0541qn.c + ", priority=" + c0541qn.b + ", group=" + c0541qn.d + "}] at " + CollectionsKt.joinToString$default(c0541qn.f, "\n", null, null, 0, null, null, 62, null) : null).toString(), new Object[0]);
     }
 
     @Override // io.appmetrica.analytics.plugins.IPluginReporter
@@ -648,19 +648,19 @@ public abstract class V2 implements Wa {
         Gi gi = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.f.fromModel(m6));
         PublicLogger publicLogger = this.c;
-        Set set = O9.f564a;
-        EnumC0636ub enumC0636ub = EnumC0636ub.EVENT_TYPE_UNDEFINED;
-        C0331i4 c0331i4 = new C0331i4(byteArray, str2, 5896, publicLogger);
+        Set set = O9.f565a;
+        EnumC0628ub enumC0628ub = EnumC0628ub.EVENT_TYPE_UNDEFINED;
+        C0323i4 c0323i4 = new C0323i4(byteArray, str2, 5896, publicLogger);
         Qh qh = this.b;
         gi.getClass();
-        gi.a(Gi.a(c0331i4, qh), qh, 1, null);
+        gi.a(Gi.a(c0323i4, qh), qh, 1, null);
         this.c.info("Error with identifier: %s from plugin received: %s", str, WrapUtils.wrapToTag(str2));
     }
 
     @Override // io.appmetrica.analytics.impl.Wa
     public final void a(String str) {
         Gi gi = this.h;
-        C0333i6 a2 = C0333i6.a(str);
+        C0325i6 a2 = C0325i6.a(str);
         Qh qh = this.b;
         gi.getClass();
         gi.a(Gi.a(a2, qh), qh, 1, null);

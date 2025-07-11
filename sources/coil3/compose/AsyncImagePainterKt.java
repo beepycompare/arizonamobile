@@ -24,7 +24,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* loaded from: classes3.dex */
 public final class AsyncImagePainterKt {
     /* renamed from: rememberAsyncImagePainter-3HmZ8SU  reason: not valid java name */
-    public static final AsyncImagePainter m7739rememberAsyncImagePainter3HmZ8SU(Object obj, ImageLoader imageLoader, Painter painter, Painter painter2, Painter painter3, Function1<? super AsyncImagePainter.State.Loading, Unit> function1, Function1<? super AsyncImagePainter.State.Success, Unit> function12, Function1<? super AsyncImagePainter.State.Error, Unit> function13, ContentScale contentScale, int i, Composer composer, int i2, int i3) {
+    public static final AsyncImagePainter m7740rememberAsyncImagePainter3HmZ8SU(Object obj, ImageLoader imageLoader, Painter painter, Painter painter2, Painter painter3, Function1<? super AsyncImagePainter.State.Loading, Unit> function1, Function1<? super AsyncImagePainter.State.Success, Unit> function12, Function1<? super AsyncImagePainter.State.Error, Unit> function13, ContentScale contentScale, int i, Composer composer, int i2, int i3) {
         ComposerKt.sourceInformationMarkerStart(composer, 1219624997, "C(rememberAsyncImagePainter)P(5,4,9,1,2,7,8,6!,3:c#ui.graphics.FilterQuality)83@3787L35,82@3748L260:AsyncImagePainter.kt#8xxpns");
         Painter painter4 = (i3 & 4) != 0 ? null : painter;
         Painter painter5 = (i3 & 8) != 0 ? null : painter2;
@@ -43,16 +43,16 @@ public final class AsyncImagePainterKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
         AsyncImageState asyncImageState = new AsyncImageState(obj, (AsyncImageModelEqualityDelegate) consume, imageLoader);
         ComposerKt.sourceInformationMarkerEnd(composer);
-        AsyncImagePainter m7741rememberAsyncImagePainterGSdzBsE = m7741rememberAsyncImagePainterGSdzBsE(asyncImageState, UtilsKt.transformOf(painter4, painter5, painter6), UtilsKt.onStateOf(function14, function15, function16), fit, m4643getDefaultFilterQualityfv9h1I, composer, (i2 >> 15) & 64512);
+        AsyncImagePainter m7742rememberAsyncImagePainterGSdzBsE = m7742rememberAsyncImagePainterGSdzBsE(asyncImageState, UtilsKt.transformOf(painter4, painter5, painter6), UtilsKt.onStateOf(function14, function15, function16), fit, m4643getDefaultFilterQualityfv9h1I, composer, (i2 >> 15) & 64512);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m7741rememberAsyncImagePainterGSdzBsE;
+        return m7742rememberAsyncImagePainterGSdzBsE;
     }
 
     /* renamed from: rememberAsyncImagePainter-5jETZwI  reason: not valid java name */
-    public static final AsyncImagePainter m7740rememberAsyncImagePainter5jETZwI(Object obj, ImageLoader imageLoader, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, ContentScale contentScale, int i, Composer composer, int i2, int i3) {
+    public static final AsyncImagePainter m7741rememberAsyncImagePainter5jETZwI(Object obj, ImageLoader imageLoader, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, ContentScale contentScale, int i, Composer composer, int i2, int i3) {
         ComposerKt.sourceInformationMarkerStart(composer, 1066092719, "C(rememberAsyncImagePainter)P(3,2,5,4!,1:c#ui.graphics.FilterQuality)114@5238L35,113@5199L195:AsyncImagePainter.kt#8xxpns");
         if ((i3 & 4) != 0) {
             function1 = AsyncImagePainter.Companion.getDefaultTransform();
@@ -78,16 +78,16 @@ public final class AsyncImagePainterKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
         AsyncImageState asyncImageState = new AsyncImageState(obj, (AsyncImageModelEqualityDelegate) consume, imageLoader);
         ComposerKt.sourceInformationMarkerEnd(composer);
-        AsyncImagePainter m7741rememberAsyncImagePainterGSdzBsE = m7741rememberAsyncImagePainterGSdzBsE(asyncImageState, function13, function12, contentScale2, i4, composer, (i2 >> 3) & 65520);
+        AsyncImagePainter m7742rememberAsyncImagePainterGSdzBsE = m7742rememberAsyncImagePainterGSdzBsE(asyncImageState, function13, function12, contentScale2, i4, composer, (i2 >> 3) & 65520);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m7741rememberAsyncImagePainterGSdzBsE;
+        return m7742rememberAsyncImagePainterGSdzBsE;
     }
 
     /* renamed from: rememberAsyncImagePainter-GSdzBsE  reason: not valid java name */
-    private static final AsyncImagePainter m7741rememberAsyncImagePainterGSdzBsE(AsyncImageState asyncImageState, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, ContentScale contentScale, int i, Composer composer, int i2) {
+    private static final AsyncImagePainter m7742rememberAsyncImagePainterGSdzBsE(AsyncImageState asyncImageState, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, ContentScale contentScale, int i, Composer composer, int i2) {
         composer.startReplaceGroup(-1242991349);
         ComposerKt.sourceInformation(composer, "C(rememberAsyncImagePainter)P(3,4,2!,1:c#ui.graphics.FilterQuality)*129@5685L22,133@5835L37,134@5893L24,139@6093L16:AsyncImagePainter.kt#8xxpns");
         if (ComposerKt.isTraceInProgress()) {
@@ -119,7 +119,7 @@ public final class AsyncImagePainterKt {
             asyncImagePainter.setTransform$coil_compose_core_release(function1);
             asyncImagePainter.setOnState$coil_compose_core_release(function12);
             asyncImagePainter.setContentScale$coil_compose_core_release(contentScale);
-            asyncImagePainter.m7738setFilterQualityvDHp3xo$coil_compose_core_release(i);
+            asyncImagePainter.m7739setFilterQualityvDHp3xo$coil_compose_core_release(i);
             asyncImagePainter.setPreviewHandler$coil_compose_core_release(UtilsKt.previewHandler(composer, 0));
             asyncImagePainter.set_input$coil_compose_core_release(input);
             if (ComposerKt.isTraceInProgress()) {

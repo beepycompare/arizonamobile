@@ -127,10 +127,10 @@ public final class Utf8 {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0081, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0082, code lost:
         if ((r11[r0] & 192) == 128) goto L22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00ee, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x00ef, code lost:
         if ((r11[r0] & 192) == 128) goto L30;
      */
     /*
@@ -250,10 +250,10 @@ public final class Utf8 {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0083, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0084, code lost:
         if ((r11[r0] & 192) == 128) goto L22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x00f1, code lost:
         if ((r11[r0] & 192) == 128) goto L30;
      */
     /*

@@ -80,22 +80,22 @@ public final class ChannelSegment<E> extends Segment<ChannelSegment<E>> {
         return getData().getAndSet((i * 2) + 1, obj);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x0062, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x0063, code lost:
         cleanElement$kotlinx_coroutines_core(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x0065, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0066, code lost:
         if (r5 == false) goto L61;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x0067, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x0068, code lost:
         r4 = getChannel().onUndeliveredElement;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x006d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x006e, code lost:
         if (r4 == null) goto L60;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x006f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0070, code lost:
         kotlinx.coroutines.internal.OnUndeliveredElementKt.callUndeliveredElement(r4, r0, r6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0072, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0073, code lost:
         return;
      */
     /* JADX WARN: Code restructure failed: missing block: B:64:?, code lost:

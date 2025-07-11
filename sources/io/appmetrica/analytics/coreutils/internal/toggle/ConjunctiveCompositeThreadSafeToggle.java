@@ -22,7 +22,7 @@ public final class ConjunctiveCompositeThreadSafeToggle implements Toggle {
     private volatile boolean e;
 
     /* renamed from: a  reason: collision with root package name */
-    private final ArrayList f296a = new ArrayList();
+    private final ArrayList f297a = new ArrayList();
     private final HashMap b = new HashMap();
     private final ReentrantLock d = new ReentrantLock();
 
@@ -73,19 +73,19 @@ public final class ConjunctiveCompositeThreadSafeToggle implements Toggle {
             try {
                 Result.Companion companion = Result.Companion;
                 z = conjunctiveCompositeThreadSafeToggle.d.tryLock(100L, TimeUnit.MILLISECONDS);
-                Result.m8443constructorimpl(Unit.INSTANCE);
+                Result.m8471constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                Result.m8443constructorimpl(ResultKt.createFailure(th));
+                Result.m8471constructorimpl(ResultKt.createFailure(th));
             }
             if (!z) {
                 try {
                     Result.Companion companion3 = Result.Companion;
                     Thread.sleep(100L);
-                    Result.m8443constructorimpl(Unit.INSTANCE);
+                    Result.m8471constructorimpl(Unit.INSTANCE);
                 } catch (Throwable th2) {
                     Result.Companion companion4 = Result.Companion;
-                    Result.m8443constructorimpl(ResultKt.createFailure(th2));
+                    Result.m8471constructorimpl(ResultKt.createFailure(th2));
                 }
             }
         }
@@ -100,7 +100,7 @@ public final class ConjunctiveCompositeThreadSafeToggle implements Toggle {
         boolean a2 = a(conjunctiveCompositeThreadSafeToggle.b.values());
         if (a2 != conjunctiveCompositeThreadSafeToggle.getActualState()) {
             conjunctiveCompositeThreadSafeToggle.setActualState(a2);
-            Iterator it = conjunctiveCompositeThreadSafeToggle.f296a.iterator();
+            Iterator it = conjunctiveCompositeThreadSafeToggle.f297a.iterator();
             while (it.hasNext()) {
                 ((ToggleObserver) it.next()).onStateChanged(a2);
             }
@@ -116,7 +116,7 @@ public final class ConjunctiveCompositeThreadSafeToggle implements Toggle {
     public void registerObserver(ToggleObserver toggleObserver, boolean z) {
         try {
             access$acquireLock(this);
-            this.f296a.add(toggleObserver);
+            this.f297a.add(toggleObserver);
             if (z) {
                 toggleObserver.onStateChanged(getActualState());
             }
@@ -129,7 +129,7 @@ public final class ConjunctiveCompositeThreadSafeToggle implements Toggle {
     public void removeObserver(ToggleObserver toggleObserver) {
         try {
             access$acquireLock(this);
-            this.f296a.remove(toggleObserver);
+            this.f297a.remove(toggleObserver);
         } finally {
             access$releaseLock(this);
         }

@@ -27,7 +27,7 @@ import kotlin.collections.MapsKt;
 public final class ScreenshotServiceModuleEntryPoint extends ModuleServiceEntryPoint<G> {
 
     /* renamed from: a  reason: collision with root package name */
-    private g0 f1318a;
+    private g0 f1319a;
     private final j0 b = new j0();
     private final I c = new I(null, null, 3, null);
     private final H d = new H(null, 1, null);
@@ -36,7 +36,7 @@ public final class ScreenshotServiceModuleEntryPoint extends ModuleServiceEntryP
         public void onRemoteConfigUpdated(ModuleRemoteConfig<G> moduleRemoteConfig) {
             ScreenshotServiceModuleEntryPoint screenshotServiceModuleEntryPoint = ScreenshotServiceModuleEntryPoint.this;
             G featuresConfig = moduleRemoteConfig.getFeaturesConfig();
-            screenshotServiceModuleEntryPoint.f1318a = featuresConfig != null ? new g0(featuresConfig) : null;
+            screenshotServiceModuleEntryPoint.f1319a = featuresConfig != null ? new g0(featuresConfig) : null;
         }
     };
     private final String f = "screenshot";
@@ -78,7 +78,7 @@ public final class ScreenshotServiceModuleEntryPoint extends ModuleServiceEntryP
             j0 j0Var;
             g0 g0Var;
             j0Var = ScreenshotServiceModuleEntryPoint.this.b;
-            g0Var = ScreenshotServiceModuleEntryPoint.this.f1318a;
+            g0Var = ScreenshotServiceModuleEntryPoint.this.f1319a;
             j0Var.getClass();
             if (g0Var == null) {
                 return null;
@@ -107,6 +107,6 @@ public final class ScreenshotServiceModuleEntryPoint extends ModuleServiceEntryP
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceEntryPoint
     public void initServiceSide(ServiceContext serviceContext, ModuleRemoteConfig<G> moduleRemoteConfig) {
         G featuresConfig = moduleRemoteConfig.getFeaturesConfig();
-        this.f1318a = featuresConfig != null ? new g0(featuresConfig) : null;
+        this.f1319a = featuresConfig != null ? new g0(featuresConfig) : null;
     }
 }

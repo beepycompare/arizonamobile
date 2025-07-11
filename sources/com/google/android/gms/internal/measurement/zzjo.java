@@ -1,22 +1,23 @@
 package com.google.android.gms.internal.measurement;
 
-import android.net.Uri;
-import androidx.collection.SimpleArrayMap;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import android.database.ContentObserver;
+import android.os.Handler;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzjo {
-    private final SimpleArrayMap zza;
+final class zzjo extends ContentObserver {
+    final /* synthetic */ zzjq zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzjo(SimpleArrayMap simpleArrayMap) {
-        this.zza = simpleArrayMap;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzjo(zzjq zzjqVar, Handler handler) {
+        super(null);
+        Objects.requireNonNull(zzjqVar);
+        this.zza = zzjqVar;
     }
 
-    public final String zza(Uri uri, String str, String str2, String str3) {
-        SimpleArrayMap simpleArrayMap = uri != null ? (SimpleArrayMap) this.zza.get(uri.toString()) : null;
-        if (simpleArrayMap == null) {
-            return null;
-        }
-        return (String) simpleArrayMap.get("".concat(str3));
+    @Override // android.database.ContentObserver
+    public final void onChange(boolean z) {
+        this.zza.zzc();
     }
 }

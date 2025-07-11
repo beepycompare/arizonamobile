@@ -13,7 +13,7 @@ import kotlinx.coroutines.Delay;
 /* loaded from: classes5.dex */
 public interface DelayWithTimeoutDiagnostics extends Delay {
     /* renamed from: timeoutMessage-LRDsOJo  reason: not valid java name */
-    String m9941timeoutMessageLRDsOJo(long j);
+    String m9972timeoutMessageLRDsOJo(long j);
 
     /* compiled from: Delay.kt */
     @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)

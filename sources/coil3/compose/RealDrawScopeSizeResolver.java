@@ -83,10 +83,10 @@ final class RealDrawScopeSizeResolver implements DrawScopeSizeResolver {
                             if (i != 0) {
                                 ResultKt.throwOnFailure(obj2);
                                 FlowCollector flowCollector = this.$this_unsafeFlow;
-                                coil3.size.Size m7770toSizeOrNulluvyYCjk = UtilsKt.m7770toSizeOrNulluvyYCjk(((Size) obj).m3911unboximpl());
-                                if (m7770toSizeOrNulluvyYCjk != null) {
+                                coil3.size.Size m7771toSizeOrNulluvyYCjk = UtilsKt.m7771toSizeOrNulluvyYCjk(((Size) obj).m3911unboximpl());
+                                if (m7771toSizeOrNulluvyYCjk != null) {
                                     anonymousClass1.label = 1;
-                                    if (flowCollector.emit(m7770toSizeOrNulluvyYCjk, anonymousClass1) == coroutine_suspended) {
+                                    if (flowCollector.emit(m7771toSizeOrNulluvyYCjk, anonymousClass1) == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
                                 }

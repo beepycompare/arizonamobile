@@ -27,29 +27,29 @@ public class ResponseData {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f163a;
+        public static final /* synthetic */ int[] f164a;
 
         static {
             int[] iArr = new int[ActivityKind.values().length];
-            f163a = iArr;
+            f164a = iArr;
             try {
                 iArr[ActivityKind.SESSION.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f163a[ActivityKind.CLICK.ordinal()] = 2;
+                f164a[ActivityKind.CLICK.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f163a[ActivityKind.ATTRIBUTION.ordinal()] = 3;
+                f164a[ActivityKind.ATTRIBUTION.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f163a[ActivityKind.EVENT.ordinal()] = 4;
+                f164a[ActivityKind.EVENT.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f163a[ActivityKind.PURCHASE_VERIFICATION.ordinal()] = 5;
+                f164a[ActivityKind.PURCHASE_VERIFICATION.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
         }
@@ -58,7 +58,7 @@ public class ResponseData {
     public static ResponseData buildResponseData(ActivityPackage activityPackage, Map<String, String> map, Map<String, String> map2) {
         ResponseData sessionResponseData;
         ActivityKind activityKind = activityPackage.getActivityKind();
-        int i = AnonymousClass1.f163a[activityKind.ordinal()];
+        int i = AnonymousClass1.f164a[activityKind.ordinal()];
         if (i == 1) {
             sessionResponseData = new SessionResponseData(activityPackage);
         } else if (i == 2) {

@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: ParserOperation.kt */
-@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\u001a@\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00042\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00040\u00072\u0006\u0010\b\u001a\u00020\tH\u0000\u001a]\u0010\n\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\b\u0010\u000b\u001a\u0004\u0018\u00010\u00042\b\u0010\f\u001a\u0004\u0018\u00010\u00042\b\u0010\r\u001a\u0004\u0018\u00010\u00042\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00040\u00072\u0006\u0010\b\u001a\u00020\t2\b\u0010\u000e\u001a\u0004\u0018\u00010\u0004H\u0000¢\u0006\u0002\u0010\u000f\u001a]\u0010\u0010\u001a\b\u0012\u0004\u0012\u0002H\u00110\u0001\"\u0004\b\u0000\u0010\u00112\b\u0010\u000b\u001a\u0004\u0018\u00010\u00042\b\u0010\f\u001a\u0004\u0018\u00010\u00042\b\u0010\r\u001a\u0004\u0018\u00010\u00042\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u0002H\u0011\u0012\u0004\u0012\u00020\u00040\u00072\u0006\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\u0012\u001a\u00020\u0013H\u0000¢\u0006\u0002\u0010\u0014\u001aI\u0010\u0015\u001a\u00020\u0016\"\u0004\b\u0000\u0010\u0017\"\u0004\b\u0001\u0010\u0018*\u000e\u0012\u0004\u0012\u0002H\u0017\u0012\u0004\u0012\u0002H\u00180\u00072\u0006\u0010\u0019\u001a\u0002H\u00172\u0006\u0010\u001a\u001a\u0002H\u00182\u0006\u0010\u001b\u001a\u00020\u00042\u0006\u0010\u001c\u001a\u00020\u0004H\u0002¢\u0006\u0002\u0010\u001d¨\u0006\u001e"}, d2 = {"ReducedIntParser", "Lkotlinx/datetime/internal/format/parser/ParserStructure;", "Output", "digits", "", TtmlNode.RUBY_BASE, "setter", "Lkotlinx/datetime/internal/format/parser/AssignableField;", "name", "", "SignedIntParser", "minDigits", "maxDigits", "spacePadding", "plusOnExceedsWidth", "(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlinx/datetime/internal/format/parser/AssignableField;Ljava/lang/String;Ljava/lang/Integer;)Lkotlinx/datetime/internal/format/parser/ParserStructure;", "spaceAndZeroPaddedUnsignedInt", "Target", "withMinus", "", "(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlinx/datetime/internal/format/parser/AssignableField;Ljava/lang/String;Z)Lkotlinx/datetime/internal/format/parser/ParserStructure;", "setWithoutReassigning", "Lkotlinx/datetime/internal/format/parser/ParseResult;", "Object", "Type", "receiver", "value", "position", "nextIndex", "(Lkotlinx/datetime/internal/format/parser/AssignableField;Ljava/lang/Object;Ljava/lang/Object;II)Ljava/lang/Object;", "kotlinx-datetime"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\u001a]\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\b\u0010\u0003\u001a\u0004\u0018\u00010\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u00042\b\u0010\u0006\u001a\u0004\u0018\u00010\u00042\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00040\b2\u0006\u0010\t\u001a\u00020\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\u0004H\u0000¢\u0006\u0002\u0010\f\u001a]\u0010\r\u001a\b\u0012\u0004\u0012\u0002H\u000e0\u0001\"\u0004\b\u0000\u0010\u000e2\b\u0010\u0003\u001a\u0004\u0018\u00010\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u00042\b\u0010\u0006\u001a\u0004\u0018\u00010\u00042\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u0002H\u000e\u0012\u0004\u0012\u00020\u00040\b2\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000f\u001a\u00020\u0010H\u0000¢\u0006\u0002\u0010\u0011\u001a@\u0010\u0012\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0013\u001a\u00020\u00042\u0006\u0010\u0014\u001a\u00020\u00042\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00040\b2\u0006\u0010\t\u001a\u00020\nH\u0000\u001aI\u0010\u0015\u001a\u00020\u0016\"\u0004\b\u0000\u0010\u0017\"\u0004\b\u0001\u0010\u0018*\u000e\u0012\u0004\u0012\u0002H\u0017\u0012\u0004\u0012\u0002H\u00180\b2\u0006\u0010\u0019\u001a\u0002H\u00172\u0006\u0010\u001a\u001a\u0002H\u00182\u0006\u0010\u001b\u001a\u00020\u00042\u0006\u0010\u001c\u001a\u00020\u0004H\u0002¢\u0006\u0002\u0010\u001d¨\u0006\u001e"}, d2 = {"SignedIntParser", "Lkotlinx/datetime/internal/format/parser/ParserStructure;", "Output", "minDigits", "", "maxDigits", "spacePadding", "setter", "Lkotlinx/datetime/internal/format/parser/AssignableField;", "name", "", "plusOnExceedsWidth", "(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlinx/datetime/internal/format/parser/AssignableField;Ljava/lang/String;Ljava/lang/Integer;)Lkotlinx/datetime/internal/format/parser/ParserStructure;", "spaceAndZeroPaddedUnsignedInt", "Target", "withMinus", "", "(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlinx/datetime/internal/format/parser/AssignableField;Ljava/lang/String;Z)Lkotlinx/datetime/internal/format/parser/ParserStructure;", "ReducedIntParser", "digits", TtmlNode.RUBY_BASE, "setWithoutReassigning", "Lkotlinx/datetime/internal/format/parser/ParseResult;", "Object", "Type", "receiver", "value", "position", "nextIndex", "(Lkotlinx/datetime/internal/format/parser/AssignableField;Ljava/lang/Object;Ljava/lang/Object;II)Ljava/lang/Object;", "kotlinx-datetime"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ParserOperationKt {
     public static final /* synthetic */ Object access$setWithoutReassigning(AssignableField assignableField, Object obj, Object obj2, int i, int i2) {
@@ -67,7 +67,7 @@ public final class ParserOperationKt {
 
     private static final <Target> ParserStructure<Target> spaceAndZeroPaddedUnsignedInt$numberOfRequiredLengths(boolean z, AssignableField<? super Target, Integer> assignableField, String str, int i, int i2) {
         if (i2 < (z ? 1 : 0) + 1) {
-            throw new IllegalStateException("Check failed.".toString());
+            throw new IllegalStateException("Check failed.");
         }
         List createListBuilder = CollectionsKt.createListBuilder();
         if (z) {
@@ -87,26 +87,19 @@ public final class ParserOperationKt {
     public static final <Object, Type> Object setWithoutReassigning(final AssignableField<? super Object, Type> assignableField, Object object, final Type type, int i, int i2) {
         final Type trySetWithoutReassigning = assignableField.trySetWithoutReassigning(object, type);
         if (trySetWithoutReassigning == null) {
-            return ParseResult.Companion.m10073OkQi1bsqg(i2);
+            return ParseResult.Companion.m10131OkQi1bsqg(i2);
         }
-        return ParseResult.Companion.m10072ErrorRg3Co2E(i, new Function0<String>() { // from class: kotlinx.datetime.internal.format.parser.ParserOperationKt$setWithoutReassigning$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            /* JADX WARN: Multi-variable type inference failed */
-            {
-                super(0);
-            }
-
+        return ParseResult.Companion.m10130ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.ParserOperationKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ String invoke() {
-                return invoke2();
-            }
-
-            @Override // kotlin.jvm.functions.Function0
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final String invoke2() {
-                return "Attempting to assign conflicting values '" + trySetWithoutReassigning + "' and '" + type + "' to field '" + assignableField.getName() + '\'';
+            public final Object invoke() {
+                String withoutReassigning$lambda$2;
+                withoutReassigning$lambda$2 = ParserOperationKt.setWithoutReassigning$lambda$2(trySetWithoutReassigning, type, assignableField);
+                return withoutReassigning$lambda$2;
             }
         });
+    }
+
+    public static final String setWithoutReassigning$lambda$2(Object obj, Object obj2, AssignableField assignableField) {
+        return "Attempting to assign conflicting values '" + obj + "' and '" + obj2 + "' to field '" + assignableField.getName() + '\'';
     }
 }

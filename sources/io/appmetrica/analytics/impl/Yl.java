@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.text.StringsKt;
 /* loaded from: classes4.dex */
-public final class Yl extends C0283g6 {
+public final class Yl extends C0275g6 {
     public List d;
     public List e;
     public String f;
@@ -20,7 +20,7 @@ public final class Yl extends C0283g6 {
     public boolean l;
     public String m;
     public long n;
-    public final C0691wg o;
+    public final C0683wg o;
     public final Y7 p;
 
     public Yl() {
@@ -62,7 +62,7 @@ public final class Yl extends C0283g6 {
         return this.j;
     }
 
-    public final C0691wg j() {
+    public final C0683wg j() {
         return this.o;
     }
 
@@ -81,7 +81,7 @@ public final class Yl extends C0283g6 {
         if (!fo.a((Collection) this.e)) {
             linkedHashSet.addAll(this.e);
         }
-        String[] strArr = (String[]) this.p.f717a.a();
+        String[] strArr = (String[]) this.p.f718a.a();
         if (strArr != null) {
             arrayList = new ArrayList();
             for (String str : strArr) {
@@ -122,15 +122,15 @@ public final class Yl extends C0283g6 {
         return this.l;
     }
 
-    @Override // io.appmetrica.analytics.impl.C0283g6, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig
+    @Override // io.appmetrica.analytics.impl.C0275g6, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig
     public final String toString() {
         return "StartupRequestConfig{mStartupHostsFromStartup=" + this.d + ", mStartupHostsFromClient=" + this.e + ", mDistributionReferrer='" + this.f + "', mInstallReferrerSource='" + this.g + "', mClidsFromClient=" + this.h + ", mNewCustomHosts=" + this.j + ", mHasNewCustomHosts=" + this.k + ", mSuccessfulStartup=" + this.l + ", mCountryInit='" + this.m + "', mFirstStartupTime=" + this.n + "} " + super.toString();
     }
 
-    public Yl(C0691wg c0691wg, Y7 y7) {
-        this.i = new N3(null, EnumC0335i8.c);
+    public Yl(C0683wg c0683wg, Y7 y7) {
+        this.i = new N3(null, EnumC0327i8.c);
         this.n = 0L;
-        this.o = c0691wg;
+        this.o = c0683wg;
         this.p = y7;
     }
 

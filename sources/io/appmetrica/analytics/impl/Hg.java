@@ -22,21 +22,21 @@ import org.json.JSONObject;
 public final class Hg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f462a;
+    public final Context f463a;
     public final SafePackageManager b;
-    public final InterfaceC0387kb c;
+    public final InterfaceC0379kb c;
     public final Wc d;
     public final long e;
     public final String f;
     public final String g;
 
-    public Hg(Context context, SafePackageManager safePackageManager, InterfaceC0387kb interfaceC0387kb) {
-        this.f462a = context;
+    public Hg(Context context, SafePackageManager safePackageManager, InterfaceC0379kb interfaceC0379kb) {
+        this.f463a = context;
         this.b = safePackageManager;
-        this.c = interfaceC0387kb;
+        this.c = interfaceC0379kb;
         Wc wc = new Wc(0);
-        wc.a(EnumC0716xg.d, 1);
-        wc.a(EnumC0716xg.c, 2);
+        wc.a(EnumC0708xg.d, 1);
+        wc.a(EnumC0708xg.c, 2);
         this.d = wc;
         this.e = TimeUnit.DAYS.toSeconds(1L);
         this.f = "com.android.vending";
@@ -49,74 +49,74 @@ public final class Hg {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final C0741yg a(List list) {
-        C0741yg c0741yg;
+    public final C0733yg a(List list) {
+        C0733yg c0733yg;
         if (list.isEmpty()) {
             return null;
         }
         if (list.size() == 1) {
-            return (C0741yg) list.get(0);
+            return (C0733yg) list.get(0);
         }
         SafePackageManager safePackageManager = this.b;
-        Context context = this.f462a;
+        Context context = this.f463a;
         PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 0);
         if (packageInfo != null) {
             long seconds = TimeUnit.MILLISECONDS.toSeconds(packageInfo.firstInstallTime);
             Iterator it = list.iterator();
             if (it.hasNext()) {
-                C0741yg c0741yg2 = (C0741yg) it.next();
-                Pair pair = TuplesKt.to(c0741yg2, Long.valueOf(Math.abs(c0741yg2.c - seconds)));
+                C0733yg c0733yg2 = (C0733yg) it.next();
+                Pair pair = TuplesKt.to(c0733yg2, Long.valueOf(Math.abs(c0733yg2.c - seconds)));
                 while (it.hasNext()) {
-                    C0741yg c0741yg3 = (C0741yg) it.next();
-                    Pair pair2 = TuplesKt.to(c0741yg3, Long.valueOf(Math.abs(c0741yg3.c - seconds)));
+                    C0733yg c0733yg3 = (C0733yg) it.next();
+                    Pair pair2 = TuplesKt.to(c0733yg3, Long.valueOf(Math.abs(c0733yg3.c - seconds)));
                     if (ComparisonsKt.compareValues((Comparable) pair.getSecond(), (Comparable) pair2.getSecond()) > 0) {
                         pair = pair2;
                     }
                 }
-                c0741yg = (C0741yg) pair.component1();
+                c0733yg = (C0733yg) pair.component1();
             } else {
                 throw new NoSuchElementException();
             }
         }
-        c0741yg = null;
-        if (c0741yg == null) {
+        c0733yg = null;
+        if (c0733yg == null) {
             Comparator comparator = new Comparator() { // from class: io.appmetrica.analytics.impl.Hg$$ExternalSyntheticLambda0
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
-                    return Hg.a(Hg.this, (C0741yg) obj, (C0741yg) obj2);
+                    return Hg.a(Hg.this, (C0733yg) obj, (C0733yg) obj2);
                 }
             };
             Iterator it2 = list.iterator();
             if (!it2.hasNext()) {
                 throw new NoSuchElementException();
             }
-            C0741yg c0741yg4 = (C0741yg) it2.next();
+            C0733yg c0733yg4 = (C0733yg) it2.next();
             while (it2.hasNext()) {
-                C0741yg c0741yg5 = (C0741yg) it2.next();
-                if (comparator.compare(c0741yg4, c0741yg5) < 0) {
-                    c0741yg4 = c0741yg5;
+                C0733yg c0733yg5 = (C0733yg) it2.next();
+                if (comparator.compare(c0733yg4, c0733yg5) < 0) {
+                    c0733yg4 = c0733yg5;
                 }
             }
-            c0741yg = c0741yg4;
+            c0733yg = c0733yg4;
         }
-        InterfaceC0387kb interfaceC0387kb = this.c;
+        InterfaceC0379kb interfaceC0379kb = this.c;
         JSONObject jSONObject = new JSONObject();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         Iterator it3 = list.iterator();
         while (it3.hasNext()) {
-            C0741yg c0741yg6 = (C0741yg) it3.next();
-            arrayList.add(new JSONObject().put(Constants.REFERRER, c0741yg6.f1146a).put("install_timestamp_seconds", c0741yg6.c).put("click_timestamp_seconds", c0741yg6.b).put("source", c0741yg6.d.f1126a));
+            C0733yg c0733yg6 = (C0733yg) it3.next();
+            arrayList.add(new JSONObject().put(Constants.REFERRER, c0733yg6.f1147a).put("install_timestamp_seconds", c0733yg6.c).put("click_timestamp_seconds", c0733yg6.b).put("source", c0733yg6.d.f1127a));
         }
-        interfaceC0387kb.reportEvent("several_filled_referrers", jSONObject.put("candidates", fo.a((Collection) arrayList) ? null : new JSONArray((Collection) arrayList)).put("chosen", new JSONObject().put(Constants.REFERRER, c0741yg.f1146a).put("install_timestamp_seconds", c0741yg.c).put("click_timestamp_seconds", c0741yg.b).put("source", c0741yg.d.f1126a)).putOpt("install_time", packageInfo != null ? Long.valueOf(packageInfo.firstInstallTime) : null).toString());
-        return c0741yg;
+        interfaceC0379kb.reportEvent("several_filled_referrers", jSONObject.put("candidates", fo.a((Collection) arrayList) ? null : new JSONArray((Collection) arrayList)).put("chosen", new JSONObject().put(Constants.REFERRER, c0733yg.f1147a).put("install_timestamp_seconds", c0733yg.c).put("click_timestamp_seconds", c0733yg.b).put("source", c0733yg.d.f1127a)).putOpt("install_time", packageInfo != null ? Long.valueOf(packageInfo.firstInstallTime) : null).toString());
+        return c0733yg;
     }
 
     public /* synthetic */ Hg(Context context) {
-        this(context, new SafePackageManager(), AbstractC0601t1.a());
+        this(context, new SafePackageManager(), AbstractC0593t1.a());
     }
 
-    public static final int a(Hg hg, C0741yg c0741yg, C0741yg c0741yg2) {
-        int sign = MathKt.getSign(c0741yg.c - c0741yg2.c);
-        return sign == 0 ? ((Number) hg.d.a(c0741yg.d)).intValue() - ((Number) hg.d.a(c0741yg2.d)).intValue() : sign;
+    public static final int a(Hg hg, C0733yg c0733yg, C0733yg c0733yg2) {
+        int sign = MathKt.getSign(c0733yg.c - c0733yg2.c);
+        return sign == 0 ? ((Number) hg.d.a(c0733yg.d)).intValue() - ((Number) hg.d.a(c0733yg2.d)).intValue() : sign;
     }
 }

@@ -32,14 +32,14 @@ public class RolloutsStateSubscriptionsHandler {
         task.addOnSuccessListener(this.executor, new OnSuccessListener() { // from class: com.google.firebase.remoteconfig.internal.rollouts.RolloutsStateSubscriptionsHandler$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
-                RolloutsStateSubscriptionsHandler.this.m8290x4e3578e1(task, rolloutsStateSubscriber, (ConfigContainer) obj);
+                RolloutsStateSubscriptionsHandler.this.m8289x4e3578e1(task, rolloutsStateSubscriber, (ConfigContainer) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$registerRolloutsStateSubscriber$1$com-google-firebase-remoteconfig-internal-rollouts-RolloutsStateSubscriptionsHandler  reason: not valid java name */
-    public /* synthetic */ void m8290x4e3578e1(Task task, final RolloutsStateSubscriber rolloutsStateSubscriber, ConfigContainer configContainer) {
+    public /* synthetic */ void m8289x4e3578e1(Task task, final RolloutsStateSubscriber rolloutsStateSubscriber, ConfigContainer configContainer) {
         try {
             ConfigContainer configContainer2 = (ConfigContainer) task.getResult();
             if (configContainer2 != null) {

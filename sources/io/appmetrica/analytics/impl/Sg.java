@@ -8,9 +8,9 @@ public final class Sg extends Rg {
     }
 
     @Override // io.appmetrica.analytics.impl.Rg, io.appmetrica.analytics.impl.Ha
-    public final void a(List<AbstractC0193ch> list) {
-        list.add(this.f458a.i);
-        list.add(this.f458a.j);
+    public final void a(List<AbstractC0185ch> list) {
+        list.add(this.f459a.i);
+        list.add(this.f459a.j);
         super.a(list);
     }
 }

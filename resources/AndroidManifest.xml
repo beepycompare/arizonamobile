@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1637" android:versionName="v16.3.7" android:installLocation="auto" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" package="com.arizona21.game.web" platformBuildVersionCode="35" platformBuildVersionName="15">
-    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="35"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1640" android:versionName="v16.4.0" android:installLocation="auto" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" package="com.arizona21.game.web" platformBuildVersionCode="35" platformBuildVersionName="15">
+    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -112,9 +112,6 @@
             <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
         </service>
         <service android:name="com.google.firebase.sessions.SessionLifecycleService" android:enabled="true" android:exported="false"/>
-        <receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false"/>
-        <service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false"/>
-        <service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
         <service android:name="io.appmetrica.analytics.internal.AppMetricaService" android:enabled="true" android:exported="false">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -123,6 +120,9 @@
             </intent-filter>
         </service>
         <provider android:name="io.appmetrica.analytics.internal.PreloadInfoContentProvider" android:enabled="true" android:exported="true" android:authorities="com.arizona21.game.web.appmetrica.preloadinfo.retail"/>
+        <receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
         <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
@@ -143,6 +143,7 @@
         <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="com.arizona21.game.web.androidx-startup">
             <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
             <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="okhttp3.internal.platform.PlatformInitializer" android:value="androidx.startup"/>
             <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
         </provider>
         <uses-library android:name="android.ext.adservices" android:required="false"/>

@@ -9,10 +9,10 @@ public final class Tn extends V4 {
     }
 
     @Override // io.appmetrica.analytics.impl.V4
-    public final boolean a(C0333i6 c0333i6, P4 p4) {
-        J4 j4 = p4.b.d.f506a;
+    public final boolean a(C0325i6 c0325i6, P4 p4) {
+        J4 j4 = p4.b.d.f507a;
         this.b.a(j4.i);
-        InterfaceC0214dc l = Ga.F.l();
+        InterfaceC0206dc l = Ga.F.l();
         if (Boolean.TRUE.equals(j4.b)) {
             l.a(true);
         } else {

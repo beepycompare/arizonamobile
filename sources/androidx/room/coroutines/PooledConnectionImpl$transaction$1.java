@@ -1,5 +1,6 @@
 package androidx.room.coroutines;
 
+import com.google.android.vending.expansion.downloader.Constants;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
@@ -8,7 +9,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ConnectionPoolImpl.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.coroutines.PooledConnectionImpl", f = "ConnectionPoolImpl.kt", i = {0, 0, 1, 1, 4}, l = {376, 380, 393, 393, 393}, m = "transaction", n = {"this", "block", "this", FirebaseAnalytics.Param.SUCCESS, "exception"}, s = {"L$0", "L$1", "L$0", "I$0", "L$0"})
+@DebugMetadata(c = "androidx.room.coroutines.PooledConnectionImpl", f = "ConnectionPoolImpl.kt", i = {0, 0, 1, 1, 4}, l = {395, 399, Constants.STATUS_PRECONDITION_FAILED, Constants.STATUS_PRECONDITION_FAILED, Constants.STATUS_PRECONDITION_FAILED}, m = "transaction", n = {"this", "block", "this", FirebaseAnalytics.Param.SUCCESS, "exception"}, s = {"L$0", "L$1", "L$0", "I$0", "L$0"})
 /* loaded from: classes3.dex */
 public final class PooledConnectionImpl$transaction$1<R> extends ContinuationImpl {
     int I$0;

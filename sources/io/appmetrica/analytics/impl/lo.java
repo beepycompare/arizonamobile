@@ -10,7 +10,7 @@ public final class lo implements mo {
         LinkedList linkedList = new LinkedList();
         boolean z = true;
         for (ko koVar : list) {
-            if (!koVar.f912a) {
+            if (!koVar.f913a) {
                 linkedList.add(koVar.b);
                 z = false;
             }

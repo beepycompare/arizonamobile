@@ -383,14 +383,14 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
         this.shapeableDelegate.maybeClip(canvas, new CanvasCompat.CanvasOperation() { // from class: com.google.android.material.navigation.NavigationView$$ExternalSyntheticLambda0
             @Override // com.google.android.material.canvas.CanvasCompat.CanvasOperation
             public final void run(Canvas canvas2) {
-                NavigationView.this.m8141xb790515(canvas2);
+                NavigationView.this.m8140xb790515(canvas2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$dispatchDraw$0$com-google-android-material-navigation-NavigationView  reason: not valid java name */
-    public /* synthetic */ void m8141xb790515(Canvas canvas) {
+    public /* synthetic */ void m8140xb790515(Canvas canvas) {
         super.dispatchDraw(canvas);
     }
 

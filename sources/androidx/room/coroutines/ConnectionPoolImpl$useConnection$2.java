@@ -1,7 +1,6 @@
 package androidx.room.coroutines;
 
 import androidx.room.Transactor;
-import io.appmetrica.analytics.BuildConfig;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -15,7 +14,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: ConnectionPoolImpl.kt */
 @Metadata(d1 = {"\u0000\b\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "R", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.coroutines.ConnectionPoolImpl$useConnection$2", f = "ConnectionPoolImpl.kt", i = {}, l = {BuildConfig.API_LEVEL}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.room.coroutines.ConnectionPoolImpl$useConnection$2", f = "ConnectionPoolImpl.kt", i = {}, l = {117}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes3.dex */
 public final class ConnectionPoolImpl$useConnection$2<R> extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super R>, Object> {
     final /* synthetic */ Function2<Transactor, Continuation<? super R>, Object> $block;

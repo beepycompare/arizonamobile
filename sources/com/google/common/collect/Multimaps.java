@@ -863,7 +863,7 @@ public final class Multimaps {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: transform */
-        public Collection<V2> m8183x893217c0(@ParametricNullness K key, Collection<V1> values) {
+        public Collection<V2> m8182x893217c0(@ParametricNullness K key, Collection<V1> values) {
             com.google.common.base.Function asValueToValueFunction = Maps.asValueToValueFunction(this.transformer, key);
             if (values instanceof List) {
                 return Lists.transform((List) values, asValueToValueFunction);
@@ -876,7 +876,7 @@ public final class Multimaps {
             return Maps.transformEntries(this.fromMultimap.asMap(), new Maps.EntryTransformer() { // from class: com.google.common.collect.Multimaps$TransformedEntriesMultimap$$ExternalSyntheticLambda0
                 @Override // com.google.common.collect.Maps.EntryTransformer
                 public final Object transformEntry(Object obj, Object obj2) {
-                    return Multimaps.TransformedEntriesMultimap.this.m8183x893217c0(obj, (Collection) obj2);
+                    return Multimaps.TransformedEntriesMultimap.this.m8182x893217c0(obj, (Collection) obj2);
                 }
             });
         }
@@ -903,7 +903,7 @@ public final class Multimaps {
 
         @Override // com.google.common.collect.Multimap, com.google.common.collect.ListMultimap
         public Collection<V2> get(@ParametricNullness final K key) {
-            return m8183x893217c0(key, this.fromMultimap.get(key));
+            return m8182x893217c0(key, this.fromMultimap.get(key));
         }
 
         @Override // com.google.common.collect.AbstractMultimap, com.google.common.collect.Multimap
@@ -945,7 +945,7 @@ public final class Multimaps {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // com.google.common.collect.Multimap, com.google.common.collect.ListMultimap
         public Collection<V2> removeAll(@CheckForNull Object key) {
-            return m8183x893217c0(key, this.fromMultimap.removeAll(key));
+            return m8182x893217c0(key, this.fromMultimap.removeAll(key));
         }
 
         @Override // com.google.common.collect.AbstractMultimap, com.google.common.collect.Multimap, com.google.common.collect.ListMultimap
@@ -1209,14 +1209,14 @@ public final class Multimaps {
                 return Maps.asMapEntryIterator(AsMap.this.multimap.keySet(), new com.google.common.base.Function() { // from class: com.google.common.collect.Multimaps$AsMap$EntrySet$$ExternalSyntheticLambda0
                     @Override // com.google.common.base.Function
                     public final Object apply(Object obj) {
-                        return Multimaps.AsMap.EntrySet.this.m8182xda360ac8(obj);
+                        return Multimaps.AsMap.EntrySet.this.m8181xda360ac8(obj);
                     }
                 });
             }
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: lambda$iterator$0$com-google-common-collect-Multimaps$AsMap$EntrySet  reason: not valid java name */
-            public /* synthetic */ Collection m8182xda360ac8(Object obj) {
+            public /* synthetic */ Collection m8181xda360ac8(Object obj) {
                 return AsMap.this.multimap.get(obj);
             }
 

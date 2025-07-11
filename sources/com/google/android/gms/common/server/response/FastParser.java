@@ -341,8 +341,8 @@ public class FastParser<T extends FastJsonResponse> {
                 do {
                     if (c == '\"') {
                         if (z) {
-                            c = '\"';
                             z = true;
+                            c = '\"';
                         }
                     }
                     z = c == '\\' ? !z : false;

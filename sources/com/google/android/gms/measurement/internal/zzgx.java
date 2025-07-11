@@ -1,157 +1,235 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
-import java.util.ArrayList;
+import com.google.common.net.HttpHeaders;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicReference;
-import okhttp3.HttpUrl;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzgx {
-    protected static final AtomicReference zza = new AtomicReference();
-    protected static final AtomicReference zzb = new AtomicReference();
-    protected static final AtomicReference zzc = new AtomicReference();
-    private final zzgw zzd;
+public final class zzgx implements Runnable {
+    final /* synthetic */ zzgy zza;
+    private final URL zzb;
+    private final byte[] zzc;
+    private final zzgv zzd;
+    private final String zze;
+    private final Map zzf;
 
-    public zzgx(zzgw zzgwVar) {
-        this.zzd = zzgwVar;
+    public zzgx(zzgy zzgyVar, String str, URL url, byte[] bArr, Map map, zzgv zzgvVar) {
+        Objects.requireNonNull(zzgyVar);
+        this.zza = zzgyVar;
+        Preconditions.checkNotEmpty(str);
+        Preconditions.checkNotNull(url);
+        Preconditions.checkNotNull(zzgvVar);
+        this.zzb = url;
+        this.zzc = bArr;
+        this.zzd = zzgvVar;
+        this.zze = str;
+        this.zzf = map;
     }
 
-    private static final String zzg(String str, String[] strArr, String[] strArr2, AtomicReference atomicReference) {
-        String str2;
-        Preconditions.checkNotNull(strArr);
-        Preconditions.checkNotNull(strArr2);
-        Preconditions.checkNotNull(atomicReference);
-        Preconditions.checkArgument(strArr.length == strArr2.length);
-        for (int i = 0; i < strArr.length; i++) {
-            if (Objects.equals(str, strArr[i])) {
-                synchronized (atomicReference) {
-                    String[] strArr3 = (String[]) atomicReference.get();
-                    if (strArr3 == null) {
-                        strArr3 = new String[strArr2.length];
-                        atomicReference.set(strArr3);
-                    }
-                    str2 = strArr3[i];
-                    if (str2 == null) {
-                        str2 = strArr2[i] + "(" + strArr[i] + ")";
-                        strArr3[i] = str2;
+    /* JADX WARN: Not initialized variable reg: 11, insn: 0x00f6: MOVE  (r9 I:??[OBJECT, ARRAY]) = (r11 I:??[OBJECT, ARRAY]), block:B:44:0x00f4 */
+    /* JADX WARN: Not initialized variable reg: 11, insn: 0x00fa: MOVE  (r10 I:??[OBJECT, ARRAY]) = (r11 I:??[OBJECT, ARRAY]), block:B:46:0x00f9 */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x013a  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0178  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x011e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x015c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int i;
+        HttpURLConnection httpURLConnection;
+        Map map;
+        IOException iOException;
+        int i2;
+        Map map2;
+        Throwable th;
+        int responseCode;
+        Map map3;
+        Map map4;
+        InputStream inputStream;
+        zzgy zzgyVar = this.zza;
+        zzgyVar.zzaX();
+        OutputStream outputStream = null;
+        try {
+            URL url = this.zzb;
+            int i3 = com.google.android.gms.internal.measurement.zzcj.zzb;
+            URLConnection openConnection = url.openConnection();
+            if (!(openConnection instanceof HttpURLConnection)) {
+                throw new IOException("Failed to obtain HTTP connection");
+            }
+            httpURLConnection = (HttpURLConnection) openConnection;
+            httpURLConnection.setDefaultUseCaches(false);
+            zzib zzibVar = zzgyVar.zzu;
+            zzibVar.zzc();
+            httpURLConnection.setConnectTimeout(60000);
+            zzibVar.zzc();
+            httpURLConnection.setReadTimeout(61000);
+            httpURLConnection.setInstanceFollowRedirects(false);
+            httpURLConnection.setDoInput(true);
+            try {
+                Map map5 = this.zzf;
+                if (map5 != null) {
+                    for (Map.Entry entry : map5.entrySet()) {
+                        httpURLConnection.addRequestProperty((String) entry.getKey(), (String) entry.getValue());
                     }
                 }
-                return str2;
-            }
-        }
-        return str;
-    }
-
-    protected final String zza(Object[] objArr) {
-        String valueOf;
-        if (objArr == null) {
-            return HttpUrl.PATH_SEGMENT_ENCODE_SET_URI;
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-        for (Object obj : objArr) {
-            if (obj instanceof Bundle) {
-                valueOf = zzb((Bundle) obj);
-            } else {
-                valueOf = String.valueOf(obj);
-            }
-            if (valueOf != null) {
-                if (sb.length() != 1) {
-                    sb.append(", ");
+                byte[] bArr = this.zzc;
+                if (bArr != null) {
+                    byte[] zzv = zzgyVar.zzg.zzp().zzv(bArr);
+                    zzgr zzk = zzibVar.zzaV().zzk();
+                    int length = zzv.length;
+                    zzk.zzb("Uploading data. size", Integer.valueOf(length));
+                    httpURLConnection.setDoOutput(true);
+                    httpURLConnection.addRequestProperty(HttpHeaders.CONTENT_ENCODING, "gzip");
+                    httpURLConnection.setFixedLengthStreamingMode(length);
+                    httpURLConnection.connect();
+                    OutputStream outputStream2 = httpURLConnection.getOutputStream();
+                    try {
+                        outputStream2.write(zzv);
+                        outputStream2.close();
+                    } catch (IOException e) {
+                        iOException = e;
+                        i2 = 0;
+                        map2 = null;
+                        outputStream = outputStream2;
+                        if (outputStream != null) {
+                        }
+                        if (httpURLConnection != null) {
+                        }
+                        this.zza.zzu.zzaW().zzj(new zzgw(this.zze, this.zzd, i2, iOException, null, map2, null));
+                    } catch (Throwable th2) {
+                        th = th2;
+                        i = 0;
+                        map = null;
+                        outputStream = outputStream2;
+                        th = th;
+                        if (outputStream != null) {
+                        }
+                        if (httpURLConnection != null) {
+                        }
+                        this.zza.zzu.zzaW().zzj(new zzgw(this.zze, this.zzd, i, null, null, map, null));
+                        throw th;
+                    }
                 }
-                sb.append(valueOf);
+                responseCode = httpURLConnection.getResponseCode();
+            } catch (IOException e2) {
+                iOException = e2;
+                i2 = 0;
+                map2 = null;
+            } catch (Throwable th3) {
+                th = th3;
+                i = 0;
+                map = null;
             }
-        }
-        sb.append("]");
-        return sb.toString();
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final String zzb(Bundle bundle) {
-        String valueOf;
-        if (bundle == null) {
-            return null;
-        }
-        if (!this.zzd.zza()) {
-            return bundle.toString();
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append("Bundle[{");
-        for (String str : bundle.keySet()) {
-            if (sb.length() != 8) {
-                sb.append(", ");
+            try {
+                try {
+                    Map<String, List<String>> headerFields = httpURLConnection.getHeaderFields();
+                    try {
+                        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                        inputStream = httpURLConnection.getInputStream();
+                        try {
+                            byte[] bArr2 = new byte[1024];
+                            while (true) {
+                                int read = inputStream.read(bArr2);
+                                if (read <= 0) {
+                                    break;
+                                }
+                                byteArrayOutputStream.write(bArr2, 0, read);
+                            }
+                            byte[] byteArray = byteArrayOutputStream.toByteArray();
+                            if (inputStream != null) {
+                                inputStream.close();
+                            }
+                            if (httpURLConnection != null) {
+                                httpURLConnection.disconnect();
+                            }
+                            this.zza.zzu.zzaW().zzj(new zzgw(this.zze, this.zzd, responseCode, null, byteArray, headerFields, null));
+                        } catch (Throwable th4) {
+                            th = th4;
+                            if (inputStream != null) {
+                                inputStream.close();
+                            }
+                            throw th;
+                        }
+                    } catch (Throwable th5) {
+                        th = th5;
+                        inputStream = null;
+                    }
+                } catch (IOException e3) {
+                    e = e3;
+                    i2 = responseCode;
+                    map2 = map4;
+                    iOException = e;
+                    if (outputStream != null) {
+                        try {
+                            outputStream.close();
+                        } catch (IOException e4) {
+                            this.zza.zzu.zzaV().zzb().zzc("Error closing HTTP compressed POST connection output stream. appId", zzgt.zzl(this.zze), e4);
+                        }
+                    }
+                    if (httpURLConnection != null) {
+                        httpURLConnection.disconnect();
+                    }
+                    this.zza.zzu.zzaW().zzj(new zzgw(this.zze, this.zzd, i2, iOException, null, map2, null));
+                } catch (Throwable th6) {
+                    th = th6;
+                    i = responseCode;
+                    map = map3;
+                    if (outputStream != null) {
+                        try {
+                            outputStream.close();
+                        } catch (IOException e5) {
+                            this.zza.zzu.zzaV().zzb().zzc("Error closing HTTP compressed POST connection output stream. appId", zzgt.zzl(this.zze), e5);
+                        }
+                    }
+                    if (httpURLConnection != null) {
+                        httpURLConnection.disconnect();
+                    }
+                    this.zza.zzu.zzaW().zzj(new zzgw(this.zze, this.zzd, i, null, null, map, null));
+                    throw th;
+                }
+            } catch (IOException e6) {
+                e = e6;
+                map2 = null;
+                i2 = responseCode;
+                iOException = e;
+                if (outputStream != null) {
+                }
+                if (httpURLConnection != null) {
+                }
+                this.zza.zzu.zzaW().zzj(new zzgw(this.zze, this.zzd, i2, iOException, null, map2, null));
+            } catch (Throwable th7) {
+                th = th7;
+                map = null;
+                i = responseCode;
+                if (outputStream != null) {
+                }
+                if (httpURLConnection != null) {
+                }
+                this.zza.zzu.zzaW().zzj(new zzgw(this.zze, this.zzd, i, null, null, map, null));
+                throw th;
             }
-            sb.append(zze(str));
-            sb.append("=");
-            Object obj = bundle.get(str);
-            if (obj instanceof Bundle) {
-                valueOf = zza(new Object[]{obj});
-            } else if (obj instanceof Object[]) {
-                valueOf = zza((Object[]) obj);
-            } else if (obj instanceof ArrayList) {
-                valueOf = zza(((ArrayList) obj).toArray());
-            } else {
-                valueOf = String.valueOf(obj);
-            }
-            sb.append(valueOf);
+        } catch (IOException e7) {
+            iOException = e7;
+            i2 = 0;
+            httpURLConnection = null;
+            map2 = null;
+        } catch (Throwable th8) {
+            th = th8;
+            i = 0;
+            httpURLConnection = null;
+            map = null;
         }
-        sb.append("}]");
-        return sb.toString();
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final String zzc(zzbh zzbhVar) {
-        String zzb2;
-        zzgw zzgwVar = this.zzd;
-        if (!zzgwVar.zza()) {
-            return zzbhVar.toString();
-        }
-        StringBuilder sb = new StringBuilder("origin=");
-        sb.append(zzbhVar.zzc);
-        sb.append(",name=");
-        sb.append(zzd(zzbhVar.zza));
-        sb.append(",params=");
-        zzbf zzbfVar = zzbhVar.zzb;
-        if (zzbfVar == null) {
-            zzb2 = null;
-        } else if (!zzgwVar.zza()) {
-            zzb2 = zzbfVar.toString();
-        } else {
-            zzb2 = zzb(zzbfVar.zzc());
-        }
-        sb.append(zzb2);
-        return sb.toString();
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final String zzd(String str) {
-        if (str == null) {
-            return null;
-        }
-        return !this.zzd.zza() ? str : zzg(str, zzjy.zzc, zzjy.zza, zza);
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final String zze(String str) {
-        if (str == null) {
-            return null;
-        }
-        return !this.zzd.zza() ? str : zzg(str, zzjz.zzb, zzjz.zza, zzb);
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final String zzf(String str) {
-        if (str == null) {
-            return null;
-        }
-        if (this.zzd.zza()) {
-            if (str.startsWith("_exp_")) {
-                return "experiment_id(" + str + ")";
-            }
-            return zzg(str, zzka.zzb, zzka.zza, zzc);
-        }
-        return str;
     }
 }

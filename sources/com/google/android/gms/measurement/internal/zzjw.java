@@ -1,15 +1,22 @@
 package com.google.android.gms.measurement.internal;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
-/* loaded from: classes3.dex */
-public enum zzjw {
-    AD_STORAGE("ad_storage"),
-    ANALYTICS_STORAGE("analytics_storage"),
-    AD_USER_DATA("ad_user_data"),
-    AD_PERSONALIZATION("ad_personalization");
-    
-    public final String zze;
 
-    zzjw(String str) {
-        this.zze = str;
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* loaded from: classes3.dex */
+public final class zzjw extends zzay {
+    final /* synthetic */ zzli zza;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzjw(zzli zzliVar, zzjf zzjfVar) {
+        super(zzjfVar);
+        Objects.requireNonNull(zzliVar);
+        this.zza = zzliVar;
+    }
+
+    @Override // com.google.android.gms.measurement.internal.zzay
+    public final void zza() {
+        this.zza.zzz();
     }
 }

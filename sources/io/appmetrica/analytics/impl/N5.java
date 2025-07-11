@@ -7,7 +7,7 @@ import java.util.Locale;
 public abstract class N5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final List f548a = CollectionUtils.createSortedListWithoutRepetitions("id", "type", "report_request_parameters", "session_description");
+    public static final List f549a = CollectionUtils.createSortedListWithoutRepetitions("id", "type", "report_request_parameters", "session_description");
     public static final String b;
     public static final String c;
 

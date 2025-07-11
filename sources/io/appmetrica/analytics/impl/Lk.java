@@ -7,22 +7,22 @@ import java.util.Map;
 public final class Lk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f521a;
+    public final String f522a;
     public final Gk b;
     public final Kk c;
     public final IBinaryDataHelper d;
 
-    public Lk(Context context, C0406l5 c0406l5) {
-        c0406l5.a();
-        this.f521a = "session_extras";
+    public Lk(Context context, C0398l5 c0398l5) {
+        c0398l5.a();
+        this.f522a = "session_extras";
         this.b = new Gk();
         this.c = new Kk();
-        this.d = C0557r7.a(context).a(c0406l5);
+        this.d = C0549r7.a(context).a(c0398l5);
     }
 
     public final Map a() {
         try {
-            byte[] bArr = this.d.get(this.f521a);
+            byte[] bArr = this.d.get(this.f522a);
             if (bArr != null) {
                 if (!(bArr.length == 0)) {
                     return this.b.toModel(this.c.toState(bArr));

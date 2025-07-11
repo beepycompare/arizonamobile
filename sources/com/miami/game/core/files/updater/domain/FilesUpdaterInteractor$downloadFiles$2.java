@@ -1,12 +1,12 @@
 package com.miami.game.core.files.updater.domain;
 
-import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.miami.game.core.downloader.sync.domain.DownloaderSyncInteractor;
 import com.miami.game.core.files.updater.domain.model.CheckedFile;
 import com.miami.game.core.files.updater.domain.model.FilesUpdaterState;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -14,17 +14,19 @@ import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.MutableStateFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FilesUpdaterInteractor.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.files.updater.domain.FilesUpdaterInteractor$downloadFiles$2", f = "FilesUpdaterInteractor.kt", i = {}, l = {SubsamplingScaleImageView.ORIENTATION_270}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.files.updater.domain.FilesUpdaterInteractor$downloadFiles$2", f = "FilesUpdaterInteractor.kt", i = {0}, l = {170}, m = "invokeSuspend", n = {"data"}, s = {"L$0"})
 /* loaded from: classes4.dex */
 public final class FilesUpdaterInteractor$downloadFiles$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ long $currentTime;
+    Object L$0;
     int label;
     final /* synthetic */ FilesUpdaterInteractor this$0;
 
@@ -72,14 +74,17 @@ public final class FilesUpdaterInteractor$downloadFiles$2 extends SuspendLambda 
             for (CheckedFile checkedFile : arrayList2) {
                 arrayList3.add(checkedFile.getGameInfoFile());
             }
+            ArrayList arrayList4 = arrayList3;
             downloaderSyncInteractor = this.this$0.downloaderSyncInteractor;
+            this.L$0 = SpillingKt.nullOutSpilledVariable(arrayList4);
             this.label = 1;
-            if (downloaderSyncInteractor.downloadFiles(arrayList3, this.$currentTime, this) == coroutine_suspended) {
+            if (downloaderSyncInteractor.downloadFiles(arrayList4, this.$currentTime, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
+            List list = (List) this.L$0;
             ResultKt.throwOnFailure(obj);
         }
         return Unit.INSTANCE;

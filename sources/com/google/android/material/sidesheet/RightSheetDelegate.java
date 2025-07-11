@@ -3,8 +3,9 @@ package com.google.android.material.sidesheet;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
-final class RightSheetDelegate extends SheetDelegate {
+public final class RightSheetDelegate extends SheetDelegate {
     final SideSheetBehavior<? extends View> sheetBehavior;
 
     /* JADX INFO: Access modifiers changed from: package-private */

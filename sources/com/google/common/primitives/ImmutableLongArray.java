@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.RandomAccess;
 import javax.annotation.CheckForNull;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-import okhttp3.HttpUrl;
+import okhttp3.internal.url._UrlKt;
 @ElementTypesAreNonnullByDefault
 @Immutable
 /* loaded from: classes4.dex */
@@ -341,7 +341,7 @@ public final class ImmutableLongArray implements Serializable {
 
     public String toString() {
         if (isEmpty()) {
-            return HttpUrl.PATH_SEGMENT_ENCODE_SET_URI;
+            return _UrlKt.PATH_SEGMENT_ENCODE_SET_URI;
         }
         StringBuilder sb = new StringBuilder(length() * 5);
         sb.append(AbstractJsonLexerKt.BEGIN_LIST).append(this.array[this.start]);

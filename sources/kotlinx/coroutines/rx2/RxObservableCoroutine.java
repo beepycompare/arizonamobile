@@ -53,7 +53,7 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: invokeOnClose */
-    public /* bridge */ /* synthetic */ void mo10035invokeOnClose(Function1 function1) {
+    public /* bridge */ /* synthetic */ void mo10066invokeOnClose(Function1 function1) {
         invokeOnClose((Function1<? super Throwable, Unit>) function1);
     }
 
@@ -121,13 +121,13 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
     /* renamed from: trySend-JP2dKIU */
     public Object mo7544trySendJP2dKIU(T t) {
         if (!Mutex.DefaultImpls.tryLock$default(this.mutex, null, 1, null)) {
-            return ChannelResult.Companion.m9980failurePtdJZtk();
+            return ChannelResult.Companion.m10011failurePtdJZtk();
         }
         Throwable doLockedNext = doLockedNext(t);
         if (doLockedNext == null) {
-            return ChannelResult.Companion.m9981successJP2dKIU(Unit.INSTANCE);
+            return ChannelResult.Companion.m10012successJP2dKIU(Unit.INSTANCE);
         }
-        return ChannelResult.Companion.m9979closedJP2dKIU(doLockedNext);
+        return ChannelResult.Companion.m10010closedJP2dKIU(doLockedNext);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -216,35 +216,31 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
 
     private final void doLockedSignalCompleted(Throwable th, boolean z) {
         Throwable th2;
-        if (_signal$volatile$FU.get(this) == -2) {
-            return;
-        }
-        _signal$volatile$FU.set(this, -2);
-        if (th != null) {
-            th2 = !DebugKt.getRECOVER_STACK_TRACES() ? th : StackTraceRecoveryKt.unwrapImpl(th);
-        } else {
-            th2 = null;
-        }
-        if (th2 == null) {
-            try {
-                this.subscriber.onComplete();
-            } catch (Exception e) {
-                RxCancellableKt.handleUndeliverableException(e, getContext());
+        if (_signal$volatile$FU.get(this) != -2) {
+            _signal$volatile$FU.set(this, -2);
+            if (th != null) {
+                th2 = !DebugKt.getRECOVER_STACK_TRACES() ? th : StackTraceRecoveryKt.unwrapImpl(th);
+            } else {
+                th2 = null;
             }
-            return;
-        }
-        if ((th2 instanceof UndeliverableException) && !z) {
-            RxCancellableKt.handleUndeliverableException(th, getContext());
-        } else if (th2 != getCancellationException() || !this.subscriber.isDisposed()) {
-            try {
-                this.subscriber.onError(th);
-            } catch (Exception e2) {
-                ExceptionsKt.addSuppressed(th, e2);
+            if (th2 == null) {
+                try {
+                    this.subscriber.onComplete();
+                } catch (Exception e) {
+                    RxCancellableKt.handleUndeliverableException(e, getContext());
+                }
+            } else if ((th2 instanceof UndeliverableException) && !z) {
                 RxCancellableKt.handleUndeliverableException(th, getContext());
+            } else if (th2 != getCancellationException() || !this.subscriber.isDisposed()) {
+                try {
+                    this.subscriber.onError(th);
+                } catch (Exception e2) {
+                    ExceptionsKt.addSuppressed(th, e2);
+                    RxCancellableKt.handleUndeliverableException(th, getContext());
+                }
             }
+            Mutex.DefaultImpls.unlock$default(this.mutex, null, 1, null);
         }
-        return;
-        Mutex.DefaultImpls.unlock$default(this.mutex, null, 1, null);
     }
 
     private final void signalCompleted(Throwable th, boolean z) {

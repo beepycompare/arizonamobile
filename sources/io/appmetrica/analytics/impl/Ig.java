@@ -6,21 +6,21 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Ig {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f476a;
+    public final String f477a;
     public final String b;
-    public final C0445mj c;
+    public final C0437mj c;
 
     public Ig(ECommerceReferrer eCommerceReferrer) {
-        this(eCommerceReferrer.getType(), eCommerceReferrer.getIdentifier(), eCommerceReferrer.getScreen() == null ? null : new C0445mj(eCommerceReferrer.getScreen()));
+        this(eCommerceReferrer.getType(), eCommerceReferrer.getIdentifier(), eCommerceReferrer.getScreen() == null ? null : new C0437mj(eCommerceReferrer.getScreen()));
     }
 
     public final String toString() {
-        return "ReferrerWrapper{type='" + this.f476a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "ReferrerWrapper{type='" + this.f477a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public Ig(String str, String str2, C0445mj c0445mj) {
-        this.f476a = str;
+    public Ig(String str, String str2, C0437mj c0437mj) {
+        this.f477a = str;
         this.b = str2;
-        this.c = c0445mj;
+        this.c = c0437mj;
     }
 }

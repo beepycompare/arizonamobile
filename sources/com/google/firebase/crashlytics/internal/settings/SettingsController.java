@@ -99,7 +99,7 @@ public class SettingsController implements SettingsProvider {
             JSONObject jSONObject = (JSONObject) this.val$crashlyticsWorkers.network.getExecutor().submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.settings.SettingsController$1$$ExternalSyntheticLambda0
                 @Override // java.util.concurrent.Callable
                 public final Object call() {
-                    return SettingsController.AnonymousClass1.this.m8249xd7ba6dd6();
+                    return SettingsController.AnonymousClass1.this.m8248xd7ba6dd6();
                 }
             }).get();
             if (jSONObject != null) {
@@ -116,7 +116,7 @@ public class SettingsController implements SettingsProvider {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$then$0$com-google-firebase-crashlytics-internal-settings-SettingsController$1  reason: not valid java name */
-        public /* synthetic */ JSONObject m8249xd7ba6dd6() throws Exception {
+        public /* synthetic */ JSONObject m8248xd7ba6dd6() throws Exception {
             return SettingsController.this.settingsSpiCall.invoke(SettingsController.this.settingsRequest, true);
         }
     }

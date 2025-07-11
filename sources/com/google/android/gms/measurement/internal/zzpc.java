@@ -1,33 +1,26 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-import java.util.ArrayList;
-import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzpc extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<zzpc> CREATOR = new zzpd();
-    public final List zza;
+public final class zzpc {
+    final String zza;
+    long zzb;
+
+    private zzpc(zzpf zzpfVar, String str) {
+        Objects.requireNonNull(zzpfVar);
+        this.zza = str;
+        this.zzb = zzpfVar.zzaZ().elapsedRealtime();
+    }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzpc(List list) {
-        this.zza = list;
+    public /* synthetic */ zzpc(zzpf zzpfVar, String str, byte[] bArr) {
+        this(zzpfVar, str);
     }
 
-    public static zzpc zza(zzmf... zzmfVarArr) {
-        ArrayList arrayList = new ArrayList(1);
-        arrayList.add(Integer.valueOf(zzmfVarArr[0].zza()));
-        return new zzpc(arrayList);
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        List list = this.zza;
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeIntegerList(parcel, 1, list, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzpc(zzpf zzpfVar, byte[] bArr) {
+        this(zzpfVar, zzpfVar.zzt().zzaw());
     }
 }

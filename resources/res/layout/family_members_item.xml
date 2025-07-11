@@ -3,7 +3,10 @@
     <LinearLayout android:orientation="horizontal" android:layout_width="@dimen/_140sdp" android:layout_height="match_parent">
         <ImageView android:layout_gravity="center" android:id="@+id/online_image" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:src="@drawable/family_online_ic"/>
         <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="@dimen/_8sdp">
-            <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@+id/member_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NAMETOP CLAN" android:fontFamily="@font/pfdindisplaypro_regular"/>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:id="@+id/member_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Christian_Carrington" android:fontFamily="@font/pfdindisplaypro_regular"/>
+                <TextView android:textSize="@dimen/_6sdp" android:textColor="#99ffffff" android:layout_gravity="center_vertical" android:id="@+id/member_offile_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_2sdp" android:text="около 20 часов назад" android:fontFamily="@font/pfdindisplaypro_regular"/>
+            </LinearLayout>
             <TextView android:textSize="@dimen/_6sdp" android:textColor="#99ffffff" android:layout_gravity="center_vertical" android:id="@+id/member_role" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Лидер" android:fontFamily="@font/pfdindisplaypro_regular"/>
         </LinearLayout>
     </LinearLayout>

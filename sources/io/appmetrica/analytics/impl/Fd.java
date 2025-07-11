@@ -3,5 +3,5 @@ package io.appmetrica.analytics.impl;
 public final class Fd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0670vk f428a = Ga.j().o();
+    public final C0662vk f429a = Ga.j().o();
 }

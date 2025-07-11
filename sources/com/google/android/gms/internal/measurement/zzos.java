@@ -1,22 +1,39 @@
 package com.google.android.gms.internal.measurement;
-
-import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
-import org.checkerframework.dataflow.qual.SideEffectFree;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzos implements Supplier {
-    private static final zzos zza = new zzos();
-    private final Supplier zzb = Suppliers.ofInstance(new zzou());
+public enum zzos {
+    DOUBLE(zzot.DOUBLE, 1),
+    FLOAT(zzot.FLOAT, 5),
+    INT64(zzot.LONG, 0),
+    UINT64(zzot.LONG, 0),
+    INT32(zzot.INT, 0),
+    FIXED64(zzot.LONG, 1),
+    FIXED32(zzot.INT, 5),
+    BOOL(zzot.BOOLEAN, 0),
+    STRING(zzot.STRING, 2),
+    GROUP(zzot.MESSAGE, 3),
+    MESSAGE(zzot.MESSAGE, 2),
+    BYTES(zzot.BYTE_STRING, 2),
+    UINT32(zzot.INT, 0),
+    ENUM(zzot.ENUM, 0),
+    SFIXED32(zzot.INT, 5),
+    SFIXED64(zzot.LONG, 1),
+    SINT32(zzot.INT, 0),
+    SINT64(zzot.LONG, 0);
+    
+    private final zzot zzs;
+    private final int zzt;
 
-    @SideEffectFree
-    public static boolean zzb() {
-        return zza.get().zza();
+    zzos(zzot zzotVar, int i) {
+        this.zzs = zzotVar;
+        this.zzt = i;
     }
 
-    @Override // com.google.common.base.Supplier
-    /* renamed from: zza */
-    public final zzot get() {
-        return (zzot) this.zzb.get();
+    public final zzot zza() {
+        return this.zzs;
+    }
+
+    public final int zzb() {
+        return this.zzt;
     }
 }

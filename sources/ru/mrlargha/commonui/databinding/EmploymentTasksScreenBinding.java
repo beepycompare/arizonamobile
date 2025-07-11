@@ -34,7 +34,7 @@ public final class EmploymentTasksScreenBinding implements ViewBinding {
     public final ShapeableImageView ivNoFraction;
     public final LinearLayout linearTaskStatus;
     public final ConstraintLayout parentLayout;
-    public final ProgressBar progressBar;
+    public final ProgressBar progressBarAllTasks;
     private final ConstraintLayout rootView;
     public final RecyclerView rvEmploymentHistory;
     public final RecyclerView rvEmploymentTasks;
@@ -47,7 +47,7 @@ public final class EmploymentTasksScreenBinding implements ViewBinding {
     public final TextView tvTitleRankName;
     public final TextView tvTitleTable;
 
-    private EmploymentTasksScreenBinding(ConstraintLayout rootView, AppCompatButton btnClose, AppCompatButton btnHistory, AppCompatButton btnMenu, AppCompatButton btnStats, AppCompatButton btnUpdate, Guideline guidelineHor, Guideline guidelineVer, Guideline guidelineVer1, Guideline guidelineVer2, Guideline guidelineVer3, Guideline guidelineVer4, Guideline guidelineVer5, LayoutEmploymentInfoBinding itemTaskInfo, ItemEmploymentTopTableBinding itemTopTable, ShapeableImageView ivNoFraction, LinearLayout linearTaskStatus, ConstraintLayout parentLayout, ProgressBar progressBar, RecyclerView rvEmploymentHistory, RecyclerView rvEmploymentTasks, TextView tvFractionName, TextView tvInfo, MaterialTextView tvNoFraction, TextView tvTasksDone, TextView tvTasksRemain, TextView tvTitle, TextView tvTitleRankName, TextView tvTitleTable) {
+    private EmploymentTasksScreenBinding(ConstraintLayout rootView, AppCompatButton btnClose, AppCompatButton btnHistory, AppCompatButton btnMenu, AppCompatButton btnStats, AppCompatButton btnUpdate, Guideline guidelineHor, Guideline guidelineVer, Guideline guidelineVer1, Guideline guidelineVer2, Guideline guidelineVer3, Guideline guidelineVer4, Guideline guidelineVer5, LayoutEmploymentInfoBinding itemTaskInfo, ItemEmploymentTopTableBinding itemTopTable, ShapeableImageView ivNoFraction, LinearLayout linearTaskStatus, ConstraintLayout parentLayout, ProgressBar progressBarAllTasks, RecyclerView rvEmploymentHistory, RecyclerView rvEmploymentTasks, TextView tvFractionName, TextView tvInfo, MaterialTextView tvNoFraction, TextView tvTasksDone, TextView tvTasksRemain, TextView tvTitle, TextView tvTitleRankName, TextView tvTitleTable) {
         this.rootView = rootView;
         this.btnClose = btnClose;
         this.btnHistory = btnHistory;
@@ -66,7 +66,7 @@ public final class EmploymentTasksScreenBinding implements ViewBinding {
         this.ivNoFraction = ivNoFraction;
         this.linearTaskStatus = linearTaskStatus;
         this.parentLayout = parentLayout;
-        this.progressBar = progressBar;
+        this.progressBarAllTasks = progressBarAllTasks;
         this.rvEmploymentHistory = rvEmploymentHistory;
         this.rvEmploymentTasks = rvEmploymentTasks;
         this.tvFractionName = tvFractionName;
@@ -146,7 +146,7 @@ public final class EmploymentTasksScreenBinding implements ViewBinding {
                                                                 LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
                                                                 if (linearLayout != null) {
                                                                     ConstraintLayout constraintLayout = (ConstraintLayout) rootView;
-                                                                    i = R.id.progressBar;
+                                                                    i = R.id.progressBarAllTasks;
                                                                     ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(rootView, i);
                                                                     if (progressBar != null) {
                                                                         i = R.id.rvEmploymentHistory;

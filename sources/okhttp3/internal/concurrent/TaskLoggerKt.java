@@ -10,55 +10,52 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 /* compiled from: TaskLogger.kt */
-@Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003\u001a \u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u0001H\u0002\u001a5\u0010\u000b\u001a\u0002H\f\"\u0004\b\u0000\u0010\f2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\f\u0010\r\u001a\b\u0012\u0004\u0012\u0002H\f0\u000eH\u0080\bø\u0001\u0000¢\u0006\u0002\u0010\u000f\u001a*\u0010\u0010\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00010\u000eH\u0080\bø\u0001\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\u0012"}, d2 = {"formatDuration", "", "ns", "", "log", "", "task", "Lokhttp3/internal/concurrent/Task;", "queue", "Lokhttp3/internal/concurrent/TaskQueue;", "message", "logElapsed", ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function0;", "(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "taskLog", "messageBlock", "okhttp"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\t\n\u0000\u001a.\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\bH\u0080\bø\u0001\u0000\u001a9\u0010\n\u001a\u0002H\u000b\"\u0004\b\u0000\u0010\u000b*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\f\u0010\f\u001a\b\u0012\u0004\u0012\u0002H\u000b0\bH\u0080\bø\u0001\u0000¢\u0006\u0002\u0010\r\u001a$\u0010\u000e\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u000f\u001a\u00020\tH\u0002\u001a\u000e\u0010\u0010\u001a\u00020\t2\u0006\u0010\u0011\u001a\u00020\u0012\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\u0013"}, d2 = {"taskLog", "", "Ljava/util/logging/Logger;", "task", "Lokhttp3/internal/concurrent/Task;", "queue", "Lokhttp3/internal/concurrent/TaskQueue;", "messageBlock", "Lkotlin/Function0;", "", "logElapsed", ExifInterface.GPS_DIRECTION_TRUE, "block", "(Ljava/util/logging/Logger;Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "log", "message", "formatDuration", "ns", "", "okhttp"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class TaskLoggerKt {
-    public static final /* synthetic */ void access$log(Task task, TaskQueue taskQueue, String str) {
-        log(task, taskQueue, str);
-    }
-
-    public static final void taskLog(Task task, TaskQueue queue, Function0<String> messageBlock) {
+    public static final void taskLog(Logger logger, Task task, TaskQueue queue, Function0<String> messageBlock) {
+        Intrinsics.checkNotNullParameter(logger, "<this>");
         Intrinsics.checkNotNullParameter(task, "task");
         Intrinsics.checkNotNullParameter(queue, "queue");
         Intrinsics.checkNotNullParameter(messageBlock, "messageBlock");
-        if (TaskRunner.Companion.getLogger().isLoggable(Level.FINE)) {
-            log(task, queue, messageBlock.invoke());
+        if (logger.isLoggable(Level.FINE)) {
+            log(logger, task, queue, messageBlock.invoke());
         }
     }
 
-    public static final <T> T logElapsed(Task task, TaskQueue queue, Function0<? extends T> block) {
+    public static final <T> T logElapsed(Logger logger, Task task, TaskQueue queue, Function0<? extends T> block) {
         long j;
+        Intrinsics.checkNotNullParameter(logger, "<this>");
         Intrinsics.checkNotNullParameter(task, "task");
         Intrinsics.checkNotNullParameter(queue, "queue");
         Intrinsics.checkNotNullParameter(block, "block");
-        boolean isLoggable = TaskRunner.Companion.getLogger().isLoggable(Level.FINE);
+        boolean isLoggable = logger.isLoggable(Level.FINE);
         if (isLoggable) {
             j = queue.getTaskRunner$okhttp().getBackend().nanoTime();
-            log(task, queue, "starting");
+            log(logger, task, queue, "starting");
         } else {
             j = -1;
         }
         try {
             T invoke = block.invoke();
             if (isLoggable) {
-                log(task, queue, "finished run in " + formatDuration(queue.getTaskRunner$okhttp().getBackend().nanoTime() - j));
+                log(logger, task, queue, "finished run in " + formatDuration(queue.getTaskRunner$okhttp().getBackend().nanoTime() - j));
             }
             return invoke;
         } catch (Throwable th) {
             if (isLoggable) {
-                log(task, queue, "failed a run in " + formatDuration(queue.getTaskRunner$okhttp().getBackend().nanoTime() - j));
+                log(logger, task, queue, "failed a run in " + formatDuration(queue.getTaskRunner$okhttp().getBackend().nanoTime() - j));
             }
             throw th;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void log(Task task, TaskQueue taskQueue, String str) {
-        Logger logger = TaskRunner.Companion.getLogger();
+    public static final void log(Logger logger, Task task, TaskQueue taskQueue, String str) {
         StringBuilder append = new StringBuilder().append(taskQueue.getName$okhttp()).append(' ');
         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
         String format = String.format("%-22s", Arrays.copyOf(new Object[]{str}, 1));
-        Intrinsics.checkNotNullExpressionValue(format, "format(format, *args)");
+        Intrinsics.checkNotNullExpressionValue(format, "format(...)");
         logger.fine(append.append(format).append(": ").append(task.getName()).toString());
     }
 
@@ -73,7 +70,7 @@ public final class TaskLoggerKt {
         }
         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
         String format = String.format("%6s", Arrays.copyOf(new Object[]{str}, 1));
-        Intrinsics.checkNotNullExpressionValue(format, "format(format, *args)");
+        Intrinsics.checkNotNullExpressionValue(format, "format(...)");
         return format;
     }
 }

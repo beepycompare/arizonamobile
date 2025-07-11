@@ -1,110 +1,105 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.android.gms.internal.measurement.zzkn;
-import com.google.android.gms.internal.measurement.zzko;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.StrictMode;
+import androidx.collection.ArrayMap;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.RandomAccess;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+import java.util.Map;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public abstract class zzkn<MessageType extends zzko<MessageType, BuilderType>, BuilderType extends zzkn<MessageType, BuilderType>> implements zzng {
-    private static void zza(List list, int i) {
-        String str = "Element at index " + (list.size() - i) + " is null.";
-        int size = list.size();
-        while (true) {
-            size--;
-            if (size >= i) {
-                list.remove(size);
-            } else {
-                throw new NullPointerException(str);
-            }
-        }
+public final class zzkn implements zzju {
+    private static final Map zza = new ArrayMap();
+    private final SharedPreferences zzb;
+    private SharedPreferences.OnSharedPreferenceChangeListener zzc;
+    private volatile Map zze;
+    private final Object zzd = new Object();
+    private final List zzf = new ArrayList();
+
+    private zzkn(SharedPreferences sharedPreferences, Runnable runnable) {
+        this.zzb = sharedPreferences;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public static void zzaW(Iterable iterable, List list) {
-        byte[] bArr = zzmk.zzb;
-        iterable.getClass();
-        if (iterable instanceof zzmt) {
-            List zza = ((zzmt) iterable).zza();
-            zzmt zzmtVar = (zzmt) list;
-            int size = list.size();
-            for (Object obj : zza) {
-                if (obj == null) {
-                    String str = "Element at index " + (zzmtVar.size() - size) + " is null.";
-                    int size2 = zzmtVar.size();
-                    while (true) {
-                        size2--;
-                        if (size2 < size) {
-                            break;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static zzkn zza(Context context, String str, Runnable runnable) {
+        final zzkn zzknVar;
+        SharedPreferences zza2;
+        if (!zzjm.zza() || str.startsWith("direct_boot:") || zzjm.zzc(context)) {
+            synchronized (zzkn.class) {
+                Map map = zza;
+                zzknVar = (zzkn) map.get(str);
+                if (zzknVar == null) {
+                    StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
+                    if (str.startsWith("direct_boot:")) {
+                        if (zzjm.zza()) {
+                            context = context.createDeviceProtectedStorageContext();
                         }
-                        zzmtVar.remove(size2);
+                        zza2 = zzcf.zza(context, str.substring(12), 0, zzcb.zza);
+                    } else {
+                        zza2 = zzcf.zza(context, str, 0, zzcb.zza);
                     }
-                    throw new NullPointerException(str);
-                } else if (obj instanceof zzld) {
-                    zzld zzldVar = (zzld) obj;
-                    zzmtVar.zzb();
-                } else if (obj instanceof byte[]) {
-                    byte[] bArr2 = (byte[]) obj;
-                    zzld.zzj(bArr2, 0, bArr2.length);
-                    zzmtVar.zzb();
-                } else {
-                    zzmtVar.add((String) obj);
+                    StrictMode.setThreadPolicy(allowThreadDiskReads);
+                    zzknVar = new zzkn(zza2, runnable);
+                    SharedPreferences.OnSharedPreferenceChangeListener onSharedPreferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() { // from class: com.google.android.gms.internal.measurement.zzkm
+                        @Override // android.content.SharedPreferences.OnSharedPreferenceChangeListener
+                        public final /* synthetic */ void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String str2) {
+                            zzkn.this.zzc(sharedPreferences, str2);
+                        }
+                    };
+                    zzknVar.zzc = onSharedPreferenceChangeListener;
+                    zzknVar.zzb.registerOnSharedPreferenceChangeListener(onSharedPreferenceChangeListener);
+                    map.put(str, zzknVar);
                 }
             }
-        } else if (!(iterable instanceof zzno)) {
-            if (iterable instanceof Collection) {
-                int size3 = ((Collection) iterable).size();
-                if (list instanceof ArrayList) {
-                    ((ArrayList) list).ensureCapacity(list.size() + size3);
-                } else if (list instanceof zznq) {
-                    ((zznq) list).zzf(list.size() + size3);
-                }
+            return zzknVar;
+        }
+        return null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static synchronized void zzb() {
+        synchronized (zzkn.class) {
+            Map map = zza;
+            for (zzkn zzknVar : map.values()) {
+                zzknVar.zzb.unregisterOnSharedPreferenceChangeListener((SharedPreferences.OnSharedPreferenceChangeListener) Preconditions.checkNotNull(zzknVar.zzc));
             }
-            int size4 = list.size();
-            if (!(iterable instanceof List) || !(iterable instanceof RandomAccess)) {
-                for (Object obj2 : iterable) {
-                    if (obj2 == null) {
-                        zza(list, size4);
-                    }
-                    list.add(obj2);
-                }
-                return;
-            }
-            List list2 = (List) iterable;
-            int size5 = list2.size();
-            for (int i = 0; i < size5; i++) {
-                Object obj3 = list2.get(i);
-                if (obj3 == null) {
-                    zza(list, size4);
-                }
-                list.add(obj3);
-            }
-        } else {
-            list.addAll((Collection) iterable);
+            map.clear();
         }
     }
 
-    @Override // 
-    /* renamed from: zzaR */
-    public abstract zzkn clone();
-
-    public zzkn zzaS(byte[] bArr, int i, int i2) throws zzmm {
-        throw null;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzc(SharedPreferences sharedPreferences, String str) {
+        synchronized (this.zzd) {
+            this.zze = null;
+            zzkl.zzc();
+        }
+        synchronized (this) {
+            for (zzjr zzjrVar : this.zzf) {
+                zzjrVar.zza();
+            }
+        }
     }
 
-    public zzkn zzaT(byte[] bArr, int i, int i2, zzlp zzlpVar) throws zzmm {
-        throw null;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzng
-    public final /* synthetic */ zzng zzaU(byte[] bArr) throws zzmm {
-        return zzaS(bArr, 0, bArr.length);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzng
-    public final /* synthetic */ zzng zzaV(byte[] bArr, zzlp zzlpVar) throws zzmm {
-        return zzaT(bArr, 0, bArr.length, zzlpVar);
+    @Override // com.google.android.gms.internal.measurement.zzju
+    public final Object zze(String str) {
+        Map<String, ?> map = this.zze;
+        if (map == null) {
+            synchronized (this.zzd) {
+                map = this.zze;
+                if (map == null) {
+                    StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
+                    Map<String, ?> all = this.zzb.getAll();
+                    this.zze = all;
+                    StrictMode.setThreadPolicy(allowThreadDiskReads);
+                    map = all;
+                }
+            }
+        }
+        if (map != null) {
+            return map.get(str);
+        }
+        return null;
     }
 }

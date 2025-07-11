@@ -6,7 +6,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlinx.datetime.internal.DecimalFraction;
 /* JADX INFO: Add missing generic type declarations: [Target] */
 /* compiled from: FieldFormatDirective.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 /* synthetic */ class DecimalFractionFieldFormatDirective$formatter$1<Target> extends FunctionReferenceImpl implements Function1<Target, DecimalFraction> {
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -1,21 +1,83 @@
 package com.google.android.gms.measurement.internal;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzpk implements Runnable {
-    final /* synthetic */ zzpw zza;
-    final /* synthetic */ zzpv zzb;
+public final class zzpk extends AbstractSafeParcelable {
+    public static final Parcelable.Creator<zzpk> CREATOR = new zzpl();
+    public final int zza;
+    public final String zzb;
+    public final long zzc;
+    public final Long zzd;
+    public final String zze;
+    public final String zzf;
+    public final Double zzg;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzpk(zzpv zzpvVar, zzpw zzpwVar) {
-        this.zza = zzpwVar;
-        this.zzb = zzpvVar;
+    public zzpk(int i, String str, long j, Long l, Float f, String str2, String str3, Double d) {
+        this.zza = i;
+        this.zzb = str;
+        this.zzc = j;
+        this.zzd = l;
+        this.zzg = i == 1 ? f != null ? Double.valueOf(f.doubleValue()) : null : d;
+        this.zze = str2;
+        this.zzf = str3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        zzpv zzpvVar = this.zzb;
-        zzpv.zzH(zzpvVar, this.zza);
-        zzpvVar.zzam();
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        zzpl.zza(this, parcel, i);
+    }
+
+    public final Object zza() {
+        Long l = this.zzd;
+        if (l != null) {
+            return l;
+        }
+        Double d = this.zzg;
+        if (d != null) {
+            return d;
+        }
+        String str = this.zze;
+        if (str != null) {
+            return str;
+        }
+        return null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzpk(zzpm zzpmVar) {
+        this(zzpmVar.zzc, zzpmVar.zzd, zzpmVar.zze, zzpmVar.zzb);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzpk(String str, long j, Object obj, String str2) {
+        Preconditions.checkNotEmpty(str);
+        this.zza = 2;
+        this.zzb = str;
+        this.zzc = j;
+        this.zzf = str2;
+        if (obj == null) {
+            this.zzd = null;
+            this.zzg = null;
+            this.zze = null;
+        } else if (obj instanceof Long) {
+            this.zzd = (Long) obj;
+            this.zzg = null;
+            this.zze = null;
+        } else if (obj instanceof String) {
+            this.zzd = null;
+            this.zzg = null;
+            this.zze = (String) obj;
+        } else if (obj instanceof Double) {
+            this.zzd = null;
+            this.zzg = (Double) obj;
+            this.zze = null;
+        } else {
+            throw new IllegalArgumentException("User attribute given of un-supported type");
+        }
     }
 }

@@ -1,31 +1,36 @@
 package com.google.android.gms.measurement.internal;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public enum zzmf {
-    GOOGLE_ANALYTICS(0),
-    GOOGLE_SIGNAL(1),
-    SGTM(2),
-    SGTM_CLIENT(3),
-    GOOGLE_SIGNAL_PENDING(4),
-    UNKNOWN(99);
-    
-    private final int zzh;
+public final class zzmf implements Runnable {
+    final /* synthetic */ zzr zza;
+    final /* synthetic */ boolean zzb;
+    final /* synthetic */ zzpk zzc;
+    final /* synthetic */ zznk zzd;
 
-    zzmf(int i) {
-        this.zzh = i;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzmf(zznk zznkVar, zzr zzrVar, boolean z, zzpk zzpkVar) {
+        this.zza = zzrVar;
+        this.zzb = z;
+        this.zzc = zzpkVar;
+        Objects.requireNonNull(zznkVar);
+        this.zzd = zznkVar;
     }
 
-    public static zzmf zzb(int i) {
-        zzmf[] values;
-        for (zzmf zzmfVar : values()) {
-            if (zzmfVar.zzh == i) {
-                return zzmfVar;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        zznk zznkVar = this.zzd;
+        zzga zzZ = zznkVar.zzZ();
+        if (zzZ == null) {
+            zznkVar.zzu.zzaV().zzb().zza("Discarding data. Failed to set user property");
+            return;
         }
-        return UNKNOWN;
-    }
-
-    public final int zza() {
-        return this.zzh;
+        zzr zzrVar = this.zza;
+        Preconditions.checkNotNull(zzrVar);
+        zznkVar.zzm(zzZ, this.zzb ? null : this.zzc, zzrVar);
+        zznkVar.zzV();
     }
 }

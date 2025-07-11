@@ -18,25 +18,25 @@ public final class Cif extends Ld implements vo {
     public static final String f = "";
     public static final String g = "";
     public static final String q = "SESSION_";
-    public static final C0391kf h = new C0391kf("PERMISSIONS_CHECK_TIME", null);
-    public static final C0391kf i = new C0391kf("PROFILE_ID", null);
-    public static final C0391kf j = new C0391kf("APP_ENVIRONMENT", null);
-    public static final C0391kf k = new C0391kf("APP_ENVIRONMENT_REVISION", null);
-    public static final C0391kf l = new C0391kf("LAST_APP_VERSION_WITH_FEATURES", null);
-    public static final C0391kf m = new C0391kf("APPLICATION_FEATURES", null);
-    public static final C0391kf n = new C0391kf("CERTIFICATES_SHA1_FINGERPRINTS", null);
-    public static final C0391kf o = new C0391kf("VITAL_DATA", null);
-    public static final C0391kf p = new C0391kf("SENT_EXTERNAL_ATTRIBUTIONS", null);
-    public static final C0391kf r = new C0391kf("MAIN_REPORTER_EVENTS_TRIGGER_CONDITION_MET", null);
+    public static final C0383kf h = new C0383kf("PERMISSIONS_CHECK_TIME", null);
+    public static final C0383kf i = new C0383kf("PROFILE_ID", null);
+    public static final C0383kf j = new C0383kf("APP_ENVIRONMENT", null);
+    public static final C0383kf k = new C0383kf("APP_ENVIRONMENT_REVISION", null);
+    public static final C0383kf l = new C0383kf("LAST_APP_VERSION_WITH_FEATURES", null);
+    public static final C0383kf m = new C0383kf("APPLICATION_FEATURES", null);
+    public static final C0383kf n = new C0383kf("CERTIFICATES_SHA1_FINGERPRINTS", null);
+    public static final C0383kf o = new C0383kf("VITAL_DATA", null);
+    public static final C0383kf p = new C0383kf("SENT_EXTERNAL_ATTRIBUTIONS", null);
+    public static final C0383kf r = new C0383kf("MAIN_REPORTER_EVENTS_TRIGGER_CONDITION_MET", null);
 
-    public Cif(InterfaceC0135ab interfaceC0135ab) {
-        super(interfaceC0135ab);
+    public Cif(InterfaceC0127ab interfaceC0127ab) {
+        super(interfaceC0127ab);
     }
 
-    public final Cif a(C0277g0 c0277g0) {
+    public final Cif a(C0269g0 c0269g0) {
         synchronized (this) {
-            b(j.b, c0277g0.f846a);
-            b(k.b, c0277g0.b);
+            b(j.b, c0269g0.f847a);
+            b(k.b, c0269g0.b);
         }
         return this;
     }
@@ -45,28 +45,28 @@ public final class Cif extends Ld implements vo {
         b(r.b, z);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0366jf
+    @Override // io.appmetrica.analytics.impl.AbstractC0358jf
     public final Set<String> c() {
-        return this.f891a.a();
+        return this.f892a.a();
     }
 
-    public final C0277g0 d() {
-        C0277g0 c0277g0;
+    public final C0269g0 d() {
+        C0269g0 c0269g0;
         synchronized (this) {
-            c0277g0 = new C0277g0(this.f891a.getString(j.b, "{}"), this.f891a.getLong(k.b, 0L));
+            c0269g0 = new C0269g0(this.f892a.getString(j.b, "{}"), this.f892a.getLong(k.b, 0L));
         }
-        return c0277g0;
+        return c0269g0;
     }
 
     public final String e() {
-        return this.f891a.getString(m.b, "");
+        return this.f892a.getString(m.b, "");
     }
 
     public final List<String> f() {
         String str = n.b;
         List emptyList = Collections.emptyList();
         String[] strArr = emptyList == null ? null : (String[]) emptyList.toArray(new String[emptyList.size()]);
-        String string = this.f891a.getString(str, null);
+        String string = this.f892a.getString(str, null);
         if (!TextUtils.isEmpty(string)) {
             try {
                 JSONArray jSONArray = new JSONArray(string);
@@ -84,11 +84,11 @@ public final class Cif extends Ld implements vo {
     }
 
     public final int g() {
-        return this.f891a.getInt(l.b, -1);
+        return this.f892a.getInt(l.b, -1);
     }
 
     public final long h() {
-        return this.f891a.getLong(h.b, 0L);
+        return this.f892a.getLong(h.b, 0L);
     }
 
     public final Cif i(String str) {
@@ -100,17 +100,17 @@ public final class Cif extends Ld implements vo {
     }
 
     public final String h(String str) {
-        return this.f891a.getString(new C0391kf(q, str).b, "");
+        return this.f892a.getString(new C0383kf(q, str).b, "");
     }
 
     public final String i() {
-        return this.f891a.getString(i.b, null);
+        return this.f892a.getString(i.b, null);
     }
 
     public final Map<Integer, String> j() {
         HashMap hashMap = new HashMap();
         try {
-            String string = this.f891a.getString(p.b, null);
+            String string = this.f892a.getString(p.b, null);
             if (string != null) {
                 JSONObject jSONObject = new JSONObject(string);
                 Iterator<String> keys = jSONObject.keys();
@@ -125,7 +125,7 @@ public final class Cif extends Ld implements vo {
     }
 
     public final Cif e(String str, String str2) {
-        return (Cif) b(new C0391kf(q, str).b, str2);
+        return (Cif) b(new C0383kf(q, str).b, str2);
     }
 
     public final Cif a(long j2) {
@@ -138,7 +138,7 @@ public final class Cif extends Ld implements vo {
 
     @Override // io.appmetrica.analytics.impl.Ld
     public final String f(String str) {
-        return new C0391kf(str, null).b;
+        return new C0383kf(str, null).b;
     }
 
     public final Cif a(List<String> list) {
@@ -146,12 +146,12 @@ public final class Cif extends Ld implements vo {
     }
 
     public final boolean a(boolean z) {
-        return this.f891a.getBoolean(r.b, z);
+        return this.f892a.getBoolean(r.b, z);
     }
 
     @Override // io.appmetrica.analytics.impl.vo
     public final String a() {
-        return this.f891a.getString(o.b, null);
+        return this.f892a.getString(o.b, null);
     }
 
     @Override // io.appmetrica.analytics.impl.vo

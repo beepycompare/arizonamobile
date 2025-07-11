@@ -7,6 +7,7 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.util.Log;
 import com.google.android.gms.common.stats.ConnectionTracker;
+import com.google.android.gms.common.util.concurrent.NamedThreadFactory;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
@@ -40,7 +41,7 @@ class WithinAppServiceConnection implements ServiceConnection {
             final ScheduledFuture<?> schedule = scheduledExecutorService.schedule(new Runnable() { // from class: com.google.firebase.messaging.WithinAppServiceConnection$BindRequest$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WithinAppServiceConnection.BindRequest.this.m8274x9cf97a38();
+                    WithinAppServiceConnection.BindRequest.this.m8273x9cf97a38();
                 }
             }, 20L, TimeUnit.SECONDS);
             getTask().addOnCompleteListener(scheduledExecutorService, new OnCompleteListener() { // from class: com.google.firebase.messaging.WithinAppServiceConnection$BindRequest$$ExternalSyntheticLambda1
@@ -53,7 +54,7 @@ class WithinAppServiceConnection implements ServiceConnection {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$arrangeTimeout$0$com-google-firebase-messaging-WithinAppServiceConnection$BindRequest  reason: not valid java name */
-        public /* synthetic */ void m8274x9cf97a38() {
+        public /* synthetic */ void m8273x9cf97a38() {
             Log.w(Constants.TAG, "Service took too long to process intent: " + this.intent.getAction() + " finishing.");
             finish();
         }
@@ -74,7 +75,7 @@ class WithinAppServiceConnection implements ServiceConnection {
     }
 
     private static ScheduledThreadPoolExecutor createScheduledThreadPoolExecutor() {
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1);
+        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new NamedThreadFactory("Firebase-FirebaseInstanceIdServiceConnection"));
         scheduledThreadPoolExecutor.setKeepAliveTime(40L, TimeUnit.SECONDS);
         scheduledThreadPoolExecutor.allowCoreThreadTimeOut(true);
         return scheduledThreadPoolExecutor;

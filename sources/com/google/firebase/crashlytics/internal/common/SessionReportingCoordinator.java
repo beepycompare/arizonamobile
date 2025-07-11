@@ -182,7 +182,7 @@ public class SessionReportingCoordinator {
             this.crashlyticsWorkers.diskWrite.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.SessionReportingCoordinator$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SessionReportingCoordinator.this.m8238x631b9fbf(addMetaDataToEvent, eventMetadata, equals);
+                    SessionReportingCoordinator.this.m8237x631b9fbf(addMetaDataToEvent, eventMetadata, equals);
                 }
             });
         } else {
@@ -192,7 +192,7 @@ public class SessionReportingCoordinator {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$persistEvent$0$com-google-firebase-crashlytics-internal-common-SessionReportingCoordinator  reason: not valid java name */
-    public /* synthetic */ void m8238x631b9fbf(CrashlyticsReport.Session.Event event, EventMetadata eventMetadata, boolean z) {
+    public /* synthetic */ void m8237x631b9fbf(CrashlyticsReport.Session.Event event, EventMetadata eventMetadata, boolean z) {
         Logger.getLogger().d("disk worker: log non-fatal event to persistence");
         this.reportPersistence.persistEvent(event, eventMetadata.getSessionId(), z);
     }

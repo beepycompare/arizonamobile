@@ -15,8 +15,8 @@ import java.util.Objects;
 import javax.annotation.Nullable;
 import kotlin.Unit;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-import okhttp3.HttpUrl;
 import okhttp3.ResponseBody;
+import okhttp3.internal.url._UrlKt;
 import okio.Buffer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes5.dex */
@@ -405,7 +405,7 @@ public final class Utils {
         }
 
         public String toString() {
-            return Utils.typeToString(this.componentType) + HttpUrl.PATH_SEGMENT_ENCODE_SET_URI;
+            return Utils.typeToString(this.componentType) + _UrlKt.PATH_SEGMENT_ENCODE_SET_URI;
         }
     }
 

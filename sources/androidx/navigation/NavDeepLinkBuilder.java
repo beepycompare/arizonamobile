@@ -299,16 +299,16 @@ public final class NavDeepLinkBuilder {
 
     public final PendingIntent createPendingIntent() {
         Bundle bundle = this.globalArgs;
-        int m7582contentDeepHashCodeimpl = bundle != null ? SavedStateReader.m7582contentDeepHashCodeimpl(SavedStateReader.m7579constructorimpl(bundle)) : 0;
+        int m7583contentDeepHashCodeimpl = bundle != null ? SavedStateReader.m7583contentDeepHashCodeimpl(SavedStateReader.m7580constructorimpl(bundle)) : 0;
         for (DeepLinkDestination deepLinkDestination : this.destinations) {
-            m7582contentDeepHashCodeimpl = (m7582contentDeepHashCodeimpl * 31) + deepLinkDestination.getDestinationId();
+            m7583contentDeepHashCodeimpl = (m7583contentDeepHashCodeimpl * 31) + deepLinkDestination.getDestinationId();
             Bundle arguments = deepLinkDestination.getArguments();
-            Integer valueOf = arguments != null ? Integer.valueOf(SavedStateReader.m7582contentDeepHashCodeimpl(SavedStateReader.m7579constructorimpl(arguments))) : null;
+            Integer valueOf = arguments != null ? Integer.valueOf(SavedStateReader.m7583contentDeepHashCodeimpl(SavedStateReader.m7580constructorimpl(arguments))) : null;
             if (valueOf != null) {
-                m7582contentDeepHashCodeimpl = (m7582contentDeepHashCodeimpl * 31) + valueOf.intValue();
+                m7583contentDeepHashCodeimpl = (m7583contentDeepHashCodeimpl * 31) + valueOf.intValue();
             }
         }
-        PendingIntent pendingIntent = createTaskStackBuilder().getPendingIntent(m7582contentDeepHashCodeimpl, 201326592);
+        PendingIntent pendingIntent = createTaskStackBuilder().getPendingIntent(m7583contentDeepHashCodeimpl, 201326592);
         Intrinsics.checkNotNull(pendingIntent);
         return pendingIntent;
     }

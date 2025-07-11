@@ -7,7 +7,6 @@ import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import io.appmetrica.analytics.BuildConfig;
 import java.util.ArrayList;
-import kotlin.io.encoding.Base64;
 /* loaded from: classes2.dex */
 public final class PathParser {
     private static final String LOGTAG = "PathParser";
@@ -315,7 +314,7 @@ public final class PathParser {
                 case 'v':
                     i2 = 1;
                     break;
-                case Base64.mimeLineLength /* 76 */:
+                case 'L':
                 case 'M':
                 case 'T':
                 case 'l':

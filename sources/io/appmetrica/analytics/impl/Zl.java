@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function0;
 public abstract class Zl {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Set f742a = SetsKt.setOf((Object[]) new String[]{"appmetrica_clids", StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, StartupParamsCallback.APPMETRICA_DEVICE_ID, "appmetrica_get_ad_url", "appmetrica_report_ad_url", StartupParamsCallback.APPMETRICA_UUID});
+    public static final Set f743a = SetsKt.setOf((Object[]) new String[]{"appmetrica_clids", StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, StartupParamsCallback.APPMETRICA_DEVICE_ID, "appmetrica_get_ad_url", "appmetrica_report_ad_url", StartupParamsCallback.APPMETRICA_UUID});
     public static final SystemTimeProvider b = new SystemTimeProvider();
     public static final Y3 c = new Y3();
 
@@ -27,7 +27,7 @@ public abstract class Zl {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final boolean a(C0198cm c0198cm, Collection collection, Map map, Function0 function0) {
+    public static final boolean a(C0190cm c0190cm, Collection collection, Map map, Function0 function0) {
         boolean a2;
         if (collection != null && !collection.isEmpty() && !collection.isEmpty()) {
             Iterator it = collection.iterator();
@@ -36,61 +36,61 @@ public abstract class Zl {
                 switch (str.hashCode()) {
                     case -1367801046:
                         if (!str.equals(StartupParamsCallback.APPMETRICA_UUID)) {
-                            if (c0198cm.w) {
+                            if (c0190cm.w) {
                                 return false;
                             }
-                            if (b.currentTimeSeconds() > c0198cm.o + c0198cm.A.f341a) {
+                            if (b.currentTimeSeconds() > c0190cm.o + c0190cm.A.f342a) {
                                 return false;
                             }
                         } else {
-                            a2 = a(c0198cm.d);
+                            a2 = a(c0190cm.d);
                             if (a2) {
                                 return false;
                             }
                         }
                     case 155670667:
                         if (str.equals("appmetrica_get_ad_url")) {
-                            a2 = a(c0198cm.i);
+                            a2 = a(c0190cm.i);
                             if (a2) {
                             }
-                        } else if (c0198cm.w) {
+                        } else if (c0190cm.w) {
                         }
                         break;
                     case 299713912:
                         if (str.equals(StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH)) {
-                            a2 = a(c0198cm.b);
+                            a2 = a(c0190cm.b);
                             if (a2) {
                             }
-                        } else if (c0198cm.w) {
+                        } else if (c0190cm.w) {
                         }
                         break;
                     case 530949152:
                         if (str.equals("appmetrica_clids")) {
                             c.getClass();
-                            a2 = Y3.a(map, c0198cm, (V3) function0.invoke());
+                            a2 = Y3.a(map, c0190cm, (V3) function0.invoke());
                             if (a2) {
                             }
-                        } else if (c0198cm.w) {
+                        } else if (c0190cm.w) {
                         }
                         break;
                     case 703740463:
                         if (str.equals("appmetrica_report_ad_url")) {
-                            a2 = a(c0198cm.j);
+                            a2 = a(c0190cm.j);
                             if (a2) {
                             }
-                        } else if (c0198cm.w) {
+                        } else if (c0190cm.w) {
                         }
                         break;
                     case 1117383061:
                         if (str.equals(StartupParamsCallback.APPMETRICA_DEVICE_ID)) {
-                            a2 = a(c0198cm.f788a);
+                            a2 = a(c0190cm.f789a);
                             if (a2) {
                             }
-                        } else if (c0198cm.w) {
+                        } else if (c0190cm.w) {
                         }
                         break;
                     default:
-                        if (c0198cm.w) {
+                        if (c0190cm.w) {
                         }
                         break;
                 }

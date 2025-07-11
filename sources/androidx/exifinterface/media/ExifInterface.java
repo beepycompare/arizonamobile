@@ -797,8 +797,17 @@ public class ExifInterface {
             return "(" + ExifInterface.IFD_FORMAT_NAMES[this.format] + ", data length:" + this.bytes.length + ")";
         }
 
-        /* JADX WARN: Not initialized variable reg: 4, insn: 0x01af: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]), block:B:150:0x01ae */
-        /* JADX WARN: Removed duplicated region for block: B:157:0x01b2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Not initialized variable reg: 4, insn: 0x015b: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]), block:B:94:0x015a */
+        /* JADX WARN: Removed duplicated region for block: B:105:0x015e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Type inference failed for: r13v22, types: [int[]] */
+        /* JADX WARN: Type inference failed for: r13v24, types: [long[]] */
+        /* JADX WARN: Type inference failed for: r13v26, types: [androidx.exifinterface.media.ExifInterface$Rational[]] */
+        /* JADX WARN: Type inference failed for: r13v28, types: [int[]] */
+        /* JADX WARN: Type inference failed for: r13v30, types: [int[]] */
+        /* JADX WARN: Type inference failed for: r13v32, types: [androidx.exifinterface.media.ExifInterface$Rational[]] */
+        /* JADX WARN: Type inference failed for: r13v34, types: [double[]] */
+        /* JADX WARN: Type inference failed for: r13v37, types: [double[]] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -809,6 +818,7 @@ public class ExifInterface {
             ByteOrderedDataInputStream byteOrderedDataInputStream2;
             byte b;
             byte b2;
+            String str;
             ByteOrderedDataInputStream byteOrderedDataInputStream3 = null;
             try {
                 try {
@@ -820,24 +830,14 @@ public class ExifInterface {
                             case 1:
                             case 6:
                                 byte[] bArr = this.bytes;
-                                if (bArr.length != 1 || (b = bArr[0]) < 0 || b > 1) {
-                                    String str = new String(this.bytes, ExifInterface.ASCII);
-                                    try {
-                                        byteOrderedDataInputStream.close();
-                                        return str;
-                                    } catch (IOException e) {
-                                        Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e);
-                                        return str;
-                                    }
+                                if (bArr.length == 1 && (b = bArr[0]) >= 0 && b <= 1) {
+                                    str = new String(new char[]{(char) (this.bytes[0] + 48)});
+                                    break;
+                                } else {
+                                    str = new String(this.bytes, ExifInterface.ASCII);
+                                    break;
                                 }
-                                String str2 = new String(new char[]{(char) (this.bytes[0] + 48)});
-                                try {
-                                    byteOrderedDataInputStream.close();
-                                    return str2;
-                                } catch (IOException e2) {
-                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e2);
-                                    return str2;
-                                }
+                                break;
                             case 2:
                             case 7:
                                 if (this.numberOfComponents >= ExifInterface.EXIF_ASCII_PREFIX.length) {
@@ -859,135 +859,112 @@ public class ExifInterface {
                                     }
                                     i++;
                                 }
-                                String sb2 = sb.toString();
-                                try {
-                                    byteOrderedDataInputStream.close();
-                                    return sb2;
-                                } catch (IOException e3) {
-                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e3);
-                                    return sb2;
-                                }
+                                str = sb.toString();
+                                break;
                             case 3:
-                                int[] iArr = new int[this.numberOfComponents];
-                                while (i < this.numberOfComponents) {
-                                    iArr[i] = byteOrderedDataInputStream.readUnsignedShort();
-                                    i++;
+                                ?? r13 = new int[this.numberOfComponents];
+                                while (true) {
+                                    str = r13;
+                                    if (i < this.numberOfComponents) {
+                                        r13[i] = byteOrderedDataInputStream.readUnsignedShort();
+                                        i++;
+                                    }
                                 }
-                                try {
-                                    byteOrderedDataInputStream.close();
-                                    return iArr;
-                                } catch (IOException e4) {
-                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e4);
-                                    return iArr;
-                                }
+                                break;
                             case 4:
-                                long[] jArr = new long[this.numberOfComponents];
-                                while (i < this.numberOfComponents) {
-                                    jArr[i] = byteOrderedDataInputStream.readUnsignedInt();
-                                    i++;
+                                ?? r132 = new long[this.numberOfComponents];
+                                while (true) {
+                                    str = r132;
+                                    if (i < this.numberOfComponents) {
+                                        r132[i] = byteOrderedDataInputStream.readUnsignedInt();
+                                        i++;
+                                    }
                                 }
-                                try {
-                                    byteOrderedDataInputStream.close();
-                                    return jArr;
-                                } catch (IOException e5) {
-                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e5);
-                                    return jArr;
-                                }
+                                break;
                             case 5:
-                                Rational[] rationalArr = new Rational[this.numberOfComponents];
-                                while (i < this.numberOfComponents) {
-                                    rationalArr[i] = new Rational(byteOrderedDataInputStream.readUnsignedInt(), byteOrderedDataInputStream.readUnsignedInt());
-                                    i++;
+                                ?? r133 = new Rational[this.numberOfComponents];
+                                while (true) {
+                                    str = r133;
+                                    if (i < this.numberOfComponents) {
+                                        r133[i] = new Rational(byteOrderedDataInputStream.readUnsignedInt(), byteOrderedDataInputStream.readUnsignedInt());
+                                        i++;
+                                    }
                                 }
-                                try {
-                                    byteOrderedDataInputStream.close();
-                                    return rationalArr;
-                                } catch (IOException e6) {
-                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e6);
-                                    return rationalArr;
-                                }
+                                break;
                             case 8:
-                                int[] iArr2 = new int[this.numberOfComponents];
-                                while (i < this.numberOfComponents) {
-                                    iArr2[i] = byteOrderedDataInputStream.readShort();
-                                    i++;
+                                ?? r134 = new int[this.numberOfComponents];
+                                while (true) {
+                                    str = r134;
+                                    if (i < this.numberOfComponents) {
+                                        r134[i] = byteOrderedDataInputStream.readShort();
+                                        i++;
+                                    }
                                 }
-                                try {
-                                    byteOrderedDataInputStream.close();
-                                    return iArr2;
-                                } catch (IOException e7) {
-                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e7);
-                                    return iArr2;
-                                }
+                                break;
                             case 9:
-                                int[] iArr3 = new int[this.numberOfComponents];
-                                while (i < this.numberOfComponents) {
-                                    iArr3[i] = byteOrderedDataInputStream.readInt();
-                                    i++;
+                                ?? r135 = new int[this.numberOfComponents];
+                                while (true) {
+                                    str = r135;
+                                    if (i < this.numberOfComponents) {
+                                        r135[i] = byteOrderedDataInputStream.readInt();
+                                        i++;
+                                    }
                                 }
-                                try {
-                                    byteOrderedDataInputStream.close();
-                                    return iArr3;
-                                } catch (IOException e8) {
-                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e8);
-                                    return iArr3;
-                                }
+                                break;
                             case 10:
-                                Rational[] rationalArr2 = new Rational[this.numberOfComponents];
-                                while (i < this.numberOfComponents) {
-                                    rationalArr2[i] = new Rational(byteOrderedDataInputStream.readInt(), byteOrderedDataInputStream.readInt());
-                                    i++;
+                                ?? r136 = new Rational[this.numberOfComponents];
+                                while (true) {
+                                    str = r136;
+                                    if (i < this.numberOfComponents) {
+                                        r136[i] = new Rational(byteOrderedDataInputStream.readInt(), byteOrderedDataInputStream.readInt());
+                                        i++;
+                                    }
                                 }
-                                try {
-                                    byteOrderedDataInputStream.close();
-                                    return rationalArr2;
-                                } catch (IOException e9) {
-                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e9);
-                                    return rationalArr2;
-                                }
+                                break;
                             case 11:
-                                double[] dArr = new double[this.numberOfComponents];
-                                while (i < this.numberOfComponents) {
-                                    dArr[i] = byteOrderedDataInputStream.readFloat();
-                                    i++;
+                                ?? r137 = new double[this.numberOfComponents];
+                                while (true) {
+                                    str = r137;
+                                    if (i < this.numberOfComponents) {
+                                        r137[i] = byteOrderedDataInputStream.readFloat();
+                                        i++;
+                                    }
                                 }
-                                try {
-                                    byteOrderedDataInputStream.close();
-                                    return dArr;
-                                } catch (IOException e10) {
-                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e10);
-                                    return dArr;
-                                }
+                                break;
                             case 12:
-                                double[] dArr2 = new double[this.numberOfComponents];
-                                while (i < this.numberOfComponents) {
-                                    dArr2[i] = byteOrderedDataInputStream.readDouble();
-                                    i++;
+                                ?? r138 = new double[this.numberOfComponents];
+                                while (true) {
+                                    str = r138;
+                                    if (i < this.numberOfComponents) {
+                                        r138[i] = byteOrderedDataInputStream.readDouble();
+                                        i++;
+                                    }
                                 }
-                                try {
-                                    byteOrderedDataInputStream.close();
-                                    return dArr2;
-                                } catch (IOException e11) {
-                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e11);
-                                    return dArr2;
-                                }
+                                break;
                             default:
                                 try {
                                     byteOrderedDataInputStream.close();
                                     return null;
-                                } catch (IOException e12) {
-                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e12);
+                                } catch (IOException e) {
+                                    Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e);
                                     return null;
                                 }
                         }
-                    } catch (IOException e13) {
-                        iOException = e13;
+                        try {
+                            byteOrderedDataInputStream.close();
+                            return str;
+                        } catch (IOException e2) {
+                            Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e2);
+                            return str;
+                        }
+                    } catch (IOException e3) {
+                        iOException = e3;
                         Log.w(ExifInterface.TAG, "IOException occurred during reading a value", iOException);
                         if (byteOrderedDataInputStream != null) {
                             try {
                                 byteOrderedDataInputStream.close();
-                            } catch (IOException e14) {
-                                Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e14);
+                            } catch (IOException e4) {
+                                Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e4);
                             }
                         }
                         return null;
@@ -998,14 +975,14 @@ public class ExifInterface {
                     if (byteOrderedDataInputStream3 != null) {
                         try {
                             byteOrderedDataInputStream3.close();
-                        } catch (IOException e15) {
-                            Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e15);
+                        } catch (IOException e5) {
+                            Log.e(ExifInterface.TAG, "IOException occurred while closing InputStream", e5);
                         }
                     }
                     throw th;
                 }
-            } catch (IOException e16) {
-                iOException = e16;
+            } catch (IOException e6) {
+                iOException = e6;
                 byteOrderedDataInputStream = null;
             } catch (Throwable th3) {
                 th = th3;

@@ -8,17 +8,19 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DownloaderSyncApiRepository.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\t\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.downloader.sync.data.api.DownloaderSyncApiRepository$downloadFile$4", f = "DownloaderSyncApiRepository.kt", i = {}, l = {107}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\t\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.downloader.sync.data.api.DownloaderSyncApiRepository$downloadFile$4", f = "DownloaderSyncApiRepository.kt", i = {0}, l = {102}, m = "invokeSuspend", n = {"destinationUri"}, s = {"L$0"})
 /* loaded from: classes4.dex */
 public final class DownloaderSyncApiRepository$downloadFile$4 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Long>, Object> {
     final /* synthetic */ String $path;
     final /* synthetic */ String $url;
+    Object L$0;
     int label;
     final /* synthetic */ DownloaderSyncApiRepository this$0;
 
@@ -49,6 +51,7 @@ public final class DownloaderSyncApiRepository$downloadFile$4 extends SuspendLam
         int i = this.label;
         if (i != 0) {
             if (i == 1) {
+                Uri uri = (Uri) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 return obj;
             }
@@ -57,6 +60,7 @@ public final class DownloaderSyncApiRepository$downloadFile$4 extends SuspendLam
         ResultKt.throwOnFailure(obj);
         files = this.this$0.files;
         Uri destinationUri = files.getDestinationUri(this.$path);
+        this.L$0 = SpillingKt.nullOutSpilledVariable(destinationUri);
         this.label = 1;
         downloadFileWithoutCopy = this.this$0.downloadFileWithoutCopy(this.$url, destinationUri, this);
         return downloadFileWithoutCopy == coroutine_suspended ? coroutine_suspended : downloadFileWithoutCopy;

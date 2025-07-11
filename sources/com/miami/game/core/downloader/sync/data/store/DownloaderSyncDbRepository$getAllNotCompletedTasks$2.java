@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DownloaderSyncDbRepository.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0010\t\n\u0002\u0018\u0002\u0010\u0000\u001a\n\u0012\u0004\u0012\u00020\u0002\u0018\u00010\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0010\t\n\u0002\u0018\u0002\u0010\u0000\u001a\n\u0012\u0004\u0012\u00020\u0002\u0018\u00010\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository$getAllNotCompletedTasks$2", f = "DownloaderSyncDbRepository.kt", i = {}, l = {23}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes4.dex */
 public final class DownloaderSyncDbRepository$getAllNotCompletedTasks$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Long>>, Object> {
@@ -58,7 +58,7 @@ public final class DownloaderSyncDbRepository$getAllNotCompletedTasks$2 extends 
         ResultKt.throwOnFailure(obj);
         downloaderInfoDatabase = this.this$0.database;
         this.label = 1;
-        Object allNotCompletedTasks$default = DownloaderInfoDao.DefaultImpls.getAllNotCompletedTasks$default(downloaderInfoDatabase.downloaderInfoDao(), false, this, 1, null);
+        Object allNotCompletedTasks$default = DownloaderInfoDao.getAllNotCompletedTasks$default(downloaderInfoDatabase.downloaderInfoDao(), false, this, 1, null);
         return allNotCompletedTasks$default == coroutine_suspended ? coroutine_suspended : allNotCompletedTasks$default;
     }
 }

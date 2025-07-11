@@ -14,9 +14,9 @@ public final class R {
         public static int dotsStrokeColor = 0x7f0401d1;
         public static int dotsStrokeWidth = 0x7f0401d2;
         public static int dotsWidthFactor = 0x7f0401d3;
-        public static int progressMode = 0x7f0404c0;
-        public static int selectedDotColor = 0x7f040510;
-        public static int stiffness = 0x7f040570;
+        public static int progressMode = 0x7f0404c1;
+        public static int selectedDotColor = 0x7f040511;
+        public static int stiffness = 0x7f040572;
 
         private attr() {
         }
@@ -24,11 +24,11 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class drawable {
-        public static int dot_background = 0x7f08064b;
-        public static int spring_dot_background = 0x7f080c7b;
-        public static int spring_dot_stroke_background = 0x7f080c7c;
-        public static int worm_dot_background = 0x7f080cd5;
-        public static int worm_dot_stroke_background = 0x7f080cd6;
+        public static int dot_background = 0x7f080661;
+        public static int spring_dot_background = 0x7f080cac;
+        public static int spring_dot_stroke_background = 0x7f080cad;
+        public static int worm_dot_background = 0x7f080d06;
+        public static int worm_dot_stroke_background = 0x7f080d07;
 
         private drawable() {
         }
@@ -36,9 +36,9 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class id {
-        public static int dot = 0x7f0a0414;
-        public static int spring_dot = 0x7f0a0c58;
-        public static int worm_dot = 0x7f0a0eae;
+        public static int dot = 0x7f0a0428;
+        public static int spring_dot = 0x7f0a0c7b;
+        public static int worm_dot = 0x7f0a0edd;
 
         private id() {
         }
@@ -46,9 +46,9 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class layout {
-        public static int dot_layout = 0x7f0d00a6;
-        public static int spring_dot_layout = 0x7f0d01ff;
-        public static int worm_dot_layout = 0x7f0d0224;
+        public static int dot_layout = 0x7f0d00a7;
+        public static int spring_dot_layout = 0x7f0d0208;
+        public static int worm_dot_layout = 0x7f0d022d;
 
         private layout() {
         }

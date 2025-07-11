@@ -1,51 +1,20 @@
 package com.google.android.gms.internal.measurement;
-
-import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzir extends zzmd implements zzni {
-    private static final zzir zzb;
-    private zzmj zzd = zzcn();
-
-    static {
-        zzir zzirVar = new zzir();
-        zzb = zzirVar;
-        zzmd.zzct(zzir.class, zzirVar);
-    }
-
-    private zzir() {
-    }
-
-    public static zzir zzc() {
-        return zzb;
-    }
-
-    public final int zza() {
-        return this.zzd.size();
-    }
-
-    public final List zzd() {
-        return this.zzd;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzmd
-    public final Object zzl(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 != 0) {
-            if (i2 == 2) {
-                return zzcq(zzb, "\u0004\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b", new Object[]{"zzd", zzit.class});
-            } else if (i2 != 3) {
-                if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzb;
+public final class zzir {
+    public static int zza(int i) {
+        if (i != 0) {
+            if (i != 1) {
+                if (i != 2) {
+                    if (i != 3) {
+                        return i != 4 ? 0 : 5;
                     }
-                    throw null;
+                    return 4;
                 }
-                return new zziq(null);
-            } else {
-                return new zzir();
+                return 3;
             }
+            return 2;
         }
-        return (byte) 1;
+        return 1;
     }
 }

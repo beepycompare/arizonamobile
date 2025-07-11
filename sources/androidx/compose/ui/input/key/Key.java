@@ -9,7 +9,6 @@ import androidx.media3.extractor.ts.TsExtractor;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.facebook.internal.AnalyticsEvents;
-import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measurement.dynamite.ModuleDescriptor;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.common.net.HttpHeaders;
 import io.appmetrica.analytics.BuildConfig;
@@ -187,7 +186,7 @@ public final class Key {
     private static final long F8 = Key_androidKt.Key(TsExtractor.TS_STREAM_TYPE_DTS);
     private static final long F9 = Key_androidKt.Key(TsExtractor.TS_STREAM_TYPE_DTS_UHD);
     private static final long F10 = Key_androidKt.Key(140);
-    private static final long F11 = Key_androidKt.Key(ModuleDescriptor.MODULE_VERSION);
+    private static final long F11 = Key_androidKt.Key(141);
     private static final long F12 = Key_androidKt.Key(142);
     private static final long NumLock = Key_androidKt.Key(143);
     private static final long NumPad0 = Key_androidKt.Key(144);
@@ -198,7 +197,7 @@ public final class Key {
     private static final long NumPad5 = Key_androidKt.Key(149);
     private static final long NumPad6 = Key_androidKt.Key(150);
     private static final long NumPad7 = Key_androidKt.Key(151);
-    private static final long NumPad8 = Key_androidKt.Key(BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER);
+    private static final long NumPad8 = Key_androidKt.Key(152);
     private static final long NumPad9 = Key_androidKt.Key(BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER);
     private static final long NumPadDivide = Key_androidKt.Key(154);
     private static final long NumPadMultiply = Key_androidKt.Key(155);

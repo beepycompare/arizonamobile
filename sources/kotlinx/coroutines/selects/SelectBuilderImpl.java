@@ -30,6 +30,6 @@ public final class SelectBuilderImpl<R> extends SelectImplementation<R> {
 
     public final void handleBuilderException(Throwable th) {
         Result.Companion companion = Result.Companion;
-        this.cont.resumeWith(Result.m8443constructorimpl(ResultKt.createFailure(th)));
+        this.cont.resumeWith(Result.m8471constructorimpl(ResultKt.createFailure(th)));
     }
 }

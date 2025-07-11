@@ -7,20 +7,20 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListe
 public final class W5 implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ X5 f681a;
+    public final /* synthetic */ X5 f682a;
 
     public W5(X5 x5) {
-        this.f681a = x5;
+        this.f682a = x5;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
     public final void onEvent(Activity activity, ActivityEvent activityEvent) {
-        int i = V5.f669a[activityEvent.ordinal()];
+        int i = V5.f670a[activityEvent.ordinal()];
         if (i == 1) {
-            this.f681a.b.resumeSession();
+            this.f682a.b.resumeSession();
         } else if (i != 2) {
         } else {
-            this.f681a.b.pauseSession();
+            this.f682a.b.pauseSession();
         }
     }
 }

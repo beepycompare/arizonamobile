@@ -1,24 +1,33 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.Iterator;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import java.util.List;
+import java.util.Map;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzak implements Iterator {
-    final /* synthetic */ Iterator zza;
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzak(Iterator it) {
-        this.zza = it;
+public interface zzak {
+    static zzao zzu(zzak zzakVar, zzao zzaoVar, zzg zzgVar, List list) {
+        if (zzakVar.zzj(zzaoVar.zzc())) {
+            zzao zzk = zzakVar.zzk(zzaoVar.zzc());
+            if (zzk instanceof zzai) {
+                return ((zzai) zzk).zza(zzgVar, list);
+            }
+            throw new IllegalArgumentException(String.format("%s is not a function", zzaoVar.zzc()));
+        } else if ("hasOwnProperty".equals(zzaoVar.zzc())) {
+            zzh.zza("hasOwnProperty", 1, list);
+            return zzakVar.zzj(zzgVar.zza((zzao) list.get(0)).zzc()) ? zzao.zzk : zzao.zzl;
+        } else {
+            throw new IllegalArgumentException(String.format("Object has no function %s", zzaoVar.zzc()));
+        }
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.zza.hasNext();
+    static Iterator zzv(Map map) {
+        return new zzaj(map.keySet().iterator());
     }
 
-    @Override // java.util.Iterator
-    public final /* bridge */ /* synthetic */ Object next() {
-        return new zzat((String) this.zza.next());
-    }
+    boolean zzj(String str);
+
+    zzao zzk(String str);
+
+    void zzm(String str, zzao zzaoVar);
 }

@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.concurrent.atomic.AtomicLongArray;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-import okhttp3.HttpUrl;
+import okhttp3.internal.url._UrlKt;
 @ElementTypesAreNonnullByDefault
 /* loaded from: classes4.dex */
 public class AtomicDoubleArray implements Serializable {
@@ -83,7 +83,7 @@ public class AtomicDoubleArray implements Serializable {
         int length = length();
         int i = length - 1;
         if (i == -1) {
-            return HttpUrl.PATH_SEGMENT_ENCODE_SET_URI;
+            return _UrlKt.PATH_SEGMENT_ENCODE_SET_URI;
         }
         StringBuilder sb = new StringBuilder(length * 19);
         sb.append(AbstractJsonLexerKt.BEGIN_LIST);

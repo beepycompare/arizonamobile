@@ -1,83 +1,83 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzhg extends zzmd implements zzni {
-    private static final zzhg zzb;
+public final class zzhg extends zzme implements zznm {
+    private static final zzhg zzh;
+    private int zzb;
     private int zzd;
-    private boolean zze;
-    private boolean zzf;
+    private zzii zze;
+    private zzii zzf;
     private boolean zzg;
-    private boolean zzh;
-    private boolean zzi;
-    private boolean zzj;
-    private boolean zzk;
 
     static {
         zzhg zzhgVar = new zzhg();
-        zzb = zzhgVar;
-        zzmd.zzct(zzhg.class, zzhgVar);
+        zzh = zzhgVar;
+        zzme.zzcp(zzhg.class, zzhgVar);
     }
 
     private zzhg() {
     }
 
-    public static zzhf zza() {
-        return (zzhf) zzb.zzcg();
+    public static zzhf zzh() {
+        return (zzhf) zzh.zzck();
     }
 
-    public static zzhg zzc() {
-        return zzb;
+    public final boolean zza() {
+        return (this.zzb & 1) != 0;
     }
 
-    public static /* synthetic */ void zzd(zzhg zzhgVar, boolean z) {
-        zzhgVar.zzd |= 32;
-        zzhgVar.zzj = z;
+    public final int zzb() {
+        return this.zzd;
     }
 
-    public static /* synthetic */ void zze(zzhg zzhgVar, boolean z) {
-        zzhgVar.zzd |= 16;
-        zzhgVar.zzi = z;
+    public final zzii zzc() {
+        zzii zziiVar = this.zze;
+        return zziiVar == null ? zzii.zzj() : zziiVar;
     }
 
-    public static /* synthetic */ void zzf(zzhg zzhgVar, boolean z) {
-        zzhgVar.zzd |= 1;
-        zzhgVar.zze = z;
+    public final boolean zzd() {
+        return (this.zzb & 4) != 0;
     }
 
-    public static /* synthetic */ void zzg(zzhg zzhgVar, boolean z) {
-        zzhgVar.zzd |= 64;
-        zzhgVar.zzk = z;
+    public final zzii zze() {
+        zzii zziiVar = this.zzf;
+        return zziiVar == null ? zzii.zzj() : zziiVar;
     }
 
-    public static /* synthetic */ void zzh(zzhg zzhgVar, boolean z) {
-        zzhgVar.zzd |= 2;
-        zzhgVar.zzf = z;
+    public final boolean zzf() {
+        return (this.zzb & 8) != 0;
     }
 
-    public static /* synthetic */ void zzi(zzhg zzhgVar, boolean z) {
-        zzhgVar.zzd |= 4;
-        zzhgVar.zzg = z;
+    public final boolean zzg() {
+        return this.zzg;
     }
 
-    public static /* synthetic */ void zzj(zzhg zzhgVar, boolean z) {
-        zzhgVar.zzd |= 8;
-        zzhgVar.zzh = z;
+    public final /* synthetic */ void zzi(int i) {
+        this.zzb |= 1;
+        this.zzd = i;
     }
 
-    public final boolean zzk() {
-        return this.zzj;
+    public final /* synthetic */ void zzj(zzii zziiVar) {
+        zziiVar.getClass();
+        this.zze = zziiVar;
+        this.zzb |= 2;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzmd
+    public final /* synthetic */ void zzk(zzii zziiVar) {
+        this.zzf = zziiVar;
+        this.zzb |= 4;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzme
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {
             if (i2 == 2) {
-                return zzcq(zzb, "\u0004\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0000\u0000\u0001ဇ\u0000\u0002ဇ\u0001\u0003ဇ\u0002\u0004ဇ\u0003\u0005ဇ\u0004\u0006ဇ\u0005\u0007ဇ\u0006", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi", "zzj", "zzk"});
+                return zzcq(zzh, "\u0004\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001င\u0000\u0002ဉ\u0001\u0003ဉ\u0002\u0004ဇ\u0003", new Object[]{"zzb", "zzd", "zze", "zzf", "zzg"});
             } else if (i2 != 3) {
                 if (i2 != 4) {
                     if (i2 == 5) {
-                        return zzb;
+                        return zzh;
                     }
                     throw null;
                 }
@@ -89,27 +89,8 @@ public final class zzhg extends zzmd implements zzni {
         return (byte) 1;
     }
 
-    public final boolean zzm() {
-        return this.zzi;
-    }
-
-    public final boolean zzn() {
-        return this.zze;
-    }
-
-    public final boolean zzo() {
-        return this.zzk;
-    }
-
-    public final boolean zzp() {
-        return this.zzf;
-    }
-
-    public final boolean zzq() {
-        return this.zzg;
-    }
-
-    public final boolean zzr() {
-        return this.zzh;
+    public final /* synthetic */ void zzm(boolean z) {
+        this.zzb |= 8;
+        this.zzg = z;
     }
 }

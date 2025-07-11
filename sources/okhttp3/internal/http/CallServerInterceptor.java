@@ -6,23 +6,27 @@ import kotlin.ExceptionsKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
+import okhttp3.Headers;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
-import okhttp3.internal.Util;
+import okhttp3.TrailersSource;
+import okhttp3.internal.UnreadableResponseBodyKt;
+import okhttp3.internal._UtilJvmKt;
 import okhttp3.internal.connection.Exchange;
 import okhttp3.internal.http2.ConnectionShutdownException;
 import okio.BufferedSink;
+import okio.BufferedSource;
 import okio.Okio;
 /* compiled from: CallServerInterceptor.kt */
-@Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u0010\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0016J\u0010\u0010\t\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u000bH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lokhttp3/internal/http/CallServerInterceptor;", "Lokhttp3/Interceptor;", "forWebSocket", "", "(Z)V", "intercept", "Lokhttp3/Response;", "chain", "Lokhttp3/Interceptor$Chain;", "shouldIgnoreAndWaitForRealResponse", "code", "", "okhttp"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016J\u0018\u0010\n\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lokhttp3/internal/http/CallServerInterceptor;", "Lokhttp3/Interceptor;", "forWebSocket", "", "<init>", "(Z)V", "intercept", "Lokhttp3/Response;", "chain", "Lokhttp3/Interceptor$Chain;", "shouldIgnoreAndWaitForRealResponse", "code", "", "exchange", "Lokhttp3/internal/connection/Exchange;", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class CallServerInterceptor implements Interceptor {
     private final boolean forWebSocket;
 
-    private final boolean shouldIgnoreAndWaitForRealResponse(int i) {
+    private final boolean shouldIgnoreAndWaitForRealResponse(int i, Exchange exchange) {
         if (i == 100) {
             return true;
         }
@@ -34,19 +38,16 @@ public final class CallServerInterceptor implements Interceptor {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00e2 A[Catch: IOException -> 0x019f, TryCatch #1 {IOException -> 0x019f, blocks: (B:39:0x00ab, B:41:0x00b4, B:42:0x00b8, B:44:0x00e2, B:46:0x00eb, B:47:0x00ee, B:48:0x0112, B:52:0x011d, B:54:0x013c, B:56:0x014a, B:63:0x0160, B:65:0x0166, B:69:0x0173, B:71:0x018a, B:72:0x0192, B:73:0x019d, B:58:0x0155, B:53:0x012c), top: B:84:0x00ab }] */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0166 A[Catch: IOException -> 0x019f, TryCatch #1 {IOException -> 0x019f, blocks: (B:39:0x00ab, B:41:0x00b4, B:42:0x00b8, B:44:0x00e2, B:46:0x00eb, B:47:0x00ee, B:48:0x0112, B:52:0x011d, B:54:0x013c, B:56:0x014a, B:63:0x0160, B:65:0x0166, B:69:0x0173, B:71:0x018a, B:72:0x0192, B:73:0x019d, B:58:0x0155, B:53:0x012c), top: B:84:0x00ab }] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x016b  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0173 A[Catch: IOException -> 0x019f, TryCatch #1 {IOException -> 0x019f, blocks: (B:39:0x00ab, B:41:0x00b4, B:42:0x00b8, B:44:0x00e2, B:46:0x00eb, B:47:0x00ee, B:48:0x0112, B:52:0x011d, B:54:0x013c, B:56:0x014a, B:63:0x0160, B:65:0x0166, B:69:0x0173, B:71:0x018a, B:72:0x0192, B:73:0x019d, B:58:0x0155, B:53:0x012c), top: B:84:0x00ab }] */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x00ab A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r10v13, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r10v14 */
-    /* JADX WARN: Type inference failed for: r10v15 */
-    /* JADX WARN: Type inference failed for: r10v16 */
-    /* JADX WARN: Type inference failed for: r10v23 */
-    /* JADX WARN: Type inference failed for: r10v24 */
-    /* JADX WARN: Type inference failed for: r10v25 */
-    /* JADX WARN: Type inference failed for: r10v26 */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00e0 A[Catch: IOException -> 0x019a, TryCatch #0 {IOException -> 0x019a, blocks: (B:39:0x00a9, B:41:0x00b2, B:42:0x00b6, B:43:0x00da, B:45:0x00e0, B:47:0x00e9, B:48:0x00ec, B:49:0x0111, B:53:0x011c, B:55:0x013c, B:57:0x014a, B:64:0x0160, B:67:0x016f, B:68:0x0199, B:59:0x0155, B:54:0x0121), top: B:76:0x00a9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x00a9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r9v18, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r9v19 */
+    /* JADX WARN: Type inference failed for: r9v20 */
+    /* JADX WARN: Type inference failed for: r9v21 */
+    /* JADX WARN: Type inference failed for: r9v28 */
+    /* JADX WARN: Type inference failed for: r9v29 */
+    /* JADX WARN: Type inference failed for: r9v30 */
+    /* JADX WARN: Type inference failed for: r9v31 */
     @Override // okhttp3.Interceptor
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -58,20 +59,19 @@ public final class CallServerInterceptor implements Interceptor {
         Response build;
         int code;
         Response build2;
-        ResponseBody body;
         Object obj;
         Intrinsics.checkNotNullParameter(chain, "chain");
         RealInterceptorChain realInterceptorChain = (RealInterceptorChain) chain;
-        Exchange exchange$okhttp = realInterceptorChain.getExchange$okhttp();
+        final Exchange exchange$okhttp = realInterceptorChain.getExchange$okhttp();
         Intrinsics.checkNotNull(exchange$okhttp);
         Request request$okhttp = realInterceptorChain.getRequest$okhttp();
-        RequestBody body2 = request$okhttp.body();
+        RequestBody body = request$okhttp.body();
         long currentTimeMillis = System.currentTimeMillis();
         try {
             exchange$okhttp.writeRequestHeaders(request$okhttp);
             builder = HttpMethod.permitsRequestBody(request$okhttp.method());
             try {
-                if (builder != 0 && body2 != null) {
+                if (builder != 0 && body != null) {
                     if (StringsKt.equals("100-continue", request$okhttp.header(com.google.common.net.HttpHeaders.EXPECT), true)) {
                         exchange$okhttp.flushRequest();
                         builder = exchange$okhttp.readResponseHeaders(true);
@@ -93,34 +93,50 @@ public final class CallServerInterceptor implements Interceptor {
                             }
                             build = builder2.request(request$okhttp).handshake(exchange$okhttp.getConnection$okhttp().handshake()).sentRequestAtMillis(currentTimeMillis).receivedResponseAtMillis(System.currentTimeMillis()).build();
                             code = build.code();
-                            if (shouldIgnoreAndWaitForRealResponse(code)) {
+                            while (shouldIgnoreAndWaitForRealResponse(code, exchange$okhttp)) {
                             }
                             exchange$okhttp.responseHeadersEnd(build);
                             if (!this.forWebSocket) {
                             }
-                            build2 = build.newBuilder().body(exchange$okhttp.openResponseBody(build)).build();
+                            final ResponseBody openResponseBody = exchange$okhttp.openResponseBody(build);
+                            build2 = build.newBuilder().body(openResponseBody).trailers(new TrailersSource() { // from class: okhttp3.internal.http.CallServerInterceptor$intercept$1
+                                @Override // okhttp3.TrailersSource
+                                public Headers peek() {
+                                    return Exchange.this.peekTrailers();
+                                }
+
+                                @Override // okhttp3.TrailersSource
+                                public Headers get() {
+                                    BufferedSource source = openResponseBody.source();
+                                    if (source.isOpen()) {
+                                        _UtilJvmKt.skipAll(source);
+                                    }
+                                    Headers peek = peek();
+                                    if (peek != null) {
+                                        return peek;
+                                    }
+                                    throw new IllegalStateException("null trailers after exhausting response body?!".toString());
+                                }
+                            }).build();
                             if (!StringsKt.equals("close", build2.request().header(com.google.common.net.HttpHeaders.CONNECTION), true)) {
                             }
                             exchange$okhttp.noNewExchangesOnConnection();
                             if (code != 204) {
                             }
-                            body = build2.body();
-                            if ((body == null ? body.contentLength() : -1L) > 0) {
-                            }
-                            return build2;
+                            throw new ProtocolException("HTTP " + code + " had non-zero Content-Length: " + build2.body().contentLength());
                         }
                     } else {
                         z = true;
                         obj = null;
                     }
                     if (obj == null) {
-                        if (body2.isDuplex()) {
+                        if (body.isDuplex()) {
                             exchange$okhttp.flushRequest();
-                            body2.writeTo(Okio.buffer(exchange$okhttp.createRequestBody(request$okhttp, true)));
+                            body.writeTo(Okio.buffer(exchange$okhttp.createRequestBody(request$okhttp, true)));
                             builder = obj;
                         } else {
                             BufferedSink buffer = Okio.buffer(exchange$okhttp.createRequestBody(request$okhttp, false));
-                            body2.writeTo(buffer);
+                            body.writeTo(buffer);
                             buffer.close();
                             builder = obj;
                         }
@@ -137,7 +153,7 @@ public final class CallServerInterceptor implements Interceptor {
                     z = true;
                     builder = 0;
                 }
-                if (body2 == null || !body2.isDuplex()) {
+                if (body == null || !body.isDuplex()) {
                     exchange$okhttp.finishRequest();
                 }
                 e = null;
@@ -168,7 +184,7 @@ public final class CallServerInterceptor implements Interceptor {
         }
         build = builder2.request(request$okhttp).handshake(exchange$okhttp.getConnection$okhttp().handshake()).sentRequestAtMillis(currentTimeMillis).receivedResponseAtMillis(System.currentTimeMillis()).build();
         code = build.code();
-        if (shouldIgnoreAndWaitForRealResponse(code)) {
+        while (shouldIgnoreAndWaitForRealResponse(code, exchange$okhttp)) {
             Response.Builder readResponseHeaders = exchange$okhttp.readResponseHeaders(false);
             Intrinsics.checkNotNull(readResponseHeaders);
             if (z) {
@@ -179,20 +195,34 @@ public final class CallServerInterceptor implements Interceptor {
         }
         exchange$okhttp.responseHeadersEnd(build);
         if (!this.forWebSocket && code == 101) {
-            build2 = build.newBuilder().body(Util.EMPTY_RESPONSE).build();
+            build2 = UnreadableResponseBodyKt.stripBody(build);
         } else {
-            build2 = build.newBuilder().body(exchange$okhttp.openResponseBody(build)).build();
+            final ResponseBody openResponseBody2 = exchange$okhttp.openResponseBody(build);
+            build2 = build.newBuilder().body(openResponseBody2).trailers(new TrailersSource() { // from class: okhttp3.internal.http.CallServerInterceptor$intercept$1
+                @Override // okhttp3.TrailersSource
+                public Headers peek() {
+                    return Exchange.this.peekTrailers();
+                }
+
+                @Override // okhttp3.TrailersSource
+                public Headers get() {
+                    BufferedSource source = openResponseBody2.source();
+                    if (source.isOpen()) {
+                        _UtilJvmKt.skipAll(source);
+                    }
+                    Headers peek = peek();
+                    if (peek != null) {
+                        return peek;
+                    }
+                    throw new IllegalStateException("null trailers after exhausting response body?!".toString());
+                }
+            }).build();
         }
         if (!StringsKt.equals("close", build2.request().header(com.google.common.net.HttpHeaders.CONNECTION), true) || StringsKt.equals("close", Response.header$default(build2, com.google.common.net.HttpHeaders.CONNECTION, null, 2, null), true)) {
             exchange$okhttp.noNewExchangesOnConnection();
         }
-        if (code != 204 || code == 205) {
-            body = build2.body();
-            if ((body == null ? body.contentLength() : -1L) > 0) {
-                StringBuilder append = new StringBuilder("HTTP ").append(code).append(" had non-zero Content-Length: ");
-                ResponseBody body3 = build2.body();
-                throw new ProtocolException(append.append(body3 != null ? Long.valueOf(body3.contentLength()) : null).toString());
-            }
+        if ((code != 204 || code == 205) && build2.body().contentLength() > 0) {
+            throw new ProtocolException("HTTP " + code + " had non-zero Content-Length: " + build2.body().contentLength());
         }
         return build2;
     }

@@ -5,20 +5,20 @@ import android.content.Context;
 public final class Nh implements B4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0605t5 f555a;
+    public final InterfaceC0597t5 f556a;
 
-    public Nh(InterfaceC0605t5 interfaceC0605t5) {
-        this.f555a = interfaceC0605t5;
+    public Nh(InterfaceC0597t5 interfaceC0597t5) {
+        this.f556a = interfaceC0597t5;
     }
 
     @Override // io.appmetrica.analytics.impl.B4
     /* renamed from: b */
-    public final Lg a(Context context, C0730y5 c0730y5, C0405l4 c0405l4, K4 k4) {
+    public final Lg a(Context context, C0722y5 c0722y5, C0397l4 c0397l4, K4 k4) {
         Mg mg;
-        C0406l5 c0406l5 = new C0406l5(c0405l4.b, c0405l4.f916a);
-        Ng ng = new Ng(this.f555a);
-        synchronized (c0730y5) {
-            mg = (Mg) c0730y5.a(c0406l5, k4, ng, c0730y5.f1139a);
+        C0398l5 c0398l5 = new C0398l5(c0397l4.b, c0397l4.f917a);
+        Ng ng = new Ng(this.f556a);
+        synchronized (c0722y5) {
+            mg = (Mg) c0722y5.a(c0398l5, k4, ng, c0722y5.f1140a);
         }
         return new Lg(context, mg);
     }

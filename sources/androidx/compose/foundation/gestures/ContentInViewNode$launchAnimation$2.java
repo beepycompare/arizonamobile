@@ -198,7 +198,7 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
                                 }
                                 Unit unit = Unit.INSTANCE;
                                 Result.Companion companion = Result.Companion;
-                                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m8443constructorimpl(unit));
+                                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m8471constructorimpl(unit));
                             } else {
                                 break;
                             }

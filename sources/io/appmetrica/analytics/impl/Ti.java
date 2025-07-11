@@ -17,7 +17,7 @@ public final class Ti extends MessageNano {
     public static volatile Ti[] h;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f644a;
+    public int f645a;
     public int b;
 
     public Ti() {
@@ -36,7 +36,7 @@ public final class Ti extends MessageNano {
     }
 
     public final Ti a() {
-        this.f644a = 0;
+        this.f645a = 0;
         this.b = 0;
         this.cachedSize = -1;
         return this;
@@ -45,7 +45,7 @@ public final class Ti extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f644a;
+        int i = this.f645a;
         if (i != 0) {
             computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(1, i);
         }
@@ -55,7 +55,7 @@ public final class Ti extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f644a;
+        int i = this.f645a;
         if (i != 0) {
             codedOutputByteBufferNano.writeUInt32(1, i);
         }
@@ -74,7 +74,7 @@ public final class Ti extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 8) {
-                this.f644a = codedInputByteBufferNano.readUInt32();
+                this.f645a = codedInputByteBufferNano.readUInt32();
             } else if (readTag != 16) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

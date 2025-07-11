@@ -35,14 +35,14 @@ public class DefaultScheduler implements Scheduler {
         this.executor.execute(new Runnable() { // from class: com.google.android.datatransport.runtime.scheduling.DefaultScheduler$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DefaultScheduler.this.m8063x41d0caed(transportContext, transportScheduleCallback, eventInternal);
+                DefaultScheduler.this.m8062x41d0caed(transportContext, transportScheduleCallback, eventInternal);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$schedule$1$com-google-android-datatransport-runtime-scheduling-DefaultScheduler  reason: not valid java name */
-    public /* synthetic */ void m8063x41d0caed(final TransportContext transportContext, TransportScheduleCallback transportScheduleCallback, EventInternal eventInternal) {
+    public /* synthetic */ void m8062x41d0caed(final TransportContext transportContext, TransportScheduleCallback transportScheduleCallback, EventInternal eventInternal) {
         try {
             TransportBackend transportBackend = this.backendRegistry.get(transportContext.getBackendName());
             if (transportBackend == null) {
@@ -55,7 +55,7 @@ public class DefaultScheduler implements Scheduler {
             this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.DefaultScheduler$$ExternalSyntheticLambda1
                 @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                 public final Object execute() {
-                    return DefaultScheduler.this.m8062x8f06a4e(transportContext, decorate);
+                    return DefaultScheduler.this.m8061x8f06a4e(transportContext, decorate);
                 }
             });
             transportScheduleCallback.onSchedule(null);
@@ -67,7 +67,7 @@ public class DefaultScheduler implements Scheduler {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$schedule$0$com-google-android-datatransport-runtime-scheduling-DefaultScheduler  reason: not valid java name */
-    public /* synthetic */ Object m8062x8f06a4e(TransportContext transportContext, EventInternal eventInternal) {
+    public /* synthetic */ Object m8061x8f06a4e(TransportContext transportContext, EventInternal eventInternal) {
         this.eventStore.persist(transportContext, eventInternal);
         this.workScheduler.schedule(transportContext, 1);
         return null;

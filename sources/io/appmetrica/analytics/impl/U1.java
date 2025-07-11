@@ -9,13 +9,13 @@ public final class U1 implements Thread.UncaughtExceptionHandler {
     public static final AtomicBoolean e = new AtomicBoolean();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ya f650a;
-    public final J6 b = C0704x4.l().n();
+    public final Ya f651a;
+    public final J6 b = C0696x4.l().n();
     public final H6 c = new H6();
-    public final C0723xn d = new C0723xn();
+    public final C0715xn d = new C0715xn();
 
     public U1(D6 d6) {
-        this.f650a = d6;
+        this.f651a = d6;
     }
 
     @Override // java.lang.Thread.UncaughtExceptionHandler
@@ -23,14 +23,14 @@ public final class U1 implements Thread.UncaughtExceptionHandler {
         StackTraceElement[] stackTraceElementArr;
         try {
             e.set(true);
-            Ya ya = this.f650a;
-            C0549qn apply = this.c.apply(thread);
-            C0723xn c0723xn = this.d;
-            Thread a2 = c0723xn.f1132a.a();
-            ArrayList a3 = c0723xn.a(a2, thread);
+            Ya ya = this.f651a;
+            C0541qn apply = this.c.apply(thread);
+            C0715xn c0715xn = this.d;
+            Thread a2 = c0715xn.f1133a.a();
+            ArrayList a3 = c0715xn.a(a2, thread);
             if (thread != a2) {
                 try {
-                    stackTraceElementArr = c0723xn.f1132a.b();
+                    stackTraceElementArr = c0715xn.f1133a.b();
                     if (stackTraceElementArr == null) {
                         try {
                             stackTraceElementArr = a2.getStackTrace();
@@ -40,7 +40,7 @@ public final class U1 implements Thread.UncaughtExceptionHandler {
                 } catch (SecurityException unused2) {
                     stackTraceElementArr = null;
                 }
-                a3.add(0, (C0549qn) c0723xn.b.apply(a2, stackTraceElementArr));
+                a3.add(0, (C0541qn) c0715xn.b.apply(a2, stackTraceElementArr));
             }
             ya.a(th, new U(apply, a3, this.b.b()));
         } catch (Throwable th2) {

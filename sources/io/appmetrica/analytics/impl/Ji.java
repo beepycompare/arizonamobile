@@ -9,9 +9,9 @@ public final class Ji extends V4 {
     }
 
     @Override // io.appmetrica.analytics.impl.V4
-    public final boolean a(C0333i6 c0333i6, P4 p4) {
-        Bundle bundle = c0333i6.m;
-        this.f668a.k.a(new R4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
+    public final boolean a(C0325i6 c0325i6, P4 p4) {
+        Bundle bundle = c0325i6.m;
+        this.f669a.k.a(new R4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
         return false;
     }
 }

@@ -1,63 +1,25 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.RemoteException;
-import com.google.android.gms.common.internal.Preconditions;
-import java.util.concurrent.atomic.AtomicReference;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import android.content.ComponentName;
+import android.content.Context;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzna implements Runnable {
-    final /* synthetic */ AtomicReference zza;
-    final /* synthetic */ zzr zzb;
-    final /* synthetic */ zzny zzc;
+final class zzna implements Runnable {
+    final /* synthetic */ zzne zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzna(zzny zznyVar, AtomicReference atomicReference, zzr zzrVar) {
-        this.zza = atomicReference;
-        this.zzb = zzrVar;
-        this.zzc = zznyVar;
+    public zzna(zzne zzneVar) {
+        Objects.requireNonNull(zzneVar);
+        this.zza = zzneVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        AtomicReference atomicReference;
-        zzny zznyVar;
-        zzio zzioVar;
-        zzgl zzglVar;
-        AtomicReference atomicReference2 = this.zza;
-        synchronized (atomicReference2) {
-            try {
-                zznyVar = this.zzc;
-                zzioVar = zznyVar.zzu;
-            } catch (RemoteException e) {
-                this.zzc.zzu.zzaW().zze().zzb("Failed to get app instance id", e);
-                atomicReference = this.zza;
-            }
-            if (zzioVar.zzm().zzh().zzr(zzjw.ANALYTICS_STORAGE)) {
-                zzglVar = zznyVar.zzb;
-                if (zzglVar != null) {
-                    zzr zzrVar = this.zzb;
-                    Preconditions.checkNotNull(zzrVar);
-                    atomicReference2.set(zzglVar.zzf(zzrVar));
-                    String str = (String) atomicReference2.get();
-                    if (str != null) {
-                        zznyVar.zzu.zzq().zzac(str);
-                        zzioVar.zzm().zze.zzb(str);
-                    }
-                    zznyVar.zzag();
-                    atomicReference = this.zza;
-                    atomicReference.notify();
-                    return;
-                }
-                zzioVar.zzaW().zze().zza("Failed to get app instance id");
-                atomicReference2.notify();
-            } else {
-                zzioVar.zzaW().zzl().zza("Analytics storage consent denied; will not get app instance id");
-                zznyVar.zzu.zzq().zzac(null);
-                zzioVar.zzm().zze.zzb(null);
-                atomicReference2.set(null);
-                atomicReference2.notify();
-            }
-        }
+        zznk zznkVar = this.zza.zza;
+        zzib zzibVar = zznkVar.zzu;
+        Context zzaY = zzibVar.zzaY();
+        zzibVar.zzaU();
+        zznkVar.zzW(new ComponentName(zzaY, "com.google.android.gms.measurement.AppMeasurementService"));
     }
 }

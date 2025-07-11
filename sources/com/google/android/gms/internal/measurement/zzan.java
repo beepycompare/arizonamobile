@@ -1,50 +1,69 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzan implements zzap {
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+public final class zzan extends zzai implements zzak {
+    protected final List zza;
+    protected final List zzb;
+    protected zzg zzc;
+
+    private zzan(zzan zzanVar) {
+        super(zzanVar.zzd);
+        ArrayList arrayList = new ArrayList(zzanVar.zza.size());
+        this.zza = arrayList;
+        arrayList.addAll(zzanVar.zza);
+        ArrayList arrayList2 = new ArrayList(zzanVar.zzb.size());
+        this.zzb = arrayList2;
+        arrayList2.addAll(zzanVar.zzb);
+        this.zzc = zzanVar.zzc;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzai
+    public final zzao zza(zzg zzgVar, List list) {
+        zzg zzc = this.zzc.zzc();
+        int i = 0;
+        while (true) {
+            List list2 = this.zza;
+            if (i >= list2.size()) {
+                break;
+            }
+            if (i < list.size()) {
+                zzc.zzf((String) list2.get(i), zzgVar.zza((zzao) list.get(i)));
+            } else {
+                zzc.zzf((String) list2.get(i), zzf);
+            }
+            i++;
         }
-        return obj instanceof zzan;
+        for (zzao zzaoVar : this.zzb) {
+            zzao zza = zzc.zza(zzaoVar);
+            if (zza instanceof zzap) {
+                zza = zzc.zza(zzaoVar);
+            }
+            if (zza instanceof zzag) {
+                return ((zzag) zza).zzb();
+            }
+        }
+        return zzao.zzf;
     }
 
-    public final int hashCode() {
-        return 1;
+    @Override // com.google.android.gms.internal.measurement.zzai, com.google.android.gms.internal.measurement.zzao
+    public final zzao zzt() {
+        return new zzan(this);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final zzap zzcz(String str, zzg zzgVar, List list) {
-        throw new IllegalStateException(String.format("null has no function %s", str));
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final zzap zzd() {
-        return zzap.zzg;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final Boolean zzg() {
-        return false;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final Double zzh() {
-        return Double.valueOf((double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final String zzi() {
-        return AbstractJsonLexerKt.NULL;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzap
-    public final Iterator zzl() {
-        return null;
+    public zzan(String str, List list, List list2, zzg zzgVar) {
+        super(str);
+        this.zza = new ArrayList();
+        this.zzc = zzgVar;
+        if (!list.isEmpty()) {
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                this.zza.add(((zzao) it.next()).zzc());
+            }
+        }
+        this.zzb = new ArrayList(list2);
     }
 }

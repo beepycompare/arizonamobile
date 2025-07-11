@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* JADX INFO: Add missing generic type declarations: [T, E] */
 /* compiled from: FormatStructure.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public /* synthetic */ class OptionalFormatStructure$PropertyWithDefault$isDefaultComparisonPredicate$1<E, T> extends FunctionReferenceImpl implements Function1<T, E> {
     public OptionalFormatStructure$PropertyWithDefault$isDefaultComparisonPredicate$1(Object obj) {

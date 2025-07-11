@@ -1,31 +1,36 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Bundle;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import android.content.SharedPreferences;
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzhf {
-    public final String zza;
-    public final String zzb;
-    public final long zzc;
-    public final Bundle zzd;
+    final /* synthetic */ zzhg zza;
+    private final String zzb;
+    private boolean zzc;
+    private String zzd;
 
-    public zzhf(String str, String str2, Bundle bundle, long j) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzd = bundle;
-        this.zzc = j;
+    public zzhf(zzhg zzhgVar, String str, String str2) {
+        Objects.requireNonNull(zzhgVar);
+        this.zza = zzhgVar;
+        Preconditions.checkNotEmpty(str);
+        this.zzb = str;
     }
 
-    public static zzhf zzb(zzbh zzbhVar) {
-        return new zzhf(zzbhVar.zza, zzbhVar.zzc, zzbhVar.zzb.zzc(), zzbhVar.zzd);
+    public final String zza() {
+        if (!this.zzc) {
+            this.zzc = true;
+            zzhg zzhgVar = this.zza;
+            this.zzd = zzhgVar.zzd().getString(this.zzb, null);
+        }
+        return this.zzd;
     }
 
-    public final String toString() {
-        String obj = this.zzd.toString();
-        return "origin=" + this.zzb + ",name=" + this.zza + ",params=" + obj;
-    }
-
-    public final zzbh zza() {
-        return new zzbh(this.zza, new zzbf(new Bundle(this.zzd)), this.zzb, this.zzc);
+    public final void zzb(String str) {
+        SharedPreferences.Editor edit = this.zza.zzd().edit();
+        edit.putString(this.zzb, str);
+        edit.apply();
+        this.zzd = str;
     }
 }

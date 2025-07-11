@@ -1,36 +1,26 @@
 package com.google.android.gms.measurement.internal;
 
-import android.content.SharedPreferences;
-import com.google.android.gms.common.internal.Preconditions;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.4.0 */
+import java.util.Map;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzhn {
-    final /* synthetic */ zzht zza;
-    private final String zzb;
-    private final boolean zzc;
-    private boolean zzd;
-    private boolean zze;
+final class zzhn implements com.google.android.gms.internal.measurement.zzo {
+    final /* synthetic */ String zza;
+    final /* synthetic */ zzhs zzb;
 
-    public zzhn(zzht zzhtVar, String str, boolean z) {
-        this.zza = zzhtVar;
-        Preconditions.checkNotEmpty(str);
-        this.zzb = str;
-        this.zzc = z;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzhn(zzhs zzhsVar, String str) {
+        this.zza = str;
+        Objects.requireNonNull(zzhsVar);
+        this.zzb = zzhsVar;
     }
 
-    public final void zza(boolean z) {
-        SharedPreferences.Editor edit = this.zza.zzb().edit();
-        edit.putBoolean(this.zzb, z);
-        edit.apply();
-        this.zze = z;
-    }
-
-    public final boolean zzb() {
-        if (!this.zzd) {
-            this.zzd = true;
-            zzht zzhtVar = this.zza;
-            this.zze = zzhtVar.zzb().getBoolean(this.zzb, this.zzc);
+    @Override // com.google.android.gms.internal.measurement.zzo
+    public final String zza(String str) {
+        Map map = (Map) this.zzb.zzD().get(this.zza);
+        if (map == null || !map.containsKey(str)) {
+            return null;
         }
-        return this.zze;
+        return (String) map.get(str);
     }
 }

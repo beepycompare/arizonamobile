@@ -8,15 +8,15 @@ import io.appmetrica.analytics.internal.IdentifiersResult;
 public final class Id {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f475a;
-    public final InterfaceC0213db b;
+    public final Context f476a;
+    public final InterfaceC0205db b;
     public final P9 c;
     public final Me d;
     public final jo e;
     public volatile IdentifiersResult f;
 
-    public Id(Context context, InterfaceC0213db interfaceC0213db) {
-        this(context, interfaceC0213db, Jd.a(context), new Me(context), new jo());
+    public Id(Context context, InterfaceC0205db interfaceC0205db) {
+        this(context, interfaceC0205db, Jd.a(context), new Me(context), new jo());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:28:0x0088  */
@@ -36,7 +36,7 @@ public final class Id {
         }
         try {
             P9 p9 = this.c;
-            p9.f578a.lock();
+            p9.f579a.lock();
             p9.b.a();
             identifiersResult = this.f;
         } catch (Throwable unused) {
@@ -48,14 +48,14 @@ public final class Id {
             if (jo.a(str2)) {
                 P9 p92 = this.c;
                 p92.b.b();
-                p92.f578a.unlock();
+                p92.f579a.unlock();
                 return identifiersResult == null ? identifiersResult : new IdentifiersResult(null, IdentifierStatus.UNKNOWN, "Uuid must be obtained via async API AppMetrica#requestStartupParams(Context, StartupParamsCallback, List<String>)");
             }
         }
-        String a2 = AbstractC0187cb.a(FileUtils.getFileFromSdkStorage(this.d.f536a, "uuid.dat"));
+        String a2 = AbstractC0179cb.a(FileUtils.getFileFromSdkStorage(this.d.f537a, "uuid.dat"));
         this.e.getClass();
         if (!jo.a(a2)) {
-            a2 = this.d.a(this.b.a(this.f475a));
+            a2 = this.d.a(this.b.a(this.f476a));
         }
         this.e.getClass();
         if (jo.a(a2)) {
@@ -68,14 +68,14 @@ public final class Id {
         }
         P9 p922 = this.c;
         p922.b.b();
-        p922.f578a.unlock();
+        p922.f579a.unlock();
         if (identifiersResult == null) {
         }
     }
 
-    public Id(Context context, InterfaceC0213db interfaceC0213db, P9 p9, Me me2, jo joVar) {
-        this.f475a = context;
-        this.b = interfaceC0213db;
+    public Id(Context context, InterfaceC0205db interfaceC0205db, P9 p9, Me me2, jo joVar) {
+        this.f476a = context;
+        this.b = interfaceC0205db;
         this.c = p9;
         this.d = me2;
         this.e = joVar;

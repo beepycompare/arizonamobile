@@ -25,7 +25,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: VideoPlayer.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007²\u0006\n\u0010\b\u001a\u00020\tX\u008a\u0084\u0002"}, d2 = {"ExoPlayerView", "", "uri", "Landroid/net/Uri;", "isSoundOn", "", "(Landroid/net/Uri;ZLandroidx/compose/runtime/Composer;I)V", "download-screen_release_web", "exoPlayer", "Landroidx/media3/exoplayer/ExoPlayer;"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007²\u0006\n\u0010\b\u001a\u00020\tX\u008a\u0084\u0002"}, d2 = {"ExoPlayerView", "", "uri", "Landroid/net/Uri;", "isSoundOn", "", "(Landroid/net/Uri;ZLandroidx/compose/runtime/Composer;I)V", "download-screen_release_web", "exoPlayer", "Landroidx/media3/exoplayer/ExoPlayer;"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class VideoPlayerKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -47,7 +47,9 @@ public final class VideoPlayerKt {
         if ((i & 48) == 0) {
             i2 |= startRestartGroup.changed(z) ? 32 : 16;
         }
-        if ((i2 & 19) != 18 || !startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-794781196, i2, -1, "com.miami.game.feature.download.screen.ui.compose.ExoPlayerView (VideoPlayer.kt:26)");
             }
@@ -55,17 +57,15 @@ public final class VideoPlayerKt {
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Context context = (Context) consume;
-            startRestartGroup.startReplaceGroup(1849434622);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):VideoPlayer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719456051, "CC(remember):VideoPlayer.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(new ExoPlayer.Builder(context).build(), null, 2, null);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             final MutableState mutableState = (MutableState) rememberedValue;
-            startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):VideoPlayer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719459720, "CC(remember):VideoPlayer.kt#9igjgp");
             boolean changed = startRestartGroup.changed(uri);
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -73,32 +73,29 @@ public final class VideoPlayerKt {
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             MediaItem mediaItem = (MediaItem) rememberedValue2;
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Intrinsics.checkNotNull(mediaItem);
             Boolean valueOf = Boolean.valueOf(z);
-            startRestartGroup.startReplaceGroup(-1633490746);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):VideoPlayer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719462416, "CC(remember):VideoPlayer.kt#9igjgp");
             boolean z2 = (i2 & 112) == 32;
             VideoPlayerKt$ExoPlayerView$1$1 rememberedValue3 = startRestartGroup.rememberedValue();
             if (z2 || rememberedValue3 == Composer.Companion.getEmpty()) {
                 rememberedValue3 = new VideoPlayerKt$ExoPlayerView$1$1(z, mutableState, null);
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             EffectsKt.LaunchedEffect(valueOf, (Function2) rememberedValue3, startRestartGroup, (i2 >> 3) & 14);
-            startRestartGroup.startReplaceGroup(-1633490746);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):VideoPlayer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719466691, "CC(remember):VideoPlayer.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(mediaItem);
             VideoPlayerKt$ExoPlayerView$2$1 rememberedValue4 = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue4 == Composer.Companion.getEmpty()) {
                 rememberedValue4 = new VideoPlayerKt$ExoPlayerView$2$1(mediaItem, mutableState, null);
                 startRestartGroup.updateRememberedValue(rememberedValue4);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             EffectsKt.LaunchedEffect(mediaItem, (Function2) rememberedValue4, startRestartGroup, 0);
             Unit unit = Unit.INSTANCE;
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):VideoPlayer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719474105, "CC(remember):VideoPlayer.kt#9igjgp");
             Object rememberedValue5 = startRestartGroup.rememberedValue();
             if (rememberedValue5 == Composer.Companion.getEmpty()) {
                 rememberedValue5 = new Function1() { // from class: com.miami.game.feature.download.screen.ui.compose.VideoPlayerKt$$ExternalSyntheticLambda0
@@ -111,10 +108,9 @@ public final class VideoPlayerKt {
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue5);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             EffectsKt.DisposableEffect(unit, (Function1) rememberedValue5, startRestartGroup, 54);
-            startRestartGroup.startReplaceGroup(5004770);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):VideoPlayer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719480242, "CC(remember):VideoPlayer.kt#9igjgp");
             Object rememberedValue6 = startRestartGroup.rememberedValue();
             if (rememberedValue6 == Composer.Companion.getEmpty()) {
                 rememberedValue6 = new Function1() { // from class: com.miami.game.feature.download.screen.ui.compose.VideoPlayerKt$$ExternalSyntheticLambda1
@@ -127,13 +123,11 @@ public final class VideoPlayerKt {
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue6);
             }
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             AndroidView_androidKt.AndroidView((Function1) rememberedValue6, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, startRestartGroup, 54, 4);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {

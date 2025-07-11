@@ -12,7 +12,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class ModuleAdRevenue {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BigDecimal f1207a;
+    private final BigDecimal f1208a;
     private final Currency b;
     private final ModuleAdType c;
     private final String d;
@@ -25,7 +25,7 @@ public final class ModuleAdRevenue {
     private final boolean k;
 
     public ModuleAdRevenue(BigDecimal bigDecimal, Currency currency, ModuleAdType moduleAdType, String str, String str2, String str3, String str4, String str5, String str6, Map<String, String> map, boolean z) {
-        this.f1207a = bigDecimal;
+        this.f1208a = bigDecimal;
         this.b = currency;
         this.c = moduleAdType;
         this.d = str;
@@ -51,7 +51,7 @@ public final class ModuleAdRevenue {
     }
 
     public final BigDecimal getAdRevenue() {
-        return this.f1207a;
+        return this.f1208a;
     }
 
     public final ModuleAdType getAdType() {

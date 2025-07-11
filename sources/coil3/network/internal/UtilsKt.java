@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.Metadata;
 import kotlin.ResultKt;
+import kotlin.UByte$$ExternalSyntheticBackport0;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jdk7.AutoCloseableKt;
@@ -132,7 +133,7 @@ public final class UtilsKt {
 
     public static final void closeQuietly(AutoCloseable autoCloseable) {
         try {
-            autoCloseable.close();
+            UByte$$ExternalSyntheticBackport0.m8544m((Object) autoCloseable);
         } catch (RuntimeException e) {
             throw e;
         } catch (Exception unused) {

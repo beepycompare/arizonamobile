@@ -5,11 +5,11 @@ import io.appmetrica.analytics.AnrListener;
 public final class Bc {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f353a = 5;
-    public final C0226e b;
+    public int f354a = 5;
+    public final C0218e b;
 
-    public Bc(InterfaceC0227e0 interfaceC0227e0) {
-        this.b = new C0226e(new Wb(interfaceC0227e0));
+    public Bc(InterfaceC0219e0 interfaceC0219e0) {
+        this.b = new C0218e(new Wb(interfaceC0219e0));
     }
 
     public static final void b(AnrListener anrListener) {
@@ -17,9 +17,9 @@ public final class Bc {
     }
 
     public final void a(final AnrListener anrListener) {
-        C0226e c0226e = this.b;
-        c0226e.f812a.add(new InterfaceC0175c() { // from class: io.appmetrica.analytics.impl.Bc$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.impl.InterfaceC0175c
+        C0218e c0218e = this.b;
+        c0218e.f813a.add(new InterfaceC0167c() { // from class: io.appmetrica.analytics.impl.Bc$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.impl.InterfaceC0167c
             public final void onAppNotResponding() {
                 Bc.b(AnrListener.this);
             }

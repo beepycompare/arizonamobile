@@ -182,7 +182,7 @@ public final class TemperatureCache {
         Collections.sort(arrayList, Comparator.comparing(new Function() { // from class: com.google.android.material.color.utilities.TemperatureCache$$ExternalSyntheticLambda0
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return TemperatureCache.this.m8136xb7a75f35((Hct) obj);
+                return TemperatureCache.this.m8135xb7a75f35((Hct) obj);
             }
         }, new Comparator() { // from class: com.google.android.material.color.utilities.TemperatureCache$$ExternalSyntheticLambda1
             @Override // java.util.Comparator
@@ -198,7 +198,7 @@ public final class TemperatureCache {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getHctsByTemp$0$com-google-android-material-color-utilities-TemperatureCache  reason: not valid java name */
-    public /* synthetic */ Double m8136xb7a75f35(Hct hct) {
+    public /* synthetic */ Double m8135xb7a75f35(Hct hct) {
         return getTempsByHct().get(hct);
     }
 

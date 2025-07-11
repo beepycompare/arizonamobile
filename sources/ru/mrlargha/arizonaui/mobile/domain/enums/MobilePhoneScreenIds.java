@@ -6,7 +6,7 @@ import kotlin.enums.EnumEntriesKt;
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* compiled from: MobilePhonePage.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b)\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013j\u0002\b\u0014j\u0002\b\u0015j\u0002\b\u0016j\u0002\b\u0017j\u0002\b\u0018j\u0002\b\u0019j\u0002\b\u001aj\u0002\b\u001bj\u0002\b\u001cj\u0002\b\u001dj\u0002\b\u001ej\u0002\b\u001fj\u0002\b j\u0002\b!j\u0002\b\"j\u0002\b#j\u0002\b$j\u0002\b%j\u0002\b&j\u0002\b'j\u0002\b(j\u0002\b)j\u0002\b*j\u0002\b+¨\u0006,"}, d2 = {"Lru/mrlargha/arizonaui/mobile/domain/enums/MobilePhoneScreenIds;", "", "id", "", "<init>", "(Ljava/lang/String;II)V", "getId", "()I", "MENU_ID_MENU", "MENU_ID_HELP", "MENU_ID_QUEST", "MENU_ID_REPORT", "MENU_ID_AZPOTIFY", "MENU_ID_DRIVER", "MENU_ID_UBER", "MENU_ID_GPS", "MENU_ID_SETTING", "MENU_ID_CALL", "MENU_ID_SMS", "MENU_ID_CONTACT", "MENU_ID_REWARD", "MENU_ID_SHOP", "MENU_ID_BLOCKCHAIN", "MENU_ID_MED", "MENU_ID_PASS", "MENU_ID_ANIM", "MENU_ID_MYFAMILY", "MENU_ID_YOUTUBE", "MENU_ID_BIZ", "MENU_ID_CARS", "MENU_ID_HOUSE", "MENU_ID_BANKING", "MENU_ID_BILBOARD", "MENU_ID_GALERY", "MENU_ID_MUSIC", "MENU_ID_COP_CHASE", "MENU_ID_SOBES_DRIVER", "MENU_ID_PROPERTY_WAR", "MENU_ID_SELFIE_CAMERA", "MENU_ID_PHONE_NUMBER_LIST", "MENU_ID_PHONE_NICKNAME", "MENU_ID_PHONE_CALENDAR", "MENU_ID_PHONE_MARKETPLACE", "MENU_ID_PHONE_STORAGE", "ArizonaUI_release_web"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b)\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013j\u0002\b\u0014j\u0002\b\u0015j\u0002\b\u0016j\u0002\b\u0017j\u0002\b\u0018j\u0002\b\u0019j\u0002\b\u001aj\u0002\b\u001bj\u0002\b\u001cj\u0002\b\u001dj\u0002\b\u001ej\u0002\b\u001fj\u0002\b j\u0002\b!j\u0002\b\"j\u0002\b#j\u0002\b$j\u0002\b%j\u0002\b&j\u0002\b'j\u0002\b(j\u0002\b)j\u0002\b*j\u0002\b+¨\u0006,"}, d2 = {"Lru/mrlargha/arizonaui/mobile/domain/enums/MobilePhoneScreenIds;", "", "id", "", "<init>", "(Ljava/lang/String;II)V", "getId", "()I", "MENU_ID_MENU", "MENU_ID_HELP", "MENU_ID_QUEST", "MENU_ID_REPORT", "MENU_ID_AZPOTIFY", "MENU_ID_DRIVER", "MENU_ID_UBER", "MENU_ID_GPS", "MENU_ID_SETTING", "MENU_ID_CALL", "MENU_ID_SMS", "MENU_ID_CONTACT", "MENU_ID_REWARD", "MENU_ID_SHOP", "MENU_ID_BLOCKCHAIN", "MENU_ID_MED", "MENU_ID_PASS", "MENU_ID_ANIM", "MENU_ID_MYFAMILY", "MENU_ID_YOUTUBE", "MENU_ID_BIZ", "MENU_ID_CARS", "MENU_ID_HOUSE", "MENU_ID_BANKING", "MENU_ID_BILBOARD", "MENU_ID_GALERY", "MENU_ID_MUSIC", "MENU_ID_COP_CHASE", "MENU_ID_SOBES_DRIVER", "MENU_ID_PROPERTY_WAR", "MENU_ID_SELFIE_CAMERA", "MENU_ID_PHONE_NUMBER_LIST", "MENU_ID_PHONE_NICKNAME", "MENU_ID_PHONE_CALENDAR", "MENU_ID_PHONE_MARKETPLACE", "MENU_ID_PHONE_STORAGE", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class MobilePhoneScreenIds {
     private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -57,6 +57,14 @@ public final class MobilePhoneScreenIds {
         return $ENTRIES;
     }
 
+    public static MobilePhoneScreenIds valueOf(String str) {
+        return (MobilePhoneScreenIds) Enum.valueOf(MobilePhoneScreenIds.class, str);
+    }
+
+    public static MobilePhoneScreenIds[] values() {
+        return (MobilePhoneScreenIds[]) $VALUES.clone();
+    }
+
     private MobilePhoneScreenIds(String str, int i, int i2) {
         this.id = i2;
     }
@@ -69,13 +77,5 @@ public final class MobilePhoneScreenIds {
         MobilePhoneScreenIds[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static MobilePhoneScreenIds valueOf(String str) {
-        return (MobilePhoneScreenIds) Enum.valueOf(MobilePhoneScreenIds.class, str);
-    }
-
-    public static MobilePhoneScreenIds[] values() {
-        return (MobilePhoneScreenIds[]) $VALUES.clone();
     }
 }

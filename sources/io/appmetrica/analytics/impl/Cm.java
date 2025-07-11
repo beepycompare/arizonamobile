@@ -3,10 +3,10 @@ package io.appmetrica.analytics.impl;
 public final class Cm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bm f378a;
+    public final Bm f379a;
 
     public Cm(Bm bm) {
-        this.f378a = bm;
+        this.f379a = bm;
     }
 
     public Cm() {

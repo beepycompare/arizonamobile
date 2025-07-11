@@ -7,11 +7,11 @@ public final class F implements Parcelable {
     public static final E CREATOR = new E();
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1271a;
+    public final boolean f1272a;
     public final long b;
 
     public F(boolean z, long j) {
-        this.f1271a = z;
+        this.f1272a = z;
         this.b = j;
     }
 
@@ -20,7 +20,7 @@ public final class F implements Parcelable {
     }
 
     public final boolean b() {
-        return this.f1271a;
+        return this.f1272a;
     }
 
     @Override // android.os.Parcelable
@@ -29,12 +29,12 @@ public final class F implements Parcelable {
     }
 
     public final String toString() {
-        return "ParcelableServiceCaptorConfig(enabled=" + this.f1271a + ", delaySeconds=" + this.b + ')';
+        return "ParcelableServiceCaptorConfig(enabled=" + this.f1272a + ", delaySeconds=" + this.b + ')';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeByte(this.f1271a ? (byte) 1 : (byte) 0);
+        parcel.writeByte(this.f1272a ? (byte) 1 : (byte) 0);
         parcel.writeLong(this.b);
     }
 

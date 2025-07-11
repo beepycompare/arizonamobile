@@ -183,7 +183,7 @@ public final class RequestBuilder {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public <T> void addTag(Class<T> cls, @Nullable T t) {
-        this.requestBuilder.tag(cls, t);
+        this.requestBuilder.tag((Class<? super Class<T>>) cls, (Class<T>) t);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

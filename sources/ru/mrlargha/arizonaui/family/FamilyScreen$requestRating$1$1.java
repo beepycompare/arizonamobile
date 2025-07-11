@@ -20,8 +20,8 @@ import ru.mrlargha.arizonaui.family.data.FamilyData;
 import ru.mrlargha.arizonaui.family.data.RatingItem;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FamilyScreen.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.arizonaui.family.FamilyScreen$requestRating$1$1", f = "FamilyScreen.kt", i = {}, l = {556}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.arizonaui.family.FamilyScreen$requestRating$1$1", f = "FamilyScreen.kt", i = {}, l = {564}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes5.dex */
 public final class FamilyScreen$requestRating$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $page;
@@ -96,8 +96,10 @@ public final class FamilyScreen$requestRating$1$1 extends SuspendLambda implemen
                 }
             }
         }
-        ratingAdapter4 = this.this$0.ratingAdapter;
-        ratingAdapter4.addAllItems(list);
+        if (!list.isEmpty()) {
+            ratingAdapter4 = this.this$0.ratingAdapter;
+            ratingAdapter4.addAllItems(list);
+        }
         return Unit.INSTANCE;
     }
 }

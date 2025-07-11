@@ -17,7 +17,7 @@ import ru.rustore.sdk.core.util.ContextExtKt;
 public final class c0 implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1340a;
+    public final Context f1341a;
     public final String b;
     public final Function0<Unit> c;
     public final Function1<RuStoreException, Unit> d;
@@ -27,7 +27,7 @@ public final class c0 implements ServiceConnection {
         Intrinsics.checkNotNullParameter(applicationId, "applicationId");
         Intrinsics.checkNotNullParameter(onSuccess, "onSuccess");
         Intrinsics.checkNotNullParameter(onError, "onError");
-        this.f1340a = context;
+        this.f1341a = context;
         this.b = applicationId;
         this.c = onSuccess;
         this.d = onError;
@@ -46,14 +46,14 @@ public final class c0 implements ServiceConnection {
                 message = "";
             }
             function1.invoke(new RuStoreException(message));
-            ContextExtKt.unbindServiceSafely(this.f1340a, this);
+            ContextExtKt.unbindServiceSafely(this.f1341a, this);
         }
     }
 
     @Override // android.content.ServiceConnection
     public final void onServiceDisconnected(ComponentName componentName) {
         this.d.invoke(new RuStoreException("onServiceDisconnected"));
-        ContextExtKt.unbindServiceSafely(this.f1340a, this);
+        ContextExtKt.unbindServiceSafely(this.f1341a, this);
     }
 
     /* loaded from: classes5.dex */
@@ -68,13 +68,13 @@ public final class c0 implements ServiceConnection {
         public final void a(int i, String errorMessage) {
             Intrinsics.checkNotNullParameter(errorMessage, "errorMessage");
             c0.this.d.invoke(RemoteProviderErrors.INSTANCE.toRuStoreException(i, errorMessage));
-            ContextExtKt.unbindServiceSafely(c0.this.f1340a, this.b);
+            ContextExtKt.unbindServiceSafely(c0.this.f1341a, this.b);
         }
 
         @Override // ru.rustore.sdk.appupdate.d0
         public final void a() {
             c0.this.c.invoke();
-            ContextExtKt.unbindServiceSafely(c0.this.f1340a, this.b);
+            ContextExtKt.unbindServiceSafely(c0.this.f1341a, this.b);
         }
     }
 }

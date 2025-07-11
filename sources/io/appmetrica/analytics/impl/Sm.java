@@ -10,10 +10,10 @@ public final class Sm extends Mi {
 
     @Override // io.appmetrica.analytics.impl.Mi
     public final Object a(int i) {
-        return this.f538a.getString(i);
+        return this.f539a.getString(i);
     }
 
     public final String b(int i) {
-        return this.f538a.getString(i);
+        return this.f539a.getString(i);
     }
 }

@@ -7,12 +7,12 @@ public final class Xn {
     public static final int[] c = {0, 1, 2, 3};
 
     /* renamed from: a  reason: collision with root package name */
-    public final SparseArray f711a = new SparseArray();
+    public final SparseArray f712a = new SparseArray();
     public int b = 0;
 
     public Xn(int[] iArr) {
         for (int i : iArr) {
-            this.f711a.put(i, new HashMap());
+            this.f712a.put(i, new HashMap());
         }
     }
 }

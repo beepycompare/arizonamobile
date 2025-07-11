@@ -58,10 +58,11 @@ public class APKExpansionPolicy implements Policy {
                 }
                 hashMap.put(name, nameValuePair.getValue());
             }
+            return hashMap;
         } catch (URISyntaxException unused) {
             Log.w(TAG, "Invalid syntax error while decoding extras data from server.");
+            return hashMap;
         }
-        return hashMap;
     }
 
     private void setLastResponse(int i) {

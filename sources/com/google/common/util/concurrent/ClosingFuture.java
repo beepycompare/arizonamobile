@@ -22,6 +22,7 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import javax.annotation.CheckForNull;
+import kotlin.UByte$$ExternalSyntheticBackport0;
 @DoNotMock("Use ClosingFuture.from(Futures.immediate*Future)")
 @ElementTypesAreNonnullByDefault
 /* loaded from: classes4.dex */
@@ -844,7 +845,7 @@ public final class ClosingFuture<V> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void lambda$closeQuietly$0(AutoCloseable autoCloseable) {
         try {
-            autoCloseable.close();
+            UByte$$ExternalSyntheticBackport0.m8544m((Object) autoCloseable);
         } catch (Exception e) {
             Platform.restoreInterruptIfIsInterruptedException(e);
             logger.get().log(Level.WARNING, "thrown by close()", (Throwable) e);

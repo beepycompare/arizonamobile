@@ -1,19 +1,48 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzgt extends zzlz implements zzni {
-    private zzgt() {
-        throw null;
+public final class zzgt extends zzme implements zznm {
+    private static final zzgt zzf;
+    private int zzb;
+    private String zzd = "";
+    private String zze = "";
+
+    static {
+        zzgt zzgtVar = new zzgt();
+        zzf = zzgtVar;
+        zzme.zzcp(zzgt.class, zzgtVar);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public /* synthetic */ zzgt(zzgz zzgzVar) {
-        super(r1);
-        zzgu zzguVar;
-        zzguVar = zzgu.zzb;
+    private zzgt() {
+    }
+
+    public final String zza() {
+        return this.zzd;
+    }
+
+    public final String zzb() {
+        return this.zze;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.google.android.gms.internal.measurement.zzme
+    public final Object zzl(int i, Object obj, Object obj2) {
+        int i2 = i - 1;
+        if (i2 != 0) {
+            if (i2 == 2) {
+                return zzcq(zzf, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0001", new Object[]{"zzb", "zzd", "zze"});
+            } else if (i2 != 3) {
+                if (i2 != 4) {
+                    if (i2 == 5) {
+                        return zzf;
+                    }
+                    throw null;
+                }
+                return new zzgs(null);
+            } else {
+                return new zzgt();
+            }
+        }
+        return (byte) 1;
     }
 }

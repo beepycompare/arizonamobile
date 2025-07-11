@@ -1,29 +1,30 @@
 package com.google.android.gms.measurement.internal;
 
-import android.content.Context;
-import android.content.res.Resources;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.google.android.gms.common.R;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.4.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzig {
-    public static String zza(Context context) {
-        try {
-            return context.getResources().getResourcePackageName(R.string.common_google_play_services_unknown_issue);
-        } catch (Resources.NotFoundException unused) {
-            return context.getPackageName();
-        }
+final class zzig implements Runnable {
+    final /* synthetic */ zzah zza;
+    final /* synthetic */ zzr zzb;
+    final /* synthetic */ zzjc zzc;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzig(zzjc zzjcVar, zzah zzahVar, zzr zzrVar) {
+        this.zza = zzahVar;
+        this.zzb = zzrVar;
+        Objects.requireNonNull(zzjcVar);
+        this.zzc = zzjcVar;
     }
 
-    public static final String zzb(String str, Resources resources, String str2) {
-        int identifier = resources.getIdentifier(str, TypedValues.Custom.S_STRING, str2);
-        if (identifier == 0) {
-            return null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        zzjc zzjcVar = this.zzc;
+        zzjcVar.zzL().zzY();
+        zzah zzahVar = this.zza;
+        if (zzahVar.zzc.zza() == null) {
+            zzjcVar.zzL().zzal(zzahVar, this.zzb);
+            return;
         }
-        try {
-            return resources.getString(identifier);
-        } catch (Resources.NotFoundException unused) {
-            return null;
-        }
+        zzjcVar.zzL().zzaj(zzahVar, this.zzb);
     }
 }

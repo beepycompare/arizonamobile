@@ -5,11 +5,11 @@ import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
 public final class Ud {
 
     /* renamed from: a  reason: collision with root package name */
-    public final NativeCrashSource f659a;
+    public final NativeCrashSource f660a;
     public final String b;
 
     public Ud(NativeCrashSource nativeCrashSource, String str) {
-        this.f659a = nativeCrashSource;
+        this.f660a = nativeCrashSource;
         this.b = str;
     }
 }

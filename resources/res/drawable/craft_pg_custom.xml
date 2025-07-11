@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="30dp" android:width="320dp" android:viewportWidth="320" android:viewportHeight="30">
     <path android:fillColor="#ffffff" android:pathData="M5,0L316,0A5,5 0,0 1,321 5L321,25A5,5 0,0 1,316 30L5,30A5,5 0,0 1,0 25L0,5A5,5 0,0 1,5 0z" android:fillAlpha="0.1"/>
-    <path android:fillColor="@drawable/res_0x7f0800c8_craft_pg_custom__0" android:pathData="M5,0L316,0A5,5 0,0 1,321 5L321,25A5,5 0,0 1,316 30L5,30A5,5 0,0 1,0 25L0,5A5,5 0,0 1,5 0z" android:fillAlpha="0.25"/>
+    <path android:fillColor="@drawable/res_0x7f0800cc_craft_pg_custom__0" android:pathData="M5,0L316,0A5,5 0,0 1,321 5L321,25A5,5 0,0 1,316 30L5,30A5,5 0,0 1,0 25L0,5A5,5 0,0 1,5 0z" android:fillAlpha="0.25"/>
     <path android:fillColor="#ffd12f" android:pathData="M0,0h169v30h-169z"/>
-    <path android:fillColor="#00000000" android:pathData="M5,0.5L316,0.5A4.5,4.5 0,0 1,320.5 5L320.5,25A4.5,4.5 0,0 1,316 29.5L5,29.5A4.5,4.5 0,0 1,0.5 25L0.5,5A4.5,4.5 0,0 1,5 0.5z" android:strokeColor="@drawable/res_0x7f0800c9_craft_pg_custom__1" android:strokeWidth="1"/>
+    <path android:fillColor="#00000000" android:pathData="M5,0.5L316,0.5A4.5,4.5 0,0 1,320.5 5L320.5,25A4.5,4.5 0,0 1,316 29.5L5,29.5A4.5,4.5 0,0 1,0.5 25L0.5,5A4.5,4.5 0,0 1,5 0.5z" android:strokeColor="@drawable/res_0x7f0800cd_craft_pg_custom__1" android:strokeWidth="1"/>
 </vector>

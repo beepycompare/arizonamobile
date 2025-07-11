@@ -1,233 +1,50 @@
 package com.google.android.gms.measurement.internal;
 
-import com.google.android.gms.common.internal.Preconditions;
-import com.google.common.net.HttpHeaders;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.List;
-import java.util.Map;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import android.content.ComponentName;
+import android.content.ServiceConnection;
+import android.os.IBinder;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzhi implements Runnable {
-    final /* synthetic */ zzhk zza;
-    private final URL zzb;
-    private final byte[] zzc;
-    private final zzhg zzd;
-    private final String zze;
-    private final Map zzf;
+public final class zzhi implements ServiceConnection {
+    final /* synthetic */ zzhj zza;
+    private final String zzb;
 
-    public zzhi(zzhk zzhkVar, String str, URL url, byte[] bArr, Map map, zzhg zzhgVar) {
-        this.zza = zzhkVar;
-        Preconditions.checkNotEmpty(str);
-        Preconditions.checkNotNull(url);
-        Preconditions.checkNotNull(zzhgVar);
-        this.zzb = url;
-        this.zzc = bArr;
-        this.zzd = zzhgVar;
-        this.zze = str;
-        this.zzf = map;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzhi(zzhj zzhjVar, String str) {
+        Objects.requireNonNull(zzhjVar);
+        this.zza = zzhjVar;
+        this.zzb = str;
     }
 
-    /* JADX WARN: Not initialized variable reg: 11, insn: 0x00f6: MOVE  (r9 I:??[OBJECT, ARRAY]) = (r11 I:??[OBJECT, ARRAY]), block:B:44:0x00f4 */
-    /* JADX WARN: Not initialized variable reg: 11, insn: 0x00fa: MOVE  (r10 I:??[OBJECT, ARRAY]) = (r11 I:??[OBJECT, ARRAY]), block:B:46:0x00f9 */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0178  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x011e A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x015c A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i;
-        HttpURLConnection httpURLConnection;
-        Map map;
-        IOException iOException;
-        int i2;
-        Map map2;
-        Throwable th;
-        int responseCode;
-        Map map3;
-        Map map4;
-        InputStream inputStream;
-        zzhk zzhkVar = this.zza;
-        zzhkVar.zzaY();
-        OutputStream outputStream = null;
-        try {
-            URL url = this.zzb;
-            int i3 = com.google.android.gms.internal.measurement.zzcm.zzb;
-            URLConnection openConnection = url.openConnection();
-            if (!(openConnection instanceof HttpURLConnection)) {
-                throw new IOException("Failed to obtain HTTP connection");
-            }
-            httpURLConnection = (HttpURLConnection) openConnection;
-            httpURLConnection.setDefaultUseCaches(false);
-            zzio zzioVar = zzhkVar.zzu;
-            zzioVar.zzf();
-            httpURLConnection.setConnectTimeout(60000);
-            zzioVar.zzf();
-            httpURLConnection.setReadTimeout(61000);
-            httpURLConnection.setInstanceFollowRedirects(false);
-            httpURLConnection.setDoInput(true);
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        if (iBinder != null) {
             try {
-                Map map5 = this.zzf;
-                if (map5 != null) {
-                    for (Map.Entry entry : map5.entrySet()) {
-                        httpURLConnection.addRequestProperty((String) entry.getKey(), (String) entry.getValue());
-                    }
+                com.google.android.gms.internal.measurement.zzbq zzb = com.google.android.gms.internal.measurement.zzbp.zzb(iBinder);
+                if (zzb == null) {
+                    this.zza.zza.zzaV().zze().zza("Install Referrer Service implementation was not found");
+                    return;
                 }
-                byte[] bArr = this.zzc;
-                if (bArr != null) {
-                    byte[] zzB = zzhkVar.zzg.zzA().zzB(bArr);
-                    zzhc zzj = zzioVar.zzaW().zzj();
-                    int length = zzB.length;
-                    zzj.zzb("Uploading data. size", Integer.valueOf(length));
-                    httpURLConnection.setDoOutput(true);
-                    httpURLConnection.addRequestProperty(HttpHeaders.CONTENT_ENCODING, "gzip");
-                    httpURLConnection.setFixedLengthStreamingMode(length);
-                    httpURLConnection.connect();
-                    OutputStream outputStream2 = httpURLConnection.getOutputStream();
-                    try {
-                        outputStream2.write(zzB);
-                        outputStream2.close();
-                    } catch (IOException e) {
-                        iOException = e;
-                        i2 = 0;
-                        map2 = null;
-                        outputStream = outputStream2;
-                        if (outputStream != null) {
-                        }
-                        if (httpURLConnection != null) {
-                        }
-                        this.zza.zzu.zzaX().zzq(new zzhh(this.zze, this.zzd, i2, iOException, null, map2, null));
-                    } catch (Throwable th2) {
-                        th = th2;
-                        i = 0;
-                        map = null;
-                        outputStream = outputStream2;
-                        th = th;
-                        if (outputStream != null) {
-                        }
-                        if (httpURLConnection != null) {
-                        }
-                        this.zza.zzu.zzaX().zzq(new zzhh(this.zze, this.zzd, i, null, null, map, null));
-                        throw th;
-                    }
-                }
-                responseCode = httpURLConnection.getResponseCode();
-            } catch (IOException e2) {
-                iOException = e2;
-                i2 = 0;
-                map2 = null;
-            } catch (Throwable th3) {
-                th = th3;
-                i = 0;
-                map = null;
+                zzib zzibVar = this.zza.zza;
+                zzibVar.zzaV().zzk().zza("Install Referrer Service connected");
+                zzibVar.zzaW().zzj(new zzhh(this, zzb, this));
+                return;
+            } catch (RuntimeException e) {
+                this.zza.zza.zzaV().zze().zzb("Exception occurred while calling Install Referrer API", e);
+                return;
             }
-            try {
-                try {
-                    Map<String, List<String>> headerFields = httpURLConnection.getHeaderFields();
-                    try {
-                        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                        inputStream = httpURLConnection.getInputStream();
-                        try {
-                            byte[] bArr2 = new byte[1024];
-                            while (true) {
-                                int read = inputStream.read(bArr2);
-                                if (read <= 0) {
-                                    break;
-                                }
-                                byteArrayOutputStream.write(bArr2, 0, read);
-                            }
-                            byte[] byteArray = byteArrayOutputStream.toByteArray();
-                            if (inputStream != null) {
-                                inputStream.close();
-                            }
-                            if (httpURLConnection != null) {
-                                httpURLConnection.disconnect();
-                            }
-                            this.zza.zzu.zzaX().zzq(new zzhh(this.zze, this.zzd, responseCode, null, byteArray, headerFields, null));
-                        } catch (Throwable th4) {
-                            th = th4;
-                            if (inputStream != null) {
-                                inputStream.close();
-                            }
-                            throw th;
-                        }
-                    } catch (Throwable th5) {
-                        th = th5;
-                        inputStream = null;
-                    }
-                } catch (IOException e3) {
-                    e = e3;
-                    i2 = responseCode;
-                    map2 = map4;
-                    iOException = e;
-                    if (outputStream != null) {
-                        try {
-                            outputStream.close();
-                        } catch (IOException e4) {
-                            this.zza.zzu.zzaW().zze().zzc("Error closing HTTP compressed POST connection output stream. appId", zzhe.zzn(this.zze), e4);
-                        }
-                    }
-                    if (httpURLConnection != null) {
-                        httpURLConnection.disconnect();
-                    }
-                    this.zza.zzu.zzaX().zzq(new zzhh(this.zze, this.zzd, i2, iOException, null, map2, null));
-                } catch (Throwable th6) {
-                    th = th6;
-                    i = responseCode;
-                    map = map3;
-                    if (outputStream != null) {
-                        try {
-                            outputStream.close();
-                        } catch (IOException e5) {
-                            this.zza.zzu.zzaW().zze().zzc("Error closing HTTP compressed POST connection output stream. appId", zzhe.zzn(this.zze), e5);
-                        }
-                    }
-                    if (httpURLConnection != null) {
-                        httpURLConnection.disconnect();
-                    }
-                    this.zza.zzu.zzaX().zzq(new zzhh(this.zze, this.zzd, i, null, null, map, null));
-                    throw th;
-                }
-            } catch (IOException e6) {
-                e = e6;
-                map2 = null;
-                i2 = responseCode;
-                iOException = e;
-                if (outputStream != null) {
-                }
-                if (httpURLConnection != null) {
-                }
-                this.zza.zzu.zzaX().zzq(new zzhh(this.zze, this.zzd, i2, iOException, null, map2, null));
-            } catch (Throwable th7) {
-                th = th7;
-                map = null;
-                i = responseCode;
-                if (outputStream != null) {
-                }
-                if (httpURLConnection != null) {
-                }
-                this.zza.zzu.zzaX().zzq(new zzhh(this.zze, this.zzd, i, null, null, map, null));
-                throw th;
-            }
-        } catch (IOException e7) {
-            iOException = e7;
-            i2 = 0;
-            httpURLConnection = null;
-            map2 = null;
-        } catch (Throwable th8) {
-            th = th8;
-            i = 0;
-            httpURLConnection = null;
-            map = null;
         }
+        this.zza.zza.zzaV().zze().zza("Install Referrer connection returned with null binder");
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+        this.zza.zza.zzaV().zzk().zza("Install Referrer Service disconnected");
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ String zza() {
+        return this.zzb;
     }
 }

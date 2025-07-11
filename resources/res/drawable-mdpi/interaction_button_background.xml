@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="65dp" android:width="250dp" android:viewportWidth="250" android:viewportHeight="65">
     <path android:fillColor="#090e23" android:pathData="M10,0L240,0A10,10 0,0 1,250 10L250,55A10,10 0,0 1,240 65L10,65A10,10 0,0 1,0 55L0,10A10,10 0,0 1,10 0z"/>
-    <path android:fillColor="@drawable/res_0x7f080204_interaction_button_background__0" android:pathData="M10,0L240,0A10,10 0,0 1,250 10L250,55A10,10 0,0 1,240 65L10,65A10,10 0,0 1,0 55L0,10A10,10 0,0 1,10 0z" android:fillAlpha="0.5"/>
+    <path android:fillColor="@drawable/res_0x7f080208_interaction_button_background__0" android:pathData="M10,0L240,0A10,10 0,0 1,250 10L250,55A10,10 0,0 1,240 65L10,65A10,10 0,0 1,0 55L0,10A10,10 0,0 1,10 0z" android:fillAlpha="0.5"/>
     <group>
         <clip-path android:pathData="M10,0L240,0A10,10 0,0 1,250 10L250,55A10,10 0,0 1,240 65L10,65A10,10 0,0 1,0 55L0,10A10,10 0,0 1,10 0z"/>
         <path android:fillColor="#ff2323" android:pathData="M-8.5,32.5m-52.5,0a52.5,52.5 0,1 1,105 0a52.5,52.5 0,1 1,-105 0" android:fillAlpha="0.25"/>
     </group>
-    <path android:fillColor="#00000000" android:pathData="M10,1.5L240,1.5A8.5,8.5 0,0 1,248.5 10L248.5,55A8.5,8.5 0,0 1,240 63.5L10,63.5A8.5,8.5 0,0 1,1.5 55L1.5,10A8.5,8.5 0,0 1,10 1.5z" android:strokeColor="@drawable/res_0x7f080205_interaction_button_background__1" android:strokeWidth="3"/>
+    <path android:fillColor="#00000000" android:pathData="M10,1.5L240,1.5A8.5,8.5 0,0 1,248.5 10L248.5,55A8.5,8.5 0,0 1,240 63.5L10,63.5A8.5,8.5 0,0 1,1.5 55L1.5,10A8.5,8.5 0,0 1,10 1.5z" android:strokeColor="@drawable/res_0x7f080209_interaction_button_background__1" android:strokeWidth="3"/>
     <path android:fillColor="#ff2323" android:pathData="M42,33m-18,0a18,18 0,1 1,36 0a18,18 0,1 1,-36 0" android:fillAlpha="0.25"/>
     <path android:fillColor="#ff2323" android:pathData="M42,33m-21,0a21,21 0,1 1,42 0a21,21 0,1 1,-42 0" android:fillAlpha="0.25"/>
     <path android:fillColor="#ff2323" android:pathData="M42,33m-14,0a14,14 0,1 1,28 0a14,14 0,1 1,-28 0"/>

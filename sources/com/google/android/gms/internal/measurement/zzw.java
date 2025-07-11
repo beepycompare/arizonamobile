@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
 public final class zzw extends zzai {
     final Map zza;
@@ -17,27 +17,28 @@ public final class zzw extends zzai {
     }
 
     @Override // com.google.android.gms.internal.measurement.zzai
-    public final zzap zza(zzg zzgVar, List list) {
-        zzap zzapVar;
-        zzh.zzh("require", 1, list);
-        String zzi = zzgVar.zzb((zzap) list.get(0)).zzi();
+    public final zzao zza(zzg zzgVar, List list) {
+        zzao zzaoVar;
+        zzh.zza("require", 1, list);
+        String zzc = zzgVar.zza((zzao) list.get(0)).zzc();
         Map map = this.zza;
-        if (map.containsKey(zzi)) {
-            return (zzap) map.get(zzi);
+        if (map.containsKey(zzc)) {
+            return (zzao) map.get(zzc);
         }
         Map map2 = this.zzb.zza;
-        if (map2.containsKey(zzi)) {
+        if (map2.containsKey(zzc)) {
             try {
-                zzapVar = (zzap) ((Callable) map2.get(zzi)).call();
+                zzaoVar = (zzao) ((Callable) map2.get(zzc)).call();
             } catch (Exception unused) {
-                throw new IllegalStateException("Failed to create API implementation: ".concat(String.valueOf(zzi)));
+                String.valueOf(zzc);
+                throw new IllegalStateException("Failed to create API implementation: ".concat(String.valueOf(zzc)));
             }
         } else {
-            zzapVar = zzap.zzf;
+            zzaoVar = zzao.zzf;
         }
-        if (zzapVar instanceof zzai) {
-            this.zza.put(zzi, (zzai) zzapVar);
+        if (zzaoVar instanceof zzai) {
+            this.zza.put(zzc, (zzai) zzaoVar);
         }
-        return zzapVar;
+        return zzaoVar;
     }
 }

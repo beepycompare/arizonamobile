@@ -105,7 +105,7 @@ public abstract class PageKeyedDataSource<Key, Value> extends DataSource<Key, Va
                 CancellableContinuation<DataSource.BaseResult<Value>> cancellableContinuation2 = cancellableContinuation;
                 Result.Companion companion = Result.Companion;
                 boolean z2 = z;
-                cancellableContinuation2.resumeWith(Result.m8443constructorimpl(new DataSource.BaseResult(data, z2 ? null : key, z2 ? key : null, 0, 0, 24, null)));
+                cancellableContinuation2.resumeWith(Result.m8471constructorimpl(new DataSource.BaseResult(data, z2 ? null : key, z2 ? key : null, 0, 0, 24, null)));
             }
         };
     }
@@ -207,14 +207,14 @@ public abstract class PageKeyedDataSource<Key, Value> extends DataSource<Key, Va
             public void onResult(List<? extends Value> data, int i, int i2, Key key, Key key2) {
                 Intrinsics.checkNotNullParameter(data, "data");
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m8443constructorimpl(new DataSource.BaseResult(data, key, key2, i, (i2 - data.size()) - i)));
+                cancellableContinuationImpl2.resumeWith(Result.m8471constructorimpl(new DataSource.BaseResult(data, key, key2, i, (i2 - data.size()) - i)));
             }
 
             @Override // androidx.paging.PageKeyedDataSource.LoadInitialCallback
             public void onResult(List<? extends Value> data, Key key, Key key2) {
                 Intrinsics.checkNotNullParameter(data, "data");
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m8443constructorimpl(new DataSource.BaseResult(data, key, key2, 0, 0, 24, null)));
+                cancellableContinuationImpl2.resumeWith(Result.m8471constructorimpl(new DataSource.BaseResult(data, key, key2, 0, 0, 24, null)));
             }
         });
         Object result = cancellableContinuationImpl.getResult();

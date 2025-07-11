@@ -6,9 +6,9 @@ import dagger.internal.InstanceFactory;
 import javax.inject.Provider;
 /* loaded from: classes4.dex */
 public final class SelectServerComponent_Factory_Impl implements SelectServerComponent.Factory {
-    private final C0121SelectServerComponent_Factory delegateFactory;
+    private final C0113SelectServerComponent_Factory delegateFactory;
 
-    SelectServerComponent_Factory_Impl(C0121SelectServerComponent_Factory delegateFactory) {
+    SelectServerComponent_Factory_Impl(C0113SelectServerComponent_Factory delegateFactory) {
         this.delegateFactory = delegateFactory;
     }
 
@@ -17,11 +17,11 @@ public final class SelectServerComponent_Factory_Impl implements SelectServerCom
         return this.delegateFactory.get(componentContext);
     }
 
-    public static Provider<SelectServerComponent.Factory> create(C0121SelectServerComponent_Factory delegateFactory) {
+    public static Provider<SelectServerComponent.Factory> create(C0113SelectServerComponent_Factory delegateFactory) {
         return InstanceFactory.create(new SelectServerComponent_Factory_Impl(delegateFactory));
     }
 
-    public static dagger.internal.Provider<SelectServerComponent.Factory> createFactoryProvider(C0121SelectServerComponent_Factory delegateFactory) {
+    public static dagger.internal.Provider<SelectServerComponent.Factory> createFactoryProvider(C0113SelectServerComponent_Factory delegateFactory) {
         return InstanceFactory.create(new SelectServerComponent_Factory_Impl(delegateFactory));
     }
 }

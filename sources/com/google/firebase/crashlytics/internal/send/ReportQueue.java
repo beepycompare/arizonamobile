@@ -90,7 +90,7 @@ public final class ReportQueue {
         new Thread(new Runnable() { // from class: com.google.firebase.crashlytics.internal.send.ReportQueue$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ReportQueue.this.m8247x23ee29ee(countDownLatch);
+                ReportQueue.this.m8246x23ee29ee(countDownLatch);
             }
         }).start();
         Utils.awaitUninterruptibly(countDownLatch, 2L, TimeUnit.SECONDS);
@@ -98,7 +98,7 @@ public final class ReportQueue {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$flushScheduledReportsIfAble$0$com-google-firebase-crashlytics-internal-send-ReportQueue  reason: not valid java name */
-    public /* synthetic */ void m8247x23ee29ee(CountDownLatch countDownLatch) {
+    public /* synthetic */ void m8246x23ee29ee(CountDownLatch countDownLatch) {
         try {
             ForcedSender.sendBlocking(this.transport, Priority.HIGHEST);
         } catch (Exception unused) {
@@ -113,14 +113,14 @@ public final class ReportQueue {
         this.transport.schedule(Event.ofUrgent(crashlyticsReportWithSessionId.getReport()), new TransportScheduleCallback() { // from class: com.google.firebase.crashlytics.internal.send.ReportQueue$$ExternalSyntheticLambda1
             @Override // com.google.android.datatransport.TransportScheduleCallback
             public final void onSchedule(Exception exc) {
-                ReportQueue.this.m8248xc033738(taskCompletionSource, z, crashlyticsReportWithSessionId, exc);
+                ReportQueue.this.m8247xc033738(taskCompletionSource, z, crashlyticsReportWithSessionId, exc);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$sendReport$1$com-google-firebase-crashlytics-internal-send-ReportQueue  reason: not valid java name */
-    public /* synthetic */ void m8248xc033738(TaskCompletionSource taskCompletionSource, boolean z, CrashlyticsReportWithSessionId crashlyticsReportWithSessionId, Exception exc) {
+    public /* synthetic */ void m8247xc033738(TaskCompletionSource taskCompletionSource, boolean z, CrashlyticsReportWithSessionId crashlyticsReportWithSessionId, Exception exc) {
         if (exc != null) {
             taskCompletionSource.trySetException(exc);
             return;

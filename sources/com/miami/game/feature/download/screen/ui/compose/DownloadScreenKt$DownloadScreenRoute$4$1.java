@@ -7,9 +7,9 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DownloadScreen.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
-public /* synthetic */ class DownloadScreenKt$DownloadScreenRoute$4$1 extends FunctionReferenceImpl implements Function0<Unit> {
+public final /* synthetic */ class DownloadScreenKt$DownloadScreenRoute$4$1 extends FunctionReferenceImpl implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public DownloadScreenKt$DownloadScreenRoute$4$1(Object obj) {
         super(0, obj, DownloadScreenComponent.class, "onSoundClick", "onSoundClick()V", 0);

@@ -1,69 +1,28 @@
 package com.google.android.gms.internal.measurement;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzao extends zzai implements zzal {
-    protected final List zza;
-    protected final List zzb;
-    protected zzg zzc;
+public interface zzao {
+    public static final zzao zzf = new zzat();
+    public static final zzao zzg = new zzam();
+    public static final zzao zzh = new zzag("continue");
+    public static final zzao zzi = new zzag("break");
+    public static final zzao zzj = new zzag("return");
+    public static final zzao zzk = new zzaf(true);
+    public static final zzao zzl = new zzaf(false);
+    public static final zzao zzm = new zzas("");
 
-    private zzao(zzao zzaoVar) {
-        super(zzaoVar.zzd);
-        ArrayList arrayList = new ArrayList(zzaoVar.zza.size());
-        this.zza = arrayList;
-        arrayList.addAll(zzaoVar.zza);
-        ArrayList arrayList2 = new ArrayList(zzaoVar.zzb.size());
-        this.zzb = arrayList2;
-        arrayList2.addAll(zzaoVar.zzb);
-        this.zzc = zzaoVar.zzc;
-    }
+    String zzc();
 
-    @Override // com.google.android.gms.internal.measurement.zzai
-    public final zzap zza(zzg zzgVar, List list) {
-        zzg zza = this.zzc.zza();
-        int i = 0;
-        while (true) {
-            List list2 = this.zza;
-            if (i >= list2.size()) {
-                break;
-            }
-            if (i < list.size()) {
-                zza.zze((String) list2.get(i), zzgVar.zzb((zzap) list.get(i)));
-            } else {
-                zza.zze((String) list2.get(i), zzf);
-            }
-            i++;
-        }
-        for (zzap zzapVar : this.zzb) {
-            zzap zzb = zza.zzb(zzapVar);
-            if (zzb instanceof zzaq) {
-                zzb = zza.zzb(zzapVar);
-            }
-            if (zzb instanceof zzag) {
-                return ((zzag) zzb).zzb();
-            }
-        }
-        return zzap.zzf;
-    }
+    zzao zzcA(String str, zzg zzgVar, List list);
 
-    @Override // com.google.android.gms.internal.measurement.zzai, com.google.android.gms.internal.measurement.zzap
-    public final zzap zzd() {
-        return new zzao(this);
-    }
+    Double zzd();
 
-    public zzao(String str, List list, List list2, zzg zzgVar) {
-        super(str);
-        this.zza = new ArrayList();
-        this.zzc = zzgVar;
-        if (!list.isEmpty()) {
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                this.zza.add(((zzap) it.next()).zzi());
-            }
-        }
-        this.zzb = new ArrayList(list2);
-    }
+    Boolean zze();
+
+    Iterator zzf();
+
+    zzao zzt();
 }

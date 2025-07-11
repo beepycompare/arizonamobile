@@ -1,68 +1,52 @@
 package com.google.android.gms.measurement.internal;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import com.google.android.gms.common.internal.Preconditions;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.4.0 */
+import java.util.List;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
 /* loaded from: classes3.dex */
-public final class zzhm extends BroadcastReceiver {
-    private final zzpv zza;
-    private boolean zzb;
-    private boolean zzc;
+final class zzhm implements com.google.android.gms.internal.measurement.zzr {
+    final /* synthetic */ zzhs zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzhm(zzpv zzpvVar) {
-        Preconditions.checkNotNull(zzpvVar);
-        this.zza = zzpvVar;
+    public zzhm(zzhs zzhsVar) {
+        Objects.requireNonNull(zzhsVar);
+        this.zza = zzhsVar;
     }
 
-    @Override // android.content.BroadcastReceiver
-    public final void onReceive(Context context, Intent intent) {
-        zzpv zzpvVar = this.zza;
-        zzpvVar.zzM();
-        String action = intent.getAction();
-        zzpvVar.zzaW().zzj().zzb("NetworkBroadcastReceiver received action", action);
-        if (!"android.net.conn.CONNECTIVITY_CHANGE".equals(action)) {
-            zzpvVar.zzaW().zzk().zzb("NetworkBroadcastReceiver received unknown action", action);
-            return;
-        }
-        boolean zzd = zzpvVar.zzp().zzd();
-        if (this.zzc != zzd) {
-            this.zzc = zzd;
-            zzpvVar.zzaX().zzq(new zzhl(this, zzd));
-        }
-    }
-
-    public final void zzb() {
-        zzpv zzpvVar = this.zza;
-        zzpvVar.zzM();
-        zzpvVar.zzaX().zzg();
-        if (this.zzb) {
-            return;
-        }
-        zzpvVar.zzaT().registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
-        this.zzc = zzpvVar.zzp().zzd();
-        zzpvVar.zzaW().zzj().zzb("Registering connectivity change receiver. Network connected", Boolean.valueOf(this.zzc));
-        this.zzb = true;
-    }
-
-    public final void zzc() {
-        zzpv zzpvVar = this.zza;
-        zzpvVar.zzM();
-        zzpvVar.zzaX().zzg();
-        zzpvVar.zzaX().zzg();
-        if (this.zzb) {
-            zzpvVar.zzaW().zzj().zza("Unregistering connectivity change receiver");
-            this.zzb = false;
-            this.zzc = false;
-            try {
-                zzpvVar.zzaT().unregisterReceiver(this);
-            } catch (IllegalArgumentException e) {
-                this.zza.zzaW().zze().zzb("Failed to unregister the network broadcast receiver", e);
+    @Override // com.google.android.gms.internal.measurement.zzr
+    public final void zza(int i, String str, List list, boolean z, boolean z2) {
+        zzgr zzj;
+        int i2 = i - 1;
+        if (i2 == 0) {
+            zzj = this.zza.zzu.zzaV().zzj();
+        } else if (i2 != 1) {
+            if (i2 == 3) {
+                zzj = this.zza.zzu.zzaV().zzk();
+            } else if (i2 != 4) {
+                zzj = this.zza.zzu.zzaV().zzi();
+            } else if (z) {
+                zzj = this.zza.zzu.zzaV().zzf();
+            } else if (!z2) {
+                zzj = this.zza.zzu.zzaV().zzh();
+            } else {
+                zzj = this.zza.zzu.zzaV().zze();
             }
+        } else if (z) {
+            zzj = this.zza.zzu.zzaV().zzc();
+        } else if (!z2) {
+            zzj = this.zza.zzu.zzaV().zzd();
+        } else {
+            zzj = this.zza.zzu.zzaV().zzb();
+        }
+        int size = list.size();
+        if (size == 1) {
+            zzj.zzb(str, list.get(0));
+        } else if (size == 2) {
+            zzj.zzc(str, list.get(0), list.get(1));
+        } else if (size == 3) {
+            zzj.zzd(str, list.get(0), list.get(1), list.get(2));
+        } else {
+            zzj.zza(str);
         }
     }
 }

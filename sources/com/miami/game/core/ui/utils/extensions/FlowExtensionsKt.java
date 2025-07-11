@@ -24,7 +24,7 @@ import kotlin.jvm.internal.SpreadBuilder;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.Flow;
 /* compiled from: FlowExtensions.kt */
-@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a;\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u0002H\u00020\u00012\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\u0010\b\u001ax\u0010\t\u001a\u00020\n\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012\u0016\u0010\u000b\u001a\f\u0012\b\b\u0001\u0012\u0004\u0018\u00010\r0\f\"\u0004\u0018\u00010\r2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072-\u0010\u000e\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\u0011\u0012\u0006\u0012\u0004\u0018\u00010\r0\u000f¢\u0006\u0002\b\u0012H\u0007¢\u0006\u0002\u0010\u0013¨\u0006\u0014²\u00067\u0010\u0015\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\u0011\u0012\u0006\u0012\u0004\u0018\u00010\r0\u000f¢\u0006\u0002\b\u0012\"\u0004\b\u0000\u0010\u0002X\u008a\u0084\u0002"}, d2 = {"rememberFlowWithLifecycle", "Lkotlinx/coroutines/flow/Flow;", ExifInterface.GPS_DIRECTION_TRUE, "flow", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "minActiveState", "Landroidx/lifecycle/Lifecycle$State;", "(Lkotlinx/coroutines/flow/Flow;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;Landroidx/compose/runtime/Composer;II)Lkotlinx/coroutines/flow/Flow;", "collectInLaunchedEffectWithLifecycle", "", UserMetadata.KEYDATA_FILENAME, "", "", "collector", "Lkotlin/Function3;", "Lkotlinx/coroutines/CoroutineScope;", "Lkotlin/coroutines/Continuation;", "Lkotlin/ExtensionFunctionType;", "(Lkotlinx/coroutines/flow/Flow;[Ljava/lang/Object;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "ui-utils_release_web", "currentCollector"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a;\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u0002H\u00020\u00012\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\u0010\b\u001ax\u0010\t\u001a\u00020\n\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012\u0016\u0010\u000b\u001a\f\u0012\b\b\u0001\u0012\u0004\u0018\u00010\r0\f\"\u0004\u0018\u00010\r2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072-\u0010\u000e\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\u0011\u0012\u0006\u0012\u0004\u0018\u00010\r0\u000f¢\u0006\u0002\b\u0012H\u0007¢\u0006\u0002\u0010\u0013¨\u0006\u0014²\u00067\u0010\u0015\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\u0011\u0012\u0006\u0012\u0004\u0018\u00010\r0\u000f¢\u0006\u0002\b\u0012\"\u0004\b\u0000\u0010\u0002X\u008a\u0084\u0002"}, d2 = {"rememberFlowWithLifecycle", "Lkotlinx/coroutines/flow/Flow;", ExifInterface.GPS_DIRECTION_TRUE, "flow", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "minActiveState", "Landroidx/lifecycle/Lifecycle$State;", "(Lkotlinx/coroutines/flow/Flow;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;Landroidx/compose/runtime/Composer;II)Lkotlinx/coroutines/flow/Flow;", "collectInLaunchedEffectWithLifecycle", "", UserMetadata.KEYDATA_FILENAME, "", "", "collector", "Lkotlin/Function3;", "Lkotlinx/coroutines/CoroutineScope;", "Lkotlin/coroutines/Continuation;", "Lkotlin/ExtensionFunctionType;", "(Lkotlinx/coroutines/flow/Flow;[Ljava/lang/Object;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "ui-utils_release_web", "currentCollector"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class FlowExtensionsKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -35,8 +35,7 @@ public final class FlowExtensionsKt {
 
     public static final <T> Flow<T> rememberFlowWithLifecycle(Flow<? extends T> flow, Lifecycle lifecycle, Lifecycle.State state, Composer composer, int i, int i2) {
         Intrinsics.checkNotNullParameter(flow, "flow");
-        composer.startReplaceGroup(1523529420);
-        ComposerKt.sourceInformation(composer, "C(rememberFlowWithLifecycle)19@721L7,21@815L150:FlowExtensions.kt#iw6472");
+        ComposerKt.sourceInformationMarkerStart(composer, 1523529420, "C(rememberFlowWithLifecycle)19@721L7,21@815L150:FlowExtensions.kt#iw6472");
         if ((i2 & 2) != 0) {
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(AndroidCompositionLocals_androidKt.getLocalLifecycleOwner());
@@ -49,8 +48,7 @@ public final class FlowExtensionsKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1523529420, i, -1, "com.miami.game.core.ui.utils.extensions.rememberFlowWithLifecycle (FlowExtensions.kt:21)");
         }
-        composer.startReplaceGroup(-1746271574);
-        ComposerKt.sourceInformation(composer, "CC(remember):FlowExtensions.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -472068542, "CC(remember):FlowExtensions.kt#9igjgp");
         boolean changed = ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(state.ordinal())) || (i & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | composer.changed(flow) | composer.changed(lifecycle);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -58,73 +56,63 @@ public final class FlowExtensionsKt {
             composer.updateRememberedValue(rememberedValue);
         }
         Flow<T> flow2 = (Flow) rememberedValue;
-        composer.endReplaceGroup();
+        ComposerKt.sourceInformationMarkerEnd(composer);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
-        composer.endReplaceGroup();
+        ComposerKt.sourceInformationMarkerEnd(composer);
         return flow2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0139  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0174  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0176  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x01b1  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x015f  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x019a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final <T> void collectInLaunchedEffectWithLifecycle(final Flow<? extends T> flow, final Object[] keys, Lifecycle lifecycle, Lifecycle.State state, final Function3<? super CoroutineScope, ? super T, ? super Continuation<? super Unit>, ? extends Object> collector, Composer composer, final int i, final int i2) {
-        int i3;
         Object obj;
-        int i4;
-        Lifecycle.State state2;
+        final Lifecycle lifecycle2;
+        final Lifecycle.State state2;
+        int i3;
+        Lifecycle.State state3;
         boolean changedInstance;
         FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 rememberedValue;
-        Lifecycle lifecycle2;
-        final Lifecycle lifecycle3;
-        final Lifecycle.State state3;
-        int i5;
+        Lifecycle lifecycle3;
+        int i4;
         Intrinsics.checkNotNullParameter(flow, "<this>");
         Intrinsics.checkNotNullParameter(keys, "keys");
         Intrinsics.checkNotNullParameter(collector, "collector");
         Composer startRestartGroup = composer.startRestartGroup(239778954);
         ComposerKt.sourceInformation(startRestartGroup, "C(collectInLaunchedEffectWithLifecycle)P(1,2,3)37@1317L31,39@1409L193,39@1354L248:FlowExtensions.kt#iw6472");
-        if ((i2 & Integer.MIN_VALUE) != 0) {
-            i3 = i | 6;
-        } else if ((i & 6) == 0) {
-            i3 = (startRestartGroup.changedInstance(flow) ? 4 : 2) | i;
-        } else {
-            i3 = i;
-        }
+        int i5 = (i & 6) == 0 ? (startRestartGroup.changedInstance(flow) ? 4 : 2) | i : i;
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             if ((i2 & 2) == 0) {
                 obj = lifecycle;
                 if (startRestartGroup.changedInstance(obj)) {
-                    i5 = 256;
-                    i3 |= i5;
+                    i4 = 256;
+                    i5 |= i4;
                 }
             } else {
                 obj = lifecycle;
             }
-            i5 = 128;
-            i3 |= i5;
+            i4 = 128;
+            i5 |= i4;
         } else {
             obj = lifecycle;
         }
         int i6 = i2 & 4;
         if (i6 != 0) {
-            i3 |= 3072;
+            i5 |= 3072;
         } else if ((i & 3072) == 0) {
-            i3 |= startRestartGroup.changed(state == null ? -1 : state.ordinal()) ? 2048 : 1024;
+            i5 |= startRestartGroup.changed(state == null ? -1 : state.ordinal()) ? 2048 : 1024;
         }
-        if ((i2 & 8) != 0) {
-            i3 |= 24576;
-        } else if ((i & 24576) == 0) {
-            i3 |= startRestartGroup.changedInstance(collector) ? 16384 : 8192;
+        if ((i & 24576) == 0) {
+            i5 |= startRestartGroup.changedInstance(collector) ? 16384 : 8192;
         }
         startRestartGroup.startMovableGroup(-1500655973, Integer.valueOf(keys.length));
         ComposerKt.sourceInformation(startRestartGroup, "32@1133L7");
-        int i7 = i3 | (startRestartGroup.changed(keys.length) ? 32 : 0);
+        int i7 = i5 | (startRestartGroup.changed(keys.length) ? 32 : 0);
         for (Object obj2 : keys) {
             i7 |= startRestartGroup.changedInstance(obj2) ? 32 : 0;
         }
@@ -132,10 +120,10 @@ public final class FlowExtensionsKt {
         if ((i7 & 112) == 0) {
             i7 |= 16;
         }
-        if ((i7 & 9363) == 9362 && startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute((i7 & 9363) != 9362, i7 & 1)) {
             startRestartGroup.skipToGroupEnd();
-            lifecycle3 = obj;
-            state3 = state;
+            lifecycle2 = obj;
+            state2 = state;
         } else {
             startRestartGroup.startDefaults();
             ComposerKt.sourceInformation(startRestartGroup, "");
@@ -148,37 +136,36 @@ public final class FlowExtensionsKt {
                     i7 &= -897;
                 }
                 if (i6 != 0) {
-                    i4 = i7;
-                    state2 = Lifecycle.State.STARTED;
+                    i3 = i7;
+                    state3 = Lifecycle.State.STARTED;
                     startRestartGroup.endDefaults();
                     if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(239778954, i4, -1, "com.miami.game.core.ui.utils.extensions.collectInLaunchedEffectWithLifecycle (FlowExtensions.kt:35)");
+                        ComposerKt.traceEventStart(239778954, i3, -1, "com.miami.game.core.ui.utils.extensions.collectInLaunchedEffectWithLifecycle (FlowExtensions.kt:35)");
                     }
-                    State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(collector, startRestartGroup, (i4 >> 12) & 14);
+                    State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(collector, startRestartGroup, (i3 >> 12) & 14);
                     SpreadBuilder spreadBuilder = new SpreadBuilder(4);
                     spreadBuilder.add(flow);
                     spreadBuilder.add(obj);
-                    spreadBuilder.add(state2);
+                    spreadBuilder.add(state3);
                     spreadBuilder.addSpread(keys);
                     Object[] array = spreadBuilder.toArray(new Object[spreadBuilder.size()]);
-                    startRestartGroup.startReplaceGroup(-1224400529);
-                    ComposerKt.sourceInformation(startRestartGroup, "CC(remember):FlowExtensions.kt#9igjgp");
-                    changedInstance = startRestartGroup.changedInstance(obj) | ((i4 & 7168) != 2048) | startRestartGroup.changedInstance(flow) | startRestartGroup.changed(rememberUpdatedState);
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1500644853, "CC(remember):FlowExtensions.kt#9igjgp");
+                    changedInstance = startRestartGroup.changedInstance(obj) | ((i3 & 7168) == 2048) | startRestartGroup.changedInstance(flow) | startRestartGroup.changed(rememberUpdatedState);
                     rememberedValue = startRestartGroup.rememberedValue();
                     if (!changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
-                        lifecycle2 = obj;
-                        rememberedValue = new FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1(lifecycle2, state2, flow, rememberUpdatedState, null);
+                        lifecycle3 = obj;
+                        rememberedValue = new FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1(lifecycle3, state3, flow, rememberUpdatedState, null);
                         startRestartGroup.updateRememberedValue(rememberedValue);
                     } else {
-                        lifecycle2 = obj;
+                        lifecycle3 = obj;
                     }
-                    startRestartGroup.endReplaceGroup();
+                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     EffectsKt.LaunchedEffect(array, (Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object>) rememberedValue, startRestartGroup, 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
-                    lifecycle3 = lifecycle2;
-                    state3 = state2;
+                    lifecycle2 = lifecycle3;
+                    state2 = state3;
                 }
             } else {
                 startRestartGroup.skipToGroupEnd();
@@ -186,33 +173,32 @@ public final class FlowExtensionsKt {
                     i7 &= -897;
                 }
             }
-            i4 = i7;
-            state2 = state;
+            i3 = i7;
+            state3 = state;
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
-            State rememberUpdatedState2 = SnapshotStateKt.rememberUpdatedState(collector, startRestartGroup, (i4 >> 12) & 14);
+            State rememberUpdatedState2 = SnapshotStateKt.rememberUpdatedState(collector, startRestartGroup, (i3 >> 12) & 14);
             SpreadBuilder spreadBuilder2 = new SpreadBuilder(4);
             spreadBuilder2.add(flow);
             spreadBuilder2.add(obj);
-            spreadBuilder2.add(state2);
+            spreadBuilder2.add(state3);
             spreadBuilder2.addSpread(keys);
             Object[] array2 = spreadBuilder2.toArray(new Object[spreadBuilder2.size()]);
-            startRestartGroup.startReplaceGroup(-1224400529);
-            ComposerKt.sourceInformation(startRestartGroup, "CC(remember):FlowExtensions.kt#9igjgp");
-            changedInstance = startRestartGroup.changedInstance(obj) | ((i4 & 7168) != 2048) | startRestartGroup.changedInstance(flow) | startRestartGroup.changed(rememberUpdatedState2);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1500644853, "CC(remember):FlowExtensions.kt#9igjgp");
+            changedInstance = startRestartGroup.changedInstance(obj) | ((i3 & 7168) == 2048) | startRestartGroup.changedInstance(flow) | startRestartGroup.changed(rememberUpdatedState2);
             rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance) {
             }
-            lifecycle2 = obj;
-            rememberedValue = new FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1(lifecycle2, state2, flow, rememberUpdatedState2, null);
+            lifecycle3 = obj;
+            rememberedValue = new FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1(lifecycle3, state3, flow, rememberUpdatedState2, null);
             startRestartGroup.updateRememberedValue(rememberedValue);
-            startRestartGroup.endReplaceGroup();
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             EffectsKt.LaunchedEffect(array2, (Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object>) rememberedValue, startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
-            lifecycle3 = lifecycle2;
-            state3 = state2;
+            lifecycle2 = lifecycle3;
+            state2 = state3;
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
@@ -220,7 +206,7 @@ public final class FlowExtensionsKt {
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
                     Unit collectInLaunchedEffectWithLifecycle$lambda$3;
-                    collectInLaunchedEffectWithLifecycle$lambda$3 = FlowExtensionsKt.collectInLaunchedEffectWithLifecycle$lambda$3(Flow.this, keys, lifecycle3, state3, collector, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                    collectInLaunchedEffectWithLifecycle$lambda$3 = FlowExtensionsKt.collectInLaunchedEffectWithLifecycle$lambda$3(Flow.this, keys, lifecycle2, state2, collector, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                     return collectInLaunchedEffectWithLifecycle$lambda$3;
                 }
             });

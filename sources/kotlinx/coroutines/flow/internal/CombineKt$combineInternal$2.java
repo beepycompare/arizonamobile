@@ -11,7 +11,6 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.io.encoding.Base64;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
@@ -25,7 +24,7 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: Combine.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2", f = "Combine.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_TAG, 73, Base64.mimeLineLength}, m = "invokeSuspend", n = {"latestValues", "resultChannel", "lastReceivedEpoch", "remainingAbsentValues", "currentEpoch", "latestValues", "resultChannel", "lastReceivedEpoch", "remainingAbsentValues", "currentEpoch", "latestValues", "resultChannel", "lastReceivedEpoch", "remainingAbsentValues", "currentEpoch"}, s = {"L$0", "L$1", "L$2", "I$0", "I$1", "L$0", "L$1", "L$2", "I$0", "I$1", "L$0", "L$1", "L$2", "I$0", "I$1"})
+@DebugMetadata(c = "kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2", f = "Combine.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_TAG, 73, 76}, m = "invokeSuspend", n = {"latestValues", "resultChannel", "lastReceivedEpoch", "remainingAbsentValues", "currentEpoch", "latestValues", "resultChannel", "lastReceivedEpoch", "remainingAbsentValues", "currentEpoch", "latestValues", "resultChannel", "lastReceivedEpoch", "remainingAbsentValues", "currentEpoch"}, s = {"L$0", "L$1", "L$2", "I$0", "I$1", "L$0", "L$1", "L$2", "I$0", "I$1", "L$0", "L$1", "L$2", "I$0", "I$1"})
 /* loaded from: classes5.dex */
 final class CombineKt$combineInternal$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function0<T[]> $arrayFactory;
@@ -123,7 +122,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
             this.I$0 = length;
             this.I$1 = b;
             this.label = 1;
-            obj2 = channel.mo9958receiveCatchingJP2dKIU(this);
+            obj2 = channel.mo9989receiveCatchingJP2dKIU(this);
             if (obj2 != coroutine_suspended) {
             }
             return coroutine_suspended;
@@ -146,14 +145,14 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
                 this.I$0 = length;
                 this.I$1 = b2;
                 this.label = 1;
-                obj2 = channel.mo9958receiveCatchingJP2dKIU(this);
+                obj2 = channel.mo9989receiveCatchingJP2dKIU(this);
                 if (obj2 != coroutine_suspended) {
                     byte[] bArr3 = bArr;
                     i2 = length;
                     i3 = b2;
                     objArr2 = objArr;
                     bArr2 = bArr3;
-                    indexedValue = (IndexedValue) ChannelResult.m9971getOrNullimpl(obj2);
+                    indexedValue = (IndexedValue) ChannelResult.m10002getOrNullimpl(obj2);
                     if (indexedValue == null) {
                         do {
                             int index = indexedValue.getIndex();
@@ -166,7 +165,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
                                 break;
                             }
                             bArr2[index] = (byte) i3;
-                            indexedValue = (IndexedValue) ChannelResult.m9971getOrNullimpl(channel.mo9959tryReceivePtdJZtk());
+                            indexedValue = (IndexedValue) ChannelResult.m10002getOrNullimpl(channel.mo9990tryReceivePtdJZtk());
                         } while (indexedValue != null);
                         if (i2 == 0) {
                             Object[] objArr4 = (Object[]) this.$arrayFactory.invoke();
@@ -197,7 +196,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
                             this.I$0 = length;
                             this.I$1 = b22;
                             this.label = 1;
-                            obj2 = channel.mo9958receiveCatchingJP2dKIU(this);
+                            obj2 = channel.mo9989receiveCatchingJP2dKIU(this);
                             if (obj2 != coroutine_suspended) {
                             }
                         }
@@ -212,7 +211,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
                         this.I$0 = length;
                         this.I$1 = b222;
                         this.label = 1;
-                        obj2 = channel.mo9958receiveCatchingJP2dKIU(this);
+                        obj2 = channel.mo9989receiveCatchingJP2dKIU(this);
                         if (obj2 != coroutine_suspended) {
                         }
                     } else {
@@ -229,8 +228,8 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
             channel = (Channel) this.L$1;
             objArr2 = (Object[]) this.L$0;
             ResultKt.throwOnFailure(obj);
-            obj2 = ((ChannelResult) obj).m9978unboximpl();
-            indexedValue = (IndexedValue) ChannelResult.m9971getOrNullimpl(obj2);
+            obj2 = ((ChannelResult) obj).m10009unboximpl();
+            indexedValue = (IndexedValue) ChannelResult.m10002getOrNullimpl(obj2);
             if (indexedValue == null) {
             }
         }
@@ -278,7 +277,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
                 if (i == 0) {
                     ResultKt.throwOnFailure(obj);
                     this.label = 1;
-                    if (this.$flows[this.$i].collect(new C00981(this.$resultChannel, this.$i), this) == coroutine_suspended) {
+                    if (this.$flows[this.$i].collect(new C00971(this.$resultChannel, this.$i), this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i != 1) {
@@ -302,11 +301,11 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
         @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
         /* renamed from: kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes5.dex */
-        public static final class C00981<T> implements FlowCollector {
+        public static final class C00971<T> implements FlowCollector {
             final /* synthetic */ int $i;
             final /* synthetic */ Channel<IndexedValue<Object>> $resultChannel;
 
-            C00981(Channel<IndexedValue<Object>> channel, int i) {
+            C00971(Channel<IndexedValue<Object>> channel, int i) {
                 this.$resultChannel = channel;
                 this.$i = i;
             }
