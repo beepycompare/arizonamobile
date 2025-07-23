@@ -1,20 +1,54 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import android.content.Context;
+import com.google.android.vending.expansion.downloader.Constants;
+import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Locale;
+import java.util.UUID;
+import kotlin.text.StringsKt;
 /* loaded from: classes4.dex */
-public final class Oe extends Wc {
-    public Oe() {
-        super(Re.UNDEFINED);
-        a(1, Re.WIFI);
-        a(0, Re.CELL);
-        a(3, Re.ETHERNET);
-        a(2, Re.BLUETOOTH);
-        a(4, Re.VPN);
-        if (AndroidUtils.isApiAchieved(27)) {
-            a(6, Re.LOWPAN);
+public final class Oe {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Context f579a;
+    public final lo b;
+    public final mo c;
+
+    public Oe(Context context) {
+        this(context, new lo(), new mo());
+    }
+
+    public final String a(String str) {
+        try {
+            this.c.getClass();
+            if (!mo.a(str)) {
+                this.b.getClass();
+                str = StringsKt.replace$default(UUID.randomUUID().toString(), Constants.FILENAME_SEQUENCE_SEPARATOR, "", false, 4, (Object) null).toLowerCase(Locale.US);
+            }
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f579a, "uuid.dat");
+            if (fileFromSdkStorage != null && str != null) {
+                AbstractC0230eb.a(str, new FileOutputStream(fileFromSdkStorage));
+            }
+            return str;
+        } catch (Throwable unused) {
+            return null;
         }
-        if (AndroidUtils.isApiAchieved(26)) {
-            a(5, Re.WIFI_AWARE);
+    }
+
+    public Oe(Context context, lo loVar, mo moVar) {
+        this.f579a = context;
+        this.b = loVar;
+        this.c = moVar;
+    }
+
+    public final void a() {
+        File fileFromAppStorage;
+        File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f579a, "uuid.dat");
+        if (fileFromSdkStorage == null || fileFromSdkStorage.exists() || (fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f579a, "uuid.dat")) == null || !fileFromAppStorage.exists()) {
+            return;
         }
+        FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);
     }
 }

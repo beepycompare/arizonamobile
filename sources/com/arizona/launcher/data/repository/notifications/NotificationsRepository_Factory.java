@@ -8,7 +8,7 @@ public final class NotificationsRepository_Factory implements Factory<Notificati
     private final Provider<NotificationHistoryDAO> notificationHistoryDAOProvider;
     private final Provider<NotificationsAPI> notificationsAPIProvider;
 
-    public NotificationsRepository_Factory(Provider<NotificationsAPI> notificationsAPIProvider, Provider<NotificationHistoryDAO> notificationHistoryDAOProvider) {
+    private NotificationsRepository_Factory(Provider<NotificationsAPI> notificationsAPIProvider, Provider<NotificationHistoryDAO> notificationHistoryDAOProvider) {
         this.notificationsAPIProvider = notificationsAPIProvider;
         this.notificationHistoryDAOProvider = notificationHistoryDAOProvider;
     }

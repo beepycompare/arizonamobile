@@ -1,13 +1,31 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 /* loaded from: classes4.dex */
-public final class Fl extends H5 {
-    public Fl(Xl xl, C0190cm c0190cm, Wl wl) {
-        super(xl, c0190cm, wl);
+public final class Fl {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ Hl f440a;
+
+    public Fl(Hl hl) {
+        this.f440a = hl;
     }
 
-    @Override // io.appmetrica.analytics.impl.H5
-    public final synchronized void a(Wl wl) {
-        a(new C0225e6(c(), Ga.F.u(), Ga.F.r(), ((Wl) b()).mergeFrom(wl)));
-        e();
+    public final void a(String str, Jl jl, C0267fm c0267fm) {
+        ArrayList arrayList;
+        synchronized (this.f440a.b) {
+            Collection collection = (Collection) this.f440a.f476a.f519a.get(str);
+            if (collection == null) {
+                arrayList = new ArrayList();
+            } else {
+                arrayList = new ArrayList(collection);
+            }
+        }
+        Iterator it = arrayList.iterator();
+        while (it.hasNext()) {
+            ((Ql) it.next()).a(jl, c0267fm);
+        }
     }
 }

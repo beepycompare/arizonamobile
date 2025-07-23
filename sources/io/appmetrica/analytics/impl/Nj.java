@@ -1,22 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import io.appmetrica.analytics.AdRevenue;
 /* loaded from: classes4.dex */
-public final class Nj implements InterfaceC0354jb {
+public final class Nj implements InterfaceC0406lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f558a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ PluginErrorDetails c;
+    public final /* synthetic */ AdRevenue f566a;
 
-    public Nj(String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.f558a = str;
-        this.b = str2;
-        this.c = pluginErrorDetails;
+    public Nj(AdRevenue adRevenue) {
+        this.f566a = adRevenue;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0354jb
-    public final void a(InterfaceC0379kb interfaceC0379kb) {
-        interfaceC0379kb.getPluginExtension().reportError(this.f558a, this.b, this.c);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0406lb
+    public final void a(InterfaceC0431mb interfaceC0431mb) {
+        interfaceC0431mb.reportAdRevenue(this.f566a);
     }
 }

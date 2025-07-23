@@ -10,7 +10,7 @@ public final class C0112NotificationsComponent_Factory {
     private final Provider<BuildConfigRepository> buildConfigProvider;
     private final Provider<NotificationStateHolder> holderProvider;
 
-    public C0112NotificationsComponent_Factory(Provider<BuildConfigRepository> buildConfigProvider, Provider<NotificationStateHolder> holderProvider) {
+    private C0112NotificationsComponent_Factory(Provider<BuildConfigRepository> buildConfigProvider, Provider<NotificationStateHolder> holderProvider) {
         this.buildConfigProvider = buildConfigProvider;
         this.holderProvider = holderProvider;
     }

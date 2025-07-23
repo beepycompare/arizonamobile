@@ -11,7 +11,7 @@ public final class LocalRepositoryModule_ProvideLocalRepositoryFactory implement
     private final Provider<Context> contextProvider;
     private final Provider<Gson> gsonProvider;
 
-    public LocalRepositoryModule_ProvideLocalRepositoryFactory(Provider<Context> provider, Provider<Gson> provider2) {
+    private LocalRepositoryModule_ProvideLocalRepositoryFactory(Provider<Context> provider, Provider<Gson> provider2) {
         this.contextProvider = provider;
         this.gsonProvider = provider2;
     }

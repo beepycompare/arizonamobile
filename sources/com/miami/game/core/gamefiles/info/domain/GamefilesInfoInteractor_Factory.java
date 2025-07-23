@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class GamefilesInfoInteractor_Factory implements Factory<GamefilesInfoInteractor> {
     private final Provider<GamefilesInfoRepository> repositoryProvider;
 
-    public GamefilesInfoInteractor_Factory(Provider<GamefilesInfoRepository> provider) {
+    private GamefilesInfoInteractor_Factory(Provider<GamefilesInfoRepository> provider) {
         this.repositoryProvider = provider;
     }
 

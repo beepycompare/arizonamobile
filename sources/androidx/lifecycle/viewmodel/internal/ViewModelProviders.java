@@ -26,7 +26,7 @@ public final class ViewModelProviders {
 
     public final <T extends ViewModel> String getDefaultKey$lifecycle_viewmodel_release(KClass<T> modelClass) {
         Intrinsics.checkNotNullParameter(modelClass, "modelClass");
-        String canonicalName = ViewModelProviders_jvmKt.getCanonicalName(modelClass);
+        String canonicalName = CanonicalName_jvmKt.getCanonicalName(modelClass);
         if (canonicalName == null) {
             throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels".toString());
         }
@@ -91,6 +91,6 @@ public final class ViewModelProviders {
         if (vm != null) {
             return vm;
         }
-        throw new IllegalArgumentException(("No initializer set for given class " + ViewModelProviders_jvmKt.getCanonicalName(modelClass)).toString());
+        throw new IllegalArgumentException(("No initializer set for given class " + CanonicalName_jvmKt.getCanonicalName(modelClass)).toString());
     }
 }

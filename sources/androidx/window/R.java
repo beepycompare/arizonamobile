@@ -10,14 +10,14 @@ public final class R {
         public static int clearTop = 0x7f0400fb;
         public static int finishPrimaryWithSecondary = 0x7f04023a;
         public static int finishSecondaryWithPrimary = 0x7f04023b;
-        public static int placeholderActivityName = 0x7f040496;
-        public static int primaryActivityName = 0x7f0404bc;
-        public static int secondaryActivityAction = 0x7f040509;
-        public static int secondaryActivityName = 0x7f04050a;
-        public static int splitLayoutDirection = 0x7f04054e;
-        public static int splitMinSmallestWidth = 0x7f04054f;
-        public static int splitMinWidth = 0x7f040550;
-        public static int splitRatio = 0x7f040551;
+        public static int placeholderActivityName = 0x7f040499;
+        public static int primaryActivityName = 0x7f0404bf;
+        public static int secondaryActivityAction = 0x7f04050c;
+        public static int secondaryActivityName = 0x7f04050d;
+        public static int splitLayoutDirection = 0x7f040551;
+        public static int splitMinSmallestWidth = 0x7f040552;
+        public static int splitMinWidth = 0x7f040553;
+        public static int splitRatio = 0x7f040554;
 
         private attr() {
         }
@@ -26,9 +26,9 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class id {
         public static int androidx_window_activity_scope = 0x7f0a00d0;
-        public static int locale = 0x7f0a07ca;
-        public static int ltr = 0x7f0a07dc;
-        public static int rtl = 0x7f0a0b59;
+        public static int locale = 0x7f0a07cd;
+        public static int ltr = 0x7f0a07df;
+        public static int rtl = 0x7f0a0b62;
 
         private id() {
         }

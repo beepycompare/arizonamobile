@@ -13,7 +13,7 @@ public final class ServersInteractor_Factory implements Factory<ServersInteracto
     private final Provider<FavoriteServerDatabase> favoriteServerDatabaseProvider;
     private final Provider<LocalRepository> localRepositoryProvider;
 
-    public ServersInteractor_Factory(Provider<BuildConfigRepository> buildConfigProvider, Provider<NetworkDataSource> dataSourceProvider, Provider<LocalRepository> localRepositoryProvider, Provider<FavoriteServerDatabase> favoriteServerDatabaseProvider) {
+    private ServersInteractor_Factory(Provider<BuildConfigRepository> buildConfigProvider, Provider<NetworkDataSource> dataSourceProvider, Provider<LocalRepository> localRepositoryProvider, Provider<FavoriteServerDatabase> favoriteServerDatabaseProvider) {
         this.buildConfigProvider = buildConfigProvider;
         this.dataSourceProvider = dataSourceProvider;
         this.localRepositoryProvider = localRepositoryProvider;

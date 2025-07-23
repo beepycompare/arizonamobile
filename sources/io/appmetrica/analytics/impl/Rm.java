@@ -1,46 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.io.UnsupportedEncodingException;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 /* loaded from: classes4.dex */
-public final class Rm extends Z2 {
-    public Rm(int i, String str) {
-        this(i, str, PublicLogger.getAnonymousInstance());
+public abstract class Rm {
+    public final ProtobufStateStorage<Object> a(Context context) {
+        return a(context, c(context));
     }
 
-    public final int b() {
-        return this.f731a;
+    public abstract ProtobufStateStorage<Object> a(Context context, IBinaryDataHelper iBinaryDataHelper);
+
+    public final ProtobufStateStorage<Object> b(Context context) {
+        return a(context, d(context));
     }
 
-    public Rm(int i, String str, PublicLogger publicLogger) {
-        super(i, str, publicLogger);
-    }
+    public abstract IBinaryDataHelper c(Context context);
 
-    public final String a() {
-        return this.b;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Fn
-    public final String a(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return str;
-        }
-        try {
-            byte[] bytes = str.getBytes("UTF-8");
-            int length = bytes.length;
-            int i = this.f731a;
-            if (length > i) {
-                String str2 = new String(bytes, 0, i, "UTF-8");
-                try {
-                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f731a));
-                } catch (UnsupportedEncodingException unused) {
-                }
-                return str2;
-            }
-            return str;
-        } catch (UnsupportedEncodingException unused2) {
-            return str;
-        }
-    }
+    public abstract IBinaryDataHelper d(Context context);
 }

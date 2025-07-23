@@ -1,6 +1,5 @@
 package ru.mrlargha.commonui.elements.donate.presentation;
 
-import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -10,7 +9,6 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.Job;
 import ru.mrlargha.commonui.elements.donate.domain.models.DonateItemModel;
 import ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -44,7 +42,6 @@ public final class DonateStates$updateItems$1 extends SuspendLambda implements F
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         DonateGetItemUseCase donateGetItemUseCase;
-        Job job;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -59,11 +56,6 @@ public final class DonateStates$updateItems$1 extends SuspendLambda implements F
         } else {
             ResultKt.throwOnFailure(obj);
         }
-        job = this.this$0.updateItemJob;
-        if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
-        }
-        this.this$0.updateItemJob = null;
         return Unit.INSTANCE;
     }
 }

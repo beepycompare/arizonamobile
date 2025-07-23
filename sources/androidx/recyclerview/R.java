@@ -9,11 +9,11 @@ public final class R {
         public static int fastScrollHorizontalTrackDrawable = 0x7f040235;
         public static int fastScrollVerticalThumbDrawable = 0x7f040236;
         public static int fastScrollVerticalTrackDrawable = 0x7f040237;
-        public static int layoutManager = 0x7f040330;
-        public static int recyclerViewStyle = 0x7f0404e6;
-        public static int reverseLayout = 0x7f0404f3;
-        public static int spanCount = 0x7f040549;
-        public static int stackFromEnd = 0x7f04055a;
+        public static int layoutManager = 0x7f040333;
+        public static int recyclerViewStyle = 0x7f0404e9;
+        public static int reverseLayout = 0x7f0404f6;
+        public static int spanCount = 0x7f04054c;
+        public static int stackFromEnd = 0x7f04055d;
 
         private attr() {
         }
@@ -34,7 +34,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int item_touch_helper_previous_elevation = 0x7f0a06fc;
+        public static int item_touch_helper_previous_elevation = 0x7f0a06fe;
 
         private id() {
         }

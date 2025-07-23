@@ -1,19 +1,19 @@
 package io.appmetrica.analytics.profile;
 
-import io.appmetrica.analytics.impl.C0526q8;
-import io.appmetrica.analytics.impl.C0550r8;
-import io.appmetrica.analytics.impl.C0663vl;
-import io.appmetrica.analytics.impl.L6;
-import io.appmetrica.analytics.impl.Li;
+import io.appmetrica.analytics.impl.C0602t8;
+import io.appmetrica.analytics.impl.C0627u8;
+import io.appmetrica.analytics.impl.C0740yl;
+import io.appmetrica.analytics.impl.InterfaceC0166bo;
 import io.appmetrica.analytics.impl.N4;
-import io.appmetrica.analytics.impl.Um;
-import io.appmetrica.analytics.impl.Vk;
-import io.appmetrica.analytics.impl.Yn;
+import io.appmetrica.analytics.impl.O6;
+import io.appmetrica.analytics.impl.Oi;
+import io.appmetrica.analytics.impl.Xm;
+import io.appmetrica.analytics.impl.Yk;
 /* loaded from: classes4.dex */
 public class GenderAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final L6 f1255a = new L6("appmetrica_gender", new C0550r8(), new C0663vl());
+    private final O6 f1258a = new O6("appmetrica_gender", new C0627u8(), new C0740yl());
 
     /* loaded from: classes4.dex */
     public enum Gender {
@@ -23,35 +23,35 @@ public class GenderAttribute {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f1256a;
+        private final String f1259a;
 
         Gender(String str) {
-            this.f1256a = str;
+            this.f1259a = str;
         }
 
         public String getStringValue() {
-            return this.f1256a;
+            return this.f1259a;
         }
     }
 
-    public UserProfileUpdate<? extends Yn> withValue(Gender gender) {
-        String str = this.f1255a.c;
+    public UserProfileUpdate<? extends InterfaceC0166bo> withValue(Gender gender) {
+        String str = this.f1258a.c;
         String stringValue = gender.getStringValue();
-        C0526q8 c0526q8 = new C0526q8();
-        L6 l6 = this.f1255a;
-        return new UserProfileUpdate<>(new Um(str, stringValue, c0526q8, l6.f514a, new N4(l6.b)));
+        C0602t8 c0602t8 = new C0602t8();
+        O6 o6 = this.f1258a;
+        return new UserProfileUpdate<>(new Xm(str, stringValue, c0602t8, o6.f573a, new N4(o6.b)));
     }
 
-    public UserProfileUpdate<? extends Yn> withValueIfUndefined(Gender gender) {
-        String str = this.f1255a.c;
+    public UserProfileUpdate<? extends InterfaceC0166bo> withValueIfUndefined(Gender gender) {
+        String str = this.f1258a.c;
         String stringValue = gender.getStringValue();
-        C0526q8 c0526q8 = new C0526q8();
-        L6 l6 = this.f1255a;
-        return new UserProfileUpdate<>(new Um(str, stringValue, c0526q8, l6.f514a, new Vk(l6.b)));
+        C0602t8 c0602t8 = new C0602t8();
+        O6 o6 = this.f1258a;
+        return new UserProfileUpdate<>(new Xm(str, stringValue, c0602t8, o6.f573a, new Yk(o6.b)));
     }
 
-    public UserProfileUpdate<? extends Yn> withValueReset() {
-        L6 l6 = this.f1255a;
-        return new UserProfileUpdate<>(new Li(0, l6.c, l6.f514a, l6.b));
+    public UserProfileUpdate<? extends InterfaceC0166bo> withValueReset() {
+        O6 o6 = this.f1258a;
+        return new UserProfileUpdate<>(new Oi(0, o6.c, o6.f573a, o6.b));
     }
 }

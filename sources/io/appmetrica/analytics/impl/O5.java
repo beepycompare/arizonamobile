@@ -1,21 +1,10 @@
 package io.appmetrica.analytics.impl;
 
-import com.adjust.sdk.Constants;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfo;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import java.util.List;
 /* loaded from: classes4.dex */
 public abstract class O5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map f564a;
-
-    static {
-        HashMap hashMap = new HashMap();
-        hashMap.put(Constants.REFERRER_API_GOOGLE, AdTrackingInfo.Provider.GOOGLE);
-        hashMap.put("huawei", AdTrackingInfo.Provider.HMS);
-        hashMap.put("yandex", AdTrackingInfo.Provider.YANDEX);
-        f564a = Collections.unmodifiableMap(hashMap);
-    }
+    public static final List f572a = CollectionUtils.createSortedListWithoutRepetitions("id", "session_id", "session_type", "number_in_session", "type", "global_number", "time", "event_description");
 }

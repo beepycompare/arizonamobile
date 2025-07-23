@@ -1543,6 +1543,12 @@
     </attr>
     <attr name="goIcon" format="reference">
     </attr>
+    <attr name="gradientAngle" format="integer">
+    </attr>
+    <attr name="gradientEndColor" format="color">
+    </attr>
+    <attr name="gradientStartColor" format="color">
+    </attr>
     <attr name="graph" format="reference">
     </attr>
     <attr name="graphAnchor">

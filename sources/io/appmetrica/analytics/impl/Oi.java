@@ -1,23 +1,14 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.Bundle;
-import io.appmetrica.analytics.internal.IAppMetricaService;
 /* loaded from: classes4.dex */
-public final class Oi extends Ih {
-    public final Nf e;
-
-    public Oi(C0418m0 c0418m0, Wk wk, Nf nf) {
-        super(c0418m0, wk);
-        this.e = nf;
+public final class Oi extends Pd {
+    public Oi(int i, String str, po poVar, InterfaceC0497p2 interfaceC0497p2) {
+        super(i, str, poVar, new Ni(interfaceC0497p2));
     }
 
-    @Override // io.appmetrica.analytics.impl.Ih
-    public final void a(IAppMetricaService iAppMetricaService) {
-        Bundle bundle = new Bundle();
-        Nf nf = this.e;
-        synchronized (nf) {
-            bundle.putParcelable("PROCESS_CFG_OBJ", nf);
+    @Override // io.appmetrica.analytics.impl.Pd, io.appmetrica.analytics.impl.InterfaceC0166bo
+    public final void a(C0140ao c0140ao) {
+        if (f()) {
+            this.d.a(c0140ao, null, this);
         }
-        iAppMetricaService.resumeUserSession(bundle);
     }
 }

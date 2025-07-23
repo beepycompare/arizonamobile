@@ -63,7 +63,7 @@ public final class TlsVersion {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "javaName", imports = {}))
     /* renamed from: -deprecated_javaName  reason: not valid java name */
-    public final String m10369deprecated_javaName() {
+    public final String m10372deprecated_javaName() {
         return this.javaName;
     }
 

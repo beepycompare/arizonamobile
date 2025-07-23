@@ -10,7 +10,7 @@ public final class PreferencesModule_ProvideSharedPreferencesFactory implements 
     private final Provider<Context> applicationContextProvider;
     private final PreferencesModule module;
 
-    public PreferencesModule_ProvideSharedPreferencesFactory(PreferencesModule module, Provider<Context> applicationContextProvider) {
+    private PreferencesModule_ProvideSharedPreferencesFactory(PreferencesModule module, Provider<Context> applicationContextProvider) {
         this.module = module;
         this.applicationContextProvider = applicationContextProvider;
     }

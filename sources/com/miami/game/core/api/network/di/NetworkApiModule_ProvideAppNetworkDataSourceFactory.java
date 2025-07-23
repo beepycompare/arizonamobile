@@ -13,7 +13,7 @@ public final class NetworkApiModule_ProvideAppNetworkDataSourceFactory implement
     private final Provider<Gson> gsonProvider;
     private final Provider<OkHttpClient> okHttpClientProvider;
 
-    public NetworkApiModule_ProvideAppNetworkDataSourceFactory(Provider<ConnectionResolver> provider, Provider<OkHttpClient> provider2, Provider<Gson> provider3) {
+    private NetworkApiModule_ProvideAppNetworkDataSourceFactory(Provider<ConnectionResolver> provider, Provider<OkHttpClient> provider2, Provider<Gson> provider3) {
         this.connectionResolverProvider = provider;
         this.okHttpClientProvider = provider2;
         this.gsonProvider = provider3;

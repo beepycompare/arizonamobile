@@ -1,16 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import io.appmetrica.analytics.coreapi.internal.backport.Function;
 /* loaded from: classes4.dex */
-public final class K6 extends Ha {
-    public K6(Bi bi) {
-        super(bi);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Ha
-    public final void a(List<AbstractC0185ch> list) {
-        list.add(this.f459a.b);
-        list.add(this.f459a.f358a);
-        list.add(this.f459a.d);
+public final class K6 implements Function {
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.Function
+    /* renamed from: a */
+    public final C0617tn apply(Thread thread) {
+        String name = thread.getName();
+        int priority = thread.getPriority();
+        long id = thread.getId();
+        ThreadGroup threadGroup = thread.getThreadGroup();
+        return new C0617tn(name, priority, id, threadGroup != null ? threadGroup.getName() : "", null, null);
     }
 }

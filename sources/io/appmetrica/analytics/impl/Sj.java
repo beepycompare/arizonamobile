@@ -1,16 +1,18 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Sj implements InterfaceC0354jb {
+public final class Sj implements InterfaceC0406lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ U f630a;
+    public final /* synthetic */ String f641a;
+    public final /* synthetic */ byte[] b;
 
-    public Sj(U u) {
-        this.f630a = u;
+    public Sj(String str, byte[] bArr) {
+        this.f641a = str;
+        this.b = bArr;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0354jb
-    public final void a(InterfaceC0379kb interfaceC0379kb) {
-        interfaceC0379kb.a(this.f630a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0406lb
+    public final void a(InterfaceC0431mb interfaceC0431mb) {
+        interfaceC0431mb.setSessionExtra(this.f641a, this.b);
     }
 }

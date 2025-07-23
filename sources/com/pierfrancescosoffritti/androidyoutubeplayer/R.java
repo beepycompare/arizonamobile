@@ -6,8 +6,8 @@ public final class R {
     public static final class attr {
         public static int autoPlay = 0x7f04004d;
         public static int enableAutomaticInitialization = 0x7f0401f5;
-        public static int handleNetworkEvents = 0x7f0402a1;
-        public static int videoId = 0x7f040659;
+        public static int handleNetworkEvents = 0x7f0402a4;
+        public static int videoId = 0x7f04065c;
 
         private attr() {
         }
@@ -15,7 +15,7 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class id {
-        public static int view_tree_lifecycle_owner = 0x7f0a0eb2;
+        public static int view_tree_lifecycle_owner = 0x7f0a0ebf;
 
         private id() {
         }

@@ -1,22 +1,167 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
-import io.appmetrica.analytics.coreutils.internal.time.TimePassedChecker;
-import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
+import io.appmetrica.analytics.AdRevenue;
+import io.appmetrica.analytics.ModuleEvent;
+import io.appmetrica.analytics.Revenue;
+import io.appmetrica.analytics.ecommerce.ECommerceEvent;
+import io.appmetrica.analytics.plugins.IPluginReporter;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import io.appmetrica.analytics.profile.UserProfile;
+import java.util.ArrayList;
+import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.ck  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0188ck extends C0572s5 {
-    public C0188ck(Context context, C0190cm c0190cm, C0398l5 c0398l5, J4 j4, InterfaceC0584sh interfaceC0584sh, AbstractC0523q5 abstractC0523q5, C0373k5 c0373k5) {
-        this(context, c0398l5, new C0319i0(), new TimePassedChecker(), new C0697x5(context, c0398l5, j4, abstractC0523q5, c0190cm, interfaceC0584sh, Ga.j().w().d(), PackageManagerUtils.getAppVersionCodeInt(context), Ga.j().k(), c0373k5), j4);
+public final class C0188ck implements InterfaceC0431mb, IPluginReporter {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final ArrayList f801a = new ArrayList();
+    public volatile C0612ti b;
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0431mb, io.appmetrica.analytics.impl.InterfaceC0506pb
+    public final void a(Nn nn) {
+        a(new Mj(nn));
     }
 
-    @Override // io.appmetrica.analytics.impl.C0572s5, io.appmetrica.analytics.impl.Xa
-    public final CounterConfigurationReporterType c() {
-        return CounterConfigurationReporterType.SELF_SDK;
+    @Override // io.appmetrica.analytics.IReporter
+    public final void clearAppEnvironment() {
+        a(new Xj());
     }
 
-    public C0188ck(Context context, C0398l5 c0398l5, C0319i0 c0319i0, TimePassedChecker timePassedChecker, C0697x5 c0697x5, J4 j4) {
-        super(context, c0398l5, c0319i0, timePassedChecker, c0697x5, j4);
+    @Override // io.appmetrica.analytics.IReporter
+    public final IPluginReporter getPluginExtension() {
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void pauseSession() {
+        a(new Gj());
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void putAppEnvironmentValue(String str, String str2) {
+        a(new Wj(str, str2));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void reportAdRevenue(AdRevenue adRevenue) {
+        a(new Nj(adRevenue));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void reportAnr(Map<Thread, StackTraceElement[]> map) {
+        a(new Uj(map));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void reportECommerce(ECommerceEvent eCommerceEvent) {
+        a(new Kj(eCommerceEvent));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void reportError(String str, Throwable th) {
+        a(new Cj(str, th));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void reportEvent(String str) {
+        a(new Zj(str));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void reportRevenue(Revenue revenue) {
+        a(new Jj(revenue));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void reportUnhandledException(Throwable th) {
+        a(new Ej(th));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void reportUserProfile(UserProfile userProfile) {
+        a(new Ij(userProfile));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void resumeSession() {
+        a(new Fj());
+    }
+
+    @Override // io.appmetrica.analytics.IReporter, io.appmetrica.analytics.IModuleReporter
+    public final void sendEventsBuffer() {
+        a(new Yj());
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void setDataSendingEnabled(boolean z) {
+        a(new Lj(z));
+    }
+
+    @Override // io.appmetrica.analytics.IModuleReporter
+    public final void setSessionExtra(String str, byte[] bArr) {
+        a(new Sj(str, bArr));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void setUserProfileID(String str) {
+        a(new Hj(str));
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0431mb, io.appmetrica.analytics.impl.InterfaceC0219e0
+    public final void a(U u) {
+        a(new Vj(u));
+    }
+
+    @Override // io.appmetrica.analytics.IModuleReporter
+    public final void reportAdRevenue(AdRevenue adRevenue, boolean z) {
+        a(new Tj(adRevenue, z));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void reportError(String str, String str2) {
+        a(new Dj(str, str2, null));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void reportEvent(String str, String str2) {
+        a(new C0136ak(str, str2));
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
+        a(new Oj(pluginErrorDetails));
+    }
+
+    public final synchronized void a(InterfaceC0406lb interfaceC0406lb) {
+        if (this.b == null) {
+            this.f801a.add(interfaceC0406lb);
+        } else {
+            interfaceC0406lb.a(this.b);
+        }
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void reportError(String str, String str2, Throwable th) {
+        a(new Dj(str, str2, th));
+    }
+
+    @Override // io.appmetrica.analytics.IReporter
+    public final void reportEvent(String str, Map<String, Object> map) {
+        a(new C0162bk(str, map));
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
+        a(new Pj(pluginErrorDetails, str));
+    }
+
+    @Override // io.appmetrica.analytics.IModuleReporter
+    public final void reportEvent(ModuleEvent moduleEvent) {
+        a(new Rj(moduleEvent));
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
+        a(new Qj(str, str2, pluginErrorDetails));
     }
 }

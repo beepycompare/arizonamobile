@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int progressCount = 0x7f0404bf;
+        public static int progressCount = 0x7f0404c2;
 
         private attr() {
         }
@@ -33,7 +33,7 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class drawable {
         public static int avatar_error_placeholder = 0x7f0802fc;
-        public static int sample_skin_avatar_view = 0x7f080c1c;
+        public static int sample_skin_avatar_view = 0x7f080c22;
 
         private drawable() {
         }
@@ -47,7 +47,7 @@ public final class R {
         public static int avatar_status = 0x7f0a0136;
         public static int back_progress = 0x7f0a0152;
         public static int front_progress = 0x7f0a0529;
-        public static int max_progress = 0x7f0a0830;
+        public static int max_progress = 0x7f0a0833;
 
         private id() {
         }

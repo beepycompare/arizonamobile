@@ -1,5 +1,6 @@
 package ru.mrlargha.commonui.elements.donate.presentation;
 
+import android.app.Activity;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -10,6 +11,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateCategoryModelUi;
+import ru.mrlargha.commonui.utils.UtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
@@ -40,12 +42,20 @@ public final class DonateScreen$onCategoryClick$1$1 extends SuspendLambda implem
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        Activity targetActivity;
         DonateStates donateStates;
+        DonateStates donateStates2;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label == 0) {
             ResultKt.throwOnFailure(obj);
-            donateStates = this.this$0.states;
-            donateStates.setItems(this.$model.getId(), this.$model.isActionCategory());
+            targetActivity = this.this$0.getTargetActivity();
+            if (UtilsKt.getArizonaType(targetActivity)) {
+                donateStates2 = this.this$0.states;
+                donateStates2.setItemsArizona(this.$model.getId(), this.$model.isActionCategory());
+            } else {
+                donateStates = this.this$0.states;
+                donateStates.setItemsRodina(this.$model.getId(), this.$model.isLimitCategory(), this.$model.isActionCategory());
+            }
             return Unit.INSTANCE;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

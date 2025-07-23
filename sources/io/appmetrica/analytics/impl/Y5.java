@@ -1,7 +1,16 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 /* loaded from: classes4.dex */
-public abstract class Y5 {
-    public static Z5 a(F2 f2) {
-        return new Z5(f2);
+public abstract /* synthetic */ class Y5 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final /* synthetic */ int[] f729a;
+
+    static {
+        int[] iArr = new int[ActivityEvent.values().length];
+        iArr[ActivityEvent.RESUMED.ordinal()] = 1;
+        iArr[ActivityEvent.PAUSED.ordinal()] = 2;
+        f729a = iArr;
     }
 }

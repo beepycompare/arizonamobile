@@ -18,6 +18,10 @@ public @interface AggregatedRoot {
 
     Class<?> rootAnnotation();
 
+    String rootComponentPackage();
+
+    String[] rootComponentSimpleNames();
+
     String rootPackage();
 
     String[] rootSimpleNames();

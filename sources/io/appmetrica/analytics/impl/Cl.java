@@ -1,31 +1,29 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* loaded from: classes4.dex */
-public final class Cl {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ El f378a;
-
-    public Cl(El el) {
-        this.f378a = el;
+public final class Cl implements ProtobufConverter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0650v6 fromModel(Dl dl) {
+        C0650v6 c0650v6 = new C0650v6();
+        c0650v6.f1096a = (String) WrapUtils.getOrDefault(dl.f401a, c0650v6.f1096a);
+        c0650v6.b = (String) WrapUtils.getOrDefault(dl.b, c0650v6.b);
+        c0650v6.c = ((Integer) WrapUtils.getOrDefault(dl.c, Integer.valueOf(c0650v6.c))).intValue();
+        c0650v6.f = ((Integer) WrapUtils.getOrDefault(dl.d, Integer.valueOf(c0650v6.f))).intValue();
+        c0650v6.d = (String) WrapUtils.getOrDefault(dl.e, c0650v6.d);
+        c0650v6.e = ((Boolean) WrapUtils.getOrDefault(dl.f, Boolean.valueOf(c0650v6.e))).booleanValue();
+        return c0650v6;
     }
 
-    public final void a(String str, Gl gl, C0190cm c0190cm) {
-        ArrayList arrayList;
-        synchronized (this.f378a.b) {
-            Collection collection = (Collection) this.f378a.f415a.f474a.get(str);
-            if (collection == null) {
-                arrayList = new ArrayList();
-            } else {
-                arrayList = new ArrayList(collection);
-            }
-        }
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            ((Nl) it.next()).a(gl, c0190cm);
-        }
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        C0650v6 c0650v6 = (C0650v6) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public final Dl a(C0650v6 c0650v6) {
+        throw new UnsupportedOperationException();
     }
 }

@@ -1,13 +1,14 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public final class Ym extends AbstractC0185ch {
-    public Ym(C0572s5 c0572s5) {
-        super(c0572s5);
-    }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0185ch
-    public final boolean a(C0325i6 c0325i6) {
-        this.f786a.B();
-        return false;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+/* loaded from: classes4.dex */
+public final class Ym implements qo {
+    @Override // io.appmetrica.analytics.impl.qo
+    public final byte[] a(C0280g9 c0280g9, C0711xh c0711xh) {
+        if (!TextUtils.isEmpty(c0280g9.b)) {
+            return StringUtils.getUTF8Bytes(c0280g9.b);
+        }
+        return new byte[0];
     }
 }

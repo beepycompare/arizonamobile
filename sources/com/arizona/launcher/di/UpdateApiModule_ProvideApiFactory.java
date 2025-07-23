@@ -7,7 +7,7 @@ import dagger.internal.Preconditions;
 public final class UpdateApiModule_ProvideApiFactory implements Factory<UpdateApi> {
     private final UpdateApiModule module;
 
-    public UpdateApiModule_ProvideApiFactory(UpdateApiModule module) {
+    private UpdateApiModule_ProvideApiFactory(UpdateApiModule module) {
         this.module = module;
     }
 

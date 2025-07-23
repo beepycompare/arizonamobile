@@ -10,7 +10,7 @@ public final class DatabaseModule_ProvideLastPlayedDAOFactory implements Factory
     private final Provider<ArizonaDatabase> databaseProvider;
     private final DatabaseModule module;
 
-    public DatabaseModule_ProvideLastPlayedDAOFactory(DatabaseModule module, Provider<ArizonaDatabase> databaseProvider) {
+    private DatabaseModule_ProvideLastPlayedDAOFactory(DatabaseModule module, Provider<ArizonaDatabase> databaseProvider) {
         this.module = module;
         this.databaseProvider = databaseProvider;
     }

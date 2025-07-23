@@ -7,7 +7,7 @@ import dagger.internal.Preconditions;
 public final class ApplicationContextModule_ProvideApplicationFactory implements Factory<Application> {
     private final ApplicationContextModule module;
 
-    public ApplicationContextModule_ProvideApplicationFactory(ApplicationContextModule module) {
+    private ApplicationContextModule_ProvideApplicationFactory(ApplicationContextModule module) {
         this.module = module;
     }
 

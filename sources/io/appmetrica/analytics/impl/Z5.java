@@ -1,14 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.BroadcastReceiver;
+import android.app.Activity;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener;
 /* loaded from: classes4.dex */
-public final class Z5 {
+public final class Z5 implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final BroadcastReceiver f732a;
-    public boolean b = false;
+    public final /* synthetic */ C0122a6 f743a;
 
-    public Z5(F2 f2) {
-        this.f732a = f2;
+    public Z5(C0122a6 c0122a6) {
+        this.f743a = c0122a6;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
+    public final void onEvent(Activity activity, ActivityEvent activityEvent) {
+        int i = Y5.f729a[activityEvent.ordinal()];
+        if (i == 1) {
+            this.f743a.b.resumeSession();
+        } else if (i != 2) {
+        } else {
+            this.f743a.b.pauseSession();
+        }
     }
 }

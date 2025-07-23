@@ -1,5 +1,12 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public interface Fn {
-    Object a(Object obj);
+public abstract class Fn {
+    public static long a() {
+        long j;
+        C0316hk c0316hk = AbstractC0291gk.f869a;
+        synchronized (c0316hk) {
+            j = c0316hk.f888a;
+        }
+        return j;
+    }
 }

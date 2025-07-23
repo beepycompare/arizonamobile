@@ -10,7 +10,7 @@ public final class DefaultViewModelFactories_InternalFactoryFactory_Factory impl
     private final Provider<Map<Class<?>, Boolean>> keySetProvider;
     private final Provider<ViewModelComponentBuilder> viewModelComponentBuilderProvider;
 
-    public DefaultViewModelFactories_InternalFactoryFactory_Factory(Provider<Map<Class<?>, Boolean>> keySetProvider, Provider<ViewModelComponentBuilder> viewModelComponentBuilderProvider) {
+    private DefaultViewModelFactories_InternalFactoryFactory_Factory(Provider<Map<Class<?>, Boolean>> keySetProvider, Provider<ViewModelComponentBuilder> viewModelComponentBuilderProvider) {
         this.keySetProvider = keySetProvider;
         this.viewModelComponentBuilderProvider = viewModelComponentBuilderProvider;
     }

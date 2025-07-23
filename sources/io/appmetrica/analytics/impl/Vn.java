@@ -1,6 +1,11 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.functions.Function2;
+import android.content.Context;
+import android.os.UserManager;
+import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 /* loaded from: classes4.dex */
-public interface Vn extends Function2 {
+public final class Vn {
+    public static boolean a(Context context) {
+        return ((Boolean) SystemServiceUtils.accessSystemServiceSafelyOrDefault((UserManager) context.getSystemService(UserManager.class), "detect unlocked user state", "User manager", Boolean.TRUE, new Un())).booleanValue();
+    }
 }

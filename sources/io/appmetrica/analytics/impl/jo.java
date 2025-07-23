@@ -1,23 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import com.google.android.vending.expansion.downloader.Constants;
-import java.util.UUID;
+import android.content.Context;
+import android.text.TextUtils;
+import io.appmetrica.analytics.internal.IdentifiersResult;
 /* loaded from: classes4.dex */
-public final class jo {
-    public static boolean a(String str) {
-        UUID uuid;
-        if (str == null || str.length() != 32) {
-            return false;
+public final class jo implements InterfaceC0256fb {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0256fb
+    public final String a(Context context) {
+        IdentifiersResult q = new C0360jf(C0626u7.a(context.getApplicationContext()).a()).q();
+        if (TextUtils.isEmpty(q.id)) {
+            return null;
         }
-        try {
-            uuid = UUID.fromString(b(str));
-        } catch (Throwable unused) {
-            uuid = null;
-        }
-        return uuid != null;
-    }
-
-    public static String b(String str) {
-        return str.substring(0, 8) + Constants.FILENAME_SEQUENCE_SEPARATOR + str.substring(8, 12) + Constants.FILENAME_SEQUENCE_SEPARATOR + str.substring(12, 16) + Constants.FILENAME_SEQUENCE_SEPARATOR + str.substring(16, 20) + Constants.FILENAME_SEQUENCE_SEPARATOR + str.substring(20, 32);
+        return q.id;
     }
 }

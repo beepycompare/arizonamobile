@@ -1,18 +1,28 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import java.util.HashMap;
 /* loaded from: classes4.dex */
-public final class Qm extends Mi {
-    public Qm(Context context, String str) {
-        super(context, str, "array");
+public final class Qm {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final HashMap f615a;
+
+    public Qm() {
+        HashMap hashMap = new HashMap();
+        this.f615a = hashMap;
+        Km km = new Km();
+        Lm lm = new Lm();
+        Mm mm = new Mm();
+        Nm nm = new Nm();
+        Om om = new Om();
+        hashMap.put(C0367jm.class, km);
+        hashMap.put(Z1.class, lm);
+        hashMap.put(C0559rf.class, mm);
+        hashMap.put(C0671w2.class, nm);
+        hashMap.put(O3.class, om);
     }
 
-    @Override // io.appmetrica.analytics.impl.Mi
-    public final Object a(int i) {
-        return this.f539a.getResources().getStringArray(i);
-    }
-
-    public final String[] b(int i) {
-        return this.f539a.getResources().getStringArray(i);
+    public static Rm a(Class cls) {
+        return (Rm) Pm.f601a.f615a.get(cls);
     }
 }

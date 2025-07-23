@@ -29,10 +29,11 @@ import ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateCategory
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateCategoryModelUi;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 /* compiled from: DonateCategoryAdapter.kt */
-@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \u001a2\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002\u0019\u001aB*\u0012!\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\t0\u0005¢\u0006\u0004\b\n\u0010\u000bJ\u001c\u0010\u0012\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u000fH\u0016J\u001c\u0010\u0016\u001a\u00020\t2\n\u0010\u0017\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0018\u001a\u00020\u000fH\u0016R,\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\t0\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter$DonateCategoryViewHolder;", "onClick", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", CommonUrlParts.MODEL, "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "selectItemPosition", "", "scope", "Lkotlinx/coroutines/CoroutineScope;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "DonateCategoryViewHolder", "Companion", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \u001d2\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002\u001c\u001dB*\u0012!\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\t0\u0005¢\u0006\u0004\b\n\u0010\u000bJ\u0006\u0010\u0014\u001a\u00020\tJ\u001c\u0010\u0015\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u000fH\u0016J\u001c\u0010\u0019\u001a\u00020\t2\n\u0010\u001a\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u001b\u001a\u00020\u000fH\u0016R,\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\t0\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001e"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter$DonateCategoryViewHolder;", "onClick", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", CommonUrlParts.MODEL, "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "selectItemPosition", "", "isRateCategory", "", "scope", "Lkotlinx/coroutines/CoroutineScope;", "rateCategory", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "DonateCategoryViewHolder", "Companion", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModelUi, DonateCategoryViewHolder> {
     private static final long SELECT_ANIMATION_DURATION = 500;
+    private boolean isRateCategory;
     private final Function1<DonateCategoryModelUi, Unit> onClick;
     private final CoroutineScope scope;
     private int selectItemPosition;
@@ -64,6 +65,10 @@ public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModel
         Intrinsics.checkNotNullParameter(onClick, "onClick");
         this.onClick = onClick;
         this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain());
+    }
+
+    public final void rateCategory() {
+        this.isRateCategory = true;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -173,7 +178,8 @@ public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModel
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final void setupListeners$lambda$4$lambda$3(DonateCategoryAdapter donateCategoryAdapter, int i, DonateCategoryItemBinding donateCategoryItemBinding, View view) {
-            if (donateCategoryAdapter.selectItemPosition != i) {
+            if (donateCategoryAdapter.selectItemPosition != i || donateCategoryAdapter.isRateCategory) {
+                donateCategoryAdapter.isRateCategory = false;
                 donateCategoryAdapter.notifyItemChanged(donateCategoryAdapter.selectItemPosition);
                 donateCategoryAdapter.selectItemPosition = i;
                 donateCategoryAdapter.notifyItemChanged(i);

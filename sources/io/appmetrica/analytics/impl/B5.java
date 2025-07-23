@@ -1,57 +1,32 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor;
-import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import kotlin.collections.CollectionsKt;
+import java.util.List;
+import kotlin.Pair;
 /* loaded from: classes4.dex */
-public final class B5 implements ModuleAdRevenueProcessor, ModuleAdRevenueProcessorsHolder {
+public final class B5 implements yo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f349a = new ArrayList();
+    public final List f351a;
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
-    public final String getDescription() {
-        return CollectionsKt.joinToString$default(this.f349a, null, "Composite processor with " + this.f349a.size() + " children: [", "]", 0, null, A5.f331a, 25, null);
+    public B5(List<? extends Pair<String, ? extends yo>> list) {
+        this.f351a = list;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
-    public final boolean process(Object... objArr) {
-        Object obj;
-        boolean process;
-        LoggerStorage.getMainPublicOrAnonymousLogger().info("Processing Ad Revenue for " + Arrays.toString(objArr), new Object[0]);
-        Iterator it = this.f349a.iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                obj = null;
-                break;
-            }
-            obj = it.next();
-            ModuleAdRevenueProcessor moduleAdRevenueProcessor = (ModuleAdRevenueProcessor) obj;
-            try {
-                process = moduleAdRevenueProcessor.process(Arrays.copyOf(objArr, objArr.length));
-                if (!process) {
-                    LoggerStorage.getMainPublicOrAnonymousLogger().info("Ad Revenue was not processed by " + moduleAdRevenueProcessor.getDescription(), new Object[0]);
-                }
-            } catch (Throwable th) {
-                LoggerStorage.getMainPublicOrAnonymousLogger().error(th, "Got exception from processor " + moduleAdRevenueProcessor.getDescription(), new Object[0]);
-            }
-            if (process) {
-                break;
+    @Override // io.appmetrica.analytics.impl.yo
+    public final String a() {
+        for (Pair pair : this.f351a) {
+            String a2 = ((yo) pair.getSecond()).a();
+            if (a2 != null && a2.length() > 0) {
+                return a2;
             }
         }
-        boolean z = ((ModuleAdRevenueProcessor) obj) != null;
-        if (!z) {
-            LoggerStorage.getMainPublicOrAnonymousLogger().info("Ad Revenue was not processed by " + getDescription() + " since processor for " + Arrays.toString(objArr) + " was not found", new Object[0]);
-        }
-        return z;
+        return null;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder
-    public final void register(ModuleAdRevenueProcessor moduleAdRevenueProcessor) {
-        this.f349a.add(moduleAdRevenueProcessor);
+    @Override // io.appmetrica.analytics.impl.yo
+    public final void a(String str) {
+        for (Pair pair : this.f351a) {
+            ((yo) pair.getSecond()).a(str);
+        }
     }
 }

@@ -8,6 +8,6 @@ import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator;
 public final class C0223e4 implements ModuleClientActivator {
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator
     public final void activate(Context context) {
-        C0696x4.l().b().a(context, AppMetricaLibraryAdapterConfig.newConfigBuilder().build());
+        C0698x4.l().b().a(context, AppMetricaLibraryAdapterConfig.newConfigBuilder().build());
     }
 }

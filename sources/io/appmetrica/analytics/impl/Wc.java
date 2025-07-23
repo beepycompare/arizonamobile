@@ -1,29 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.HashMap;
-import java.util.Map;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public class Wc {
+public final class Wc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f687a;
-    public final Object b;
+    public final String f701a;
+    public final PublicLogger b;
 
-    public Wc(Object obj) {
-        this(new HashMap(), obj);
-    }
-
-    public final void a(Object obj, Object obj2) {
-        this.f687a.put(obj, obj2);
-    }
-
-    public Wc(HashMap hashMap, Object obj) {
-        this.f687a = hashMap;
-        this.b = obj;
-    }
-
-    public final Object a(Object obj) {
-        Object obj2 = this.f687a.get(obj);
-        return obj2 == null ? this.b : obj2;
+    public Wc(String str, PublicLogger publicLogger) {
+        this.f701a = str;
+        this.b = publicLogger;
     }
 }

@@ -1,12 +1,35 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public final class Wm extends AbstractC0523q5 {
-    public Wm() {
-        super(null);
+public final class Wm extends Z2 {
+    public Wm(int i, String str) {
+        this(i, str, PublicLogger.getAnonymousInstance());
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0523q5
-    public final <C extends Xa> Hl a() {
-        return new Xm();
+    public final int b() {
+        return this.f742a;
+    }
+
+    public Wm(int i, String str, PublicLogger publicLogger) {
+        super(i, str, publicLogger);
+    }
+
+    @Override // io.appmetrica.analytics.impl.In
+    public final String a(String str) {
+        if (str != null) {
+            int length = str.length();
+            int i = this.f742a;
+            if (length > i) {
+                String substring = str.substring(0, i);
+                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f742a));
+                return substring;
+            }
+        }
+        return str;
+    }
+
+    public final String a() {
+        return this.b;
     }
 }

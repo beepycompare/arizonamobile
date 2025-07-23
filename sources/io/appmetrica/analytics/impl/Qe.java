@@ -1,21 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
 /* loaded from: classes4.dex */
-public final class Qe implements FunctionWithThrowable {
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
-    public final Object apply(Object obj) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) obj;
-        if (AndroidUtils.isApiAchieved(23)) {
-            return Se.a(connectivityManager);
+public final class Qe extends Yc {
+    public Qe() {
+        super(Te.UNDEFINED);
+        a(1, Te.WIFI);
+        a(0, Te.CELL);
+        a(3, Te.ETHERNET);
+        a(2, Te.BLUETOOTH);
+        a(4, Te.VPN);
+        if (AndroidUtils.isApiAchieved(27)) {
+            a(6, Te.LOWPAN);
         }
-        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
-            return (Re) Se.b.a(Integer.valueOf(activeNetworkInfo.getType()));
+        if (AndroidUtils.isApiAchieved(26)) {
+            a(5, Te.WIFI_AWARE);
         }
-        return Re.OFFLINE;
     }
 }

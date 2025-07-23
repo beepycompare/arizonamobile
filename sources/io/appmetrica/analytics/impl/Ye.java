@@ -1,22 +1,36 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback;
+import java.util.concurrent.TimeUnit;
 /* loaded from: classes4.dex */
-public final class Ye implements Runnable {
+public final class Ye implements Pc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f723a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ C0131af c;
+    public final Oc f735a;
+    public final Oc b;
 
-    public Ye(C0131af c0131af, PluginErrorDetails pluginErrorDetails, String str) {
-        this.c = c0131af;
-        this.f723a = pluginErrorDetails;
-        this.b = str;
+    public Ye(final M9 m9, C0211dh c0211dh, J4 j4, C0385kf c0385kf) {
+        Oc oc = new Oc(c0211dh, j4, c0385kf);
+        this.f735a = oc;
+        this.b = oc;
+        if (oc.b()) {
+            return;
+        }
+        Ia.j().a().subscribe(TimeUnit.SECONDS.toMillis(AbstractC0176c8.f796a.longValue()), Ia.j().w().a(), new ActivationBarrierCallback() { // from class: io.appmetrica.analytics.impl.Ye$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback
+            public final void onWaitFinished() {
+                Ye.a(Ye.this, m9);
+            }
+        });
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ((InterfaceC0379kb) this.c.d.get()).getPluginExtension().reportError(this.f723a, this.b);
+    @Override // io.appmetrica.analytics.impl.Pc
+    public final Y8 a() {
+        return this.b;
+    }
+
+    public static final void a(Ye ye, M9 m9) {
+        ye.f735a.a();
+        ((F5) m9.a()).e();
     }
 }

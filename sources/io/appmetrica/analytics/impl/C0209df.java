@@ -1,10 +1,19 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.plugins.IPluginReporter;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* renamed from: io.appmetrica.analytics.impl.df  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0209df {
+public final class C0209df implements IPluginReporter {
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public final C0740yn f805a = new C0740yn(new C0482oe("Error details"));
-    public final C0740yn b = new C0740yn(new C0432me("Error identifier"));
-    public final C0407le c = new C0407le("Stacktrace");
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
+    }
 }

@@ -12,7 +12,7 @@ public final class C0108CommonDialogComponent_Factory {
     private final Provider<privacyInteractor> privacyInteractorProvider;
     private final Provider<Resources> resourcesProvider;
 
-    public C0108CommonDialogComponent_Factory(Provider<Resources> resourcesProvider, Provider<BuildConfigRepository> buildConfigProvider, Provider<privacyInteractor> privacyInteractorProvider) {
+    private C0108CommonDialogComponent_Factory(Provider<Resources> resourcesProvider, Provider<BuildConfigRepository> buildConfigProvider, Provider<privacyInteractor> privacyInteractorProvider) {
         this.resourcesProvider = resourcesProvider;
         this.buildConfigProvider = buildConfigProvider;
         this.privacyInteractorProvider = privacyInteractorProvider;

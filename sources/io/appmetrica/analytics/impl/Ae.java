@@ -1,44 +1,41 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ecommerce.ECommerceEvent;
-import io.appmetrica.analytics.ecommerce.ECommerceOrder;
-import java.util.List;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public final class Ae extends ECommerceEvent {
-    public static final int d = 6;
-    public static final int e = 7;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final int f336a;
-    public final Ce b;
-    public final InterfaceC0575s8 c;
-
-    public Ae(int i, ECommerceOrder eCommerceOrder) {
-        this(i, new Ce(eCommerceOrder), new Be());
+public final class Ae implements Converter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Integer fromModel(Boolean bool) {
+        int i;
+        if (bool == null) {
+            i = -1;
+        } else if (Intrinsics.areEqual(bool, Boolean.TRUE)) {
+            i = 1;
+        } else if (!Intrinsics.areEqual(bool, Boolean.FALSE)) {
+            throw new NoWhenBranchMatchedException();
+        } else {
+            i = 0;
+        }
+        return Integer.valueOf(i);
     }
 
-    public final InterfaceC0575s8 a() {
-        return this.c;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final /* bridge */ /* synthetic */ Object toModel(Object obj) {
+        return a(((Number) obj).intValue());
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
-    public final String getPublicDescription() {
-        return "order info";
-    }
-
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.Vf
-    public final List<Ni> toProto() {
-        return (List) this.c.fromModel(this);
-    }
-
-    public final String toString() {
-        return "OrderInfoEvent{eventType=" + this.f336a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public Ae(int i, Ce ce, InterfaceC0575s8 interfaceC0575s8) {
-        this.f336a = i;
-        this.b = ce;
-        this.c = interfaceC0575s8;
+    public final Boolean a(int i) {
+        if (i != -1) {
+            if (i != 0) {
+                if (i != 1) {
+                    return null;
+                }
+                return Boolean.TRUE;
+            }
+            return Boolean.FALSE;
+        }
+        return null;
     }
 }

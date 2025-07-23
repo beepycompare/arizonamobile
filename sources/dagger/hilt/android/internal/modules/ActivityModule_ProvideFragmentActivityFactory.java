@@ -9,7 +9,7 @@ import dagger.internal.Provider;
 public final class ActivityModule_ProvideFragmentActivityFactory implements Factory<FragmentActivity> {
     private final Provider<Activity> activityProvider;
 
-    public ActivityModule_ProvideFragmentActivityFactory(Provider<Activity> activityProvider) {
+    private ActivityModule_ProvideFragmentActivityFactory(Provider<Activity> activityProvider) {
         this.activityProvider = activityProvider;
     }
 

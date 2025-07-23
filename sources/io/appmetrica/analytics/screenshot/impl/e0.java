@@ -3,21 +3,21 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class e0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1297a;
+    public final boolean f1300a;
 
     public e0(boolean z) {
-        this.f1297a = z;
+        this.f1300a = z;
     }
 
     public final boolean a() {
-        return this.f1297a;
+        return this.f1300a;
     }
 
     public final String toString() {
-        return "ServiceSideApiCaptorConfig(enabled=" + this.f1297a + ')';
+        return "ServiceSideApiCaptorConfig(enabled=" + this.f1300a + ')';
     }
 
-    public e0(C0770e c0770e) {
-        this(c0770e.a());
+    public e0(C0772e c0772e) {
+        this(c0772e.a());
     }
 }

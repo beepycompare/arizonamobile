@@ -3,13 +3,13 @@ package io.appmetrica.analytics.impl;
 public final class W4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0752za f681a;
-    public final Ji b;
-    public final Tn c;
+    public final Ba f694a;
+    public final Mi b;
+    public final Wn c;
 
     public W4(S4 s4) {
-        this.f681a = new C0752za(s4);
-        this.b = new Ji(s4);
-        this.c = new Tn(s4, Ga.j().g());
+        this.f694a = new Ba(s4);
+        this.b = new Mi(s4);
+        this.c = new Wn(s4, Ia.j().g());
     }
 }

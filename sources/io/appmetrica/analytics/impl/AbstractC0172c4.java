@@ -33,7 +33,7 @@ public abstract class AbstractC0172c4 {
         }
         JSONObject jSONObject = new JSONObject(str);
         PreloadInfo.Builder newBuilder = PreloadInfo.newBuilder(jSONObject.has("trackid") ? jSONObject.optString("trackid") : null);
-        HashMap c = AbstractC0753zb.c(jSONObject.optString("params"));
+        HashMap c = Bb.c(jSONObject.optString("params"));
         if (c != null && c.size() > 0) {
             for (Map.Entry entry : c.entrySet()) {
                 newBuilder.setAdditionalParams((String) entry.getKey(), (String) entry.getValue());

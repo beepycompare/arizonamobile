@@ -3,26 +3,26 @@ package io.appmetrica.analytics.impl;
 public final class U4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Yb f653a;
+    public final C0128ac f664a;
 
     public U4() {
-        this(Ga.j().k());
+        this(Ia.j().k());
     }
 
     public static Z4 a(S4 s4) {
         return new Z4(new X4(s4), s4);
     }
 
-    public U4(Yb yb) {
-        this.f653a = yb;
+    public U4(C0128ac c0128ac) {
+        this.f664a = c0128ac;
     }
 
-    public final C0292gn a(S4 s4, C0739ym c0739ym) {
-        C0292gn c0292gn = new C0292gn(s4, new Tg(c0739ym));
-        Yb yb = this.f653a;
-        synchronized (yb) {
-            yb.c.add(c0292gn);
+    public final C0368jn a(S4 s4, Bm bm) {
+        C0368jn c0368jn = new C0368jn(s4, new Vg(bm));
+        C0128ac c0128ac = this.f664a;
+        synchronized (c0128ac) {
+            c0128ac.c.add(c0368jn);
         }
-        return c0292gn;
+        return c0368jn;
     }
 }

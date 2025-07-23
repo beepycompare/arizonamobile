@@ -1,11 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.IPluginReporter;
+import android.os.Handler;
+import io.appmetrica.analytics.AppMetricaConfig;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* loaded from: classes4.dex */
-public interface Wa extends InterfaceC0379kb, IPluginReporter {
-    void a(String str);
+public interface Wa {
+    C0748z4 a();
 
-    void b(String str, String str2);
+    void a(AppMetricaConfig appMetricaConfig, InterfaceC0481ob interfaceC0481ob);
 
-    boolean b();
+    Handler b();
+
+    Y1 c();
+
+    Fb d();
+
+    ICommonExecutor getDefaultExecutor();
 }

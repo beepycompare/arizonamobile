@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class ServersList_Factory implements Factory<ServersList> {
     private final Provider<BuildConfigRepository> buildConfigProvider;
 
-    public ServersList_Factory(Provider<BuildConfigRepository> provider) {
+    private ServersList_Factory(Provider<BuildConfigRepository> provider) {
         this.buildConfigProvider = provider;
     }
 

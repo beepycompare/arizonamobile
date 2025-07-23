@@ -1,16 +1,23 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
+import androidx.media3.exoplayer.upstream.CmcdData;
+import java.io.File;
+import kotlin.Metadata;
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\n\u001a\u00020\b¢\u0006\u0004\b\u000b\u0010\fJ\u0018\u0010\u0007\u001a\u00020\u00062\u0006\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0004H\u0016R\u0014\u0010\n\u001a\u00020\b8\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u0007\u0010\t¨\u0006\r"}, d2 = {"Lio/appmetrica/analytics/impl/e7;", "Lio/appmetrica/analytics/impl/d7;", "Landroid/content/Context;", "context", "", "simpleName", "Ljava/io/File;", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "Lio/appmetrica/analytics/impl/Wg;", "Lio/appmetrica/analytics/impl/Wg;", "relativePathFormer", "<init>", "(Lio/appmetrica/analytics/impl/Wg;)V", "analytics_binaryProdRelease"}, k = 1, mv = {1, 6, 0})
 /* renamed from: io.appmetrica.analytics.impl.e7  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0226e7 {
+public final class C0226e7 implements InterfaceC0201d7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0475o7 f818a;
-    public final N7 b;
-    public final C0217dn c;
+    private final Wg f827a;
 
-    public C0226e7(C0475o7 c0475o7, N7 n7, C0217dn c0217dn) {
-        this.f818a = c0475o7;
-        this.b = n7;
-        this.c = c0217dn;
+    public C0226e7(Wg wg) {
+        this.f827a = wg;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0201d7
+    public File a(Context context, String str) {
+        return new File(context.getNoBackupFilesDir(), this.f827a.a(str));
     }
 }

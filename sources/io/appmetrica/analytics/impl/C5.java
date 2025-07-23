@@ -1,28 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
-import java.util.Arrays;
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Lambda;
 /* loaded from: classes4.dex */
-public final class C5 implements PermissionStrategy {
+public final class C5 extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final PermissionStrategy[] f367a;
+    public static final C5 f371a = new C5();
 
-    public C5(PermissionStrategy... permissionStrategyArr) {
-        this.f367a = permissionStrategyArr;
+    public C5() {
+        super(1);
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy
-    public final boolean forbidUsePermission(String str) {
-        for (PermissionStrategy permissionStrategy : this.f367a) {
-            if (permissionStrategy.forbidUsePermission(str)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final String toString() {
-        return "CompositePermissionStrategy(strategies=" + Arrays.toString(this.f367a) + ')';
+    @Override // kotlin.jvm.functions.Function1
+    public final Object invoke(Object obj) {
+        return ((ModuleAdRevenueProcessor) obj).getDescription();
     }
 }

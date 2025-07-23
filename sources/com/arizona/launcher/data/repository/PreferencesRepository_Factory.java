@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class PreferencesRepository_Factory implements Factory<PreferencesRepository> {
     private final Provider<SharedPreferences> preferencesProvider;
 
-    public PreferencesRepository_Factory(Provider<SharedPreferences> preferencesProvider) {
+    private PreferencesRepository_Factory(Provider<SharedPreferences> preferencesProvider) {
         this.preferencesProvider = preferencesProvider;
     }
 

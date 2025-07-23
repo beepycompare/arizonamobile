@@ -1,41 +1,44 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ecommerce.ECommerceEvent;
-import io.appmetrica.analytics.ecommerce.ECommerceScreen;
+import java.util.Collections;
 import java.util.List;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.cl  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0189cl extends ECommerceEvent {
+public final class C0189cl implements InterfaceC0652v8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0437mj f788a;
-    public final InterfaceC0575s8 b;
+    public final C0414lj f802a;
+    public final Rf b;
 
-    public C0189cl(ECommerceScreen eCommerceScreen) {
-        this(new C0437mj(eCommerceScreen), new C0215dl());
+    public C0189cl() {
+        this(new C0414lj(), new Rf());
     }
 
-    public final InterfaceC0575s8 a() {
-        return this.b;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final List<Qi> fromModel(C0163bl c0163bl) {
+        O8 o8 = new O8();
+        o8.f575a = 2;
+        o8.c = new L8();
+        Qi fromModel = this.f802a.fromModel(c0163bl.b);
+        o8.c.b = (K8) fromModel.f612a;
+        Qi fromModel2 = this.b.fromModel(c0163bl.f788a);
+        o8.c.f530a = (H8) fromModel2.f612a;
+        return Collections.singletonList(new Qi(o8, new C0672w3(C0672w3.b(fromModel, fromModel2))));
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
-    public final String getPublicDescription() {
-        return "shown screen info";
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        List list = (List) obj;
+        throw new UnsupportedOperationException();
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.Vf
-    public final List<Ni> toProto() {
-        return (List) this.b.fromModel(this);
+    public C0189cl(C0414lj c0414lj, Rf rf) {
+        this.f802a = c0414lj;
+        this.b = rf;
     }
 
-    public final String toString() {
-        return "ShownScreenInfoEvent{screen=" + this.f788a + ", converter=" + this.b + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public C0189cl(C0437mj c0437mj, InterfaceC0575s8 interfaceC0575s8) {
-        this.f788a = c0437mj;
-        this.b = interfaceC0575s8;
+    public final C0163bl a(List<Qi> list) {
+        throw new UnsupportedOperationException();
     }
 }

@@ -1,19 +1,19 @@
 package io.appmetrica.analytics.profile;
 
-import io.appmetrica.analytics.impl.Nd;
-import io.appmetrica.analytics.impl.Yn;
+import io.appmetrica.analytics.impl.InterfaceC0166bo;
+import io.appmetrica.analytics.impl.Pd;
 /* loaded from: classes4.dex */
-public class UserProfileUpdate<T extends Yn> {
+public class UserProfileUpdate<T extends InterfaceC0166bo> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Yn f1261a;
+    private final InterfaceC0166bo f1264a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public UserProfileUpdate(Nd nd) {
-        this.f1261a = nd;
+    public UserProfileUpdate(Pd pd) {
+        this.f1264a = pd;
     }
 
     public T getUserProfileUpdatePatcher() {
-        return (T) this.f1261a;
+        return (T) this.f1264a;
     }
 }

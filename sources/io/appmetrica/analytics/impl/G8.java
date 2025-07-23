@@ -7,36 +7,32 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
-import java.util.Arrays;
 /* loaded from: classes4.dex */
 public final class G8 extends MessageNano {
-    public static volatile G8[] d;
+    public static volatile G8[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f442a;
-    public byte[] b;
-    public H8 c;
+    public C0677w8 f450a;
+    public C0677w8[] b;
 
     public G8() {
         a();
     }
 
     public static G8[] b() {
-        if (d == null) {
+        if (c == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (d == null) {
-                    d = new G8[0];
+                if (c == null) {
+                    c = new G8[0];
                 }
             }
         }
-        return d;
+        return c;
     }
 
     public final G8 a() {
-        byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f442a = bArr;
-        this.b = bArr;
-        this.c = null;
+        this.f450a = null;
+        this.b = C0677w8.b();
         this.cachedSize = -1;
         return this;
     }
@@ -44,31 +40,48 @@ public final class G8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f442a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f442a);
+        C0677w8 c0677w8 = this.f450a;
+        if (c0677w8 != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0677w8);
         }
-        if (!Arrays.equals(this.b, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(2, this.b);
+        C0677w8[] c0677w8Arr = this.b;
+        if (c0677w8Arr != null && c0677w8Arr.length > 0) {
+            int i = 0;
+            while (true) {
+                C0677w8[] c0677w8Arr2 = this.b;
+                if (i >= c0677w8Arr2.length) {
+                    break;
+                }
+                C0677w8 c0677w82 = c0677w8Arr2[i];
+                if (c0677w82 != null) {
+                    computeSerializedSize = CodedOutputByteBufferNano.computeMessageSize(2, c0677w82) + computeSerializedSize;
+                }
+                i++;
+            }
         }
-        H8 h8 = this.c;
-        return h8 != null ? CodedOutputByteBufferNano.computeMessageSize(3, h8) + computeSerializedSize : computeSerializedSize;
+        return computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f442a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f442a);
+        C0677w8 c0677w8 = this.f450a;
+        if (c0677w8 != null) {
+            codedOutputByteBufferNano.writeMessage(1, c0677w8);
         }
-        if (!Arrays.equals(this.b, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(2, this.b);
-        }
-        H8 h8 = this.c;
-        if (h8 != null) {
-            codedOutputByteBufferNano.writeMessage(3, h8);
+        C0677w8[] c0677w8Arr = this.b;
+        if (c0677w8Arr != null && c0677w8Arr.length > 0) {
+            int i = 0;
+            while (true) {
+                C0677w8[] c0677w8Arr2 = this.b;
+                if (i >= c0677w8Arr2.length) {
+                    break;
+                }
+                C0677w8 c0677w82 = c0677w8Arr2[i];
+                if (c0677w82 != null) {
+                    codedOutputByteBufferNano.writeMessage(2, c0677w82);
+                }
+                i++;
+            }
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -81,18 +94,34 @@ public final class G8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f442a = codedInputByteBufferNano.readBytes();
-            } else if (readTag == 18) {
-                this.b = codedInputByteBufferNano.readBytes();
-            } else if (readTag != 26) {
+                if (this.f450a == null) {
+                    this.f450a = new C0677w8();
+                }
+                codedInputByteBufferNano.readMessage(this.f450a);
+            } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                if (this.c == null) {
-                    this.c = new H8();
+                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 18);
+                C0677w8[] c0677w8Arr = this.b;
+                int length = c0677w8Arr == null ? 0 : c0677w8Arr.length;
+                int i = repeatedFieldArrayLength + length;
+                C0677w8[] c0677w8Arr2 = new C0677w8[i];
+                if (length != 0) {
+                    System.arraycopy(c0677w8Arr, 0, c0677w8Arr2, 0, length);
                 }
-                codedInputByteBufferNano.readMessage(this.c);
+                while (length < i - 1) {
+                    C0677w8 c0677w8 = new C0677w8();
+                    c0677w8Arr2[length] = c0677w8;
+                    codedInputByteBufferNano.readMessage(c0677w8);
+                    codedInputByteBufferNano.readTag();
+                    length++;
+                }
+                C0677w8 c0677w82 = new C0677w8();
+                c0677w8Arr2[length] = c0677w82;
+                codedInputByteBufferNano.readMessage(c0677w82);
+                this.b = c0677w8Arr2;
             }
         }
         return this;

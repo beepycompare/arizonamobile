@@ -1,10 +1,27 @@
 package io.appmetrica.analytics.impl;
+
+import okhttp3.internal.connection.RealConnection;
 /* loaded from: classes4.dex */
 public final class Rk {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f615a;
-    public long b;
-    public long c;
-    public Tk d;
+    public final uo f626a;
+
+    public Rk(uo uoVar) {
+        this.f626a = uoVar;
+    }
+
+    public final long a() {
+        long optLong;
+        uo uoVar = this.f626a;
+        synchronized (uoVar) {
+            optLong = uoVar.f1091a.a().optLong("session_id", -1L);
+        }
+        long j = RealConnection.IDLE_CONNECTION_HEALTHY_NS;
+        if (optLong >= RealConnection.IDLE_CONNECTION_HEALTHY_NS) {
+            j = 1 + optLong;
+        }
+        this.f626a.c(j);
+        return j;
+    }
 }

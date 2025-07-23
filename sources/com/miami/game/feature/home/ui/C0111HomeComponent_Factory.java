@@ -20,7 +20,7 @@ public final class C0111HomeComponent_Factory {
     private final Provider<ServersInteractor> serversInteractorProvider;
     private final Provider<SettingsInteractor> settingsInteractorProvider;
 
-    public C0111HomeComponent_Factory(Provider<privacyInteractor> privacyInteractorProvider, Provider<NewsInteractor> newsInteractorProvider, Provider<BuildConfigRepository> buildConfigProvider, Provider<NetworkDataSource> apiProvider, Provider<ServersInteractor> serversInteractorProvider, Provider<SettingsInteractor> settingsInteractorProvider, Provider<NotificationStateHolder> notificationStateHolderProvider) {
+    private C0111HomeComponent_Factory(Provider<privacyInteractor> privacyInteractorProvider, Provider<NewsInteractor> newsInteractorProvider, Provider<BuildConfigRepository> buildConfigProvider, Provider<NetworkDataSource> apiProvider, Provider<ServersInteractor> serversInteractorProvider, Provider<SettingsInteractor> settingsInteractorProvider, Provider<NotificationStateHolder> notificationStateHolderProvider) {
         this.privacyInteractorProvider = privacyInteractorProvider;
         this.newsInteractorProvider = newsInteractorProvider;
         this.buildConfigProvider = buildConfigProvider;

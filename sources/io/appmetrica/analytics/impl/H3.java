@@ -7,34 +7,34 @@ import java.util.List;
 public final class H3 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ka f454a;
+    public final Ma f463a;
 
     public H3() {
-        this(new Ka(20, 100));
+        this(new Ma(20, 100));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Ni fromModel(List<String> list) {
-        Gn a2 = this.f454a.a((List<Object>) list);
-        C0675w8 c0675w8 = new C0675w8();
-        c0675w8.f1102a = StringUtils.getUTF8Bytes((List) a2.f450a);
-        InterfaceC0695x3 interfaceC0695x3 = a2.b;
-        int i = ((I4) interfaceC0695x3).f1098a;
-        return new Ni(c0675w8, interfaceC0695x3);
+    public final Qi fromModel(List<String> list) {
+        Jn a2 = this.f463a.a((List<Object>) list);
+        C0752z8 c0752z8 = new C0752z8();
+        c0752z8.f1166a = StringUtils.getUTF8Bytes((List) a2.f511a);
+        InterfaceC0697x3 interfaceC0697x3 = a2.b;
+        int i = ((I4) interfaceC0697x3).f1111a;
+        return new Qi(c0752z8, interfaceC0697x3);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        Ni ni = (Ni) obj;
+        Qi qi = (Qi) obj;
         throw new UnsupportedOperationException();
     }
 
-    public H3(Ka ka) {
-        this.f454a = ka;
+    public H3(Ma ma) {
+        this.f463a = ma;
     }
 
-    public final List<String> a(Ni ni) {
+    public final List<String> a(Qi qi) {
         throw new UnsupportedOperationException();
     }
 }

@@ -21,7 +21,7 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBoostModel
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3", f = "DonateScreen.kt", i = {}, l = {225}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3", f = "DonateScreen.kt", i = {}, l = {223}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes5.dex */
 public final class DonateScreen$setupCollectors$1$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -47,7 +47,7 @@ public final class DonateScreen$setupCollectors$1$3 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DonateScreen.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3$1", f = "DonateScreen.kt", i = {}, l = {226}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3$1", f = "DonateScreen.kt", i = {}, l = {224}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -89,11 +89,10 @@ public final class DonateScreen$setupCollectors$1$3 extends SuspendLambda implem
 
                     public final Object emit(UiState<? extends List<DonateBoostModelUi>> uiState, Continuation<? super Unit> continuation) {
                         if (!(uiState instanceof UiState.Error) && !(uiState instanceof UiState.Loading)) {
-                            if (uiState instanceof UiState.Successful) {
-                                DonateScreen.this.dialogModel = (DonateBoostModelUi) ((List) ((UiState.Successful) uiState).getData()).get(0);
-                            } else if (!(uiState instanceof UiState.Update)) {
+                            if (!(uiState instanceof UiState.Successful)) {
                                 throw new NoWhenBranchMatchedException();
                             }
+                            DonateScreen.this.dialogModel = (DonateBoostModelUi) ((List) ((UiState.Successful) uiState).getData()).get(0);
                         }
                         return Unit.INSTANCE;
                     }

@@ -24,7 +24,7 @@ import ru.rustore.sdk.core.util.CancellableContinuationExtKt;
 public final class c extends SuspendLambda implements Function2<CoroutineScope, Continuation<Object>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1339a;
+    public int f1342a;
     public /* synthetic */ Object b;
     public final /* synthetic */ Function1<CancellableContinuation<Object>, ServiceConnection> c;
     public final /* synthetic */ Ref.ObjectRef<ServiceConnection> d;
@@ -34,19 +34,19 @@ public final class c extends SuspendLambda implements Function2<CoroutineScope, 
     public static final class a extends Lambda implements Function1<RuStoreException, Unit> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ CancellableContinuation<Object> f1340a;
+        public final /* synthetic */ CancellableContinuation<Object> f1343a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public a(CancellableContinuationImpl cancellableContinuationImpl) {
             super(1);
-            this.f1340a = cancellableContinuationImpl;
+            this.f1343a = cancellableContinuationImpl;
         }
 
         @Override // kotlin.jvm.functions.Function1
         public final Unit invoke(RuStoreException ruStoreException) {
             RuStoreException error = ruStoreException;
             Intrinsics.checkNotNullParameter(error, "error");
-            CancellableContinuationExtKt.resumeWithExceptionIfActive(this.f1340a, error);
+            CancellableContinuationExtKt.resumeWithExceptionIfActive(this.f1343a, error);
             return Unit.INSTANCE;
         }
     }
@@ -75,9 +75,9 @@ public final class c extends SuspendLambda implements Function2<CoroutineScope, 
     /* JADX WARN: Type inference failed for: r1v9, types: [T, android.content.ServiceConnection] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m8471constructorimpl;
+        Object m8474constructorimpl;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.f1339a;
+        int i = this.f1342a;
         if (i != 0) {
             if (i == 1) {
                 CoroutineScope coroutineScope = (CoroutineScope) this.b;
@@ -91,22 +91,22 @@ public final class c extends SuspendLambda implements Function2<CoroutineScope, 
         Ref.ObjectRef<ServiceConnection> objectRef = this.d;
         j jVar = this.e;
         this.b = (CoroutineScope) this.b;
-        this.f1339a = 1;
+        this.f1342a = 1;
         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(this), 1);
         cancellableContinuationImpl.initCancellability();
         try {
             Result.Companion companion = Result.Companion;
             ServiceConnection invoke = function1.invoke(cancellableContinuationImpl);
             objectRef.element = invoke;
-            j.a(jVar, jVar.f1352a, new a(cancellableContinuationImpl), invoke);
-            m8471constructorimpl = Result.m8471constructorimpl(Unit.INSTANCE);
+            j.a(jVar, jVar.f1355a, new a(cancellableContinuationImpl), invoke);
+            m8474constructorimpl = Result.m8474constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m8471constructorimpl = Result.m8471constructorimpl(ResultKt.createFailure(th));
+            m8474constructorimpl = Result.m8474constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m8474exceptionOrNullimpl = Result.m8474exceptionOrNullimpl(m8471constructorimpl);
-        if (m8474exceptionOrNullimpl != null) {
-            CancellableContinuationExtKt.resumeWithExceptionIfActive(cancellableContinuationImpl, m8474exceptionOrNullimpl);
+        Throwable m8477exceptionOrNullimpl = Result.m8477exceptionOrNullimpl(m8474constructorimpl);
+        if (m8477exceptionOrNullimpl != null) {
+            CancellableContinuationExtKt.resumeWithExceptionIfActive(cancellableContinuationImpl, m8477exceptionOrNullimpl);
         }
         Object result = cancellableContinuationImpl.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {

@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class DownloadService_MembersInjector implements MembersInjector<DownloadService> {
     private final Provider<FilesUpdaterInteractor> filesUpdaterInteractorProvider;
 
-    public DownloadService_MembersInjector(Provider<FilesUpdaterInteractor> provider) {
+    private DownloadService_MembersInjector(Provider<FilesUpdaterInteractor> provider) {
         this.filesUpdaterInteractorProvider = provider;
     }
 

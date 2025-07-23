@@ -1,32 +1,41 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.ArrayList;
-import java.util.Iterator;
 /* loaded from: classes4.dex */
-public final class Yb {
+public final class Yb implements InterfaceC0167c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0145b3 f720a;
-    public final C0420m2 b;
-    public final ArrayList c;
+    public final InterfaceC0219e0 f732a;
+    public final An b = new An();
 
-    public Yb(C0145b3 c0145b3, C0420m2 c0420m2) {
-        ArrayList arrayList = new ArrayList();
-        this.c = arrayList;
-        this.f720a = c0145b3;
-        arrayList.add(c0145b3);
-        this.b = c0420m2;
-        arrayList.add(c0420m2);
+    public Yb(InterfaceC0219e0 interfaceC0219e0) {
+        this.f732a = interfaceC0219e0;
     }
 
-    public final synchronized void a() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            ((InterfaceC0513pk) it.next()).onCreate();
+    public static final void a(Yb yb, U u) {
+        yb.f732a.a(u);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0167c
+    public final void onAppNotResponding() {
+        StackTraceElement[] stackTraceElementArr;
+        An an = this.b;
+        Thread a2 = an.f345a.a();
+        try {
+            stackTraceElementArr = an.f345a.b();
+            if (stackTraceElementArr == null) {
+                try {
+                    stackTraceElementArr = a2.getStackTrace();
+                } catch (SecurityException unused) {
+                }
+            }
+        } catch (SecurityException unused2) {
+            stackTraceElementArr = null;
         }
-    }
-
-    public final synchronized void a(Fa fa) {
-        this.c.add(fa);
+        final U u = new U((C0617tn) an.b.apply(a2, stackTraceElementArr), an.a(a2, null), an.c.b());
+        ((U9) C0698x4.l().c.a()).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.Yb$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                Yb.a(Yb.this, u);
+            }
+        });
     }
 }

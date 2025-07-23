@@ -1,18 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.List;
 /* loaded from: classes4.dex */
 public final class Kf extends Ja {
-    public Kf(int i) {
-        super(i);
+    public Kf(Ei ei) {
+        super(ei);
     }
 
     @Override // io.appmetrica.analytics.impl.Ja
-    /* renamed from: a */
-    public final int b(Y y) {
-        if (y == null) {
-            return 0;
-        }
-        return StringUtils.getUtf8BytesLength(y.b) + 12;
+    public final void a(List<AbstractC0236eh> list) {
+        list.add(this.f503a.n);
+        list.add(this.f503a.h);
+        list.add(this.f503a.d);
     }
 }

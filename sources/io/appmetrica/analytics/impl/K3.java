@@ -6,21 +6,21 @@ import io.appmetrica.analytics.internal.PreloadInfoContentProvider;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 /* loaded from: classes4.dex */
-public final class K3 implements R6 {
-    @Override // io.appmetrica.analytics.impl.R6
+public final class K3 implements U6 {
+    @Override // io.appmetrica.analytics.impl.U6
     public final void a(Context context) {
-        CountDownLatch countDownLatch = T5.f635a;
+        CountDownLatch countDownLatch = W5.f695a;
         if (countDownLatch != null) {
             countDownLatch.await(1L, TimeUnit.SECONDS);
             try {
                 context.getPackageManager().setComponentEnabledSetting(new ComponentName(context, PreloadInfoContentProvider.class), 2, 1);
-                PreloadInfoContentProvider preloadInfoContentProvider = T5.b;
+                PreloadInfoContentProvider preloadInfoContentProvider = W5.b;
                 if (preloadInfoContentProvider != null) {
                     preloadInfoContentProvider.disable();
                 }
             } catch (Throwable unused) {
             }
-            T5.f635a = null;
+            W5.f695a = null;
         }
     }
 }

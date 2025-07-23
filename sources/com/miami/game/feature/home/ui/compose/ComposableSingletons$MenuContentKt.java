@@ -43,12 +43,12 @@ public final class ComposableSingletons$MenuContentKt {
     });
 
     /* renamed from: getLambda$-432014182$home_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8382getLambda$432014182$home_release_web() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m8384getLambda$432014182$home_release_web() {
         return f80lambda$432014182;
     }
 
     /* renamed from: getLambda$-989998245$home_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8383getLambda$989998245$home_release_web() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m8385getLambda$989998245$home_release_web() {
         return f81lambda$989998245;
     }
 

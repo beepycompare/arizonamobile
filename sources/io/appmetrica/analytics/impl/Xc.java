@@ -1,20 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.functions.Function0;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public final class Xc implements V8 {
+public final class Xc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ge f705a;
-    public final Function0 b;
+    public final Wm f716a;
+    public final Wm b;
+    public final H4 c;
+    public final PublicLogger d;
+    public final String e;
 
-    public Xc(Ge ge, Function0<Integer> function0) {
-        this.f705a = ge;
-        this.b = function0;
+    public Xc(String str, PublicLogger publicLogger) {
+        this(new H4(30), new Wm(50, str.concat("map key"), publicLogger), new Wm(4000, str.concat("map value"), publicLogger), str, publicLogger);
     }
 
-    @Override // io.appmetrica.analytics.impl.V8
-    public final boolean b() {
-        return ((Fe) this.f705a).b.get() >= ((long) ((Number) this.b.invoke()).intValue());
+    public Xc(H4 h4, Wm wm, Wm wm2, String str, PublicLogger publicLogger) {
+        this.c = h4;
+        this.f716a = wm;
+        this.b = wm2;
+        this.e = str;
+        this.d = publicLogger;
     }
 }

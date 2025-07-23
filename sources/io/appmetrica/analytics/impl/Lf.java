@@ -1,41 +1,53 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ecommerce.ECommerceAmount;
-import io.appmetrica.analytics.ecommerce.ECommercePrice;
-import java.util.Iterator;
-import java.util.LinkedList;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import java.util.Collection;
 import java.util.List;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public final class Lf {
+public final class Lf implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y f519a;
-    public final List b;
+    public final X f533a;
+    public final Mf b;
 
-    public Lf(ECommercePrice eCommercePrice) {
-        this(new Y(eCommercePrice.getFiat()), a(eCommercePrice.getInternalComponents()));
+    public Lf() {
+        this(new X(), new Mf(30));
     }
 
-    public static LinkedList a(List list) {
-        if (list != null) {
-            LinkedList linkedList = new LinkedList();
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                ECommerceAmount eCommerceAmount = (ECommerceAmount) it.next();
-                linkedList.add(new Y(eCommerceAmount.getAmount(), eCommerceAmount.getUnit()));
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Qi fromModel(Nf nf) {
+        int i;
+        G8 g8 = new G8();
+        Qi fromModel = this.f533a.fromModel(nf.f564a);
+        g8.f450a = (C0677w8) fromModel.f612a;
+        Jn a2 = this.b.a(nf.b);
+        if (io.a((Collection) a2.f511a)) {
+            i = 0;
+        } else {
+            g8.b = new C0677w8[((List) a2.f511a).size()];
+            i = 0;
+            for (int i2 = 0; i2 < ((List) a2.f511a).size(); i2++) {
+                Qi fromModel2 = this.f533a.fromModel((Y) ((List) a2.f511a).get(i2));
+                g8.b[i2] = (C0677w8) fromModel2.f612a;
+                i += fromModel2.b.getBytesTruncated();
             }
-            return linkedList;
         }
-        return null;
+        return new Qi(g8, new C0672w3(C0672w3.b(fromModel, a2, new C0672w3(i))));
     }
 
-    public final String toString() {
-        return "PriceWrapper{fiat=" + this.f519a + ", internalComponents=" + this.b + AbstractJsonLexerKt.END_OBJ;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        Qi qi = (Qi) obj;
+        throw new UnsupportedOperationException();
     }
 
-    public Lf(Y y, LinkedList linkedList) {
-        this.f519a = y;
-        this.b = linkedList;
+    public Lf(X x, Mf mf) {
+        this.f533a = x;
+        this.b = mf;
+    }
+
+    public final Nf a(Qi qi) {
+        throw new UnsupportedOperationException();
     }
 }

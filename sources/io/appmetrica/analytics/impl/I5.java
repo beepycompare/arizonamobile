@@ -1,13 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
+import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
 public final class I5 {
-    public final Re a(Context context) {
-        SafePackageManager safePackageManager = Se.f626a;
-        return (Re) SystemServiceUtils.accessSystemServiceSafelyOrDefault((ConnectivityManager) context.getSystemService("connectivity"), "getting connection type", "ConnectivityManager", Re.UNDEFINED, new Qe());
+
+    /* renamed from: a  reason: collision with root package name */
+    public final PublicLogger f484a;
+
+    public I5(String str) {
+        this.f484a = LoggerStorage.getOrCreatePublicLogger(str);
+    }
+
+    public final int a(int i) {
+        if (i < 100) {
+            this.f484a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be greater than or equal to 100, but was: " + i + ". Default value (100) will be used", new Object[0]);
+            return 100;
+        } else if (i > 10000) {
+            this.f484a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be less than or equal to 10000, but was: " + i + ". Default value (10000) will be used", new Object[0]);
+            return 10000;
+        } else {
+            return i;
+        }
     }
 }

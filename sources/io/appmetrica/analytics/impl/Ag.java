@@ -1,34 +1,78 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public class Ag {
+public final class Ag {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0280gb f338a;
-    public final InterfaceC0658vg b;
-    public final InterfaceC0230eb c;
+    public final String f339a;
+    public final long b;
+    public final long c;
+    public final EnumC0760zg d;
 
-    public Ag(InterfaceC0280gb interfaceC0280gb, InterfaceC0658vg interfaceC0658vg, InterfaceC0230eb interfaceC0230eb) {
-        this.f338a = interfaceC0280gb;
-        this.b = interfaceC0658vg;
-        this.c = interfaceC0230eb;
+    public Ag(byte[] bArr) {
+        Bg a2 = Bg.a(bArr);
+        this.f339a = a2.f359a;
+        this.b = a2.c;
+        this.c = a2.b;
+        this.d = a(a2.d);
     }
 
-    public final void a(C0733yg c0733yg) {
-        if (this.f338a.a(c0733yg)) {
-            this.b.a(c0733yg);
-            this.c.a();
+    public final byte[] a() {
+        Bg bg = new Bg();
+        bg.f359a = this.f339a;
+        bg.c = this.b;
+        bg.b = this.c;
+        int ordinal = this.d.ordinal();
+        int i = 1;
+        if (ordinal != 1) {
+            i = 2;
+            if (ordinal != 2) {
+                i = 0;
+            }
         }
+        bg.d = i;
+        return MessageNano.toByteArray(bg);
     }
 
-    public final InterfaceC0658vg b() {
-        return this.b;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && Ag.class == obj.getClass()) {
+            Ag ag = (Ag) obj;
+            if (this.b == ag.b && this.c == ag.c && this.f339a.equals(ag.f339a) && this.d == ag.d) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public final InterfaceC0230eb c() {
-        return this.c;
+    public final int hashCode() {
+        long j = this.b;
+        long j2 = this.c;
+        return this.d.hashCode() + (((((this.f339a.hashCode() * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31);
     }
 
-    public final InterfaceC0280gb a() {
-        return this.f338a;
+    public final String toString() {
+        return "ReferrerInfo{installReferrer='" + this.f339a + "', referrerClickTimestampSeconds=" + this.b + ", installBeginTimestampSeconds=" + this.c + ", source=" + this.d + AbstractJsonLexerKt.END_OBJ;
+    }
+
+    public Ag(String str, long j, long j2, EnumC0760zg enumC0760zg) {
+        this.f339a = str;
+        this.b = j;
+        this.c = j2;
+        this.d = enumC0760zg;
+    }
+
+    public static EnumC0760zg a(int i) {
+        if (i != 1) {
+            if (i != 2) {
+                return EnumC0760zg.b;
+            }
+            return EnumC0760zg.d;
+        }
+        return EnumC0760zg.c;
     }
 }

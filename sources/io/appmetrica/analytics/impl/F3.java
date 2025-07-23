@@ -5,49 +5,49 @@ import io.appmetrica.analytics.coreapi.internal.data.Converter;
 public final class F3 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Pf f422a;
-    public final O7 b;
-    public final Jf c;
-    public final C0558rg d;
+    public final Rf f428a;
+    public final R7 b;
+    public final Lf c;
+    public final C0610tg d;
 
     public F3() {
-        this(new Pf(), new O7(), new Jf(), new C0558rg());
+        this(new Rf(), new R7(), new Lf(), new C0610tg());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Ni fromModel(G3 g3) {
-        Ni ni;
-        C0650v8 c0650v8 = new C0650v8();
-        Ni fromModel = this.f422a.fromModel(g3.f437a);
-        c0650v8.f1088a = (E8) fromModel.f557a;
-        c0650v8.c = this.b.fromModel(g3.b);
-        Ni fromModel2 = this.c.fromModel(g3.c);
-        c0650v8.d = (D8) fromModel2.f557a;
-        Ig ig = g3.d;
-        if (ig != null) {
-            ni = this.d.fromModel(ig);
-            c0650v8.b = (G8) ni.f557a;
+    public final Qi fromModel(G3 g3) {
+        Qi qi;
+        C0727y8 c0727y8 = new C0727y8();
+        Qi fromModel = this.f428a.fromModel(g3.f445a);
+        c0727y8.f1150a = (H8) fromModel.f612a;
+        c0727y8.c = this.b.fromModel(g3.b);
+        Qi fromModel2 = this.c.fromModel(g3.c);
+        c0727y8.d = (G8) fromModel2.f612a;
+        Kg kg = g3.d;
+        if (kg != null) {
+            qi = this.d.fromModel(kg);
+            c0727y8.b = (J8) qi.f612a;
         } else {
-            ni = null;
+            qi = null;
         }
-        return new Ni(c0650v8, new C0670w3(C0670w3.b(fromModel, fromModel2, ni)));
+        return new Qi(c0727y8, new C0672w3(C0672w3.b(fromModel, fromModel2, qi)));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        Ni ni = (Ni) obj;
+        Qi qi = (Qi) obj;
         throw new UnsupportedOperationException();
     }
 
-    public F3(Pf pf, O7 o7, Jf jf, C0558rg c0558rg) {
-        this.f422a = pf;
-        this.b = o7;
-        this.c = jf;
-        this.d = c0558rg;
+    public F3(Rf rf, R7 r7, Lf lf, C0610tg c0610tg) {
+        this.f428a = rf;
+        this.b = r7;
+        this.c = lf;
+        this.d = c0610tg;
     }
 
-    public final G3 a(Ni ni) {
+    public final G3 a(Qi qi) {
         throw new UnsupportedOperationException();
     }
 }

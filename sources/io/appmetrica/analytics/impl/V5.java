@@ -1,16 +1,6 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
+import kotlin.jvm.functions.Function1;
 /* loaded from: classes4.dex */
-public abstract /* synthetic */ class V5 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f670a;
-
-    static {
-        int[] iArr = new int[ActivityEvent.values().length];
-        iArr[ActivityEvent.RESUMED.ordinal()] = 1;
-        iArr[ActivityEvent.PAUSED.ordinal()] = 2;
-        f670a = iArr;
-    }
+public interface V5 extends Function1 {
 }

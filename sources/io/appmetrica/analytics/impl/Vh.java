@@ -3,15 +3,21 @@ package io.appmetrica.analytics.impl;
 public final class Vh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0560ri f676a;
+    public final /* synthetic */ String f688a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Throwable c;
+    public final /* synthetic */ C0612ti d;
 
-    public Vh(C0560ri c0560ri) {
-        this.f676a = c0560ri;
+    public Vh(C0612ti c0612ti, String str, String str2, Throwable th) {
+        this.d = c0612ti;
+        this.f688a = str;
+        this.b = str2;
+        this.c = th;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0560ri c0560ri = this.f676a;
-        C0560ri.a(c0560ri.f1029a, c0560ri.d, c0560ri.e).resumeSession();
+        C0612ti c0612ti = this.d;
+        C0612ti.a(c0612ti.f1068a, c0612ti.d, c0612ti.e).reportError(this.f688a, this.b, this.c);
     }
 }

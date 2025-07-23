@@ -9,7 +9,7 @@ public final class GamefilesInfoRepository_Factory implements Factory<GamefilesI
     private final Provider<GameInfoPrefRepository> gameInfoPrefRepositoryProvider;
     private final Provider<GamefilesInfoApiRepository> gamefilesInfoApiRepositoryProvider;
 
-    public GamefilesInfoRepository_Factory(Provider<GamefilesInfoApiRepository> provider, Provider<GameInfoPrefRepository> provider2) {
+    private GamefilesInfoRepository_Factory(Provider<GamefilesInfoApiRepository> provider, Provider<GameInfoPrefRepository> provider2) {
         this.gamefilesInfoApiRepositoryProvider = provider;
         this.gameInfoPrefRepositoryProvider = provider2;
     }

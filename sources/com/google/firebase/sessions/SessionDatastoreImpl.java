@@ -5,7 +5,7 @@ import androidx.datastore.preferences.core.Preferences;
 import androidx.datastore.preferences.core.PreferencesKeys;
 import androidx.exifinterface.media.ExifInterface;
 import com.google.firebase.annotations.concurrent.Background;
-import io.appmetrica.analytics.impl.Sk;
+import io.appmetrica.analytics.impl.Vk;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -46,7 +46,7 @@ public final class SessionDatastoreImpl implements SessionDatastore {
         this.backgroundDispatcher = backgroundDispatcher;
         this.dataStore = dataStore;
         this.currentSessionFromDatastore = new AtomicReference<>();
-        final Flow m10019catch = FlowKt.m10019catch(dataStore.getData(), new SessionDatastoreImpl$firebaseSessionDataFlow$1(null));
+        final Flow m10022catch = FlowKt.m10022catch(dataStore.getData(), new SessionDatastoreImpl$firebaseSessionDataFlow$1(null));
         this.firebaseSessionDataFlow = new Flow<FirebaseSessionsData>() { // from class: com.google.firebase.sessions.SessionDatastoreImpl$special$$inlined$map$1
             @Override // kotlinx.coroutines.flow.Flow
             public Object collect(FlowCollector<? super FirebaseSessionsData> flowCollector, Continuation continuation) {
@@ -137,7 +137,7 @@ public final class SessionDatastoreImpl implements SessionDatastore {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SessionDatastore.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\bÂ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0017\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/google/firebase/sessions/SessionDatastoreImpl$FirebaseSessionDataKeys;", "", "()V", Sk.f, "Landroidx/datastore/preferences/core/Preferences$Key;", "", "getSESSION_ID", "()Landroidx/datastore/preferences/core/Preferences$Key;", "com.google.firebase-firebase-sessions"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\bÂ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0017\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/google/firebase/sessions/SessionDatastoreImpl$FirebaseSessionDataKeys;", "", "()V", Vk.f, "Landroidx/datastore/preferences/core/Preferences$Key;", "", "getSESSION_ID", "()Landroidx/datastore/preferences/core/Preferences$Key;", "com.google.firebase-firebase-sessions"}, k = 1, mv = {1, 8, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class FirebaseSessionDataKeys {
         public static final FirebaseSessionDataKeys INSTANCE = new FirebaseSessionDataKeys();

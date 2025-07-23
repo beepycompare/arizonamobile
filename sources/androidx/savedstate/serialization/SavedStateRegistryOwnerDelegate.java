@@ -3,6 +3,7 @@ package androidx.savedstate.serialization;
 import android.os.Bundle;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.savedstate.SavedStateRegistry;
+import androidx.savedstate.internal.CanonicalName_jvmKt;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -67,7 +68,7 @@ public final class SavedStateRegistryOwnerDelegate<T> implements ReadWriteProper
     }
 
     private final String createDefaultKey(Object obj, KProperty<?> kProperty) {
-        return (obj != null ? Reflection.getOrCreateKotlinClass(obj.getClass()).getQualifiedName() + '.' : "") + kProperty.getName();
+        return (obj != null ? CanonicalName_jvmKt.getCanonicalName(Reflection.getOrCreateKotlinClass(obj.getClass())) + '.' : "") + kProperty.getName();
     }
 
     @Override // kotlin.properties.ReadWriteProperty, kotlin.properties.ReadOnlyProperty

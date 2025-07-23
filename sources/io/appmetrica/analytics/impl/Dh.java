@@ -1,15 +1,27 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Dh {
+public final class Dh extends AbstractC0236eh {
+    public Dh(C0574s5 c0574s5) {
+        super(c0574s5);
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public final C0726y9 f392a;
-    public final C0269g0 b;
-    public final boolean c;
-
-    public Dh(C0726y9 c0726y9, C0269g0 c0269g0, boolean z) {
-        this.f392a = c0726y9;
-        this.b = c0269g0;
-        this.c = z;
+    @Override // io.appmetrica.analytics.impl.AbstractC0236eh
+    public final boolean a(C0401l6 c0401l6) {
+        ((F5) this.f831a.p).e();
+        Sk sk = this.f831a.j;
+        synchronized (sk) {
+            Ek b = sk.b(c0401l6);
+            if (b.g) {
+                b.g = false;
+                Vk vk = b.b;
+                vk.a(Vk.i, Boolean.FALSE);
+                vk.b();
+            }
+            if (sk.g != 1) {
+                sk.b(sk.f, c0401l6);
+            }
+            sk.g = 1;
+        }
+        return true;
     }
 }

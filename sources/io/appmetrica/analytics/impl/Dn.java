@@ -1,28 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.ArrayList;
+import java.util.List;
 /* loaded from: classes4.dex */
-public class Dn implements Qi {
+public final class Dn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f395a;
-    public final int b;
-    public int c = 0;
+    public final String f403a;
+    public final String b;
+    public final List c;
+    public final Dn d;
+    public final List e;
 
-    public Dn(int i, int i2) {
-        this.f395a = i;
-        this.b = i2;
-    }
-
-    public final int a() {
-        return this.b;
-    }
-
-    public final boolean b() {
-        int i = this.c;
-        this.c = i + 1;
-        return i < this.f395a;
-    }
-
-    public final void c() {
-        this.c = 0;
+    public Dn(String str, String str2, ArrayList arrayList, Dn dn, ArrayList arrayList2) {
+        this.f403a = str;
+        this.b = str2;
+        this.c = arrayList;
+        this.d = dn;
+        this.e = arrayList2;
     }
 }

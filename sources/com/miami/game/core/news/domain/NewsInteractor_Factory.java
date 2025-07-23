@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class NewsInteractor_Factory implements Factory<NewsInteractor> {
     private final Provider<NewsRepository> repositoryProvider;
 
-    public NewsInteractor_Factory(Provider<NewsRepository> provider) {
+    private NewsInteractor_Factory(Provider<NewsRepository> provider) {
         this.repositoryProvider = provider;
     }
 

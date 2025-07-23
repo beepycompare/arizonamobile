@@ -1,32 +1,101 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.LinkedList;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes4.dex */
-public final class D9 extends Of {
+public final class D9 extends MessageNano {
+    public static volatile D9[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0709xh f388a;
-    public final C0759zh b;
-    public final C0410lh c;
+    public long f393a;
+    public int b;
+    public long c;
+    public boolean d;
 
-    public D9(C0572s5 c0572s5) {
-        this.f388a = new C0709xh(c0572s5);
-        this.b = new C0759zh(c0572s5);
-        this.c = new C0410lh(c0572s5);
+    public D9() {
+        a();
     }
 
-    @Override // io.appmetrica.analytics.impl.Of
-    public final AbstractC0477o9 a(int i) {
-        LinkedList linkedList = new LinkedList();
-        int ordinal = EnumC0628ub.a(i).ordinal();
-        if (ordinal == 1) {
-            linkedList.add(this.f388a);
-        } else if (ordinal == 3) {
-            linkedList.add(this.c);
-        } else if (ordinal == 27) {
-            linkedList.add(this.b);
-            linkedList.add(this.f388a);
+    public static D9[] b() {
+        if (e == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (e == null) {
+                    e = new D9[0];
+                }
+            }
         }
-        return new C0452n9(linkedList);
+        return e;
+    }
+
+    public final D9 a() {
+        this.f393a = 0L;
+        this.b = 0;
+        this.c = 0L;
+        this.d = false;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSInt32Size = CodedOutputByteBufferNano.computeSInt32Size(2, this.b) + CodedOutputByteBufferNano.computeUInt64Size(1, this.f393a) + super.computeSerializedSize();
+        long j = this.c;
+        if (j != 0) {
+            computeSInt32Size += CodedOutputByteBufferNano.computeInt64Size(3, j);
+        }
+        boolean z = this.d;
+        return z ? CodedOutputByteBufferNano.computeBoolSize(4, z) + computeSInt32Size : computeSInt32Size;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        codedOutputByteBufferNano.writeUInt64(1, this.f393a);
+        codedOutputByteBufferNano.writeSInt32(2, this.b);
+        long j = this.c;
+        if (j != 0) {
+            codedOutputByteBufferNano.writeInt64(3, j);
+        }
+        boolean z = this.d;
+        if (z) {
+            codedOutputByteBufferNano.writeBool(4, z);
+        }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final D9 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 8) {
+                this.f393a = codedInputByteBufferNano.readUInt64();
+            } else if (readTag == 16) {
+                this.b = codedInputByteBufferNano.readSInt32();
+            } else if (readTag == 24) {
+                this.c = codedInputByteBufferNano.readInt64();
+            } else if (readTag != 32) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                this.d = codedInputByteBufferNano.readBool();
+            }
+        }
+        return this;
+    }
+
+    public static D9 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new D9().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static D9 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (D9) MessageNano.mergeFrom(new D9(), bArr);
     }
 }

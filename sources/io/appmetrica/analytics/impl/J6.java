@@ -1,54 +1,97 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import android.content.Context;
+import com.google.android.vending.expansion.downloader.Constants;
+import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
+import java.io.BufferedOutputStream;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 /* loaded from: classes4.dex */
 public final class J6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile String f488a;
+    public final C0654va f499a;
+    public final B6 b;
+    public final Context c;
+    public final C0629ua d;
 
-    public static String a() {
-        try {
-            Class<?> cls = Class.forName("android.app.ActivityThread");
-            return (String) cls.getMethod("getProcessName", new Class[0]).invoke(cls.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]), new Object[0]);
-        } catch (Throwable th) {
-            throw new RuntimeException(th);
-        }
+    public J6(Context context) {
+        this(context, new C0654va(), new B6(), C0629ua.a(context));
     }
 
-    public final String b() {
-        if (this.f488a != null) {
-            return this.f488a;
+    /* JADX WARN: Can't wrap try/catch for region: R(6:3|(5:(10:5|(2:7|(1:9)(1:13))|14|15|16|18|19|20|9b|25)(1:34)|18|19|20|9b)|(1:11)|14|15|16) */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x00a6, code lost:
+        r0 = null;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x009c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(Ih ih) {
+        boolean mkdir;
+        Pf pf;
+        String str;
+        S9 b;
+        PrintWriter printWriter;
+        C0629ua c0629ua;
+        File crashesDirectory = FileUtils.getCrashesDirectory(this.c);
+        this.b.getClass();
+        if (crashesDirectory == null) {
+            return;
         }
-        synchronized (this) {
-            if (this.f488a == null) {
-                this.f488a = a();
-            }
-        }
-        return this.f488a;
-    }
-
-    public final boolean c() {
         try {
-            if (TextUtils.isEmpty(b())) {
-                return false;
-            }
-            return !b().contains(StringUtils.PROCESS_POSTFIX_DELIMITER);
-        } catch (Throwable unused) {
-            return false;
-        }
-    }
-
-    public final boolean a(String str) {
-        try {
-            if (!TextUtils.isEmpty(b())) {
-                if (b().endsWith(StringUtils.PROCESS_POSTFIX_DELIMITER + str)) {
-                    return true;
+            if (crashesDirectory.exists()) {
+                if (!crashesDirectory.isDirectory()) {
+                    if (!crashesDirectory.delete()) {
+                        return;
+                    }
+                    mkdir = crashesDirectory.mkdir();
                 }
+                str = ih.e.f811a.f595a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + pf.f595a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+                b = this.d.b(str);
+                b.f637a.lock();
+                b.b.a();
+                this.f499a.getClass();
+                printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
+                printWriter.write(new Eb(ih.f491a, ih.e, ih.d).k());
+                io.a((Closeable) printWriter);
+                b.c();
+                c0629ua = this.d;
+                synchronized (c0629ua) {
+                    c0629ua.b.remove(str);
+                }
+                return;
+            }
+            mkdir = crashesDirectory.mkdir();
+            printWriter.write(new Eb(ih.f491a, ih.e, ih.d).k());
+            io.a((Closeable) printWriter);
+            b.c();
+            c0629ua = this.d;
+            synchronized (c0629ua) {
             }
         } catch (Throwable unused) {
+            io.a((Closeable) printWriter);
+            b.c();
+            this.d.a(str);
+            return;
         }
-        return false;
+        if (!mkdir) {
+            return;
+        }
+        str = ih.e.f811a.f595a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + pf.f595a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+        b = this.d.b(str);
+        b.f637a.lock();
+        b.b.a();
+        this.f499a.getClass();
+        printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
+    }
+
+    public J6(Context context, C0654va c0654va, B6 b6, C0629ua c0629ua) {
+        this.c = context;
+        this.f499a = c0654va;
+        this.b = b6;
+        this.d = c0629ua;
     }
 }

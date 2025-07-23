@@ -1,83 +1,52 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
+import android.text.TextUtils;
 import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
-import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
 import java.util.concurrent.TimeUnit;
 /* loaded from: classes4.dex */
-public final class Ii implements InterfaceC0338ik {
-    public static final Hi e = new Hi();
-    public static final long f = TimeUnit.SECONDS.toMillis(4);
+public final class Ii extends C0368jn {
+    public final Hi d;
+    public final ICommonExecutor e;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final C0418m0 f479a;
-    public final C0264fk b;
-    public final TimeProvider c;
-    public final ICommonExecutor d;
-
-    public Ii(C0418m0 c0418m0, C0264fk c0264fk, TimeProvider timeProvider) {
-        this.f479a = c0418m0;
-        this.b = c0264fk;
-        this.c = timeProvider;
-        this.d = C0696x4.l().g().b();
+    public Ii(C0574s5 c0574s5, Kl kl, ICommonExecutor iCommonExecutor) {
+        super(c0574s5, kl);
+        this.d = new Hi(this);
+        this.e = iCommonExecutor;
     }
 
-    public final void a(Gh gh) {
-        Ih c0133ah;
-        ICommonExecutor iCommonExecutor = this.d;
-        if (gh.b) {
-            C0264fk c0264fk = this.b;
-            c0133ah = new C0648v6(c0264fk.f842a, c0264fk.b, c0264fk.c, gh);
-        } else {
-            C0264fk c0264fk2 = this.b;
-            c0133ah = new C0133ah(c0264fk2.b, c0264fk2.c, gh);
-        }
-        iCommonExecutor.submit(c0133ah);
+    @Override // io.appmetrica.analytics.impl.C0368jn
+    public final void a() {
+        this.e.remove(this.d);
     }
 
-    public final void b(Gh gh) {
-        long uptimeMillis = this.c.uptimeMillis();
-        C0264fk c0264fk = this.b;
-        C0648v6 c0648v6 = new C0648v6(c0264fk.f842a, c0264fk.b, c0264fk.c, gh);
-        if (this.f479a.a()) {
+    @Override // io.appmetrica.analytics.impl.C0368jn
+    public final void f() {
+        this.b.a();
+        C0711xh c0711xh = (C0711xh) ((C0574s5) this.f918a).k.a();
+        if (c0711xh.k.a(c0711xh.j)) {
+            String str = c0711xh.m;
+            if (TextUtils.isEmpty(str) || "-1".equals(str)) {
+                return;
+            }
             try {
-                this.d.submit(c0648v6).get(f, TimeUnit.MILLISECONDS);
+                a(C0384ke.a((C0574s5) this.f918a));
             } catch (Throwable unused) {
             }
         }
-        if (!c0648v6.c) {
-            try {
-                c0648v6.a();
-            } catch (Throwable unused2) {
-            }
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0368jn
+    public final void g() {
+        this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(1L));
+    }
+
+    public final void h() {
+        if (this.c.get()) {
+            return;
         }
-        try {
-            Thread.sleep(Math.max(0L, f - (this.c.uptimeMillis() - uptimeMillis)));
-        } catch (Throwable unused3) {
+        this.e.remove(this.d);
+        if (((C0711xh) ((C0574s5) this.f918a).k.a()).g > 0) {
+            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((C0711xh) ((C0574s5) this.f918a).k.a()).g));
         }
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0338ik
-    public final void reportData(int i, Bundle bundle) {
-        ICommonExecutor iCommonExecutor = this.d;
-        C0264fk c0264fk = this.b;
-        iCommonExecutor.submit(new Hn(c0264fk.b, c0264fk.c, i, bundle));
-    }
-
-    public Ii(C0418m0 c0418m0, C0264fk c0264fk) {
-        this(c0418m0, c0264fk, new SystemTimeProvider());
-    }
-
-    public final void a(Nf nf) {
-        ICommonExecutor iCommonExecutor = this.d;
-        C0264fk c0264fk = this.b;
-        iCommonExecutor.submit(new De(c0264fk.b, c0264fk.c, nf));
-    }
-
-    public final void b(Nf nf) {
-        ICommonExecutor iCommonExecutor = this.d;
-        C0264fk c0264fk = this.b;
-        iCommonExecutor.submit(new Oi(c0264fk.b, c0264fk.c, nf));
     }
 }

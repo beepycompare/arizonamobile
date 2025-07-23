@@ -1,15 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
+import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public final class Bo extends Location {
-    public static final /* synthetic */ int b = 0;
+public final class Bo implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f361a;
+    public final /* synthetic */ String f365a = "WebView interface setup failed because javascript is disabled for the WebView.";
 
-    public Bo(Location location, String str) {
-        super(location);
-        this.f361a = str;
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
+    public final void consume(Object obj) {
+        ((PublicLogger) obj).warning(this.f365a, new Object[0]);
     }
 }

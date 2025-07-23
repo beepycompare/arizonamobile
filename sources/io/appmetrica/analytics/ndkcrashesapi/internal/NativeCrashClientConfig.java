@@ -7,16 +7,16 @@ import kotlin.Metadata;
 public final class NativeCrashClientConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f1215a;
+    private final String f1218a;
     private final String b;
 
     public NativeCrashClientConfig(String str, String str2) {
-        this.f1215a = str;
+        this.f1218a = str;
         this.b = str2;
     }
 
     public final String getNativeCrashFolder() {
-        return this.f1215a;
+        return this.f1218a;
     }
 
     public final String getNativeCrashMetadata() {

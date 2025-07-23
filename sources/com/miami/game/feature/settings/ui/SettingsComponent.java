@@ -1,6 +1,7 @@
 package com.miami.game.feature.settings.ui;
 
 import android.net.Uri;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.arkivanov.decompose.ComponentContext;
 import com.arkivanov.decompose.ComponentContextFactory;
@@ -36,7 +37,7 @@ import kotlinx.coroutines.flow.StateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 import timber.log.Timber;
 /* compiled from: SettingsComponent.kt */
-@Metadata(d1 = {"\u0000¦\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0007\u0018\u00002\u00020\u00012\u00020\u0002:\u0001SB+\b\u0001\u0012\b\b\u0001\u0010\u0003\u001a\u00020\u0001\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\b\u0010\u001b\u001a\u00020\u001cH\u0002J\b\u0010\u001d\u001a\u00020\u001cH\u0002J\u0014\u0010\u001e\u001a\u00020\u001c2\n\u0010\u001f\u001a\u00060 j\u0002`!H\u0002J\u0006\u0010\"\u001a\u00020\u001cJ\u0006\u0010#\u001a\u00020\u001cJ\u000e\u0010$\u001a\u00020\u001c2\u0006\u0010%\u001a\u00020&J\b\u0010'\u001a\u00020\u001cH\u0002J\u000e\u0010(\u001a\u00020\u001c2\u0006\u0010)\u001a\u00020*J\u000e\u0010+\u001a\u00020\u001c2\u0006\u0010,\u001a\u00020-J\u0006\u0010.\u001a\u00020\u001cJ\u0006\u0010/\u001a\u00020\u001cJ\u0006\u00100\u001a\u00020\u001cJ\u0006\u00101\u001a\u00020\u001cJ\u0006\u00102\u001a\u00020\u001cJ\u0010\u00103\u001a\u00020\u001c2\u0006\u00104\u001a\u00020\u0015H\u0002J\u0006\u00105\u001a\u00020\u001cJ\u0006\u00106\u001a\u00020\u001cJ\u0006\u00107\u001a\u00020\u001cJ\u0006\u00108\u001a\u00020\u001cJ\u0006\u00109\u001a\u00020\u001cJ\u0010\u0010:\u001a\u00020\u001c2\u0006\u00104\u001a\u00020\u0019H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u000e0\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0017\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0017\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00190\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0017R\u0012\u0010;\u001a\u00020<X\u0096\u0005¢\u0006\u0006\u001a\u0004\b=\u0010>R\u0018\u0010?\u001a\b\u0012\u0004\u0012\u00020\u00010@X\u0096\u0005¢\u0006\u0006\u001a\u0004\bA\u0010BR\u0012\u0010C\u001a\u00020DX\u0096\u0005¢\u0006\u0006\u001a\u0004\bE\u0010FR\u0012\u0010G\u001a\u00020HX\u0096\u0005¢\u0006\u0006\u001a\u0004\bI\u0010JR\u0012\u0010K\u001a\u00020LX\u0096\u0005¢\u0006\u0006\u001a\u0004\bM\u0010NR\u0012\u0010O\u001a\u00020PX\u0096\u0005¢\u0006\u0006\u001a\u0004\bQ\u0010R¨\u0006T"}, d2 = {"Lcom/miami/game/feature/settings/ui/SettingsComponent;", "Lcom/arkivanov/decompose/ComponentContext;", "Lcom/miami/game/core/decompose/utils/CoroutineFeature;", "componentContext", "filesUpdaterInteractor", "Lcom/miami/game/core/files/updater/domain/FilesUpdaterInteractor;", "buildConfig", "Lcom/miami/game/core/build/config/BuildConfigRepository;", "settingsInteractor", "Lcom/miami/game/core/settings/SettingsInteractor;", "<init>", "(Lcom/arkivanov/decompose/ComponentContext;Lcom/miami/game/core/files/updater/domain/FilesUpdaterInteractor;Lcom/miami/game/core/build/config/BuildConfigRepository;Lcom/miami/game/core/settings/SettingsInteractor;)V", "stateStore", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/feature/settings/ui/model/SettingsUiState;", "uiState", "Lkotlinx/coroutines/flow/StateFlow;", "getUiState", "()Lkotlinx/coroutines/flow/StateFlow;", "uiAction", "Lcom/miami/game/core/decompose/utils/SharedEventFlow;", "Lcom/miami/game/feature/settings/ui/model/SettingsUiAction;", "getUiAction", "()Lcom/miami/game/core/decompose/utils/SharedEventFlow;", "externalNavigationAction", "Lcom/miami/game/core/external/navigation/model/ExternalNavigationAction;", "getExternalNavigationAction", "initVmState", "", "observeSettingsState", "handleError", "exception", "Ljava/lang/Exception;", "Lkotlin/Exception;", "onRepairGameClick", "onRepairGameStart", "onConnectGame", "connectionData", "Lcom/miami/game/feature/download/dialog/ui/connection/ConnectionData;", "repairGame", "selectFontSize", TtmlNode.ATTR_TTS_FONT_SIZE, "", "selectPageSize", "pageSize", "", "onFullScreen", "onFps", "onChatTime", "onKeyBoard", "onStreamer", "emitUiAction", "action", "onBugsReport", "onShareLogs", "onPrivacyPolicy", "onTech", "closeTech", "emitExternalNavigationAction", "backHandler", "Lcom/arkivanov/essenty/backhandler/BackHandler;", "getBackHandler", "()Lcom/arkivanov/essenty/backhandler/BackHandler;", "componentContextFactory", "Lcom/arkivanov/decompose/ComponentContextFactory;", "getComponentContextFactory", "()Lcom/arkivanov/decompose/ComponentContextFactory;", "instanceKeeper", "Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "getInstanceKeeper", "()Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "lifecycle", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "getLifecycle", "()Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "stateKeeper", "Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "getStateKeeper", "()Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "Factory", "settings_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¦\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0007\u0018\u00002\u00020\u00012\u00020\u0002:\u0001UB+\b\u0001\u0012\b\b\u0001\u0010\u0003\u001a\u00020\u0001\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\b\u0010\u001b\u001a\u00020\u001cH\u0002J\b\u0010\u001d\u001a\u00020\u001cH\u0002J\b\u0010\u001e\u001a\u00020\u001cH\u0002J\u0014\u0010\u001f\u001a\u00020\u001c2\n\u0010 \u001a\u00060!j\u0002`\"H\u0002J\u0006\u0010#\u001a\u00020\u001cJ\u0006\u0010$\u001a\u00020\u001cJ\u000e\u0010%\u001a\u00020\u001c2\u0006\u0010&\u001a\u00020'J\b\u0010(\u001a\u00020\u001cH\u0002J\u000e\u0010)\u001a\u00020\u001c2\u0006\u0010*\u001a\u00020+J\u000e\u0010,\u001a\u00020\u001c2\u0006\u0010-\u001a\u00020.J\u0006\u0010/\u001a\u00020\u001cJ\u0006\u00100\u001a\u00020\u001cJ\u0006\u00101\u001a\u00020\u001cJ\u0006\u00102\u001a\u00020\u001cJ\u0006\u00103\u001a\u00020\u001cJ\u0006\u00104\u001a\u00020\u001cJ\u0010\u00105\u001a\u00020\u001c2\u0006\u00106\u001a\u00020\u0015H\u0002J\u0006\u00107\u001a\u00020\u001cJ\u0006\u00108\u001a\u00020\u001cJ\u0006\u00109\u001a\u00020\u001cJ\u0006\u0010:\u001a\u00020\u001cJ\u0006\u0010;\u001a\u00020\u001cJ\u0010\u0010<\u001a\u00020\u001c2\u0006\u00106\u001a\u00020\u0019H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u000e0\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0017\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0017\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00190\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0017R\u0012\u0010=\u001a\u00020>X\u0096\u0005¢\u0006\u0006\u001a\u0004\b?\u0010@R\u0018\u0010A\u001a\b\u0012\u0004\u0012\u00020\u00010BX\u0096\u0005¢\u0006\u0006\u001a\u0004\bC\u0010DR\u0012\u0010E\u001a\u00020FX\u0096\u0005¢\u0006\u0006\u001a\u0004\bG\u0010HR\u0012\u0010I\u001a\u00020JX\u0096\u0005¢\u0006\u0006\u001a\u0004\bK\u0010LR\u0012\u0010M\u001a\u00020NX\u0096\u0005¢\u0006\u0006\u001a\u0004\bO\u0010PR\u0012\u0010Q\u001a\u00020RX\u0096\u0005¢\u0006\u0006\u001a\u0004\bS\u0010T¨\u0006V"}, d2 = {"Lcom/miami/game/feature/settings/ui/SettingsComponent;", "Lcom/arkivanov/decompose/ComponentContext;", "Lcom/miami/game/core/decompose/utils/CoroutineFeature;", "componentContext", "filesUpdaterInteractor", "Lcom/miami/game/core/files/updater/domain/FilesUpdaterInteractor;", "buildConfig", "Lcom/miami/game/core/build/config/BuildConfigRepository;", "settingsInteractor", "Lcom/miami/game/core/settings/SettingsInteractor;", "<init>", "(Lcom/arkivanov/decompose/ComponentContext;Lcom/miami/game/core/files/updater/domain/FilesUpdaterInteractor;Lcom/miami/game/core/build/config/BuildConfigRepository;Lcom/miami/game/core/settings/SettingsInteractor;)V", "stateStore", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/feature/settings/ui/model/SettingsUiState;", "uiState", "Lkotlinx/coroutines/flow/StateFlow;", "getUiState", "()Lkotlinx/coroutines/flow/StateFlow;", "uiAction", "Lcom/miami/game/core/decompose/utils/SharedEventFlow;", "Lcom/miami/game/feature/settings/ui/model/SettingsUiAction;", "getUiAction", "()Lcom/miami/game/core/decompose/utils/SharedEventFlow;", "externalNavigationAction", "Lcom/miami/game/core/external/navigation/model/ExternalNavigationAction;", "getExternalNavigationAction", "initVmState", "", "observeLifecycle", "observeSettingsState", "handleError", "exception", "Ljava/lang/Exception;", "Lkotlin/Exception;", "onRepairGameClick", "onRepairGameStart", "onConnectGame", "connectionData", "Lcom/miami/game/feature/download/dialog/ui/connection/ConnectionData;", "repairGame", "selectFontSize", TtmlNode.ATTR_TTS_FONT_SIZE, "", "selectPageSize", "pageSize", "", "onFullScreen", "onFps", "onChatTime", "onKeyBoard", "onStreamer", "onNotifications", "emitUiAction", "action", "onBugsReport", "onShareLogs", "onPrivacyPolicy", "onTech", "closeTech", "emitExternalNavigationAction", "backHandler", "Lcom/arkivanov/essenty/backhandler/BackHandler;", "getBackHandler", "()Lcom/arkivanov/essenty/backhandler/BackHandler;", "componentContextFactory", "Lcom/arkivanov/decompose/ComponentContextFactory;", "getComponentContextFactory", "()Lcom/arkivanov/decompose/ComponentContextFactory;", "instanceKeeper", "Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "getInstanceKeeper", "()Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "lifecycle", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "getLifecycle", "()Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "stateKeeper", "Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "getStateKeeper", "()Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "Factory", "settings_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class SettingsComponent implements ComponentContext, CoroutineFeature {
     public static final int $stable = 8;
@@ -106,6 +107,7 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
         this.externalNavigationAction = new SharedEventFlow<>();
         initVmState();
         observeSettingsState();
+        observeLifecycle();
     }
 
     public final StateFlow<SettingsUiState> getUiState() {
@@ -123,6 +125,42 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
     private final void initVmState() {
         Timber.Forest.d("initVmState", new Object[0]);
         BuildersKt__Builders_commonKt.launch$default(getScope(), null, null, new SettingsComponent$initVmState$$inlined$launchSafe$default$1(null, this), 3, null);
+    }
+
+    private final void observeLifecycle() {
+        getLifecycle().subscribe(new Lifecycle.Callbacks() { // from class: com.miami.game.feature.settings.ui.SettingsComponent$observeLifecycle$1
+            @Override // com.arkivanov.essenty.lifecycle.Lifecycle.Callbacks
+            public void onCreate() {
+                Lifecycle.Callbacks.DefaultImpls.onCreate(this);
+            }
+
+            @Override // com.arkivanov.essenty.lifecycle.Lifecycle.Callbacks
+            public void onDestroy() {
+                Lifecycle.Callbacks.DefaultImpls.onDestroy(this);
+            }
+
+            @Override // com.arkivanov.essenty.lifecycle.Lifecycle.Callbacks
+            public void onPause() {
+                Lifecycle.Callbacks.DefaultImpls.onPause(this);
+            }
+
+            @Override // com.arkivanov.essenty.lifecycle.Lifecycle.Callbacks
+            public void onStart() {
+                Lifecycle.Callbacks.DefaultImpls.onStart(this);
+            }
+
+            @Override // com.arkivanov.essenty.lifecycle.Lifecycle.Callbacks
+            public void onStop() {
+                Lifecycle.Callbacks.DefaultImpls.onStop(this);
+            }
+
+            @Override // com.arkivanov.essenty.lifecycle.Lifecycle.Callbacks
+            public void onResume() {
+                SettingsInteractor settingsInteractor;
+                settingsInteractor = SettingsComponent.this.settingsInteractor;
+                settingsInteractor.getSettings();
+            }
+        });
     }
 
     private final void observeSettingsState() {
@@ -150,7 +188,7 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
         do {
             value = mutableStateFlow.getValue();
         } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default(value, 0, null, null, null, false, null, false, null, 239, null)));
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, new com.miami.game.core.settings.ConnectionData(connectionData.getIp(), connectionData.getPort(), connectionData.getPassword()), 127, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, new com.miami.game.core.settings.ConnectionData(connectionData.getIp(), connectionData.getPort(), connectionData.getPassword()), 255, null));
         ConnectionHolder.INSTANCE.setSettingsData(SettingsData.copy$default(ConnectionHolder.INSTANCE.getSettingsData(), 0, 0, false, false, false, false, false, connectionData.getIp(), connectionData.getPort(), connectionData.getPassword(), 127, null));
         ConnectionHolder.INSTANCE.getOnConnectTest().invoke();
     }
@@ -161,31 +199,35 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
     }
 
     public final void selectFontSize(float f) {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), f, 0, false, false, false, false, false, null, 254, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), f, 0, false, false, false, false, false, false, null, TypedValues.PositionType.TYPE_POSITION_TYPE, null));
     }
 
     public final void selectPageSize(int i) {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, i, false, false, false, false, false, null, 253, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, i, false, false, false, false, false, false, null, 509, null));
     }
 
     public final void onFullScreen() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, !this.stateStore.getValue().getSettingState().getFullScreen(), false, null, 223, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, !this.stateStore.getValue().getSettingState().getFullScreen(), false, false, null, 479, null));
     }
 
     public final void onFps() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, !this.stateStore.getValue().getSettingState().getShowFps(), false, false, null, 239, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, !this.stateStore.getValue().getSettingState().getShowFps(), false, false, false, null, 495, null));
     }
 
     public final void onChatTime() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, !this.stateStore.getValue().getSettingState().getShowChatTime(), false, false, false, null, 247, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, !this.stateStore.getValue().getSettingState().getShowChatTime(), false, false, false, false, null, TypedValues.PositionType.TYPE_PERCENT_WIDTH, null));
     }
 
     public final void onKeyBoard() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, !this.stateStore.getValue().getSettingState().getCustomKeyBoard(), false, false, false, false, null, 251, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, !this.stateStore.getValue().getSettingState().getCustomKeyBoard(), false, false, false, false, false, null, TypedValues.PositionType.TYPE_PERCENT_Y, null));
     }
 
     public final void onStreamer() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, !this.stateStore.getValue().getSettingState().getStreamerMode(), null, 191, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, !this.stateStore.getValue().getSettingState().getStreamerMode(), false, null, 447, null));
+    }
+
+    public final void onNotifications() {
+        this.settingsInteractor.changeNotifications();
     }
 
     private final void emitUiAction(SettingsUiAction settingsUiAction) {

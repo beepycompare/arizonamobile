@@ -26,7 +26,7 @@ final class ULongProgressionIterator implements Iterator<ULong>, KMappedMarker {
 
     @Override // java.util.Iterator
     public /* bridge */ /* synthetic */ ULong next() {
-        return ULong.m8644boximpl(m9719nextsVKNKU());
+        return ULong.m8647boximpl(m9722nextsVKNKU());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x001b, code lost:
@@ -52,7 +52,7 @@ final class ULongProgressionIterator implements Iterator<ULong>, KMappedMarker {
             compare = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
         }
         this.hasNext = z;
-        this.step = ULong.m8650constructorimpl(j3);
+        this.step = ULong.m8653constructorimpl(j3);
         this.next = this.hasNext ? j : j2;
     }
 
@@ -62,7 +62,7 @@ final class ULongProgressionIterator implements Iterator<ULong>, KMappedMarker {
     }
 
     /* renamed from: next-s-VKNKU  reason: not valid java name */
-    public long m9719nextsVKNKU() {
+    public long m9722nextsVKNKU() {
         long j = this.next;
         if (j == this.finalElement) {
             if (!this.hasNext) {
@@ -71,7 +71,7 @@ final class ULongProgressionIterator implements Iterator<ULong>, KMappedMarker {
             this.hasNext = false;
             return j;
         }
-        this.next = ULong.m8650constructorimpl(this.step + j);
+        this.next = ULong.m8653constructorimpl(this.step + j);
         return j;
     }
 }

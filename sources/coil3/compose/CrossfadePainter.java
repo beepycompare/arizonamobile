@@ -124,14 +124,14 @@ public final class CrossfadePainter extends Painter {
             timeMark = this.timeSource.markNow();
             this.startTime = timeMark;
         }
-        float m9834getInWholeMillisecondsimpl = ((float) Duration.m9834getInWholeMillisecondsimpl(timeMark.mo9813elapsedNowUwyO8pc())) / ((float) Duration.m9834getInWholeMillisecondsimpl(this.duration));
-        float coerceIn = RangesKt.coerceIn(m9834getInWholeMillisecondsimpl, 0.0f, 1.0f);
+        float m9837getInWholeMillisecondsimpl = ((float) Duration.m9837getInWholeMillisecondsimpl(timeMark.mo9816elapsedNowUwyO8pc())) / ((float) Duration.m9837getInWholeMillisecondsimpl(this.duration));
+        float coerceIn = RangesKt.coerceIn(m9837getInWholeMillisecondsimpl, 0.0f, 1.0f);
         float f = this.maxAlpha;
         float f2 = coerceIn * f;
         if (this.fadeStart) {
             f -= f2;
         }
-        this.isDone = m9834getInWholeMillisecondsimpl >= 1.0f;
+        this.isDone = m9837getInWholeMillisecondsimpl >= 1.0f;
         drawPainter(drawScope, this.start, f);
         drawPainter(drawScope, this.end, f2);
         if (this.isDone) {

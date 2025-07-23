@@ -20,7 +20,7 @@ public final class C0107MainComponent_Factory {
     private final Provider<SelectServerComponent.Factory> selectServerFactoryProvider;
     private final Provider<SettingsComponent.Factory> settingsFactoryProvider;
 
-    public C0107MainComponent_Factory(Provider<HomeComponent.Factory> provider, Provider<SelectServerComponent.Factory> provider2, Provider<SettingsComponent.Factory> provider3, Provider<CommonDialogComponent.Factory> provider4, Provider<ErrorDialogComponent.Factory> provider5, Provider<DownloadScreenComponent.Factory> provider6, Provider<NotificationsComponent.Factory> provider7) {
+    private C0107MainComponent_Factory(Provider<HomeComponent.Factory> provider, Provider<SelectServerComponent.Factory> provider2, Provider<SettingsComponent.Factory> provider3, Provider<CommonDialogComponent.Factory> provider4, Provider<ErrorDialogComponent.Factory> provider5, Provider<DownloadScreenComponent.Factory> provider6, Provider<NotificationsComponent.Factory> provider7) {
         this.homeFactoryProvider = provider;
         this.selectServerFactoryProvider = provider2;
         this.settingsFactoryProvider = provider3;

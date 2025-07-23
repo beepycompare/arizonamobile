@@ -3,8 +3,8 @@ package androidx.lifecycle.viewmodel;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.viewmodel.internal.CanonicalName_jvmKt;
 import androidx.lifecycle.viewmodel.internal.ViewModelProviders;
-import androidx.lifecycle.viewmodel.internal.ViewModelProviders_jvmKt;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import kotlin.Metadata;
@@ -22,7 +22,7 @@ public final class InitializerViewModelFactoryBuilder {
         Intrinsics.checkNotNullParameter(clazz, "clazz");
         Intrinsics.checkNotNullParameter(initializer, "initializer");
         if (this.initializers.containsKey(clazz)) {
-            throw new IllegalArgumentException(("A `initializer` with the same `clazz` has already been added: " + ViewModelProviders_jvmKt.getCanonicalName(clazz) + '.').toString());
+            throw new IllegalArgumentException(("A `initializer` with the same `clazz` has already been added: " + CanonicalName_jvmKt.getCanonicalName(clazz) + '.').toString());
         }
         this.initializers.put(clazz, new ViewModelInitializer<>((KClass<?>) clazz, (Function1<? super CreationExtras, ? extends Object>) initializer));
     }

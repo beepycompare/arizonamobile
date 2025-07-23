@@ -1,42 +1,37 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import org.json.JSONObject;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
 /* loaded from: classes4.dex */
-public final class Df implements ProtobufConverter {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Bf f391a = new Bf();
-
+public final class Df implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0707xf fromModel(Cf cf) {
-        C0707xf c0707xf = new C0707xf();
-        if (!TextUtils.isEmpty(cf.f375a)) {
-            c0707xf.f1126a = cf.f375a;
+    public final Integer fromModel(EnumC0403l8 enumC0403l8) {
+        int ordinal = enumC0403l8.ordinal();
+        if (ordinal != 1) {
+            if (ordinal != 2) {
+                if (ordinal != 3) {
+                    return 0;
+                }
+                return 2;
+            }
+            return 3;
         }
-        c0707xf.b = cf.b.toString();
-        c0707xf.c = cf.c;
-        c0707xf.d = cf.d;
-        c0707xf.e = this.f391a.fromModel(cf.e).intValue();
-        return c0707xf;
+        return 1;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Cf toModel(C0707xf c0707xf) {
-        JSONObject jSONObject;
-        String str = c0707xf.f1126a;
-        String str2 = c0707xf.b;
-        if (!TextUtils.isEmpty(str2)) {
-            try {
-                jSONObject = new JSONObject(str2);
-            } catch (Throwable unused) {
+    public final EnumC0403l8 toModel(Integer num) {
+        int intValue = num.intValue();
+        if (intValue != 1) {
+            if (intValue != 2) {
+                if (intValue != 3) {
+                    return EnumC0403l8.b;
+                }
+                return EnumC0403l8.d;
             }
-            return new Cf(str, jSONObject, c0707xf.c, c0707xf.d, this.f391a.toModel(Integer.valueOf(c0707xf.e)));
+            return EnumC0403l8.e;
         }
-        jSONObject = new JSONObject();
-        return new Cf(str, jSONObject, c0707xf.c, c0707xf.d, this.f391a.toModel(Integer.valueOf(c0707xf.e)));
+        return EnumC0403l8.c;
     }
 }

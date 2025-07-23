@@ -3,17 +3,17 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class U {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0771f f1284a;
+    public final C0773f f1287a;
     public final Y b;
-    public final C0781p c;
+    public final C0783p c;
 
-    public U(C0771f c0771f, Y y, C0781p c0781p) {
-        this.f1284a = c0771f;
+    public U(C0773f c0773f, Y y, C0783p c0783p) {
+        this.f1287a = c0773f;
         this.b = y;
-        this.c = c0781p;
+        this.c = c0783p;
     }
 
     public /* synthetic */ U() {
-        this(new C0771f(), new Y(), new C0781p());
+        this(new C0773f(), new Y(), new C0783p());
     }
 }

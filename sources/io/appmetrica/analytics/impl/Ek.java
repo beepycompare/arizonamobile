@@ -1,39 +1,59 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import java.util.concurrent.atomic.AtomicLong;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
 public final class Ek {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Tk f414a;
-    public final Long b;
-    public final Long c;
-    public final Integer d;
-    public final Long e;
-    public final Boolean f;
-    public final Long g;
-    public final Long h;
+    public final C0574s5 f422a;
+    public final Vk b;
+    public final Hk c;
+    public long d;
+    public long e;
+    public AtomicLong f;
+    public boolean g;
+    public volatile Tk h;
+    public long i;
+    public long j;
+    public final SystemTimeProvider k;
 
-    public Ek(Dk dk) {
-        Tk tk;
-        Integer num;
-        Long l;
-        Long l2;
-        Long l3;
-        Boolean bool;
-        Long l4;
-        tk = dk.b;
-        this.f414a = tk;
-        num = dk.e;
-        this.d = num;
-        l = dk.c;
-        this.b = l;
-        l2 = dk.d;
-        this.c = l2;
-        l3 = dk.f;
-        this.e = l3;
-        bool = dk.g;
-        this.f = bool;
-        l4 = dk.h;
-        this.g = l4;
-        this.h = dk.f393a;
+    public Ek(C0574s5 c0574s5, Vk vk, Hk hk, SystemTimeProvider systemTimeProvider) {
+        this.f422a = c0574s5;
+        this.b = vk;
+        this.c = hk;
+        this.k = systemTimeProvider;
+        a();
+    }
+
+    public final void a() {
+        Hk hk = this.c;
+        long elapsedRealtime = this.k.elapsedRealtime();
+        Long l = hk.c;
+        if (l != null) {
+            elapsedRealtime = l.longValue();
+        }
+        this.e = elapsedRealtime;
+        Long l2 = this.c.b;
+        this.d = l2 == null ? -1L : l2.longValue();
+        Long l3 = this.c.e;
+        this.f = new AtomicLong(l3 == null ? 0L : l3.longValue());
+        Boolean bool = this.c.f;
+        this.g = bool == null ? true : bool.booleanValue();
+        Long l4 = this.c.g;
+        long longValue = l4 != null ? l4.longValue() : 0L;
+        this.i = longValue;
+        Hk hk2 = this.c;
+        long j = longValue - this.e;
+        Long l5 = hk2.h;
+        if (l5 != null) {
+            j = l5.longValue();
+        }
+        this.j = j;
+    }
+
+    public final String toString() {
+        return "Session{id=" + this.d + ", creationTime=" + this.e + ", currentReportId=" + this.f + ", sessionRequestParams=" + this.h + ", sleepStart=" + this.i + AbstractJsonLexerKt.END_OBJ;
     }
 }

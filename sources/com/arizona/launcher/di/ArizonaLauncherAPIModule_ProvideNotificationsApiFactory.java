@@ -7,7 +7,7 @@ import dagger.internal.Preconditions;
 public final class ArizonaLauncherAPIModule_ProvideNotificationsApiFactory implements Factory<NotificationsAPI> {
     private final ArizonaLauncherAPIModule module;
 
-    public ArizonaLauncherAPIModule_ProvideNotificationsApiFactory(ArizonaLauncherAPIModule module) {
+    private ArizonaLauncherAPIModule_ProvideNotificationsApiFactory(ArizonaLauncherAPIModule module) {
         this.module = module;
     }
 

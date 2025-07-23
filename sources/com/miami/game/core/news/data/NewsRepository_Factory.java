@@ -9,7 +9,7 @@ public final class NewsRepository_Factory implements Factory<NewsRepository> {
     private final Provider<NewsApiRepository> apiRepositoryProvider;
     private final Provider<NewsPrefRepository> prefRepositoryProvider;
 
-    public NewsRepository_Factory(Provider<NewsApiRepository> provider, Provider<NewsPrefRepository> provider2) {
+    private NewsRepository_Factory(Provider<NewsApiRepository> provider, Provider<NewsPrefRepository> provider2) {
         this.apiRepositoryProvider = provider;
         this.prefRepositoryProvider = provider2;
     }

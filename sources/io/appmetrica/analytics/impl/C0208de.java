@@ -1,22 +1,20 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashServiceModule;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashServiceModuleDummy;
 /* renamed from: io.appmetrica.analytics.impl.de  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0208de implements Nc {
+public final class C0208de {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V8 f804a = new V8() { // from class: io.appmetrica.analytics.impl.de$$ExternalSyntheticLambda0
-        @Override // io.appmetrica.analytics.impl.V8
-        public final boolean b() {
-            return C0208de.b();
-        }
-    };
+    public final NativeCrashServiceModule f816a;
+    public final Xd b;
 
-    public static final boolean b() {
-        return true;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Nc
-    public final V8 a() {
-        return this.f804a;
+    public C0208de() {
+        ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
+        NativeCrashServiceModule nativeCrashServiceModule = (NativeCrashServiceModule) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor("io.appmetrica.analytics.ndkcrashes.NativeCrashServiceModuleImpl", NativeCrashServiceModule.class);
+        this.f816a = nativeCrashServiceModule == null ? new NativeCrashServiceModuleDummy() : nativeCrashServiceModule;
+        this.b = new Xd(new C0182ce(this));
     }
 }

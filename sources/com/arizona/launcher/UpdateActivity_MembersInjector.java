@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class UpdateActivity_MembersInjector implements MembersInjector<UpdateActivity> {
     private final Provider<DownloadScreenComponent.Factory> rootFactoryProvider;
 
-    public UpdateActivity_MembersInjector(Provider<DownloadScreenComponent.Factory> rootFactoryProvider) {
+    private UpdateActivity_MembersInjector(Provider<DownloadScreenComponent.Factory> rootFactoryProvider) {
         this.rootFactoryProvider = rootFactoryProvider;
     }
 

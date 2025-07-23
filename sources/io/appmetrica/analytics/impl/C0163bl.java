@@ -1,50 +1,44 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Collections;
+import io.appmetrica.analytics.ecommerce.ECommerceEvent;
+import io.appmetrica.analytics.ecommerce.ECommerceProduct;
+import io.appmetrica.analytics.ecommerce.ECommerceScreen;
 import java.util.List;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.bl  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0163bl implements InterfaceC0575s8 {
+public final class C0163bl extends ECommerceEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Pf f772a;
-    public final C0558rg b;
+    public final Uf f788a;
+    public final C0514pj b;
+    public final InterfaceC0652v8 c;
 
-    public C0163bl() {
-        this(new Pf(), new C0558rg());
+    public C0163bl(ECommerceProduct eCommerceProduct, ECommerceScreen eCommerceScreen) {
+        this(new Uf(eCommerceProduct), new C0514pj(eCommerceScreen), new C0189cl());
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final List<Ni> fromModel(C0137al c0137al) {
-        Ni ni;
-        L8 l8 = new L8();
-        l8.f516a = 3;
-        l8.d = new J8();
-        Ni fromModel = this.f772a.fromModel(c0137al.f757a);
-        l8.d.f490a = (E8) fromModel.f557a;
-        Ig ig = c0137al.b;
-        if (ig != null) {
-            ni = this.b.fromModel(ig);
-            l8.d.b = (G8) ni.f557a;
-        } else {
-            ni = null;
-        }
-        return Collections.singletonList(new Ni(l8, new C0670w3(C0670w3.b(fromModel, ni))));
+    public final InterfaceC0652v8 a() {
+        return this.c;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        List list = (List) obj;
-        throw new UnsupportedOperationException();
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
+    public final String getPublicDescription() {
+        return "shown product card info";
     }
 
-    public C0163bl(Pf pf, C0558rg c0558rg) {
-        this.f772a = pf;
-        this.b = c0558rg;
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.Xf
+    public final List<Qi> toProto() {
+        return (List) this.c.fromModel(this);
     }
 
-    public final C0137al a(List<Ni> list) {
-        throw new UnsupportedOperationException();
+    public final String toString() {
+        return "ShownProductCardInfoEvent{product=" + this.f788a + ", screen=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
+    }
+
+    public C0163bl(Uf uf, C0514pj c0514pj, InterfaceC0652v8 interfaceC0652v8) {
+        this.f788a = uf;
+        this.b = c0514pj;
+        this.c = interfaceC0652v8;
     }
 }

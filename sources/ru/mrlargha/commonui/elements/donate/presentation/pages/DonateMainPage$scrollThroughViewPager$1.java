@@ -1,6 +1,5 @@
 package ru.mrlargha.commonui.elements.donate.presentation.pages;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.exoplayer.Renderer;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
@@ -17,7 +16,7 @@ import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.DelayKt;
 /* compiled from: DonateMainPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateMainPage$scrollThroughViewPager$1", f = "DonateMainPage.kt", i = {0}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_WRAP_BEHAVIOR_IN_PARENT}, m = "invokeSuspend", n = {"$this$launch"}, s = {"L$0"})
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateMainPage$scrollThroughViewPager$1", f = "DonateMainPage.kt", i = {0}, l = {64}, m = "invokeSuspend", n = {"$this$launch"}, s = {"L$0"})
 /* loaded from: classes5.dex */
 final class DonateMainPage$scrollThroughViewPager$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ViewPager2 $viewPager;

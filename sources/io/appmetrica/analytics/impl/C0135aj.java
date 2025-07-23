@@ -1,16 +1,30 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
+import io.appmetrica.analytics.Revenue;
+import java.util.Arrays;
+import java.util.List;
 /* renamed from: io.appmetrica.analytics.impl.aj  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0135aj implements L9 {
-    @Override // io.appmetrica.analytics.impl.L9
-    public final Integer a(C0203d9 c0203d9) {
-        EnumC0628ub enumC0628ub = c0203d9.h;
-        if (enumC0628ub == null) {
-            Map map = AbstractC0132ag.f755a;
-            return null;
+public final class C0135aj implements po {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final oo f771a = new oo();
+
+    @Override // io.appmetrica.analytics.impl.po
+    public final no a(Revenue revenue) {
+        no noVar;
+        oo ooVar = this.f771a;
+        no[] noVarArr = new no[1];
+        C0261fg c0261fg = new C0261fg();
+        Integer num = revenue.quantity;
+        if (num != null && num.intValue() <= 0) {
+            noVar = new no(c0261fg, false, "Invalid quantity value " + num);
+        } else {
+            noVar = new no(c0261fg, true, "");
         }
-        return (Integer) AbstractC0132ag.c.get(enumC0628ub);
+        noVarArr[0] = noVar;
+        List<no> asList = Arrays.asList(noVarArr);
+        ooVar.getClass();
+        return ooVar.a(asList);
     }
 }

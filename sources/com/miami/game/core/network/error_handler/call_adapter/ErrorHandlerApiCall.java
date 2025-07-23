@@ -36,9 +36,9 @@ public final class ErrorHandlerApiCall<T> implements Call<T> {
 
     @Override // retrofit2.Call
     public Call<T> clone() {
-        Call<T> mo8324clone = this.sourceCall.mo8324clone();
-        Intrinsics.checkNotNullExpressionValue(mo8324clone, "clone(...)");
-        return mo8324clone;
+        Call<T> mo8326clone = this.sourceCall.mo8326clone();
+        Intrinsics.checkNotNullExpressionValue(mo8326clone, "clone(...)");
+        return mo8326clone;
     }
 
     @Override // retrofit2.Call

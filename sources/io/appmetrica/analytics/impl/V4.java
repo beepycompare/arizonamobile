@@ -3,15 +3,15 @@ package io.appmetrica.analytics.impl;
 public abstract class V4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final S4 f669a;
+    public final S4 f681a;
 
     public V4(S4 s4) {
-        this.f669a = s4;
+        this.f681a = s4;
     }
 
     public final S4 a() {
-        return this.f669a;
+        return this.f681a;
     }
 
-    public abstract boolean a(C0325i6 c0325i6, P4 p4);
+    public abstract boolean a(C0401l6 c0401l6, P4 p4);
 }

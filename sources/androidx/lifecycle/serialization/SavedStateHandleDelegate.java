@@ -3,6 +3,7 @@ package androidx.lifecycle.serialization;
 import android.os.Bundle;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.lifecycle.SavedStateHandle;
+import androidx.lifecycle.internal.CanonicalName_jvmKt;
 import androidx.savedstate.SavedStateRegistry;
 import androidx.savedstate.serialization.SavedStateConfiguration;
 import androidx.savedstate.serialization.SavedStateDecoderKt;
@@ -71,7 +72,7 @@ public final class SavedStateHandleDelegate<T> implements ReadWriteProperty<Obje
     }
 
     private final String createDefaultKey(Object obj, KProperty<?> kProperty) {
-        return (obj != null ? Reflection.getOrCreateKotlinClass(obj.getClass()).getQualifiedName() + '.' : "") + kProperty.getName();
+        return (obj != null ? CanonicalName_jvmKt.getCanonicalName(Reflection.getOrCreateKotlinClass(obj.getClass())) + '.' : "") + kProperty.getName();
     }
 
     @Override // kotlin.properties.ReadWriteProperty, kotlin.properties.ReadOnlyProperty

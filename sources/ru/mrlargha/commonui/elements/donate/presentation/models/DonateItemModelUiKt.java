@@ -49,6 +49,7 @@ public final class DonateItemModelUiKt {
         if (arrayList == null) {
             arrayList = CollectionsKt.emptyList();
         }
-        return new DonateItemModelUi(key, donateItemModel.getCategory(), name, description, price, priceCurrency, typeTemplate, iconButton, z, colorListButton, titleButton, image, imageEffect, backgroundId, discount, discountPrice, blockedType, blockedReason, leftUnixTime, arrayList, donateItemModel.getVisible() == 1, donateItemModel.getAnimation() == 1, donateItemModel.getTextGradientColor(), donateItemModel.getTotalEarnings(), donateItemModel.getGifId() != -1);
+        List list2 = arrayList;
+        return new DonateItemModelUi(key, donateItemModel.getCategory(), name, description, price, priceCurrency, typeTemplate, iconButton, z, colorListButton, titleButton, image, imageEffect, backgroundId, discount, discountPrice, blockedType, blockedReason, leftUnixTime, list2, donateItemModel.getVisible() == 1, donateItemModel.getAnimation() == 1, donateItemModel.getTextGradientColor(), donateItemModel.getTotalEarnings(), donateItemModel.getGifId() != -1, donateItemModel.getLimited() > 0);
     }
 }

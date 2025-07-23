@@ -43,35 +43,31 @@ public final class BillingLibraryMonitor implements BillingMonitor, n {
 
     @Override // io.appmetrica.analytics.billinginterface.internal.config.BillingConfigChangedListener
     public synchronized void onBillingConfigChanged(BillingConfig billingConfig) {
-        try {
+        if (Intrinsics.areEqual(this.g, billingConfig)) {
+            return;
+        }
+        this.g = billingConfig;
+        if (billingConfig != null && !this.h) {
+            this.h = true;
+            BillingClient build = BillingClient.newBuilder(this.f236a).setListener(new l()).enablePendingPurchases().build();
             try {
-                if (Intrinsics.areEqual(this.g, billingConfig)) {
-                    return;
-                }
-                this.g = billingConfig;
-                if (billingConfig != null && !this.h) {
-                    this.h = true;
-                    BillingClient build = BillingClient.newBuilder(this.f236a).setListener(new l()).enablePendingPurchases().build();
-                    build.startConnection(new b(billingConfig, build, new BillingLibraryMonitor$updateBilling$1(this), new d(build), this));
-                }
-            } catch (Throwable th) {
-                th = th;
-                throw th;
+                build.startConnection(new b(billingConfig, build, new BillingLibraryMonitor$updateBilling$1(this), new d(build), this));
+            } catch (Throwable unused) {
             }
-        } catch (Throwable th2) {
-            th = th2;
         }
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.monitor.BillingMonitor
     public void onSessionResumed() {
-        BillingConfig billingConfig = this.g;
-        if (billingConfig == null || this.h) {
-            return;
+        try {
+            BillingConfig billingConfig = this.g;
+            if (billingConfig != null && !this.h) {
+                this.h = true;
+                BillingClient build = BillingClient.newBuilder(this.f236a).setListener(new l()).enablePendingPurchases().build();
+                build.startConnection(new b(billingConfig, build, new BillingLibraryMonitor$updateBilling$1(this), new d(build), this));
+            }
+        } catch (Throwable unused) {
         }
-        this.h = true;
-        BillingClient build = BillingClient.newBuilder(this.f236a).setListener(new l()).enablePendingPurchases().build();
-        build.startConnection(new b(billingConfig, build, new BillingLibraryMonitor$updateBilling$1(this), new d(build), this));
     }
 
     @Override // io.appmetrica.analytics.billingv6.impl.n

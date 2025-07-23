@@ -11,7 +11,7 @@
         <item name="fontFamily">@font/gotham</item>
         <item name="materialCardViewStyle">@style/Widget.App.CardView</item>
     </style>
-    <style name="AppTheme.NoActionBar" parent="@style/AppTheme">
+    <style name="AppTheme.NoActionBar" parent="@style/Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:navigationBarColor">@color/dark_blue</item>
         <item name="android:forceDarkAllowed">false</item>
         <item name="windowActionBar">false</item>
@@ -33,7 +33,7 @@
         <item name="android:forceDarkAllowed">false</item>
         <item name="colorAccent">@color/arizona_accent</item>
     </style>
-    <style name="Theme.AppCompat.Translucent" parent="@style/Theme.AppCompat.NoActionBar">
+    <style name="Theme.AppCompat.Translucent" parent="@style/Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowAnimationStyle">@android:style/Animation</item>

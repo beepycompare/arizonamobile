@@ -1,26 +1,29 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ecommerce.ECommerceReferrer;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 /* loaded from: classes4.dex */
 public final class Ig {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f477a;
-    public final String b;
-    public final C0437mj c;
-
-    public Ig(ECommerceReferrer eCommerceReferrer) {
-        this(eCommerceReferrer.getType(), eCommerceReferrer.getIdentifier(), eCommerceReferrer.getScreen() == null ? null : new C0437mj(eCommerceReferrer.getScreen()));
+    public Ig(InterfaceC0356jb interfaceC0356jb) {
     }
 
-    public final String toString() {
-        return "ReferrerWrapper{type='" + this.f477a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public Ig(String str, String str2, C0437mj c0437mj) {
-        this.f477a = str;
-        this.b = str2;
-        this.c = c0437mj;
+    /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0011  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static InterfaceC0356jb a(Context context, IHandlerExecutor iHandlerExecutor) {
+        C0660vg c0660vg;
+        if (ReflectionUtils.detectClassExists("com.android.installreferrer.api.InstallReferrerClient")) {
+            try {
+                c0660vg = new C0660vg(context, iHandlerExecutor);
+            } catch (Throwable unused) {
+            }
+            return c0660vg != null ? new Hg() : c0660vg;
+        }
+        c0660vg = null;
+        if (c0660vg != null) {
+        }
     }
 }

@@ -1,12 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.bk  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0162bk implements InterfaceC0597t5 {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0597t5
-    /* renamed from: b */
-    public final C0188ck a(Context context, C0398l5 c0398l5, J4 j4, C0739ym c0739ym) {
-        return new C0188ck(context, c0739ym.e(), c0398l5, j4, new C0136ak(Ga.F.g()), new Wm(), new C0373k5());
+public final class C0162bk implements InterfaceC0406lb {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ String f787a;
+    public final /* synthetic */ Map b;
+
+    public C0162bk(String str, Map map) {
+        this.f787a = str;
+        this.b = map;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0406lb
+    public final void a(InterfaceC0431mb interfaceC0431mb) {
+        interfaceC0431mb.reportEvent(this.f787a, this.b);
     }
 }

@@ -13,11 +13,12 @@ import ru.mrlargha.commonui.databinding.DonateBottomItemsListBinding;
 import ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateBottomItemsAdapter;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemModelUi;
 /* compiled from: DonateBottomItemsAdapter.kt */
-@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u00002\f\u0012\b\u0012\u00060\u0002R\u00020\u00000\u0001:\u0001\u001bB>\u0012\u0012\u0010\u0003\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u00040\u0004\u0012!\u0010\u0006\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0007¢\u0006\u0004\b\r\u0010\u000eJ\u001c\u0010\u0013\u001a\u00060\u0002R\u00020\u00002\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\bH\u0016J\b\u0010\u0017\u001a\u00020\bH\u0016J\u001c\u0010\u0018\u001a\u00020\f2\n\u0010\u0019\u001a\u00060\u0002R\u00020\u00002\u0006\u0010\u001a\u001a\u00020\bH\u0016R\u001d\u0010\u0003\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u00040\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R,\u0010\u0006\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBottomItemsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBottomItemsAdapter$DonateBottomItemsViewHolder;", "list", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "onClick", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "id", "", "<init>", "(Ljava/util/List;Lkotlin/jvm/functions/Function1;)V", "getList", "()Ljava/util/List;", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "getItemCount", "onBindViewHolder", "holder", "position", "DonateBottomItemsViewHolder", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u00002\f\u0012\b\u0012\u00060\u0002R\u00020\u00000\u0001:\u0001\u001eBc\u0012\u0012\u0010\u0003\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u00040\u0004\u0012!\u0010\u0006\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0007\u0012#\u0010\r\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0005¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000e\u0012\u0004\u0012\u00020\f0\u0007¢\u0006\u0004\b\u000f\u0010\u0010J\u001c\u0010\u0016\u001a\u00060\u0002R\u00020\u00002\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\bH\u0016J\b\u0010\u001a\u001a\u00020\bH\u0016J\u001c\u0010\u001b\u001a\u00020\f2\n\u0010\u001c\u001a\u00060\u0002R\u00020\u00002\u0006\u0010\u001d\u001a\u00020\bH\u0016R\u001d\u0010\u0003\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u00040\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R,\u0010\u0006\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R.\u0010\r\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0005¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000e\u0012\u0004\u0012\u00020\f0\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0014¨\u0006\u001f"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBottomItemsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBottomItemsAdapter$DonateBottomItemsViewHolder;", "list", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "onClick", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "id", "", "openDialog", "itemModel", "<init>", "(Ljava/util/List;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "getList", "()Ljava/util/List;", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "getOpenDialog", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "getItemCount", "onBindViewHolder", "holder", "position", "DonateBottomItemsViewHolder", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DonateBottomItemsAdapter extends RecyclerView.Adapter<DonateBottomItemsViewHolder> {
     private final List<List<DonateItemModelUi>> list;
     private final Function1<Integer, Unit> onClick;
+    private final Function1<DonateItemModelUi, Unit> openDialog;
 
     public final List<List<DonateItemModelUi>> getList() {
         return this.list;
@@ -27,12 +28,18 @@ public final class DonateBottomItemsAdapter extends RecyclerView.Adapter<DonateB
         return this.onClick;
     }
 
+    public final Function1<DonateItemModelUi, Unit> getOpenDialog() {
+        return this.openDialog;
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
-    public DonateBottomItemsAdapter(List<? extends List<DonateItemModelUi>> list, Function1<? super Integer, Unit> onClick) {
+    public DonateBottomItemsAdapter(List<? extends List<DonateItemModelUi>> list, Function1<? super Integer, Unit> onClick, Function1<? super DonateItemModelUi, Unit> openDialog) {
         Intrinsics.checkNotNullParameter(list, "list");
         Intrinsics.checkNotNullParameter(onClick, "onClick");
+        Intrinsics.checkNotNullParameter(openDialog, "openDialog");
         this.list = list;
         this.onClick = onClick;
+        this.openDialog = openDialog;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -75,6 +82,13 @@ public final class DonateBottomItemsAdapter extends RecyclerView.Adapter<DonateB
                     itemAdapter$lambda$0 = DonateBottomItemsAdapter.DonateBottomItemsViewHolder.itemAdapter$lambda$0(DonateBottomItemsAdapter.this, ((Integer) obj).intValue());
                     return itemAdapter$lambda$0;
                 }
+            }, new Function1() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateBottomItemsAdapter$DonateBottomItemsViewHolder$$ExternalSyntheticLambda1
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit itemAdapter$lambda$1;
+                    itemAdapter$lambda$1 = DonateBottomItemsAdapter.DonateBottomItemsViewHolder.itemAdapter$lambda$1(DonateBottomItemsAdapter.this, (DonateItemModelUi) obj);
+                    return itemAdapter$lambda$1;
+                }
             });
             this.itemAdapter = donateBottomItemAdapter;
             binding.rvBottomItems.setAdapter(donateBottomItemAdapter);
@@ -87,6 +101,12 @@ public final class DonateBottomItemsAdapter extends RecyclerView.Adapter<DonateB
         /* JADX INFO: Access modifiers changed from: private */
         public static final Unit itemAdapter$lambda$0(DonateBottomItemsAdapter donateBottomItemsAdapter, int i) {
             donateBottomItemsAdapter.getOnClick().invoke(Integer.valueOf(i));
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit itemAdapter$lambda$1(DonateBottomItemsAdapter donateBottomItemsAdapter, DonateItemModelUi donateItemModelUi) {
+            donateBottomItemsAdapter.getOpenDialog().invoke(donateItemModelUi);
             return Unit.INSTANCE;
         }
 

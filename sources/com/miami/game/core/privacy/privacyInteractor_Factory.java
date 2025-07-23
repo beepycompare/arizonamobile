@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class privacyInteractor_Factory implements Factory<privacyInteractor> {
     private final Provider<LocalRepository> localRepositoryProvider;
 
-    public privacyInteractor_Factory(Provider<LocalRepository> provider) {
+    private privacyInteractor_Factory(Provider<LocalRepository> provider) {
         this.localRepositoryProvider = provider;
     }
 

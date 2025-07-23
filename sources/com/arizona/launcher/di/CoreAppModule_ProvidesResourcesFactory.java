@@ -9,7 +9,7 @@ import dagger.internal.Provider;
 public final class CoreAppModule_ProvidesResourcesFactory implements Factory<Resources> {
     private final Provider<Context> contextProvider;
 
-    public CoreAppModule_ProvidesResourcesFactory(Provider<Context> contextProvider) {
+    private CoreAppModule_ProvidesResourcesFactory(Provider<Context> contextProvider) {
         this.contextProvider = contextProvider;
     }
 

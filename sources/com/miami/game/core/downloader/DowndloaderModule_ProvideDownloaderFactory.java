@@ -9,7 +9,7 @@ public final class DowndloaderModule_ProvideDownloaderFactory implements Factory
     private final Provider<Context> contextProvider;
     private final DowndloaderModule module;
 
-    public DowndloaderModule_ProvideDownloaderFactory(DowndloaderModule downdloaderModule, Provider<Context> provider) {
+    private DowndloaderModule_ProvideDownloaderFactory(DowndloaderModule downdloaderModule, Provider<Context> provider) {
         this.module = downdloaderModule;
         this.contextProvider = provider;
     }

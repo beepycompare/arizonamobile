@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class NewsPrefRepository_Factory implements Factory<NewsPrefRepository> {
     private final Provider<LocalRepository> localRepositoryProvider;
 
-    public NewsPrefRepository_Factory(Provider<LocalRepository> provider) {
+    private NewsPrefRepository_Factory(Provider<LocalRepository> provider) {
         this.localRepositoryProvider = provider;
     }
 

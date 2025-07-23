@@ -10,7 +10,7 @@ public final class C0109ErrorDialogComponent_Factory {
     private final Provider<Resources> resourcesProvider;
     private final Provider<ErrorDialogUiAssembler> uiAssemblerProvider;
 
-    public C0109ErrorDialogComponent_Factory(Provider<ErrorDialogUiAssembler> uiAssemblerProvider, Provider<Resources> resourcesProvider) {
+    private C0109ErrorDialogComponent_Factory(Provider<ErrorDialogUiAssembler> uiAssemblerProvider, Provider<Resources> resourcesProvider) {
         this.uiAssemblerProvider = uiAssemblerProvider;
         this.resourcesProvider = resourcesProvider;
     }

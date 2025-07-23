@@ -1,21 +1,19 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.Revenue;
 /* loaded from: classes4.dex */
 public final class Zh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Revenue f739a;
-    public final /* synthetic */ C0560ri b;
+    public final /* synthetic */ String f751a;
+    public final /* synthetic */ C0612ti b;
 
-    public Zh(C0560ri c0560ri, Revenue revenue) {
-        this.b = c0560ri;
-        this.f739a = revenue;
+    public Zh(C0612ti c0612ti, String str) {
+        this.b = c0612ti;
+        this.f751a = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0560ri c0560ri = this.b;
-        C0560ri.a(c0560ri.f1029a, c0560ri.d, c0560ri.e).reportRevenue(this.f739a);
+        C0612ti c0612ti = this.b;
+        C0612ti.a(c0612ti.f1068a, c0612ti.d, c0612ti.e).setUserProfileID(this.f751a);
     }
 }

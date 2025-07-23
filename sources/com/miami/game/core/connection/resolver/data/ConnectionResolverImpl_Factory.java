@@ -7,7 +7,7 @@ public final class ConnectionResolverImpl_Factory implements Factory<ConnectionR
     private final Provider<AvailabilityService> availabilityServiceProvider;
     private final Provider<ServersList> serversListProvider;
 
-    public ConnectionResolverImpl_Factory(Provider<AvailabilityService> provider, Provider<ServersList> provider2) {
+    private ConnectionResolverImpl_Factory(Provider<AvailabilityService> provider, Provider<ServersList> provider2) {
         this.availabilityServiceProvider = provider;
         this.serversListProvider = provider2;
     }

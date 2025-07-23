@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class DownloaderSyncDbRepository_Factory implements Factory<DownloaderSyncDbRepository> {
     private final Provider<DownloaderInfoDatabase> databaseProvider;
 
-    public DownloaderSyncDbRepository_Factory(Provider<DownloaderInfoDatabase> databaseProvider) {
+    private DownloaderSyncDbRepository_Factory(Provider<DownloaderInfoDatabase> databaseProvider) {
         this.databaseProvider = databaseProvider;
     }
 

@@ -9,10 +9,10 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
 public final class M implements J {
 
     /* renamed from: a  reason: collision with root package name */
-    public final J f525a;
+    public final J f538a;
 
     public M(J j) {
-        this.f525a = j;
+        this.f538a = j;
     }
 
     @Override // io.appmetrica.analytics.impl.J
@@ -21,8 +21,8 @@ public final class M implements J {
     }
 
     @Override // io.appmetrica.analytics.impl.J
-    public final AdTrackingInfoResult a(Context context, Qi qi) {
-        return a(new L(this, context, qi));
+    public final AdTrackingInfoResult a(Context context, Ti ti) {
+        return a(new L(this, context, ti));
     }
 
     public static AdTrackingInfoResult a(Provider provider) {

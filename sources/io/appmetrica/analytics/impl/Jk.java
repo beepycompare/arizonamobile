@@ -1,93 +1,44 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-import java.util.Arrays;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import kotlin.Pair;
+import kotlin.TuplesKt;
+import kotlin.collections.MapsKt;
+import kotlin.ranges.RangesKt;
+import kotlin.text.Charsets;
 /* loaded from: classes4.dex */
-public final class Jk extends MessageNano {
-    public static volatile Jk[] c;
-
-    /* renamed from: a  reason: collision with root package name */
-    public byte[] f495a;
-    public byte[] b;
-
-    public Jk() {
-        a();
-    }
-
-    public static Jk[] b() {
-        if (c == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (c == null) {
-                    c = new Jk[0];
-                }
-            }
-        }
-        return c;
-    }
-
-    public final Jk a() {
-        byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f495a = bArr;
-        this.b = bArr;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f495a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f495a);
-        }
-        return !Arrays.equals(this.b, bArr2) ? CodedOutputByteBufferNano.computeBytesSize(2, this.b) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f495a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f495a);
-        }
-        if (!Arrays.equals(this.b, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(2, this.b);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+public final class Jk implements ProtobufConverter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Jk mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                this.f495a = codedInputByteBufferNano.readBytes();
-            } else if (readTag != 18) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                this.b = codedInputByteBufferNano.readBytes();
-            }
+    public final Lk fromModel(Map<String, byte[]> map) {
+        Lk lk = new Lk();
+        ArrayList arrayList = new ArrayList(map.size());
+        for (Map.Entry<String, byte[]> entry : map.entrySet()) {
+            Mk mk = new Mk();
+            mk.f551a = entry.getKey().getBytes(Charsets.UTF_8);
+            mk.b = entry.getValue();
+            arrayList.add(mk);
         }
-        return this;
+        Object[] array = arrayList.toArray(new Mk[0]);
+        if (array != null) {
+            lk.f536a = (Mk[]) array;
+            return lk;
+        }
+        throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
     }
 
-    public static Jk b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new Jk().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static Jk a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (Jk) MessageNano.mergeFrom(new Jk(), bArr);
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Map<String, byte[]> toModel(Lk lk) {
+        Mk[] mkArr = lk.f536a;
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(mkArr.length), 16));
+        for (Mk mk : mkArr) {
+            Pair pair = TuplesKt.to(new String(mk.f551a, Charsets.UTF_8), mk.b);
+            linkedHashMap.put(pair.getFirst(), pair.getSecond());
+        }
+        return linkedHashMap;
     }
 }

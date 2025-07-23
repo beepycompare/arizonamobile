@@ -10,7 +10,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class Response {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f1225a;
+    private final boolean f1228a;
     private final int b;
     private final byte[] c;
     private final byte[] d;
@@ -42,16 +42,16 @@ public class Response {
     }
 
     public boolean isCompleted() {
-        return this.f1225a;
+        return this.f1228a;
     }
 
     public String toString() {
-        return "Response{completed=" + this.f1225a + ", code=" + this.b + ", responseDataLength=" + this.c.length + ", errorDataLength=" + this.d.length + ", headers=" + this.e + ", exception=" + this.f + AbstractJsonLexerKt.END_OBJ;
+        return "Response{completed=" + this.f1228a + ", code=" + this.b + ", responseDataLength=" + this.c.length + ", errorDataLength=" + this.d.length + ", headers=" + this.e + ", exception=" + this.f + AbstractJsonLexerKt.END_OBJ;
     }
 
     public Response(boolean z, int i, byte[] bArr, byte[] bArr2, Map<String, List<String>> map, Throwable th) {
         Map a2;
-        this.f1225a = z;
+        this.f1228a = z;
         this.b = i;
         this.c = bArr;
         this.d = bArr2;

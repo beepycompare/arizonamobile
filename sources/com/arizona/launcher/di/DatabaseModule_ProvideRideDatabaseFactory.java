@@ -10,7 +10,7 @@ public final class DatabaseModule_ProvideRideDatabaseFactory implements Factory<
     private final Provider<Context> appContextProvider;
     private final DatabaseModule module;
 
-    public DatabaseModule_ProvideRideDatabaseFactory(DatabaseModule module, Provider<Context> appContextProvider) {
+    private DatabaseModule_ProvideRideDatabaseFactory(DatabaseModule module, Provider<Context> appContextProvider) {
         this.module = module;
         this.appContextProvider = appContextProvider;
     }

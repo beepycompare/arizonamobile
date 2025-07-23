@@ -1,24 +1,28 @@
 package io.appmetrica.analytics.impl;
-
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public final class Gn implements InterfaceC0695x3 {
+public class Gn implements Ti {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Object f450a;
-    public final InterfaceC0695x3 b;
+    public final int f459a;
+    public final int b;
+    public int c = 0;
 
-    public Gn(Object obj, InterfaceC0695x3 interfaceC0695x3) {
-        this.f450a = obj;
-        this.b = interfaceC0695x3;
+    public Gn(int i, int i2) {
+        this.f459a = i;
+        this.b = i2;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x3
-    public final int getBytesTruncated() {
-        return this.b.getBytesTruncated();
+    public final int a() {
+        return this.b;
     }
 
-    public final String toString() {
-        return "TrimmingResult{value=" + this.f450a + ", metaInfo=" + this.b + AbstractJsonLexerKt.END_OBJ;
+    public final boolean b() {
+        int i = this.c;
+        this.c = i + 1;
+        return i < this.f459a;
+    }
+
+    public final void c() {
+        this.c = 0;
     }
 }

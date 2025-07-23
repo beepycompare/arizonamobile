@@ -1,15 +1,33 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.Map;
+import kotlin.collections.CollectionsKt;
+import kotlin.text.Charsets;
 /* loaded from: classes4.dex */
-public final class Da implements InterfaceC0308he {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0308he
-    public final C0651v9 a(Integer num, String str) {
-        C0651v9 c0651v9 = new C0651v9();
-        if (num != null) {
-            c0651v9.f1089a = num.intValue();
+public final class Da implements InterfaceC0331ia {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final C0177c9 f394a = new C0177c9();
+
+    public final C0703x9[] a(byte[] bArr) {
+        int i = 0;
+        if (bArr != null) {
+            Map<String, byte[]> model = this.f394a.toModel(bArr);
+            C0703x9[] c0703x9Arr = new C0703x9[model.size()];
+            for (Object obj : model.entrySet()) {
+                int i2 = i + 1;
+                if (i < 0) {
+                    CollectionsKt.throwIndexOverflow();
+                }
+                Map.Entry entry = (Map.Entry) obj;
+                C0703x9 c0703x9 = new C0703x9();
+                c0703x9.f1134a = ((String) entry.getKey()).getBytes(Charsets.UTF_8);
+                c0703x9.b = (byte[]) entry.getValue();
+                c0703x9Arr[i] = c0703x9;
+                i = i2;
+            }
+            return c0703x9Arr;
         }
-        if (str != null) {
-            c0651v9.b = str;
-        }
-        return c0651v9;
+        return new C0703x9[0];
     }
 }

@@ -9,7 +9,7 @@ public final class LauncherDBModule_ProvideDownloaderInfoDatabaseFactory impleme
     private final Provider<Context> contextProvider;
     private final LauncherDBModule module;
 
-    public LauncherDBModule_ProvideDownloaderInfoDatabaseFactory(LauncherDBModule module, Provider<Context> contextProvider) {
+    private LauncherDBModule_ProvideDownloaderInfoDatabaseFactory(LauncherDBModule module, Provider<Context> contextProvider) {
         this.module = module;
         this.contextProvider = contextProvider;
     }

@@ -1,24 +1,11 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import java.util.List;
+import android.content.Context;
 /* loaded from: classes4.dex */
-public final class Rh implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f612a;
-    public final /* synthetic */ List b;
-    public final /* synthetic */ C0560ri c;
-
-    public Rh(C0560ri c0560ri, String str, List list) {
-        this.c = c0560ri;
-        this.f612a = str;
-        this.b = list;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        C0560ri c0560ri = this.c;
-        C0560ri.a(c0560ri.f1029a, c0560ri.d, c0560ri.e).reportEvent(this.f612a, CollectionUtils.getMapFromList(this.b));
+public final class Rh implements InterfaceC0599t5 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0599t5
+    /* renamed from: b */
+    public final Qh a(Context context, C0400l5 c0400l5, J4 j4, Bm bm) {
+        return new Qh(context, c0400l5, j4, Ia.F.g(), bm.e(), new Sg(bm), new C0375k5());
     }
 }

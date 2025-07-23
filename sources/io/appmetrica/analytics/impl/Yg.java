@@ -1,15 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.List;
 /* loaded from: classes4.dex */
-public final class Yg extends Ha {
-    public Yg(Bi bi) {
-        super(bi);
+public final class Yg extends AbstractC0236eh {
+    public Yg(C0574s5 c0574s5) {
+        super(c0574s5);
     }
 
-    @Override // io.appmetrica.analytics.impl.Ha
-    public final void a(List<AbstractC0185ch> list) {
-        list.add(this.f459a.l);
-        list.add(this.f459a.b);
+    @Override // io.appmetrica.analytics.impl.AbstractC0236eh
+    public final boolean a(C0401l6 c0401l6) {
+        this.f831a.d();
+        return false;
     }
 }

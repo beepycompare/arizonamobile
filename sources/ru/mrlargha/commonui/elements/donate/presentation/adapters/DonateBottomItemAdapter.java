@@ -1,8 +1,10 @@
 package ru.mrlargha.commonui.elements.donate.presentation.adapters;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +36,7 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemType;
 import ru.mrlargha.commonui.elements.donate.utils.CustomGridLayoutManager;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 /* compiled from: DonateBottomItemAdapter.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \u00172\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002\u0016\u0017B*\u0012!\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0005¢\u0006\u0004\b\u000b\u0010\fJ\u001c\u0010\u000f\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0006H\u0016J\u001c\u0010\u0013\u001a\u00020\n2\n\u0010\u0014\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0015\u001a\u00020\u0006H\u0016R,\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u0018"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBottomItemAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBottomItemAdapter$DonateBottomItemViewHolder;", "onClick", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "id", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "DonateBottomItemViewHolder", "Companion", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \u001a2\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002\u0019\u001aBO\u0012!\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0005\u0012#\u0010\u000b\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0002¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\f\u0012\u0004\u0012\u00020\n0\u0005¢\u0006\u0004\b\r\u0010\u000eJ\u001c\u0010\u0012\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0006H\u0016J\u001c\u0010\u0016\u001a\u00020\n2\n\u0010\u0017\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0018\u001a\u00020\u0006H\u0016R,\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R.\u0010\u000b\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0002¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\f\u0012\u0004\u0012\u00020\n0\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0010¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBottomItemAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBottomItemAdapter$DonateBottomItemViewHolder;", "onClick", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "id", "", "openDialog", "itemModel", "<init>", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "getOpenDialog", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "DonateBottomItemViewHolder", "Companion", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DonateBottomItemAdapter extends ListAdapter<DonateItemModelUi, DonateBottomItemViewHolder> {
     public static final Companion Companion = new Companion(null);
@@ -54,17 +56,24 @@ public final class DonateBottomItemAdapter extends ListAdapter<DonateItemModelUi
         }
     };
     private final Function1<Integer, Unit> onClick;
+    private final Function1<DonateItemModelUi, Unit> openDialog;
 
     public final Function1<Integer, Unit> getOnClick() {
         return this.onClick;
     }
 
+    public final Function1<DonateItemModelUi, Unit> getOpenDialog() {
+        return this.openDialog;
+    }
+
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
-    public DonateBottomItemAdapter(Function1<? super Integer, Unit> onClick) {
+    public DonateBottomItemAdapter(Function1<? super Integer, Unit> onClick, Function1<? super DonateItemModelUi, Unit> openDialog) {
         super(diffUtilCallback);
         Intrinsics.checkNotNullParameter(onClick, "onClick");
+        Intrinsics.checkNotNullParameter(openDialog, "openDialog");
         this.onClick = onClick;
+        this.openDialog = openDialog;
     }
 
     /* compiled from: DonateBottomItemAdapter.kt */
@@ -159,18 +168,24 @@ public final class DonateBottomItemAdapter extends ListAdapter<DonateItemModelUi
             donateDefaultItemBinding.btnBuy.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateBottomItemAdapter$DonateBottomItemViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DonateBottomItemAdapter.DonateBottomItemViewHolder.initItem$lambda$1$lambda$0(DonateBottomItemAdapter.this, donateItemModelUi, view);
+                    DonateBottomItemAdapter.DonateBottomItemViewHolder.initItem$lambda$1$lambda$0(DonateItemModelUi.this, donateBottomItemAdapter, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void initItem$lambda$1$lambda$0(DonateBottomItemAdapter donateBottomItemAdapter, DonateItemModelUi donateItemModelUi, View view) {
-            donateBottomItemAdapter.getOnClick().invoke(Integer.valueOf(donateItemModelUi.getId()));
+        public static final void initItem$lambda$1$lambda$0(DonateItemModelUi donateItemModelUi, DonateBottomItemAdapter donateBottomItemAdapter, View view) {
+            if (donateItemModelUi.getItemType() == DonateItemType.RATE) {
+                donateBottomItemAdapter.getOpenDialog().invoke(null);
+            } else if (donateItemModelUi.getItemType() == DonateItemType.EXP) {
+                donateBottomItemAdapter.getOpenDialog().invoke(donateItemModelUi);
+            } else {
+                donateBottomItemAdapter.getOnClick().invoke(Integer.valueOf(donateItemModelUi.getId()));
+            }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:9:0x0060, code lost:
-            if (r9.getTextGradientColor().size() > 1) goto L10;
+        /* JADX WARN: Code restructure failed: missing block: B:13:0x00fb, code lost:
+            if (r10.getTextGradientColor().size() > 1) goto L14;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -188,29 +203,53 @@ public final class DonateBottomItemAdapter extends ListAdapter<DonateItemModelUi
                 TextView tvName = donateDefaultItemBinding.tvName;
                 Intrinsics.checkNotNullExpressionValue(tvName, "tvName");
                 tvName.setVisibility(8);
+                ImageView ivRateAz = donateDefaultItemBinding.ivRateAz;
+                Intrinsics.checkNotNullExpressionValue(ivRateAz, "ivRateAz");
+                ivRateAz.setVisibility(0);
+                donateDefaultItemBinding.ivAzCoinIc.setImageResource(R.drawable.ic_dollar);
+                donateDefaultItemBinding.ivAzCoinIc.setImageTintList(ColorStateList.valueOf(Color.parseColor("#CCFFFFFF")));
+                Log.d(DonateUtilsKt.DONATE_TAG, "updateItem:  " + donateItemModelUi.getTotalEarnings());
                 donateDefaultItemBinding.tvAzCoins.setText(String.valueOf(donateItemModelUi.getTotalEarnings()));
-                return;
+                donateDefaultItemBinding.tvMoney.setText("1");
+            } else if (donateItemModelUi.getItemType() == DonateItemType.EXP) {
+                LinearLayout rateContainer2 = donateDefaultItemBinding.rateContainer;
+                Intrinsics.checkNotNullExpressionValue(rateContainer2, "rateContainer");
+                rateContainer2.setVisibility(0);
+                LinearLayout gradientTextContainer2 = donateDefaultItemBinding.gradientTextContainer;
+                Intrinsics.checkNotNullExpressionValue(gradientTextContainer2, "gradientTextContainer");
+                gradientTextContainer2.setVisibility(8);
+                TextView tvName2 = donateDefaultItemBinding.tvName;
+                Intrinsics.checkNotNullExpressionValue(tvName2, "tvName");
+                tvName2.setVisibility(8);
+                ImageView ivRateAz2 = donateDefaultItemBinding.ivRateAz;
+                Intrinsics.checkNotNullExpressionValue(ivRateAz2, "ivRateAz");
+                ivRateAz2.setVisibility(8);
+                donateDefaultItemBinding.ivAzCoinIc.setImageResource(R.drawable.ic_az_coins);
+                donateDefaultItemBinding.ivAzCoinIc.setImageTintList(null);
+                donateDefaultItemBinding.tvAzCoins.setText(String.valueOf(donateItemModelUi.getTotalEarnings()));
+                donateDefaultItemBinding.tvMoney.setText("1 exp");
+            } else {
+                LinearLayout rateContainer3 = donateDefaultItemBinding.rateContainer;
+                Intrinsics.checkNotNullExpressionValue(rateContainer3, "rateContainer");
+                rateContainer3.setVisibility(8);
+                if (!donateItemModelUi.getTextGradientColor().isEmpty()) {
+                    z = true;
+                }
+                z = false;
+                LinearLayout gradientTextContainer3 = donateDefaultItemBinding.gradientTextContainer;
+                Intrinsics.checkNotNullExpressionValue(gradientTextContainer3, "gradientTextContainer");
+                gradientTextContainer3.setVisibility(z ? 0 : 8);
+                TextView tvName3 = donateDefaultItemBinding.tvName;
+                Intrinsics.checkNotNullExpressionValue(tvName3, "tvName");
+                tvName3.setVisibility(z ? 8 : 0);
+                if (z) {
+                    donateDefaultItemBinding.tvSecondTitle.setColorList(DonateUtilsKt.convertColorList(donateItemModelUi.getTextGradientColor()));
+                    donateDefaultItemBinding.tvFirstTitle.setText(DonateUtilsKt.splitOnPart(donateItemModelUi.getName()).getFirst());
+                    donateDefaultItemBinding.tvSecondTitle.setText(DonateUtilsKt.splitOnPart(donateItemModelUi.getName()).getSecond());
+                    return;
+                }
+                donateDefaultItemBinding.tvName.setText(donateItemModelUi.getName());
             }
-            LinearLayout rateContainer2 = donateDefaultItemBinding.rateContainer;
-            Intrinsics.checkNotNullExpressionValue(rateContainer2, "rateContainer");
-            rateContainer2.setVisibility(8);
-            if (!donateItemModelUi.getTextGradientColor().isEmpty()) {
-                z = true;
-            }
-            z = false;
-            LinearLayout gradientTextContainer2 = donateDefaultItemBinding.gradientTextContainer;
-            Intrinsics.checkNotNullExpressionValue(gradientTextContainer2, "gradientTextContainer");
-            gradientTextContainer2.setVisibility(z ? 0 : 8);
-            TextView tvName2 = donateDefaultItemBinding.tvName;
-            Intrinsics.checkNotNullExpressionValue(tvName2, "tvName");
-            tvName2.setVisibility(z ? 8 : 0);
-            if (z) {
-                donateDefaultItemBinding.tvSecondTitle.setColorList(DonateUtilsKt.convertColorList(donateItemModelUi.getTextGradientColor()));
-                donateDefaultItemBinding.tvFirstTitle.setText(DonateUtilsKt.splitOnPart(donateItemModelUi.getName()).getFirst());
-                donateDefaultItemBinding.tvSecondTitle.setText(DonateUtilsKt.splitOnPart(donateItemModelUi.getName()).getSecond());
-                return;
-            }
-            donateDefaultItemBinding.tvName.setText(donateItemModelUi.getName());
         }
 
         private final Unit setImageInfo(DonateItemModelUi donateItemModelUi) {
@@ -229,11 +268,22 @@ public final class DonateBottomItemAdapter extends ListAdapter<DonateItemModelUi
             return null;
         }
 
-        private final void rvInit(List<DonateBadgesModelUi> list) {
-            DonateDefaultItemBinding donateDefaultItemBinding = this.binding;
-            donateDefaultItemBinding.rvTags.setLayoutManager(new CustomGridLayoutManager());
-            donateDefaultItemBinding.rvTags.setAdapter(this.badgesAdapter);
-            this.badgesAdapter.submitList(list);
+        private final void rvInit(final List<DonateBadgesModelUi> list) {
+            final DonateDefaultItemBinding donateDefaultItemBinding = this.binding;
+            donateDefaultItemBinding.rvTags.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateBottomItemAdapter$DonateBottomItemViewHolder$rvInit$1$1
+                @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+                public void onGlobalLayout() {
+                    DonateBadgesAdapter donateBadgesAdapter;
+                    DonateBadgesAdapter donateBadgesAdapter2;
+                    DonateDefaultItemBinding.this.rvTags.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    DonateDefaultItemBinding.this.rvTags.setLayoutManager(new CustomGridLayoutManager());
+                    RecyclerView recyclerView = DonateDefaultItemBinding.this.rvTags;
+                    donateBadgesAdapter = this.badgesAdapter;
+                    recyclerView.setAdapter(donateBadgesAdapter);
+                    donateBadgesAdapter2 = this.badgesAdapter;
+                    donateBadgesAdapter2.submitList(list);
+                }
+            });
         }
 
         private final void setButtonTitle(DonateItemModelUi donateItemModelUi) {
@@ -255,7 +305,7 @@ public final class DonateBottomItemAdapter extends ListAdapter<DonateItemModelUi
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonateDefaultItemBinding donateDefaultItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m10603getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m10607getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donateDefaultItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");

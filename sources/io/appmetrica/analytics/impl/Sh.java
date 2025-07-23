@@ -1,21 +1,47 @@
 package io.appmetrica.analytics.impl;
+
+import android.os.Bundle;
+import io.appmetrica.analytics.internal.CounterConfiguration;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Sh implements Runnable {
+public class Sh extends C0198d4 {
+    protected W8 c;
+    protected If d;
+    public boolean e;
+    public String f;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f628a;
-    public final /* synthetic */ Throwable b;
-    public final /* synthetic */ C0560ri c;
-
-    public Sh(C0560ri c0560ri, String str, Throwable th) {
-        this.c = c0560ri;
-        this.f628a = str;
-        this.b = th;
+    public Sh(Pf pf, CounterConfiguration counterConfiguration, W8 w8) {
+        this(pf, counterConfiguration, w8, null);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        C0560ri c0560ri = this.c;
-        C0560ri.a(c0560ri.f1029a, c0560ri.d, c0560ri.e).reportError(this.f628a, this.b);
+    public final Bundle c() {
+        Bundle bundle = new Bundle();
+        this.b.toBundle(bundle);
+        Pf pf = this.f811a;
+        synchronized (pf) {
+            bundle.putParcelable("PROCESS_CFG_OBJ", pf);
+        }
+        return bundle;
+    }
+
+    public final synchronized String d() {
+        W8 w8;
+        w8 = this.c;
+        return w8.f698a.isEmpty() ? null : new JSONObject(w8.f698a).toString();
+    }
+
+    public final synchronized String e() {
+        return this.f;
+    }
+
+    public boolean f() {
+        return this.e;
+    }
+
+    public Sh(Pf pf, CounterConfiguration counterConfiguration, W8 w8, String str) {
+        super(pf, counterConfiguration);
+        this.e = true;
+        this.f = str;
+        this.c = w8;
     }
 }

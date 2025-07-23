@@ -1,27 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.ReporterConfig;
+import io.appmetrica.analytics.ecommerce.ECommerceEvent;
 /* renamed from: io.appmetrica.analytics.impl.ei  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
 public final class RunnableC0237ei implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ReporterConfig f823a;
-    public final /* synthetic */ C0560ri b;
+    public final /* synthetic */ ECommerceEvent f832a;
+    public final /* synthetic */ C0612ti b;
 
-    public RunnableC0237ei(C0560ri c0560ri, ReporterConfig reporterConfig) {
-        this.b = c0560ri;
-        this.f823a = reporterConfig;
+    public RunnableC0237ei(C0612ti c0612ti, ECommerceEvent eCommerceEvent) {
+        this.b = c0612ti;
+        this.f832a = eCommerceEvent;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0560ri c0560ri = this.b;
-        ReporterConfig reporterConfig = this.f823a;
-        C0617u0 c0617u0 = c0560ri.f1029a;
-        Context context = c0560ri.d;
-        c0617u0.getClass();
-        C0592t0.a(context).f().a(reporterConfig);
+        C0612ti c0612ti = this.b;
+        C0612ti.a(c0612ti.f1068a, c0612ti.d, c0612ti.e).reportECommerce(this.f832a);
     }
 }

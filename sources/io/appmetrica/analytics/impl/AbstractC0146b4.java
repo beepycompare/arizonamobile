@@ -13,6 +13,6 @@ public abstract class AbstractC0146b4 {
                 return clientComponentsInitializer;
             }
         }
-        return new U7();
+        return new X7();
     }
 }

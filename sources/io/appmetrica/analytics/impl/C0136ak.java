@@ -1,15 +1,19 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* renamed from: io.appmetrica.analytics.impl.ak  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0136ak extends AbstractC0559rh {
-    public C0136ak(W6 w6) {
-        super(w6);
+public final class C0136ak implements InterfaceC0406lb {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ String f772a;
+    public final /* synthetic */ String b;
+
+    public C0136ak(String str, String str2) {
+        this.f772a = str;
+        this.b = str2;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0559rh, io.appmetrica.analytics.impl.InterfaceC0584sh
-    public final boolean a(Boolean bool) {
-        return !this.f1028a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
+    @Override // io.appmetrica.analytics.impl.InterfaceC0406lb
+    public final void a(InterfaceC0431mb interfaceC0431mb) {
+        interfaceC0431mb.reportEvent(this.f772a, this.b);
     }
 }

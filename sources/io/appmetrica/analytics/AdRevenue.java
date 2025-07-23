@@ -1,7 +1,7 @@
 package io.appmetrica.analytics;
 
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.fo;
+import io.appmetrica.analytics.impl.io;
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.Map;
@@ -109,10 +109,10 @@ public class AdRevenue {
     }
 
     public static Builder newBuilder(long j, Currency currency) {
-        return new Builder(fo.a(j), currency, 0);
+        return new Builder(io.a(j), currency, 0);
     }
 
     public static Builder newBuilder(double d, Currency currency) {
-        return new Builder(new BigDecimal(fo.a(d)), currency, 0);
+        return new Builder(new BigDecimal(io.a(d)), currency, 0);
     }
 }

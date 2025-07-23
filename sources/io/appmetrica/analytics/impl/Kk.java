@@ -1,25 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import android.content.Context;
+import java.util.Map;
+import kotlin.collections.MapsKt;
 /* loaded from: classes4.dex */
-public final class Kk extends Q2 {
-    @Override // io.appmetrica.analytics.impl.Q2
-    public final MessageNano a() {
-        return new Ik();
-    }
+public final class Kk {
 
-    public final Ik b() {
-        return new Ik();
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public final Ok f525a;
+    public final Map b;
 
-    @Override // io.appmetrica.analytics.impl.Q2, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final Object defaultValue() {
-        return new Ik();
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    /* renamed from: a */
-    public final Ik toState(byte[] bArr) {
-        return (Ik) MessageNano.mergeFrom(new Ik(), bArr);
+    public Kk(Context context, C0400l5 c0400l5) {
+        c0400l5.a();
+        Ok ok = new Ok(context, c0400l5);
+        this.f525a = ok;
+        this.b = MapsKt.toMutableMap(ok.a());
     }
 }

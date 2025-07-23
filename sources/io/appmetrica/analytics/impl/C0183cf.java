@@ -1,15 +1,45 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.backport.Provider;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.plugins.IPluginReporter;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import java.util.Collection;
 /* renamed from: io.appmetrica.analytics.impl.cf  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0183cf {
+public final class C0183cf implements IPluginReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0318i f785a;
-    public final C0740yn b = new C0740yn(new C0482oe("Error details"));
-    public final C0740yn c = new C0740yn(new C0432me("Error identifier"));
-    public final C0407le d = new C0407le("Stacktrace");
+    public final C0260ff f797a = new C0260ff();
+    public final C0286gf b = new C0286gf();
+    public final IHandlerExecutor c = C0698x4.l().g().a();
+    public final Provider d;
 
-    public C0183cf(C0617u0 c0617u0) {
-        this.f785a = new C0318i(c0617u0);
+    public C0183cf(Provider<InterfaceC0431mb> provider) {
+        this.d = provider;
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
+        C0260ff c0260ff = this.f797a;
+        c0260ff.f847a.a(pluginErrorDetails);
+        if (c0260ff.c.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f975a) {
+            this.b.getClass();
+            this.c.execute(new RunnableC0131af(this, pluginErrorDetails, str));
+        }
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
+        this.f797a.f847a.a(pluginErrorDetails);
+        this.b.getClass();
+        this.c.execute(new Ze(this, pluginErrorDetails));
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
+        this.f797a.b.a(str);
+        this.b.getClass();
+        this.c.execute(new RunnableC0157bf(this, str, str2, pluginErrorDetails));
     }
 }

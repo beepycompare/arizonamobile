@@ -4,7 +4,7 @@ package kotlin;
 /* loaded from: classes5.dex */
 public final class CharCodeJVMKt {
     /* renamed from: Char-xj2QHRw  reason: not valid java name */
-    private static final char m8467Charxj2QHRw(short s) {
+    private static final char m8470Charxj2QHRw(short s) {
         return (char) (s & UShort.MAX_VALUE);
     }
 }

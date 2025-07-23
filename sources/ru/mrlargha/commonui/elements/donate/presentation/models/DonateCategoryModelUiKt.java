@@ -11,8 +11,9 @@ public final class DonateCategoryModelUiKt {
     public static final DonateCategoryModelUi toUi(DonateCategoryModel donateCategoryModel) {
         boolean z;
         boolean z2;
-        int i;
         boolean z3;
+        int i;
+        boolean z4;
         Intrinsics.checkNotNullParameter(donateCategoryModel, "<this>");
         int key = donateCategoryModel.getKey();
         String name = donateCategoryModel.getName();
@@ -20,28 +21,33 @@ public final class DonateCategoryModelUiKt {
         String hoverColor = donateCategoryModel.getHoverColor();
         int image = donateCategoryModel.getImage();
         int backgroundImage = donateCategoryModel.getBackgroundImage();
-        boolean z4 = false;
-        boolean z5 = true;
+        boolean z5 = false;
+        boolean z6 = true;
         if (donateCategoryModel.isNew() == 1) {
             z = false;
-            z4 = true;
+            z5 = true;
         } else {
             z = false;
         }
         if (donateCategoryModel.getVisible() == 1) {
-            z2 = 1;
+            z2 = true;
         } else {
-            z2 = 1;
-            z5 = z;
+            z2 = true;
+            z6 = z;
         }
         int gridTemplateType = donateCategoryModel.getGridTemplateType();
         if (donateCategoryModel.isActionCategory() == z2) {
             z3 = z2;
             i = gridTemplateType;
+            z4 = z3;
         } else {
+            z3 = z2;
             i = gridTemplateType;
+            z4 = z;
+        }
+        if (donateCategoryModel.isLimitCategory() != z3) {
             z3 = z;
         }
-        return new DonateCategoryModelUi(key, name, borderColor, hoverColor, image, backgroundImage, z4, z5, i, z3);
+        return new DonateCategoryModelUi(key, name, borderColor, hoverColor, image, backgroundImage, z5, z6, i, z4, z3);
     }
 }

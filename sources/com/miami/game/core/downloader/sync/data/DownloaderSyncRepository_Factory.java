@@ -9,7 +9,7 @@ public final class DownloaderSyncRepository_Factory implements Factory<Downloade
     private final Provider<DownloaderSyncApiRepository> apiRepositoryProvider;
     private final Provider<DownloaderSyncDbRepository> dbRepositoryProvider;
 
-    public DownloaderSyncRepository_Factory(Provider<DownloaderSyncApiRepository> apiRepositoryProvider, Provider<DownloaderSyncDbRepository> dbRepositoryProvider) {
+    private DownloaderSyncRepository_Factory(Provider<DownloaderSyncApiRepository> apiRepositoryProvider, Provider<DownloaderSyncDbRepository> dbRepositoryProvider) {
         this.apiRepositoryProvider = apiRepositoryProvider;
         this.dbRepositoryProvider = dbRepositoryProvider;
     }

@@ -1,7 +1,15 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Y9 extends N2 {
-    public Y9(int i, String str) {
-        super(Z9.a(i, str));
+public final class Y9 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final X9 f731a;
+
+    public Y9(X9 x9) {
+        this.f731a = x9;
+    }
+
+    public Y9() {
+        this(new X9());
     }
 }

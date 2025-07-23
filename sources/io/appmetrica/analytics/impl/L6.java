@@ -1,15 +1,16 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.crypto.CryptoProvider;
+import io.appmetrica.analytics.coreapi.internal.crypto.Encrypter;
+import io.appmetrica.analytics.coreutils.internal.encryption.AESRSAEncrypter;
 /* loaded from: classes4.dex */
-public final class L6 {
+public final class L6 implements CryptoProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final mo f514a;
-    public final InterfaceC0495p2 b;
-    public final String c;
+    public final AESRSAEncrypter f528a = new AESRSAEncrypter();
 
-    public L6(String str, mo moVar, InterfaceC0495p2 interfaceC0495p2) {
-        this.c = str;
-        this.f514a = moVar;
-        this.b = interfaceC0495p2;
+    @Override // io.appmetrica.analytics.coreapi.internal.crypto.CryptoProvider
+    public final Encrypter getAesRsaEncrypter() {
+        return this.f528a;
     }
 }

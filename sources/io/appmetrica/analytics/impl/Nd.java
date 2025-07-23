@@ -1,61 +1,53 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public abstract class Nd implements Yn, InterfaceC0470o2 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f553a;
-    public final int b;
-    public final mo c;
-    public final W2 d;
-    public PublicLogger e = PublicLogger.getAnonymousInstance();
-
-    public Nd(int i, String str, mo moVar, W2 w2) {
-        this.b = i;
-        this.f553a = str;
-        this.c = moVar;
-        this.d = w2;
+public abstract class Nd extends AbstractC0410lf implements InterfaceC0640ul {
+    public Nd(InterfaceC0179cb interfaceC0179cb, String str) {
+        super(interfaceC0179cb, str);
     }
 
-    public final Zn a() {
-        Zn zn = new Zn();
-        zn.b = this.b;
-        zn.f745a = this.f553a.getBytes();
-        zn.d = new C0166bo();
-        zn.c = new C0140ao();
-        return zn;
+    public final String c(String str, String str2) {
+        return this.f938a.getString(f(str), str2);
     }
 
-    @Override // io.appmetrica.analytics.impl.Yn
-    public abstract /* synthetic */ void a(Xn xn);
-
-    public final W2 b() {
-        return this.d;
+    public final InterfaceC0640ul d(String str, String str2) {
+        return (InterfaceC0640ul) b(f(str), str2);
     }
 
-    public final String c() {
-        return this.f553a;
+    public final boolean e(String str) {
+        return this.f938a.a(f(str));
     }
 
-    public final mo d() {
-        return this.c;
+    public abstract String f(String str);
+
+    public InterfaceC0640ul g(String str) {
+        return (InterfaceC0640ul) d(f(str));
     }
 
-    public final int e() {
-        return this.b;
+    public Nd(InterfaceC0179cb interfaceC0179cb) {
+        this(interfaceC0179cb, null);
     }
 
-    public final boolean f() {
-        ko a2 = this.c.a(this.f553a);
-        if (a2.f913a) {
-            return true;
-        }
-        this.e.warning("Attribute " + this.f553a + " of type " + ((String) In.f482a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
-        return false;
+    public final InterfaceC0640ul d(String str, int i) {
+        return (InterfaceC0640ul) b(f(str), i);
     }
 
-    public final void a(PublicLogger publicLogger) {
-        this.e = publicLogger;
+    public final int c(String str, int i) {
+        return this.f938a.getInt(f(str), i);
+    }
+
+    public final InterfaceC0640ul d(String str, long j) {
+        return (InterfaceC0640ul) b(f(str), j);
+    }
+
+    public final InterfaceC0640ul d(String str, boolean z) {
+        return (InterfaceC0640ul) b(f(str), z);
+    }
+
+    public final long c(String str, long j) {
+        return this.f938a.getLong(f(str), j);
+    }
+
+    public final boolean c(String str, boolean z) {
+        return this.f938a.getBoolean(f(str), z);
     }
 }

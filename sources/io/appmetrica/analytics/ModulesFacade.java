@@ -1,15 +1,15 @@
 package io.appmetrica.analytics;
 
 import android.content.Context;
-import io.appmetrica.analytics.impl.AbstractC0735yi;
 import io.appmetrica.analytics.impl.Ad;
+import io.appmetrica.analytics.impl.Ai;
 import io.appmetrica.analytics.impl.Bd;
-import io.appmetrica.analytics.impl.C0592t0;
-import io.appmetrica.analytics.impl.C0630ud;
-import io.appmetrica.analytics.impl.C0680wd;
-import io.appmetrica.analytics.impl.C0705xd;
-import io.appmetrica.analytics.impl.C0730yd;
-import io.appmetrica.analytics.impl.C0755zd;
+import io.appmetrica.analytics.impl.C0594t0;
+import io.appmetrica.analytics.impl.C0682wd;
+import io.appmetrica.analytics.impl.C0732yd;
+import io.appmetrica.analytics.impl.C0757zd;
+import io.appmetrica.analytics.impl.Cd;
+import io.appmetrica.analytics.impl.Dd;
 /* loaded from: classes4.dex */
 public final class ModulesFacade {
     public static final int EXTERNAL_ATTRIBUTION_ADJUST = 2;
@@ -20,25 +20,25 @@ public final class ModulesFacade {
     public static final int EXTERNAL_ATTRIBUTION_TENJIN = 4;
 
     /* renamed from: a  reason: collision with root package name */
-    private static Bd f201a = new Bd();
+    private static Dd f201a = new Dd();
 
     public static IModuleReporter getModuleReporter(Context context, String str) {
-        Bd bd = f201a;
-        C0630ud c0630ud = bd.b;
-        c0630ud.b.a(context);
-        c0630ud.d.a(str);
-        bd.c.f462a.a(context.getApplicationContext().getApplicationContext());
-        return AbstractC0735yi.f1148a.a(context.getApplicationContext(), str);
+        Dd dd = f201a;
+        C0682wd c0682wd = dd.b;
+        c0682wd.b.a(context);
+        c0682wd.d.a(str);
+        dd.c.f506a.a(context.getApplicationContext().getApplicationContext());
+        return Ai.f340a.a(context.getApplicationContext(), str);
     }
 
     public static boolean isActivatedForApp() {
         boolean z;
-        Bd bd = f201a;
-        bd.b.getClass();
-        bd.c.getClass();
-        bd.f355a.getClass();
-        synchronized (C0592t0.class) {
-            z = C0592t0.f;
+        Dd dd = f201a;
+        dd.b.getClass();
+        dd.c.getClass();
+        dd.f396a.getClass();
+        synchronized (C0594t0.class) {
+            z = C0594t0.f;
         }
         return z;
     }
@@ -48,49 +48,49 @@ public final class ModulesFacade {
     }
 
     public static void reportEvent(ModuleEvent moduleEvent) {
-        Bd bd = f201a;
-        bd.b.f1076a.a(null);
-        bd.c.getClass();
-        bd.d.execute(new C0705xd(bd, moduleEvent));
+        Dd dd = f201a;
+        dd.b.f1121a.a(null);
+        dd.c.getClass();
+        dd.d.execute(new C0757zd(dd, moduleEvent));
     }
 
     public static void reportExternalAttribution(int i, String str) {
-        Bd bd = f201a;
-        bd.b.getClass();
-        bd.c.getClass();
-        bd.d.execute(new C0730yd(bd, i, str));
+        Dd dd = f201a;
+        dd.b.getClass();
+        dd.c.getClass();
+        dd.d.execute(new Ad(dd, i, str));
     }
 
     public static void sendEventsBuffer() {
-        Bd bd = f201a;
-        bd.b.getClass();
-        bd.c.getClass();
+        Dd dd = f201a;
+        dd.b.getClass();
+        dd.c.getClass();
         AppMetrica.sendEventsBuffer();
     }
 
     public static void setAdvIdentifiersTracking(boolean z) {
-        Bd bd = f201a;
-        bd.b.getClass();
-        bd.c.getClass();
-        bd.d.execute(new C0755zd(bd, z));
+        Dd dd = f201a;
+        dd.b.getClass();
+        dd.c.getClass();
+        dd.d.execute(new Bd(dd, z));
     }
 
-    public static void setProxy(Bd bd) {
-        f201a = bd;
+    public static void setProxy(Dd dd) {
+        f201a = dd;
     }
 
     public static void setSessionExtra(String str, byte[] bArr) {
-        Bd bd = f201a;
-        bd.b.c.a(str);
-        bd.c.getClass();
-        bd.d.execute(new Ad(bd, str, bArr));
+        Dd dd = f201a;
+        dd.b.c.a(str);
+        dd.c.getClass();
+        dd.d.execute(new Cd(dd, str, bArr));
     }
 
     public static void reportAdRevenue(AdRevenue adRevenue, Boolean bool) {
-        Bd bd = f201a;
+        Dd dd = f201a;
         boolean booleanValue = bool.booleanValue();
-        bd.b.getClass();
-        bd.c.getClass();
-        bd.d.execute(new C0680wd(bd, adRevenue, booleanValue));
+        dd.b.getClass();
+        dd.c.getClass();
+        dd.d.execute(new C0732yd(dd, adRevenue, booleanValue));
     }
 }

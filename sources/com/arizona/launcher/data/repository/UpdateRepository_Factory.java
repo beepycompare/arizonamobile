@@ -7,7 +7,7 @@ public final class UpdateRepository_Factory implements Factory<UpdateRepository>
     private final Provider<SecondaryUpdateApi> secondaryUpdateApiProvider;
     private final Provider<UpdateApi> updateApiProvider;
 
-    public UpdateRepository_Factory(Provider<UpdateApi> updateApiProvider, Provider<SecondaryUpdateApi> secondaryUpdateApiProvider) {
+    private UpdateRepository_Factory(Provider<UpdateApi> updateApiProvider, Provider<SecondaryUpdateApi> secondaryUpdateApiProvider) {
         this.updateApiProvider = updateApiProvider;
         this.secondaryUpdateApiProvider = secondaryUpdateApiProvider;
     }

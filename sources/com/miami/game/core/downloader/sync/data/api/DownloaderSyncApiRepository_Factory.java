@@ -11,7 +11,7 @@ public final class DownloaderSyncApiRepository_Factory implements Factory<Downlo
     private final Provider<Downloader> downloaderProvider;
     private final Provider<Files> filesProvider;
 
-    public DownloaderSyncApiRepository_Factory(Provider<Downloader> downloaderProvider, Provider<ConnectionResolver> connectionResolverProvider, Provider<Files> filesProvider) {
+    private DownloaderSyncApiRepository_Factory(Provider<Downloader> downloaderProvider, Provider<ConnectionResolver> connectionResolverProvider, Provider<Files> filesProvider) {
         this.downloaderProvider = downloaderProvider;
         this.connectionResolverProvider = connectionResolverProvider;
         this.filesProvider = filesProvider;

@@ -1,26 +1,21 @@
 package io.appmetrica.analytics.impl;
+
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Lambda;
 /* loaded from: classes4.dex */
-public final class Am {
+public final class Am extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f342a;
+    public final /* synthetic */ Bm f344a;
 
-    public Am(int i) {
-        this.f342a = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public Am(Bm bm) {
+        super(0);
+        this.f344a = bm;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof Am) && this.f342a == ((Am) obj).f342a;
-    }
-
-    public final int hashCode() {
-        return Integer.hashCode(this.f342a);
-    }
-
-    public final String toString() {
-        return "StartupUpdateConfig(intervalSeconds=" + this.f342a + ')';
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        return this.f344a.f363a.j;
     }
 }

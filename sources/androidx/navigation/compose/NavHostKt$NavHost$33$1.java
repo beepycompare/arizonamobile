@@ -22,6 +22,7 @@ import kotlinx.coroutines.CoroutineScope;
 @DebugMetadata(c = "androidx.navigation.compose.NavHostKt$NavHost$33$1", f = "NavHost.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes3.dex */
 public final class NavHostKt$NavHost$33$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final /* synthetic */ NavBackStackEntry $backStackEntry;
     final /* synthetic */ ComposeNavigator $composeNavigator;
     final /* synthetic */ NavHostController $navController;
     final /* synthetic */ Transition<NavBackStackEntry> $transition;
@@ -32,10 +33,11 @@ public final class NavHostKt$NavHost$33$1 extends SuspendLambda implements Funct
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
-    public NavHostKt$NavHost$33$1(Transition<NavBackStackEntry> transition, NavHostController navHostController, MutableObjectFloatMap<String> mutableObjectFloatMap, State<? extends List<NavBackStackEntry>> state, ComposeNavigator composeNavigator, Continuation<? super NavHostKt$NavHost$33$1> continuation) {
+    public NavHostKt$NavHost$33$1(Transition<NavBackStackEntry> transition, NavHostController navHostController, NavBackStackEntry navBackStackEntry, MutableObjectFloatMap<String> mutableObjectFloatMap, State<? extends List<NavBackStackEntry>> state, ComposeNavigator composeNavigator, Continuation<? super NavHostKt$NavHost$33$1> continuation) {
         super(2, continuation);
         this.$transition = transition;
         this.$navController = navHostController;
+        this.$backStackEntry = navBackStackEntry;
         this.$zIndices = mutableObjectFloatMap;
         this.$visibleEntries$delegate = state;
         this.$composeNavigator = composeNavigator;
@@ -43,7 +45,7 @@ public final class NavHostKt$NavHost$33$1 extends SuspendLambda implements Funct
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new NavHostKt$NavHost$33$1(this.$transition, this.$navController, this.$zIndices, this.$visibleEntries$delegate, this.$composeNavigator, continuation);
+        return new NavHostKt$NavHost$33$1(this.$transition, this.$navController, this.$backStackEntry, this.$zIndices, this.$visibleEntries$delegate, this.$composeNavigator, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -59,7 +61,7 @@ public final class NavHostKt$NavHost$33$1 extends SuspendLambda implements Funct
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        if (Intrinsics.areEqual(this.$transition.getCurrentState(), this.$transition.getTargetState()) && (this.$navController.getCurrentBackStackEntry() == null || Intrinsics.areEqual(this.$transition.getTargetState(), this.$navController.getCurrentBackStackEntry()))) {
+        if (Intrinsics.areEqual(this.$transition.getCurrentState(), this.$transition.getTargetState()) && (this.$navController.getCurrentBackStackEntry() == null || Intrinsics.areEqual(this.$transition.getTargetState(), this.$backStackEntry))) {
             NavHost$lambda$53 = NavHostKt.NavHost$lambda$53(this.$visibleEntries$delegate);
             ComposeNavigator composeNavigator = this.$composeNavigator;
             for (NavBackStackEntry navBackStackEntry : NavHost$lambda$53) {

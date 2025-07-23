@@ -10,7 +10,7 @@ public final class DatabaseModule_ProvideNotificationHistoryDAOFactory implement
     private final Provider<ArizonaDatabase> databaseProvider;
     private final DatabaseModule module;
 
-    public DatabaseModule_ProvideNotificationHistoryDAOFactory(DatabaseModule module, Provider<ArizonaDatabase> databaseProvider) {
+    private DatabaseModule_ProvideNotificationHistoryDAOFactory(DatabaseModule module, Provider<ArizonaDatabase> databaseProvider) {
         this.module = module;
         this.databaseProvider = databaseProvider;
     }

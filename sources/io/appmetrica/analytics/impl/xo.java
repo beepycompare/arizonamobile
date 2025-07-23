@@ -1,15 +1,28 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import android.content.Context;
+import java.util.LinkedHashMap;
 /* loaded from: classes4.dex */
-public final class xo implements Consumer {
+public final class xo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f1134a = "WebView interface setup is successful.";
+    public final Context f1142a;
+    public final LinkedHashMap b = new LinkedHashMap();
+    public final to c;
+    public final to d;
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    public final void consume(Object obj) {
-        ((PublicLogger) obj).info(this.f1134a, new Object[0]);
+    public xo(Context context) {
+        this.f1142a = context;
+        C0679wa c0679wa = new C0679wa(context, "appmetrica_vital.dat");
+        this.c = new to(Ia.j().x(), c0679wa);
+        this.d = new to(new C0460nf(C0626u7.a(context).d()), c0679wa);
+    }
+
+    public final to a() {
+        return this.c;
+    }
+
+    public final to b() {
+        return this.d;
     }
 }

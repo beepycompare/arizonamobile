@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.utils.ui.GradientText.ArizonaGradientTextView;
 /* loaded from: classes5.dex */
 public final class WinterBattlepassRouletteLayoutBinding implements ViewBinding {
     public final LinearLayout battlepass2025WinterRoulettePremButton;
@@ -17,18 +18,26 @@ public final class WinterBattlepassRouletteLayoutBinding implements ViewBinding 
     public final ImageView battlepass2025WinterRouletteUsual;
     public final LinearLayout battlepass2025WinterRouletteUsualButton;
     public final TextView battlepass2025WinterRouletteUsualCount;
+    public final ArizonaGradientTextView premText;
     private final ConstraintLayout rootView;
     public final TextView roulettePageSaleText;
+    public final TextView usualTitle;
+    public final TextView usualTitle1;
+    public final TextView usualTitle2;
     public final ConstraintLayout winterBattlepassTasksLayoutContainer;
 
-    private WinterBattlepassRouletteLayoutBinding(ConstraintLayout rootView, LinearLayout battlepass2025WinterRoulettePremButton, TextView battlepass2025WinterRoulettePremCount, ImageView battlepass2025WinterRouletteUsual, LinearLayout battlepass2025WinterRouletteUsualButton, TextView battlepass2025WinterRouletteUsualCount, TextView roulettePageSaleText, ConstraintLayout winterBattlepassTasksLayoutContainer) {
+    private WinterBattlepassRouletteLayoutBinding(ConstraintLayout rootView, LinearLayout battlepass2025WinterRoulettePremButton, TextView battlepass2025WinterRoulettePremCount, ImageView battlepass2025WinterRouletteUsual, LinearLayout battlepass2025WinterRouletteUsualButton, TextView battlepass2025WinterRouletteUsualCount, ArizonaGradientTextView premText, TextView roulettePageSaleText, TextView usualTitle, TextView usualTitle1, TextView usualTitle2, ConstraintLayout winterBattlepassTasksLayoutContainer) {
         this.rootView = rootView;
         this.battlepass2025WinterRoulettePremButton = battlepass2025WinterRoulettePremButton;
         this.battlepass2025WinterRoulettePremCount = battlepass2025WinterRoulettePremCount;
         this.battlepass2025WinterRouletteUsual = battlepass2025WinterRouletteUsual;
         this.battlepass2025WinterRouletteUsualButton = battlepass2025WinterRouletteUsualButton;
         this.battlepass2025WinterRouletteUsualCount = battlepass2025WinterRouletteUsualCount;
+        this.premText = premText;
         this.roulettePageSaleText = roulettePageSaleText;
+        this.usualTitle = usualTitle;
+        this.usualTitle1 = usualTitle1;
+        this.usualTitle2 = usualTitle2;
         this.winterBattlepassTasksLayoutContainer = winterBattlepassTasksLayoutContainer;
     }
 
@@ -65,11 +74,27 @@ public final class WinterBattlepassRouletteLayoutBinding implements ViewBinding 
                         i = R.id.battlepass_2025_winter_roulette_usual_count;
                         TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
                         if (textView2 != null) {
-                            i = R.id.roulette_page_sale_text;
-                            TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                            if (textView3 != null) {
-                                ConstraintLayout constraintLayout = (ConstraintLayout) rootView;
-                                return new WinterBattlepassRouletteLayoutBinding(constraintLayout, linearLayout, textView, imageView, linearLayout2, textView2, textView3, constraintLayout);
+                            i = R.id.prem_text;
+                            ArizonaGradientTextView arizonaGradientTextView = (ArizonaGradientTextView) ViewBindings.findChildViewById(rootView, i);
+                            if (arizonaGradientTextView != null) {
+                                i = R.id.roulette_page_sale_text;
+                                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                if (textView3 != null) {
+                                    i = R.id.usual_title;
+                                    TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                    if (textView4 != null) {
+                                        i = R.id.usual_title1;
+                                        TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                        if (textView5 != null) {
+                                            i = R.id.usual_title2;
+                                            TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                            if (textView6 != null) {
+                                                ConstraintLayout constraintLayout = (ConstraintLayout) rootView;
+                                                return new WinterBattlepassRouletteLayoutBinding(constraintLayout, linearLayout, textView, imageView, linearLayout2, textView2, arizonaGradientTextView, textView3, textView4, textView5, textView6, constraintLayout);
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

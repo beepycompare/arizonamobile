@@ -139,7 +139,7 @@ public final class ConstraintsSizeResolver implements SizeResolver, LayoutModifi
         Iterator<T> it = list.iterator();
         while (it.hasNext()) {
             Result.Companion companion = Result.Companion;
-            ((Continuation) it.next()).resumeWith(Result.m8471constructorimpl(Unit.INSTANCE));
+            ((Continuation) it.next()).resumeWith(Result.m8474constructorimpl(Unit.INSTANCE));
         }
     }
 }

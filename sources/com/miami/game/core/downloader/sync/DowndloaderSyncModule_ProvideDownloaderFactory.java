@@ -10,7 +10,7 @@ public final class DowndloaderSyncModule_ProvideDownloaderFactory implements Fac
     private final Provider<Context> contextProvider;
     private final DowndloaderSyncModule module;
 
-    public DowndloaderSyncModule_ProvideDownloaderFactory(DowndloaderSyncModule module, Provider<Context> contextProvider) {
+    private DowndloaderSyncModule_ProvideDownloaderFactory(DowndloaderSyncModule module, Provider<Context> contextProvider) {
         this.module = module;
         this.contextProvider = contextProvider;
     }

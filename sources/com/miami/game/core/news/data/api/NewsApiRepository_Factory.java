@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class NewsApiRepository_Factory implements Factory<NewsApiRepository> {
     private final Provider<NetworkDataSource> networkDataSourceProvider;
 
-    public NewsApiRepository_Factory(Provider<NetworkDataSource> provider) {
+    private NewsApiRepository_Factory(Provider<NetworkDataSource> provider) {
         this.networkDataSourceProvider = provider;
     }
 

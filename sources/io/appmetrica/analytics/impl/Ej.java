@@ -1,16 +1,16 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Ej implements InterfaceC0354jb {
+public final class Ej implements InterfaceC0406lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f413a;
+    public final /* synthetic */ Throwable f421a;
 
-    public Ej(String str) {
-        this.f413a = str;
+    public Ej(Throwable th) {
+        this.f421a = th;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0354jb
-    public final void a(InterfaceC0379kb interfaceC0379kb) {
-        interfaceC0379kb.setUserProfileID(this.f413a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0406lb
+    public final void a(InterfaceC0431mb interfaceC0431mb) {
+        interfaceC0431mb.reportUnhandledException(this.f421a);
     }
 }

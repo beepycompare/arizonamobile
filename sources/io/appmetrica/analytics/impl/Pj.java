@@ -1,18 +1,20 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes4.dex */
-public final class Pj implements InterfaceC0354jb {
+public final class Pj implements InterfaceC0406lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f584a;
-    public final /* synthetic */ byte[] b;
+    public final /* synthetic */ PluginErrorDetails f599a;
+    public final /* synthetic */ String b;
 
-    public Pj(String str, byte[] bArr) {
-        this.f584a = str;
-        this.b = bArr;
+    public Pj(PluginErrorDetails pluginErrorDetails, String str) {
+        this.f599a = pluginErrorDetails;
+        this.b = str;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0354jb
-    public final void a(InterfaceC0379kb interfaceC0379kb) {
-        interfaceC0379kb.setSessionExtra(this.f584a, this.b);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0406lb
+    public final void a(InterfaceC0431mb interfaceC0431mb) {
+        interfaceC0431mb.getPluginExtension().reportError(this.f599a, this.b);
     }
 }

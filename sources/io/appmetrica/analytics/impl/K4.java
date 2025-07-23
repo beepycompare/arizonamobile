@@ -5,12 +5,12 @@ import android.os.ResultReceiver;
 public final class K4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Wl f501a;
+    public final Zl f515a;
     public final J4 b;
     public final ResultReceiver c;
 
-    public K4(Wl wl, J4 j4, ResultReceiver resultReceiver) {
-        this.f501a = wl;
+    public K4(Zl zl, J4 j4, ResultReceiver resultReceiver) {
+        this.f515a = zl;
         this.b = j4;
         this.c = resultReceiver;
     }

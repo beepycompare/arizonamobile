@@ -1,16 +1,30 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.res.Configuration;
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
-import java.util.List;
-import kotlin.collections.CollectionsKt;
+import java.util.HashMap;
 /* renamed from: io.appmetrica.analytics.impl.bc  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0154bc {
-    public static List a(Configuration configuration) {
-        if (AndroidUtils.isApiAchieved(24)) {
-            return AbstractC0180cc.a(configuration);
+public final class C0154bc implements InterfaceC0497p2 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final H4 f781a;
+
+    public C0154bc(H4 h4) {
+        this.f781a = h4;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0497p2
+    public final C0192co a(C0140ao c0140ao, C0192co c0192co) {
+        int i = c0140ao.b;
+        int i2 = this.f781a.f464a;
+        if (i == i2) {
+            if (((C0192co) ((HashMap) c0140ao.f773a.get(c0192co.b)).get(new String(c0192co.f805a))) != null) {
+                ((HashMap) c0140ao.f773a.get(c0192co.b)).put(new String(c0192co.f805a), c0192co);
+                return c0192co;
+            }
+        } else if (i < i2) {
+            ((HashMap) c0140ao.f773a.get(c0192co.b)).put(new String(c0192co.f805a), c0192co);
+            c0140ao.b++;
         }
-        return CollectionsKt.listOf(Se.a(configuration.locale));
+        return c0192co;
     }
 }

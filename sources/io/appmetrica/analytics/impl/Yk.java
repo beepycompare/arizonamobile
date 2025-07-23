@@ -1,43 +1,17 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.ecommerce.ECommerceEvent;
-import io.appmetrica.analytics.ecommerce.ECommerceProduct;
-import io.appmetrica.analytics.ecommerce.ECommerceScreen;
-import java.util.List;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public final class Yk extends ECommerceEvent {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Sf f727a;
-    public final C0437mj b;
-    public final InterfaceC0575s8 c;
-
-    public Yk(ECommerceProduct eCommerceProduct, ECommerceScreen eCommerceScreen) {
-        this(new Sf(eCommerceProduct), new C0437mj(eCommerceScreen), new Zk());
+public final class Yk extends W2 {
+    public Yk(InterfaceC0497p2 interfaceC0497p2) {
+        super(interfaceC0497p2);
     }
 
-    public final InterfaceC0575s8 a() {
-        return this.c;
-    }
-
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
-    public final String getPublicDescription() {
-        return "shown product card info";
-    }
-
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.Vf
-    public final List<Ni> toProto() {
-        return (List) this.c.fromModel(this);
-    }
-
-    public final String toString() {
-        return "ShownProductCardInfoEvent{product=" + this.f727a + ", screen=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public Yk(Sf sf, C0437mj c0437mj, InterfaceC0575s8 interfaceC0575s8) {
-        this.f727a = sf;
-        this.b = c0437mj;
-        this.c = interfaceC0575s8;
+    @Override // io.appmetrica.analytics.impl.W2
+    public final C0192co a(C0140ao c0140ao, C0192co c0192co, InterfaceC0472o2 interfaceC0472o2) {
+        if (c0192co == null || c0192co.c.b) {
+            C0192co a2 = ((Pd) interfaceC0472o2).a();
+            a2.c.f821a = true;
+            return this.f693a.a(c0140ao, a2);
+        }
+        return null;
     }
 }

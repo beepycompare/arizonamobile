@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import java.util.List;
 /* loaded from: classes4.dex */
-public final class Z3 implements Gm {
+public final class Z3 implements Jm {
     public final O3 a(N3 n3, List<N3> list) {
         return new O3(n3, list);
     }

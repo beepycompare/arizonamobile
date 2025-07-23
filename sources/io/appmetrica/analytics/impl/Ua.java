@@ -1,19 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Handler;
-import io.appmetrica.analytics.AppMetricaConfig;
-import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import android.content.Context;
+import android.database.Cursor;
 /* loaded from: classes4.dex */
-public interface Ua {
-    C0746z4 a();
+public final class Ua {
 
-    void a(AppMetricaConfig appMetricaConfig, InterfaceC0429mb interfaceC0429mb);
+    /* renamed from: a  reason: collision with root package name */
+    public final Context f668a;
+    public Cursor b;
 
-    Handler b();
-
-    Y1 c();
-
-    Db d();
-
-    ICommonExecutor getDefaultExecutor();
+    public Ua(Context context) {
+        this.f668a = context;
+    }
 }

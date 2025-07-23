@@ -1,29 +1,40 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.ResultReceiver;
+import com.adjust.sdk.Constants;
 /* loaded from: classes4.dex */
-public final class Gg {
-    public Gg(InterfaceC0305hb interfaceC0305hb) {
+public final class Gg extends ResultReceiver {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final InterfaceC0585sg f455a;
+
+    public Gg(Handler handler, InterfaceC0585sg interfaceC0585sg) {
+        super(handler);
+        this.f455a = interfaceC0585sg;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0011  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static InterfaceC0305hb a(Context context, IHandlerExecutor iHandlerExecutor) {
-        C0608tg c0608tg;
-        if (ReflectionUtils.detectClassExists("com.android.installreferrer.api.InstallReferrerClient")) {
+    public static void a(ResultReceiver resultReceiver, Ag ag) {
+        if (resultReceiver != null) {
+            Bundle bundle = new Bundle();
+            bundle.putByteArray(Constants.REFERRER, ag == null ? null : ag.a());
+            resultReceiver.send(1, bundle);
+        }
+    }
+
+    @Override // android.os.ResultReceiver
+    public final void onReceiveResult(int i, Bundle bundle) {
+        if (i == 1) {
+            Ag ag = null;
             try {
-                c0608tg = new C0608tg(context, iHandlerExecutor);
+                byte[] byteArray = bundle.getByteArray(Constants.REFERRER);
+                if (byteArray != null && byteArray.length != 0) {
+                    ag = new Ag(byteArray);
+                }
             } catch (Throwable unused) {
             }
-            return c0608tg != null ? new Fg() : c0608tg;
-        }
-        c0608tg = null;
-        if (c0608tg != null) {
+            this.f455a.a(ag);
         }
     }
 }

@@ -1,106 +1,64 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import com.google.firebase.remoteconfig.RemoteConfigConstants;
+import io.appmetrica.analytics.coreutils.internal.services.FrameworkDetector;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 /* loaded from: classes4.dex */
-public final class H7 extends MessageNano {
-    public static volatile H7[] d;
+public final class H7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f457a;
-    public long b;
-    public int c;
+    public final String f467a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final String f;
+    public final String g;
+    public final String h;
+    public final String i;
+    public final String j;
+    public final String k;
+    public final String l;
+    public final String m;
+    public final String n;
+
+    public H7(Ab ab) {
+        this.f467a = ab.b("dId");
+        this.b = ab.b("uId");
+        this.c = ab.b("analyticsSdkVersionName");
+        this.d = ab.b("kitBuildNumber");
+        this.e = ab.b("kitBuildType");
+        this.f = ab.b("appVer");
+        this.g = ab.optString("app_debuggable", "0");
+        this.h = ab.b(RemoteConfigConstants.RequestFieldKey.APP_BUILD);
+        this.i = ab.b("osVer");
+        this.k = ab.b("lang");
+        this.l = ab.b("root");
+        this.m = ab.optString(CommonUrlParts.APP_FRAMEWORK, FrameworkDetector.framework());
+        int optInt = ab.optInt("osApiLev", -1);
+        this.j = optInt == -1 ? null : String.valueOf(optInt);
+        int optInt2 = ab.optInt("attribution_id", 0);
+        this.n = optInt2 > 0 ? String.valueOf(optInt2) : null;
+    }
+
+    public final String toString() {
+        return "DbNetworkTaskConfig{deviceId='" + this.f467a + "', uuid='" + this.b + "', analyticsSdkVersionName='" + this.c + "', kitBuildNumber='" + this.d + "', kitBuildType='" + this.e + "', appVersion='" + this.f + "', appDebuggable='" + this.g + "', appBuildNumber='" + this.h + "', osVersion='" + this.i + "', osApiLevel='" + this.j + "', locale='" + this.k + "', deviceRootStatus='" + this.l + "', appFramework='" + this.m + "', attributionId='" + this.n + "'}";
+    }
 
     public H7() {
-        a();
-    }
-
-    public static H7[] b() {
-        if (d == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (d == null) {
-                    d = new H7[0];
-                }
-            }
-        }
-        return d;
-    }
-
-    public final H7 a() {
-        this.f457a = -1L;
-        this.b = -1L;
-        this.c = -1;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        long j = this.f457a;
-        if (j != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(1, j);
-        }
-        long j2 = this.b;
-        if (j2 != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(2, j2);
-        }
-        int i = this.c;
-        return i != -1 ? CodedOutputByteBufferNano.computeInt32Size(3, i) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        long j = this.f457a;
-        if (j != -1) {
-            codedOutputByteBufferNano.writeInt64(1, j);
-        }
-        long j2 = this.b;
-        if (j2 != -1) {
-            codedOutputByteBufferNano.writeInt64(2, j2);
-        }
-        int i = this.c;
-        if (i != -1) {
-            codedOutputByteBufferNano.writeInt32(3, i);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final H7 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 8) {
-                this.f457a = codedInputByteBufferNano.readInt64();
-            } else if (readTag == 16) {
-                this.b = codedInputByteBufferNano.readInt64();
-            } else if (readTag != 24) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == -1 || readInt32 == 0 || readInt32 == 1) {
-                    this.c = readInt32;
-                }
-            }
-        }
-        return this;
-    }
-
-    public static H7 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new H7().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static H7 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (H7) MessageNano.mergeFrom(new H7(), bArr);
+        this.f467a = null;
+        this.b = null;
+        this.c = null;
+        this.d = null;
+        this.e = null;
+        this.f = null;
+        this.g = null;
+        this.h = null;
+        this.i = null;
+        this.j = null;
+        this.k = null;
+        this.l = null;
+        this.m = null;
+        this.n = null;
     }
 }

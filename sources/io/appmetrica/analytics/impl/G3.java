@@ -7,23 +7,23 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class G3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Sf f437a;
+    public final Uf f445a;
     public final BigDecimal b;
-    public final Lf c;
-    public final Ig d;
+    public final Nf c;
+    public final Kg d;
 
     public G3(ECommerceCartItem eCommerceCartItem) {
-        this(new Sf(eCommerceCartItem.getProduct()), eCommerceCartItem.getQuantity(), new Lf(eCommerceCartItem.getRevenue()), eCommerceCartItem.getReferrer() == null ? null : new Ig(eCommerceCartItem.getReferrer()));
+        this(new Uf(eCommerceCartItem.getProduct()), eCommerceCartItem.getQuantity(), new Nf(eCommerceCartItem.getRevenue()), eCommerceCartItem.getReferrer() == null ? null : new Kg(eCommerceCartItem.getReferrer()));
     }
 
     public final String toString() {
-        return "CartItemWrapper{product=" + this.f437a + ", quantity=" + this.b + ", revenue=" + this.c + ", referrer=" + this.d + AbstractJsonLexerKt.END_OBJ;
+        return "CartItemWrapper{product=" + this.f445a + ", quantity=" + this.b + ", revenue=" + this.c + ", referrer=" + this.d + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public G3(Sf sf, BigDecimal bigDecimal, Lf lf, Ig ig) {
-        this.f437a = sf;
+    public G3(Uf uf, BigDecimal bigDecimal, Nf nf, Kg kg) {
+        this.f445a = uf;
         this.b = bigDecimal;
-        this.c = lf;
-        this.d = ig;
+        this.c = nf;
+        this.d = kg;
     }
 }

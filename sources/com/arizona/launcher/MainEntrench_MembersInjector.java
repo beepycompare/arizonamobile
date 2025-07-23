@@ -9,7 +9,7 @@ public final class MainEntrench_MembersInjector implements MembersInjector<MainE
     private final Provider<NotificationStateHolder> notificationStateHolderProvider;
     private final Provider<MainComponent.Factory> rootFactoryProvider;
 
-    public MainEntrench_MembersInjector(Provider<MainComponent.Factory> rootFactoryProvider, Provider<NotificationStateHolder> notificationStateHolderProvider) {
+    private MainEntrench_MembersInjector(Provider<MainComponent.Factory> rootFactoryProvider, Provider<NotificationStateHolder> notificationStateHolderProvider) {
         this.rootFactoryProvider = rootFactoryProvider;
         this.notificationStateHolderProvider = notificationStateHolderProvider;
     }

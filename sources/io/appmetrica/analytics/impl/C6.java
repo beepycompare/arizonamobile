@@ -1,37 +1,48 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ICrashTransformer;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
+import java.io.File;
+import java.util.concurrent.Executor;
+import kotlin.Unit;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 /* loaded from: classes4.dex */
-public abstract class C6 implements Ya {
+public final class C6 implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final B6 f368a;
-    public final ICrashTransformer b;
-    public final C0254fa c;
+    public final Executor f372a;
+    public final C0313hh b;
 
-    public C6(B6 b6, ICrashTransformer iCrashTransformer, C0254fa c0254fa) {
-        this.f368a = b6;
-        this.b = iCrashTransformer;
-        this.c = c0254fa;
+    public C6(Context context, InterfaceC0750z6 interfaceC0750z6, EnumC0680wb enumC0680wb, InterfaceC0137al interfaceC0137al, Executor executor, String str) {
+        this.f372a = executor;
+        this.b = new C0313hh(context, interfaceC0750z6, enumC0680wb, interfaceC0137al);
     }
 
-    @Override // io.appmetrica.analytics.impl.Ya
-    public final void a(Throwable th, U u) {
-        if (this.f368a.a(th)) {
-            ICrashTransformer iCrashTransformer = this.b;
-            if (iCrashTransformer == null || th == null || (th = iCrashTransformer.process(th)) != null) {
-                Kn a2 = Nn.a(th, u, null, (String) this.c.b.a(), (Boolean) this.c.c.a());
-                C0729yc c0729yc = (C0729yc) ((Mh) this).d;
-                c0729yc.f600a.a().a(c0729yc.b).a(a2);
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
+    /* renamed from: a */
+    public final void consume(File file) {
+        if (file == null) {
+            return;
+        }
+        Executor executor = this.f372a;
+        C0313hh c0313hh = this.b;
+        Ib ib = c0313hh.c;
+        Consumer consumer = c0313hh.e;
+        Context context = c0313hh.f886a;
+        if (C0629ua.c == null) {
+            synchronized (Reflection.getOrCreateKotlinClass(C0629ua.class)) {
+                if (C0629ua.c == null) {
+                    C0629ua.c = new C0629ua(context);
+                }
+                Unit unit = Unit.INSTANCE;
             }
         }
-    }
-
-    public final B6 b() {
-        return this.f368a;
-    }
-
-    public final ICrashTransformer a() {
-        return this.b;
+        C0629ua c0629ua = C0629ua.c;
+        if (c0629ua == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("INSTANCE");
+            c0629ua = null;
+        }
+        executor.execute(new RunnableC0287gg(file, ib, ib, consumer, c0629ua, c0313hh.b));
     }
 }

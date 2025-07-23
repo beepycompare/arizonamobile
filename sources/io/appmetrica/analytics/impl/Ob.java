@@ -1,20 +1,84 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.location.LocationListener;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
-import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractor;
-import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider;
+import java.util.Set;
 /* loaded from: classes4.dex */
-public final class Ob implements LastKnownLocationExtractorProvider {
-    @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider
-    public final LastKnownLocationExtractor getExtractor(Context context, PermissionExtractor permissionExtractor, IHandlerExecutor iHandlerExecutor, LocationListener locationListener) {
-        return new Pb();
+public final class Ob implements InterfaceC0179cb {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final InterfaceC0179cb f576a;
+
+    public Ob(InterfaceC0179cb interfaceC0179cb) {
+        this.f576a = interfaceC0179cb;
     }
 
-    @Override // io.appmetrica.analytics.locationapi.internal.Identifiable
-    public final String getIdentifier() {
-        return "Last known extractor stub";
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final InterfaceC0179cb a(String str, String str2) {
+        this.f576a.a(str, str2);
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final void b() {
+        this.f576a.b();
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final boolean getBoolean(String str, boolean z) {
+        return this.f576a.getBoolean(str, z);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final int getInt(String str, int i) {
+        return this.f576a.getInt(str, i);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final long getLong(String str, long j) {
+        return this.f576a.getLong(str, j);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final String getString(String str, String str2) {
+        return this.f576a.getString(str, str2);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final InterfaceC0179cb remove(String str) {
+        this.f576a.remove(str);
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final InterfaceC0179cb a(String str, long j) {
+        this.f576a.a(str, j);
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final InterfaceC0179cb a(int i, String str) {
+        this.f576a.a(i, str);
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final InterfaceC0179cb a(String str, boolean z) {
+        this.f576a.a(str, z);
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final InterfaceC0179cb a(String str, float f) {
+        this.f576a.a(str, f);
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final boolean a(String str) {
+        return this.f576a.a(str);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    public final Set a() {
+        return this.f576a.a();
     }
 }

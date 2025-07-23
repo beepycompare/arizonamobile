@@ -1,6 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.functions.Function1;
+import com.adjust.sdk.Constants;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfo;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 /* loaded from: classes4.dex */
-public interface R5 extends Function1 {
+public abstract class R5 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final Map f619a;
+
+    static {
+        HashMap hashMap = new HashMap();
+        hashMap.put(Constants.REFERRER_API_GOOGLE, AdTrackingInfo.Provider.GOOGLE);
+        hashMap.put("huawei", AdTrackingInfo.Provider.HMS);
+        hashMap.put("yandex", AdTrackingInfo.Provider.YANDEX);
+        f619a = Collections.unmodifiableMap(hashMap);
+    }
 }

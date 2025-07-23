@@ -118,7 +118,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
             try {
                 Bitmap decodeFrame = decodeFrame(t, build, longValue, num.intValue(), i, i2, downsampleStrategy2);
                 if (Build.VERSION.SDK_INT >= 29) {
-                    UByte$$ExternalSyntheticBackport0.m8544m((Object) build);
+                    UByte$$ExternalSyntheticBackport0.m8547m((Object) build);
                 } else {
                     build.release();
                 }
@@ -127,7 +127,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
                 th = th;
                 Throwable th2 = th;
                 if (Build.VERSION.SDK_INT >= 29) {
-                    UByte$$ExternalSyntheticBackport0.m8544m((Object) build);
+                    UByte$$ExternalSyntheticBackport0.m8547m((Object) build);
                 } else {
                     build.release();
                 }

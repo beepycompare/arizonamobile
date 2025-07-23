@@ -14,6 +14,7 @@ import ru.mrlargha.commonui.elements.donate.presentation.DonateSubIds;
 import ru.mrlargha.commonui.elements.donate.presentation.adapters.DonatePurchaseAdapter;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBoostModelUi;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemModelUi;
+import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemType;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateRateModel;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: DonatePurchasePage.kt */
@@ -81,7 +82,7 @@ public final class DonatePurchasePage extends DonatePage {
         DonateItemModelUi donateItemModelUi = this.canPressItem;
         if (donateItemModelUi != null) {
             if (donateItemModelUi.getId() == i) {
-                this.openDialog.invoke(new DonateBoostModelUi(new DonateRateModel(1, donateItemModelUi.getTotalEarnings() < 1 ? 1 : donateItemModelUi.getTotalEarnings()), donateItemModelUi.getUnixTime(), CollectionsKt.emptyList(), false, 0, 0));
+                this.openDialog.invoke(new DonateBoostModelUi(new DonateRateModel(1, donateItemModelUi.getTotalEarnings() < 1 ? 1 : donateItemModelUi.getTotalEarnings()), donateItemModelUi.getUnixTime(), CollectionsKt.emptyList(), false, 0, 0, DonateItemType.RATE));
             } else {
                 getNotifier().clickedWrapper(getBackendId(), i, 3);
             }

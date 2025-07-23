@@ -23,11 +23,11 @@ public final class SelectServerScreenKt$SelectServerScreen$lambda$20$lambda$15$l
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ GridItemSpan invoke(LazyGridItemSpanScope lazyGridItemSpanScope, Integer num) {
-        return GridItemSpan.m859boximpl(m8403invoke_orMbw(lazyGridItemSpanScope, num.intValue()));
+        return GridItemSpan.m859boximpl(m8405invoke_orMbw(lazyGridItemSpanScope, num.intValue()));
     }
 
     /* renamed from: invoke-_-orMbw  reason: not valid java name */
-    public final long m8403invoke_orMbw(LazyGridItemSpanScope lazyGridItemSpanScope, int i) {
+    public final long m8405invoke_orMbw(LazyGridItemSpanScope lazyGridItemSpanScope, int i) {
         return ((GridItemSpan) this.$span.invoke(lazyGridItemSpanScope, this.$items.get(i))).m866unboximpl();
     }
 }

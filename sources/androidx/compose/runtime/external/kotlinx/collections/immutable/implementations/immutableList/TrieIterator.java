@@ -15,7 +15,7 @@ public final class TrieIterator<E> extends AbstractListIterator<E> {
     private Object[] path;
 
     /* JADX WARN: Type inference failed for: r5v1 */
-    /* JADX WARN: Type inference failed for: r5v2, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r5v2, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r5v3 */
     public TrieIterator(Object[] objArr, int i, int i2, int i3) {
         super(i, i2);
@@ -29,7 +29,7 @@ public final class TrieIterator<E> extends AbstractListIterator<E> {
     }
 
     /* JADX WARN: Type inference failed for: r0v2 */
-    /* JADX WARN: Type inference failed for: r0v3, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r0v3, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r0v4 */
     public final void reset$runtime_release(Object[] objArr, int i, int i2, int i3) {
         setIndex(i);

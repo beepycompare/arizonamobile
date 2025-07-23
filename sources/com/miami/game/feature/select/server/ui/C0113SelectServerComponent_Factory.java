@@ -10,7 +10,7 @@ public final class C0113SelectServerComponent_Factory {
     private final Provider<BuildConfigRepository> buildConfigProvider;
     private final Provider<ServersInteractor> serversInteractorProvider;
 
-    public C0113SelectServerComponent_Factory(Provider<ServersInteractor> serversInteractorProvider, Provider<BuildConfigRepository> buildConfigProvider) {
+    private C0113SelectServerComponent_Factory(Provider<ServersInteractor> serversInteractorProvider, Provider<BuildConfigRepository> buildConfigProvider) {
         this.serversInteractorProvider = serversInteractorProvider;
         this.buildConfigProvider = buildConfigProvider;
     }

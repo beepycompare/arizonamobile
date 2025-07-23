@@ -1,11 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.os.UserManager;
-import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
+import java.util.List;
 /* loaded from: classes4.dex */
-public final class Sn {
-    public static boolean a(Context context) {
-        return ((Boolean) SystemServiceUtils.accessSystemServiceSafelyOrDefault((UserManager) context.getSystemService(UserManager.class), "detect unlocked user state", "User manager", Boolean.TRUE, new Rn())).booleanValue();
+public final class Sn extends Ja {
+    public Sn(Ei ei) {
+        super(ei);
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ja
+    public final void a(List<AbstractC0236eh> list) {
+        list.add(this.f503a.h);
+        list.add(this.f503a.n);
     }
 }

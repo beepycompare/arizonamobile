@@ -1,16 +1,18 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.Revenue;
 /* loaded from: classes4.dex */
-public final class Jj implements InterfaceC0354jb {
+public final class Jj implements InterfaceC0406lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Kn f494a;
+    public final /* synthetic */ Revenue f509a;
 
-    public Jj(Kn kn) {
-        this.f494a = kn;
+    public Jj(Revenue revenue) {
+        this.f509a = revenue;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0354jb
-    public final void a(InterfaceC0379kb interfaceC0379kb) {
-        interfaceC0379kb.a(this.f494a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0406lb
+    public final void a(InterfaceC0431mb interfaceC0431mb) {
+        interfaceC0431mb.reportRevenue(this.f509a);
     }
 }

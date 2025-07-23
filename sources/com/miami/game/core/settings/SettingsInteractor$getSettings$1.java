@@ -1,5 +1,6 @@
 package com.miami.game.core.settings;
 
+import androidx.core.app.NotificationManagerCompat;
 import com.miami.game.core.local.repository.common.IKeyValueRepository;
 import com.miami.game.core.local.repository.common.LocalRepository;
 import kotlin.Metadata;
@@ -15,16 +16,16 @@ import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.flow.MutableStateFlow;
-import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SettingsInteractor.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.settings.SettingsInteractor$getSettings$1", f = "SettingsInteractor.kt", i = {0, 0, 0}, l = {LockFreeTaskQueueCore.CLOSED_SHIFT}, m = "invokeSuspend", n = {"$this$getSuspend$iv", "key$iv", "$i$f$getSuspend"}, s = {"L$0", "L$1", "I$0"})
+@DebugMetadata(c = "com.miami.game.core.settings.SettingsInteractor$getSettings$1", f = "SettingsInteractor.kt", i = {0, 0, 0, 0}, l = {72}, m = "invokeSuspend", n = {"$this$getSuspend$iv", "key$iv", "notification", "$i$f$getSuspend"}, s = {"L$0", "L$1", "Z$0", "I$0"})
 /* loaded from: classes4.dex */
 public final class SettingsInteractor$getSettings$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int I$0;
     Object L$0;
     Object L$1;
+    boolean Z$0;
     int label;
     final /* synthetic */ SettingsInteractor this$0;
 
@@ -48,6 +49,9 @@ public final class SettingsInteractor$getSettings$1 extends SuspendLambda implem
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         LocalRepository localRepository;
+        LocalRepository localRepository2;
+        Object withContext;
+        boolean z;
         MutableStateFlow mutableStateFlow;
         Object value;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -55,32 +59,37 @@ public final class SettingsInteractor$getSettings$1 extends SuspendLambda implem
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             localRepository = this.this$0.localRepository;
-            LocalRepository localRepository2 = localRepository;
+            boolean areNotificationsEnabled = NotificationManagerCompat.from(localRepository.getContext()).areNotificationsEnabled();
+            localRepository2 = this.this$0.localRepository;
+            LocalRepository localRepository3 = localRepository2;
             String settingsKey = SettingsInteractor.Companion.getSettingsKey();
-            this.L$0 = SpillingKt.nullOutSpilledVariable(localRepository2);
+            this.L$0 = SpillingKt.nullOutSpilledVariable(localRepository3);
             this.L$1 = SpillingKt.nullOutSpilledVariable(settingsKey);
+            this.Z$0 = areNotificationsEnabled;
             this.I$0 = 0;
             this.label = 1;
-            obj = BuildersKt.withContext(Dispatchers.getIO(), new SettingsInteractor$getSettings$1$invokeSuspend$$inlined$getSuspend$1(localRepository2, settingsKey, null), this);
-            if (obj == coroutine_suspended) {
+            withContext = BuildersKt.withContext(Dispatchers.getIO(), new SettingsInteractor$getSettings$1$invokeSuspend$$inlined$getSuspend$1(localRepository3, settingsKey, null), this);
+            if (withContext == coroutine_suspended) {
                 return coroutine_suspended;
             }
+            z = areNotificationsEnabled;
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
+            boolean z2 = this.Z$0;
             String str = (String) this.L$1;
             IKeyValueRepository iKeyValueRepository = (IKeyValueRepository) this.L$0;
             ResultKt.throwOnFailure(obj);
+            withContext = obj;
+            z = z2;
         }
-        SettingState settingState = (SettingState) obj;
-        if (settingState == null) {
-            settingState = new SettingState(0.0f, 0, false, false, false, false, false, null, 255, null);
-        }
+        SettingState settingState = (SettingState) withContext;
+        SettingState settingState2 = settingState == null ? new SettingState(0.0f, 0, false, false, false, false, false, false, null, 511, null) : settingState;
         mutableStateFlow = this.this$0.stateStore;
         do {
             value = mutableStateFlow.getValue();
-            SettingState settingState2 = (SettingState) value;
-        } while (!mutableStateFlow.compareAndSet(value, settingState));
+            SettingState settingState3 = (SettingState) value;
+        } while (!mutableStateFlow.compareAndSet(value, SettingState.copy$default(settingState2, 0.0f, 0, false, false, false, false, false, z, null, 383, null)));
         return Unit.INSTANCE;
     }
 }

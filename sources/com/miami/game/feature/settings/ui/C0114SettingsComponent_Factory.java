@@ -12,7 +12,7 @@ public final class C0114SettingsComponent_Factory {
     private final Provider<FilesUpdaterInteractor> filesUpdaterInteractorProvider;
     private final Provider<SettingsInteractor> settingsInteractorProvider;
 
-    public C0114SettingsComponent_Factory(Provider<FilesUpdaterInteractor> filesUpdaterInteractorProvider, Provider<BuildConfigRepository> buildConfigProvider, Provider<SettingsInteractor> settingsInteractorProvider) {
+    private C0114SettingsComponent_Factory(Provider<FilesUpdaterInteractor> filesUpdaterInteractorProvider, Provider<BuildConfigRepository> buildConfigProvider, Provider<SettingsInteractor> settingsInteractorProvider) {
         this.filesUpdaterInteractorProvider = filesUpdaterInteractorProvider;
         this.buildConfigProvider = buildConfigProvider;
         this.settingsInteractorProvider = settingsInteractorProvider;

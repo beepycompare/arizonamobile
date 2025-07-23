@@ -1,25 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes4.dex */
-public final class Nh implements B4 {
+public final class Nh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0597t5 f556a;
-
-    public Nh(InterfaceC0597t5 interfaceC0597t5) {
-        this.f556a = interfaceC0597t5;
-    }
-
-    @Override // io.appmetrica.analytics.impl.B4
-    /* renamed from: b */
-    public final Lg a(Context context, C0722y5 c0722y5, C0397l4 c0397l4, K4 k4) {
-        Mg mg;
-        C0398l5 c0398l5 = new C0398l5(c0397l4.b, c0397l4.f917a);
-        Ng ng = new Ng(this.f556a);
-        synchronized (c0722y5) {
-            mg = (Mg) c0722y5.a(c0398l5, k4, ng, c0722y5.f1140a);
-        }
-        return new Lg(context, mg);
-    }
+    public final Bn f565a = new Bn(new C0484oe("Event name"));
+    public final Bn b = new Bn(new C0484oe("Error message"));
+    public final Bn c = new Bn(new C0484oe("Error identifier"));
+    public final Bn d = new Bn(new C0534qe("Unhandled exception"));
+    public final Bn e = new Bn(new C0534qe("Throwable"));
+    public final Bn f = new Bn(new C0534qe("User profile"));
+    public final Bn g = new Bn(new C0534qe("Revenue"));
+    public final Bn h = new Bn(new C0534qe("AdRevenue"));
+    public final Bn i = new Bn(new C0534qe("ECommerceEvent"));
+    public final Bn j = new Bn(new C0534qe("ANR all threads"));
 }

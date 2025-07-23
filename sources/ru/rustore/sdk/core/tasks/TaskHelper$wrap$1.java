@@ -45,7 +45,7 @@ final class TaskHelper$wrap$1 extends SuspendLambda implements Function2<Corouti
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m8471constructorimpl;
+        Object m8474constructorimpl;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
@@ -64,19 +64,19 @@ final class TaskHelper$wrap$1 extends SuspendLambda implements Function2<Corouti
             } else {
                 ResultKt.throwOnFailure(obj);
             }
-            m8471constructorimpl = Result.m8471constructorimpl(obj);
+            m8474constructorimpl = Result.m8474constructorimpl(obj);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m8471constructorimpl = Result.m8471constructorimpl(ResultKt.createFailure(th));
+            m8474constructorimpl = Result.m8474constructorimpl(ResultKt.createFailure(th));
         }
         TaskResultProvider<T> taskResultProvider = this.$resultProvider;
-        if (Result.m8478isSuccessimpl(m8471constructorimpl)) {
-            taskResultProvider.setTaskResult((TaskResultProvider<T>) m8471constructorimpl);
+        if (Result.m8481isSuccessimpl(m8474constructorimpl)) {
+            taskResultProvider.setTaskResult((TaskResultProvider<T>) m8474constructorimpl);
         }
         TaskResultProvider<T> taskResultProvider2 = this.$resultProvider;
-        Throwable m8474exceptionOrNullimpl = Result.m8474exceptionOrNullimpl(m8471constructorimpl);
-        if (m8474exceptionOrNullimpl != null) {
-            taskResultProvider2.setTaskResult(m8474exceptionOrNullimpl);
+        Throwable m8477exceptionOrNullimpl = Result.m8477exceptionOrNullimpl(m8474constructorimpl);
+        if (m8477exceptionOrNullimpl != null) {
+            taskResultProvider2.setTaskResult(m8477exceptionOrNullimpl);
         }
         return Unit.INSTANCE;
     }

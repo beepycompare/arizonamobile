@@ -6,35 +6,35 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class X implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final O7 f695a;
-    public final La b;
+    public final R7 f708a;
+    public final Na b;
 
     public X() {
-        this(new O7(), new La(20));
+        this(new R7(), new Na(20));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Ni fromModel(Y y) {
-        C0600t8 c0600t8 = new C0600t8();
-        c0600t8.b = this.f695a.fromModel(y.f713a);
-        Gn a2 = this.b.a(y.b);
-        c0600t8.f1056a = StringUtils.getUTF8Bytes((String) a2.f450a);
-        return new Ni(c0600t8, new C0670w3(C0670w3.b(a2)));
+    public final Qi fromModel(Y y) {
+        C0677w8 c0677w8 = new C0677w8();
+        c0677w8.b = this.f708a.fromModel(y.f724a);
+        Jn a2 = this.b.a(y.b);
+        c0677w8.f1116a = StringUtils.getUTF8Bytes((String) a2.f511a);
+        return new Qi(c0677w8, new C0672w3(C0672w3.b(a2)));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        Ni ni = (Ni) obj;
+        Qi qi = (Qi) obj;
         throw new UnsupportedOperationException();
     }
 
-    public X(O7 o7, La la) {
-        this.f695a = o7;
-        this.b = la;
+    public X(R7 r7, Na na) {
+        this.f708a = r7;
+        this.b = na;
     }
 
-    public final Y a(Ni ni) {
+    public final Y a(Qi qi) {
         throw new UnsupportedOperationException();
     }
 }

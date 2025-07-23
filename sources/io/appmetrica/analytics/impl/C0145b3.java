@@ -9,75 +9,75 @@ import java.util.ArrayList;
 import java.util.Iterator;
 /* renamed from: io.appmetrica.analytics.impl.b3  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0145b3 implements InterfaceC0513pk {
+public final class C0145b3 implements InterfaceC0589sk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f765a;
+    public final ArrayList f778a;
     public Intent b;
     public final Context c;
-    public final Z5 d;
+    public final C0174c6 d;
 
     public C0145b3(Context context, ICommonExecutor iCommonExecutor) {
         this(context, iCommonExecutor, 0);
     }
 
     public final synchronized Intent a(Consumer<Intent> consumer) {
-        this.f765a.add(consumer);
+        this.f778a.add(consumer);
         return this.b;
     }
 
     public final void b() {
         this.b = null;
-        Z5 z5 = this.d;
+        C0174c6 c0174c6 = this.d;
         Context context = this.c;
-        synchronized (z5) {
-            if (z5.b) {
+        synchronized (c0174c6) {
+            if (c0174c6.b) {
                 try {
-                    context.unregisterReceiver(z5.f732a);
-                    z5.b = false;
+                    context.unregisterReceiver(c0174c6.f794a);
+                    c0174c6.b = false;
                 } catch (Throwable unused) {
                 }
             }
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0513pk
+    @Override // io.appmetrica.analytics.impl.InterfaceC0589sk
     public final synchronized void onCreate() {
         Intent a2 = a();
         this.b = a2;
-        Iterator it = this.f765a.iterator();
+        Iterator it = this.f778a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(a2);
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0513pk
+    @Override // io.appmetrica.analytics.impl.InterfaceC0589sk
     public final synchronized void onDestroy() {
         this.b = null;
         b();
-        Iterator it = this.f765a.iterator();
+        Iterator it = this.f778a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(null);
         }
     }
 
     public C0145b3(Context context, ICommonExecutor iCommonExecutor, int i) {
-        this.f765a = new ArrayList();
+        this.f778a = new ArrayList();
         this.b = null;
         this.c = context;
-        this.d = Y5.a(new F2(new C0119a3(this), iCommonExecutor));
+        this.d = AbstractC0148b6.a(new F2(new C0119a3(this), iCommonExecutor));
     }
 
     public final Intent a() {
         Intent intent;
         IntentFilter intentFilter = new IntentFilter("android.intent.action.BATTERY_CHANGED");
-        Z5 z5 = this.d;
+        C0174c6 c0174c6 = this.d;
         Context context = this.c;
-        synchronized (z5) {
+        synchronized (c0174c6) {
             try {
-                intent = context.registerReceiver(z5.f732a, intentFilter);
+                intent = context.registerReceiver(c0174c6.f794a, intentFilter);
                 try {
-                    z5.b = true;
+                    c0174c6.b = true;
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {

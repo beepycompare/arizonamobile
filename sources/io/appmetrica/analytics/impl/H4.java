@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class H4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f455a;
+    public final int f464a;
 
     public H4(int i) {
-        this.f455a = i;
+        this.f464a = i;
     }
 }

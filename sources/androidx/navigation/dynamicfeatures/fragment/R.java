@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int moduleName = 0x7f040429;
+        public static int moduleName = 0x7f04042c;
 
         private attr() {
         }
@@ -13,10 +13,10 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class id {
         public static int dfn_progress_fragment = 0x7f0a03ca;
-        public static int installation_progress = 0x7f0a06b4;
-        public static int progress_action = 0x7f0a0a36;
-        public static int progress_icon = 0x7f0a0a3d;
-        public static int progress_title = 0x7f0a0a41;
+        public static int installation_progress = 0x7f0a06b6;
+        public static int progress_action = 0x7f0a0a3a;
+        public static int progress_icon = 0x7f0a0a41;
+        public static int progress_title = 0x7f0a0a45;
 
         private id() {
         }

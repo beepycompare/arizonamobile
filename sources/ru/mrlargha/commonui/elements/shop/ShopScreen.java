@@ -9,6 +9,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -117,23 +119,45 @@ public final class ShopScreen extends SAMPUIElement implements InterfaceControll
     public void onBackendMessage(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         Log.d("TAG_SHOP", "subID: " + i + " ====== data: " + data);
-        if (i != 0) {
-            if (i != 1) {
-                return;
-            }
-            Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) SellerInfo.class);
+        if (i == 0) {
+            Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
             Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
-            this.binding.tvScreenTitle.setText(((SellerInfo) fromJson).getName());
-            return;
+            InventoryResponse inventoryResponse = (InventoryResponse) fromJson;
+            this.currentItemsType = inventoryResponse.getType();
+            if (!inventoryResponse.getItems().isEmpty() && inventoryResponse.getItems().get(0).getSlot() == 0) {
+                this.pagingList.clear();
+            }
+            initObservers(inventoryResponse.getItems());
+        } else if (i == 1) {
+            Object fromJson2 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) SellerInfo.class);
+            Intrinsics.checkNotNullExpressionValue(fromJson2, "fromJson(...)");
+            this.binding.tvScreenTitle.setText(((SellerInfo) fromJson2).getName());
+        } else if (i == 2) {
+            Object fromJson3 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
+            Intrinsics.checkNotNullExpressionValue(fromJson3, "fromJson(...)");
+            List<InventoryItem> items = ((InventoryResponse) fromJson3).getItems();
+            List<InventoryItem> currentList = this.shopAdapter.getCurrentList();
+            Intrinsics.checkNotNullExpressionValue(currentList, "getCurrentList(...)");
+            List mutableList = CollectionsKt.toMutableList((Collection) currentList);
+            for (InventoryItem inventoryItem : items) {
+                Iterator it = mutableList.iterator();
+                int i2 = 0;
+                while (true) {
+                    if (!it.hasNext()) {
+                        i2 = -1;
+                        break;
+                    } else if (((InventoryItem) it.next()).getSlot() == inventoryItem.getSlot()) {
+                        break;
+                    } else {
+                        i2++;
+                    }
+                }
+                if (i2 != -1) {
+                    mutableList.set(i2, inventoryItem);
+                }
+                this.shopAdapter.submitList(mutableList);
+            }
         }
-        Object fromJson2 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
-        Intrinsics.checkNotNullExpressionValue(fromJson2, "fromJson(...)");
-        InventoryResponse inventoryResponse = (InventoryResponse) fromJson2;
-        this.currentItemsType = inventoryResponse.getType();
-        if (!inventoryResponse.getItems().isEmpty() && inventoryResponse.getItems().get(0).getSlot() == 0) {
-            this.pagingList.clear();
-        }
-        initObservers(inventoryResponse.getItems());
     }
 
     private final void initObservers(List<InventoryItem> list) {

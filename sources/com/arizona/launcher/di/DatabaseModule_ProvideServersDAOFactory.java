@@ -10,7 +10,7 @@ public final class DatabaseModule_ProvideServersDAOFactory implements Factory<Se
     private final Provider<ArizonaDatabase> databaseProvider;
     private final DatabaseModule module;
 
-    public DatabaseModule_ProvideServersDAOFactory(DatabaseModule module, Provider<ArizonaDatabase> databaseProvider) {
+    private DatabaseModule_ProvideServersDAOFactory(DatabaseModule module, Provider<ArizonaDatabase> databaseProvider) {
         this.module = module;
         this.databaseProvider = databaseProvider;
     }

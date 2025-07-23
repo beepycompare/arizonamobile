@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class GamefilesInfoApiRepository_Factory implements Factory<GamefilesInfoApiRepository> {
     private final Provider<NetworkDataSource> networkDataSourceProvider;
 
-    public GamefilesInfoApiRepository_Factory(Provider<NetworkDataSource> provider) {
+    private GamefilesInfoApiRepository_Factory(Provider<NetworkDataSource> provider) {
         this.networkDataSourceProvider = provider;
     }
 

@@ -1,14 +1,11 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AppMetricaConfig;
-import java.util.Map;
-import org.json.JSONObject;
+import android.app.Activity;
+import android.app.Application;
+import android.os.Bundle;
 /* loaded from: classes4.dex */
-public final class V7 {
-    public final void a(JSONObject jSONObject, AppMetricaConfig.Builder builder) {
-    }
-
-    public final JSONObject a(Map<String, ? extends Object> map) {
-        return new JSONObject();
+public abstract class V7 implements Application.ActivityLifecycleCallbacks {
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
     }
 }

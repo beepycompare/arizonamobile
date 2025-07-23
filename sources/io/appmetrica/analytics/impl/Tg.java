@@ -1,23 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.networktasks.internal.NetworkServiceLocator;
-import io.appmetrica.analytics.networktasks.internal.NetworkTask;
+import java.util.List;
 /* loaded from: classes4.dex */
-public final class Tg implements Hl {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final C0739ym f643a;
-
-    public Tg(C0739ym c0739ym) {
-        this.f643a = c0739ym;
+public class Tg extends Ja {
+    public Tg(Ei ei) {
+        super(ei);
     }
 
-    @Override // io.appmetrica.analytics.impl.Hl
-    public final void a() {
-        NetworkTask c = this.f643a.c();
-        if (c != null) {
-            Ga.F.getClass();
-            NetworkServiceLocator.getInstance().getNetworkCore().startTask(c);
-        }
+    @Override // io.appmetrica.analytics.impl.Ja
+    public void a(List<AbstractC0236eh> list) {
+        list.add(this.f503a.m);
+        list.add(this.f503a.b);
     }
 }

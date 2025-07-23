@@ -31,6 +31,10 @@ public final class RegistrationAccountBinding implements ViewBinding {
     public final AppCompatImageView registrationAccountPasswordCheck;
     public final AppCompatImageView registrationAccountPasswordIcon;
     public final EditText registrationAccountPasswordPlaceholder;
+    public final ConstraintLayout registrationAccountPromo;
+    public final AppCompatImageView registrationAccountPromoCheck;
+    public final AppCompatImageView registrationAccountPromoIcon;
+    public final EditText registrationAccountPromoPlaceholder;
     public final ConstraintLayout registrationAccountSurname;
     public final AppCompatImageView registrationAccountSurnameCheck;
     public final EditText registrationAccountSurnamePlaceholder;
@@ -40,7 +44,7 @@ public final class RegistrationAccountBinding implements ViewBinding {
     public final EditText registrationAccountUsernamePlaceholder;
     private final ConstraintLayout rootView;
 
-    private RegistrationAccountBinding(ConstraintLayout rootView, Guideline centerLine, Guideline regTopLine, ConstraintLayout registrationAccount, ConstraintLayout registrationAccountBackground, ConstraintLayout registrationAccountContainer, ConstraintLayout registrationAccountExistContainer, ConstraintLayout registrationAccountInvite, AppCompatImageView registrationAccountInviteCheck, AppCompatImageView registrationAccountInviteIcon, EditText registrationAccountInvitePlaceholder, TextView registrationAccountIsExist, TextView registrationAccountIsExistButton, ConstraintLayout registrationAccountNextButton, TextView registrationAccountNextButtonText, ConstraintLayout registrationAccountPassword, AppCompatImageView registrationAccountPasswordCheck, AppCompatImageView registrationAccountPasswordIcon, EditText registrationAccountPasswordPlaceholder, ConstraintLayout registrationAccountSurname, AppCompatImageView registrationAccountSurnameCheck, EditText registrationAccountSurnamePlaceholder, TextView registrationAccountTitle, ConstraintLayout registrationAccountUsername, AppCompatImageView registrationAccountUsernameCheck, EditText registrationAccountUsernamePlaceholder) {
+    private RegistrationAccountBinding(ConstraintLayout rootView, Guideline centerLine, Guideline regTopLine, ConstraintLayout registrationAccount, ConstraintLayout registrationAccountBackground, ConstraintLayout registrationAccountContainer, ConstraintLayout registrationAccountExistContainer, ConstraintLayout registrationAccountInvite, AppCompatImageView registrationAccountInviteCheck, AppCompatImageView registrationAccountInviteIcon, EditText registrationAccountInvitePlaceholder, TextView registrationAccountIsExist, TextView registrationAccountIsExistButton, ConstraintLayout registrationAccountNextButton, TextView registrationAccountNextButtonText, ConstraintLayout registrationAccountPassword, AppCompatImageView registrationAccountPasswordCheck, AppCompatImageView registrationAccountPasswordIcon, EditText registrationAccountPasswordPlaceholder, ConstraintLayout registrationAccountPromo, AppCompatImageView registrationAccountPromoCheck, AppCompatImageView registrationAccountPromoIcon, EditText registrationAccountPromoPlaceholder, ConstraintLayout registrationAccountSurname, AppCompatImageView registrationAccountSurnameCheck, EditText registrationAccountSurnamePlaceholder, TextView registrationAccountTitle, ConstraintLayout registrationAccountUsername, AppCompatImageView registrationAccountUsernameCheck, EditText registrationAccountUsernamePlaceholder) {
         this.rootView = rootView;
         this.centerLine = centerLine;
         this.regTopLine = regTopLine;
@@ -60,6 +64,10 @@ public final class RegistrationAccountBinding implements ViewBinding {
         this.registrationAccountPasswordCheck = registrationAccountPasswordCheck;
         this.registrationAccountPasswordIcon = registrationAccountPasswordIcon;
         this.registrationAccountPasswordPlaceholder = registrationAccountPasswordPlaceholder;
+        this.registrationAccountPromo = registrationAccountPromo;
+        this.registrationAccountPromoCheck = registrationAccountPromoCheck;
+        this.registrationAccountPromoIcon = registrationAccountPromoIcon;
+        this.registrationAccountPromoPlaceholder = registrationAccountPromoPlaceholder;
         this.registrationAccountSurname = registrationAccountSurname;
         this.registrationAccountSurnameCheck = registrationAccountSurnameCheck;
         this.registrationAccountSurnamePlaceholder = registrationAccountSurnamePlaceholder;
@@ -139,28 +147,44 @@ public final class RegistrationAccountBinding implements ViewBinding {
                                                                         i = R.id.registration_account_password_placeholder;
                                                                         EditText editText2 = (EditText) ViewBindings.findChildViewById(rootView, i);
                                                                         if (editText2 != null) {
-                                                                            i = R.id.registration_account_surname;
+                                                                            i = R.id.registration_account_promo;
                                                                             ConstraintLayout constraintLayout8 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
                                                                             if (constraintLayout8 != null) {
-                                                                                i = R.id.registration_account_surname_check;
+                                                                                i = R.id.registration_account_promo_check;
                                                                                 AppCompatImageView appCompatImageView5 = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
                                                                                 if (appCompatImageView5 != null) {
-                                                                                    i = R.id.registration_account_surname_placeholder;
-                                                                                    EditText editText3 = (EditText) ViewBindings.findChildViewById(rootView, i);
-                                                                                    if (editText3 != null) {
-                                                                                        i = R.id.registration_account_title;
-                                                                                        TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                        if (textView4 != null) {
-                                                                                            i = R.id.registration_account_username;
+                                                                                    i = R.id.registration_account_promo_icon;
+                                                                                    AppCompatImageView appCompatImageView6 = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                    if (appCompatImageView6 != null) {
+                                                                                        i = R.id.registration_account_promo_placeholder;
+                                                                                        EditText editText3 = (EditText) ViewBindings.findChildViewById(rootView, i);
+                                                                                        if (editText3 != null) {
+                                                                                            i = R.id.registration_account_surname;
                                                                                             ConstraintLayout constraintLayout9 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
                                                                                             if (constraintLayout9 != null) {
-                                                                                                i = R.id.registration_account_username_check;
-                                                                                                AppCompatImageView appCompatImageView6 = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                if (appCompatImageView6 != null) {
-                                                                                                    i = R.id.registration_account_username_placeholder;
+                                                                                                i = R.id.registration_account_surname_check;
+                                                                                                AppCompatImageView appCompatImageView7 = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                if (appCompatImageView7 != null) {
+                                                                                                    i = R.id.registration_account_surname_placeholder;
                                                                                                     EditText editText4 = (EditText) ViewBindings.findChildViewById(rootView, i);
                                                                                                     if (editText4 != null) {
-                                                                                                        return new RegistrationAccountBinding(constraintLayout, guideline, guideline2, constraintLayout, constraintLayout2, constraintLayout3, constraintLayout4, constraintLayout5, appCompatImageView, appCompatImageView2, editText, textView, textView2, constraintLayout6, textView3, constraintLayout7, appCompatImageView3, appCompatImageView4, editText2, constraintLayout8, appCompatImageView5, editText3, textView4, constraintLayout9, appCompatImageView6, editText4);
+                                                                                                        i = R.id.registration_account_title;
+                                                                                                        TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                        if (textView4 != null) {
+                                                                                                            i = R.id.registration_account_username;
+                                                                                                            ConstraintLayout constraintLayout10 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                            if (constraintLayout10 != null) {
+                                                                                                                i = R.id.registration_account_username_check;
+                                                                                                                AppCompatImageView appCompatImageView8 = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                if (appCompatImageView8 != null) {
+                                                                                                                    i = R.id.registration_account_username_placeholder;
+                                                                                                                    EditText editText5 = (EditText) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                    if (editText5 != null) {
+                                                                                                                        return new RegistrationAccountBinding(constraintLayout, guideline, guideline2, constraintLayout, constraintLayout2, constraintLayout3, constraintLayout4, constraintLayout5, appCompatImageView, appCompatImageView2, editText, textView, textView2, constraintLayout6, textView3, constraintLayout7, appCompatImageView3, appCompatImageView4, editText2, constraintLayout8, appCompatImageView5, appCompatImageView6, editText3, constraintLayout9, appCompatImageView7, editText4, textView4, constraintLayout10, appCompatImageView8, editText5);
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
                                                                                                     }
                                                                                                 }
                                                                                             }

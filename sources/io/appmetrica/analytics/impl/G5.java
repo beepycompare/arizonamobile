@@ -1,26 +1,26 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public final class G5 {
+public final class G5 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final PublicLogger f439a;
+    public final /* synthetic */ InterfaceC0509pe f447a;
+    public final /* synthetic */ H5 b;
 
-    public G5(String str) {
-        this.f439a = LoggerStorage.getOrCreatePublicLogger(str);
+    public G5(H5 h5, InterfaceC0509pe interfaceC0509pe) {
+        this.b = h5;
+        this.f447a = interfaceC0509pe;
     }
 
-    public final int a(int i) {
-        if (i < 100) {
-            this.f439a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be greater than or equal to 100, but was: " + i + ". Default value (100) will be used", new Object[0]);
-            return 100;
-        } else if (i > 10000) {
-            this.f439a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be less than or equal to 10000, but was: " + i + ". Default value (10000) will be used", new Object[0]);
-            return 10000;
-        } else {
-            return i;
+    @Override // java.lang.Runnable
+    public final void run() {
+        synchronized (this.b) {
+            H5 h5 = this.b;
+            Object obj = h5.f465a;
+            if (obj == null) {
+                h5.b.add(this.f447a);
+            } else {
+                this.f447a.consume(obj);
+            }
         }
     }
 }

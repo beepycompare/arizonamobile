@@ -7,32 +7,31 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
+import java.util.Arrays;
 /* loaded from: classes4.dex */
 public final class I8 extends MessageNano {
-    public static volatile I8[] c;
+    public static volatile I8[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public E8 f473a;
-    public H8 b;
+    public byte[] f487a;
 
     public I8() {
         a();
     }
 
     public static I8[] b() {
-        if (c == null) {
+        if (b == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (c == null) {
-                    c = new I8[0];
+                if (b == null) {
+                    b = new I8[0];
                 }
             }
         }
-        return c;
+        return b;
     }
 
     public final I8 a() {
-        this.f473a = null;
-        this.b = null;
+        this.f487a = WireFormatNano.EMPTY_BYTES;
         this.cachedSize = -1;
         return this;
     }
@@ -40,23 +39,13 @@ public final class I8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        E8 e8 = this.f473a;
-        if (e8 != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, e8);
-        }
-        H8 h8 = this.b;
-        return h8 != null ? CodedOutputByteBufferNano.computeMessageSize(2, h8) + computeSerializedSize : computeSerializedSize;
+        return !Arrays.equals(this.f487a, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(1, this.f487a) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        E8 e8 = this.f473a;
-        if (e8 != null) {
-            codedOutputByteBufferNano.writeMessage(1, e8);
-        }
-        H8 h8 = this.b;
-        if (h8 != null) {
-            codedOutputByteBufferNano.writeMessage(2, h8);
+        if (!Arrays.equals(this.f487a, WireFormatNano.EMPTY_BYTES)) {
+            codedOutputByteBufferNano.writeBytes(1, this.f487a);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -68,20 +57,12 @@ public final class I8 extends MessageNano {
             int readTag = codedInputByteBufferNano.readTag();
             if (readTag == 0) {
                 break;
-            } else if (readTag == 10) {
-                if (this.f473a == null) {
-                    this.f473a = new E8();
-                }
-                codedInputByteBufferNano.readMessage(this.f473a);
-            } else if (readTag != 18) {
+            } else if (readTag != 10) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                if (this.b == null) {
-                    this.b = new H8();
-                }
-                codedInputByteBufferNano.readMessage(this.b);
+                this.f487a = codedInputByteBufferNano.readBytes();
             }
         }
         return this;

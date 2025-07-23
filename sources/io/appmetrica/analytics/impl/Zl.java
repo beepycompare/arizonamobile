@@ -1,101 +1,53 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.StartupParamsCallback;
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
-import java.util.Collection;
-import java.util.Iterator;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import kotlin.collections.SetsKt;
-import kotlin.jvm.functions.Function0;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public abstract class Zl {
+public final class Zl extends BaseRequestConfig.BaseRequestArguments {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Set f743a = SetsKt.setOf((Object[]) new String[]{"appmetrica_clids", StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, StartupParamsCallback.APPMETRICA_DEVICE_ID, "appmetrica_get_ad_url", "appmetrica_report_ad_url", StartupParamsCallback.APPMETRICA_UUID});
-    public static final SystemTimeProvider b = new SystemTimeProvider();
-    public static final Y3 c = new Y3();
+    public final String f754a;
+    public final String b;
+    public final Map<String, String> c;
+    public final boolean d;
+    public final List<String> e;
 
-    public static final boolean a(String str) {
-        return !(str == null || str.length() == 0);
+    public Zl(C0198d4 c0198d4) {
+        this(c0198d4.a().c(), c0198d4.a().d(), c0198d4.a().a(), c0198d4.a().h(), c0198d4.a().b());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:44:0x009c  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00ae A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00ae A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0017 A[SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final boolean a(C0190cm c0190cm, Collection collection, Map map, Function0 function0) {
-        boolean a2;
-        if (collection != null && !collection.isEmpty() && !collection.isEmpty()) {
-            Iterator it = collection.iterator();
-            while (it.hasNext()) {
-                String str = (String) it.next();
-                switch (str.hashCode()) {
-                    case -1367801046:
-                        if (!str.equals(StartupParamsCallback.APPMETRICA_UUID)) {
-                            if (c0190cm.w) {
-                                return false;
-                            }
-                            if (b.currentTimeSeconds() > c0190cm.o + c0190cm.A.f342a) {
-                                return false;
-                            }
-                        } else {
-                            a2 = a(c0190cm.d);
-                            if (a2) {
-                                return false;
-                            }
-                        }
-                    case 155670667:
-                        if (str.equals("appmetrica_get_ad_url")) {
-                            a2 = a(c0190cm.i);
-                            if (a2) {
-                            }
-                        } else if (c0190cm.w) {
-                        }
-                        break;
-                    case 299713912:
-                        if (str.equals(StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH)) {
-                            a2 = a(c0190cm.b);
-                            if (a2) {
-                            }
-                        } else if (c0190cm.w) {
-                        }
-                        break;
-                    case 530949152:
-                        if (str.equals("appmetrica_clids")) {
-                            c.getClass();
-                            a2 = Y3.a(map, c0190cm, (V3) function0.invoke());
-                            if (a2) {
-                            }
-                        } else if (c0190cm.w) {
-                        }
-                        break;
-                    case 703740463:
-                        if (str.equals("appmetrica_report_ad_url")) {
-                            a2 = a(c0190cm.j);
-                            if (a2) {
-                            }
-                        } else if (c0190cm.w) {
-                        }
-                        break;
-                    case 1117383061:
-                        if (str.equals(StartupParamsCallback.APPMETRICA_DEVICE_ID)) {
-                            a2 = a(c0190cm.f789a);
-                            if (a2) {
-                            }
-                        } else if (c0190cm.w) {
-                        }
-                        break;
-                    default:
-                        if (c0190cm.w) {
-                        }
-                        break;
-                }
-            }
-        }
-        return true;
+    public final boolean a(Zl zl) {
+        return false;
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
+    /* renamed from: b */
+    public final Zl mergeFrom(Zl zl) {
+        return new Zl((String) WrapUtils.getOrDefaultNullable(this.f754a, zl.f754a), (String) WrapUtils.getOrDefaultNullable(this.b, zl.b), (Map) WrapUtils.getOrDefaultNullable(this.c, zl.c), this.d || zl.d, zl.d ? zl.e : this.e);
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
+    public final boolean compareWithOtherArguments(Object obj) {
+        Zl zl = (Zl) obj;
+        return false;
+    }
+
+    public final String toString() {
+        return "Arguments{distributionReferrer='" + this.f754a + "', installReferrerSource='" + this.b + "', clientClids=" + this.c + ", hasNewCustomHosts=" + this.d + ", newCustomHosts=" + this.e + AbstractJsonLexerKt.END_OBJ;
+    }
+
+    public Zl(String str, String str2, Map<String, String> map, boolean z, List<String> list) {
+        this.f754a = str;
+        this.b = str2;
+        this.c = map;
+        this.d = z;
+        this.e = list;
+    }
+
+    public Zl() {
+        this(null, null, null, false, null);
     }
 }

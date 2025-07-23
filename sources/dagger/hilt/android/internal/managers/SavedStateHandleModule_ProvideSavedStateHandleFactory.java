@@ -8,7 +8,7 @@ import dagger.internal.Provider;
 public final class SavedStateHandleModule_ProvideSavedStateHandleFactory implements Factory<SavedStateHandle> {
     private final Provider<SavedStateHandleHolder> savedStateHandleHolderProvider;
 
-    public SavedStateHandleModule_ProvideSavedStateHandleFactory(Provider<SavedStateHandleHolder> savedStateHandleHolderProvider) {
+    private SavedStateHandleModule_ProvideSavedStateHandleFactory(Provider<SavedStateHandleHolder> savedStateHandleHolderProvider) {
         this.savedStateHandleHolderProvider = savedStateHandleHolderProvider;
     }
 

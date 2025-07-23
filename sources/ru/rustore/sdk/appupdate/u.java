@@ -20,10 +20,10 @@ public interface u extends IInterface {
         public static class C0106a implements u {
 
             /* renamed from: a  reason: collision with root package name */
-            public final IBinder f1364a;
+            public final IBinder f1367a;
 
             public C0106a(IBinder iBinder) {
-                this.f1364a = iBinder;
+                this.f1367a = iBinder;
             }
 
             @Override // ru.rustore.sdk.appupdate.u
@@ -34,7 +34,7 @@ public interface u extends IInterface {
                     obtain.writeInterfaceToken("ru.vk.store.provider.appupdate.AppUpdateProvider");
                     obtain.writeString(str);
                     obtain.writeStrongInterface(aVar);
-                    this.f1364a.transact(3, obtain, obtain2, 0);
+                    this.f1367a.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -44,7 +44,7 @@ public interface u extends IInterface {
 
             @Override // android.os.IInterface
             public final IBinder asBinder() {
-                return this.f1364a;
+                return this.f1367a;
             }
 
             @Override // ru.rustore.sdk.appupdate.u
@@ -61,7 +61,7 @@ public interface u extends IInterface {
                         obtain.writeInt(0);
                     }
                     obtain.writeStrongInterface(aVar);
-                    this.f1364a.transact(1, obtain, obtain2, 0);
+                    this.f1367a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -77,7 +77,7 @@ public interface u extends IInterface {
                     obtain.writeInterfaceToken("ru.vk.store.provider.appupdate.AppUpdateProvider");
                     obtain.writeString(str);
                     obtain.writeStrongInterface(aVar);
-                    this.f1364a.transact(2, obtain, obtain2, 0);
+                    this.f1367a.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -93,7 +93,7 @@ public interface u extends IInterface {
                     obtain.writeInterfaceToken("ru.vk.store.provider.appupdate.AppUpdateProvider");
                     obtain.writeString(str);
                     obtain.writeStrongInterface(aVar);
-                    this.f1364a.transact(4, obtain, obtain2, 0);
+                    this.f1367a.transact(4, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();

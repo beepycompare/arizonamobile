@@ -1,8 +1,82 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes4.dex */
-public final class N8 implements no {
-    @Override // io.appmetrica.analytics.impl.no
-    public final byte[] a(C0203d9 c0203d9, C0659vh c0659vh) {
-        return new byte[0];
+public final class N8 extends MessageNano {
+    public static volatile N8[] b;
+
+    /* renamed from: a  reason: collision with root package name */
+    public K8 f561a;
+
+    public N8() {
+        a();
+    }
+
+    public static N8[] b() {
+        if (b == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (b == null) {
+                    b = new N8[0];
+                }
+            }
+        }
+        return b;
+    }
+
+    public final N8 a() {
+        this.f561a = null;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        K8 k8 = this.f561a;
+        return k8 != null ? CodedOutputByteBufferNano.computeMessageSize(1, k8) + computeSerializedSize : computeSerializedSize;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        K8 k8 = this.f561a;
+        if (k8 != null) {
+            codedOutputByteBufferNano.writeMessage(1, k8);
+        }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final N8 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag != 10) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                if (this.f561a == null) {
+                    this.f561a = new K8();
+                }
+                codedInputByteBufferNano.readMessage(this.f561a);
+            }
+        }
+        return this;
+    }
+
+    public static N8 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new N8().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static N8 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (N8) MessageNano.mergeFrom(new N8(), bArr);
     }
 }

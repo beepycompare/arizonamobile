@@ -5,12 +5,12 @@ import android.text.TextUtils;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
 import io.appmetrica.analytics.impl.AbstractC0172c4;
-import io.appmetrica.analytics.impl.AbstractC0753zb;
-import io.appmetrica.analytics.impl.C0244f0;
-import io.appmetrica.analytics.impl.C0740yn;
-import io.appmetrica.analytics.impl.G5;
-import io.appmetrica.analytics.impl.V7;
-import io.appmetrica.analytics.impl.fo;
+import io.appmetrica.analytics.impl.Bb;
+import io.appmetrica.analytics.impl.Bn;
+import io.appmetrica.analytics.impl.C0245f0;
+import io.appmetrica.analytics.impl.I5;
+import io.appmetrica.analytics.impl.Y7;
+import io.appmetrica.analytics.impl.io;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Collection;
 import java.util.HashMap;
@@ -53,13 +53,13 @@ public class AppMetricaConfig {
 
     /* loaded from: classes4.dex */
     public static class Builder {
-        private static final C0740yn D = new C0740yn(new C0244f0());
+        private static final Bn D = new Bn(new C0245f0());
         private Integer A;
         private List B;
         private final HashMap C;
 
         /* renamed from: a  reason: collision with root package name */
-        private final G5 f193a;
+        private final I5 f193a;
         private final String b;
         private String c;
         private Integer d;
@@ -237,7 +237,7 @@ public class AppMetricaConfig {
             this.x = new LinkedHashMap();
             this.C = new HashMap();
             D.a(str);
-            this.f193a = new G5(str);
+            this.f193a = new I5(str);
             this.b = str;
         }
     }
@@ -249,7 +249,7 @@ public class AppMetricaConfig {
     public static AppMetricaConfig fromJson(String str) {
         HashMap c;
         HashMap c2;
-        new V7();
+        new Y7();
         if (TextUtils.isEmpty(str)) {
             return null;
         }
@@ -282,7 +282,7 @@ public class AppMetricaConfig {
             if (jSONObject.has("max_reports_in_db_count")) {
                 newConfigBuilder.withMaxReportsInDatabaseCount(jSONObject.optInt("max_reports_in_db_count"));
             }
-            if (jSONObject.has("error_environment") && (c2 = AbstractC0753zb.c(jSONObject.optString("error_environment"))) != null) {
+            if (jSONObject.has("error_environment") && (c2 = Bb.c(jSONObject.optString("error_environment"))) != null) {
                 for (Map.Entry entry : c2.entrySet()) {
                     newConfigBuilder.withErrorEnvironmentValue((String) entry.getKey(), (String) entry.getValue());
                 }
@@ -317,7 +317,7 @@ public class AppMetricaConfig {
             if (jSONObject.has("max_reports_count")) {
                 newConfigBuilder.withMaxReportsCount(jSONObject.optInt("max_reports_count"));
             }
-            if (jSONObject.has("app_environment") && (c = AbstractC0753zb.c(jSONObject.optString("app_environment"))) != null) {
+            if (jSONObject.has("app_environment") && (c = Bb.c(jSONObject.optString("app_environment"))) != null) {
                 for (Map.Entry entry2 : c.entrySet()) {
                     newConfigBuilder.withAppEnvironmentValue((String) entry2.getKey(), (String) entry2.getValue());
                 }
@@ -329,7 +329,7 @@ public class AppMetricaConfig {
                 newConfigBuilder.withAnrMonitoringTimeout(jSONObject.optInt("anr_monitoring_timeout"));
             }
             if (jSONObject.has("customHosts")) {
-                newConfigBuilder.withCustomHosts(AbstractC0753zb.a(jSONObject.optJSONArray("customHosts")));
+                newConfigBuilder.withCustomHosts(Bb.a(jSONObject.optJSONArray("customHosts")));
             }
             if (jSONObject.has("additional_config")) {
                 jSONObject.optJSONObject("additional_config");
@@ -355,7 +355,7 @@ public class AppMetricaConfig {
     public String toJson() {
         String str;
         List<String> list;
-        new V7();
+        new Y7();
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("apikey", this.apiKey);
@@ -399,7 +399,7 @@ public class AppMetricaConfig {
                 jSONObject.put("anr_monitoring_timeout", this.anrMonitoringTimeout);
                 list = this.customHosts;
                 if (list != null) {
-                    if (!fo.a((Collection) list)) {
+                    if (!io.a((Collection) list)) {
                         jSONArray = new JSONArray((Collection) list);
                     }
                     jSONObject.put("customHosts", jSONArray);

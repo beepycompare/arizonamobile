@@ -12,7 +12,7 @@ public final class C0110DownloadScreenComponent_Factory {
     private final Provider<FilesUpdaterInteractor> filesUpdaterInteractorProvider;
     private final Provider<LocalRepository> localRepositoryProvider;
 
-    public C0110DownloadScreenComponent_Factory(Provider<FilesUpdaterInteractor> filesUpdaterInteractorProvider, Provider<BuildConfigRepository> buildConfigRepositoryProvider, Provider<LocalRepository> localRepositoryProvider) {
+    private C0110DownloadScreenComponent_Factory(Provider<FilesUpdaterInteractor> filesUpdaterInteractorProvider, Provider<BuildConfigRepository> buildConfigRepositoryProvider, Provider<LocalRepository> localRepositoryProvider) {
         this.filesUpdaterInteractorProvider = filesUpdaterInteractorProvider;
         this.buildConfigRepositoryProvider = buildConfigRepositoryProvider;
         this.localRepositoryProvider = localRepositoryProvider;

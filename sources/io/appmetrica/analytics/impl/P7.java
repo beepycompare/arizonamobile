@@ -1,32 +1,64 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.ContentValues;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes4.dex */
-public final class P7 {
+public final class P7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f577a;
-    public final int b;
+    public final M7 f591a;
 
-    public P7(int i, long j) {
-        this.f577a = j;
-        this.b = i;
+    public P7() {
+        this(null, 1, null);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final ContentValues fromModel(O7 o7) {
+        ContentValues contentValues = new ContentValues();
+        Long l = o7.f574a;
+        if (l != null) {
+            contentValues.put("id", Long.valueOf(l.longValue()));
         }
-        if (obj instanceof P7) {
-            P7 p7 = (P7) obj;
-            return this.f577a == p7.f577a && this.b == p7.b;
+        Wk wk = o7.b;
+        if (wk != null) {
+            contentValues.put("type", Integer.valueOf(wk.f706a));
         }
-        return false;
+        String str = o7.c;
+        if (str != null) {
+            contentValues.put("report_request_parameters", str);
+        }
+        M7 m7 = this.f591a;
+        contentValues.put("session_description", MessageNano.toByteArray(m7.f545a.fromModel(o7.d)));
+        return contentValues;
     }
 
-    public final int hashCode() {
-        return Integer.hashCode(this.b) + (Long.hashCode(this.f577a) * 31);
+    public P7(M7 m7) {
+        this.f591a = m7;
     }
 
-    public final String toString() {
-        return "DecimalProtoModel(mantissa=" + this.f577a + ", exponent=" + this.b + ')';
+    public /* synthetic */ P7(M7 m7, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? new M7(null, 1, null) : m7);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final O7 toModel(ContentValues contentValues) {
+        Wk wk;
+        int intValue;
+        Long asLong = contentValues.getAsLong("id");
+        Integer asInteger = contentValues.getAsInteger("type");
+        if (asInteger != null) {
+            Integer valueOf = Integer.valueOf(asInteger.intValue());
+            wk = Wk.FOREGROUND;
+            if (valueOf != null && (intValue = valueOf.intValue()) != 0 && intValue == 1) {
+                wk = Wk.BACKGROUND;
+            }
+        } else {
+            wk = null;
+        }
+        return new O7(asLong, wk, contentValues.getAsString("report_request_parameters"), this.f591a.toModel(contentValues.getAsByteArray("session_description")));
     }
 }

@@ -43,7 +43,7 @@ final class Winter2025BattlePassScreen$setWelcomeScreen$1$4$bitmap1$1 extends Su
         if (this.label == 0) {
             ResultKt.throwOnFailure(obj);
             z = this.this$0.isArizonaType;
-            return UtilsKt.getIconFromArchive$default("battlepass", z ? 3 : 6740, null, 4, null);
+            return UtilsKt.getIconFromArchive$default("battlepass", z ? 3 : 7079, null, 4, null);
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }

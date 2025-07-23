@@ -1,33 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
-import kotlin.collections.CollectionsKt;
-import kotlin.text.Charsets;
+import android.os.Bundle;
 /* loaded from: classes4.dex */
-public final class Ba implements InterfaceC0279ga {
+public final class Ba extends V4 {
+    public Ba(S4 s4) {
+        super(s4);
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Z8 f353a = new Z8();
-
-    public final C0626u9[] a(byte[] bArr) {
-        int i = 0;
-        if (bArr != null) {
-            Map<String, byte[]> model = this.f353a.toModel(bArr);
-            C0626u9[] c0626u9Arr = new C0626u9[model.size()];
-            for (Object obj : model.entrySet()) {
-                int i2 = i + 1;
-                if (i < 0) {
-                    CollectionsKt.throwIndexOverflow();
-                }
-                Map.Entry entry = (Map.Entry) obj;
-                C0626u9 c0626u9 = new C0626u9();
-                c0626u9.f1072a = ((String) entry.getKey()).getBytes(Charsets.UTF_8);
-                c0626u9.b = (byte[]) entry.getValue();
-                c0626u9Arr[i] = c0626u9;
-                i = i2;
+    @Override // io.appmetrica.analytics.impl.V4
+    public final boolean a(C0401l6 c0401l6, P4 p4) {
+        Bundle bundle = c0401l6.m;
+        C0580sb c0580sb = bundle != null ? (C0580sb) bundle.getParcelable("io.appmetrica.analytics.impl.IdentifiersData") : null;
+        if (c0580sb != null) {
+            if (c0580sb.d) {
+                J4 j4 = p4.b.d.f549a;
+                Boolean bool = j4.n;
+                Boolean bool2 = j4.i;
+                Ia.F.b().c(bool != null ? bool.booleanValue() : true);
+                Ia.F.g().b(bool2);
             }
-            return c0626u9Arr;
         }
-        return new C0626u9[0];
+        this.f681a.a(c0580sb);
+        return false;
     }
 }

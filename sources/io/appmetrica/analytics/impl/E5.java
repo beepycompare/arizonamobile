@@ -1,26 +1,28 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
+import java.util.Arrays;
 /* loaded from: classes4.dex */
-public final class E5 implements Runnable {
+public final class E5 implements PermissionStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ InterfaceC0457ne f402a;
-    public final /* synthetic */ F5 b;
+    public final PermissionStrategy[] f411a;
 
-    public E5(F5 f5, InterfaceC0457ne interfaceC0457ne) {
-        this.b = f5;
-        this.f402a = interfaceC0457ne;
+    public E5(PermissionStrategy... permissionStrategyArr) {
+        this.f411a = permissionStrategyArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        synchronized (this.b) {
-            F5 f5 = this.b;
-            Object obj = f5.f424a;
-            if (obj == null) {
-                f5.b.add(this.f402a);
-            } else {
-                this.f402a.consume(obj);
+    @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy
+    public final boolean forbidUsePermission(String str) {
+        for (PermissionStrategy permissionStrategy : this.f411a) {
+            if (permissionStrategy.forbidUsePermission(str)) {
+                return true;
             }
         }
+        return false;
+    }
+
+    public final String toString() {
+        return "CompositePermissionStrategy(strategies=" + Arrays.toString(this.f411a) + ')';
     }
 }

@@ -1,17 +1,11 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
-import io.appmetrica.analytics.ICrashTransformer;
 /* loaded from: classes4.dex */
-public final class Mh extends C6 {
-    public final Qn d;
+public final class Mh {
 
-    public Mh(Context context, Qn qn, B6 b6, ICrashTransformer iCrashTransformer) {
-        this(qn, b6, iCrashTransformer, new C0254fa(context));
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public J4 f549a;
 
-    public Mh(Qn qn, B6 b6, ICrashTransformer iCrashTransformer, C0254fa c0254fa) {
-        super(b6, iCrashTransformer, c0254fa);
-        this.d = qn;
+    public Mh(J4 j4) {
+        this.f549a = j4;
     }
 }

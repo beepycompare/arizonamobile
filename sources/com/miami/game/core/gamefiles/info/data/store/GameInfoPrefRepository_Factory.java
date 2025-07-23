@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class GameInfoPrefRepository_Factory implements Factory<GameInfoPrefRepository> {
     private final Provider<LocalRepository> localRepositoryProvider;
 
-    public GameInfoPrefRepository_Factory(Provider<LocalRepository> provider) {
+    private GameInfoPrefRepository_Factory(Provider<LocalRepository> provider) {
         this.localRepositoryProvider = provider;
     }
 

@@ -1,77 +1,57 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.atomic.AtomicBoolean;
+import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor;
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import kotlin.collections.CollectionsKt;
 /* loaded from: classes4.dex */
-public final class D5 implements I9 {
+public final class D5 implements ModuleAdRevenueProcessor, ModuleAdRevenueProcessorsHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    public final N9 f384a;
-    public final List b;
-    public final List c;
-    public final AtomicBoolean d;
+    public final ArrayList f390a = new ArrayList();
 
-    public D5(N9 n9, List<? extends V8> list, List<? extends V8> list2, C0398l5 c0398l5) {
-        this.f384a = n9;
-        this.b = list;
-        this.c = list2;
-        Objects.toString(c0398l5);
-        this.d = new AtomicBoolean(true);
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
+    public final String getDescription() {
+        return CollectionsKt.joinToString$default(this.f390a, null, "Composite processor with " + this.f390a.size() + " children: [", "]", 0, null, C5.f371a, 25, null);
     }
 
-    public final boolean a() {
-        List<V8> list = this.c;
-        if (!list.isEmpty() && !list.isEmpty()) {
-            for (V8 v8 : list) {
-                if (!v8.b()) {
-                    return false;
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
+    public final boolean process(Object... objArr) {
+        Object obj;
+        boolean process;
+        LoggerStorage.getMainPublicOrAnonymousLogger().info("Processing Ad Revenue for " + Arrays.toString(objArr), new Object[0]);
+        Iterator it = this.f390a.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                obj = null;
+                break;
+            }
+            obj = it.next();
+            ModuleAdRevenueProcessor moduleAdRevenueProcessor = (ModuleAdRevenueProcessor) obj;
+            try {
+                process = moduleAdRevenueProcessor.process(Arrays.copyOf(objArr, objArr.length));
+                if (!process) {
+                    LoggerStorage.getMainPublicOrAnonymousLogger().info("Ad Revenue was not processed by " + moduleAdRevenueProcessor.getDescription(), new Object[0]);
                 }
+            } catch (Throwable th) {
+                LoggerStorage.getMainPublicOrAnonymousLogger().error(th, "Got exception from processor " + moduleAdRevenueProcessor.getDescription(), new Object[0]);
+            }
+            if (process) {
+                break;
             }
         }
-        List<V8> list2 = this.b;
-        if (list2.isEmpty() || list2.isEmpty()) {
-            return false;
+        boolean z = ((ModuleAdRevenueProcessor) obj) != null;
+        if (!z) {
+            LoggerStorage.getMainPublicOrAnonymousLogger().info("Ad Revenue was not processed by " + getDescription() + " since processor for " + Arrays.toString(objArr) + " was not found", new Object[0]);
         }
-        for (V8 v82 : list2) {
-            if (v82.b()) {
-                return true;
-            }
-        }
-        return false;
+        return z;
     }
 
-    public final void b() {
-        this.d.set(false);
-    }
-
-    public final void c() {
-        this.d.set(true);
-    }
-
-    public final void d() {
-        if (this.d.get()) {
-            List<V8> list = this.c;
-            if (!list.isEmpty() && !list.isEmpty()) {
-                for (V8 v8 : list) {
-                    if (!v8.b()) {
-                        return;
-                    }
-                }
-            }
-            ((C0292gn) this.f384a).c();
-        }
-    }
-
-    public final void e() {
-        if (this.d.get() && a()) {
-            ((C0292gn) this.f384a).c();
-        }
-    }
-
-    public final void f() {
-        if (this.d.get() && a()) {
-            ((C0292gn) this.f384a).b();
-        }
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder
+    public final void register(ModuleAdRevenueProcessor moduleAdRevenueProcessor) {
+        this.f390a.add(moduleAdRevenueProcessor);
     }
 }

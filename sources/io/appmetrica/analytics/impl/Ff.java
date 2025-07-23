@@ -1,10 +1,42 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Ff extends AbstractC0252f8 {
-    public Ff(Context context, ProtobufStateStorage<C0508pf> protobufStateStorage, AbstractC0302h8 abstractC0302h8, Vn vn, Gm gm, InterfaceC0238ej interfaceC0238ej, InterfaceC0187cj interfaceC0187cj, R6 r6, C0508pf c0508pf, String str) {
-        super(context, protobufStateStorage, abstractC0302h8, vn, gm, interfaceC0238ej, interfaceC0187cj, r6, c0508pf);
+public final class Ff implements ProtobufConverter {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Df f437a = new Df();
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0759zf fromModel(Ef ef) {
+        C0759zf c0759zf = new C0759zf();
+        if (!TextUtils.isEmpty(ef.f418a)) {
+            c0759zf.f1171a = ef.f418a;
+        }
+        c0759zf.b = ef.b.toString();
+        c0759zf.c = ef.c;
+        c0759zf.d = ef.d;
+        c0759zf.e = this.f437a.fromModel(ef.e).intValue();
+        return c0759zf;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Ef toModel(C0759zf c0759zf) {
+        JSONObject jSONObject;
+        String str = c0759zf.f1171a;
+        String str2 = c0759zf.b;
+        if (!TextUtils.isEmpty(str2)) {
+            try {
+                jSONObject = new JSONObject(str2);
+            } catch (Throwable unused) {
+            }
+            return new Ef(str, jSONObject, c0759zf.c, c0759zf.d, this.f437a.toModel(Integer.valueOf(c0759zf.e)));
+        }
+        jSONObject = new JSONObject();
+        return new Ef(str, jSONObject, c0759zf.c, c0759zf.d, this.f437a.toModel(Integer.valueOf(c0759zf.e)));
     }
 }

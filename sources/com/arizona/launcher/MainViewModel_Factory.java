@@ -9,7 +9,7 @@ public final class MainViewModel_Factory implements Factory<MainViewModel> {
     private final Provider<PreferencesRepository> preferencesRepositoryProvider;
     private final Provider<SettingsRepository> settingsRepositoryProvider;
 
-    public MainViewModel_Factory(Provider<SettingsRepository> settingsRepositoryProvider, Provider<PreferencesRepository> preferencesRepositoryProvider) {
+    private MainViewModel_Factory(Provider<SettingsRepository> settingsRepositoryProvider, Provider<PreferencesRepository> preferencesRepositoryProvider) {
         this.settingsRepositoryProvider = settingsRepositoryProvider;
         this.preferencesRepositoryProvider = preferencesRepositoryProvider;
     }

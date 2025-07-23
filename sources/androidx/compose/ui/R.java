@@ -49,8 +49,8 @@ public final class R {
         public static int compose_view_saveable_id_tag = 0x7f0a0346;
         public static int consume_window_insets_tag = 0x7f0a034d;
         public static int hide_in_inspector_tag = 0x7f0a0610;
-        public static int inspection_slot_table_set = 0x7f0a06b2;
-        public static int wrapped_composition_tag = 0x7f0a0ee1;
+        public static int inspection_slot_table_set = 0x7f0a06b4;
+        public static int wrapped_composition_tag = 0x7f0a0eee;
 
         private id() {
         }

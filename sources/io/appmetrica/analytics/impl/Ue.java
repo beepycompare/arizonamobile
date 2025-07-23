@@ -1,37 +1,51 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import java.nio.charset.Charset;
-import java.util.Map;
-import kotlin.text.Charsets;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
+import java.util.Locale;
 /* loaded from: classes4.dex */
-public final class Ue implements Converter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0424m6[] fromModel(Map<String, String> map) {
-        int size = map.size();
-        C0424m6[] c0424m6Arr = new C0424m6[size];
-        int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            c0424m6Arr[i2] = new C0424m6();
+public abstract class Ue {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final SafePackageManager f670a = new SafePackageManager();
+    public static final Pe b = new Pe();
+    public static final Qe c = new Qe();
+    public static final Re d = new Re(2);
+
+    public static String a(Locale locale) {
+        String language = locale.getLanguage();
+        String country = locale.getCountry();
+        StringBuilder sb = new StringBuilder(language);
+        String script = locale.getScript();
+        if (!TextUtils.isEmpty(script)) {
+            sb.append('-').append(script);
         }
-        for (Map.Entry<String, String> entry : map.entrySet()) {
-            C0424m6 c0424m6 = c0424m6Arr[i];
-            Charset charset = Charsets.UTF_8;
-            c0424m6.f935a = entry.getKey().getBytes(charset);
-            c0424m6Arr[i].b = entry.getValue().getBytes(charset);
-            i++;
+        if (!TextUtils.isEmpty(country)) {
+            sb.append('_').append(country);
         }
-        return c0424m6Arr;
+        return sb.toString();
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        C0424m6[] c0424m6Arr = (C0424m6[]) obj;
-        throw new UnsupportedOperationException();
-    }
-
-    public final Map<String, String> a(C0424m6[] c0424m6Arr) {
-        throw new UnsupportedOperationException();
+    public static Te a(ConnectivityManager connectivityManager) {
+        NetworkInfo networkInfo;
+        Te te = Te.UNDEFINED;
+        Network activeNetwork = connectivityManager.getActiveNetwork();
+        if (!AndroidUtils.isApiAchieved(29) ? !(activeNetwork != null && ((networkInfo = connectivityManager.getNetworkInfo(activeNetwork)) == null || networkInfo.isConnected())) : activeNetwork == null) {
+            return Te.OFFLINE;
+        }
+        NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork);
+        if (networkCapabilities != null) {
+            for (Integer num : c.f733a.keySet()) {
+                if (networkCapabilities.hasTransport(num.intValue())) {
+                    return (Te) c.a(num);
+                }
+            }
+        }
+        return te;
     }
 }

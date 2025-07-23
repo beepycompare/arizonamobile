@@ -59,6 +59,7 @@ import ru.mrlargha.commonui.databinding.WinterBattlepassBuyPremiumLayoutBinding;
 import ru.mrlargha.commonui.databinding.WinterBattlepassConvertBattlecoinsLayoutBinding;
 import ru.mrlargha.commonui.databinding.WinterBattlepassLayoutBinding;
 import ru.mrlargha.commonui.databinding.WinterBattlepassLevelSetsLayoutBinding;
+import ru.mrlargha.commonui.databinding.WinterBattlepassRouletteLayoutBinding;
 import ru.mrlargha.commonui.databinding.WinterBattlepassRouletteMainScreenBinding;
 import ru.mrlargha.commonui.databinding.WinterBattlepassShopLayoutBinding;
 import ru.mrlargha.commonui.databinding.WinterBattlepassTasksLayoutBinding;
@@ -257,11 +258,11 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void rouletteSpinPrises$lambda$74(View view) {
+    public static final void rouletteSpinPrises$lambda$75(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setWelcomeScreen$lambda$86$lambda$83(View view) {
+    public static final void setWelcomeScreen$lambda$87$lambda$84(View view) {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -763,6 +764,17 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
                 Winter2025BattlePassScreen.setupNavigation$lambda$33$lambda$32(Winter2025BattlePassScreen.this, view);
             }
         });
+        WinterBattlepassRouletteLayoutBinding winterBattlepassRouletteLayoutBinding = this.battlePassBinding.battlepassRoulettePage;
+        winterBattlepassRouletteLayoutBinding.premText.setColorList(CollectionsKt.listOf((Object[]) new String[]{"#EBFFD7", "#C6EB8B"}));
+        if (this.isArizonaType) {
+            winterBattlepassRouletteLayoutBinding.usualTitle1.setVisibility(0);
+            winterBattlepassRouletteLayoutBinding.usualTitle.setText("Гетто");
+            winterBattlepassRouletteLayoutBinding.usualTitle2.setVisibility(8);
+            return;
+        }
+        winterBattlepassRouletteLayoutBinding.usualTitle1.setVisibility(8);
+        winterBattlepassRouletteLayoutBinding.usualTitle.setText("Уличная");
+        winterBattlepassRouletteLayoutBinding.usualTitle2.setVisibility(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -869,7 +881,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
                     winterBattlepassLayoutBinding.battlepassLevelSetsPageMaximum.buttonReturn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda45
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            Winter2025BattlePassScreen.clickButtonMenuNavigation$lambda$35$lambda$34(Winter2025BattlePassScreen.this, view);
+                            Winter2025BattlePassScreen.clickButtonMenuNavigation$lambda$36$lambda$35(Winter2025BattlePassScreen.this, view);
                         }
                     });
                     winterBattlepassLayoutBinding.battlepassContainerBg.setImageResource(R.drawable.battlepass_2025_winter_bg2);
@@ -896,7 +908,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void clickButtonMenuNavigation$lambda$35$lambda$34(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
+    public static final void clickButtonMenuNavigation$lambda$36$lambda$35(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         winter2025BattlePassScreen.clickButtonMenuNavigation(NavItems.MAIN_PAGE);
     }
 
@@ -906,31 +918,31 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         winterBattlepassTasksLayoutBinding.buttonDailyTasks.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda31
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$40$lambda$36(Winter2025BattlePassScreen.this, view);
+                Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$41$lambda$37(Winter2025BattlePassScreen.this, view);
             }
         });
         winterBattlepassTasksLayoutBinding.buttonPremiumTasks.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda32
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$40$lambda$37(Winter2025BattlePassScreen.this, view);
+                Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$41$lambda$38(Winter2025BattlePassScreen.this, view);
             }
         });
         winterBattlepassTasksLayoutBinding.buyLevelsBtnSd.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda34
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$40$lambda$38(Winter2025BattlePassScreen.this, view);
+                Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$41$lambda$39(Winter2025BattlePassScreen.this, view);
             }
         });
         winterBattlepassTasksLayoutBinding.btnBuyPremiumLock.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda35
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$40$lambda$39(Winter2025BattlePassScreen.this, view);
+                Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$41$lambda$40(Winter2025BattlePassScreen.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCommonTasksInfo$lambda$40$lambda$36(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
+    public static final void setupCommonTasksInfo$lambda$41$lambda$37(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         winter2025BattlePassScreen.setupThemeForSelectedTask(CategoryType.DAILY);
         winter2025BattlePassScreen.filterListForSelectedTask(CategoryType.DAILY);
         CommonTaskInfo commonTaskInfo = !winter2025BattlePassScreen.commonTasksAdapter.getCurrentTasksList().isEmpty() ? winter2025BattlePassScreen.commonTasksAdapter.getCurrentTasksList().get(0) : null;
@@ -940,7 +952,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCommonTasksInfo$lambda$40$lambda$37(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
+    public static final void setupCommonTasksInfo$lambda$41$lambda$38(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         winter2025BattlePassScreen.setupThemeForSelectedTask(CategoryType.PREMIUM);
         winter2025BattlePassScreen.filterListForSelectedTask(CategoryType.PREMIUM);
         CommonTaskInfo commonTaskInfo = !winter2025BattlePassScreen.commonTasksAdapter.getCurrentTasksList().isEmpty() ? winter2025BattlePassScreen.commonTasksAdapter.getCurrentTasksList().get(0) : null;
@@ -950,12 +962,12 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCommonTasksInfo$lambda$40$lambda$38(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
+    public static final void setupCommonTasksInfo$lambda$41$lambda$39(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         winter2025BattlePassScreen.clickButtonMenuNavigation(NavItems.LEVEL_SETS);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCommonTasksInfo$lambda$40$lambda$39(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
+    public static final void setupCommonTasksInfo$lambda$41$lambda$40(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         winter2025BattlePassScreen.clickButtonMenuNavigation(NavItems.BUY_PREMIUM);
     }
 
@@ -1162,7 +1174,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         winterBattlepassTasksLayoutBinding.buttonTaskInfoGetReward.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.setupTaskDataIntoUi$lambda$55$lambda$54(Winter2025BattlePassScreen.this, categoryType, commonTaskInfo, view);
+                Winter2025BattlePassScreen.setupTaskDataIntoUi$lambda$56$lambda$55(Winter2025BattlePassScreen.this, categoryType, commonTaskInfo, view);
             }
         });
         if (categoryType == CategoryType.PREMIUM) {
@@ -1188,7 +1200,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupTaskDataIntoUi$lambda$55$lambda$54(Winter2025BattlePassScreen winter2025BattlePassScreen, CategoryType categoryType, CommonTaskInfo commonTaskInfo, View view) {
+    public static final void setupTaskDataIntoUi$lambda$56$lambda$55(Winter2025BattlePassScreen winter2025BattlePassScreen, CategoryType categoryType, CommonTaskInfo commonTaskInfo, View view) {
         winter2025BattlePassScreen.notifyClick(1, -1, StringKt.toStringJson(new RewardGetRequest(categoryType.getValue(), commonTaskInfo.getId())));
     }
 
@@ -1334,25 +1346,25 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         winterBattlepassLevelSetsLayoutBinding.silverPriceButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda33
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.setupLevelBuyPage$lambda$65$lambda$61(Winter2025BattlePassScreen.this, view);
+                Winter2025BattlePassScreen.setupLevelBuyPage$lambda$66$lambda$62(Winter2025BattlePassScreen.this, view);
             }
         });
         winterBattlepassLevelSetsLayoutBinding.goldPriceButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda42
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.setupLevelBuyPage$lambda$65$lambda$62(Winter2025BattlePassScreen.this, view);
+                Winter2025BattlePassScreen.setupLevelBuyPage$lambda$66$lambda$63(Winter2025BattlePassScreen.this, view);
             }
         });
         winterBattlepassLevelSetsLayoutBinding.epicPriceButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda43
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.setupLevelBuyPage$lambda$65$lambda$63(Winter2025BattlePassScreen.this, view);
+                Winter2025BattlePassScreen.setupLevelBuyPage$lambda$66$lambda$64(Winter2025BattlePassScreen.this, view);
             }
         });
         winterBattlepassLevelSetsLayoutBinding.legendaryPriceButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda44
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.setupLevelBuyPage$lambda$65$lambda$64(Winter2025BattlePassScreen.this, view);
+                Winter2025BattlePassScreen.setupLevelBuyPage$lambda$66$lambda$65(Winter2025BattlePassScreen.this, view);
             }
         });
         if (this.isArizonaType) {
@@ -1365,22 +1377,22 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupLevelBuyPage$lambda$65$lambda$61(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
+    public static final void setupLevelBuyPage$lambda$66$lambda$62(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, 0, 7, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupLevelBuyPage$lambda$65$lambda$62(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
+    public static final void setupLevelBuyPage$lambda$66$lambda$63(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, 1, 7, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupLevelBuyPage$lambda$65$lambda$63(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
+    public static final void setupLevelBuyPage$lambda$66$lambda$64(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, 2, 7, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupLevelBuyPage$lambda$65$lambda$64(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
+    public static final void setupLevelBuyPage$lambda$66$lambda$65(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, 3, 7, null, 4, null);
     }
 
@@ -1436,17 +1448,32 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     private final void updateLogo() {
+        int premium;
         int i;
-        MainBattlePassInfo mainBattlePassInfo = this.battlePassInfo;
-        int premium = mainBattlePassInfo != null ? mainBattlePassInfo.getPremium() : -1;
-        if (premium == 0) {
-            i = R.drawable.battlepass_logo;
-        } else if (premium == 1) {
-            i = R.drawable.battlepass_logo_prem;
-        } else if (premium == 2) {
-            i = R.drawable.battlepass_logo_prem_plus;
+        if (this.isArizonaType) {
+            MainBattlePassInfo mainBattlePassInfo = this.battlePassInfo;
+            premium = mainBattlePassInfo != null ? mainBattlePassInfo.getPremium() : -1;
+            if (premium == 0) {
+                i = R.drawable.battlepass_logo;
+            } else if (premium == 1) {
+                i = R.drawable.battlepass_logo_prem;
+            } else if (premium == 2) {
+                i = R.drawable.battlepass_logo_prem_plus;
+            } else {
+                i = R.drawable.battlepass_logo;
+            }
         } else {
-            i = R.drawable.battlepass_logo;
+            MainBattlePassInfo mainBattlePassInfo2 = this.battlePassInfo;
+            premium = mainBattlePassInfo2 != null ? mainBattlePassInfo2.getPremium() : -1;
+            if (premium == 0) {
+                i = R.drawable.battlepass_logo_rodina;
+            } else if (premium == 1) {
+                i = R.drawable.battlepass_logo_prem_rodina;
+            } else if (premium == 2) {
+                i = R.drawable.battlepass_logo_prem_plus_rodina;
+            } else {
+                i = R.drawable.battlepass_logo_rodina;
+            }
         }
         this.battlePassBinding.logo.setImageResource(i);
         this.battlePassBinding.battlepassLevelSetsPageMaximum.logo.setImageResource(i);
@@ -1467,13 +1494,13 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
             winterBattlepassLayoutBinding.battlepassRoulettePage.battlepass2025WinterRouletteUsualButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda19
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    Winter2025BattlePassScreen.setupRoulette$lambda$68$lambda$66(Winter2025BattlePassScreen.this, winterBattlepassLayoutBinding, rouletteData, view);
+                    Winter2025BattlePassScreen.setupRoulette$lambda$69$lambda$67(Winter2025BattlePassScreen.this, winterBattlepassLayoutBinding, rouletteData, view);
                 }
             });
             winterBattlepassLayoutBinding.battlepassRoulettePage.battlepass2025WinterRoulettePremButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda20
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    Winter2025BattlePassScreen.setupRoulette$lambda$68$lambda$67(Winter2025BattlePassScreen.this, winterBattlepassLayoutBinding, rouletteData2, view);
+                    Winter2025BattlePassScreen.setupRoulette$lambda$69$lambda$68(Winter2025BattlePassScreen.this, winterBattlepassLayoutBinding, rouletteData2, view);
                 }
             });
             if (this.isPremRoulette) {
@@ -1489,7 +1516,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupRoulette$lambda$68$lambda$66(Winter2025BattlePassScreen winter2025BattlePassScreen, WinterBattlepassLayoutBinding winterBattlepassLayoutBinding, RouletteData rouletteData, View view) {
+    public static final void setupRoulette$lambda$69$lambda$67(Winter2025BattlePassScreen winter2025BattlePassScreen, WinterBattlepassLayoutBinding winterBattlepassLayoutBinding, RouletteData rouletteData, View view) {
         winter2025BattlePassScreen.possiblePrisesList.clear();
         RoulettePrisesPicasso.INSTANCE.clear();
         winter2025BattlePassScreen.priseAdapter.clearPriseList();
@@ -1501,7 +1528,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupRoulette$lambda$68$lambda$67(Winter2025BattlePassScreen winter2025BattlePassScreen, WinterBattlepassLayoutBinding winterBattlepassLayoutBinding, RouletteData rouletteData, View view) {
+    public static final void setupRoulette$lambda$69$lambda$68(Winter2025BattlePassScreen winter2025BattlePassScreen, WinterBattlepassLayoutBinding winterBattlepassLayoutBinding, RouletteData rouletteData, View view) {
         winter2025BattlePassScreen.possiblePrisesList.clear();
         RoulettePrisesPicasso.INSTANCE.clear();
         winter2025BattlePassScreen.priseAdapter.clearPriseList();
@@ -1546,7 +1573,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         winterBattlepassRouletteMainScreenBinding.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda37
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.initRouletteView$lambda$72$lambda$69(Winter2025BattlePassScreen.this, view);
+                Winter2025BattlePassScreen.initRouletteView$lambda$73$lambda$70(Winter2025BattlePassScreen.this, view);
             }
         });
         winterBattlepassRouletteMainScreenBinding.btnSprint.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda38
@@ -1580,9 +1607,9 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         winterBattlepassRouletteMainScreenBinding.rouletteView.isPremium(z, new Function1() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda39
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit initRouletteView$lambda$72$lambda$71;
-                initRouletteView$lambda$72$lambda$71 = Winter2025BattlePassScreen.initRouletteView$lambda$72$lambda$71(Winter2025BattlePassScreen.this, ((Integer) obj).intValue());
-                return initRouletteView$lambda$72$lambda$71;
+                Unit initRouletteView$lambda$73$lambda$72;
+                initRouletteView$lambda$73$lambda$72 = Winter2025BattlePassScreen.initRouletteView$lambda$73$lambda$72(Winter2025BattlePassScreen.this, ((Integer) obj).intValue());
+                return initRouletteView$lambda$73$lambda$72;
             }
         });
         winterBattlepassRouletteMainScreenBinding.priseListRv.setAdapter(this.priseAdapter);
@@ -1600,7 +1627,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initRouletteView$lambda$72$lambda$69(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
+    public static final void initRouletteView$lambda$73$lambda$70(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         winter2025BattlePassScreen.battlePassBinding.battlepassRoulettePage.getRoot().setVisibility(0);
         winter2025BattlePassScreen.battlePassBinding.battlepassRouletteView.getRoot().setVisibility(8);
         SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, 2, 11, null, 4, null);
@@ -1608,7 +1635,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit initRouletteView$lambda$72$lambda$71(Winter2025BattlePassScreen winter2025BattlePassScreen, int i) {
+    public static final Unit initRouletteView$lambda$73$lambda$72(Winter2025BattlePassScreen winter2025BattlePassScreen, int i) {
         SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, i, 14, null, 4, null);
         return Unit.INSTANCE;
     }
@@ -1633,21 +1660,21 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         this.battlePassBinding.clickBlocker.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.rouletteSpinPrises$lambda$74(view);
+                Winter2025BattlePassScreen.rouletteSpinPrises$lambda$75(view);
             }
         });
         this.battlePassBinding.battlepassRouletteView.rouletteView.start(arrayList, new Function0() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda22
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit rouletteSpinPrises$lambda$75;
-                rouletteSpinPrises$lambda$75 = Winter2025BattlePassScreen.rouletteSpinPrises$lambda$75(Winter2025BattlePassScreen.this);
-                return rouletteSpinPrises$lambda$75;
+                Unit rouletteSpinPrises$lambda$76;
+                rouletteSpinPrises$lambda$76 = Winter2025BattlePassScreen.rouletteSpinPrises$lambda$76(Winter2025BattlePassScreen.this);
+                return rouletteSpinPrises$lambda$76;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit rouletteSpinPrises$lambda$75(Winter2025BattlePassScreen winter2025BattlePassScreen) {
+    public static final Unit rouletteSpinPrises$lambda$76(Winter2025BattlePassScreen winter2025BattlePassScreen) {
         SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, 0, 18, null, 4, null);
         winter2025BattlePassScreen.battlePassBinding.clickBlocker.setVisibility(8);
         return Unit.INSTANCE;
@@ -1696,26 +1723,26 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         winterBattlepassRouletteMainScreenBinding.btn1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda28
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.rouletteBuySelectSetup$lambda$79$lambda$76(Winter2025BattlePassScreen.this, winterBattlepassRouletteMainScreenBinding, i2, parseColor, i, str, view);
+                Winter2025BattlePassScreen.rouletteBuySelectSetup$lambda$80$lambda$77(Winter2025BattlePassScreen.this, winterBattlepassRouletteMainScreenBinding, i2, parseColor, i, str, view);
             }
         });
         winterBattlepassRouletteMainScreenBinding.btn2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda29
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.rouletteBuySelectSetup$lambda$79$lambda$77(Winter2025BattlePassScreen.this, winterBattlepassRouletteMainScreenBinding, parseColor, i2, i, str, view);
+                Winter2025BattlePassScreen.rouletteBuySelectSetup$lambda$80$lambda$78(Winter2025BattlePassScreen.this, winterBattlepassRouletteMainScreenBinding, parseColor, i2, i, str, view);
             }
         });
         winterBattlepassRouletteMainScreenBinding.btn3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda30
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.rouletteBuySelectSetup$lambda$79$lambda$78(Winter2025BattlePassScreen.this, winterBattlepassRouletteMainScreenBinding, parseColor, i2, i, str, view);
+                Winter2025BattlePassScreen.rouletteBuySelectSetup$lambda$80$lambda$79(Winter2025BattlePassScreen.this, winterBattlepassRouletteMainScreenBinding, parseColor, i2, i, str, view);
             }
         });
         winterBattlepassRouletteMainScreenBinding.buttonPrice.setText(calcRoulettePrice(i, this.multiplierBuyRoulette, str));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void rouletteBuySelectSetup$lambda$79$lambda$76(Winter2025BattlePassScreen winter2025BattlePassScreen, WinterBattlepassRouletteMainScreenBinding winterBattlepassRouletteMainScreenBinding, int i, int i2, int i3, String str, View view) {
+    public static final void rouletteBuySelectSetup$lambda$80$lambda$77(Winter2025BattlePassScreen winter2025BattlePassScreen, WinterBattlepassRouletteMainScreenBinding winterBattlepassRouletteMainScreenBinding, int i, int i2, int i3, String str, View view) {
         winter2025BattlePassScreen.multiplierBuyRoulette = 1;
         winterBattlepassRouletteMainScreenBinding.btn1.setBackgroundResource(R.drawable.winter_battlepass_roulette_bg_transparent_white_selected);
         winterBattlepassRouletteMainScreenBinding.btn2.setBackgroundResource(R.drawable.winter_battlepass_roulette_bg_transparent_white);
@@ -1727,7 +1754,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void rouletteBuySelectSetup$lambda$79$lambda$77(Winter2025BattlePassScreen winter2025BattlePassScreen, WinterBattlepassRouletteMainScreenBinding winterBattlepassRouletteMainScreenBinding, int i, int i2, int i3, String str, View view) {
+    public static final void rouletteBuySelectSetup$lambda$80$lambda$78(Winter2025BattlePassScreen winter2025BattlePassScreen, WinterBattlepassRouletteMainScreenBinding winterBattlepassRouletteMainScreenBinding, int i, int i2, int i3, String str, View view) {
         winter2025BattlePassScreen.multiplierBuyRoulette = 5;
         winterBattlepassRouletteMainScreenBinding.btn1.setBackgroundResource(R.drawable.winter_battlepass_roulette_bg_transparent_white);
         winterBattlepassRouletteMainScreenBinding.btn2.setBackgroundResource(R.drawable.winter_battlepass_roulette_bg_transparent_white_selected);
@@ -1739,7 +1766,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void rouletteBuySelectSetup$lambda$79$lambda$78(Winter2025BattlePassScreen winter2025BattlePassScreen, WinterBattlepassRouletteMainScreenBinding winterBattlepassRouletteMainScreenBinding, int i, int i2, int i3, String str, View view) {
+    public static final void rouletteBuySelectSetup$lambda$80$lambda$79(Winter2025BattlePassScreen winter2025BattlePassScreen, WinterBattlepassRouletteMainScreenBinding winterBattlepassRouletteMainScreenBinding, int i, int i2, int i3, String str, View view) {
         winter2025BattlePassScreen.multiplierBuyRoulette = 10;
         winterBattlepassRouletteMainScreenBinding.btn1.setBackgroundResource(R.drawable.winter_battlepass_roulette_bg_transparent_white);
         winterBattlepassRouletteMainScreenBinding.btn2.setBackgroundResource(R.drawable.winter_battlepass_roulette_bg_transparent_white);
@@ -1754,13 +1781,13 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         this.battlePassBinding.battlepassRouletteView.btnBuy.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.rouletteBuyButtonSetup$lambda$81$lambda$80(Winter2025BattlePassScreen.this, i, str, view);
+                Winter2025BattlePassScreen.rouletteBuyButtonSetup$lambda$82$lambda$81(Winter2025BattlePassScreen.this, i, str, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void rouletteBuyButtonSetup$lambda$81$lambda$80(Winter2025BattlePassScreen winter2025BattlePassScreen, int i, String str, View view) {
+    public static final void rouletteBuyButtonSetup$lambda$82$lambda$81(Winter2025BattlePassScreen winter2025BattlePassScreen, int i, String str, View view) {
         SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, winter2025BattlePassScreen.multiplierBuyRoulette, 16, null, 4, null);
         winter2025BattlePassScreen.rouletteBuySelectSetup(i, str);
     }
@@ -1778,24 +1805,31 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     private final void setWelcomeScreen() {
+        int i;
         final WinterBattlepassLayoutBinding winterBattlepassLayoutBinding = this.battlePassBinding;
+        if (this.isArizonaType) {
+            i = R.drawable.battlepass_logo;
+        } else {
+            i = R.drawable.battlepass_logo_rodina;
+        }
+        winterBattlepassLayoutBinding.logoWelcome.setImageResource(i);
         winterBattlepassLayoutBinding.winterBattlepassWelcome.setVisibility(0);
         winterBattlepassLayoutBinding.winterBattlepassWelcome.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.setWelcomeScreen$lambda$86$lambda$83(view);
+                Winter2025BattlePassScreen.setWelcomeScreen$lambda$87$lambda$84(view);
             }
         });
         winterBattlepassLayoutBinding.backWelcomeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.setWelcomeScreen$lambda$86$lambda$84(WinterBattlepassLayoutBinding.this, this, view);
+                Winter2025BattlePassScreen.setWelcomeScreen$lambda$87$lambda$85(WinterBattlepassLayoutBinding.this, this, view);
             }
         });
         winterBattlepassLayoutBinding.btnGetInfoWinterWelcome.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda18
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Winter2025BattlePassScreen.setWelcomeScreen$lambda$86$lambda$85(WinterBattlepassLayoutBinding.this, view);
+                Winter2025BattlePassScreen.setWelcomeScreen$lambda$87$lambda$86(WinterBattlepassLayoutBinding.this, view);
             }
         });
         winterBattlepassLayoutBinding.welcomePrice1.timerContainer.setVisibility(8);
@@ -1814,14 +1848,14 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setWelcomeScreen$lambda$86$lambda$84(WinterBattlepassLayoutBinding winterBattlepassLayoutBinding, Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
+    public static final void setWelcomeScreen$lambda$87$lambda$85(WinterBattlepassLayoutBinding winterBattlepassLayoutBinding, Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         winterBattlepassLayoutBinding.winterBattlepassWelcome.setVisibility(8);
         winter2025BattlePassScreen.setVisibility(false);
         SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, 0, 10, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setWelcomeScreen$lambda$86$lambda$85(WinterBattlepassLayoutBinding winterBattlepassLayoutBinding, View view) {
+    public static final void setWelcomeScreen$lambda$87$lambda$86(WinterBattlepassLayoutBinding winterBattlepassLayoutBinding, View view) {
         winterBattlepassLayoutBinding.winterBattlepassWelcome.setVisibility(8);
     }
 

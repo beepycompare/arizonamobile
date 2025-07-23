@@ -34,7 +34,7 @@ import ru.mrlargha.commonui.utils.StringKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2", f = "DonateScreen.kt", i = {}, l = {178}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2", f = "DonateScreen.kt", i = {}, l = {191}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes5.dex */
 public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ DonateScreenBinding $this_with;
@@ -62,7 +62,7 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DonateScreen.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2$1", f = "DonateScreen.kt", i = {}, l = {179}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2$1", f = "DonateScreen.kt", i = {}, l = {192}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -106,14 +106,9 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
                     }
 
                     public final Object emit(UiState<? extends List<DonateItemModelUi>> uiState, Continuation<? super Unit> continuation) {
-                        DonateScreenBinding donateScreenBinding2;
                         boolean z;
                         Map map;
                         DonateScreen.Pages pages;
-                        boolean z2;
-                        boolean z3;
-                        Map map2;
-                        DonateScreen.Pages pages2;
                         IBackendNotifier notifier;
                         if (uiState instanceof UiState.Loading) {
                             FrameLayout pagesContainer = DonateScreenBinding.this.pagesContainer;
@@ -132,42 +127,24 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
                             pageProgressBar2.setVisibility(8);
                             Boxing.boxInt(Log.e(DonateUtilsKt.DONATE_TAG, "error items: " + ((UiState.Error) uiState).getMessage()));
                         } else if (uiState instanceof UiState.Successful) {
-                            z2 = donateScreen.isHasUpdate;
-                            Log.i(DonateUtilsKt.DONATE_TAG, "successful items: " + z2);
-                            z3 = donateScreen.isHasUpdate;
-                            if (!z3) {
+                            z = donateScreen.isHasUpdate;
+                            if (!z) {
                                 donateScreen.isHasUpdate = true;
                                 notifier = donateScreen.getNotifier();
                                 notifier.clickedWrapper(donateScreen.getBackendID(), 0, 6);
                             } else {
                                 UiState.Successful successful = (UiState.Successful) uiState;
                                 if (!((Collection) successful.getData()).isEmpty()) {
-                                    map2 = donateScreen.pages;
-                                    pages2 = donateScreen.currentPage;
-                                    DonatePage donatePage = (DonatePage) map2.get(pages2);
+                                    Log.i(DonateUtilsKt.DONATE_TAG, "successful items: " + ((List) successful.getData()).size());
+                                    map = donateScreen.pages;
+                                    pages = donateScreen.currentPage;
+                                    DonatePage donatePage = (DonatePage) map.get(pages);
                                     if (donatePage != null) {
                                         donatePage.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(successful.getData()));
                                     }
                                 }
                             }
-                        } else if (uiState instanceof UiState.Update) {
-                            donateScreenBinding2 = donateScreen.binding;
-                            ProgressBar pageProgressBar3 = donateScreenBinding2.pageProgressBar;
-                            Intrinsics.checkNotNullExpressionValue(pageProgressBar3, "pageProgressBar");
-                            if (pageProgressBar3.getVisibility() == 0) {
-                                UiState.Update update = (UiState.Update) uiState;
-                                Log.i(DonateUtilsKt.DONATE_TAG, "successful items: " + ((List) update.getData()).size());
-                                z = donateScreen.isHasUpdate;
-                                if (!z && !((Collection) update.getData()).isEmpty()) {
-                                    map = donateScreen.pages;
-                                    pages = donateScreen.currentPage;
-                                    DonatePage donatePage2 = (DonatePage) map.get(pages);
-                                    if (donatePage2 != null) {
-                                        donatePage2.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(update.getData()));
-                                    }
-                                }
-                                Log.i(DonateUtilsKt.DONATE_TAG, "update items: " + ((List) update.getData()).size());
-                            }
+                            Unit unit = Unit.INSTANCE;
                         } else {
                             throw new NoWhenBranchMatchedException();
                         }

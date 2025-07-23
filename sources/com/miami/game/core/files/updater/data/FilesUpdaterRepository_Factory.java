@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class FilesUpdaterRepository_Factory implements Factory<FilesUpdaterRepository> {
     private final Provider<ContentResolver> contentResolverProvider;
 
-    public FilesUpdaterRepository_Factory(Provider<ContentResolver> contentResolverProvider) {
+    private FilesUpdaterRepository_Factory(Provider<ContentResolver> contentResolverProvider) {
         this.contentResolverProvider = contentResolverProvider;
     }
 

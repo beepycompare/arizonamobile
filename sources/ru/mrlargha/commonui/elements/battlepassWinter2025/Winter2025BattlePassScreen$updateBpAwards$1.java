@@ -18,7 +18,7 @@ import ru.mrlargha.commonui.elements.battlepassWinter2025.data.AwardItemData;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Winter2025BattlePass.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$updateBpAwards$1", f = "Winter2025BattlePass.kt", i = {2}, l = {293, 297, 307}, m = "invokeSuspend", n = {"pairList"}, s = {"L$0"})
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$updateBpAwards$1", f = "Winter2025BattlePass.kt", i = {2}, l = {292, 296, 306}, m = "invokeSuspend", n = {"pairList"}, s = {"L$0"})
 /* loaded from: classes5.dex */
 public final class Winter2025BattlePassScreen$updateBpAwards$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ List<List<Integer>> $awardsStatusList;

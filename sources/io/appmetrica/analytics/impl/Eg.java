@@ -1,40 +1,49 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.ResultReceiver;
-import com.adjust.sdk.Constants;
+import android.net.Uri;
+import android.text.TextUtils;
+import java.util.HashMap;
+import java.util.Map;
 /* loaded from: classes4.dex */
-public final class Eg extends ResultReceiver {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0534qg f410a;
-
-    public Eg(Handler handler, InterfaceC0534qg interfaceC0534qg) {
-        super(handler);
-        this.f410a = interfaceC0534qg;
-    }
-
-    public static void a(ResultReceiver resultReceiver, C0733yg c0733yg) {
-        if (resultReceiver != null) {
-            Bundle bundle = new Bundle();
-            bundle.putByteArray(Constants.REFERRER, c0733yg == null ? null : c0733yg.a());
-            resultReceiver.send(1, bundle);
+public final class Eg {
+    public static C0202d8 a(String str) {
+        HashMap hashMap;
+        HashMap b = b(str);
+        if (b.isEmpty()) {
+            b = b(Uri.decode(str));
         }
-    }
-
-    @Override // android.os.ResultReceiver
-    public final void onReceiveResult(int i, Bundle bundle) {
-        if (i == 1) {
-            C0733yg c0733yg = null;
-            try {
-                byte[] byteArray = bundle.getByteArray(Constants.REFERRER);
-                if (byteArray != null && byteArray.length != 0) {
-                    c0733yg = new C0733yg(byteArray);
-                }
-            } catch (Throwable unused) {
+        String decode = Uri.decode((String) b.get("appmetrica_deep_link"));
+        if (TextUtils.isEmpty(decode)) {
+            hashMap = null;
+        } else {
+            HashMap b2 = b(decode);
+            hashMap = new HashMap(b2.size());
+            for (Map.Entry entry : b2.entrySet()) {
+                hashMap.put(Uri.decode((String) entry.getKey()), Uri.decode((String) entry.getValue()));
             }
-            this.f410a.a(c0733yg);
         }
+        return new C0202d8(decode, hashMap, str);
+    }
+
+    public static HashMap b(String str) {
+        String[] split;
+        HashMap hashMap = new HashMap();
+        if (str != null) {
+            int lastIndexOf = str.lastIndexOf(63);
+            if (lastIndexOf >= 0) {
+                str = str.substring(lastIndexOf + 1);
+            }
+            if (str.contains("=")) {
+                for (String str2 : str.split("&")) {
+                    int indexOf = str2.indexOf("=");
+                    if (indexOf >= 0) {
+                        hashMap.put(str2.substring(0, indexOf), str2.substring(indexOf + 1));
+                    } else {
+                        hashMap.put(str2, "");
+                    }
+                }
+            }
+        }
+        return hashMap;
     }
 }

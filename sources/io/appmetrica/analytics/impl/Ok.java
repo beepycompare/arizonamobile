@@ -1,27 +1,37 @@
 package io.appmetrica.analytics.impl;
 
-import okhttp3.internal.connection.RealConnection;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+import java.util.Map;
 /* loaded from: classes4.dex */
 public final class Ok {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ro f569a;
+    public final String f582a;
+    public final Jk b;
+    public final Nk c;
+    public final IBinaryDataHelper d;
 
-    public Ok(ro roVar) {
-        this.f569a = roVar;
+    public Ok(Context context, C0400l5 c0400l5) {
+        c0400l5.a();
+        this.f582a = "session_extras";
+        this.b = new Jk();
+        this.c = new Nk();
+        this.d = C0626u7.a(context).a(c0400l5);
     }
 
-    public final long a() {
-        long optLong;
-        ro roVar = this.f569a;
-        synchronized (roVar) {
-            optLong = roVar.f1034a.a().optLong("session_id", -1L);
+    public final Map a() {
+        try {
+            byte[] bArr = this.d.get(this.f582a);
+            if (bArr != null) {
+                if (!(bArr.length == 0)) {
+                    return this.b.toModel(this.c.toState(bArr));
+                }
+            }
+        } catch (Throwable unused) {
         }
-        long j = RealConnection.IDLE_CONNECTION_HEALTHY_NS;
-        if (optLong >= RealConnection.IDLE_CONNECTION_HEALTHY_NS) {
-            j = 1 + optLong;
-        }
-        this.f569a.c(j);
-        return j;
+        Jk jk = this.b;
+        this.c.getClass();
+        return jk.toModel(new Lk());
     }
 }

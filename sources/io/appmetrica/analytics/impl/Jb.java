@@ -1,17 +1,25 @@
 package io.appmetrica.analytics.impl;
+
+import android.os.Handler;
+import android.os.SystemClock;
+import com.google.firebase.messaging.ServiceStarter;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* loaded from: classes4.dex */
-public final class Jb implements mo {
-    @Override // io.appmetrica.analytics.impl.mo
-    public final ko a(String str) {
-        if (str == null) {
-            return new ko(this, false, "key is null");
-        }
-        if (str.startsWith("appmetrica")) {
-            return new ko(this, false, "key starts with appmetrica");
-        }
-        if (str.length() > 200) {
-            return new ko(this, false, "key length more then 200 characters");
-        }
-        return new ko(this, true, "");
+public final class Jb {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Handler f504a;
+    public final V2 b;
+    public final Kb c;
+
+    public Jb(Handler handler, V2 v2) {
+        this.f504a = handler;
+        this.b = v2;
+        this.c = new Kb(handler, v2);
+    }
+
+    public static void a(Handler handler, V2 v2, Runnable runnable) {
+        handler.removeCallbacks(runnable, v2.b.b.getApiKey());
+        handler.postAtTime(runnable, v2.b.b.getApiKey(), SystemClock.uptimeMillis() + (((Integer) WrapUtils.getOrDefault(v2.b.b.getSessionTimeout(), 10)).intValue() * ServiceStarter.ERROR_UNKNOWN));
     }
 }

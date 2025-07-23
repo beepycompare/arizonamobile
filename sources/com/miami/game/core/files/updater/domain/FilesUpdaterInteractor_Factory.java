@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class FilesUpdaterInteractor_Factory implements Factory<FilesUpdaterInteractor> {
     private final Provider<DownloaderSyncInteractor> downloaderSyncInteractorProvider;
 
-    public FilesUpdaterInteractor_Factory(Provider<DownloaderSyncInteractor> downloaderSyncInteractorProvider) {
+    private FilesUpdaterInteractor_Factory(Provider<DownloaderSyncInteractor> downloaderSyncInteractorProvider) {
         this.downloaderSyncInteractorProvider = downloaderSyncInteractorProvider;
     }
 

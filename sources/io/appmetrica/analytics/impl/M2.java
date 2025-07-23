@@ -1,44 +1,44 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
 public final class M2 {
-    public final C0740yn A;
+    public final Bn A;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0318i f528a;
-    public final C0740yn b = new C0740yn(new C0482oe("Config"));
-    public final C0740yn c = new C0740yn(new C0482oe("Activity"));
-    public final C0740yn d = new C0740yn(new C0482oe("Intent"));
-    public final C0740yn e = new C0740yn(new C0482oe("Application"));
-    public final C0740yn f = new C0740yn(new C0482oe("Context"));
-    public final C0740yn g = new C0740yn(new C0482oe("Deeplink listener"));
-    public final C0740yn h = new C0740yn(new C0482oe("Reporter Config"));
-    public final C0740yn i = new C0740yn(new C0432me("Deeplink"));
-    public final C0740yn j = new C0740yn(new C0432me("Referral url"));
-    public final C0740yn k = new C0740yn(new C0244f0());
-    public final C0740yn l = new C0740yn(new C0482oe("Key"));
-    public final C0740yn m = new C0740yn(new C0482oe("WebView"));
-    public final C0432me n = new C0432me("value");
-    public final C0432me o = new C0432me("name");
-    public final C0740yn p = new C0740yn(new C0482oe("AppMetricaDeviceIdentifiers callback"));
-    public final C0740yn q = new C0740yn(new C0482oe("ANR listener"));
-    public final C0740yn r = new C0740yn(new C0482oe("External attribution"));
-    public final C0740yn s = new C0740yn(new C0432me("Event name"));
-    public final C0740yn t = new C0740yn(new C0432me("Error message"));
-    public final C0740yn u = new C0740yn(new C0432me("Error identifier"));
-    public final C0740yn v;
-    public final C0740yn w;
-    public final C0740yn x;
-    public final C0740yn y;
-    public final C0740yn z;
+    public final C0320i f541a;
+    public final Bn b = new Bn(new C0534qe("Config"));
+    public final Bn c = new Bn(new C0534qe("Activity"));
+    public final Bn d = new Bn(new C0534qe("Intent"));
+    public final Bn e = new Bn(new C0534qe("Application"));
+    public final Bn f = new Bn(new C0534qe("Context"));
+    public final Bn g = new Bn(new C0534qe("Deeplink listener"));
+    public final Bn h = new Bn(new C0534qe("Reporter Config"));
+    public final Bn i = new Bn(new C0484oe("Deeplink"));
+    public final Bn j = new Bn(new C0484oe("Referral url"));
+    public final Bn k = new Bn(new C0245f0());
+    public final Bn l = new Bn(new C0534qe("Key"));
+    public final Bn m = new Bn(new C0534qe("WebView"));
+    public final C0484oe n = new C0484oe("value");
+    public final C0484oe o = new C0484oe("name");
+    public final Bn p = new Bn(new C0534qe("AppMetricaDeviceIdentifiers callback"));
+    public final Bn q = new Bn(new C0534qe("ANR listener"));
+    public final Bn r = new Bn(new C0534qe("External attribution"));
+    public final Bn s = new Bn(new C0484oe("Event name"));
+    public final Bn t = new Bn(new C0484oe("Error message"));
+    public final Bn u = new Bn(new C0484oe("Error identifier"));
+    public final Bn v;
+    public final Bn w;
+    public final Bn x;
+    public final Bn y;
+    public final Bn z;
 
-    public M2(C0617u0 c0617u0) {
-        this.f528a = new C0318i(c0617u0);
-        new C0740yn(new C0482oe("Unhandled exception"));
-        this.v = new C0740yn(new C0482oe("Throwable"));
-        this.w = new C0740yn(new C0482oe("User profile"));
-        this.x = new C0740yn(new C0482oe("Revenue"));
-        this.y = new C0740yn(new C0482oe("AdRevenue"));
-        this.z = new C0740yn(new C0482oe("ECommerceEvent"));
-        this.A = new C0740yn(new C0482oe("Anr all threads"));
+    public M2(C0619u0 c0619u0) {
+        this.f541a = new C0320i(c0619u0);
+        new Bn(new C0534qe("Unhandled exception"));
+        this.v = new Bn(new C0534qe("Throwable"));
+        this.w = new Bn(new C0534qe("User profile"));
+        this.x = new Bn(new C0534qe("Revenue"));
+        this.y = new Bn(new C0534qe("AdRevenue"));
+        this.z = new Bn(new C0534qe("ECommerceEvent"));
+        this.A = new Bn(new C0534qe("Anr all threads"));
     }
 }

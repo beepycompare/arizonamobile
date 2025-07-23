@@ -1,37 +1,42 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.ecommerce.ECommerceProduct;
-import java.util.List;
-import java.util.Map;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import io.appmetrica.analytics.billinginterface.internal.Period;
+import io.appmetrica.analytics.billinginterface.internal.ProductType;
 /* loaded from: classes4.dex */
-public final class Sf {
+public abstract /* synthetic */ class Sf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f627a;
-    public final String b;
-    public final List c;
-    public final Map d;
-    public final Lf e;
-    public final Lf f;
-    public final List g;
+    public static final /* synthetic */ int[] f640a;
+    public static final /* synthetic */ int[] b;
 
-    public Sf(ECommerceProduct eCommerceProduct) {
-        this(eCommerceProduct.getSku(), eCommerceProduct.getName(), CollectionUtils.arrayListCopyOfNullableCollection(eCommerceProduct.getCategoriesPath()), CollectionUtils.mapCopyOfNullableMap(eCommerceProduct.getPayload()), eCommerceProduct.getActualPrice() == null ? null : new Lf(eCommerceProduct.getActualPrice()), eCommerceProduct.getOriginalPrice() != null ? new Lf(eCommerceProduct.getOriginalPrice()) : null, CollectionUtils.arrayListCopyOfNullableCollection(eCommerceProduct.getPromocodes()));
-    }
-
-    public final String toString() {
-        return "ProductWrapper{sku='" + this.f627a + "', name='" + this.b + "', categoriesPath=" + this.c + ", payload=" + this.d + ", actualPrice=" + this.e + ", originalPrice=" + this.f + ", promocodes=" + this.g + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public Sf(String str, String str2, List list, Map map, Lf lf, Lf lf2, List list2) {
-        this.f627a = str;
-        this.b = str2;
-        this.c = list;
-        this.d = map;
-        this.e = lf;
-        this.f = lf2;
-        this.g = list2;
+    static {
+        int[] iArr = new int[Period.TimeUnit.values().length];
+        b = iArr;
+        try {
+            iArr[Period.TimeUnit.DAY.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
+        }
+        try {
+            b[Period.TimeUnit.WEEK.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            b[Period.TimeUnit.MONTH.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            b[Period.TimeUnit.YEAR.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+        int[] iArr2 = new int[ProductType.values().length];
+        f640a = iArr2;
+        try {
+            iArr2[ProductType.INAPP.ordinal()] = 1;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            f640a[ProductType.SUBS.ordinal()] = 2;
+        } catch (NoSuchFieldError unused6) {
+        }
     }
 }

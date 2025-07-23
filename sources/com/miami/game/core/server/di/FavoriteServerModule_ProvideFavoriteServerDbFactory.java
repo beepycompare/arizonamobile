@@ -10,7 +10,7 @@ public final class FavoriteServerModule_ProvideFavoriteServerDbFactory implement
     private final Provider<Context> contextProvider;
     private final FavoriteServerModule module;
 
-    public FavoriteServerModule_ProvideFavoriteServerDbFactory(FavoriteServerModule module, Provider<Context> contextProvider) {
+    private FavoriteServerModule_ProvideFavoriteServerDbFactory(FavoriteServerModule module, Provider<Context> contextProvider) {
         this.module = module;
         this.contextProvider = contextProvider;
     }

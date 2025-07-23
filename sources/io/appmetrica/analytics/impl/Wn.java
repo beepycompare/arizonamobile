@@ -1,14 +1,28 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.BuildConfig;
-import io.appmetrica.analytics.coreutils.internal.network.UserAgent;
 /* loaded from: classes4.dex */
-public final class Wn {
+public final class Wn extends V4 {
+    public final Z6 b;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final String f694a = UserAgent.getFor(BuildConfig.LIBRARY_PACKAGE_NAME, "7.9.0", "50132373");
+    public Wn(S4 s4, Z6 z6) {
+        super(s4);
+        this.b = z6;
+    }
 
-    public final String a() {
-        return this.f694a;
+    @Override // io.appmetrica.analytics.impl.V4
+    public final boolean a(C0401l6 c0401l6, P4 p4) {
+        J4 j4 = p4.b.d.f549a;
+        this.b.a(j4.i);
+        InterfaceC0257fc l = Ia.F.l();
+        if (Boolean.TRUE.equals(j4.b)) {
+            l.a(true);
+        } else {
+            if (Boolean.FALSE.equals(j4.b)) {
+                l.a(false);
+            }
+        }
+        l.a(j4.c);
+        Boolean bool = j4.n;
+        Ia.F.b().b(bool != null ? bool.booleanValue() : true);
+        return false;
     }
 }

@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class AndroidFiles_Factory implements Factory<AndroidFiles> {
     private final Provider<Context> applicationContextProvider;
 
-    public AndroidFiles_Factory(Provider<Context> provider) {
+    private AndroidFiles_Factory(Provider<Context> provider) {
         this.applicationContextProvider = provider;
     }
 

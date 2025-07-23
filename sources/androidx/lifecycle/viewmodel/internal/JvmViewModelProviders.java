@@ -2,6 +2,8 @@ package androidx.lifecycle.viewmodel.internal;
 
 import androidx.exifinterface.media.ExifInterface;
 import androidx.lifecycle.ViewModel;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Modifier;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: JvmViewModelProviders.kt */
@@ -16,13 +18,19 @@ public final class JvmViewModelProviders {
     public final <T extends ViewModel> T createViewModel(Class<T> modelClass) {
         Intrinsics.checkNotNullParameter(modelClass, "modelClass");
         try {
-            T newInstance = modelClass.getDeclaredConstructor(new Class[0]).newInstance(new Object[0]);
-            Intrinsics.checkNotNull(newInstance);
-            return newInstance;
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException("Cannot create an instance of " + modelClass, e);
-        } catch (InstantiationException e2) {
-            throw new RuntimeException("Cannot create an instance of " + modelClass, e2);
+            Constructor<T> declaredConstructor = modelClass.getDeclaredConstructor(new Class[0]);
+            if (!Modifier.isPublic(declaredConstructor.getModifiers())) {
+                throw new RuntimeException("Cannot create an instance of " + modelClass);
+            }
+            try {
+                T newInstance = declaredConstructor.newInstance(new Object[0]);
+                Intrinsics.checkNotNull(newInstance);
+                return newInstance;
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException("Cannot create an instance of " + modelClass, e);
+            } catch (InstantiationException e2) {
+                throw new RuntimeException("Cannot create an instance of " + modelClass, e2);
+            }
         } catch (NoSuchMethodException e3) {
             throw new RuntimeException("Cannot create an instance of " + modelClass, e3);
         }

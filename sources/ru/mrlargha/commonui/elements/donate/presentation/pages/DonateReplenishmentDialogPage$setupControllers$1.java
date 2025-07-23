@@ -1,7 +1,9 @@
 package ru.mrlargha.commonui.elements.donate.presentation.pages;
 
+import android.util.Log;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.Pair;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -16,11 +18,12 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.MutableStateFlow;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBoostModelUi;
+import ru.mrlargha.commonui.elements.donate.presentation.models.DonateRateType;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateReplenishmentDialogPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1", f = "DonateReplenishmentDialogPage.kt", i = {}, l = {233}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1", f = "DonateReplenishmentDialogPage.kt", i = {}, l = {278}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes5.dex */
 public final class DonateReplenishmentDialogPage$setupControllers$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ DonateBoostModelUi $model;
@@ -70,6 +73,31 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
                     int label;
                     final /* synthetic */ DonateReplenishmentDialogPage this$0;
 
+                    /* compiled from: DonateReplenishmentDialogPage.kt */
+                    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+                    /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1$1$1$WhenMappings */
+                    /* loaded from: classes5.dex */
+                    public static final /* synthetic */ class WhenMappings {
+                        public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+
+                        static {
+                            int[] iArr = new int[DonateRateType.values().length];
+                            try {
+                                iArr[DonateRateType.BUY_AZ.ordinal()] = 1;
+                            } catch (NoSuchFieldError unused) {
+                            }
+                            try {
+                                iArr[DonateRateType.EXCHANGER_RUB.ordinal()] = 2;
+                            } catch (NoSuchFieldError unused2) {
+                            }
+                            try {
+                                iArr[DonateRateType.EXCHANGER_EXP.ordinal()] = 3;
+                            } catch (NoSuchFieldError unused3) {
+                            }
+                            $EnumSwitchMapping$0 = iArr;
+                        }
+                    }
+
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     C01031(Pair<Long, Integer> pair, DonateBoostModelUi donateBoostModelUi, DonateReplenishmentDialogPage donateReplenishmentDialogPage, Continuation<? super C01031> continuation) {
                         super(2, continuation);
@@ -90,7 +118,7 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     public final Object invokeSuspend(Object obj) {
-                        boolean z;
+                        DonateRateType donateRateType;
                         IntrinsicsKt.getCOROUTINE_SUSPENDED();
                         if (this.label != 0) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -99,13 +127,20 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
                         long longValue = (this.$it.getFirst().longValue() * this.$model.getRate().getTo()) / this.$model.getRate().getFrom();
                         int doubleValue = (int) (longValue * (this.$it.getSecond().doubleValue() / 100.0d));
                         long j = doubleValue + longValue;
-                        z = this.this$0.isReverse;
-                        if (!z) {
+                        Log.d(DonateUtilsKt.DONATE_TAG, "setupControllers: rate: " + this.$model.getRate().getTo());
+                        donateRateType = this.this$0.rateType;
+                        int i = WhenMappings.$EnumSwitchMapping$0[donateRateType.ordinal()];
+                        if (i == 1) {
                             this.this$0.getBinding().tvReceive.setText(DonateUtilsKt.formatWithSpaces(longValue));
                             this.this$0.getAmount = longValue;
-                        } else {
+                        } else if (i == 2) {
                             this.this$0.getBinding().tvReceive.setText(DonateUtilsKt.formatWithSpaces(j));
                             this.this$0.getAmount = j;
+                        } else if (i != 3) {
+                            throw new NoWhenBranchMatchedException();
+                        } else {
+                            this.this$0.getBinding().tvReceive.setText(DonateUtilsKt.formatWithSpaces(longValue) + " exp");
+                            this.this$0.getAmount = longValue;
                         }
                         this.this$0.getBinding().tvBonus.setText(String.valueOf(doubleValue));
                         return Unit.INSTANCE;

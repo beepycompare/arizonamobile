@@ -12,7 +12,7 @@ public final class m extends SynchronizedDataCache {
     public static final long e = 50;
 
     /* renamed from: a  reason: collision with root package name */
-    public final l f1190a;
+    public final l f1193a;
     public static final long b = TimeUnit.SECONDS.toMillis(10);
     public static final long c = TimeUnit.MINUTES.toMillis(2);
     public static final List<String> f = Arrays.asList("gps", "network");
@@ -31,14 +31,14 @@ public final class m extends SynchronizedDataCache {
     /* renamed from: a */
     public final boolean shouldUpdate(Location location) {
         if (f.contains(location.getProvider())) {
-            return this.mCachedData.isEmpty() || this.mCachedData.shouldUpdateData() || a(location, (Location) this.mCachedData.getData(), this.f1190a.f1189a, 200L);
+            return this.mCachedData.isEmpty() || this.mCachedData.shouldUpdateData() || a(location, (Location) this.mCachedData.getData(), this.f1193a.f1192a, 200L);
         }
         return false;
     }
 
     public m(l lVar, long j, long j2) {
         super(j, j2, FirebaseAnalytics.Param.LOCATION);
-        this.f1190a = lVar;
+        this.f1193a = lVar;
     }
 
     public static boolean a(Location location, Location location2, long j, long j2) {

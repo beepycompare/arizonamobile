@@ -1,36 +1,37 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback;
-import java.util.concurrent.TimeUnit;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import java.nio.charset.Charset;
+import java.util.Map;
+import kotlin.text.Charsets;
 /* loaded from: classes4.dex */
-public final class We implements Nc {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Mc f689a;
-    public final Mc b;
-
-    public We(final J9 j9, C0159bh c0159bh, J4 j4, Cif cif) {
-        Mc mc = new Mc(c0159bh, j4, cif);
-        this.f689a = mc;
-        this.b = mc;
-        if (mc.b()) {
-            return;
+public final class We implements Converter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0501p6[] fromModel(Map<String, String> map) {
+        int size = map.size();
+        C0501p6[] c0501p6Arr = new C0501p6[size];
+        int i = 0;
+        for (int i2 = 0; i2 < size; i2++) {
+            c0501p6Arr[i2] = new C0501p6();
         }
-        Ga.j().a().subscribe(TimeUnit.SECONDS.toMillis(Z7.f734a.longValue()), Ga.j().w().a(), new ActivationBarrierCallback() { // from class: io.appmetrica.analytics.impl.We$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback
-            public final void onWaitFinished() {
-                We.a(We.this, j9);
-            }
-        });
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            C0501p6 c0501p6 = c0501p6Arr[i];
+            Charset charset = Charsets.UTF_8;
+            c0501p6.f997a = entry.getKey().getBytes(charset);
+            c0501p6Arr[i].b = entry.getValue().getBytes(charset);
+            i++;
+        }
+        return c0501p6Arr;
     }
 
-    @Override // io.appmetrica.analytics.impl.Nc
-    public final V8 a() {
-        return this.b;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        C0501p6[] c0501p6Arr = (C0501p6[]) obj;
+        throw new UnsupportedOperationException();
     }
 
-    public static final void a(We we, J9 j9) {
-        we.f689a.a();
-        ((D5) j9.a()).e();
+    public final Map<String, String> a(C0501p6[] c0501p6Arr) {
+        throw new UnsupportedOperationException();
     }
 }

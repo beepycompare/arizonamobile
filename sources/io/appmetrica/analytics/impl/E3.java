@@ -3,10 +3,10 @@ package io.appmetrica.analytics.impl;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes4.dex */
-public final class E3 implements InterfaceC0575s8 {
+public final class E3 implements InterfaceC0652v8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final F3 f400a;
+    public final F3 f409a;
 
     public E3() {
         this(new F3());
@@ -14,13 +14,13 @@ public final class E3 implements InterfaceC0575s8 {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final List<Ni> fromModel(D3 d3) {
-        L8 l8 = new L8();
-        l8.e = new C0625u8();
-        Ni fromModel = this.f400a.fromModel(d3.b);
-        l8.e.f1071a = (C0650v8) fromModel.f557a;
-        l8.f516a = d3.f383a;
-        return Collections.singletonList(new Ni(l8, new C0670w3(C0670w3.b(fromModel))));
+    public final List<Qi> fromModel(D3 d3) {
+        O8 o8 = new O8();
+        o8.e = new C0702x8();
+        Qi fromModel = this.f409a.fromModel(d3.b);
+        o8.e.f1133a = (C0727y8) fromModel.f612a;
+        o8.f575a = d3.f389a;
+        return Collections.singletonList(new Qi(o8, new C0672w3(C0672w3.b(fromModel))));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -30,10 +30,10 @@ public final class E3 implements InterfaceC0575s8 {
     }
 
     public E3(F3 f3) {
-        this.f400a = f3;
+        this.f409a = f3;
     }
 
-    public final D3 a(List<Ni> list) {
+    public final D3 a(List<Qi> list) {
         throw new UnsupportedOperationException();
     }
 }

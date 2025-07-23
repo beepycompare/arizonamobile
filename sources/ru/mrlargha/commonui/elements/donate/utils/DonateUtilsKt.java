@@ -38,6 +38,8 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemModelUi;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemType;
 import ru.mrlargha.commonui.utils.ConverterKt;
+import ru.mrlargha.commonui.utils.FirebaseConfigHelper;
+import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: DonateUtils.kt */
 @Metadata(d1 = {"\u0000p\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u0015\n\u0002\b\u0006\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\f\u001a\u001a\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00020\u0004\u001a\u001e\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0004\u001a\u001e\u0010\u000b\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0004\u001a\u0018\u0010\f\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\r\u001a\u00020\n\u001a\u0018\u0010\u000e\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\u000f\u001a\u00020\u0010\u001a\u0018\u0010\u0011\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0012\u001a\u00020\n\u001a\u0018\u0010\u0013\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\r\u001a\u00020\n\u001a(\u0010\u0014\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\r\u001a\u00020\n2\u0006\u0010\u0015\u001a\u00020\n2\u0006\u0010\u0016\u001a\u00020\u0017\u001aH\u0010\u0018\u001a\u00020\u0019*\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001c2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\b\b\u0002\u0010 \u001a\u00020\u001f2\b\b\u0002\u0010!\u001a\u00020\"2\u000e\b\u0002\u0010#\u001a\b\u0012\u0004\u0012\u00020%0$\u001a\u000e\u0010&\u001a\u00020\n2\u0006\u0010'\u001a\u00020\n\u001a\u0012\u0010(\u001a\u00020%*\u00020)2\u0006\u0010*\u001a\u00020\u0017\u001a\u0012\u0010+\u001a\u00020%*\u00020)2\u0006\u0010,\u001a\u00020\u0017\u001a\u0012\u0010-\u001a\u00020%*\u00020)2\u0006\u0010*\u001a\u00020\u0017\u001a\u0012\u0010.\u001a\u00020%*\u00020)2\u0006\u0010*\u001a\u00020\u0017\u001a\u0012\u0010/\u001a\u00020%*\u00020)2\u0006\u0010*\u001a\u00020\u0017\u001a\u0016\u00100\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n01*\u00020\n\u001a\u0014\u00102\u001a\u00020\u00102\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0004\u001a\f\u00103\u001a\u0004\u0018\u00010\n*\u00020\u001f\u001a\f\u00104\u001a\u0004\u0018\u00010\n*\u00020\u001f\u001a\u000e\u00105\u001a\u00020\n2\u0006\u00106\u001a\u00020\u001f\"\u000e\u00107\u001a\u00020\nX\u0086T¢\u0006\u0002\n\u0000\"\u0014\u00108\u001a\b\u0012\u0004\u0012\u00020\n0\u0004X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u00109\u001a\u00020\nX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010:\u001a\u00020\nX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010;\u001a\u00020\u001fX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010<\u001a\u00020\nX\u0086T¢\u0006\u0002\n\u0000¨\u0006="}, d2 = {"sortForLines", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "input", "", "getButtonsGradientDrawable", "Landroid/graphics/drawable/Drawable;", "context", "Landroid/content/Context;", "colorList", "", "getDialogButtonGradient", "getItemEffectDrawable", "color", "getGradientBorderDrawable", "colors", "", "getTransfusionDrawable", "centerColor", "getSelectCategoryDrawable", "getDialogItemDrawable", "borderColor", "borderWith", "", "setTranslateAnimation", "Landroid/animation/ObjectAnimator;", "Landroid/view/View;", "from", "", TypedValues.TransitionType.S_TO, "startDelay", "", TypedValues.TransitionType.S_DURATION, "isRepeat", "", "onStart", "Lkotlin/Function0;", "", "decodeEmoji", "emojiCode", "setImageSdn", "Landroid/widget/ImageView;", "imageId", "setGifSdn", "gifId", "setImageItemBgSdn", "setImageCategorySdn", "setBackgroundCategorySdn", "splitOnPart", "Lkotlin/Pair;", "convertColorList", "getTimeHM", "getTimeHMS", "formatWithSpaces", "number", "TRANSPARENT_COLOR", "colorsDefault", "ANIMATION_PROPERTY_NAME", "ITEM_FOLDER_NAME", "ANIMATION_DURATION", DonateUtilsKt.DONATE_TAG, "CommonUI_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
@@ -297,28 +299,55 @@ public final class DonateUtilsKt {
 
     public static final void setImageSdn(ImageView imageView, int i) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
-        Log.e("donate", "setItem: " + i);
-        Picasso.get().load("https://cdn.azresources.cloud/projects/arizona-rp/assets/images/donate_shop/" + i + ".webp").into(imageView);
+        String str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate_shop/" + i + ".webp";
+        String str2 = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/items/" + i + ".webp";
+        Context context = imageView.getContext();
+        Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
+        if (!UtilsKt.getArizonaType(context)) {
+            str = str2;
+        }
+        Picasso.get().load(str).into(imageView);
     }
 
     public static final void setGifSdn(ImageView imageView, int i) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
-        Glide.with(imageView.getContext()).asGif().load("https://cdn.azresources.cloud/projects/arizona-rp/assets/images/donate_shop/" + i + ".gif").into(imageView);
+        Glide.with(imageView.getContext()).asGif().load(FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate_shop/" + i + ".gif").into(imageView);
     }
 
     public static final void setImageItemBgSdn(ImageView imageView, int i) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
-        Picasso.get().load("https://cdn.azresources.cloud/projects/arizona-rp/assets/images/donate_background/" + i + ".webp").into(imageView);
+        String str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate_background/" + i + ".webp";
+        String str2 = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/donate_background/" + i + ".webp";
+        Context context = imageView.getContext();
+        Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
+        if (!UtilsKt.getArizonaType(context)) {
+            str = str2;
+        }
+        Picasso.get().load(str).into(imageView);
     }
 
     public static final void setImageCategorySdn(ImageView imageView, int i) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
-        Picasso.get().load("https://cdn.azresources.cloud/projects/arizona-rp/assets/images/donate_category/mobile_icons/" + i + ".webp").into(imageView);
+        String str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate_category/mobile_icons/" + i + ".webp";
+        String str2 = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/donate_category/" + i + ".webp";
+        Context context = imageView.getContext();
+        Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
+        if (!UtilsKt.getArizonaType(context)) {
+            str = str2;
+        }
+        Picasso.get().load(str).into(imageView);
     }
 
     public static final void setBackgroundCategorySdn(ImageView imageView, int i) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
-        Picasso.get().load("https://cdn.azresources.cloud/projects/arizona-rp/assets/images/donate_category/mobile/" + i + ".webp").into(imageView);
+        String str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate_category/mobile/" + i + ".webp";
+        String str2 = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/donate_category/" + i + ".webp";
+        Context context = imageView.getContext();
+        Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
+        if (!UtilsKt.getArizonaType(context)) {
+            str = str2;
+        }
+        Picasso.get().load(str).into(imageView);
     }
 
     public static final Pair<String, String> splitOnPart(String str) {

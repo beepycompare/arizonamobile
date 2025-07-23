@@ -1,9 +1,9 @@
 package io.appmetrica.analytics;
 
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.C0244f0;
-import io.appmetrica.analytics.impl.C0740yn;
-import io.appmetrica.analytics.impl.G5;
+import io.appmetrica.analytics.impl.Bn;
+import io.appmetrica.analytics.impl.C0245f0;
+import io.appmetrica.analytics.impl.I5;
 import java.util.HashMap;
 import java.util.Map;
 /* loaded from: classes4.dex */
@@ -21,10 +21,10 @@ public class ReporterConfig {
 
     /* loaded from: classes4.dex */
     public static class Builder {
-        private static final C0740yn l = new C0740yn(new C0244f0());
+        private static final Bn l = new Bn(new C0245f0());
 
         /* renamed from: a  reason: collision with root package name */
-        private final G5 f204a;
+        private final I5 f204a;
         private final String b;
         private Integer c;
         private Boolean d;
@@ -93,7 +93,7 @@ public class ReporterConfig {
             this.j = new HashMap();
             this.k = new HashMap();
             l.a(str);
-            this.f204a = new G5(str);
+            this.f204a = new I5(str);
             this.b = str;
         }
     }

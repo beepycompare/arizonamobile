@@ -142,7 +142,7 @@ public final class SettingsUiState {
     }
 
     public /* synthetic */ SettingsUiState(int i, SettingState settingState, String str, String str2, boolean z, ConnectionData connectionData, boolean z2, String str3, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(i, (i2 & 2) != 0 ? new SettingState(0.0f, 0, false, false, false, false, false, null, 255, null) : settingState, str, str2, (i2 & 16) != 0 ? false : z, (i2 & 32) != 0 ? new ConnectionData(null, null, null, 7, null) : connectionData, (i2 & 64) != 0 ? false : z2, (i2 & 128) != 0 ? "" : str3);
+        this(i, (i2 & 2) != 0 ? new SettingState(0.0f, 0, false, false, false, false, false, false, null, 511, null) : settingState, str, str2, (i2 & 16) != 0 ? false : z, (i2 & 32) != 0 ? new ConnectionData(null, null, null, 7, null) : connectionData, (i2 & 64) != 0 ? false : z2, (i2 & 128) != 0 ? "" : str3);
     }
 
     public final SettingState getSettingState() {

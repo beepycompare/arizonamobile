@@ -1,20 +1,29 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import io.appmetrica.analytics.coreutils.internal.toggle.SimpleThreadSafeToggle;
+import java.util.WeakHashMap;
 /* loaded from: classes4.dex */
-public final class zo implements Consumer {
+public final class zo extends SimpleThreadSafeToggle {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Throwable f1174a;
-    public final /* synthetic */ String b = "WebView interface setup failed because of an exception.";
+    public final WeakHashMap f1177a;
 
-    public zo(Throwable th) {
-        this.f1174a = th;
+    public zo() {
+        super(false, "[WakelocksToggle]");
+        this.f1177a = new WeakHashMap();
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    public final void consume(Object obj) {
-        ((PublicLogger) obj).error(this.f1174a, this.b, new Object[0]);
+    public final synchronized void a(Object obj) {
+        this.f1177a.put(obj, null);
+        if (this.f1177a.size() == 1) {
+            updateState(true);
+        }
+    }
+
+    public final synchronized void b(Object obj) {
+        this.f1177a.remove(obj);
+        if (this.f1177a.isEmpty()) {
+            updateState(false);
+        }
     }
 }

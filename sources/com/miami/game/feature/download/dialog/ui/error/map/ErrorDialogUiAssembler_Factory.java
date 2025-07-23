@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class ErrorDialogUiAssembler_Factory implements Factory<ErrorDialogUiAssembler> {
     private final Provider<Resources> resourcesProvider;
 
-    public ErrorDialogUiAssembler_Factory(Provider<Resources> resourcesProvider) {
+    private ErrorDialogUiAssembler_Factory(Provider<Resources> resourcesProvider) {
         this.resourcesProvider = resourcesProvider;
     }
 

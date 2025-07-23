@@ -14,7 +14,7 @@ public final class DonatePriceCurrencyType {
     private static final /* synthetic */ DonatePriceCurrencyType[] $VALUES;
     private final int icon;
     private final int type;
-    public static final DonatePriceCurrencyType RUB = new DonatePriceCurrencyType("RUB", 0, 0, R.drawable.ic_rubble);
+    public static final DonatePriceCurrencyType RUB = new DonatePriceCurrencyType("RUB", 0, 0, R.drawable.blueprint_ic_rub);
     public static final DonatePriceCurrencyType AZ = new DonatePriceCurrencyType("AZ", 1, 1, R.drawable.ic_az_coins);
     public static final DonatePriceCurrencyType DOLLAR = new DonatePriceCurrencyType("DOLLAR", 2, 2, R.drawable.ic_dollar);
 

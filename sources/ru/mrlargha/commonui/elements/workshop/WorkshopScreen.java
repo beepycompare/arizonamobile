@@ -1038,11 +1038,11 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         this.inventoryAdapter.notifyDataSetChanged();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x011e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x011f, code lost:
         if (r2 != 3) goto L38;
      */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x01b4  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x01b9  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x01b5  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x01ba  */
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     /*
         Code decompiled incorrectly, please refer to instructions dump.

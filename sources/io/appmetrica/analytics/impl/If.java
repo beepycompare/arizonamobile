@@ -1,15 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import android.text.TextUtils;
+import io.appmetrica.analytics.PreloadInfo;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class If extends Ha {
-    public If(Bi bi) {
-        super(bi);
-    }
+public final class If {
 
-    @Override // io.appmetrica.analytics.impl.Ha
-    public final void a(List<AbstractC0185ch> list) {
-        list.add(this.f459a.n);
-        list.add(this.f459a.h);
+    /* renamed from: a  reason: collision with root package name */
+    public final Ef f490a;
+
+    public If(PreloadInfo preloadInfo, PublicLogger publicLogger, boolean z) {
+        if (preloadInfo != null) {
+            if (TextUtils.isEmpty(preloadInfo.getTrackingId())) {
+                publicLogger.error("Required field \"PreloadInfo.trackingId\" is empty!\nThis preload info will be skipped.", new Object[0]);
+            } else {
+                this.f490a = new Ef(preloadInfo.getTrackingId(), new JSONObject(preloadInfo.getAdditionalParams()), true, z, EnumC0403l8.c);
+            }
+        }
     }
 }

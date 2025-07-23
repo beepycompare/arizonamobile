@@ -3,13 +3,13 @@ package io.appmetrica.analytics.impl;
 public abstract class M4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bi f529a;
+    public final Ei f542a;
 
-    public M4(Bi bi) {
-        this.f529a = bi;
+    public M4(Ei ei) {
+        this.f542a = ei;
     }
 
-    public final Bi a() {
-        return this.f529a;
+    public final Ei a() {
+        return this.f542a;
     }
 }

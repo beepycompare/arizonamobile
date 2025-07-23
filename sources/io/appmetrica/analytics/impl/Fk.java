@@ -1,9 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.concurrent.TimeUnit;
 /* loaded from: classes4.dex */
-public abstract class Fk {
+public final class Fk {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f433a = TimeUnit.DAYS.toSeconds(1);
+    public final long f439a;
+    public final long b;
+
+    public Fk(long j, long j2) {
+        this.f439a = j;
+        this.b = j2;
+    }
 }

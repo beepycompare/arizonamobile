@@ -7,7 +7,7 @@ import dagger.internal.Provider;
 public final class SettingsInteractor_Factory implements Factory<SettingsInteractor> {
     private final Provider<LocalRepository> localRepositoryProvider;
 
-    public SettingsInteractor_Factory(Provider<LocalRepository> provider) {
+    private SettingsInteractor_Factory(Provider<LocalRepository> provider) {
         this.localRepositoryProvider = provider;
     }
 

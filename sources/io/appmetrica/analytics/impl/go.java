@@ -1,16 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.text.TextUtils;
-import io.appmetrica.analytics.internal.IdentifiersResult;
+import io.appmetrica.analytics.coreutils.internal.services.UtilityServiceConfiguration;
+import io.appmetrica.analytics.coreutils.internal.services.UtilityServiceProvider;
 /* loaded from: classes4.dex */
-public final class go implements InterfaceC0205db {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0205db
-    public final String a(Context context) {
-        IdentifiersResult q = new C0309hf(C0549r7.a(context.getApplicationContext()).a()).q();
-        if (TextUtils.isEmpty(q.id)) {
-            return null;
-        }
-        return q.id;
+public final class go implements InterfaceC0392km {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final UtilityServiceProvider f872a;
+
+    public go(UtilityServiceProvider utilityServiceProvider) {
+        this.f872a = utilityServiceProvider;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0392km
+    public final void a(C0267fm c0267fm) {
+        this.f872a.updateConfiguration(new UtilityServiceConfiguration(c0267fm.v, c0267fm.u));
     }
 }

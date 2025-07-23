@@ -7,8 +7,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
@@ -50,8 +48,7 @@ public final class CaseRouletteScreen extends SAMPUIElement {
         this.rouletteAwardsAdapter = rouletteAwardsAdapter;
         SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
         this.sharedPref = sharedPreferences;
-        boolean z = sharedPreferences.getBoolean("isArizonaType", false);
-        this.isArizonaType = z;
+        this.isArizonaType = sharedPreferences.getBoolean("isArizonaType", false);
         caseLayout.setClickable(true);
         Intrinsics.checkNotNullExpressionValue(caseLayout, "caseLayout");
         addViewToConstraintLayout(caseLayout, -1, -1);
@@ -82,15 +79,6 @@ public final class CaseRouletteScreen extends SAMPUIElement {
                 SAMPUIElement.notifyClick$default(CaseRouletteScreen.this, 0, 3, null, 4, null);
             }
         });
-        if (z) {
-            return;
-        }
-        TextView tvInstantOpen = bind.tvInstantOpen;
-        Intrinsics.checkNotNullExpressionValue(tvInstantOpen, "tvInstantOpen");
-        tvInstantOpen.setVisibility(8);
-        ConstraintLayout instantOpenContainer = bind.instantOpenContainer;
-        Intrinsics.checkNotNullExpressionValue(instantOpenContainer, "instantOpenContainer");
-        instantOpenContainer.setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

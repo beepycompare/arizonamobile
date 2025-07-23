@@ -35,7 +35,7 @@ import ru.rustore.sdk.core.util.WithTimeoutOrThrowKt;
 public final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1352a;
+    public final Context f1355a;
     public final ru.rustore.sdk.appupdate.a b;
 
     @DebugMetadata(c = "ru.rustore.sdk.appupdate.impl.data.AppUpdateProvider", f = "AppUpdateProvider.kt", i = {0}, l = {80, 81}, m = "completeUpdateFlow", n = {"this"}, s = {"L$0"})
@@ -43,7 +43,7 @@ public final class j {
     public static final class a extends ContinuationImpl {
 
         /* renamed from: a  reason: collision with root package name */
-        public j f1353a;
+        public j f1356a;
         public /* synthetic */ Object b;
         public int d;
 
@@ -64,7 +64,7 @@ public final class j {
     public static final class b extends ContinuationImpl {
 
         /* renamed from: a  reason: collision with root package name */
-        public j f1354a;
+        public j f1357a;
         public AppUpdateInfo b;
         public /* synthetic */ Object c;
         public int e;
@@ -84,7 +84,7 @@ public final class j {
     public j(Context context, ru.rustore.sdk.appupdate.a appUpdateInfoMapper) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(appUpdateInfoMapper, "appUpdateInfoMapper");
-        this.f1352a = context;
+        this.f1355a = context;
         this.b = appUpdateInfoMapper;
     }
 
@@ -126,7 +126,7 @@ public final class j {
      */
     /* JADX WARN: Code restructure failed: missing block: B:30:0x00bb, code lost:
         r3 = kotlin.Result.Companion;
-        r2 = kotlin.Result.m8471constructorimpl(kotlin.ResultKt.createFailure(r2));
+        r2 = kotlin.Result.m8474constructorimpl(kotlin.ResultKt.createFailure(r2));
      */
     /* JADX WARN: Code restructure failed: missing block: B:41:0x00e4, code lost:
         if (r11 != r1) goto L11;
@@ -144,7 +144,7 @@ public final class j {
         a aVar;
         int i;
         j jVar;
-        Throwable m8474exceptionOrNullimpl;
+        Throwable m8477exceptionOrNullimpl;
         Object result;
         if (continuation instanceof a) {
             aVar = (a) continuation;
@@ -156,7 +156,7 @@ public final class j {
                 i = aVar.d;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    aVar.f1353a = this;
+                    aVar.f1356a = this;
                     aVar.d = 1;
                     f fVar = new f(this);
                     Ref.ObjectRef objectRef = new Ref.ObjectRef();
@@ -175,27 +175,27 @@ public final class j {
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    jVar = aVar.f1353a;
+                    jVar = aVar.f1356a;
                     ResultKt.throwOnFailure(obj);
                 }
-                aVar.f1353a = null;
+                aVar.f1356a = null;
                 aVar.d = 2;
                 jVar.getClass();
                 CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(aVar), 1);
                 cancellableContinuationImpl.initCancellability();
                 Result.Companion companion = Result.Companion;
-                if (!RuStoreUtils.INSTANCE.isRuStoreInstalled(jVar.f1352a)) {
+                if (!RuStoreUtils.INSTANCE.isRuStoreInstalled(jVar.f1355a)) {
                     CancellableContinuationExtKt.resumeWithExceptionIfActive(cancellableContinuationImpl, new RuStoreNotInstalledException());
                 }
-                Context context = jVar.f1352a;
+                Context context = jVar.f1355a;
                 Intent intent = new Intent("ru.vk.store.FlexibleAppUpdate");
                 intent.putExtra("RUN_INSTALL", true);
-                intent.putExtra("PACKAGE_NAME", jVar.f1352a.getPackageName());
+                intent.putExtra("PACKAGE_NAME", jVar.f1355a.getPackageName());
                 ContextExtensionKt.openActivityForResult(context, intent, new o(cancellableContinuationImpl));
-                Object m8471constructorimpl = Result.m8471constructorimpl(Unit.INSTANCE);
-                m8474exceptionOrNullimpl = Result.m8474exceptionOrNullimpl(m8471constructorimpl);
-                if (m8474exceptionOrNullimpl != null) {
-                    CancellableContinuationExtKt.resumeWithExceptionIfActive(cancellableContinuationImpl, m8474exceptionOrNullimpl);
+                Object m8474constructorimpl = Result.m8474constructorimpl(Unit.INSTANCE);
+                m8477exceptionOrNullimpl = Result.m8477exceptionOrNullimpl(m8474constructorimpl);
+                if (m8477exceptionOrNullimpl != null) {
+                    CancellableContinuationExtKt.resumeWithExceptionIfActive(cancellableContinuationImpl, m8477exceptionOrNullimpl);
                 }
                 result = cancellableContinuationImpl.getResult();
                 if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
@@ -212,22 +212,22 @@ public final class j {
         i = aVar.d;
         if (i != 0) {
         }
-        aVar.f1353a = null;
+        aVar.f1356a = null;
         aVar.d = 2;
         jVar.getClass();
         CancellableContinuationImpl cancellableContinuationImpl2 = new CancellableContinuationImpl(IntrinsicsKt.intercepted(aVar), 1);
         cancellableContinuationImpl2.initCancellability();
         Result.Companion companion2 = Result.Companion;
-        if (!RuStoreUtils.INSTANCE.isRuStoreInstalled(jVar.f1352a)) {
+        if (!RuStoreUtils.INSTANCE.isRuStoreInstalled(jVar.f1355a)) {
         }
-        Context context2 = jVar.f1352a;
+        Context context2 = jVar.f1355a;
         Intent intent2 = new Intent("ru.vk.store.FlexibleAppUpdate");
         intent2.putExtra("RUN_INSTALL", true);
-        intent2.putExtra("PACKAGE_NAME", jVar.f1352a.getPackageName());
+        intent2.putExtra("PACKAGE_NAME", jVar.f1355a.getPackageName());
         ContextExtensionKt.openActivityForResult(context2, intent2, new o(cancellableContinuationImpl2));
-        Object m8471constructorimpl2 = Result.m8471constructorimpl(Unit.INSTANCE);
-        m8474exceptionOrNullimpl = Result.m8474exceptionOrNullimpl(m8471constructorimpl2);
-        if (m8474exceptionOrNullimpl != null) {
+        Object m8474constructorimpl2 = Result.m8474constructorimpl(Unit.INSTANCE);
+        m8477exceptionOrNullimpl = Result.m8477exceptionOrNullimpl(m8474constructorimpl2);
+        if (m8477exceptionOrNullimpl != null) {
         }
         result = cancellableContinuationImpl2.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
@@ -242,7 +242,7 @@ public final class j {
      */
     /* JADX WARN: Code restructure failed: missing block: B:28:0x00ac, code lost:
         r2 = kotlin.Result.Companion;
-        r11 = kotlin.Result.m8471constructorimpl(kotlin.ResultKt.createFailure(r11));
+        r11 = kotlin.Result.m8474constructorimpl(kotlin.ResultKt.createFailure(r11));
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x003d  */
@@ -257,7 +257,7 @@ public final class j {
         b bVar;
         int i;
         j jVar;
-        Throwable m8474exceptionOrNullimpl;
+        Throwable m8477exceptionOrNullimpl;
         Object result;
         if (continuation instanceof b) {
             bVar = (b) continuation;
@@ -269,7 +269,7 @@ public final class j {
                 i = bVar.e;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    bVar.f1354a = this;
+                    bVar.f1357a = this;
                     bVar.b = appUpdateInfo;
                     bVar.e = 1;
                     i iVar = new i(this);
@@ -289,26 +289,26 @@ public final class j {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     appUpdateInfo = bVar.b;
-                    jVar = bVar.f1354a;
+                    jVar = bVar.f1357a;
                     ResultKt.throwOnFailure(obj);
                 }
-                bVar.f1354a = null;
+                bVar.f1357a = null;
                 bVar.b = null;
                 bVar.e = 2;
                 jVar.getClass();
                 CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(bVar), 1);
                 cancellableContinuationImpl.initCancellability();
                 Result.Companion companion = Result.Companion;
-                Context context = jVar.f1352a;
+                Context context = jVar.f1355a;
                 Intent intent = new Intent("ru.vk.store.FlexibleAppUpdate");
                 jVar.b.getClass();
                 intent.putExtras(ru.rustore.sdk.appupdate.a.a(appUpdateInfo));
                 ContextExtensionKt.openActivityForResult(context, intent, new n(cancellableContinuationImpl));
                 appUpdateInfo.markIsUsed$sdk_public_appupdate_release();
-                Object m8471constructorimpl = Result.m8471constructorimpl(Unit.INSTANCE);
-                m8474exceptionOrNullimpl = Result.m8474exceptionOrNullimpl(m8471constructorimpl);
-                if (m8474exceptionOrNullimpl != null) {
-                    CancellableContinuationExtKt.resumeWithExceptionIfActive(cancellableContinuationImpl, m8474exceptionOrNullimpl);
+                Object m8474constructorimpl = Result.m8474constructorimpl(Unit.INSTANCE);
+                m8477exceptionOrNullimpl = Result.m8477exceptionOrNullimpl(m8474constructorimpl);
+                if (m8477exceptionOrNullimpl != null) {
+                    CancellableContinuationExtKt.resumeWithExceptionIfActive(cancellableContinuationImpl, m8477exceptionOrNullimpl);
                 }
                 result = cancellableContinuationImpl.getResult();
                 if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
@@ -323,22 +323,22 @@ public final class j {
         i = bVar.e;
         if (i != 0) {
         }
-        bVar.f1354a = null;
+        bVar.f1357a = null;
         bVar.b = null;
         bVar.e = 2;
         jVar.getClass();
         CancellableContinuationImpl cancellableContinuationImpl2 = new CancellableContinuationImpl(IntrinsicsKt.intercepted(bVar), 1);
         cancellableContinuationImpl2.initCancellability();
         Result.Companion companion2 = Result.Companion;
-        Context context2 = jVar.f1352a;
+        Context context2 = jVar.f1355a;
         Intent intent2 = new Intent("ru.vk.store.FlexibleAppUpdate");
         jVar.b.getClass();
         intent2.putExtras(ru.rustore.sdk.appupdate.a.a(appUpdateInfo));
         ContextExtensionKt.openActivityForResult(context2, intent2, new n(cancellableContinuationImpl2));
         appUpdateInfo.markIsUsed$sdk_public_appupdate_release();
-        Object m8471constructorimpl2 = Result.m8471constructorimpl(Unit.INSTANCE);
-        m8474exceptionOrNullimpl = Result.m8474exceptionOrNullimpl(m8471constructorimpl2);
-        if (m8474exceptionOrNullimpl != null) {
+        Object m8474constructorimpl2 = Result.m8474constructorimpl(Unit.INSTANCE);
+        m8477exceptionOrNullimpl = Result.m8477exceptionOrNullimpl(m8474constructorimpl2);
+        if (m8477exceptionOrNullimpl != null) {
         }
         result = cancellableContinuationImpl2.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {

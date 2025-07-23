@@ -3,13 +3,24 @@ package io.appmetrica.analytics.impl;
 public final class W9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V9 f685a;
+    public final long f699a;
 
-    public W9(V9 v9) {
-        this.f685a = v9;
+    public W9(long j) {
+        this.f699a = j;
     }
 
-    public W9() {
-        this(new V9());
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof W9) && this.f699a == ((W9) obj).f699a;
+    }
+
+    public final int hashCode() {
+        return Long.hashCode(this.f699a);
+    }
+
+    public final String toString() {
+        return "ExternalAttributionConfig(collectingInterval=" + this.f699a + ')';
     }
 }

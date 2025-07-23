@@ -1,68 +1,41 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController;
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
-import java.util.HashSet;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.ResultReceiver;
 /* loaded from: classes4.dex */
-public final class W6 implements DataSendingRestrictionController {
+public final class W6 extends ResultReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final U6 f683a;
-    public Boolean b;
-    public final HashSet c = new HashSet();
-    public final HashSet d = new HashSet();
+    public final V6 f696a;
 
-    public W6(U6 u6) {
-        this.f683a = u6;
-        this.b = ((V6) u6).a();
+    public W6(Handler handler, V6 v6) {
+        super(handler);
+        this.f696a = v6;
     }
 
-    public final synchronized void a(Boolean bool) {
-        if (fo.a(bool) || this.b == null) {
-            Boolean valueOf = Boolean.valueOf(Boolean.FALSE.equals(bool));
-            this.b = valueOf;
-            U6 u6 = this.f683a;
-            ((V6) u6).f671a.c(valueOf.booleanValue()).b();
+    public static void a(ResultReceiver resultReceiver, C0474o4 c0474o4) {
+        if (resultReceiver != null) {
+            Bundle bundle = new Bundle();
+            c0474o4.b(bundle);
+            resultReceiver.send(1, bundle);
         }
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController
-    public final boolean isRestrictedForBackgroundDataCollection() {
-        Boolean bool = this.b;
-        if (bool == null) {
-            return !this.c.isEmpty() || this.d.isEmpty();
+    @Override // android.os.ResultReceiver
+    public final void onReceiveResult(int i, Bundle bundle) {
+        if (bundle == null) {
+            bundle = new Bundle();
         }
-        return bool.booleanValue();
+        this.f696a.a(i, bundle);
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController
-    public final synchronized boolean isRestrictedForReporter() {
-        boolean booleanValue;
-        Boolean bool = this.b;
-        if (bool == null) {
-            booleanValue = this.d.isEmpty() && this.c.isEmpty();
-        } else {
-            booleanValue = bool.booleanValue();
-        }
-        return booleanValue;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController
-    public final synchronized boolean isRestrictedForSdk() {
-        Boolean bool;
-        bool = this.b;
-        return bool == null ? this.d.isEmpty() : bool.booleanValue();
-    }
-
-    public final synchronized void a(String str, Boolean bool) {
-        if (fo.a(bool) || (!this.d.contains(str) && !this.c.contains(str))) {
-            if (((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue()) {
-                this.d.add(str);
-                this.c.remove(str);
-            } else {
-                this.c.add(str);
-                this.d.remove(str);
-            }
+    public static void a(ResultReceiver resultReceiver, Jl jl, C0474o4 c0474o4) {
+        if (resultReceiver != null) {
+            Bundle bundle = new Bundle();
+            bundle.putInt("startup_error_key_code", jl.f510a);
+            c0474o4.b(bundle);
+            resultReceiver.send(2, bundle);
         }
     }
 }

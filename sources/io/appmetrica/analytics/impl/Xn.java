@@ -1,18 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.util.SparseArray;
-import java.util.HashMap;
+import android.text.TextUtils;
 /* loaded from: classes4.dex */
-public final class Xn {
-    public static final int[] c = {0, 1, 2, 3};
+public final class Xn extends AbstractC0236eh {
+    public Xn(C0574s5 c0574s5) {
+        super(c0574s5);
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public final SparseArray f712a = new SparseArray();
-    public int b = 0;
-
-    public Xn(int[] iArr) {
-        for (int i : iArr) {
-            this.f712a.put(i, new HashMap());
+    @Override // io.appmetrica.analytics.impl.AbstractC0236eh
+    public final boolean a(C0401l6 c0401l6) {
+        String i = this.f831a.c.i();
+        String str = c0401l6.h;
+        this.f831a.c.j(str).b();
+        if (TextUtils.equals(i, str)) {
+            return false;
         }
+        this.f831a.a(C0325i4.o());
+        return false;
     }
 }

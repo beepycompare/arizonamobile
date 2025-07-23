@@ -1,6 +1,6 @@
 package io.appmetrica.analytics.ecommerce;
 
-import io.appmetrica.analytics.impl.fo;
+import io.appmetrica.analytics.impl.io;
 import java.math.BigDecimal;
 /* loaded from: classes4.dex */
 public class ECommerceAmount {
@@ -10,7 +10,7 @@ public class ECommerceAmount {
     private final String b;
 
     public ECommerceAmount(long j, String str) {
-        this(fo.a(j), str);
+        this(io.a(j), str);
     }
 
     public BigDecimal getAmount() {
@@ -26,7 +26,7 @@ public class ECommerceAmount {
     }
 
     public ECommerceAmount(double d, String str) {
-        this(new BigDecimal(fo.a(d)), str);
+        this(new BigDecimal(io.a(d)), str);
     }
 
     public ECommerceAmount(BigDecimal bigDecimal, String str) {

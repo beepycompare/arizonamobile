@@ -1,18 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
+import io.appmetrica.analytics.ModuleEvent;
 /* loaded from: classes4.dex */
-public final class Rj implements InterfaceC0354jb {
+public final class Rj implements InterfaceC0406lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Map f614a;
+    public final /* synthetic */ ModuleEvent f625a;
 
-    public Rj(Map map) {
-        this.f614a = map;
+    public Rj(ModuleEvent moduleEvent) {
+        this.f625a = moduleEvent;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0354jb
-    public final void a(InterfaceC0379kb interfaceC0379kb) {
-        interfaceC0379kb.reportAnr(this.f614a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0406lb
+    public final void a(InterfaceC0431mb interfaceC0431mb) {
+        interfaceC0431mb.reportEvent(this.f625a);
     }
 }

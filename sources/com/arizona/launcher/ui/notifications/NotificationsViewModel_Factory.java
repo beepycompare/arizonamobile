@@ -9,7 +9,7 @@ public final class NotificationsViewModel_Factory implements Factory<Notificatio
     private final Provider<NotificationsRepository> notificationsRepositoryProvider;
     private final Provider<SchedulersFacade> schedulersProvider;
 
-    public NotificationsViewModel_Factory(Provider<NotificationsRepository> notificationsRepositoryProvider, Provider<SchedulersFacade> schedulersProvider) {
+    private NotificationsViewModel_Factory(Provider<NotificationsRepository> notificationsRepositoryProvider, Provider<SchedulersFacade> schedulersProvider) {
         this.notificationsRepositoryProvider = notificationsRepositoryProvider;
         this.schedulersProvider = schedulersProvider;
     }

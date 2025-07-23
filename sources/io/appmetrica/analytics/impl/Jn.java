@@ -1,32 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.io.Base64Utils;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public final class Jn implements no {
+public final class Jn implements InterfaceC0697x3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final X8 f497a;
+    public final Object f511a;
+    public final InterfaceC0697x3 b;
 
-    public Jn() {
-        this(new X8());
+    public Jn(Object obj, InterfaceC0697x3 interfaceC0697x3) {
+        this.f511a = obj;
+        this.b = interfaceC0697x3;
     }
 
-    @Override // io.appmetrica.analytics.impl.no
-    public final byte[] a(C0203d9 c0203d9, C0659vh c0659vh) {
-        byte[] bArr = new byte[0];
-        try {
-            bArr = Base64Utils.decompressBase64GzipAsBytes(c0203d9.b);
-        } catch (Throwable unused) {
-        }
-        byte[] a2 = ((W8) this.f497a.f703a.a(c0203d9.o)).a(bArr);
-        return a2 == null ? new byte[0] : a2;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0697x3
+    public final int getBytesTruncated() {
+        return this.b.getBytesTruncated();
     }
 
-    public Jn(X8 x8) {
-        this.f497a = x8;
-    }
-
-    public final X8 a() {
-        return this.f497a;
+    public final String toString() {
+        return "TrimmingResult{value=" + this.f511a + ", metaInfo=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }
