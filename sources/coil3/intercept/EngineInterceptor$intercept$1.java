@@ -6,11 +6,20 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: EngineInterceptor.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "coil3.intercept.EngineInterceptor", f = "EngineInterceptor.kt", i = {0}, l = {75}, m = "intercept", n = {"chain"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "coil3.intercept.EngineInterceptor", f = "EngineInterceptor.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {75}, m = "intercept", n = {"chain", "request", "data", "size", "eventListener", "options", "scale", "mappedData", "cacheKey", "cacheValue"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9"})
 /* loaded from: classes3.dex */
 public final class EngineInterceptor$intercept$1 extends ContinuationImpl {
     Object L$0;
+    Object L$1;
+    Object L$2;
+    Object L$3;
+    Object L$4;
+    Object L$5;
+    Object L$6;
+    Object L$7;
+    Object L$8;
+    Object L$9;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ EngineInterceptor this$0;

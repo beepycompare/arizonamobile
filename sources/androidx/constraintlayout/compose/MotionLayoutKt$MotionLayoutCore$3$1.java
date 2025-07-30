@@ -93,7 +93,7 @@ public final class MotionLayoutKt$MotionLayoutCore$3$1 extends SuspendLambda imp
             obj2 = obj;
             if (((Boolean) obj2).booleanValue()) {
                 ConstraintSet next = it.next();
-                ConstraintSet constraintSet = (ConstraintSet) ChannelResult.m10005getOrNullimpl(this.$channel.mo9993tryReceivePtdJZtk());
+                ConstraintSet constraintSet = (ConstraintSet) ChannelResult.m10009getOrNullimpl(this.$channel.mo9997tryReceivePtdJZtk());
                 if (constraintSet != null) {
                     next = constraintSet;
                 }

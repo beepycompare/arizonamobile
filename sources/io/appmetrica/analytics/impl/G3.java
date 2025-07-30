@@ -7,7 +7,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class G3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Uf f445a;
+    public final Uf f446a;
     public final BigDecimal b;
     public final Nf c;
     public final Kg d;
@@ -17,11 +17,11 @@ public final class G3 {
     }
 
     public final String toString() {
-        return "CartItemWrapper{product=" + this.f445a + ", quantity=" + this.b + ", revenue=" + this.c + ", referrer=" + this.d + AbstractJsonLexerKt.END_OBJ;
+        return "CartItemWrapper{product=" + this.f446a + ", quantity=" + this.b + ", revenue=" + this.c + ", referrer=" + this.d + AbstractJsonLexerKt.END_OBJ;
     }
 
     public G3(Uf uf, BigDecimal bigDecimal, Nf nf, Kg kg) {
-        this.f445a = uf;
+        this.f446a = uf;
         this.b = bigDecimal;
         this.c = nf;
         this.d = kg;

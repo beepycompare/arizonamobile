@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt;
 public final class I {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0460nf f479a = Ia.j().x();
+    public final C0460nf f480a = Ia.j().x();
     public final SavableToggle b;
     public final OuterStateToggle c;
     public final OuterStateToggle d;

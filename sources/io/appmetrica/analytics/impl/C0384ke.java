@@ -18,7 +18,7 @@ import kotlin.collections.CollectionsKt;
 public final class C0384ke {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0384ke f925a = new C0384ke();
+    public static final C0384ke f926a = new C0384ke();
     public static final LinkedHashMap b = new LinkedHashMap();
     public static final String c = UserAgent.getFor(BuildConfig.LIBRARY_PACKAGE_NAME, "7.10.0", "50135769");
 
@@ -37,6 +37,6 @@ public final class C0384ke {
         AESRSARequestBodyEncrypter aESRSARequestBodyEncrypter = new AESRSARequestBodyEncrypter();
         C0437mh c0437mh = new C0437mh(aESRSARequestBodyEncrypter);
         Tb tb = new Tb(c0574s5);
-        return new NetworkTask(new BlockingExecutor(), new K5(c0574s5.f1048a), new AllHostsExponentialBackoffPolicy(f925a.a(EnumC0335ie.REPORT)), new Hh(c0574s5, c0437mh, tb, new FullUrlFormer(c0437mh, tb), new RequestDataHolder(), new ResponseDataHolder(new DefaultResponseValidityChecker()), c0574s5.h(), c0574s5.o(), c0574s5.t(), aESRSARequestBodyEncrypter), CollectionsKt.listOf(new ho()), c);
+        return new NetworkTask(new BlockingExecutor(), new K5(c0574s5.f1049a), new AllHostsExponentialBackoffPolicy(f926a.a(EnumC0335ie.REPORT)), new Hh(c0574s5, c0437mh, tb, new FullUrlFormer(c0437mh, tb), new RequestDataHolder(), new ResponseDataHolder(new DefaultResponseValidityChecker()), c0574s5.h(), c0574s5.o(), c0574s5.t(), aESRSARequestBodyEncrypter), CollectionsKt.listOf(new ho()), c);
     }
 }

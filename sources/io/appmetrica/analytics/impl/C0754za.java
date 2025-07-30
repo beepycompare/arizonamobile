@@ -10,14 +10,14 @@ public final class C0754za {
     public static final C0754za d = new C0754za();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Id f1168a = new Id();
+    public final Id f1169a = new Id();
     public final ServiceComponentsInitializer b = AbstractC0365jk.a();
     public boolean c = false;
 
     public final void a(Context context) {
         Ia.a(context);
         this.b.onCreate(context);
-        this.f1168a.getClass();
+        this.f1169a.getClass();
         for (String str : Ia.F.s.a()) {
             ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
             Object loadAndInstantiateClassWithDefaultConstructor = ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor(str, ModuleServiceEntryPoint.class);

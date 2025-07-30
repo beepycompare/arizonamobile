@@ -4,21 +4,21 @@ package io.appmetrica.analytics.impl;
 public final class C0534qe implements po {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1018a;
+    public final String f1019a;
 
     public C0534qe(String str) {
-        this.f1018a = str;
+        this.f1019a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.po
     public final no a(Object obj) {
         if (obj == null) {
-            return new no(this, false, this.f1018a + " is null.");
+            return new no(this, false, this.f1019a + " is null.");
         }
         return new no(this, true, "");
     }
 
     public final String a() {
-        return this.f1018a;
+        return this.f1019a;
     }
 }

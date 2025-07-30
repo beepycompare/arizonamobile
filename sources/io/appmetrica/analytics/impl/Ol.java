@@ -24,7 +24,7 @@ public final class Ol implements Pl {
     public static final Map k = Collections.unmodifiableMap(new Ll());
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f583a;
+    public final List f584a;
     public final Ji b;
     public final Wl c;
     public final Handler d;
@@ -171,7 +171,7 @@ public final class Ol implements Pl {
             c0530qa = c0480oa.b;
         }
         c0455na.getClass();
-        Boolean bool = c0530qa.f1016a;
+        Boolean bool = c0530qa.f1017a;
         return new C0579sa();
     }
 
@@ -208,13 +208,13 @@ public final class Ol implements Pl {
         synchronized (this.g) {
             if (!this.j || this.c.b()) {
                 this.j = true;
-                a(this.f583a, this.f, this.i, false);
+                a(this.f584a, this.f, this.i, false);
             }
         }
     }
 
     public Ol(Ji ji, Wl wl, Handler handler) {
-        this.f583a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
+        this.f584a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
         this.g = new Object();
         this.h = new WeakHashMap();
         this.j = false;
@@ -240,10 +240,10 @@ public final class Ol implements Pl {
         bundle.putParcelable("io.appmetrica.analytics.impl.IdentifiersData", new C0580sb(w6, list, map, z));
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         C0325i4 c0325i4 = new C0325i4("", "", 1536, 0, anonymousInstance);
         c0325i4.m = bundle;
-        C0121a5 c0121a5 = ji.f508a;
+        C0121a5 c0121a5 = ji.f509a;
         ji.a(Ji.a(c0325i4, c0121a5), c0121a5, 1, null);
     }
 

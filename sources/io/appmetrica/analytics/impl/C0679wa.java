@@ -9,21 +9,21 @@ import kotlin.io.FilesKt;
 public final class C0679wa implements yo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1118a;
+    public final Context f1119a;
     public final String b;
 
     public C0679wa(Context context, String str) {
-        this.f1118a = context;
+        this.f1119a = context;
         this.b = str;
     }
 
     @Override // io.appmetrica.analytics.impl.yo
     public final String a() {
         try {
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f1118a, this.b);
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f1119a, this.b);
             if (fileFromSdkStorage != null) {
                 fileFromSdkStorage.exists();
-                File fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f1118a, this.b);
+                File fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f1119a, this.b);
                 if (fileFromAppStorage != null) {
                     FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);
                 }
@@ -38,7 +38,7 @@ public final class C0679wa implements yo {
     @Override // io.appmetrica.analytics.impl.yo
     public final void a(String str) {
         try {
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f1118a, this.b);
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f1119a, this.b);
             if (fileFromSdkStorage != null) {
                 FilesKt.writeText$default(fileFromSdkStorage, str, null, 2, null);
             }

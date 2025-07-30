@@ -4,16 +4,16 @@ package io.appmetrica.analytics.impl;
 public final class C0317hl implements po {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0619u0 f889a;
+    public final C0619u0 f890a;
 
     public C0317hl(C0619u0 c0619u0) {
-        this.f889a = c0619u0;
+        this.f890a = c0619u0;
     }
 
     @Override // io.appmetrica.analytics.impl.po
     public final no a(Void r3) {
         boolean z;
-        this.f889a.getClass();
+        this.f890a.getClass();
         synchronized (C0594t0.class) {
             z = C0594t0.f;
         }

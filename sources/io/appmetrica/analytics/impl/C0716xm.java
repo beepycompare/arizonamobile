@@ -24,7 +24,7 @@ public final class C0716xm extends MessageNano {
     public C0566rm D;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1141a;
+    public String f1142a;
     public long b;
     public String[] c;
     public String d;
@@ -67,7 +67,7 @@ public final class C0716xm extends MessageNano {
     }
 
     public final C0716xm a() {
-        this.f1141a = "";
+        this.f1142a = "";
         this.b = 0L;
         String[] strArr = WireFormatNano.EMPTY_STRING_ARRAY;
         this.c = strArr;
@@ -105,8 +105,8 @@ public final class C0716xm extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f1141a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f1141a);
+        if (!this.f1142a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f1142a);
         }
         int computeInt64Size = CodedOutputByteBufferNano.computeInt64Size(2, this.b) + computeSerializedSize;
         String[] strArr = this.c;
@@ -281,8 +281,8 @@ public final class C0716xm extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f1141a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f1141a);
+        if (!this.f1142a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f1142a);
         }
         codedOutputByteBufferNano.writeInt64(2, this.b);
         String[] strArr = this.c;
@@ -457,7 +457,7 @@ public final class C0716xm extends MessageNano {
                 case 0:
                     break;
                 case 10:
-                    this.f1141a = codedInputByteBufferNano.readString();
+                    this.f1142a = codedInputByteBufferNano.readString();
                     break;
                 case 16:
                     this.b = codedInputByteBufferNano.readInt64();

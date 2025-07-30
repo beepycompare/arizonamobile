@@ -10,23 +10,23 @@ import java.util.concurrent.Executor;
 public final class T9 implements ExecutorProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0564rk f649a;
+    public final C0564rk f650a;
     public final IHandlerExecutor b;
 
     public T9() {
         C0564rk w = Ia.j().w();
-        this.f649a = w;
+        this.f650a = w;
         this.b = w.c();
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
     public final IHandlerExecutor getDefaultExecutor() {
-        return this.f649a.a();
+        return this.f650a.a();
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
     public final InterruptionSafeThread getInterruptionThread(String str, String str2, Runnable runnable) {
-        return new InterruptionSafeThread(runnable, (str + '-' + str2) + Constants.FILENAME_SEQUENCE_SEPARATOR + Od.f578a.incrementAndGet());
+        return new InterruptionSafeThread(runnable, (str + '-' + str2) + Constants.FILENAME_SEQUENCE_SEPARATOR + Od.f579a.incrementAndGet());
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
@@ -36,11 +36,11 @@ public final class T9 implements ExecutorProvider {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
     public final IHandlerExecutor getSupportIOExecutor() {
-        C0564rk c0564rk = this.f649a;
+        C0564rk c0564rk = this.f650a;
         if (c0564rk.f == null) {
             synchronized (c0564rk) {
                 if (c0564rk.f == null) {
-                    c0564rk.f1040a.getClass();
+                    c0564rk.f1041a.getClass();
                     HandlerThreadC0705xb a2 = U9.a("IAA-SIO");
                     c0564rk.f = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -51,6 +51,6 @@ public final class T9 implements ExecutorProvider {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
     public final Executor getUiExecutor() {
-        return this.f649a.f();
+        return this.f650a.f();
     }
 }

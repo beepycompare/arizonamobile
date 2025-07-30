@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class C0610tg implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0414lj f1066a;
+    public final C0414lj f1067a;
     public final Na b;
     public final Na c;
 
@@ -20,14 +20,14 @@ public final class C0610tg implements Converter {
     public final Qi fromModel(Kg kg) {
         Qi qi;
         J8 j8 = new J8();
-        Jn a2 = this.b.a(kg.f522a);
-        j8.f501a = StringUtils.getUTF8Bytes((String) a2.f511a);
+        Jn a2 = this.b.a(kg.f523a);
+        j8.f502a = StringUtils.getUTF8Bytes((String) a2.f512a);
         Jn a3 = this.c.a(kg.b);
-        j8.b = StringUtils.getUTF8Bytes((String) a3.f511a);
+        j8.b = StringUtils.getUTF8Bytes((String) a3.f512a);
         C0514pj c0514pj = kg.c;
         if (c0514pj != null) {
-            qi = this.f1066a.fromModel(c0514pj);
-            j8.c = (K8) qi.f612a;
+            qi = this.f1067a.fromModel(c0514pj);
+            j8.c = (K8) qi.f613a;
         } else {
             qi = null;
         }
@@ -41,7 +41,7 @@ public final class C0610tg implements Converter {
     }
 
     public C0610tg(C0414lj c0414lj, Na na, Na na2) {
-        this.f1066a = c0414lj;
+        this.f1067a = c0414lj;
         this.b = na;
         this.c = na2;
     }

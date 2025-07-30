@@ -6,18 +6,18 @@ import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFact
 public final class o implements LocationReceiverProviderFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    public final q f1195a;
+    public final q f1196a;
 
     public o(q qVar) {
-        this.f1195a = qVar;
+        this.f1196a = qVar;
     }
 
     public final q a() {
-        return this.f1195a;
+        return this.f1196a;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFactory
     public final LocationReceiverProvider getPassiveLocationReceiverProvider() {
-        return this.f1195a;
+        return this.f1196a;
     }
 }

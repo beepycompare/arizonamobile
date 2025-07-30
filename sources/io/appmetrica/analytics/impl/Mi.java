@@ -11,7 +11,7 @@ public final class Mi extends V4 {
     @Override // io.appmetrica.analytics.impl.V4
     public final boolean a(C0401l6 c0401l6, P4 p4) {
         Bundle bundle = c0401l6.m;
-        this.f681a.k.a(new R4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
+        this.f682a.k.a(new R4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
         return false;
     }
 }

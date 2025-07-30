@@ -17,7 +17,7 @@ import java.util.Map;
 public final class C0612ti implements InterfaceC0431mb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0619u0 f1068a;
+    public final C0619u0 f1069a;
     public final Nh b;
     public final IHandlerExecutor c;
     public final Context d;
@@ -101,7 +101,7 @@ public final class C0612ti implements InterfaceC0431mb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str) {
-        this.b.f565a.a(str);
+        this.b.f566a.a(str);
         this.f.getClass();
         this.c.execute(new RunnableC0562ri(this, str));
     }
@@ -182,7 +182,7 @@ public final class C0612ti implements InterfaceC0431mb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str, String str2) {
-        this.b.f565a.a(str);
+        this.b.f566a.a(str);
         this.f.getClass();
         this.c.execute(new RunnableC0587si(this, str, str2));
     }
@@ -214,7 +214,7 @@ public final class C0612ti implements InterfaceC0431mb {
         this.c = C0698x4.l().g().a();
         this.d = context;
         this.b = nh;
-        this.f1068a = c0619u0;
+        this.f1069a = c0619u0;
         this.f = di;
         this.e = reporterConfig;
         this.g = c0183cf;
@@ -222,7 +222,7 @@ public final class C0612ti implements InterfaceC0431mb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str, Map<String, Object> map) {
-        this.b.f565a.a(str);
+        this.b.f566a.a(str);
         this.f.getClass();
         this.c.execute(new Th(this, str, CollectionUtils.getListFromMap(map)));
     }

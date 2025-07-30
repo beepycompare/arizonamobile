@@ -9,18 +9,18 @@ public abstract class AbstractC0410lf {
     public static final String c = "lf";
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0179cb f938a;
+    public final InterfaceC0179cb f939a;
     public final String b;
 
     public AbstractC0410lf(InterfaceC0179cb interfaceC0179cb, String str) {
-        this.f938a = interfaceC0179cb;
+        this.f939a = interfaceC0179cb;
         this.b = str;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends AbstractC0410lf> T a(String str, float f) {
         synchronized (this) {
-            this.f938a.a(str, f);
+            this.f939a.a(str, f);
         }
         return this;
     }
@@ -28,7 +28,7 @@ public abstract class AbstractC0410lf {
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends AbstractC0410lf> T b(String str, String str2) {
         synchronized (this) {
-            this.f938a.a(str, str2);
+            this.f939a.a(str, str2);
         }
         return this;
     }
@@ -40,13 +40,13 @@ public abstract class AbstractC0410lf {
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends AbstractC0410lf> T d(String str) {
         synchronized (this) {
-            this.f938a.remove(str);
+            this.f939a.remove(str);
         }
         return this;
     }
 
     public Set<String> c() {
-        return this.f938a.a();
+        return this.f939a.a();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -61,14 +61,14 @@ public abstract class AbstractC0410lf {
         } catch (Throwable unused) {
             str2 = null;
         }
-        this.f938a.a(str, str2);
+        this.f939a.a(str, str2);
         return this;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends AbstractC0410lf> T b(String str, long j) {
         synchronized (this) {
-            this.f938a.a(str, j);
+            this.f939a.a(str, j);
         }
         return this;
     }
@@ -76,7 +76,7 @@ public abstract class AbstractC0410lf {
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends AbstractC0410lf> T b(String str, int i) {
         synchronized (this) {
-            this.f938a.a(i, str);
+            this.f939a.a(i, str);
         }
         return this;
     }
@@ -84,7 +84,7 @@ public abstract class AbstractC0410lf {
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends AbstractC0410lf> T b(String str, boolean z) {
         synchronized (this) {
-            this.f938a.a(str, z);
+            this.f939a.a(str, z);
         }
         return this;
     }
@@ -94,28 +94,28 @@ public abstract class AbstractC0410lf {
     }
 
     public final long a(String str, long j) {
-        return this.f938a.getLong(str, j);
+        return this.f939a.getLong(str, j);
     }
 
     public final int a(String str, int i) {
-        return this.f938a.getInt(str, i);
+        return this.f939a.getInt(str, i);
     }
 
     public final String a(String str, String str2) {
-        return this.f938a.getString(str, str2);
+        return this.f939a.getString(str, str2);
     }
 
     public final void b() {
         synchronized (this) {
-            this.f938a.b();
+            this.f939a.b();
         }
     }
 
     public final boolean a(String str, boolean z) {
-        return this.f938a.getBoolean(str, z);
+        return this.f939a.getBoolean(str, z);
     }
 
     public final boolean b(String str) {
-        return this.f938a.a(str);
+        return this.f939a.a(str);
     }
 }

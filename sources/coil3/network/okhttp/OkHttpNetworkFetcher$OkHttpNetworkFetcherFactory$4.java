@@ -5,9 +5,9 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 import okhttp3.OkHttpClient;
 /* compiled from: OkHttpNetworkFetcher.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
-/* synthetic */ class OkHttpNetworkFetcher$OkHttpNetworkFetcherFactory$4 extends FunctionReferenceImpl implements Function0<OkHttpClient> {
+final /* synthetic */ class OkHttpNetworkFetcher$OkHttpNetworkFetcherFactory$4 extends FunctionReferenceImpl implements Function0<OkHttpClient> {
     public static final OkHttpNetworkFetcher$OkHttpNetworkFetcherFactory$4 INSTANCE = new OkHttpNetworkFetcher$OkHttpNetworkFetcherFactory$4();
 
     OkHttpNetworkFetcher$OkHttpNetworkFetcherFactory$4() {

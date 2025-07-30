@@ -9,27 +9,27 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListe
 public final class C0786t implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0787u f1314a;
+    public final /* synthetic */ C0787u f1315a;
 
     public C0786t(C0787u c0787u) {
-        this.f1314a = c0787u;
+        this.f1315a = c0787u;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
     public final void onEvent(Activity activity, ActivityEvent activityEvent) {
-        int i = AbstractC0785s.f1313a[activityEvent.ordinal()];
+        int i = AbstractC0785s.f1314a[activityEvent.ordinal()];
         try {
             if (i != 1) {
                 if (i == 2) {
-                    this.f1314a.f1315a.getContext().getContentResolver().unregisterContentObserver(this.f1314a.d);
+                    this.f1315a.f1316a.getContext().getContentResolver().unregisterContentObserver(this.f1315a.d);
                     return;
                 }
             }
-            C0777j c0777j = this.f1314a.c;
-            if (c0777j == null || !c0777j.f1306a) {
+            C0777j c0777j = this.f1315a.c;
+            if (c0777j == null || !c0777j.f1307a) {
                 return;
             }
-            this.f1314a.f1315a.getContext().getContentResolver().registerContentObserver(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, true, this.f1314a.d);
+            this.f1315a.f1316a.getContext().getContentResolver().registerContentObserver(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, true, this.f1315a.d);
         } catch (Throwable unused) {
         }
     }

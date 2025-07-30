@@ -6,12 +6,12 @@ import android.os.ResultReceiver;
 public final class P4 implements A4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f588a;
+    public final Context f589a;
     public final S4 b;
     public final ResultReceiver c;
 
     public P4(Context context, S4 s4, K4 k4) {
-        this.f588a = context;
+        this.f589a = context;
         this.b = s4;
         this.c = k4.c;
         s4.a(this);
@@ -28,7 +28,7 @@ public final class P4 implements A4 {
     }
 
     public final Context c() {
-        return this.f588a;
+        return this.f589a;
     }
 
     public final ResultReceiver d() {

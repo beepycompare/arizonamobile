@@ -31,14 +31,14 @@ public final class C0707xd extends AbstractC0236eh {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0236eh
     public final boolean a(C0401l6 c0401l6) {
-        if (this.f831a.t.c()) {
+        if (this.f832a.t.c()) {
             ArrayList arrayList = this.b;
             if (!(arrayList instanceof Collection) || !arrayList.isEmpty()) {
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
                     Pair pair = (Pair) it.next();
                     C0483od c0483od = (C0483od) pair.component2();
-                    if (((ModuleServiceEventHandler) pair.component1()).handle(new C0557rd(c0483od.b, c0483od.f985a, new C0533qd(c0483od.d, c0483od.c, c0401l6)), c0401l6)) {
+                    if (((ModuleServiceEventHandler) pair.component1()).handle(new C0557rd(c0483od.b, c0483od.f986a, new C0533qd(c0483od.d, c0483od.c, c0401l6)), c0401l6)) {
                         return true;
                     }
                 }

@@ -6,7 +6,7 @@ import org.json.JSONObject;
 public final class ro implements qo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V8 f1044a;
+    public final V8 f1045a;
 
     public ro() {
         this(new V8());
@@ -22,10 +22,10 @@ public final class ro implements qo {
             } catch (Throwable unused) {
             }
         }
-        return this.f1044a.a(c0280g9, c0711xh);
+        return this.f1045a.a(c0280g9, c0711xh);
     }
 
     public ro(V8 v8) {
-        this.f1044a = v8;
+        this.f1045a = v8;
     }
 }

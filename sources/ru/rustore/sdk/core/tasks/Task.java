@@ -105,7 +105,7 @@ public final class Task<T> {
         countDownLatch.await(j, unit);
         Result<? extends T> result = this.taskResult;
         if (result != null) {
-            T t = (T) result.m8483unboximpl();
+            T t = (T) result.m8487unboximpl();
             ResultKt.throwOnFailure(t);
             return t;
         }
@@ -168,7 +168,7 @@ public final class Task<T> {
     /* JADX INFO: Access modifiers changed from: private */
     public final synchronized void setTaskResult(final T t) {
         Result.Companion companion = Result.Companion;
-        this.taskResult = Result.m8473boximpl(Result.m8474constructorimpl(t));
+        this.taskResult = Result.m8477boximpl(Result.m8478constructorimpl(t));
         for (Listener<T> listener : this.listeners) {
             final OnSuccessListener<T> onSuccess = listener.getOnSuccess();
             if (onSuccess != null) {
@@ -197,7 +197,7 @@ public final class Task<T> {
     /* JADX INFO: Access modifiers changed from: private */
     public final synchronized void setTaskResult(final Throwable th) {
         Result.Companion companion = Result.Companion;
-        this.taskResult = Result.m8473boximpl(Result.m8474constructorimpl(ResultKt.createFailure(th)));
+        this.taskResult = Result.m8477boximpl(Result.m8478constructorimpl(ResultKt.createFailure(th)));
         for (Listener<T> listener : this.listeners) {
             final OnFailureListener onFailure = listener.getOnFailure();
             if (onFailure != null) {
@@ -238,7 +238,7 @@ public final class Task<T> {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:6:0x000e, code lost:
-        if (kotlin.Result.m8480isFailureimpl(r2) != false) goto L20;
+        if (kotlin.Result.m8484isFailureimpl(r2) != false) goto L20;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -247,10 +247,10 @@ public final class Task<T> {
         final Object obj;
         Result<? extends T> result = this.taskResult;
         if (result != null) {
-            obj = result.m8483unboximpl();
+            obj = result.m8487unboximpl();
         }
         obj = null;
-        final Throwable m8477exceptionOrNullimpl = result != null ? Result.m8477exceptionOrNullimpl(result.m8483unboximpl()) : null;
+        final Throwable m8481exceptionOrNullimpl = result != null ? Result.m8481exceptionOrNullimpl(result.m8487unboximpl()) : null;
         if (obj != null && onSuccessListener != null) {
             runWithFallbackToMain(executor, new Function0<Unit>() { // from class: ru.rustore.sdk.core.tasks.Task$addListener$1
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -271,7 +271,7 @@ public final class Task<T> {
                 }
             });
         }
-        if (m8477exceptionOrNullimpl != null && onFailureListener != null) {
+        if (m8481exceptionOrNullimpl != null && onFailureListener != null) {
             runWithFallbackToMain(executor, new Function0<Unit>() { // from class: ru.rustore.sdk.core.tasks.Task$addListener$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -287,7 +287,7 @@ public final class Task<T> {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    OnFailureListener.this.onFailure(m8477exceptionOrNullimpl);
+                    OnFailureListener.this.onFailure(m8481exceptionOrNullimpl);
                 }
             });
         }

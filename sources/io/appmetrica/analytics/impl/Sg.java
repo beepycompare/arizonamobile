@@ -7,6 +7,6 @@ public final class Sg extends AbstractC0525q5 {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0525q5
     public final <C extends Za> Kl a() {
-        return new Vg(this.f1013a);
+        return new Vg(this.f1014a);
     }
 }

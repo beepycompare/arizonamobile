@@ -16,7 +16,7 @@ public final class Bf extends MessageNano {
     public static volatile Bf[] g;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0759zf f358a;
+    public C0759zf f359a;
     public Af[] b;
 
     public Bf() {
@@ -35,7 +35,7 @@ public final class Bf extends MessageNano {
     }
 
     public final Bf a() {
-        this.f358a = null;
+        this.f359a = null;
         this.b = Af.b();
         this.cachedSize = -1;
         return this;
@@ -44,7 +44,7 @@ public final class Bf extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0759zf c0759zf = this.f358a;
+        C0759zf c0759zf = this.f359a;
         if (c0759zf != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0759zf);
         }
@@ -68,7 +68,7 @@ public final class Bf extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0759zf c0759zf = this.f358a;
+        C0759zf c0759zf = this.f359a;
         if (c0759zf != null) {
             codedOutputByteBufferNano.writeMessage(1, c0759zf);
         }
@@ -98,10 +98,10 @@ public final class Bf extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f358a == null) {
-                    this.f358a = new C0759zf();
+                if (this.f359a == null) {
+                    this.f359a = new C0759zf();
                 }
-                codedInputByteBufferNano.readMessage(this.f358a);
+                codedInputByteBufferNano.readMessage(this.f359a);
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

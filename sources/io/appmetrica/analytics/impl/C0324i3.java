@@ -9,7 +9,7 @@ import java.util.List;
 public final class C0324i3 implements BillingInfoSender {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0381kb f894a;
+    public final InterfaceC0381kb f895a;
     public final ICommonExecutor b;
 
     public C0324i3(InterfaceC0381kb interfaceC0381kb) {
@@ -24,7 +24,7 @@ public final class C0324i3 implements BillingInfoSender {
     }
 
     public C0324i3(InterfaceC0381kb interfaceC0381kb, ICommonExecutor iCommonExecutor) {
-        this.f894a = interfaceC0381kb;
+        this.f895a = interfaceC0381kb;
         this.b = iCommonExecutor;
     }
 }

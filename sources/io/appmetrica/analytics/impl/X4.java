@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public final class X4 extends Qf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final W4 f712a;
+    public final W4 f713a;
 
     public X4(S4 s4) {
-        this.f712a = new W4(s4);
+        this.f713a = new W4(s4);
     }
 
     @Override // io.appmetrica.analytics.impl.Qf
@@ -16,11 +16,11 @@ public final class X4 extends Qf {
         ArrayList arrayList = new ArrayList();
         int ordinal = EnumC0680wb.a(i).ordinal();
         if (ordinal == 12) {
-            arrayList.add(this.f712a.f694a);
+            arrayList.add(this.f713a.f695a);
         } else if (ordinal == 14) {
-            arrayList.add(this.f712a.b);
+            arrayList.add(this.f713a.b);
         } else if (ordinal == 34) {
-            arrayList.add(this.f712a.c);
+            arrayList.add(this.f713a.c);
         }
         return new C0529q9(arrayList);
     }

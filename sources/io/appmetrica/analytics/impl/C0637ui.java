@@ -12,7 +12,7 @@ import java.util.Map;
 public class C0637ui implements InterfaceC0431mb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0209df f1086a = new C0209df();
+    public final C0209df f1087a = new C0209df();
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0431mb, io.appmetrica.analytics.impl.InterfaceC0506pb
     public final void a(Nn nn) {
@@ -28,7 +28,7 @@ public class C0637ui implements InterfaceC0431mb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final IPluginReporter getPluginExtension() {
-        return this.f1086a;
+        return this.f1087a;
     }
 
     @Override // io.appmetrica.analytics.IReporter

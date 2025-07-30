@@ -12,8 +12,9 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 /* compiled from: LocalAsyncImagePreviewHandler.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 final class AsyncImagePreviewHandler$Companion$Default$1 implements AsyncImagePreviewHandler {
     public static final AsyncImagePreviewHandler$Companion$Default$1 INSTANCE = new AsyncImagePreviewHandler$Companion$Default$1();
@@ -22,9 +23,9 @@ final class AsyncImagePreviewHandler$Companion$Default$1 implements AsyncImagePr
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x006e  */
     @Override // coil3.compose.AsyncImagePreviewHandler
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -42,7 +43,8 @@ final class AsyncImagePreviewHandler$Companion$Default$1 implements AsyncImagePr
                 i = asyncImagePreviewHandler$Companion$Default$1$handle$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    asyncImagePreviewHandler$Companion$Default$1$handle$1.L$0 = imageRequest;
+                    asyncImagePreviewHandler$Companion$Default$1$handle$1.L$0 = SpillingKt.nullOutSpilledVariable(imageLoader);
+                    asyncImagePreviewHandler$Companion$Default$1$handle$1.L$1 = imageRequest;
                     asyncImagePreviewHandler$Companion$Default$1$handle$1.label = 1;
                     obj = imageLoader.execute(imageRequest, asyncImagePreviewHandler$Companion$Default$1$handle$1);
                     if (obj == coroutine_suspended) {
@@ -51,17 +53,18 @@ final class AsyncImagePreviewHandler$Companion$Default$1 implements AsyncImagePr
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    imageRequest = (ImageRequest) asyncImagePreviewHandler$Companion$Default$1$handle$1.L$0;
+                    imageRequest = (ImageRequest) asyncImagePreviewHandler$Companion$Default$1$handle$1.L$1;
+                    ImageLoader imageLoader2 = (ImageLoader) asyncImagePreviewHandler$Companion$Default$1$handle$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 imageResult = (ImageResult) obj;
                 if (!(imageResult instanceof SuccessResult)) {
                     SuccessResult successResult = (SuccessResult) imageResult;
-                    return new AsyncImagePainter.State.Success(ImagePainter_androidKt.m7749asPainter55t9rM$default(successResult.getImage(), imageRequest.getContext(), 0, 2, null), successResult);
+                    return new AsyncImagePainter.State.Success(ImagePainter_androidKt.m7748asPainter55t9rM$default(successResult.getImage(), imageRequest.getContext(), 0, 2, null), successResult);
                 } else if (imageResult instanceof ErrorResult) {
                     ErrorResult errorResult = (ErrorResult) imageResult;
                     Image image = errorResult.getImage();
-                    return new AsyncImagePainter.State.Error(image != null ? ImagePainter_androidKt.m7749asPainter55t9rM$default(image, imageRequest.getContext(), 0, 2, null) : null, errorResult);
+                    return new AsyncImagePainter.State.Error(image != null ? ImagePainter_androidKt.m7748asPainter55t9rM$default(image, imageRequest.getContext(), 0, 2, null) : null, errorResult);
                 } else {
                     throw new NoWhenBranchMatchedException();
                 }

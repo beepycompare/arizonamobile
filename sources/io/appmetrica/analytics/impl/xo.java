@@ -6,13 +6,13 @@ import java.util.LinkedHashMap;
 public final class xo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1142a;
+    public final Context f1143a;
     public final LinkedHashMap b = new LinkedHashMap();
     public final to c;
     public final to d;
 
     public xo(Context context) {
-        this.f1142a = context;
+        this.f1143a = context;
         C0679wa c0679wa = new C0679wa(context, "appmetrica_vital.dat");
         this.c = new to(Ia.j().x(), c0679wa);
         this.d = new to(new C0460nf(C0626u7.a(context).d()), c0679wa);

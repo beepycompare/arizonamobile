@@ -35,7 +35,7 @@ public final class C0730yb {
             default:
                 throw new NoWhenBranchMatchedException();
         }
-        v9.f683a = i;
+        v9.f684a = i;
         v9.b = jSONObject.toString().getBytes(Charsets.UTF_8);
         return v9;
     }

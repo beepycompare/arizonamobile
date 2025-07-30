@@ -11,7 +11,7 @@ import coil3.size.Size;
 import kotlin.Metadata;
 import kotlin.math.MathKt;
 /* compiled from: DrawableUtils.kt */
-@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\bÀ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J0\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0007J\u0018\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\u00072\u0006\u0010\n\u001a\u00020\u000bH\u0002J(\u0010\u0014\u001a\u00020\u00112\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\u00072\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lcoil3/util/DrawableUtils;", "", "<init>", "()V", "DEFAULT_SIZE", "", "convertToBitmap", "Landroid/graphics/Bitmap;", "drawable", "Landroid/graphics/drawable/Drawable;", "config", "Landroid/graphics/Bitmap$Config;", "size", "Lcoil3/size/Size;", "scale", "Lcoil3/size/Scale;", "allowInexactSize", "", "isConfigValid", "bitmap", "isSizeValid", "coil-core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\bÀ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J0\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0007J\u0018\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\u00072\u0006\u0010\n\u001a\u00020\u000bH\u0002J(\u0010\u0014\u001a\u00020\u00112\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\u00072\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lcoil3/util/DrawableUtils;", "", "<init>", "()V", "DEFAULT_SIZE", "", "convertToBitmap", "Landroid/graphics/Bitmap;", "drawable", "Landroid/graphics/drawable/Drawable;", "config", "Landroid/graphics/Bitmap$Config;", "size", "Lcoil3/size/Size;", "scale", "Lcoil3/size/Scale;", "allowInexactSize", "", "isConfigValid", "bitmap", "isSizeValid", "coil-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class DrawableUtils {
     private static final int DEFAULT_SIZE = 512;
@@ -34,8 +34,8 @@ public final class DrawableUtils {
         }
         int height = Utils_androidKt.getHeight(mutate);
         int i = height > 0 ? height : 512;
-        long m7772computeDstSizesEdh43o = DecodeUtils.m7772computeDstSizesEdh43o(width, i, size, scale, Size.ORIGINAL);
-        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, i, IntPair.m7830getFirstimpl(m7772computeDstSizesEdh43o), IntPair.m7831getSecondimpl(m7772computeDstSizesEdh43o), scale);
+        long m7773computeDstSizesEdh43o = DecodeUtils.m7773computeDstSizesEdh43o(width, i, size, scale, Size.ORIGINAL);
+        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, i, IntPair.m7831getFirstimpl(m7773computeDstSizesEdh43o), IntPair.m7832getSecondimpl(m7773computeDstSizesEdh43o), scale);
         int roundToInt = MathKt.roundToInt(width * computeSizeMultiplier);
         int roundToInt2 = MathKt.roundToInt(computeSizeMultiplier * i);
         Bitmap createBitmap = Bitmap.createBitmap(roundToInt, roundToInt2, BitmapsKt.toSoftware(config));
@@ -58,7 +58,7 @@ public final class DrawableUtils {
         if (z) {
             return true;
         }
-        long m7772computeDstSizesEdh43o = DecodeUtils.m7772computeDstSizesEdh43o(bitmap.getWidth(), bitmap.getHeight(), size, scale, Size.ORIGINAL);
-        return DecodeUtils.computeSizeMultiplier(bitmap.getWidth(), bitmap.getHeight(), IntPair.m7830getFirstimpl(m7772computeDstSizesEdh43o), IntPair.m7831getSecondimpl(m7772computeDstSizesEdh43o), scale) == 1.0d;
+        long m7773computeDstSizesEdh43o = DecodeUtils.m7773computeDstSizesEdh43o(bitmap.getWidth(), bitmap.getHeight(), size, scale, Size.ORIGINAL);
+        return DecodeUtils.computeSizeMultiplier(bitmap.getWidth(), bitmap.getHeight(), IntPair.m7831getFirstimpl(m7773computeDstSizesEdh43o), IntPair.m7832getSecondimpl(m7773computeDstSizesEdh43o), scale) == 1.0d;
     }
 }

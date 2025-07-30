@@ -10,10 +10,10 @@ public final class Vm extends Pi {
 
     @Override // io.appmetrica.analytics.impl.Pi
     public final Object a(int i) {
-        return this.f598a.getString(i);
+        return this.f599a.getString(i);
     }
 
     public final String b(int i) {
-        return this.f598a.getString(i);
+        return this.f599a.getString(i);
     }
 }

@@ -15,7 +15,7 @@ public final class C0389kj extends AbstractC0236eh {
     public final boolean a(C0401l6 c0401l6) {
         Object remove;
         for (Map.Entry entry : c0401l6.p.entrySet()) {
-            Kk kk = this.f831a.u;
+            Kk kk = this.f832a.u;
             String str = (String) entry.getKey();
             byte[] bArr = (byte[]) entry.getValue();
             if (bArr != null) {
@@ -23,10 +23,10 @@ public final class C0389kj extends AbstractC0236eh {
                 if (bArr.length != 0) {
                     remove = kk.b.put(str, bArr);
                     byte[] bArr2 = (byte[]) remove;
-                    Ok ok = kk.f525a;
+                    Ok ok = kk.f526a;
                     Map<String, byte[]> map = kk.b;
                     IBinaryDataHelper iBinaryDataHelper = ok.d;
-                    String str2 = ok.f582a;
+                    String str2 = ok.f583a;
                     Nk nk = ok.c;
                     Lk fromModel = ok.b.fromModel(map);
                     nk.getClass();
@@ -35,10 +35,10 @@ public final class C0389kj extends AbstractC0236eh {
             }
             remove = kk.b.remove(str);
             byte[] bArr22 = (byte[]) remove;
-            Ok ok2 = kk.f525a;
+            Ok ok2 = kk.f526a;
             Map<String, byte[]> map2 = kk.b;
             IBinaryDataHelper iBinaryDataHelper2 = ok2.d;
-            String str22 = ok2.f582a;
+            String str22 = ok2.f583a;
             Nk nk2 = ok2.c;
             Lk fromModel2 = ok2.b.fromModel(map2);
             nk2.getClass();

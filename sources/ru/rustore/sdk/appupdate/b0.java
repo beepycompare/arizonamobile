@@ -46,7 +46,7 @@ import ru.rustore.sdk.core.util.WithTimeoutOrThrowKt;
 public final class b0 implements RuStoreAppUpdateManager {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Lazy f1333a;
+    public final Lazy f1334a;
     public final LinkedHashSet b;
     public final CoroutineScope c;
     public final z d;
@@ -55,18 +55,18 @@ public final class b0 implements RuStoreAppUpdateManager {
     public static final class a extends Lambda implements Function0<j> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Context f1334a;
+        public final /* synthetic */ Context f1335a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public a(Context context) {
             super(0);
-            this.f1334a = context;
+            this.f1335a = context;
         }
 
         @Override // kotlin.jvm.functions.Function0
         public final j invoke() {
             f0 f0Var = new f0();
-            return new j(this.f1334a, new ru.rustore.sdk.appupdate.a(new AppUpdateInfo.Factory(f0Var), f0Var));
+            return new j(this.f1335a, new ru.rustore.sdk.appupdate.a(new AppUpdateInfo.Factory(f0Var), f0Var));
         }
     }
 
@@ -75,7 +75,7 @@ public final class b0 implements RuStoreAppUpdateManager {
     public static final class b extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f1335a;
+        public int f1336a;
 
         public b(Continuation<? super b> continuation) {
             super(1, continuation);
@@ -94,11 +94,11 @@ public final class b0 implements RuStoreAppUpdateManager {
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            int i = this.f1335a;
+            int i = this.f1336a;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                this.f1335a = 1;
-                if (((j) b0.this.f1333a.getValue()).a(this) == coroutine_suspended) {
+                this.f1336a = 1;
+                if (((j) b0.this.f1334a.getValue()).a(this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {
@@ -115,7 +115,7 @@ public final class b0 implements RuStoreAppUpdateManager {
     public static final class c extends SuspendLambda implements Function1<Continuation<? super AppUpdateInfo>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f1336a;
+        public int f1337a;
 
         public c(Continuation<? super c> continuation) {
             super(1, continuation);
@@ -134,7 +134,7 @@ public final class b0 implements RuStoreAppUpdateManager {
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            int i = this.f1336a;
+            int i = this.f1337a;
             if (i != 0) {
                 if (i == 1) {
                     ResultKt.throwOnFailure(obj);
@@ -143,8 +143,8 @@ public final class b0 implements RuStoreAppUpdateManager {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             ResultKt.throwOnFailure(obj);
-            j jVar = (j) b0.this.f1333a.getValue();
-            this.f1336a = 1;
+            j jVar = (j) b0.this.f1334a.getValue();
+            this.f1337a = 1;
             jVar.getClass();
             m mVar = new m(jVar);
             Ref.ObjectRef objectRef = new Ref.ObjectRef();
@@ -158,22 +158,22 @@ public final class b0 implements RuStoreAppUpdateManager {
     public static final class d extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f1337a;
+        public int f1338a;
 
         /* loaded from: classes5.dex */
         public static final class a<T> implements FlowCollector {
 
             /* renamed from: a  reason: collision with root package name */
-            public final /* synthetic */ b0 f1338a;
+            public final /* synthetic */ b0 f1339a;
 
             public a(b0 b0Var) {
-                this.f1338a = b0Var;
+                this.f1339a = b0Var;
             }
 
             @Override // kotlinx.coroutines.flow.FlowCollector
             public final Object emit(Object obj, Continuation continuation) {
                 InstallState installState = (InstallState) obj;
-                for (InstallStateUpdateListener installStateUpdateListener : this.f1338a.b) {
+                for (InstallStateUpdateListener installStateUpdateListener : this.f1339a.b) {
                     installStateUpdateListener.onStateUpdated(installState);
                 }
                 return Unit.INSTANCE;
@@ -197,13 +197,13 @@ public final class b0 implements RuStoreAppUpdateManager {
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            int i = this.f1337a;
+            int i = this.f1338a;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 b0 b0Var = b0.this;
                 MutableStateFlow mutableStateFlow = b0Var.d.b;
                 a aVar = new a(b0Var);
-                this.f1337a = 1;
+                this.f1338a = 1;
                 if (mutableStateFlow.collect(aVar, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -221,7 +221,7 @@ public final class b0 implements RuStoreAppUpdateManager {
     public static final class e extends SuspendLambda implements Function1<Continuation<? super Integer>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f1339a;
+        public int f1340a;
         public final /* synthetic */ AppUpdateInfo c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -242,9 +242,9 @@ public final class b0 implements RuStoreAppUpdateManager {
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            Object m8474constructorimpl;
+            Object m8478constructorimpl;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            int i = this.f1339a;
+            int i = this.f1340a;
             if (i != 0) {
                 if (i == 1) {
                     ResultKt.throwOnFailure(obj);
@@ -253,24 +253,24 @@ public final class b0 implements RuStoreAppUpdateManager {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             ResultKt.throwOnFailure(obj);
-            j jVar = (j) b0.this.f1333a.getValue();
+            j jVar = (j) b0.this.f1334a.getValue();
             AppUpdateInfo appUpdateInfo = this.c;
-            this.f1339a = 1;
+            this.f1340a = 1;
             jVar.getClass();
             CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(this), 1);
             cancellableContinuationImpl.initCancellability();
             try {
                 Result.Companion companion = Result.Companion;
-                ContextExtensionKt.openActivityForResult(jVar.f1355a, new Intent("ru.vk.store.AnyAppForceUpdateActivity"), new p(cancellableContinuationImpl));
+                ContextExtensionKt.openActivityForResult(jVar.f1356a, new Intent("ru.vk.store.AnyAppForceUpdateActivity"), new p(cancellableContinuationImpl));
                 appUpdateInfo.markIsUsed$sdk_public_appupdate_release();
-                m8474constructorimpl = Result.m8474constructorimpl(Unit.INSTANCE);
+                m8478constructorimpl = Result.m8478constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m8474constructorimpl = Result.m8474constructorimpl(ResultKt.createFailure(th));
+                m8478constructorimpl = Result.m8478constructorimpl(ResultKt.createFailure(th));
             }
-            Throwable m8477exceptionOrNullimpl = Result.m8477exceptionOrNullimpl(m8474constructorimpl);
-            if (m8477exceptionOrNullimpl != null) {
-                CancellableContinuationExtKt.resumeWithExceptionIfActive(cancellableContinuationImpl, m8477exceptionOrNullimpl);
+            Throwable m8481exceptionOrNullimpl = Result.m8481exceptionOrNullimpl(m8478constructorimpl);
+            if (m8481exceptionOrNullimpl != null) {
+                CancellableContinuationExtKt.resumeWithExceptionIfActive(cancellableContinuationImpl, m8481exceptionOrNullimpl);
             }
             Object result = cancellableContinuationImpl.getResult();
             if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
@@ -285,7 +285,7 @@ public final class b0 implements RuStoreAppUpdateManager {
     public static final class f extends SuspendLambda implements Function1<Continuation<? super Integer>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f1340a;
+        public int f1341a;
         public final /* synthetic */ AppUpdateInfo c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -307,12 +307,12 @@ public final class b0 implements RuStoreAppUpdateManager {
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            int i = this.f1340a;
+            int i = this.f1341a;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                j jVar = (j) b0.this.f1333a.getValue();
+                j jVar = (j) b0.this.f1334a.getValue();
                 AppUpdateInfo appUpdateInfo = this.c;
-                this.f1340a = 1;
+                this.f1341a = 1;
                 jVar.getClass();
                 t tVar = new t(appUpdateInfo, jVar);
                 Ref.ObjectRef objectRef = new Ref.ObjectRef();
@@ -337,7 +337,7 @@ public final class b0 implements RuStoreAppUpdateManager {
     public static final class g extends SuspendLambda implements Function1<Continuation<? super Integer>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f1341a;
+        public int f1342a;
         public final /* synthetic */ AppUpdateInfo c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -359,7 +359,7 @@ public final class b0 implements RuStoreAppUpdateManager {
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            int i = this.f1341a;
+            int i = this.f1342a;
             if (i != 0) {
                 if (i == 1) {
                     ResultKt.throwOnFailure(obj);
@@ -369,15 +369,15 @@ public final class b0 implements RuStoreAppUpdateManager {
             }
             ResultKt.throwOnFailure(obj);
             AppUpdateInfo appUpdateInfo = this.c;
-            this.f1341a = 1;
-            Object a2 = ((j) b0.this.f1333a.getValue()).a(appUpdateInfo, this);
+            this.f1342a = 1;
+            Object a2 = ((j) b0.this.f1334a.getValue()).a(appUpdateInfo, this);
             return a2 == coroutine_suspended ? coroutine_suspended : a2;
         }
     }
 
     public b0(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        this.f1333a = LazyKt.lazy(new a(context));
+        this.f1334a = LazyKt.lazy(new a(context));
         this.b = new LinkedHashSet();
         this.c = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain());
         this.d = new z();

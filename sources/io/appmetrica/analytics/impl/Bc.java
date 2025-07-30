@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class Bc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Cc f355a;
+    public final /* synthetic */ Cc f356a;
 
     public Bc(Cc cc) {
-        this.f355a = cc;
+        this.f356a = cc;
     }
 }

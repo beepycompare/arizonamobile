@@ -18,6 +18,6 @@ public class C0185ch extends Kh {
     @Override // io.appmetrica.analytics.impl.Kh
     public final void a(IAppMetricaService iAppMetricaService) {
         Ih ih = this.e;
-        iAppMetricaService.reportData(ih.c, ih.f491a.d(ih.e.c()));
+        iAppMetricaService.reportData(ih.c, ih.f492a.d(ih.e.c()));
     }
 }

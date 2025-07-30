@@ -11,12 +11,12 @@ import kotlin.collections.CollectionsKt;
 public final class C0124a8 implements ServiceComponentsInitializer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f764a = CollectionsKt.listOf((Object[]) new String[]{"io.appmetrica.analytics.remotepermissions.internal.RemotePermissionsModuleEntryPoint", "io.appmetrica.analytics.apphud.internal.ApphudServiceModuleEntryPoint", "io.appmetrica.analytics.screenshot.internal.ScreenshotServiceModuleEntryPoint"});
+    public final List f765a = CollectionsKt.listOf((Object[]) new String[]{"io.appmetrica.analytics.remotepermissions.internal.RemotePermissionsModuleEntryPoint", "io.appmetrica.analytics.apphud.internal.ApphudServiceModuleEntryPoint", "io.appmetrica.analytics.screenshot.internal.ScreenshotServiceModuleEntryPoint"});
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentsInitializer
     public final void onCreate(Context context) {
         C0458nd c0458nd = Ia.F.s;
-        List<String> list = this.f764a;
+        List<String> list = this.f765a;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (String str : list) {
             arrayList.add(new M5(str));
@@ -26,7 +26,7 @@ public final class C0124a8 implements ServiceComponentsInitializer {
             M5[] m5Arr = (M5[]) array;
             InterfaceC0433md[] interfaceC0433mdArr = (InterfaceC0433md[]) Arrays.copyOf(m5Arr, m5Arr.length);
             synchronized (c0458nd) {
-                CollectionsKt.addAll(c0458nd.f968a, interfaceC0433mdArr);
+                CollectionsKt.addAll(c0458nd.f969a, interfaceC0433mdArr);
             }
             Ia.F.s.a(new Cif(context, "io.appmetrica.analytics.modules.ads", "lsm"));
             return;

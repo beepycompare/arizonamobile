@@ -12,6 +12,6 @@ public final class I4 extends C0672w3 {
 
     @Override // io.appmetrica.analytics.impl.C0672w3
     public final String toString() {
-        return "CollectionTrimInfo{itemsDropped=" + this.b + ", bytesTruncated=" + this.f1111a + AbstractJsonLexerKt.END_OBJ;
+        return "CollectionTrimInfo{itemsDropped=" + this.b + ", bytesTruncated=" + this.f1112a + AbstractJsonLexerKt.END_OBJ;
     }
 }

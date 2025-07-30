@@ -7,11 +7,11 @@ import java.util.List;
 public final class C0123a7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f763a;
+    public final List f764a;
     public final int b;
 
     public C0123a7(ArrayList arrayList, int i) {
-        this.f763a = arrayList;
+        this.f764a = arrayList;
         this.b = i;
     }
 }

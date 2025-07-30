@@ -9,8 +9,8 @@ public final class Kf extends Ja {
 
     @Override // io.appmetrica.analytics.impl.Ja
     public final void a(List<AbstractC0236eh> list) {
-        list.add(this.f503a.n);
-        list.add(this.f503a.h);
-        list.add(this.f503a.d);
+        list.add(this.f504a.n);
+        list.add(this.f504a.h);
+        list.add(this.f504a.d);
     }
 }

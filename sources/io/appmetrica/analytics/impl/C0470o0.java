@@ -7,7 +7,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 public final class C0470o0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Vn f977a;
+    public final Vn f978a;
     public volatile Boolean b;
     public Wa c;
     public Xa d;
@@ -28,7 +28,7 @@ public final class C0470o0 {
     }
 
     public C0470o0(Vn vn) {
-        this.f977a = vn;
+        this.f978a = vn;
     }
 
     public final boolean a(Context context) {
@@ -37,7 +37,7 @@ public final class C0470o0 {
             synchronized (this) {
                 bool = this.b;
                 if (bool == null) {
-                    this.f977a.getClass();
+                    this.f978a.getClass();
                     Boolean valueOf = Boolean.valueOf(!Vn.a(context));
                     this.b = valueOf;
                     if (valueOf.booleanValue()) {

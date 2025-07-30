@@ -19,22 +19,22 @@ public final class UShortArraySerializer extends PrimitiveArraySerializer<UShort
 
     @Override // kotlinx.serialization.internal.AbstractCollectionSerializer
     public /* bridge */ /* synthetic */ int collectionSize(Object obj) {
-        return m10211collectionSizerL5Bavg(((UShortArray) obj).m8827unboximpl());
+        return m10215collectionSizerL5Bavg(((UShortArray) obj).m8831unboximpl());
     }
 
     @Override // kotlinx.serialization.internal.PrimitiveArraySerializer
     public /* bridge */ /* synthetic */ UShortArray empty() {
-        return UShortArray.m8811boximpl(m10212emptyamswpOA());
+        return UShortArray.m8815boximpl(m10216emptyamswpOA());
     }
 
     @Override // kotlinx.serialization.internal.AbstractCollectionSerializer
     public /* bridge */ /* synthetic */ Object toBuilder(Object obj) {
-        return m10213toBuilderrL5Bavg(((UShortArray) obj).m8827unboximpl());
+        return m10217toBuilderrL5Bavg(((UShortArray) obj).m8831unboximpl());
     }
 
     @Override // kotlinx.serialization.internal.PrimitiveArraySerializer
     public /* bridge */ /* synthetic */ void writeContent(CompositeEncoder compositeEncoder, UShortArray uShortArray, int i) {
-        m10214writeContenteny0XGE(compositeEncoder, uShortArray.m8827unboximpl(), i);
+        m10218writeContenteny0XGE(compositeEncoder, uShortArray.m8831unboximpl(), i);
     }
 
     private UShortArraySerializer() {
@@ -42,20 +42,20 @@ public final class UShortArraySerializer extends PrimitiveArraySerializer<UShort
     }
 
     /* renamed from: collectionSize-rL5Bavg  reason: not valid java name */
-    protected int m10211collectionSizerL5Bavg(short[] collectionSize) {
+    protected int m10215collectionSizerL5Bavg(short[] collectionSize) {
         Intrinsics.checkNotNullParameter(collectionSize, "$this$collectionSize");
-        return UShortArray.m8819getSizeimpl(collectionSize);
+        return UShortArray.m8823getSizeimpl(collectionSize);
     }
 
     /* renamed from: toBuilder-rL5Bavg  reason: not valid java name */
-    protected UShortArrayBuilder m10213toBuilderrL5Bavg(short[] toBuilder) {
+    protected UShortArrayBuilder m10217toBuilderrL5Bavg(short[] toBuilder) {
         Intrinsics.checkNotNullParameter(toBuilder, "$this$toBuilder");
         return new UShortArrayBuilder(toBuilder, null);
     }
 
     /* renamed from: empty-amswpOA  reason: not valid java name */
-    protected short[] m10212emptyamswpOA() {
-        return UShortArray.m8812constructorimpl(0);
+    protected short[] m10216emptyamswpOA() {
+        return UShortArray.m8816constructorimpl(0);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -63,15 +63,15 @@ public final class UShortArraySerializer extends PrimitiveArraySerializer<UShort
     public void readElement(CompositeDecoder decoder, int i, UShortArrayBuilder builder, boolean z) {
         Intrinsics.checkNotNullParameter(decoder, "decoder");
         Intrinsics.checkNotNullParameter(builder, "builder");
-        builder.m10209appendxj2QHRw$kotlinx_serialization_core(UShort.m8760constructorimpl(decoder.decodeInlineElement(getDescriptor(), i).decodeShort()));
+        builder.m10213appendxj2QHRw$kotlinx_serialization_core(UShort.m8764constructorimpl(decoder.decodeInlineElement(getDescriptor(), i).decodeShort()));
     }
 
     /* renamed from: writeContent-eny0XGE  reason: not valid java name */
-    protected void m10214writeContenteny0XGE(CompositeEncoder encoder, short[] content, int i) {
+    protected void m10218writeContenteny0XGE(CompositeEncoder encoder, short[] content, int i) {
         Intrinsics.checkNotNullParameter(encoder, "encoder");
         Intrinsics.checkNotNullParameter(content, "content");
         for (int i2 = 0; i2 < i; i2++) {
-            encoder.encodeInlineElement(getDescriptor(), i2).encodeShort(UShortArray.m8818getMh2AYeg(content, i2));
+            encoder.encodeInlineElement(getDescriptor(), i2).encodeShort(UShortArray.m8822getMh2AYeg(content, i2));
         }
     }
 }

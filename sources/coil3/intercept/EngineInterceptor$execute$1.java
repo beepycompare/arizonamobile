@@ -8,8 +8,8 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: EngineInterceptor.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "coil3.intercept.EngineInterceptor", f = "EngineInterceptor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1}, l = {WebSocketProtocol.PAYLOAD_SHORT, TsExtractor.TS_STREAM_TYPE_HDMV_DTS, 148}, m = "execute", n = {"request", "mappedData", "eventListener", "options", "components", "fetchResult", "request", "eventListener", "options", "fetchResult"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "coil3.intercept.EngineInterceptor", f = "EngineInterceptor.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {WebSocketProtocol.PAYLOAD_SHORT, TsExtractor.TS_STREAM_TYPE_HDMV_DTS, 148}, m = "execute", n = {"request", "mappedData", "options", "eventListener", "options", "components", "fetchResult", "request", "mappedData", "options", "eventListener", "options", "components", "fetchResult", "request", "mappedData", "options", "eventListener", "options", "components", "fetchResult", "executeResult"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"})
 /* loaded from: classes3.dex */
 public final class EngineInterceptor$execute$1 extends ContinuationImpl {
     Object L$0;
@@ -19,6 +19,7 @@ public final class EngineInterceptor$execute$1 extends ContinuationImpl {
     Object L$4;
     Object L$5;
     Object L$6;
+    Object L$7;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ EngineInterceptor this$0;

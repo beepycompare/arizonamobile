@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class B2 implements InterfaceC0576s7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f350a = "auto_inapp.db";
+    public final String f351a = "auto_inapp.db";
     public final String b = "metrica_aip.db";
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0576s7
@@ -13,6 +13,6 @@ public final class B2 implements InterfaceC0576s7 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0576s7
     public final String b() {
-        return this.f350a;
+        return this.f351a;
     }
 }

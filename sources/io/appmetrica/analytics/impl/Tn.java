@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public abstract class Tn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0481ob f659a;
+    public final InterfaceC0481ob f660a;
 
     public Tn(InterfaceC0481ob interfaceC0481ob) {
-        this.f659a = interfaceC0481ob;
+        this.f660a = interfaceC0481ob;
     }
 }

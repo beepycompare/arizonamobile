@@ -6,14 +6,14 @@ import io.appmetrica.analytics.coreutils.internal.services.UtilityServiceProvide
 public final class go implements InterfaceC0392km {
 
     /* renamed from: a  reason: collision with root package name */
-    public final UtilityServiceProvider f872a;
+    public final UtilityServiceProvider f873a;
 
     public go(UtilityServiceProvider utilityServiceProvider) {
-        this.f872a = utilityServiceProvider;
+        this.f873a = utilityServiceProvider;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0392km
     public final void a(C0267fm c0267fm) {
-        this.f872a.updateConfiguration(new UtilityServiceConfiguration(c0267fm.v, c0267fm.u));
+        this.f873a.updateConfiguration(new UtilityServiceConfiguration(c0267fm.v, c0267fm.u));
     }
 }

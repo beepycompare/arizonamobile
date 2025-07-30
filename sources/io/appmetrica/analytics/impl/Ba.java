@@ -13,14 +13,14 @@ public final class Ba extends V4 {
         C0580sb c0580sb = bundle != null ? (C0580sb) bundle.getParcelable("io.appmetrica.analytics.impl.IdentifiersData") : null;
         if (c0580sb != null) {
             if (c0580sb.d) {
-                J4 j4 = p4.b.d.f549a;
+                J4 j4 = p4.b.d.f550a;
                 Boolean bool = j4.n;
                 Boolean bool2 = j4.i;
                 Ia.F.b().c(bool != null ? bool.booleanValue() : true);
                 Ia.F.g().b(bool2);
             }
         }
-        this.f681a.a(c0580sb);
+        this.f682a.a(c0580sb);
         return false;
     }
 }

@@ -5,16 +5,16 @@ import io.appmetrica.analytics.AdRevenue;
 public final class Tj implements InterfaceC0406lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f656a;
+    public final /* synthetic */ AdRevenue f657a;
     public final /* synthetic */ boolean b;
 
     public Tj(AdRevenue adRevenue, boolean z) {
-        this.f656a = adRevenue;
+        this.f657a = adRevenue;
         this.b = z;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0406lb
     public final void a(InterfaceC0431mb interfaceC0431mb) {
-        interfaceC0431mb.reportAdRevenue(this.f656a, this.b);
+        interfaceC0431mb.reportAdRevenue(this.f657a, this.b);
     }
 }

@@ -8,7 +8,7 @@ import java.util.Iterator;
 public final class C0735yg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashSet f1155a = new HashSet();
+    public final HashSet f1156a = new HashSet();
     public Ag b;
     public boolean c;
     public final to d;
@@ -36,14 +36,14 @@ public final class C0735yg {
     }
 
     public final synchronized void a(Cg cg) {
-        this.f1155a.add(cg);
+        this.f1156a.add(cg);
         if (this.c) {
             cg.a(this.b);
         }
     }
 
     public final synchronized void a(Ag ag) {
-        Iterator it = this.f1155a.iterator();
+        Iterator it = this.f1156a.iterator();
         while (it.hasNext()) {
             ((Cg) it.next()).a(ag);
         }

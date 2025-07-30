@@ -16,7 +16,7 @@ import kotlin.collections.CollectionsKt;
 public final class C0687wi implements InterfaceC0456nb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1123a;
+    public final Context f1124a;
     public final Pf b;
     public final Ji c;
     public final Handler d;
@@ -29,7 +29,7 @@ public final class C0687wi implements InterfaceC0456nb {
     public H6 k;
 
     public C0687wi(Context context, Pf pf, Ji ji, Handler handler, Ol ol) {
-        this.f1123a = context;
+        this.f1124a = context;
         this.b = pf;
         this.c = ji;
         this.d = handler;
@@ -117,7 +117,7 @@ public final class C0687wi implements InterfaceC0456nb {
             if (!this.i.contains(reporterConfig.apiKey)) {
                 this.e.i();
             }
-            Context context = this.f1123a;
+            Context context = this.f1124a;
             Tc tc2 = new Tc(context, this.b, reporterConfig, this.c, new C0306ha(context));
             tc2.i = new Jb(this.d, tc2);
             Ol ol = this.e;

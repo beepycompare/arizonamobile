@@ -34,7 +34,7 @@ import okio.ForwardingSource;
 import okio.Okio;
 import okio.Source;
 /* compiled from: BitmapFactoryDecoder.kt */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u0000 \u00172\u00020\u0001:\u0003\u0015\u0016\u0017B+\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\u000e\u0010\f\u001a\u00020\rH\u0096@¢\u0006\u0002\u0010\u000eJ\f\u0010\f\u001a\u00020\r*\u00020\u000fH\u0002J\u0014\u0010\u0010\u001a\u00020\u0011*\u00020\u000f2\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J\u0014\u0010\u0014\u001a\u00020\u0011*\u00020\u000f2\u0006\u0010\u0012\u001a\u00020\u0013H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcoil3/decode/BitmapFactoryDecoder;", "Lcoil3/decode/Decoder;", "source", "Lcoil3/decode/ImageSource;", "options", "Lcoil3/request/Options;", "parallelismLock", "Lkotlinx/coroutines/sync/Semaphore;", "exifOrientationStrategy", "Lcoil3/decode/ExifOrientationStrategy;", "<init>", "(Lcoil3/decode/ImageSource;Lcoil3/request/Options;Lkotlinx/coroutines/sync/Semaphore;Lcoil3/decode/ExifOrientationStrategy;)V", "decode", "Lcoil3/decode/DecodeResult;", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Landroid/graphics/BitmapFactory$Options;", "configureConfig", "", "exifData", "Lcoil3/decode/ExifData;", "configureScale", "Factory", "ExceptionCatchingSource", "Companion", "coil-core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u0000 \u00172\u00020\u0001:\u0003\u0015\u0016\u0017B+\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\u000e\u0010\f\u001a\u00020\rH\u0096@¢\u0006\u0002\u0010\u000eJ\f\u0010\f\u001a\u00020\r*\u00020\u000fH\u0002J\u0014\u0010\u0010\u001a\u00020\u0011*\u00020\u000f2\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J\u0014\u0010\u0014\u001a\u00020\u0011*\u00020\u000f2\u0006\u0010\u0012\u001a\u00020\u0013H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcoil3/decode/BitmapFactoryDecoder;", "Lcoil3/decode/Decoder;", "source", "Lcoil3/decode/ImageSource;", "options", "Lcoil3/request/Options;", "parallelismLock", "Lkotlinx/coroutines/sync/Semaphore;", "exifOrientationStrategy", "Lcoil3/decode/ExifOrientationStrategy;", "<init>", "(Lcoil3/decode/ImageSource;Lcoil3/request/Options;Lkotlinx/coroutines/sync/Semaphore;Lcoil3/decode/ExifOrientationStrategy;)V", "decode", "Lcoil3/decode/DecodeResult;", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Landroid/graphics/BitmapFactory$Options;", "configureConfig", "", "exifData", "Lcoil3/decode/ExifData;", "configureScale", "Factory", "ExceptionCatchingSource", "Companion", "coil-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class BitmapFactoryDecoder implements Decoder {
     public static final Companion Companion = new Companion(null);
@@ -55,12 +55,9 @@ public final class BitmapFactoryDecoder implements Decoder {
         this(imageSource, options, (i & 4) != 0 ? SemaphoreKt.Semaphore$default(Integer.MAX_VALUE, 0, 2, null) : semaphore, (i & 8) != 0 ? ExifOrientationStrategy.RESPECT_PERFORMANCE : exifOrientationStrategy);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0051, code lost:
-        if (r7.acquire(r0) == r1) goto L27;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0044  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0065  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0073  */
     @Override // coil3.decode.Decoder
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -70,6 +67,7 @@ public final class BitmapFactoryDecoder implements Decoder {
         Object coroutine_suspended;
         int i;
         Semaphore semaphore;
+        int i2;
         Semaphore semaphore2;
         Throwable th;
         Object runInterruptible$default;
@@ -85,9 +83,16 @@ public final class BitmapFactoryDecoder implements Decoder {
                         ResultKt.throwOnFailure(obj);
                         semaphore = this.parallelismLock;
                         bitmapFactoryDecoder$decode$1.L$0 = semaphore;
+                        bitmapFactoryDecoder$decode$1.I$0 = 0;
                         bitmapFactoryDecoder$decode$1.label = 1;
+                        if (semaphore.acquire(bitmapFactoryDecoder$decode$1) != coroutine_suspended) {
+                            i2 = 0;
+                        }
+                        return coroutine_suspended;
                     } else if (i != 1) {
                         if (i == 2) {
+                            int i3 = bitmapFactoryDecoder$decode$1.I$1;
+                            int i4 = bitmapFactoryDecoder$decode$1.I$0;
                             semaphore2 = (Semaphore) bitmapFactoryDecoder$decode$1.L$0;
                             try {
                                 ResultKt.throwOnFailure(obj);
@@ -102,6 +107,7 @@ public final class BitmapFactoryDecoder implements Decoder {
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
+                        i2 = bitmapFactoryDecoder$decode$1.I$0;
                         ResultKt.throwOnFailure(obj);
                         semaphore = (Semaphore) bitmapFactoryDecoder$decode$1.L$0;
                     }
@@ -114,6 +120,8 @@ public final class BitmapFactoryDecoder implements Decoder {
                         }
                     };
                     bitmapFactoryDecoder$decode$1.L$0 = semaphore;
+                    bitmapFactoryDecoder$decode$1.I$0 = i2;
+                    bitmapFactoryDecoder$decode$1.I$1 = 0;
                     bitmapFactoryDecoder$decode$1.label = 2;
                     runInterruptible$default = InterruptibleKt.runInterruptible$default(null, function0, bitmapFactoryDecoder$decode$1, 1, null);
                     if (runInterruptible$default != coroutine_suspended) {
@@ -135,6 +143,8 @@ public final class BitmapFactoryDecoder implements Decoder {
                 }
             };
             bitmapFactoryDecoder$decode$1.L$0 = semaphore;
+            bitmapFactoryDecoder$decode$1.I$0 = i2;
+            bitmapFactoryDecoder$decode$1.I$1 = 0;
             bitmapFactoryDecoder$decode$1.label = 2;
             runInterruptible$default = InterruptibleKt.runInterruptible$default(null, function02, bitmapFactoryDecoder$decode$1, 1, null);
             if (runInterruptible$default != coroutine_suspended) {
@@ -225,11 +235,11 @@ public final class BitmapFactoryDecoder implements Decoder {
         }
         int i = ExifUtilsKt.isSwapped(exifData) ? options.outHeight : options.outWidth;
         int i2 = ExifUtilsKt.isSwapped(exifData) ? options.outWidth : options.outHeight;
-        long m7772computeDstSizesEdh43o = DecodeUtils.m7772computeDstSizesEdh43o(i, i2, this.options.getSize(), this.options.getScale(), ImageRequestsKt.getMaxBitmapSize(this.options));
-        int m7830getFirstimpl = IntPair.m7830getFirstimpl(m7772computeDstSizesEdh43o);
-        int m7831getSecondimpl = IntPair.m7831getSecondimpl(m7772computeDstSizesEdh43o);
-        options.inSampleSize = DecodeUtils.calculateInSampleSize(i, i2, m7830getFirstimpl, m7831getSecondimpl, this.options.getScale());
-        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(i / options.inSampleSize, i2 / options.inSampleSize, m7830getFirstimpl, m7831getSecondimpl, this.options.getScale());
+        long m7773computeDstSizesEdh43o = DecodeUtils.m7773computeDstSizesEdh43o(i, i2, this.options.getSize(), this.options.getScale(), ImageRequestsKt.getMaxBitmapSize(this.options));
+        int m7831getFirstimpl = IntPair.m7831getFirstimpl(m7773computeDstSizesEdh43o);
+        int m7832getSecondimpl = IntPair.m7832getSecondimpl(m7773computeDstSizesEdh43o);
+        options.inSampleSize = DecodeUtils.calculateInSampleSize(i, i2, m7831getFirstimpl, m7832getSecondimpl, this.options.getScale());
+        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(i / options.inSampleSize, i2 / options.inSampleSize, m7831getFirstimpl, m7832getSecondimpl, this.options.getScale());
         if (this.options.getPrecision() == Precision.INEXACT) {
             computeSizeMultiplier = RangesKt.coerceAtMost(computeSizeMultiplier, 1.0d);
         }
@@ -246,7 +256,7 @@ public final class BitmapFactoryDecoder implements Decoder {
     }
 
     /* compiled from: BitmapFactoryDecoder.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u001b\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J \u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lcoil3/decode/BitmapFactoryDecoder$Factory;", "Lcoil3/decode/Decoder$Factory;", "parallelismLock", "Lkotlinx/coroutines/sync/Semaphore;", "exifOrientationStrategy", "Lcoil3/decode/ExifOrientationStrategy;", "<init>", "(Lkotlinx/coroutines/sync/Semaphore;Lcoil3/decode/ExifOrientationStrategy;)V", "create", "Lcoil3/decode/Decoder;", "result", "Lcoil3/fetch/SourceFetchResult;", "options", "Lcoil3/request/Options;", "imageLoader", "Lcoil3/ImageLoader;", "coil-core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u001b\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J \u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lcoil3/decode/BitmapFactoryDecoder$Factory;", "Lcoil3/decode/Decoder$Factory;", "parallelismLock", "Lkotlinx/coroutines/sync/Semaphore;", "exifOrientationStrategy", "Lcoil3/decode/ExifOrientationStrategy;", "<init>", "(Lkotlinx/coroutines/sync/Semaphore;Lcoil3/decode/ExifOrientationStrategy;)V", "create", "Lcoil3/decode/Decoder;", "result", "Lcoil3/fetch/SourceFetchResult;", "options", "Lcoil3/request/Options;", "imageLoader", "Lcoil3/ImageLoader;", "coil-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Factory implements Decoder.Factory {
         private final ExifOrientationStrategy exifOrientationStrategy;
@@ -273,7 +283,7 @@ public final class BitmapFactoryDecoder implements Decoder {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: BitmapFactoryDecoder.kt */
-    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0018\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\rH\u0016R.\u0010\t\u001a\n\u0018\u00010\u0007j\u0004\u0018\u0001`\b2\u000e\u0010\u0006\u001a\n\u0018\u00010\u0007j\u0004\u0018\u0001`\b@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\u0011"}, d2 = {"Lcoil3/decode/BitmapFactoryDecoder$ExceptionCatchingSource;", "Lokio/ForwardingSource;", "delegate", "Lokio/Source;", "<init>", "(Lokio/Source;)V", "value", "Ljava/lang/Exception;", "Lkotlin/Exception;", "exception", "getException", "()Ljava/lang/Exception;", "read", "", "sink", "Lokio/Buffer;", "byteCount", "coil-core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0018\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\rH\u0016R.\u0010\t\u001a\n\u0018\u00010\u0007j\u0004\u0018\u0001`\b2\u000e\u0010\u0006\u001a\n\u0018\u00010\u0007j\u0004\u0018\u0001`\b@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\u0011"}, d2 = {"Lcoil3/decode/BitmapFactoryDecoder$ExceptionCatchingSource;", "Lokio/ForwardingSource;", "delegate", "Lokio/Source;", "<init>", "(Lokio/Source;)V", "value", "Ljava/lang/Exception;", "Lkotlin/Exception;", "exception", "getException", "()Ljava/lang/Exception;", "read", "", "sink", "Lokio/Buffer;", "byteCount", "coil-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class ExceptionCatchingSource extends ForwardingSource {
         private Exception exception;
@@ -298,7 +308,7 @@ public final class BitmapFactoryDecoder implements Decoder {
     }
 
     /* compiled from: BitmapFactoryDecoder.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\b\u0080\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0080T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcoil3/decode/BitmapFactoryDecoder$Companion;", "", "<init>", "()V", "DEFAULT_MAX_PARALLELISM", "", "coil-core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\b\u0080\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0080T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcoil3/decode/BitmapFactoryDecoder$Companion;", "", "<init>", "()V", "DEFAULT_MAX_PARALLELISM", "", "coil-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

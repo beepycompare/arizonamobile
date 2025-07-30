@@ -9,18 +9,18 @@ public final class C0647v3 extends Z2 {
     }
 
     public final int b() {
-        return this.f742a;
+        return this.f743a;
     }
 
     @Override // io.appmetrica.analytics.impl.In
     public final byte[] a(byte[] bArr) {
         if (bArr != null) {
             int length = bArr.length;
-            int i = this.f742a;
+            int i = this.f743a;
             if (length > i) {
                 byte[] bArr2 = new byte[i];
                 System.arraycopy(bArr, 0, bArr2, 0, i);
-                this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, bArr, Integer.valueOf(this.f742a));
+                this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, bArr, Integer.valueOf(this.f743a));
                 return bArr2;
             }
         }

@@ -9,13 +9,13 @@ public final class Xn extends AbstractC0236eh {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0236eh
     public final boolean a(C0401l6 c0401l6) {
-        String i = this.f831a.c.i();
+        String i = this.f832a.c.i();
         String str = c0401l6.h;
-        this.f831a.c.j(str).b();
+        this.f832a.c.j(str).b();
         if (TextUtils.equals(i, str)) {
             return false;
         }
-        this.f831a.a(C0325i4.o());
+        this.f832a.a(C0325i4.o());
         return false;
     }
 }

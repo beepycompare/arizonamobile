@@ -9,13 +9,13 @@ import java.util.Map;
 public final class C0253f8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f843a;
+    public final boolean f844a;
     public DeferredDeeplinkListener b;
     public DeferredDeeplinkParametersListener c;
     public C0202d8 d;
 
     public C0253f8(boolean z) {
-        this.f843a = z;
+        this.f844a = z;
     }
 
     public final void a(int i) {
@@ -73,8 +73,8 @@ public final class C0253f8 {
                     deferredDeeplinkListener.onDeeplinkLoaded(str);
                     this.b = null;
                 }
-                if (!io.a(this.d.f813a)) {
-                    Map<String, String> map = this.d.f813a;
+                if (!io.a(this.d.f814a)) {
+                    Map<String, String> map = this.d.f814a;
                     DeferredDeeplinkParametersListener deferredDeeplinkParametersListener = this.c;
                     if (deferredDeeplinkParametersListener != null) {
                         deferredDeeplinkParametersListener.onParametersLoaded(map);

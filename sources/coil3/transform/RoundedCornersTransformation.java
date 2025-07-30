@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.math.MathKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: RoundedCornersTransformation.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B/\u0012\b\b\u0003\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0003\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0003\u0010\u0005\u001a\u00020\u0003\u0012\b\b\u0003\u0010\u0006\u001a\u00020\u0003¢\u0006\u0004\b\u0007\u0010\bB\u0013\b\u0016\u0012\b\b\u0001\u0010\t\u001a\u00020\u0003¢\u0006\u0004\b\u0007\u0010\nJ\u001e\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u0012\u001a\u00020\u0013H\u0096@¢\u0006\u0002\u0010\u0014J\u001f\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u0012\u001a\u00020\u0013H\u0002¢\u0006\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\u00020\fX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u0019"}, d2 = {"Lcoil3/transform/RoundedCornersTransformation;", "Lcoil3/transform/Transformation;", "topLeft", "", "topRight", "bottomLeft", "bottomRight", "<init>", "(FFFF)V", "radius", "(F)V", "cacheKey", "", "getCacheKey", "()Ljava/lang/String;", "transform", "Landroid/graphics/Bitmap;", "input", "size", "Lcoil3/size/Size;", "(Landroid/graphics/Bitmap;Lcoil3/size/Size;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "calculateOutputSize", "Lcoil3/util/IntPair;", "calculateOutputSize-nmZnaPc", "(Landroid/graphics/Bitmap;Lcoil3/size/Size;)J", "coil-core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B/\u0012\b\b\u0003\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0003\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0003\u0010\u0005\u001a\u00020\u0003\u0012\b\b\u0003\u0010\u0006\u001a\u00020\u0003¢\u0006\u0004\b\u0007\u0010\bB\u0013\b\u0016\u0012\b\b\u0001\u0010\t\u001a\u00020\u0003¢\u0006\u0004\b\u0007\u0010\nJ\u001e\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u0012\u001a\u00020\u0013H\u0096@¢\u0006\u0002\u0010\u0014J\u001f\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u0012\u001a\u00020\u0013H\u0002¢\u0006\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\u00020\fX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u0019"}, d2 = {"Lcoil3/transform/RoundedCornersTransformation;", "Lcoil3/transform/Transformation;", "topLeft", "", "topRight", "bottomLeft", "bottomRight", "<init>", "(FFFF)V", "radius", "(F)V", "cacheKey", "", "getCacheKey", "()Ljava/lang/String;", "transform", "Landroid/graphics/Bitmap;", "input", "size", "Lcoil3/size/Size;", "(Landroid/graphics/Bitmap;Lcoil3/size/Size;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "calculateOutputSize", "Lcoil3/util/IntPair;", "calculateOutputSize-nmZnaPc", "(Landroid/graphics/Bitmap;Lcoil3/size/Size;)J", "coil-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class RoundedCornersTransformation extends Transformation {
     private final float bottomLeft;
@@ -58,25 +58,25 @@ public final class RoundedCornersTransformation extends Transformation {
 
     @Override // coil3.transform.Transformation
     public Object transform(Bitmap bitmap, Size size, Continuation<? super Bitmap> continuation) {
-        long m7822calculateOutputSizenmZnaPc = m7822calculateOutputSizenmZnaPc(bitmap, size);
-        int m7830getFirstimpl = IntPair.m7830getFirstimpl(m7822calculateOutputSizenmZnaPc);
-        int m7831getSecondimpl = IntPair.m7831getSecondimpl(m7822calculateOutputSizenmZnaPc);
-        Bitmap createBitmap = Bitmap.createBitmap(m7830getFirstimpl, m7831getSecondimpl, BitmapsKt.getSafeConfig(bitmap));
+        long m7823calculateOutputSizenmZnaPc = m7823calculateOutputSizenmZnaPc(bitmap, size);
+        int m7831getFirstimpl = IntPair.m7831getFirstimpl(m7823calculateOutputSizenmZnaPc);
+        int m7832getSecondimpl = IntPair.m7832getSecondimpl(m7823calculateOutputSizenmZnaPc);
+        Bitmap createBitmap = Bitmap.createBitmap(m7831getFirstimpl, m7832getSecondimpl, BitmapsKt.getSafeConfig(bitmap));
         Canvas canvas = new Canvas(createBitmap);
-        Paint newScaledShaderPaint = TransformationsKt.newScaledShaderPaint(bitmap, m7830getFirstimpl, m7831getSecondimpl);
+        Paint newScaledShaderPaint = TransformationsKt.newScaledShaderPaint(bitmap, m7831getFirstimpl, m7832getSecondimpl);
         float f = this.topLeft;
         float f2 = this.topRight;
         if (f == f2) {
             float f3 = this.bottomLeft;
             if (f2 == f3 && f3 == this.bottomRight) {
-                canvas.drawRoundRect(0.0f, 0.0f, m7830getFirstimpl, m7831getSecondimpl, f, f, newScaledShaderPaint);
+                canvas.drawRoundRect(0.0f, 0.0f, m7831getFirstimpl, m7832getSecondimpl, f, f, newScaledShaderPaint);
                 return createBitmap;
             }
         }
         float f4 = this.bottomRight;
         float f5 = this.bottomLeft;
         float[] fArr = {f, f, f2, f2, f4, f4, f5, f5};
-        RectF rectF = new RectF(0.0f, 0.0f, m7830getFirstimpl, m7831getSecondimpl);
+        RectF rectF = new RectF(0.0f, 0.0f, m7831getFirstimpl, m7832getSecondimpl);
         Path path = new Path();
         path.addRoundRect(rectF, fArr, Path.Direction.CW);
         canvas.drawPath(path, newScaledShaderPaint);
@@ -84,21 +84,21 @@ public final class RoundedCornersTransformation extends Transformation {
     }
 
     /* renamed from: calculateOutputSize-nmZnaPc  reason: not valid java name */
-    private final long m7822calculateOutputSizenmZnaPc(Bitmap bitmap, Size size) {
+    private final long m7823calculateOutputSizenmZnaPc(Bitmap bitmap, Size size) {
         if (SizeKt.isOriginal(size)) {
-            return IntPair.m7826constructorimpl(bitmap.getWidth(), bitmap.getHeight());
+            return IntPair.m7827constructorimpl(bitmap.getWidth(), bitmap.getHeight());
         }
         Dimension component1 = size.component1();
         Dimension component2 = size.component2();
         if ((component1 instanceof Dimension.Pixels) && (component2 instanceof Dimension.Pixels)) {
-            return IntPair.m7826constructorimpl(((Dimension.Pixels) component1).m7821unboximpl(), ((Dimension.Pixels) component2).m7821unboximpl());
+            return IntPair.m7827constructorimpl(((Dimension.Pixels) component1).m7822unboximpl(), ((Dimension.Pixels) component2).m7822unboximpl());
         }
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
         Dimension width2 = size.getWidth();
-        int m7821unboximpl = width2 instanceof Dimension.Pixels ? ((Dimension.Pixels) width2).m7821unboximpl() : Integer.MIN_VALUE;
+        int m7822unboximpl = width2 instanceof Dimension.Pixels ? ((Dimension.Pixels) width2).m7822unboximpl() : Integer.MIN_VALUE;
         Dimension height2 = size.getHeight();
-        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, height, m7821unboximpl, height2 instanceof Dimension.Pixels ? ((Dimension.Pixels) height2).m7821unboximpl() : Integer.MIN_VALUE, Scale.FILL);
-        return IntPair.m7826constructorimpl(MathKt.roundToInt(bitmap.getWidth() * computeSizeMultiplier), MathKt.roundToInt(computeSizeMultiplier * bitmap.getHeight()));
+        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, height, m7822unboximpl, height2 instanceof Dimension.Pixels ? ((Dimension.Pixels) height2).m7822unboximpl() : Integer.MIN_VALUE, Scale.FILL);
+        return IntPair.m7827constructorimpl(MathKt.roundToInt(bitmap.getWidth() * computeSizeMultiplier), MathKt.roundToInt(computeSizeMultiplier * bitmap.getHeight()));
     }
 }

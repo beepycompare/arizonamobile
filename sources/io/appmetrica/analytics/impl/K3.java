@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public final class K3 implements U6 {
     @Override // io.appmetrica.analytics.impl.U6
     public final void a(Context context) {
-        CountDownLatch countDownLatch = W5.f695a;
+        CountDownLatch countDownLatch = W5.f696a;
         if (countDownLatch != null) {
             countDownLatch.await(1L, TimeUnit.SECONDS);
             try {
@@ -20,7 +20,7 @@ public final class K3 implements U6 {
                 }
             } catch (Throwable unused) {
             }
-            W5.f695a = null;
+            W5.f696a = null;
         }
     }
 }

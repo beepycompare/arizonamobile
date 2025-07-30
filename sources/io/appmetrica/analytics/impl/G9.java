@@ -5,12 +5,12 @@ import java.util.LinkedList;
 public final class G9 extends Qf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0761zh f451a;
+    public final C0761zh f452a;
     public final Bh b;
     public final C0462nh c;
 
     public G9(C0574s5 c0574s5) {
-        this.f451a = new C0761zh(c0574s5);
+        this.f452a = new C0761zh(c0574s5);
         this.b = new Bh(c0574s5);
         this.c = new C0462nh(c0574s5);
     }
@@ -20,12 +20,12 @@ public final class G9 extends Qf {
         LinkedList linkedList = new LinkedList();
         int ordinal = EnumC0680wb.a(i).ordinal();
         if (ordinal == 1) {
-            linkedList.add(this.f451a);
+            linkedList.add(this.f452a);
         } else if (ordinal == 3) {
             linkedList.add(this.c);
         } else if (ordinal == 27) {
             linkedList.add(this.b);
-            linkedList.add(this.f451a);
+            linkedList.add(this.f452a);
         }
         return new C0529q9(linkedList);
     }

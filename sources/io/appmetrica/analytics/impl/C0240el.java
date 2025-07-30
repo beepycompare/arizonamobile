@@ -7,7 +7,7 @@ import java.util.List;
 public final class C0240el implements InterfaceC0652v8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Rf f833a;
+    public final Rf f834a;
     public final C0610tg b;
 
     public C0240el() {
@@ -19,14 +19,14 @@ public final class C0240el implements InterfaceC0652v8 {
     public final List<Qi> fromModel(C0215dl c0215dl) {
         Qi qi;
         O8 o8 = new O8();
-        o8.f575a = 3;
+        o8.f576a = 3;
         o8.d = new M8();
-        Qi fromModel = this.f833a.fromModel(c0215dl.f818a);
-        o8.d.f546a = (H8) fromModel.f612a;
+        Qi fromModel = this.f834a.fromModel(c0215dl.f819a);
+        o8.d.f547a = (H8) fromModel.f613a;
         Kg kg = c0215dl.b;
         if (kg != null) {
             qi = this.b.fromModel(kg);
-            o8.d.b = (J8) qi.f612a;
+            o8.d.b = (J8) qi.f613a;
         } else {
             qi = null;
         }
@@ -40,7 +40,7 @@ public final class C0240el implements InterfaceC0652v8 {
     }
 
     public C0240el(Rf rf, C0610tg c0610tg) {
-        this.f833a = rf;
+        this.f834a = rf;
         this.b = c0610tg;
     }
 

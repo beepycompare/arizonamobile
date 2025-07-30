@@ -15,7 +15,7 @@ import kotlinx.coroutines.Dispatchers;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: GhettoScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.arizonaui.ghetto.GhettoScreen$requestCaptures$1", f = "GhettoScreen.kt", i = {}, l = {337}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "ru.mrlargha.arizonaui.ghetto.GhettoScreen$requestCaptures$1", f = "GhettoScreen.kt", i = {}, l = {335}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes5.dex */
 public final class GhettoScreen$requestCaptures$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;

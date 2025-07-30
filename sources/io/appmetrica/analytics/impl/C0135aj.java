@@ -8,12 +8,12 @@ import java.util.List;
 public final class C0135aj implements po {
 
     /* renamed from: a  reason: collision with root package name */
-    public final oo f771a = new oo();
+    public final oo f772a = new oo();
 
     @Override // io.appmetrica.analytics.impl.po
     public final no a(Revenue revenue) {
         no noVar;
-        oo ooVar = this.f771a;
+        oo ooVar = this.f772a;
         no[] noVarArr = new no[1];
         C0261fg c0261fg = new C0261fg();
         Integer num = revenue.quantity;

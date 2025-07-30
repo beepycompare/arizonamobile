@@ -13,6 +13,7 @@ import kotlin.Pair;
 import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import okhttp3.Headers;
 import okhttp3.MediaType;
 import okhttp3.Request;
@@ -24,7 +25,7 @@ import okio.BufferedSink;
 import okio.BufferedSource;
 import okio.ByteString;
 /* compiled from: utils.kt */
-@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0082@¢\u0006\u0002\u0010\u0003\u001a\u0012\u0010\u0004\u001a\u00020\u0005*\u00020\u0006H\u0082@¢\u0006\u0002\u0010\u0007\u001a\f\u0010\b\u001a\u00020\t*\u00020\nH\u0002\u001a\f\u0010\u000b\u001a\u00020\f*\u00020\rH\u0002\u001a\f\u0010\u000e\u001a\u00020\r*\u00020\fH\u0002¨\u0006\u000f"}, d2 = {"toRequest", "Lokhttp3/Request;", "Lcoil3/network/NetworkRequest;", "(Lcoil3/network/NetworkRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "readByteString", "Lokio/ByteString;", "Lcoil3/network/NetworkRequestBody;", "(Lcoil3/network/NetworkRequestBody;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toNetworkResponse", "Lcoil3/network/NetworkResponse;", "Lokhttp3/Response;", "toHeaders", "Lokhttp3/Headers;", "Lcoil3/network/NetworkHeaders;", "toNetworkHeaders", "coil-network-okhttp"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0082@¢\u0006\u0002\u0010\u0003\u001a\u0012\u0010\u0004\u001a\u00020\u0005*\u00020\u0006H\u0082@¢\u0006\u0002\u0010\u0007\u001a\f\u0010\b\u001a\u00020\t*\u00020\nH\u0002\u001a\f\u0010\u000b\u001a\u00020\f*\u00020\rH\u0002\u001a\f\u0010\u000e\u001a\u00020\r*\u00020\fH\u0002¨\u0006\u000f"}, d2 = {"toRequest", "Lokhttp3/Request;", "Lcoil3/network/NetworkRequest;", "(Lcoil3/network/NetworkRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "readByteString", "Lokio/ByteString;", "Lcoil3/network/NetworkRequestBody;", "(Lcoil3/network/NetworkRequestBody;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toNetworkResponse", "Lcoil3/network/NetworkResponse;", "Lokhttp3/Response;", "toHeaders", "Lokhttp3/Headers;", "Lcoil3/network/NetworkHeaders;", "toNetworkHeaders", "coil-network-okhttp"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class UtilsKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -127,7 +128,7 @@ public final class UtilsKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -145,7 +146,8 @@ public final class UtilsKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     BufferedSink buffer2 = new Buffer();
-                    utilsKt$readByteString$1.L$0 = buffer2;
+                    utilsKt$readByteString$1.L$0 = SpillingKt.nullOutSpilledVariable(networkRequestBody);
+                    utilsKt$readByteString$1.L$1 = buffer2;
                     utilsKt$readByteString$1.label = 1;
                     if (networkRequestBody.writeTo(buffer2, utilsKt$readByteString$1) == coroutine_suspended) {
                         return coroutine_suspended;
@@ -154,7 +156,8 @@ public final class UtilsKt {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    buffer = (Buffer) utilsKt$readByteString$1.L$0;
+                    buffer = (Buffer) utilsKt$readByteString$1.L$1;
+                    NetworkRequestBody networkRequestBody2 = (NetworkRequestBody) utilsKt$readByteString$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 return buffer.readByteString();

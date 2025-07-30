@@ -6,16 +6,16 @@ import java.util.Map;
 public final class C0162bk implements InterfaceC0406lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f787a;
+    public final /* synthetic */ String f788a;
     public final /* synthetic */ Map b;
 
     public C0162bk(String str, Map map) {
-        this.f787a = str;
+        this.f788a = str;
         this.b = map;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0406lb
     public final void a(InterfaceC0431mb interfaceC0431mb) {
-        interfaceC0431mb.reportEvent(this.f787a, this.b);
+        interfaceC0431mb.reportEvent(this.f788a, this.b);
     }
 }

@@ -5,14 +5,14 @@ import android.net.Uri;
 public class NetworkTaskForSendingDataParamsAppender {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RequestBodyEncrypter f1246a;
+    private final RequestBodyEncrypter f1247a;
 
     public NetworkTaskForSendingDataParamsAppender(RequestBodyEncrypter requestBodyEncrypter) {
-        this.f1246a = requestBodyEncrypter;
+        this.f1247a = requestBodyEncrypter;
     }
 
     public void appendEncryptedData(Uri.Builder builder) {
-        if (this.f1246a.getEncryptionMode() == RequestBodyEncryptionMode.AES_RSA) {
+        if (this.f1247a.getEncryptionMode() == RequestBodyEncryptionMode.AES_RSA) {
             builder.appendQueryParameter(CommonUrlParts.ENCRYPTED_REQUEST, "1");
         }
     }

@@ -13,7 +13,7 @@ import javax.net.ssl.SSLSocketFactory;
 public final class C0766zm implements UnderlyingNetworkTask {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bm f1176a;
+    public final Bm f1177a;
     public C0216dm b;
     public Jl c;
     public final RequestDataHolder d;
@@ -28,7 +28,7 @@ public final class C0766zm implements UnderlyingNetworkTask {
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
     public final String description() {
-        return "Startup task for component: " + this.f1176a.f363a.f.toString();
+        return "Startup task for component: " + this.f1177a.f364a.f.toString();
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -60,7 +60,7 @@ public final class C0766zm implements UnderlyingNetworkTask {
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
     public final boolean onCreateTask() {
         this.d.setHeader(HttpHeaders.ACCEPT_ENCODING, "encrypted");
-        return this.f1176a.g();
+        return this.f1177a.g();
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -97,7 +97,7 @@ public final class C0766zm implements UnderlyingNetworkTask {
         if (this.b == null || this.f.getResponseHeaders() == null) {
             return;
         }
-        this.f1176a.a(this.b, (C0164bm) this.e.getConfig(), this.f.getResponseHeaders());
+        this.f1177a.a(this.b, (C0164bm) this.e.getConfig(), this.f.getResponseHeaders());
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -117,11 +117,11 @@ public final class C0766zm implements UnderlyingNetworkTask {
         if (this.c == null) {
             this.c = Jl.UNKNOWN;
         }
-        this.f1176a.a(this.c);
+        this.f1177a.a(this.c);
     }
 
     public C0766zm(Bm bm, Rl rl, FullUrlFormer fullUrlFormer, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, ConfigProvider configProvider) {
-        this.f1176a = bm;
+        this.f1177a = bm;
         this.h = rl;
         this.d = requestDataHolder;
         this.f = responseDataHolder;

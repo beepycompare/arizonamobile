@@ -8,7 +8,7 @@ import java.util.Map;
 public final class Z7 implements InterfaceC0181cd {
 
     /* renamed from: a  reason: collision with root package name */
-    public Location f745a;
+    public Location f746a;
     public Boolean b;
     public Boolean c;
     public Boolean d;
@@ -46,7 +46,7 @@ public final class Z7 implements InterfaceC0181cd {
     }
 
     public final Location j() {
-        return this.f745a;
+        return this.f746a;
     }
 
     public final Boolean k() {
@@ -87,7 +87,7 @@ public final class Z7 implements InterfaceC0181cd {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
     public final void a(Location location) {
-        this.f745a = location;
+        this.f746a = location;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
@@ -200,7 +200,7 @@ public final class Z7 implements InterfaceC0181cd {
         if (appMetricaConfig.locationTracking == null && io.a(bool)) {
             newConfigBuilder.withLocationTracking(bool.booleanValue());
         }
-        Location location = this.f745a;
+        Location location = this.f746a;
         if (appMetricaConfig.location == null && io.a(location)) {
             newConfigBuilder.withLocation(location);
         }
@@ -216,7 +216,7 @@ public final class Z7 implements InterfaceC0181cd {
             newConfigBuilder.withAdvIdentifiersTracking(bool3.booleanValue());
         }
         this.i = true;
-        this.f745a = null;
+        this.f746a = null;
         this.b = null;
         this.c = null;
         this.d = null;

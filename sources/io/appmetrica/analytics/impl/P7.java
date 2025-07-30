@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class P7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final M7 f591a;
+    public final M7 f592a;
 
     public P7() {
         this(null, 1, null);
@@ -18,25 +18,25 @@ public final class P7 implements Converter {
     /* renamed from: a */
     public final ContentValues fromModel(O7 o7) {
         ContentValues contentValues = new ContentValues();
-        Long l = o7.f574a;
+        Long l = o7.f575a;
         if (l != null) {
             contentValues.put("id", Long.valueOf(l.longValue()));
         }
         Wk wk = o7.b;
         if (wk != null) {
-            contentValues.put("type", Integer.valueOf(wk.f706a));
+            contentValues.put("type", Integer.valueOf(wk.f707a));
         }
         String str = o7.c;
         if (str != null) {
             contentValues.put("report_request_parameters", str);
         }
-        M7 m7 = this.f591a;
-        contentValues.put("session_description", MessageNano.toByteArray(m7.f545a.fromModel(o7.d)));
+        M7 m7 = this.f592a;
+        contentValues.put("session_description", MessageNano.toByteArray(m7.f546a.fromModel(o7.d)));
         return contentValues;
     }
 
     public P7(M7 m7) {
-        this.f591a = m7;
+        this.f592a = m7;
     }
 
     public /* synthetic */ P7(M7 m7, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -59,6 +59,6 @@ public final class P7 implements Converter {
         } else {
             wk = null;
         }
-        return new O7(asLong, wk, contentValues.getAsString("report_request_parameters"), this.f591a.toModel(contentValues.getAsByteArray("session_description")));
+        return new O7(asLong, wk, contentValues.getAsString("report_request_parameters"), this.f592a.toModel(contentValues.getAsByteArray("session_description")));
     }
 }

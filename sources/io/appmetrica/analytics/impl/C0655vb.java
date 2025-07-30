@@ -18,18 +18,18 @@ import kotlin.collections.MapsKt;
 public final class C0655vb implements InternalClientModuleFacade {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0358jd f1099a = new C0358jd();
+    public final C0358jd f1100a = new C0358jd();
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFacade
     public final void reportAdRevenue(ModuleAdRevenue moduleAdRevenue) {
         AdType adType;
         Map<String, String> linkedHashMap;
-        C0358jd c0358jd = this.f1099a;
+        C0358jd c0358jd = this.f1100a;
         c0358jd.getClass();
         AdRevenue.Builder newBuilder = AdRevenue.newBuilder(moduleAdRevenue.getAdRevenue(), moduleAdRevenue.getCurrency());
         ModuleAdType adType2 = moduleAdRevenue.getAdType();
         ModuleAdType.values();
-        switch (adType2 == null ? -1 : AbstractC0334id.f898a[adType2.ordinal()]) {
+        switch (adType2 == null ? -1 : AbstractC0334id.f899a[adType2.ordinal()]) {
             case -1:
                 adType = null;
                 break;
@@ -63,7 +63,7 @@ public final class C0655vb implements InternalClientModuleFacade {
         if (payload == null || (linkedHashMap = MapsKt.toMutableMap(payload)) == null) {
             linkedHashMap = new LinkedHashMap<>();
         }
-        c0358jd.f915a.getClass();
+        c0358jd.f916a.getClass();
         linkedHashMap.put(AdRevenueConstants.LAYER_KEY, "native");
         ModulesFacade.reportAdRevenue(withPrecision.withPayload(linkedHashMap).build(), Boolean.valueOf(moduleAdRevenue.getAutoCollected()));
     }
@@ -78,7 +78,7 @@ public final class C0655vb implements InternalClientModuleFacade {
         }
         InternalModuleEvent.Category category2 = internalModuleEvent.getCategory();
         if (category2 != null) {
-            int i = AbstractC0630ub.f1082a[category2.ordinal()];
+            int i = AbstractC0630ub.f1083a[category2.ordinal()];
             if (i != 1) {
                 category = i != 2 ? null : ModuleEvent.Category.GENERAL;
             } else {

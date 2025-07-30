@@ -7,7 +7,7 @@ public final class C0698x4 {
     public static volatile C0698x4 u;
 
     /* renamed from: a  reason: collision with root package name */
-    public final M6 f1129a;
+    public final M6 f1130a;
     public final Z7 b;
     public final C0449n4 c;
     public final N1 d;
@@ -88,7 +88,7 @@ public final class C0698x4 {
     }
 
     public final M6 i() {
-        return this.f1129a;
+        return this.f1130a;
     }
 
     public final Z7 j() {
@@ -116,7 +116,7 @@ public final class C0698x4 {
     }
 
     public final M6 n() {
-        return this.f1129a;
+        return this.f1130a;
     }
 
     public final Xk o() {
@@ -140,7 +140,7 @@ public final class C0698x4 {
         this.q = new R1();
         this.r = new C0704xa();
         new Y7();
-        this.f1129a = m6;
+        this.f1130a = m6;
         this.b = z7;
         this.c = c0449n4;
         this.h = c0394l;

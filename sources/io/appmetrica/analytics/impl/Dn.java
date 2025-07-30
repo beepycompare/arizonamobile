@@ -6,14 +6,14 @@ import java.util.List;
 public final class Dn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f403a;
+    public final String f404a;
     public final String b;
     public final List c;
     public final Dn d;
     public final List e;
 
     public Dn(String str, String str2, ArrayList arrayList, Dn dn, ArrayList arrayList2) {
-        this.f403a = str;
+        this.f404a = str;
         this.b = str2;
         this.c = arrayList;
         this.d = dn;

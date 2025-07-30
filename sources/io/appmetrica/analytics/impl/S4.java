@@ -11,7 +11,7 @@ import java.util.List;
 public final class S4 implements Za, Ql, InterfaceC0153bb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f632a;
+    public final Context f633a;
     public final C0400l5 b;
     public final Bm c;
     public final Mh d;
@@ -36,7 +36,7 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
     @Override // io.appmetrica.analytics.impl.Za
     public final void a(J4 j4) {
         Mh mh = this.d;
-        mh.f549a = mh.f549a.mergeFrom(j4);
+        mh.f550a = mh.f550a.mergeFrom(j4);
     }
 
     @Override // io.appmetrica.analytics.impl.Za
@@ -45,7 +45,7 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
     }
 
     public final J4 d() {
-        return this.d.f549a;
+        return this.d.f550a;
     }
 
     public final C0735yg e() {
@@ -54,20 +54,20 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
 
     @Override // io.appmetrica.analytics.impl.Za
     public final Context getContext() {
-        return this.f632a;
+        return this.f633a;
     }
 
     public S4(Context context, Hl hl, C0400l5 c0400l5, K4 k4, Mh mh, C0735yg c0735yg, C0425m5 c0425m5, U4 u4, Dg dg) {
         this.g = new ArrayList();
         this.l = new Object();
         Context applicationContext = context.getApplicationContext();
-        this.f632a = applicationContext;
+        this.f633a = applicationContext;
         this.b = c0400l5;
         this.d = mh;
         this.h = c0425m5;
         this.e = U4.a(this);
         b(k4);
-        Bm a2 = hl.a(applicationContext, c0400l5, k4.f515a);
+        Bm a2 = hl.a(applicationContext, c0400l5, k4.f516a);
         this.c = a2;
         this.j = AbstractC0524q4.a(a2, Ia.j().b());
         this.f = u4.a(this, a2);
@@ -77,12 +77,12 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
     }
 
     public final synchronized void a(P4 p4) {
-        this.h.f949a.add(p4);
+        this.h.f950a.add(p4);
         W6.a(p4.c, this.j.a(Gm.a(this.c.e().l)));
     }
 
     public final synchronized void b(P4 p4) {
-        this.h.f949a.remove(p4);
+        this.h.f950a.remove(p4);
     }
 
     @Override // io.appmetrica.analytics.impl.Za
@@ -102,7 +102,7 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
             Iterator it = this.g.iterator();
             while (it.hasNext()) {
                 C0580sb c0580sb = (C0580sb) it.next();
-                W6.a(c0580sb.f1051a, jl, this.j.a(c0580sb.c));
+                W6.a(c0580sb.f1052a, jl, this.j.a(c0580sb.c));
             }
             this.g.clear();
         }
@@ -111,7 +111,7 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
     @Override // io.appmetrica.analytics.impl.Ql
     public final void a(C0267fm c0267fm) {
         synchronized (this.l) {
-            Iterator it = this.h.f949a.iterator();
+            Iterator it = this.h.f950a.iterator();
             while (it.hasNext()) {
                 W6.a(((P4) it.next()).c, this.j.a(Gm.a(c0267fm.l)));
             }
@@ -120,7 +120,7 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
             while (it2.hasNext()) {
                 C0580sb c0580sb = (C0580sb) it2.next();
                 if (AbstractC0190cm.a(c0267fm, c0580sb.b, c0580sb.c, new C0531qb())) {
-                    W6.a(c0580sb.f1051a, this.j.a(c0580sb.c));
+                    W6.a(c0580sb.f1052a, this.j.a(c0580sb.c));
                 } else {
                     arrayList.add(c0580sb);
                 }
@@ -140,7 +140,7 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
         HashMap hashMap2 = new HashMap();
         if (c0580sb != null) {
             list = c0580sb.b;
-            resultReceiver = c0580sb.f1051a;
+            resultReceiver = c0580sb.f1052a;
             hashMap = c0580sb.c;
         } else {
             resultReceiver = null;
@@ -176,7 +176,7 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0153bb
     public final void a(K4 k4) {
-        this.c.a(k4.f515a);
+        this.c.a(k4.f516a);
         a(k4.b);
     }
 }

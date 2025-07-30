@@ -7,7 +7,7 @@ import io.appmetrica.analytics.BuildConfig;
 public final class C0639uk extends AbstractC0232ed {
 
     /* renamed from: a  reason: collision with root package name */
-    public final to f1088a;
+    public final to f1089a;
 
     public C0639uk() {
         this(Ia.j().B().b());
@@ -15,9 +15,9 @@ public final class C0639uk extends AbstractC0232ed {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0232ed
     public final void a(int i) {
-        to toVar = this.f1088a;
+        to toVar = this.f1089a;
         synchronized (toVar) {
-            vo voVar = toVar.f1073a;
+            vo voVar = toVar.f1074a;
             voVar.a(voVar.a().put("last_migration_api_level", i));
         }
     }
@@ -25,9 +25,9 @@ public final class C0639uk extends AbstractC0232ed {
     @Override // io.appmetrica.analytics.impl.AbstractC0232ed
     public final int b() {
         int optInt;
-        to toVar = this.f1088a;
+        to toVar = this.f1089a;
         synchronized (toVar) {
-            optInt = toVar.f1073a.a().optInt("last_migration_api_level", -1);
+            optInt = toVar.f1074a.a().optInt("last_migration_api_level", -1);
         }
         return optInt;
     }
@@ -35,12 +35,12 @@ public final class C0639uk extends AbstractC0232ed {
     @Override // io.appmetrica.analytics.impl.AbstractC0232ed
     public final SparseArray<InterfaceC0207dd> c() {
         SparseArray<InterfaceC0207dd> sparseArray = new SparseArray<>(1);
-        sparseArray.put(112, new C0664vk(this.f1088a));
+        sparseArray.put(112, new C0664vk(this.f1089a));
         sparseArray.put(BuildConfig.API_LEVEL, new C0689wk());
         return sparseArray;
     }
 
     public C0639uk(to toVar) {
-        this.f1088a = toVar;
+        this.f1089a = toVar;
     }
 }

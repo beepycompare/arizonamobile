@@ -8,17 +8,17 @@ public enum EnumC0729ya {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1152a;
+    public final int f1153a;
 
     EnumC0729ya(int i) {
-        this.f1152a = i;
+        this.f1153a = i;
     }
 
     public static EnumC0729ya a(Integer num) {
         EnumC0729ya[] values;
         if (num != null) {
             for (EnumC0729ya enumC0729ya : values()) {
-                if (enumC0729ya.f1152a == num.intValue()) {
+                if (enumC0729ya.f1153a == num.intValue()) {
                     return enumC0729ya;
                 }
             }

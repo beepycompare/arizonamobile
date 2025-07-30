@@ -10,7 +10,7 @@ public final class oo implements po {
         LinkedList linkedList = new LinkedList();
         boolean z = true;
         for (no noVar : list) {
-            if (!noVar.f975a) {
+            if (!noVar.f976a) {
                 linkedList.add(noVar.b);
                 z = false;
             }

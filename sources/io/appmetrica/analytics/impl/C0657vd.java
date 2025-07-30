@@ -8,10 +8,10 @@ import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycl
 public final class C0657vd implements ModuleServiceLifecycleController {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Q1 f1100a;
+    public final Q1 f1101a;
 
     public C0657vd(Q1 q1) {
-        this.f1100a = q1;
+        this.f1101a = q1;
     }
 
     public static final void a(ModuleServiceLifecycleObserver moduleServiceLifecycleObserver, Intent intent) {
@@ -24,13 +24,13 @@ public final class C0657vd implements ModuleServiceLifecycleController {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleController
     public final void registerObserver(final ModuleServiceLifecycleObserver moduleServiceLifecycleObserver) {
-        this.f1100a.b(new P1() { // from class: io.appmetrica.analytics.impl.vd$$ExternalSyntheticLambda0
+        this.f1101a.b(new P1() { // from class: io.appmetrica.analytics.impl.vd$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.P1
             public final void a(Intent intent) {
                 C0657vd.a(ModuleServiceLifecycleObserver.this, intent);
             }
         });
-        this.f1100a.a(new P1() { // from class: io.appmetrica.analytics.impl.vd$$ExternalSyntheticLambda1
+        this.f1101a.a(new P1() { // from class: io.appmetrica.analytics.impl.vd$$ExternalSyntheticLambda1
             @Override // io.appmetrica.analytics.impl.P1
             public final void a(Intent intent) {
                 C0657vd.b(ModuleServiceLifecycleObserver.this, intent);

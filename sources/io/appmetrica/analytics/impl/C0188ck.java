@@ -14,7 +14,7 @@ import java.util.Map;
 public final class C0188ck implements InterfaceC0431mb, IPluginReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f801a = new ArrayList();
+    public final ArrayList f802a = new ArrayList();
     public volatile C0612ti b;
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0431mb, io.appmetrica.analytics.impl.InterfaceC0506pb
@@ -134,7 +134,7 @@ public final class C0188ck implements InterfaceC0431mb, IPluginReporter {
 
     public final synchronized void a(InterfaceC0406lb interfaceC0406lb) {
         if (this.b == null) {
-            this.f801a.add(interfaceC0406lb);
+            this.f802a.add(interfaceC0406lb);
         } else {
             interfaceC0406lb.a(this.b);
         }

@@ -6,11 +6,11 @@ import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
 public final class C0204da {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0574s5 f815a;
+    public final C0574s5 f816a;
     public final TimeProvider b;
 
     public C0204da(C0574s5 c0574s5, TimeProvider timeProvider) {
-        this.f815a = c0574s5;
+        this.f816a = c0574s5;
         this.b = timeProvider;
     }
 }

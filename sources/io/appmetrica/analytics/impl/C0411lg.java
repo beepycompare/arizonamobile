@@ -8,22 +8,22 @@ import java.util.concurrent.TimeUnit;
 public final class C0411lg implements InterfaceC0361jg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0560rg f939a;
+    public final /* synthetic */ C0560rg f940a;
 
     public C0411lg(C0560rg c0560rg) {
-        this.f939a = c0560rg;
+        this.f940a = c0560rg;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0361jg
     public final void a() {
-        C0560rg c0560rg = this.f939a;
+        C0560rg c0560rg = this.f940a;
         Ua ua = c0560rg.b;
         C0386kg c0386kg = new C0386kg(c0560rg);
         ua.getClass();
         try {
             FutureTask futureTask = new FutureTask(new Ta(ua));
-            Ia.F.d.f1040a.getClass();
-            new InterruptionSafeThread(futureTask, "IAA-SHMSR-" + Od.f578a.incrementAndGet()).start();
+            Ia.F.d.f1041a.getClass();
+            new InterruptionSafeThread(futureTask, "IAA-SHMSR-" + Od.f579a.incrementAndGet()).start();
             Ag ag = (Ag) futureTask.get(5L, TimeUnit.SECONDS);
             io.a(ua.b);
             C0560rg.a(c0560rg, ag, C0560rg.a(c0560rg));

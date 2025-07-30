@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 public final class C0379k9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0330i9 f924a;
+    public final C0330i9 f925a;
     public final C0354j9 b;
     public final IBinaryDataHelper c;
 
@@ -17,7 +17,7 @@ public final class C0379k9 {
 
     public C0379k9(C0354j9 c0354j9, C0330i9 c0330i9, IBinaryDataHelper iBinaryDataHelper) {
         this.b = c0354j9;
-        this.f924a = c0330i9;
+        this.f925a = c0330i9;
         this.c = iBinaryDataHelper;
     }
 }

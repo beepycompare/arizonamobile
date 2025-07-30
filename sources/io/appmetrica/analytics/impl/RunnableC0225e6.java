@@ -10,16 +10,16 @@ import java.util.concurrent.TimeUnit;
 public final class RunnableC0225e6 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f826a;
+    public final List f827a;
     public final IHandlerExecutor b = Ia.j().w().a();
     public final WaitForActivationDelayBarrier c = Ia.j().a();
 
     public RunnableC0225e6(List list) {
-        this.f826a = list;
+        this.f827a = list;
     }
 
     public static final void a(RunnableC0225e6 runnableC0225e6) {
-        for (Runnable runnable : runnableC0225e6.f826a) {
+        for (Runnable runnable : runnableC0225e6.f827a) {
             runnable.run();
         }
     }

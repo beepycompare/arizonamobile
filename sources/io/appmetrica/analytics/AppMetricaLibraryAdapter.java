@@ -10,11 +10,11 @@ import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 public class AppMetricaLibraryAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private static A0 f194a = new A0();
+    private static A0 f195a = new A0();
 
     public static void activate(Context context) {
-        A0 a0 = f194a;
-        if (a0.f328a.f700a.a(context).f975a) {
+        A0 a0 = f195a;
+        if (a0.f329a.f701a.a(context).f976a) {
             Xb xb = a0.b;
             Context applicationContext = context.getApplicationContext();
             xb.getClass();
@@ -26,25 +26,25 @@ public class AppMetricaLibraryAdapter {
     }
 
     public static void reportEvent(String str, String str2, String str3) {
-        f194a.a(str, str2, str3);
+        f195a.a(str, str2, str3);
     }
 
     public static void setAdvIdentifiersTracking(boolean z) {
-        A0 a0 = f194a;
-        if (a0.f328a.c.a((Void) null).f975a) {
+        A0 a0 = f195a;
+        if (a0.f329a.c.a((Void) null).f976a) {
             a0.b.getClass();
             ModulesFacade.setAdvIdentifiersTracking(z);
         }
     }
 
     public static void setProxy(A0 a0) {
-        f194a = a0;
+        f195a = a0;
     }
 
     public static void activate(Context context, AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
-        A0 a0 = f194a;
-        Wb wb = a0.f328a;
-        if (wb.f700a.a(context).f975a && wb.b.a(appMetricaLibraryAdapterConfig).f975a) {
+        A0 a0 = f195a;
+        Wb wb = a0.f329a;
+        if (wb.f701a.a(context).f976a && wb.b.a(appMetricaLibraryAdapterConfig).f976a) {
             Xb xb = a0.b;
             Context applicationContext = context.getApplicationContext();
             xb.getClass();

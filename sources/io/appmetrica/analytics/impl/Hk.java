@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class Hk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Wk f475a;
+    public final Wk f476a;
     public final Long b;
     public final Long c;
     public final Integer d;
@@ -21,7 +21,7 @@ public final class Hk {
         Boolean bool;
         Long l4;
         wk = gk.b;
-        this.f475a = wk;
+        this.f476a = wk;
         num = gk.e;
         this.d = num;
         l = gk.c;
@@ -34,6 +34,6 @@ public final class Hk {
         this.f = bool;
         l4 = gk.h;
         this.g = l4;
-        this.h = gk.f457a;
+        this.h = gk.f458a;
     }
 }

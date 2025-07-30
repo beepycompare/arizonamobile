@@ -7,7 +7,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Ek {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0574s5 f422a;
+    public final C0574s5 f423a;
     public final Vk b;
     public final Hk c;
     public long d;
@@ -20,7 +20,7 @@ public final class Ek {
     public final SystemTimeProvider k;
 
     public Ek(C0574s5 c0574s5, Vk vk, Hk hk, SystemTimeProvider systemTimeProvider) {
-        this.f422a = c0574s5;
+        this.f423a = c0574s5;
         this.b = vk;
         this.c = hk;
         this.k = systemTimeProvider;

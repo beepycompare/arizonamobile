@@ -157,7 +157,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
                     }
                     if (cancellableContinuation != null) {
                         Result.Companion companion4 = Result.Companion;
-                        cancellableContinuation.resumeWith(Result.m8474constructorimpl(Unit.INSTANCE));
+                        cancellableContinuation.resumeWith(Result.m8478constructorimpl(Unit.INSTANCE));
                     }
                 }
             });

@@ -12,7 +12,7 @@ public final class L8 extends MessageNano {
     public static volatile L8[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public H8 f530a;
+    public H8 f531a;
     public K8 b;
 
     public L8() {
@@ -31,7 +31,7 @@ public final class L8 extends MessageNano {
     }
 
     public final L8 a() {
-        this.f530a = null;
+        this.f531a = null;
         this.b = null;
         this.cachedSize = -1;
         return this;
@@ -40,7 +40,7 @@ public final class L8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        H8 h8 = this.f530a;
+        H8 h8 = this.f531a;
         if (h8 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, h8);
         }
@@ -50,7 +50,7 @@ public final class L8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        H8 h8 = this.f530a;
+        H8 h8 = this.f531a;
         if (h8 != null) {
             codedOutputByteBufferNano.writeMessage(1, h8);
         }
@@ -69,10 +69,10 @@ public final class L8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f530a == null) {
-                    this.f530a = new H8();
+                if (this.f531a == null) {
+                    this.f531a = new H8();
                 }
-                codedInputByteBufferNano.readMessage(this.f530a);
+                codedInputByteBufferNano.readMessage(this.f531a);
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

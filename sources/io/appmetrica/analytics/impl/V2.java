@@ -34,7 +34,7 @@ public abstract class V2 implements Ya {
     public static final T2 o = new T2();
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f680a;
+    protected final Context f681a;
     protected final Sh b;
     protected final PublicLogger c;
     protected final On d;
@@ -50,7 +50,7 @@ public abstract class V2 implements Ya {
 
     public V2(Context context, Ji ji, Sh sh, C0306ha c0306ha, M6 m6, On on, Rg rg, Q6 q6, C0142b0 c0142b0, Xe xe) {
         Context applicationContext = context.getApplicationContext();
-        this.f680a = applicationContext;
+        this.f681a = applicationContext;
         this.h = ji;
         this.b = sh;
         this.k = c0306ha;
@@ -77,7 +77,7 @@ public abstract class V2 implements Ya {
         Sh sh = this.b;
         synchronized (sh) {
             W8 w8 = sh.c;
-            w8.b.b(w8.f698a, str, str2);
+            w8.b.b(w8.f699a, str, str2);
         }
     }
 
@@ -96,11 +96,11 @@ public abstract class V2 implements Ya {
         }
         this.h.d.c();
         Jb jb = this.i;
-        jb.f504a.removeCallbacks(jb.c, jb.b.b.b.getApiKey());
+        jb.f505a.removeCallbacks(jb.c, jb.b.b.b.getApiKey());
         this.b.e = true;
         Ji ji = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4("", str, 3, 0, publicLogger);
         Sh sh = this.b;
@@ -116,7 +116,7 @@ public abstract class V2 implements Ya {
         Sh sh = this.b;
         ji.getClass();
         C0401l6 n2 = C0325i4.n();
-        Pf pf = new Pf(sh.f811a);
+        Pf pf = new Pf(sh.f812a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(sh.b);
         W8 w8 = sh.c;
         synchronized (sh) {
@@ -128,10 +128,10 @@ public abstract class V2 implements Ya {
     public final void d(String str) {
         this.h.d.b();
         Jb jb = this.i;
-        Jb.a(jb.f504a, jb.b, jb.c);
+        Jb.a(jb.f505a, jb.b, jb.c);
         Ji ji = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4("", str, 6400, 0, publicLogger);
         Sh sh = this.b;
@@ -160,9 +160,9 @@ public abstract class V2 implements Ya {
             str = sh.f;
         }
         PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(sh.b.getApiKey());
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         JSONObject jSONObject = new JSONObject();
-        if (r2 != null && (ef = r2.f490a) != null) {
+        if (r2 != null && (ef = r2.f491a) != null) {
             try {
                 jSONObject.put("preloadInfo", ef.c());
             } catch (Throwable unused) {
@@ -193,7 +193,7 @@ public abstract class V2 implements Ya {
         Sh sh = this.b;
         ji.getClass();
         C0401l6 b = C0325i4.b(str, str2);
-        Pf pf = new Pf(sh.f811a);
+        Pf pf = new Pf(sh.f812a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(sh.b);
         W8 w8 = sh.c;
         synchronized (sh) {
@@ -212,7 +212,7 @@ public abstract class V2 implements Ya {
         StackTraceElement[] stackTraceElementArr;
         C0168c0 c0168c0 = new C0168c0(new C0194d0(this, map));
         Ga ga = new Ga();
-        M6 m6 = C0698x4.l().f1129a;
+        M6 m6 = C0698x4.l().f1130a;
         Thread a2 = c0168c0.a();
         Map map2 = null;
         try {
@@ -256,9 +256,9 @@ public abstract class V2 implements Ya {
             C0325i4 c0325i4 = new C0325i4(LoggerStorage.getOrCreatePublicLogger(sh.b.getApiKey()));
             EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
             c0325i4.d = 41000;
-            c0325i4.b = c0325i4.e(Base64Utils.compressBase64(MessageNano.toByteArray((MessageNano) qi.f612a)));
+            c0325i4.b = c0325i4.e(Base64Utils.compressBase64(MessageNano.toByteArray((MessageNano) qi.f613a)));
             c0325i4.g = qi.b.getBytesTruncated();
-            Pf pf = new Pf(sh.f811a);
+            Pf pf = new Pf(sh.f812a);
             CounterConfiguration counterConfiguration = new CounterConfiguration(sh.b);
             W8 w8 = sh.c;
             synchronized (sh) {
@@ -274,7 +274,7 @@ public abstract class V2 implements Ya {
         Ji ji = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.e.fromModel(qg));
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4(byteArray, str, 5892, publicLogger);
         Sh sh = this.b;
@@ -288,7 +288,7 @@ public abstract class V2 implements Ya {
         this.c.info("Event received: " + WrapUtils.wrapToTag(str), new Object[0]);
         Ji ji = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4("", str, 1, 0, publicLogger);
         Sh sh = this.b;
@@ -299,16 +299,16 @@ public abstract class V2 implements Ya {
     @Override // io.appmetrica.analytics.IReporter
     public final void reportRevenue(Revenue revenue) {
         String str;
-        C0135aj c0135aj = U2.f663a;
+        C0135aj c0135aj = U2.f664a;
         c0135aj.getClass();
         no a2 = c0135aj.a(revenue);
-        if (a2.f975a) {
+        if (a2.f976a) {
             Ji ji = this.h;
             C0161bj c0161bj = new C0161bj(revenue, this.c);
             Sh sh = this.b;
             ji.getClass();
             C0325i4 a3 = C0325i4.a(LoggerStorage.getOrCreatePublicLogger(sh.b.getApiKey()), c0161bj);
-            Pf pf = new Pf(sh.f811a);
+            Pf pf = new Pf(sh.f812a);
             CounterConfiguration counterConfiguration = new CounterConfiguration(sh.b);
             W8 w8 = sh.c;
             synchronized (sh) {
@@ -341,19 +341,19 @@ public abstract class V2 implements Ya {
         }
         C0269fo c0269fo = new C0269fo();
         ArrayList arrayList = new ArrayList();
-        for (int i = 0; i < c0140ao.f773a.size(); i++) {
-            SparseArray sparseArray = c0140ao.f773a;
+        for (int i = 0; i < c0140ao.f774a.size(); i++) {
+            SparseArray sparseArray = c0140ao.f774a;
             for (C0192co c0192co : ((HashMap) sparseArray.get(sparseArray.keyAt(i))).values()) {
                 arrayList.add(c0192co);
             }
         }
-        c0269fo.f853a = (C0192co[]) arrayList.toArray(new C0192co[arrayList.size()]);
-        if (o.a(c0269fo).f975a) {
+        c0269fo.f854a = (C0192co[]) arrayList.toArray(new C0192co[arrayList.size()]);
+        if (o.a(c0269fo).f976a) {
             Ji ji = this.h;
             Sh sh = this.b;
             ji.getClass();
             C0401l6 a3 = C0325i4.a(c0269fo);
-            Pf pf = new Pf(sh.f811a);
+            Pf pf = new Pf(sh.f812a);
             CounterConfiguration counterConfiguration = new CounterConfiguration(sh.b);
             W8 w8 = sh.c;
             synchronized (sh) {
@@ -378,7 +378,7 @@ public abstract class V2 implements Ya {
         Ji ji = this.h;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         C0325i4 c0325i4 = new C0325i4("", "", 256, 0, publicLogger);
         Sh sh = this.b;
         ji.getClass();
@@ -395,7 +395,7 @@ public abstract class V2 implements Ya {
     public final void setSessionExtra(String str, byte[] bArr) {
         Ji ji = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4("", null, 8193, 0, publicLogger);
         if (bArr == null) {
@@ -418,7 +418,7 @@ public abstract class V2 implements Ya {
         c0325i4.d = 40962;
         c0325i4.c(str);
         c0325i4.b = c0325i4.e(str);
-        Pf pf = new Pf(sh.f811a);
+        Pf pf = new Pf(sh.f812a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(sh.b);
         W8 w8 = sh.c;
         synchronized (sh) {
@@ -436,7 +436,7 @@ public abstract class V2 implements Ya {
         Sh sh = this.b;
         ji.getClass();
         C0325i4 a2 = C0325i4.a(LoggerStorage.getOrCreatePublicLogger(sh.b.getApiKey()), d);
-        Pf pf = new Pf(sh.f811a);
+        Pf pf = new Pf(sh.f812a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(sh.b);
         W8 w8 = sh.c;
         synchronized (sh) {
@@ -451,7 +451,7 @@ public abstract class V2 implements Ya {
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(str2), new Object[0]);
         Ji ji = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4(str2, str, 1, 0, publicLogger);
         c0325i4.l = H9.JS;
@@ -474,7 +474,7 @@ public abstract class V2 implements Ya {
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(str2), new Object[0]);
         Ji ji = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4(str2, str, 1, 0, publicLogger);
         Sh sh = this.b;
@@ -509,7 +509,7 @@ public abstract class V2 implements Ya {
         Ji ji = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.f.fromModel(p6));
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4(byteArray, str2, 5896, publicLogger);
         Sh sh = this.b;
@@ -527,11 +527,11 @@ public abstract class V2 implements Ya {
     public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
         Nn a2 = this.l.a(pluginErrorDetails);
         Ji ji = this.h;
-        Dn dn = a2.f568a;
-        String str = dn != null ? (String) WrapUtils.getOrDefault(dn.f403a, "") : "";
+        Dn dn = a2.f569a;
+        String str = dn != null ? (String) WrapUtils.getOrDefault(dn.f404a, "") : "";
         byte[] byteArray = MessageNano.toByteArray(this.d.fromModel(a2));
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4(byteArray, str, 5891, publicLogger);
         Sh sh = this.b;
@@ -544,7 +544,7 @@ public abstract class V2 implements Ya {
     public final void reportEvent(String str, Map<String, Object> map) {
         Ji ji = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         ji.a(new C0325i4("", str, 1, 0, publicLogger), this.b, 1, map);
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(map == null ? null : map.toString()), new Object[0]);
@@ -579,7 +579,7 @@ public abstract class V2 implements Ya {
         Ji ji = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.e.fromModel(qg));
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4(byteArray, str, 5896, publicLogger);
         Sh sh = this.b;
@@ -595,12 +595,12 @@ public abstract class V2 implements Ya {
             return;
         }
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         String value = moduleEvent.getValue();
         String name = moduleEvent.getName();
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4(value, name, 8192, moduleEvent.getType(), publicLogger);
-        int i = X8.f715a[moduleEvent.getCategory().ordinal()];
+        int i = X8.f716a[moduleEvent.getCategory().ordinal()];
         if (i == 1) {
             h9 = H9.NATIVE;
         } else if (i != 2) {
@@ -622,7 +622,7 @@ public abstract class V2 implements Ya {
         Ji ji = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.g.fromModel(c0116a0));
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4(byteArray, "", 5968, publicLogger);
         Sh sh = this.b;
@@ -630,8 +630,8 @@ public abstract class V2 implements Ya {
         ji.a(Ji.a(c0325i4, sh), sh, 1, null);
         PublicLogger publicLogger2 = this.c;
         StringBuilder sb = new StringBuilder("ANR was reported ");
-        C0617tn c0617tn = u.f660a;
-        publicLogger2.info(sb.append(c0617tn != null ? "Thread[name=" + c0617tn.f1072a + ",tid={" + c0617tn.c + ", priority=" + c0617tn.b + ", group=" + c0617tn.d + "}] at " + CollectionsKt.joinToString$default(c0617tn.f, "\n", null, null, 0, null, null, 62, null) : null).toString(), new Object[0]);
+        C0617tn c0617tn = u.f661a;
+        publicLogger2.info(sb.append(c0617tn != null ? "Thread[name=" + c0617tn.f1073a + ",tid={" + c0617tn.c + ", priority=" + c0617tn.b + ", group=" + c0617tn.d + "}] at " + CollectionsKt.joinToString$default(c0617tn.f, "\n", null, null, 0, null, null, 62, null) : null).toString(), new Object[0]);
     }
 
     @Override // io.appmetrica.analytics.plugins.IPluginReporter
@@ -648,7 +648,7 @@ public abstract class V2 implements Ya {
         Ji ji = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.f.fromModel(p6));
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4(byteArray, str2, 5896, publicLogger);
         Sh sh = this.b;

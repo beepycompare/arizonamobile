@@ -10,10 +10,10 @@ public final class C0295h extends Ja {
 
     @Override // io.appmetrica.analytics.impl.Ja
     public final void a(List<AbstractC0236eh> list) {
-        list.add(this.f503a.p);
-        list.add(this.f503a.o);
-        list.add(this.f503a.r);
-        list.add(this.f503a.g);
-        list.add(this.f503a.q);
+        list.add(this.f504a.p);
+        list.add(this.f504a.o);
+        list.add(this.f504a.r);
+        list.add(this.f504a.g);
+        list.add(this.f504a.q);
     }
 }

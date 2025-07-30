@@ -4,6 +4,6 @@ package io.appmetrica.analytics.impl;
 public final class C0544r0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final M6 f1026a = C0698x4.l().i();
+    public final M6 f1027a = C0698x4.l().i();
     public final C0704xa b = C0698x4.l().k();
 }

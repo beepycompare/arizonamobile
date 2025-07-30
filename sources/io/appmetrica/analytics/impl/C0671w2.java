@@ -6,11 +6,11 @@ import java.util.List;
 public final class C0671w2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f1110a;
+    public final List f1111a;
     public final boolean b;
 
     public C0671w2(List list, boolean z) {
-        this.f1110a = list;
+        this.f1111a = list;
         this.b = z;
     }
 }

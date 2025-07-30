@@ -4,12 +4,12 @@ package io.appmetrica.analytics.impl;
 public final class C0648v4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1094a;
+    public final String f1095a;
     public final Integer b;
     public final String c;
 
     public C0648v4(String str, Integer num, String str2) {
-        this.f1094a = str;
+        this.f1095a = str;
         this.b = num;
         this.c = str2;
     }
@@ -20,7 +20,7 @@ public final class C0648v4 {
         }
         if (obj != null && C0648v4.class == obj.getClass()) {
             C0648v4 c0648v4 = (C0648v4) obj;
-            if (!this.f1094a.equals(c0648v4.f1094a)) {
+            if (!this.f1095a.equals(c0648v4.f1095a)) {
                 return false;
             }
             Integer num = this.b;
@@ -40,7 +40,7 @@ public final class C0648v4 {
     }
 
     public final int hashCode() {
-        int hashCode = this.f1094a.hashCode() * 31;
+        int hashCode = this.f1095a.hashCode() * 31;
         Integer num = this.b;
         int hashCode2 = (hashCode + (num != null ? num.hashCode() : 0)) * 31;
         String str = this.c;

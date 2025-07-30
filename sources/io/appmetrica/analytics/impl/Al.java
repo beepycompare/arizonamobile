@@ -6,10 +6,10 @@ import javax.net.ssl.SSLSocketFactory;
 public final class Al implements X2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f343a;
+    public final Context f344a;
 
     public Al(Context context) {
-        this.f343a = context;
+        this.f344a = context;
     }
 
     @Override // io.appmetrica.analytics.impl.X2, io.appmetrica.analytics.impl.InterfaceC0392km
@@ -17,7 +17,7 @@ public final class Al implements X2 {
     }
 
     public final Context b() {
-        return this.f343a;
+        return this.f344a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider

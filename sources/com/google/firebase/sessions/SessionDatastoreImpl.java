@@ -46,7 +46,7 @@ public final class SessionDatastoreImpl implements SessionDatastore {
         this.backgroundDispatcher = backgroundDispatcher;
         this.dataStore = dataStore;
         this.currentSessionFromDatastore = new AtomicReference<>();
-        final Flow m10022catch = FlowKt.m10022catch(dataStore.getData(), new SessionDatastoreImpl$firebaseSessionDataFlow$1(null));
+        final Flow m10026catch = FlowKt.m10026catch(dataStore.getData(), new SessionDatastoreImpl$firebaseSessionDataFlow$1(null));
         this.firebaseSessionDataFlow = new Flow<FirebaseSessionsData>() { // from class: com.google.firebase.sessions.SessionDatastoreImpl$special$$inlined$map$1
             @Override // kotlinx.coroutines.flow.Flow
             public Object collect(FlowCollector<? super FirebaseSessionsData> flowCollector, Continuation continuation) {

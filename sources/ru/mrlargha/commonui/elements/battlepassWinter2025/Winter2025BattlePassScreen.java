@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.sessions.settings.RemoteSettings;
+import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -83,7 +84,6 @@ import ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RoulettePrise
 import ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.data.OldPrise;
 import ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.data.PossiblePrise;
 import ru.mrlargha.commonui.elements.battlepassWinter2025.utils.TimeConverterKt;
-import ru.mrlargha.commonui.utils.FirebaseConfigHelper;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;

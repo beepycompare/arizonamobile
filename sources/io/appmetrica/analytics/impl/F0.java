@@ -3,5 +3,5 @@ package io.appmetrica.analytics.impl;
 public abstract class F0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final E0 f425a = new E0(new G0());
+    public static final E0 f426a = new E0(new G0());
 }

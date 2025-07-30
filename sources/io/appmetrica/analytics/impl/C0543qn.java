@@ -8,34 +8,34 @@ import java.util.Collection;
 public final class C0543qn implements TempCacheStorage {
 
     /* renamed from: a  reason: collision with root package name */
-    public final TempCacheStorage f1024a;
+    public final TempCacheStorage f1025a;
 
     public C0543qn(Context context, Sm sm, TempCacheStorage tempCacheStorage) {
-        this.f1024a = tempCacheStorage;
+        this.f1025a = tempCacheStorage;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.TempCacheStorage
     public final TempCacheStorage.Entry get(String str) {
-        return this.f1024a.get(str);
+        return this.f1025a.get(str);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.TempCacheStorage
     public final long put(String str, long j, byte[] bArr) {
-        return this.f1024a.put(str, j, bArr);
+        return this.f1025a.put(str, j, bArr);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.TempCacheStorage
     public final void remove(long j) {
-        this.f1024a.remove(j);
+        this.f1025a.remove(j);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.TempCacheStorage
     public final void removeOlderThan(String str, long j) {
-        this.f1024a.removeOlderThan(str, j);
+        this.f1025a.removeOlderThan(str, j);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.TempCacheStorage
     public final Collection<TempCacheStorage.Entry> get(String str, int i) {
-        return this.f1024a.get(str, i);
+        return this.f1025a.get(str, i);
     }
 }

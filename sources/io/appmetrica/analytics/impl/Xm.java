@@ -11,7 +11,7 @@ public final class Xm extends O4 {
     @Override // io.appmetrica.analytics.impl.O4
     public final void a(C0192co c0192co) {
         String str = (String) this.g.a((String) this.f);
-        c0192co.d.f836a = str == null ? new byte[0] : str.getBytes();
+        c0192co.d.f837a = str == null ? new byte[0] : str.getBytes();
     }
 
     public final In h() {

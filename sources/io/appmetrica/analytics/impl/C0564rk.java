@@ -10,7 +10,7 @@ import java.util.concurrent.Executor;
 public final class C0564rk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0540qk f1040a;
+    public final C0540qk f1041a;
     public volatile U9 b;
     public volatile U9 c;
     public volatile U9 d;
@@ -27,7 +27,7 @@ public final class C0564rk {
         if (this.g == null) {
             synchronized (this) {
                 if (this.g == null) {
-                    this.f1040a.getClass();
+                    this.f1041a.getClass();
                     HandlerThreadC0705xb a2 = U9.a("IAA-SDE");
                     this.g = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -40,7 +40,7 @@ public final class C0564rk {
         if (this.b == null) {
             synchronized (this) {
                 if (this.b == null) {
-                    this.f1040a.getClass();
+                    this.f1041a.getClass();
                     HandlerThreadC0705xb a2 = U9.a("IAA-SC");
                     this.b = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -53,7 +53,7 @@ public final class C0564rk {
         if (this.d == null) {
             synchronized (this) {
                 if (this.d == null) {
-                    this.f1040a.getClass();
+                    this.f1041a.getClass();
                     HandlerThreadC0705xb a2 = U9.a("IAA-SMH-1");
                     this.d = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -66,7 +66,7 @@ public final class C0564rk {
         if (this.e == null) {
             synchronized (this) {
                 if (this.e == null) {
-                    this.f1040a.getClass();
+                    this.f1041a.getClass();
                     HandlerThreadC0705xb a2 = U9.a("IAA-SNTPE");
                     this.e = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -79,7 +79,7 @@ public final class C0564rk {
         if (this.c == null) {
             synchronized (this) {
                 if (this.c == null) {
-                    this.f1040a.getClass();
+                    this.f1041a.getClass();
                     HandlerThreadC0705xb a2 = U9.a("IAA-STE");
                     this.c = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -92,7 +92,7 @@ public final class C0564rk {
         if (this.h == null) {
             synchronized (this) {
                 if (this.h == null) {
-                    this.f1040a.getClass();
+                    this.f1041a.getClass();
                     this.h = new ExecutorC0515pk(new Handler(Looper.getMainLooper()));
                 }
             }
@@ -102,6 +102,6 @@ public final class C0564rk {
 
     public C0564rk(C0540qk c0540qk) {
         new HashMap();
-        this.f1040a = c0540qk;
+        this.f1041a = c0540qk;
     }
 }

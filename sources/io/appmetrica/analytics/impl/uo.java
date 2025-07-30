@@ -6,10 +6,10 @@ import org.json.JSONObject;
 public final class uo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final vo f1091a;
+    public final vo f1092a;
 
     public uo(C0385kf c0385kf, yo yoVar, String str) {
-        this.f1091a = new vo(c0385kf, yoVar, new wo() { // from class: io.appmetrica.analytics.impl.uo$$ExternalSyntheticLambda0
+        this.f1092a = new vo(c0385kf, yoVar, new wo() { // from class: io.appmetrica.analytics.impl.uo$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.wo
             public final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
                 return uo.a(jSONObject, jSONObject2);
@@ -35,53 +35,53 @@ public final class uo {
     }
 
     public final synchronized void b(long j) {
-        vo voVar = this.f1091a;
+        vo voVar = this.f1092a;
         voVar.a(voVar.a().put("global_number", j));
     }
 
     public final synchronized boolean c() {
-        return this.f1091a.a().optBoolean("first_event_done", false);
+        return this.f1092a.a().optBoolean("first_event_done", false);
     }
 
     public final synchronized boolean d() {
-        return this.f1091a.a().optBoolean("init_event_done", false);
+        return this.f1092a.a().optBoolean("init_event_done", false);
     }
 
     public final synchronized int b() {
-        return this.f1091a.a().optInt("open_id", 1);
+        return this.f1092a.a().optInt("open_id", 1);
     }
 
     public final synchronized void c(long j) {
-        vo voVar = this.f1091a;
+        vo voVar = this.f1092a;
         voVar.a(voVar.a().put("session_id", j));
     }
 
     public final synchronized void b(int i) {
-        vo voVar = this.f1091a;
+        vo voVar = this.f1092a;
         voVar.a(voVar.a().put("last_migration_api_level", i));
     }
 
     public final synchronized void c(int i) {
-        vo voVar = this.f1091a;
+        vo voVar = this.f1092a;
         voVar.a(voVar.a().put("open_id", i));
     }
 
     public final synchronized void a(JSONObject jSONObject) {
-        vo voVar = this.f1091a;
+        vo voVar = this.f1092a;
         voVar.a(voVar.a().put("numbers_of_type", jSONObject));
     }
 
     public final synchronized int a() {
-        return this.f1091a.a().optInt("attribution_id", 1);
+        return this.f1092a.a().optInt("attribution_id", 1);
     }
 
     public final synchronized void a(int i) {
-        vo voVar = this.f1091a;
+        vo voVar = this.f1092a;
         voVar.a(voVar.a().put("attribution_id", i));
     }
 
     public final synchronized void a(long j) {
-        vo voVar = this.f1091a;
+        vo voVar = this.f1092a;
         voVar.a(voVar.a().put("external_attribution_window_start", j));
     }
 }

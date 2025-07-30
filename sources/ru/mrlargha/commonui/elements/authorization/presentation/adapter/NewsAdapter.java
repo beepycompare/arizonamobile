@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import kotlin.Metadata;
+import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.AuthorizationNewsItemBinding;
@@ -40,24 +41,28 @@ public final class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-    public void onBindViewHolder(NewsViewHolder holder, final int i) {
+    public void onBindViewHolder(NewsViewHolder holder, int i) {
         Intrinsics.checkNotNullParameter(holder, "holder");
+        final News news = (News) CollectionsKt.getOrNull(this.news, i);
+        if (news == null) {
+            return;
+        }
         AuthorizationNewsItemBinding binding = holder.getBinding();
-        Picasso.get().load(this.news.get(i).getImageUrl()).placeholder(R.drawable.banner_news).into(binding.authorizationNewsItemBanner);
-        binding.authorizationNewsDate.setText(getDateTime(String.valueOf(this.news.get(i).getCreateDate())));
-        binding.authorizationNewsDescription.setText(this.news.get(i).getTitle());
+        Picasso.get().load(news.getImageUrl()).placeholder(R.drawable.banner_news).into(binding.authorizationNewsItemBanner);
+        binding.authorizationNewsDate.setText(news.getCreateDate());
+        binding.authorizationNewsDescription.setText(news.getTitle());
         binding.authorizationNewsItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.adapter.NewsAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                NewsAdapter.onBindViewHolder$lambda$1$lambda$0(NewsAdapter.this, i, view);
+                NewsAdapter.onBindViewHolder$lambda$1$lambda$0(News.this, this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(NewsAdapter newsAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$1$lambda$0(News news, NewsAdapter newsAdapter, View view) {
         try {
-            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(newsAdapter.news.get(i).getUrl()));
+            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(news.getUrl()));
             if (newsAdapter.targetActivity.getPackageManager().resolveActivity(intent, 65536) != null) {
                 newsAdapter.targetActivity.startActivity(intent);
             }

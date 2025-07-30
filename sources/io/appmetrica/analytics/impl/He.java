@@ -6,11 +6,11 @@ import java.util.concurrent.atomic.AtomicLong;
 public final class He implements InterfaceC0404l9, Ie {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0278g7 f471a;
+    public final C0278g7 f472a;
     public final AtomicLong b;
 
     public He(C0278g7 c0278g7) {
-        this.f471a = c0278g7;
+        this.f472a = c0278g7;
         this.b = new AtomicLong(c0278g7.b());
         c0278g7.a(this);
     }
@@ -27,7 +27,7 @@ public final class He implements InterfaceC0404l9, Ie {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0404l9
     public final void a() {
-        this.b.set(this.f471a.b());
+        this.b.set(this.f472a.b());
     }
 
     public final long b() {

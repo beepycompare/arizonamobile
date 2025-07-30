@@ -10,10 +10,10 @@ public final class C0572s3 extends Pi {
 
     @Override // io.appmetrica.analytics.impl.Pi
     public final Object a(int i) {
-        return Boolean.valueOf(this.f598a.getResources().getBoolean(i));
+        return Boolean.valueOf(this.f599a.getResources().getBoolean(i));
     }
 
     public final Boolean b(int i) {
-        return Boolean.valueOf(this.f598a.getResources().getBoolean(i));
+        return Boolean.valueOf(this.f599a.getResources().getBoolean(i));
     }
 }

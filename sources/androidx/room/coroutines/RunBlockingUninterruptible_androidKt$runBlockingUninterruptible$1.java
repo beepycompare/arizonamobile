@@ -111,7 +111,7 @@ public final class RunBlockingUninterruptible_androidKt$runBlockingUninterruptib
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             CompletableDeferred<T> completableDeferred;
-            Object m8474constructorimpl;
+            Object m8478constructorimpl;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
@@ -132,8 +132,8 @@ public final class RunBlockingUninterruptible_androidKt$runBlockingUninterruptib
                     th = th;
                     completableDeferred = completableDeferred2;
                     Result.Companion companion2 = Result.Companion;
-                    m8474constructorimpl = Result.m8474constructorimpl(ResultKt.createFailure(th));
-                    CompletableDeferredKt.completeWith(completableDeferred, m8474constructorimpl);
+                    m8478constructorimpl = Result.m8478constructorimpl(ResultKt.createFailure(th));
+                    CompletableDeferredKt.completeWith(completableDeferred, m8478constructorimpl);
                     return Unit.INSTANCE;
                 }
             } else if (i != 1) {
@@ -145,13 +145,13 @@ public final class RunBlockingUninterruptible_androidKt$runBlockingUninterruptib
                 } catch (Throwable th2) {
                     th = th2;
                     Result.Companion companion22 = Result.Companion;
-                    m8474constructorimpl = Result.m8474constructorimpl(ResultKt.createFailure(th));
-                    CompletableDeferredKt.completeWith(completableDeferred, m8474constructorimpl);
+                    m8478constructorimpl = Result.m8478constructorimpl(ResultKt.createFailure(th));
+                    CompletableDeferredKt.completeWith(completableDeferred, m8478constructorimpl);
                     return Unit.INSTANCE;
                 }
             }
-            m8474constructorimpl = Result.m8474constructorimpl(obj);
-            CompletableDeferredKt.completeWith(completableDeferred, m8474constructorimpl);
+            m8478constructorimpl = Result.m8478constructorimpl(obj);
+            CompletableDeferredKt.completeWith(completableDeferred, m8478constructorimpl);
             return Unit.INSTANCE;
         }
     }

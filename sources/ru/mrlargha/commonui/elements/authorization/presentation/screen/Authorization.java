@@ -18,6 +18,7 @@ import androidx.media3.exoplayer.Renderer;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -43,7 +44,6 @@ import ru.mrlargha.commonui.elements.authorization.domain.controller.Registratio
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceManager;
 import ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount;
-import ru.mrlargha.commonui.utils.FirebaseConfigHelper;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: Authorization.kt */

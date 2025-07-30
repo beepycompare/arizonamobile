@@ -90,17 +90,17 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
         }
 
         public final void resume(long j) {
-            Object m8474constructorimpl;
+            Object m8478constructorimpl;
             Continuation<R> continuation = this.continuation;
             try {
                 Result.Companion companion = Result.Companion;
                 FrameAwaiter<R> frameAwaiter = this;
-                m8474constructorimpl = Result.m8474constructorimpl(this.onFrame.invoke(Long.valueOf(j)));
+                m8478constructorimpl = Result.m8478constructorimpl(this.onFrame.invoke(Long.valueOf(j)));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m8474constructorimpl = Result.m8474constructorimpl(ResultKt.createFailure(th));
+                m8478constructorimpl = Result.m8478constructorimpl(ResultKt.createFailure(th));
             }
-            continuation.resumeWith(m8474constructorimpl);
+            continuation.resumeWith(m8478constructorimpl);
         }
     }
 
@@ -135,7 +135,7 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
             for (int i = 0; i < size; i++) {
                 Continuation<?> continuation = list.get(i).getContinuation();
                 Result.Companion companion = Result.Companion;
-                continuation.resumeWith(Result.m8474constructorimpl(ResultKt.createFailure(th)));
+                continuation.resumeWith(Result.m8478constructorimpl(ResultKt.createFailure(th)));
             }
             this.awaiters.clear();
             this.hasAwaitersUnlocked.set(0);
@@ -204,7 +204,7 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
                 }
             } else {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m8474constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m8478constructorimpl(ResultKt.createFailure(th)));
             }
         }
         Object result = cancellableContinuationImpl.getResult();

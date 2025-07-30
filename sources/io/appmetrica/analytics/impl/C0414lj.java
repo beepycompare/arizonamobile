@@ -9,7 +9,7 @@ import java.util.Map;
 public final class C0414lj implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ge f941a;
+    public final Ge f942a;
     public final H3 b;
     public final Na c;
     public final Na d;
@@ -23,22 +23,22 @@ public final class C0414lj implements Converter {
     public final Qi fromModel(C0514pj c0514pj) {
         Qi qi;
         K8 k8 = new K8();
-        Jn a2 = this.c.a(c0514pj.f1004a);
-        k8.f518a = StringUtils.getUTF8Bytes((String) a2.f511a);
+        Jn a2 = this.c.a(c0514pj.f1005a);
+        k8.f519a = StringUtils.getUTF8Bytes((String) a2.f512a);
         List<String> list = c0514pj.b;
         Qi qi2 = null;
         if (list != null) {
             qi = this.b.fromModel(list);
-            k8.b = (C0752z8) qi.f612a;
+            k8.b = (C0752z8) qi.f613a;
         } else {
             qi = null;
         }
         Jn a3 = this.d.a(c0514pj.c);
-        k8.c = StringUtils.getUTF8Bytes((String) a3.f511a);
+        k8.c = StringUtils.getUTF8Bytes((String) a3.f512a);
         Map<String, String> map = c0514pj.d;
         if (map != null) {
-            qi2 = this.f941a.fromModel(map);
-            k8.d = (F8) qi2.f612a;
+            qi2 = this.f942a.fromModel(map);
+            k8.d = (F8) qi2.f613a;
         }
         return new Qi(k8, new C0672w3(C0672w3.b(a2, qi, a3, qi2)));
     }
@@ -50,7 +50,7 @@ public final class C0414lj implements Converter {
     }
 
     public C0414lj(Ge ge, H3 h3, Na na, Na na2) {
-        this.f941a = ge;
+        this.f942a = ge;
         this.b = h3;
         this.c = na;
         this.d = na2;

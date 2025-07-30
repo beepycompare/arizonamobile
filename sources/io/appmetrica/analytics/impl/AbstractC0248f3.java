@@ -6,17 +6,17 @@ import io.appmetrica.analytics.billinginterface.internal.ProductType;
 public abstract /* synthetic */ class AbstractC0248f3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f840a;
+    public static final /* synthetic */ int[] f841a;
 
     static {
         int[] iArr = new int[ProductType.values().length];
-        f840a = iArr;
+        f841a = iArr;
         try {
             iArr[ProductType.INAPP.ordinal()] = 1;
         } catch (NoSuchFieldError unused) {
         }
         try {
-            f840a[ProductType.SUBS.ordinal()] = 2;
+            f841a[ProductType.SUBS.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
     }

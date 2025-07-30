@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Mj implements InterfaceC0406lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Nn f550a;
+    public final /* synthetic */ Nn f551a;
 
     public Mj(Nn nn) {
-        this.f550a = nn;
+        this.f551a = nn;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0406lb
     public final void a(InterfaceC0431mb interfaceC0431mb) {
-        interfaceC0431mb.a(this.f550a);
+        interfaceC0431mb.a(this.f551a);
     }
 }

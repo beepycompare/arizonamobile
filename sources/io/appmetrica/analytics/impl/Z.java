@@ -9,12 +9,12 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Z {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0619u0 f739a;
+    public final C0619u0 f740a;
     public final Xk b;
     public final C0449n4 c;
 
     public Z(C0619u0 c0619u0, Xk xk, C0449n4 c0449n4) {
-        this.f739a = c0619u0;
+        this.f740a = c0619u0;
         this.b = xk;
         this.c = c0449n4;
     }
@@ -22,7 +22,7 @@ public final class Z {
     public final void a(final Context context, final AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         boolean z;
         PublicLogger mainPublicOrAnonymousLogger = LoggerStorage.getMainPublicOrAnonymousLogger();
-        this.f739a.getClass();
+        this.f740a.getClass();
         synchronized (C0594t0.class) {
             z = C0594t0.f;
         }
@@ -30,7 +30,7 @@ public final class Z {
             mainPublicOrAnonymousLogger.info("Session autotracking enabled", new Object[0]);
             this.b.a();
         }
-        this.f739a.getClass();
+        this.f740a.getClass();
         C0594t0 a2 = C0594t0.a(context);
         a2.d.a(null, a2);
         IHandlerExecutor a3 = this.c.a();
@@ -40,14 +40,14 @@ public final class Z {
                 Z.a(Z.this, context, appMetricaLibraryAdapterConfig);
             }
         });
-        this.f739a.getClass();
+        this.f740a.getClass();
         C0619u0.a();
     }
 
     public static final void a(Z z, Context context, AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
-        z.f739a.getClass();
+        z.f740a.getClass();
         C0594t0 a2 = C0594t0.a(context);
         a2.f().a(appMetricaLibraryAdapterConfig);
-        C0698x4.l().c.a().execute(new RunnableC0570s1(a2.f1059a));
+        C0698x4.l().c.a().execute(new RunnableC0570s1(a2.f1060a));
     }
 }

@@ -6,20 +6,20 @@ import android.app.Activity;
 public final class RunnableC0322i1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Activity f893a;
+    public final /* synthetic */ Activity f894a;
     public final /* synthetic */ C0496p1 b;
 
     public RunnableC0322i1(C0496p1 c0496p1, Activity activity) {
         this.b = c0496p1;
-        this.f893a = activity;
+        this.f894a = activity;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         C0496p1 c0496p1 = this.b;
         Xk xk = c0496p1.h;
-        Activity activity = this.f893a;
-        InterfaceC0205db interfaceC0205db = c0496p1.d().f416a;
+        Activity activity = this.f894a;
+        InterfaceC0205db interfaceC0205db = c0496p1.d().f417a;
         if (activity != null) {
             xk.f.a(activity);
         }

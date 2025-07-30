@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class AbstractC0270g {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0574s5 f854a;
+    public final C0574s5 f855a;
     public final Rk b;
     public final Vk c;
     public final Qk d;
@@ -15,7 +15,7 @@ public abstract class AbstractC0270g {
     public final SystemTimeProvider f;
 
     public AbstractC0270g(C0574s5 c0574s5, Rk rk, Vk vk, Qk qk, InterfaceC0431mb interfaceC0431mb, SystemTimeProvider systemTimeProvider) {
-        this.f854a = c0574s5;
+        this.f855a = c0574s5;
         this.b = rk;
         this.c = vk;
         this.d = qk;
@@ -29,7 +29,7 @@ public abstract class AbstractC0270g {
 
     public final Ek b() {
         if (this.c.h()) {
-            return new Ek(this.f854a, this.c, a(), this.f);
+            return new Ek(this.f855a, this.c, a(), this.f);
         }
         return null;
     }
@@ -38,17 +38,17 @@ public abstract class AbstractC0270g {
         if (this.c.h()) {
             this.e.reportEvent("create session with non-empty storage");
         }
-        C0574s5 c0574s5 = this.f854a;
+        C0574s5 c0574s5 = this.f855a;
         Vk vk = this.c;
         long a2 = this.b.a();
         Vk vk2 = this.c;
         vk2.a(Vk.f, Long.valueOf(a2));
-        vk2.a(Vk.d, Long.valueOf(fk.f439a));
-        vk2.a(Vk.h, Long.valueOf(fk.f439a));
+        vk2.a(Vk.d, Long.valueOf(fk.f440a));
+        vk2.a(Vk.h, Long.valueOf(fk.f440a));
         vk2.a(Vk.g, 0L);
         vk2.a(Vk.i, Boolean.TRUE);
         vk2.b();
-        this.f854a.e.a(a2, this.d.f614a, TimeUnit.MILLISECONDS.toSeconds(fk.b));
+        this.f855a.e.a(a2, this.d.f615a, TimeUnit.MILLISECONDS.toSeconds(fk.b));
         return new Ek(c0574s5, vk, a(), new SystemTimeProvider());
     }
 
@@ -59,7 +59,7 @@ public abstract class AbstractC0270g {
         gk.d = this.c.c.a(Vk.h);
         gk.c = this.c.c.a(Vk.f);
         gk.h = this.c.c.a(Vk.d);
-        gk.f457a = this.c.c.a(Vk.e);
+        gk.f458a = this.c.c.a(Vk.e);
         return new Hk(gk);
     }
 }

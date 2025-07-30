@@ -23,7 +23,7 @@ import io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock;
 public final class C0390kk implements ServiceContext {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ModuleServiceLifecycleController f928a;
+    public final ModuleServiceLifecycleController f929a;
     public final C0310he b = new C0310he(getContext());
     public final C0632ud c = new C0632ud();
     public final Dk d = new Dk(getContext(), new Ck(new S1()));
@@ -32,7 +32,7 @@ public final class C0390kk implements ServiceContext {
     public final L6 g = new L6();
 
     public C0390kk(ModuleServiceLifecycleController moduleServiceLifecycleController) {
-        this.f928a = moduleServiceLifecycleController;
+        this.f929a = moduleServiceLifecycleController;
     }
 
     public final C0310he a() {
@@ -70,7 +70,7 @@ public final class C0390kk implements ServiceContext {
             synchronized (ia) {
                 c0222e3 = ia.e;
                 if (c0222e3 == null) {
-                    c0222e3 = new C0222e3(ia.d.a(), ia.k().f766a);
+                    c0222e3 = new C0222e3(ia.d.a(), ia.k().f767a);
                     ia.e = c0222e3;
                 }
             }
@@ -81,7 +81,7 @@ public final class C0390kk implements ServiceContext {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceContext
     public final Context getContext() {
-        return Ia.F.f489a;
+        return Ia.F.f490a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceContext
@@ -111,7 +111,7 @@ public final class C0390kk implements ServiceContext {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceContext
     public final ModuleServiceLifecycleController getModuleServiceLifecycleController() {
-        return this.f928a;
+        return this.f929a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceContext

@@ -5,11 +5,11 @@ import android.util.SparseArray;
 public abstract class Ln {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SparseArray f537a;
+    public static final SparseArray f538a;
 
     static {
         SparseArray sparseArray = new SparseArray();
-        f537a = sparseArray;
+        f538a = sparseArray;
         sparseArray.put(0, "String");
         sparseArray.put(1, "Number");
         sparseArray.put(2, "Counter");

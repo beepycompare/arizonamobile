@@ -14,7 +14,7 @@ import kotlin.jvm.JvmStatic;
 public final class G2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final G2 f444a = new G2();
+    public static final G2 f445a = new G2();
 
     private G2() {
     }

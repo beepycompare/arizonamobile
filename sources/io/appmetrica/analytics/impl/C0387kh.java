@@ -27,7 +27,7 @@ public final class C0387kh extends AbstractC0236eh {
                 enumC0729ya2 = EnumC0729ya.NON_FIRST_OCCURENCE;
             } else {
                 C0305h9 c0305h9 = c0254f9.c;
-                if (c0305h9.f880a) {
+                if (c0305h9.f881a) {
                     enumC0729ya = EnumC0729ya.FIRST_OCCURRENCE;
                 } else {
                     enumC0729ya = EnumC0729ya.UNKNOWN;
@@ -36,13 +36,13 @@ public final class C0387kh extends AbstractC0236eh {
                     c0305h9.b.add(Integer.valueOf(hashCode));
                     c0305h9.d++;
                 } else {
-                    c0305h9.f880a = false;
+                    c0305h9.f881a = false;
                 }
                 C0379k9 c0379k9 = c0254f9.b;
                 C0305h9 c0305h92 = c0254f9.c;
                 IBinaryDataHelper iBinaryDataHelper = c0379k9.c;
                 C0354j9 c0354j9 = c0379k9.b;
-                c0379k9.f924a.getClass();
+                c0379k9.f925a.getClass();
                 P9 a2 = C0330i9.a(c0305h92);
                 c0354j9.getClass();
                 iBinaryDataHelper.insert("event_hashes", MessageNano.toByteArray(a2));

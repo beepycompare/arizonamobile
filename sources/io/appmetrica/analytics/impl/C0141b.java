@@ -8,7 +8,7 @@ import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
 public final class C0141b implements Z8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AESEncrypter f774a;
+    public final AESEncrypter f775a;
 
     public C0141b() {
         this(new C0115a(Ia.j().f()));
@@ -21,7 +21,7 @@ public final class C0141b implements Z8 {
         String value = c0401l6.getValue();
         if (!TextUtils.isEmpty(value)) {
             try {
-                encrypt = this.f774a.encrypt(value.getBytes("UTF-8"));
+                encrypt = this.f775a.encrypt(value.getBytes("UTF-8"));
             } catch (Throwable unused) {
             }
             if (encrypt != null) {
@@ -40,7 +40,7 @@ public final class C0141b implements Z8 {
     }
 
     public C0141b(AESEncrypter aESEncrypter) {
-        this.f774a = aESEncrypter;
+        this.f775a = aESEncrypter;
     }
 
     @Override // io.appmetrica.analytics.impl.Z8
@@ -48,7 +48,7 @@ public final class C0141b implements Z8 {
         byte[] bArr2 = new byte[0];
         if (bArr != null && bArr.length > 0) {
             try {
-                return this.f774a.decrypt(Base64.decode(bArr, 0));
+                return this.f775a.decrypt(Base64.decode(bArr, 0));
             } catch (Throwable unused) {
             }
         }

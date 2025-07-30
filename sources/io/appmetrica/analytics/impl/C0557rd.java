@@ -8,12 +8,12 @@ import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServ
 public final class C0557rd implements ModuleEventServiceHandlerContext {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ModulePreferences f1035a;
+    public final ModulePreferences f1036a;
     public final ModulePreferences b;
     public final ModuleEventServiceHandlerReporter c;
 
     public C0557rd(ModulePreferences modulePreferences, ModulePreferences modulePreferences2, ModuleEventServiceHandlerReporter moduleEventServiceHandlerReporter) {
-        this.f1035a = modulePreferences;
+        this.f1036a = modulePreferences;
         this.b = modulePreferences2;
         this.c = moduleEventServiceHandlerReporter;
     }
@@ -30,6 +30,6 @@ public final class C0557rd implements ModuleEventServiceHandlerContext {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerContext
     public final ModulePreferences getModulePreferences() {
-        return this.f1035a;
+        return this.f1036a;
     }
 }

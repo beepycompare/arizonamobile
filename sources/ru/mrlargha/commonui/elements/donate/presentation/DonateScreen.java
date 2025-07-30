@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.arizona.game.BuildConfig;
+import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Map;
@@ -55,7 +56,6 @@ import ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePage;
 import ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePurchasePage;
 import ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
-import ru.mrlargha.commonui.utils.FirebaseConfigHelper;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
@@ -205,7 +205,9 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     public void setVisibility(boolean z) {
         super.setVisibility(z);
         if (z) {
+            Log.i(DonateUtilsKt.DONATE_TAG, "setVisibility: " + z);
             this.isHasUpdate = false;
+            this.categoryAdapter.refreshSelectItem();
             initAdapters();
             setupCollectors();
             setupListeners();
@@ -327,8 +329,10 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setupListeners$lambda$13$lambda$12(DonateScreen donateScreen, View view) {
         donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 3, 2);
-        donateScreen.setVisibility(false);
-        donateScreen.getNotifier().requestRemoveUIElement(donateScreen);
+        if (UtilsKt.getArizonaType(donateScreen.getTargetActivity())) {
+            donateScreen.setVisibility(false);
+            donateScreen.getNotifier().requestRemoveUIElement(donateScreen);
+        }
     }
 
     private final void sendDialogData(DonateBoostModelUi donateBoostModelUi) {
@@ -352,7 +356,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         this.isChangeCategory = true;
         getNotifier().clickedWrapper(getBackendID(), donateCategoryModelUi.getId(), 4);
         BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$onCategoryClick$1$1(this, donateCategoryModelUi, null), 3, null);
-        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m10606getGridTemplateType().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m10610getGridTemplateType().ordinal()];
         if (i == 1) {
             setPage(Pages.MAIN);
         } else if (i == 2) {

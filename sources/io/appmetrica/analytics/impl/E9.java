@@ -15,7 +15,7 @@ public final class E9 extends MessageNano {
     public static volatile E9[] i;
 
     /* renamed from: a  reason: collision with root package name */
-    public B9[] f414a;
+    public B9[] f415a;
     public C0678w9 b;
     public C0603t9[] c;
     public C9[] d;
@@ -37,7 +37,7 @@ public final class E9 extends MessageNano {
     }
 
     public final E9 a() {
-        this.f414a = B9.b();
+        this.f415a = B9.b();
         this.b = null;
         this.c = C0603t9.b();
         this.d = C9.b();
@@ -49,12 +49,12 @@ public final class E9 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        B9[] b9Arr = this.f414a;
+        B9[] b9Arr = this.f415a;
         int i2 = 0;
         if (b9Arr != null && b9Arr.length > 0) {
             int i3 = 0;
             while (true) {
-                B9[] b9Arr2 = this.f414a;
+                B9[] b9Arr2 = this.f415a;
                 if (i3 >= b9Arr2.length) {
                     break;
                 }
@@ -121,12 +121,12 @@ public final class E9 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        B9[] b9Arr = this.f414a;
+        B9[] b9Arr = this.f415a;
         int i2 = 0;
         if (b9Arr != null && b9Arr.length > 0) {
             int i3 = 0;
             while (true) {
-                B9[] b9Arr2 = this.f414a;
+                B9[] b9Arr2 = this.f415a;
                 if (i3 >= b9Arr2.length) {
                     break;
                 }
@@ -197,7 +197,7 @@ public final class E9 extends MessageNano {
                 break;
             } else if (readTag == 26) {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 26);
-                B9[] b9Arr = this.f414a;
+                B9[] b9Arr = this.f415a;
                 int length = b9Arr == null ? 0 : b9Arr.length;
                 int i2 = repeatedFieldArrayLength + length;
                 B9[] b9Arr2 = new B9[i2];
@@ -214,7 +214,7 @@ public final class E9 extends MessageNano {
                 B9 b92 = new B9();
                 b9Arr2[length] = b92;
                 codedInputByteBufferNano.readMessage(b92);
-                this.f414a = b9Arr2;
+                this.f415a = b9Arr2;
             } else if (readTag == 34) {
                 if (this.b == null) {
                     this.b = new C0678w9();

@@ -7,12 +7,12 @@ import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
 public final class C0250f5 extends DatabaseScript {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0224e5 f841a = new C0224e5();
+    public final C0224e5 f842a = new C0224e5();
     public final C0199d5 b = new C0199d5();
 
     @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
     public final void runScript(SQLiteDatabase sQLiteDatabase) {
-        this.f841a.runScript(sQLiteDatabase);
+        this.f842a.runScript(sQLiteDatabase);
         this.b.runScript(sQLiteDatabase);
     }
 }

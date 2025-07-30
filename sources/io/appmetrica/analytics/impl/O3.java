@@ -6,11 +6,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class O3 implements InterfaceC0353j8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final N3 f571a;
+    public final N3 f572a;
     public final List b;
 
     public O3(N3 n3, List<N3> list) {
-        this.f571a = n3;
+        this.f572a = n3;
         this.b = list;
     }
 
@@ -20,11 +20,11 @@ public final class O3 implements InterfaceC0353j8 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0353j8
     public final Object b() {
-        return this.f571a;
+        return this.f572a;
     }
 
     public final N3 c() {
-        return this.f571a;
+        return this.f572a;
     }
 
     public final List<N3> d() {
@@ -32,7 +32,7 @@ public final class O3 implements InterfaceC0353j8 {
     }
 
     public final N3 e() {
-        return this.f571a;
+        return this.f572a;
     }
 
     public final boolean equals(Object obj) {
@@ -41,22 +41,22 @@ public final class O3 implements InterfaceC0353j8 {
         }
         if (obj instanceof O3) {
             O3 o3 = (O3) obj;
-            return Intrinsics.areEqual(this.f571a, o3.f571a) && Intrinsics.areEqual(this.b, o3.b);
+            return Intrinsics.areEqual(this.f572a, o3.f572a) && Intrinsics.areEqual(this.b, o3.b);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f571a.hashCode() * 31);
+        return this.b.hashCode() + (this.f572a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "ClidsInfo(chosen=" + this.f571a + ", candidates=" + this.b + ')';
+        return "ClidsInfo(chosen=" + this.f572a + ", candidates=" + this.b + ')';
     }
 
     public static O3 a(O3 o3, N3 n3, List list, int i, Object obj) {
         if ((i & 1) != 0) {
-            n3 = o3.f571a;
+            n3 = o3.f572a;
         }
         if ((i & 2) != 0) {
             list = o3.b;

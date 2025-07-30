@@ -7,12 +7,12 @@ import kotlin.collections.ArraysKt;
 public final class C0782o {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1311a;
+    public final boolean f1312a;
     public final List b;
     public final long c;
 
     public C0782o(boolean z, List list, long j) {
-        this.f1311a = z;
+        this.f1312a = z;
         this.b = list;
         this.c = j;
     }
@@ -22,7 +22,7 @@ public final class C0782o {
     }
 
     public final boolean b() {
-        return this.f1311a;
+        return this.f1312a;
     }
 
     public final List c() {
@@ -30,10 +30,10 @@ public final class C0782o {
     }
 
     public final String toString() {
-        return "ContentObserverCaptorConfig(enabled=" + this.f1311a + ", mediaStoreColumnNames='" + this.b + "', detectWindowSeconds=" + this.c + ')';
+        return "ContentObserverCaptorConfig(enabled=" + this.f1312a + ", mediaStoreColumnNames='" + this.b + "', detectWindowSeconds=" + this.c + ')';
     }
 
     public C0782o() {
-        this(new L().f1281a, ArraysKt.toList(new L().c), new L().b);
+        this(new L().f1282a, ArraysKt.toList(new L().c), new L().b);
     }
 }

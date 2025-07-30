@@ -10,6 +10,6 @@ public final class C0235eg extends Ja {
 
     @Override // io.appmetrica.analytics.impl.Ja
     public final void a(List<AbstractC0236eh> list) {
-        list.add(this.f503a.f420a);
+        list.add(this.f504a.f421a);
     }
 }

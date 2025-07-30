@@ -37,7 +37,7 @@ public final class C0683we {
             default:
                 throw new NoWhenBranchMatchedException();
         }
-        v9.f683a = i;
+        v9.f684a = i;
         C0708xe.b.getClass();
         JSONObject jSONObject = new JSONObject();
         for (Field field : obj.getClass().getFields()) {

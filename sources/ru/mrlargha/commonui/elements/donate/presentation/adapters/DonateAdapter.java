@@ -490,7 +490,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonateDefaultItemBinding donateDefaultItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m10607getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m10611getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donateDefaultItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");
@@ -623,6 +623,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final void initItem$lambda$2$lambda$1(DonateItemModelUi donateItemModelUi, DonateAdapter donateAdapter, View view) {
+            Log.i(DonateUtilsKt.DONATE_TAG, "onClick: " + donateItemModelUi.getItemType());
             Log.d(DonateUtilsKt.DONATE_TAG, donateItemModelUi.getItemType().toString());
             if (donateItemModelUi.getItemType() == DonateItemType.RATE) {
                 donateAdapter.getOpenDialog().invoke(null);
@@ -675,7 +676,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonatePosterItemBinding donatePosterItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m10607getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m10611getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donatePosterItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");

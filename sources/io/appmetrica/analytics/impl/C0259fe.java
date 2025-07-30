@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public final class C0259fe implements Pc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y8 f846a = new Y8() { // from class: io.appmetrica.analytics.impl.fe$$ExternalSyntheticLambda0
+    public final Y8 f847a = new Y8() { // from class: io.appmetrica.analytics.impl.fe$$ExternalSyntheticLambda0
         @Override // io.appmetrica.analytics.impl.Y8
         public final boolean b() {
             return C0259fe.b();
@@ -17,6 +17,6 @@ public final class C0259fe implements Pc {
 
     @Override // io.appmetrica.analytics.impl.Pc
     public final Y8 a() {
-        return this.f846a;
+        return this.f847a;
     }
 }

@@ -71,7 +71,7 @@ public final class TextSettingsKt {
                 }
                 composer2 = startRestartGroup;
                 Modifier modifier2 = companion;
-                TextKt.m2497Text4IGK_g(text, OffsetKt.m698offsetVpY3zN4$default(companion, 0.0f, Dp.m6684constructorimpl(-Dp.m6684constructorimpl(1)), 1, null), Color.Companion.m4115getWhite0d7_KjU(), TypeKt.m8430dpToSp8Feqmps(Dp.m6684constructorimpl(20), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, TextAlign.m6561boximpl(TextAlign.Companion.m6568getCentere0LSkKk()), 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 65008);
+                TextKt.m2497Text4IGK_g(text, OffsetKt.m698offsetVpY3zN4$default(companion, 0.0f, Dp.m6684constructorimpl(-Dp.m6684constructorimpl(1)), 1, null), Color.Companion.m4115getWhite0d7_KjU(), TypeKt.m8434dpToSp8Feqmps(Dp.m6684constructorimpl(20), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, TextAlign.m6561boximpl(TextAlign.Companion.m6568getCentere0LSkKk()), 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 65008);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }

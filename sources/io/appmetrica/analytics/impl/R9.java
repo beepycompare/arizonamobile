@@ -10,7 +10,7 @@ import java.util.Set;
 public abstract class R9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Set f620a;
+    public static final Set f621a;
     public static final EnumSet b;
     public static final EnumSet c;
     public static final EnumSet d;
@@ -28,7 +28,7 @@ public abstract class R9 {
         EnumC0680wb enumC0680wb4 = EnumC0680wb.EVENT_TYPE_EXCEPTION_UNHANDLED_FROM_FILE;
         EnumC0680wb enumC0680wb5 = EnumC0680wb.EVENT_TYPE_PREV_SESSION_EXCEPTION_UNHANDLED_FROM_FILE;
         EnumC0680wb enumC0680wb6 = EnumC0680wb.EVENT_TYPE_ANR;
-        f620a = CollectionUtils.unmodifiableSetOf(5892, 5896, 5891, 5889, 5890, 5968);
+        f621a = CollectionUtils.unmodifiableSetOf(5892, 5896, 5891, 5889, 5890, 5968);
         EnumC0680wb enumC0680wb7 = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         EnumC0680wb enumC0680wb8 = EnumC0680wb.EVENT_TYPE_PURGE_BUFFER;
         EnumC0680wb enumC0680wb9 = EnumC0680wb.EVENT_TYPE_SEND_REFERRER;

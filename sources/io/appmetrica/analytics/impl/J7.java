@@ -12,7 +12,7 @@ public final class J7 extends MessageNano {
     public static volatile J7[] k;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f500a;
+    public int f501a;
     public double b;
     public double c;
     public int d;
@@ -39,7 +39,7 @@ public final class J7 extends MessageNano {
     }
 
     public final J7 a() {
-        this.f500a = -1;
+        this.f501a = -1;
         this.b = -1.0d;
         this.c = -1.0d;
         this.d = -1;
@@ -56,7 +56,7 @@ public final class J7 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f500a;
+        int i = this.f501a;
         if (i != -1) {
             computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(1, i);
         }
@@ -94,7 +94,7 @@ public final class J7 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f500a;
+        int i = this.f501a;
         if (i != -1) {
             codedOutputByteBufferNano.writeInt32(1, i);
         }
@@ -150,7 +150,7 @@ public final class J7 extends MessageNano {
                     if (readInt32 != -1 && readInt32 != 0 && readInt32 != 1) {
                         break;
                     } else {
-                        this.f500a = readInt32;
+                        this.f501a = readInt32;
                         break;
                     }
                 case 17:

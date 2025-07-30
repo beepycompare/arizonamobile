@@ -8,14 +8,14 @@ public final class C0790x implements Parcelable {
     public static final C0789w CREATOR = new C0789w();
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1317a;
+    public final boolean f1318a;
 
     public C0790x(boolean z) {
-        this.f1317a = z;
+        this.f1318a = z;
     }
 
     public final boolean a() {
-        return this.f1317a;
+        return this.f1318a;
     }
 
     @Override // android.os.Parcelable
@@ -24,12 +24,12 @@ public final class C0790x implements Parcelable {
     }
 
     public final String toString() {
-        return "ParcelableApiCaptorConfig(enabled=" + this.f1317a + ')';
+        return "ParcelableApiCaptorConfig(enabled=" + this.f1318a + ')';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeByte(this.f1317a ? (byte) 1 : (byte) 0);
+        parcel.writeByte(this.f1318a ? (byte) 1 : (byte) 0);
     }
 
     public C0790x(e0 e0Var) {

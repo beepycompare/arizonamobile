@@ -15,7 +15,7 @@ public final class C0243eo extends MessageNano {
     public static volatile C0243eo[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f836a;
+    public byte[] f837a;
     public double b;
     public double c;
     public boolean d;
@@ -36,7 +36,7 @@ public final class C0243eo extends MessageNano {
     }
 
     public final C0243eo a() {
-        this.f836a = WireFormatNano.EMPTY_BYTES;
+        this.f837a = WireFormatNano.EMPTY_BYTES;
         this.b = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
         this.c = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
         this.d = false;
@@ -47,8 +47,8 @@ public final class C0243eo extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!Arrays.equals(this.f836a, WireFormatNano.EMPTY_BYTES)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f836a);
+        if (!Arrays.equals(this.f837a, WireFormatNano.EMPTY_BYTES)) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f837a);
         }
         if (Double.doubleToLongBits(this.b) != Double.doubleToLongBits(FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE)) {
             computeSerializedSize += CodedOutputByteBufferNano.computeDoubleSize(2, this.b);
@@ -62,8 +62,8 @@ public final class C0243eo extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!Arrays.equals(this.f836a, WireFormatNano.EMPTY_BYTES)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f836a);
+        if (!Arrays.equals(this.f837a, WireFormatNano.EMPTY_BYTES)) {
+            codedOutputByteBufferNano.writeBytes(1, this.f837a);
         }
         if (Double.doubleToLongBits(this.b) != Double.doubleToLongBits(FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE)) {
             codedOutputByteBufferNano.writeDouble(2, this.b);
@@ -86,7 +86,7 @@ public final class C0243eo extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f836a = codedInputByteBufferNano.readBytes();
+                this.f837a = codedInputByteBufferNano.readBytes();
             } else if (readTag == 17) {
                 this.b = codedInputByteBufferNano.readDouble();
             } else if (readTag == 25) {

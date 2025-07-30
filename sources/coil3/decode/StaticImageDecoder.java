@@ -24,7 +24,7 @@ import kotlin.math.MathKt;
 import kotlinx.coroutines.sync.Semaphore;
 import kotlinx.coroutines.sync.SemaphoreKt;
 /* compiled from: StaticImageDecoder.kt */
-@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001:\u0001\u0013B+\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\u0010\u0004\u001a\u00060\u0005j\u0002`\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n¢\u0006\u0004\b\u000b\u0010\fJ\u000e\u0010\r\u001a\u00020\u000eH\u0096@¢\u0006\u0002\u0010\u000fJ\f\u0010\u0010\u001a\u00020\u0011*\u00020\u0012H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u0004\u001a\u00060\u0005j\u0002`\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lcoil3/decode/StaticImageDecoder;", "Lcoil3/decode/Decoder;", "source", "Landroid/graphics/ImageDecoder$Source;", "closeable", "Ljava/lang/AutoCloseable;", "Lkotlin/AutoCloseable;", "options", "Lcoil3/request/Options;", "parallelismLock", "Lkotlinx/coroutines/sync/Semaphore;", "<init>", "(Landroid/graphics/ImageDecoder$Source;Ljava/lang/AutoCloseable;Lcoil3/request/Options;Lkotlinx/coroutines/sync/Semaphore;)V", "decode", "Lcoil3/decode/DecodeResult;", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "configureImageDecoderProperties", "", "Landroid/graphics/ImageDecoder;", "Factory", "coil-core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001:\u0001\u0013B+\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\u0010\u0004\u001a\u00060\u0005j\u0002`\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n¢\u0006\u0004\b\u000b\u0010\fJ\u000e\u0010\r\u001a\u00020\u000eH\u0096@¢\u0006\u0002\u0010\u000fJ\f\u0010\u0010\u001a\u00020\u0011*\u00020\u0012H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u0004\u001a\u00060\u0005j\u0002`\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lcoil3/decode/StaticImageDecoder;", "Lcoil3/decode/Decoder;", "source", "Landroid/graphics/ImageDecoder$Source;", "closeable", "Ljava/lang/AutoCloseable;", "Lkotlin/AutoCloseable;", "options", "Lcoil3/request/Options;", "parallelismLock", "Lkotlinx/coroutines/sync/Semaphore;", "<init>", "(Landroid/graphics/ImageDecoder$Source;Ljava/lang/AutoCloseable;Lcoil3/request/Options;Lkotlinx/coroutines/sync/Semaphore;)V", "decode", "Lcoil3/decode/DecodeResult;", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "configureImageDecoderProperties", "", "Landroid/graphics/ImageDecoder;", "Factory", "coil-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class StaticImageDecoder implements Decoder {
     private final AutoCloseable closeable;
@@ -44,8 +44,8 @@ public final class StaticImageDecoder implements Decoder {
         this.parallelismLock = semaphore;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0039  */
     @Override // coil3.decode.Decoder
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -66,6 +66,7 @@ public final class StaticImageDecoder implements Decoder {
                         ResultKt.throwOnFailure(obj);
                         Semaphore semaphore2 = this.parallelismLock;
                         staticImageDecoder$decode$1.L$0 = semaphore2;
+                        staticImageDecoder$decode$1.I$0 = 0;
                         staticImageDecoder$decode$1.label = 1;
                         if (semaphore2.acquire(staticImageDecoder$decode$1) == coroutine_suspended) {
                             return coroutine_suspended;
@@ -74,6 +75,7 @@ public final class StaticImageDecoder implements Decoder {
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
+                        int i2 = staticImageDecoder$decode$1.I$0;
                         semaphore = (Semaphore) staticImageDecoder$decode$1.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
@@ -101,12 +103,12 @@ public final class StaticImageDecoder implements Decoder {
                             options2 = StaticImageDecoder.this.options;
                             Scale scale = options2.getScale();
                             options3 = StaticImageDecoder.this.options;
-                            long m7772computeDstSizesEdh43o = DecodeUtils.m7772computeDstSizesEdh43o(width, height, size2, scale, ImageRequestsKt.getMaxBitmapSize(options3));
-                            int m7830getFirstimpl = IntPair.m7830getFirstimpl(m7772computeDstSizesEdh43o);
-                            int m7831getSecondimpl = IntPair.m7831getSecondimpl(m7772computeDstSizesEdh43o);
-                            if (width > 0 && height > 0 && (width != m7830getFirstimpl || height != m7831getSecondimpl)) {
+                            long m7773computeDstSizesEdh43o = DecodeUtils.m7773computeDstSizesEdh43o(width, height, size2, scale, ImageRequestsKt.getMaxBitmapSize(options3));
+                            int m7831getFirstimpl = IntPair.m7831getFirstimpl(m7773computeDstSizesEdh43o);
+                            int m7832getSecondimpl = IntPair.m7832getSecondimpl(m7773computeDstSizesEdh43o);
+                            if (width > 0 && height > 0 && (width != m7831getFirstimpl || height != m7832getSecondimpl)) {
                                 options4 = StaticImageDecoder.this.options;
-                                double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, height, m7830getFirstimpl, m7831getSecondimpl, options4.getScale());
+                                double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, height, m7831getFirstimpl, m7832getSecondimpl, options4.getScale());
                                 booleanRef.element = computeSizeMultiplier < 1.0d;
                                 if (!booleanRef.element) {
                                     options5 = StaticImageDecoder.this.options;
@@ -144,12 +146,12 @@ public final class StaticImageDecoder implements Decoder {
                     options2 = StaticImageDecoder.this.options;
                     Scale scale = options2.getScale();
                     options3 = StaticImageDecoder.this.options;
-                    long m7772computeDstSizesEdh43o = DecodeUtils.m7772computeDstSizesEdh43o(width, height, size2, scale, ImageRequestsKt.getMaxBitmapSize(options3));
-                    int m7830getFirstimpl = IntPair.m7830getFirstimpl(m7772computeDstSizesEdh43o);
-                    int m7831getSecondimpl = IntPair.m7831getSecondimpl(m7772computeDstSizesEdh43o);
-                    if (width > 0 && height > 0 && (width != m7830getFirstimpl || height != m7831getSecondimpl)) {
+                    long m7773computeDstSizesEdh43o = DecodeUtils.m7773computeDstSizesEdh43o(width, height, size2, scale, ImageRequestsKt.getMaxBitmapSize(options3));
+                    int m7831getFirstimpl = IntPair.m7831getFirstimpl(m7773computeDstSizesEdh43o);
+                    int m7832getSecondimpl = IntPair.m7832getSecondimpl(m7773computeDstSizesEdh43o);
+                    if (width > 0 && height > 0 && (width != m7831getFirstimpl || height != m7832getSecondimpl)) {
                         options4 = StaticImageDecoder.this.options;
-                        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, height, m7830getFirstimpl, m7831getSecondimpl, options4.getScale());
+                        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, height, m7831getFirstimpl, m7832getSecondimpl, options4.getScale());
                         booleanRef2.element = computeSizeMultiplier < 1.0d;
                         if (!booleanRef2.element) {
                             options5 = StaticImageDecoder.this.options;
@@ -191,7 +193,7 @@ public final class StaticImageDecoder implements Decoder {
     }
 
     /* compiled from: StaticImageDecoder.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\u0018\u00002\u00020\u0001B\u0011\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\"\u0010\u0006\u001a\u0004\u0018\u00010\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0016J\u0010\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\n\u001a\u00020\u000bH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lcoil3/decode/StaticImageDecoder$Factory;", "Lcoil3/decode/Decoder$Factory;", "parallelismLock", "Lkotlinx/coroutines/sync/Semaphore;", "<init>", "(Lkotlinx/coroutines/sync/Semaphore;)V", "create", "Lcoil3/decode/Decoder;", "result", "Lcoil3/fetch/SourceFetchResult;", "options", "Lcoil3/request/Options;", "imageLoader", "Lcoil3/ImageLoader;", "isApplicable", "", "coil-core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\u0018\u00002\u00020\u0001B\u0011\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\"\u0010\u0006\u001a\u0004\u0018\u00010\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0016J\u0010\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\n\u001a\u00020\u000bH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lcoil3/decode/StaticImageDecoder$Factory;", "Lcoil3/decode/Decoder$Factory;", "parallelismLock", "Lkotlinx/coroutines/sync/Semaphore;", "<init>", "(Lkotlinx/coroutines/sync/Semaphore;)V", "create", "Lcoil3/decode/Decoder;", "result", "Lcoil3/fetch/SourceFetchResult;", "options", "Lcoil3/request/Options;", "imageLoader", "Lcoil3/ImageLoader;", "isApplicable", "", "coil-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Factory implements Decoder.Factory {
         private final Semaphore parallelismLock;

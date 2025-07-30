@@ -7,14 +7,18 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RealImageLoader.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "coil3.RealImageLoader", f = "RealImageLoader.kt", i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2}, l = {117, TsExtractor.TS_STREAM_TYPE_AC3, 133}, m = "execute", n = {"requestDelegate", "request", "eventListener", "requestDelegate", "request", "eventListener", "cachedPlaceholder", "requestDelegate", "request", "eventListener"}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "coil3.RealImageLoader", f = "RealImageLoader.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {117, TsExtractor.TS_STREAM_TYPE_AC3, 133}, m = "execute", n = {"initialRequest", "requestDelegate", "request", "eventListener", "type", "initialRequest", "requestDelegate", "request", "eventListener", "cachedPlaceholder", "sizeResolver", "type", "initialRequest", "requestDelegate", "request", "eventListener", "cachedPlaceholder", "sizeResolver", "size", "type"}, s = {"L$0", "L$1", "L$2", "L$3", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0"})
 /* loaded from: classes3.dex */
 public final class RealImageLoader$execute$3 extends ContinuationImpl {
+    int I$0;
     Object L$0;
     Object L$1;
     Object L$2;
     Object L$3;
+    Object L$4;
+    Object L$5;
+    Object L$6;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ RealImageLoader this$0;

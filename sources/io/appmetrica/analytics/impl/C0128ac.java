@@ -7,14 +7,14 @@ import java.util.Iterator;
 public final class C0128ac {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0145b3 f766a;
+    public final C0145b3 f767a;
     public final C0422m2 b;
     public final ArrayList c;
 
     public C0128ac(C0145b3 c0145b3, C0422m2 c0422m2) {
         ArrayList arrayList = new ArrayList();
         this.c = arrayList;
-        this.f766a = c0145b3;
+        this.f767a = c0145b3;
         arrayList.add(c0145b3);
         this.b = c0422m2;
         arrayList.add(c0422m2);

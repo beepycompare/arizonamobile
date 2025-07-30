@@ -24,13 +24,13 @@ public final class C0132ag implements qo {
                 if (decode != null && decode.length != 0) {
                     ag = new Ag(decode);
                     C0336ig c0336ig = new C0336ig();
-                    str = ag.f339a;
+                    str = ag.f340a;
                     if (str != null) {
                         bytes = new byte[0];
                     } else {
                         bytes = str.getBytes();
                     }
-                    c0336ig.f901a = bytes;
+                    c0336ig.f902a = bytes;
                     c0336ig.c = ag.b;
                     c0336ig.b = ag.c;
                     ordinal = ag.d.ordinal();
@@ -46,10 +46,10 @@ public final class C0132ag implements qo {
                 }
                 ag = null;
                 C0336ig c0336ig2 = new C0336ig();
-                str = ag.f339a;
+                str = ag.f340a;
                 if (str != null) {
                 }
-                c0336ig2.f901a = bytes;
+                c0336ig2.f902a = bytes;
                 c0336ig2.c = ag.b;
                 c0336ig2.b = ag.c;
                 ordinal = ag.d.ordinal();

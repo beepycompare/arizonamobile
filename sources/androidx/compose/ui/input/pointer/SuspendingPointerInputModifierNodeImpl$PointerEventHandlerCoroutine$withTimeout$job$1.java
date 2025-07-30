@@ -67,7 +67,7 @@ public final class SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCor
                 cancellableContinuation = ((SuspendingPointerInputModifierNodeImpl.PointerEventHandlerCoroutine) this.this$0).pointerAwaiter;
                 if (cancellableContinuation != null) {
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuation.resumeWith(Result.m8474constructorimpl(ResultKt.createFailure(new PointerEventTimeoutCancellationException(this.$timeMillis))));
+                    cancellableContinuation.resumeWith(Result.m8478constructorimpl(ResultKt.createFailure(new PointerEventTimeoutCancellationException(this.$timeMillis))));
                 }
                 return Unit.INSTANCE;
             }

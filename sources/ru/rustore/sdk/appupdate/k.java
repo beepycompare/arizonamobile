@@ -11,20 +11,20 @@ import ru.rustore.sdk.core.util.CancellableContinuationExtKt;
 public final class k extends Lambda implements Function1<AppUpdateInfo, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ CancellableContinuation<AppUpdateInfo> f1358a;
+    public final /* synthetic */ CancellableContinuation<AppUpdateInfo> f1359a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
     public k(CancellableContinuation<? super AppUpdateInfo> cancellableContinuation) {
         super(1);
-        this.f1358a = cancellableContinuation;
+        this.f1359a = cancellableContinuation;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final Unit invoke(AppUpdateInfo appUpdateInfo) {
         AppUpdateInfo appUpdateInfo2 = appUpdateInfo;
         Intrinsics.checkNotNullParameter(appUpdateInfo2, "appUpdateInfo");
-        CancellableContinuationExtKt.resumeIfActive(this.f1358a, appUpdateInfo2);
+        CancellableContinuationExtKt.resumeIfActive(this.f1359a, appUpdateInfo2);
         return Unit.INSTANCE;
     }
 }

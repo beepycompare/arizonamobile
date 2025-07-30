@@ -7,15 +7,15 @@ import java.util.HashMap;
 public final class C0321i0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f892a = new HashMap();
+    public final HashMap f893a = new HashMap();
 
     public final synchronized C0296h0 a(C0400l5 c0400l5, PublicLogger publicLogger, C0385kf c0385kf) {
         C0296h0 c0296h0;
-        c0296h0 = (C0296h0) this.f892a.get(c0400l5.toString());
+        c0296h0 = (C0296h0) this.f893a.get(c0400l5.toString());
         if (c0296h0 == null) {
             C0271g0 d = c0385kf.d();
-            c0296h0 = new C0296h0(d.f855a, d.b, new C0565rl(publicLogger, "[App Environment]"));
-            this.f892a.put(c0400l5.toString(), c0296h0);
+            c0296h0 = new C0296h0(d.f856a, d.b, new C0565rl(publicLogger, "[App Environment]"));
+            this.f893a.put(c0400l5.toString(), c0296h0);
         }
         return c0296h0;
     }

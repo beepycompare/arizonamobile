@@ -5,22 +5,22 @@ import io.appmetrica.analytics.ValidationException;
 public class Bn implements po {
 
     /* renamed from: a  reason: collision with root package name */
-    public final po f364a;
+    public final po f365a;
 
     public Bn(po poVar) {
-        this.f364a = poVar;
+        this.f365a = poVar;
     }
 
     @Override // io.appmetrica.analytics.impl.po
     public final no a(Object obj) {
-        no a2 = this.f364a.a(obj);
-        if (a2.f975a) {
+        no a2 = this.f365a.a(obj);
+        if (a2.f976a) {
             return a2;
         }
         throw new ValidationException(a2.b);
     }
 
     public final po a() {
-        return this.f364a;
+        return this.f365a;
     }
 }

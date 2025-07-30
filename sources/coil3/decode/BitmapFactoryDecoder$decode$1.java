@@ -6,10 +6,12 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BitmapFactoryDecoder.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "coil3.decode.BitmapFactoryDecoder", f = "BitmapFactoryDecoder.kt", i = {0, 1}, l = {212, 40}, m = "decode", n = {"$this$withPermit$iv", "$this$withPermit$iv"}, s = {"L$0", "L$0"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "coil3.decode.BitmapFactoryDecoder", f = "BitmapFactoryDecoder.kt", i = {0, 0, 1, 1, 1}, l = {212, 40}, m = "decode", n = {"$this$withPermit$iv", "$i$f$withPermit", "$this$withPermit$iv", "$i$f$withPermit", "$i$a$-withPermit-BitmapFactoryDecoder$decode$2"}, s = {"L$0", "I$0", "L$0", "I$0", "I$1"})
 /* loaded from: classes3.dex */
 public final class BitmapFactoryDecoder$decode$1 extends ContinuationImpl {
+    int I$0;
+    int I$1;
     Object L$0;
     int label;
     /* synthetic */ Object result;

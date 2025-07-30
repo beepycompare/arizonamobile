@@ -6,10 +6,10 @@ public final class Eo extends Location {
     public static final /* synthetic */ int b = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f423a;
+    public final String f424a;
 
     public Eo(Location location, String str) {
         super(location);
-        this.f423a = str;
+        this.f424a = str;
     }
 }

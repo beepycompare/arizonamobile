@@ -23,12 +23,12 @@ public final class C0623u4 {
     public InterfaceC0200d6 c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0598t4 f1076a = new C0598t4();
+    public final C0598t4 f1077a = new C0598t4();
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
     public final CopyOnWriteArrayList d = new CopyOnWriteArrayList();
 
     public static void a(String str, String str2, Throwable th) {
-        C0188ck c0188ck = Bj.f361a;
+        C0188ck c0188ck = Bj.f362a;
         Map mapOf = MapsKt.mapOf(TuplesKt.to(str, MapsKt.mapOf(TuplesKt.to(str2, ExceptionsKt.stackTraceToString(th)))));
         c0188ck.getClass();
         c0188ck.a(new C0162bk("client_module_errors", mapOf));
@@ -40,7 +40,7 @@ public final class C0623u4 {
         if (interfaceC0200d6 == null || (c0277g6 = ((C0275g4) interfaceC0200d6).b) == null) {
             return null;
         }
-        return c0277g6.f860a;
+        return c0277g6.f861a;
     }
 
     public final void c() {
@@ -114,7 +114,7 @@ public final class C0623u4 {
                 ServiceConfigExtensionConfiguration serviceConfigExtensionConfiguration = moduleClientEntryPoint.getServiceConfigExtensionConfiguration();
                 if (serviceConfigExtensionConfiguration != null) {
                     ServiceConfigUpdateListener serviceConfigUpdateListener = serviceConfigExtensionConfiguration.getServiceConfigUpdateListener();
-                    C0598t4 c0598t4 = this.f1076a;
+                    C0598t4 c0598t4 = this.f1077a;
                     String identifier = moduleClientEntryPoint.getIdentifier();
                     c0598t4.getClass();
                     Bundle bundle2 = bundle.getBundle(identifier);

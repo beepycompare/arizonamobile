@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope;
 import ru.mrlargha.arizonaui.ghetto.data.CaptureCount;
 /* compiled from: GhettoScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lru/mrlargha/arizonaui/ghetto/data/CaptureCount;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.arizonaui.ghetto.GhettoScreen$requestCapturesCount$1$contextList$1", f = "GhettoScreen.kt", i = {}, l = {347}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "ru.mrlargha.arizonaui.ghetto.GhettoScreen$requestCapturesCount$1$contextList$1", f = "GhettoScreen.kt", i = {}, l = {345}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes5.dex */
 final class GhettoScreen$requestCapturesCount$1$contextList$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super CaptureCount>, Object> {
     final /* synthetic */ int $fraction;

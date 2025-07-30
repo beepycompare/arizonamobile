@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.firebase.sessions.settings.RemoteSettings;
+import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumSet;
@@ -75,7 +76,6 @@ import ru.mrlargha.commonui.elements.inventory.presentation.dialog.SelectorDialo
 import ru.mrlargha.commonui.utils.ArizonaBlockType;
 import ru.mrlargha.commonui.utils.ArzInventoryButtonTypes;
 import ru.mrlargha.commonui.utils.ConstantsKt;
-import ru.mrlargha.commonui.utils.FirebaseConfigHelper;
 import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.ItemTypes;
 import ru.mrlargha.commonui.utils.ItemsInfo;
@@ -1514,25 +1514,29 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     private final void setVisibilityBtnGuards() {
-        if (this.guardInfoList.get(0).getSkin() == null) {
+        GuardInfo guardInfo = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, 0);
+        if ((guardInfo != null ? guardInfo.getSkin() : null) == null) {
             this.binding.layoutGuards.btnGuardTypeOne.setEnabled(false);
             this.binding.layoutGuards.btnGuardTypeOne.setBackgroundResource(R.drawable.btn_guard_1_disabled);
         } else {
             this.binding.layoutGuards.btnGuardTypeOne.setEnabled(true);
         }
-        if (this.guardInfoList.get(1).getSkin() == null) {
+        GuardInfo guardInfo2 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, 1);
+        if ((guardInfo2 != null ? guardInfo2.getSkin() : null) == null) {
             this.binding.layoutGuards.btnGuardTypeTwo.setEnabled(false);
             this.binding.layoutGuards.btnGuardTypeTwo.setBackgroundResource(R.drawable.btn_guard_2_disabled);
         } else {
             this.binding.layoutGuards.btnGuardTypeTwo.setEnabled(true);
         }
-        if (this.guardInfoList.get(2).getSkin() == null) {
+        GuardInfo guardInfo3 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, 2);
+        if ((guardInfo3 != null ? guardInfo3.getSkin() : null) == null) {
             this.binding.layoutGuards.btnGuardTypeThree.setEnabled(false);
             this.binding.layoutGuards.btnGuardTypeThree.setBackgroundResource(R.drawable.btn_guard_3_disabled);
         } else {
             this.binding.layoutGuards.btnGuardTypeThree.setEnabled(true);
         }
-        if (this.guardInfoList.get(3).getSkin() == null) {
+        GuardInfo guardInfo4 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, 3);
+        if ((guardInfo4 != null ? guardInfo4.getSkin() : null) == null) {
             this.binding.layoutGuards.btnGuardTypeFour.setEnabled(false);
             this.binding.layoutGuards.btnGuardTypeFour.setBackgroundResource(R.drawable.btn_guard_4_disabled);
             return;
@@ -1604,18 +1608,21 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     private final void observeGuardAccessories() {
-        Integer spawned = this.guardInfoList.get(this.guardNumber).getSpawned();
-        if (spawned != null && spawned.intValue() == 0) {
-            List<InventoryItem> accessoriesList = this.guardInfoList.get(this.guardNumber).getAccessoriesList();
-            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(accessoriesList, 10));
-            for (InventoryItem inventoryItem : accessoriesList) {
-                arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, 1, null, null, null, null, 0, null, null, false, false, 2095103, null));
+        GuardInfo guardInfo = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
+        if (guardInfo != null) {
+            Integer spawned = guardInfo.getSpawned();
+            if (spawned != null && spawned.intValue() == 0) {
+                List<InventoryItem> accessoriesList = guardInfo.getAccessoriesList();
+                ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(accessoriesList, 10));
+                for (InventoryItem inventoryItem : accessoriesList) {
+                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, 1, null, null, null, null, 0, null, null, false, false, 2095103, null));
+                }
+                this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(arrayList));
+            } else {
+                this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(guardInfo.getAccessoriesList()));
             }
-            this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(arrayList));
-        } else {
-            this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(this.guardInfoList.get(this.guardNumber).getAccessoriesList()));
+            this.guardInventoryAdapter.submitList(CollectionsKt.toList(guardInfo.getInventoryList()));
         }
-        this.guardInventoryAdapter.submitList(CollectionsKt.toList(this.guardInfoList.get(this.guardNumber).getInventoryList()));
     }
 
     private final void btnAccessoriesPressed() {
@@ -1781,16 +1788,16 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
                         new Handler().postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                InventoryScreen.onBackendMessage$lambda$72(InventoryScreen.this);
+                                InventoryScreen.onBackendMessage$lambda$73(InventoryScreen.this);
                             }
                         }, 1000L);
                     }
                     CollectionsKt.removeAll((List) this.mainInventoryList, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda11
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj9) {
-                            boolean onBackendMessage$lambda$73;
-                            onBackendMessage$lambda$73 = InventoryScreen.onBackendMessage$lambda$73((InventoryItem) obj9);
-                            return Boolean.valueOf(onBackendMessage$lambda$73);
+                            boolean onBackendMessage$lambda$74;
+                            onBackendMessage$lambda$74 = InventoryScreen.onBackendMessage$lambda$74((InventoryItem) obj9);
+                            return Boolean.valueOf(onBackendMessage$lambda$74);
                         }
                     });
                     CollectionsKt.addAll(this.mainInventoryList, editResponseInfo(inventoryResponse));
@@ -2805,14 +2812,14 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackendMessage$lambda$72(InventoryScreen inventoryScreen) {
+    public static final void onBackendMessage$lambda$73(InventoryScreen inventoryScreen) {
         inventoryScreen.addLockedItems();
         inventoryScreen.mainInventoryAdapter.notifyDataSetChanged();
         inventoryScreen.addInfoToDatabase(inventoryScreen.mainInventoryList);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean onBackendMessage$lambda$73(InventoryItem it) {
+    public static final boolean onBackendMessage$lambda$74(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.isLocked();
     }

@@ -8,13 +8,17 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NetworkFetcher.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "coil3.network.NetworkFetcher", f = "NetworkFetcher.kt", i = {0, 0, 1, 1, 1}, l = {TsExtractor.TS_STREAM_TYPE_DTS, BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER}, m = "writeToDiskCache", n = {"snapshot", "networkResponse", "networkResponse", "modifiedNetworkResponse", "editor"}, s = {"L$0", "L$1", "L$0", "L$1", "L$2"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "coil3.network.NetworkFetcher", f = "NetworkFetcher.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {TsExtractor.TS_STREAM_TYPE_DTS, BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER}, m = "writeToDiskCache", n = {"snapshot", "cacheResponse", "networkRequest", "networkResponse", "snapshot", "cacheResponse", "networkRequest", "networkResponse", "writeResult", "modifiedNetworkResponse", "editor"}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"})
 /* loaded from: classes3.dex */
 public final class NetworkFetcher$writeToDiskCache$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;
     Object L$2;
+    Object L$3;
+    Object L$4;
+    Object L$5;
+    Object L$6;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ NetworkFetcher this$0;

@@ -9,11 +9,11 @@ public final class L4 extends M4 {
 
     public final void a(EnumC0680wb enumC0680wb, List<AbstractC0236eh> list) {
         if (!R9.h.contains(enumC0680wb)) {
-            list.add(this.f542a.s);
+            list.add(this.f543a.s);
         }
         if (R9.b.contains(enumC0680wb)) {
             return;
         }
-        list.add(this.f542a.c);
+        list.add(this.f543a.c);
     }
 }

@@ -9,13 +9,13 @@ import kotlin.collections.CollectionsKt;
 public final class X7 implements ClientComponentsInitializer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f714a = CollectionsKt.listOf((Object[]) new String[]{"io.appmetrica.analytics.adrevenue.admob.v23.internal.AdMobClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.applovin.v12.internal.AppLovinClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.fyber.v3.internal.FyberClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.ironsource.v7.internal.IronSourceClientModuleEntryPoint", "io.appmetrica.analytics.apphud.internal.ApphudClientModuleEntryPoint", "io.appmetrica.analytics.screenshot.internal.ScreenshotClientModuleEntryPoint", "io.appmetrica.analytics.reporterextension.internal.ReporterExtensionClientModuleEntryPoint"});
+    public final List f715a = CollectionsKt.listOf((Object[]) new String[]{"io.appmetrica.analytics.adrevenue.admob.v23.internal.AdMobClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.applovin.v12.internal.AppLovinClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.fyber.v3.internal.FyberClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.ironsource.v7.internal.IronSourceClientModuleEntryPoint", "io.appmetrica.analytics.apphud.internal.ApphudClientModuleEntryPoint", "io.appmetrica.analytics.screenshot.internal.ScreenshotClientModuleEntryPoint", "io.appmetrica.analytics.reporterextension.internal.ReporterExtensionClientModuleEntryPoint"});
 
     @Override // io.appmetrica.analytics.coreapi.internal.clientcomponents.ClientComponentsInitializer
     public final void onCreate() {
-        if (C0698x4.l().f1129a.c()) {
+        if (C0698x4.l().f1130a.c()) {
             C0458nd c0458nd = C0698x4.l().m;
-            List<String> list = this.f714a;
+            List<String> list = this.f715a;
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
             for (String str : list) {
                 arrayList.add(new M5(str));
@@ -25,7 +25,7 @@ public final class X7 implements ClientComponentsInitializer {
                 M5[] m5Arr = (M5[]) array;
                 InterfaceC0433md[] interfaceC0433mdArr = (InterfaceC0433md[]) Arrays.copyOf(m5Arr, m5Arr.length);
                 synchronized (c0458nd) {
-                    CollectionsKt.addAll(c0458nd.f968a, interfaceC0433mdArr);
+                    CollectionsKt.addAll(c0458nd.f969a, interfaceC0433mdArr);
                 }
                 return;
             }

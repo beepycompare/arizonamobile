@@ -7,18 +7,18 @@ import kotlin.text.Charsets;
 public class N2 implements ExternalAttribution {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V9 f557a;
+    public final V9 f558a;
 
     public N2(V9 v9) {
-        this.f557a = v9;
+        this.f558a = v9;
     }
 
     @Override // io.appmetrica.analytics.ExternalAttribution
     public final byte[] toBytes() {
-        return MessageNano.toByteArray(this.f557a);
+        return MessageNano.toByteArray(this.f558a);
     }
 
     public final String toString() {
-        return "ExternalAttribution(type=`" + AbstractC0255fa.a(this.f557a.f683a) + "`value=`" + new String(this.f557a.b, Charsets.UTF_8) + "`)";
+        return "ExternalAttribution(type=`" + AbstractC0255fa.a(this.f558a.f684a) + "`value=`" + new String(this.f558a.b, Charsets.UTF_8) + "`)";
     }
 }

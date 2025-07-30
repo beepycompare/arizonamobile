@@ -405,7 +405,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(this, str + " v16.4.2 release_web", 1).show();
+            Toast.makeText(this, str + " v16.4.3 release_web", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -494,7 +494,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$9(final MainEntrench mainEntrench, final MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C245@9341L269,245@9322L288:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C245@9354L269,245@9335L288:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -518,7 +518,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$9$lambda$8(MainEntrench mainEntrench, MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C246@9359L237:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C246@9372L237:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -553,7 +553,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, -384672921, "C89@4556L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C247@9388L8,251@9513L43,249@9418L160:MainEntrench.kt#5ji0rp");
+            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C247@9401L8,251@9526L43,249@9431L160:MainEntrench.kt#5ji0rp");
             mainEntrench.GLView(composer, 0);
             MainRouteKt.MainRoute(mainComponent, AndroidWindowSizeClass_androidKt.calculateWindowSizeClass(mainEntrench, composer, 0), composer, MainComponent.$stable);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -580,7 +580,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     /* JADX WARN: Type inference failed for: r0v7 */
     public final void GLView(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(163249873);
-        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)273@10018L7,274@10075L7,276@10105L48,278@10196L464,278@10163L497,293@10705L10,292@10670L150:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)273@10031L7,274@10088L7,276@10118L48,278@10209L464,278@10176L497,293@10718L10,292@10683L150:MainEntrench.kt#5ji0rp");
         int i2 = i & 1;
         if (!startRestartGroup.shouldExecute(i2 != 0, i2)) {
             startRestartGroup.skipToGroupEnd();

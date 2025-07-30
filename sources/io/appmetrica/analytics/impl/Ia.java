@@ -15,7 +15,7 @@ public final class Ia {
     public volatile C0306ha C;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f489a;
+    public final Context f490a;
     public volatile C0735yg b;
     public volatile Z6 c;
     public volatile C0222e3 e;
@@ -47,7 +47,7 @@ public final class Ia {
     public final C0564rk d = new C0564rk();
 
     public Ia(Context context) {
-        this.f489a = context;
+        this.f490a = context;
     }
 
     public static void a(Context context) {
@@ -71,7 +71,7 @@ public final class Ia {
             synchronized (this) {
                 c0418ln = this.x;
                 if (c0418ln == null) {
-                    c0418ln = new C0418ln(this.f489a);
+                    c0418ln = new C0418ln(this.f490a);
                     this.x = c0418ln;
                 }
             }
@@ -82,7 +82,7 @@ public final class Ia {
 
     public final synchronized xo B() {
         if (this.m == null) {
-            this.m = new xo(this.f489a);
+            this.m = new xo(this.f490a);
         }
         return this.m;
     }
@@ -92,10 +92,10 @@ public final class Ia {
             synchronized (this) {
                 if (this.j == null) {
                     Rm a2 = Qm.a(C0559rf.class);
-                    Context context = this.f489a;
+                    Context context = this.f490a;
                     ProtobufStateStorage<Object> a3 = a2.a(context, a2.c(context));
                     C0559rf c0559rf = (C0559rf) a3.read();
-                    this.j = new Hf(this.f489a, a3, new C0734yf(), new C0510pf(c0559rf), new Gf(), new C0709xf(this.f489a), new Cf(j().x()), new C0584sf(), c0559rf, "[PreloadInfoStorage]");
+                    this.j = new Hf(this.f490a, a3, new C0734yf(), new C0510pf(c0559rf), new Gf(), new C0709xf(this.f490a), new Cf(j().x()), new C0584sf(), c0559rf, "[PreloadInfoStorage]");
                 }
             }
         }
@@ -108,7 +108,7 @@ public final class Ia {
             synchronized (this) {
                 t = this.g;
                 if (t == null) {
-                    t = new T(this.f489a, this.d.a(), this.u.b());
+                    t = new T(this.f490a, this.d.a(), this.u.b());
                     this.u.a(t);
                     this.g = t;
                 }
@@ -125,7 +125,7 @@ public final class Ia {
             synchronized (this) {
                 c0273g2 = this.h;
                 if (c0273g2 == null) {
-                    c0273g2 = new C0273g2(this.f489a, AbstractC0298h2.a());
+                    c0273g2 = new C0273g2(this.f490a, AbstractC0298h2.a());
                     this.h = c0273g2;
                 }
             }
@@ -143,9 +143,9 @@ public final class Ia {
             synchronized (this) {
                 if (this.k == null) {
                     Rm a2 = Qm.a(O3.class);
-                    Context context = this.f489a;
+                    Context context = this.f490a;
                     ProtobufStateStorage<Object> a3 = a2.a(context, a2.c(context));
-                    this.k = new V3(this.f489a, a3, new W3(), new J3(), new Z3(), new C0290gj(this.f489a), new X3(x()), new K3(), (O3) a3.read(), "[ClidsInfoStorage]");
+                    this.k = new V3(this.f490a, a3, new W3(), new J3(), new Z3(), new C0290gj(this.f490a), new X3(x()), new K3(), (O3) a3.read(), "[ClidsInfoStorage]");
                 }
             }
         }
@@ -153,7 +153,7 @@ public final class Ia {
     }
 
     public final Context f() {
-        return this.f489a;
+        return this.f490a;
     }
 
     public final Z6 g() {
@@ -174,7 +174,7 @@ public final class Ia {
             synchronized (this) {
                 c0306ha = this.C;
                 if (c0306ha == null) {
-                    c0306ha = new C0306ha(this.f489a);
+                    c0306ha = new C0306ha(this.f490a);
                     this.C = c0306ha;
                 }
             }
@@ -206,7 +206,7 @@ public final class Ia {
             synchronized (this) {
                 c0128ac = this.o;
                 if (c0128ac == null) {
-                    c0128ac = new C0128ac(new C0145b3(this.f489a, this.d.a()), new C0422m2());
+                    c0128ac = new C0128ac(new C0145b3(this.f490a, this.d.a()), new C0422m2());
                     this.o = c0128ac;
                 }
             }
@@ -222,7 +222,7 @@ public final class Ia {
             synchronized (this) {
                 interfaceC0257fc = this.w;
                 if (interfaceC0257fc == null) {
-                    Context context = this.f489a;
+                    Context context = this.f490a;
                     ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
                     LocationClient locationClient = (LocationClient) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor("io.appmetrica.analytics.location.internal.LocationClientImpl", LocationClient.class);
                     if (locationClient == null) {
@@ -269,7 +269,7 @@ public final class Ia {
             synchronized (this) {
                 kd = this.z;
                 if (kd == null) {
-                    kd = new Kd(this.f489a, new ko());
+                    kd = new Kd(this.f490a, new ko());
                     this.z = kd;
                 }
             }
@@ -307,7 +307,7 @@ public final class Ia {
         if (this.b == null) {
             synchronized (this) {
                 if (this.b == null) {
-                    this.b = new C0735yg(this.f489a, F.B().c);
+                    this.b = new C0735yg(this.f490a, F.B().c);
                 }
             }
         }
@@ -321,7 +321,7 @@ public final class Ia {
             synchronized (this) {
                 c0563rj = this.n;
                 if (c0563rj == null) {
-                    c0563rj = new C0563rj(this.f489a);
+                    c0563rj = new C0563rj(this.f490a);
                     this.n = c0563rj;
                 }
             }
@@ -342,7 +342,7 @@ public final class Ia {
         if (this.l == null) {
             synchronized (this) {
                 if (this.l == null) {
-                    this.l = new C0460nf(C0626u7.a(this.f489a).c());
+                    this.l = new C0460nf(C0626u7.a(this.f490a).c());
                 }
             }
         }
@@ -351,7 +351,7 @@ public final class Ia {
 
     public final synchronized X2 y() {
         if (this.p == null) {
-            Al al = new Al(this.f489a);
+            Al al = new Al(this.f490a);
             this.p = al;
             this.u.a(al);
         }

@@ -14,7 +14,7 @@ public final class C0517pm extends MessageNano {
     public static volatile C0517pm[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f1007a;
+    public long f1008a;
 
     public C0517pm() {
         a();
@@ -32,7 +32,7 @@ public final class C0517pm extends MessageNano {
     }
 
     public final C0517pm a() {
-        this.f1007a = Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+        this.f1008a = Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
         this.cachedSize = -1;
         return this;
     }
@@ -40,13 +40,13 @@ public final class C0517pm extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        long j = this.f1007a;
+        long j = this.f1008a;
         return j != Renderer.DEFAULT_DURATION_TO_PROGRESS_US ? CodedOutputByteBufferNano.computeInt64Size(1, j) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        long j = this.f1007a;
+        long j = this.f1008a;
         if (j != Renderer.DEFAULT_DURATION_TO_PROGRESS_US) {
             codedOutputByteBufferNano.writeInt64(1, j);
         }
@@ -65,7 +65,7 @@ public final class C0517pm extends MessageNano {
                     break;
                 }
             } else {
-                this.f1007a = codedInputByteBufferNano.readInt64();
+                this.f1008a = codedInputByteBufferNano.readInt64();
             }
         }
         return this;

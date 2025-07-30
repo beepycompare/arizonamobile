@@ -7,18 +7,18 @@ import java.io.File;
 public final class RunnableC0312hg implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f885a;
+    public final File f886a;
     public final Consumer b;
 
     public RunnableC0312hg(File file, C6 c6) {
-        this.f885a = file;
+        this.f886a = file;
         this.b = c6;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         File[] listFiles;
-        if (!this.f885a.exists() || !this.f885a.isDirectory() || (listFiles = this.f885a.listFiles()) == null || listFiles.length == 0) {
+        if (!this.f886a.exists() || !this.f886a.isDirectory() || (listFiles = this.f886a.listFiles()) == null || listFiles.length == 0) {
             return;
         }
         for (File file : listFiles) {

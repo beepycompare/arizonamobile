@@ -11,7 +11,7 @@ import java.util.Map;
 public final class C0293gm implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Me f871a = new Me();
+    public final Me f872a = new Me();
     public final Aa b = new Aa();
     public final Im c = new Im();
     public final C0621u2 d = new C0621u2();
@@ -28,9 +28,9 @@ public final class C0293gm implements ProtobufConverter {
         C0716xm c0716xm = new C0716xm();
         c0716xm.s = c0367jm.u;
         c0716xm.t = c0367jm.v;
-        String str = c0367jm.f917a;
+        String str = c0367jm.f918a;
         if (str != null) {
-            c0716xm.f1141a = str;
+            c0716xm.f1142a = str;
         }
         List list = c0367jm.f;
         if (list != null) {
@@ -54,7 +54,7 @@ public final class C0293gm implements ProtobufConverter {
         }
         Le le = c0367jm.s;
         if (le != null) {
-            c0716xm.v = this.f871a.fromModel(le);
+            c0716xm.v = this.f872a.fromModel(le);
         }
         String str2 = c0367jm.j;
         if (str2 != null) {
@@ -95,7 +95,7 @@ public final class C0293gm implements ProtobufConverter {
         if (hm != null) {
             this.c.getClass();
             C0691wm c0691wm = new C0691wm();
-            c0691wm.f1125a = hm.f477a;
+            c0691wm.f1126a = hm.f478a;
             c0716xm.p = c0691wm;
         }
         c0716xm.u = c0367jm.w;
@@ -107,7 +107,7 @@ public final class C0293gm implements ProtobufConverter {
         if (c0747z3 != null) {
             this.e.getClass();
             C0517pm c0517pm = new C0517pm();
-            c0517pm.f1007a = c0747z3.f1162a;
+            c0517pm.f1008a = c0747z3.f1163a;
             c0716xm.y = c0517pm;
         }
         C0546r2 c0546r2 = c0367jm.z;
@@ -124,7 +124,7 @@ public final class C0293gm implements ProtobufConverter {
     /* renamed from: a */
     public final C0367jm toModel(C0716xm c0716xm) {
         C0342im c0342im = new C0342im(this.b.toModel(c0716xm.i));
-        c0342im.f905a = c0716xm.f1141a;
+        c0342im.f906a = c0716xm.f1142a;
         c0342im.j = c0716xm.j;
         c0342im.c = c0716xm.d;
         c0342im.b = Arrays.asList(c0716xm.c);
@@ -146,23 +146,23 @@ public final class C0293gm implements ProtobufConverter {
         c0342im.i = this.g.toModel(c0716xm.h);
         C0641um c0641um = c0716xm.v;
         if (c0641um != null) {
-            this.f871a.getClass();
-            c0342im.n = new Le(c0641um.f1089a, c0641um.b);
+            this.f872a.getClass();
+            c0342im.n = new Le(c0641um.f1090a, c0641um.b);
         }
         C0691wm c0691wm = c0716xm.p;
         if (c0691wm != null) {
             this.c.getClass();
-            c0342im.s = new Hm(c0691wm.f1125a);
+            c0342im.s = new Hm(c0691wm.f1126a);
         }
         C0492om c0492om = c0716xm.z;
         if (c0492om != null) {
             this.d.getClass();
-            c0342im.x = new BillingConfig(c0492om.f992a, c0492om.b);
+            c0342im.x = new BillingConfig(c0492om.f993a, c0492om.b);
         }
         C0517pm c0517pm = c0716xm.y;
         if (c0517pm != null) {
             this.e.getClass();
-            c0342im.y = new C0747z3(c0517pm.f1007a);
+            c0342im.y = new C0747z3(c0517pm.f1008a);
         }
         C0467nm c0467nm = c0716xm.A;
         if (c0467nm != null) {
@@ -171,13 +171,13 @@ public final class C0293gm implements ProtobufConverter {
         C0666vm c0666vm = c0716xm.B;
         if (c0666vm != null) {
             this.h.getClass();
-            c0342im.A = new Dm(c0666vm.f1105a);
+            c0342im.A = new Dm(c0666vm.f1106a);
         }
         c0342im.B = this.i.toModel(c0716xm.C);
         C0566rm c0566rm = c0716xm.D;
         if (c0566rm != null) {
             this.j.getClass();
-            c0342im.C = new W9(c0566rm.f1042a);
+            c0342im.C = new W9(c0566rm.f1043a);
         }
         return new C0367jm(c0342im);
     }

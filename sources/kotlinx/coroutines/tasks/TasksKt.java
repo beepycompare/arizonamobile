@@ -292,11 +292,11 @@ public final class TasksKt {
                         return;
                     }
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuationImpl2.resumeWith(Result.m8474constructorimpl(task2.getResult()));
+                    cancellableContinuationImpl2.resumeWith(Result.m8478constructorimpl(task2.getResult()));
                     return;
                 }
                 Result.Companion companion2 = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m8474constructorimpl(ResultKt.createFailure(exception2)));
+                cancellableContinuationImpl2.resumeWith(Result.m8478constructorimpl(ResultKt.createFailure(exception2)));
             }
         });
         if (cancellationTokenSource != null) {

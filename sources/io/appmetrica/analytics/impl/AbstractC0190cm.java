@@ -13,7 +13,7 @@ import kotlin.jvm.functions.Function0;
 public abstract class AbstractC0190cm {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Set f803a = SetsKt.setOf((Object[]) new String[]{"appmetrica_clids", StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, StartupParamsCallback.APPMETRICA_DEVICE_ID, "appmetrica_get_ad_url", "appmetrica_report_ad_url", StartupParamsCallback.APPMETRICA_UUID});
+    public static final Set f804a = SetsKt.setOf((Object[]) new String[]{"appmetrica_clids", StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, StartupParamsCallback.APPMETRICA_DEVICE_ID, "appmetrica_get_ad_url", "appmetrica_report_ad_url", StartupParamsCallback.APPMETRICA_UUID});
     public static final SystemTimeProvider b = new SystemTimeProvider();
     public static final Y3 c = new Y3();
 
@@ -40,7 +40,7 @@ public abstract class AbstractC0190cm {
                             if (c0267fm.w) {
                                 return false;
                             }
-                            if (b.currentTimeSeconds() > c0267fm.o + c0267fm.A.f402a) {
+                            if (b.currentTimeSeconds() > c0267fm.o + c0267fm.A.f403a) {
                                 return false;
                             }
                         } else {
@@ -84,7 +84,7 @@ public abstract class AbstractC0190cm {
                         break;
                     case 1117383061:
                         if (str.equals(StartupParamsCallback.APPMETRICA_DEVICE_ID)) {
-                            a2 = a(c0267fm.f851a);
+                            a2 = a(c0267fm.f852a);
                             if (a2) {
                             }
                         } else if (c0267fm.w) {

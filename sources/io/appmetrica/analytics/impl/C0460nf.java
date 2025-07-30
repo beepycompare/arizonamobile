@@ -26,11 +26,11 @@ public final class C0460nf extends Nd implements yo {
     }
 
     public final long a(int i2) {
-        return this.f938a.getLong(e.b, i2);
+        return this.f939a.getLong(e.b, i2);
     }
 
     public final boolean b(boolean z) {
-        return this.f938a.getBoolean(f.b, z);
+        return this.f939a.getBoolean(f.b, z);
     }
 
     public final C0460nf c(boolean z) {
@@ -42,7 +42,7 @@ public final class C0460nf extends Nd implements yo {
     }
 
     public final boolean e() {
-        return this.f938a.getBoolean(d.b, false);
+        return this.f939a.getBoolean(d.b, false);
     }
 
     public final void f(boolean z) {
@@ -58,15 +58,15 @@ public final class C0460nf extends Nd implements yo {
     }
 
     public final boolean i() {
-        return this.f938a.getBoolean(o.b, false);
+        return this.f939a.getBoolean(o.b, false);
     }
 
     public final boolean j() {
-        return this.f938a.getBoolean(p.b, false);
+        return this.f939a.getBoolean(p.b, false);
     }
 
     public final long a(long j2) {
-        return this.f938a.getLong(h.b, j2);
+        return this.f939a.getLong(h.b, j2);
     }
 
     public final C0460nf b(long j2) {
@@ -86,12 +86,12 @@ public final class C0460nf extends Nd implements yo {
     }
 
     public final long f() {
-        return this.f938a.getLong(r.b, 0L);
+        return this.f939a.getLong(r.b, 0L);
     }
 
     @Override // io.appmetrica.analytics.impl.yo
     public final String a() {
-        return this.f938a.getString(q.b, null);
+        return this.f939a.getString(q.b, null);
     }
 
     public final C0460nf b(EnumC0335ie enumC0335ie, int i2) {
@@ -109,13 +109,13 @@ public final class C0460nf extends Nd implements yo {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0410lf
     public final Set<String> c() {
-        return this.f938a.a();
+        return this.f939a.a();
     }
 
     public final Boolean d() {
         C0435mf c0435mf = g;
-        if (this.f938a.a(c0435mf.b)) {
-            return Boolean.valueOf(this.f938a.getBoolean(c0435mf.b, true));
+        if (this.f939a.a(c0435mf.b)) {
+            return Boolean.valueOf(this.f939a.getBoolean(c0435mf.b, true));
         }
         return null;
     }
@@ -131,7 +131,7 @@ public final class C0460nf extends Nd implements yo {
     }
 
     public final boolean a(boolean z) {
-        return this.f938a.getBoolean(s.b, z);
+        return this.f939a.getBoolean(s.b, z);
     }
 
     public final int a(EnumC0335ie enumC0335ie, int i2) {
@@ -147,7 +147,7 @@ public final class C0460nf extends Nd implements yo {
         if (c0435mf == null) {
             return i2;
         }
-        return this.f938a.getInt(c0435mf.b, i2);
+        return this.f939a.getInt(c0435mf.b, i2);
     }
 
     public final C0460nf b(EnumC0335ie enumC0335ie, long j2) {
@@ -176,6 +176,6 @@ public final class C0460nf extends Nd implements yo {
         if (c0435mf == null) {
             return j2;
         }
-        return this.f938a.getLong(c0435mf.b, j2);
+        return this.f939a.getLong(c0435mf.b, j2);
     }
 }

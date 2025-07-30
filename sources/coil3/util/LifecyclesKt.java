@@ -15,13 +15,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.CancellableContinuationImpl;
 /* compiled from: lifecycles.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0080@¢\u0006\u0002\u0010\u0003\u001a\u0014\u0010\u0004\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0006H\u0000¨\u0006\u0007"}, d2 = {"awaitStarted", "", "Landroidx/lifecycle/Lifecycle;", "(Landroidx/lifecycle/Lifecycle;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "removeAndAddObserver", "observer", "Landroidx/lifecycle/LifecycleObserver;", "coil-core_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0080@¢\u0006\u0002\u0010\u0003\u001a\u0014\u0010\u0004\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0006H\u0000¨\u0006\u0007"}, d2 = {"awaitStarted", "", "Landroidx/lifecycle/Lifecycle;", "(Landroidx/lifecycle/Lifecycle;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "removeAndAddObserver", "observer", "Landroidx/lifecycle/LifecycleObserver;", "coil-core_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class LifecyclesKt {
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x003d  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0097  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x003f  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00ad  */
     /* JADX WARN: Type inference failed for: r3v1, types: [coil3.util.LifecyclesKt$awaitStarted$2$1, T] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -50,6 +50,7 @@ public final class LifecyclesKt {
                     try {
                         lifecyclesKt$awaitStarted$1.L$0 = lifecycle;
                         lifecyclesKt$awaitStarted$1.L$1 = objectRef2;
+                        lifecyclesKt$awaitStarted$1.I$0 = 0;
                         lifecyclesKt$awaitStarted$1.label = 1;
                         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(lifecyclesKt$awaitStarted$1), 1);
                         cancellableContinuationImpl.initCancellability();
@@ -58,7 +59,7 @@ public final class LifecyclesKt {
                             @Override // androidx.lifecycle.DefaultLifecycleObserver
                             public void onStart(LifecycleOwner lifecycleOwner) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuationImpl2.resumeWith(Result.m8474constructorimpl(Unit.INSTANCE));
+                                cancellableContinuationImpl2.resumeWith(Result.m8478constructorimpl(Unit.INSTANCE));
                             }
                         };
                         T t = objectRef2.element;
@@ -79,12 +80,14 @@ public final class LifecyclesKt {
                         th = th2;
                         lifecycleObserver = (LifecycleObserver) objectRef.element;
                         if (lifecycleObserver != null) {
+                            lifecycle2.removeObserver(lifecycleObserver);
                         }
                         throw th;
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
+                    int i2 = lifecyclesKt$awaitStarted$1.I$0;
                     objectRef = (Ref.ObjectRef) lifecyclesKt$awaitStarted$1.L$1;
                     lifecycle2 = (Lifecycle) lifecyclesKt$awaitStarted$1.L$0;
                     try {
@@ -93,7 +96,6 @@ public final class LifecyclesKt {
                         th = th3;
                         lifecycleObserver = (LifecycleObserver) objectRef.element;
                         if (lifecycleObserver != null) {
-                            lifecycle2.removeObserver(lifecycleObserver);
                         }
                         throw th;
                     }

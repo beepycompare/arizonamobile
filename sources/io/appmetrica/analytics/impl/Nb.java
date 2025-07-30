@@ -15,7 +15,7 @@ import java.util.Set;
 public final class Nb implements InterfaceC0179cb, Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f562a = new HashMap();
+    public final HashMap f563a = new HashMap();
     public final HashMap b = new HashMap();
     public final String c = "preferences";
     public final Mb d;
@@ -71,7 +71,7 @@ public final class Nb implements InterfaceC0179cb, Closeable {
                                         str = ParseUtils.parseLong(string2);
                                     }
                                     if (str == null) {
-                                        nb.f562a.put(string, str);
+                                        nb.f563a.put(string, str);
                                     }
                                 } else {
                                     if ("true".equals(string2)) {
@@ -112,7 +112,7 @@ public final class Nb implements InterfaceC0179cb, Closeable {
             return;
         }
         try {
-            this.f562a.wait();
+            this.f563a.wait();
         } catch (InterruptedException unused) {
         }
     }
@@ -150,9 +150,9 @@ public final class Nb implements InterfaceC0179cb, Closeable {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
     public final InterfaceC0179cb remove(String str) {
-        synchronized (this.f562a) {
+        synchronized (this.f563a) {
             c();
-            this.f562a.remove(str);
+            this.f563a.remove(str);
         }
         synchronized (this.d) {
             this.b.put(str, this);
@@ -163,9 +163,9 @@ public final class Nb implements InterfaceC0179cb, Closeable {
 
     public final Object b(String str) {
         Object obj;
-        synchronized (this.f562a) {
+        synchronized (this.f563a) {
             c();
-            obj = this.f562a.get(str);
+            obj = this.f563a.get(str);
         }
         return obj;
     }
@@ -272,9 +272,9 @@ public final class Nb implements InterfaceC0179cb, Closeable {
     @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
     public final boolean a(String str) {
         boolean containsKey;
-        synchronized (this.f562a) {
+        synchronized (this.f563a) {
             c();
-            containsKey = this.f562a.containsKey(str);
+            containsKey = this.f563a.containsKey(str);
         }
         return containsKey;
     }
@@ -282,16 +282,16 @@ public final class Nb implements InterfaceC0179cb, Closeable {
     @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
     public final Set a() {
         HashSet hashSet;
-        synchronized (this.f562a) {
-            hashSet = new HashSet(this.f562a.keySet());
+        synchronized (this.f563a) {
+            hashSet = new HashSet(this.f563a.keySet());
         }
         return hashSet;
     }
 
     public final void a(String str, Object obj) {
-        synchronized (this.f562a) {
+        synchronized (this.f563a) {
             c();
-            this.f562a.put(str, obj);
+            this.f563a.put(str, obj);
         }
         synchronized (this.d) {
             this.b.put(str, obj);

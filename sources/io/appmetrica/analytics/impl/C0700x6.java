@@ -13,7 +13,7 @@ public final class C0700x6 extends MessageNano {
     public static volatile C0700x6[] f;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1131a;
+    public String f1132a;
     public String b;
     public C0650v6[] c;
     public C0700x6 d;
@@ -35,7 +35,7 @@ public final class C0700x6 extends MessageNano {
     }
 
     public final C0700x6 a() {
-        this.f1131a = "";
+        this.f1132a = "";
         this.b = "";
         this.c = C0650v6.b();
         this.d = null;
@@ -46,7 +46,7 @@ public final class C0700x6 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeStringSize = CodedOutputByteBufferNano.computeStringSize(1, this.f1131a) + super.computeSerializedSize();
+        int computeStringSize = CodedOutputByteBufferNano.computeStringSize(1, this.f1132a) + super.computeSerializedSize();
         if (!this.b.equals("")) {
             computeStringSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
         }
@@ -89,7 +89,7 @@ public final class C0700x6 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeString(1, this.f1131a);
+        codedOutputByteBufferNano.writeString(1, this.f1132a);
         if (!this.b.equals("")) {
             codedOutputByteBufferNano.writeString(2, this.b);
         }
@@ -138,7 +138,7 @@ public final class C0700x6 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f1131a = codedInputByteBufferNano.readString();
+                this.f1132a = codedInputByteBufferNano.readString();
             } else if (readTag == 18) {
                 this.b = codedInputByteBufferNano.readString();
             } else if (readTag == 26) {

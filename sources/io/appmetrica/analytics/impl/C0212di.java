@@ -8,19 +8,19 @@ import io.appmetrica.analytics.coreapi.internal.backport.Provider;
 public final class C0212di implements Provider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0619u0 f817a;
+    public final /* synthetic */ C0619u0 f818a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ ReporterConfig c;
 
     public C0212di(C0619u0 c0619u0, Context context, ReporterConfig reporterConfig) {
-        this.f817a = c0619u0;
+        this.f818a = c0619u0;
         this.b = context;
         this.c = reporterConfig;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Provider
     public final Object get() {
-        C0619u0 c0619u0 = this.f817a;
+        C0619u0 c0619u0 = this.f818a;
         Context context = this.b;
         ReporterConfig reporterConfig = this.c;
         c0619u0.getClass();

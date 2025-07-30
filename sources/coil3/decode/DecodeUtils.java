@@ -11,15 +11,15 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.JvmStatic;
 import kotlin.ranges.RangesKt;
 /* compiled from: DecodeUtils.kt */
-@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0006\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J0\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u000bH\u0007J0\u0010\f\u001a\u00020\r2\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u000bH\u0007J0\u0010\f\u001a\u00020\u000e2\u0006\u0010\u0006\u001a\u00020\u000e2\u0006\u0010\u0007\u001a\u00020\u000e2\u0006\u0010\b\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\u000e2\u0006\u0010\n\u001a\u00020\u000bH\u0007J0\u0010\f\u001a\u00020\r2\u0006\u0010\u0006\u001a\u00020\r2\u0006\u0010\u0007\u001a\u00020\r2\u0006\u0010\b\u001a\u00020\r2\u0006\u0010\t\u001a\u00020\r2\u0006\u0010\n\u001a\u00020\u000bH\u0007J7\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0013\u001a\u00020\u0012H\u0007¢\u0006\u0004\b\u0014\u0010\u0015J\u0014\u0010\u0016\u001a\u00020\u0005*\u00020\u00172\u0006\u0010\n\u001a\u00020\u000bH\u0002¨\u0006\u0018"}, d2 = {"Lcoil3/decode/DecodeUtils;", "", "<init>", "()V", "calculateInSampleSize", "", "srcWidth", "srcHeight", "dstWidth", "dstHeight", "scale", "Lcoil3/size/Scale;", "computeSizeMultiplier", "", "", "computeDstSize", "Lcoil3/util/IntPair;", "targetSize", "Lcoil3/size/Size;", "maxSize", "computeDstSize-sEdh43o", "(IILcoil3/size/Size;Lcoil3/size/Scale;Lcoil3/size/Size;)J", "toPx", "Lcoil3/size/Dimension;", "coil-core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0006\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J0\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u000bH\u0007J0\u0010\f\u001a\u00020\r2\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u000bH\u0007J0\u0010\f\u001a\u00020\u000e2\u0006\u0010\u0006\u001a\u00020\u000e2\u0006\u0010\u0007\u001a\u00020\u000e2\u0006\u0010\b\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\u000e2\u0006\u0010\n\u001a\u00020\u000bH\u0007J0\u0010\f\u001a\u00020\r2\u0006\u0010\u0006\u001a\u00020\r2\u0006\u0010\u0007\u001a\u00020\r2\u0006\u0010\b\u001a\u00020\r2\u0006\u0010\t\u001a\u00020\r2\u0006\u0010\n\u001a\u00020\u000bH\u0007J7\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0013\u001a\u00020\u0012H\u0007¢\u0006\u0004\b\u0014\u0010\u0015J\u0014\u0010\u0016\u001a\u00020\u0005*\u00020\u00172\u0006\u0010\n\u001a\u00020\u000bH\u0002¨\u0006\u0018"}, d2 = {"Lcoil3/decode/DecodeUtils;", "", "<init>", "()V", "calculateInSampleSize", "", "srcWidth", "srcHeight", "dstWidth", "dstHeight", "scale", "Lcoil3/size/Scale;", "computeSizeMultiplier", "", "", "computeDstSize", "Lcoil3/util/IntPair;", "targetSize", "Lcoil3/size/Size;", "maxSize", "computeDstSize-sEdh43o", "(IILcoil3/size/Size;Lcoil3/size/Scale;Lcoil3/size/Size;)J", "toPx", "Lcoil3/size/Dimension;", "coil-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class DecodeUtils {
     public static final DecodeUtils INSTANCE = new DecodeUtils();
 
     /* compiled from: DecodeUtils.kt */
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -99,7 +99,7 @@ public final class DecodeUtils {
 
     @JvmStatic
     /* renamed from: computeDstSize-sEdh43o  reason: not valid java name */
-    public static final long m7772computeDstSizesEdh43o(int i, int i2, Size size, Scale scale, Size size2) {
+    public static final long m7773computeDstSizesEdh43o(int i, int i2, Size size, Scale scale, Size size2) {
         if (!SizeKt.isOriginal(size)) {
             DecodeUtils decodeUtils = INSTANCE;
             int px = decodeUtils.toPx(size.getWidth(), scale);
@@ -107,17 +107,17 @@ public final class DecodeUtils {
             i = px;
         }
         if ((size2.getWidth() instanceof Dimension.Pixels) && !UtilsKt.isMinOrMax(i)) {
-            i = RangesKt.coerceAtMost(i, ((Dimension.Pixels) size2.getWidth()).m7821unboximpl());
+            i = RangesKt.coerceAtMost(i, ((Dimension.Pixels) size2.getWidth()).m7822unboximpl());
         }
         if ((size2.getHeight() instanceof Dimension.Pixels) && !UtilsKt.isMinOrMax(i2)) {
-            i2 = RangesKt.coerceAtMost(i2, ((Dimension.Pixels) size2.getHeight()).m7821unboximpl());
+            i2 = RangesKt.coerceAtMost(i2, ((Dimension.Pixels) size2.getHeight()).m7822unboximpl());
         }
-        return IntPair.m7826constructorimpl(i, i2);
+        return IntPair.m7827constructorimpl(i, i2);
     }
 
     private final int toPx(Dimension dimension, Scale scale) {
         if (dimension instanceof Dimension.Pixels) {
-            return ((Dimension.Pixels) dimension).m7821unboximpl();
+            return ((Dimension.Pixels) dimension).m7822unboximpl();
         }
         int i = WhenMappings.$EnumSwitchMapping$0[scale.ordinal()];
         if (i != 1) {

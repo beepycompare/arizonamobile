@@ -43,7 +43,7 @@ public abstract class AbstractC0230eb {
                     } catch (Throwable th) {
                         th = th;
                         try {
-                            C0188ck c0188ck = Bj.f361a;
+                            C0188ck c0188ck = Bj.f362a;
                             c0188ck.getClass();
                             c0188ck.a(new Cj("error_during_file_reading", th));
                             bArr = null;
@@ -74,7 +74,7 @@ public abstract class AbstractC0230eb {
                     return new String(bArr, "UTF-8");
                 } catch (UnsupportedEncodingException e) {
                     String str = new String(bArr);
-                    C0188ck c0188ck2 = Bj.f361a;
+                    C0188ck c0188ck2 = Bj.f362a;
                     c0188ck2.getClass();
                     c0188ck2.a(new Cj("read_share_file_with_unsupported_encoding", e));
                     return str;

@@ -7,7 +7,7 @@ import java.util.HashMap;
 public final class Bi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f360a = new HashMap();
+    public final HashMap f361a = new HashMap();
     public final C0619u0 b;
 
     public Bi(C0619u0 c0619u0) {
@@ -15,15 +15,15 @@ public final class Bi {
     }
 
     public static Bi a() {
-        return Ai.f340a;
+        return Ai.f341a;
     }
 
     public final C0612ti a(Context context, String str) {
         C0612ti c0612ti;
-        C0612ti c0612ti2 = (C0612ti) this.f360a.get(str);
+        C0612ti c0612ti2 = (C0612ti) this.f361a.get(str);
         if (c0612ti2 == null) {
-            synchronized (this.f360a) {
-                c0612ti = (C0612ti) this.f360a.get(str);
+            synchronized (this.f361a) {
+                c0612ti = (C0612ti) this.f361a.get(str);
                 if (c0612ti == null) {
                     IHandlerExecutor a2 = C0698x4.l().c.a();
                     this.b.getClass();
@@ -31,7 +31,7 @@ public final class Bi {
                         ((U9) a2).b.post(new RunnableC0762zi(this, context));
                     }
                     c0612ti = new C0612ti(context.getApplicationContext(), str, new C0619u0());
-                    this.f360a.put(str, c0612ti);
+                    this.f361a.put(str, c0612ti);
                     c0612ti.c(str);
                 }
             }

@@ -13,7 +13,7 @@ public final class C0451n6 extends MessageNano {
     public static volatile C0451n6[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0675w6 f965a;
+    public C0675w6 f966a;
     public C0675w6[] b;
     public String c;
 
@@ -33,7 +33,7 @@ public final class C0451n6 extends MessageNano {
     }
 
     public final C0451n6 a() {
-        this.f965a = null;
+        this.f966a = null;
         this.b = C0675w6.b();
         this.c = "";
         this.cachedSize = -1;
@@ -43,7 +43,7 @@ public final class C0451n6 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0675w6 c0675w6 = this.f965a;
+        C0675w6 c0675w6 = this.f966a;
         if (c0675w6 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0675w6);
         }
@@ -67,7 +67,7 @@ public final class C0451n6 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0675w6 c0675w6 = this.f965a;
+        C0675w6 c0675w6 = this.f966a;
         if (c0675w6 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0675w6);
         }
@@ -100,10 +100,10 @@ public final class C0451n6 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f965a == null) {
-                    this.f965a = new C0675w6();
+                if (this.f966a == null) {
+                    this.f966a = new C0675w6();
                 }
-                codedInputByteBufferNano.readMessage(this.f965a);
+                codedInputByteBufferNano.readMessage(this.f966a);
             } else if (readTag == 18) {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 18);
                 C0675w6[] c0675w6Arr = this.b;

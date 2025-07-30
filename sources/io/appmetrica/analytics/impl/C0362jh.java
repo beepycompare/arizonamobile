@@ -10,7 +10,7 @@ public final class C0362jh extends AbstractC0236eh {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0236eh
     public final boolean a(C0401l6 c0401l6) {
-        C0574s5 c0574s5 = this.f831a;
+        C0574s5 c0574s5 = this.f832a;
         if (this.b.c()) {
             return false;
         }
@@ -20,7 +20,7 @@ public final class C0362jh extends AbstractC0236eh {
         }
         uo uoVar = this.b;
         synchronized (uoVar) {
-            vo voVar = uoVar.f1091a;
+            vo voVar = uoVar.f1092a;
             voVar.a(voVar.a().put("first_event_done", true));
         }
         return false;

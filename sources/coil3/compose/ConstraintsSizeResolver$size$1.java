@@ -6,10 +6,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ConstraintsSizeResolver.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "coil3.compose.ConstraintsSizeResolver", f = "ConstraintsSizeResolver.kt", i = {0}, l = {77}, m = "size", n = {"continuation"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "coil3.compose.ConstraintsSizeResolver", f = "ConstraintsSizeResolver.kt", i = {0, 0}, l = {77}, m = "size", n = {"continuation", "$i$f$suspendCancellableCoroutine"}, s = {"L$0", "I$0"})
 /* loaded from: classes3.dex */
 public final class ConstraintsSizeResolver$size$1 extends ContinuationImpl {
+    int I$0;
     Object L$0;
     int label;
     /* synthetic */ Object result;

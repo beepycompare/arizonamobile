@@ -41,7 +41,7 @@ public final class Cc extends V2 implements InterfaceC0205db {
         this.c.info("App opened via deeplink: " + WrapUtils.wrapToTag(str), new Object[0]);
         Ji ji = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         HashMap hashMap = new HashMap();
         hashMap.put("type", TtmlNode.TEXT_EMPHASIS_MARK_OPEN);
         hashMap.put("link", str);
@@ -59,7 +59,7 @@ public final class Cc extends V2 implements InterfaceC0205db {
         this.p.a(str);
         Ji ji = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         HashMap hashMap = new HashMap();
         hashMap.put("type", "referral");
         hashMap.put("link", str);
@@ -77,13 +77,13 @@ public final class Cc extends V2 implements InterfaceC0205db {
     public final void c() {
         Dc dc = this.r;
         synchronized (dc) {
-            dc.b.a(dc.f395a);
+            dc.b.a(dc.f396a);
         }
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0205db
     public final List<String> f() {
-        return this.b.f811a.b();
+        return this.b.f812a.b();
     }
 
     @Override // io.appmetrica.analytics.impl.V2
@@ -99,7 +99,7 @@ public final class Cc extends V2 implements InterfaceC0205db {
 
     public final void l() {
         Ji ji = this.h;
-        ji.c.a(this.b.f811a);
+        ji.c.a(this.b.f812a);
         C0372k2 c0372k2 = this.q.g;
         Bc bc = new Bc(this);
         long longValue = s.longValue();
@@ -113,7 +113,7 @@ public final class Cc extends V2 implements InterfaceC0205db {
         if (enumC0419m == EnumC0419m.b) {
             this.c.info("Enable activity auto tracking", new Object[0]);
         } else {
-            this.c.warning("Could not enable activity auto tracking. " + enumC0419m.f944a, new Object[0]);
+            this.c.warning("Could not enable activity auto tracking. " + enumC0419m.f945a, new Object[0]);
         }
     }
 
@@ -125,7 +125,7 @@ public final class Cc extends V2 implements InterfaceC0205db {
             C0372k2 c0372k2 = this.q.g;
             synchronized (c0372k2) {
                 c0372k2.getClass();
-                for (C0347j2 c0347j2 : c0372k2.f921a) {
+                for (C0347j2 c0347j2 : c0372k2.f922a) {
                     if (!c0347j2.d) {
                         c0347j2.d = true;
                         c0347j2.b.executeDelayed(c0347j2.e, c0347j2.c);
@@ -143,12 +143,12 @@ public final class Cc extends V2 implements InterfaceC0205db {
             C0372k2 c0372k2 = this.q.g;
             synchronized (c0372k2) {
                 c0372k2.getClass();
-                for (C0347j2 c0347j2 : c0372k2.f921a) {
+                for (C0347j2 c0347j2 : c0372k2.f922a) {
                     if (c0347j2.d) {
                         c0347j2.d = false;
                         c0347j2.b.remove(c0347j2.e);
-                        Cc cc = c0347j2.f910a.f355a;
-                        cc.h.c.b(cc.b.f811a);
+                        Cc cc = c0347j2.f911a.f356a;
+                        cc.h.c.b(cc.b.f812a);
                     }
                 }
             }
@@ -171,8 +171,8 @@ public final class Cc extends V2 implements InterfaceC0205db {
         this.c.info("native crash reporting enabled: %b", Boolean.valueOf(booleanValue));
         if (booleanValue) {
             Qd qd = this.q.c;
-            Context context = this.f680a;
-            qd.d = new C0(this.b.b.getApiKey(), qd.f610a.f595a.getAsString("PROCESS_CFG_PACKAGE_NAME"), CounterConfigurationReporterType.MAIN, qd.f610a.f595a.getAsInteger("PROCESS_CFG_PROCESS_ID").intValue(), qd.f610a.f595a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID"), this.b.d());
+            Context context = this.f681a;
+            qd.d = new C0(this.b.b.getApiKey(), qd.f611a.f596a.getAsString("PROCESS_CFG_PACKAGE_NAME"), CounterConfigurationReporterType.MAIN, qd.f611a.f596a.getAsInteger("PROCESS_CFG_PROCESS_ID").intValue(), qd.f611a.f596a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID"), this.b.d());
             File nativeCrashDirectory = FileUtils.getNativeCrashDirectory(context);
             C0 c0 = null;
             String absolutePath = nativeCrashDirectory != null ? nativeCrashDirectory.getAbsolutePath() : null;
@@ -192,13 +192,13 @@ public final class Cc extends V2 implements InterfaceC0205db {
         Dc dc = this.r;
         synchronized (dc) {
             Integer num = appMetricaConfig.anrMonitoringTimeout;
-            dc.f395a = num != null ? num.intValue() : 5;
+            dc.f396a = num != null ? num.intValue() : 5;
             Boolean bool = appMetricaConfig.anrMonitoring;
             if (bool == null) {
                 bool = Boolean.FALSE;
             }
             if (bool.booleanValue()) {
-                dc.b.a(dc.f395a);
+                dc.b.a(dc.f396a);
             } else {
                 dc.b.b();
             }
@@ -222,11 +222,11 @@ public final class Cc extends V2 implements InterfaceC0205db {
         synchronized (r4) {
             r4.b = publicLogger;
         }
-        Iterator it = r4.f404a.iterator();
+        Iterator it = r4.f405a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(publicLogger);
         }
-        r4.f404a.clear();
+        r4.f405a.clear();
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0205db
@@ -240,7 +240,7 @@ public final class Cc extends V2 implements InterfaceC0205db {
         Ji ji = this.h;
         byte[] bytes = externalAttribution.toBytes();
         PublicLogger publicLogger = this.c;
-        Set set = R9.f620a;
+        Set set = R9.f621a;
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         C0325i4 c0325i4 = new C0325i4(bytes, "", 42, publicLogger);
         Sh sh = this.b;
@@ -255,7 +255,7 @@ public final class Cc extends V2 implements InterfaceC0205db {
         String d = this.b.d();
         C0 c0 = qd.d;
         if (c0 != null) {
-            C0 c02 = new C0(c0.f367a, c0.b, c0.c, c0.d, c0.e, d);
+            C0 c02 = new C0(c0.f368a, c0.b, c0.c, c0.d, c0.e, d);
             qd.d = c02;
             NativeCrashClientModule nativeCrashClientModule = qd.b;
             qd.c.getClass();

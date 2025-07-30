@@ -12,14 +12,14 @@ import java.util.Collection;
 public final class C0601t7 extends SQLiteOpenHelper implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1061a;
+    public final String f1062a;
     public final PublicLogger b;
     public final C0319hn c;
 
     public C0601t7(Context context, String str, C0319hn c0319hn, PublicLogger publicLogger) {
         super(context, str, (SQLiteDatabase.CursorFactory) null, S5.b);
         this.c = c0319hn;
-        this.f1061a = str;
+        this.f1062a = str;
         this.b = publicLogger;
     }
 
@@ -28,8 +28,8 @@ public final class C0601t7 extends SQLiteOpenHelper implements Closeable {
         try {
             return super.getReadableDatabase();
         } catch (Throwable th) {
-            this.b.error(th, "Could not get readable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f1061a);
-            C0188ck c0188ck = Bj.f361a;
+            this.b.error(th, "Could not get readable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f1062a);
+            C0188ck c0188ck = Bj.f362a;
             c0188ck.getClass();
             c0188ck.a(new Cj("db_read_error", th));
             return null;
@@ -41,8 +41,8 @@ public final class C0601t7 extends SQLiteOpenHelper implements Closeable {
         try {
             return super.getWritableDatabase();
         } catch (Throwable th) {
-            this.b.error(th, "Could not get writable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f1061a);
-            C0188ck c0188ck = Bj.f361a;
+            this.b.error(th, "Could not get writable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f1062a);
+            C0188ck c0188ck = Bj.f362a;
             c0188ck.getClass();
             c0188ck.a(new Cj("db_write_error", th));
             return null;
@@ -52,7 +52,7 @@ public final class C0601t7 extends SQLiteOpenHelper implements Closeable {
     @Override // android.database.sqlite.SQLiteOpenHelper
     public final void onCreate(SQLiteDatabase sQLiteDatabase) {
         try {
-            this.c.f891a.runScript(sQLiteDatabase);
+            this.c.f892a.runScript(sQLiteDatabase);
         } catch (Throwable unused) {
         }
     }
@@ -66,7 +66,7 @@ public final class C0601t7 extends SQLiteOpenHelper implements Closeable {
             } catch (Throwable unused) {
             }
             try {
-                c0319hn.f891a.runScript(sQLiteDatabase);
+                c0319hn.f892a.runScript(sQLiteDatabase);
                 return;
             } catch (Throwable unused2) {
                 return;
@@ -89,7 +89,7 @@ public final class C0601t7 extends SQLiteOpenHelper implements Closeable {
                 c0319hn.b.runScript(sQLiteDatabase);
             } catch (Throwable unused) {
             }
-            c0319hn.f891a.runScript(sQLiteDatabase);
+            c0319hn.f892a.runScript(sQLiteDatabase);
         } catch (Throwable unused2) {
         }
     }
@@ -107,7 +107,7 @@ public final class C0601t7 extends SQLiteOpenHelper implements Closeable {
         if (i2 > i) {
             for (int i3 = i + 1; i3 <= i2; i3++) {
                 try {
-                    Collection<DatabaseScript> collection = (Collection) c0319hn.c.f519a.get(Integer.valueOf(i3));
+                    Collection<DatabaseScript> collection = (Collection) c0319hn.c.f520a.get(Integer.valueOf(i3));
                     if (collection != null) {
                         for (DatabaseScript databaseScript : collection) {
                             databaseScript.runScript(sQLiteDatabase);
@@ -123,7 +123,7 @@ public final class C0601t7 extends SQLiteOpenHelper implements Closeable {
                 } catch (Throwable unused2) {
                 }
                 try {
-                    c0319hn.f891a.runScript(sQLiteDatabase);
+                    c0319hn.f892a.runScript(sQLiteDatabase);
                     return;
                 } catch (Throwable unused3) {
                     return;

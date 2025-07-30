@@ -12,7 +12,7 @@ public final class C0267fm {
     public final W9 C;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f851a;
+    public final String f852a;
     public final String b;
     public final C0367jm c;
     public final String d;
@@ -40,10 +40,10 @@ public final class C0267fm {
     public final C0546r2 z;
 
     public C0267fm(String str, String str2, C0367jm c0367jm) {
-        this.f851a = str;
+        this.f852a = str;
         this.b = str2;
         this.c = c0367jm;
-        this.d = c0367jm.f917a;
+        this.d = c0367jm.f918a;
         this.e = c0367jm.b;
         this.f = c0367jm.f;
         this.g = c0367jm.g;
@@ -75,7 +75,7 @@ public final class C0267fm {
     }
 
     public final String a() {
-        return this.f851a;
+        return this.f852a;
     }
 
     public final String b() {
@@ -95,6 +95,6 @@ public final class C0267fm {
     }
 
     public final String toString() {
-        return "StartupState(deviceId=" + this.f851a + ", deviceIdHash=" + this.b + ", startupStateModel=" + this.c + ')';
+        return "StartupState(deviceId=" + this.f852a + ", deviceIdHash=" + this.b + ", startupStateModel=" + this.c + ')';
     }
 }

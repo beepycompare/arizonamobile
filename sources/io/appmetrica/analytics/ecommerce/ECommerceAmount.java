@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 public class ECommerceAmount {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BigDecimal f300a;
+    private final BigDecimal f301a;
     private final String b;
 
     public ECommerceAmount(long j, String str) {
@@ -14,7 +14,7 @@ public class ECommerceAmount {
     }
 
     public BigDecimal getAmount() {
-        return this.f300a;
+        return this.f301a;
     }
 
     public String getUnit() {
@@ -22,7 +22,7 @@ public class ECommerceAmount {
     }
 
     public String toString() {
-        return "ECommerceAmount{amount=" + this.f300a + ", unit='" + this.b + "'}";
+        return "ECommerceAmount{amount=" + this.f301a + ", unit='" + this.b + "'}";
     }
 
     public ECommerceAmount(double d, String str) {
@@ -30,7 +30,7 @@ public class ECommerceAmount {
     }
 
     public ECommerceAmount(BigDecimal bigDecimal, String str) {
-        this.f300a = bigDecimal;
+        this.f301a = bigDecimal;
         this.b = str;
     }
 }

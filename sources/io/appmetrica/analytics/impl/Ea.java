@@ -10,7 +10,7 @@ public final class Ea implements InterfaceC0532qc {
         if ((e7 != null ? e7.b : null) != null && e7.c != null) {
             c0628u9 = new C0628u9();
             c0628u9.b = e7.b.doubleValue();
-            c0628u9.f1080a = e7.c.doubleValue();
+            c0628u9.f1081a = e7.c.doubleValue();
             Integer num = e7.d;
             if (num != null) {
                 c0628u9.g = num.intValue();

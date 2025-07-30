@@ -11,7 +11,7 @@ public final class C0420m0 {
     public static final long j = TimeUnit.SECONDS.toMillis(10);
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f945a;
+    public final Context f946a;
     public final ICommonExecutor b;
     public CountDownLatch e;
     public final N1 g;
@@ -22,7 +22,7 @@ public final class C0420m0 {
     public boolean c = false;
 
     public C0420m0(Context context, ICommonExecutor iCommonExecutor, N1 n1) {
-        this.f945a = context.getApplicationContext();
+        this.f946a = context.getApplicationContext();
         this.b = iCommonExecutor;
         this.g = n1;
     }

@@ -42,15 +42,15 @@ public final class Qa extends O2 {
                 Jn a2 = this.b.a((String) entry.getKey());
                 Jn a3 = this.c.a((String) entry.getValue());
                 int utf8BytesLength = StringUtils.getUtf8BytesLength((String) entry.getValue()) + StringUtils.getUtf8BytesLength((String) entry.getKey());
-                int utf8BytesLength2 = StringUtils.getUtf8BytesLength((String) a3.f511a) + StringUtils.getUtf8BytesLength((String) a2.f511a);
-                if (z || utf8BytesLength2 + i4 > this.f570a) {
+                int utf8BytesLength2 = StringUtils.getUtf8BytesLength((String) a3.f512a) + StringUtils.getUtf8BytesLength((String) a2.f512a);
+                if (z || utf8BytesLength2 + i4 > this.f571a) {
                     i3++;
                     i += utf8BytesLength;
                     z = true;
                 } else {
                     i = a3.b.getBytesTruncated() + a2.b.getBytesTruncated() + i;
-                    int utf8BytesLength3 = StringUtils.getUtf8BytesLength((String) a3.f511a) + StringUtils.getUtf8BytesLength((String) a2.f511a) + i4;
-                    hashMap.put((String) a2.f511a, (String) a3.f511a);
+                    int utf8BytesLength3 = StringUtils.getUtf8BytesLength((String) a3.f512a) + StringUtils.getUtf8BytesLength((String) a2.f512a) + i4;
+                    hashMap.put((String) a2.f512a, (String) a3.f512a);
                     i4 = utf8BytesLength3;
                 }
                 i2++;

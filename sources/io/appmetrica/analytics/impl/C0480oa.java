@@ -12,7 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0480oa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Tl f984a = new Tl();
+    public final Tl f985a = new Tl();
     public C0530qa b = new C0530qa();
 
     public final synchronized void a(C0530qa c0530qa) {
@@ -24,7 +24,7 @@ public final class C0480oa {
         String str;
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            if (Intrinsics.areEqual((String) it.next(), "appmetrica_lib_ssl_enabled") && (bool = this.b.f1016a) != null) {
+            if (Intrinsics.areEqual((String) it.next(), "appmetrica_lib_ssl_enabled") && (bool = this.b.f1017a) != null) {
                 boolean booleanValue = bool.booleanValue();
                 C0530qa c0530qa = this.b;
                 IdentifierStatus identifierStatus = c0530qa.b;
@@ -36,7 +36,7 @@ public final class C0480oa {
                 } else {
                     throw new NoWhenBranchMatchedException();
                 }
-                hashMap.put("appmetrica_lib_ssl_enabled", this.f984a.a(new IdentifiersResult(str, identifierStatus, str2)));
+                hashMap.put("appmetrica_lib_ssl_enabled", this.f985a.a(new IdentifiersResult(str, identifierStatus, str2)));
             }
         }
     }

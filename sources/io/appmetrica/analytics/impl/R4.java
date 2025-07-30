@@ -5,14 +5,14 @@ import android.os.ResultReceiver;
 public final class R4 implements InterfaceC0585sg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ResultReceiver f618a;
+    public final /* synthetic */ ResultReceiver f619a;
 
     public R4(ResultReceiver resultReceiver) {
-        this.f618a = resultReceiver;
+        this.f619a = resultReceiver;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0585sg
     public final void a(Ag ag) {
-        Gg.a(this.f618a, ag);
+        Gg.a(this.f619a, ag);
     }
 }

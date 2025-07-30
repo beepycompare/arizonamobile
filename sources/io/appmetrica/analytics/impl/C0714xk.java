@@ -9,12 +9,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0714xk implements ModuleRemoteConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SdkIdentifiers f1140a;
+    public final SdkIdentifiers f1141a;
     public final RemoteConfigMetaInfo b;
     public final Object c;
 
     public C0714xk(SdkIdentifiers sdkIdentifiers, RemoteConfigMetaInfo remoteConfigMetaInfo, Object obj) {
-        this.f1140a = sdkIdentifiers;
+        this.f1141a = sdkIdentifiers;
         this.b = remoteConfigMetaInfo;
         this.c = obj;
     }
@@ -37,7 +37,7 @@ public final class C0714xk implements ModuleRemoteConfig {
         }
         if (obj instanceof C0714xk) {
             C0714xk c0714xk = (C0714xk) obj;
-            return Intrinsics.areEqual(this.f1140a, c0714xk.f1140a) && Intrinsics.areEqual(this.b, c0714xk.b) && Intrinsics.areEqual(this.c, c0714xk.c);
+            return Intrinsics.areEqual(this.f1141a, c0714xk.f1141a) && Intrinsics.areEqual(this.b, c0714xk.b) && Intrinsics.areEqual(this.c, c0714xk.c);
         }
         return false;
     }
@@ -49,7 +49,7 @@ public final class C0714xk implements ModuleRemoteConfig {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleRemoteConfig
     public final SdkIdentifiers getIdentifiers() {
-        return this.f1140a;
+        return this.f1141a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleRemoteConfig
@@ -58,22 +58,22 @@ public final class C0714xk implements ModuleRemoteConfig {
     }
 
     public final int hashCode() {
-        int hashCode = (this.b.hashCode() + (this.f1140a.hashCode() * 31)) * 31;
+        int hashCode = (this.b.hashCode() + (this.f1141a.hashCode() * 31)) * 31;
         Object obj = this.c;
         return hashCode + (obj == null ? 0 : obj.hashCode());
     }
 
     public final String toString() {
-        return "ServiceModuleRemoteConfigModel(identifiers=" + this.f1140a + ", remoteConfigMetaInfo=" + this.b + ", featuresConfig=" + this.c + ')';
+        return "ServiceModuleRemoteConfigModel(identifiers=" + this.f1141a + ", remoteConfigMetaInfo=" + this.b + ", featuresConfig=" + this.c + ')';
     }
 
     public final SdkIdentifiers a() {
-        return this.f1140a;
+        return this.f1141a;
     }
 
     public static C0714xk a(C0714xk c0714xk, SdkIdentifiers sdkIdentifiers, RemoteConfigMetaInfo remoteConfigMetaInfo, Object obj, int i, Object obj2) {
         if ((i & 1) != 0) {
-            sdkIdentifiers = c0714xk.f1140a;
+            sdkIdentifiers = c0714xk.f1141a;
         }
         if ((i & 2) != 0) {
             remoteConfigMetaInfo = c0714xk.b;

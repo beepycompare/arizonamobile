@@ -7,19 +7,19 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class C0669w0 implements Rc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0694x0 f1109a;
+    public final /* synthetic */ C0694x0 f1110a;
     public final /* synthetic */ AppMetricaConfig b;
     public final /* synthetic */ PublicLogger c;
 
     public C0669w0(C0694x0 c0694x0, AppMetricaConfig appMetricaConfig, PublicLogger publicLogger) {
-        this.f1109a = c0694x0;
+        this.f1110a = c0694x0;
         this.b = appMetricaConfig;
         this.c = publicLogger;
     }
 
     @Override // io.appmetrica.analytics.impl.Rc
     public final Cc a() {
-        C0694x0 c0694x0 = this.f1109a;
+        C0694x0 c0694x0 = this.f1110a;
         return c0694x0.g.a(this.b, this.c, c0694x0.i.g);
     }
 }

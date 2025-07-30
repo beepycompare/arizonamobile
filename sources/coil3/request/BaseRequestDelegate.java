@@ -6,56 +6,56 @@ import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.Job;
 /* compiled from: RequestDelegate.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0081@\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\rHÖ\u0003J\t\u0010\u000e\u001a\u00020\u000fHÖ\u0001J\t\u0010\u0010\u001a\u00020\u0011HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0012"}, d2 = {"Lcoil3/request/BaseRequestDelegate;", "Lcoil3/request/RequestDelegate;", "job", "Lkotlinx/coroutines/Job;", "constructor-impl", "(Lkotlinx/coroutines/Job;)Lkotlinx/coroutines/Job;", "dispose", "", "dispose-impl", "(Lkotlinx/coroutines/Job;)V", "equals", "", "other", "", "hashCode", "", "toString", "", "coil-core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0081@\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\rHÖ\u0003J\t\u0010\u000e\u001a\u00020\u000fHÖ\u0001J\t\u0010\u0010\u001a\u00020\u0011HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0012"}, d2 = {"Lcoil3/request/BaseRequestDelegate;", "Lcoil3/request/RequestDelegate;", "job", "Lkotlinx/coroutines/Job;", "constructor-impl", "(Lkotlinx/coroutines/Job;)Lkotlinx/coroutines/Job;", "dispose", "", "dispose-impl", "(Lkotlinx/coroutines/Job;)V", "equals", "", "other", "", "hashCode", "", "toString", "", "coil-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes3.dex */
 public final class BaseRequestDelegate implements RequestDelegate {
     private final Job job;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ BaseRequestDelegate m7805boximpl(Job job) {
+    public static final /* synthetic */ BaseRequestDelegate m7806boximpl(Job job) {
         return new BaseRequestDelegate(job);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static Job m7806constructorimpl(Job job) {
+    public static Job m7807constructorimpl(Job job) {
         return job;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7808equalsimpl(Job job, Object obj) {
-        return (obj instanceof BaseRequestDelegate) && Intrinsics.areEqual(job, ((BaseRequestDelegate) obj).m7812unboximpl());
+    public static boolean m7809equalsimpl(Job job, Object obj) {
+        return (obj instanceof BaseRequestDelegate) && Intrinsics.areEqual(job, ((BaseRequestDelegate) obj).m7813unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7809equalsimpl0(Job job, Job job2) {
+    public static final boolean m7810equalsimpl0(Job job, Job job2) {
         return Intrinsics.areEqual(job, job2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7810hashCodeimpl(Job job) {
+    public static int m7811hashCodeimpl(Job job) {
         return job.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7811toStringimpl(Job job) {
+    public static String m7812toStringimpl(Job job) {
         return "BaseRequestDelegate(job=" + job + ')';
     }
 
     public boolean equals(Object obj) {
-        return m7808equalsimpl(this.job, obj);
+        return m7809equalsimpl(this.job, obj);
     }
 
     public int hashCode() {
-        return m7810hashCodeimpl(this.job);
+        return m7811hashCodeimpl(this.job);
     }
 
     public String toString() {
-        return m7811toStringimpl(this.job);
+        return m7812toStringimpl(this.job);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Job m7812unboximpl() {
+    public final /* synthetic */ Job m7813unboximpl() {
         return this.job;
     }
 
@@ -65,11 +65,11 @@ public final class BaseRequestDelegate implements RequestDelegate {
 
     @Override // coil3.request.RequestDelegate
     public void dispose() {
-        m7807disposeimpl(this.job);
+        m7808disposeimpl(this.job);
     }
 
     /* renamed from: dispose-impl  reason: not valid java name */
-    public static void m7807disposeimpl(Job job) {
+    public static void m7808disposeimpl(Job job) {
         Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
     }
 }

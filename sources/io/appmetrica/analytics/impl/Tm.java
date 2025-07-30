@@ -9,10 +9,10 @@ public final class Tm extends Pi {
 
     @Override // io.appmetrica.analytics.impl.Pi
     public final Object a(int i) {
-        return this.f598a.getResources().getStringArray(i);
+        return this.f599a.getResources().getStringArray(i);
     }
 
     public final String[] b(int i) {
-        return this.f598a.getResources().getStringArray(i);
+        return this.f599a.getResources().getStringArray(i);
     }
 }

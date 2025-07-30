@@ -9,7 +9,7 @@ public final class Z9 extends Db {
 
     @Override // io.appmetrica.analytics.impl.Db, io.appmetrica.analytics.impl.Ja
     public final void a(List<AbstractC0236eh> list) {
-        list.add(this.f503a.u);
+        list.add(this.f504a.u);
         super.a(list);
     }
 }

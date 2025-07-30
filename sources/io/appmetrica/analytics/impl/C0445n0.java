@@ -14,7 +14,7 @@ import io.appmetrica.analytics.logger.common.BaseReleaseLogger;
 public final class C0445n0 implements Wa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f961a;
+    public final Context f962a;
     public final IHandlerExecutor b;
     public final C0748z4 c = new C0748z4();
     public final Handler d = f().getHandler();
@@ -22,7 +22,7 @@ public final class C0445n0 implements Wa {
     public final Fb f = new Fb();
 
     public C0445n0(Context context, C0449n4 c0449n4) {
-        this.f961a = context;
+        this.f962a = context;
         this.b = c0449n4.a();
         BaseReleaseLogger.init(context);
         f().execute(new Runnable() { // from class: io.appmetrica.analytics.impl.n0$$ExternalSyntheticLambda0
@@ -103,7 +103,7 @@ public final class C0445n0 implements Wa {
             this.f.c();
             this.f.b();
             if (appMetricaConfig != null) {
-                this.f.a(this.f961a, appMetricaConfig, interfaceC0481ob);
+                this.f.a(this.f962a, appMetricaConfig, interfaceC0481ob);
             }
             if (appMetricaConfig != null) {
             }

@@ -6,18 +6,18 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class I5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final PublicLogger f484a;
+    public final PublicLogger f485a;
 
     public I5(String str) {
-        this.f484a = LoggerStorage.getOrCreatePublicLogger(str);
+        this.f485a = LoggerStorage.getOrCreatePublicLogger(str);
     }
 
     public final int a(int i) {
         if (i < 100) {
-            this.f484a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be greater than or equal to 100, but was: " + i + ". Default value (100) will be used", new Object[0]);
+            this.f485a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be greater than or equal to 100, but was: " + i + ". Default value (100) will be used", new Object[0]);
             return 100;
         } else if (i > 10000) {
-            this.f484a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be less than or equal to 10000, but was: " + i + ". Default value (10000) will be used", new Object[0]);
+            this.f485a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be less than or equal to 10000, but was: " + i + ". Default value (10000) will be used", new Object[0]);
             return 10000;
         } else {
             return i;

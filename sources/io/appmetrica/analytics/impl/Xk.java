@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListe
 public final class Xk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0444n f722a;
+    public final C0444n f723a;
     public final H5 b;
     public final ActivityLifecycleListener c;
     public final ActivityLifecycleListener d;
@@ -53,7 +53,7 @@ public final class Xk {
 
     public Xk(C0444n c0444n, C0394l c0394l, H5 h5, C0494p c0494p) {
         this.g = false;
-        this.f722a = c0444n;
+        this.f723a = c0444n;
         this.f = c0394l;
         this.b = h5;
         this.e = c0494p;
@@ -79,11 +79,11 @@ public final class Xk {
 
     public final synchronized EnumC0419m a() {
         if (!this.g) {
-            this.f722a.registerListener(this.c, ActivityEvent.RESUMED);
-            this.f722a.registerListener(this.d, ActivityEvent.PAUSED);
+            this.f723a.registerListener(this.c, ActivityEvent.RESUMED);
+            this.f723a.registerListener(this.d, ActivityEvent.PAUSED);
             this.g = true;
         }
-        return this.f722a.b;
+        return this.f723a.b;
     }
 
     public final void a(Activity activity, Cc cc) {

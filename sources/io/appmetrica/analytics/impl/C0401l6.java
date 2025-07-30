@@ -29,7 +29,7 @@ public class C0401l6 implements CounterReportApi, Parcelable {
     public static final Parcelable.Creator<C0401l6> CREATOR = new C0376k6();
 
     /* renamed from: a  reason: collision with root package name */
-    protected String f935a;
+    protected String f936a;
     protected String b;
     public String c;
     public int d;
@@ -102,7 +102,7 @@ public class C0401l6 implements CounterReportApi, Parcelable {
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
     public final String getName() {
-        return this.f935a;
+        return this.f936a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
@@ -141,7 +141,7 @@ public class C0401l6 implements CounterReportApi, Parcelable {
     }
 
     public final boolean l() {
-        return this.f935a == null;
+        return this.f936a == null;
     }
 
     public final boolean m() {
@@ -166,7 +166,7 @@ public class C0401l6 implements CounterReportApi, Parcelable {
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
     public void setName(String str) {
-        this.f935a = str;
+        this.f936a = str;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
@@ -186,7 +186,7 @@ public class C0401l6 implements CounterReportApi, Parcelable {
 
     public final String toString() {
         Locale locale = Locale.US;
-        String str = this.f935a;
+        String str = this.f936a;
         String str2 = EnumC0680wb.a(this.d).b;
         String str3 = this.b;
         if (str3 == null) {
@@ -200,13 +200,13 @@ public class C0401l6 implements CounterReportApi, Parcelable {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         Bundle bundle = new Bundle();
-        bundle.putString("CounterReport.Event", this.f935a);
+        bundle.putString("CounterReport.Event", this.f936a);
         bundle.putString("CounterReport.Value", this.b);
         bundle.putInt("CounterReport.Type", this.d);
         bundle.putInt("CounterReport.CustomType", this.e);
         bundle.putInt("CounterReport.TRUNCATED", this.g);
         bundle.putString("CounterReport.ProfileID", this.h);
-        bundle.putInt("CounterReport.UniquenessStatus", this.k.f1152a);
+        bundle.putInt("CounterReport.UniquenessStatus", this.k.f1153a);
         Bundle bundle2 = this.m;
         if (bundle2 != null) {
             bundle.putParcelable("CounterReport.Payload", bundle2);
@@ -224,7 +224,7 @@ public class C0401l6 implements CounterReportApi, Parcelable {
         bundle.putLong("CounterReport.CreationTimestamp", this.j);
         H9 h9 = this.l;
         if (h9 != null) {
-            bundle.putInt("CounterReport.Source", h9.f469a);
+            bundle.putInt("CounterReport.Source", h9.f470a);
         }
         Boolean bool = this.n;
         if (bool != null) {
@@ -281,7 +281,7 @@ public class C0401l6 implements CounterReportApi, Parcelable {
     public C0401l6(String str, String str2, int i, SystemTimeProvider systemTimeProvider) {
         this.k = EnumC0729ya.UNKNOWN;
         this.p = new HashMap();
-        this.f935a = str2;
+        this.f936a = str2;
         this.d = i;
         this.b = str;
         this.i = systemTimeProvider.elapsedRealtime();
@@ -343,7 +343,7 @@ public class C0401l6 implements CounterReportApi, Parcelable {
 
     public static C0401l6 a(C0401l6 c0401l6, EnumC0680wb enumC0680wb) {
         C0401l6 d = d(c0401l6);
-        d.d = enumC0680wb.f1119a;
+        d.d = enumC0680wb.f1120a;
         return d;
     }
 
@@ -375,7 +375,7 @@ public class C0401l6 implements CounterReportApi, Parcelable {
             JSONObject jSONObject = new JSONObject();
             if (j2 != null) {
                 jSONObject.put("background_restricted", j2.b);
-                I2 i2 = j2.f496a;
+                I2 i2 = j2.f497a;
                 c0323i2.getClass();
                 if (i2 != null) {
                     switch (i2.ordinal()) {
@@ -437,9 +437,9 @@ public class C0401l6 implements CounterReportApi, Parcelable {
         C0401l6 c0401l6 = new C0401l6("", "", 0);
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         c0401l6.d = 40976;
-        ProductInfo productInfo = tf.f654a;
+        ProductInfo productInfo = tf.f655a;
         Zi zi = new Zi();
-        zi.f752a = productInfo.quantity;
+        zi.f753a = productInfo.quantity;
         zi.f = productInfo.priceMicros;
         try {
             str = Currency.getInstance(productInfo.priceCurrency).getCurrencyCode();
@@ -448,33 +448,33 @@ public class C0401l6 implements CounterReportApi, Parcelable {
         zi.b = str.getBytes();
         zi.c = productInfo.sku.getBytes();
         Ui ui = new Ui();
-        ui.f673a = productInfo.purchaseOriginalJson.getBytes();
+        ui.f674a = productInfo.purchaseOriginalJson.getBytes();
         ui.b = productInfo.signature.getBytes();
         zi.e = ui;
         zi.g = true;
         zi.h = 1;
-        zi.i = Sf.f640a[productInfo.type.ordinal()] != 2 ? 1 : 2;
+        zi.i = Sf.f641a[productInfo.type.ordinal()] != 2 ? 1 : 2;
         Yi yi = new Yi();
-        yi.f737a = productInfo.purchaseToken.getBytes();
+        yi.f738a = productInfo.purchaseToken.getBytes();
         yi.b = TimeUnit.MILLISECONDS.toSeconds(productInfo.purchaseTime);
         zi.j = yi;
         if (productInfo.type == ProductType.SUBS) {
             Xi xi = new Xi();
-            xi.f721a = productInfo.autoRenewing;
+            xi.f722a = productInfo.autoRenewing;
             Period period = productInfo.subscriptionPeriod;
             if (period != null) {
                 Wi wi = new Wi();
-                wi.f704a = period.number;
+                wi.f705a = period.number;
                 int i2 = Sf.b[period.timeUnit.ordinal()];
                 wi.b = i2 != 1 ? i2 != 2 ? i2 != 3 ? i2 != 4 ? 0 : 4 : 3 : 2 : 1;
                 xi.b = wi;
             }
             Vi vi = new Vi();
-            vi.f689a = productInfo.introductoryPriceMicros;
+            vi.f690a = productInfo.introductoryPriceMicros;
             Period period2 = productInfo.introductoryPricePeriod;
             if (period2 != null) {
                 Wi wi2 = new Wi();
-                wi2.f704a = period2.number;
+                wi2.f705a = period2.number;
                 int i3 = Sf.b[period2.timeUnit.ordinal()];
                 if (i3 == 1) {
                     i = 1;

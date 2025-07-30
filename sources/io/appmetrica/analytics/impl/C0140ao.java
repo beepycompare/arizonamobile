@@ -8,12 +8,12 @@ public final class C0140ao {
     public static final int[] c = {0, 1, 2, 3};
 
     /* renamed from: a  reason: collision with root package name */
-    public final SparseArray f773a = new SparseArray();
+    public final SparseArray f774a = new SparseArray();
     public int b = 0;
 
     public C0140ao(int[] iArr) {
         for (int i : iArr) {
-            this.f773a.put(i, new HashMap());
+            this.f774a.put(i, new HashMap());
         }
     }
 }

@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Pattern f1210a = Pattern.compile("[\\p{Space},;]");
+    public final Pattern f1211a = Pattern.compile("[\\p{Space},;]");
 
     public static int a(Matcher matcher, int i, int i2) {
         if (i2 >= i) {

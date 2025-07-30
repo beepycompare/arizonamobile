@@ -9,18 +9,18 @@ import java.util.Map;
 public final class Eh implements InterfaceC0443mn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ E9 f419a;
+    public final /* synthetic */ E9 f420a;
     public final /* synthetic */ Hh b;
 
     public Eh(Hh hh, E9 e9) {
         this.b = hh;
-        this.f419a = e9;
+        this.f420a = e9;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0443mn
     public final void a(Object obj) {
         List list = (List) obj;
-        E9 e9 = this.f419a;
+        E9 e9 = this.f420a;
         if (io.a((Collection) list)) {
             return;
         }
@@ -28,11 +28,11 @@ public final class Eh implements InterfaceC0443mn {
         for (int i = 0; i < list.size(); i++) {
             C0341il c0341il = (C0341il) list.get(i);
             C9[] c9Arr = e9.d;
-            Map map = AbstractC0184cg.f798a;
+            Map map = AbstractC0184cg.f799a;
             C9 c9 = new C9();
-            Integer num = c0341il.f904a;
+            Integer num = c0341il.f905a;
             if (num != null) {
-                c9.f375a = num.intValue();
+                c9.f376a = num.intValue();
             }
             Integer num2 = c0341il.b;
             if (num2 != null) {

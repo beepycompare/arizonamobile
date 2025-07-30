@@ -7,19 +7,19 @@ import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServ
 public final class C0533qd implements ModuleEventServiceHandlerReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1017a;
+    public final boolean f1018a;
     public final F9 b;
     public final C0401l6 c;
 
     public C0533qd(boolean z, F9 f9, C0401l6 c0401l6) {
-        this.f1017a = z;
+        this.f1018a = z;
         this.b = f9;
         this.c = c0401l6;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter
     public final boolean isMain() {
-        return this.f1017a;
+        return this.f1018a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter

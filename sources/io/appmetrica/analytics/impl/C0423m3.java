@@ -8,19 +8,19 @@ import io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationsta
 public final class C0423m3 implements ApplicationStateObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0448n3 f948a;
+    public final /* synthetic */ C0448n3 f949a;
 
     public C0423m3(C0448n3 c0448n3) {
-        this.f948a = c0448n3;
+        this.f949a = c0448n3;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateObserver
     public final void onApplicationStateChanged(ApplicationState applicationState) {
-        C0448n3 c0448n3 = this.f948a;
+        C0448n3 c0448n3 = this.f949a;
         c0448n3.getClass();
         if (applicationState == ApplicationState.VISIBLE) {
             try {
-                BillingMonitor billingMonitor = c0448n3.f963a;
+                BillingMonitor billingMonitor = c0448n3.f964a;
                 if (billingMonitor != null) {
                     billingMonitor.onSessionResumed();
                 }

@@ -17,13 +17,13 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class A0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Wb f328a = new Wb(C0698x4.l().d());
+    public final Wb f329a = new Wb(C0698x4.l().d());
     public final Xb b = new Xb();
     public final Zb c = new Zb();
 
     public final void a(final String str, final String str2, final String str3) {
-        Wb wb = this.f328a;
-        if (wb.c.a((Void) null).f975a && wb.d.a(str).f975a && wb.e.a(str2).f975a && wb.f.a(str3).f975a) {
+        Wb wb = this.f329a;
+        if (wb.c.a((Void) null).f976a && wb.d.a(str).f976a && wb.e.a(str2).f976a && wb.f.a(str3).f976a) {
             this.b.getClass();
             IHandlerExecutor a2 = C0698x4.l().c.a();
             ((U9) a2).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.A0$$ExternalSyntheticLambda0
@@ -58,10 +58,10 @@ public final class A0 {
         Map<String, Object> mutableMapOf = MapsKt.mutableMapOf(pairArr);
         ModuleEvent.Builder withName = ModuleEvent.newBuilder(4).withName("appmetrica_system_event_42");
         synchronized (zb) {
-            if (zb.f746a == null && (a2 = C0698x4.l().g.a()) != null) {
-                zb.f746a = CollectionsKt.listOf((Object[]) new InterfaceC0568s[]{new C0233ee(), new C0242en(a2), new Fo()});
+            if (zb.f747a == null && (a2 = C0698x4.l().g.a()) != null) {
+                zb.f747a = CollectionsKt.listOf((Object[]) new InterfaceC0568s[]{new C0233ee(), new C0242en(a2), new Fo()});
             }
-            list = zb.f746a;
+            list = zb.f747a;
         }
         if (list != null) {
             for (InterfaceC0568s interfaceC0568s : list) {

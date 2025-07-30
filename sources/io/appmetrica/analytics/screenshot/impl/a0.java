@@ -13,10 +13,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class a0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ d0 f1292a;
+    public final /* synthetic */ d0 f1293a;
 
     public a0(d0 d0Var) {
-        this.f1292a = d0Var;
+        this.f1293a = d0Var;
     }
 
     public static final Boolean a(d0 d0Var, a0 a0Var, C0780m c0780m, ActivityManager activityManager) {
@@ -46,12 +46,12 @@ public final class a0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        final C0780m c0780m = this.f1292a.e;
-        if (this.f1292a.d || c0780m == null || !c0780m.f1309a) {
+        final C0780m c0780m = this.f1293a.e;
+        if (this.f1293a.d || c0780m == null || !c0780m.f1310a) {
             return;
         }
-        Context context = this.f1292a.f1298a.getContext();
-        final d0 d0Var = this.f1292a;
+        Context context = this.f1293a.f1299a.getContext();
+        final d0 d0Var = this.f1293a;
         SystemServiceUtils.accessSystemServiceByNameSafely(context, "activity", "running service screenshot captor", "ActivityManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.screenshot.impl.a0$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
             public final Object apply(Object obj) {

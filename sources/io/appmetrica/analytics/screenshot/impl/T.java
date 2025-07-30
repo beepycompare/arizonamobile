@@ -3,18 +3,18 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class T {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0772e f1286a;
+    public final C0772e f1287a;
     public final X b;
     public final C0782o c;
 
     public T(C0772e c0772e, X x, C0782o c0782o) {
-        this.f1286a = c0772e;
+        this.f1287a = c0772e;
         this.b = x;
         this.c = c0782o;
     }
 
     public final C0772e a() {
-        return this.f1286a;
+        return this.f1287a;
     }
 
     public final C0782o b() {
@@ -26,7 +26,7 @@ public final class T {
     }
 
     public final String toString() {
-        return "ScreenshotConfig(apiCaptorConfig=" + this.f1286a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
+        return "ScreenshotConfig(apiCaptorConfig=" + this.f1287a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
     }
 
     public T() {

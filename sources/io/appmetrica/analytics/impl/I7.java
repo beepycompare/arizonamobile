@@ -15,7 +15,7 @@ public final class I7 extends MessageNano {
     public static volatile I7[] s;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f486a;
+    public int f487a;
     public String b;
     public String c;
     public long d;
@@ -50,7 +50,7 @@ public final class I7 extends MessageNano {
     }
 
     public final I7 a() {
-        this.f486a = -1;
+        this.f487a = -1;
         this.b = "";
         this.c = "";
         this.d = -1L;
@@ -75,7 +75,7 @@ public final class I7 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f486a;
+        int i = this.f487a;
         if (i != -1) {
             computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(1, i);
         }
@@ -142,7 +142,7 @@ public final class I7 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f486a;
+        int i = this.f487a;
         if (i != -1) {
             codedOutputByteBufferNano.writeInt32(1, i);
         }
@@ -223,7 +223,7 @@ public final class I7 extends MessageNano {
                 case 0:
                     break;
                 case 8:
-                    this.f486a = codedInputByteBufferNano.readInt32();
+                    this.f487a = codedInputByteBufferNano.readInt32();
                     break;
                 case 18:
                     this.b = codedInputByteBufferNano.readString();

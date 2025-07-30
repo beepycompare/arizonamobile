@@ -13,7 +13,7 @@ public final class C0476o6 extends MessageNano {
     public static volatile C0476o6[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0451n6 f982a;
+    public C0451n6 f983a;
     public String b;
     public int c;
 
@@ -33,7 +33,7 @@ public final class C0476o6 extends MessageNano {
     }
 
     public final C0476o6 a() {
-        this.f982a = null;
+        this.f983a = null;
         this.b = "";
         this.c = -1;
         this.cachedSize = -1;
@@ -43,7 +43,7 @@ public final class C0476o6 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0451n6 c0451n6 = this.f982a;
+        C0451n6 c0451n6 = this.f983a;
         if (c0451n6 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0451n6);
         }
@@ -56,7 +56,7 @@ public final class C0476o6 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0451n6 c0451n6 = this.f982a;
+        C0451n6 c0451n6 = this.f983a;
         if (c0451n6 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0451n6);
         }
@@ -78,10 +78,10 @@ public final class C0476o6 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f982a == null) {
-                    this.f982a = new C0451n6();
+                if (this.f983a == null) {
+                    this.f983a = new C0451n6();
                 }
-                codedInputByteBufferNano.readMessage(this.f982a);
+                codedInputByteBufferNano.readMessage(this.f983a);
             } else if (readTag == 18) {
                 this.b = codedInputByteBufferNano.readString();
             } else if (readTag != 24) {

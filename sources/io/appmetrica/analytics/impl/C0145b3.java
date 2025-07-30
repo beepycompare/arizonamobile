@@ -12,7 +12,7 @@ import java.util.Iterator;
 public final class C0145b3 implements InterfaceC0589sk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f778a;
+    public final ArrayList f779a;
     public Intent b;
     public final Context c;
     public final C0174c6 d;
@@ -22,7 +22,7 @@ public final class C0145b3 implements InterfaceC0589sk {
     }
 
     public final synchronized Intent a(Consumer<Intent> consumer) {
-        this.f778a.add(consumer);
+        this.f779a.add(consumer);
         return this.b;
     }
 
@@ -33,7 +33,7 @@ public final class C0145b3 implements InterfaceC0589sk {
         synchronized (c0174c6) {
             if (c0174c6.b) {
                 try {
-                    context.unregisterReceiver(c0174c6.f794a);
+                    context.unregisterReceiver(c0174c6.f795a);
                     c0174c6.b = false;
                 } catch (Throwable unused) {
                 }
@@ -45,7 +45,7 @@ public final class C0145b3 implements InterfaceC0589sk {
     public final synchronized void onCreate() {
         Intent a2 = a();
         this.b = a2;
-        Iterator it = this.f778a.iterator();
+        Iterator it = this.f779a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(a2);
         }
@@ -55,14 +55,14 @@ public final class C0145b3 implements InterfaceC0589sk {
     public final synchronized void onDestroy() {
         this.b = null;
         b();
-        Iterator it = this.f778a.iterator();
+        Iterator it = this.f779a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(null);
         }
     }
 
     public C0145b3(Context context, ICommonExecutor iCommonExecutor, int i) {
-        this.f778a = new ArrayList();
+        this.f779a = new ArrayList();
         this.b = null;
         this.c = context;
         this.d = AbstractC0148b6.a(new F2(new C0119a3(this), iCommonExecutor));
@@ -75,7 +75,7 @@ public final class C0145b3 implements InterfaceC0589sk {
         Context context = this.c;
         synchronized (c0174c6) {
             try {
-                intent = context.registerReceiver(c0174c6.f794a, intentFilter);
+                intent = context.registerReceiver(c0174c6.f795a, intentFilter);
                 try {
                     c0174c6.b = true;
                 } catch (Throwable unused) {

@@ -29,7 +29,7 @@ public final class C0626u7 {
     public C0631uc r;
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f1079a = new HashMap();
+    public final HashMap f1080a = new HashMap();
     public final HashMap b = new HashMap();
     public final HashMap c = new HashMap();
     public final C0303h7 d = S5.a();
@@ -52,7 +52,7 @@ public final class C0626u7 {
 
     public final synchronized InterfaceC0179cb b(C0400l5 c0400l5) {
         InterfaceC0179cb interfaceC0179cb;
-        String str = new C0173c5(c0400l5).f793a;
+        String str = new C0173c5(c0400l5).f794a;
         interfaceC0179cb = (InterfaceC0179cb) this.b.get(str);
         if (interfaceC0179cb == null) {
             interfaceC0179cb = new Nb(new C0541ql(c(c0400l5)));
@@ -64,11 +64,11 @@ public final class C0626u7 {
     public final synchronized C0601t7 c(C0400l5 c0400l5) {
         C0601t7 c0601t7;
         C0173c5 c0173c5 = new C0173c5(c0400l5);
-        c0601t7 = (C0601t7) this.f1079a.get(c0173c5.f793a);
+        c0601t7 = (C0601t7) this.f1080a.get(c0173c5.f794a);
         if (c0601t7 == null) {
             Context context = this.e;
             C0676w7 c0676w7 = this.s;
-            String a2 = new C0651v7(c0676w7.f1115a, c0676w7.b, false).a(context, c0173c5);
+            String a2 = new C0651v7(c0676w7.f1116a, c0676w7.b, false).a(context, c0173c5);
             C0303h7 c0303h7 = this.d;
             c0303h7.getClass();
             String str = c0400l5.b;
@@ -77,15 +77,15 @@ public final class C0626u7 {
             }
             String format = String.format("component-%s", str);
             C0294gn c0294gn = c0303h7.c;
-            C0551r7 c0551r7 = c0303h7.f879a;
-            C0352j7 c0352j7 = c0551r7.f1033a;
+            C0551r7 c0551r7 = c0303h7.f880a;
+            C0352j7 c0352j7 = c0551r7.f1034a;
             C0377k7 c0377k7 = c0551r7.b;
             Ka ka = new Ka(false);
             ka.a(112, new C0250f5());
-            C0343in c0343in = new C0343in(format, c0303h7.b.f609a);
+            C0343in c0343in = new C0343in(format, c0303h7.b.f610a);
             c0294gn.getClass();
             c0601t7 = new C0601t7(context, a2, new C0319hn(c0352j7, c0377k7, ka, c0343in), PublicLogger.getAnonymousInstance());
-            this.f1079a.put(c0173c5.f793a, c0601t7);
+            this.f1080a.put(c0173c5.f794a, c0601t7);
         }
         return c0601t7;
     }
@@ -102,13 +102,13 @@ public final class C0626u7 {
             if (this.g == null) {
                 Context context = this.e;
                 C0676w7 c0676w7 = this.s;
-                String a2 = new C0651v7(c0676w7.f1115a, c0676w7.b, false).a(context, new B2());
+                String a2 = new C0651v7(c0676w7.f1116a, c0676w7.b, false).a(context, new B2());
                 C0303h7 c0303h7 = this.d;
                 c0303h7.getClass();
                 HashMap hashMap = new HashMap();
-                hashMap.put("binary_data", N5.f559a);
+                hashMap.put("binary_data", N5.f560a);
                 C0294gn c0294gn = c0303h7.c;
-                C0551r7 c0551r7 = c0303h7.f879a;
+                C0551r7 c0551r7 = c0303h7.f880a;
                 C0402l7 c0402l7 = c0551r7.g;
                 C0427m7 c0427m7 = c0551r7.h;
                 Ka ka = new Ka(false);
@@ -127,14 +127,14 @@ public final class C0626u7 {
             synchronized (this) {
                 if (this.r == null) {
                     C0676w7 c0676w7 = this.s;
-                    String a2 = new C0651v7(c0676w7.f1115a, c0676w7.b, true).a(this.e, new C0349j4());
+                    String a2 = new C0651v7(c0676w7.f1116a, c0676w7.b, true).a(this.e, new C0349j4());
                     Context context = this.e;
                     C0303h7 c0303h7 = this.d;
                     c0303h7.getClass();
                     HashMap hashMap = new HashMap();
-                    hashMap.put("preferences", P5.f589a);
+                    hashMap.put("preferences", P5.f590a);
                     C0294gn c0294gn = c0303h7.c;
-                    C0551r7 c0551r7 = c0303h7.f879a;
+                    C0551r7 c0551r7 = c0303h7.f880a;
                     C0452n7 c0452n7 = c0551r7.c;
                     C0477o7 c0477o7 = c0551r7.d;
                     Ka ka = new Ka(false);
@@ -161,20 +161,20 @@ public final class C0626u7 {
         if (this.f == null) {
             Context context = this.e;
             C0676w7 c0676w7 = this.s;
-            String a2 = new C0651v7(c0676w7.f1115a, c0676w7.b, true).a(context, new C0465nk());
+            String a2 = new C0651v7(c0676w7.f1116a, c0676w7.b, true).a(context, new C0465nk());
             C0303h7 c0303h7 = this.d;
             c0303h7.getClass();
             HashMap hashMap = new HashMap();
-            hashMap.put("preferences", P5.f589a);
-            hashMap.put("binary_data", N5.f559a);
-            hashMap.put("temp_cache", AbstractC0592sn.f1057a);
+            hashMap.put("preferences", P5.f590a);
+            hashMap.put("binary_data", N5.f560a);
+            hashMap.put("temp_cache", AbstractC0592sn.f1058a);
             for (ModuleServicesDatabase moduleServicesDatabase : Ia.F.o().b()) {
                 for (TableDescription tableDescription : moduleServicesDatabase.getTables()) {
                     hashMap.put(tableDescription.getTableName(), tableDescription.getColumnNames());
                 }
             }
             C0294gn c0294gn = c0303h7.c;
-            C0551r7 c0551r7 = c0303h7.f879a;
+            C0551r7 c0551r7 = c0303h7.f880a;
             C0502p7 c0502p7 = c0551r7.e;
             C0527q7 c0527q7 = c0551r7.f;
             Ka ka = new Ka(false);
@@ -199,7 +199,7 @@ public final class C0626u7 {
 
     public final synchronized IBinaryDataHelper a(C0400l5 c0400l5) {
         IBinaryDataHelper iBinaryDataHelper;
-        String str = new C0173c5(c0400l5).f793a;
+        String str = new C0173c5(c0400l5).f794a;
         iBinaryDataHelper = (IBinaryDataHelper) this.c.get(str);
         if (iBinaryDataHelper == null) {
             iBinaryDataHelper = new C0473o3(new C0541ql(c(c0400l5)));

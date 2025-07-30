@@ -8,13 +8,13 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0567rn implements TempCacheStorage.Entry {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f1043a;
+    public final long f1044a;
     public final String b;
     public final long c;
     public final byte[] d;
 
     public C0567rn(long j, String str, long j2, byte[] bArr) {
-        this.f1043a = j;
+        this.f1044a = j;
         this.b = str;
         this.c = j2;
         this.d = bArr;
@@ -27,7 +27,7 @@ public final class C0567rn implements TempCacheStorage.Entry {
         if (Intrinsics.areEqual(C0567rn.class, obj != null ? obj.getClass() : null)) {
             if (obj != null) {
                 C0567rn c0567rn = (C0567rn) obj;
-                if (this.f1043a == c0567rn.f1043a && Intrinsics.areEqual(this.b, c0567rn.b) && this.c == c0567rn.c) {
+                if (this.f1044a == c0567rn.f1044a && Intrinsics.areEqual(this.b, c0567rn.b) && this.c == c0567rn.c) {
                     return Arrays.equals(this.d, c0567rn.d);
                 }
                 return false;
@@ -44,7 +44,7 @@ public final class C0567rn implements TempCacheStorage.Entry {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.TempCacheStorage.Entry
     public final long getId() {
-        return this.f1043a;
+        return this.f1044a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.TempCacheStorage.Entry
@@ -60,10 +60,10 @@ public final class C0567rn implements TempCacheStorage.Entry {
     public final int hashCode() {
         int hashCode = this.b.hashCode();
         int hashCode2 = Long.hashCode(this.c);
-        return Arrays.hashCode(this.d) + ((hashCode2 + ((hashCode + (Long.hashCode(this.f1043a) * 31)) * 31)) * 31);
+        return Arrays.hashCode(this.d) + ((hashCode2 + ((hashCode + (Long.hashCode(this.f1044a) * 31)) * 31)) * 31);
     }
 
     public final String toString() {
-        return "TempCacheEntry(id=" + this.f1043a + ", scope='" + this.b + "', timestamp=" + this.c + ", data=array[" + this.d.length + "])";
+        return "TempCacheEntry(id=" + this.f1044a + ", scope='" + this.b + "', timestamp=" + this.c + ", data=array[" + this.d.length + "])";
     }
 }

@@ -5,7 +5,7 @@ import io.appmetrica.analytics.AppMetrica;
 public abstract class S5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Boolean f633a = Boolean.FALSE;
+    public static final Boolean f634a = Boolean.FALSE;
     public static final int b = AppMetrica.getLibraryApiLevel();
     public static final C0303h7 c = new C0303h7(new C0551r7(), new Q7(), new C0294gn());
 

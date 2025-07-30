@@ -13,7 +13,7 @@ import io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFa
 public final class C0275g4 implements InterfaceC0200d6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f858a;
+    public final Context f859a;
     public final C0277g6 b = new C0277g6(new D5());
     public final C0723y4 c = new C0723y4(C0698x4.l().b(getContext()));
     public final C0655vb d = new C0655vb();
@@ -23,7 +23,7 @@ public final class C0275g4 implements InterfaceC0200d6 {
     public final C0249f4 h = new C0249f4();
 
     public C0275g4(Context context) {
-        this.f858a = context;
+        this.f859a = context;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
@@ -48,7 +48,7 @@ public final class C0275g4 implements InterfaceC0200d6 {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
     public final Context getContext() {
-        return this.f858a;
+        return this.f859a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext

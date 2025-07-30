@@ -9,7 +9,7 @@ public final class C0621u2 implements ProtobufConverter {
     /* renamed from: a */
     public final C0492om fromModel(BillingConfig billingConfig) {
         C0492om c0492om = new C0492om();
-        c0492om.f992a = billingConfig.sendFrequencySeconds;
+        c0492om.f993a = billingConfig.sendFrequencySeconds;
         c0492om.b = billingConfig.firstCollectingInappMaxAgeSeconds;
         return c0492om;
     }
@@ -17,10 +17,10 @@ public final class C0621u2 implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
         C0492om c0492om = (C0492om) obj;
-        return new BillingConfig(c0492om.f992a, c0492om.b);
+        return new BillingConfig(c0492om.f993a, c0492om.b);
     }
 
     public final BillingConfig a(C0492om c0492om) {
-        return new BillingConfig(c0492om.f992a, c0492om.b);
+        return new BillingConfig(c0492om.f993a, c0492om.b);
     }
 }

@@ -17,7 +17,7 @@ public final class C0661vh extends AbstractC0327i6 {
     /* renamed from: b */
     public final C0711xh load(C0302h6 c0302h6) {
         C0711xh c0711xh = (C0711xh) super.load(c0302h6);
-        c0711xh.m = ((C0586sh) c0302h6.componentArguments).f1053a;
+        c0711xh.m = ((C0586sh) c0302h6.componentArguments).f1054a;
         c0711xh.r = this.b.t.a();
         c0711xh.w = this.b.q.a();
         C0586sh c0586sh = (C0586sh) c0302h6.componentArguments;
@@ -33,12 +33,12 @@ public final class C0661vh extends AbstractC0327i6 {
         c0711xh.k = interfaceC0636uh;
         C0586sh c0586sh2 = (C0586sh) c0302h6.componentArguments;
         c0711xh.v = c0586sh2.j;
-        C0267fm c0267fm = c0302h6.f878a;
+        C0267fm c0267fm = c0302h6.f879a;
         G4 g4 = c0267fm.n;
-        c0711xh.n = g4.f446a;
+        c0711xh.n = g4.f447a;
         Le le = c0267fm.s;
         if (le != null) {
-            c0711xh.s = le.f532a;
+            c0711xh.s = le.f533a;
             c0711xh.t = le.b;
         }
         c0711xh.o = g4.b;

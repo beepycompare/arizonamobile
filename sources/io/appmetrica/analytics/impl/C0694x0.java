@@ -25,7 +25,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0694x0 implements Xa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1127a;
+    public final Context f1128a;
     public final Wa b;
     public final C0360jf c;
     public final Ol d;
@@ -40,7 +40,7 @@ public final class C0694x0 implements Xa {
     public boolean m;
 
     public C0694x0(Context context, Wa wa) {
-        this.f1127a = context;
+        this.f1128a = context;
         this.b = wa;
         C0360jf b = C0698x4.l().b(context);
         this.c = b;
@@ -101,7 +101,7 @@ public final class C0694x0 implements Xa {
     public final InterfaceC0205db j() {
         Ec ec = this.k;
         Intrinsics.checkNotNull(ec);
-        return ec.f416a;
+        return ec.f417a;
     }
 
     public final C0687wi k() {
@@ -126,12 +126,12 @@ public final class C0694x0 implements Xa {
     @Override // io.appmetrica.analytics.impl.Xa
     public final void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         C0345j0 c0345j0 = this.l;
-        AppMetricaConfig f = c0345j0.f908a.f();
+        AppMetricaConfig f = c0345j0.f909a.f();
         if (f == null) {
             C0544r0 c0544r0 = c0345j0.b;
             c0544r0.getClass();
             AppMetricaConfig.Builder newConfigBuilder = AppMetricaConfig.newConfigBuilder("629a824d-c717-4ba5-bc0f-3f3968554d01");
-            if (c0544r0.f1026a.c() && Intrinsics.areEqual(c0544r0.b.f1135a, Boolean.TRUE)) {
+            if (c0544r0.f1027a.c() && Intrinsics.areEqual(c0544r0.b.f1136a, Boolean.TRUE)) {
                 newConfigBuilder.handleFirstActivationAsUpdate(true);
             }
             Boolean bool = appMetricaLibraryAdapterConfig.advIdentifiersTracking;
@@ -199,7 +199,7 @@ public final class C0694x0 implements Xa {
 
     @Override // io.appmetrica.analytics.impl.Xa
     public final void a(StartupParamsCallback startupParamsCallback, List<String> list) {
-        this.d.a(startupParamsCallback, list, Bb.c(this.f.f595a.getAsString("PROCESS_CFG_CLIDS")));
+        this.d.a(startupParamsCallback, list, Bb.c(this.f.f596a.getAsString("PROCESS_CFG_CLIDS")));
     }
 
     public final boolean a(PublicLogger publicLogger, AppMetricaConfig appMetricaConfig, Rc rc) {
@@ -213,7 +213,7 @@ public final class C0694x0 implements Xa {
             this.k = ec;
             H5 h5 = this.j.b;
             synchronized (h5) {
-                h5.f465a = a2;
+                h5.f466a = a2;
                 Iterator it = h5.b.iterator();
                 while (it.hasNext()) {
                     ((InterfaceC0509pe) it.next()).consume(a2);
@@ -237,7 +237,7 @@ public final class C0694x0 implements Xa {
             PublicLogger.Companion.getAnonymousInstance().setEnabled(false);
         }
         if (((Boolean) WrapUtils.getOrDefault(appMetricaConfig.crashReporting, bool2)).booleanValue()) {
-            this.b.d().a(this.f1127a, appMetricaConfig, this);
+            this.b.d().a(this.f1128a, appMetricaConfig, this);
             this.b.d().b();
             publicLogger.info("Register application crash handler", new Object[0]);
         } else {
@@ -250,8 +250,8 @@ public final class C0694x0 implements Xa {
             Xk xk = this.j;
             synchronized (xk) {
                 if (xk.g) {
-                    xk.f722a.unregisterListener(xk.c, ActivityEvent.RESUMED);
-                    xk.f722a.unregisterListener(xk.d, ActivityEvent.PAUSED);
+                    xk.f723a.unregisterListener(xk.c, ActivityEvent.RESUMED);
+                    xk.f723a.unregisterListener(xk.d, ActivityEvent.PAUSED);
                     xk.g = false;
                 }
             }

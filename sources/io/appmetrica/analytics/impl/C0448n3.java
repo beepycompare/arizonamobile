@@ -15,7 +15,7 @@ import java.util.concurrent.Executor;
 public final class C0448n3 implements InterfaceC0392km {
 
     /* renamed from: a  reason: collision with root package name */
-    public BillingMonitor f963a;
+    public BillingMonitor f964a;
     public final Context b;
     public final Executor c;
     public final Executor d;
@@ -41,17 +41,17 @@ public final class C0448n3 implements InterfaceC0392km {
                 BillingInfoStorage billingInfoStorage = this.f;
                 BillingInfoSender billingInfoSender = this.g;
                 c0398l3.getClass();
-                if (AbstractC0373k3.f922a[billingType.ordinal()] == 1) {
+                if (AbstractC0373k3.f923a[billingType.ordinal()] == 1) {
                     c0478o8 = new BillingLibraryMonitor(context, executor, executor2, billingInfoStorage, billingInfoSender, null, null, 96, null);
                 } else {
                     c0478o8 = new C0478o8();
                 }
-                this.f963a = c0478o8;
+                this.f964a = c0478o8;
             }
             c0478o8.onBillingConfigChanged(c0267fm.x);
             if (this.h.registerStickyObserver(new C0423m3(this)) == ApplicationState.VISIBLE) {
                 try {
-                    BillingMonitor billingMonitor = this.f963a;
+                    BillingMonitor billingMonitor = this.f964a;
                     if (billingMonitor != null) {
                         billingMonitor.onSessionResumed();
                     }
@@ -76,7 +76,7 @@ public final class C0448n3 implements InterfaceC0392km {
     public final synchronized void a(C0267fm c0267fm) {
         BillingMonitor billingMonitor;
         synchronized (this) {
-            billingMonitor = this.f963a;
+            billingMonitor = this.f964a;
         }
         if (billingMonitor != null) {
             billingMonitor.onBillingConfigChanged(c0267fm.x);

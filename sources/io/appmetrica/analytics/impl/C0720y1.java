@@ -7,16 +7,16 @@ import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 public final class C0720y1 extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Configuration f1144a;
+    public final /* synthetic */ Configuration f1145a;
     public final /* synthetic */ I1 b;
 
     public C0720y1(I1 i1, Configuration configuration) {
         this.b = i1;
-        this.f1144a = configuration;
+        this.f1145a = configuration;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        this.b.b.onConfigurationChanged(this.f1144a);
+        this.b.b.onConfigurationChanged(this.f1145a);
     }
 }

@@ -14,7 +14,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NetworkFetcher.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "Lcoil3/fetch/SourceFetchResult;", "response", "Lcoil3/network/NetworkResponse;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "Lcoil3/fetch/SourceFetchResult;", "response", "Lcoil3/network/NetworkResponse;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "coil3.network.NetworkFetcher$fetch$2", f = "NetworkFetcher.kt", i = {0}, l = {104}, m = "invokeSuspend", n = {"response"}, s = {"L$0"})
 /* loaded from: classes3.dex */
 public final class NetworkFetcher$fetch$2 extends SuspendLambda implements Function2<NetworkResponse, Continuation<? super SourceFetchResult>, Object> {
@@ -43,26 +43,21 @@ public final class NetworkFetcher$fetch$2 extends SuspendLambda implements Funct
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object imageSource;
-        NetworkResponse networkResponse;
         String str;
+        NetworkResponse networkResponse = (NetworkResponse) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            NetworkResponse networkResponse2 = (NetworkResponse) this.L$0;
-            this.L$0 = networkResponse2;
+            this.L$0 = networkResponse;
             this.label = 1;
-            imageSource = this.this$0.toImageSource(UtilsKt.requireBody(networkResponse2), this);
-            if (imageSource == coroutine_suspended) {
+            obj = this.this$0.toImageSource(UtilsKt.requireBody(networkResponse), this);
+            if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
-            networkResponse = networkResponse2;
-            obj = imageSource;
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
-            networkResponse = (NetworkResponse) this.L$0;
             ResultKt.throwOnFailure(obj);
         }
         NetworkFetcher networkFetcher = this.this$0;

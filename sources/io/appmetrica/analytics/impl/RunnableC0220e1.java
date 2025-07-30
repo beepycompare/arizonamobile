@@ -8,22 +8,22 @@ import java.util.List;
 public final class RunnableC0220e1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f823a;
+    public final /* synthetic */ Context f824a;
     public final /* synthetic */ StartupParamsCallback b;
     public final /* synthetic */ List c;
     public final /* synthetic */ C0496p1 d;
 
     public RunnableC0220e1(C0496p1 c0496p1, Context context, StartupParamsCallback startupParamsCallback, List list) {
         this.d = c0496p1;
-        this.f823a = context;
+        this.f824a = context;
         this.b = startupParamsCallback;
         this.c = list;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0619u0 c0619u0 = this.d.f994a;
-        Context applicationContext = this.f823a.getApplicationContext();
+        C0619u0 c0619u0 = this.d.f995a;
+        Context applicationContext = this.f824a.getApplicationContext();
         c0619u0.getClass();
         C0594t0 a2 = C0594t0.a(applicationContext);
         a2.f().a(this.b, this.c);

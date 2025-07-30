@@ -31,8 +31,8 @@ public final class BinaryDataReader {
     }
 
     /* renamed from: readUnsignedByte-w2LRezQ  reason: not valid java name */
-    public final byte m10121readUnsignedBytew2LRezQ() {
-        return UByte.m8492constructorimpl(readByte());
+    public final byte m10125readUnsignedBytew2LRezQ() {
+        return UByte.m8496constructorimpl(readByte());
     }
 
     public final int readInt() {

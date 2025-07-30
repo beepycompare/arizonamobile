@@ -4,13 +4,13 @@ package io.appmetrica.analytics.impl;
 public final class C0522q2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1012a;
+    public final String f1013a;
 
     public C0522q2(String str) {
-        this.f1012a = str;
+        this.f1013a = str;
     }
 
     public final String toString() {
-        return this.f1012a;
+        return this.f1013a;
     }
 }

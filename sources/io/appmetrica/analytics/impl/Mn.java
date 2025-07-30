@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.io.Base64Utils;
 public final class Mn implements qo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0125a9 f553a;
+    public final C0125a9 f554a;
 
     public Mn() {
         this(new C0125a9());
@@ -18,15 +18,15 @@ public final class Mn implements qo {
             bArr = Base64Utils.decompressBase64GzipAsBytes(c0280g9.b);
         } catch (Throwable unused) {
         }
-        byte[] a2 = ((Z8) this.f553a.f765a.a(c0280g9.o)).a(bArr);
+        byte[] a2 = ((Z8) this.f554a.f766a.a(c0280g9.o)).a(bArr);
         return a2 == null ? new byte[0] : a2;
     }
 
     public Mn(C0125a9 c0125a9) {
-        this.f553a = c0125a9;
+        this.f554a = c0125a9;
     }
 
     public final C0125a9 a() {
-        return this.f553a;
+        return this.f554a;
     }
 }

@@ -21,13 +21,13 @@ public final class ULongArrayBuilder extends PrimitiveArrayBuilder<ULongArray> {
 
     @Override // kotlinx.serialization.internal.PrimitiveArrayBuilder
     public /* bridge */ /* synthetic */ ULongArray build$kotlinx_serialization_core() {
-        return ULongArray.m8706boximpl(m10202buildY2RjT0g$kotlinx_serialization_core());
+        return ULongArray.m8710boximpl(m10206buildY2RjT0g$kotlinx_serialization_core());
     }
 
     private ULongArrayBuilder(long[] bufferWithData) {
         Intrinsics.checkNotNullParameter(bufferWithData, "bufferWithData");
         this.buffer = bufferWithData;
-        this.position = ULongArray.m8714getSizeimpl(bufferWithData);
+        this.position = ULongArray.m8718getSizeimpl(bufferWithData);
         ensureCapacity$kotlinx_serialization_core(10);
     }
 
@@ -38,27 +38,27 @@ public final class ULongArrayBuilder extends PrimitiveArrayBuilder<ULongArray> {
 
     @Override // kotlinx.serialization.internal.PrimitiveArrayBuilder
     public void ensureCapacity$kotlinx_serialization_core(int i) {
-        if (ULongArray.m8714getSizeimpl(this.buffer) < i) {
+        if (ULongArray.m8718getSizeimpl(this.buffer) < i) {
             long[] jArr = this.buffer;
-            long[] copyOf = Arrays.copyOf(jArr, RangesKt.coerceAtLeast(i, ULongArray.m8714getSizeimpl(jArr) * 2));
+            long[] copyOf = Arrays.copyOf(jArr, RangesKt.coerceAtLeast(i, ULongArray.m8718getSizeimpl(jArr) * 2));
             Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-            this.buffer = ULongArray.m8708constructorimpl(copyOf);
+            this.buffer = ULongArray.m8712constructorimpl(copyOf);
         }
     }
 
     /* renamed from: append-VKZWuLQ$kotlinx_serialization_core  reason: not valid java name */
-    public final void m10201appendVKZWuLQ$kotlinx_serialization_core(long j) {
+    public final void m10205appendVKZWuLQ$kotlinx_serialization_core(long j) {
         PrimitiveArrayBuilder.ensureCapacity$kotlinx_serialization_core$default(this, 0, 1, null);
         long[] jArr = this.buffer;
         int position$kotlinx_serialization_core = getPosition$kotlinx_serialization_core();
         this.position = position$kotlinx_serialization_core + 1;
-        ULongArray.m8718setk8EXiF4(jArr, position$kotlinx_serialization_core, j);
+        ULongArray.m8722setk8EXiF4(jArr, position$kotlinx_serialization_core, j);
     }
 
     /* renamed from: build-Y2RjT0g$kotlinx_serialization_core  reason: not valid java name */
-    public long[] m10202buildY2RjT0g$kotlinx_serialization_core() {
+    public long[] m10206buildY2RjT0g$kotlinx_serialization_core() {
         long[] copyOf = Arrays.copyOf(this.buffer, getPosition$kotlinx_serialization_core());
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return ULongArray.m8708constructorimpl(copyOf);
+        return ULongArray.m8712constructorimpl(copyOf);
     }
 }

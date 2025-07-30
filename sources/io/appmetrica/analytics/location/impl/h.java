@@ -6,17 +6,17 @@ import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
 public final class h implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final m f1188a;
+    public final m f1189a;
 
     public h(m mVar) {
-        this.f1188a = mVar;
+        this.f1189a = mVar;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
     /* renamed from: a */
     public final void consume(Location location) {
         if (location != null) {
-            this.f1188a.updateData(location);
+            this.f1189a.updateData(location);
         }
     }
 }

@@ -10,10 +10,10 @@ import kotlin.collections.CollectionsKt;
 public final class Xe {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0306ha f718a;
+    public final C0306ha f719a;
 
     public Xe(C0306ha c0306ha) {
-        this.f718a = c0306ha;
+        this.f719a = c0306ha;
     }
 
     public final Nn a(PluginErrorDetails pluginErrorDetails) {
@@ -24,8 +24,8 @@ public final class Xe {
         String platform = pluginErrorDetails.getPlatform();
         String virtualMachineVersion = pluginErrorDetails.getVirtualMachineVersion();
         Map<String, String> pluginEnvironment = pluginErrorDetails.getPluginEnvironment();
-        String str = (String) this.f718a.b.a();
-        Boolean bool = (Boolean) this.f718a.c.a();
+        String str = (String) this.f719a.b.a();
+        Boolean bool = (Boolean) this.f719a.c.a();
         if (stacktrace != null) {
             arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(stacktrace, 10));
             for (StackTraceItem stackTraceItem : stacktrace) {

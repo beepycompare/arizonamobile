@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public abstract class AbstractC0378k8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Yc f923a;
+    public final Yc f924a;
 
     public AbstractC0378k8() {
         Yc yc = new Yc(0);
@@ -12,11 +12,11 @@ public abstract class AbstractC0378k8 {
         yc.a(EnumC0403l8.c, 1);
         yc.a(EnumC0403l8.d, 2);
         yc.a(EnumC0403l8.e, 3);
-        this.f923a = yc;
+        this.f924a = yc;
     }
 
     public final Yc a() {
-        return this.f923a;
+        return this.f924a;
     }
 
     public abstract boolean a(Object obj, Object obj2);

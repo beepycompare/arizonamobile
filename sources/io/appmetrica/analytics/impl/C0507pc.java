@@ -11,27 +11,27 @@ public final class C0507pc implements PermissionStrategy, LocationControllerObse
     public static final List c = CollectionsKt.listOf((Object[]) new String[]{"android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION"});
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f999a;
+    public volatile boolean f1000a;
 
     @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy
     public final boolean forbidUsePermission(String str) {
         if (c.contains(str)) {
-            return !this.f999a;
+            return !this.f1000a;
         }
         return false;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationControllerObserver
     public final void startLocationTracking() {
-        this.f999a = true;
+        this.f1000a = true;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationControllerObserver
     public final void stopLocationTracking() {
-        this.f999a = false;
+        this.f1000a = false;
     }
 
     public final String toString() {
-        return "LocationFlagStrategy(enabled=" + this.f999a + ", locationPermissions=" + c + ')';
+        return "LocationFlagStrategy(enabled=" + this.f1000a + ", locationPermissions=" + c + ')';
     }
 }

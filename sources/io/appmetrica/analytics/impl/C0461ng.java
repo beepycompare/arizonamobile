@@ -8,15 +8,15 @@ import kotlin.collections.CollectionsKt;
 public final class C0461ng implements InterfaceC0361jg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0560rg f970a;
+    public final /* synthetic */ C0560rg f971a;
 
     public C0461ng(C0560rg c0560rg) {
-        this.f970a = c0560rg;
+        this.f971a = c0560rg;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0361jg
     public final void a() {
-        C0560rg c0560rg = this.f970a;
+        C0560rg c0560rg = this.f971a;
         ArrayList arrayList = c0560rg.g;
         ArrayList arrayList2 = new ArrayList();
         Iterator it = arrayList.iterator();
@@ -24,7 +24,7 @@ public final class C0461ng implements InterfaceC0361jg {
             Object next = it.next();
             Ag ag = (Ag) next;
             c0560rg.c.getClass();
-            String str = ag != null ? ag.f339a : null;
+            String str = ag != null ? ag.f340a : null;
             if (!(str == null || str.length() == 0)) {
                 arrayList2.add(next);
             }

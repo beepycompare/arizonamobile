@@ -38,7 +38,7 @@ public final class C0725y6 extends C0185ch {
         if (Intrinsics.areEqual(b, serviceInfo != null ? serviceInfo.processName : null)) {
             this.j.a(this.g);
         } else {
-            this.f523a.c();
+            this.f524a.c();
             this.c = false;
             super.a();
         }

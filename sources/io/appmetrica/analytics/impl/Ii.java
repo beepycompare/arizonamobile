@@ -22,14 +22,14 @@ public final class Ii extends C0368jn {
     @Override // io.appmetrica.analytics.impl.C0368jn
     public final void f() {
         this.b.a();
-        C0711xh c0711xh = (C0711xh) ((C0574s5) this.f918a).k.a();
+        C0711xh c0711xh = (C0711xh) ((C0574s5) this.f919a).k.a();
         if (c0711xh.k.a(c0711xh.j)) {
             String str = c0711xh.m;
             if (TextUtils.isEmpty(str) || "-1".equals(str)) {
                 return;
             }
             try {
-                a(C0384ke.a((C0574s5) this.f918a));
+                a(C0384ke.a((C0574s5) this.f919a));
             } catch (Throwable unused) {
             }
         }
@@ -45,8 +45,8 @@ public final class Ii extends C0368jn {
             return;
         }
         this.e.remove(this.d);
-        if (((C0711xh) ((C0574s5) this.f918a).k.a()).g > 0) {
-            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((C0711xh) ((C0574s5) this.f918a).k.a()).g));
+        if (((C0711xh) ((C0574s5) this.f919a).k.a()).g > 0) {
+            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((C0711xh) ((C0574s5) this.f919a).k.a()).g));
         }
     }
 }

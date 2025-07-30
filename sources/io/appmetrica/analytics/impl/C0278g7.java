@@ -27,7 +27,7 @@ import org.json.JSONObject;
 public final class C0278g7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ReentrantReadWriteLock.ReadLock f861a;
+    public final ReentrantReadWriteLock.ReadLock f862a;
     public final ReentrantReadWriteLock.WriteLock b;
     public final C0601t7 c;
     public final C0252f7 d;
@@ -49,7 +49,7 @@ public final class C0278g7 {
 
     public C0278g7(C0574s5 c0574s5, C0601t7 c0601t7, C0175c7 c0175c7, B7 b7) {
         ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
-        this.f861a = reentrantReadWriteLock.readLock();
+        this.f862a = reentrantReadWriteLock.readLock();
         this.b = reentrantReadWriteLock.writeLock();
         this.e = new Object();
         this.f = new ArrayList(3);
@@ -68,7 +68,7 @@ public final class C0278g7 {
     }
 
     public final long a(Set set) {
-        this.f861a.lock();
+        this.f862a.lock();
         Cursor cursor = null;
         long j = 0;
         try {
@@ -96,41 +96,41 @@ public final class C0278g7 {
         } catch (Throwable unused) {
         }
         io.a(cursor);
-        this.f861a.unlock();
+        this.f862a.unlock();
         return j;
     }
 
     public final long b() {
-        this.f861a.lock();
+        this.f862a.lock();
         try {
             return this.i.get();
         } finally {
-            this.f861a.unlock();
+            this.f862a.unlock();
         }
     }
 
     public final long c() {
         long j;
         SQLiteDatabase readableDatabase;
-        this.f861a.lock();
+        this.f862a.lock();
         try {
             readableDatabase = this.c.getReadableDatabase();
         } catch (Throwable unused) {
         }
         if (readableDatabase != null) {
             j = DBUtils.queryRowsCount(readableDatabase, "events");
-            this.f861a.unlock();
+            this.f862a.unlock();
             return j;
         }
         j = 0;
-        this.f861a.unlock();
+        this.f862a.unlock();
         return j;
     }
 
     public final void d() {
         Cursor cursor;
         Cursor cursor2;
-        this.f861a.lock();
+        this.f862a.lock();
         Cursor cursor3 = null;
         try {
             SQLiteDatabase readableDatabase = this.c.getReadableDatabase();
@@ -153,7 +153,7 @@ public final class C0278g7 {
                     cursor3 = cursor2;
                     cursor2 = cursor3;
                     cursor3 = cursor;
-                    this.f861a.unlock();
+                    this.f862a.unlock();
                     io.a(cursor2);
                     io.a(cursor3);
                 }
@@ -163,7 +163,7 @@ public final class C0278g7 {
         } catch (Throwable unused2) {
             cursor = null;
         }
-        this.f861a.unlock();
+        this.f862a.unlock();
         io.a(cursor2);
         io.a(cursor3);
     }
@@ -188,13 +188,13 @@ public final class C0278g7 {
         Long valueOf = Long.valueOf(j);
         Long valueOf2 = Long.valueOf(j2);
         try {
-            jSONObject = new JSONObject().put("dId", c0711xh.getDeviceId()).put("uId", c0711xh.getUuid()).put("appVer", c0711xh.getAppVersion()).put(RemoteConfigConstants.RequestFieldKey.APP_BUILD, c0711xh.getAppBuildNumber()).put("kitBuildType", c0711xh.getAnalyticsSdkBuildType()).put("osVer", c0711xh.getOsVersion()).put("osApiLev", c0711xh.getOsApiLevel()).put("lang", c0711xh.getLocale()).put("root", c0711xh.getDeviceRootStatus()).put("app_debuggable", ((C0351j6) c0711xh).f914a).put(CommonUrlParts.APP_FRAMEWORK, c0711xh.getAppFramework()).put("attribution_id", c0711xh.r).put("analyticsSdkVersionName", c0711xh.getAnalyticsSdkVersionName()).put("kitBuildNumber", c0711xh.getAnalyticsSdkBuildNumber());
+            jSONObject = new JSONObject().put("dId", c0711xh.getDeviceId()).put("uId", c0711xh.getUuid()).put("appVer", c0711xh.getAppVersion()).put(RemoteConfigConstants.RequestFieldKey.APP_BUILD, c0711xh.getAppBuildNumber()).put("kitBuildType", c0711xh.getAnalyticsSdkBuildType()).put("osVer", c0711xh.getOsVersion()).put("osApiLev", c0711xh.getOsApiLevel()).put("lang", c0711xh.getLocale()).put("root", c0711xh.getDeviceRootStatus()).put("app_debuggable", ((C0351j6) c0711xh).f915a).put(CommonUrlParts.APP_FRAMEWORK, c0711xh.getAppFramework()).put("attribution_id", c0711xh.r).put("analyticsSdkVersionName", c0711xh.getAnalyticsSdkVersionName()).put("kitBuildNumber", c0711xh.getAnalyticsSdkBuildNumber());
         } catch (Throwable unused) {
             jSONObject = new JSONObject();
         }
         String jSONObject2 = jSONObject.toString();
         Long valueOf3 = Long.valueOf(Fn.a());
-        C0316hk c0316hk = AbstractC0291gk.f869a;
+        C0316hk c0316hk = AbstractC0291gk.f870a;
         synchronized (c0316hk) {
             b = c0316hk.b.b(true);
         }
@@ -245,7 +245,7 @@ public final class C0278g7 {
         try {
             return this.k.a(sQLiteDatabase, String.format("id IN (SELECT id FROM events ORDER BY CASE WHEN type IN (%1$s) THEN 2 WHEN type IN (%2$s) THEN 1 ELSE 0 END, id LIMIT (SELECT count() FROM events) / %3$s)", TextUtils.join(", ", R9.i), TextUtils.join(", ", R9.j), 10), 2, this.h.b.b, true).b;
         } catch (Throwable th) {
-            C0188ck c0188ck = Bj.f361a;
+            C0188ck c0188ck = Bj.f362a;
             c0188ck.getClass();
             c0188ck.a(new Cj("deleteExcessiveReports exception", th));
             return 0;
@@ -262,9 +262,9 @@ public final class C0278g7 {
             SQLiteDatabase writableDatabase = this.c.getWritableDatabase();
             if (writableDatabase != null) {
                 C0123a7 a2 = this.k.a(writableDatabase, format, 1, this.h.b.b, z);
-                if (a2.f763a != null) {
+                if (a2.f764a != null) {
                     ArrayList arrayList = new ArrayList();
-                    for (ContentValues contentValues : a2.f763a) {
+                    for (ContentValues contentValues : a2.f764a) {
                         arrayList.add(Integer.valueOf(contentValues.getAsInteger("type").intValue()));
                     }
                     Iterator it = this.j.iterator();
@@ -272,7 +272,7 @@ public final class C0278g7 {
                         ((InterfaceC0404l9) it.next()).b(arrayList);
                     }
                 }
-                List list = a2.f763a;
+                List list = a2.f764a;
                 if (list != null) {
                     for (int i3 = 0; i3 < list.size(); i3++) {
                         a((ContentValues) list.get(i3), "Event removed from db");
@@ -287,12 +287,12 @@ public final class C0278g7 {
 
     public final ContentValues a(long j, Wk wk) {
         ContentValues contentValues = new ContentValues();
-        this.f861a.lock();
+        this.f862a.lock();
         Cursor cursor = null;
         try {
             SQLiteDatabase readableDatabase = this.c.getReadableDatabase();
             if (readableDatabase != null) {
-                cursor = readableDatabase.rawQuery(String.format(Locale.US, "SELECT report_request_parameters FROM sessions WHERE id = %s AND type = %s ORDER BY id DESC LIMIT 1", Long.valueOf(j), Integer.valueOf(wk.f706a)), null);
+                cursor = readableDatabase.rawQuery(String.format(Locale.US, "SELECT report_request_parameters FROM sessions WHERE id = %s AND type = %s ORDER BY id DESC LIMIT 1", Long.valueOf(j), Integer.valueOf(wk.f707a)), null);
                 if (cursor.moveToNext()) {
                     ContentValues contentValues2 = new ContentValues();
                     DatabaseUtils.cursorRowToContentValues(cursor, contentValues2);
@@ -302,7 +302,7 @@ public final class C0278g7 {
         } catch (Throwable unused) {
         }
         io.a(cursor);
-        this.f861a.unlock();
+        this.f862a.unlock();
         return contentValues;
     }
 

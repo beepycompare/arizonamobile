@@ -18,7 +18,7 @@ import kotlin.jvm.internal.Ref;
 import okio.Buffer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NetworkFetcher.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "Lcoil3/fetch/SourceFetchResult;", "response", "Lcoil3/network/NetworkResponse;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "Lcoil3/fetch/SourceFetchResult;", "response", "Lcoil3/network/NetworkResponse;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "coil3.network.NetworkFetcher$fetch$fetchResult$1", f = "NetworkFetcher.kt", i = {0, 1}, l = {76, 87}, m = "invokeSuspend", n = {"response", "response"}, s = {"L$0", "L$0"})
 /* loaded from: classes3.dex */
 public final class NetworkFetcher$fetch$fetchResult$1 extends SuspendLambda implements Function2<NetworkResponse, Continuation<? super SourceFetchResult>, Object> {
@@ -52,81 +52,77 @@ public final class NetworkFetcher$fetch$fetchResult$1 extends SuspendLambda impl
         return ((NetworkFetcher$fetch$fetchResult$1) create(networkResponse, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x00b4, code lost:
+        if (r13 == r0) goto L26;
+     */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00e8 A[RETURN] */
     /* JADX WARN: Type inference failed for: r0v3, types: [T, coil3.network.NetworkResponse] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Ref.ObjectRef<DiskCache.Snapshot> objectRef;
         Object writeToDiskCache;
-        NetworkResponse networkResponse;
+        Ref.ObjectRef<DiskCache.Snapshot> objectRef;
         T t;
-        NetworkResponse networkResponse2;
         ?? networkResponseOrNull;
         ImageSource imageSource;
         String str;
         NetworkHeaders headers;
         Object obj2;
-        Buffer buffer;
         ImageSource imageSource2;
         String str2;
+        NetworkResponse networkResponse = (NetworkResponse) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         String str3 = null;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            NetworkResponse networkResponse3 = (NetworkResponse) this.L$0;
-            objectRef = this.$snapshot;
-            this.L$0 = networkResponse3;
-            this.L$1 = objectRef;
+            Ref.ObjectRef<DiskCache.Snapshot> objectRef2 = this.$snapshot;
+            this.L$0 = networkResponse;
+            this.L$1 = objectRef2;
             this.label = 1;
-            writeToDiskCache = this.this$0.writeToDiskCache(objectRef.element, this.$cacheResponse.element, this.$networkRequest, networkResponse3, this);
+            writeToDiskCache = this.this$0.writeToDiskCache(objectRef2.element, this.$cacheResponse.element, this.$networkRequest, networkResponse, this);
             if (writeToDiskCache != coroutine_suspended) {
-                networkResponse = networkResponse3;
+                objectRef = objectRef2;
                 t = writeToDiskCache;
             }
             return coroutine_suspended;
         } else if (i != 1) {
             if (i == 2) {
-                networkResponse2 = (NetworkResponse) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 obj2 = obj;
-                buffer = (Buffer) obj2;
-                if (buffer.size() <= 0) {
+                Buffer buffer = (Buffer) obj2;
+                if (buffer.size() > 0) {
                     imageSource2 = this.this$0.toImageSource(buffer);
                     NetworkFetcher networkFetcher = this.this$0;
                     str2 = networkFetcher.url;
-                    return new SourceFetchResult(imageSource2, networkFetcher.getMimeType(str2, networkResponse2.getHeaders().get("Content-Type")), DataSource.NETWORK);
+                    return new SourceFetchResult(imageSource2, networkFetcher.getMimeType(str2, networkResponse.getHeaders().get("Content-Type")), DataSource.NETWORK);
                 }
                 return null;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             objectRef = (Ref.ObjectRef) this.L$1;
-            networkResponse = (NetworkResponse) this.L$0;
             ResultKt.throwOnFailure(obj);
             t = obj;
         }
         objectRef.element = t;
         if (this.$snapshot.element != null) {
-            Ref.ObjectRef<NetworkResponse> objectRef2 = this.$cacheResponse;
+            Ref.ObjectRef<NetworkResponse> objectRef3 = this.$cacheResponse;
             NetworkFetcher networkFetcher2 = this.this$0;
             DiskCache.Snapshot snapshot = this.$snapshot.element;
             Intrinsics.checkNotNull(snapshot);
             networkResponseOrNull = networkFetcher2.toNetworkResponseOrNull(snapshot);
-            objectRef2.element = networkResponseOrNull;
+            objectRef3.element = networkResponseOrNull;
             NetworkFetcher networkFetcher3 = this.this$0;
             DiskCache.Snapshot snapshot2 = this.$snapshot.element;
             Intrinsics.checkNotNull(snapshot2);
             imageSource = networkFetcher3.toImageSource(snapshot2);
             NetworkFetcher networkFetcher4 = this.this$0;
             str = networkFetcher4.url;
-            NetworkResponse networkResponse4 = this.$cacheResponse.element;
-            if (networkResponse4 != null && (headers = networkResponse4.getHeaders()) != null) {
+            NetworkResponse networkResponse2 = this.$cacheResponse.element;
+            if (networkResponse2 != null && (headers = networkResponse2.getHeaders()) != null) {
                 str3 = headers.get("Content-Type");
             }
             return new SourceFetchResult(imageSource, networkFetcher4.getMimeType(str, str3), DataSource.NETWORK);
@@ -135,13 +131,6 @@ public final class NetworkFetcher$fetch$fetchResult$1 extends SuspendLambda impl
         this.L$1 = null;
         this.label = 2;
         Object readBuffer = UtilsKt.readBuffer(UtilsKt.requireBody(networkResponse), this);
-        if (readBuffer != coroutine_suspended) {
-            networkResponse2 = networkResponse;
-            obj2 = readBuffer;
-            buffer = (Buffer) obj2;
-            if (buffer.size() <= 0) {
-            }
-        }
-        return coroutine_suspended;
+        obj2 = readBuffer;
     }
 }

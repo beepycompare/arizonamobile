@@ -10,12 +10,12 @@ import java.util.Iterator;
 public final class C0252f7 extends InterruptionSafeThread {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0574s5 f842a;
+    public final C0574s5 f843a;
     public final /* synthetic */ C0278g7 b;
 
     public C0252f7(C0278g7 c0278g7, C0574s5 c0574s5) {
         this.b = c0278g7;
-        this.f842a = c0574s5;
+        this.f843a = c0574s5;
     }
 
     public final synchronized void a(ArrayList arrayList) {
@@ -29,7 +29,7 @@ public final class C0252f7 extends InterruptionSafeThread {
         while (it2.hasNext()) {
             ((InterfaceC0404l9) it2.next()).a(arrayList2);
         }
-        ((F5) this.f842a.p).e();
+        ((F5) this.f843a.p).e();
     }
 
     @Override // java.lang.Thread, java.lang.Runnable

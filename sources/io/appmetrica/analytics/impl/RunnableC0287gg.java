@@ -8,7 +8,7 @@ import java.io.File;
 public final class RunnableC0287gg implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f866a;
+    public final File f867a;
     public final Function b;
     public final Consumer c;
     public final Consumer d;
@@ -16,7 +16,7 @@ public final class RunnableC0287gg implements Runnable {
     public final InterfaceC0137al f;
 
     public RunnableC0287gg(File file, Function function, Consumer consumer, Consumer consumer2, C0629ua c0629ua, InterfaceC0137al interfaceC0137al) {
-        this.f866a = file;
+        this.f867a = file;
         this.b = function;
         this.c = consumer;
         this.d = consumer2;
@@ -29,25 +29,25 @@ public final class RunnableC0287gg implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        if (this.f866a.exists()) {
-            S9 b = this.e.b(this.f866a.getName());
+        if (this.f867a.exists()) {
+            S9 b = this.e.b(this.f867a.getName());
             Consumer consumer = this.c;
             try {
-                b.f637a.lock();
+                b.f638a.lock();
                 b.b.a();
             } catch (Throwable unused) {
             }
-            if (!this.f866a.exists()) {
-                consumer.consume(this.f866a);
+            if (!this.f867a.exists()) {
+                consumer.consume(this.f867a);
                 b.c();
                 C0629ua c0629ua = this.e;
-                String name = this.f866a.getName();
+                String name = this.f867a.getName();
                 synchronized (c0629ua) {
                     c0629ua.b.remove(name);
                 }
                 return;
             }
-            Object apply = this.b.apply(this.f866a);
+            Object apply = this.b.apply(this.f867a);
             if (apply != null) {
                 if (this.f.a(apply)) {
                     this.d.consume(apply);
@@ -60,9 +60,9 @@ public final class RunnableC0287gg implements Runnable {
                     };
                 }
             }
-            consumer.consume(this.f866a);
+            consumer.consume(this.f867a);
             b.c();
-            this.e.a(this.f866a.getName());
+            this.e.a(this.f867a.getName());
         }
     }
 }

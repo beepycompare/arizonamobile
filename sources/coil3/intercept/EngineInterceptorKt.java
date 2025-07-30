@@ -17,17 +17,18 @@ import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.internal.Reflection;
 import kotlinx.coroutines.JobKt;
 /* compiled from: EngineInterceptor.kt */
-@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a8\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\u0010\t\u001a\u0004\u0018\u00010\nH\u0080@¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"transform", "Lcoil3/intercept/EngineInterceptor$ExecuteResult;", "result", "request", "Lcoil3/request/ImageRequest;", "options", "Lcoil3/request/Options;", "eventListener", "Lcoil3/EventListener;", "logger", "Lcoil3/util/Logger;", "(Lcoil3/intercept/EngineInterceptor$ExecuteResult;Lcoil3/request/ImageRequest;Lcoil3/request/Options;Lcoil3/EventListener;Lcoil3/util/Logger;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "coil-core_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a8\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\u0010\t\u001a\u0004\u0018\u00010\nH\u0080@¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"transform", "Lcoil3/intercept/EngineInterceptor$ExecuteResult;", "result", "request", "Lcoil3/request/ImageRequest;", "options", "Lcoil3/request/Options;", "eventListener", "Lcoil3/EventListener;", "logger", "Lcoil3/util/Logger;", "(Lcoil3/intercept/EngineInterceptor$ExecuteResult;Lcoil3/request/ImageRequest;Lcoil3/request/Options;Lcoil3/EventListener;Lcoil3/util/Logger;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "coil-core_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class EngineInterceptorKt {
-    /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00ca  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0104  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x00eb -> B:32:0x00f2). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0028  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00f9  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x016e  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x0158 -> B:32:0x015d). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -35,13 +36,19 @@ public final class EngineInterceptorKt {
         EngineInterceptorKt$transform$1 engineInterceptorKt$transform$1;
         int i;
         Options options2;
+        Bitmap convertImageToBitmap;
         ImageRequest imageRequest2;
         EventListener eventListener2;
-        EngineInterceptor.ExecuteResult executeResult2;
-        List<Transformation> list;
-        Bitmap bitmap;
         int size;
+        List<Transformation> list;
+        List<Transformation> list2;
+        Image image;
+        Bitmap bitmap;
+        Bitmap bitmap2;
         int i2;
+        int i3;
+        Logger logger2;
+        EngineInterceptor.ExecuteResult executeResult2;
         if (continuation instanceof EngineInterceptorKt$transform$1) {
             engineInterceptorKt$transform$1 = (EngineInterceptorKt$transform$1) continuation;
             if ((engineInterceptorKt$transform$1.label & Integer.MIN_VALUE) != 0) {
@@ -53,18 +60,23 @@ public final class EngineInterceptorKt {
                     ResultKt.throwOnFailure(obj);
                     List<Transformation> transformations = ImageRequestsKt.getTransformations(imageRequest);
                     if (!transformations.isEmpty()) {
-                        Image image = executeResult.getImage();
-                        if ((image instanceof BitmapImage) || ImageRequestsKt.getAllowConversionToBitmap(imageRequest)) {
+                        Image image2 = executeResult.getImage();
+                        if ((image2 instanceof BitmapImage) || ImageRequestsKt.getAllowConversionToBitmap(imageRequest)) {
                             options2 = options;
-                            Bitmap convertImageToBitmap = EngineInterceptor_androidKt.convertImageToBitmap(image, options2, transformations, logger);
+                            convertImageToBitmap = EngineInterceptor_androidKt.convertImageToBitmap(image2, options2, transformations, logger);
                             imageRequest2 = imageRequest;
                             eventListener2 = eventListener;
                             eventListener2.transformStart(imageRequest2, convertImageToBitmap);
-                            executeResult2 = executeResult;
-                            list = transformations;
-                            bitmap = convertImageToBitmap;
                             size = transformations.size();
+                            list = transformations;
+                            list2 = list;
+                            image = image2;
+                            bitmap = convertImageToBitmap;
+                            bitmap2 = bitmap;
                             i2 = 0;
+                            i3 = 0;
+                            logger2 = logger;
+                            executeResult2 = executeResult;
                             if (i2 < size) {
                             }
                         } else if (logger != null) {
@@ -78,51 +90,76 @@ public final class EngineInterceptorKt {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    size = engineInterceptorKt$transform$1.I$1;
-                    int i3 = engineInterceptorKt$transform$1.I$0;
-                    eventListener2 = (EventListener) engineInterceptorKt$transform$1.L$3;
-                    Options options3 = (Options) engineInterceptorKt$transform$1.L$2;
-                    ImageRequest imageRequest3 = (ImageRequest) engineInterceptorKt$transform$1.L$1;
-                    EngineInterceptor.ExecuteResult executeResult3 = (EngineInterceptor.ExecuteResult) engineInterceptorKt$transform$1.L$0;
+                    int i4 = engineInterceptorKt$transform$1.I$3;
+                    int i5 = engineInterceptorKt$transform$1.I$2;
+                    i2 = engineInterceptorKt$transform$1.I$1;
+                    int i6 = engineInterceptorKt$transform$1.I$0;
+                    Bitmap bitmap3 = (Bitmap) engineInterceptorKt$transform$1.L$12;
+                    Transformation transformation = (Transformation) engineInterceptorKt$transform$1.L$11;
+                    Bitmap bitmap4 = (Bitmap) engineInterceptorKt$transform$1.L$10;
+                    Logger logger3 = (Logger) engineInterceptorKt$transform$1.L$4;
                     ResultKt.throwOnFailure(obj);
-                    List<Transformation> list2 = (List) engineInterceptorKt$transform$1.L$4;
-                    options2 = options3;
-                    bitmap = (Bitmap) obj;
+                    EngineInterceptor.ExecuteResult executeResult3 = (EngineInterceptor.ExecuteResult) engineInterceptorKt$transform$1.L$0;
+                    options2 = (Options) engineInterceptorKt$transform$1.L$2;
+                    imageRequest2 = (ImageRequest) engineInterceptorKt$transform$1.L$1;
+                    Image image3 = (Image) engineInterceptorKt$transform$1.L$6;
+                    list = (List) engineInterceptorKt$transform$1.L$8;
+                    i3 = i6;
+                    eventListener2 = (EventListener) engineInterceptorKt$transform$1.L$3;
+                    list2 = (List) engineInterceptorKt$transform$1.L$5;
+                    bitmap2 = (Bitmap) engineInterceptorKt$transform$1.L$7;
+                    bitmap = (Bitmap) engineInterceptorKt$transform$1.L$9;
+                    size = i5;
+                    int i7 = 1;
                     JobKt.ensureActive(engineInterceptorKt$transform$1.getContext());
-                    List<Transformation> list3 = list2;
-                    i2 = i3 + 1;
-                    imageRequest2 = imageRequest3;
+                    i2 += i7;
+                    Image image4 = image3;
+                    convertImageToBitmap = (Bitmap) obj;
+                    logger2 = logger3;
+                    image = image4;
                     executeResult2 = executeResult3;
-                    list = list3;
                     if (i2 < size) {
+                        Logger logger4 = logger2;
+                        Transformation transformation2 = list.get(i2);
+                        Bitmap bitmap5 = bitmap;
                         Size size2 = options2.getSize();
                         engineInterceptorKt$transform$1.L$0 = executeResult2;
                         engineInterceptorKt$transform$1.L$1 = imageRequest2;
                         engineInterceptorKt$transform$1.L$2 = options2;
                         engineInterceptorKt$transform$1.L$3 = eventListener2;
-                        engineInterceptorKt$transform$1.L$4 = list;
-                        engineInterceptorKt$transform$1.I$0 = i2;
-                        engineInterceptorKt$transform$1.I$1 = size;
+                        executeResult3 = executeResult2;
+                        engineInterceptorKt$transform$1.L$4 = SpillingKt.nullOutSpilledVariable(logger4);
+                        engineInterceptorKt$transform$1.L$5 = SpillingKt.nullOutSpilledVariable(list2);
+                        engineInterceptorKt$transform$1.L$6 = SpillingKt.nullOutSpilledVariable(image);
+                        engineInterceptorKt$transform$1.L$7 = SpillingKt.nullOutSpilledVariable(bitmap2);
+                        engineInterceptorKt$transform$1.L$8 = list;
+                        engineInterceptorKt$transform$1.L$9 = SpillingKt.nullOutSpilledVariable(bitmap5);
+                        engineInterceptorKt$transform$1.L$10 = SpillingKt.nullOutSpilledVariable(convertImageToBitmap);
+                        engineInterceptorKt$transform$1.L$11 = SpillingKt.nullOutSpilledVariable(transformation2);
+                        engineInterceptorKt$transform$1.L$12 = SpillingKt.nullOutSpilledVariable(convertImageToBitmap);
+                        engineInterceptorKt$transform$1.I$0 = i3;
+                        engineInterceptorKt$transform$1.I$1 = i2;
+                        engineInterceptorKt$transform$1.I$2 = size;
+                        engineInterceptorKt$transform$1.I$3 = 0;
+                        i7 = 1;
                         engineInterceptorKt$transform$1.label = 1;
-                        obj = list.get(i2).transform(bitmap, size2, engineInterceptorKt$transform$1);
+                        obj = transformation2.transform(convertImageToBitmap, size2, engineInterceptorKt$transform$1);
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        EngineInterceptor.ExecuteResult executeResult4 = executeResult2;
-                        imageRequest3 = imageRequest2;
-                        i3 = i2;
-                        list2 = list;
-                        executeResult3 = executeResult4;
-                        bitmap = (Bitmap) obj;
+                        bitmap = bitmap5;
+                        image3 = image;
+                        logger3 = logger4;
                         JobKt.ensureActive(engineInterceptorKt$transform$1.getContext());
-                        List<Transformation> list32 = list2;
-                        i2 = i3 + 1;
-                        imageRequest2 = imageRequest3;
+                        i2 += i7;
+                        Image image42 = image3;
+                        convertImageToBitmap = (Bitmap) obj;
+                        logger2 = logger3;
+                        image = image42;
                         executeResult2 = executeResult3;
-                        list = list32;
                         if (i2 < size) {
-                            eventListener2.transformEnd(imageRequest2, bitmap);
-                            return EngineInterceptor.ExecuteResult.copy$default(executeResult2, Image_androidKt.asImage$default(bitmap, false, 1, null), false, null, null, 14, null);
+                            eventListener2.transformEnd(imageRequest2, convertImageToBitmap);
+                            return EngineInterceptor.ExecuteResult.copy$default(executeResult2, Image_androidKt.asImage$default(convertImageToBitmap, false, 1, null), false, null, null, 14, null);
                         }
                     }
                 }

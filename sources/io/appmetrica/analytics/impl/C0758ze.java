@@ -4,14 +4,14 @@ package io.appmetrica.analytics.impl;
 public final class C0758ze implements InterfaceC0332ib {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0307hb f1170a;
+    public final InterfaceC0307hb f1171a;
 
     public C0758ze(InterfaceC0307hb interfaceC0307hb) {
-        this.f1170a = interfaceC0307hb;
+        this.f1171a = interfaceC0307hb;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0332ib
     public final boolean a(Ag ag) {
-        return (ag == null || ((Kc) this.f1170a).C()) ? false : true;
+        return (ag == null || ((Kc) this.f1171a).C()) ? false : true;
     }
 }

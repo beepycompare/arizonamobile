@@ -6,7 +6,7 @@ public abstract class Nd extends AbstractC0410lf implements InterfaceC0640ul {
     }
 
     public final String c(String str, String str2) {
-        return this.f938a.getString(f(str), str2);
+        return this.f939a.getString(f(str), str2);
     }
 
     public final InterfaceC0640ul d(String str, String str2) {
@@ -14,7 +14,7 @@ public abstract class Nd extends AbstractC0410lf implements InterfaceC0640ul {
     }
 
     public final boolean e(String str) {
-        return this.f938a.a(f(str));
+        return this.f939a.a(f(str));
     }
 
     public abstract String f(String str);
@@ -32,7 +32,7 @@ public abstract class Nd extends AbstractC0410lf implements InterfaceC0640ul {
     }
 
     public final int c(String str, int i) {
-        return this.f938a.getInt(f(str), i);
+        return this.f939a.getInt(f(str), i);
     }
 
     public final InterfaceC0640ul d(String str, long j) {
@@ -44,10 +44,10 @@ public abstract class Nd extends AbstractC0410lf implements InterfaceC0640ul {
     }
 
     public final long c(String str, long j) {
-        return this.f938a.getLong(f(str), j);
+        return this.f939a.getLong(f(str), j);
     }
 
     public final boolean c(String str, boolean z) {
-        return this.f938a.getBoolean(f(str), z);
+        return this.f939a.getBoolean(f(str), z);
     }
 }

@@ -17,7 +17,7 @@ public class Revenue {
         private static final Bn g = new Bn(new C0534qe("revenue currency"));
 
         /* renamed from: a  reason: collision with root package name */
-        final long f205a;
+        final long f206a;
         final Currency b;
         Integer c;
         String d;
@@ -54,7 +54,7 @@ public class Revenue {
 
         private Builder(long j, Currency currency) {
             g.a(currency);
-            this.f205a = j;
+            this.f206a = j;
             this.b = currency;
         }
     }
@@ -68,7 +68,7 @@ public class Revenue {
         public static class Builder {
 
             /* renamed from: a  reason: collision with root package name */
-            private String f206a;
+            private String f207a;
             private String b;
 
             /* synthetic */ Builder(int i) {
@@ -80,7 +80,7 @@ public class Revenue {
             }
 
             public Builder withData(String str) {
-                this.f206a = str;
+                this.f207a = str;
                 return this;
             }
 
@@ -102,7 +102,7 @@ public class Revenue {
         }
 
         private Receipt(Builder builder) {
-            this.data = builder.f206a;
+            this.data = builder.f207a;
             this.signature = builder.b;
         }
     }
@@ -116,7 +116,7 @@ public class Revenue {
     }
 
     private Revenue(Builder builder) {
-        this.priceMicros = builder.f205a;
+        this.priceMicros = builder.f206a;
         this.currency = builder.b;
         this.quantity = builder.c;
         this.productID = builder.d;

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 import com.arizona.common.utils.EasyAnimation;
+import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -19,7 +20,6 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.arizonaui.R;
 import ru.mrlargha.arizonaui.cars.CarsScreen;
 import ru.mrlargha.arizonaui.databinding.CarsCarItemBinding;
-import ru.mrlargha.commonui.utils.FirebaseConfigHelper;
 /* compiled from: CarInfoListAdapter.kt */
 @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\b\u0018\u0000 \u00192\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0004\u0017\u0018\u0019\u001aB\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u0007J\u000e\u0010\r\u001a\u00020\u000b2\u0006\u0010\u000e\u001a\u00020\tJ\u0018\u0010\u000f\u001a\u00020\u00032\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0016J\u0018\u0010\u0014\u001a\u00020\u000b2\u0006\u0010\u0015\u001a\u00020\u00032\u0006\u0010\u0016\u001a\u00020\u0013H\u0016R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082.¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lru/mrlargha/arizonaui/cars/CarInfoListAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/arizonaui/cars/CarsScreen$Companion$CarInfoListItem;", "Lru/mrlargha/arizonaui/cars/CarInfoListAdapter$ViewHolder;", "<init>", "()V", "spawnClickListener", "Lru/mrlargha/arizonaui/cars/CarInfoListAdapter$OnSpawnClickListener;", "carInfoClickListener", "Lru/mrlargha/arizonaui/cars/CarInfoListAdapter$OnCarInfoClickListener;", "setOnSpawnClickListener", "", "onSpawnClickListener", "setOnCarInfoClickListener", "onCarInfoClickListener", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "OnSpawnClickListener", "OnCarInfoClickListener", "Companion", "ViewHolder", "ArizonaUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */

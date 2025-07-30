@@ -19,7 +19,7 @@ public final class C0600t6 extends MessageNano {
     public static volatile boolean p;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0700x6 f1060a;
+    public C0700x6 f1061a;
     public C0451n6 b;
     public String c;
     public int d;
@@ -55,7 +55,7 @@ public final class C0600t6 extends MessageNano {
     }
 
     public final C0600t6 a() {
-        this.f1060a = null;
+        this.f1061a = null;
         this.b = null;
         this.c = "";
         this.d = -1;
@@ -73,7 +73,7 @@ public final class C0600t6 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0700x6 c0700x6 = this.f1060a;
+        C0700x6 c0700x6 = this.f1061a;
         if (c0700x6 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0700x6);
         }
@@ -140,7 +140,7 @@ public final class C0600t6 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0700x6 c0700x6 = this.f1060a;
+        C0700x6 c0700x6 = this.f1061a;
         if (c0700x6 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0700x6);
         }
@@ -218,10 +218,10 @@ public final class C0600t6 extends MessageNano {
                 case 0:
                     break;
                 case 10:
-                    if (this.f1060a == null) {
-                        this.f1060a = new C0700x6();
+                    if (this.f1061a == null) {
+                        this.f1061a = new C0700x6();
                     }
-                    codedInputByteBufferNano.readMessage(this.f1060a);
+                    codedInputByteBufferNano.readMessage(this.f1061a);
                     break;
                 case 18:
                     if (this.b == null) {

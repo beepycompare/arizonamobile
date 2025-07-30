@@ -9,21 +9,21 @@ import java.util.Iterator;
 public final class n implements LocationListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final p f1194a;
+    public final p f1195a;
 
     public n(p pVar) {
-        this.f1194a = pVar;
+        this.f1195a = pVar;
     }
 
     @Override // android.location.LocationListener
     public final void onLocationChanged(Location location) {
         if (location != null) {
-            p pVar = this.f1194a;
+            p pVar = this.f1195a;
             pVar.getClass();
             String provider = location.getProvider();
             t tVar = (t) pVar.e.get(provider);
             if (tVar == null) {
-                t tVar2 = new t(pVar.f1196a.f1189a);
+                t tVar2 = new t(pVar.f1197a.f1190a);
                 tVar2.c.add(pVar.c);
                 for (Consumer consumer : pVar.d) {
                     tVar2.c.add(consumer);
@@ -31,12 +31,12 @@ public final class n implements LocationListener {
                 pVar.e.put(provider, tVar2);
                 tVar = tVar2;
             } else {
-                tVar.f1198a = pVar.f1196a.f1189a;
+                tVar.f1199a = pVar.f1197a.f1190a;
             }
             if (tVar.d != null) {
-                boolean didTimePassMillis = tVar.b.didTimePassMillis(tVar.e, tVar.f1198a.getUpdateTimeInterval(), "isSavedLocationOutdated");
+                boolean didTimePassMillis = tVar.b.didTimePassMillis(tVar.e, tVar.f1199a.getUpdateTimeInterval(), "isSavedLocationOutdated");
                 boolean z = true;
-                boolean z2 = location.distanceTo(tVar.d) > tVar.f1198a.getUpdateDistanceInterval();
+                boolean z2 = location.distanceTo(tVar.d) > tVar.f1199a.getUpdateDistanceInterval();
                 if (tVar.d != null && location.getTime() - tVar.d.getTime() < 0) {
                     z = false;
                 }

@@ -11,7 +11,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Nc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f563a;
+    public final Context f564a;
     public final Ji b;
     public final Qd c;
     public final C0306ha d;
@@ -27,7 +27,7 @@ public final class Nc {
     public final C0142b0 n;
 
     public Nc(Context context, Pf pf, Ji ji, Ol ol) {
-        this.f563a = context;
+        this.f564a = context;
         this.b = ji;
         this.c = new Qd(pf);
         C0306ha c0306ha = new C0306ha(context);
@@ -50,7 +50,7 @@ public final class Nc {
     }
 
     public final Context b() {
-        return this.f563a;
+        return this.f564a;
     }
 
     public final Q6 c() {

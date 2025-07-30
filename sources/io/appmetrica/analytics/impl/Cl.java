@@ -8,7 +8,7 @@ public final class Cl implements ProtobufConverter {
     /* renamed from: a */
     public final C0650v6 fromModel(Dl dl) {
         C0650v6 c0650v6 = new C0650v6();
-        c0650v6.f1096a = (String) WrapUtils.getOrDefault(dl.f401a, c0650v6.f1096a);
+        c0650v6.f1097a = (String) WrapUtils.getOrDefault(dl.f402a, c0650v6.f1097a);
         c0650v6.b = (String) WrapUtils.getOrDefault(dl.b, c0650v6.b);
         c0650v6.c = ((Integer) WrapUtils.getOrDefault(dl.c, Integer.valueOf(c0650v6.c))).intValue();
         c0650v6.f = ((Integer) WrapUtils.getOrDefault(dl.d, Integer.valueOf(c0650v6.f))).intValue();

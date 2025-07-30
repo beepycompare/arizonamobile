@@ -5,10 +5,10 @@ import androidx.fragment.app.FragmentTransaction;
 public final class Jc implements InterfaceC0710xg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Kc f505a;
+    public final /* synthetic */ Kc f506a;
 
     public Jc(Kc kc) {
-        this.f505a = kc;
+        this.f506a = kc;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0710xg
@@ -20,6 +20,6 @@ public final class Jc implements InterfaceC0710xg {
         c0401l6.setValueBytes(ag.a());
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         c0401l6.d = FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
-        this.f505a.a(c0401l6);
+        this.f506a.a(c0401l6);
     }
 }

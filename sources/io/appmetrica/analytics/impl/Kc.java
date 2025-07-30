@@ -24,7 +24,7 @@ public final class Kc extends C0574s5 implements InterfaceC0307hb, InterfaceC028
         boolean optBoolean;
         uo uoVar = this.t;
         synchronized (uoVar) {
-            optBoolean = uoVar.f1091a.a().optBoolean("referrer_handled", false);
+            optBoolean = uoVar.f1092a.a().optBoolean("referrer_handled", false);
         }
         return optBoolean;
     }
@@ -50,7 +50,7 @@ public final class Kc extends C0574s5 implements InterfaceC0307hb, InterfaceC028
     public final void a() {
         uo uoVar = this.t;
         synchronized (uoVar) {
-            vo voVar = uoVar.f1091a;
+            vo voVar = uoVar.f1092a;
             voVar.a(voVar.a().put("referrer_handled", true));
         }
     }

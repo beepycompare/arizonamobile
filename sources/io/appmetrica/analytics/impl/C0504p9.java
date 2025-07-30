@@ -10,7 +10,7 @@ public final class C0504p9 {
     public static final C0504p9 i;
 
     /* renamed from: a */
-    public final Md f998a;
+    public final Md f999a;
     public final qo b;
     public final R8 c;
     public final O9 d;
@@ -40,7 +40,7 @@ public final class C0504p9 {
         InterfaceC0532qc interfaceC0532qc;
         InterfaceC0359je interfaceC0359je;
         InterfaceC0331ia interfaceC0331ia;
-        md = c0479o9.f983a;
+        md = c0479o9.f984a;
         qoVar = c0479o9.b;
         r8 = c0479o9.c;
         o9 = c0479o9.d;
@@ -59,7 +59,7 @@ public final class C0504p9 {
         if (a3 != null) {
             c0753z9.f = a3;
         }
-        String a4 = this.f998a.a(c0280g9.f863a);
+        String a4 = this.f999a.a(c0280g9.f864a);
         if (a4 != null) {
             c0753z9.d = a4;
         }
@@ -74,7 +74,7 @@ public final class C0504p9 {
         }
         Long l = c0280g9.c;
         if (l != null) {
-            c0753z9.f1167a = l.longValue();
+            c0753z9.f1168a = l.longValue();
         }
         Long l2 = c0280g9.d;
         if (l2 != null) {
@@ -94,7 +94,7 @@ public final class C0504p9 {
         }
         c0753z9.j = this.c.a(c0280g9.o);
         E7 e7 = c0280g9.g;
-        c0753z9.k = e7 != null ? new D6().a(e7.f412a) : -1;
+        c0753z9.k = e7 != null ? new D6().a(e7.f413a) : -1;
         String str2 = c0280g9.n;
         if (str2 != null) {
             c0753z9.l = str2.getBytes();
@@ -128,7 +128,7 @@ public final class C0504p9 {
     }
 
     public C0504p9(Md md, qo qoVar, R8 r8, O9 o9, InterfaceC0532qc interfaceC0532qc, InterfaceC0359je interfaceC0359je, InterfaceC0331ia interfaceC0331ia) {
-        this.f998a = md;
+        this.f999a = md;
         this.b = qoVar;
         this.c = r8;
         this.d = o9;

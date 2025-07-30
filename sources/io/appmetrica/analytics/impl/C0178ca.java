@@ -20,40 +20,40 @@ public final class C0178ca extends AbstractC0236eh {
     public final boolean a(C0401l6 c0401l6) {
         long optLong;
         C0204da c0204da = this.b;
-        W9 w9 = c0204da.f815a.s().C;
-        Long valueOf = w9 != null ? Long.valueOf(w9.f699a) : null;
+        W9 w9 = c0204da.f816a.s().C;
+        Long valueOf = w9 != null ? Long.valueOf(w9.f700a) : null;
         if (valueOf != null) {
-            uo uoVar = c0204da.f815a.t;
+            uo uoVar = c0204da.f816a.t;
             synchronized (uoVar) {
-                optLong = uoVar.f1091a.a().optLong("external_attribution_window_start", -1L);
+                optLong = uoVar.f1092a.a().optLong("external_attribution_window_start", -1L);
             }
             if (optLong < 0) {
                 optLong = c0204da.b.currentTimeMillis();
-                c0204da.f815a.t.a(optLong);
+                c0204da.f816a.t.a(optLong);
             }
             if (c0204da.b.currentTimeMillis() - optLong <= valueOf.longValue()) {
                 V9 v9 = (V9) MessageNano.mergeFrom(new V9(), c0401l6.getValueBytes());
-                int i = v9.f683a;
+                int i = v9.f684a;
                 String str = new String(v9.b, Charsets.UTF_8);
-                String str2 = this.b.f815a.c.j().get(Integer.valueOf(i));
+                String str2 = this.b.f816a.c.j().get(Integer.valueOf(i));
                 if (str2 != null) {
                     try {
                         if (JsonUtils.isEqualTo(new JSONObject(str), new JSONObject(str2))) {
-                            this.f831a.m.info("Ignoring attribution of type `" + AbstractC0255fa.a(i) + "` with value `" + str + "` since it is not new", new Object[0]);
+                            this.f832a.m.info("Ignoring attribution of type `" + AbstractC0255fa.a(i) + "` with value `" + str + "` since it is not new", new Object[0]);
                             return true;
                         }
                     } catch (Throwable unused) {
                     }
                 }
                 C0204da c0204da2 = this.b;
-                Map<Integer, String> j = c0204da2.f815a.c.j();
+                Map<Integer, String> j = c0204da2.f816a.c.j();
                 j.put(Integer.valueOf(i), str);
-                c0204da2.f815a.c.a(j);
-                this.f831a.m.info("Handling attribution of type `" + AbstractC0255fa.a(i) + '`', new Object[0]);
+                c0204da2.f816a.c.a(j);
+                this.f832a.m.info("Handling attribution of type `" + AbstractC0255fa.a(i) + '`', new Object[0]);
                 return false;
             }
         }
-        this.f831a.m.info("Ignoring attribution since out of collecting interval", new Object[0]);
+        this.f832a.m.info("Ignoring attribution since out of collecting interval", new Object[0]);
         return true;
     }
 }

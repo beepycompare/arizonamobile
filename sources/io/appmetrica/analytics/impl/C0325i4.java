@@ -95,7 +95,7 @@ public final class C0325i4 extends C0401l6 {
 
     @Override // io.appmetrica.analytics.impl.C0401l6, io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
     public final void setName(String str) {
-        this.f935a = d(str);
+        this.f936a = d(str);
     }
 
     @Override // io.appmetrica.analytics.impl.C0401l6, io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
@@ -125,7 +125,7 @@ public final class C0325i4 extends C0401l6 {
         this.q = new HashMap();
         a(publicLogger);
         this.b = e(str);
-        this.f935a = d(str2);
+        this.f936a = d(str2);
         setType(i);
         setCustomType(i2);
     }
@@ -168,20 +168,20 @@ public final class C0325i4 extends C0401l6 {
         EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
         c0325i4.d = 40976;
         Zi zi = new Zi();
-        zi.b = c0161bj.f786a.currency.getCurrencyCode().getBytes();
-        zi.f = c0161bj.f786a.priceMicros;
-        zi.c = StringUtils.stringToBytesForProtobuf(new Wm(200, "revenue productID", c0161bj.e).a(c0161bj.f786a.productID));
-        zi.f752a = ((Integer) WrapUtils.getOrDefault(c0161bj.f786a.quantity, 1)).intValue();
+        zi.b = c0161bj.f787a.currency.getCurrencyCode().getBytes();
+        zi.f = c0161bj.f787a.priceMicros;
+        zi.c = StringUtils.stringToBytesForProtobuf(new Wm(200, "revenue productID", c0161bj.e).a(c0161bj.f787a.productID));
+        zi.f753a = ((Integer) WrapUtils.getOrDefault(c0161bj.f787a.quantity, 1)).intValue();
         Um um = c0161bj.b;
-        String str = c0161bj.f786a.payload;
+        String str = c0161bj.f787a.payload;
         um.getClass();
         zi.d = StringUtils.stringToBytesForProtobuf(um.a(str));
-        if (io.a(c0161bj.f786a.receipt)) {
+        if (io.a(c0161bj.f787a.receipt)) {
             Ui ui = new Ui();
-            String str2 = (String) c0161bj.c.a(c0161bj.f786a.receipt.data);
-            i = !StringUtils.equalsNullSafety(c0161bj.f786a.receipt.data, str2) ? c0161bj.f786a.receipt.data.length() : 0;
-            ui.f673a = StringUtils.stringToBytesForProtobuf(str2);
-            ui.b = StringUtils.stringToBytesForProtobuf((String) c0161bj.d.a(c0161bj.f786a.receipt.signature));
+            String str2 = (String) c0161bj.c.a(c0161bj.f787a.receipt.data);
+            i = !StringUtils.equalsNullSafety(c0161bj.f787a.receipt.data, str2) ? c0161bj.f787a.receipt.data.length() : 0;
+            ui.f674a = StringUtils.stringToBytesForProtobuf(str2);
+            ui.b = StringUtils.stringToBytesForProtobuf((String) c0161bj.d.a(c0161bj.f787a.receipt.signature));
             zi.e = ui;
         } else {
             i = 0;
@@ -196,7 +196,7 @@ public final class C0325i4 extends C0401l6 {
         this.q = new HashMap();
         a(publicLogger);
         a(bArr);
-        this.f935a = d(str);
+        this.f936a = d(str);
         setType(i);
     }
 

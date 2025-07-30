@@ -7,14 +7,14 @@ import io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences;
 public final class C0723y4 implements ClientStorageProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0640ul f1147a;
+    public final InterfaceC0640ul f1148a;
 
     public C0723y4(InterfaceC0640ul interfaceC0640ul) {
-        this.f1147a = interfaceC0640ul;
+        this.f1148a = interfaceC0640ul;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientStorageProvider
     public final ModulePreferences modulePreferences(String str) {
-        return new C0582sd(str, this.f1147a);
+        return new C0582sd(str, this.f1148a);
     }
 }

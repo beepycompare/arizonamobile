@@ -13,12 +13,12 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class C0664vk implements InterfaceC0207dd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final to f1104a;
+    public final to f1105a;
     public final String b = "startup_state";
     public final AESEncrypter c;
 
     public C0664vk(to toVar) {
-        this.f1104a = toVar;
+        this.f1105a = toVar;
         C0115a c0115a = new C0115a(Ia.j().f());
         this.c = new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, c0115a.b(), c0115a.a());
     }
@@ -31,7 +31,7 @@ public final class C0664vk implements InterfaceC0207dd {
                 Vb a2 = a(readableDatabase);
                 C0342im c0342im = new C0342im(new G4(new E4()));
                 if (a2 != null) {
-                    a(this.f1104a, c0342im, a2);
+                    a(this.f1105a, c0342im, a2);
                     c0342im.p = a2.c;
                     c0342im.r = a2.b;
                 }
@@ -46,7 +46,7 @@ public final class C0664vk implements InterfaceC0207dd {
     public static void a(to toVar, C0342im c0342im, Vb vb) {
         String optStringOrNull;
         synchronized (toVar) {
-            optStringOrNull = JsonUtils.optStringOrNull(toVar.f1073a.a(), "device_id");
+            optStringOrNull = JsonUtils.optStringOrNull(toVar.f1074a.a(), "device_id");
         }
         if (TextUtils.isEmpty(optStringOrNull)) {
             if (!TextUtils.isEmpty(vb.d)) {
@@ -55,10 +55,10 @@ public final class C0664vk implements InterfaceC0207dd {
             if (!TextUtils.isEmpty(vb.e)) {
                 toVar.b(vb.e);
             }
-            if (TextUtils.isEmpty(vb.f684a)) {
+            if (TextUtils.isEmpty(vb.f685a)) {
                 return;
             }
-            c0342im.f905a = vb.f684a;
+            c0342im.f906a = vb.f685a;
         }
     }
 

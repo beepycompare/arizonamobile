@@ -7,12 +7,13 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: NetworkFetcher.kt */
-@Metadata(d1 = {"\u0000\b\n\u0002\b\u0003\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", ExifInterface.GPS_DIRECTION_TRUE, "response", "Lcoil3/network/NetworkResponse;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "coil3.network.NetworkFetcher$executeNetworkRequest$2", f = "NetworkFetcher.kt", i = {}, l = {205}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\b\n\u0002\b\u0003\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", ExifInterface.GPS_DIRECTION_TRUE, "response", "Lcoil3/network/NetworkResponse;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "coil3.network.NetworkFetcher$executeNetworkRequest$2", f = "NetworkFetcher.kt", i = {0}, l = {205}, m = "invokeSuspend", n = {"response"}, s = {"L$0"})
 /* loaded from: classes3.dex */
 final class NetworkFetcher$executeNetworkRequest$2<T> extends SuspendLambda implements Function2<NetworkResponse, Continuation<? super T>, Object> {
     final /* synthetic */ Function2<NetworkResponse, Continuation<? super T>, Object> $block;
@@ -45,6 +46,7 @@ final class NetworkFetcher$executeNetworkRequest$2<T> extends SuspendLambda impl
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        NetworkResponse networkResponse = (NetworkResponse) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i != 0) {
@@ -55,12 +57,12 @@ final class NetworkFetcher$executeNetworkRequest$2<T> extends SuspendLambda impl
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        NetworkResponse networkResponse = (NetworkResponse) this.L$0;
         int code = networkResponse.getCode();
         if ((200 > code || code >= 300) && networkResponse.getCode() != 304) {
             throw new HttpException(networkResponse);
         }
         Function2<NetworkResponse, Continuation<? super T>, Object> function2 = this.$block;
+        this.L$0 = SpillingKt.nullOutSpilledVariable(networkResponse);
         this.label = 1;
         Object invoke = function2.invoke(networkResponse, this);
         return invoke == coroutine_suspended ? coroutine_suspended : invoke;

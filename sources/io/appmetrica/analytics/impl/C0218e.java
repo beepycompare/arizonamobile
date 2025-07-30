@@ -11,10 +11,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 /* loaded from: classes4.dex */
 public final class C0218e {
     public static final long g = TimeUnit.SECONDS.toMillis(1);
-    public static final String h = "WatchDog-" + Od.f578a.incrementAndGet();
+    public static final String h = "WatchDog-" + Od.f579a.incrementAndGet();
 
     /* renamed from: a  reason: collision with root package name */
-    public final CopyOnWriteArrayList f822a;
+    public final CopyOnWriteArrayList f823a;
     public final AtomicInteger b;
     public final Handler c;
     public C0193d d;
@@ -23,7 +23,7 @@ public final class C0218e {
 
     public C0218e(Yb yb) {
         CopyOnWriteArrayList copyOnWriteArrayList = new CopyOnWriteArrayList();
-        this.f822a = copyOnWriteArrayList;
+        this.f823a = copyOnWriteArrayList;
         this.b = new AtomicInteger();
         this.c = new Handler(Looper.getMainLooper());
         this.e = new AtomicBoolean();
@@ -43,7 +43,7 @@ public final class C0218e {
     public final synchronized void b() {
         C0193d c0193d = this.d;
         if (c0193d != null) {
-            c0193d.f806a.set(false);
+            c0193d.f807a.set(false);
             this.d = null;
             PublicLogger.getAnonymousInstance().info("Stop ANR monitoring", new Object[0]);
         }

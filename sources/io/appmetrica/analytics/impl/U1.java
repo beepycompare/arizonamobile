@@ -9,13 +9,13 @@ public final class U1 implements Thread.UncaughtExceptionHandler {
     public static final AtomicBoolean e = new AtomicBoolean();
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0127ab f662a;
+    public final InterfaceC0127ab f663a;
     public final M6 b = C0698x4.l().n();
     public final K6 c = new K6();
     public final An d = new An();
 
     public U1(G6 g6) {
-        this.f662a = g6;
+        this.f663a = g6;
     }
 
     @Override // java.lang.Thread.UncaughtExceptionHandler
@@ -23,14 +23,14 @@ public final class U1 implements Thread.UncaughtExceptionHandler {
         StackTraceElement[] stackTraceElementArr;
         try {
             e.set(true);
-            InterfaceC0127ab interfaceC0127ab = this.f662a;
+            InterfaceC0127ab interfaceC0127ab = this.f663a;
             C0617tn apply = this.c.apply(thread);
             An an = this.d;
-            Thread a2 = an.f345a.a();
+            Thread a2 = an.f346a.a();
             ArrayList a3 = an.a(a2, thread);
             if (thread != a2) {
                 try {
-                    stackTraceElementArr = an.f345a.b();
+                    stackTraceElementArr = an.f346a.b();
                     if (stackTraceElementArr == null) {
                         try {
                             stackTraceElementArr = a2.getStackTrace();

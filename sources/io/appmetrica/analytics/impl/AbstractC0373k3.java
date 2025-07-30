@@ -6,11 +6,11 @@ import io.appmetrica.analytics.billinginterface.internal.BillingType;
 public abstract /* synthetic */ class AbstractC0373k3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f922a;
+    public static final /* synthetic */ int[] f923a;
 
     static {
         int[] iArr = new int[BillingType.values().length];
         iArr[BillingType.LIBRARY_V6.ordinal()] = 1;
-        f922a = iArr;
+        f923a = iArr;
     }
 }

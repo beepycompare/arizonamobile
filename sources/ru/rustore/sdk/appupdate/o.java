@@ -12,22 +12,22 @@ import ru.rustore.sdk.core.util.CancellableContinuationExtKt;
 public final class o implements OnReceiveResultCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ CancellableContinuation<Unit> f1362a;
+    public final /* synthetic */ CancellableContinuation<Unit> f1363a;
 
     public o(CancellableContinuationImpl cancellableContinuationImpl) {
-        this.f1362a = cancellableContinuationImpl;
+        this.f1363a = cancellableContinuationImpl;
     }
 
     @Override // ru.rustore.sdk.activitylauncher.OnReceiveResultCallback
     public final void onReceiveResult(int i, Bundle bundle) {
         if (i == -1 || i == 0) {
-            CancellableContinuationExtKt.resumeIfActive(this.f1362a, Unit.INSTANCE);
+            CancellableContinuationExtKt.resumeIfActive(this.f1363a, Unit.INSTANCE);
         } else if (i == 2) {
-            CancellableContinuationExtKt.resumeWithExceptionIfActive(this.f1362a, new RuStoreOutdatedException());
+            CancellableContinuationExtKt.resumeWithExceptionIfActive(this.f1363a, new RuStoreOutdatedException());
         } else if (i == 9901 || i == 9902) {
-            CancellableContinuationExtKt.resumeWithExceptionIfActive(this.f1362a, new RuStoreInstallException(i));
+            CancellableContinuationExtKt.resumeWithExceptionIfActive(this.f1363a, new RuStoreInstallException(i));
         } else {
-            CancellableContinuationExtKt.resumeWithExceptionIfActive(this.f1362a, new RuStoreInstallException(i));
+            CancellableContinuationExtKt.resumeWithExceptionIfActive(this.f1363a, new RuStoreInstallException(i));
         }
     }
 }

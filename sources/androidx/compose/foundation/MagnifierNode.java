@@ -362,7 +362,7 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         contentDrawScope.drawContent();
         Channel<Unit> channel = this.drawSignalChannel;
         if (channel != null) {
-            ChannelResult.m10000boximpl(channel.mo7544trySendJP2dKIU(Unit.INSTANCE));
+            ChannelResult.m10004boximpl(channel.mo7544trySendJP2dKIU(Unit.INSTANCE));
         }
     }
 

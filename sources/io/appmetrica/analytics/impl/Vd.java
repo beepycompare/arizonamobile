@@ -5,14 +5,14 @@ import android.os.Process;
 public final class Vd implements InterfaceC0137al {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f685a;
+    public final int f686a;
 
     public Vd(int i) {
-        this.f685a = i;
+        this.f686a = i;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0137al
     public final boolean a(String str) {
-        return this.f685a != Process.myPid();
+        return this.f686a != Process.myPid();
     }
 }

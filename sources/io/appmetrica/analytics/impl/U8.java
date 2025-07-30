@@ -7,23 +7,23 @@ import java.io.IOException;
 public class U8 implements StateSerializer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final StateSerializer f666a;
+    public final StateSerializer f667a;
     public final AESEncrypter b;
 
     public U8(StateSerializer<Object> stateSerializer, AESEncrypter aESEncrypter) {
-        this.f666a = stateSerializer;
+        this.f667a = stateSerializer;
         this.b = aESEncrypter;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
     public final Object defaultValue() {
-        return this.f666a.defaultValue();
+        return this.f667a.defaultValue();
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
     public final byte[] toByteArray(Object obj) {
         try {
-            return this.b.encrypt(this.f666a.toByteArray(obj));
+            return this.b.encrypt(this.f667a.toByteArray(obj));
         } catch (Throwable unused) {
             return new byte[0];
         }
@@ -32,7 +32,7 @@ public class U8 implements StateSerializer {
     @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
     public final Object toState(byte[] bArr) throws IOException {
         try {
-            return this.f666a.toState(this.b.decrypt(bArr));
+            return this.f667a.toState(this.b.decrypt(bArr));
         } catch (Throwable th) {
             throw new IOException(th);
         }

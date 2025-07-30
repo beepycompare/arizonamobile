@@ -28,9 +28,11 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
+import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.MainCoroutineDispatcher;
 import okio.FileSystem;
 /* compiled from: ImageLoader.kt */
-@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001:\u0001\u001dJ\u0010\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H&J\u0016\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0014\u001a\u00020\u0015H¦@¢\u0006\u0002\u0010\u0018J\b\u0010\u0019\u001a\u00020\u001aH&J\b\u0010\u001b\u001a\u00020\u001cH&R\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005R\u0012\u0010\u0006\u001a\u00020\u0007X¦\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u0004\u0018\u00010\u000bX¦\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\rR\u0014\u0010\u000e\u001a\u0004\u0018\u00010\u000fX¦\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0011ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u001eÀ\u0006\u0001"}, d2 = {"Lcoil3/ImageLoader;", "", RemoteConfigComponent.DEFAULTS_FILE_NAME, "Lcoil3/request/ImageRequest$Defaults;", "getDefaults", "()Lcoil3/request/ImageRequest$Defaults;", "components", "Lcoil3/ComponentRegistry;", "getComponents", "()Lcoil3/ComponentRegistry;", "memoryCache", "Lcoil3/memory/MemoryCache;", "getMemoryCache", "()Lcoil3/memory/MemoryCache;", "diskCache", "Lcoil3/disk/DiskCache;", "getDiskCache", "()Lcoil3/disk/DiskCache;", "enqueue", "Lcoil3/request/Disposable;", "request", "Lcoil3/request/ImageRequest;", "execute", "Lcoil3/request/ImageResult;", "(Lcoil3/request/ImageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "shutdown", "", "newBuilder", "Lcoil3/ImageLoader$Builder;", "Builder", "coil-core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001:\u0001\u001dJ\u0010\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H&J\u0016\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0014\u001a\u00020\u0015H¦@¢\u0006\u0002\u0010\u0018J\b\u0010\u0019\u001a\u00020\u001aH&J\b\u0010\u001b\u001a\u00020\u001cH&R\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005R\u0012\u0010\u0006\u001a\u00020\u0007X¦\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u0004\u0018\u00010\u000bX¦\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\rR\u0014\u0010\u000e\u001a\u0004\u0018\u00010\u000fX¦\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0011ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u001eÀ\u0006\u0001"}, d2 = {"Lcoil3/ImageLoader;", "", RemoteConfigComponent.DEFAULTS_FILE_NAME, "Lcoil3/request/ImageRequest$Defaults;", "getDefaults", "()Lcoil3/request/ImageRequest$Defaults;", "components", "Lcoil3/ComponentRegistry;", "getComponents", "()Lcoil3/ComponentRegistry;", "memoryCache", "Lcoil3/memory/MemoryCache;", "getMemoryCache", "()Lcoil3/memory/MemoryCache;", "diskCache", "Lcoil3/disk/DiskCache;", "getDiskCache", "()Lcoil3/disk/DiskCache;", "enqueue", "Lcoil3/request/Disposable;", "request", "Lcoil3/request/ImageRequest;", "execute", "Lcoil3/request/ImageResult;", "(Lcoil3/request/ImageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "shutdown", "", "newBuilder", "Lcoil3/ImageLoader$Builder;", "Builder", "coil-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public interface ImageLoader {
     Disposable enqueue(ImageRequest imageRequest);
@@ -50,7 +52,7 @@ public interface ImageLoader {
     void shutdown();
 
     /* compiled from: ImageLoader.kt */
-    @Metadata(d1 = {"\u0000¢\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u0015\b\u0016\u0012\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004¢\u0006\u0004\b\u0005\u0010\u0006B\u0011\b\u0010\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\u0005\u0010\tJ\"\u0010\u001d\u001a\u00020\u00002\u0017\u0010\u001e\u001a\u0013\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020!0\u001f¢\u0006\u0002\b\"H\u0086\bJ\u000e\u0010\u001d\u001a\u00020\u00002\u0006\u0010\u001d\u001a\u00020\u0016J\u0010\u0010#\u001a\u00020\u00002\b\u0010#\u001a\u0004\u0018\u00010\u0010J\u0016\u0010#\u001a\u00020\u00002\u000e\u0010$\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00100%J\u0010\u0010&\u001a\u00020\u00002\b\u0010&\u001a\u0004\u0018\u00010\u0012J\u0016\u0010&\u001a\u00020\u00002\u000e\u0010$\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120%J\u000e\u0010'\u001a\u00020\u00002\u0006\u0010'\u001a\u00020(J\u000e\u0010)\u001a\u00020\u00002\u0006\u0010*\u001a\u00020+J\u000e\u0010\u0013\u001a\u00020\u00002\u0006\u0010,\u001a\u00020\u0014J\u000e\u0010-\u001a\u00020\u00002\u0006\u0010-\u001a\u00020.J\u000e\u0010/\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u000200J\u000e\u00101\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u000200J\u000e\u00102\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u000200J\u000e\u00103\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u000200J\u0010\u00104\u001a\u00020\u00002\b\u00105\u001a\u0004\u0018\u000106J\u001c\u00104\u001a\u00020\u00002\u0014\u0010,\u001a\u0010\u0012\u0004\u0012\u000207\u0012\u0006\u0012\u0004\u0018\u0001060\u001fJ\u0010\u00108\u001a\u00020\u00002\b\u00105\u001a\u0004\u0018\u000106J\u001c\u00108\u001a\u00020\u00002\u0014\u0010,\u001a\u0010\u0012\u0004\u0012\u000207\u0012\u0006\u0012\u0004\u0018\u0001060\u001fJ\u0010\u00109\u001a\u00020\u00002\b\u00105\u001a\u0004\u0018\u000106J\u001c\u00109\u001a\u00020\u00002\u0014\u0010,\u001a\u0010\u0012\u0004\u0012\u000207\u0012\u0006\u0012\u0004\u0018\u0001060\u001fJ\u000e\u0010:\u001a\u00020\u00002\u0006\u0010;\u001a\u00020<J\u000e\u0010=\u001a\u00020\u00002\u0006\u0010;\u001a\u00020<J\u000e\u0010>\u001a\u00020\u00002\u0006\u0010;\u001a\u00020<J\u0010\u0010\u0017\u001a\u00020\u00002\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018J\u0006\u0010?\u001a\u00020@R\u0014\u0010\n\u001a\u00060\u0003j\u0002`\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010\u000e\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0010\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010\u0011\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0012\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u0019\u001a\u00020\u001a¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001c¨\u0006A"}, d2 = {"Lcoil3/ImageLoader$Builder;", "", "context", "Landroid/content/Context;", "Lcoil3/PlatformContext;", "<init>", "(Landroid/content/Context;)V", "options", "Lcoil3/RealImageLoader$Options;", "(Lcoil3/RealImageLoader$Options;)V", MimeTypes.BASE_TYPE_APPLICATION, "Landroid/content/Context;", RemoteConfigComponent.DEFAULTS_FILE_NAME, "Lcoil3/request/ImageRequest$Defaults;", "memoryCacheLazy", "Lkotlin/Lazy;", "Lcoil3/memory/MemoryCache;", "diskCacheLazy", "Lcoil3/disk/DiskCache;", "eventListenerFactory", "Lcoil3/EventListener$Factory;", "componentRegistry", "Lcoil3/ComponentRegistry;", "logger", "Lcoil3/util/Logger;", "extras", "Lcoil3/Extras$Builder;", "getExtras", "()Lcoil3/Extras$Builder;", "components", "builder", "Lkotlin/Function1;", "Lcoil3/ComponentRegistry$Builder;", "", "Lkotlin/ExtensionFunctionType;", "memoryCache", "initializer", "Lkotlin/Function0;", "diskCache", "fileSystem", "Lokio/FileSystem;", "eventListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lcoil3/EventListener;", "factory", "precision", "Lcoil3/size/Precision;", "coroutineContext", "Lkotlin/coroutines/CoroutineContext;", "interceptorCoroutineContext", "fetcherCoroutineContext", "decoderCoroutineContext", "placeholder", "image", "Lcoil3/Image;", "Lcoil3/request/ImageRequest;", "error", "fallback", "memoryCachePolicy", "policy", "Lcoil3/request/CachePolicy;", "diskCachePolicy", "networkCachePolicy", "build", "Lcoil3/ImageLoader;", "coil-core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000¢\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u0015\b\u0016\u0012\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004¢\u0006\u0004\b\u0005\u0010\u0006B\u0011\b\u0010\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\u0005\u0010\tJ\"\u0010\u001f\u001a\u00020\u00002\u0017\u0010 \u001a\u0013\u0012\u0004\u0012\u00020\"\u0012\u0004\u0012\u00020#0!¢\u0006\u0002\b$H\u0086\bJ\u000e\u0010\u001f\u001a\u00020\u00002\u0006\u0010\u001f\u001a\u00020\u0018J\u0010\u0010%\u001a\u00020\u00002\b\u0010%\u001a\u0004\u0018\u00010\u0012J\u0016\u0010%\u001a\u00020\u00002\u000e\u0010&\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120'J\u0010\u0010(\u001a\u00020\u00002\b\u0010(\u001a\u0004\u0018\u00010\u0014J\u0016\u0010(\u001a\u00020\u00002\u000e\u0010&\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00140'J\u000e\u0010)\u001a\u00020\u00002\u0006\u0010)\u001a\u00020*J\u000e\u0010+\u001a\u00020\u00002\u0006\u0010,\u001a\u00020-J\u000e\u0010\u0015\u001a\u00020\u00002\u0006\u0010.\u001a\u00020\u0016J\u000e\u0010/\u001a\u00020\u00002\u0006\u0010/\u001a\u000200J\u000e\u00101\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0010J\u0010\u00102\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0010H\u0007J\u0016\u00102\u001a\u00020\u00002\f\u0010&\u001a\b\u0012\u0004\u0012\u00020\u00100'H\u0007J\u000e\u00103\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0010J\u000e\u00104\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0010J\u000e\u00105\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0010J\u0010\u00106\u001a\u00020\u00002\b\u00107\u001a\u0004\u0018\u000108J\u001c\u00106\u001a\u00020\u00002\u0014\u0010.\u001a\u0010\u0012\u0004\u0012\u000209\u0012\u0006\u0012\u0004\u0018\u0001080!J\u0010\u0010:\u001a\u00020\u00002\b\u00107\u001a\u0004\u0018\u000108J\u001c\u0010:\u001a\u00020\u00002\u0014\u0010.\u001a\u0010\u0012\u0004\u0012\u000209\u0012\u0006\u0012\u0004\u0018\u0001080!J\u0010\u0010;\u001a\u00020\u00002\b\u00107\u001a\u0004\u0018\u000108J\u001c\u0010;\u001a\u00020\u00002\u0014\u0010.\u001a\u0010\u0012\u0004\u0012\u000209\u0012\u0006\u0012\u0004\u0018\u0001080!J\u000e\u0010<\u001a\u00020\u00002\u0006\u0010=\u001a\u00020>J\u000e\u0010?\u001a\u00020\u00002\u0006\u0010=\u001a\u00020>J\u000e\u0010@\u001a\u00020\u00002\u0006\u0010=\u001a\u00020>J\u0010\u0010\u0019\u001a\u00020\u00002\b\u0010\u0019\u001a\u0004\u0018\u00010\u001aJ\u0006\u0010A\u001a\u00020BR\u0014\u0010\n\u001a\u00060\u0003j\u0002`\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n\u0012\u0004\u0012\u00020\u0010\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010\u0011\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0012\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010\u0013\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0014\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001b\u001a\u00020\u001c¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001e¨\u0006C"}, d2 = {"Lcoil3/ImageLoader$Builder;", "", "context", "Landroid/content/Context;", "Lcoil3/PlatformContext;", "<init>", "(Landroid/content/Context;)V", "options", "Lcoil3/RealImageLoader$Options;", "(Lcoil3/RealImageLoader$Options;)V", MimeTypes.BASE_TYPE_APPLICATION, "Landroid/content/Context;", RemoteConfigComponent.DEFAULTS_FILE_NAME, "Lcoil3/request/ImageRequest$Defaults;", "mainCoroutineContextLazy", "Lkotlin/Lazy;", "Lkotlin/coroutines/CoroutineContext;", "memoryCacheLazy", "Lcoil3/memory/MemoryCache;", "diskCacheLazy", "Lcoil3/disk/DiskCache;", "eventListenerFactory", "Lcoil3/EventListener$Factory;", "componentRegistry", "Lcoil3/ComponentRegistry;", "logger", "Lcoil3/util/Logger;", "extras", "Lcoil3/Extras$Builder;", "getExtras", "()Lcoil3/Extras$Builder;", "components", "builder", "Lkotlin/Function1;", "Lcoil3/ComponentRegistry$Builder;", "", "Lkotlin/ExtensionFunctionType;", "memoryCache", "initializer", "Lkotlin/Function0;", "diskCache", "fileSystem", "Lokio/FileSystem;", "eventListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lcoil3/EventListener;", "factory", "precision", "Lcoil3/size/Precision;", "coroutineContext", "mainCoroutineContext", "interceptorCoroutineContext", "fetcherCoroutineContext", "decoderCoroutineContext", "placeholder", "image", "Lcoil3/Image;", "Lcoil3/request/ImageRequest;", "error", "fallback", "memoryCachePolicy", "policy", "Lcoil3/request/CachePolicy;", "diskCachePolicy", "networkCachePolicy", "build", "Lcoil3/ImageLoader;", "coil-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Builder {
         private final Context application;
@@ -60,10 +62,11 @@ public interface ImageLoader {
         private EventListener.Factory eventListenerFactory;
         private final Extras.Builder extras;
         private Logger logger;
+        private Lazy<? extends CoroutineContext> mainCoroutineContextLazy;
         private Lazy<? extends MemoryCache> memoryCacheLazy;
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final Image error$lambda$15(Image image, ImageRequest imageRequest) {
+        public static final Image error$lambda$17(Image image, ImageRequest imageRequest) {
             return image;
         }
 
@@ -73,12 +76,17 @@ public interface ImageLoader {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final Image fallback$lambda$17(Image image, ImageRequest imageRequest) {
+        public static final Image fallback$lambda$19(Image image, ImageRequest imageRequest) {
             return image;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final Image placeholder$lambda$13(Image image, ImageRequest imageRequest) {
+        public static final CoroutineContext mainCoroutineContext$lambda$10(CoroutineContext coroutineContext) {
+            return coroutineContext;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Image placeholder$lambda$15(Image image, ImageRequest imageRequest) {
             return image;
         }
 
@@ -89,6 +97,7 @@ public interface ImageLoader {
         public Builder(Context context) {
             this.application = ContextsKt.getApplication(context);
             this.defaults = ImageRequest.Defaults.DEFAULT;
+            this.mainCoroutineContextLazy = null;
             this.memoryCacheLazy = null;
             this.diskCacheLazy = null;
             this.eventListenerFactory = null;
@@ -100,6 +109,7 @@ public interface ImageLoader {
         public Builder(RealImageLoader.Options options) {
             this.application = options.getApplication();
             this.defaults = options.getDefaults();
+            this.mainCoroutineContextLazy = options.getMainCoroutineContextLazy();
             this.memoryCacheLazy = options.getMemoryCacheLazy();
             this.diskCacheLazy = options.getDiskCacheLazy();
             this.eventListenerFactory = options.getEventListenerFactory();
@@ -145,7 +155,7 @@ public interface ImageLoader {
         }
 
         public final Builder eventListener(final EventListener eventListener) {
-            return eventListenerFactory(new EventListener.Factory() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda5
+            return eventListenerFactory(new EventListener.Factory() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda6
                 @Override // coil3.EventListener.Factory
                 public final EventListener create(ImageRequest imageRequest) {
                     EventListener eventListener$lambda$6;
@@ -170,6 +180,22 @@ public interface ImageLoader {
             return this;
         }
 
+        public final Builder mainCoroutineContext(final CoroutineContext coroutineContext) {
+            return mainCoroutineContext(new Function0() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda7
+                @Override // kotlin.jvm.functions.Function0
+                public final Object invoke() {
+                    CoroutineContext mainCoroutineContext$lambda$10;
+                    mainCoroutineContext$lambda$10 = ImageLoader.Builder.mainCoroutineContext$lambda$10(CoroutineContext.this);
+                    return mainCoroutineContext$lambda$10;
+                }
+            });
+        }
+
+        public final Builder mainCoroutineContext(Function0<? extends CoroutineContext> function0) {
+            this.mainCoroutineContextLazy = LazyKt.lazy(function0);
+            return this;
+        }
+
         public final Builder interceptorCoroutineContext(CoroutineContext coroutineContext) {
             this.defaults = ImageRequest.Defaults.copy$default(this.defaults, null, coroutineContext, null, null, null, null, null, null, null, null, null, null, null, null, 16381, null);
             return this;
@@ -186,12 +212,12 @@ public interface ImageLoader {
         }
 
         public final Builder placeholder(final Image image) {
-            return placeholder(new Function1() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda4
+            return placeholder(new Function1() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Image placeholder$lambda$13;
-                    placeholder$lambda$13 = ImageLoader.Builder.placeholder$lambda$13(Image.this, (ImageRequest) obj);
-                    return placeholder$lambda$13;
+                    Image placeholder$lambda$15;
+                    placeholder$lambda$15 = ImageLoader.Builder.placeholder$lambda$15(Image.this, (ImageRequest) obj);
+                    return placeholder$lambda$15;
                 }
             });
         }
@@ -202,12 +228,12 @@ public interface ImageLoader {
         }
 
         public final Builder error(final Image image) {
-            return error(new Function1() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda2
+            return error(new Function1() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Image error$lambda$15;
-                    error$lambda$15 = ImageLoader.Builder.error$lambda$15(Image.this, (ImageRequest) obj);
-                    return error$lambda$15;
+                    Image error$lambda$17;
+                    error$lambda$17 = ImageLoader.Builder.error$lambda$17(Image.this, (ImageRequest) obj);
+                    return error$lambda$17;
                 }
             });
         }
@@ -218,12 +244,12 @@ public interface ImageLoader {
         }
 
         public final Builder fallback(final Image image) {
-            return fallback(new Function1() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda3
+            return fallback(new Function1() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Image fallback$lambda$17;
-                    fallback$lambda$17 = ImageLoader.Builder.fallback$lambda$17(Image.this, (ImageRequest) obj);
-                    return fallback$lambda$17;
+                    Image fallback$lambda$19;
+                    fallback$lambda$19 = ImageLoader.Builder.fallback$lambda$19(Image.this, (ImageRequest) obj);
+                    return fallback$lambda$19;
                 }
             });
         }
@@ -256,25 +282,36 @@ public interface ImageLoader {
         public final ImageLoader build() {
             Context context = this.application;
             ImageRequest.Defaults copy$default = ImageRequest.Defaults.copy$default(this.defaults, null, null, null, null, null, null, null, null, null, null, null, null, null, this.extras.build(), 8191, null);
-            Lazy<? extends MemoryCache> lazy = this.memoryCacheLazy;
+            Lazy<? extends CoroutineContext> lazy = this.mainCoroutineContextLazy;
             if (lazy == null) {
                 lazy = LazyKt.lazy(new Function0() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        MemoryCache build$lambda$23;
-                        build$lambda$23 = ImageLoader.Builder.build$lambda$23(ImageLoader.Builder.this);
-                        return build$lambda$23;
+                        MainCoroutineDispatcher build$lambda$25;
+                        build$lambda$25 = ImageLoader.Builder.build$lambda$25();
+                        return build$lambda$25;
                     }
                 });
             }
-            Lazy<? extends DiskCache> lazy2 = this.diskCacheLazy;
+            Lazy<? extends MemoryCache> lazy2 = this.memoryCacheLazy;
             if (lazy2 == null) {
                 lazy2 = LazyKt.lazy(new Function0() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        DiskCache build$lambda$24;
-                        build$lambda$24 = ImageLoader.Builder.build$lambda$24();
-                        return build$lambda$24;
+                        MemoryCache build$lambda$26;
+                        build$lambda$26 = ImageLoader.Builder.build$lambda$26(ImageLoader.Builder.this);
+                        return build$lambda$26;
+                    }
+                });
+            }
+            Lazy<? extends DiskCache> lazy3 = this.diskCacheLazy;
+            if (lazy3 == null) {
+                lazy3 = LazyKt.lazy(new Function0() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda2
+                    @Override // kotlin.jvm.functions.Function0
+                    public final Object invoke() {
+                        DiskCache build$lambda$27;
+                        build$lambda$27 = ImageLoader.Builder.build$lambda$27();
+                        return build$lambda$27;
                     }
                 });
             }
@@ -286,16 +323,21 @@ public interface ImageLoader {
             if (componentRegistry == null) {
                 componentRegistry = new ComponentRegistry();
             }
-            return new RealImageLoader(new RealImageLoader.Options(context, copy$default, lazy, lazy2, factory, componentRegistry, this.logger));
+            return new RealImageLoader(new RealImageLoader.Options(context, copy$default, lazy, lazy2, lazy3, factory, componentRegistry, this.logger));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final MemoryCache build$lambda$23(Builder builder) {
+        public static final MainCoroutineDispatcher build$lambda$25() {
+            return Dispatchers.getMain().getImmediate();
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final MemoryCache build$lambda$26(Builder builder) {
             return MemoryCache.Builder.maxSizePercent$default(new MemoryCache.Builder(), builder.application, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 2, null).build();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final DiskCache build$lambda$24() {
+        public static final DiskCache build$lambda$27() {
             return UtilsKt.singletonDiskCache();
         }
     }

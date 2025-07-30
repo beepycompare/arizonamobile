@@ -7,7 +7,7 @@ import java.util.List;
 public final class Lf implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final X f533a;
+    public final X f534a;
     public final Mf b;
 
     public Lf() {
@@ -19,17 +19,17 @@ public final class Lf implements Converter {
     public final Qi fromModel(Nf nf) {
         int i;
         G8 g8 = new G8();
-        Qi fromModel = this.f533a.fromModel(nf.f564a);
-        g8.f450a = (C0677w8) fromModel.f612a;
+        Qi fromModel = this.f534a.fromModel(nf.f565a);
+        g8.f451a = (C0677w8) fromModel.f613a;
         Jn a2 = this.b.a(nf.b);
-        if (io.a((Collection) a2.f511a)) {
+        if (io.a((Collection) a2.f512a)) {
             i = 0;
         } else {
-            g8.b = new C0677w8[((List) a2.f511a).size()];
+            g8.b = new C0677w8[((List) a2.f512a).size()];
             i = 0;
-            for (int i2 = 0; i2 < ((List) a2.f511a).size(); i2++) {
-                Qi fromModel2 = this.f533a.fromModel((Y) ((List) a2.f511a).get(i2));
-                g8.b[i2] = (C0677w8) fromModel2.f612a;
+            for (int i2 = 0; i2 < ((List) a2.f512a).size(); i2++) {
+                Qi fromModel2 = this.f534a.fromModel((Y) ((List) a2.f512a).get(i2));
+                g8.b[i2] = (C0677w8) fromModel2.f613a;
                 i += fromModel2.b.getBytesTruncated();
             }
         }
@@ -43,7 +43,7 @@ public final class Lf implements Converter {
     }
 
     public Lf(X x, Mf mf) {
-        this.f533a = x;
+        this.f534a = x;
         this.b = mf;
     }
 

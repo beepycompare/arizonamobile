@@ -9,6 +9,6 @@ public final class Lh extends AbstractC0611th {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0611th, io.appmetrica.analytics.impl.InterfaceC0636uh
     public final boolean a(Boolean bool) {
-        return !this.f1067a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
+        return !this.f1068a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
     }
 }

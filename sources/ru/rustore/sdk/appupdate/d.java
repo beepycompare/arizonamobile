@@ -9,18 +9,18 @@ import ru.rustore.sdk.core.util.CancellableContinuationExtKt;
 public final class d extends Lambda implements Function0<Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ CancellableContinuation<Unit> f1346a;
+    public final /* synthetic */ CancellableContinuation<Unit> f1347a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
     public d(CancellableContinuation<? super Unit> cancellableContinuation) {
         super(0);
-        this.f1346a = cancellableContinuation;
+        this.f1347a = cancellableContinuation;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Unit invoke() {
-        CancellableContinuationExtKt.resumeIfActive(this.f1346a, Unit.INSTANCE);
+        CancellableContinuationExtKt.resumeIfActive(this.f1347a, Unit.INSTANCE);
         return Unit.INSTANCE;
     }
 }

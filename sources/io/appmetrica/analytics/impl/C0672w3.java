@@ -6,10 +6,10 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class C0672w3 implements InterfaceC0697x3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1111a;
+    public final int f1112a;
 
     public C0672w3(int i) {
-        this.f1111a = i;
+        this.f1112a = i;
     }
 
     public static InterfaceC0697x3 a(InterfaceC0697x3... interfaceC0697x3Arr) {
@@ -28,10 +28,10 @@ public class C0672w3 implements InterfaceC0697x3 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0697x3
     public final int getBytesTruncated() {
-        return this.f1111a;
+        return this.f1112a;
     }
 
     public String toString() {
-        return "BytesTruncatedInfo{bytesTruncated=" + this.f1111a + AbstractJsonLexerKt.END_OBJ;
+        return "BytesTruncatedInfo{bytesTruncated=" + this.f1112a + AbstractJsonLexerKt.END_OBJ;
     }
 }

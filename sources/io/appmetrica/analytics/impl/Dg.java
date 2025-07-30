@@ -7,7 +7,7 @@ import java.util.Iterator;
 public final class Dg implements InterfaceC0710xg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashSet f398a;
+    public final HashSet f399a;
     public boolean b;
     public Ag c;
 
@@ -18,28 +18,28 @@ public final class Dg implements InterfaceC0710xg {
     @Override // io.appmetrica.analytics.impl.InterfaceC0710xg
     public final synchronized void a(Ag ag) {
         if (ag != null) {
-            LoggerStorage.getMainPublicOrAnonymousLogger().info("Received referrer from source %s: %s", ag.d.f1172a, ag.f339a);
+            LoggerStorage.getMainPublicOrAnonymousLogger().info("Received referrer from source %s: %s", ag.d.f1173a, ag.f340a);
         }
         this.c = ag;
         this.b = true;
-        Iterator it = this.f398a.iterator();
+        Iterator it = this.f399a.iterator();
         while (it.hasNext()) {
             ((InterfaceC0585sg) it.next()).a(this.c);
         }
-        this.f398a.clear();
+        this.f399a.clear();
     }
 
     public Dg(C0735yg c0735yg) {
-        this.f398a = new HashSet();
+        this.f399a = new HashSet();
         c0735yg.a(new C0715xl(this));
         c0735yg.a();
     }
 
     public final synchronized void a(InterfaceC0585sg interfaceC0585sg) {
-        this.f398a.add(interfaceC0585sg);
+        this.f399a.add(interfaceC0585sg);
         if (this.b) {
             interfaceC0585sg.a(this.c);
-            this.f398a.remove(interfaceC0585sg);
+            this.f399a.remove(interfaceC0585sg);
         }
     }
 }

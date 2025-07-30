@@ -563,6 +563,7 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     private final void downloadGameData() {
+        String str;
         File externalFilesDir;
         Log.i(TAG, "Downloading game data...");
         startForegroundService();
@@ -586,11 +587,28 @@ public final class UpdateService extends Hilt_UpdateService {
             return;
         }
         final ArrayList<Integer> arrayList = new ArrayList<>();
+        if (this.mUpdateFiles.isEmpty()) {
+            this.mLastOperationStatus = Errno.ConnectionRefused;
+            Message obtain2 = Message.obtain(this.mInHandler, 2);
+            obtain2.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
+            obtain2.replyTo = this.mMessenger;
+            Messenger messenger2 = this.mActivityMessenger;
+            if (messenger2 != null) {
+                messenger2.send(obtain2);
+            }
+            Log.w(TAG, "Server unreachable: " + currentServer);
+            stopForegroundService();
+            return;
+        }
         int size = this.mUpdateFiles.size();
         for (int i = 0; i < size; i++) {
-            String str = currentServer + "data/files" + this.mUpdateFiles.get(i);
+            String str2 = (String) CollectionsKt.getOrNull(this.mUpdateFiles, i);
+            if (str2 == null || (str = (String) CollectionsKt.getOrNull(this.mUpdateFiles, i)) == null) {
+                return;
+            }
+            String str3 = currentServer + "data/files" + str2;
             SharedPreferences sharedPreferences = null;
-            File file = new File((getExternalFilesDir(null) != null ? externalFilesDir.getPath() : null) + this.mUpdateFiles.get(i));
+            File file = new File((getExternalFilesDir(null) != null ? externalFilesDir.getPath() : null) + str);
             if (!file.isDirectory() && file.exists()) {
                 SharedPreferences sharedPreferences2 = this.updatePreferences;
                 if (sharedPreferences2 == null) {
@@ -613,12 +631,12 @@ public final class UpdateService extends Hilt_UpdateService {
                 int intValue = next.intValue();
                 BreakpointInfo breakpointInfo = OkDownload.with().breakpointStore().get(intValue);
                 if (breakpointInfo != null && Intrinsics.areEqual(breakpointInfo.getFile(), file)) {
-                    BreakpointInfo copyWithReplaceIdAndUrl = breakpointInfo.copyWithReplaceIdAndUrl(intValue, str);
+                    BreakpointInfo copyWithReplaceIdAndUrl = breakpointInfo.copyWithReplaceIdAndUrl(intValue, str3);
                     OkDownload.with().breakpointStore().update(copyWithReplaceIdAndUrl);
                     Log.i(TAG, "Update breakPoint " + copyWithReplaceIdAndUrl + " " + intValue);
                 }
             }
-            DownloadTask build = new DownloadTask.Builder(str, file).setPriority(5).setMinIntervalMillisCallbackProcess(300).setConnectionCount(1).setPreAllocateLength(true).build();
+            DownloadTask build = new DownloadTask.Builder(str3, file).setPriority(5).setMinIntervalMillisCallbackProcess(300).setConnectionCount(1).setPreAllocateLength(true).build();
             commit.bindSetTask(build);
             Log.v(TAG, "Create download " + build);
             arrayList.add(Integer.valueOf(build.getId()));
@@ -1219,7 +1237,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void checkLauncherUpdate$lambda$14(UpdateService updateService, String str) {
         try {
-            boolean z = new JSONObject(str).getInt("launcherVersion") > 1642;
+            boolean z = new JSONObject(str).getInt("launcherVersion") > 1643;
             Message obtain = Message.obtain(updateService.mInHandler, 3);
             obtain.getData().putBoolean(NEED_UPDATE_MSG, z);
             obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);

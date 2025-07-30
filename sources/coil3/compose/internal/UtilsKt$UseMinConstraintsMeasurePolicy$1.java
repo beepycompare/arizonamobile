@@ -11,7 +11,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: utils.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 final class UtilsKt$UseMinConstraintsMeasurePolicy$1 implements MeasurePolicy {
     public static final UtilsKt$UseMinConstraintsMeasurePolicy$1 INSTANCE = new UtilsKt$UseMinConstraintsMeasurePolicy$1();

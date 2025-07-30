@@ -12,7 +12,7 @@ public final class C0512ph extends AbstractC0236eh {
     public final boolean a(C0401l6 c0401l6) {
         Ek ek;
         Uk uk;
-        F9 f9 = this.f831a.n;
+        F9 f9 = this.f832a.n;
         Sk sk = f9.c;
         if (sk.g == 0) {
             ek = sk.d.b();
@@ -25,22 +25,22 @@ public final class C0512ph extends AbstractC0236eh {
         }
         if (ek != null) {
             uk = new Uk();
-            uk.f675a = ek.d;
+            uk.f676a = ek.d;
             long andIncrement = ek.f.getAndIncrement();
             Vk vk = ek.b;
             vk.a(Vk.g, Long.valueOf(ek.f.get()));
             vk.b();
             uk.b = andIncrement;
             uk.c = TimeUnit.MILLISECONDS.toSeconds(ek.j);
-            uk.d = ek.c.f475a;
+            uk.d = ek.c.f476a;
         } else {
             long j = c0401l6.j;
             long a2 = sk.b.a();
-            C0278g7 c0278g7 = sk.f642a.e;
+            C0278g7 c0278g7 = sk.f643a.e;
             Wk wk = Wk.BACKGROUND;
             c0278g7.a(a2, wk, j);
             uk = new Uk();
-            uk.f675a = a2;
+            uk.f676a = a2;
             uk.d = wk;
             uk.b = 0L;
             uk.c = 0L;

@@ -1067,7 +1067,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         }
         recyclerView.setAdapter(craftItemsAdapter);
         CraftResponse craftResponse = this.craftResponse;
-        if (craftResponse == null || (categories = craftResponse.getCategories()) == null || (categoryItem = categories.get(i)) == null || (items = categoryItem.getItems()) == null) {
+        if (craftResponse == null || (categories = craftResponse.getCategories()) == null || (categoryItem = (CategoryItem) CollectionsKt.getOrNull(categories, i)) == null || (items = categoryItem.getItems()) == null) {
             arrayList = new ArrayList();
         } else {
             List<Integer> list = items;

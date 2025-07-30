@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public final class C0609tf implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ff f1065a;
+    public final Ff f1066a;
     public final C0485of b;
 
     public C0609tf() {
@@ -18,7 +18,7 @@ public final class C0609tf implements ProtobufConverter {
     /* renamed from: a */
     public final Bf fromModel(C0559rf c0559rf) {
         Bf bf = new Bf();
-        bf.f358a = this.f1065a.fromModel(c0559rf.f1036a);
+        bf.f359a = this.f1066a.fromModel(c0559rf.f1037a);
         bf.b = new Af[c0559rf.b.size()];
         int i = 0;
         for (C0535qf c0535qf : c0559rf.b) {
@@ -29,7 +29,7 @@ public final class C0609tf implements ProtobufConverter {
     }
 
     public C0609tf(Ff ff, C0485of c0485of) {
-        this.f1065a = ff;
+        this.f1066a = ff;
         this.b = c0485of;
     }
 
@@ -41,11 +41,11 @@ public final class C0609tf implements ProtobufConverter {
         for (Af af : bf.b) {
             arrayList.add(this.b.toModel(af));
         }
-        C0759zf c0759zf = bf.f358a;
+        C0759zf c0759zf = bf.f359a;
         if (c0759zf == null) {
-            model = this.f1065a.toModel(new C0759zf());
+            model = this.f1066a.toModel(new C0759zf());
         } else {
-            model = this.f1065a.toModel(c0759zf);
+            model = this.f1066a.toModel(c0759zf);
         }
         return new C0559rf(model, arrayList);
     }

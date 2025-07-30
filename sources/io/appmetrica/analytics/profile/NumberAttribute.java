@@ -13,22 +13,22 @@ import io.appmetrica.analytics.impl.Yk;
 public final class NumberAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final O6 f1260a;
+    private final O6 f1261a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public NumberAttribute(String str, Lb lb, C0154bc c0154bc) {
-        this.f1260a = new O6(str, lb, c0154bc);
+        this.f1261a = new O6(str, lb, c0154bc);
     }
 
     public UserProfileUpdate<? extends InterfaceC0166bo> withValue(double d) {
-        return new UserProfileUpdate<>(new C0633ue(this.f1260a.c, d, new Lb(), new N4(new C0154bc(new H4(100)))));
+        return new UserProfileUpdate<>(new C0633ue(this.f1261a.c, d, new Lb(), new N4(new C0154bc(new H4(100)))));
     }
 
     public UserProfileUpdate<? extends InterfaceC0166bo> withValueIfUndefined(double d) {
-        return new UserProfileUpdate<>(new C0633ue(this.f1260a.c, d, new Lb(), new Yk(new C0154bc(new H4(100)))));
+        return new UserProfileUpdate<>(new C0633ue(this.f1261a.c, d, new Lb(), new Yk(new C0154bc(new H4(100)))));
     }
 
     public UserProfileUpdate<? extends InterfaceC0166bo> withValueReset() {
-        return new UserProfileUpdate<>(new Oi(1, this.f1260a.c, new Lb(), new C0154bc(new H4(100))));
+        return new UserProfileUpdate<>(new Oi(1, this.f1261a.c, new Lb(), new C0154bc(new H4(100))));
     }
 }

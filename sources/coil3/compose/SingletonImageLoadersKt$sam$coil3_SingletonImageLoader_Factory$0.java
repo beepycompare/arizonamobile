@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionAdapter;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: singletonImageLoaders.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 final class SingletonImageLoadersKt$sam$coil3_SingletonImageLoader_Factory$0 implements SingletonImageLoader.Factory, FunctionAdapter {
     private final /* synthetic */ Function1 function;

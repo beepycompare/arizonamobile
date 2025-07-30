@@ -5,17 +5,17 @@ import android.content.Context;
 public final class Og implements Ql, InterfaceC0153bb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f580a;
+    public final Context f581a;
     public final C0400l5 b;
     public final C0425m5 c;
     public final Bm d;
     public final InterfaceC0381kb e;
 
     public Og(Context context, C0400l5 c0400l5, K4 k4, InterfaceC0599t5 interfaceC0599t5, C0425m5 c0425m5, Hl hl) {
-        this.f580a = context;
+        this.f581a = context;
         this.b = c0400l5;
         this.c = c0425m5;
-        Bm a2 = hl.a(context, c0400l5, k4.f515a);
+        Bm a2 = hl.a(context, c0400l5, k4.f516a);
         this.d = a2;
         this.e = interfaceC0599t5.a(context, c0400l5, k4.b, a2);
         hl.a(c0400l5, this);
@@ -26,15 +26,15 @@ public final class Og implements Ql, InterfaceC0153bb {
     }
 
     public final Context b() {
-        return this.f580a;
+        return this.f581a;
     }
 
     public final void a(A4 a4) {
-        this.c.f949a.add(a4);
+        this.c.f950a.add(a4);
     }
 
     public final void b(A4 a4) {
-        this.c.f949a.remove(a4);
+        this.c.f950a.remove(a4);
     }
 
     @Override // io.appmetrica.analytics.impl.Ql
@@ -49,7 +49,7 @@ public final class Og implements Ql, InterfaceC0153bb {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0153bb
     public final void a(K4 k4) {
-        this.d.a(k4.f515a);
+        this.d.a(k4.f516a);
         this.e.a(k4.b);
     }
 

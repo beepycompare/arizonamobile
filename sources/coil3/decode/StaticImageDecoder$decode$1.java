@@ -6,10 +6,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StaticImageDecoder.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "coil3.decode.StaticImageDecoder", f = "StaticImageDecoder.kt", i = {0}, l = {168}, m = "decode", n = {"$this$withPermit$iv"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "coil3.decode.StaticImageDecoder", f = "StaticImageDecoder.kt", i = {0, 0}, l = {168}, m = "decode", n = {"$this$withPermit$iv", "$i$f$withPermit"}, s = {"L$0", "I$0"})
 /* loaded from: classes3.dex */
 public final class StaticImageDecoder$decode$1 extends ContinuationImpl {
+    int I$0;
     Object L$0;
     int label;
     /* synthetic */ Object result;

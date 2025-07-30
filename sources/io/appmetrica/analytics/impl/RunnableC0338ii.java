@@ -6,17 +6,17 @@ import io.appmetrica.analytics.ModuleEvent;
 public final class RunnableC0338ii implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ModuleEvent f902a;
+    public final /* synthetic */ ModuleEvent f903a;
     public final /* synthetic */ C0612ti b;
 
     public RunnableC0338ii(C0612ti c0612ti, ModuleEvent moduleEvent) {
         this.b = c0612ti;
-        this.f902a = moduleEvent;
+        this.f903a = moduleEvent;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         C0612ti c0612ti = this.b;
-        C0612ti.a(c0612ti.f1068a, c0612ti.d, c0612ti.e).reportEvent(this.f902a);
+        C0612ti.a(c0612ti.f1069a, c0612ti.d, c0612ti.e).reportEvent(this.f903a);
     }
 }

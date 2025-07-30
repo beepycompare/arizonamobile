@@ -11,13 +11,13 @@ public final class Li implements InterfaceC0415lk {
     public static final long f = TimeUnit.SECONDS.toMillis(4);
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0420m0 f534a;
+    public final C0420m0 f535a;
     public final C0340ik b;
     public final TimeProvider c;
     public final ICommonExecutor d;
 
     public Li(C0420m0 c0420m0, C0340ik c0340ik, TimeProvider timeProvider) {
-        this.f534a = c0420m0;
+        this.f535a = c0420m0;
         this.b = c0340ik;
         this.c = timeProvider;
         this.d = C0698x4.l().g().b();
@@ -28,7 +28,7 @@ public final class Li implements InterfaceC0415lk {
         ICommonExecutor iCommonExecutor = this.d;
         if (ih.b) {
             C0340ik c0340ik = this.b;
-            c0185ch = new C0725y6(c0340ik.f903a, c0340ik.b, c0340ik.c, ih);
+            c0185ch = new C0725y6(c0340ik.f904a, c0340ik.b, c0340ik.c, ih);
         } else {
             C0340ik c0340ik2 = this.b;
             c0185ch = new C0185ch(c0340ik2.b, c0340ik2.c, ih);
@@ -39,8 +39,8 @@ public final class Li implements InterfaceC0415lk {
     public final void b(Ih ih) {
         long uptimeMillis = this.c.uptimeMillis();
         C0340ik c0340ik = this.b;
-        C0725y6 c0725y6 = new C0725y6(c0340ik.f903a, c0340ik.b, c0340ik.c, ih);
-        if (this.f534a.a()) {
+        C0725y6 c0725y6 = new C0725y6(c0340ik.f904a, c0340ik.b, c0340ik.c, ih);
+        if (this.f535a.a()) {
             try {
                 this.d.submit(c0725y6).get(f, TimeUnit.MILLISECONDS);
             } catch (Throwable unused) {

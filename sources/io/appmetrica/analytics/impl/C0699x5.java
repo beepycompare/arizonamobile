@@ -13,7 +13,7 @@ import kotlin.collections.CollectionsKt;
 public class C0699x5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0649v5 f1130a;
+    public final C0649v5 f1131a;
     public final C0674w5 b;
     protected final Context c;
     public final C0400l5 d;
@@ -28,7 +28,7 @@ public class C0699x5 {
     public final int m;
 
     public C0699x5(Context context, C0400l5 c0400l5, J4 j4, AbstractC0525q5 abstractC0525q5, C0267fm c0267fm, InterfaceC0636uh interfaceC0636uh, ICommonExecutor iCommonExecutor, int i, C0128ac c0128ac, N9 n9) {
-        this(context, c0400l5, j4, abstractC0525q5, c0267fm, interfaceC0636uh, iCommonExecutor, new C0125a9(), i, new C0649v5(j4.f497a), new C0674w5(context, c0400l5), c0128ac, n9);
+        this(context, c0400l5, j4, abstractC0525q5, c0267fm, interfaceC0636uh, iCommonExecutor, new C0125a9(), i, new C0649v5(j4.f498a), new C0674w5(context, c0400l5), c0128ac, n9);
     }
 
     public static C0578s9 c(C0574s5 c0574s5) {
@@ -46,7 +46,7 @@ public class C0699x5 {
     }
 
     public final C0649v5 d() {
-        return this.f1130a;
+        return this.f1131a;
     }
 
     public final C0674w5 e() {
@@ -63,12 +63,12 @@ public class C0699x5 {
             LinkedHashMap linkedHashMap = B.b;
             Object obj = linkedHashMap.get(valueOf);
             if (obj == null) {
-                C0385kf c0385kf = new C0385kf(C0626u7.a(B.f1142a).b(c0400l5));
+                C0385kf c0385kf = new C0385kf(C0626u7.a(B.f1143a).b(c0400l5));
                 if (c0400l5.d()) {
                     String str = "appmetrica_vital_" + c0400l5.b + ".dat";
-                    c0679wa = new B5(CollectionsKt.listOf((Object[]) new Pair[]{TuplesKt.to(str, new C0679wa(B.f1142a, str)), TuplesKt.to("appmetrica_vital_main.dat", new C0679wa(B.f1142a, "appmetrica_vital_main.dat"))}));
+                    c0679wa = new B5(CollectionsKt.listOf((Object[]) new Pair[]{TuplesKt.to(str, new C0679wa(B.f1143a, str)), TuplesKt.to("appmetrica_vital_main.dat", new C0679wa(B.f1143a, "appmetrica_vital_main.dat"))}));
                 } else {
-                    c0679wa = new C0679wa(B.f1142a, "appmetrica_vital_" + c0400l5.b + ".dat");
+                    c0679wa = new C0679wa(B.f1143a, "appmetrica_vital_" + c0400l5.b + ".dat");
                 }
                 obj = new uo(c0385kf, c0679wa, valueOf);
                 linkedHashMap.put(valueOf, obj);
@@ -88,7 +88,7 @@ public class C0699x5 {
         this.j = iCommonExecutor;
         this.i = c0125a9;
         this.m = i;
-        this.f1130a = c0649v5;
+        this.f1131a = c0649v5;
         this.b = c0674w5;
         this.k = c0128ac;
         this.l = n9;

@@ -18,7 +18,7 @@ public final class We implements Converter {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             C0501p6 c0501p6 = c0501p6Arr[i];
             Charset charset = Charsets.UTF_8;
-            c0501p6.f997a = entry.getKey().getBytes(charset);
+            c0501p6.f998a = entry.getKey().getBytes(charset);
             c0501p6Arr[i].b = entry.getValue().getBytes(charset);
             i++;
         }

@@ -10,7 +10,7 @@ import java.util.List;
 public final class C0348j3 implements BillingInfoStorage {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ProtobufStateStorage f911a;
+    public final ProtobufStateStorage f912a;
     public C0671w2 b;
 
     public C0348j3(Context context) {
@@ -19,7 +19,7 @@ public final class C0348j3 implements BillingInfoStorage {
 
     @Override // io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoStorage
     public final List<BillingInfo> getBillingInfo() {
-        return this.b.f1110a;
+        return this.b.f1111a;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoStorage
@@ -33,11 +33,11 @@ public final class C0348j3 implements BillingInfoStorage {
         }
         C0671w2 c0671w2 = new C0671w2(list, z);
         this.b = c0671w2;
-        this.f911a.save(c0671w2);
+        this.f912a.save(c0671w2);
     }
 
     public C0348j3(ProtobufStateStorage protobufStateStorage) {
-        this.f911a = protobufStateStorage;
+        this.f912a = protobufStateStorage;
         this.b = (C0671w2) protobufStateStorage.read();
     }
 }

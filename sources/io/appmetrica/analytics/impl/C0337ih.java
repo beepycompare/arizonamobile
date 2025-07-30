@@ -31,10 +31,10 @@ public final class C0337ih extends AbstractC0236eh {
     public final boolean a(C0401l6 c0401l6) {
         HashSet hashSet;
         ArrayList b;
-        C0574s5 c0574s5 = this.f831a;
+        C0574s5 c0574s5 = this.f832a;
         if (c0574s5.t.c() && c0574s5.x()) {
             C0385kf c0385kf = c0574s5.c;
-            String e = this.f831a.c.e();
+            String e = this.f832a.c.e();
             try {
                 if (!TextUtils.isEmpty(e)) {
                     try {
@@ -51,14 +51,14 @@ public final class C0337ih extends AbstractC0236eh {
                         F9 f9 = c0574s5.n;
                         int i2 = f9.k;
                         f9.m = i2;
-                        f9.f434a.a(i2).b();
+                        f9.f435a.a(i2).b();
                     } else {
                         JSONArray jSONArray2 = new JSONArray();
                         Iterator it = b.iterator();
                         while (it.hasNext()) {
                             C0430ma c0430ma = (C0430ma) it.next();
                             c0430ma.getClass();
-                            JSONObject put = new JSONObject().put("name", c0430ma.f951a).put("required", c0430ma.c);
+                            JSONObject put = new JSONObject().put("name", c0430ma.f952a).put("required", c0430ma.c);
                             int i3 = c0430ma.b;
                             if (i3 != -1) {
                                 put.put(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, i3);
@@ -70,7 +70,7 @@ public final class C0337ih extends AbstractC0236eh {
                         f92.a(a2, Sk.a(f92.c.b(a2), a2.i));
                         int i4 = f92.k;
                         f92.m = i4;
-                        f92.f434a.a(i4).b();
+                        f92.f435a.a(i4).b();
                         c0385kf.i(jSONArray2.toString());
                     }
                 }
@@ -88,9 +88,9 @@ public final class C0337ih extends AbstractC0236eh {
         AbstractC0405la c0380ka;
         FeatureInfo[] featureInfoArr;
         try {
-            C0574s5 c0574s5 = this.f831a;
+            C0574s5 c0574s5 = this.f832a;
             SafePackageManager safePackageManager = this.b;
-            Context context = c0574s5.f1048a;
+            Context context = c0574s5.f1049a;
             PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 16384);
             ArrayList arrayList = new ArrayList();
             if (AndroidUtils.isApiAchieved(24)) {

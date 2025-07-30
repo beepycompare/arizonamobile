@@ -7,12 +7,12 @@ import org.json.JSONObject;
 public final class C0430ma {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f951a;
+    public final String f952a;
     public final int b;
     public final boolean c;
 
     public C0430ma(JSONObject jSONObject) {
-        this.f951a = jSONObject.getString("name");
+        this.f952a = jSONObject.getString("name");
         this.c = jSONObject.getBoolean("required");
         this.b = jSONObject.optInt(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, -1);
     }
@@ -26,8 +26,8 @@ public final class C0430ma {
             if (this.b != c0430ma.b || this.c != c0430ma.c) {
                 return false;
             }
-            String str = this.f951a;
-            String str2 = c0430ma.f951a;
+            String str = this.f952a;
+            String str2 = c0430ma.f952a;
             if (str != null) {
                 return str.equals(str2);
             }
@@ -39,12 +39,12 @@ public final class C0430ma {
     }
 
     public final int hashCode() {
-        String str = this.f951a;
+        String str = this.f952a;
         return ((((str != null ? str.hashCode() : 0) * 31) + this.b) * 31) + (this.c ? 1 : 0);
     }
 
     public C0430ma(String str, int i, boolean z) {
-        this.f951a = str;
+        this.f952a = str;
         this.b = i;
         this.c = z;
     }

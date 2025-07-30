@@ -6,7 +6,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: LocalAsyncImagePreviewHandler.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 176)
 @DebugMetadata(c = "coil3.compose.LocalAsyncImagePreviewHandlerKt$AsyncImagePreviewHandler$2", f = "LocalAsyncImagePreviewHandler.kt", i = {0}, l = {TsExtractor.TS_SYNC_BYTE}, m = "handle", n = {"request"}, s = {"L$0"})
 /* loaded from: classes3.dex */
 public final class LocalAsyncImagePreviewHandlerKt$AsyncImagePreviewHandler$2$handle$1 extends ContinuationImpl {

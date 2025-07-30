@@ -50,23 +50,23 @@ public enum EnumC0680wb {
     public static final HashMap K = new HashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1119a;
+    public final int f1120a;
     public final String b;
 
     static {
         EnumC0680wb[] values;
         for (EnumC0680wb enumC0680wb : values()) {
-            K.put(Integer.valueOf(enumC0680wb.f1119a), enumC0680wb);
+            K.put(Integer.valueOf(enumC0680wb.f1120a), enumC0680wb);
         }
     }
 
     EnumC0680wb(int i, String str) {
-        this.f1119a = i;
+        this.f1120a = i;
         this.b = str;
     }
 
     public final int a() {
-        return this.f1119a;
+        return this.f1120a;
     }
 
     public static EnumC0680wb a(int i) {

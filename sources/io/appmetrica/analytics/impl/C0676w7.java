@@ -6,13 +6,13 @@ import java.util.ArrayList;
 public final class C0676w7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0201d7 f1115a;
+    public final InterfaceC0201d7 f1116a;
     public final ArrayList b;
 
     public C0676w7() {
         ArrayList arrayList = new ArrayList();
         this.b = arrayList;
-        this.f1115a = new C0226e7(new C0328i7());
+        this.f1116a = new C0226e7(new C0328i7());
         arrayList.add(new C0226e7(new C0733ye()));
     }
 }

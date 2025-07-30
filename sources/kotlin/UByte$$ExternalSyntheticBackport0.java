@@ -28,7 +28,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ long m8543m(long j, long j2) {
+    public static /* synthetic */ long m8547m(long j, long j2) {
         if (j2 < 0) {
             return (j ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE) ? j : j - j2;
         } else if (j >= 0) {
@@ -43,7 +43,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ String m8544m(int i, int i2) {
+    public static /* synthetic */ String m8548m(int i, int i2) {
         return Long.toString(i & 4294967295L, i2);
     }
 
@@ -119,12 +119,12 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ Map.Entry m8545m(Object obj, Object obj2) {
+    public static /* synthetic */ Map.Entry m8549m(Object obj, Object obj2) {
         return new AbstractMap.SimpleImmutableEntry(Objects.requireNonNull(obj), Objects.requireNonNull(obj2));
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ Set m8546m(Object[] objArr) {
+    public static /* synthetic */ Set m8550m(Object[] objArr) {
         HashSet hashSet = new HashSet(objArr.length);
         for (Object obj : objArr) {
             if (!hashSet.add(Objects.requireNonNull(obj))) {
@@ -135,7 +135,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ void m8547m(Object obj) {
+    public static /* synthetic */ void m8551m(Object obj) {
         if (obj instanceof AutoCloseable) {
             ((AutoCloseable) obj).close();
         } else if (obj instanceof ExecutorService) {

@@ -14,13 +14,13 @@ import java.util.List;
 public final class I3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f483a;
+    public final Context f484a;
     public final C0385kf b;
     public final String c;
     public final SafePackageManager d;
 
     public I3(Context context, C0385kf c0385kf, String str, SafePackageManager safePackageManager) {
-        this.f483a = context;
+        this.f484a = context;
         this.b = c0385kf;
         this.c = str;
         this.d = safePackageManager;
@@ -36,14 +36,14 @@ public final class I3 {
             ArrayList arrayList2 = new ArrayList();
             try {
                 if (AndroidUtils.isApiAchieved(28)) {
-                    SigningInfo signingInfo = this.d.getPackageInfo(this.f483a, this.c, androidx.media3.common.C.BUFFER_FLAG_FIRST_SAMPLE).signingInfo;
+                    SigningInfo signingInfo = this.d.getPackageInfo(this.f484a, this.c, androidx.media3.common.C.BUFFER_FLAG_FIRST_SAMPLE).signingInfo;
                     if (signingInfo.hasMultipleSigners()) {
                         signatureArr = signingInfo.getApkContentsSigners();
                     } else {
                         signatureArr = signingInfo.getSigningCertificateHistory();
                     }
                 } else {
-                    signatureArr = this.d.getPackageInfo(this.f483a, this.c, 64).signatures;
+                    signatureArr = this.d.getPackageInfo(this.f484a, this.c, 64).signatures;
                 }
                 if (signatureArr != null) {
                     for (Signature signature : signatureArr) {

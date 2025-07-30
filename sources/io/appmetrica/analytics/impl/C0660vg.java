@@ -8,11 +8,11 @@ import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 public final class C0660vg implements InterfaceC0356jb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ICommonExecutor f1102a;
+    public final ICommonExecutor f1103a;
     public final InstallReferrerClient b;
 
     public C0660vg(Context context, ICommonExecutor iCommonExecutor) {
-        this.f1102a = iCommonExecutor;
+        this.f1103a = iCommonExecutor;
         this.b = InstallReferrerClient.newBuilder(context).build();
     }
 
@@ -26,7 +26,7 @@ public final class C0660vg implements InterfaceC0356jb {
     }
 
     public final void a(final Fg fg, final Throwable th) {
-        this.f1102a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.vg$$ExternalSyntheticLambda0
+        this.f1103a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.vg$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 C0660vg.b(Fg.this, th);

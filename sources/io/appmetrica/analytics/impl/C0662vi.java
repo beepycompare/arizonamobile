@@ -4,13 +4,13 @@ package io.appmetrica.analytics.impl;
 public final class C0662vi implements Zk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Cc f1103a;
+    public final /* synthetic */ Cc f1104a;
 
     public C0662vi(Cc cc) {
-        this.f1103a = cc;
+        this.f1104a = cc;
     }
 
     public final boolean a() {
-        return this.f1103a.b.f();
+        return this.f1104a.b.f();
     }
 }

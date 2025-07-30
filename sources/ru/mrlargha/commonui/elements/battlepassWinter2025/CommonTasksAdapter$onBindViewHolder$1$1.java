@@ -59,7 +59,7 @@ public final class CommonTasksAdapter$onBindViewHolder$1$1 extends SuspendLambda
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             z = this.this$0.isArizona;
-            int image = (z && this.$task.getImage() == 1) ? 30094 : this.$task.getImage();
+            int image = (z && this.$task.getImage() == 1) ? 30104 : this.$task.getImage();
             this.I$0 = image;
             this.label = 1;
             obj = BuildersKt.withContext(Dispatchers.getIO(), new CommonTasksAdapter$onBindViewHolder$1$1$bitmap$1(image, null), this);

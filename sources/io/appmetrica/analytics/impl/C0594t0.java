@@ -22,13 +22,13 @@ public final class C0594t0 implements InterfaceC0481ob {
     public static volatile boolean g;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1059a;
+    public final Context f1060a;
     public final C0470o0 b;
     public final FutureTask c;
     public final Wa d;
 
     public C0594t0(Context context) {
-        this.f1059a = context;
+        this.f1060a = context;
         C0470o0 c = C0698x4.l().c();
         this.b = c;
         this.d = c.a(context, C0698x4.l().g());
@@ -129,7 +129,7 @@ public final class C0594t0 implements InterfaceC0481ob {
 
     public final void d(AppMetricaConfig appMetricaConfig) {
         f().b(appMetricaConfig);
-        C0698x4.l().c.a().execute(new RunnableC0570s1(this.f1059a));
+        C0698x4.l().c.a().execute(new RunnableC0570s1(this.f1060a));
     }
 
     public final String e() {
@@ -164,21 +164,21 @@ public final class C0594t0 implements InterfaceC0481ob {
                 C0594t0.this.o();
             }
         };
-        c0449n4.f964a.getClass();
-        new InterruptionSafeThread(runnable, "IAA-INIT_CORE-" + Od.f578a.incrementAndGet()).start();
+        c0449n4.f965a.getClass();
+        new InterruptionSafeThread(runnable, "IAA-INIT_CORE-" + Od.f579a.incrementAndGet()).start();
     }
 
     public final void o() {
-        C0698x4.l().r.a(this.f1059a);
-        new C0548r4(this.f1059a).a(this.f1059a);
-        C0698x4.l().a(this.f1059a).a();
+        C0698x4.l().r.a(this.f1060a);
+        new C0548r4(this.f1060a).a(this.f1060a);
+        C0698x4.l().a(this.f1060a).a();
         this.c.run();
     }
 
     public final Xa p() {
         Xa xa;
         C0470o0 c0470o0 = this.b;
-        Context context = this.f1059a;
+        Context context = this.f1060a;
         Wa wa = this.d;
         synchronized (c0470o0) {
             if (c0470o0.d == null) {
@@ -195,7 +195,7 @@ public final class C0594t0 implements InterfaceC0481ob {
 
     public final void b(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         f().a(appMetricaLibraryAdapterConfig);
-        C0698x4.l().c.a().execute(new RunnableC0570s1(this.f1059a));
+        C0698x4.l().c.a().execute(new RunnableC0570s1(this.f1060a));
     }
 
     public final InterfaceC0431mb c(ReporterConfig reporterConfig) {

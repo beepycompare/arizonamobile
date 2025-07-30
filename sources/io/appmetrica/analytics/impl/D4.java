@@ -4,7 +4,7 @@ import kotlin.NoWhenBranchMatchedException;
 /* loaded from: classes4.dex */
 public final class D4 {
     public static B4 a(C0399l4 c0399l4) {
-        switch (C4.f370a[c0399l4.e.ordinal()]) {
+        switch (C4.f371a[c0399l4.e.ordinal()]) {
             case 1:
                 return new C0656vc();
             case 2:

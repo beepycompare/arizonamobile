@@ -24,7 +24,7 @@ import kotlin.collections.CollectionsKt;
 public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f495a;
+    public boolean f496a;
     public final Context b;
     public volatile InterfaceC0670w1 c;
     public final C0673w4 d;
@@ -71,7 +71,7 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
             q1.getClass();
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                q1.f605a.a(action, Integer.valueOf(Q1.a(intent)));
+                q1.f606a.a(action, Integer.valueOf(Q1.a(intent)));
             }
             for (Map.Entry entry : q1.b.entrySet()) {
                 P1 p1 = (P1) entry.getKey();
@@ -95,18 +95,18 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
     public final void onCreate() {
-        if (!this.f495a) {
+        if (!this.f496a) {
             this.g.b(this.b);
             Ia ia = Ia.F;
             synchronized (ia) {
                 ia.B.initAsync();
-                ia.u.a(ia.f489a);
+                ia.u.a(ia.f490a);
                 ia.u.a(new go(ia.B));
-                NetworkServiceLocator.init(new A5(new Ci(ia.g()), new K5(ia.f489a)));
+                NetworkServiceLocator.init(new A5(new Ci(ia.g()), new K5(ia.f490a)));
                 ia.k().a(ia.q);
                 ia.C();
             }
-            AbstractC0291gk.f869a.e();
+            AbstractC0291gk.f870a.e();
             C0318hm c0318hm = Ia.F.u;
             c0318hm.b();
             C0267fm b = c0318hm.b();
@@ -123,7 +123,7 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
             k1.getClass();
             this.f = new C0262fh(context, c0673w4);
             Context context2 = this.b;
-            AbstractC0521q1.f1011a.b(context2);
+            AbstractC0521q1.f1012a.b(context2);
             AppMetrica.getReporter(context2, "20799a27-fa80-4b36-b2db-0f8141f24180");
             Context context3 = this.b;
             C0262fh c0262fh = this.f;
@@ -149,18 +149,18 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
             File nativeCrashDirectory = FileUtils.getNativeCrashDirectory(context3);
             String absolutePath = nativeCrashDirectory != null ? nativeCrashDirectory.getAbsolutePath() : null;
             if (absolutePath != null) {
-                q.f816a.init(context3, new NativeCrashServiceConfig(absolutePath));
-                List<NativeCrash> allCrashes = q.f816a.getAllCrashes();
+                q.f817a.init(context3, new NativeCrashServiceConfig(absolutePath));
+                List<NativeCrash> allCrashes = q.f817a.getAllCrashes();
                 if (!allCrashes.isEmpty()) {
                     Yd b2 = q.b.b(context3, c0262fh);
                     for (NativeCrash nativeCrash : allCrashes) {
                         b2.newCrash(nativeCrash);
                     }
                 }
-                q.f816a.setDefaultCrashHandler(q.b.a(context3, c0262fh));
+                q.f817a.setDefaultCrashHandler(q.b.a(context3, c0262fh));
             }
             new RunnableC0225e6(CollectionsKt.listOf(new RunnableC0412lh())).run();
-            this.f495a = true;
+            this.f496a = true;
         } else {
             Ia.F.u().a(this.b.getResources().getConfiguration());
         }
@@ -188,7 +188,7 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
         } catch (Throwable unused) {
             pf = null;
         }
-        Integer asInteger = pf != null ? pf.f595a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
+        Integer asInteger = pf != null ? pf.f596a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
         if (asInteger != null) {
             this.h.b(asInteger.intValue());
         }
@@ -197,7 +197,7 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
     @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
     public final void reportData(int i, Bundle bundle) {
         this.j.getClass();
-        List<InterfaceC0415lk> list = (List) Ia.F.v.f957a.get(Integer.valueOf(i));
+        List<InterfaceC0415lk> list = (List) Ia.F.v.f958a.get(Integer.valueOf(i));
         if (list == null) {
             list = CollectionsKt.emptyList();
         }
@@ -219,7 +219,7 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
         } catch (Throwable unused) {
             pf = null;
         }
-        Integer asInteger = pf != null ? pf.f595a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
+        Integer asInteger = pf != null ? pf.f596a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
         if (asInteger != null) {
             this.h.c(asInteger.intValue());
         }
@@ -236,7 +236,7 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
             q1.getClass();
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                q1.f605a.a(action, Integer.valueOf(Q1.a(intent)));
+                q1.f606a.a(action, Integer.valueOf(Q1.a(intent)));
             }
             for (Map.Entry entry : q1.b.entrySet()) {
                 P1 p1 = (P1) entry.getKey();
@@ -250,7 +250,7 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
     }
 
     public J1(Context context, InterfaceC0670w1 interfaceC0670w1, C0673w4 c0673w4, Q1 q1, C0754za c0754za, C0422m2 c0422m2, K1 k1) {
-        this.f495a = false;
+        this.f496a = false;
         this.b = context;
         this.c = interfaceC0670w1;
         this.d = c0673w4;
@@ -277,11 +277,11 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
     public final void a(Intent intent, int i) {
-        ((C0620u1) this.c).f1075a.stopSelfResult(i);
+        ((C0620u1) this.c).f1076a.stopSelfResult(i);
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
     public final void a(Intent intent, int i, int i2) {
-        ((C0620u1) this.c).f1075a.stopSelfResult(i2);
+        ((C0620u1) this.c).f1076a.stopSelfResult(i2);
     }
 }

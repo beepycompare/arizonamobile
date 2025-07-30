@@ -6,25 +6,25 @@ import java.util.Map;
 public final class C0168c0 implements InterfaceC0767zn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0194d0 f789a;
+    public final /* synthetic */ C0194d0 f790a;
 
     public C0168c0(C0194d0 c0194d0) {
-        this.f789a = c0194d0;
+        this.f790a = c0194d0;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0767zn
     public final Thread a() {
-        return this.f789a.b;
+        return this.f790a.b;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0767zn
     public final StackTraceElement[] b() {
-        C0194d0 c0194d0 = this.f789a;
-        return (StackTraceElement[]) c0194d0.f807a.get(c0194d0.b);
+        C0194d0 c0194d0 = this.f790a;
+        return (StackTraceElement[]) c0194d0.f808a.get(c0194d0.b);
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0767zn
     public final Map<Thread, StackTraceElement[]> c() {
-        return this.f789a.f807a;
+        return this.f790a.f808a;
     }
 }

@@ -20,14 +20,14 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0563rj implements SdkEnvironmentProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1039a;
+    public final Context f1040a;
     public final C0206dc b = new C0206dc();
     public final CopyOnWriteArrayList c = new CopyOnWriteArrayList();
     public SdkEnvironment d;
     public String e;
 
     public C0563rj(Context context) {
-        this.f1039a = context;
+        this.f1040a = context;
         this.d = new SdkEnvironment(new AppVersionInfo(PackageManagerUtils.getAppVersionName(context), PackageManagerUtils.getAppVersionCodeString(context)), FrameworkDetector.framework(), new ScreenInfo(0, 0, 0, 0.0f), new SdkInfo("7.10.0", "50135769", AbstractC0588sj.a()), "phone", C0206dc.a(context.getResources().getConfiguration()));
     }
 
@@ -37,9 +37,9 @@ public final class C0563rj implements SdkEnvironmentProvider {
             if (!Intrinsics.areEqual(screenInfo, getSdkEnvironment().getScreenInfo())) {
                 String str = this.e;
                 if (str == null) {
-                    Context context = this.f1039a;
+                    Context context = this.f1040a;
                     Point point = new Point(screenInfo.getWidth(), screenInfo.getHeight());
-                    SafePackageManager safePackageManager = Ue.f670a;
+                    SafePackageManager safePackageManager = Ue.f671a;
                     try {
                         f = context.getResources().getDisplayMetrics().density;
                     } catch (Throwable unused) {
@@ -55,7 +55,7 @@ public final class C0563rj implements SdkEnvironmentProvider {
                         float f5 = f2 / f4;
                         float f6 = f3 / f4;
                         double sqrt = Math.sqrt((f6 * f6) + (f5 * f5));
-                        if (sqrt >= 15.0d && !Ue.f670a.hasSystemFeature(context, "android.hardware.touchscreen")) {
+                        if (sqrt >= 15.0d && !Ue.f671a.hasSystemFeature(context, "android.hardware.touchscreen")) {
                             str = "tv";
                         } else {
                             if (sqrt < 7.0d && min < 600.0f) {

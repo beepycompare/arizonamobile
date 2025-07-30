@@ -35,7 +35,7 @@ public final class C0385kf extends Nd implements yo {
 
     public final C0385kf a(C0271g0 c0271g0) {
         synchronized (this) {
-            b(j.b, c0271g0.f855a);
+            b(j.b, c0271g0.f856a);
             b(k.b, c0271g0.b);
         }
         return this;
@@ -47,26 +47,26 @@ public final class C0385kf extends Nd implements yo {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0410lf
     public final Set<String> c() {
-        return this.f938a.a();
+        return this.f939a.a();
     }
 
     public final C0271g0 d() {
         C0271g0 c0271g0;
         synchronized (this) {
-            c0271g0 = new C0271g0(this.f938a.getString(j.b, "{}"), this.f938a.getLong(k.b, 0L));
+            c0271g0 = new C0271g0(this.f939a.getString(j.b, "{}"), this.f939a.getLong(k.b, 0L));
         }
         return c0271g0;
     }
 
     public final String e() {
-        return this.f938a.getString(m.b, "");
+        return this.f939a.getString(m.b, "");
     }
 
     public final List<String> f() {
         String str = n.b;
         List emptyList = Collections.emptyList();
         String[] strArr = emptyList == null ? null : (String[]) emptyList.toArray(new String[emptyList.size()]);
-        String string = this.f938a.getString(str, null);
+        String string = this.f939a.getString(str, null);
         if (!TextUtils.isEmpty(string)) {
             try {
                 JSONArray jSONArray = new JSONArray(string);
@@ -84,11 +84,11 @@ public final class C0385kf extends Nd implements yo {
     }
 
     public final int g() {
-        return this.f938a.getInt(l.b, -1);
+        return this.f939a.getInt(l.b, -1);
     }
 
     public final long h() {
-        return this.f938a.getLong(h.b, 0L);
+        return this.f939a.getLong(h.b, 0L);
     }
 
     public final C0385kf i(String str) {
@@ -100,17 +100,17 @@ public final class C0385kf extends Nd implements yo {
     }
 
     public final String h(String str) {
-        return this.f938a.getString(new C0435mf(q, str).b, "");
+        return this.f939a.getString(new C0435mf(q, str).b, "");
     }
 
     public final String i() {
-        return this.f938a.getString(i.b, null);
+        return this.f939a.getString(i.b, null);
     }
 
     public final Map<Integer, String> j() {
         HashMap hashMap = new HashMap();
         try {
-            String string = this.f938a.getString(p.b, null);
+            String string = this.f939a.getString(p.b, null);
             if (string != null) {
                 JSONObject jSONObject = new JSONObject(string);
                 Iterator<String> keys = jSONObject.keys();
@@ -146,12 +146,12 @@ public final class C0385kf extends Nd implements yo {
     }
 
     public final boolean a(boolean z) {
-        return this.f938a.getBoolean(r.b, z);
+        return this.f939a.getBoolean(r.b, z);
     }
 
     @Override // io.appmetrica.analytics.impl.yo
     public final String a() {
-        return this.f938a.getString(o.b, null);
+        return this.f939a.getString(o.b, null);
     }
 
     @Override // io.appmetrica.analytics.impl.yo

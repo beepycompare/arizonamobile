@@ -8,9 +8,9 @@ public final class C0738yj implements B4 {
     /* renamed from: b */
     public final C0638uj a(Context context, C0724y5 c0724y5, C0399l4 c0399l4, K4 k4) {
         Og og;
-        C0400l5 c0400l5 = new C0400l5(c0399l4.b, c0399l4.f933a);
+        C0400l5 c0400l5 = new C0400l5(c0399l4.b, c0399l4.f934a);
         synchronized (c0724y5) {
-            og = (Og) c0724y5.f1148a.get(c0400l5.toString());
+            og = (Og) c0724y5.f1149a.get(c0400l5.toString());
         }
         return new C0638uj(og);
     }

@@ -1236,7 +1236,7 @@ public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final float m9792maxOf(CharSequence charSequence, Function1<? super Character, Float> selector) {
+    private static final float m9796maxOf(CharSequence charSequence, Function1<? super Character, Float> selector) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (charSequence.length() == 0) {
@@ -1258,7 +1258,7 @@ public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m9793maxOf(CharSequence charSequence, Function1<? super Character, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m9797maxOf(CharSequence charSequence, Function1<? super Character, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (charSequence.length() == 0) {
@@ -1283,7 +1283,7 @@ public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Double m9794maxOfOrNull(CharSequence charSequence, Function1<? super Character, Double> selector) {
+    private static final Double m9798maxOfOrNull(CharSequence charSequence, Function1<? super Character, Double> selector) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (charSequence.length() == 0) {
@@ -1305,7 +1305,7 @@ public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Float m9795maxOfOrNull(CharSequence charSequence, Function1<? super Character, Float> selector) {
+    private static final Float m9799maxOfOrNull(CharSequence charSequence, Function1<? super Character, Float> selector) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (charSequence.length() == 0) {
@@ -1577,7 +1577,7 @@ public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final float m9796minOf(CharSequence charSequence, Function1<? super Character, Float> selector) {
+    private static final float m9800minOf(CharSequence charSequence, Function1<? super Character, Float> selector) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (charSequence.length() == 0) {
@@ -1599,7 +1599,7 @@ public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m9797minOf(CharSequence charSequence, Function1<? super Character, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m9801minOf(CharSequence charSequence, Function1<? super Character, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (charSequence.length() == 0) {
@@ -1624,7 +1624,7 @@ public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Double m9798minOfOrNull(CharSequence charSequence, Function1<? super Character, Double> selector) {
+    private static final Double m9802minOfOrNull(CharSequence charSequence, Function1<? super Character, Double> selector) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (charSequence.length() == 0) {
@@ -1646,7 +1646,7 @@ public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Float m9799minOfOrNull(CharSequence charSequence, Function1<? super Character, Float> selector) {
+    private static final Float m9803minOfOrNull(CharSequence charSequence, Function1<? super Character, Float> selector) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (charSequence.length() == 0) {
@@ -2101,21 +2101,21 @@ public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
     private static final int sumOfUInt(CharSequence charSequence, Function1<? super Character, UInt> selector) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m8574constructorimpl = UInt.m8574constructorimpl(0);
+        int m8578constructorimpl = UInt.m8578constructorimpl(0);
         for (int i = 0; i < charSequence.length(); i++) {
-            m8574constructorimpl = UInt.m8574constructorimpl(m8574constructorimpl + selector.invoke(Character.valueOf(charSequence.charAt(i))).m8626unboximpl());
+            m8578constructorimpl = UInt.m8578constructorimpl(m8578constructorimpl + selector.invoke(Character.valueOf(charSequence.charAt(i))).m8630unboximpl());
         }
-        return m8574constructorimpl;
+        return m8578constructorimpl;
     }
 
     private static final long sumOfULong(CharSequence charSequence, Function1<? super Character, ULong> selector) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m8653constructorimpl = ULong.m8653constructorimpl(0L);
+        long m8657constructorimpl = ULong.m8657constructorimpl(0L);
         for (int i = 0; i < charSequence.length(); i++) {
-            m8653constructorimpl = ULong.m8653constructorimpl(m8653constructorimpl + selector.invoke(Character.valueOf(charSequence.charAt(i))).m8705unboximpl());
+            m8657constructorimpl = ULong.m8657constructorimpl(m8657constructorimpl + selector.invoke(Character.valueOf(charSequence.charAt(i))).m8709unboximpl());
         }
-        return m8653constructorimpl;
+        return m8657constructorimpl;
     }
 
     public static final List<String> chunked(CharSequence charSequence, int i) {

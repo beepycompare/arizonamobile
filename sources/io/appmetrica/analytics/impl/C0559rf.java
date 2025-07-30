@@ -7,11 +7,11 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0559rf implements InterfaceC0353j8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ef f1036a;
+    public final Ef f1037a;
     public final List<C0535qf> b;
 
     public C0559rf(Ef ef, List<C0535qf> list) {
-        this.f1036a = ef;
+        this.f1037a = ef;
         this.b = list;
     }
 
@@ -22,14 +22,14 @@ public final class C0559rf implements InterfaceC0353j8 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0353j8
     public final Object b() {
-        return this.f1036a;
+        return this.f1037a;
     }
 
     public final Ef c() {
-        return this.f1036a;
+        return this.f1037a;
     }
 
     public final String toString() {
-        return "PreloadInfoData{chosenPreloadInfo=" + this.f1036a + ", candidates=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "PreloadInfoData{chosenPreloadInfo=" + this.f1037a + ", candidates=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

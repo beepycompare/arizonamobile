@@ -7,9 +7,9 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: OkHttpNetworkFetcher.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
-/* synthetic */ class OkHttpNetworkFetcher$OkHttpNetworkFetcherFactory$9 extends FunctionReferenceImpl implements Function1<PlatformContext, ConnectivityChecker> {
+final /* synthetic */ class OkHttpNetworkFetcher$OkHttpNetworkFetcherFactory$9 extends FunctionReferenceImpl implements Function1<PlatformContext, ConnectivityChecker> {
     public static final OkHttpNetworkFetcher$OkHttpNetworkFetcherFactory$9 INSTANCE = new OkHttpNetworkFetcher$OkHttpNetworkFetcherFactory$9();
 
     OkHttpNetworkFetcher$OkHttpNetworkFetcherFactory$9() {

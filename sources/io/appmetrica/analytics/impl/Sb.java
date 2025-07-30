@@ -6,16 +6,16 @@ import kotlin.jvm.internal.Lambda;
 public final class Sb extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Tb f639a;
+    public final /* synthetic */ Tb f640a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Sb(Tb tb) {
         super(0);
-        this.f639a = tb;
+        this.f640a = tb;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        return (C0711xh) this.f639a.f651a.k.a();
+        return (C0711xh) this.f640a.f652a.k.a();
     }
 }

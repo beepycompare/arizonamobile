@@ -189,7 +189,7 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
                 Iterator<T> it = list.iterator();
                 while (it.hasNext()) {
                     if (((BufferedChannel) it.next()).shouldSendSuspend$kotlinx_coroutines_core()) {
-                        return ChannelResult.Companion.m10014failurePtdJZtk();
+                        return ChannelResult.Companion.m10018failurePtdJZtk();
                     }
                 }
             }
@@ -200,7 +200,7 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
             while (it2.hasNext()) {
                 ((BufferedChannel) it2.next()).mo7544trySendJP2dKIU(e);
             }
-            return ChannelResult.Companion.m10015successJP2dKIU(Unit.INSTANCE);
+            return ChannelResult.Companion.m10019successJP2dKIU(Unit.INSTANCE);
         } finally {
             reentrantLock.unlock();
         }
