@@ -14,7 +14,6 @@ import android.database.MatrixCursor;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import com.android.vending.expansion.zipfile.ZipResourceFile;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -110,7 +109,7 @@ public abstract class APEZProvider extends ContentProvider {
     public AssetFileDescriptor openAssetFile(Uri uri, String str) throws FileNotFoundException {
         initIfNecessary();
         String encodedPath = uri.getEncodedPath();
-        if (encodedPath.startsWith(RemoteSettings.FORWARD_SLASH_STRING)) {
+        if (encodedPath.startsWith("/")) {
             encodedPath = encodedPath.substring(1);
         }
         return this.mAPKExtensionFile.getAssetFileDescriptor(encodedPath);

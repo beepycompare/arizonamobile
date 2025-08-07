@@ -17,6 +17,7 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
     private RendererConfiguration configuration;
     private int index;
     private long lastResetPositionUs;
+    private MediaSource.MediaPeriodId mediaPeriodId;
     private PlayerId playerId;
     private RendererCapabilities.Listener rendererCapabilitiesListener;
     private int state;
@@ -109,6 +110,7 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
     public final void enable(RendererConfiguration rendererConfiguration, Format[] formatArr, SampleStream sampleStream, long j, boolean z, boolean z2, long j2, long j3, MediaSource.MediaPeriodId mediaPeriodId) throws ExoPlaybackException {
         Assertions.checkState(this.state == 0);
         this.configuration = rendererConfiguration;
+        this.mediaPeriodId = mediaPeriodId;
         this.state = 1;
         onEnabled(z, z2);
         replaceStream(formatArr, sampleStream, j2, j3, mediaPeriodId);
@@ -126,6 +128,7 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
     public final void replaceStream(Format[] formatArr, SampleStream sampleStream, long j, long j2, MediaSource.MediaPeriodId mediaPeriodId) throws ExoPlaybackException {
         Assertions.checkState(!this.streamIsFinal);
         this.stream = sampleStream;
+        this.mediaPeriodId = mediaPeriodId;
         if (this.readingPositionUs == Long.MIN_VALUE) {
             this.readingPositionUs = j;
         }
@@ -201,6 +204,7 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
         this.streamFormats = null;
         this.streamIsFinal = false;
         onDisabled();
+        this.mediaPeriodId = null;
     }
 
     @Override // androidx.media3.exoplayer.Renderer
@@ -275,6 +279,10 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
         return this.timeline;
     }
 
+    protected final MediaSource.MediaPeriodId getMediaPeriodId() {
+        return this.mediaPeriodId;
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
     public final ExoPlaybackException createRendererException(Throwable th, Format format, int i) {
         return createRendererException(th, format, false, i);
@@ -291,10 +299,10 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
             } finally {
                 this.throwRendererExceptionIsExecuting = false;
             }
-            return ExoPlaybackException.createForRenderer(th, getName(), getIndex(), format, i2, z, i);
+            return ExoPlaybackException.createForRenderer(th, getName(), getIndex(), format, i2, this.mediaPeriodId, z, i);
         }
         i2 = 4;
-        return ExoPlaybackException.createForRenderer(th, getName(), getIndex(), format, i2, z, i);
+        return ExoPlaybackException.createForRenderer(th, getName(), getIndex(), format, i2, this.mediaPeriodId, z, i);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

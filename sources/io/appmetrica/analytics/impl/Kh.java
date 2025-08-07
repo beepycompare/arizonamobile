@@ -12,12 +12,12 @@ public abstract class Kh implements Callable {
     public static final Jh d = new Jh();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0420m0 f524a;
+    public final C0421m0 f523a;
     public final Zk b;
     public boolean c;
 
-    public Kh(C0420m0 c0420m0, Zk zk) {
-        this.f524a = c0420m0;
+    public Kh(C0421m0 c0421m0, Zk zk) {
+        this.f523a = c0421m0;
         this.b = zk;
     }
 
@@ -26,24 +26,24 @@ public abstract class Kh implements Callable {
     public void a(Throwable th) {
     }
 
-    public final C0420m0 b() {
-        return this.f524a;
+    public final C0421m0 b() {
+        return this.f523a;
     }
 
     public boolean c() {
-        C0420m0 c0420m0 = this.f524a;
-        synchronized (c0420m0) {
-            if (c0420m0.d == null) {
-                c0420m0.e = new CountDownLatch(1);
-                Intent a2 = Ak.a(c0420m0.f946a);
+        C0421m0 c0421m0 = this.f523a;
+        synchronized (c0421m0) {
+            if (c0421m0.d == null) {
+                c0421m0.e = new CountDownLatch(1);
+                Intent a2 = Ak.a(c0421m0.f945a);
                 try {
-                    c0420m0.g.b(c0420m0.f946a);
-                    c0420m0.f946a.bindService(a2, c0420m0.i, 1);
+                    c0421m0.g.b(c0421m0.f945a);
+                    c0421m0.f945a.bindService(a2, c0421m0.i, 1);
                 } catch (Throwable unused) {
                 }
             }
         }
-        this.f524a.a(5000L);
+        this.f523a.a(5000L);
         return true;
     }
 
@@ -70,16 +70,16 @@ public abstract class Kh implements Callable {
             this.c = true;
             int i = 0;
             do {
-                C0420m0 c0420m0 = this.f524a;
-                synchronized (c0420m0) {
-                    iAppMetricaService = c0420m0.d;
+                C0421m0 c0421m0 = this.f523a;
+                synchronized (c0421m0) {
+                    iAppMetricaService = c0421m0.d;
                 }
                 if (iAppMetricaService != null) {
                     try {
                         a(iAppMetricaService);
                         Zk zk = this.b;
-                        if (zk == null || ((C0662vi) zk).a()) {
-                            this.f524a.c();
+                        if (zk == null || ((C0663vi) zk).a()) {
+                            this.f523a.c();
                             return;
                         }
                         return;

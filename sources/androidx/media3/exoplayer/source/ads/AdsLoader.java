@@ -31,7 +31,8 @@ public interface AdsLoader {
         AdsLoader getAdsLoader(MediaItem.AdsConfiguration adsConfiguration);
     }
 
-    default void handleContentTimelineChanged(AdsMediaSource adsMediaSource, Timeline timeline) {
+    default boolean handleContentTimelineChanged(AdsMediaSource adsMediaSource, Timeline timeline) {
+        return false;
     }
 
     void handlePrepareComplete(AdsMediaSource adsMediaSource, int i, int i2);

@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public final class Eb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte[] f416a;
+    public final byte[] f415a;
     public final String b;
     public final int c;
     public final HashMap d;
@@ -27,7 +27,7 @@ public final class Eb {
     public Eb(String str) throws JSONException {
         JSONObject jSONObject = new JSONObject(str);
         JSONObject jSONObject2 = jSONObject.getJSONObject(NotificationCompat.CATEGORY_EVENT);
-        this.f416a = Base64.decode(jSONObject2.getString("jvm_crash"), 0);
+        this.f415a = Base64.decode(jSONObject2.getString("jvm_crash"), 0);
         this.b = jSONObject2.getString("name");
         this.c = jSONObject2.getInt("bytes_truncated");
         this.j = JsonUtils.optStringOrNull(jSONObject2, "environment");
@@ -38,7 +38,7 @@ public final class Eb {
                 HashMap c = Bb.c(optString);
                 if (c != null) {
                     for (Map.Entry entry : c.entrySet()) {
-                        this.d.put(EnumC0300h4.valueOf((String) entry.getKey()), Integer.valueOf(Integer.parseInt((String) entry.getValue())));
+                        this.d.put(EnumC0301h4.valueOf((String) entry.getKey()), Integer.valueOf(Integer.parseInt((String) entry.getValue())));
                     }
                 }
             } catch (Throwable unused) {
@@ -62,7 +62,7 @@ public final class Eb {
     }
 
     public final byte[] c() {
-        return this.f416a;
+        return this.f415a;
     }
 
     public final String d() {
@@ -89,16 +89,16 @@ public final class Eb {
         return this.i;
     }
 
-    public final HashMap<EnumC0300h4, Integer> j() {
+    public final HashMap<EnumC0301h4, Integer> j() {
         return this.d;
     }
 
     public final String k() throws JSONException {
         HashMap hashMap = new HashMap();
         for (Map.Entry entry : this.d.entrySet()) {
-            hashMap.put(((EnumC0300h4) entry.getKey()).name(), (Integer) entry.getValue());
+            hashMap.put(((EnumC0301h4) entry.getKey()).name(), (Integer) entry.getValue());
         }
-        return new JSONObject().put("process_configuration", new JSONObject().put("pid", this.f).put("psid", this.g).put("package_name", this.e)).put("reporter_configuration", new JSONObject().put("api_key", this.h).put("reporter_type", this.i.getStringValue())).put(NotificationCompat.CATEGORY_EVENT, new JSONObject().put("jvm_crash", Base64.encodeToString(this.f416a, 0)).put("name", this.b).put("bytes_truncated", this.c).put("trimmed_fields", Bb.b(hashMap)).putOpt("environment", this.j)).toString();
+        return new JSONObject().put("process_configuration", new JSONObject().put("pid", this.f).put("psid", this.g).put("package_name", this.e)).put("reporter_configuration", new JSONObject().put("api_key", this.h).put("reporter_type", this.i.getStringValue())).put(NotificationCompat.CATEGORY_EVENT, new JSONObject().put("jvm_crash", Base64.encodeToString(this.f415a, 0)).put("name", this.b).put("bytes_truncated", this.c).put("trimmed_fields", Bb.b(hashMap)).putOpt("environment", this.j)).toString();
     }
 
     public static CounterConfigurationReporterType a(JSONObject jSONObject) {
@@ -108,22 +108,22 @@ public final class Eb {
         return CounterConfigurationReporterType.MAIN;
     }
 
-    public Eb(C0401l6 c0401l6, C0198d4 c0198d4, HashMap<EnumC0300h4, Integer> hashMap) {
-        this.f416a = c0401l6.getValueBytes();
-        this.b = c0401l6.getName();
-        this.c = c0401l6.getBytesTruncated();
+    public Eb(C0402l6 c0402l6, C0199d4 c0199d4, HashMap<EnumC0301h4, Integer> hashMap) {
+        this.f415a = c0402l6.getValueBytes();
+        this.b = c0402l6.getName();
+        this.c = c0402l6.getBytesTruncated();
         if (hashMap != null) {
             this.d = hashMap;
         } else {
             this.d = new HashMap();
         }
-        Pf a2 = c0198d4.a();
+        Pf a2 = c0199d4.a();
         this.e = a2.e();
         this.f = a2.f();
         this.g = a2.g();
-        CounterConfiguration b = c0198d4.b();
+        CounterConfiguration b = c0199d4.b();
         this.h = b.getApiKey();
         this.i = b.getReporterType();
-        this.j = c0401l6.f();
+        this.j = c0402l6.f();
     }
 }

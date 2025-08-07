@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzaz {
     public static final zzaz zza = new zzaz((Boolean) null, 100, (Boolean) null, (String) null);
@@ -17,9 +17,9 @@ public final class zzaz {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzaz(Boolean bool, int i, Boolean bool2, String str) {
-        EnumMap enumMap = new EnumMap(zzjj.class);
+        EnumMap enumMap = new EnumMap(zzjk.class);
         this.zzf = enumMap;
-        enumMap.put((EnumMap) zzjj.AD_USER_DATA, (zzjj) zzjk.zzh(bool));
+        enumMap.put((EnumMap) zzjk.AD_USER_DATA, (zzjk) zzjl.zzh(bool));
         this.zzb = i;
         this.zzc = zzl();
         this.zzd = bool2;
@@ -27,9 +27,9 @@ public final class zzaz {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static zzaz zza(zzjh zzjhVar, int i) {
-        EnumMap enumMap = new EnumMap(zzjj.class);
-        enumMap.put((EnumMap) zzjj.AD_USER_DATA, (zzjj) zzjhVar);
+    public static zzaz zza(zzji zzjiVar, int i) {
+        EnumMap enumMap = new EnumMap(zzjk.class);
+        enumMap.put((EnumMap) zzjk.AD_USER_DATA, (zzjk) zzjiVar);
         return new zzaz(enumMap, -10, (Boolean) null, (String) null);
     }
 
@@ -39,13 +39,13 @@ public final class zzaz {
         }
         String[] split = str.split(StringUtils.PROCESS_POSTFIX_DELIMITER);
         int parseInt = Integer.parseInt(split[0]);
-        EnumMap enumMap = new EnumMap(zzjj.class);
-        zzjj[] zza2 = zzji.DMA.zza();
+        EnumMap enumMap = new EnumMap(zzjk.class);
+        zzjk[] zza2 = zzjj.DMA.zza();
         int length = zza2.length;
         int i = 1;
         int i2 = 0;
         while (i2 < length) {
-            enumMap.put((EnumMap) zza2[i2], (zzjj) zzjk.zzj(split[i].charAt(0)));
+            enumMap.put((EnumMap) zza2[i2], (zzjk) zzjl.zzj(split[i].charAt(0)));
             i2++;
             i++;
         }
@@ -53,20 +53,20 @@ public final class zzaz {
     }
 
     public static zzaz zzh(Bundle bundle, int i) {
-        zzjj[] zza2;
+        zzjk[] zza2;
         if (bundle == null) {
             return new zzaz((Boolean) null, i, (Boolean) null, (String) null);
         }
-        EnumMap enumMap = new EnumMap(zzjj.class);
-        for (zzjj zzjjVar : zzji.DMA.zza()) {
-            enumMap.put((EnumMap) zzjjVar, (zzjj) zzjk.zzg(bundle.getString(zzjjVar.zze)));
+        EnumMap enumMap = new EnumMap(zzjk.class);
+        for (zzjk zzjkVar : zzjj.DMA.zza()) {
+            enumMap.put((EnumMap) zzjkVar, (zzjk) zzjl.zzg(bundle.getString(zzjkVar.zze)));
         }
         return new zzaz(enumMap, i, bundle.containsKey("is_dma_region") ? Boolean.valueOf(bundle.getString("is_dma_region")) : null, bundle.getString("cps_display_str"));
     }
 
     public static Boolean zzi(Bundle bundle) {
-        zzjh zzg;
-        if (bundle == null || (zzg = zzjk.zzg(bundle.getString("ad_personalization"))) == null) {
+        zzji zzg;
+        if (bundle == null || (zzg = zzjl.zzg(bundle.getString("ad_personalization"))) == null) {
             return null;
         }
         int ordinal = zzg.ordinal();
@@ -77,12 +77,12 @@ public final class zzaz {
     }
 
     private final String zzl() {
-        zzjj[] zza2;
+        zzjk[] zza2;
         StringBuilder sb = new StringBuilder();
         sb.append(this.zzb);
-        for (zzjj zzjjVar : zzji.DMA.zza()) {
+        for (zzjk zzjkVar : zzjj.DMA.zza()) {
             sb.append(StringUtils.PROCESS_POSTFIX_DELIMITER);
-            sb.append(zzjk.zzm((zzjh) this.zzf.get(zzjjVar)));
+            sb.append(zzjl.zzm((zzji) this.zzf.get(zzjkVar)));
         }
         return sb.toString();
     }
@@ -99,18 +99,18 @@ public final class zzaz {
     }
 
     public final String toString() {
-        zzjj[] zza2;
+        zzjk[] zza2;
         StringBuilder sb = new StringBuilder("source=");
-        sb.append(zzjk.zzd(this.zzb));
-        for (zzjj zzjjVar : zzji.DMA.zza()) {
+        sb.append(zzjl.zzd(this.zzb));
+        for (zzjk zzjkVar : zzjj.DMA.zza()) {
             sb.append(StringUtils.COMMA);
-            sb.append(zzjjVar.zze);
+            sb.append(zzjkVar.zze);
             sb.append("=");
-            zzjh zzjhVar = (zzjh) this.zzf.get(zzjjVar);
-            if (zzjhVar == null) {
+            zzji zzjiVar = (zzji) this.zzf.get(zzjkVar);
+            if (zzjiVar == null) {
                 sb.append("uninitialized");
             } else {
-                int ordinal = zzjhVar.ordinal();
+                int ordinal = zzjiVar.ordinal();
                 if (ordinal == 0) {
                     sb.append("uninitialized");
                 } else if (ordinal == 1) {
@@ -139,14 +139,14 @@ public final class zzaz {
         return this.zzb;
     }
 
-    public final zzjh zzc() {
-        zzjh zzjhVar = (zzjh) this.zzf.get(zzjj.AD_USER_DATA);
-        return zzjhVar == null ? zzjh.UNINITIALIZED : zzjhVar;
+    public final zzji zzc() {
+        zzji zzjiVar = (zzji) this.zzf.get(zzjk.AD_USER_DATA);
+        return zzjiVar == null ? zzji.UNINITIALIZED : zzjiVar;
     }
 
     public final boolean zzd() {
-        for (zzjh zzjhVar : this.zzf.values()) {
-            if (zzjhVar != zzjh.UNINITIALIZED) {
+        for (zzji zzjiVar : this.zzf.values()) {
+            if (zzjiVar != zzji.UNINITIALIZED) {
                 return true;
             }
         }
@@ -160,9 +160,9 @@ public final class zzaz {
     public final Bundle zzf() {
         Bundle bundle = new Bundle();
         for (Map.Entry entry : this.zzf.entrySet()) {
-            String zzi = zzjk.zzi((zzjh) entry.getValue());
+            String zzi = zzjl.zzi((zzji) entry.getValue());
             if (zzi != null) {
-                bundle.putString(((zzjj) entry.getKey()).zze, zzi);
+                bundle.putString(((zzjk) entry.getKey()).zze, zzi);
             }
         }
         Boolean bool = this.zzd;
@@ -197,7 +197,7 @@ public final class zzaz {
     }
 
     private zzaz(EnumMap enumMap, int i, Boolean bool, String str) {
-        EnumMap enumMap2 = new EnumMap(zzjj.class);
+        EnumMap enumMap2 = new EnumMap(zzjk.class);
         this.zzf = enumMap2;
         enumMap2.putAll(enumMap);
         this.zzb = i;

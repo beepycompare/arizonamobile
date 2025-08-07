@@ -2,7 +2,6 @@ package com.nvidia.devtech;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -97,9 +96,9 @@ public class NvAPKFileHelper {
             }
             for (int i2 = 0; i2 < list.length; i2++) {
                 if (list[i2].indexOf(46) == -1) {
-                    getDirectoryListing(assetManager, str.length() > 0 ? str + RemoteSettings.FORWARD_SLASH_STRING + list[i2] : list[i2], i);
+                    getDirectoryListing(assetManager, str.length() > 0 ? str + "/" + list[i2] : list[i2], i);
                 } else if (i > 0) {
-                    AddAssetFile(str.length() > 0 ? str + RemoteSettings.FORWARD_SLASH_STRING + list[i2] : list[i2]);
+                    AddAssetFile(str.length() > 0 ? str + "/" + list[i2] : list[i2]);
                 } else {
                     this.apkCount++;
                 }

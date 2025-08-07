@@ -18,12 +18,12 @@ public /* synthetic */ class BufferedChannel$bindCancellationFunResult$1<E> exte
 
     @Override // kotlin.jvm.functions.Function3
     public /* bridge */ /* synthetic */ Unit invoke(Throwable th, Object obj, CoroutineContext coroutineContext) {
-        m9999invoke5_sEAP8(th, ((ChannelResult) obj).m10016unboximpl(), coroutineContext);
+        m10022invoke5_sEAP8(th, ((ChannelResult) obj).m10039unboximpl(), coroutineContext);
         return Unit.INSTANCE;
     }
 
     /* renamed from: invoke-5_sEAP8  reason: not valid java name */
-    public final void m9999invoke5_sEAP8(Throwable th, Object obj, CoroutineContext coroutineContext) {
-        ((BufferedChannel) this.receiver).m9993onCancellationChannelResultImplDoNotCall5_sEAP8(th, obj, coroutineContext);
+    public final void m10022invoke5_sEAP8(Throwable th, Object obj, CoroutineContext coroutineContext) {
+        ((BufferedChannel) this.receiver).m10016onCancellationChannelResultImplDoNotCall5_sEAP8(th, obj, coroutineContext);
     }
 }

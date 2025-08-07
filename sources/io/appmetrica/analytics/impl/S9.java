@@ -6,34 +6,34 @@ import java.util.concurrent.locks.ReentrantLock;
 public final class S9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ReentrantLock f638a;
-    public final C0604ta b;
+    public final ReentrantLock f637a;
+    public final C0605ta b;
 
     public S9(Context context, String str) {
-        this(new ReentrantLock(), new C0604ta(context, str));
+        this(new ReentrantLock(), new C0605ta(context, str));
     }
 
     public final void a() {
-        this.f638a.lock();
+        this.f637a.lock();
         this.b.a();
     }
 
     public final void b() {
         this.b.b();
-        this.f638a.unlock();
+        this.f637a.unlock();
     }
 
     public final void c() {
-        C0604ta c0604ta = this.b;
-        synchronized (c0604ta) {
-            c0604ta.b();
-            c0604ta.f1064a.delete();
+        C0605ta c0605ta = this.b;
+        synchronized (c0605ta) {
+            c0605ta.b();
+            c0605ta.f1063a.delete();
         }
-        this.f638a.unlock();
+        this.f637a.unlock();
     }
 
-    public S9(ReentrantLock reentrantLock, C0604ta c0604ta) {
-        this.f638a = reentrantLock;
-        this.b = c0604ta;
+    public S9(ReentrantLock reentrantLock, C0605ta c0605ta) {
+        this.f637a = reentrantLock;
+        this.b = c0605ta;
     }
 }

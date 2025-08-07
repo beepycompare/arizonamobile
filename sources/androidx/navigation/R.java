@@ -5,11 +5,11 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class attr {
         public static int action = 0x7f040002;
-        public static int data = 0x7f040192;
-        public static int dataPattern = 0x7f040193;
-        public static int graph = 0x7f040279;
-        public static int navGraph = 0x7f04045c;
-        public static int targetPackage = 0x7f0405b3;
+        public static int data = 0x7f04019e;
+        public static int dataPattern = 0x7f04019f;
+        public static int graph = 0x7f040284;
+        public static int navGraph = 0x7f040467;
+        public static int targetPackage = 0x7f0405bf;
 
         private attr() {
         }

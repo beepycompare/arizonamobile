@@ -3,19 +3,19 @@ package com.google.android.gms.measurement.internal;
 import android.os.Handler;
 import com.google.android.gms.common.internal.Preconditions;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public abstract class zzay {
     private static volatile Handler zzb;
-    private final zzjf zza;
+    private final zzjg zza;
     private final Runnable zzc;
     private volatile long zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzay(zzjf zzjfVar) {
-        Preconditions.checkNotNull(zzjfVar);
-        this.zza = zzjfVar;
-        this.zzc = new zzax(this, zzjfVar);
+    public zzay(zzjg zzjgVar) {
+        Preconditions.checkNotNull(zzjgVar);
+        this.zza = zzjgVar;
+        this.zzc = new zzax(this, zzjgVar);
     }
 
     private final Handler zzf() {
@@ -37,12 +37,12 @@ public abstract class zzay {
     public final void zzb(long j) {
         zzd();
         if (j >= 0) {
-            zzjf zzjfVar = this.zza;
-            this.zzd = zzjfVar.zzaZ().currentTimeMillis();
+            zzjg zzjgVar = this.zza;
+            this.zzd = zzjgVar.zzaZ().currentTimeMillis();
             if (zzf().postDelayed(this.zzc, j)) {
                 return;
             }
-            zzjfVar.zzaV().zzb().zzb("Failed to schedule delayed post. time", Long.valueOf(j));
+            zzjgVar.zzaV().zzb().zzb("Failed to schedule delayed post. time", Long.valueOf(j));
         }
     }
 

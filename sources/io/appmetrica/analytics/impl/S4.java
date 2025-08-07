@@ -8,24 +8,24 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 /* loaded from: classes4.dex */
-public final class S4 implements Za, Ql, InterfaceC0153bb {
+public final class S4 implements Za, Ql, InterfaceC0154bb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f633a;
-    public final C0400l5 b;
+    public final Context f632a;
+    public final C0401l5 b;
     public final Bm c;
     public final Mh d;
     public final Z4 e;
-    public final C0368jn f;
+    public final C0369jn f;
     public ArrayList g;
-    public final C0425m5 h;
-    public final C0735yg i;
-    public final C0499p4 j;
+    public final C0426m5 h;
+    public final C0736yg i;
+    public final C0500p4 j;
     public final Dg k;
     public final Object l;
 
-    public S4(Context context, Hl hl, C0400l5 c0400l5, K4 k4, C0735yg c0735yg) {
-        this(context, hl, c0400l5, k4, new Mh(k4.b), c0735yg, new C0425m5(), new U4(), new Dg());
+    public S4(Context context, Hl hl, C0401l5 c0401l5, K4 k4, C0736yg c0736yg) {
+        this(context, hl, c0401l5, k4, new Mh(k4.b), c0736yg, new C0426m5(), new U4(), new Dg());
     }
 
     public static void b(K4 k4) {
@@ -36,7 +36,7 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
     @Override // io.appmetrica.analytics.impl.Za
     public final void a(J4 j4) {
         Mh mh = this.d;
-        mh.f550a = mh.f550a.mergeFrom(j4);
+        mh.f549a = mh.f549a.mergeFrom(j4);
     }
 
     @Override // io.appmetrica.analytics.impl.Za
@@ -45,84 +45,84 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
     }
 
     public final J4 d() {
-        return this.d.f550a;
+        return this.d.f549a;
     }
 
-    public final C0735yg e() {
+    public final C0736yg e() {
         return this.i;
     }
 
     @Override // io.appmetrica.analytics.impl.Za
     public final Context getContext() {
-        return this.f633a;
+        return this.f632a;
     }
 
-    public S4(Context context, Hl hl, C0400l5 c0400l5, K4 k4, Mh mh, C0735yg c0735yg, C0425m5 c0425m5, U4 u4, Dg dg) {
+    public S4(Context context, Hl hl, C0401l5 c0401l5, K4 k4, Mh mh, C0736yg c0736yg, C0426m5 c0426m5, U4 u4, Dg dg) {
         this.g = new ArrayList();
         this.l = new Object();
         Context applicationContext = context.getApplicationContext();
-        this.f633a = applicationContext;
-        this.b = c0400l5;
+        this.f632a = applicationContext;
+        this.b = c0401l5;
         this.d = mh;
-        this.h = c0425m5;
+        this.h = c0426m5;
         this.e = U4.a(this);
         b(k4);
-        Bm a2 = hl.a(applicationContext, c0400l5, k4.f516a);
+        Bm a2 = hl.a(applicationContext, c0401l5, k4.f515a);
         this.c = a2;
-        this.j = AbstractC0524q4.a(a2, Ia.j().b());
+        this.j = AbstractC0525q4.a(a2, Ia.j().b());
         this.f = u4.a(this, a2);
-        this.i = c0735yg;
+        this.i = c0736yg;
         this.k = dg;
-        hl.a(c0400l5, this);
+        hl.a(c0401l5, this);
     }
 
     public final synchronized void a(P4 p4) {
-        this.h.f950a.add(p4);
+        this.h.f949a.add(p4);
         W6.a(p4.c, this.j.a(Gm.a(this.c.e().l)));
     }
 
     public final synchronized void b(P4 p4) {
-        this.h.f950a.remove(p4);
+        this.h.f949a.remove(p4);
     }
 
     @Override // io.appmetrica.analytics.impl.Za
-    public final C0400l5 b() {
+    public final C0401l5 b() {
         return this.b;
     }
 
-    public final void a(C0401l6 c0401l6, P4 p4) {
+    public final void a(C0402l6 c0402l6, P4 p4) {
         Z4 z4 = this.e;
         z4.getClass();
-        z4.a(c0401l6, new Y4(p4));
+        z4.a(c0402l6, new Y4(p4));
     }
 
     @Override // io.appmetrica.analytics.impl.Ql
-    public final void a(Jl jl, C0267fm c0267fm) {
+    public final void a(Jl jl, C0268fm c0268fm) {
         synchronized (this.l) {
             Iterator it = this.g.iterator();
             while (it.hasNext()) {
-                C0580sb c0580sb = (C0580sb) it.next();
-                W6.a(c0580sb.f1052a, jl, this.j.a(c0580sb.c));
+                C0581sb c0581sb = (C0581sb) it.next();
+                W6.a(c0581sb.f1051a, jl, this.j.a(c0581sb.c));
             }
             this.g.clear();
         }
     }
 
     @Override // io.appmetrica.analytics.impl.Ql
-    public final void a(C0267fm c0267fm) {
+    public final void a(C0268fm c0268fm) {
         synchronized (this.l) {
-            Iterator it = this.h.f950a.iterator();
+            Iterator it = this.h.f949a.iterator();
             while (it.hasNext()) {
-                W6.a(((P4) it.next()).c, this.j.a(Gm.a(c0267fm.l)));
+                W6.a(((P4) it.next()).c, this.j.a(Gm.a(c0268fm.l)));
             }
             ArrayList arrayList = new ArrayList();
             Iterator it2 = this.g.iterator();
             while (it2.hasNext()) {
-                C0580sb c0580sb = (C0580sb) it2.next();
-                if (AbstractC0190cm.a(c0267fm, c0580sb.b, c0580sb.c, new C0531qb())) {
-                    W6.a(c0580sb.f1052a, this.j.a(c0580sb.c));
+                C0581sb c0581sb = (C0581sb) it2.next();
+                if (AbstractC0191cm.a(c0268fm, c0581sb.b, c0581sb.c, new C0532qb())) {
+                    W6.a(c0581sb.f1051a, this.j.a(c0581sb.c));
                 } else {
-                    arrayList.add(c0580sb);
+                    arrayList.add(c0581sb);
                 }
             }
             this.g = new ArrayList(arrayList);
@@ -133,15 +133,15 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void a(C0580sb c0580sb) {
+    public final void a(C0581sb c0581sb) {
         ResultReceiver resultReceiver;
         HashMap hashMap;
         List list;
         HashMap hashMap2 = new HashMap();
-        if (c0580sb != null) {
-            list = c0580sb.b;
-            resultReceiver = c0580sb.f1052a;
-            hashMap = c0580sb.c;
+        if (c0581sb != null) {
+            list = c0581sb.b;
+            resultReceiver = c0581sb.f1051a;
+            hashMap = c0581sb.c;
         } else {
             resultReceiver = null;
             hashMap = hashMap2;
@@ -159,8 +159,8 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
             return;
         }
         synchronized (this.l) {
-            if (a2 && c0580sb != null) {
-                this.g.add(c0580sb);
+            if (a2 && c0581sb != null) {
+                this.g.add(c0581sb);
             }
         }
         this.f.c();
@@ -170,13 +170,13 @@ public final class S4 implements Za, Ql, InterfaceC0153bb {
         this.k.a(new R4(resultReceiver));
     }
 
-    public final C0499p4 a() {
+    public final C0500p4 a() {
         return this.j;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0153bb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0154bb
     public final void a(K4 k4) {
-        this.c.a(k4.f516a);
+        this.c.a(k4.f515a);
         a(k4.b);
     }
 }

@@ -269,7 +269,7 @@ public final class RealBufferedSource {
         r1 = java.lang.Integer.toString(r8, kotlin.text.CharsKt.checkRadix(16));
         kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, "toString(...)");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0054, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0055, code lost:
         throw new java.lang.NumberFormatException(r0.append(r1).toString());
      */
     /*
@@ -301,7 +301,7 @@ public final class RealBufferedSource {
         r1 = java.lang.Integer.toString(r2, kotlin.text.CharsKt.checkRadix(16));
         kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, "toString(...)");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x005c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x005d, code lost:
         throw new java.lang.NumberFormatException(r0.append(r1).toString());
      */
     /*

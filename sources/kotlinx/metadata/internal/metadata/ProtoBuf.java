@@ -11,6 +11,7 @@ import java.io.ObjectStreamException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 import kotlinx.metadata.internal.protobuf.AbstractMessageLite;
 import kotlinx.metadata.internal.protobuf.AbstractParser;
 import kotlinx.metadata.internal.protobuf.ByteString;
@@ -7292,7 +7293,7 @@ public final class ProtoBuf {
                                     this.bitField0_ |= 16;
                                     continue;
                                     z = z4;
-                                case 152:
+                                case BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER /* 152 */:
                                     this.bitField0_ |= 32;
                                     this.inlineClassUnderlyingTypeId_ = codedInputStream.readInt32();
                                     continue;

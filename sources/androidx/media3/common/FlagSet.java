@@ -2,7 +2,6 @@ package androidx.media3.common;
 
 import android.util.SparseBooleanArray;
 import androidx.media3.common.util.Assertions;
-import androidx.media3.common.util.Util;
 /* loaded from: classes2.dex */
 public final class FlagSet {
     private final SparseBooleanArray flags;
@@ -91,31 +90,12 @@ public final class FlagSet {
             return true;
         }
         if (obj instanceof FlagSet) {
-            FlagSet flagSet = (FlagSet) obj;
-            if (Util.SDK_INT < 24) {
-                if (size() != flagSet.size()) {
-                    return false;
-                }
-                for (int i = 0; i < size(); i++) {
-                    if (get(i) != flagSet.get(i)) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            return this.flags.equals(flagSet.flags);
+            return this.flags.equals(((FlagSet) obj).flags);
         }
         return false;
     }
 
     public int hashCode() {
-        if (Util.SDK_INT < 24) {
-            int size = size();
-            for (int i = 0; i < size(); i++) {
-                size = (size * 31) + get(i);
-            }
-            return size;
-        }
         return this.flags.hashCode();
     }
 }

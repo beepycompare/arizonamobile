@@ -1,6 +1,7 @@
 package androidx.media3.exoplayer.mediacodec;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.HandlerThread;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.util.Log;
@@ -60,9 +61,9 @@ public final class DefaultMediaCodecAdapterFactory implements MediaCodecAdapter.
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter.Factory
     public MediaCodecAdapter createAdapter(MediaCodecAdapter.Configuration configuration) throws IOException {
-        int i;
         AsynchronousMediaCodecAdapter.Factory factory;
-        if (Util.SDK_INT >= 23 && ((i = this.asynchronousMode) == 1 || (i == 0 && shouldUseAsynchronousAdapterInDefaultMode()))) {
+        int i = this.asynchronousMode;
+        if (i == 1 || (i == 0 && shouldUseAsynchronousAdapterInDefaultMode())) {
             int trackType = MimeTypes.getTrackType(configuration.format.sampleMimeType);
             Log.i(TAG, "Creating an asynchronous MediaCodec adapter for track type " + Util.getTrackTypeString(trackType));
             if (this.callbackThreadSupplier != null && this.queueingThreadSupplier != null) {
@@ -77,9 +78,9 @@ public final class DefaultMediaCodecAdapterFactory implements MediaCodecAdapter.
     }
 
     private boolean shouldUseAsynchronousAdapterInDefaultMode() {
-        if (Util.SDK_INT >= 31) {
+        if (Build.VERSION.SDK_INT >= 31) {
             return true;
         }
-        return this.context != null && Util.SDK_INT >= 28 && this.context.getPackageManager().hasSystemFeature("com.amazon.hardware.tv_screen");
+        return this.context != null && Build.VERSION.SDK_INT >= 28 && this.context.getPackageManager().hasSystemFeature("com.amazon.hardware.tv_screen");
     }
 }

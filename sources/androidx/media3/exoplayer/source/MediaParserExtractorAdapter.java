@@ -2,9 +2,9 @@ package androidx.media3.exoplayer.source;
 
 import android.media.MediaParser;
 import android.net.Uri;
+import android.os.Build;
 import android.util.Pair;
 import androidx.media3.common.DataReader;
-import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.source.ProgressiveMediaExtractor;
 import androidx.media3.exoplayer.source.mediaparser.InputReaderAdapterV30;
@@ -78,7 +78,7 @@ public final class MediaParserExtractorAdapter implements ProgressiveMediaExtrac
             this.mediaParser.setParameter(entry.getKey(), entry.getValue());
         }
         this.parserName = "android.media.mediaparser.UNKNOWN";
-        if (Util.SDK_INT >= 31) {
+        if (Build.VERSION.SDK_INT >= 31) {
             MediaParserUtil.setLogSessionIdOnMediaParser(this.mediaParser, playerId);
         }
     }

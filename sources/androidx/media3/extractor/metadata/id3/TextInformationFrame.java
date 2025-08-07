@@ -5,7 +5,6 @@ import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -206,7 +205,7 @@ public final class TextInformationFrame extends Id3Frame {
                     return;
                 case 6:
                 case 21:
-                    String[] split = Util.split(this.values.get(0), RemoteSettings.FORWARD_SLASH_STRING);
+                    String[] split = Util.split(this.values.get(0), "/");
                     builder.setTrackNumber(Integer.valueOf(Integer.parseInt(split[0]))).setTotalTrackCount(split.length > 1 ? Integer.valueOf(Integer.parseInt(split[1])) : null);
                     return;
                 case 7:

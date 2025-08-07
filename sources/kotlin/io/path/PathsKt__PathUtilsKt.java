@@ -4,7 +4,6 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.CopyOption;
@@ -96,12 +95,12 @@ public class PathsKt__PathUtilsKt extends PathsKt__PathRecursiveFunctionsKt {
     public static final String getInvariantSeparatorsPathString(Path path) {
         Intrinsics.checkNotNullParameter(path, "<this>");
         String separator = path.getFileSystem().getSeparator();
-        if (Intrinsics.areEqual(separator, RemoteSettings.FORWARD_SLASH_STRING)) {
+        if (Intrinsics.areEqual(separator, "/")) {
             return path.toString();
         }
         String obj = path.toString();
         Intrinsics.checkNotNull(separator);
-        return StringsKt.replace$default(obj, separator, RemoteSettings.FORWARD_SLASH_STRING, false, 4, (Object) null);
+        return StringsKt.replace$default(obj, separator, "/", false, 4, (Object) null);
     }
 
     private static final String getInvariantSeparatorsPath(Path path) {

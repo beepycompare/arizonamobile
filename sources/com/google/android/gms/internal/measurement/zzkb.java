@@ -1,36 +1,25 @@
 package com.google.android.gms.internal.measurement;
 
-import android.util.Log;
-import javax.annotation.Nullable;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+import android.net.Uri;
+import androidx.collection.ArrayMap;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzkb extends zzkl {
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzkb(zzkf zzkfVar, String str, Long l, boolean z) {
-        super(zzkfVar, str, l, true, null);
-    }
+public final class zzkb {
+    public static final /* synthetic */ int zza = 0;
+    private static final ArrayMap zzb = new ArrayMap();
 
-    @Override // com.google.android.gms.internal.measurement.zzkl
-    @Nullable
-    final /* synthetic */ Object zza(Object obj) {
-        if (obj instanceof Long) {
-            return (Long) obj;
-        }
-        if (obj instanceof String) {
-            try {
-                return Long.valueOf(Long.parseLong((String) obj));
-            } catch (NumberFormatException unused) {
+    public static synchronized Uri zza(String str) {
+        synchronized (zzkb.class) {
+            ArrayMap arrayMap = zzb;
+            Uri uri = (Uri) arrayMap.get("com.google.android.gms.measurement");
+            if (uri == null) {
+                String encode = Uri.encode("com.google.android.gms.measurement");
+                String.valueOf(encode);
+                Uri parse = Uri.parse("content://com.google.android.gms.phenotype/".concat(String.valueOf(encode)));
+                arrayMap.put("com.google.android.gms.measurement", parse);
+                return parse;
             }
+            return uri;
         }
-        String str = this.zzb;
-        String obj2 = obj.toString();
-        StringBuilder sb = new StringBuilder(str.length() + 25 + obj2.length());
-        sb.append("Invalid long value for ");
-        sb.append(str);
-        sb.append(": ");
-        sb.append(obj2);
-        Log.e("PhenotypeFlag", sb.toString());
-        return null;
     }
 }

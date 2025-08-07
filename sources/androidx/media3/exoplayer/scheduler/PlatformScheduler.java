@@ -7,6 +7,7 @@ import android.app.job.JobService;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.PersistableBundle;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
@@ -23,7 +24,7 @@ public final class PlatformScheduler implements Scheduler {
     private final ComponentName jobServiceComponentName;
 
     static {
-        SUPPORTED_REQUIREMENTS = (Util.SDK_INT >= 26 ? 16 : 0) | 15;
+        SUPPORTED_REQUIREMENTS = (Build.VERSION.SDK_INT >= 26 ? 16 : 0) | 15;
     }
 
     public PlatformScheduler(Context context, int i) {
@@ -62,7 +63,7 @@ public final class PlatformScheduler implements Scheduler {
         }
         builder.setRequiresDeviceIdle(requirements.isIdleRequired());
         builder.setRequiresCharging(requirements.isChargingRequired());
-        if (Util.SDK_INT >= 26 && requirements.isStorageNotLowRequired()) {
+        if (Build.VERSION.SDK_INT >= 26 && requirements.isStorageNotLowRequired()) {
             builder.setRequiresStorageNotLow(true);
         }
         builder.setPersisted(true);

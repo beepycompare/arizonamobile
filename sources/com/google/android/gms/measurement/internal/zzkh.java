@@ -1,45 +1,53 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Bundle;
-import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.measurement.api.AppMeasurementSdk;
+import android.text.TextUtils;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzkh implements Runnable {
-    final /* synthetic */ Bundle zza;
-    final /* synthetic */ zzli zzb;
+    final /* synthetic */ long zza;
+    final /* synthetic */ zzlj zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzkh(zzli zzliVar, Bundle bundle) {
-        this.zza = bundle;
-        Objects.requireNonNull(zzliVar);
-        this.zzb = zzliVar;
+    public zzkh(zzlj zzljVar, long j) {
+        this.zza = j;
+        Objects.requireNonNull(zzljVar);
+        this.zzb = zzljVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zzli zzliVar = this.zzb;
-        zzliVar.zzg();
-        zzliVar.zzb();
-        Bundle bundle = this.zza;
-        Preconditions.checkNotNull(bundle);
-        String string = bundle.getString("name");
-        String string2 = bundle.getString("origin");
-        Preconditions.checkNotEmpty(string);
-        Preconditions.checkNotEmpty(string2);
-        Preconditions.checkNotNull(bundle.get("value"));
-        if (!zzliVar.zzu.zzB()) {
-            zzliVar.zzu.zzaV().zzk().zza("Conditional property not set since app measurement is disabled");
-            return;
+        zzlj zzljVar = this.zzb;
+        zzljVar.zzg();
+        zzljVar.zzb();
+        zzic zzicVar = zzljVar.zzu;
+        zzicVar.zzaV().zzj().zza("Resetting analytics data (FE)");
+        zzic zzicVar2 = zzljVar.zzu;
+        zzoc zzh = zzicVar2.zzh();
+        zzh.zzg();
+        zzob zzobVar = zzh.zza;
+        zzh.zzb.zzc();
+        zzicVar2.zzv().zzi();
+        boolean z = !zzljVar.zzu.zzB();
+        zzhh zzd = zzicVar.zzd();
+        zzd.zzc.zzb(this.zza);
+        zzic zzicVar3 = zzd.zzu;
+        if (!TextUtils.isEmpty(zzicVar3.zzd().zzq.zza())) {
+            zzd.zzq.zzb(null);
         }
-        zzpk zzpkVar = new zzpk(string, bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP), bundle.get("value"), string2);
-        try {
-            zzib zzibVar = zzliVar.zzu;
-            zzbg zzac = zzibVar.zzk().zzac(bundle.getString("app_id"), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_NAME), bundle.getBundle(AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_PARAMS), string2, 0L, true, true);
-            zzliVar.zzu.zzt().zzp(new zzah(bundle.getString("app_id"), string2, zzpkVar, bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP), false, bundle.getString(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME), zzibVar.zzk().zzac(bundle.getString("app_id"), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_NAME), bundle.getBundle(AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_PARAMS), string2, 0L, true, true), bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT), zzac, bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE), zzibVar.zzk().zzac(bundle.getString("app_id"), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_NAME), bundle.getBundle(AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_PARAMS), string2, 0L, true, true)));
-        } catch (IllegalArgumentException unused) {
+        zzd.zzk.zzb(0L);
+        zzd.zzl.zzb(0L);
+        if (!zzicVar3.zzc().zzt()) {
+            zzd.zzn(z);
         }
+        zzd.zzr.zzb(null);
+        zzd.zzs.zzb(0L);
+        zzd.zzt.zzb(null);
+        zzicVar2.zzt().zzB();
+        zzicVar2.zzh().zza.zza();
+        zzljVar.zzc = z;
+        zzicVar2.zzt().zzC(new AtomicReference());
     }
 }

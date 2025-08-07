@@ -2,9 +2,9 @@ package com.google.android.gms.internal.measurement;
 
 import java.util.Collections;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzgk extends zzma implements zznm {
+public final class zzgk extends zzmb implements zznn {
     private zzgk() {
         throw null;
     }

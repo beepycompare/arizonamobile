@@ -1,29 +1,28 @@
 package com.google.android.gms.measurement.internal;
 
-import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+import java.util.concurrent.Callable;
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-final class zzim implements Runnable {
-    final /* synthetic */ zzr zza;
-    final /* synthetic */ zzjc zzb;
+final class zzim implements Callable {
+    final /* synthetic */ String zza;
+    final /* synthetic */ String zzb;
+    final /* synthetic */ String zzc;
+    final /* synthetic */ zzjd zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzim(zzjc zzjcVar, zzr zzrVar) {
-        this.zza = zzrVar;
-        Objects.requireNonNull(zzjcVar);
-        this.zzb = zzjcVar;
+    public zzim(zzjd zzjdVar, String str, String str2, String str3) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = str3;
+        Objects.requireNonNull(zzjdVar);
+        this.zzd = zzjdVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        zzjc zzjcVar = this.zzb;
-        zzjcVar.zzL().zzY();
-        zzpf zzL = zzjcVar.zzL();
-        zzL.zzaW().zzg();
-        zzL.zzu();
-        zzr zzrVar = this.zza;
-        Preconditions.checkNotEmpty(zzrVar.zza);
-        zzL.zzan(zzrVar);
+    @Override // java.util.concurrent.Callable
+    public final /* bridge */ /* synthetic */ Object call() throws Exception {
+        zzjd zzjdVar = this.zzd;
+        zzjdVar.zzL().zzZ();
+        return zzjdVar.zzL().zzj().zzs(this.zza, this.zzb, this.zzc);
     }
 }

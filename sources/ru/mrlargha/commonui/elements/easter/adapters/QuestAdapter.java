@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -75,7 +74,7 @@ public final class QuestAdapter extends RecyclerView.Adapter<EasterTaskViewHolde
         }
         binding.tvName.setText(questData.getName());
         binding.tvDescription.setText(questData.getDescription());
-        binding.tvTaskCount.setText(questData.getProgress().getCurrent() + RemoteSettings.FORWARD_SLASH_STRING + questData.getProgress().getMax());
+        binding.tvTaskCount.setText(questData.getProgress().getCurrent() + "/" + questData.getProgress().getMax());
         binding.progressBar.setMax(questData.getProgress().getMax());
         binding.progressBar.setProgress(questData.getProgress().getCurrent());
         binding.rvTaskPrise.setAdapter(holder.getAdapter());

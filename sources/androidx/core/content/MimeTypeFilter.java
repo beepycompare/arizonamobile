@@ -1,6 +1,5 @@
 package androidx.core.content;
 
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.ArrayList;
 /* loaded from: classes2.dex */
 public final class MimeTypeFilter {
@@ -27,16 +26,16 @@ public final class MimeTypeFilter {
         if (str == null) {
             return false;
         }
-        return mimeTypeAgainstFilter(str.split(RemoteSettings.FORWARD_SLASH_STRING), str2.split(RemoteSettings.FORWARD_SLASH_STRING));
+        return mimeTypeAgainstFilter(str.split("/"), str2.split("/"));
     }
 
     public static String matches(String str, String[] strArr) {
         if (str == null) {
             return null;
         }
-        String[] split = str.split(RemoteSettings.FORWARD_SLASH_STRING);
+        String[] split = str.split("/");
         for (String str2 : strArr) {
-            if (mimeTypeAgainstFilter(split, str2.split(RemoteSettings.FORWARD_SLASH_STRING))) {
+            if (mimeTypeAgainstFilter(split, str2.split("/"))) {
                 return str2;
             }
         }
@@ -47,9 +46,9 @@ public final class MimeTypeFilter {
         if (strArr == null) {
             return null;
         }
-        String[] split = str.split(RemoteSettings.FORWARD_SLASH_STRING);
+        String[] split = str.split("/");
         for (String str2 : strArr) {
-            if (mimeTypeAgainstFilter(str2.split(RemoteSettings.FORWARD_SLASH_STRING), split)) {
+            if (mimeTypeAgainstFilter(str2.split("/"), split)) {
                 return str2;
             }
         }
@@ -61,9 +60,9 @@ public final class MimeTypeFilter {
             return new String[0];
         }
         ArrayList arrayList = new ArrayList();
-        String[] split = str.split(RemoteSettings.FORWARD_SLASH_STRING);
+        String[] split = str.split("/");
         for (String str2 : strArr) {
-            if (mimeTypeAgainstFilter(str2.split(RemoteSettings.FORWARD_SLASH_STRING), split)) {
+            if (mimeTypeAgainstFilter(str2.split("/"), split)) {
                 arrayList.add(str2);
             }
         }

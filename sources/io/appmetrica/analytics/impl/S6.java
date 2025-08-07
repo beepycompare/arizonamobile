@@ -17,7 +17,7 @@ import org.json.JSONObject;
 public final class S6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Tl f635a = new Tl();
+    public final Tl f634a = new Tl();
     public Map b = MapsKt.emptyMap();
     public Map c = MapsKt.emptyMap();
     public IdentifiersResult d;
@@ -109,7 +109,7 @@ public final class S6 {
                 linkedHashMap.put(str, list2);
             }
         }
-        Tl tl = this.f635a;
+        Tl tl = this.f634a;
         String a2 = Bb.a((Map) linkedHashMap);
         IdentifiersResult identifiersResult = this.d;
         if (identifiersResult == null || (identifierStatus = identifiersResult.status) == null) {

@@ -8,9 +8,9 @@ public final class Ug extends Tg {
     }
 
     @Override // io.appmetrica.analytics.impl.Tg, io.appmetrica.analytics.impl.Ja
-    public final void a(List<AbstractC0236eh> list) {
-        list.add(this.f504a.i);
-        list.add(this.f504a.j);
+    public final void a(List<AbstractC0237eh> list) {
+        list.add(this.f503a.i);
+        list.add(this.f503a.j);
         super.a(list);
     }
 }

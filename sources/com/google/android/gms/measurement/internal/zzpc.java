@@ -1,26 +1,60 @@
 package com.google.android.gms.measurement.internal;
 
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzpc {
-    final String zza;
-    long zzb;
-
-    private zzpc(zzpf zzpfVar, String str) {
-        Objects.requireNonNull(zzpfVar);
-        this.zza = str;
-        this.zzb = zzpfVar.zzaZ().elapsedRealtime();
-    }
+    com.google.android.gms.internal.measurement.zzid zza;
+    List zzb;
+    List zzc;
+    long zzd;
+    final /* synthetic */ zzpg zze;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zzpc(zzpf zzpfVar, String str, byte[] bArr) {
-        this(zzpfVar, str);
+    public /* synthetic */ zzpc(zzpg zzpgVar, byte[] bArr) {
+        Objects.requireNonNull(zzpgVar);
+        this.zze = zzpgVar;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zzpc(zzpf zzpfVar, byte[] bArr) {
-        this(zzpfVar, zzpfVar.zzt().zzaw());
+    private static final long zzb(com.google.android.gms.internal.measurement.zzhs zzhsVar) {
+        return ((zzhsVar.zzf() / 1000) / 60) / 60;
+    }
+
+    public final boolean zza(long j, com.google.android.gms.internal.measurement.zzhs zzhsVar) {
+        Preconditions.checkNotNull(zzhsVar);
+        if (this.zzc == null) {
+            this.zzc = new ArrayList();
+        }
+        if (this.zzb == null) {
+            this.zzb = new ArrayList();
+        }
+        if (this.zzc.isEmpty() || zzb((com.google.android.gms.internal.measurement.zzhs) this.zzc.get(0)) == zzb(zzhsVar)) {
+            long zzcn = this.zzd + zzhsVar.zzcn();
+            zzpg zzpgVar = this.zze;
+            if (zzpgVar.zzd().zzp(null, zzfy.zzbd)) {
+                if (!this.zzc.isEmpty()) {
+                    zzpgVar.zzd();
+                    if (zzcn >= zzal.zzG()) {
+                        return false;
+                    }
+                }
+            } else {
+                zzpgVar.zzd();
+                if (zzcn >= zzal.zzG()) {
+                    return false;
+                }
+            }
+            this.zzd = zzcn;
+            this.zzc.add(zzhsVar);
+            this.zzb.add(Long.valueOf(j));
+            int size = this.zzc.size();
+            zzpgVar.zzd();
+            return size < Math.max(1, ((Integer) zzfy.zzj.zzb(null)).intValue());
+        }
+        return false;
     }
 }

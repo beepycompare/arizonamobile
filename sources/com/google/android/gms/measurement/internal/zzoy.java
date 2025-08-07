@@ -1,32 +1,34 @@
 package com.google.android.gms.measurement.internal;
 
-import com.google.android.gms.common.internal.Preconditions;
+import android.content.Intent;
 import java.util.Objects;
-import java.util.concurrent.Callable;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzoy implements Callable {
-    final /* synthetic */ zzr zza;
-    final /* synthetic */ zzpf zzb;
+public final class zzoy extends zzay {
+    final /* synthetic */ zzpg zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzoy(zzpf zzpfVar, zzr zzrVar) {
-        this.zza = zzrVar;
-        Objects.requireNonNull(zzpfVar);
-        this.zzb = zzpfVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzoy(zzpg zzpgVar, zzjg zzjgVar) {
+        super(zzjgVar);
+        Objects.requireNonNull(zzpgVar);
+        this.zza = zzpgVar;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final /* bridge */ /* synthetic */ Object call() throws Exception {
-        zzr zzrVar = this.zza;
-        zzpf zzpfVar = this.zzb;
-        zzjk zzB = zzpfVar.zzB((String) Preconditions.checkNotNull(zzrVar.zza));
-        zzjj zzjjVar = zzjj.ANALYTICS_STORAGE;
-        if (!zzB.zzo(zzjjVar) || !zzjk.zzf(zzrVar.zzs, 100).zzo(zzjjVar)) {
-            zzpfVar.zzaV().zzk().zza("Analytics storage consent denied. Returning null app instance id");
-            return null;
+    @Override // com.google.android.gms.measurement.internal.zzay
+    public final void zza() {
+        zzpg zzpgVar = this.zza;
+        zzpgVar.zzaW().zzg();
+        String str = (String) zzpgVar.zzay().pollFirst();
+        if (str != null) {
+            zzpgVar.zzaz(zzpgVar.zzaZ().elapsedRealtime());
+            zzpgVar.zzaV().zzk().zzb("Sending trigger URI notification to app", str);
+            Intent intent = new Intent();
+            intent.setAction("com.google.android.gms.measurement.TRIGGERS_AVAILABLE");
+            intent.setPackage(str);
+            zzpg.zzaQ(zzpgVar.zzaY(), intent);
         }
-        return zzpfVar.zzan(zzrVar).zzd();
+        zzpgVar.zzav();
     }
 }

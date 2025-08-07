@@ -277,6 +277,13 @@ public class PlaybackException extends Exception {
         return false;
     }
 
+    public static boolean areErrorInfosEqual(PlaybackException playbackException, PlaybackException playbackException2) {
+        if (playbackException != null) {
+            return playbackException.errorInfoEquals(playbackException2);
+        }
+        return playbackException2 == null;
+    }
+
     public static PlaybackException fromBundle(Bundle bundle) {
         return new PlaybackException(bundle);
     }

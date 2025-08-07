@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzbo extends zzbl implements zzbq {
     /* JADX INFO: Access modifiers changed from: package-private */

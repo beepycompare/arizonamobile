@@ -27,7 +27,6 @@ import com.adjust.sdk.Adjust;
 import com.adjust.sdk.AdjustEvent;
 import com.adjust.sdk.Constants;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -171,13 +170,13 @@ public final class UtilsKt {
             if (Intrinsics.areEqual(folderName, "gears")) {
                 ZipFile zipFile = zipFileIcons;
                 if (zipFile != null) {
-                    entry = zipFile.getEntry(folderName + RemoteSettings.FORWARD_SLASH_STRING + gearsIconName);
+                    entry = zipFile.getEntry(folderName + "/" + gearsIconName);
                 }
                 entry = null;
             } else {
                 ZipFile zipFile2 = zipFileIcons;
                 if (zipFile2 != null) {
-                    entry = zipFile2.getEntry(folderName + RemoteSettings.FORWARD_SLASH_STRING + i + ".webp");
+                    entry = zipFile2.getEntry(folderName + "/" + i + ".webp");
                 }
                 entry = null;
             }
@@ -207,7 +206,7 @@ public final class UtilsKt {
         Intrinsics.checkNotNullParameter(item, "item");
         try {
             ZipFile zipFile = zipFileIcons;
-            ZipEntry entry = zipFile != null ? zipFile.getEntry(folderName + RemoteSettings.FORWARD_SLASH_STRING + item + ".webp") : null;
+            ZipEntry entry = zipFile != null ? zipFile.getEntry(folderName + "/" + item + ".webp") : null;
             if (entry != null) {
                 ZipFile zipFile2 = zipFileIcons;
                 InputStream inputStream = zipFile2 != null ? zipFile2.getInputStream(entry) : null;
@@ -315,7 +314,7 @@ public final class UtilsKt {
     public static final void setImage(ImageView imageView, Bitmap bitmap) {
         Intrinsics.checkNotNullParameter(imageView, "imageView");
         Intrinsics.checkNotNullParameter(bitmap, "bitmap");
-        imageView.setImageBitmap(Bitmap.createBitmap(bitmap));
+        imageView.setImageBitmap(bitmap);
     }
 
     public static final void setNotLoadedImage(ImageView imageView, Context context) {

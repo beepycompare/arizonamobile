@@ -2,7 +2,6 @@ package okio;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
@@ -22,7 +21,7 @@ import okio.internal.ZipFilesKt;
 /* loaded from: classes5.dex */
 public final class ZipFileSystem extends FileSystem {
     private static final Companion Companion = new Companion(null);
-    private static final Path ROOT = Path.Companion.get$default(Path.Companion, RemoteSettings.FORWARD_SLASH_STRING, false, 1, (Object) null);
+    private static final Path ROOT = Path.Companion.get$default(Path.Companion, "/", false, 1, (Object) null);
     private final String comment;
     private final Map<Path, ZipEntry> entries;
     private final FileSystem fileSystem;

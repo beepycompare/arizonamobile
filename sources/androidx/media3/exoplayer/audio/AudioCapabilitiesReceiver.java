@@ -39,7 +39,7 @@ public final class AudioCapabilitiesReceiver {
     }
 
     public AudioCapabilitiesReceiver(Context context, Listener listener, AudioAttributes audioAttributes, AudioDeviceInfo audioDeviceInfo) {
-        this(context, listener, audioAttributes, (Util.SDK_INT < 23 || audioDeviceInfo == null) ? null : new AudioDeviceInfoApi23(audioDeviceInfo));
+        this(context, listener, audioAttributes, audioDeviceInfo != null ? new AudioDeviceInfoApi23(audioDeviceInfo) : null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -51,10 +51,14 @@ public final class AudioCapabilitiesReceiver {
         this.routedDevice = audioDeviceInfoApi23;
         Handler createHandlerForCurrentOrMainLooper = Util.createHandlerForCurrentOrMainLooper();
         this.handler = createHandlerForCurrentOrMainLooper;
-        this.audioDeviceCallback = Util.SDK_INT >= 23 ? new AudioDeviceCallbackV23() : null;
+        this.audioDeviceCallback = new AudioDeviceCallbackV23();
         this.hdmiAudioPlugBroadcastReceiver = new HdmiAudioPlugBroadcastReceiver();
         Uri externalSurroundSoundGlobalSettingUri = AudioCapabilities.getExternalSurroundSoundGlobalSettingUri();
         this.externalSurroundSoundSettingObserver = externalSurroundSoundGlobalSettingUri != null ? new ExternalSurroundSoundSettingObserver(createHandlerForCurrentOrMainLooper, applicationContext.getContentResolver(), externalSurroundSoundGlobalSettingUri) : null;
+    }
+
+    public void overrideCapabilities(AudioCapabilities audioCapabilities) {
+        onNewAudioCapabilities(audioCapabilities);
     }
 
     public void setAudioAttributes(AudioAttributes audioAttributes) {
@@ -73,7 +77,6 @@ public final class AudioCapabilitiesReceiver {
     }
 
     public AudioCapabilities register() {
-        AudioDeviceCallbackV23 audioDeviceCallbackV23;
         if (this.registered) {
             return (AudioCapabilities) Assertions.checkNotNull(this.audioCapabilities);
         }
@@ -82,7 +85,8 @@ public final class AudioCapabilitiesReceiver {
         if (externalSurroundSoundSettingObserver != null) {
             externalSurroundSoundSettingObserver.register();
         }
-        if (Util.SDK_INT >= 23 && (audioDeviceCallbackV23 = this.audioDeviceCallback) != null) {
+        AudioDeviceCallbackV23 audioDeviceCallbackV23 = this.audioDeviceCallback;
+        if (audioDeviceCallbackV23 != null) {
             Api23.registerAudioDeviceCallback(this.context, audioDeviceCallbackV23, this.handler);
         }
         AudioCapabilities capabilitiesInternal = AudioCapabilities.getCapabilitiesInternal(this.context, this.context.registerReceiver(this.hdmiAudioPlugBroadcastReceiver, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"), null, this.handler), this.audioAttributes, this.routedDevice);
@@ -91,10 +95,10 @@ public final class AudioCapabilitiesReceiver {
     }
 
     public void unregister() {
-        AudioDeviceCallbackV23 audioDeviceCallbackV23;
         if (this.registered) {
             this.audioCapabilities = null;
-            if (Util.SDK_INT >= 23 && (audioDeviceCallbackV23 = this.audioDeviceCallback) != null) {
+            AudioDeviceCallbackV23 audioDeviceCallbackV23 = this.audioDeviceCallback;
+            if (audioDeviceCallbackV23 != null) {
                 Api23.unregisterAudioDeviceCallback(this.context, audioDeviceCallbackV23);
             }
             this.context.unregisterReceiver(this.hdmiAudioPlugBroadcastReceiver);

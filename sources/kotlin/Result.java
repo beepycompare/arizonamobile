@@ -15,22 +15,22 @@ public final class Result<T> implements Serializable {
     private final Object value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Result m8477boximpl(Object obj) {
+    public static final /* synthetic */ Result m8499boximpl(Object obj) {
         return new Result(obj);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Object m8478constructorimpl(Object obj) {
+    public static <T> Object m8500constructorimpl(Object obj) {
         return obj;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8479equalsimpl(Object obj, Object obj2) {
-        return (obj2 instanceof Result) && Intrinsics.areEqual(obj, ((Result) obj2).m8487unboximpl());
+    public static boolean m8501equalsimpl(Object obj, Object obj2) {
+        return (obj2 instanceof Result) && Intrinsics.areEqual(obj, ((Result) obj2).m8509unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8480equalsimpl0(Object obj, Object obj2) {
+    public static final boolean m8502equalsimpl0(Object obj, Object obj2) {
         return Intrinsics.areEqual(obj, obj2);
     }
 
@@ -38,7 +38,7 @@ public final class Result<T> implements Serializable {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8483hashCodeimpl(Object obj) {
+    public static int m8505hashCodeimpl(Object obj) {
         if (obj == null) {
             return 0;
         }
@@ -46,15 +46,15 @@ public final class Result<T> implements Serializable {
     }
 
     public boolean equals(Object obj) {
-        return m8479equalsimpl(this.value, obj);
+        return m8501equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m8483hashCodeimpl(this.value);
+        return m8505hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Object m8487unboximpl() {
+    public final /* synthetic */ Object m8509unboximpl() {
         return this.value;
     }
 
@@ -63,26 +63,26 @@ public final class Result<T> implements Serializable {
     }
 
     /* renamed from: isSuccess-impl  reason: not valid java name */
-    public static final boolean m8485isSuccessimpl(Object obj) {
+    public static final boolean m8507isSuccessimpl(Object obj) {
         return !(obj instanceof Failure);
     }
 
     /* renamed from: isFailure-impl  reason: not valid java name */
-    public static final boolean m8484isFailureimpl(Object obj) {
+    public static final boolean m8506isFailureimpl(Object obj) {
         return obj instanceof Failure;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: getOrNull-impl  reason: not valid java name */
-    private static final T m8482getOrNullimpl(Object obj) {
-        if (m8484isFailureimpl(obj)) {
+    private static final T m8504getOrNullimpl(Object obj) {
+        if (m8506isFailureimpl(obj)) {
             return null;
         }
         return obj;
     }
 
     /* renamed from: exceptionOrNull-impl  reason: not valid java name */
-    public static final Throwable m8481exceptionOrNullimpl(Object obj) {
+    public static final Throwable m8503exceptionOrNullimpl(Object obj) {
         if (obj instanceof Failure) {
             return ((Failure) obj).exception;
         }
@@ -90,11 +90,11 @@ public final class Result<T> implements Serializable {
     }
 
     public String toString() {
-        return m8486toStringimpl(this.value);
+        return m8508toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8486toStringimpl(Object obj) {
+    public static String m8508toStringimpl(Object obj) {
         return obj instanceof Failure ? ((Failure) obj).toString() : "Success(" + obj + ')';
     }
 
@@ -110,12 +110,12 @@ public final class Result<T> implements Serializable {
         }
 
         private final <T> Object success(T t) {
-            return Result.m8478constructorimpl(t);
+            return Result.m8500constructorimpl(t);
         }
 
         private final <T> Object failure(Throwable exception) {
             Intrinsics.checkNotNullParameter(exception, "exception");
-            return Result.m8478constructorimpl(ResultKt.createFailure(exception));
+            return Result.m8500constructorimpl(ResultKt.createFailure(exception));
         }
     }
 

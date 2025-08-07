@@ -14,7 +14,6 @@ import android.widget.Toast;
 import androidx.media3.common.MediaItem;
 import androidx.media3.exoplayer.ExoPlayer;
 import com.facebook.widget.FacebookDialog;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
 import java.io.File;
@@ -297,7 +296,7 @@ public final class EasterScreen extends SAMPUIElement implements InterfaceContro
         } catch (Exception e) {
             Log.d("family_rodina", data + "  " + e.getMessage());
             e.printStackTrace();
-            Toast.makeText(getTargetActivity(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
         }
     }
 
@@ -331,7 +330,7 @@ public final class EasterScreen extends SAMPUIElement implements InterfaceContro
         easterBattlePassMainScreenBinding.levelPassText.setText(String.valueOf(mainInfo.getLevel()));
         TextView textView = easterBattlePassMainScreenBinding.mainExperienceText;
         int exp = mainInfo.getExp();
-        textView.setText(exp + RemoteSettings.FORWARD_SLASH_STRING + mainInfo.getMaxExp());
+        textView.setText(exp + "/" + mainInfo.getMaxExp());
         easterBattlePassMainScreenBinding.progressExperience.setMax(mainInfo.getMaxExp());
         easterBattlePassMainScreenBinding.progressExperience.setProgress(mainInfo.getExp());
         easterBattlePassMainScreenBinding.remainingTimeTextMain.setText(TimeConverterKt.mainPageTimeConvert(mainInfo.getTimestampEnd()));
@@ -539,12 +538,12 @@ public final class EasterScreen extends SAMPUIElement implements InterfaceContro
             }
         }
         if (eventData.getAttempts() != null) {
-            easterBattlePassEventItemBinding.tvAttemptsAvailable.setText(eventData.getAttempts().getCurrent() + RemoteSettings.FORWARD_SLASH_STRING + eventData.getAttempts().getMax());
+            easterBattlePassEventItemBinding.tvAttemptsAvailable.setText(eventData.getAttempts().getCurrent() + "/" + eventData.getAttempts().getMax());
             easterBattlePassEventItemBinding.playersContainer.setVisibility(8);
         }
         if (eventData.getPlayers() != null) {
             easterBattlePassEventItemBinding.playersContainer.setVisibility(0);
-            easterBattlePassEventItemBinding.tvParticipants.setText(eventData.getPlayers().getCurrent() + RemoteSettings.FORWARD_SLASH_STRING + eventData.getPlayers().getMax());
+            easterBattlePassEventItemBinding.tvParticipants.setText(eventData.getPlayers().getCurrent() + "/" + eventData.getPlayers().getMax());
         }
         List<EasterItem> items = eventData.getItems();
         if (items != null && (easterItem3 = (EasterItem) CollectionsKt.getOrNull(items, 0)) != null) {
@@ -666,12 +665,12 @@ public final class EasterScreen extends SAMPUIElement implements InterfaceContro
             if (linearLayout2 != null) {
                 linearLayout2.setVisibility(0);
             }
-            easterBattlePassEventItemBinding.tvAttemptsAvailable.setText(eventData.getAttempts().getCurrent() + RemoteSettings.FORWARD_SLASH_STRING + eventData.getAttempts().getMax());
+            easterBattlePassEventItemBinding.tvAttemptsAvailable.setText(eventData.getAttempts().getCurrent() + "/" + eventData.getAttempts().getMax());
         }
         easterBattlePassEventItemBinding.playersContainer.setVisibility(8);
         if (eventData.getPlayers() != null) {
             easterBattlePassEventItemBinding.playersContainer.setVisibility(0);
-            easterBattlePassEventItemBinding.tvParticipants.setText(eventData.getPlayers().getCurrent() + RemoteSettings.FORWARD_SLASH_STRING + eventData.getPlayers().getMax());
+            easterBattlePassEventItemBinding.tvParticipants.setText(eventData.getPlayers().getCurrent() + "/" + eventData.getPlayers().getMax());
         }
         List<EasterItem> items = eventData.getItems();
         if (items != null && (easterItem3 = (EasterItem) CollectionsKt.getOrNull(items, 0)) != null) {

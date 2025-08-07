@@ -25,8 +25,8 @@ public abstract class Fig {
 
     private static int parseResId(Context context, String str) {
         if (str.startsWith(RESOURCE_ID_PREFIX)) {
-            if (str.contains("/")) {
-                String[] split = str.split("/");
+            if (str.contains(PATH_SEPARATOR)) {
+                String[] split = str.split(PATH_SEPARATOR);
                 String replace = split[0].replace(RESOURCE_ID_PREFIX, "");
                 return context.getResources().getIdentifier(split[1], replace, context.getPackageName());
             }

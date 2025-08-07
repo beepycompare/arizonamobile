@@ -3,6 +3,7 @@ package androidx.media3.exoplayer.offline;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
+import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.StreamKey;
@@ -38,6 +39,7 @@ public final class DownloadRequest implements Parcelable {
     public final byte[] keySetId;
     public final String mimeType;
     public final List<StreamKey> streamKeys;
+    public final TimeRange timeRange;
     public final Uri uri;
 
     /* loaded from: classes2.dex */
@@ -51,7 +53,6 @@ public final class DownloadRequest implements Parcelable {
 
     /* loaded from: classes2.dex */
     public static class Builder {
-        private ByteRange byteRange = null;
         private String customCacheKey;
         private byte[] data;
         private final String id;
@@ -59,6 +60,8 @@ public final class DownloadRequest implements Parcelable {
         private String mimeType;
         private List<StreamKey> streamKeys;
         private final Uri uri;
+        private ByteRange byteRange = null;
+        private TimeRange timeRange = null;
 
         public Builder(String str, Uri uri) {
             this.id = str;
@@ -95,6 +98,11 @@ public final class DownloadRequest implements Parcelable {
             return this;
         }
 
+        public Builder setTimeRange(long j, long j2) {
+            this.timeRange = new TimeRange(j, j2);
+            return this;
+        }
+
         public DownloadRequest build() {
             String str = this.id;
             Uri uri = this.uri;
@@ -103,17 +111,19 @@ public final class DownloadRequest implements Parcelable {
             if (list == null) {
                 list = ImmutableList.of();
             }
-            return new DownloadRequest(str, uri, str2, list, this.keySetId, this.customCacheKey, this.data, this.byteRange);
+            return new DownloadRequest(str, uri, str2, list, this.keySetId, this.customCacheKey, this.data, this.byteRange, this.timeRange);
         }
     }
 
-    private DownloadRequest(String str, Uri uri, String str2, List<StreamKey> list, byte[] bArr, String str3, byte[] bArr2, ByteRange byteRange) {
+    private DownloadRequest(String str, Uri uri, String str2, List<StreamKey> list, byte[] bArr, String str3, byte[] bArr2, ByteRange byteRange, TimeRange timeRange) {
         int inferContentTypeForUriAndMimeType = Util.inferContentTypeForUriAndMimeType(uri, str2);
         if (inferContentTypeForUriAndMimeType == 0 || inferContentTypeForUriAndMimeType == 2 || inferContentTypeForUriAndMimeType == 1) {
             Assertions.checkArgument(str3 == null, "customCacheKey must be null for type: " + inferContentTypeForUriAndMimeType);
             this.byteRange = null;
+            this.timeRange = timeRange;
         } else {
             this.byteRange = byteRange;
+            this.timeRange = null;
         }
         this.id = str;
         this.uri = uri;
@@ -140,14 +150,15 @@ public final class DownloadRequest implements Parcelable {
         this.customCacheKey = parcel.readString();
         this.data = (byte[]) Util.castNonNull(parcel.createByteArray());
         this.byteRange = (ByteRange) parcel.readParcelable(ByteRange.class.getClassLoader());
+        this.timeRange = (TimeRange) parcel.readParcelable(TimeRange.class.getClassLoader());
     }
 
     public DownloadRequest copyWithId(String str) {
-        return new DownloadRequest(str, this.uri, this.mimeType, this.streamKeys, this.keySetId, this.customCacheKey, this.data, this.byteRange);
+        return new DownloadRequest(str, this.uri, this.mimeType, this.streamKeys, this.keySetId, this.customCacheKey, this.data, this.byteRange, this.timeRange);
     }
 
     public DownloadRequest copyWithKeySetId(byte[] bArr) {
-        return new DownloadRequest(this.id, this.uri, this.mimeType, this.streamKeys, bArr, this.customCacheKey, this.data, this.byteRange);
+        return new DownloadRequest(this.id, this.uri, this.mimeType, this.streamKeys, bArr, this.customCacheKey, this.data, this.byteRange, this.timeRange);
     }
 
     public DownloadRequest copyWithMergedRequest(DownloadRequest downloadRequest) {
@@ -164,11 +175,15 @@ public final class DownloadRequest implements Parcelable {
                 }
             }
         }
-        return new DownloadRequest(this.id, downloadRequest.uri, downloadRequest.mimeType, emptyList, downloadRequest.keySetId, downloadRequest.customCacheKey, downloadRequest.data, downloadRequest.byteRange);
+        return new DownloadRequest(this.id, downloadRequest.uri, downloadRequest.mimeType, emptyList, downloadRequest.keySetId, downloadRequest.customCacheKey, downloadRequest.data, downloadRequest.byteRange, downloadRequest.timeRange);
     }
 
     public MediaItem toMediaItem() {
-        return new MediaItem.Builder().setMediaId(this.id).setUri(this.uri).setCustomCacheKey(this.customCacheKey).setMimeType(this.mimeType).setStreamKeys(this.streamKeys).build();
+        return toMediaItem(new MediaItem.Builder());
+    }
+
+    public MediaItem toMediaItem(MediaItem.Builder builder) {
+        return builder.setMediaId(this.id).setUri(this.uri).setCustomCacheKey(this.customCacheKey).setMimeType(this.mimeType).setStreamKeys(this.streamKeys).build();
     }
 
     public String toString() {
@@ -178,7 +193,7 @@ public final class DownloadRequest implements Parcelable {
     public boolean equals(Object obj) {
         if (obj instanceof DownloadRequest) {
             DownloadRequest downloadRequest = (DownloadRequest) obj;
-            return this.id.equals(downloadRequest.id) && this.uri.equals(downloadRequest.uri) && Objects.equals(this.mimeType, downloadRequest.mimeType) && this.streamKeys.equals(downloadRequest.streamKeys) && Arrays.equals(this.keySetId, downloadRequest.keySetId) && Objects.equals(this.customCacheKey, downloadRequest.customCacheKey) && Arrays.equals(this.data, downloadRequest.data) && Objects.equals(this.byteRange, downloadRequest.byteRange);
+            return this.id.equals(downloadRequest.id) && this.uri.equals(downloadRequest.uri) && Objects.equals(this.mimeType, downloadRequest.mimeType) && this.streamKeys.equals(downloadRequest.streamKeys) && Arrays.equals(this.keySetId, downloadRequest.keySetId) && Objects.equals(this.customCacheKey, downloadRequest.customCacheKey) && Arrays.equals(this.data, downloadRequest.data) && Objects.equals(this.byteRange, downloadRequest.byteRange) && Objects.equals(this.timeRange, downloadRequest.timeRange);
         }
         return false;
     }
@@ -190,7 +205,9 @@ public final class DownloadRequest implements Parcelable {
         String str2 = this.customCacheKey;
         int hashCode3 = (((hashCode2 + (str2 != null ? str2.hashCode() : 0)) * 31) + Arrays.hashCode(this.data)) * 31;
         ByteRange byteRange = this.byteRange;
-        return hashCode3 + (byteRange != null ? byteRange.hashCode() : 0);
+        int hashCode4 = (hashCode3 + (byteRange != null ? byteRange.hashCode() : 0)) * 31;
+        TimeRange timeRange = this.timeRange;
+        return hashCode4 + (timeRange != null ? timeRange.hashCode() : 0);
     }
 
     @Override // android.os.Parcelable
@@ -206,6 +223,7 @@ public final class DownloadRequest implements Parcelable {
         parcel.writeString(this.customCacheKey);
         parcel.writeByteArray(this.data);
         parcel.writeParcelable(this.byteRange, 0);
+        parcel.writeParcelable(this.timeRange, 0);
     }
 
     /* loaded from: classes2.dex */
@@ -262,6 +280,58 @@ public final class DownloadRequest implements Parcelable {
         public void writeToParcel(Parcel parcel, int i) {
             parcel.writeLong(this.offset);
             parcel.writeLong(this.length);
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    public static final class TimeRange implements Parcelable {
+        public static final Parcelable.Creator<TimeRange> CREATOR = new Parcelable.Creator<TimeRange>() { // from class: androidx.media3.exoplayer.offline.DownloadRequest.TimeRange.1
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // android.os.Parcelable.Creator
+            public TimeRange createFromParcel(Parcel parcel) {
+                return new TimeRange(parcel);
+            }
+
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // android.os.Parcelable.Creator
+            public TimeRange[] newArray(int i) {
+                return new TimeRange[i];
+            }
+        };
+        public final long durationUs;
+        public final long startPositionUs;
+
+        @Override // android.os.Parcelable
+        public int describeContents() {
+            return 0;
+        }
+
+        TimeRange(long j, long j2) {
+            Assertions.checkArgument(j2 >= 0 || j2 == C.TIME_UNSET);
+            this.startPositionUs = j;
+            this.durationUs = j2;
+        }
+
+        TimeRange(Parcel parcel) {
+            this(parcel.readLong(), parcel.readLong());
+        }
+
+        public boolean equals(Object obj) {
+            if (obj instanceof TimeRange) {
+                TimeRange timeRange = (TimeRange) obj;
+                return this.startPositionUs == timeRange.startPositionUs && this.durationUs == timeRange.durationUs;
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return (((int) this.startPositionUs) * 961) + ((int) this.durationUs);
+        }
+
+        @Override // android.os.Parcelable
+        public void writeToParcel(Parcel parcel, int i) {
+            parcel.writeLong(this.startPositionUs);
+            parcel.writeLong(this.durationUs);
         }
     }
 }

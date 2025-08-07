@@ -3,9 +3,9 @@ package com.google.android.gms.measurement.internal;
 import java.util.Map;
 import java.util.Set;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzad extends zzor {
+public final class zzad extends zzos {
     private String zza;
     private Set zzb;
     private Map zzc;
@@ -13,8 +13,8 @@ public final class zzad extends zzor {
     private Long zze;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzad(zzpf zzpfVar) {
-        super(zzpfVar);
+    public zzad(zzpg zzpgVar) {
+        super(zzpgVar);
     }
 
     private final zzy zzc(Integer num) {
@@ -48,7 +48,7 @@ public final class zzad extends zzor {
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.measurement.internal.zzad.zzb(java.lang.String, java.util.List, java.util.List, java.lang.Long, java.lang.Long, boolean):java.util.List");
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzor
+    @Override // com.google.android.gms.measurement.internal.zzos
     protected final boolean zzbb() {
         return false;
     }

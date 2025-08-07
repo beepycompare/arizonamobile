@@ -374,7 +374,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
                         return Unit.INSTANCE;
                     } finally {
                         channel = this.this$0.channel;
-                        channel.mo7544trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
+                        channel.mo7559trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
                     }
                 }
             }

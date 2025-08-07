@@ -259,6 +259,8 @@ public final class NalUnitUtil {
         public final int colorRange;
         public final int colorSpace;
         public final int colorTransfer;
+        public final int decodedHeight;
+        public final int decodedWidth;
         public final int height;
         public final int maxNumReorderPics;
         public final int maxSubLayersMinus1;
@@ -268,7 +270,7 @@ public final class NalUnitUtil {
         public final int seqParameterSetId;
         public final int width;
 
-        public H265SpsData(H265NalHeader h265NalHeader, int i, H265ProfileTierLevel h265ProfileTierLevel, int i2, int i3, int i4, int i5, int i6, int i7, float f, int i8, int i9, int i10, int i11) {
+        public H265SpsData(H265NalHeader h265NalHeader, int i, H265ProfileTierLevel h265ProfileTierLevel, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, float f, int i10, int i11, int i12, int i13) {
             this.nalHeader = h265NalHeader;
             this.maxSubLayersMinus1 = i;
             this.profileTierLevel = h265ProfileTierLevel;
@@ -279,10 +281,12 @@ public final class NalUnitUtil {
             this.width = i6;
             this.height = i7;
             this.pixelWidthHeightRatio = f;
-            this.maxNumReorderPics = i8;
-            this.colorSpace = i9;
-            this.colorRange = i10;
-            this.colorTransfer = i11;
+            this.maxNumReorderPics = i10;
+            this.colorSpace = i11;
+            this.colorRange = i12;
+            this.colorTransfer = i13;
+            this.decodedWidth = i8;
+            this.decodedHeight = i9;
         }
     }
 
@@ -1178,13 +1182,20 @@ public final class NalUnitUtil {
         return parseH265SpsNalUnitPayload(bArr, i + 2, i2, parseH265NalHeader(new ParsableNalUnitBitArray(bArr, i, i2)), h265VpsData);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0249  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0258  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x01e2  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x01eb  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0214  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public static H265SpsData parseH265SpsNalUnitPayload(byte[] bArr, int i, int i2, H265NalHeader h265NalHeader, H265VpsData h265VpsData) {
         int i3;
         int readUnsignedExpGolombCodedInt;
         int i4;
         int i5;
         int readUnsignedExpGolombCodedInt2;
-        int readUnsignedExpGolombCodedInt3;
         int i6;
         int i7;
         int i8;
@@ -1194,73 +1205,92 @@ public final class NalUnitUtil {
         int i12;
         int i13;
         int i14;
+        float f;
         int i15;
         int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
         ParsableNalUnitBitArray parsableNalUnitBitArray = new ParsableNalUnitBitArray(bArr, i, i2);
         parsableNalUnitBitArray.skipBits(4);
         int readBits = parsableNalUnitBitArray.readBits(3);
         boolean z = h265NalHeader.layerId != 0 && readBits == 7;
-        int i17 = (h265VpsData == null || h265VpsData.layerInfos.isEmpty()) ? 0 : h265VpsData.layerInfos.get(Math.min(h265NalHeader.layerId, h265VpsData.layerInfos.size() - 1)).layerIdInVps;
+        int i22 = (h265VpsData == null || h265VpsData.layerInfos.isEmpty()) ? 0 : h265VpsData.layerInfos.get(Math.min(h265NalHeader.layerId, h265VpsData.layerInfos.size() - 1)).layerIdInVps;
         H265ProfileTierLevel h265ProfileTierLevel = null;
         if (!z) {
             parsableNalUnitBitArray.skipBit();
             h265ProfileTierLevel = parseH265ProfileTierLevel(parsableNalUnitBitArray, true, readBits, null);
-        } else if (h265VpsData != null && h265VpsData.profileTierLevelsAndIndices.profileTierLevels.size() > (i3 = h265VpsData.profileTierLevelsAndIndices.indices[i17])) {
+        } else if (h265VpsData != null && h265VpsData.profileTierLevelsAndIndices.profileTierLevels.size() > (i3 = h265VpsData.profileTierLevelsAndIndices.indices[i22])) {
             h265ProfileTierLevel = h265VpsData.profileTierLevelsAndIndices.profileTierLevels.get(i3);
         }
-        int readUnsignedExpGolombCodedInt4 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
+        int readUnsignedExpGolombCodedInt3 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
         if (z) {
             int readBits2 = parsableNalUnitBitArray.readBit() ? parsableNalUnitBitArray.readBits(8) : -1;
             if (h265VpsData != null && h265VpsData.repFormatsAndIndices != null) {
                 if (readBits2 == -1) {
-                    readBits2 = h265VpsData.repFormatsAndIndices.indices[i17];
+                    readBits2 = h265VpsData.repFormatsAndIndices.indices[i22];
                 }
                 if (readBits2 != -1 && h265VpsData.repFormatsAndIndices.repFormats.size() > readBits2) {
                     H265RepFormat h265RepFormat = h265VpsData.repFormatsAndIndices.repFormats.get(readBits2);
                     readUnsignedExpGolombCodedInt = h265RepFormat.chromaFormatIdc;
-                    i4 = h265RepFormat.width;
-                    i5 = h265RepFormat.height;
-                    readUnsignedExpGolombCodedInt2 = h265RepFormat.bitDepthLumaMinus8;
-                    readUnsignedExpGolombCodedInt3 = h265RepFormat.bitDepthChromaMinus8;
+                    i8 = h265RepFormat.width;
+                    i6 = h265RepFormat.height;
+                    i9 = h265RepFormat.bitDepthLumaMinus8;
+                    readUnsignedExpGolombCodedInt2 = h265RepFormat.bitDepthChromaMinus8;
+                    i7 = i6;
+                    i10 = i8;
                 }
             }
-            i5 = 0;
+            i7 = 0;
+            i6 = 0;
+            i9 = 0;
+            i10 = 0;
             readUnsignedExpGolombCodedInt2 = 0;
-            readUnsignedExpGolombCodedInt3 = 0;
             readUnsignedExpGolombCodedInt = 0;
-            i4 = 0;
+            i8 = 0;
         } else {
             readUnsignedExpGolombCodedInt = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
             if (readUnsignedExpGolombCodedInt == 3) {
                 parsableNalUnitBitArray.skipBit();
             }
+            int readUnsignedExpGolombCodedInt4 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
             int readUnsignedExpGolombCodedInt5 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
-            int readUnsignedExpGolombCodedInt6 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
             if (parsableNalUnitBitArray.readBit()) {
+                int readUnsignedExpGolombCodedInt6 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
                 int readUnsignedExpGolombCodedInt7 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
                 int readUnsignedExpGolombCodedInt8 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
                 int readUnsignedExpGolombCodedInt9 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
-                int readUnsignedExpGolombCodedInt10 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
-                i4 = applyConformanceWindowToWidth(readUnsignedExpGolombCodedInt5, readUnsignedExpGolombCodedInt, readUnsignedExpGolombCodedInt7, readUnsignedExpGolombCodedInt8);
-                i5 = applyConformanceWindowToHeight(readUnsignedExpGolombCodedInt6, readUnsignedExpGolombCodedInt, readUnsignedExpGolombCodedInt9, readUnsignedExpGolombCodedInt10);
+                i5 = applyConformanceWindowToWidth(readUnsignedExpGolombCodedInt4, readUnsignedExpGolombCodedInt, readUnsignedExpGolombCodedInt6, readUnsignedExpGolombCodedInt7);
+                i4 = applyConformanceWindowToHeight(readUnsignedExpGolombCodedInt5, readUnsignedExpGolombCodedInt, readUnsignedExpGolombCodedInt8, readUnsignedExpGolombCodedInt9);
             } else {
                 i4 = readUnsignedExpGolombCodedInt5;
-                i5 = readUnsignedExpGolombCodedInt6;
+                i5 = readUnsignedExpGolombCodedInt4;
             }
+            int readUnsignedExpGolombCodedInt10 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
             readUnsignedExpGolombCodedInt2 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
-            readUnsignedExpGolombCodedInt3 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
+            i6 = i4;
+            i7 = readUnsignedExpGolombCodedInt5;
+            i8 = i5;
+            i9 = readUnsignedExpGolombCodedInt10;
+            i10 = readUnsignedExpGolombCodedInt4;
         }
         int readUnsignedExpGolombCodedInt11 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
         if (z) {
-            i6 = -1;
+            i11 = -1;
         } else {
-            i6 = -1;
-            for (int i18 = parsableNalUnitBitArray.readBit() ? 0 : readBits; i18 <= readBits; i18++) {
+            int i23 = parsableNalUnitBitArray.readBit() ? 0 : readBits;
+            i11 = -1;
+            while (i23 <= readBits) {
                 parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
-                i6 = Math.max(parsableNalUnitBitArray.readUnsignedExpGolombCodedInt(), i6);
+                i11 = Math.max(parsableNalUnitBitArray.readUnsignedExpGolombCodedInt(), i11);
                 parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
+                i23++;
+                i7 = i7;
             }
         }
+        int i24 = i7;
         parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
         parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
         parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
@@ -1274,7 +1304,7 @@ public final class NalUnitUtil {
                 skipH265ScalingList(parsableNalUnitBitArray);
             }
         }
-        int i19 = 2;
+        int i25 = 2;
         parsableNalUnitBitArray.skipBits(2);
         if (parsableNalUnitBitArray.readBit()) {
             parsableNalUnitBitArray.skipBits(8);
@@ -1285,15 +1315,14 @@ public final class NalUnitUtil {
         skipH265ShortTermReferencePictureSets(parsableNalUnitBitArray);
         if (parsableNalUnitBitArray.readBit()) {
             int readUnsignedExpGolombCodedInt12 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
-            int i20 = 0;
-            while (i20 < readUnsignedExpGolombCodedInt12) {
+            int i26 = 0;
+            while (i26 < readUnsignedExpGolombCodedInt12) {
                 parsableNalUnitBitArray.skipBits(readUnsignedExpGolombCodedInt11 + 5);
-                i20++;
-                i19 = 2;
+                i26++;
+                i25 = 2;
             }
         }
-        parsableNalUnitBitArray.skipBits(i19);
-        float f = 1.0f;
+        parsableNalUnitBitArray.skipBits(i25);
         if (parsableNalUnitBitArray.readBit()) {
             if (parsableNalUnitBitArray.readBit()) {
                 int readBits3 = parsableNalUnitBitArray.readBits(8);
@@ -1302,67 +1331,108 @@ public final class NalUnitUtil {
                     int readBits5 = parsableNalUnitBitArray.readBits(16);
                     if (readBits4 != 0 && readBits5 != 0) {
                         f = readBits4 / readBits5;
+                        if (parsableNalUnitBitArray.readBit()) {
+                            parsableNalUnitBitArray.skipBit();
+                        }
+                        if (parsableNalUnitBitArray.readBit()) {
+                            parsableNalUnitBitArray.skipBits(3);
+                            i18 = parsableNalUnitBitArray.readBit() ? 1 : 2;
+                            if (parsableNalUnitBitArray.readBit()) {
+                                int readBits6 = parsableNalUnitBitArray.readBits(8);
+                                int readBits7 = parsableNalUnitBitArray.readBits(8);
+                                parsableNalUnitBitArray.skipBits(8);
+                                i20 = ColorInfo.isoColorPrimariesToColorSpace(readBits6);
+                                i21 = ColorInfo.isoTransferCharacteristicsToColorTransfer(readBits7);
+                                if (parsableNalUnitBitArray.readBit()) {
+                                    parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
+                                    parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
+                                }
+                                parsableNalUnitBitArray.skipBit();
+                                if (parsableNalUnitBitArray.readBit()) {
+                                    i6 *= 2;
+                                }
+                                i12 = readBits;
+                                i17 = i21;
+                                i13 = readUnsignedExpGolombCodedInt;
+                                i14 = i8;
+                                i16 = i18;
+                                i15 = i20;
+                            }
+                            i20 = -1;
+                            i21 = -1;
+                            if (parsableNalUnitBitArray.readBit()) {
+                            }
+                            parsableNalUnitBitArray.skipBit();
+                            if (parsableNalUnitBitArray.readBit()) {
+                            }
+                            i12 = readBits;
+                            i17 = i21;
+                            i13 = readUnsignedExpGolombCodedInt;
+                            i14 = i8;
+                            i16 = i18;
+                            i15 = i20;
+                        } else if (h265VpsData != null && h265VpsData.videoSignalInfosAndIndices != null && h265VpsData.videoSignalInfosAndIndices.videoSignalInfos.size() > (i19 = h265VpsData.videoSignalInfosAndIndices.indices[i22])) {
+                            H265VideoSignalInfo h265VideoSignalInfo = h265VpsData.videoSignalInfosAndIndices.videoSignalInfos.get(i19);
+                            i20 = h265VideoSignalInfo.colorSpace;
+                            int i27 = h265VideoSignalInfo.colorRange;
+                            i21 = h265VideoSignalInfo.colorTransfer;
+                            i18 = i27;
+                            if (parsableNalUnitBitArray.readBit()) {
+                            }
+                            parsableNalUnitBitArray.skipBit();
+                            if (parsableNalUnitBitArray.readBit()) {
+                            }
+                            i12 = readBits;
+                            i17 = i21;
+                            i13 = readUnsignedExpGolombCodedInt;
+                            i14 = i8;
+                            i16 = i18;
+                            i15 = i20;
+                        } else {
+                            i18 = -1;
+                            i20 = -1;
+                            i21 = -1;
+                            if (parsableNalUnitBitArray.readBit()) {
+                            }
+                            parsableNalUnitBitArray.skipBit();
+                            if (parsableNalUnitBitArray.readBit()) {
+                            }
+                            i12 = readBits;
+                            i17 = i21;
+                            i13 = readUnsignedExpGolombCodedInt;
+                            i14 = i8;
+                            i16 = i18;
+                            i15 = i20;
+                        }
                     }
                 } else {
                     float[] fArr = ASPECT_RATIO_IDC_VALUES;
                     if (readBits3 < fArr.length) {
                         f = fArr[readBits3];
+                        if (parsableNalUnitBitArray.readBit()) {
+                        }
+                        if (parsableNalUnitBitArray.readBit()) {
+                        }
                     } else {
                         Log.w(TAG, "Unexpected aspect_ratio_idc value: " + readBits3);
                     }
                 }
             }
+            f = 1.0f;
             if (parsableNalUnitBitArray.readBit()) {
-                parsableNalUnitBitArray.skipBit();
             }
             if (parsableNalUnitBitArray.readBit()) {
-                parsableNalUnitBitArray.skipBits(3);
-                i13 = parsableNalUnitBitArray.readBit() ? 1 : 2;
-                if (parsableNalUnitBitArray.readBit()) {
-                    int readBits6 = parsableNalUnitBitArray.readBits(8);
-                    int readBits7 = parsableNalUnitBitArray.readBits(8);
-                    parsableNalUnitBitArray.skipBits(8);
-                    i15 = ColorInfo.isoColorPrimariesToColorSpace(readBits6);
-                    i16 = ColorInfo.isoTransferCharacteristicsToColorTransfer(readBits7);
-                    i10 = i15;
-                }
-                i16 = -1;
-                i10 = -1;
-            } else if (h265VpsData == null || h265VpsData.videoSignalInfosAndIndices == null || h265VpsData.videoSignalInfosAndIndices.videoSignalInfos.size() <= (i14 = h265VpsData.videoSignalInfosAndIndices.indices[i17])) {
-                i13 = -1;
-                i16 = -1;
-                i10 = -1;
-            } else {
-                H265VideoSignalInfo h265VideoSignalInfo = h265VpsData.videoSignalInfosAndIndices.videoSignalInfos.get(i14);
-                i15 = h265VideoSignalInfo.colorSpace;
-                int i21 = h265VideoSignalInfo.colorRange;
-                i16 = h265VideoSignalInfo.colorTransfer;
-                i13 = i21;
-                i10 = i15;
             }
-            if (parsableNalUnitBitArray.readBit()) {
-                parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
-                parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
-            }
-            parsableNalUnitBitArray.skipBit();
-            if (parsableNalUnitBitArray.readBit()) {
-                i5 *= 2;
-            }
-            int i22 = readUnsignedExpGolombCodedInt3;
-            i11 = i13;
-            i8 = i22;
-            i7 = readBits;
-            i9 = readUnsignedExpGolombCodedInt;
-            i12 = i16;
         } else {
-            i7 = readBits;
-            i8 = readUnsignedExpGolombCodedInt3;
-            i9 = readUnsignedExpGolombCodedInt;
-            i10 = -1;
-            i11 = -1;
-            i12 = -1;
+            i12 = readBits;
+            i13 = readUnsignedExpGolombCodedInt;
+            i14 = i8;
+            f = 1.0f;
+            i15 = -1;
+            i16 = -1;
+            i17 = -1;
         }
-        return new H265SpsData(h265NalHeader, i7, h265ProfileTierLevel, i9, readUnsignedExpGolombCodedInt2, i8, readUnsignedExpGolombCodedInt4, i4, i5, f, i6, i10, i11, i12);
+        return new H265SpsData(h265NalHeader, i12, h265ProfileTierLevel, i13, i9, readUnsignedExpGolombCodedInt2, readUnsignedExpGolombCodedInt3, i14, i6, i10, i24, f, i11, i15, i16, i17);
     }
 
     public static PpsData parsePpsNalUnit(byte[] bArr, int i, int i2) {
@@ -1382,56 +1452,57 @@ public final class NalUnitUtil {
         int max;
         int max2;
         int i3 = i + 2;
+        int i4 = i2 - 1;
         while (true) {
-            i2--;
-            b = bArr[i2];
-            if (b != 0 || i2 <= i3) {
+            b = bArr[i4];
+            if (b != 0 || i4 <= i3) {
                 break;
             }
+            i4--;
         }
-        if (b != 0 && i2 > i3) {
-            ParsableNalUnitBitArray parsableNalUnitBitArray = new ParsableNalUnitBitArray(bArr, i3, i2 + 1);
+        if (b != 0 && i4 > i3) {
+            ParsableNalUnitBitArray parsableNalUnitBitArray = new ParsableNalUnitBitArray(bArr, i3, i4 + 1);
             while (parsableNalUnitBitArray.canReadBits(16)) {
                 int readBits = parsableNalUnitBitArray.readBits(8);
-                int i4 = 0;
+                int i5 = 0;
                 while (readBits == 255) {
-                    i4 += 255;
+                    i5 += 255;
                     readBits = parsableNalUnitBitArray.readBits(8);
                 }
-                int i5 = i4 + readBits;
+                int i6 = i5 + readBits;
                 int readBits2 = parsableNalUnitBitArray.readBits(8);
-                int i6 = 0;
+                int i7 = 0;
                 while (readBits2 == 255) {
-                    i6 += 255;
+                    i7 += 255;
                     readBits2 = parsableNalUnitBitArray.readBits(8);
                 }
-                int i7 = i6 + readBits2;
-                if (i7 == 0 || !parsableNalUnitBitArray.canReadBits(i7)) {
+                int i8 = i7 + readBits2;
+                if (i8 == 0 || !parsableNalUnitBitArray.canReadBits(i8)) {
                     break;
-                } else if (i5 == 176) {
+                } else if (i6 == 176) {
                     int readUnsignedExpGolombCodedInt = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
                     boolean readBit = parsableNalUnitBitArray.readBit();
                     int readUnsignedExpGolombCodedInt2 = readBit ? parsableNalUnitBitArray.readUnsignedExpGolombCodedInt() : 0;
                     int readUnsignedExpGolombCodedInt3 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
-                    int i8 = -1;
                     int i9 = -1;
                     int i10 = -1;
                     int i11 = -1;
                     int i12 = -1;
                     int i13 = -1;
-                    for (int i14 = 0; i14 <= readUnsignedExpGolombCodedInt3; i14++) {
-                        i8 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
+                    int i14 = -1;
+                    for (int i15 = 0; i15 <= readUnsignedExpGolombCodedInt3; i15++) {
                         i9 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
-                        i10 = parsableNalUnitBitArray.readBits(6);
-                        if (i10 == 63) {
+                        i10 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
+                        i11 = parsableNalUnitBitArray.readBits(6);
+                        if (i11 == 63) {
                             return null;
                         }
-                        if (i10 == 0) {
+                        if (i11 == 0) {
                             max = Math.max(0, readUnsignedExpGolombCodedInt - 30);
                         } else {
-                            max = Math.max(0, (i10 + readUnsignedExpGolombCodedInt) - 31);
+                            max = Math.max(0, (i11 + readUnsignedExpGolombCodedInt) - 31);
                         }
-                        i11 = parsableNalUnitBitArray.readBits(max);
+                        i12 = parsableNalUnitBitArray.readBits(max);
                         if (readBit) {
                             int readBits3 = parsableNalUnitBitArray.readBits(6);
                             if (readBits3 == 63) {
@@ -1442,14 +1513,16 @@ public final class NalUnitUtil {
                             } else {
                                 max2 = Math.max(0, (readBits3 + readUnsignedExpGolombCodedInt2) - 31);
                             }
-                            i12 = readBits3;
-                            i13 = parsableNalUnitBitArray.readBits(max2);
+                            i13 = readBits3;
+                            i14 = parsableNalUnitBitArray.readBits(max2);
                         }
                         if (parsableNalUnitBitArray.readBit()) {
                             parsableNalUnitBitArray.skipBits(10);
                         }
                     }
-                    return new H265Sei3dRefDisplayInfoData(readUnsignedExpGolombCodedInt, readUnsignedExpGolombCodedInt2, readUnsignedExpGolombCodedInt3 + 1, i8, i9, i10, i11, i12, i13);
+                    return new H265Sei3dRefDisplayInfoData(readUnsignedExpGolombCodedInt, readUnsignedExpGolombCodedInt2, readUnsignedExpGolombCodedInt3 + 1, i9, i10, i11, i12, i13, i14);
+                } else {
+                    parsableNalUnitBitArray.skipBits(i8 * 8);
                 }
             }
         }

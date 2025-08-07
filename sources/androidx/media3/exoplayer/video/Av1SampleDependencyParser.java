@@ -4,7 +4,7 @@ import androidx.media3.container.ObuParser;
 import java.nio.ByteBuffer;
 import java.util.List;
 /* loaded from: classes2.dex */
-final class Av1SampleDependencyParser {
+public final class Av1SampleDependencyParser {
     private static final int MAX_OBU_COUNT_FOR_PARTIAL_SKIP = 8;
     private ObuParser.SequenceHeader sequenceHeader;
 

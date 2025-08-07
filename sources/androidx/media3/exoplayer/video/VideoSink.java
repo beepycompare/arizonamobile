@@ -7,7 +7,6 @@ import androidx.media3.common.Format;
 import androidx.media3.common.VideoSize;
 import androidx.media3.common.util.Size;
 import androidx.media3.common.util.TimestampIterator;
-import androidx.media3.exoplayer.Renderer;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -19,6 +18,16 @@ import java.util.concurrent.Executor;
 public interface VideoSink {
     public static final int INPUT_TYPE_BITMAP = 2;
     public static final int INPUT_TYPE_SURFACE = 1;
+    public static final int RELEASE_FIRST_FRAME_IMMEDIATELY = 0;
+    public static final int RELEASE_FIRST_FRAME_WHEN_PREVIOUS_STREAM_PROCESSED = 2;
+    public static final int RELEASE_FIRST_FRAME_WHEN_STARTED = 1;
+
+    @Target({ElementType.TYPE_USE})
+    @Documented
+    @Retention(RetentionPolicy.SOURCE)
+    /* loaded from: classes2.dex */
+    public @interface FirstFrameReleaseInstruction {
+    }
 
     @Target({ElementType.TYPE_USE})
     @Documented
@@ -30,30 +39,22 @@ public interface VideoSink {
     /* loaded from: classes2.dex */
     public interface Listener {
         public static final Listener NO_OP = new Listener() { // from class: androidx.media3.exoplayer.video.VideoSink.Listener.1
-            @Override // androidx.media3.exoplayer.video.VideoSink.Listener
-            public void onError(VideoSink videoSink, VideoSinkException videoSinkException) {
-            }
-
-            @Override // androidx.media3.exoplayer.video.VideoSink.Listener
-            public void onFirstFrameRendered(VideoSink videoSink) {
-            }
-
-            @Override // androidx.media3.exoplayer.video.VideoSink.Listener
-            public void onFrameDropped(VideoSink videoSink) {
-            }
-
-            @Override // androidx.media3.exoplayer.video.VideoSink.Listener
-            public void onVideoSizeChanged(VideoSink videoSink, VideoSize videoSize) {
-            }
         };
 
-        void onError(VideoSink videoSink, VideoSinkException videoSinkException);
+        default void onError(VideoSinkException videoSinkException) {
+        }
 
-        void onFirstFrameRendered(VideoSink videoSink);
+        default void onFirstFrameRendered() {
+        }
 
-        void onFrameDropped(VideoSink videoSink);
+        default void onFrameAvailableForRendering() {
+        }
 
-        void onVideoSizeChanged(VideoSink videoSink, VideoSize videoSize);
+        default void onFrameDropped() {
+        }
+
+        default void onVideoSizeChanged(VideoSize videoSize) {
+        }
     }
 
     /* loaded from: classes2.dex */
@@ -63,9 +64,9 @@ public interface VideoSink {
         void skip();
     }
 
-    void clearOutputSurfaceInfo();
+    void allowReleaseFirstFrameBeforeStarted();
 
-    void enableMayRenderStartOfStream();
+    void clearOutputSurfaceInfo();
 
     void flush(boolean z);
 
@@ -73,7 +74,7 @@ public interface VideoSink {
 
     boolean handleInputBitmap(Bitmap bitmap, TimestampIterator timestampIterator);
 
-    boolean handleInputFrame(long j, boolean z, VideoFrameHandler videoFrameHandler);
+    boolean handleInputFrame(long j, VideoFrameHandler videoFrameHandler);
 
     boolean initialize(Format format) throws VideoSinkException;
 
@@ -85,19 +86,15 @@ public interface VideoSink {
 
     void join(boolean z);
 
-    void onInputStreamChanged(int i, Format format, List<Effect> list);
+    void onInputStreamChanged(int i, Format format, long j, int i2, List<Effect> list);
 
-    void onRendererDisabled();
-
-    void onRendererEnabled(boolean z);
-
-    void onRendererStarted();
-
-    void onRendererStopped();
+    void redraw();
 
     void release();
 
     void render(long j, long j2) throws VideoSinkException;
+
+    void setBufferTimestampAdjustmentUs(long j);
 
     void setChangeFrameRateStrategy(int i);
 
@@ -107,17 +104,17 @@ public interface VideoSink {
 
     void setPlaybackSpeed(float f);
 
-    void setStreamTimestampInfo(long j, long j2);
-
     void setVideoEffects(List<Effect> list);
 
     void setVideoFrameMetadataListener(VideoFrameMetadataListener videoFrameMetadataListener);
 
-    void setWakeupListener(Renderer.WakeupListener wakeupListener);
-
     void signalEndOfCurrentInputStream();
 
     void signalEndOfInput();
+
+    void startRendering();
+
+    void stopRendering();
 
     /* loaded from: classes2.dex */
     public static final class VideoSinkException extends Exception {

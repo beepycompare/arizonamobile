@@ -47,22 +47,22 @@ public final class SavedStateDecoder extends AbstractDecoder {
 
     @Override // kotlinx.serialization.encoding.CompositeDecoder
     public int decodeElementIndex(SerialDescriptor descriptor) {
-        int m7660sizeimpl;
+        int m7675sizeimpl;
         Intrinsics.checkNotNullParameter(descriptor, "descriptor");
         if (Intrinsics.areEqual(descriptor.getKind(), StructureKind.LIST.INSTANCE) || Intrinsics.areEqual(descriptor.getKind(), StructureKind.MAP.INSTANCE)) {
-            m7660sizeimpl = SavedStateReader.m7660sizeimpl(SavedStateReader.m7580constructorimpl(this.savedState));
+            m7675sizeimpl = SavedStateReader.m7675sizeimpl(SavedStateReader.m7595constructorimpl(this.savedState));
         } else {
-            m7660sizeimpl = descriptor.getElementsCount();
+            m7675sizeimpl = descriptor.getElementsCount();
         }
         while (true) {
             int i = this.index;
-            if (i >= m7660sizeimpl || !descriptor.isElementOptional(i) || decodeElementIndex$presentInEncoding(this, descriptor, this.index)) {
+            if (i >= m7675sizeimpl || !descriptor.isElementOptional(i) || decodeElementIndex$presentInEncoding(this, descriptor, this.index)) {
                 break;
             }
             this.index++;
         }
         int i2 = this.index;
-        if (i2 < m7660sizeimpl) {
+        if (i2 < m7675sizeimpl) {
             this.key = descriptor.getElementName(i2);
             int i3 = this.index;
             this.index = i3 + 1;
@@ -72,94 +72,94 @@ public final class SavedStateDecoder extends AbstractDecoder {
     }
 
     private static final boolean decodeElementIndex$presentInEncoding(SavedStateDecoder savedStateDecoder, SerialDescriptor serialDescriptor, int i) {
-        return SavedStateReader.m7581containsimpl(SavedStateReader.m7580constructorimpl(savedStateDecoder.savedState), serialDescriptor.getElementName(i));
+        return SavedStateReader.m7596containsimpl(SavedStateReader.m7595constructorimpl(savedStateDecoder.savedState), serialDescriptor.getElementName(i));
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public boolean decodeBoolean() {
-        return SavedStateReader.m7589getBooleanimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7604getBooleanimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public byte decodeByte() {
-        return (byte) SavedStateReader.m7611getIntimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return (byte) SavedStateReader.m7626getIntimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public short decodeShort() {
-        return (short) SavedStateReader.m7611getIntimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return (short) SavedStateReader.m7626getIntimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public int decodeInt() {
-        return SavedStateReader.m7611getIntimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7626getIntimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public long decodeLong() {
-        return SavedStateReader.m7621getLongimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7636getLongimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public float decodeFloat() {
-        return SavedStateReader.m7607getFloatimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7622getFloatimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public double decodeDouble() {
-        return SavedStateReader.m7603getDoubleimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7618getDoubleimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public char decodeChar() {
-        return SavedStateReader.m7593getCharimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7608getCharimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public String decodeString() {
-        return SavedStateReader.m7651getStringimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7666getStringimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public int decodeEnum(SerialDescriptor enumDescriptor) {
         Intrinsics.checkNotNullParameter(enumDescriptor, "enumDescriptor");
-        return SavedStateReader.m7611getIntimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7626getIntimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     private final List<Integer> decodeIntList() {
-        return SavedStateReader.m7614getIntListimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7629getIntListimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     private final List<String> decodeStringList() {
-        return SavedStateReader.m7654getStringListimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7669getStringListimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     private final boolean[] decodeBooleanArray() {
-        return SavedStateReader.m7590getBooleanArrayimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7605getBooleanArrayimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     private final char[] decodeCharArray() {
-        return SavedStateReader.m7594getCharArrayimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7609getCharArrayimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     private final double[] decodeDoubleArray() {
-        return SavedStateReader.m7604getDoubleArrayimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7619getDoubleArrayimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     private final float[] decodeFloatArray() {
-        return SavedStateReader.m7608getFloatArrayimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7623getFloatArrayimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     private final int[] decodeIntArray() {
-        return SavedStateReader.m7612getIntArrayimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7627getIntArrayimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     private final long[] decodeLongArray() {
-        return SavedStateReader.m7622getLongArrayimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7637getLongArrayimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     private final String[] decodeStringArray() {
-        return SavedStateReader.m7652getStringArrayimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m7667getStringArrayimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
@@ -168,12 +168,12 @@ public final class SavedStateDecoder extends AbstractDecoder {
         if (Intrinsics.areEqual(this.key, "")) {
             return this;
         }
-        return new SavedStateDecoder(SavedStateReader.m7637getSavedStateimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key), this.configuration);
+        return new SavedStateDecoder(SavedStateReader.m7652getSavedStateimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key), this.configuration);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public boolean decodeNotNullMark() {
-        return !SavedStateReader.m7659isNullimpl(SavedStateReader.m7580constructorimpl(this.savedState), this.key);
+        return !SavedStateReader.m7674isNullimpl(SavedStateReader.m7595constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder

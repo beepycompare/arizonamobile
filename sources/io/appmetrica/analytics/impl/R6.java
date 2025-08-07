@@ -15,8 +15,8 @@ import kotlin.ranges.RangesKt;
 public final class R6 implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0542qm[] fromModel(Map<String, ? extends List<String>> map) {
-        C0542qm[] c0542qmArr = new C0542qm[map.size()];
+    public final C0543qm[] fromModel(Map<String, ? extends List<String>> map) {
+        C0543qm[] c0543qmArr = new C0543qm[map.size()];
         int i = 0;
         for (Object obj : map.entrySet()) {
             int i2 = i + 1;
@@ -24,26 +24,26 @@ public final class R6 implements Converter {
                 CollectionsKt.throwIndexOverflow();
             }
             Map.Entry entry = (Map.Entry) obj;
-            C0542qm c0542qm = new C0542qm();
-            c0542qm.f1024a = (String) entry.getKey();
+            C0543qm c0543qm = new C0543qm();
+            c0543qm.f1023a = (String) entry.getKey();
             Object[] array = ((Collection) entry.getValue()).toArray(new String[0]);
             if (array != null) {
-                c0542qm.b = (String[]) array;
-                c0542qmArr[i] = c0542qm;
+                c0543qm.b = (String[]) array;
+                c0543qmArr[i] = c0543qm;
                 i = i2;
             } else {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
             }
         }
-        return c0542qmArr;
+        return c0543qmArr;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Map<String, List<String>> toModel(C0542qm[] c0542qmArr) {
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(c0542qmArr.length), 16));
-        for (C0542qm c0542qm : c0542qmArr) {
-            Pair pair = TuplesKt.to(c0542qm.f1024a, ArraysKt.toList(c0542qm.b));
+    public final Map<String, List<String>> toModel(C0543qm[] c0543qmArr) {
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(c0543qmArr.length), 16));
+        for (C0543qm c0543qm : c0543qmArr) {
+            Pair pair = TuplesKt.to(c0543qm.f1023a, ArraysKt.toList(c0543qm.b));
             linkedHashMap.put(pair.getFirst(), pair.getSecond());
         }
         return linkedHashMap;

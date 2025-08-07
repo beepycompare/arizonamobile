@@ -34,7 +34,7 @@ public class TransportRegistrar implements ComponentRegistrar {
             public final Object create(ComponentContainer componentContainer) {
                 return TransportRegistrar.lambda$getComponents$2(componentContainer);
             }
-        }).build(), LibraryVersionComponent.create(LIBRARY_NAME, BuildConfig.VERSION_NAME));
+        }).build(), LibraryVersionComponent.create(LIBRARY_NAME, "19.0.0"));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

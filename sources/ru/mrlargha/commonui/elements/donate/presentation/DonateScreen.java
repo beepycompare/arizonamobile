@@ -60,7 +60,7 @@ import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: DonateScreen.kt */
-@Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0002=>B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020\"H\u0016J\u0018\u0010*\u001a\u00020(2\u0006\u0010+\u001a\u00020\u001b2\u0006\u0010,\u001a\u00020\u0006H\u0016J\b\u0010-\u001a\u00020(H\u0002J\u0010\u0010.\u001a\u00020(2\u0006\u0010/\u001a\u000200H\u0002J\b\u00101\u001a\u00020(H\u0002J\b\u00102\u001a\u000203H\u0002J\b\u00104\u001a\u00020(H\u0002J\u0010\u00105\u001a\u00020(2\u0006\u0010/\u001a\u00020%H\u0002J\u0010\u00106\u001a\u00020(2\u0006\u0010/\u001a\u000207H\u0002J\u0014\u00108\u001a\u00020(2\n\b\u0002\u0010/\u001a\u0004\u0018\u000109H\u0002J\u0010\u0010:\u001a\u00020(2\u0006\u0010;\u001a\u00020\u0010H\u0002J\b\u0010<\u001a\u00020(H\u0016R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020\u00110\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u000b*\u0004\u0018\u00010\u00180\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001c\u001a\u00020\u001b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001eR\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u0004\u0018\u00010%X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006?"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/DonateScreenBinding;", "pages", "", "Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen$Pages;", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePage;", "currentPage", "categoryAdapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "sharedPref", "Landroid/content/SharedPreferences;", "serverId", "_token", "", "token", "getToken", "()Ljava/lang/String;", "states", "Lru/mrlargha/commonui/elements/donate/presentation/DonateStates;", "isHasUpdate", "", "isChangeCategory", "dialogModel", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "x", "setVisibility", "", "visible", "onBackendMessage", "data", "subId", "checkArizonaType", "initDopInfo", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateScreenModel;", "initAdapters", "setupCollectors", "Lkotlinx/coroutines/Job;", "setupListeners", "sendDialogData", "onCategoryClick", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "openReverseDialog", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "setPage", "page", "itemReadyToShow", "Pages", "Spawner", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0002=>B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020\"H\u0016J\u0018\u0010*\u001a\u00020(2\u0006\u0010+\u001a\u00020\u001b2\u0006\u0010,\u001a\u00020\u0006H\u0016J\b\u0010-\u001a\u00020(H\u0002J\u0010\u0010.\u001a\u00020(2\u0006\u0010/\u001a\u000200H\u0002J\b\u00101\u001a\u00020(H\u0002J\b\u00102\u001a\u000203H\u0002J\b\u00104\u001a\u00020(H\u0002J\u0010\u00105\u001a\u00020(2\u0006\u0010/\u001a\u00020%H\u0002J\u0010\u00106\u001a\u00020(2\u0006\u0010/\u001a\u000207H\u0002J\u0014\u00108\u001a\u00020(2\n\b\u0002\u0010/\u001a\u0004\u0018\u000109H\u0002J\u0010\u0010:\u001a\u00020(2\u0006\u0010;\u001a\u00020\u0010H\u0002J\b\u0010<\u001a\u00020(H\u0016R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020\u00110\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u000b*\u0004\u0018\u00010\u00180\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001c\u001a\u00020\u001b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001eR\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u0004\u0018\u00010%X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006?"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/DonateScreenBinding;", "pages", "", "Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen$Pages;", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePage;", "currentPage", "categoryAdapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "sharedPref", "Landroid/content/SharedPreferences;", "serverId", "_token", "", "token", "getToken", "()Ljava/lang/String;", "states", "Lru/mrlargha/commonui/elements/donate/presentation/DonateStates;", "isHasUpdate", "", "isChangeCategory", "dialogModel", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "x", "setVisibility", "", "visible", "onBackendMessage", "data", "subId", "checkArizonaType", "initDopInfo", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateScreenModel;", "initAdapters", "setupCollectors", "Lkotlinx/coroutines/Job;", "setupListeners", "sendDialogData", "onCategoryClick", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "openReverseDialog", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "setPage", "page", "itemReadyToShow", "Pages", "Spawner", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DonateScreen extends SAMPUIElement implements DonateOnItemCompleteListeners {
     private final String _token;
@@ -75,7 +75,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     private final View screen;
     private final int serverId;
     private final SharedPreferences sharedPref;
-    private final DonateStates states;
+    private DonateStates states;
     private int x;
 
     /* compiled from: DonateScreen.kt */
@@ -157,15 +157,13 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
                 return pages$lambda$3;
             }
         })));
-        this.currentPage = Pages.MAIN;
+        this.currentPage = Pages.NONE;
         this.categoryAdapter = new DonateCategoryAdapter(new DonateScreen$categoryAdapter$1(this));
         this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO());
         SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
         this.sharedPref = sharedPreferences;
-        int i2 = sharedPreferences.getInt("server_id", 0);
-        this.serverId = i2;
+        this.serverId = sharedPreferences.getInt("server_id", 0);
         this._token = sharedPreferences.getString("api_token", "");
-        this.states = new DonateStates(getToken(), i2, UtilsKt.getArizonaType(targetActivity) ? BuildConfig.FLAVOR : "rodina");
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
         addViewToConstraintLayout(screen, -1, -1);
         checkArizonaType();
@@ -205,7 +203,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     public void setVisibility(boolean z) {
         super.setVisibility(z);
         if (z) {
-            Log.i(DonateUtilsKt.DONATE_TAG, "setVisibility: " + z);
+            this.states = new DonateStates(getToken(), this.serverId, UtilsKt.getArizonaType(getTargetActivity()) ? BuildConfig.FLAVOR : "rodina");
             this.isHasUpdate = false;
             this.categoryAdapter.refreshSelectItem();
             initAdapters();
@@ -213,18 +211,27 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
             setupListeners();
             return;
         }
-        this.states.clearJobs();
+        DonateStates donateStates = this.states;
+        if (donateStates != null) {
+            donateStates.clearJobs();
+        }
+        this.states = null;
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void onBackendMessage(String data, int i) {
+        DonateStates donateStates;
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == DonateSubIds.UPDATE_CATEGORY_LIST.getSubIds()) {
-            this.states.updateCategories((DonateCategoryModel) MapperKt.toModel(data, DonateCategoryModel.class));
-        } else if (i == DonateSubIds.UPDATE_ITEM_LIST.getSubIds()) {
-            if (data.length() > 0) {
-                this.states.updateItems((DonateItemModel) MapperKt.toModel(data, DonateItemModel.class), this.isHasUpdate);
+            DonateStates donateStates2 = this.states;
+            if (donateStates2 != null) {
+                donateStates2.updateCategories((DonateCategoryModel) MapperKt.toModel(data, DonateCategoryModel.class));
             }
+        } else if (i == DonateSubIds.UPDATE_ITEM_LIST.getSubIds()) {
+            if (data.length() <= 0 || (donateStates = this.states) == null) {
+                return;
+            }
+            donateStates.updateItems((DonateItemModel) MapperKt.toModel(data, DonateItemModel.class), this.isHasUpdate);
         } else if (i == DonateSubIds.GET_DOP_INFO.getSubIds()) {
             initDopInfo((DonateScreenModel) MapperKt.toModel(data, DonateScreenModel.class));
         }
@@ -272,7 +279,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     }
 
     private final void setupListeners() {
-        DonateScreenBinding donateScreenBinding = this.binding;
+        final DonateScreenBinding donateScreenBinding = this.binding;
         donateScreenBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -288,13 +295,13 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         donateScreenBinding.topBar.btnAddMoney.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateScreen.setupListeners$lambda$13$lambda$10(DonateScreen.this, view);
+                DonateScreen.setupListeners$lambda$13$lambda$10(DonateScreenBinding.this, this, view);
             }
         });
         donateScreenBinding.topBar.btnAddAzCoins.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateScreen.setupListeners$lambda$13$lambda$11(DonateScreen.this, view);
+                DonateScreen.setupListeners$lambda$13$lambda$11(DonateScreenBinding.this, this, view);
             }
         });
         donateScreenBinding.topBar.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda8
@@ -311,19 +318,38 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$13$lambda$10(DonateScreen donateScreen, View view) {
-        donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 1, 2);
-        donateScreen.openReverseDialog(null);
+    public static final void setupListeners$lambda$13$lambda$10(DonateScreenBinding donateScreenBinding, DonateScreen donateScreen, View view) {
+        FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
+        Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
+        if (pagesContainer.getVisibility() == 0) {
+            donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 1, 2);
+            donateScreen.openReverseDialog(null);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$13$lambda$11(DonateScreen donateScreen, View view) {
-        donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 2, 2);
-        donateScreen.setPage(Pages.PURCHASE);
-        int i = UtilsKt.getArizonaType(donateScreen.getTargetActivity()) ? 10 : 12;
-        donateScreen.categoryAdapter.rateCategory();
-        donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), i, 4);
-        donateScreen.states.setItemsArizona(i, false);
+    public static final void setupListeners$lambda$13$lambda$11(DonateScreenBinding donateScreenBinding, DonateScreen donateScreen, View view) {
+        FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
+        Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
+        if (pagesContainer.getVisibility() == 0) {
+            donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 2, 2);
+            donateScreen.setPage(Pages.PURCHASE);
+            int i = UtilsKt.getArizonaType(donateScreen.getTargetActivity()) ? 10 : 13;
+            donateScreen.categoryAdapter.rateCategory();
+            donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), i, 4);
+            if (UtilsKt.getArizonaType(donateScreen.getTargetActivity())) {
+                DonateStates donateStates = donateScreen.states;
+                if (donateStates != null) {
+                    donateStates.setItemsArizona(i, false);
+                    return;
+                }
+                return;
+            }
+            DonateStates donateStates2 = donateScreen.states;
+            if (donateStates2 != null) {
+                donateStates2.setItemsRodina(i, false, false);
+            }
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -356,7 +382,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         this.isChangeCategory = true;
         getNotifier().clickedWrapper(getBackendID(), donateCategoryModelUi.getId(), 4);
         BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$onCategoryClick$1$1(this, donateCategoryModelUi, null), 3, null);
-        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m10610getGridTemplateType().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m10631getGridTemplateType().ordinal()];
         if (i == 1) {
             setPage(Pages.MAIN);
         } else if (i == 2) {

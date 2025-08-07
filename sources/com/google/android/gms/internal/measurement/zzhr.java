@@ -2,9 +2,9 @@ package com.google.android.gms.internal.measurement;
 
 import java.util.Collections;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzhr extends zzma implements zznm {
+public final class zzhr extends zzmb implements zznn {
     private zzhr() {
         throw null;
     }
@@ -17,7 +17,7 @@ public final class zzhr extends zzma implements zznm {
     public /* synthetic */ zzhr(byte[] bArr) {
         super(r1);
         zzhs zzhsVar;
-        zzhsVar = zzhs.zzi;
+        zzhsVar = zzhs.zzj;
     }
 
     public final List zza() {
@@ -105,6 +105,12 @@ public final class zzhr extends zzma implements zznm {
     public final zzhr zzq(long j) {
         zzaX();
         ((zzhs) this.zza).zzt(j);
+        return this;
+    }
+
+    public final zzhr zzr(long j) {
+        zzaX();
+        ((zzhs) this.zza).zzu(j);
         return this;
     }
 }

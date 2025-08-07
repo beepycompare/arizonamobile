@@ -3,16 +3,16 @@ package com.google.android.gms.measurement;
 import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.content.Intent;
-import com.google.android.gms.measurement.internal.zzno;
-import com.google.android.gms.measurement.internal.zzns;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+import com.google.android.gms.measurement.internal.zznp;
+import com.google.android.gms.measurement.internal.zznt;
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class AppMeasurementJobService extends JobService implements zzno {
-    private zzns zza;
+public final class AppMeasurementJobService extends JobService implements zznp {
+    private zznt zza;
 
-    private final zzns zzd() {
+    private final zznt zzd() {
         if (this.zza == null) {
-            this.zza = new zzns(this);
+            this.zza = new zznt(this);
         }
         return this.zza;
     }
@@ -32,7 +32,7 @@ public final class AppMeasurementJobService extends JobService implements zzno {
     @Override // android.app.Service
     public void onRebind(Intent intent) {
         zzd();
-        zzns.zzi(intent);
+        zznt.zzi(intent);
     }
 
     @Override // android.app.job.JobService
@@ -49,21 +49,21 @@ public final class AppMeasurementJobService extends JobService implements zzno {
     @Override // android.app.Service
     public boolean onUnbind(Intent intent) {
         zzd();
-        zzns.zzj(intent);
+        zznt.zzj(intent);
         return true;
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzno
+    @Override // com.google.android.gms.measurement.internal.zznp
     public final boolean zza(int i) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzno
+    @Override // com.google.android.gms.measurement.internal.zznp
     public final void zzb(JobParameters jobParameters, boolean z) {
         jobFinished(jobParameters, false);
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzno
+    @Override // com.google.android.gms.measurement.internal.zznp
     public final void zzc(Intent intent) {
     }
 }

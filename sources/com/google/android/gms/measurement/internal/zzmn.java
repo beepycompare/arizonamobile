@@ -1,51 +1,39 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Bundle;
 import android.os.RemoteException;
-import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzmn implements Runnable {
-    final /* synthetic */ zzr zza;
-    final /* synthetic */ boolean zzb;
-    final /* synthetic */ zzbe zzc;
-    final /* synthetic */ Bundle zzd;
-    final /* synthetic */ zznk zze;
+    final /* synthetic */ zzlu zza;
+    final /* synthetic */ zznl zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzmn(zznk zznkVar, boolean z, zzr zzrVar, boolean z2, zzbe zzbeVar, Bundle bundle) {
-        this.zza = zzrVar;
-        this.zzb = z2;
-        this.zzc = zzbeVar;
-        this.zzd = bundle;
-        Objects.requireNonNull(zznkVar);
-        this.zze = zznkVar;
+    public zzmn(zznl zznlVar, zzlu zzluVar) {
+        this.zza = zzluVar;
+        Objects.requireNonNull(zznlVar);
+        this.zzb = zznlVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zznk zznkVar = this.zze;
-        zzga zzZ = zznkVar.zzZ();
+        zznl zznlVar = this.zzb;
+        zzgb zzZ = zznlVar.zzZ();
         if (zzZ == null) {
-            zznkVar.zzu.zzaV().zzb().zza("Failed to send default event parameters to service");
+            zznlVar.zzu.zzaV().zzb().zza("Failed to send current screen to service");
             return;
         }
-        if (!zznkVar.zzu.zzc().zzp(null, zzfx.zzbc)) {
-            try {
-                zzr zzrVar = this.zza;
-                Preconditions.checkNotNull(zzrVar);
-                zzZ.zzu(this.zzd, zzrVar);
-                zznkVar.zzV();
-                return;
-            } catch (RemoteException e) {
-                this.zze.zzu.zzaV().zzb().zzb("Failed to send default event parameters to service", e);
-                return;
+        try {
+            zzlu zzluVar = this.zza;
+            if (zzluVar == null) {
+                zzZ.zzl(0L, null, null, zznlVar.zzu.zzaY().getPackageName());
+            } else {
+                zzZ.zzl(zzluVar.zzc, zzluVar.zza, zzluVar.zzb, zznlVar.zzu.zzaY().getPackageName());
             }
+            zznlVar.zzV();
+        } catch (RemoteException e) {
+            this.zzb.zzu.zzaV().zzb().zzb("Failed to send current screen to the service", e);
         }
-        zzr zzrVar2 = this.zza;
-        Preconditions.checkNotNull(zzrVar2);
-        this.zze.zzm(zzZ, this.zzb ? null : this.zzc, zzrVar2);
     }
 }

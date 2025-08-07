@@ -37,9 +37,8 @@ public final class MediaPeriodHolder {
     private TrackSelectorResult trackSelectorResult;
     public final Object uid;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes2.dex */
-    public interface Factory {
+    interface Factory {
         MediaPeriodHolder create(MediaPeriodInfo mediaPeriodInfo, long j);
     }
 

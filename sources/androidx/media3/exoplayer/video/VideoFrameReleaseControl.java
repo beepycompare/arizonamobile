@@ -22,6 +22,7 @@ public final class VideoFrameReleaseControl {
     public static final int FRAME_RELEASE_TRY_AGAIN_LATER = 5;
     private static final long MAX_EARLY_US_THRESHOLD = 50000;
     private final long allowedJoiningTimeMs;
+    private boolean disableAdvancingTimestampChecks;
     private boolean frameReadyWithoutSurface;
     private final VideoFrameReleaseHelper frameReleaseHelper;
     private final FrameTimingEvaluator frameTimingEvaluator;
@@ -78,12 +79,16 @@ public final class VideoFrameReleaseControl {
         this.frameReleaseHelper = new VideoFrameReleaseHelper(context);
     }
 
-    public void onEnabled(boolean z) {
-        this.firstFrameState = z ? 1 : 0;
-    }
-
-    public void onDisabled() {
-        lowerFirstFrameState(0);
+    public void onStreamChanged(int i) {
+        if (i == 0) {
+            this.firstFrameState = 1;
+        } else if (i == 1) {
+            this.firstFrameState = 0;
+        } else if (i == 2) {
+            lowerFirstFrameState(2);
+        } else {
+            throw new IllegalStateException();
+        }
     }
 
     public void onStarted() {
@@ -96,10 +101,6 @@ public final class VideoFrameReleaseControl {
         this.started = false;
         this.joiningDeadlineMs = C.TIME_UNSET;
         this.frameReleaseHelper.onStopped();
-    }
-
-    public void onProcessedStreamChange() {
-        lowerFirstFrameState(2);
     }
 
     public void setOutputSurface(Surface surface) {
@@ -152,7 +153,7 @@ public final class VideoFrameReleaseControl {
 
     public int getFrameReleaseAction(long j, long j2, long j3, long j4, boolean z, boolean z2, FrameReleaseInfo frameReleaseInfo) throws ExoPlaybackException {
         frameReleaseInfo.reset();
-        if (this.initialPositionUs == C.TIME_UNSET) {
+        if (this.started && this.initialPositionUs == C.TIME_UNSET) {
             this.initialPositionUs = j2;
         }
         if (this.lastPresentationTimeUs != j) {
@@ -207,6 +208,11 @@ public final class VideoFrameReleaseControl {
         this.frameReleaseHelper.onPlaybackSpeed(f);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void experimentalDisableAdvancingTimestampChecks() {
+        this.disableAdvancingTimestampChecks = true;
+    }
+
     private void lowerFirstFrameState(int i) {
         this.firstFrameState = Math.min(this.firstFrameState, i);
     }
@@ -216,6 +222,12 @@ public final class VideoFrameReleaseControl {
         return this.started ? j4 - (Util.msToUs(this.clock.elapsedRealtime()) - j2) : j4;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x003b, code lost:
+        if (r5 != r8) goto L23;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private boolean shouldForceRelease(long j, long j2, long j3) {
         if (this.joiningDeadlineMs == C.TIME_UNSET || this.joiningRenderNextFrameImmediately) {
             int i = this.firstFrameState;
@@ -224,7 +236,18 @@ public final class VideoFrameReleaseControl {
                     if (i == 2) {
                         return j >= j3;
                     } else if (i == 3) {
-                        return this.started && this.frameTimingEvaluator.shouldForceReleaseFrame(j2, Util.msToUs(this.clock.elapsedRealtime()) - this.lastReleaseRealtimeUs);
+                        long msToUs = Util.msToUs(this.clock.elapsedRealtime()) - this.lastReleaseRealtimeUs;
+                        if (this.started) {
+                            if (!this.disableAdvancingTimestampChecks) {
+                                long j4 = this.initialPositionUs;
+                                if (j4 != C.TIME_UNSET) {
+                                }
+                            }
+                            if (this.frameTimingEvaluator.shouldForceReleaseFrame(j2, msToUs)) {
+                                return true;
+                            }
+                        }
+                        return false;
                     } else {
                         throw new IllegalStateException();
                     }

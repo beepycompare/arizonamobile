@@ -12,10 +12,10 @@ public final class R {
         public static int btn_telegram = 0x7f0804a1;
         public static int btn_vk = 0x7f0804a7;
         public static int messenger_ic = 0x7f0809fe;
-        public static int news_item_arrow = 0x7f080ab8;
-        public static int server_button_arrow = 0x7f080c33;
-        public static int shop_notificaiotns_bg = 0x7f080c4c;
-        public static int update_home_screen = 0x7f080cda;
+        public static int news_item_arrow = 0x7f080ab9;
+        public static int server_button_arrow = 0x7f080c34;
+        public static int shop_notificaiotns_bg = 0x7f080c4d;
+        public static int update_home_screen = 0x7f080cdb;
 
         private drawable() {
         }

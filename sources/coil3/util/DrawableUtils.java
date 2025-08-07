@@ -34,8 +34,8 @@ public final class DrawableUtils {
         }
         int height = Utils_androidKt.getHeight(mutate);
         int i = height > 0 ? height : 512;
-        long m7773computeDstSizesEdh43o = DecodeUtils.m7773computeDstSizesEdh43o(width, i, size, scale, Size.ORIGINAL);
-        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, i, IntPair.m7831getFirstimpl(m7773computeDstSizesEdh43o), IntPair.m7832getSecondimpl(m7773computeDstSizesEdh43o), scale);
+        long m7788computeDstSizesEdh43o = DecodeUtils.m7788computeDstSizesEdh43o(width, i, size, scale, Size.ORIGINAL);
+        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(width, i, IntPair.m7846getFirstimpl(m7788computeDstSizesEdh43o), IntPair.m7847getSecondimpl(m7788computeDstSizesEdh43o), scale);
         int roundToInt = MathKt.roundToInt(width * computeSizeMultiplier);
         int roundToInt2 = MathKt.roundToInt(computeSizeMultiplier * i);
         Bitmap createBitmap = Bitmap.createBitmap(roundToInt, roundToInt2, BitmapsKt.toSoftware(config));
@@ -58,7 +58,7 @@ public final class DrawableUtils {
         if (z) {
             return true;
         }
-        long m7773computeDstSizesEdh43o = DecodeUtils.m7773computeDstSizesEdh43o(bitmap.getWidth(), bitmap.getHeight(), size, scale, Size.ORIGINAL);
-        return DecodeUtils.computeSizeMultiplier(bitmap.getWidth(), bitmap.getHeight(), IntPair.m7831getFirstimpl(m7773computeDstSizesEdh43o), IntPair.m7832getSecondimpl(m7773computeDstSizesEdh43o), scale) == 1.0d;
+        long m7788computeDstSizesEdh43o = DecodeUtils.m7788computeDstSizesEdh43o(bitmap.getWidth(), bitmap.getHeight(), size, scale, Size.ORIGINAL);
+        return DecodeUtils.computeSizeMultiplier(bitmap.getWidth(), bitmap.getHeight(), IntPair.m7846getFirstimpl(m7788computeDstSizesEdh43o), IntPair.m7847getSecondimpl(m7788computeDstSizesEdh43o), scale) == 1.0d;
     }
 }

@@ -90,7 +90,7 @@ public final class CatalogScreen extends SAMPUIElement {
         if (this.catalogAdapter.removeItemById(i)) {
             return;
         }
-        Toast.makeText(getTargetActivity(), "Не удалось удалить!", 0).show();
+        Toast.makeText(getTargetActivity().getApplicationContext(), "Не удалось удалить!", 0).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

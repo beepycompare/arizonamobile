@@ -1,7 +1,7 @@
 package com.google.android.gms.measurement.internal;
 
-import com.google.android.gms.internal.measurement.zzqx;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+import com.google.android.gms.internal.measurement.zzqs;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 final /* synthetic */ class zzfv implements zzbn {
     static final /* synthetic */ zzfv zza = new zzfv();
@@ -11,6 +11,6 @@ final /* synthetic */ class zzfv implements zzbn {
 
     @Override // com.google.android.gms.measurement.internal.zzbn
     public final /* synthetic */ Object zza() {
-        return new Boolean(zzqx.zza());
+        return new Boolean(zzqs.zza());
     }
 }

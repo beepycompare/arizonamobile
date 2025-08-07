@@ -13,6 +13,7 @@ import com.google.firebase.components.Component;
 import com.google.firebase.components.ComponentContainer;
 import com.google.firebase.components.ComponentFactory;
 import com.google.firebase.components.Dependency;
+import com.google.firebase.components.Lazy;
 import com.google.firebase.components.Qualified;
 import com.google.firebase.heartbeatinfo.HeartBeatInfo;
 import com.google.firebase.inject.Provider;
@@ -44,14 +45,14 @@ public class DefaultHeartBeatController implements HeartBeatController, HeartBea
         return Tasks.call(this.backgroundExecutor, new Callable() { // from class: com.google.firebase.heartbeatinfo.DefaultHeartBeatController$$ExternalSyntheticLambda3
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return DefaultHeartBeatController.this.m8252x734756b4();
+                return DefaultHeartBeatController.this.m8268x734756b4();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$registerHeartBeat$0$com-google-firebase-heartbeatinfo-DefaultHeartBeatController  reason: not valid java name */
-    public /* synthetic */ Void m8252x734756b4() throws Exception {
+    public /* synthetic */ Void m8268x734756b4() throws Exception {
         synchronized (this) {
             this.storageProvider.get().storeHeartBeat(System.currentTimeMillis(), this.userAgentProvider.get().getUserAgent());
         }
@@ -66,14 +67,14 @@ public class DefaultHeartBeatController implements HeartBeatController, HeartBea
         return Tasks.call(this.backgroundExecutor, new Callable() { // from class: com.google.firebase.heartbeatinfo.DefaultHeartBeatController$$ExternalSyntheticLambda1
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return DefaultHeartBeatController.this.m8251x341e14f2();
+                return DefaultHeartBeatController.this.m8267x341e14f2();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getHeartBeatsHeader$1$com-google-firebase-heartbeatinfo-DefaultHeartBeatController  reason: not valid java name */
-    public /* synthetic */ String m8251x341e14f2() throws Exception {
+    public /* synthetic */ String m8267x341e14f2() throws Exception {
         String byteArrayOutputStream;
         synchronized (this) {
             HeartBeatInfoStorage heartBeatInfoStorage = this.storageProvider.get();
@@ -111,12 +112,12 @@ public class DefaultHeartBeatController implements HeartBeatController, HeartBea
     }
 
     private DefaultHeartBeatController(final Context context, final String str, Set<HeartBeatConsumer> set, Provider<UserAgentPublisher> provider, Executor executor) {
-        this(new Provider() { // from class: com.google.firebase.heartbeatinfo.DefaultHeartBeatController$$ExternalSyntheticLambda0
+        this(new Lazy(new Provider() { // from class: com.google.firebase.heartbeatinfo.DefaultHeartBeatController$$ExternalSyntheticLambda0
             @Override // com.google.firebase.inject.Provider
             public final Object get() {
                 return DefaultHeartBeatController.lambda$new$2(context, str);
             }
-        }, set, executor, provider, context);
+        }), set, executor, provider, context);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

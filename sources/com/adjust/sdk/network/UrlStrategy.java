@@ -1,6 +1,7 @@
 package com.adjust.sdk.network;
 
 import com.adjust.sdk.ActivityKind;
+import com.adjust.sdk.AdjustFactory;
 import com.adjust.sdk.Constants;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -125,7 +126,7 @@ public class UrlStrategy {
     public boolean shouldRetryAfterFailure(ActivityKind activityKind) {
         int size;
         this.wasLastAttemptSuccess = false;
-        if (this.wasLastAttemptWithOverwrittenUrl) {
+        if (AdjustFactory.isAllowUrlStrategyFallback() && this.wasLastAttemptWithOverwrittenUrl) {
             return false;
         }
         if (activityKind == ActivityKind.GDPR) {

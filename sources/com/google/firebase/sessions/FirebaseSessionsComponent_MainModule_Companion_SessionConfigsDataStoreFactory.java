@@ -2,29 +2,32 @@ package com.google.firebase.sessions;
 
 import android.content.Context;
 import androidx.datastore.core.DataStore;
-import androidx.datastore.preferences.core.Preferences;
 import com.google.firebase.sessions.FirebaseSessionsComponent;
 import com.google.firebase.sessions.dagger.internal.Factory;
 import com.google.firebase.sessions.dagger.internal.Preconditions;
+import com.google.firebase.sessions.settings.SessionConfigs;
 import javax.inject.Provider;
+import kotlin.coroutines.CoroutineContext;
 /* loaded from: classes4.dex */
-public final class FirebaseSessionsComponent_MainModule_Companion_SessionConfigsDataStoreFactory implements Factory<DataStore<Preferences>> {
+public final class FirebaseSessionsComponent_MainModule_Companion_SessionConfigsDataStoreFactory implements Factory<DataStore<SessionConfigs>> {
     private final Provider<Context> appContextProvider;
+    private final Provider<CoroutineContext> blockingDispatcherProvider;
 
-    public FirebaseSessionsComponent_MainModule_Companion_SessionConfigsDataStoreFactory(Provider<Context> provider) {
+    public FirebaseSessionsComponent_MainModule_Companion_SessionConfigsDataStoreFactory(Provider<Context> provider, Provider<CoroutineContext> provider2) {
         this.appContextProvider = provider;
+        this.blockingDispatcherProvider = provider2;
     }
 
     @Override // javax.inject.Provider, jakarta.inject.Provider
-    public DataStore<Preferences> get() {
-        return sessionConfigsDataStore(this.appContextProvider.get());
+    public DataStore<SessionConfigs> get() {
+        return sessionConfigsDataStore(this.appContextProvider.get(), this.blockingDispatcherProvider.get());
     }
 
-    public static FirebaseSessionsComponent_MainModule_Companion_SessionConfigsDataStoreFactory create(Provider<Context> provider) {
-        return new FirebaseSessionsComponent_MainModule_Companion_SessionConfigsDataStoreFactory(provider);
+    public static FirebaseSessionsComponent_MainModule_Companion_SessionConfigsDataStoreFactory create(Provider<Context> provider, Provider<CoroutineContext> provider2) {
+        return new FirebaseSessionsComponent_MainModule_Companion_SessionConfigsDataStoreFactory(provider, provider2);
     }
 
-    public static DataStore<Preferences> sessionConfigsDataStore(Context context) {
-        return (DataStore) Preconditions.checkNotNullFromProvides(FirebaseSessionsComponent.MainModule.Companion.sessionConfigsDataStore(context));
+    public static DataStore<SessionConfigs> sessionConfigsDataStore(Context context, CoroutineContext coroutineContext) {
+        return (DataStore) Preconditions.checkNotNullFromProvides(FirebaseSessionsComponent.MainModule.Companion.sessionConfigsDataStore(context, coroutineContext));
     }
 }

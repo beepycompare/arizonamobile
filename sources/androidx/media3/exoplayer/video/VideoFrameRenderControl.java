@@ -1,9 +1,11 @@
 package androidx.media3.exoplayer.video;
 
+import androidx.collection.SieveCacheKt;
 import androidx.media3.common.C;
 import androidx.media3.common.VideoSize;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.LongArrayQueue;
+import androidx.media3.common.util.SystemClock;
 import androidx.media3.common.util.TimedValueQueue;
 import androidx.media3.exoplayer.ExoPlaybackException;
 import androidx.media3.exoplayer.video.VideoFrameReleaseControl;
@@ -42,7 +44,7 @@ final class VideoFrameRenderControl {
         this.latestOutputPresentationTimeUs = C.TIME_UNSET;
         this.lastPresentationTimeUs = C.TIME_UNSET;
         if (this.streamStartPositionsUs.size() > 0) {
-            this.streamStartPositionsUs.add(0L, Long.valueOf(((Long) getLastAndClear(this.streamStartPositionsUs)).longValue()));
+            this.outputStreamStartPositionUs = ((Long) getLastAndClear(this.streamStartPositionsUs)).longValue();
         }
         if (this.videoSizes.size() > 0) {
             this.videoSizes.add(0L, (VideoSize) getLastAndClear(this.videoSizes));
@@ -52,8 +54,8 @@ final class VideoFrameRenderControl {
     public void render(long j, long j2) throws ExoPlaybackException {
         while (!this.presentationTimestampsUs.isEmpty()) {
             long element = this.presentationTimestampsUs.element();
-            if (maybeUpdateOutputStreamStartPosition(element)) {
-                this.videoFrameReleaseControl.onProcessedStreamChange();
+            if (maybeUpdateOutputStream(element)) {
+                this.videoFrameReleaseControl.onStreamChanged(2);
             }
             int frameReleaseAction = this.videoFrameReleaseControl.getFrameReleaseAction(element, j, j2, this.outputStreamStartPositionUs, false, false, this.videoFrameReleaseInfo);
             if (frameReleaseAction == 0 || frameReleaseAction == 1) {
@@ -79,10 +81,15 @@ final class VideoFrameRenderControl {
         timedValueQueue.add(j == C.TIME_UNSET ? 0L : j + 1, new VideoSize(i, i2));
     }
 
-    public void onStreamStartPositionChanged(long j) {
+    public void onStreamChanged(int i, long j) {
+        if (this.presentationTimestampsUs.isEmpty()) {
+            this.videoFrameReleaseControl.onStreamChanged(i);
+            this.outputStreamStartPositionUs = j;
+            return;
+        }
         TimedValueQueue<Long> timedValueQueue = this.streamStartPositionsUs;
         long j2 = this.latestInputPresentationTimeUs;
-        timedValueQueue.add(j2 == C.TIME_UNSET ? 0L : j2 + 1, Long.valueOf(j));
+        timedValueQueue.add(j2 == C.TIME_UNSET ? SieveCacheKt.NodeMetaMask : j2 + 1, Long.valueOf(j));
     }
 
     public void onFrameAvailableForRendering(long j) {
@@ -92,6 +99,10 @@ final class VideoFrameRenderControl {
     }
 
     public void signalEndOfInput() {
+        if (this.latestInputPresentationTimeUs == C.TIME_UNSET) {
+            this.latestInputPresentationTimeUs = Long.MIN_VALUE;
+            this.latestOutputPresentationTimeUs = Long.MIN_VALUE;
+        }
         this.lastPresentationTimeUs = this.latestInputPresentationTimeUs;
     }
 
@@ -106,14 +117,20 @@ final class VideoFrameRenderControl {
     }
 
     private void renderFrame(boolean z) {
+        long releaseTimeNs;
         long remove = this.presentationTimestampsUs.remove();
         if (maybeUpdateOutputVideoSize(remove)) {
             this.frameRenderer.onVideoSizeChanged(this.outputVideoSize);
         }
-        this.frameRenderer.renderFrame(z ? -1L : this.videoFrameReleaseInfo.getReleaseTimeNs(), remove, this.videoFrameReleaseControl.onFrameReleasedIsFirstFrame());
+        if (z) {
+            releaseTimeNs = SystemClock.DEFAULT.nanoTime();
+        } else {
+            releaseTimeNs = this.videoFrameReleaseInfo.getReleaseTimeNs();
+        }
+        this.frameRenderer.renderFrame(releaseTimeNs, remove, this.videoFrameReleaseControl.onFrameReleasedIsFirstFrame());
     }
 
-    private boolean maybeUpdateOutputStreamStartPosition(long j) {
+    private boolean maybeUpdateOutputStream(long j) {
         Long pollFloor = this.streamStartPositionsUs.pollFloor(j);
         if (pollFloor == null || pollFloor.longValue() == this.outputStreamStartPositionUs) {
             return false;

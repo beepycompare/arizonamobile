@@ -17,22 +17,22 @@ public final class ChannelResult<T> {
     private final Object holder;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ChannelResult m10004boximpl(Object obj) {
+    public static final /* synthetic */ ChannelResult m10027boximpl(Object obj) {
         return new ChannelResult(obj);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Object m10005constructorimpl(Object obj) {
+    public static <T> Object m10028constructorimpl(Object obj) {
         return obj;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m10006equalsimpl(Object obj, Object obj2) {
-        return (obj2 instanceof ChannelResult) && Intrinsics.areEqual(obj, ((ChannelResult) obj2).m10016unboximpl());
+    public static boolean m10029equalsimpl(Object obj, Object obj2) {
+        return (obj2 instanceof ChannelResult) && Intrinsics.areEqual(obj, ((ChannelResult) obj2).m10039unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m10007equalsimpl0(Object obj, Object obj2) {
+    public static final boolean m10030equalsimpl0(Object obj, Object obj2) {
         return Intrinsics.areEqual(obj, obj2);
     }
 
@@ -40,7 +40,7 @@ public final class ChannelResult<T> {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m10011hashCodeimpl(Object obj) {
+    public static int m10034hashCodeimpl(Object obj) {
         if (obj == null) {
             return 0;
         }
@@ -48,15 +48,15 @@ public final class ChannelResult<T> {
     }
 
     public boolean equals(Object obj) {
-        return m10006equalsimpl(this.holder, obj);
+        return m10029equalsimpl(this.holder, obj);
     }
 
     public int hashCode() {
-        return m10011hashCodeimpl(this.holder);
+        return m10034hashCodeimpl(this.holder);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Object m10016unboximpl() {
+    public final /* synthetic */ Object m10039unboximpl() {
         return this.holder;
     }
 
@@ -65,23 +65,23 @@ public final class ChannelResult<T> {
     }
 
     /* renamed from: isSuccess-impl  reason: not valid java name */
-    public static final boolean m10014isSuccessimpl(Object obj) {
+    public static final boolean m10037isSuccessimpl(Object obj) {
         return !(obj instanceof Failed);
     }
 
     /* renamed from: isFailure-impl  reason: not valid java name */
-    public static final boolean m10013isFailureimpl(Object obj) {
+    public static final boolean m10036isFailureimpl(Object obj) {
         return obj instanceof Failed;
     }
 
     /* renamed from: isClosed-impl  reason: not valid java name */
-    public static final boolean m10012isClosedimpl(Object obj) {
+    public static final boolean m10035isClosedimpl(Object obj) {
         return obj instanceof Closed;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: getOrNull-impl  reason: not valid java name */
-    public static final T m10009getOrNullimpl(Object obj) {
+    public static final T m10032getOrNullimpl(Object obj) {
         if (obj instanceof Failed) {
             return null;
         }
@@ -90,7 +90,7 @@ public final class ChannelResult<T> {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: getOrThrow-impl  reason: not valid java name */
-    public static final T m10010getOrThrowimpl(Object obj) {
+    public static final T m10033getOrThrowimpl(Object obj) {
         if (obj instanceof Failed) {
             if (obj instanceof Closed) {
                 Closed closed = (Closed) obj;
@@ -105,7 +105,7 @@ public final class ChannelResult<T> {
     }
 
     /* renamed from: exceptionOrNull-impl  reason: not valid java name */
-    public static final Throwable m10008exceptionOrNullimpl(Object obj) {
+    public static final Throwable m10031exceptionOrNullimpl(Object obj) {
         Closed closed = obj instanceof Closed ? (Closed) obj : null;
         if (closed != null) {
             return closed.cause;
@@ -162,27 +162,27 @@ public final class ChannelResult<T> {
         }
 
         /* renamed from: success-JP2dKIU  reason: not valid java name */
-        public final <E> Object m10019successJP2dKIU(E e) {
-            return ChannelResult.m10005constructorimpl(e);
+        public final <E> Object m10042successJP2dKIU(E e) {
+            return ChannelResult.m10028constructorimpl(e);
         }
 
         /* renamed from: failure-PtdJZtk  reason: not valid java name */
-        public final <E> Object m10018failurePtdJZtk() {
-            return ChannelResult.m10005constructorimpl(ChannelResult.failed);
+        public final <E> Object m10041failurePtdJZtk() {
+            return ChannelResult.m10028constructorimpl(ChannelResult.failed);
         }
 
         /* renamed from: closed-JP2dKIU  reason: not valid java name */
-        public final <E> Object m10017closedJP2dKIU(Throwable th) {
-            return ChannelResult.m10005constructorimpl(new Closed(th));
+        public final <E> Object m10040closedJP2dKIU(Throwable th) {
+            return ChannelResult.m10028constructorimpl(new Closed(th));
         }
     }
 
     public String toString() {
-        return m10015toStringimpl(this.holder);
+        return m10038toStringimpl(this.holder);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m10015toStringimpl(Object obj) {
+    public static String m10038toStringimpl(Object obj) {
         return obj instanceof Closed ? ((Closed) obj).toString() : "Value(" + obj + ')';
     }
 }

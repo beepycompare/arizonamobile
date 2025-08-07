@@ -3,9 +3,8 @@ package androidx.media3.exoplayer;
 import androidx.media3.common.PlaybackParameters;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes2.dex */
-public final class DefaultMediaClock implements MediaClock {
+final class DefaultMediaClock implements MediaClock {
     private boolean isUsingStandaloneClock = true;
     private final PlaybackParametersListener listener;
     private MediaClock rendererClock;

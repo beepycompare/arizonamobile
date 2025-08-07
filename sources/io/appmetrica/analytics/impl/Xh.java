@@ -3,15 +3,15 @@ package io.appmetrica.analytics.impl;
 public final class Xh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0612ti f721a;
+    public final /* synthetic */ C0613ti f720a;
 
-    public Xh(C0612ti c0612ti) {
-        this.f721a = c0612ti;
+    public Xh(C0613ti c0613ti) {
+        this.f720a = c0613ti;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0612ti c0612ti = this.f721a;
-        C0612ti.a(c0612ti.f1069a, c0612ti.d, c0612ti.e).resumeSession();
+        C0613ti c0613ti = this.f720a;
+        C0613ti.a(c0613ti.f1068a, c0613ti.d, c0613ti.e).resumeSession();
     }
 }

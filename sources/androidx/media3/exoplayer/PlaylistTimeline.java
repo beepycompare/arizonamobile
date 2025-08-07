@@ -9,9 +9,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes2.dex */
-public final class PlaylistTimeline extends AbstractConcatenatedTimeline {
+final class PlaylistTimeline extends AbstractConcatenatedTimeline {
     private final HashMap<Object, Integer> childIndexByUid;
     private final int[] firstPeriodInChildIndices;
     private final int[] firstWindowInChildIndices;

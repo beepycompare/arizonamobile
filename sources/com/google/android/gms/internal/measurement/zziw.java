@@ -1,16 +1,16 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zziw extends zzme implements zznm {
+public final class zziw extends zzmf implements zznn {
     private static final zziw zzd;
-    private zzmn zzb = zzcv();
+    private zzmo zzb = zzcv();
 
     static {
         zziw zziwVar = new zziw();
         zzd = zziwVar;
-        zzme.zzcp(zziw.class, zziwVar);
+        zzmf.zzcp(zziw.class, zziwVar);
     }
 
     private zziw() {
@@ -28,7 +28,7 @@ public final class zziw extends zzme implements zznm {
         return this.zzb.size();
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {

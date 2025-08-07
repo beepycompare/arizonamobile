@@ -166,7 +166,7 @@ public final class NavBackStackEntryImpl {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m7670putAllimpl(SavedStateWriter.m7666constructorimpl(bundleOf), this.immutableArgs);
+        SavedStateWriter.m7685putAllimpl(SavedStateWriter.m7681constructorimpl(bundleOf), this.immutableArgs);
         return bundleOf;
     }
 

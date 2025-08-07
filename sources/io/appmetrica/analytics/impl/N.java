@@ -5,33 +5,33 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
 public abstract /* synthetic */ class N {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f555a;
+    public static final /* synthetic */ int[] f554a;
 
     static {
         int[] iArr = new int[IdentifierStatus.values().length];
-        f555a = iArr;
+        f554a = iArr;
         try {
             iArr[IdentifierStatus.OK.ordinal()] = 1;
         } catch (NoSuchFieldError unused) {
         }
         try {
-            f555a[IdentifierStatus.NO_STARTUP.ordinal()] = 2;
+            f554a[IdentifierStatus.NO_STARTUP.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
         try {
-            f555a[IdentifierStatus.FEATURE_DISABLED.ordinal()] = 3;
+            f554a[IdentifierStatus.FEATURE_DISABLED.ordinal()] = 3;
         } catch (NoSuchFieldError unused3) {
         }
         try {
-            f555a[IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE.ordinal()] = 4;
+            f554a[IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE.ordinal()] = 4;
         } catch (NoSuchFieldError unused4) {
         }
         try {
-            f555a[IdentifierStatus.INVALID_ADV_ID.ordinal()] = 5;
+            f554a[IdentifierStatus.INVALID_ADV_ID.ordinal()] = 5;
         } catch (NoSuchFieldError unused5) {
         }
         try {
-            f555a[IdentifierStatus.FORBIDDEN_BY_CLIENT_CONFIG.ordinal()] = 6;
+            f554a[IdentifierStatus.FORBIDDEN_BY_CLIENT_CONFIG.ordinal()] = 6;
         } catch (NoSuchFieldError unused6) {
         }
     }

@@ -9,7 +9,6 @@ import android.os.StatFs;
 import android.util.Log;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.OkDownload;
 import com.liulishuo.okdownload.core.breakpoint.BlockInfo;
@@ -291,7 +290,7 @@ public class Util {
 
     public static File getParentFile(File file) {
         File parentFile = file.getParentFile();
-        return parentFile == null ? new File(RemoteSettings.FORWARD_SLASH_STRING) : parentFile;
+        return parentFile == null ? new File("/") : parentFile;
     }
 
     public static long getSizeFromContentUri(Uri uri) {

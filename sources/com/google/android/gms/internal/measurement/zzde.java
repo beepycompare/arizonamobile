@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzde implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator

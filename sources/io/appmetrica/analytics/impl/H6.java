@@ -4,21 +4,21 @@ import io.appmetrica.analytics.AppMetricaConfig;
 import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
 import java.util.Map;
 /* loaded from: classes4.dex */
-public final class H6 implements InterfaceC0506pb {
+public final class H6 implements InterfaceC0507pb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final I6 f467a;
+    public final I6 f466a;
     public final Sh b;
 
     public H6(I6 i6) {
-        this.f467a = i6;
+        this.f466a = i6;
         this.b = i6.a();
-        C0698x4.l().getClass();
+        C0699x4.l().getClass();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0506pb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0507pb
     public final void a(Nn nn) {
-        Ji ji = this.f467a.f486a;
+        Ji ji = this.f466a.f485a;
         Ih a2 = ji.a(nn, this.b);
         Sh sh = a2.e;
         Pl pl = ji.e;
@@ -40,7 +40,7 @@ public final class H6 implements InterfaceC0506pb {
                 String value = entry.getValue();
                 synchronized (sh) {
                     W8 w8 = sh.c;
-                    w8.b.b(w8.f699a, key, value);
+                    w8.b.b(w8.f698a, key, value);
                 }
             }
         }

@@ -27,6 +27,6 @@ final class ConstraintLayoutKt$ConstraintLayout$3$1 extends Lambda implements Fu
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
-        this.$channel.mo7544trySendJP2dKIU(this.$constraintSet);
+        this.$channel.mo7559trySendJP2dKIU(this.$constraintSet);
     }
 }

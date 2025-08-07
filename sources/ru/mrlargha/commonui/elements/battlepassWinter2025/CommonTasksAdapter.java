@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -86,7 +85,7 @@ public final class CommonTasksAdapter extends RecyclerView.Adapter<RodinaBattleP
         binding.itemDescription.setText(commonTaskInfo2.getDescription());
         TextView textView = binding.itemCount;
         int validCurrentProgress = commonTaskInfo2.validCurrentProgress();
-        textView.setText(validCurrentProgress + RemoteSettings.FORWARD_SLASH_STRING + commonTaskInfo2.getTotalProgress());
+        textView.setText(validCurrentProgress + "/" + commonTaskInfo2.getTotalProgress());
         binding.itemRewardDescription.setText("+" + commonTaskInfo2.getPrizeValue() + " ед.");
         binding.dayTaskProgressBar.setMax(commonTaskInfo2.getTotalProgress());
         binding.dayTaskProgressBar.setProgress(commonTaskInfo2.validCurrentProgress());

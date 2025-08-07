@@ -1190,7 +1190,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
             }
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(getTargetActivity(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
         }
     }
 

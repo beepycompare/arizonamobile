@@ -6,15 +6,15 @@ import kotlin.Pair;
 public final class B5 implements yo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f352a;
+    public final List f351a;
 
     public B5(List<? extends Pair<String, ? extends yo>> list) {
-        this.f352a = list;
+        this.f351a = list;
     }
 
     @Override // io.appmetrica.analytics.impl.yo
     public final String a() {
-        for (Pair pair : this.f352a) {
+        for (Pair pair : this.f351a) {
             String a2 = ((yo) pair.getSecond()).a();
             if (a2 != null && a2.length() > 0) {
                 return a2;
@@ -25,7 +25,7 @@ public final class B5 implements yo {
 
     @Override // io.appmetrica.analytics.impl.yo
     public final void a(String str) {
-        for (Pair pair : this.f352a) {
+        for (Pair pair : this.f351a) {
             ((yo) pair.getSecond()).a(str);
         }
     }

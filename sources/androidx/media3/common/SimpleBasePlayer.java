@@ -739,7 +739,6 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* loaded from: classes2.dex */
     public static final class MediaItemData {
         public final long defaultPositionUs;
@@ -1026,7 +1025,8 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         public Timeline.Period getPeriod(int i, int i2, Timeline.Period period) {
             if (this.periods.isEmpty()) {
                 Object obj = this.uid;
-                period.set(obj, obj, i, this.positionInFirstPeriodUs + this.durationUs, 0L, AdPlaybackState.NONE, this.isPlaceholder);
+                long j = this.positionInFirstPeriodUs;
+                period.set(obj, obj, i, j + this.durationUs, -j, AdPlaybackState.NONE, this.isPlaceholder);
                 return period;
             }
             PeriodData periodData = this.periods.get(i2);
@@ -1044,7 +1044,6 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* loaded from: classes2.dex */
     public static final class PeriodData {
         public final AdPlaybackState adPlaybackState;
@@ -1127,7 +1126,6 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* loaded from: classes2.dex */
     public interface PositionSupplier {
         public static final PositionSupplier ZERO = getConstant(0);
@@ -1163,7 +1161,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     }
 
     /* loaded from: classes2.dex */
-    protected static final class LivePositionSupplier implements PositionSupplier {
+    public static final class LivePositionSupplier implements PositionSupplier {
         private long finalValue = C.TIME_UNSET;
         private final PositionSupplier livePosition;
 

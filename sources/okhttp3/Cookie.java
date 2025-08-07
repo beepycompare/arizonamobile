@@ -3,7 +3,6 @@ package okhttp3;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import com.google.android.vending.expansion.downloader.Constants;
 import com.google.common.net.HttpHeaders;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -148,55 +147,55 @@ public final class Cookie {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "name", imports = {}))
     /* renamed from: -deprecated_name  reason: not valid java name */
-    public final String m10270deprecated_name() {
+    public final String m10293deprecated_name() {
         return this.name;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "value", imports = {}))
     /* renamed from: -deprecated_value  reason: not valid java name */
-    public final String m10274deprecated_value() {
+    public final String m10297deprecated_value() {
         return this.value;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "persistent", imports = {}))
     /* renamed from: -deprecated_persistent  reason: not valid java name */
-    public final boolean m10272deprecated_persistent() {
+    public final boolean m10295deprecated_persistent() {
         return this.persistent;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "expiresAt", imports = {}))
     /* renamed from: -deprecated_expiresAt  reason: not valid java name */
-    public final long m10267deprecated_expiresAt() {
+    public final long m10290deprecated_expiresAt() {
         return this.expiresAt;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "hostOnly", imports = {}))
     /* renamed from: -deprecated_hostOnly  reason: not valid java name */
-    public final boolean m10268deprecated_hostOnly() {
+    public final boolean m10291deprecated_hostOnly() {
         return this.hostOnly;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "domain", imports = {}))
     /* renamed from: -deprecated_domain  reason: not valid java name */
-    public final String m10266deprecated_domain() {
+    public final String m10289deprecated_domain() {
         return this.domain;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "path", imports = {}))
     /* renamed from: -deprecated_path  reason: not valid java name */
-    public final String m10271deprecated_path() {
+    public final String m10294deprecated_path() {
         return this.path;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "httpOnly", imports = {}))
     /* renamed from: -deprecated_httpOnly  reason: not valid java name */
-    public final boolean m10269deprecated_httpOnly() {
+    public final boolean m10292deprecated_httpOnly() {
         return this.httpOnly;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "secure", imports = {}))
     /* renamed from: -deprecated_secure  reason: not valid java name */
-    public final boolean m10273deprecated_secure() {
+    public final boolean m10296deprecated_secure() {
         return this.secure;
     }
 
@@ -255,7 +254,7 @@ public final class Cookie {
 
         public Builder() {
             this.expiresAt = DateFormattingKt.MAX_DATE;
-            this.path = RemoteSettings.FORWARD_SLASH_STRING;
+            this.path = "/";
         }
 
         /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
@@ -326,7 +325,7 @@ public final class Cookie {
 
         public final Builder path(String path) {
             Intrinsics.checkNotNullParameter(path, "path");
-            if (!StringsKt.startsWith$default(path, RemoteSettings.FORWARD_SLASH_STRING, false, 2, (Object) null)) {
+            if (!StringsKt.startsWith$default(path, "/", false, 2, (Object) null)) {
                 throw new IllegalArgumentException("path must start with '/'".toString());
             }
             this.path = path;
@@ -395,7 +394,7 @@ public final class Cookie {
             if (Intrinsics.areEqual(encodedPath, str)) {
                 return true;
             }
-            return StringsKt.startsWith$default(encodedPath, str, false, 2, (Object) null) && (StringsKt.endsWith$default(str, RemoteSettings.FORWARD_SLASH_STRING, false, 2, (Object) null) || encodedPath.charAt(str.length()) == '/');
+            return StringsKt.startsWith$default(encodedPath, str, false, 2, (Object) null) && (StringsKt.endsWith$default(str, "/", false, 2, (Object) null) || encodedPath.charAt(str.length()) == '/');
         }
 
         @JvmStatic
@@ -486,8 +485,8 @@ public final class Cookie {
                     return cookie3;
                 }
                 if (host.length() == str2.length() || PublicSuffixDatabase.Companion.get().getEffectiveTldPlusOne(str2) != null) {
-                    String str5 = RemoteSettings.FORWARD_SLASH_STRING;
-                    if (str3 == null || !StringsKt.startsWith$default(str3, RemoteSettings.FORWARD_SLASH_STRING, false, 2, (Object) cookie3)) {
+                    String str5 = "/";
+                    if (str3 == null || !StringsKt.startsWith$default(str3, "/", false, 2, (Object) cookie3)) {
                         String encodedPath = url.encodedPath();
                         int lastIndexOf$default = StringsKt.lastIndexOf$default((CharSequence) encodedPath, '/', 0, false, 6, (Object) null);
                         if (lastIndexOf$default != 0) {

@@ -3,17 +3,17 @@ package io.appmetrica.analytics.impl;
 public abstract class S2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Qf f631a;
+    public final Qf f630a;
     public final Za b;
 
     public S2(Qf qf, Za za) {
-        this.f631a = qf;
+        this.f630a = qf;
         this.b = za;
     }
 
-    public final boolean a(C0401l6 c0401l6, R2 r2) {
-        for (Object obj : ((C0529q9) this.f631a.a(c0401l6.d)).f1016a) {
-            if (r2.a(obj, c0401l6)) {
+    public final boolean a(C0402l6 c0402l6, R2 r2) {
+        for (Object obj : ((C0530q9) this.f630a.a(c0402l6.d)).f1015a) {
+            if (r2.a(obj, c0402l6)) {
                 return true;
             }
         }
@@ -21,7 +21,7 @@ public abstract class S2 {
     }
 
     public final Qf b() {
-        return this.f631a;
+        return this.f630a;
     }
 
     public final Za a() {

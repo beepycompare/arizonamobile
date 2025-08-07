@@ -1123,6 +1123,7 @@ public final class MediaItem {
 
     /* loaded from: classes2.dex */
     public static class ClippingConfiguration {
+        public final boolean allowUnseekableMedia;
         public final long endPositionMs;
         public final long endPositionUs;
         public final boolean relativeToDefaultPosition;
@@ -1138,9 +1139,11 @@ public final class MediaItem {
         private static final String FIELD_STARTS_AT_KEY_FRAME = Util.intToStringMaxRadix(4);
         static final String FIELD_START_POSITION_US = Util.intToStringMaxRadix(5);
         static final String FIELD_END_POSITION_US = Util.intToStringMaxRadix(6);
+        private static final String FIELD_ALLOW_UNSEEKABLE_MEDIA = Util.intToStringMaxRadix(7);
 
         /* loaded from: classes2.dex */
         public static final class Builder {
+            private boolean allowUnseekableMedia;
             private long endPositionUs;
             private boolean relativeToDefaultPosition;
             private boolean relativeToLiveWindow;
@@ -1157,6 +1160,7 @@ public final class MediaItem {
                 this.relativeToLiveWindow = clippingConfiguration.relativeToLiveWindow;
                 this.relativeToDefaultPosition = clippingConfiguration.relativeToDefaultPosition;
                 this.startsAtKeyFrame = clippingConfiguration.startsAtKeyFrame;
+                this.allowUnseekableMedia = clippingConfiguration.allowUnseekableMedia;
             }
 
             public Builder setStartPositionMs(long j) {
@@ -1194,6 +1198,11 @@ public final class MediaItem {
                 return this;
             }
 
+            public Builder setAllowUnseekableMedia(boolean z) {
+                this.allowUnseekableMedia = z;
+                return this;
+            }
+
             public ClippingConfiguration build() {
                 return new ClippingConfiguration(this);
             }
@@ -1212,6 +1221,7 @@ public final class MediaItem {
             this.relativeToLiveWindow = builder.relativeToLiveWindow;
             this.relativeToDefaultPosition = builder.relativeToDefaultPosition;
             this.startsAtKeyFrame = builder.startsAtKeyFrame;
+            this.allowUnseekableMedia = builder.allowUnseekableMedia;
         }
 
         public Builder buildUpon() {
@@ -1224,7 +1234,7 @@ public final class MediaItem {
             }
             if (obj instanceof ClippingConfiguration) {
                 ClippingConfiguration clippingConfiguration = (ClippingConfiguration) obj;
-                return this.startPositionUs == clippingConfiguration.startPositionUs && this.endPositionUs == clippingConfiguration.endPositionUs && this.relativeToLiveWindow == clippingConfiguration.relativeToLiveWindow && this.relativeToDefaultPosition == clippingConfiguration.relativeToDefaultPosition && this.startsAtKeyFrame == clippingConfiguration.startsAtKeyFrame;
+                return this.startPositionUs == clippingConfiguration.startPositionUs && this.endPositionUs == clippingConfiguration.endPositionUs && this.relativeToLiveWindow == clippingConfiguration.relativeToLiveWindow && this.relativeToDefaultPosition == clippingConfiguration.relativeToDefaultPosition && this.startsAtKeyFrame == clippingConfiguration.startsAtKeyFrame && this.allowUnseekableMedia == clippingConfiguration.allowUnseekableMedia;
             }
             return false;
         }
@@ -1232,7 +1242,7 @@ public final class MediaItem {
         public int hashCode() {
             long j = this.startPositionUs;
             long j2 = this.endPositionUs;
-            return (((((((((int) (j ^ (j >>> 32))) * 31) + ((int) ((j2 >>> 32) ^ j2))) * 31) + (this.relativeToLiveWindow ? 1 : 0)) * 31) + (this.relativeToDefaultPosition ? 1 : 0)) * 31) + (this.startsAtKeyFrame ? 1 : 0);
+            return (((((((((((int) (j ^ (j >>> 32))) * 31) + ((int) ((j2 >>> 32) ^ j2))) * 31) + (this.relativeToLiveWindow ? 1 : 0)) * 31) + (this.relativeToDefaultPosition ? 1 : 0)) * 31) + (this.startsAtKeyFrame ? 1 : 0)) * 31) + (this.allowUnseekableMedia ? 1 : 0);
         }
 
         public Bundle toBundle() {
@@ -1266,6 +1276,10 @@ public final class MediaItem {
             if (z3 != clippingConfiguration.startsAtKeyFrame) {
                 bundle.putBoolean(FIELD_STARTS_AT_KEY_FRAME, z3);
             }
+            boolean z4 = this.allowUnseekableMedia;
+            if (z4 != clippingConfiguration.allowUnseekableMedia) {
+                bundle.putBoolean(FIELD_ALLOW_UNSEEKABLE_MEDIA, z4);
+            }
             return bundle;
         }
 
@@ -1273,16 +1287,16 @@ public final class MediaItem {
             Builder builder = new Builder();
             String str = FIELD_START_POSITION_MS;
             ClippingConfiguration clippingConfiguration = UNSET;
-            Builder startsAtKeyFrame = builder.setStartPositionMs(bundle.getLong(str, clippingConfiguration.startPositionMs)).setEndPositionMs(bundle.getLong(FIELD_END_POSITION_MS, clippingConfiguration.endPositionMs)).setRelativeToLiveWindow(bundle.getBoolean(FIELD_RELATIVE_TO_LIVE_WINDOW, clippingConfiguration.relativeToLiveWindow)).setRelativeToDefaultPosition(bundle.getBoolean(FIELD_RELATIVE_TO_DEFAULT_POSITION, clippingConfiguration.relativeToDefaultPosition)).setStartsAtKeyFrame(bundle.getBoolean(FIELD_STARTS_AT_KEY_FRAME, clippingConfiguration.startsAtKeyFrame));
+            Builder allowUnseekableMedia = builder.setStartPositionMs(bundle.getLong(str, clippingConfiguration.startPositionMs)).setEndPositionMs(bundle.getLong(FIELD_END_POSITION_MS, clippingConfiguration.endPositionMs)).setRelativeToLiveWindow(bundle.getBoolean(FIELD_RELATIVE_TO_LIVE_WINDOW, clippingConfiguration.relativeToLiveWindow)).setRelativeToDefaultPosition(bundle.getBoolean(FIELD_RELATIVE_TO_DEFAULT_POSITION, clippingConfiguration.relativeToDefaultPosition)).setStartsAtKeyFrame(bundle.getBoolean(FIELD_STARTS_AT_KEY_FRAME, clippingConfiguration.startsAtKeyFrame)).setAllowUnseekableMedia(bundle.getBoolean(FIELD_ALLOW_UNSEEKABLE_MEDIA, clippingConfiguration.allowUnseekableMedia));
             long j = bundle.getLong(FIELD_START_POSITION_US, clippingConfiguration.startPositionUs);
             if (j != clippingConfiguration.startPositionUs) {
-                startsAtKeyFrame.setStartPositionUs(j);
+                allowUnseekableMedia.setStartPositionUs(j);
             }
             long j2 = bundle.getLong(FIELD_END_POSITION_US, clippingConfiguration.endPositionUs);
             if (j2 != clippingConfiguration.endPositionUs) {
-                startsAtKeyFrame.setEndPositionUs(j2);
+                allowUnseekableMedia.setEndPositionUs(j2);
             }
-            return startsAtKeyFrame.buildClippingProperties();
+            return allowUnseekableMedia.buildClippingProperties();
         }
     }
 

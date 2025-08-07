@@ -10,21 +10,21 @@ import java.util.EnumSet;
 public final class K5 implements IExecutionPolicy {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f517a;
+    public final Context f516a;
     public final L5 b = new L5();
     public final EnumSet c = EnumSet.of(Te.OFFLINE);
     public final String d = "connection based";
 
     public K5(Context context) {
-        this.f517a = context;
+        this.f516a = context;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy
     public final boolean canBeExecuted() {
         L5 l5 = this.b;
-        Context context = this.f517a;
+        Context context = this.f516a;
         l5.getClass();
-        SafePackageManager safePackageManager = Ue.f671a;
+        SafePackageManager safePackageManager = Ue.f670a;
         return !this.c.contains((Te) SystemServiceUtils.accessSystemServiceSafelyOrDefault((ConnectivityManager) context.getSystemService("connectivity"), "getting connection type", "ConnectivityManager", Te.UNDEFINED, new Se()));
     }
 

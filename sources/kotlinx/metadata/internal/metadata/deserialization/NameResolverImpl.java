@@ -2,7 +2,6 @@ package kotlinx.metadata.internal.metadata.deserialization;
 
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.LinkedList;
 import java.util.List;
 import kotlin.Metadata;
@@ -69,7 +68,7 @@ public final class NameResolverImpl implements NameResolver {
         Triple<List<String>, List<String>, Boolean> traverseIds = traverseIds(i);
         List<String> component1 = traverseIds.component1();
         String joinToString$default = CollectionsKt.joinToString$default(traverseIds.component2(), ".", null, null, 0, null, null, 62, null);
-        return component1.isEmpty() ? joinToString$default : CollectionsKt.joinToString$default(component1, RemoteSettings.FORWARD_SLASH_STRING, null, null, 0, null, null, 62, null) + '/' + joinToString$default;
+        return component1.isEmpty() ? joinToString$default : CollectionsKt.joinToString$default(component1, "/", null, null, 0, null, null, 62, null) + '/' + joinToString$default;
     }
 
     @Override // kotlinx.metadata.internal.metadata.deserialization.NameResolver

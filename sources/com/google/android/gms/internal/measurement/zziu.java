@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.measurement;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zziu extends zzme implements zznm {
+public final class zziu extends zzmf implements zznn {
     private static final zziu zzj;
     private int zzb;
     private long zzd;
@@ -16,7 +16,7 @@ public final class zziu extends zzme implements zznm {
     static {
         zziu zziuVar = new zziu();
         zzj = zziuVar;
-        zzme.zzcp(zziu.class, zziuVar);
+        zzmf.zzcp(zziu.class, zziuVar);
     }
 
     private zziu() {
@@ -70,7 +70,7 @@ public final class zziu extends zzme implements zznm {
         return this.zzi;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {

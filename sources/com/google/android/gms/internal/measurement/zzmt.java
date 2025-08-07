@@ -1,29 +1,33 @@
 package com.google.android.gms.internal.measurement;
 
-import java.util.Iterator;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-final class zzmt implements Iterator {
-    private final Iterator zza;
+final class zzmt implements Map.Entry {
+    private final Map.Entry zza;
 
-    public zzmt(Iterator it) {
-        this.zza = it;
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.zza.getKey();
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.zza.hasNext();
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        if (((zzmv) this.zza.getValue()) == null) {
+            return null;
+        }
+        throw null;
     }
 
-    @Override // java.util.Iterator
-    public final /* bridge */ /* synthetic */ Object next() {
-        Map.Entry entry = (Map.Entry) this.zza.next();
-        return entry.getValue() instanceof zzmu ? new zzms(entry, null) : entry;
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        if (!(obj instanceof zznm)) {
+            throw new IllegalArgumentException("LazyField now only used for MessageSet, and the value of MessageSet must be an instance of MessageLite");
+        }
+        return ((zzmv) this.zza.getValue()).zza((zznm) obj);
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        this.zza.remove();
+    public final zzmv zza() {
+        return (zzmv) this.zza.getValue();
     }
 }

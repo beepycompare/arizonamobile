@@ -28,7 +28,6 @@ import androidx.constraintlayout.widget.R;
 import androidx.constraintlayout.widget.StateSet;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -867,7 +866,7 @@ public class MotionScene {
                         String string = typedArray.getString(index);
                         this.mDefaultInterpolatorString = string;
                         if (string != null) {
-                            if (string.indexOf(RemoteSettings.FORWARD_SLASH_STRING) > 0) {
+                            if (string.indexOf("/") > 0) {
                                 this.mDefaultInterpolatorID = typedArray.getResourceId(index, -1);
                                 this.mDefaultInterpolator = -2;
                             } else {
@@ -919,16 +918,17 @@ public class MotionScene {
         this.mConstraintSetIdMap.put("motion_base", Integer.valueOf(R.id.motion_base));
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x0138, code lost:
+        continue;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private void load(Context context, int i) {
         XmlResourceParser xml = context.getResources().getXml(i);
         try {
-            int eventType = xml.getEventType();
             Transition transition = null;
-            while (true) {
-                char c = 1;
-                if (eventType == 1) {
-                    return;
-                }
+            for (int eventType = xml.getEventType(); eventType != 1; eventType = xml.next()) {
                 if (eventType != 2) {
                     continue;
                 } else {
@@ -936,147 +936,105 @@ public class MotionScene {
                     switch (name.hashCode()) {
                         case -1349929691:
                             if (name.equals(CONSTRAINTSET_TAG)) {
-                                c = 5;
-                                break;
+                                parseConstraintSet(context, xml);
+                                continue;
+                            } else {
+                                continue;
                             }
-                            c = 65535;
-                            break;
                         case -1239391468:
                             if (name.equals("KeyFrameSet")) {
-                                c = '\b';
-                                break;
+                                KeyFrames keyFrames = new KeyFrames(context, xml);
+                                if (transition != null) {
+                                    transition.mKeyFramesList.add(keyFrames);
+                                    continue;
+                                } else {
+                                    continue;
+                                }
+                            } else {
+                                continue;
                             }
-                            c = 65535;
-                            break;
                         case -687739768:
-                            if (name.equals(INCLUDE_TAG_UC)) {
-                                c = 7;
-                                break;
+                            if (!name.equals(INCLUDE_TAG_UC)) {
+                                continue;
                             }
-                            c = 65535;
-                            break;
+                            parseInclude(context, xml);
+                            continue;
                         case 61998586:
                             if (name.equals("ViewTransition")) {
-                                c = '\t';
-                                break;
+                                this.mViewTransitionController.add(new ViewTransition(context, xml));
+                                continue;
+                            } else {
+                                continue;
                             }
-                            c = 65535;
-                            break;
                         case 269306229:
                             if (name.equals(TRANSITION_TAG)) {
-                                break;
-                            }
-                            c = 65535;
-                            break;
-                        case 312750793:
-                            if (name.equals(ONCLICK_TAG)) {
-                                c = 3;
-                                break;
-                            }
-                            c = 65535;
-                            break;
-                        case 327855227:
-                            if (name.equals(ONSWIPE_TAG)) {
-                                c = 2;
-                                break;
-                            }
-                            c = 65535;
-                            break;
-                        case 793277014:
-                            if (name.equals(TypedValues.MotionScene.NAME)) {
-                                c = 0;
-                                break;
-                            }
-                            c = 65535;
-                            break;
-                        case 1382829617:
-                            if (name.equals(STATESET_TAG)) {
-                                c = 4;
-                                break;
-                            }
-                            c = 65535;
-                            break;
-                        case 1942574248:
-                            if (name.equals(INCLUDE_TAG)) {
-                                c = 6;
-                                break;
-                            }
-                            c = 65535;
-                            break;
-                        default:
-                            c = 65535;
-                            break;
-                    }
-                    switch (c) {
-                        case 0:
-                            parseMotionSceneTags(context, xml);
-                            continue;
-                        case 1:
-                            ArrayList<Transition> arrayList = this.mTransitionList;
-                            transition = new Transition(this, context, xml);
-                            arrayList.add(transition);
-                            if (this.mCurrentTransition == null && !transition.mIsAbstract) {
-                                this.mCurrentTransition = transition;
-                                if (transition.mTouchResponse != null) {
-                                    this.mCurrentTransition.mTouchResponse.setRTL(this.mRtl);
+                                ArrayList<Transition> arrayList = this.mTransitionList;
+                                transition = new Transition(this, context, xml);
+                                arrayList.add(transition);
+                                if (this.mCurrentTransition == null && !transition.mIsAbstract) {
+                                    this.mCurrentTransition = transition;
+                                    if (transition.mTouchResponse != null) {
+                                        this.mCurrentTransition.mTouchResponse.setRTL(this.mRtl);
+                                    }
                                 }
-                            }
-                            if (transition.mIsAbstract) {
-                                if (transition.mConstraintSetEnd == -1) {
-                                    this.mDefaultTransition = transition;
+                                if (transition.mIsAbstract) {
+                                    if (transition.mConstraintSetEnd == -1) {
+                                        this.mDefaultTransition = transition;
+                                    } else {
+                                        this.mAbstractTransitionList.add(transition);
+                                    }
+                                    this.mTransitionList.remove(transition);
+                                    continue;
                                 } else {
-                                    this.mAbstractTransitionList.add(transition);
+                                    continue;
                                 }
-                                this.mTransitionList.remove(transition);
-                                continue;
                             } else {
                                 continue;
                             }
-                        case 2:
-                            if (transition == null) {
-                                Log.v(TypedValues.MotionScene.NAME, " OnSwipe (" + context.getResources().getResourceEntryName(i) + ".xml:" + xml.getLineNumber() + ")");
-                            }
-                            if (transition != null) {
-                                transition.mTouchResponse = new TouchResponse(context, this.mMotionLayout, xml);
-                                continue;
-                            } else {
-                                continue;
-                            }
-                        case 3:
-                            if (transition == null) {
-                                continue;
-                            } else if (this.mMotionLayout.isInEditMode()) {
-                                continue;
-                            } else {
+                        case 312750793:
+                            if (name.equals(ONCLICK_TAG) && transition != null && !this.mMotionLayout.isInEditMode()) {
                                 transition.addOnClick(context, xml);
                                 continue;
                             }
-                        case 4:
-                            this.mStateSet = new StateSet(context, xml);
-                            continue;
-                        case 5:
-                            parseConstraintSet(context, xml);
-                            continue;
-                        case 6:
-                        case 7:
-                            parseInclude(context, xml);
-                            continue;
-                        case '\b':
-                            KeyFrames keyFrames = new KeyFrames(context, xml);
-                            if (transition != null) {
-                                transition.mKeyFramesList.add(keyFrames);
+                            break;
+                        case 327855227:
+                            if (name.equals(ONSWIPE_TAG)) {
+                                if (transition == null) {
+                                    String resourceEntryName = context.getResources().getResourceEntryName(i);
+                                    Log.v(TypedValues.MotionScene.NAME, " OnSwipe (" + resourceEntryName + ".xml:" + xml.getLineNumber() + ")");
+                                }
+                                if (transition != null) {
+                                    transition.mTouchResponse = new TouchResponse(context, this.mMotionLayout, xml);
+                                    continue;
+                                } else {
+                                    continue;
+                                }
+                            } else {
+                                continue;
+                            }
+                        case 793277014:
+                            if (name.equals(TypedValues.MotionScene.NAME)) {
+                                parseMotionSceneTags(context, xml);
                                 continue;
                             } else {
                                 continue;
                             }
-                        case '\t':
-                            this.mViewTransitionController.add(new ViewTransition(context, xml));
-                            continue;
-                        default:
-                            continue;
+                        case 1382829617:
+                            if (name.equals(STATESET_TAG)) {
+                                this.mStateSet = new StateSet(context, xml);
+                                continue;
+                            } else {
+                                continue;
+                            }
+                        case 1942574248:
+                            if (name.equals(INCLUDE_TAG)) {
+                                parseInclude(context, xml);
+                                continue;
+                            } else {
+                                continue;
+                            }
                     }
                 }
-                eventType = xml.next();
             }
         } catch (IOException e) {
             Log.e(TypedValues.MotionScene.NAME, "Error parsing resource: " + i, e);
@@ -1105,7 +1063,7 @@ public class MotionScene {
 
     private int getId(Context context, String str) {
         int i;
-        if (str.contains(RemoteSettings.FORWARD_SLASH_STRING)) {
+        if (str.contains("/")) {
             i = context.getResources().getIdentifier(str.substring(str.indexOf(47) + 1), "id", context.getPackageName());
         } else {
             i = -1;
@@ -1735,7 +1693,7 @@ public class MotionScene {
                 Log.e(TypedValues.MotionScene.NAME, "ERROR! invalid deriveConstraintsFrom: @id/" + Debug.getName(this.mMotionLayout.getContext(), i2));
                 return;
             } else {
-                constraintSet.derivedState += RemoteSettings.FORWARD_SLASH_STRING + constraintSet2.derivedState;
+                constraintSet.derivedState += "/" + constraintSet2.derivedState;
                 constraintSet.readFallback(constraintSet2);
             }
         } else {

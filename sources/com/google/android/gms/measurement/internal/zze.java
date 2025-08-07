@@ -1,34 +1,34 @@
 package com.google.android.gms.measurement.internal;
 
 import android.text.TextUtils;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 final class zze {
-    private final zzjh zza;
+    private final zzji zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zze(zzjh zzjhVar) {
-        this.zza = zzjhVar;
+    public zze(zzji zzjiVar) {
+        this.zza = zzjiVar;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static zze zzc(String str) {
-        zzjh zzjhVar;
+        zzji zzjiVar;
         if (TextUtils.isEmpty(str) || str.length() > 1) {
-            zzjhVar = zzjh.UNINITIALIZED;
+            zzjiVar = zzji.UNINITIALIZED;
         } else {
-            zzjhVar = zzjk.zzj(str.charAt(0));
+            zzjiVar = zzjl.zzj(str.charAt(0));
         }
-        return new zze(zzjhVar);
+        return new zze(zzjiVar);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzjh zza() {
+    public final zzji zza() {
         return this.zza;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final String zzb() {
-        return String.valueOf(zzjk.zzm(this.zza));
+        return String.valueOf(zzjl.zzm(this.zza));
     }
 }

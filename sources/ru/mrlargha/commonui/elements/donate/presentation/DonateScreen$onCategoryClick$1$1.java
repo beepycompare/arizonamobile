@@ -51,10 +51,14 @@ public final class DonateScreen$onCategoryClick$1$1 extends SuspendLambda implem
             targetActivity = this.this$0.getTargetActivity();
             if (UtilsKt.getArizonaType(targetActivity)) {
                 donateStates2 = this.this$0.states;
-                donateStates2.setItemsArizona(this.$model.getId(), this.$model.isActionCategory());
+                if (donateStates2 != null) {
+                    donateStates2.setItemsArizona(this.$model.getId(), this.$model.isActionCategory());
+                }
             } else {
                 donateStates = this.this$0.states;
-                donateStates.setItemsRodina(this.$model.getId(), this.$model.isLimitCategory(), this.$model.isActionCategory());
+                if (donateStates != null) {
+                    donateStates.setItemsRodina(this.$model.getId(), this.$model.isLimitCategory(), this.$model.isActionCategory());
+                }
             }
             return Unit.INSTANCE;
         }

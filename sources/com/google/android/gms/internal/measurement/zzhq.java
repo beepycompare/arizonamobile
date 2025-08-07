@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzhq extends zzme implements zznm {
+public final class zzhq extends zzmf implements zznn {
     private static final zzhq zzf;
     private int zzb;
     private int zzd;
@@ -10,7 +10,7 @@ public final class zzhq extends zzme implements zznm {
     static {
         zzhq zzhqVar = new zzhq();
         zzf = zzhqVar;
-        zzme.zzcp(zzhq.class, zzhqVar);
+        zzmf.zzcp(zzhq.class, zzhqVar);
     }
 
     private zzhq() {
@@ -46,7 +46,7 @@ public final class zzhq extends zzme implements zznm {
         this.zze = j;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {

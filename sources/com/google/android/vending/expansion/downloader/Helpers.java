@@ -6,7 +6,6 @@ import android.os.StatFs;
 import android.os.SystemClock;
 import android.util.Log;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -202,7 +201,7 @@ public class Helpers {
     }
 
     public static boolean isFilenameValid(String str) {
-        String replaceFirst = str.replaceFirst("/+", RemoteSettings.FORWARD_SLASH_STRING);
+        String replaceFirst = str.replaceFirst("/+", "/");
         return replaceFirst.startsWith(Environment.getDownloadCacheDirectory().toString()) || replaceFirst.startsWith(Environment.getExternalStorageDirectory().toString());
     }
 

@@ -3,5 +3,5 @@ package io.appmetrica.analytics.impl;
 public abstract class Ai {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Bi f341a = new Bi(new C0619u0());
+    public static final Bi f340a = new Bi(new C0620u0());
 }

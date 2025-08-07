@@ -34,7 +34,6 @@ import com.davemorrissey.labs.subscaleview.decoder.SkiaImageDecoder;
 import com.davemorrissey.labs.subscaleview.decoder.SkiaImageRegionDecoder;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.ServiceStarter;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import com.tbuonomo.viewpagerdotsindicator.BaseDotsIndicator;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.lang.ref.WeakReference;
@@ -385,7 +384,7 @@ public class SubsamplingScaleImageView extends View {
             } else {
                 Uri uri = imageSource2.getUri();
                 if (uri == null && imageSource2.getResource() != null) {
-                    uri = Uri.parse("android.resource://" + getContext().getPackageName() + RemoteSettings.FORWARD_SLASH_STRING + imageSource2.getResource());
+                    uri = Uri.parse("android.resource://" + getContext().getPackageName() + "/" + imageSource2.getResource());
                 }
                 execute(new BitmapLoadTask(this, getContext(), this.bitmapDecoderFactory, uri, true));
             }
@@ -399,7 +398,7 @@ public class SubsamplingScaleImageView extends View {
             Uri uri2 = imageSource.getUri();
             this.uri = uri2;
             if (uri2 == null && imageSource.getResource() != null) {
-                this.uri = Uri.parse("android.resource://" + getContext().getPackageName() + RemoteSettings.FORWARD_SLASH_STRING + imageSource.getResource());
+                this.uri = Uri.parse("android.resource://" + getContext().getPackageName() + "/" + imageSource.getResource());
             }
             if (imageSource.getTile() || this.sRegion != null) {
                 execute(new TilesInitTask(this, getContext(), this.regionDecoderFactory, this.uri));

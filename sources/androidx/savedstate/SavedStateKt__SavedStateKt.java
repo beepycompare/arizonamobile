@@ -12,12 +12,12 @@ final /* synthetic */ class SavedStateKt__SavedStateKt {
     public static final <T> T read(Bundle bundle, Function1<? super SavedStateReader, ? extends T> block) {
         Intrinsics.checkNotNullParameter(bundle, "<this>");
         Intrinsics.checkNotNullParameter(block, "block");
-        return block.invoke(SavedStateReader.m7579boximpl(SavedStateReader.m7580constructorimpl(bundle)));
+        return block.invoke(SavedStateReader.m7594boximpl(SavedStateReader.m7595constructorimpl(bundle)));
     }
 
     public static final <T> T write(Bundle bundle, Function1<? super SavedStateWriter, ? extends T> block) {
         Intrinsics.checkNotNullParameter(bundle, "<this>");
         Intrinsics.checkNotNullParameter(block, "block");
-        return block.invoke(SavedStateWriter.m7664boximpl(SavedStateWriter.m7666constructorimpl(bundle)));
+        return block.invoke(SavedStateWriter.m7679boximpl(SavedStateWriter.m7681constructorimpl(bundle)));
     }
 }

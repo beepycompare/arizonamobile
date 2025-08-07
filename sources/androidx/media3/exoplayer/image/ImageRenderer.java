@@ -320,6 +320,7 @@ public class ImageRenderer extends BaseRenderer {
                 this.inputBuffer.flip();
                 boolean z = (this.inputBuffer.data != null && this.inputBuffer.data.remaining() > 0) || ((DecoderInputBuffer) Assertions.checkStateNotNull(this.inputBuffer)).isEndOfStream();
                 if (z) {
+                    ((DecoderInputBuffer) Assertions.checkStateNotNull(this.inputBuffer)).format = this.inputFormat;
                     ((ImageDecoder) Assertions.checkStateNotNull(this.decoder)).queueInputBuffer((DecoderInputBuffer) Assertions.checkStateNotNull(this.inputBuffer));
                     this.currentTileIndex = 0;
                 }

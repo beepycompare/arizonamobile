@@ -1,29 +1,64 @@
 package com.google.android.gms.measurement.internal;
 
+import android.os.RemoteException;
+import android.text.TextUtils;
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.Collections;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+import java.util.concurrent.atomic.AtomicReference;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-final class zzmx implements Runnable {
-    final /* synthetic */ zzga zza;
-    final /* synthetic */ zzne zzb;
+public final class zzmx implements Runnable {
+    final /* synthetic */ AtomicReference zza;
+    final /* synthetic */ String zzb;
+    final /* synthetic */ String zzc;
+    final /* synthetic */ zzr zzd;
+    final /* synthetic */ boolean zze;
+    final /* synthetic */ zznl zzf;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzmx(zzne zzneVar, zzga zzgaVar) {
-        this.zza = zzgaVar;
-        Objects.requireNonNull(zzneVar);
-        this.zzb = zzneVar;
+    public zzmx(zznl zznlVar, AtomicReference atomicReference, String str, String str2, String str3, zzr zzrVar, boolean z) {
+        this.zza = atomicReference;
+        this.zzb = str2;
+        this.zzc = str3;
+        this.zzd = zzrVar;
+        this.zze = z;
+        Objects.requireNonNull(zznlVar);
+        this.zzf = zznlVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zzne zzneVar = this.zzb;
-        synchronized (zzneVar) {
-            zzneVar.zzd(false);
-            zznk zznkVar = zzneVar.zza;
-            if (!zznkVar.zzh()) {
-                zznkVar.zzu.zzaV().zzk().zza("Connected to service");
-                zznkVar.zzL(this.zza);
+        AtomicReference atomicReference;
+        zznl zznlVar;
+        zzgb zzZ;
+        AtomicReference atomicReference2 = this.zza;
+        synchronized (atomicReference2) {
+            try {
+                zznlVar = this.zzf;
+                zzZ = zznlVar.zzZ();
+            } catch (RemoteException e) {
+                this.zzf.zzu.zzaV().zzb().zzd("(legacy) Failed to get user properties; remote exception", null, this.zzb, e);
+                this.zza.set(Collections.emptyList());
+                atomicReference = this.zza;
             }
+            if (zzZ != null) {
+                if (!TextUtils.isEmpty(null)) {
+                    atomicReference2.set(zzZ.zzq(null, this.zzb, this.zzc, this.zze));
+                } else {
+                    zzr zzrVar = this.zzd;
+                    Preconditions.checkNotNull(zzrVar);
+                    atomicReference2.set(zzZ.zzp(this.zzb, this.zzc, this.zze, zzrVar));
+                }
+                zznlVar.zzV();
+                atomicReference = this.zza;
+                atomicReference.notify();
+                return;
+            }
+            zznlVar.zzu.zzaV().zzb().zzd("(legacy) Failed to get user properties; not connected to service", null, this.zzb, this.zzc);
+            atomicReference2.set(Collections.emptyList());
+            atomicReference2.notify();
         }
     }
 }

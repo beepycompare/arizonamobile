@@ -1,15 +1,15 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzha extends zzme implements zznm {
+public final class zzha extends zzmf implements zznn {
     private static final zzha zzn;
     private int zzb;
     private long zzg;
     private long zzk;
-    private zznf zzl = zznf.zza();
-    private zznf zzm = zznf.zza();
+    private zzng zzl = zzng.zza();
+    private zzng zzm = zzng.zza();
     private String zzd = "";
     private String zze = "";
     private String zzf = "";
@@ -20,7 +20,7 @@ public final class zzha extends zzme implements zznm {
     static {
         zzha zzhaVar = new zzha();
         zzn = zzhaVar;
-        zzme.zzcp(zzha.class, zzhaVar);
+        zzmf.zzcp(zzha.class, zzhaVar);
     }
 
     private zzha() {
@@ -127,7 +127,7 @@ public final class zzha extends zzme implements zznm {
         return (this.zzb & 32) != 0;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {

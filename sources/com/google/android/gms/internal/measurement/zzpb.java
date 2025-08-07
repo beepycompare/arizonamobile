@@ -1,22 +1,11 @@
 package com.google.android.gms.internal.measurement;
-
-import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
-import org.checkerframework.dataflow.qual.SideEffectFree;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzpb implements Supplier {
-    private static final zzpb zza = new zzpb();
-    private final Supplier zzb = Suppliers.ofInstance(new zzpd());
+public final class zzpb implements zzpa {
+    public static final zzkm zza = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb().zzd("measurement.overlapping_bundles_fix", false);
 
-    @SideEffectFree
-    public static long zza() {
-        return zza.get().zza();
-    }
-
-    @Override // com.google.common.base.Supplier
-    /* renamed from: zzb */
-    public final zzpc get() {
-        return (zzpc) this.zzb.get();
+    @Override // com.google.android.gms.internal.measurement.zzpa
+    public final boolean zza() {
+        return ((Boolean) zza.zzd()).booleanValue();
     }
 }

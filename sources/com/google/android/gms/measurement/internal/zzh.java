@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzh {
     private Long zzA;
@@ -29,7 +29,7 @@ public final class zzh {
     private boolean zzQ;
     private long zzR;
     private long zzS;
-    private final zzib zza;
+    private final zzic zza;
     private final String zzb;
     private String zzc;
     private String zzd;
@@ -57,12 +57,12 @@ public final class zzh {
     private Long zzz;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzh(zzib zzibVar, String str) {
-        Preconditions.checkNotNull(zzibVar);
+    public zzh(zzic zzicVar, String str) {
+        Preconditions.checkNotNull(zzicVar);
         Preconditions.checkNotEmpty(str);
-        this.zza = zzibVar;
+        this.zza = zzicVar;
         this.zzb = str;
-        zzibVar.zzaW().zzg();
+        zzicVar.zzaW().zzg();
     }
 
     public final void zzA(long j) {
@@ -128,11 +128,11 @@ public final class zzh {
     }
 
     public final void zzL() {
-        zzib zzibVar = this.zza;
-        zzibVar.zzaW().zzg();
+        zzic zzicVar = this.zza;
+        zzicVar.zzaW().zzg();
         long j = this.zzg + 1;
         if (j > SieveCacheKt.NodeLinkMask) {
-            zzibVar.zzaV().zze().zzb("Bundle index overflow. appId", zzgt.zzl(this.zzb));
+            zzicVar.zzaV().zze().zzb("Bundle index overflow. appId", zzgu.zzl(this.zzb));
             j = 0;
         }
         this.zzQ = true;
@@ -140,16 +140,16 @@ public final class zzh {
     }
 
     public final void zzM(long j) {
-        zzib zzibVar = this.zza;
-        zzibVar.zzaW().zzg();
+        zzic zzicVar = this.zza;
+        zzicVar.zzaW().zzg();
         long j2 = this.zzg + j;
         if (j2 > SieveCacheKt.NodeLinkMask) {
-            zzibVar.zzaV().zze().zzb("Bundle index overflow. appId", zzgt.zzl(this.zzb));
+            zzicVar.zzaV().zze().zzb("Bundle index overflow. appId", zzgu.zzl(this.zzb));
             j2 = (-1) + j;
         }
         long j3 = this.zzF + 1;
         if (j3 > SieveCacheKt.NodeLinkMask) {
-            zzibVar.zzaV().zze().zzb("Delivery index overflow. appId", zzgt.zzl(this.zzb));
+            zzicVar.zzaV().zze().zzb("Delivery index overflow. appId", zzgu.zzl(this.zzb));
             j3 = 0;
         }
         this.zzQ = true;

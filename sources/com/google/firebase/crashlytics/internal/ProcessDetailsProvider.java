@@ -13,7 +13,7 @@ import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ProcessDetailsProvider.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bÀ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J.\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\b2\b\b\u0002\u0010\n\u001a\u00020\u000bH\u0007J\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00040\r2\u0006\u0010\u000e\u001a\u00020\u000fJ\u000e\u0010\u0010\u001a\u00020\u00042\u0006\u0010\u000e\u001a\u00020\u000fJ\b\u0010\u0011\u001a\u00020\u0006H\u0002¨\u0006\u0012"}, d2 = {"Lcom/google/firebase/crashlytics/internal/ProcessDetailsProvider;", "", "()V", "buildProcessDetails", "Lcom/google/firebase/crashlytics/internal/model/CrashlyticsReport$Session$Event$Application$ProcessDetails;", "processName", "", "pid", "", "importance", "isDefaultProcess", "", "getAppProcessDetails", "", "context", "Landroid/content/Context;", "getCurrentProcessDetails", "getProcessName", "com.google.firebase-firebase-crashlytics"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\bÀ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\u0006\u0010\u0007\u001a\u00020\bJ\u000e\u0010\t\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bJ.\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u000e2\b\b\u0002\u0010\u0010\u001a\u00020\u0011H\u0007J\b\u0010\u0012\u001a\u00020\fH\u0002¨\u0006\u0013"}, d2 = {"Lcom/google/firebase/crashlytics/internal/ProcessDetailsProvider;", "", "<init>", "()V", "getAppProcessDetails", "", "Lcom/google/firebase/crashlytics/internal/model/CrashlyticsReport$Session$Event$Application$ProcessDetails;", "context", "Landroid/content/Context;", "getCurrentProcessDetails", "buildProcessDetails", "processName", "", "pid", "", "importance", "isDefaultProcess", "", "getProcessName", "com.google.firebase-firebase-crashlytics"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ProcessDetailsProvider {
     public static final ProcessDetailsProvider INSTANCE = new ProcessDetailsProvider();
@@ -37,17 +37,17 @@ public final class ProcessDetailsProvider {
     }
 
     public final List<CrashlyticsReport.Session.Event.Application.ProcessDetails> getAppProcessDetails(Context context) {
+        List<ActivityManager.RunningAppProcessInfo> emptyList;
         Intrinsics.checkNotNullParameter(context, "context");
         int i = context.getApplicationInfo().uid;
         String str = context.getApplicationInfo().processName;
         Object systemService = context.getSystemService("activity");
         ActivityManager activityManager = systemService instanceof ActivityManager ? (ActivityManager) systemService : null;
-        List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = activityManager != null ? activityManager.getRunningAppProcesses() : null;
-        if (runningAppProcesses == null) {
-            runningAppProcesses = CollectionsKt.emptyList();
+        if (activityManager == null || (emptyList = activityManager.getRunningAppProcesses()) == null) {
+            emptyList = CollectionsKt.emptyList();
         }
         ArrayList arrayList = new ArrayList();
-        for (Object obj : CollectionsKt.filterNotNull(runningAppProcesses)) {
+        for (Object obj : CollectionsKt.filterNotNull(emptyList)) {
             if (((ActivityManager.RunningAppProcessInfo) obj).uid == i) {
                 arrayList.add(obj);
             }
@@ -95,7 +95,7 @@ public final class ProcessDetailsProvider {
     public final CrashlyticsReport.Session.Event.Application.ProcessDetails buildProcessDetails(String processName, int i, int i2, boolean z) {
         Intrinsics.checkNotNullParameter(processName, "processName");
         CrashlyticsReport.Session.Event.Application.ProcessDetails build = CrashlyticsReport.Session.Event.Application.ProcessDetails.builder().setProcessName(processName).setPid(i).setImportance(i2).setDefaultProcess(z).build();
-        Intrinsics.checkNotNullExpressionValue(build, "builder()\n      .setProc…ltProcess)\n      .build()");
+        Intrinsics.checkNotNullExpressionValue(build, "build(...)");
         return build;
     }
 
@@ -105,7 +105,7 @@ public final class ProcessDetailsProvider {
             return (Build.VERSION.SDK_INT < 28 || (processName = Application.getProcessName()) == null) ? "" : processName;
         }
         String myProcessName = Process.myProcessName();
-        Intrinsics.checkNotNullExpressionValue(myProcessName, "{\n      Process.myProcessName()\n    }");
+        Intrinsics.checkNotNull(myProcessName);
         return myProcessName;
     }
 }

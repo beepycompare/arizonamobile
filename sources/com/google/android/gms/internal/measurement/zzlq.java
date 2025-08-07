@@ -1,43 +1,25 @@
 package com.google.android.gms.internal.measurement;
-
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzlq {
-    static final zzlq zza = new zzlq(true);
-    public static final /* synthetic */ int zzb = 0;
-    private static volatile boolean zzc = false;
-    private static volatile zzlq zzd;
-    private final Map zze;
+final class zzlq {
+    private final Object zza;
+    private final int zzb;
 
-    zzlq() {
-        this.zze = new HashMap();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzlq(Object obj, int i) {
+        this.zza = obj;
+        this.zzb = i;
     }
 
-    public static zzlq zza() {
-        zzlq zzlqVar = zzd;
-        if (zzlqVar != null) {
-            return zzlqVar;
+    public final boolean equals(Object obj) {
+        if (obj instanceof zzlq) {
+            zzlq zzlqVar = (zzlq) obj;
+            return this.zza == zzlqVar.zza && this.zzb == zzlqVar.zzb;
         }
-        synchronized (zzlq.class) {
-            zzlq zzlqVar2 = zzd;
-            if (zzlqVar2 != null) {
-                return zzlqVar2;
-            }
-            int i = zznt.zza;
-            zzlq zzb2 = zzly.zzb(zzlq.class);
-            zzd = zzb2;
-            return zzb2;
-        }
+        return false;
     }
 
-    public final zzmd zzb(zznl zznlVar, int i) {
-        return (zzmd) this.zze.get(new zzlp(zznlVar, i));
-    }
-
-    zzlq(boolean z) {
-        this.zze = Collections.emptyMap();
+    public final int hashCode() {
+        return (System.identityHashCode(this.zza) * 65535) + this.zzb;
     }
 }

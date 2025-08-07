@@ -2,6 +2,7 @@ package androidx.media3.common.audio;
 
 import android.media.AudioFocusRequest;
 import android.media.AudioManager;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import androidx.media3.common.AudioAttributes;
@@ -23,12 +24,12 @@ public final class AudioFocusRequestCompat {
         this.focusChangeHandler = handler;
         this.audioAttributes = audioAttributes;
         this.pauseOnDuck = z;
-        if (Util.SDK_INT < 26) {
+        if (Build.VERSION.SDK_INT < 26) {
             this.onAudioFocusChangeListener = new OnAudioFocusChangeListenerHandlerCompat(onAudioFocusChangeListener, handler);
         } else {
             this.onAudioFocusChangeListener = onAudioFocusChangeListener;
         }
-        if (Util.SDK_INT >= 26) {
+        if (Build.VERSION.SDK_INT >= 26) {
             this.frameworkAudioFocusRequest = new AudioFocusRequest.Builder(i).setAudioAttributes(audioAttributes.getAudioAttributesV21().audioAttributes).setWillPauseWhenDucked(z).setOnAudioFocusChangeListener(onAudioFocusChangeListener, handler).build();
         } else {
             this.frameworkAudioFocusRequest = null;

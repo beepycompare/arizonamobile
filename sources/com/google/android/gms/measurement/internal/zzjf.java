@@ -1,18 +1,50 @@
 package com.google.android.gms.measurement.internal;
-
-import android.content.Context;
-import com.google.android.gms.common.util.Clock;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public interface zzjf {
-    zzae zzaU();
+public abstract class zzjf extends zzje {
+    private boolean zza;
 
-    zzgt zzaV();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzjf(zzic zzicVar) {
+        super(zzicVar);
+        this.zzu.zzF();
+    }
 
-    zzhy zzaW();
+    protected abstract boolean zza();
 
-    Context zzaY();
+    protected void zzba() {
+    }
 
-    Clock zzaZ();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final boolean zzv() {
+        return this.zza;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final void zzw() {
+        if (!zzv()) {
+            throw new IllegalStateException("Not initialized");
+        }
+    }
+
+    public final void zzx() {
+        if (this.zza) {
+            throw new IllegalStateException("Can't initialize twice");
+        }
+        if (zza()) {
+            return;
+        }
+        this.zzu.zzG();
+        this.zza = true;
+    }
+
+    public final void zzy() {
+        if (this.zza) {
+            throw new IllegalStateException("Can't initialize twice");
+        }
+        zzba();
+        this.zzu.zzG();
+        this.zza = true;
+    }
 }

@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
@@ -27,6 +27,7 @@ import androidx.media3.common.TrackSelectionOverride;
 import androidx.media3.common.TrackSelectionParameters;
 import androidx.media3.common.Tracks;
 import androidx.media3.common.util.Assertions;
+import androidx.media3.common.util.Log;
 import androidx.media3.common.util.RepeatModeUtil;
 import androidx.media3.common.util.Util;
 import androidx.media3.ui.PlayerControlView;
@@ -34,6 +35,8 @@ import androidx.media3.ui.TimeBar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.common.collect.ImmutableList;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -42,6 +45,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
+import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
 /* loaded from: classes.dex */
 public class PlayerControlView extends FrameLayout {
     public static final int DEFAULT_REPEAT_TOGGLE_MODES = 0;
@@ -52,15 +56,20 @@ public class PlayerControlView extends FrameLayout {
     private static final float[] PLAYBACK_SPEEDS;
     private static final int SETTINGS_AUDIO_TRACK_SELECTION_POSITION = 1;
     private static final int SETTINGS_PLAYBACK_SPEED_POSITION = 0;
+    private static final String TAG = "PlayerControlView";
     private long[] adGroupTimesMs;
     private final View audioTrackButton;
     private final AudioTrackSelectionAdapter audioTrackSelectionAdapter;
     private final float buttonAlphaDisabled;
     private final float buttonAlphaEnabled;
     private final ComponentListener componentListener;
+    private final Class<?> compositionPlayerClazz;
+    private final Method compositionPlayerIsScrubbingModeEnabledMethod;
+    private final Method compositionPlayerSetScrubbingModeEnabledMethod;
     private final PlayerControlViewLayoutManager controlViewLayoutManager;
     private long currentWindowOffset;
     private final TextView durationView;
+    private final Class<?> exoplayerClazz;
     private long[] extraAdGroupTimesMs;
     private boolean[] extraPlayedAdGroups;
     private final View fastForwardButton;
@@ -74,6 +83,7 @@ public class PlayerControlView extends FrameLayout {
     private final Drawable fullscreenExitDrawable;
     private boolean isAttachedToWindow;
     private boolean isFullscreen;
+    private final Method isScrubbingModeEnabledMethod;
     private final ImageView minimalFullscreenButton;
     private boolean multiWindowTimeBar;
     private boolean needToHideBars;
@@ -102,6 +112,7 @@ public class PlayerControlView extends FrameLayout {
     private final View rewindButton;
     private final TextView rewindButtonTextView;
     private boolean scrubbing;
+    private final Method setScrubbingModeEnabledMethod;
     private final SettingsAdapter settingsAdapter;
     private final View settingsButton;
     private final RecyclerView settingsView;
@@ -123,6 +134,7 @@ public class PlayerControlView extends FrameLayout {
     private final TextTrackSelectionAdapter textTrackSelectionAdapter;
     private final TimeBar timeBar;
     private int timeBarMinUpdateIntervalMs;
+    private boolean timeBarScrubbingEnabled;
     private final TrackNameProvider trackNameProvider;
     private final Runnable updateProgressAction;
     private final CopyOnWriteArrayList<VisibilityListener> visibilityListeners;
@@ -167,10 +179,52 @@ public class PlayerControlView extends FrameLayout {
         this(context, attributeSet, i, attributeSet);
     }
 
+    /* JADX WARN: Can't wrap try/catch for region: R(54:1|(7:3|4|5|6|7|8|9)(1:131)|10|(6:11|12|13|14|15|16)|(6:17|18|19|20|21|22)|(3:23|24|25)|26|27|28|29|30|31|32|33|34|35|36|37|(1:39)|40|(1:42)|43|(1:45)|46|(1:48)|49|(1:51)(1:(1:100)(1:101))|52|(1:54)|55|(1:57)|58|(1:60)|61|(1:63)|64|(1:66)(1:(1:97)(1:98))|67|(1:69)|70|(1:72)(2:92|(1:94)(1:95))|73|(1:75)|76|(1:78)|79|(1:81)|82|(1:84)(1:91)|85|(1:87)|88|89|(1:(0))) */
+    /* JADX WARN: Can't wrap try/catch for region: R(59:1|(7:3|4|5|6|7|8|9)(1:131)|10|11|12|13|14|15|16|(6:17|18|19|20|21|22)|(3:23|24|25)|26|27|28|29|30|31|32|33|34|35|36|37|(1:39)|40|(1:42)|43|(1:45)|46|(1:48)|49|(1:51)(1:(1:100)(1:101))|52|(1:54)|55|(1:57)|58|(1:60)|61|(1:63)|64|(1:66)(1:(1:97)(1:98))|67|(1:69)|70|(1:72)(2:92|(1:94)(1:95))|73|(1:75)|76|(1:78)|79|(1:81)|82|(1:84)(1:91)|85|(1:87)|88|89|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0251, code lost:
+        r2 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x0253, code lost:
+        r3 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0254, code lost:
+        r5 = null;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x047f  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x048b  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x05f8  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x027b  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x02ae  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x02bd  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x02cc  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x02e1  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0303  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0378  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x038f  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x03a0  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x03ba  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x03de  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x03ed  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x03ff  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0416  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0423  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0436  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0447  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0458  */
+    /* JADX WARN: Type inference failed for: r21v0 */
+    /* JADX WARN: Type inference failed for: r21v1 */
+    /* JADX WARN: Type inference failed for: r21v2 */
+    /* JADX WARN: Type inference failed for: r21v3 */
+    /* JADX WARN: Type inference failed for: r42v1 */
+    /* JADX WARN: Type inference failed for: r42v2 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public PlayerControlView(Context context, AttributeSet attributeSet, int i, AttributeSet attributeSet2) {
         super(context, attributeSet, i);
-        int i2;
         final PlayerControlView playerControlView;
+        int i2;
         int i3;
         int i4;
         int i5;
@@ -178,53 +232,71 @@ public class PlayerControlView extends FrameLayout {
         int i7;
         int i8;
         int i9;
-        int i10;
-        int i11;
-        int i12;
         boolean z;
         boolean z2;
         boolean z3;
         boolean z4;
         boolean z5;
         boolean z6;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
         boolean z7;
-        int i17;
-        int i18;
         boolean z8;
-        Context context2;
+        int i10;
+        int i11;
+        String str;
+        String str2;
+        Class<?> cls;
+        Method method;
+        int i12;
+        Method method2;
         ImageView imageView;
-        int i19;
+        View findViewById;
+        View findViewById2;
+        View findViewById3;
+        TimeBar timeBar;
         boolean z9;
+        int i13;
         boolean z10;
-        int i20;
-        TextView textView;
+        int i14;
+        Context context2;
+        int i15;
+        ImageView imageView2;
+        int i16;
         boolean z11;
+        int i17;
+        TextView textView;
+        ?? r21;
         final PlayerControlView playerControlView2;
-        int i21;
         boolean z12;
-        int i22;
+        int i18;
+        TimeBar timeBar2;
+        ImageView imageView3;
+        ImageView imageView4;
+        ImageView imageView5;
+        ImageView imageView6;
+        View view;
+        ImageView imageView7;
+        View view2;
+        ImageView imageView8;
+        ImageView imageView9;
+        ImageView imageView10;
         boolean z13;
-        int i23 = R.layout.exo_player_control_view;
-        int i24 = R.drawable.exo_styled_controls_play;
-        int i25 = R.drawable.exo_styled_controls_pause;
-        int i26 = R.drawable.exo_styled_controls_next;
-        int i27 = R.drawable.exo_styled_controls_simple_fastforward;
-        int i28 = R.drawable.exo_styled_controls_previous;
-        int i29 = R.drawable.exo_styled_controls_simple_rewind;
-        int i30 = R.drawable.exo_styled_controls_fullscreen_exit;
-        int i31 = R.drawable.exo_styled_controls_fullscreen_enter;
-        int i32 = R.drawable.exo_styled_controls_repeat_off;
-        int i33 = R.drawable.exo_styled_controls_repeat_one;
-        int i34 = R.drawable.exo_styled_controls_repeat_all;
-        int i35 = R.drawable.exo_styled_controls_shuffle_on;
-        int i36 = R.drawable.exo_styled_controls_shuffle_off;
-        int i37 = R.drawable.exo_styled_controls_subtitle_on;
-        int i38 = R.drawable.exo_styled_controls_subtitle_off;
-        int i39 = R.drawable.exo_styled_controls_vr;
+        int i19 = R.layout.exo_player_control_view;
+        int i20 = R.drawable.exo_styled_controls_play;
+        int i21 = R.drawable.exo_styled_controls_pause;
+        int i22 = R.drawable.exo_styled_controls_next;
+        int i23 = R.drawable.exo_styled_controls_simple_fastforward;
+        int i24 = R.drawable.exo_styled_controls_previous;
+        int i25 = R.drawable.exo_styled_controls_simple_rewind;
+        int i26 = R.drawable.exo_styled_controls_fullscreen_exit;
+        int i27 = R.drawable.exo_styled_controls_fullscreen_enter;
+        int i28 = R.drawable.exo_styled_controls_repeat_off;
+        int i29 = R.drawable.exo_styled_controls_repeat_one;
+        int i30 = R.drawable.exo_styled_controls_repeat_all;
+        int i31 = R.drawable.exo_styled_controls_shuffle_on;
+        int i32 = R.drawable.exo_styled_controls_shuffle_off;
+        int i33 = R.drawable.exo_styled_controls_subtitle_on;
+        int i34 = R.drawable.exo_styled_controls_subtitle_off;
+        int i35 = R.drawable.exo_styled_controls_vr;
         this.showPlayButtonIfSuppressed = true;
         this.showTimeoutMs = 5000;
         this.repeatToggleModes = 0;
@@ -232,23 +304,24 @@ public class PlayerControlView extends FrameLayout {
         if (attributeSet2 != null) {
             TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(attributeSet2, R.styleable.PlayerControlView, i, 0);
             try {
-                int resourceId = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_controller_layout_id, i23);
-                int resourceId2 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_play_icon, i24);
-                int resourceId3 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_pause_icon, i25);
-                int resourceId4 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_next_icon, i26);
-                int resourceId5 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_fastforward_icon, i27);
-                int resourceId6 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_previous_icon, i28);
-                int resourceId7 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_rewind_icon, i29);
-                int resourceId8 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_fullscreen_exit_icon, i30);
-                int resourceId9 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_fullscreen_enter_icon, i31);
-                int resourceId10 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_repeat_off_icon, i32);
-                int resourceId11 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_repeat_one_icon, i33);
-                int resourceId12 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_repeat_all_icon, i34);
-                int resourceId13 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_shuffle_on_icon, i35);
-                int resourceId14 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_shuffle_off_icon, i36);
-                int resourceId15 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_subtitle_on_icon, i37);
-                int resourceId16 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_subtitle_off_icon, i38);
-                int resourceId17 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_vr_icon, i39);
+                i19 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_controller_layout_id, i19);
+                int resourceId = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_play_icon, i20);
+                i21 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_pause_icon, i21);
+                i22 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_next_icon, i22);
+                int resourceId2 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_fastforward_icon, i23);
+                int resourceId3 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_previous_icon, i24);
+                i25 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_rewind_icon, i25);
+                i26 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_fullscreen_exit_icon, i26);
+                int resourceId4 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_fullscreen_enter_icon, i27);
+                int resourceId5 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_repeat_off_icon, i28);
+                int resourceId6 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_repeat_one_icon, i29);
+                int resourceId7 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_repeat_all_icon, i30);
+                int resourceId8 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_shuffle_on_icon, i31);
+                int resourceId9 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_shuffle_off_icon, i32);
+                i33 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_subtitle_on_icon, i33);
+                i34 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_subtitle_off_icon, i34);
+                int resourceId10 = obtainStyledAttributes.getResourceId(R.styleable.PlayerControlView_vr_icon, i35);
+                i2 = resourceId;
                 playerControlView = this;
                 try {
                     playerControlView.showTimeoutMs = obtainStyledAttributes.getInt(R.styleable.PlayerControlView_show_timeout, playerControlView.showTimeoutMs);
@@ -260,34 +333,27 @@ public class PlayerControlView extends FrameLayout {
                     boolean z18 = obtainStyledAttributes.getBoolean(R.styleable.PlayerControlView_show_shuffle_button, false);
                     boolean z19 = obtainStyledAttributes.getBoolean(R.styleable.PlayerControlView_show_subtitle_button, false);
                     boolean z20 = obtainStyledAttributes.getBoolean(R.styleable.PlayerControlView_show_vr_button, false);
+                    playerControlView.timeBarScrubbingEnabled = obtainStyledAttributes.getBoolean(R.styleable.PlayerControlView_time_bar_scrubbing_enabled, false);
                     playerControlView.setTimeBarMinUpdateInterval(obtainStyledAttributes.getInt(R.styleable.PlayerControlView_time_bar_min_update_interval, playerControlView.timeBarMinUpdateIntervalMs));
                     boolean z21 = obtainStyledAttributes.getBoolean(R.styleable.PlayerControlView_animation_enabled, true);
                     obtainStyledAttributes.recycle();
-                    z6 = z21;
-                    i7 = resourceId11;
-                    i8 = resourceId12;
-                    i9 = resourceId13;
-                    i11 = resourceId14;
-                    i5 = resourceId15;
-                    i12 = resourceId16;
-                    i10 = resourceId4;
-                    i3 = resourceId17;
-                    z = z14;
-                    z3 = z18;
-                    z4 = z19;
-                    z5 = z20;
-                    i2 = resourceId2;
-                    i4 = resourceId;
-                    i13 = resourceId5;
-                    i14 = resourceId6;
-                    i6 = resourceId7;
-                    i15 = resourceId9;
-                    i16 = resourceId10;
-                    z2 = z15;
-                    z7 = z17;
-                    i17 = resourceId3;
-                    i18 = resourceId8;
-                    z8 = z16;
+                    i5 = resourceId3;
+                    i6 = resourceId4;
+                    i7 = resourceId5;
+                    i8 = resourceId6;
+                    i9 = resourceId7;
+                    i3 = resourceId10;
+                    z2 = z14;
+                    z3 = z15;
+                    z4 = z16;
+                    z5 = z17;
+                    z6 = z18;
+                    z7 = z19;
+                    z8 = z20;
+                    i10 = resourceId9;
+                    i4 = resourceId2;
+                    z = z21;
+                    i11 = resourceId8;
                 } catch (Throwable th) {
                     th = th;
                     obtainStyledAttributes.recycle();
@@ -297,44 +363,39 @@ public class PlayerControlView extends FrameLayout {
                 th = th2;
             }
         } else {
-            i2 = i24;
             playerControlView = this;
-            i3 = i39;
+            i2 = i20;
+            i3 = i35;
             i4 = i23;
-            i5 = i37;
-            i6 = i29;
-            i7 = i33;
-            i8 = i34;
-            i9 = i35;
-            i10 = i26;
-            i11 = i36;
-            i12 = i38;
+            i5 = i24;
+            i6 = i27;
+            i7 = i28;
+            i8 = i29;
+            i9 = i30;
             z = true;
             z2 = true;
-            z3 = false;
-            z4 = false;
-            z5 = false;
-            z6 = true;
-            i13 = i27;
-            i14 = i28;
-            i15 = i31;
-            i16 = i32;
-            z7 = true;
-            i17 = i25;
-            i18 = i30;
-            z8 = true;
+            z3 = true;
+            z4 = true;
+            z5 = true;
+            z6 = false;
+            z7 = false;
+            z8 = false;
+            i10 = i32;
+            i11 = i31;
         }
-        LayoutInflater.from(context).inflate(i4, playerControlView);
+        int i36 = i25;
+        int i37 = i26;
+        int i38 = i33;
+        int i39 = i34;
+        LayoutInflater.from(context).inflate(i19, playerControlView);
         playerControlView.setDescendantFocusability(262144);
-        ComponentListener componentListener = new ComponentListener();
-        playerControlView.componentListener = componentListener;
+        playerControlView.componentListener = new ComponentListener();
         playerControlView.visibilityListeners = new CopyOnWriteArrayList<>();
         playerControlView.period = new Timeline.Period();
         playerControlView.window = new Timeline.Window();
         StringBuilder sb = new StringBuilder();
         playerControlView.formatBuilder = sb;
-        int i40 = i18;
-        int i41 = i15;
+        int i40 = i21;
         playerControlView.formatter = new Formatter(sb, Locale.getDefault());
         playerControlView.adGroupTimesMs = new long[0];
         playerControlView.playedAdGroups = new boolean[0];
@@ -346,231 +407,607 @@ public class PlayerControlView extends FrameLayout {
                 PlayerControlView.this.updateProgress();
             }
         };
+        try {
+            cls = Class.forName("androidx.media3.exoplayer.ExoPlayer");
+            try {
+                str2 = "setScrubbingModeEnabled";
+            } catch (ClassNotFoundException | NoSuchMethodException unused) {
+                str = "isScrubbingModeEnabled";
+                str2 = "setScrubbingModeEnabled";
+            }
+        } catch (ClassNotFoundException | NoSuchMethodException unused2) {
+            str = "isScrubbingModeEnabled";
+            str2 = "setScrubbingModeEnabled";
+            cls = null;
+        }
+        try {
+            method = cls.getMethod(str2, Boolean.TYPE);
+            try {
+                str = "isScrubbingModeEnabled";
+            } catch (ClassNotFoundException | NoSuchMethodException unused3) {
+                str = "isScrubbingModeEnabled";
+            }
+        } catch (ClassNotFoundException | NoSuchMethodException unused4) {
+            str = "isScrubbingModeEnabled";
+            method = null;
+            i12 = i22;
+            method2 = null;
+            playerControlView.exoplayerClazz = cls;
+            playerControlView.setScrubbingModeEnabledMethod = method;
+            playerControlView.isScrubbingModeEnabledMethod = method2;
+            Class<?> cls2 = Class.forName("androidx.media3.transformer.CompositionPlayer");
+            Class<?>[] clsArr = new Class[1];
+            clsArr[0] = Boolean.TYPE;
+            Method method3 = cls2.getMethod(str2, clsArr);
+            Method method4 = cls2.getMethod(str, new Class[0]);
+            playerControlView.compositionPlayerClazz = cls2;
+            playerControlView.compositionPlayerSetScrubbingModeEnabledMethod = method3;
+            playerControlView.compositionPlayerIsScrubbingModeEnabledMethod = method4;
+            playerControlView.durationView = (TextView) playerControlView.findViewById(R.id.exo_duration);
+            playerControlView.positionView = (TextView) playerControlView.findViewById(R.id.exo_position);
+            imageView = (ImageView) playerControlView.findViewById(R.id.exo_subtitle);
+            playerControlView.subtitleButton = imageView;
+            if (imageView != null) {
+            }
+            ImageView imageView11 = (ImageView) playerControlView.findViewById(R.id.exo_fullscreen);
+            playerControlView.fullscreenButton = imageView11;
+            initializeFullscreenButton(imageView11, new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$$ExternalSyntheticLambda1
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view3) {
+                    PlayerControlView.this.onFullscreenButtonClicked(view3);
+                }
+            });
+            ImageView imageView12 = (ImageView) playerControlView.findViewById(R.id.exo_minimal_fullscreen);
+            playerControlView.minimalFullscreenButton = imageView12;
+            initializeFullscreenButton(imageView12, new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$$ExternalSyntheticLambda1
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view3) {
+                    PlayerControlView.this.onFullscreenButtonClicked(view3);
+                }
+            });
+            findViewById = playerControlView.findViewById(R.id.exo_settings);
+            playerControlView.settingsButton = findViewById;
+            if (findViewById != null) {
+            }
+            findViewById2 = playerControlView.findViewById(R.id.exo_playback_speed);
+            playerControlView.playbackSpeedButton = findViewById2;
+            if (findViewById2 != null) {
+            }
+            findViewById3 = playerControlView.findViewById(R.id.exo_audio_track);
+            playerControlView.audioTrackButton = findViewById3;
+            if (findViewById3 != null) {
+            }
+            timeBar = (TimeBar) playerControlView.findViewById(R.id.exo_progress);
+            View findViewById4 = playerControlView.findViewById(R.id.exo_progress_placeholder);
+            if (timeBar != null) {
+            }
+            timeBar2 = playerControlView2.timeBar;
+            if (timeBar2 != null) {
+            }
+            Resources resources = context2.getResources();
+            playerControlView2.resources = resources;
+            imageView3 = (ImageView) playerControlView2.findViewById(R.id.exo_play_pause);
+            playerControlView2.playPauseButton = imageView3;
+            if (imageView3 != null) {
+            }
+            imageView4 = (ImageView) playerControlView2.findViewById(R.id.exo_prev);
+            playerControlView2.previousButton = imageView4;
+            if (imageView4 != null) {
+            }
+            imageView5 = (ImageView) playerControlView2.findViewById(R.id.exo_next);
+            playerControlView2.nextButton = imageView5;
+            if (imageView5 != null) {
+            }
+            Typeface font = ResourcesCompat.getFont(context2, R.font.roboto_medium_numbers);
+            imageView6 = (ImageView) playerControlView2.findViewById(R.id.exo_rew);
+            TextView textView2 = (TextView) playerControlView2.findViewById(R.id.exo_rew_with_amount);
+            if (imageView6 != null) {
+            }
+            view = playerControlView2.rewindButton;
+            if (view != null) {
+            }
+            imageView7 = (ImageView) playerControlView2.findViewById(R.id.exo_ffwd);
+            TextView textView3 = (TextView) playerControlView2.findViewById(R.id.exo_ffwd_with_amount);
+            if (imageView7 != null) {
+            }
+            view2 = playerControlView2.fastForwardButton;
+            if (view2 != null) {
+            }
+            imageView8 = (ImageView) playerControlView2.findViewById(R.id.exo_repeat_toggle);
+            playerControlView2.repeatToggleButton = imageView8;
+            if (imageView8 != null) {
+            }
+            imageView9 = (ImageView) playerControlView2.findViewById(R.id.exo_shuffle);
+            playerControlView2.shuffleButton = imageView9;
+            if (imageView9 != null) {
+            }
+            playerControlView2.buttonAlphaEnabled = resources.getInteger(R.integer.exo_media_button_opacity_percentage_enabled) / 100.0f;
+            playerControlView2.buttonAlphaDisabled = resources.getInteger(R.integer.exo_media_button_opacity_percentage_disabled) / 100.0f;
+            imageView10 = (ImageView) playerControlView2.findViewById(R.id.exo_vr);
+            playerControlView2.vrButton = imageView10;
+            if (imageView10 != null) {
+            }
+            PlayerControlViewLayoutManager playerControlViewLayoutManager = new PlayerControlViewLayoutManager(playerControlView2);
+            playerControlView2.controlViewLayoutManager = playerControlViewLayoutManager;
+            playerControlViewLayoutManager.setAnimationEnabled(z);
+            String[] strArr = new String[2];
+            Drawable[] drawableArr = new Drawable[2];
+            boolean z22 = z13;
+            strArr[z22 ? 1 : 0] = resources.getString(R.string.exo_controls_playback_speed);
+            drawableArr[z22 ? 1 : 0] = Util.getDrawable(context2, resources, R.drawable.exo_styled_controls_speed);
+            strArr[r21] = resources.getString(R.string.exo_track_selection_title_audio);
+            drawableArr[r21] = Util.getDrawable(context2, resources, R.drawable.exo_styled_controls_audiotrack);
+            SettingsAdapter settingsAdapter = new SettingsAdapter(strArr, drawableArr);
+            playerControlView2.settingsAdapter = settingsAdapter;
+            playerControlView2.settingsWindowMargin = resources.getDimensionPixelSize(R.dimen.exo_settings_offset);
+            RecyclerView recyclerView = (RecyclerView) LayoutInflater.from(context2).inflate(R.layout.exo_styled_settings_list, (ViewGroup) null);
+            playerControlView2.settingsView = recyclerView;
+            recyclerView.setAdapter(settingsAdapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(playerControlView2.getContext()));
+            boolean z23 = r21;
+            PopupWindow popupWindow = new PopupWindow(recyclerView, -2, -2, z23);
+            playerControlView2.settingsWindow = popupWindow;
+            popupWindow.setOnDismissListener(playerControlView2.componentListener);
+            playerControlView2.needToHideBars = z23;
+            playerControlView2.trackNameProvider = new DefaultTrackNameProvider(playerControlView2.getResources());
+            playerControlView2.subtitleOnButtonDrawable = Util.getDrawable(context2, resources, i38);
+            playerControlView2.subtitleOffButtonDrawable = Util.getDrawable(context2, resources, i39);
+            playerControlView2.subtitleOnContentDescription = resources.getString(R.string.exo_controls_cc_enabled_description);
+            playerControlView2.subtitleOffContentDescription = resources.getString(R.string.exo_controls_cc_disabled_description);
+            playerControlView2.textTrackSelectionAdapter = new TextTrackSelectionAdapter();
+            playerControlView2.audioTrackSelectionAdapter = new AudioTrackSelectionAdapter();
+            playerControlView2.playbackSpeedAdapter = new PlaybackSpeedAdapter(resources.getStringArray(R.array.exo_controls_playback_speeds), PLAYBACK_SPEEDS);
+            playerControlView2.playButtonDrawable = Util.getDrawable(context2, resources, i13);
+            playerControlView2.pauseButtonDrawable = Util.getDrawable(context2, resources, i17);
+            playerControlView2.fullscreenExitDrawable = Util.getDrawable(context2, resources, i37);
+            playerControlView2.fullscreenEnterDrawable = Util.getDrawable(context2, resources, i6);
+            playerControlView2.repeatOffButtonDrawable = Util.getDrawable(context2, resources, i7);
+            playerControlView2.repeatOneButtonDrawable = Util.getDrawable(context2, resources, i8);
+            playerControlView2.repeatAllButtonDrawable = Util.getDrawable(context2, resources, i9);
+            playerControlView2.shuffleOnButtonDrawable = Util.getDrawable(context2, resources, i15);
+            playerControlView2.shuffleOffButtonDrawable = Util.getDrawable(context2, resources, i16);
+            playerControlView2.fullscreenExitContentDescription = resources.getString(R.string.exo_controls_fullscreen_exit_description);
+            playerControlView2.fullscreenEnterContentDescription = resources.getString(R.string.exo_controls_fullscreen_enter_description);
+            playerControlView2.repeatOffButtonContentDescription = resources.getString(R.string.exo_controls_repeat_off_description);
+            playerControlView2.repeatOneButtonContentDescription = resources.getString(R.string.exo_controls_repeat_one_description);
+            playerControlView2.repeatAllButtonContentDescription = resources.getString(R.string.exo_controls_repeat_all_description);
+            playerControlView2.shuffleOnContentDescription = resources.getString(R.string.exo_controls_shuffle_on_description);
+            playerControlView2.shuffleOffContentDescription = resources.getString(R.string.exo_controls_shuffle_off_description);
+            playerControlViewLayoutManager.setShowButton((ViewGroup) playerControlView2.findViewById(R.id.exo_bottom_bar), true);
+            playerControlViewLayoutManager.setShowButton(playerControlView2.fastForwardButton, z9);
+            playerControlViewLayoutManager.setShowButton(playerControlView2.rewindButton, z12);
+            playerControlViewLayoutManager.setShowButton(imageView4, z10);
+            playerControlViewLayoutManager.setShowButton(imageView5, z11);
+            playerControlViewLayoutManager.setShowButton(imageView9, z6);
+            playerControlViewLayoutManager.setShowButton(imageView2, z7);
+            playerControlViewLayoutManager.setShowButton(imageView10, z8);
+            playerControlViewLayoutManager.setShowButton(imageView8, playerControlView2.repeatToggleModes == 0 ? z22 ? 1 : 0 : true);
+            playerControlView2.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: androidx.media3.ui.PlayerControlView$$ExternalSyntheticLambda2
+                @Override // android.view.View.OnLayoutChangeListener
+                public final void onLayoutChange(View view3, int i41, int i42, int i43, int i44, int i45, int i46, int i47, int i48) {
+                    PlayerControlView.this.onLayoutChange(view3, i41, i42, i43, i44, i45, i46, i47, i48);
+                }
+            });
+        }
+        try {
+            i12 = i22;
+            method2 = cls.getMethod(str, new Class[0]);
+        } catch (ClassNotFoundException | NoSuchMethodException unused5) {
+            i12 = i22;
+            method2 = null;
+            playerControlView.exoplayerClazz = cls;
+            playerControlView.setScrubbingModeEnabledMethod = method;
+            playerControlView.isScrubbingModeEnabledMethod = method2;
+            Class<?> cls22 = Class.forName("androidx.media3.transformer.CompositionPlayer");
+            Class<?>[] clsArr2 = new Class[1];
+            clsArr2[0] = Boolean.TYPE;
+            Method method32 = cls22.getMethod(str2, clsArr2);
+            Method method42 = cls22.getMethod(str, new Class[0]);
+            playerControlView.compositionPlayerClazz = cls22;
+            playerControlView.compositionPlayerSetScrubbingModeEnabledMethod = method32;
+            playerControlView.compositionPlayerIsScrubbingModeEnabledMethod = method42;
+            playerControlView.durationView = (TextView) playerControlView.findViewById(R.id.exo_duration);
+            playerControlView.positionView = (TextView) playerControlView.findViewById(R.id.exo_position);
+            imageView = (ImageView) playerControlView.findViewById(R.id.exo_subtitle);
+            playerControlView.subtitleButton = imageView;
+            if (imageView != null) {
+            }
+            ImageView imageView112 = (ImageView) playerControlView.findViewById(R.id.exo_fullscreen);
+            playerControlView.fullscreenButton = imageView112;
+            initializeFullscreenButton(imageView112, new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$$ExternalSyntheticLambda1
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view3) {
+                    PlayerControlView.this.onFullscreenButtonClicked(view3);
+                }
+            });
+            ImageView imageView122 = (ImageView) playerControlView.findViewById(R.id.exo_minimal_fullscreen);
+            playerControlView.minimalFullscreenButton = imageView122;
+            initializeFullscreenButton(imageView122, new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$$ExternalSyntheticLambda1
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view3) {
+                    PlayerControlView.this.onFullscreenButtonClicked(view3);
+                }
+            });
+            findViewById = playerControlView.findViewById(R.id.exo_settings);
+            playerControlView.settingsButton = findViewById;
+            if (findViewById != null) {
+            }
+            findViewById2 = playerControlView.findViewById(R.id.exo_playback_speed);
+            playerControlView.playbackSpeedButton = findViewById2;
+            if (findViewById2 != null) {
+            }
+            findViewById3 = playerControlView.findViewById(R.id.exo_audio_track);
+            playerControlView.audioTrackButton = findViewById3;
+            if (findViewById3 != null) {
+            }
+            timeBar = (TimeBar) playerControlView.findViewById(R.id.exo_progress);
+            View findViewById42 = playerControlView.findViewById(R.id.exo_progress_placeholder);
+            if (timeBar != null) {
+            }
+            timeBar2 = playerControlView2.timeBar;
+            if (timeBar2 != null) {
+            }
+            Resources resources2 = context2.getResources();
+            playerControlView2.resources = resources2;
+            imageView3 = (ImageView) playerControlView2.findViewById(R.id.exo_play_pause);
+            playerControlView2.playPauseButton = imageView3;
+            if (imageView3 != null) {
+            }
+            imageView4 = (ImageView) playerControlView2.findViewById(R.id.exo_prev);
+            playerControlView2.previousButton = imageView4;
+            if (imageView4 != null) {
+            }
+            imageView5 = (ImageView) playerControlView2.findViewById(R.id.exo_next);
+            playerControlView2.nextButton = imageView5;
+            if (imageView5 != null) {
+            }
+            Typeface font2 = ResourcesCompat.getFont(context2, R.font.roboto_medium_numbers);
+            imageView6 = (ImageView) playerControlView2.findViewById(R.id.exo_rew);
+            TextView textView22 = (TextView) playerControlView2.findViewById(R.id.exo_rew_with_amount);
+            if (imageView6 != null) {
+            }
+            view = playerControlView2.rewindButton;
+            if (view != null) {
+            }
+            imageView7 = (ImageView) playerControlView2.findViewById(R.id.exo_ffwd);
+            TextView textView32 = (TextView) playerControlView2.findViewById(R.id.exo_ffwd_with_amount);
+            if (imageView7 != null) {
+            }
+            view2 = playerControlView2.fastForwardButton;
+            if (view2 != null) {
+            }
+            imageView8 = (ImageView) playerControlView2.findViewById(R.id.exo_repeat_toggle);
+            playerControlView2.repeatToggleButton = imageView8;
+            if (imageView8 != null) {
+            }
+            imageView9 = (ImageView) playerControlView2.findViewById(R.id.exo_shuffle);
+            playerControlView2.shuffleButton = imageView9;
+            if (imageView9 != null) {
+            }
+            playerControlView2.buttonAlphaEnabled = resources2.getInteger(R.integer.exo_media_button_opacity_percentage_enabled) / 100.0f;
+            playerControlView2.buttonAlphaDisabled = resources2.getInteger(R.integer.exo_media_button_opacity_percentage_disabled) / 100.0f;
+            imageView10 = (ImageView) playerControlView2.findViewById(R.id.exo_vr);
+            playerControlView2.vrButton = imageView10;
+            if (imageView10 != null) {
+            }
+            PlayerControlViewLayoutManager playerControlViewLayoutManager2 = new PlayerControlViewLayoutManager(playerControlView2);
+            playerControlView2.controlViewLayoutManager = playerControlViewLayoutManager2;
+            playerControlViewLayoutManager2.setAnimationEnabled(z);
+            String[] strArr2 = new String[2];
+            Drawable[] drawableArr2 = new Drawable[2];
+            boolean z222 = z13;
+            strArr2[z222 ? 1 : 0] = resources2.getString(R.string.exo_controls_playback_speed);
+            drawableArr2[z222 ? 1 : 0] = Util.getDrawable(context2, resources2, R.drawable.exo_styled_controls_speed);
+            strArr2[r21] = resources2.getString(R.string.exo_track_selection_title_audio);
+            drawableArr2[r21] = Util.getDrawable(context2, resources2, R.drawable.exo_styled_controls_audiotrack);
+            SettingsAdapter settingsAdapter2 = new SettingsAdapter(strArr2, drawableArr2);
+            playerControlView2.settingsAdapter = settingsAdapter2;
+            playerControlView2.settingsWindowMargin = resources2.getDimensionPixelSize(R.dimen.exo_settings_offset);
+            RecyclerView recyclerView2 = (RecyclerView) LayoutInflater.from(context2).inflate(R.layout.exo_styled_settings_list, (ViewGroup) null);
+            playerControlView2.settingsView = recyclerView2;
+            recyclerView2.setAdapter(settingsAdapter2);
+            recyclerView2.setLayoutManager(new LinearLayoutManager(playerControlView2.getContext()));
+            boolean z232 = r21;
+            PopupWindow popupWindow2 = new PopupWindow(recyclerView2, -2, -2, z232);
+            playerControlView2.settingsWindow = popupWindow2;
+            popupWindow2.setOnDismissListener(playerControlView2.componentListener);
+            playerControlView2.needToHideBars = z232;
+            playerControlView2.trackNameProvider = new DefaultTrackNameProvider(playerControlView2.getResources());
+            playerControlView2.subtitleOnButtonDrawable = Util.getDrawable(context2, resources2, i38);
+            playerControlView2.subtitleOffButtonDrawable = Util.getDrawable(context2, resources2, i39);
+            playerControlView2.subtitleOnContentDescription = resources2.getString(R.string.exo_controls_cc_enabled_description);
+            playerControlView2.subtitleOffContentDescription = resources2.getString(R.string.exo_controls_cc_disabled_description);
+            playerControlView2.textTrackSelectionAdapter = new TextTrackSelectionAdapter();
+            playerControlView2.audioTrackSelectionAdapter = new AudioTrackSelectionAdapter();
+            playerControlView2.playbackSpeedAdapter = new PlaybackSpeedAdapter(resources2.getStringArray(R.array.exo_controls_playback_speeds), PLAYBACK_SPEEDS);
+            playerControlView2.playButtonDrawable = Util.getDrawable(context2, resources2, i13);
+            playerControlView2.pauseButtonDrawable = Util.getDrawable(context2, resources2, i17);
+            playerControlView2.fullscreenExitDrawable = Util.getDrawable(context2, resources2, i37);
+            playerControlView2.fullscreenEnterDrawable = Util.getDrawable(context2, resources2, i6);
+            playerControlView2.repeatOffButtonDrawable = Util.getDrawable(context2, resources2, i7);
+            playerControlView2.repeatOneButtonDrawable = Util.getDrawable(context2, resources2, i8);
+            playerControlView2.repeatAllButtonDrawable = Util.getDrawable(context2, resources2, i9);
+            playerControlView2.shuffleOnButtonDrawable = Util.getDrawable(context2, resources2, i15);
+            playerControlView2.shuffleOffButtonDrawable = Util.getDrawable(context2, resources2, i16);
+            playerControlView2.fullscreenExitContentDescription = resources2.getString(R.string.exo_controls_fullscreen_exit_description);
+            playerControlView2.fullscreenEnterContentDescription = resources2.getString(R.string.exo_controls_fullscreen_enter_description);
+            playerControlView2.repeatOffButtonContentDescription = resources2.getString(R.string.exo_controls_repeat_off_description);
+            playerControlView2.repeatOneButtonContentDescription = resources2.getString(R.string.exo_controls_repeat_one_description);
+            playerControlView2.repeatAllButtonContentDescription = resources2.getString(R.string.exo_controls_repeat_all_description);
+            playerControlView2.shuffleOnContentDescription = resources2.getString(R.string.exo_controls_shuffle_on_description);
+            playerControlView2.shuffleOffContentDescription = resources2.getString(R.string.exo_controls_shuffle_off_description);
+            playerControlViewLayoutManager2.setShowButton((ViewGroup) playerControlView2.findViewById(R.id.exo_bottom_bar), true);
+            playerControlViewLayoutManager2.setShowButton(playerControlView2.fastForwardButton, z9);
+            playerControlViewLayoutManager2.setShowButton(playerControlView2.rewindButton, z12);
+            playerControlViewLayoutManager2.setShowButton(imageView4, z10);
+            playerControlViewLayoutManager2.setShowButton(imageView5, z11);
+            playerControlViewLayoutManager2.setShowButton(imageView9, z6);
+            playerControlViewLayoutManager2.setShowButton(imageView2, z7);
+            playerControlViewLayoutManager2.setShowButton(imageView10, z8);
+            playerControlViewLayoutManager2.setShowButton(imageView8, playerControlView2.repeatToggleModes == 0 ? z222 ? 1 : 0 : true);
+            playerControlView2.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: androidx.media3.ui.PlayerControlView$$ExternalSyntheticLambda2
+                @Override // android.view.View.OnLayoutChangeListener
+                public final void onLayoutChange(View view3, int i41, int i42, int i43, int i44, int i45, int i46, int i47, int i48) {
+                    PlayerControlView.this.onLayoutChange(view3, i41, i42, i43, i44, i45, i46, i47, i48);
+                }
+            });
+        }
+        playerControlView.exoplayerClazz = cls;
+        playerControlView.setScrubbingModeEnabledMethod = method;
+        playerControlView.isScrubbingModeEnabledMethod = method2;
+        Class<?> cls222 = Class.forName("androidx.media3.transformer.CompositionPlayer");
+        Class<?>[] clsArr22 = new Class[1];
+        clsArr22[0] = Boolean.TYPE;
+        Method method322 = cls222.getMethod(str2, clsArr22);
+        Method method422 = cls222.getMethod(str, new Class[0]);
+        playerControlView.compositionPlayerClazz = cls222;
+        playerControlView.compositionPlayerSetScrubbingModeEnabledMethod = method322;
+        playerControlView.compositionPlayerIsScrubbingModeEnabledMethod = method422;
         playerControlView.durationView = (TextView) playerControlView.findViewById(R.id.exo_duration);
         playerControlView.positionView = (TextView) playerControlView.findViewById(R.id.exo_position);
-        ImageView imageView2 = (ImageView) playerControlView.findViewById(R.id.exo_subtitle);
-        playerControlView.subtitleButton = imageView2;
-        if (imageView2 != null) {
-            imageView2.setOnClickListener(componentListener);
+        imageView = (ImageView) playerControlView.findViewById(R.id.exo_subtitle);
+        playerControlView.subtitleButton = imageView;
+        if (imageView != null) {
+            imageView.setOnClickListener(playerControlView.componentListener);
         }
-        ImageView imageView3 = (ImageView) playerControlView.findViewById(R.id.exo_fullscreen);
-        playerControlView.fullscreenButton = imageView3;
-        initializeFullscreenButton(imageView3, new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$$ExternalSyntheticLambda1
+        ImageView imageView1122 = (ImageView) playerControlView.findViewById(R.id.exo_fullscreen);
+        playerControlView.fullscreenButton = imageView1122;
+        initializeFullscreenButton(imageView1122, new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                PlayerControlView.this.onFullscreenButtonClicked(view);
+            public final void onClick(View view3) {
+                PlayerControlView.this.onFullscreenButtonClicked(view3);
             }
         });
-        ImageView imageView4 = (ImageView) playerControlView.findViewById(R.id.exo_minimal_fullscreen);
-        playerControlView.minimalFullscreenButton = imageView4;
-        initializeFullscreenButton(imageView4, new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$$ExternalSyntheticLambda1
+        ImageView imageView1222 = (ImageView) playerControlView.findViewById(R.id.exo_minimal_fullscreen);
+        playerControlView.minimalFullscreenButton = imageView1222;
+        initializeFullscreenButton(imageView1222, new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                PlayerControlView.this.onFullscreenButtonClicked(view);
+            public final void onClick(View view3) {
+                PlayerControlView.this.onFullscreenButtonClicked(view3);
             }
         });
-        View findViewById = playerControlView.findViewById(R.id.exo_settings);
+        findViewById = playerControlView.findViewById(R.id.exo_settings);
         playerControlView.settingsButton = findViewById;
         if (findViewById != null) {
-            findViewById.setOnClickListener(componentListener);
+            findViewById.setOnClickListener(playerControlView.componentListener);
         }
-        View findViewById2 = playerControlView.findViewById(R.id.exo_playback_speed);
+        findViewById2 = playerControlView.findViewById(R.id.exo_playback_speed);
         playerControlView.playbackSpeedButton = findViewById2;
         if (findViewById2 != null) {
-            findViewById2.setOnClickListener(componentListener);
+            findViewById2.setOnClickListener(playerControlView.componentListener);
         }
-        View findViewById3 = playerControlView.findViewById(R.id.exo_audio_track);
+        findViewById3 = playerControlView.findViewById(R.id.exo_audio_track);
         playerControlView.audioTrackButton = findViewById3;
         if (findViewById3 != null) {
-            findViewById3.setOnClickListener(componentListener);
+            findViewById3.setOnClickListener(playerControlView.componentListener);
         }
-        TimeBar timeBar = (TimeBar) playerControlView.findViewById(R.id.exo_progress);
-        View findViewById4 = playerControlView.findViewById(R.id.exo_progress_placeholder);
+        timeBar = (TimeBar) playerControlView.findViewById(R.id.exo_progress);
+        View findViewById422 = playerControlView.findViewById(R.id.exo_progress_placeholder);
         if (timeBar != null) {
             playerControlView.timeBar = timeBar;
+            int i41 = i2;
+            z9 = z3;
+            i13 = i41;
+            int i42 = i12;
+            z10 = z4;
+            i14 = i42;
             context2 = context;
-            imageView = imageView2;
-            i19 = i16;
-            z9 = z2;
-            z10 = z7;
-            i20 = i41;
+            i15 = i11;
+            imageView2 = imageView;
+            i16 = i10;
+            z11 = z5;
+            i17 = i40;
             textView = null;
-            z11 = z;
+            r21 = 1;
             playerControlView2 = playerControlView;
-            i21 = i40;
-            z12 = z8;
-            i22 = i6;
-        } else if (findViewById4 != null) {
-            imageView = imageView2;
-            z10 = z7;
-            i20 = i41;
-            i19 = i16;
+            z12 = z2;
+            i18 = i4;
+        } else if (findViewById422 != null) {
+            int i43 = i2;
+            z9 = z3;
+            i13 = i43;
+            int i44 = i12;
+            z10 = z4;
+            i14 = i44;
+            i15 = i11;
+            imageView2 = imageView;
+            i16 = i10;
+            z11 = z5;
+            i17 = i40;
+            textView = null;
+            r21 = 1;
             playerControlView2 = this;
             context2 = context;
-            z11 = z;
-            z9 = z2;
-            i21 = i40;
-            textView = null;
-            z12 = z8;
-            i22 = i6;
+            z12 = z2;
+            i18 = i4;
             DefaultTimeBar defaultTimeBar = new DefaultTimeBar(context2, null, 0, attributeSet2, R.style.ExoStyledControls_TimeBar);
             defaultTimeBar.setId(R.id.exo_progress);
-            defaultTimeBar.setLayoutParams(findViewById4.getLayoutParams());
-            ViewGroup viewGroup = (ViewGroup) findViewById4.getParent();
-            int indexOfChild = viewGroup.indexOfChild(findViewById4);
-            viewGroup.removeView(findViewById4);
+            defaultTimeBar.setLayoutParams(findViewById422.getLayoutParams());
+            ViewGroup viewGroup = (ViewGroup) findViewById422.getParent();
+            int indexOfChild = viewGroup.indexOfChild(findViewById422);
+            viewGroup.removeView(findViewById422);
             viewGroup.addView(defaultTimeBar, indexOfChild);
             playerControlView2.timeBar = defaultTimeBar;
         } else {
+            int i45 = i2;
+            z9 = z3;
+            i13 = i45;
+            int i46 = i12;
+            z10 = z4;
+            i14 = i46;
             context2 = context;
-            imageView = imageView2;
-            i19 = i16;
-            z9 = z2;
-            z10 = z7;
-            i20 = i41;
+            i15 = i11;
+            imageView2 = imageView;
+            i16 = i10;
+            z11 = z5;
+            i17 = i40;
             textView = null;
-            z11 = z;
+            r21 = 1;
             playerControlView2 = playerControlView;
-            i21 = i40;
-            z12 = z8;
-            i22 = i6;
+            z12 = z2;
+            i18 = i4;
             playerControlView2.timeBar = null;
         }
-        TimeBar timeBar2 = playerControlView2.timeBar;
+        timeBar2 = playerControlView2.timeBar;
         if (timeBar2 != null) {
-            timeBar2.addListener(componentListener);
+            timeBar2.addListener(playerControlView2.componentListener);
         }
-        Resources resources = context2.getResources();
-        playerControlView2.resources = resources;
-        ImageView imageView5 = (ImageView) playerControlView2.findViewById(R.id.exo_play_pause);
-        playerControlView2.playPauseButton = imageView5;
+        Resources resources22 = context2.getResources();
+        playerControlView2.resources = resources22;
+        imageView3 = (ImageView) playerControlView2.findViewById(R.id.exo_play_pause);
+        playerControlView2.playPauseButton = imageView3;
+        if (imageView3 != null) {
+            imageView3.setOnClickListener(playerControlView2.componentListener);
+        }
+        imageView4 = (ImageView) playerControlView2.findViewById(R.id.exo_prev);
+        playerControlView2.previousButton = imageView4;
+        if (imageView4 != null) {
+            imageView4.setImageDrawable(Util.getDrawable(context2, resources22, i5));
+            imageView4.setOnClickListener(playerControlView2.componentListener);
+        }
+        imageView5 = (ImageView) playerControlView2.findViewById(R.id.exo_next);
+        playerControlView2.nextButton = imageView5;
         if (imageView5 != null) {
-            imageView5.setOnClickListener(componentListener);
+            imageView5.setImageDrawable(Util.getDrawable(context2, resources22, i14));
+            imageView5.setOnClickListener(playerControlView2.componentListener);
         }
-        ImageView imageView6 = (ImageView) playerControlView2.findViewById(R.id.exo_prev);
-        playerControlView2.previousButton = imageView6;
+        Typeface font22 = ResourcesCompat.getFont(context2, R.font.roboto_medium_numbers);
+        imageView6 = (ImageView) playerControlView2.findViewById(R.id.exo_rew);
+        TextView textView222 = (TextView) playerControlView2.findViewById(R.id.exo_rew_with_amount);
         if (imageView6 != null) {
-            imageView6.setImageDrawable(Util.getDrawable(context2, resources, i14));
-            imageView6.setOnClickListener(componentListener);
-        }
-        ImageView imageView7 = (ImageView) playerControlView2.findViewById(R.id.exo_next);
-        playerControlView2.nextButton = imageView7;
-        if (imageView7 != null) {
-            imageView7.setImageDrawable(Util.getDrawable(context2, resources, i10));
-            imageView7.setOnClickListener(componentListener);
-        }
-        Typeface font = ResourcesCompat.getFont(context2, R.font.roboto_medium_numbers);
-        ImageView imageView8 = (ImageView) playerControlView2.findViewById(R.id.exo_rew);
-        TextView textView2 = (TextView) playerControlView2.findViewById(R.id.exo_rew_with_amount);
-        if (imageView8 != null) {
-            imageView8.setImageDrawable(Util.getDrawable(context2, resources, i22));
-            playerControlView2.rewindButton = imageView8;
-            playerControlView2.rewindButtonTextView = textView;
-        } else if (textView2 != null) {
-            textView2.setTypeface(font);
-            playerControlView2.rewindButtonTextView = textView2;
-            playerControlView2.rewindButton = textView2;
+            imageView6.setImageDrawable(Util.getDrawable(context2, resources22, i36));
+            playerControlView2.rewindButton = imageView6;
+            playerControlView2.rewindButtonTextView = null;
+        } else if (textView222 != null) {
+            textView222.setTypeface(font22);
+            playerControlView2.rewindButtonTextView = textView222;
+            playerControlView2.rewindButton = textView222;
         } else {
             playerControlView2.rewindButtonTextView = textView;
             playerControlView2.rewindButton = textView;
         }
-        View view = playerControlView2.rewindButton;
+        view = playerControlView2.rewindButton;
         if (view != null) {
-            view.setOnClickListener(componentListener);
+            view.setOnClickListener(playerControlView2.componentListener);
         }
-        ImageView imageView9 = (ImageView) playerControlView2.findViewById(R.id.exo_ffwd);
-        TextView textView3 = (TextView) playerControlView2.findViewById(R.id.exo_ffwd_with_amount);
-        if (imageView9 != null) {
-            imageView9.setImageDrawable(Util.getDrawable(context2, resources, i13));
-            playerControlView2.fastForwardButton = imageView9;
-            playerControlView2.fastForwardButtonTextView = textView;
-        } else if (textView3 != null) {
-            textView3.setTypeface(font);
-            playerControlView2.fastForwardButtonTextView = textView3;
-            playerControlView2.fastForwardButton = textView3;
+        imageView7 = (ImageView) playerControlView2.findViewById(R.id.exo_ffwd);
+        TextView textView322 = (TextView) playerControlView2.findViewById(R.id.exo_ffwd_with_amount);
+        if (imageView7 != null) {
+            imageView7.setImageDrawable(Util.getDrawable(context2, resources22, i18));
+            playerControlView2.fastForwardButton = imageView7;
+            playerControlView2.fastForwardButtonTextView = null;
+        } else if (textView322 != null) {
+            textView322.setTypeface(font22);
+            playerControlView2.fastForwardButtonTextView = textView322;
+            playerControlView2.fastForwardButton = textView322;
         } else {
-            playerControlView2.fastForwardButtonTextView = textView;
-            playerControlView2.fastForwardButton = textView;
+            playerControlView2.fastForwardButtonTextView = null;
+            playerControlView2.fastForwardButton = null;
         }
-        View view2 = playerControlView2.fastForwardButton;
+        view2 = playerControlView2.fastForwardButton;
         if (view2 != null) {
-            view2.setOnClickListener(componentListener);
+            view2.setOnClickListener(playerControlView2.componentListener);
         }
-        ImageView imageView10 = (ImageView) playerControlView2.findViewById(R.id.exo_repeat_toggle);
-        playerControlView2.repeatToggleButton = imageView10;
+        imageView8 = (ImageView) playerControlView2.findViewById(R.id.exo_repeat_toggle);
+        playerControlView2.repeatToggleButton = imageView8;
+        if (imageView8 != null) {
+            imageView8.setOnClickListener(playerControlView2.componentListener);
+        }
+        imageView9 = (ImageView) playerControlView2.findViewById(R.id.exo_shuffle);
+        playerControlView2.shuffleButton = imageView9;
+        if (imageView9 != null) {
+            imageView9.setOnClickListener(playerControlView2.componentListener);
+        }
+        playerControlView2.buttonAlphaEnabled = resources22.getInteger(R.integer.exo_media_button_opacity_percentage_enabled) / 100.0f;
+        playerControlView2.buttonAlphaDisabled = resources22.getInteger(R.integer.exo_media_button_opacity_percentage_disabled) / 100.0f;
+        imageView10 = (ImageView) playerControlView2.findViewById(R.id.exo_vr);
+        playerControlView2.vrButton = imageView10;
         if (imageView10 != null) {
-            imageView10.setOnClickListener(componentListener);
-        }
-        ImageView imageView11 = (ImageView) playerControlView2.findViewById(R.id.exo_shuffle);
-        playerControlView2.shuffleButton = imageView11;
-        if (imageView11 != null) {
-            imageView11.setOnClickListener(componentListener);
-        }
-        playerControlView2.buttonAlphaEnabled = resources.getInteger(R.integer.exo_media_button_opacity_percentage_enabled) / 100.0f;
-        playerControlView2.buttonAlphaDisabled = resources.getInteger(R.integer.exo_media_button_opacity_percentage_disabled) / 100.0f;
-        ImageView imageView12 = (ImageView) playerControlView2.findViewById(R.id.exo_vr);
-        playerControlView2.vrButton = imageView12;
-        if (imageView12 != null) {
-            imageView12.setImageDrawable(Util.getDrawable(context2, resources, i3));
-            playerControlView2.updateButton(false, imageView12);
-        }
-        PlayerControlViewLayoutManager playerControlViewLayoutManager = new PlayerControlViewLayoutManager(playerControlView2);
-        playerControlView2.controlViewLayoutManager = playerControlViewLayoutManager;
-        playerControlViewLayoutManager.setAnimationEnabled(z6);
-        SettingsAdapter settingsAdapter = new SettingsAdapter(new String[]{resources.getString(R.string.exo_controls_playback_speed), resources.getString(R.string.exo_track_selection_title_audio)}, new Drawable[]{Util.getDrawable(context2, resources, R.drawable.exo_styled_controls_speed), Util.getDrawable(context2, resources, R.drawable.exo_styled_controls_audiotrack)});
-        playerControlView2.settingsAdapter = settingsAdapter;
-        playerControlView2.settingsWindowMargin = resources.getDimensionPixelSize(R.dimen.exo_settings_offset);
-        RecyclerView recyclerView = (RecyclerView) LayoutInflater.from(context2).inflate(R.layout.exo_styled_settings_list, (ViewGroup) null);
-        playerControlView2.settingsView = recyclerView;
-        recyclerView.setAdapter(settingsAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(playerControlView2.getContext()));
-        PopupWindow popupWindow = new PopupWindow((View) recyclerView, -2, -2, true);
-        playerControlView2.settingsWindow = popupWindow;
-        if (Util.SDK_INT < 23) {
+            imageView10.setImageDrawable(Util.getDrawable(context2, resources22, i3));
             z13 = false;
-            popupWindow.setBackgroundDrawable(new ColorDrawable(0));
+            playerControlView2.updateButton(false, imageView10);
         } else {
             z13 = false;
         }
-        popupWindow.setOnDismissListener(componentListener);
-        playerControlView2.needToHideBars = true;
+        PlayerControlViewLayoutManager playerControlViewLayoutManager22 = new PlayerControlViewLayoutManager(playerControlView2);
+        playerControlView2.controlViewLayoutManager = playerControlViewLayoutManager22;
+        playerControlViewLayoutManager22.setAnimationEnabled(z);
+        String[] strArr22 = new String[2];
+        Drawable[] drawableArr22 = new Drawable[2];
+        boolean z2222 = z13;
+        strArr22[z2222 ? 1 : 0] = resources22.getString(R.string.exo_controls_playback_speed);
+        drawableArr22[z2222 ? 1 : 0] = Util.getDrawable(context2, resources22, R.drawable.exo_styled_controls_speed);
+        strArr22[r21] = resources22.getString(R.string.exo_track_selection_title_audio);
+        drawableArr22[r21] = Util.getDrawable(context2, resources22, R.drawable.exo_styled_controls_audiotrack);
+        SettingsAdapter settingsAdapter22 = new SettingsAdapter(strArr22, drawableArr22);
+        playerControlView2.settingsAdapter = settingsAdapter22;
+        playerControlView2.settingsWindowMargin = resources22.getDimensionPixelSize(R.dimen.exo_settings_offset);
+        RecyclerView recyclerView22 = (RecyclerView) LayoutInflater.from(context2).inflate(R.layout.exo_styled_settings_list, (ViewGroup) null);
+        playerControlView2.settingsView = recyclerView22;
+        recyclerView22.setAdapter(settingsAdapter22);
+        recyclerView22.setLayoutManager(new LinearLayoutManager(playerControlView2.getContext()));
+        boolean z2322 = r21;
+        PopupWindow popupWindow22 = new PopupWindow(recyclerView22, -2, -2, z2322);
+        playerControlView2.settingsWindow = popupWindow22;
+        popupWindow22.setOnDismissListener(playerControlView2.componentListener);
+        playerControlView2.needToHideBars = z2322;
         playerControlView2.trackNameProvider = new DefaultTrackNameProvider(playerControlView2.getResources());
-        playerControlView2.subtitleOnButtonDrawable = Util.getDrawable(context2, resources, i5);
-        playerControlView2.subtitleOffButtonDrawable = Util.getDrawable(context2, resources, i12);
-        playerControlView2.subtitleOnContentDescription = resources.getString(R.string.exo_controls_cc_enabled_description);
-        playerControlView2.subtitleOffContentDescription = resources.getString(R.string.exo_controls_cc_disabled_description);
+        playerControlView2.subtitleOnButtonDrawable = Util.getDrawable(context2, resources22, i38);
+        playerControlView2.subtitleOffButtonDrawable = Util.getDrawable(context2, resources22, i39);
+        playerControlView2.subtitleOnContentDescription = resources22.getString(R.string.exo_controls_cc_enabled_description);
+        playerControlView2.subtitleOffContentDescription = resources22.getString(R.string.exo_controls_cc_disabled_description);
         playerControlView2.textTrackSelectionAdapter = new TextTrackSelectionAdapter();
         playerControlView2.audioTrackSelectionAdapter = new AudioTrackSelectionAdapter();
-        playerControlView2.playbackSpeedAdapter = new PlaybackSpeedAdapter(resources.getStringArray(R.array.exo_controls_playback_speeds), PLAYBACK_SPEEDS);
-        playerControlView2.playButtonDrawable = Util.getDrawable(context2, resources, i2);
-        playerControlView2.pauseButtonDrawable = Util.getDrawable(context2, resources, i17);
-        playerControlView2.fullscreenExitDrawable = Util.getDrawable(context2, resources, i21);
-        playerControlView2.fullscreenEnterDrawable = Util.getDrawable(context2, resources, i20);
-        playerControlView2.repeatOffButtonDrawable = Util.getDrawable(context2, resources, i19);
-        playerControlView2.repeatOneButtonDrawable = Util.getDrawable(context2, resources, i7);
-        playerControlView2.repeatAllButtonDrawable = Util.getDrawable(context2, resources, i8);
-        playerControlView2.shuffleOnButtonDrawable = Util.getDrawable(context2, resources, i9);
-        playerControlView2.shuffleOffButtonDrawable = Util.getDrawable(context2, resources, i11);
-        playerControlView2.fullscreenExitContentDescription = resources.getString(R.string.exo_controls_fullscreen_exit_description);
-        playerControlView2.fullscreenEnterContentDescription = resources.getString(R.string.exo_controls_fullscreen_enter_description);
-        playerControlView2.repeatOffButtonContentDescription = resources.getString(R.string.exo_controls_repeat_off_description);
-        playerControlView2.repeatOneButtonContentDescription = resources.getString(R.string.exo_controls_repeat_one_description);
-        playerControlView2.repeatAllButtonContentDescription = resources.getString(R.string.exo_controls_repeat_all_description);
-        playerControlView2.shuffleOnContentDescription = resources.getString(R.string.exo_controls_shuffle_on_description);
-        playerControlView2.shuffleOffContentDescription = resources.getString(R.string.exo_controls_shuffle_off_description);
-        playerControlViewLayoutManager.setShowButton((ViewGroup) playerControlView2.findViewById(R.id.exo_bottom_bar), true);
-        playerControlViewLayoutManager.setShowButton(playerControlView2.fastForwardButton, z9);
-        playerControlViewLayoutManager.setShowButton(playerControlView2.rewindButton, z11);
-        playerControlViewLayoutManager.setShowButton(imageView6, z12);
-        playerControlViewLayoutManager.setShowButton(imageView7, z10);
-        playerControlViewLayoutManager.setShowButton(imageView11, z3);
-        playerControlViewLayoutManager.setShowButton(imageView, z4);
-        playerControlViewLayoutManager.setShowButton(imageView12, z5);
-        playerControlViewLayoutManager.setShowButton(imageView10, playerControlView2.repeatToggleModes != 0 ? true : z13);
+        playerControlView2.playbackSpeedAdapter = new PlaybackSpeedAdapter(resources22.getStringArray(R.array.exo_controls_playback_speeds), PLAYBACK_SPEEDS);
+        playerControlView2.playButtonDrawable = Util.getDrawable(context2, resources22, i13);
+        playerControlView2.pauseButtonDrawable = Util.getDrawable(context2, resources22, i17);
+        playerControlView2.fullscreenExitDrawable = Util.getDrawable(context2, resources22, i37);
+        playerControlView2.fullscreenEnterDrawable = Util.getDrawable(context2, resources22, i6);
+        playerControlView2.repeatOffButtonDrawable = Util.getDrawable(context2, resources22, i7);
+        playerControlView2.repeatOneButtonDrawable = Util.getDrawable(context2, resources22, i8);
+        playerControlView2.repeatAllButtonDrawable = Util.getDrawable(context2, resources22, i9);
+        playerControlView2.shuffleOnButtonDrawable = Util.getDrawable(context2, resources22, i15);
+        playerControlView2.shuffleOffButtonDrawable = Util.getDrawable(context2, resources22, i16);
+        playerControlView2.fullscreenExitContentDescription = resources22.getString(R.string.exo_controls_fullscreen_exit_description);
+        playerControlView2.fullscreenEnterContentDescription = resources22.getString(R.string.exo_controls_fullscreen_enter_description);
+        playerControlView2.repeatOffButtonContentDescription = resources22.getString(R.string.exo_controls_repeat_off_description);
+        playerControlView2.repeatOneButtonContentDescription = resources22.getString(R.string.exo_controls_repeat_one_description);
+        playerControlView2.repeatAllButtonContentDescription = resources22.getString(R.string.exo_controls_repeat_all_description);
+        playerControlView2.shuffleOnContentDescription = resources22.getString(R.string.exo_controls_shuffle_on_description);
+        playerControlView2.shuffleOffContentDescription = resources22.getString(R.string.exo_controls_shuffle_off_description);
+        playerControlViewLayoutManager22.setShowButton((ViewGroup) playerControlView2.findViewById(R.id.exo_bottom_bar), true);
+        playerControlViewLayoutManager22.setShowButton(playerControlView2.fastForwardButton, z9);
+        playerControlViewLayoutManager22.setShowButton(playerControlView2.rewindButton, z12);
+        playerControlViewLayoutManager22.setShowButton(imageView4, z10);
+        playerControlViewLayoutManager22.setShowButton(imageView5, z11);
+        playerControlViewLayoutManager22.setShowButton(imageView9, z6);
+        playerControlViewLayoutManager22.setShowButton(imageView2, z7);
+        playerControlViewLayoutManager22.setShowButton(imageView10, z8);
+        playerControlViewLayoutManager22.setShowButton(imageView8, playerControlView2.repeatToggleModes == 0 ? z2222 ? 1 : 0 : true);
         playerControlView2.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: androidx.media3.ui.PlayerControlView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnLayoutChangeListener
-            public final void onLayoutChange(View view3, int i42, int i43, int i44, int i45, int i46, int i47, int i48, int i49) {
-                PlayerControlView.this.onLayoutChange(view3, i42, i43, i44, i45, i46, i47, i48, i49);
+            public final void onLayoutChange(View view3, int i412, int i422, int i432, int i442, int i452, int i462, int i47, int i48) {
+                PlayerControlView.this.onLayoutChange(view3, i412, i422, i432, i442, i452, i462, i47, i48);
             }
         });
     }
@@ -730,6 +1167,10 @@ public class PlayerControlView extends FrameLayout {
 
     public boolean isAnimationEnabled() {
         return this.controlViewLayoutManager.isAnimationEnabled();
+    }
+
+    public void setTimeBarScrubbingEnabled(boolean z) {
+        this.timeBarScrubbingEnabled = z;
     }
 
     public void setTimeBarMinUpdateInterval(int i) {
@@ -1101,7 +1542,7 @@ public class PlayerControlView extends FrameLayout {
             TimeBar timeBar = this.timeBar;
             if (timeBar != null) {
                 timeBar.setPosition(j);
-                this.timeBar.setBufferedPosition(j2);
+                this.timeBar.setBufferedPosition(isScrubbingModeEnabled(player) ? j : j2);
             }
             ProgressUpdateListener progressUpdateListener = this.progressUpdateListener;
             if (progressUpdateListener != null) {
@@ -1374,6 +1815,38 @@ public class PlayerControlView extends FrameLayout {
         return typedArray.getInt(R.styleable.PlayerControlView_repeat_toggle_modes, i);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    @EnsuresNonNullIf(expression = {"#1"}, result = true)
+    public boolean isScrubbingModeEnabled(Player player) {
+        try {
+            if (isExoPlayer(player) && ((Boolean) Assertions.checkNotNull(((Method) Assertions.checkNotNull(this.isScrubbingModeEnabledMethod)).invoke(player, new Object[0]))).booleanValue()) {
+                return true;
+            }
+            if (isCompositionPlayer(player)) {
+                if (((Boolean) Assertions.checkNotNull(((Method) Assertions.checkNotNull(this.compositionPlayerIsScrubbingModeEnabledMethod)).invoke(player, new Object[0]))).booleanValue()) {
+                    return true;
+                }
+            }
+            return false;
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    @EnsuresNonNullIf(expression = {"#1"}, result = true)
+    public boolean isExoPlayer(Player player) {
+        Class<?> cls;
+        return (player == null || (cls = this.exoplayerClazz) == null || !cls.isAssignableFrom(player.getClass())) ? false : true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    @EnsuresNonNullIf(expression = {"#1"}, result = true)
+    public boolean isCompositionPlayer(Player player) {
+        Class<?> cls;
+        return (player == null || (cls = this.compositionPlayerClazz) == null || !cls.isAssignableFrom(player.getClass())) ? false : true;
+    }
+
     /* loaded from: classes.dex */
     private final class ComponentListener implements Player.Listener, TimeBar.OnScrubListener, View.OnClickListener, PopupWindow.OnDismissListener {
         private ComponentListener() {
@@ -1414,6 +1887,28 @@ public class PlayerControlView extends FrameLayout {
                 PlayerControlView.this.positionView.setText(Util.getStringForTime(PlayerControlView.this.formatBuilder, PlayerControlView.this.formatter, j));
             }
             PlayerControlView.this.controlViewLayoutManager.removeHideCallbacks();
+            if (PlayerControlView.this.player == null || !PlayerControlView.this.timeBarScrubbingEnabled) {
+                return;
+            }
+            PlayerControlView playerControlView = PlayerControlView.this;
+            if (playerControlView.isExoPlayer(playerControlView.player)) {
+                try {
+                    ((Method) Assertions.checkNotNull(PlayerControlView.this.setScrubbingModeEnabledMethod)).invoke(PlayerControlView.this.player, true);
+                    return;
+                } catch (IllegalAccessException | InvocationTargetException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            PlayerControlView playerControlView2 = PlayerControlView.this;
+            if (playerControlView2.isCompositionPlayer(playerControlView2.player)) {
+                try {
+                    ((Method) Assertions.checkNotNull(PlayerControlView.this.compositionPlayerSetScrubbingModeEnabledMethod)).invoke(PlayerControlView.this.player, true);
+                    return;
+                } catch (IllegalAccessException | InvocationTargetException e2) {
+                    throw new RuntimeException(e2);
+                }
+            }
+            Log.w(PlayerControlView.TAG, "Time bar scrubbing is enabled, but player is not an ExoPlayer or CompositionPlayer instance, so ignoring (because we can't enable scrubbing mode). player.class=" + ((Player) Assertions.checkNotNull(PlayerControlView.this.player)).getClass());
         }
 
         @Override // androidx.media3.ui.TimeBar.OnScrubListener
@@ -1421,14 +1916,38 @@ public class PlayerControlView extends FrameLayout {
             if (PlayerControlView.this.positionView != null) {
                 PlayerControlView.this.positionView.setText(Util.getStringForTime(PlayerControlView.this.formatBuilder, PlayerControlView.this.formatter, j));
             }
+            PlayerControlView playerControlView = PlayerControlView.this;
+            if (playerControlView.isScrubbingModeEnabled(playerControlView.player)) {
+                PlayerControlView playerControlView2 = PlayerControlView.this;
+                playerControlView2.seekToTimeBarPosition(playerControlView2.player, j);
+            }
         }
 
         @Override // androidx.media3.ui.TimeBar.OnScrubListener
         public void onScrubStop(TimeBar timeBar, long j, boolean z) {
             PlayerControlView.this.scrubbing = false;
-            if (!z && PlayerControlView.this.player != null) {
-                PlayerControlView playerControlView = PlayerControlView.this;
-                playerControlView.seekToTimeBarPosition(playerControlView.player, j);
+            if (PlayerControlView.this.player != null) {
+                if (!z) {
+                    PlayerControlView playerControlView = PlayerControlView.this;
+                    playerControlView.seekToTimeBarPosition(playerControlView.player, j);
+                }
+                PlayerControlView playerControlView2 = PlayerControlView.this;
+                if (playerControlView2.isExoPlayer(playerControlView2.player)) {
+                    try {
+                        ((Method) Assertions.checkNotNull(PlayerControlView.this.setScrubbingModeEnabledMethod)).invoke(PlayerControlView.this.player, false);
+                    } catch (IllegalAccessException | InvocationTargetException e) {
+                        throw new RuntimeException(e);
+                    }
+                } else {
+                    PlayerControlView playerControlView3 = PlayerControlView.this;
+                    if (playerControlView3.isCompositionPlayer(playerControlView3.player)) {
+                        try {
+                            ((Method) Assertions.checkNotNull(PlayerControlView.this.compositionPlayerSetScrubbingModeEnabledMethod)).invoke(PlayerControlView.this.player, false);
+                        } catch (IllegalAccessException | InvocationTargetException e2) {
+                            throw new RuntimeException(e2);
+                        }
+                    }
+                }
             }
             PlayerControlView.this.controlViewLayoutManager.resetHideCallbacks();
         }
@@ -1574,7 +2093,7 @@ public class PlayerControlView extends FrameLayout {
 
         public SettingViewHolder(View view) {
             super(view);
-            if (Util.SDK_INT < 26) {
+            if (Build.VERSION.SDK_INT < 26) {
                 view.setFocusable(true);
             }
             this.mainTextView = (TextView) view.findViewById(R.id.exo_main_text);
@@ -1583,14 +2102,14 @@ public class PlayerControlView extends FrameLayout {
             view.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$SettingViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    PlayerControlView.SettingViewHolder.this.m7470x7eeeb754(view2);
+                    PlayerControlView.SettingViewHolder.this.m7485x7eeeb754(view2);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$new$0$androidx-media3-ui-PlayerControlView$SettingViewHolder  reason: not valid java name */
-        public /* synthetic */ void m7470x7eeeb754(View view) {
+        public /* synthetic */ void m7485x7eeeb754(View view) {
             PlayerControlView.this.onSettingViewClicked(getBindingAdapterPosition());
         }
     }
@@ -1652,14 +2171,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$PlaybackSpeedAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.PlaybackSpeedAdapter.this.m7469x9de2ddb7(i, view);
+                    PlayerControlView.PlaybackSpeedAdapter.this.m7484x9de2ddb7(i, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolder$0$androidx-media3-ui-PlayerControlView$PlaybackSpeedAdapter  reason: not valid java name */
-        public /* synthetic */ void m7469x9de2ddb7(int i, View view) {
+        public /* synthetic */ void m7484x9de2ddb7(int i, View view) {
             if (i != this.selectedIndex) {
                 PlayerControlView.this.setPlaybackSpeed(this.playbackSpeeds[i]);
             }
@@ -1744,14 +2263,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$TextTrackSelectionAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.TextTrackSelectionAdapter.this.m7471x7bd5d809(view);
+                    PlayerControlView.TextTrackSelectionAdapter.this.m7486x7bd5d809(view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolderAtZeroPosition$0$androidx-media3-ui-PlayerControlView$TextTrackSelectionAdapter  reason: not valid java name */
-        public /* synthetic */ void m7471x7bd5d809(View view) {
+        public /* synthetic */ void m7486x7bd5d809(View view) {
             if (PlayerControlView.this.player == null || !PlayerControlView.this.player.isCommandAvailable(29)) {
                 return;
             }
@@ -1783,14 +2302,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$AudioTrackSelectionAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.AudioTrackSelectionAdapter.this.m7468xa84b12b0(view);
+                    PlayerControlView.AudioTrackSelectionAdapter.this.m7483xa84b12b0(view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolderAtZeroPosition$0$androidx-media3-ui-PlayerControlView$AudioTrackSelectionAdapter  reason: not valid java name */
-        public /* synthetic */ void m7468xa84b12b0(View view) {
+        public /* synthetic */ void m7483xa84b12b0(View view) {
             if (PlayerControlView.this.player == null || !PlayerControlView.this.player.isCommandAvailable(29)) {
                 return;
             }
@@ -1875,14 +2394,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$TrackSelectionAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.TrackSelectionAdapter.this.m7472x45c3fb1a(player, mediaTrackGroup, trackInformation, view);
+                    PlayerControlView.TrackSelectionAdapter.this.m7487x45c3fb1a(player, mediaTrackGroup, trackInformation, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolder$0$androidx-media3-ui-PlayerControlView$TrackSelectionAdapter  reason: not valid java name */
-        public /* synthetic */ void m7472x45c3fb1a(Player player, TrackGroup trackGroup, TrackInformation trackInformation, View view) {
+        public /* synthetic */ void m7487x45c3fb1a(Player player, TrackGroup trackGroup, TrackInformation trackInformation, View view) {
             if (player.isCommandAvailable(29)) {
                 player.setTrackSelectionParameters(player.getTrackSelectionParameters().buildUpon().setOverrideForType(new TrackSelectionOverride(trackGroup, ImmutableList.of(Integer.valueOf(trackInformation.trackIndex)))).setTrackTypeDisabled(trackInformation.trackGroup.getType(), false).build());
                 onTrackSelection(trackInformation.trackName);
@@ -1911,7 +2430,7 @@ public class PlayerControlView extends FrameLayout {
 
         public SubSettingViewHolder(View view) {
             super(view);
-            if (Util.SDK_INT < 26) {
+            if (Build.VERSION.SDK_INT < 26) {
                 view.setFocusable(true);
             }
             this.textView = (TextView) view.findViewById(R.id.exo_text);

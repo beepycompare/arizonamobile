@@ -1,28 +1,18 @@
 package com.google.android.gms.internal.measurement;
-
-import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
-import org.checkerframework.dataflow.qual.SideEffectFree;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzrg implements Supplier {
-    private static final zzrg zza = new zzrg();
-    private final Supplier zzb = Suppliers.ofInstance(new zzri());
+public final class zzrg implements zzrf {
+    public static final zzkm zza;
 
-    @SideEffectFree
-    public static boolean zza() {
-        zza.get().zza();
-        return true;
+    static {
+        zzkg zzb = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
+        zza = zzb.zzd("measurement.client.sessions.enable_fix_background_engagement", false);
+        zzb.zzd("measurement.client.sessions.enable_pause_engagement_in_background", true);
+        zzb.zzc("measurement.id.client.sessions.enable_fix_background_engagement", 0L);
     }
 
-    @SideEffectFree
-    public static boolean zzb() {
-        return zza.get().zzb();
-    }
-
-    @Override // com.google.common.base.Supplier
-    /* renamed from: zzc */
-    public final zzrh get() {
-        return (zzrh) this.zzb.get();
+    @Override // com.google.android.gms.internal.measurement.zzrf
+    public final boolean zza() {
+        return ((Boolean) zza.zzd()).booleanValue();
     }
 }

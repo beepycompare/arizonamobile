@@ -1,19 +1,29 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-public class zzli {
-    public static final /* synthetic */ int zza = 0;
-    private static volatile int zzb = 100;
+final class zzli extends zzlj {
+    private int zzb;
+    private int zzc;
+    private int zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zzli(byte[] bArr) {
+    public /* synthetic */ zzli(byte[] bArr, int i, int i2, boolean z, byte[] bArr2) {
+        super(null);
+        this.zzd = Integer.MAX_VALUE;
+        this.zzb = 0;
     }
 
-    public static int zzb(int i) {
-        return (i >>> 1) ^ (-(i & 1));
-    }
-
-    public static long zzc(long j) {
-        return (j >>> 1) ^ (-(1 & j));
+    public final int zza(int i) throws zzmr {
+        int i2 = this.zzd;
+        this.zzd = 0;
+        int i3 = this.zzb + this.zzc;
+        this.zzb = i3;
+        if (i3 <= 0) {
+            this.zzc = 0;
+            return i2;
+        }
+        this.zzc = i3;
+        this.zzb = 0;
+        return i2;
     }
 }

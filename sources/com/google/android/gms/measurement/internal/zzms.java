@@ -1,36 +1,37 @@
 package com.google.android.gms.measurement.internal;
 
+import android.os.RemoteException;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzms implements Runnable {
     final /* synthetic */ zzr zza;
-    final /* synthetic */ boolean zzb;
-    final /* synthetic */ zzbg zzc;
-    final /* synthetic */ zznk zzd;
+    final /* synthetic */ zznl zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzms(zznk zznkVar, boolean z, zzr zzrVar, boolean z2, zzbg zzbgVar, String str) {
+    public zzms(zznl zznlVar, zzr zzrVar) {
         this.zza = zzrVar;
-        this.zzb = z2;
-        this.zzc = zzbgVar;
-        Objects.requireNonNull(zznkVar);
-        this.zzd = zznkVar;
+        Objects.requireNonNull(zznlVar);
+        this.zzb = zznlVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zznk zznkVar = this.zzd;
-        zzga zzZ = zznkVar.zzZ();
+        zznl zznlVar = this.zzb;
+        zzgb zzZ = zznlVar.zzZ();
         if (zzZ == null) {
-            zznkVar.zzu.zzaV().zzb().zza("Discarding data. Failed to send event to service");
+            zznlVar.zzu.zzaV().zzb().zza("Failed to send consent settings to service");
             return;
         }
-        zzr zzrVar = this.zza;
-        Preconditions.checkNotNull(zzrVar);
-        zznkVar.zzm(zzZ, this.zzb ? null : this.zzc, zzrVar);
-        zznkVar.zzV();
+        try {
+            zzr zzrVar = this.zza;
+            Preconditions.checkNotNull(zzrVar);
+            zzZ.zzv(zzrVar);
+            zznlVar.zzV();
+        } catch (RemoteException e) {
+            this.zzb.zzu.zzaV().zzb().zzb("Failed to send consent settings to the service", e);
+        }
     }
 }

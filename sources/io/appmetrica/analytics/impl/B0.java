@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class B0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final NativeCrashSource f349a;
+    public final NativeCrashSource f348a;
     public final String b;
     public final String c;
     public final String d;
@@ -14,7 +14,7 @@ public final class B0 {
     public final C0 f;
 
     public B0(NativeCrashSource nativeCrashSource, String str, String str2, String str3, long j, C0 c0) {
-        this.f349a = nativeCrashSource;
+        this.f348a = nativeCrashSource;
         this.b = str;
         this.c = str2;
         this.d = str3;
@@ -28,7 +28,7 @@ public final class B0 {
         }
         if (obj instanceof B0) {
             B0 b0 = (B0) obj;
-            return this.f349a == b0.f349a && Intrinsics.areEqual(this.b, b0.b) && Intrinsics.areEqual(this.c, b0.c) && Intrinsics.areEqual(this.d, b0.d) && this.e == b0.e && Intrinsics.areEqual(this.f, b0.f);
+            return this.f348a == b0.f348a && Intrinsics.areEqual(this.b, b0.b) && Intrinsics.areEqual(this.c, b0.c) && Intrinsics.areEqual(this.d, b0.d) && this.e == b0.e && Intrinsics.areEqual(this.f, b0.f);
         }
         return false;
     }
@@ -38,10 +38,10 @@ public final class B0 {
         int hashCode2 = this.c.hashCode();
         int hashCode3 = this.d.hashCode();
         int hashCode4 = Long.hashCode(this.e);
-        return this.f.hashCode() + ((hashCode4 + ((hashCode3 + ((hashCode2 + ((hashCode + (this.f349a.hashCode() * 31)) * 31)) * 31)) * 31)) * 31);
+        return this.f.hashCode() + ((hashCode4 + ((hashCode3 + ((hashCode2 + ((hashCode + (this.f348a.hashCode() * 31)) * 31)) * 31)) * 31)) * 31);
     }
 
     public final String toString() {
-        return "AppMetricaNativeCrash(source=" + this.f349a + ", handlerVersion=" + this.b + ", uuid=" + this.c + ", dumpFile=" + this.d + ", creationTime=" + this.e + ", metadata=" + this.f + ')';
+        return "AppMetricaNativeCrash(source=" + this.f348a + ", handlerVersion=" + this.b + ", uuid=" + this.c + ", dumpFile=" + this.d + ", creationTime=" + this.e + ", metadata=" + this.f + ')';
     }
 }

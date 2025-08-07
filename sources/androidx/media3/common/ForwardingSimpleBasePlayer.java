@@ -11,6 +11,7 @@ import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import java.util.List;
 import java.util.Objects;
+import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 /* loaded from: classes2.dex */
 public class ForwardingSimpleBasePlayer extends SimpleBasePlayer {
     private Metadata lastTimedMetadata;
@@ -19,44 +20,30 @@ public class ForwardingSimpleBasePlayer extends SimpleBasePlayer {
     private boolean pendingFirstFrameRendered;
     private long pendingPositionDiscontinuityNewPositionMs;
     private int playWhenReadyChangeReason;
-    private final Player player;
+    private Player player;
+    private final Player.Listener playerListener;
 
-    public ForwardingSimpleBasePlayer(final Player player) {
+    public ForwardingSimpleBasePlayer(Player player) {
         super(player.getApplicationLooper());
-        this.player = player;
-        this.lastTimedMetadata = new Metadata((long) C.TIME_UNSET, new Metadata.Entry[0]);
-        this.playWhenReadyChangeReason = 1;
-        this.pendingDiscontinuityReason = 5;
-        this.livePositionSuppliers = new LivePositionSuppliers(player);
-        player.addListener(new Player.Listener() { // from class: androidx.media3.common.ForwardingSimpleBasePlayer.1
-            @Override // androidx.media3.common.Player.Listener
-            public void onMetadata(Metadata metadata) {
-                ForwardingSimpleBasePlayer.this.lastTimedMetadata = metadata;
-            }
+        initializeForwardingState(player);
+        PlayerListener playerListener = new PlayerListener();
+        this.playerListener = playerListener;
+        player.addListener(playerListener);
+    }
 
-            @Override // androidx.media3.common.Player.Listener
-            public void onPlayWhenReadyChanged(boolean z, int i) {
-                ForwardingSimpleBasePlayer.this.playWhenReadyChangeReason = i;
-            }
-
-            @Override // androidx.media3.common.Player.Listener
-            public void onPositionDiscontinuity(Player.PositionInfo positionInfo, Player.PositionInfo positionInfo2, int i) {
-                ForwardingSimpleBasePlayer.this.pendingDiscontinuityReason = i;
-                ForwardingSimpleBasePlayer.this.pendingPositionDiscontinuityNewPositionMs = positionInfo2.positionMs;
-                ForwardingSimpleBasePlayer.this.livePositionSuppliers.disconnect(positionInfo.positionMs, positionInfo.contentPositionMs);
-                ForwardingSimpleBasePlayer.this.livePositionSuppliers = new LivePositionSuppliers(player);
-            }
-
-            @Override // androidx.media3.common.Player.Listener
-            public void onRenderedFirstFrame() {
-                ForwardingSimpleBasePlayer.this.pendingFirstFrameRendered = true;
-            }
-
-            @Override // androidx.media3.common.Player.Listener
-            public void onEvents(Player player2, Player.Events events) {
-                ForwardingSimpleBasePlayer.this.invalidateState();
-            }
-        });
+    protected final void setPlayer(Player player) {
+        Player player2 = this.player;
+        if (player2 == player) {
+            return;
+        }
+        if (player.getApplicationLooper() != player2.getApplicationLooper()) {
+            throw new IllegalArgumentException("Trying to swap players with non-matching loopers.");
+        }
+        player2.removeListener(this.playerListener);
+        player.addListener(this.playerListener);
+        initializeForwardingState(player);
+        this.pendingPositionDiscontinuityNewPositionMs = player.getCurrentPosition();
+        invalidateState();
     }
 
     protected final Player getPlayer() {
@@ -377,8 +364,18 @@ public class ForwardingSimpleBasePlayer extends SimpleBasePlayer {
         return Futures.immediateVoidFuture();
     }
 
+    @EnsuresNonNull({"player", "lastTimedMetadata", "playWhenReadyChangeReason", "pendingDiscontinuityReason", "livePositionSuppliers"})
+    private void initializeForwardingState(Player player) {
+        this.player = player;
+        this.lastTimedMetadata = new Metadata((long) C.TIME_UNSET, new Metadata.Entry[0]);
+        this.playWhenReadyChangeReason = 1;
+        this.pendingDiscontinuityReason = 5;
+        this.livePositionSuppliers = new LivePositionSuppliers(player);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    private static final class LivePositionSuppliers {
+    public static final class LivePositionSuppliers {
         public final SimpleBasePlayer.LivePositionSupplier bufferedPositionSupplier;
         public final SimpleBasePlayer.LivePositionSupplier contentBufferedPositionSupplier;
         public final SimpleBasePlayer.LivePositionSupplier contentPositionSupplier;
@@ -429,6 +426,40 @@ public class ForwardingSimpleBasePlayer extends SimpleBasePlayer {
             this.contentPositionSupplier.disconnect(j2);
             this.contentBufferedPositionSupplier.disconnect(j2);
             this.totalBufferedPositionSupplier.disconnect(0L);
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    private class PlayerListener implements Player.Listener {
+        private PlayerListener() {
+        }
+
+        @Override // androidx.media3.common.Player.Listener
+        public void onMetadata(Metadata metadata) {
+            ForwardingSimpleBasePlayer.this.lastTimedMetadata = metadata;
+        }
+
+        @Override // androidx.media3.common.Player.Listener
+        public void onPlayWhenReadyChanged(boolean z, int i) {
+            ForwardingSimpleBasePlayer.this.playWhenReadyChangeReason = i;
+        }
+
+        @Override // androidx.media3.common.Player.Listener
+        public void onPositionDiscontinuity(Player.PositionInfo positionInfo, Player.PositionInfo positionInfo2, int i) {
+            ForwardingSimpleBasePlayer.this.pendingDiscontinuityReason = i;
+            ForwardingSimpleBasePlayer.this.pendingPositionDiscontinuityNewPositionMs = positionInfo2.positionMs;
+            ForwardingSimpleBasePlayer.this.livePositionSuppliers.disconnect(positionInfo.positionMs, positionInfo.contentPositionMs);
+            ForwardingSimpleBasePlayer.this.livePositionSuppliers = new LivePositionSuppliers(ForwardingSimpleBasePlayer.this.player);
+        }
+
+        @Override // androidx.media3.common.Player.Listener
+        public void onRenderedFirstFrame() {
+            ForwardingSimpleBasePlayer.this.pendingFirstFrameRendered = true;
+        }
+
+        @Override // androidx.media3.common.Player.Listener
+        public void onEvents(Player player, Player.Events events) {
+            ForwardingSimpleBasePlayer.this.invalidateState();
         }
     }
 }

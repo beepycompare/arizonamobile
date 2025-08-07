@@ -90,7 +90,7 @@ public final class SpawnMenu implements InterfaceController {
             spawnMenu.setVisible(false);
             return;
         }
-        Toast.makeText(activity, "Выберите локацию!", 0).show();
+        Toast.makeText(activity.getApplicationContext(), "Выберите локацию!", 0).show();
     }
 
     public final void addSpawns(String data) {

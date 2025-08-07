@@ -487,7 +487,6 @@ public class TrackSelectionParameters {
             return this;
         }
 
-        @Deprecated
         public Builder setDisabledTrackTypes(Set<Integer> set) {
             this.disabledTrackTypes.clear();
             this.disabledTrackTypes.addAll(set);

@@ -1,0 +1,507 @@
+package io.appmetrica.analytics.impl;
+
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.Base64;
+import android.util.Pair;
+import com.google.firebase.messaging.ServiceStarter;
+import io.appmetrica.analytics.billinginterface.internal.Period;
+import io.appmetrica.analytics.billinginterface.internal.ProductInfo;
+import io.appmetrica.analytics.billinginterface.internal.ProductType;
+import io.appmetrica.analytics.coreapi.internal.event.CounterReportApi;
+import io.appmetrica.analytics.coreapi.internal.permission.PermissionState;
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import java.util.Collection;
+import java.util.Currency;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import org.json.JSONArray;
+import org.json.JSONObject;
+/* renamed from: io.appmetrica.analytics.impl.l6  reason: case insensitive filesystem */
+/* loaded from: classes4.dex */
+public class C0402l6 implements CounterReportApi, Parcelable {
+    public static final Parcelable.Creator<C0402l6> CREATOR = new C0377k6();
+
+    /* renamed from: a  reason: collision with root package name */
+    protected String f935a;
+    protected String b;
+    public String c;
+    public int d;
+    public int e;
+    public Pair f;
+    public int g;
+    public String h;
+    public long i;
+    public long j;
+    public EnumC0730ya k;
+    public H9 l;
+    public Bundle m;
+    public Boolean n;
+    public Integer o;
+    public Map p;
+
+    public C0402l6() {
+        this("", 0);
+    }
+
+    public final void a(String str, String str2) {
+        if (this.f == null) {
+            this.f = new Pair(str, str2);
+        }
+    }
+
+    public final Pair<String, String> b() {
+        return this.f;
+    }
+
+    public final void c(Bundle bundle) {
+        this.m = bundle;
+    }
+
+    public final long d() {
+        return this.i;
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final long e() {
+        return this.j;
+    }
+
+    public final String f() {
+        return this.c;
+    }
+
+    public final EnumC0730ya g() {
+        return this.k;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public final int getBytesTruncated() {
+        return this.g;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public final int getCustomType() {
+        return this.e;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public final Map<String, byte[]> getExtras() {
+        return this.p;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public final String getName() {
+        return this.f935a;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public final int getType() {
+        return this.d;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public final String getValue() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public final byte[] getValueBytes() {
+        String str = this.b;
+        if (str == null) {
+            return null;
+        }
+        return Base64.decode(str, 0);
+    }
+
+    public final Integer h() {
+        return this.o;
+    }
+
+    public final Bundle i() {
+        return this.m;
+    }
+
+    public final String j() {
+        return this.h;
+    }
+
+    public final H9 k() {
+        return this.l;
+    }
+
+    public final boolean l() {
+        return this.f935a == null;
+    }
+
+    public final boolean m() {
+        EnumC0681wb enumC0681wb = EnumC0681wb.EVENT_TYPE_UNDEFINED;
+        return -1 == this.d;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public final void setBytesTruncated(int i) {
+        this.g = i;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public final void setCustomType(int i) {
+        this.e = i;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public final void setExtras(Map<String, byte[]> map) {
+        this.p = map;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public void setName(String str) {
+        this.f935a = str;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public final void setType(int i) {
+        this.d = i;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public void setValue(String str) {
+        this.b = str;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
+    public void setValueBytes(byte[] bArr) {
+        this.b = bArr == null ? null : new String(Base64.encode(bArr, 0));
+    }
+
+    public final String toString() {
+        Locale locale = Locale.US;
+        String str = this.f935a;
+        String str2 = EnumC0681wb.a(this.d).b;
+        String str3 = this.b;
+        if (str3 == null) {
+            str3 = null;
+        } else if (str3.length() > 500) {
+            str3 = str3.substring(0, ServiceStarter.ERROR_UNKNOWN);
+        }
+        return String.format(locale, "[event: %s, type: %s, value: %s]", str, str2, str3);
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        Bundle bundle = new Bundle();
+        bundle.putString("CounterReport.Event", this.f935a);
+        bundle.putString("CounterReport.Value", this.b);
+        bundle.putInt("CounterReport.Type", this.d);
+        bundle.putInt("CounterReport.CustomType", this.e);
+        bundle.putInt("CounterReport.TRUNCATED", this.g);
+        bundle.putString("CounterReport.ProfileID", this.h);
+        bundle.putInt("CounterReport.UniquenessStatus", this.k.f1152a);
+        Bundle bundle2 = this.m;
+        if (bundle2 != null) {
+            bundle.putParcelable("CounterReport.Payload", bundle2);
+        }
+        String str = this.c;
+        if (str != null) {
+            bundle.putString("CounterReport.Environment", str);
+        }
+        Pair pair = this.f;
+        if (pair != null) {
+            bundle.putString("CounterReport.AppEnvironmentDiffKey", (String) pair.first);
+            bundle.putString("CounterReport.AppEnvironmentDiffValue", (String) pair.second);
+        }
+        bundle.putLong("CounterReport.CreationElapsedRealtime", this.i);
+        bundle.putLong("CounterReport.CreationTimestamp", this.j);
+        H9 h9 = this.l;
+        if (h9 != null) {
+            bundle.putInt("CounterReport.Source", h9.f469a);
+        }
+        Boolean bool = this.n;
+        if (bool != null) {
+            bundle.putBoolean("CounterReport.AttributionIdChanged", bool.booleanValue());
+        }
+        Integer num = this.o;
+        if (num != null) {
+            bundle.putInt("CounterReport.OpenId", num.intValue());
+        }
+        bundle.putBundle("CounterReport.Extras", CollectionUtils.mapToBundle(this.p));
+        parcel.writeBundle(bundle);
+    }
+
+    public C0402l6(String str, int i) {
+        this("", str, i);
+    }
+
+    public static C0402l6 e(C0402l6 c0402l6) {
+        return a(c0402l6, EnumC0681wb.EVENT_TYPE_APP_UPDATE);
+    }
+
+    public final void b(String str) {
+        this.c = str;
+    }
+
+    public void c(String str) {
+        this.h = str;
+    }
+
+    public final Bundle d(Bundle bundle) {
+        if (bundle == null) {
+            bundle = new Bundle();
+        }
+        bundle.putParcelable("CounterReport.Object", this);
+        return bundle;
+    }
+
+    public C0402l6(String str, String str2, int i) {
+        this(str, str2, i, new SystemTimeProvider());
+    }
+
+    public final void a(long j) {
+        this.i = j;
+    }
+
+    public final void b(long j) {
+        this.j = j;
+    }
+
+    public final Boolean c() {
+        return this.n;
+    }
+
+    public C0402l6(String str, String str2, int i, SystemTimeProvider systemTimeProvider) {
+        this.k = EnumC0730ya.UNKNOWN;
+        this.p = new HashMap();
+        this.f935a = str2;
+        this.d = i;
+        this.b = str;
+        this.i = systemTimeProvider.elapsedRealtime();
+        this.j = systemTimeProvider.currentTimeMillis();
+    }
+
+    public static C0402l6 b(Bundle bundle) {
+        if (bundle != null) {
+            try {
+                C0402l6 c0402l6 = (C0402l6) bundle.getParcelable("CounterReport.Object");
+                if (c0402l6 != null) {
+                    return c0402l6;
+                }
+            } catch (Throwable unused) {
+                return new C0402l6("", 0);
+            }
+        }
+        return new C0402l6("", 0);
+    }
+
+    public static C0402l6 c(C0402l6 c0402l6) {
+        return a(c0402l6, EnumC0681wb.EVENT_TYPE_INIT);
+    }
+
+    public static C0402l6 d(C0402l6 c0402l6) {
+        C0402l6 c0402l62 = new C0402l6("", 0);
+        c0402l62.j = c0402l6.j;
+        c0402l62.i = c0402l6.i;
+        c0402l62.f = c0402l6.f;
+        c0402l62.c = c0402l6.c;
+        c0402l62.m = c0402l6.m;
+        c0402l62.p = c0402l6.p;
+        c0402l62.h = c0402l6.h;
+        return c0402l62;
+    }
+
+    public final void a(EnumC0730ya enumC0730ya) {
+        this.k = enumC0730ya;
+    }
+
+    public final void a(H9 h9) {
+        this.l = h9;
+    }
+
+    public final void a(Boolean bool) {
+        this.n = bool;
+    }
+
+    public final void a(Integer num) {
+        this.o = num;
+    }
+
+    public static Pair a(Bundle bundle) {
+        if (bundle.containsKey("CounterReport.AppEnvironmentDiffKey") && bundle.containsKey("CounterReport.AppEnvironmentDiffValue")) {
+            return new Pair(bundle.getString("CounterReport.AppEnvironmentDiffKey"), bundle.getString("CounterReport.AppEnvironmentDiffValue"));
+        }
+        return null;
+    }
+
+    public static C0402l6 a(C0402l6 c0402l6, EnumC0681wb enumC0681wb) {
+        C0402l6 d = d(c0402l6);
+        d.d = enumC0681wb.f1119a;
+        return d;
+    }
+
+    public static C0402l6 b(C0402l6 c0402l6) {
+        return a(c0402l6, EnumC0681wb.EVENT_TYPE_FIRST_ACTIVATION);
+    }
+
+    public static C0402l6 a(C0402l6 c0402l6) {
+        return a(c0402l6, EnumC0681wb.EVENT_TYPE_ALIVE);
+    }
+
+    public static C0402l6 a(C0402l6 c0402l6, C0307ha c0307ha) {
+        C0402l6 a2 = a(c0402l6, EnumC0681wb.EVENT_TYPE_START);
+        a2.setValueBytes(MessageNano.toByteArray(new K9().fromModel(new J9((String) c0307ha.b.a()))));
+        a2.j = c0402l6.j;
+        a2.i = c0402l6.i;
+        return a2;
+    }
+
+    public static C0402l6 a(C0402l6 c0402l6, Collection<PermissionState> collection, J2 j2, C0324i2 c0324i2, List<String> list) {
+        String str;
+        String str2;
+        C0402l6 d = d(c0402l6);
+        try {
+            JSONArray jSONArray = new JSONArray();
+            for (PermissionState permissionState : collection) {
+                jSONArray.put(new JSONObject().put("name", permissionState.name).put("granted", permissionState.granted));
+            }
+            JSONObject jSONObject = new JSONObject();
+            if (j2 != null) {
+                jSONObject.put("background_restricted", j2.b);
+                I2 i2 = j2.f496a;
+                c0324i2.getClass();
+                if (i2 != null) {
+                    switch (i2.ordinal()) {
+                        case 0:
+                            str2 = "EXEMPTED";
+                            break;
+                        case 1:
+                            str2 = "ACTIVE";
+                            break;
+                        case 2:
+                            str2 = "WORKING_SET";
+                            break;
+                        case 3:
+                            str2 = "FREQUENT";
+                            break;
+                        case 4:
+                            str2 = "RARE";
+                            break;
+                        case 5:
+                            str2 = "RESTRICTED";
+                            break;
+                        case 6:
+                            str2 = "UNKNOWN";
+                            break;
+                    }
+                    jSONObject.put("app_standby_bucket", str2);
+                }
+                str2 = null;
+                jSONObject.put("app_standby_bucket", str2);
+            }
+            str = new JSONObject().put("permissions", jSONArray).put("background_restrictions", jSONObject).put("available_providers", new JSONArray((Collection) list)).toString();
+        } catch (Throwable unused) {
+            str = "";
+        }
+        EnumC0681wb enumC0681wb = EnumC0681wb.EVENT_TYPE_UNDEFINED;
+        d.d = 12288;
+        d.setValue(str);
+        return d;
+    }
+
+    public static C0402l6 a(C0402l6 c0402l6, String str) {
+        C0402l6 d = d(c0402l6);
+        EnumC0681wb enumC0681wb = EnumC0681wb.EVENT_TYPE_UNDEFINED;
+        d.d = 12289;
+        d.setValue(str);
+        return d;
+    }
+
+    public static C0402l6 a() {
+        C0402l6 c0402l6 = new C0402l6("", 0);
+        EnumC0681wb enumC0681wb = EnumC0681wb.EVENT_TYPE_UNDEFINED;
+        c0402l6.d = 16384;
+        return c0402l6;
+    }
+
+    public static C0402l6 a(Tf tf) {
+        String str = "";
+        int i = 0;
+        C0402l6 c0402l6 = new C0402l6("", "", 0);
+        EnumC0681wb enumC0681wb = EnumC0681wb.EVENT_TYPE_UNDEFINED;
+        c0402l6.d = 40976;
+        ProductInfo productInfo = tf.f654a;
+        Zi zi = new Zi();
+        zi.f752a = productInfo.quantity;
+        zi.f = productInfo.priceMicros;
+        try {
+            str = Currency.getInstance(productInfo.priceCurrency).getCurrencyCode();
+        } catch (Throwable unused) {
+        }
+        zi.b = str.getBytes();
+        zi.c = productInfo.sku.getBytes();
+        Ui ui = new Ui();
+        ui.f673a = productInfo.purchaseOriginalJson.getBytes();
+        ui.b = productInfo.signature.getBytes();
+        zi.e = ui;
+        zi.g = true;
+        zi.h = 1;
+        zi.i = Sf.f640a[productInfo.type.ordinal()] != 2 ? 1 : 2;
+        Yi yi = new Yi();
+        yi.f737a = productInfo.purchaseToken.getBytes();
+        yi.b = TimeUnit.MILLISECONDS.toSeconds(productInfo.purchaseTime);
+        zi.j = yi;
+        if (productInfo.type == ProductType.SUBS) {
+            Xi xi = new Xi();
+            xi.f721a = productInfo.autoRenewing;
+            Period period = productInfo.subscriptionPeriod;
+            if (period != null) {
+                Wi wi = new Wi();
+                wi.f704a = period.number;
+                int i2 = Sf.b[period.timeUnit.ordinal()];
+                wi.b = i2 != 1 ? i2 != 2 ? i2 != 3 ? i2 != 4 ? 0 : 4 : 3 : 2 : 1;
+                xi.b = wi;
+            }
+            Vi vi = new Vi();
+            vi.f689a = productInfo.introductoryPriceMicros;
+            Period period2 = productInfo.introductoryPricePeriod;
+            if (period2 != null) {
+                Wi wi2 = new Wi();
+                wi2.f704a = period2.number;
+                int i3 = Sf.b[period2.timeUnit.ordinal()];
+                if (i3 == 1) {
+                    i = 1;
+                } else if (i3 == 2) {
+                    i = 2;
+                } else if (i3 == 3) {
+                    i = 3;
+                } else if (i3 == 4) {
+                    i = 4;
+                }
+                wi2.b = i;
+                vi.b = wi2;
+            }
+            vi.c = productInfo.introductoryPriceCycles;
+            xi.c = vi;
+            zi.k = xi;
+        }
+        c0402l6.setValueBytes(MessageNano.toByteArray(zi));
+        return c0402l6;
+    }
+
+    public static C0402l6 a(String str) {
+        C0402l6 c0402l6 = new C0402l6("", 0);
+        EnumC0681wb enumC0681wb = EnumC0681wb.EVENT_TYPE_UNDEFINED;
+        c0402l6.d = 12320;
+        c0402l6.b = str;
+        c0402l6.l = H9.JS;
+        return c0402l6;
+    }
+}

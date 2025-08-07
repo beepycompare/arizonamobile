@@ -1,30 +1,50 @@
 package com.google.android.gms.measurement.internal;
 
-import com.google.android.gms.common.wrappers.PackageManagerWrapper;
-import com.google.android.gms.common.wrappers.Wrappers;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+import android.content.ComponentName;
+import android.content.ServiceConnection;
+import android.os.IBinder;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzhj {
-    final zzib zza;
+public final class zzhj implements ServiceConnection {
+    final /* synthetic */ zzhk zza;
+    private final String zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzhj(zzpf zzpfVar) {
-        this.zza = zzpfVar.zzaf();
+    public zzhj(zzhk zzhkVar, String str) {
+        Objects.requireNonNull(zzhkVar);
+        this.zza = zzhkVar;
+        this.zzb = str;
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        if (iBinder != null) {
+            try {
+                com.google.android.gms.internal.measurement.zzbq zzb = com.google.android.gms.internal.measurement.zzbp.zzb(iBinder);
+                if (zzb == null) {
+                    this.zza.zza.zzaV().zze().zza("Install Referrer Service implementation was not found");
+                    return;
+                }
+                zzic zzicVar = this.zza.zza;
+                zzicVar.zzaV().zzk().zza("Install Referrer Service connected");
+                zzicVar.zzaW().zzj(new zzhi(this, zzb, this));
+                return;
+            } catch (RuntimeException e) {
+                this.zza.zza.zzaV().zze().zzb("Exception occurred while calling Install Referrer API", e);
+                return;
+            }
+        }
+        this.zza.zza.zzaV().zze().zza("Install Referrer connection returned with null binder");
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+        this.zza.zza.zzaV().zzk().zza("Install Referrer Service disconnected");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zza() {
-        try {
-            zzib zzibVar = this.zza;
-            PackageManagerWrapper packageManager = Wrappers.packageManager(zzibVar.zzaY());
-            if (packageManager != null) {
-                return packageManager.getPackageInfo("com.android.vending", 128).versionCode >= 80837300;
-            }
-            zzibVar.zzaV().zzk().zza("Failed to get PackageManager for Install Referrer Play Store compatibility check");
-            return false;
-        } catch (Exception e) {
-            this.zza.zzaV().zzk().zzb("Failed to retrieve Play Store version for Install Referrer", e);
-            return false;
-        }
+    public final /* synthetic */ String zza() {
+        return this.zzb;
     }
 }

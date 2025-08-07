@@ -7,7 +7,6 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.util.Xml;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
@@ -218,16 +217,18 @@ public class ConstraintLayoutStates {
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0061, code lost:
+        continue;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private void load(Context context, int i) {
+        String str;
         XmlResourceParser xml = context.getResources().getXml(i);
         try {
-            int eventType = xml.getEventType();
             State state = null;
-            while (true) {
-                char c = 1;
-                if (eventType == 1) {
-                    return;
-                }
+            for (int eventType = xml.getEventType(); eventType != 1; eventType = xml.next()) {
                 if (eventType != 2) {
                     continue;
                 } else {
@@ -235,63 +236,42 @@ public class ConstraintLayoutStates {
                     switch (name.hashCode()) {
                         case -1349929691:
                             if (name.equals("ConstraintSet")) {
-                                c = 4;
-                                break;
+                                parseConstraintSet(context, xml);
+                                continue;
+                            } else {
+                                continue;
                             }
-                            c = 65535;
-                            break;
                         case 80204913:
                             if (name.equals("State")) {
-                                c = 2;
-                                break;
+                                State state2 = new State(context, xml);
+                                this.mStateList.put(state2.mId, state2);
+                                state = state2;
+                                continue;
+                            } else {
+                                continue;
                             }
-                            c = 65535;
-                            break;
                         case 1382829617:
-                            if (name.equals("StateSet")) {
-                                break;
-                            }
-                            c = 65535;
-                            break;
+                            str = "StateSet";
+                            name.equals(str);
+                            continue;
                         case 1657696882:
-                            if (name.equals("layoutDescription")) {
-                                c = 0;
-                                break;
-                            }
-                            c = 65535;
-                            break;
+                            str = "layoutDescription";
+                            name.equals(str);
+                            continue;
                         case 1901439077:
                             if (name.equals("Variant")) {
-                                c = 3;
-                                break;
+                                Variant variant = new Variant(context, xml);
+                                if (state != null) {
+                                    state.add(variant);
+                                    continue;
+                                } else {
+                                    continue;
+                                }
+                            } else {
+                                continue;
                             }
-                            c = 65535;
-                            break;
-                        default:
-                            c = 65535;
-                            break;
-                    }
-                    if (c == 2) {
-                        State state2 = new State(context, xml);
-                        this.mStateList.put(state2.mId, state2);
-                        state = state2;
-                        continue;
-                    } else if (c == 3) {
-                        Variant variant = new Variant(context, xml);
-                        if (state != null) {
-                            state.add(variant);
-                            continue;
-                        } else {
-                            continue;
-                        }
-                    } else if (c != 4) {
-                        continue;
-                    } else {
-                        parseConstraintSet(context, xml);
-                        continue;
                     }
                 }
-                eventType = xml.next();
             }
         } catch (IOException e) {
             Log.e("ConstraintLayoutStates", "Error parsing resource: " + i, e);
@@ -307,7 +287,7 @@ public class ConstraintLayoutStates {
             String attributeName = xmlPullParser.getAttributeName(i);
             String attributeValue = xmlPullParser.getAttributeValue(i);
             if (attributeName != null && attributeValue != null && "id".equals(attributeName)) {
-                int identifier = attributeValue.contains(RemoteSettings.FORWARD_SLASH_STRING) ? context.getResources().getIdentifier(attributeValue.substring(attributeValue.indexOf(47) + 1), "id", context.getPackageName()) : -1;
+                int identifier = attributeValue.contains("/") ? context.getResources().getIdentifier(attributeValue.substring(attributeValue.indexOf(47) + 1), "id", context.getPackageName()) : -1;
                 if (identifier == -1) {
                     if (attributeValue.length() > 1) {
                         identifier = Integer.parseInt(attributeValue.substring(1));

@@ -4,18 +4,18 @@ import com.google.android.vending.expansion.downloader.Constants;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzba extends zzje {
+public final class zzba extends zzjf {
     private long zza;
     private String zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzba(zzib zzibVar) {
-        super(zzibVar);
+    public zzba(zzic zzicVar) {
+        super(zzicVar);
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzje
+    @Override // com.google.android.gms.measurement.internal.zzjf
     protected final boolean zza() {
         Calendar calendar = Calendar.getInstance();
         this.zza = TimeUnit.MINUTES.convert(calendar.get(15) + calendar.get(16), TimeUnit.MILLISECONDS);

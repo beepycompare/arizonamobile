@@ -9,6 +9,7 @@ public interface ImageDecoder extends Decoder<DecoderInputBuffer, ImageOutputBuf
 
     /* loaded from: classes2.dex */
     public interface Factory {
+        @Deprecated
         public static final Factory DEFAULT = new BitmapFactoryImageDecoder.Factory();
 
         ImageDecoder createImageDecoder();

@@ -5,10 +5,10 @@ import io.appmetrica.analytics.AppMetricaConfig;
 import java.util.LinkedHashMap;
 import java.util.Map;
 /* loaded from: classes4.dex */
-public final class Z7 implements InterfaceC0181cd {
+public final class Z7 implements InterfaceC0182cd {
 
     /* renamed from: a  reason: collision with root package name */
-    public Location f746a;
+    public Location f745a;
     public Boolean b;
     public Boolean c;
     public Boolean d;
@@ -19,7 +19,7 @@ public final class Z7 implements InterfaceC0181cd {
     public boolean i;
     public Ji j;
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     public final void a(boolean z) {
         Boolean valueOf = Boolean.valueOf(z);
         this.b = valueOf;
@@ -29,7 +29,7 @@ public final class Z7 implements InterfaceC0181cd {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     public final void b(boolean z) {
         Boolean valueOf = Boolean.valueOf(z);
         this.c = valueOf;
@@ -39,14 +39,14 @@ public final class Z7 implements InterfaceC0181cd {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     public final void clearAppEnvironment() {
         this.g = true;
         this.e.clear();
     }
 
     public final Location j() {
-        return this.f746a;
+        return this.f745a;
     }
 
     public final Boolean k() {
@@ -65,12 +65,12 @@ public final class Z7 implements InterfaceC0181cd {
         return this.g;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     public final void putAppEnvironmentValue(String str, String str2) {
         this.e.put(str, str2);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     public final void setDataSendingEnabled(boolean z) {
         Boolean valueOf = Boolean.valueOf(z);
         this.d = valueOf;
@@ -80,17 +80,17 @@ public final class Z7 implements InterfaceC0181cd {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     public final void setUserProfileID(String str) {
         this.h = str;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     public final void a(Location location) {
-        this.f746a = location;
+        this.f745a = location;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     public final void a(String str, String str2) {
         this.f.put(str, str2);
     }
@@ -200,7 +200,7 @@ public final class Z7 implements InterfaceC0181cd {
         if (appMetricaConfig.locationTracking == null && io.a(bool)) {
             newConfigBuilder.withLocationTracking(bool.booleanValue());
         }
-        Location location = this.f746a;
+        Location location = this.f745a;
         if (appMetricaConfig.location == null && io.a(location)) {
             newConfigBuilder.withLocation(location);
         }
@@ -216,7 +216,7 @@ public final class Z7 implements InterfaceC0181cd {
             newConfigBuilder.withAdvIdentifiersTracking(bool3.booleanValue());
         }
         this.i = true;
-        this.f746a = null;
+        this.f745a = null;
         this.b = null;
         this.c = null;
         this.d = null;

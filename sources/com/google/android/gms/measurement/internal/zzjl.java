@@ -1,20 +1,321 @@
 package com.google.android.gms.measurement.internal;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.messaging.Constants;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+import android.os.Bundle;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.EnumMap;
+import java.util.Map;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzjl {
-    public static final String[] zza = {"ad_activeview", "ad_click", "ad_exposure", "ad_query", "ad_reward", "adunit_exposure", "app_clear_data", "app_exception", "app_remove", "app_store_refund", "app_store_subscription_cancel", "app_store_subscription_convert", "app_store_subscription_renew", "app_upgrade", "app_update", "ga_campaign", "error", "first_open", "first_visit", "in_app_purchase", "notification_dismiss", "notification_foreground", "notification_open", "notification_receive", "os_update", "session_start", "session_start_with_rollout", "user_engagement", FirebaseAnalytics.Event.AD_IMPRESSION, FirebaseAnalytics.Event.SCREEN_VIEW, "ga_extra_parameter", "app_background", "firebase_campaign"};
-    public static final String[] zzb = {FirebaseAnalytics.Event.AD_IMPRESSION};
-    public static final String[] zzc = {"_aa", "_ac", "_xa", "_aq", "_ar", "_xu", "_cd", "_ae", "_ui", "app_store_refund", "app_store_subscription_cancel", "app_store_subscription_convert", "app_store_subscription_renew", "_ug", "_au", Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN, "_err", "_f", "_v", "_iap", Constants.ScionAnalytics.EVENT_NOTIFICATION_DISMISS, Constants.ScionAnalytics.EVENT_NOTIFICATION_FOREGROUND, Constants.ScionAnalytics.EVENT_NOTIFICATION_OPEN, Constants.ScionAnalytics.EVENT_NOTIFICATION_RECEIVE, "_ou", "_s", "_ssr", "_e", "_ai", "_vs", "_ep", "_ab", Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN};
-    public static final String[] zzd = {FirebaseAnalytics.Event.PURCHASE, FirebaseAnalytics.Event.REFUND, FirebaseAnalytics.Event.ADD_PAYMENT_INFO, FirebaseAnalytics.Event.ADD_SHIPPING_INFO, FirebaseAnalytics.Event.ADD_TO_CART, FirebaseAnalytics.Event.ADD_TO_WISHLIST, FirebaseAnalytics.Event.BEGIN_CHECKOUT, FirebaseAnalytics.Event.REMOVE_FROM_CART, FirebaseAnalytics.Event.SELECT_ITEM, FirebaseAnalytics.Event.SELECT_PROMOTION, FirebaseAnalytics.Event.VIEW_CART, FirebaseAnalytics.Event.VIEW_ITEM, FirebaseAnalytics.Event.VIEW_ITEM_LIST, FirebaseAnalytics.Event.VIEW_PROMOTION, "ecommerce_purchase", "purchase_refund", "set_checkout_option", "checkout_progress", FirebaseAnalytics.Event.SELECT_CONTENT, FirebaseAnalytics.Event.VIEW_SEARCH_RESULTS};
+    public static final zzjl zza = new zzjl(null, null, 100);
+    private final EnumMap zzb;
+    private final int zzc;
 
-    public static String zza(String str) {
-        return zzls.zzc(str, zzc, zza);
+    public zzjl(Boolean bool, Boolean bool2, int i) {
+        EnumMap enumMap = new EnumMap(zzjk.class);
+        this.zzb = enumMap;
+        enumMap.put((EnumMap) zzjk.AD_STORAGE, (zzjk) zzh(null));
+        enumMap.put((EnumMap) zzjk.ANALYTICS_STORAGE, (zzjk) zzh(null));
+        this.zzc = i;
     }
 
-    public static String zzb(String str) {
-        return zzls.zzc(str, zza, zzc);
+    public static zzjl zza(zzji zzjiVar, zzji zzjiVar2, int i) {
+        EnumMap enumMap = new EnumMap(zzjk.class);
+        enumMap.put((EnumMap) zzjk.AD_STORAGE, (zzjk) zzjiVar);
+        enumMap.put((EnumMap) zzjk.ANALYTICS_STORAGE, (zzjk) zzjiVar2);
+        return new zzjl(enumMap, -10);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static String zzd(int i) {
+        return i != -30 ? i != -20 ? i != -10 ? i != 0 ? i != 30 ? i != 90 ? i != 100 ? "OTHER" : "UNKNOWN" : "REMOTE_CONFIG" : "1P_INIT" : "1P_API" : "MANIFEST" : "API" : "TCF";
+    }
+
+    public static zzjl zze(Bundle bundle, int i) {
+        zzjk[] zzb;
+        if (bundle == null) {
+            return new zzjl(null, null, i);
+        }
+        EnumMap enumMap = new EnumMap(zzjk.class);
+        for (zzjk zzjkVar : zzjj.STORAGE.zzb()) {
+            enumMap.put((EnumMap) zzjkVar, (zzjk) zzg(bundle.getString(zzjkVar.zze)));
+        }
+        return new zzjl(enumMap, i);
+    }
+
+    public static zzjl zzf(String str, int i) {
+        EnumMap enumMap = new EnumMap(zzjk.class);
+        zzjk[] zza2 = zzjj.STORAGE.zza();
+        for (int i2 = 0; i2 < zza2.length; i2++) {
+            String str2 = str == null ? "" : str;
+            zzjk zzjkVar = zza2[i2];
+            int i3 = i2 + 2;
+            if (i3 < str2.length()) {
+                enumMap.put((EnumMap) zzjkVar, (zzjk) zzj(str2.charAt(i3)));
+            } else {
+                enumMap.put((EnumMap) zzjkVar, (zzjk) zzji.UNINITIALIZED);
+            }
+        }
+        return new zzjl(enumMap, i);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static zzji zzg(String str) {
+        if (str == null) {
+            return zzji.UNINITIALIZED;
+        }
+        if (str.equals("granted")) {
+            return zzji.GRANTED;
+        }
+        if (str.equals("denied")) {
+            return zzji.DENIED;
+        }
+        return zzji.UNINITIALIZED;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static zzji zzh(Boolean bool) {
+        if (bool == null) {
+            return zzji.UNINITIALIZED;
+        }
+        if (bool.booleanValue()) {
+            return zzji.GRANTED;
+        }
+        return zzji.DENIED;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static String zzi(zzji zzjiVar) {
+        int ordinal = zzjiVar.ordinal();
+        if (ordinal != 2) {
+            if (ordinal != 3) {
+                return null;
+            }
+            return "granted";
+        }
+        return "denied";
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static char zzm(zzji zzjiVar) {
+        if (zzjiVar != null) {
+            int ordinal = zzjiVar.ordinal();
+            if (ordinal != 1) {
+                if (ordinal != 2) {
+                    return ordinal != 3 ? '-' : '1';
+                }
+                return '0';
+            }
+            return '+';
+        }
+        return '-';
+    }
+
+    public static boolean zzu(int i, int i2) {
+        int i3 = -30;
+        if (i == -20) {
+            if (i2 == -30) {
+                return true;
+            }
+            i = -20;
+        }
+        if (i != -30) {
+            i3 = i;
+        } else if (i2 == -20) {
+            return true;
+        }
+        return i3 == i2 || i < i2;
+    }
+
+    public final boolean equals(Object obj) {
+        zzjk[] zzb;
+        if (obj instanceof zzjl) {
+            zzjl zzjlVar = (zzjl) obj;
+            for (zzjk zzjkVar : zzjj.STORAGE.zzb()) {
+                if (this.zzb.get(zzjkVar) != zzjlVar.zzb.get(zzjkVar)) {
+                    return false;
+                }
+            }
+            return this.zzc == zzjlVar.zzc;
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int i = this.zzc * 17;
+        for (zzji zzjiVar : this.zzb.values()) {
+            i = (i * 31) + zzjiVar.hashCode();
+        }
+        return i;
+    }
+
+    public final String toString() {
+        zzjk[] zzb;
+        StringBuilder sb = new StringBuilder("source=");
+        sb.append(zzd(this.zzc));
+        for (zzjk zzjkVar : zzjj.STORAGE.zzb()) {
+            sb.append(StringUtils.COMMA);
+            sb.append(zzjkVar.zze);
+            sb.append("=");
+            zzji zzjiVar = (zzji) this.zzb.get(zzjkVar);
+            if (zzjiVar == null) {
+                zzjiVar = zzji.UNINITIALIZED;
+            }
+            sb.append(zzjiVar);
+        }
+        return sb.toString();
+    }
+
+    public final int zzb() {
+        return this.zzc;
+    }
+
+    public final boolean zzc() {
+        for (zzji zzjiVar : this.zzb.values()) {
+            if (zzjiVar != zzji.UNINITIALIZED) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final String zzk() {
+        int ordinal;
+        StringBuilder sb = new StringBuilder("G1");
+        for (zzjk zzjkVar : zzjj.STORAGE.zza()) {
+            zzji zzjiVar = (zzji) this.zzb.get(zzjkVar);
+            char c = '-';
+            if (zzjiVar != null && (ordinal = zzjiVar.ordinal()) != 0) {
+                if (ordinal != 1) {
+                    if (ordinal == 2) {
+                        c = '0';
+                    } else if (ordinal != 3) {
+                    }
+                }
+                c = '1';
+            }
+            sb.append(c);
+        }
+        return sb.toString();
+    }
+
+    public final String zzl() {
+        StringBuilder sb = new StringBuilder("G1");
+        for (zzjk zzjkVar : zzjj.STORAGE.zza()) {
+            sb.append(zzm((zzji) this.zzb.get(zzjkVar)));
+        }
+        return sb.toString();
+    }
+
+    public final Bundle zzn() {
+        Bundle bundle = new Bundle();
+        for (Map.Entry entry : this.zzb.entrySet()) {
+            String zzi = zzi((zzji) entry.getValue());
+            if (zzi != null) {
+                bundle.putString(((zzjk) entry.getKey()).zze, zzi);
+            }
+        }
+        return bundle;
+    }
+
+    public final boolean zzo(zzjk zzjkVar) {
+        return ((zzji) this.zzb.get(zzjkVar)) != zzji.DENIED;
+    }
+
+    public final zzji zzp() {
+        zzji zzjiVar = (zzji) this.zzb.get(zzjk.AD_STORAGE);
+        return zzjiVar == null ? zzji.UNINITIALIZED : zzjiVar;
+    }
+
+    public final zzji zzq() {
+        zzji zzjiVar = (zzji) this.zzb.get(zzjk.ANALYTICS_STORAGE);
+        return zzjiVar == null ? zzji.UNINITIALIZED : zzjiVar;
+    }
+
+    public final boolean zzr(zzjl zzjlVar) {
+        zzjk[] zzjkVarArr;
+        EnumMap enumMap = this.zzb;
+        for (zzjk zzjkVar : (zzjk[]) enumMap.keySet().toArray(new zzjk[0])) {
+            zzji zzjiVar = (zzji) enumMap.get(zzjkVar);
+            zzji zzjiVar2 = (zzji) zzjlVar.zzb.get(zzjkVar);
+            zzji zzjiVar3 = zzji.DENIED;
+            if (zzjiVar == zzjiVar3 && zzjiVar2 != zzjiVar3) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0047 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final zzjl zzs(zzjl zzjlVar) {
+        zzjk[] zzb;
+        EnumMap enumMap = new EnumMap(zzjk.class);
+        for (zzjk zzjkVar : zzjj.STORAGE.zzb()) {
+            zzji zzjiVar = (zzji) this.zzb.get(zzjkVar);
+            zzji zzjiVar2 = (zzji) zzjlVar.zzb.get(zzjkVar);
+            if (zzjiVar != null) {
+                if (zzjiVar2 != null) {
+                    zzji zzjiVar3 = zzji.UNINITIALIZED;
+                    if (zzjiVar != zzjiVar3) {
+                        if (zzjiVar2 != zzjiVar3) {
+                            zzji zzjiVar4 = zzji.POLICY;
+                            if (zzjiVar != zzjiVar4) {
+                                if (zzjiVar2 != zzjiVar4) {
+                                    zzji zzjiVar5 = zzji.DENIED;
+                                    zzjiVar = (zzjiVar == zzjiVar5 || zzjiVar2 == zzjiVar5) ? zzjiVar5 : zzji.GRANTED;
+                                }
+                            }
+                        }
+                    }
+                }
+                if (zzjiVar == null) {
+                    enumMap.put((EnumMap) zzjkVar, (zzjk) zzjiVar);
+                }
+            }
+            zzjiVar = zzjiVar2;
+            if (zzjiVar == null) {
+            }
+        }
+        return new zzjl(enumMap, 100);
+    }
+
+    public final zzjl zzt(zzjl zzjlVar) {
+        zzjk[] zzb;
+        EnumMap enumMap = new EnumMap(zzjk.class);
+        for (zzjk zzjkVar : zzjj.STORAGE.zzb()) {
+            zzji zzjiVar = (zzji) this.zzb.get(zzjkVar);
+            if (zzjiVar == zzji.UNINITIALIZED) {
+                zzjiVar = (zzji) zzjlVar.zzb.get(zzjkVar);
+            }
+            if (zzjiVar != null) {
+                enumMap.put((EnumMap) zzjkVar, (zzjk) zzjiVar);
+            }
+        }
+        return new zzjl(enumMap, this.zzc);
+    }
+
+    private zzjl(EnumMap enumMap, int i) {
+        EnumMap enumMap2 = new EnumMap(zzjk.class);
+        this.zzb = enumMap2;
+        enumMap2.putAll(enumMap);
+        this.zzc = i;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static zzji zzj(char c) {
+        if (c != '+') {
+            if (c != '0') {
+                if (c == '1') {
+                    return zzji.GRANTED;
+                }
+                return zzji.UNINITIALIZED;
+            }
+            return zzji.DENIED;
+        }
+        return zzji.POLICY;
     }
 }

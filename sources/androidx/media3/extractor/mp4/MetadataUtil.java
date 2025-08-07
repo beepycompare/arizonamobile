@@ -16,7 +16,6 @@ import androidx.media3.extractor.metadata.id3.Id3Util;
 import androidx.media3.extractor.metadata.id3.InternalFrame;
 import androidx.media3.extractor.metadata.id3.TextInformationFrame;
 import com.google.common.collect.ImmutableList;
-import com.google.firebase.sessions.settings.RemoteSettings;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes2.dex */
 public final class MetadataUtil {
@@ -284,7 +283,7 @@ public final class MetadataUtil {
                 String str2 = "" + readUnsignedShort;
                 int readUnsignedShort2 = parsableByteArray.readUnsignedShort();
                 if (readUnsignedShort2 > 0) {
-                    str2 = str2 + RemoteSettings.FORWARD_SLASH_STRING + readUnsignedShort2;
+                    str2 = str2 + "/" + readUnsignedShort2;
                 }
                 return new TextInformationFrame(str, (String) null, ImmutableList.of(str2));
             }

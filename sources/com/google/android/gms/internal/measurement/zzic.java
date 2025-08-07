@@ -3,9 +3,9 @@ package com.google.android.gms.internal.measurement;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import java.util.Collections;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzic extends zzma implements zznm {
+public final class zzic extends zzmb implements zznn {
     private zzic() {
         throw null;
     }
@@ -103,7 +103,7 @@ public final class zzic extends zzma implements zznm {
 
     public final zzic zzO(long j) {
         zzaX();
-        ((zzid) this.zza).zzbi(130000L);
+        ((zzid) this.zza).zzbi(133005L);
         return this;
     }
 

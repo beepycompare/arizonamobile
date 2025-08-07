@@ -8,6 +8,7 @@ import javax.net.ssl.HttpsURLConnection;
 /* loaded from: classes3.dex */
 public class AdjustFactory {
     private static IActivityHandler activityHandler = null;
+    private static boolean allowUrlStrategyFallback = true;
     private static IAttributionHandler attributionHandler = null;
     private static String baseUrl = null;
     private static UtilNetworking.IConnectionOptions connectionOptions = null;
@@ -185,12 +186,20 @@ public class AdjustFactory {
         return tryInstallReferrer;
     }
 
+    public static boolean isAllowUrlStrategyFallback() {
+        return allowUrlStrategyFallback;
+    }
+
     public static boolean isSystemLifecycleBootstrapIgnored() {
         return ignoreSystemLifecycleBootstrap;
     }
 
     public static void setActivityHandler(IActivityHandler iActivityHandler) {
         activityHandler = iActivityHandler;
+    }
+
+    public static void setAllowUrlStrategyFallback(boolean z) {
+        allowUrlStrategyFallback = z;
     }
 
     public static void setAttributionHandler(IAttributionHandler iAttributionHandler) {

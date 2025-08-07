@@ -2,7 +2,6 @@ package androidx.media3.common;
 
 import android.os.Bundle;
 import androidx.media3.common.util.Util;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.Arrays;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
 import org.checkerframework.dataflow.qual.Pure;
@@ -211,7 +210,7 @@ public final class ColorInfo {
         } else {
             str = "NA/NA/NA";
         }
-        return str + RemoteSettings.FORWARD_SLASH_STRING + (isBitdepthValid() ? this.lumaBitdepth + RemoteSettings.FORWARD_SLASH_STRING + this.chromaBitdepth : "NA/NA");
+        return str + "/" + (isBitdepthValid() ? this.lumaBitdepth + "/" + this.chromaBitdepth : "NA/NA");
     }
 
     public boolean equals(Object obj) {

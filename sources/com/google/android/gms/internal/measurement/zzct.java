@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
 public abstract class zzct extends zzbm implements zzcu {
     public zzct() {

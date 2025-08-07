@@ -1,25 +1,25 @@
 package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 final class zzax implements Runnable {
-    final /* synthetic */ zzjf zza;
+    final /* synthetic */ zzjg zza;
     final /* synthetic */ zzay zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzax(zzay zzayVar, zzjf zzjfVar) {
-        this.zza = zzjfVar;
+    public zzax(zzay zzayVar, zzjg zzjgVar) {
+        this.zza = zzjgVar;
         Objects.requireNonNull(zzayVar);
         this.zzb = zzayVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zzjf zzjfVar = this.zza;
-        zzjfVar.zzaU();
+        zzjg zzjgVar = this.zza;
+        zzjgVar.zzaU();
         if (zzae.zza()) {
-            zzjfVar.zzaW().zzj(this);
+            zzjgVar.zzaW().zzj(this);
             return;
         }
         zzay zzayVar = this.zzb;

@@ -12,7 +12,6 @@ import com.google.common.graph.SuccessorsFunction;
 import com.google.common.graph.Traverser;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.HashFunction;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -351,12 +350,12 @@ public final class Files {
         }
         String join = Joiner.on('/').join(arrayList);
         if (pathname.charAt(0) == '/') {
-            join = RemoteSettings.FORWARD_SLASH_STRING + join;
+            join = "/" + join;
         }
         while (join.startsWith("/../")) {
             join = join.substring(3);
         }
-        return join.equals("/..") ? RemoteSettings.FORWARD_SLASH_STRING : "".equals(join) ? "." : join;
+        return join.equals("/..") ? "/" : "".equals(join) ? "." : join;
     }
 
     public static String getFileExtension(String fullName) {

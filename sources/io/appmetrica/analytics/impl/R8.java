@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
 public interface R8 {
-    int a(EnumC0151b9 enumC0151b9);
+    int a(EnumC0152b9 enumC0152b9);
 }

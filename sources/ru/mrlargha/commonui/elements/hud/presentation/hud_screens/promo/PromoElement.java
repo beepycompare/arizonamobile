@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
 import com.google.android.material.card.MaterialCardView;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.R;
@@ -49,7 +48,7 @@ public final class PromoElement {
             this.binding.title.setText(promoInfo.getTitle());
             TextView textView = this.binding.progress;
             int currentProgress = promoInfo.getCurrentProgress();
-            textView.setText(currentProgress + RemoteSettings.FORWARD_SLASH_STRING + promoInfo.getMaxProgress());
+            textView.setText(currentProgress + "/" + promoInfo.getMaxProgress());
             if (promoInfo.getCurrentProgress() >= promoInfo.getMaxProgress()) {
                 this.binding.progress.setVisibility(8);
                 this.binding.ic.setVisibility(0);

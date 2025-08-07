@@ -1,95 +1,109 @@
 package com.google.android.gms.internal.measurement;
 
 import java.io.IOException;
-import java.io.Serializable;
-import java.util.Iterator;
-import java.util.Locale;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-public abstract class zzlg implements Iterable, Serializable {
-    public static final zzlg zzb = new zzlf(zzmo.zzb);
-    private int zza = 0;
+public class zzlg extends zzlf {
+    protected final byte[] zza;
 
-    static {
-        int i = zzku.zza;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzlg(byte[] bArr) {
+        super(null);
+        bArr.getClass();
+        this.zza = bArr;
     }
 
-    public static zzlg zzh(byte[] bArr, int i, int i2) {
-        zzj(i, i + i2, bArr.length);
-        byte[] bArr2 = new byte[i2];
-        System.arraycopy(bArr, i, bArr2, 0, i2);
-        return new zzlf(bArr2);
-    }
-
-    public abstract boolean equals(Object obj);
-
-    public final int hashCode() {
-        int i = this.zza;
-        if (i == 0) {
-            int zzc = zzc();
-            i = zzg(zzc, 0, zzc);
-            if (i == 0) {
-                i = 1;
-            }
-            this.zza = i;
+    @Override // com.google.android.gms.internal.measurement.zzlh
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        return i;
-    }
-
-    @Override // java.lang.Iterable
-    public final /* synthetic */ Iterator iterator() {
-        return new zzkz(this);
-    }
-
-    public final String toString() {
-        return String.format(Locale.ROOT, "<ByteString@%s size=%d contents=\"%s\">", Integer.toHexString(System.identityHashCode(this)), Integer.valueOf(zzc()), zzc() <= 50 ? zzof.zza(this) : zzof.zza(zze(0, 47)).concat("..."));
-    }
-
-    public abstract byte zza(int i);
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract byte zzb(int i);
-
-    public abstract int zzc();
-
-    public abstract zzlg zze(int i, int i2);
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void zzf(zzky zzkyVar) throws IOException;
-
-    protected abstract int zzg(int i, int i2, int i3);
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final int zzi() {
-        return this.zza;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static int zzj(int i, int i2, int i3) {
-        int i4 = i2 - i;
-        if ((i | i2 | i4 | (i3 - i2)) < 0) {
-            if (i < 0) {
-                StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 21);
-                sb.append("Beginning index: ");
-                sb.append(i);
-                sb.append(" < 0");
-                throw new IndexOutOfBoundsException(sb.toString());
-            } else if (i2 < i) {
-                StringBuilder sb2 = new StringBuilder(String.valueOf(i).length() + 44 + String.valueOf(i2).length());
-                sb2.append("Beginning index larger than ending index: ");
-                sb2.append(i);
-                sb2.append(", ");
-                sb2.append(i2);
-                throw new IndexOutOfBoundsException(sb2.toString());
-            } else {
-                StringBuilder sb3 = new StringBuilder(String.valueOf(i2).length() + 15 + String.valueOf(i3).length());
-                sb3.append("End index: ");
-                sb3.append(i2);
-                sb3.append(" >= ");
-                sb3.append(i3);
-                throw new IndexOutOfBoundsException(sb3.toString());
+        if ((obj instanceof zzlh) && zzc() == ((zzlh) obj).zzc()) {
+            if (zzc() == 0) {
+                return true;
             }
+            if (obj instanceof zzlg) {
+                zzlg zzlgVar = (zzlg) obj;
+                int zzi = zzi();
+                int zzi2 = zzlgVar.zzi();
+                if (zzi == 0 || zzi2 == 0 || zzi == zzi2) {
+                    int zzc = zzc();
+                    if (zzc > zzlgVar.zzc()) {
+                        int zzc2 = zzc();
+                        StringBuilder sb = new StringBuilder(String.valueOf(zzc).length() + 18 + String.valueOf(zzc2).length());
+                        sb.append("Length too large: ");
+                        sb.append(zzc);
+                        sb.append(zzc2);
+                        throw new IllegalArgumentException(sb.toString());
+                    } else if (zzc <= zzlgVar.zzc()) {
+                        if (zzlgVar instanceof zzlg) {
+                            byte[] bArr = this.zza;
+                            byte[] bArr2 = zzlgVar.zza;
+                            zzlgVar.zzd();
+                            int i = 0;
+                            int i2 = 0;
+                            while (i < zzc) {
+                                if (bArr[i] != bArr2[i2]) {
+                                    return false;
+                                }
+                                i++;
+                                i2++;
+                            }
+                            return true;
+                        }
+                        return zzlgVar.zze(0, zzc).equals(zze(0, zzc));
+                    } else {
+                        int zzc3 = zzlgVar.zzc();
+                        StringBuilder sb2 = new StringBuilder(String.valueOf(zzc).length() + 27 + String.valueOf(zzc3).length());
+                        sb2.append("Ran off end of other: 0, ");
+                        sb2.append(zzc);
+                        sb2.append(", ");
+                        sb2.append(zzc3);
+                        throw new IllegalArgumentException(sb2.toString());
+                    }
+                }
+                return false;
+            }
+            return obj.equals(this);
         }
-        return i4;
+        return false;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzlh
+    public byte zza(int i) {
+        return this.zza[i];
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // com.google.android.gms.internal.measurement.zzlh
+    public byte zzb(int i) {
+        return this.zza[i];
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzlh
+    public int zzc() {
+        return this.zza.length;
+    }
+
+    protected int zzd() {
+        return 0;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzlh
+    public final zzlh zze(int i, int i2) {
+        int zzj = zzj(0, i2, zzc());
+        return zzj == 0 ? zzlh.zzb : new zzlc(this.zza, 0, zzj);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // com.google.android.gms.internal.measurement.zzlh
+    public final void zzf(zzkz zzkzVar) throws IOException {
+        ((zzlk) zzkzVar).zzv(this.zza, 0, zzc());
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzlh
+    protected final int zzg(int i, int i2, int i3) {
+        return zzmp.zzc(i, this.zza, 0, i3);
     }
 }

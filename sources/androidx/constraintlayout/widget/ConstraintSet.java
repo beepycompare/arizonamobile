@@ -28,7 +28,6 @@ import androidx.constraintlayout.widget.R;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.IOException;
 import java.io.Writer;
@@ -1579,7 +1578,7 @@ public class ConstraintSet {
                         } else if (peekValue.type == 3) {
                             String string = obtainStyledAttributes.getString(index);
                             this.mQuantizeInterpolatorString = string;
-                            if (string.indexOf(RemoteSettings.FORWARD_SLASH_STRING) > 0) {
+                            if (string.indexOf("/") > 0) {
                                 this.mQuantizeInterpolatorID = obtainStyledAttributes.getResourceId(index, -1);
                                 this.mQuantizeInterpolatorType = -2;
                                 break;
@@ -3199,9 +3198,11 @@ public class ConstraintSet {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:119:0x01da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:117:0x01b4, code lost:
         continue;
      */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00a6 A[Catch: IOException -> 0x01ba, XmlPullParserException -> 0x01bf, TryCatch #2 {IOException -> 0x01ba, XmlPullParserException -> 0x01bf, blocks: (B:3:0x0004, B:78:0x01b4, B:12:0x0017, B:13:0x0025, B:15:0x002a, B:18:0x0033, B:26:0x004d, B:21:0x003c, B:24:0x0045, B:27:0x005b, B:31:0x006b, B:33:0x0073, B:35:0x007e, B:44:0x00a6, B:45:0x00ad, B:46:0x00c7, B:38:0x0087, B:40:0x008f, B:41:0x009c, B:47:0x00c8, B:49:0x00d0, B:50:0x00e1, B:53:0x00eb, B:54:0x00f6, B:55:0x0110, B:56:0x0111, B:59:0x011b, B:60:0x0126, B:61:0x0140, B:62:0x0141, B:64:0x0149, B:65:0x0153, B:68:0x015d, B:69:0x0167, B:70:0x0181, B:71:0x0182, B:74:0x018c, B:75:0x0196, B:76:0x01b0, B:77:0x01b1), top: B:85:0x0004 }] */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x00ad A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3211,162 +3212,131 @@ public class ConstraintSet {
             int eventType = xmlPullParser.getEventType();
             Constraint constraint = null;
             while (eventType != 1) {
-                if (eventType != 0) {
-                    char c = 65535;
-                    if (eventType == 2) {
-                        String name = xmlPullParser.getName();
-                        switch (name.hashCode()) {
-                            case -2025855158:
-                                if (name.equals("Layout")) {
-                                    c = 6;
-                                    break;
-                                }
+                if (eventType == 0) {
+                    xmlPullParser.getName();
+                } else if (eventType == 2) {
+                    String name = xmlPullParser.getName();
+                    switch (name.hashCode()) {
+                        case -2025855158:
+                            if (!name.equals("Layout")) {
+                                continue;
+                            } else if (constraint == null) {
+                                throw new RuntimeException(ERROR_MESSAGE + xmlPullParser.getLineNumber());
+                            } else {
+                                constraint.layout.fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser));
                                 break;
-                            case -1984451626:
-                                if (name.equals(TypedValues.MotionType.NAME)) {
-                                    c = 7;
-                                    break;
-                                }
+                            }
+                        case -1984451626:
+                            if (!name.equals(TypedValues.MotionType.NAME)) {
+                                continue;
+                            } else if (constraint == null) {
+                                throw new RuntimeException(ERROR_MESSAGE + xmlPullParser.getLineNumber());
+                            } else {
+                                constraint.motion.fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser));
                                 break;
-                            case -1962203927:
-                                if (name.equals(ViewTransition.CONSTRAINT_OVERRIDE)) {
-                                    c = 1;
-                                    break;
-                                }
+                            }
+                        case -1962203927:
+                            if (!name.equals(ViewTransition.CONSTRAINT_OVERRIDE)) {
                                 break;
-                            case -1269513683:
-                                if (name.equals("PropertySet")) {
-                                    c = 4;
-                                    break;
-                                }
-                                break;
-                            case -1238332596:
-                                if (name.equals("Transform")) {
-                                    c = 5;
-                                    break;
-                                }
-                                break;
-                            case -71750448:
-                                if (name.equals("Guideline")) {
-                                    c = 2;
-                                    break;
-                                }
-                                break;
-                            case 366511058:
-                                if (name.equals(ViewTransition.CUSTOM_METHOD)) {
-                                    c = '\t';
-                                    break;
-                                }
-                                break;
-                            case 1331510167:
-                                if (name.equals("Barrier")) {
-                                    c = 3;
-                                    break;
-                                }
-                                break;
-                            case 1791837707:
-                                if (name.equals(ViewTransition.CUSTOM_ATTRIBUTE)) {
-                                    c = '\b';
-                                    break;
-                                }
-                                break;
-                            case 1803088381:
-                                if (name.equals("Constraint")) {
-                                    c = 0;
-                                    break;
-                                }
-                                break;
-                        }
-                        switch (c) {
-                            case 0:
-                                fillFromAttributeList = fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser), false);
-                                constraint = fillFromAttributeList;
-                                break;
-                            case 1:
+                            } else {
                                 fillFromAttributeList = fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser), true);
                                 constraint = fillFromAttributeList;
                                 break;
-                            case 2:
+                            }
+                        case -1269513683:
+                            if (!name.equals("PropertySet")) {
+                                continue;
+                            } else if (constraint == null) {
+                                throw new RuntimeException(ERROR_MESSAGE + xmlPullParser.getLineNumber());
+                            } else {
+                                constraint.propertySet.fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser));
+                                break;
+                            }
+                        case -1238332596:
+                            if (!name.equals("Transform")) {
+                                continue;
+                            } else if (constraint == null) {
+                                throw new RuntimeException(ERROR_MESSAGE + xmlPullParser.getLineNumber());
+                            } else {
+                                constraint.transform.fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser));
+                                break;
+                            }
+                        case -71750448:
+                            if (!name.equals("Guideline")) {
+                                break;
+                            } else {
                                 fillFromAttributeList = fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser), false);
                                 fillFromAttributeList.layout.mIsGuideline = true;
                                 fillFromAttributeList.layout.mApply = true;
                                 constraint = fillFromAttributeList;
                                 break;
-                            case 3:
+                            }
+                        case 366511058:
+                            if (!name.equals(ViewTransition.CUSTOM_METHOD)) {
+                                continue;
+                            }
+                            if (constraint != null) {
+                                throw new RuntimeException(ERROR_MESSAGE + xmlPullParser.getLineNumber());
+                            }
+                            ConstraintAttribute.parse(context, xmlPullParser, constraint.mCustomConstraints);
+                            break;
+                        case 1331510167:
+                            if (!name.equals("Barrier")) {
+                                break;
+                            } else {
                                 fillFromAttributeList = fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser), false);
                                 fillFromAttributeList.layout.mHelperType = 1;
                                 constraint = fillFromAttributeList;
                                 break;
-                            case 4:
-                                if (constraint == null) {
-                                    throw new RuntimeException(ERROR_MESSAGE + xmlPullParser.getLineNumber());
-                                }
-                                constraint.propertySet.fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser));
+                            }
+                        case 1791837707:
+                            if (!name.equals(ViewTransition.CUSTOM_ATTRIBUTE)) {
+                                continue;
+                            } else if (constraint != null) {
+                            }
+                            break;
+                        case 1803088381:
+                            if (!name.equals("Constraint")) {
                                 break;
-                            case 5:
-                                if (constraint == null) {
-                                    throw new RuntimeException(ERROR_MESSAGE + xmlPullParser.getLineNumber());
-                                }
-                                constraint.transform.fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser));
+                            } else {
+                                fillFromAttributeList = fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser), false);
+                                constraint = fillFromAttributeList;
                                 break;
-                            case 6:
-                                if (constraint == null) {
-                                    throw new RuntimeException(ERROR_MESSAGE + xmlPullParser.getLineNumber());
-                                }
-                                constraint.layout.fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser));
+                            }
+                    }
+                } else if (eventType == 3) {
+                    String lowerCase = xmlPullParser.getName().toLowerCase(Locale.ROOT);
+                    switch (lowerCase.hashCode()) {
+                        case -2075718416:
+                            if (!lowerCase.equals("guideline")) {
                                 break;
-                            case 7:
-                                if (constraint == null) {
-                                    throw new RuntimeException(ERROR_MESSAGE + xmlPullParser.getLineNumber());
-                                }
-                                constraint.motion.fillFromAttributeList(context, Xml.asAttributeSet(xmlPullParser));
-                                break;
-                            case '\b':
-                            case '\t':
-                                if (constraint == null) {
-                                    throw new RuntimeException(ERROR_MESSAGE + xmlPullParser.getLineNumber());
-                                }
-                                ConstraintAttribute.parse(context, xmlPullParser, constraint.mCustomConstraints);
-                                break;
-                        }
-                    } else if (eventType == 3) {
-                        String lowerCase = xmlPullParser.getName().toLowerCase(Locale.ROOT);
-                        switch (lowerCase.hashCode()) {
-                            case -2075718416:
-                                if (lowerCase.equals("guideline")) {
-                                    c = 3;
-                                    break;
-                                }
-                                break;
-                            case -190376483:
-                                if (lowerCase.equals("constraint")) {
-                                    c = 1;
-                                    break;
-                                }
-                                break;
-                            case 426575017:
-                                if (lowerCase.equals("constraintoverride")) {
-                                    c = 2;
-                                    break;
-                                }
-                                break;
-                            case 2146106725:
-                                if (lowerCase.equals("constraintset")) {
-                                    c = 0;
-                                    break;
-                                }
-                                break;
-                        }
-                        if (c == 0) {
-                            return;
-                        }
-                        if (c == 1 || c == 2 || c == 3) {
+                            }
                             this.mConstraints.put(Integer.valueOf(constraint.mViewId), constraint);
                             constraint = null;
-                        }
+                            break;
+                        case -190376483:
+                            if (!lowerCase.equals("constraint")) {
+                                break;
+                            } else {
+                                this.mConstraints.put(Integer.valueOf(constraint.mViewId), constraint);
+                                constraint = null;
+                                break;
+                            }
+                        case 426575017:
+                            if (!lowerCase.equals("constraintoverride")) {
+                                break;
+                            } else {
+                                this.mConstraints.put(Integer.valueOf(constraint.mViewId), constraint);
+                                constraint = null;
+                                break;
+                            }
+                        case 2146106725:
+                            if (!lowerCase.equals("constraintset")) {
+                                break;
+                            } else {
+                                return;
+                            }
                     }
-                } else {
-                    xmlPullParser.getName();
                 }
                 eventType = xmlPullParser.next();
             }
@@ -3667,7 +3637,7 @@ public class ConstraintSet {
                     } else if (peekValue.type == 3) {
                         constraint.motion.mQuantizeInterpolatorString = typedArray.getString(index);
                         delta.add(90, constraint.motion.mQuantizeInterpolatorString);
-                        if (constraint.motion.mQuantizeInterpolatorString.indexOf(RemoteSettings.FORWARD_SLASH_STRING) > 0) {
+                        if (constraint.motion.mQuantizeInterpolatorString.indexOf("/") > 0) {
                             constraint.motion.mQuantizeInterpolatorID = typedArray.getResourceId(index, -1);
                             delta.add(89, constraint.motion.mQuantizeInterpolatorID);
                             constraint.motion.mQuantizeInterpolatorType = -2;
@@ -4279,7 +4249,7 @@ public class ConstraintSet {
                         }
                     } else if (peekValue.type == 3) {
                         constraint.motion.mQuantizeInterpolatorString = typedArray.getString(index);
-                        if (constraint.motion.mQuantizeInterpolatorString.indexOf(RemoteSettings.FORWARD_SLASH_STRING) > 0) {
+                        if (constraint.motion.mQuantizeInterpolatorString.indexOf("/") > 0) {
                             constraint.motion.mQuantizeInterpolatorID = typedArray.getResourceId(index, -1);
                             constraint.motion.mQuantizeInterpolatorType = -2;
                             break;

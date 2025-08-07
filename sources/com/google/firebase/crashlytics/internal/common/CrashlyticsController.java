@@ -28,6 +28,7 @@ import com.google.firebase.crashlytics.internal.model.StaticSessionData;
 import com.google.firebase.crashlytics.internal.persistence.FileStore;
 import com.google.firebase.crashlytics.internal.settings.Settings;
 import com.google.firebase.crashlytics.internal.settings.SettingsProvider;
+import com.google.firebase.sessions.api.CrashEventReceiver;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FilenameFilter;
@@ -121,9 +122,18 @@ public class CrashlyticsController {
     }
 
     synchronized void handleUncaughtException(final SettingsProvider settingsProvider, final Thread thread, final Throwable th, final boolean z) {
+        Throwable th2;
         try {
             try {
                 Logger.getLogger().d("Handling uncaught exception \"" + th + "\" from thread " + thread.getName());
+                if (!z) {
+                    try {
+                        CrashEventReceiver.notifyCrashOccurred();
+                    } catch (Throwable th3) {
+                        th2 = th3;
+                        throw th2;
+                    }
+                }
                 final long currentTimeMillis = System.currentTimeMillis();
                 Task submitTask = this.crashlyticsWorkers.common.submitTask(new Callable<Task<Void>>() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.2
                     /* JADX WARN: Can't rename method to resolve collision */
@@ -167,12 +177,13 @@ public class CrashlyticsController {
                         Logger.getLogger().e("Error handling uncaught exception", e);
                     }
                 }
-            } catch (Throwable th2) {
-                th = th2;
-                throw th;
+            } catch (Throwable th4) {
+                th = th4;
+                th2 = th;
+                throw th2;
             }
-        } catch (Throwable th3) {
-            th = th3;
+        } catch (Throwable th5) {
+            th = th5;
         }
     }
 
@@ -338,14 +349,14 @@ public class CrashlyticsController {
         this.crashlyticsWorkers.common.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsController.this.m8226xe0c67ca9(str);
+                CrashlyticsController.this.m8241xe0c67ca9(str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$openSession$1$com-google-firebase-crashlytics-internal-common-CrashlyticsController  reason: not valid java name */
-    public /* synthetic */ void m8226xe0c67ca9(String str) {
+    public /* synthetic */ void m8241xe0c67ca9(String str) {
         doOpenSession(str, false);
     }
 

@@ -14,8 +14,9 @@ public interface Constants {
     public static final String BASE_URL_FORMAT = "https://app.%s";
     public static final String BASE_URL_NO_SUB_DOMAIN_FORMAT = "https://%s";
     public static final String CALLBACK_PARAMETERS = "callback_params";
-    public static final String CLIENT_SDK = "android5.4.1";
+    public static final String CLIENT_SDK = "android5.4.2";
     public static final int CONNECTION_TIMEOUT = 60000;
+    public static final int CONNECTION_TIMEOUT_VERIFY = 30000;
     public static final String CONTENT_PROVIDER = "content_provider";
     public static final String CONTENT_PROVIDER_INTENT_ACTION = "content_provider_intent_action";
     public static final String CONTENT_PROVIDER_NO_PERMISSION = "content_provider_no_permission";

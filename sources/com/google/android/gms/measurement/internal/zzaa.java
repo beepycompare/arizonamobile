@@ -2,13 +2,13 @@ package com.google.android.gms.measurement.internal;
 
 import android.util.Log;
 import androidx.collection.ArrayMap;
-import com.google.android.gms.internal.measurement.zzpq;
+import com.google.android.gms.internal.measurement.zzpu;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Objects;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzaa extends zzab {
     final /* synthetic */ zzad zza;
@@ -51,12 +51,12 @@ public final class zzaa extends zzab {
     */
     public final boolean zzd(Long l, Long l2, com.google.android.gms.internal.measurement.zzhs zzhsVar, long j, zzbc zzbcVar, boolean z) {
         Boolean zzi;
-        zzpq.zza();
+        zzpu.zza();
         zzad zzadVar = this.zza;
-        zzib zzibVar = zzadVar.zzu;
-        zzal zzc = zzibVar.zzc();
+        zzic zzicVar = zzadVar.zzu;
+        zzal zzc = zzicVar.zzc();
         String str = this.zzb;
-        boolean zzp = zzc.zzp(str, zzfx.zzaF);
+        boolean zzp = zzc.zzp(str, zzfy.zzaF);
         com.google.android.gms.internal.measurement.zzff zzffVar = this.zzh;
         long j2 = zzffVar.zzm() ? zzbcVar.zze : j;
         r9 = null;
@@ -71,12 +71,12 @@ public final class zzaa extends zzab {
         r9 = null;
         r9 = null;
         Boolean bool = null;
-        if (Log.isLoggable(zzibVar.zzaV().zzn(), 2)) {
-            zzibVar.zzaV().zzk().zzd("Evaluating filter. audience, filter, event", Integer.valueOf(this.zzc), zzffVar.zza() ? Integer.valueOf(zzffVar.zzb()) : null, zzibVar.zzl().zza(zzffVar.zzc()));
-            zzibVar.zzaV().zzk().zzb("Filter definition", zzadVar.zzg.zzp().zzj(zzffVar));
+        if (Log.isLoggable(zzicVar.zzaV().zzn(), 2)) {
+            zzicVar.zzaV().zzk().zzd("Evaluating filter. audience, filter, event", Integer.valueOf(this.zzc), zzffVar.zza() ? Integer.valueOf(zzffVar.zzb()) : null, zzicVar.zzl().zza(zzffVar.zzc()));
+            zzicVar.zzaV().zzk().zzb("Filter definition", zzadVar.zzg.zzp().zzj(zzffVar));
         }
         if (!zzffVar.zza() || zzffVar.zzb() > 256) {
-            zzibVar.zzaV().zze().zzc("Invalid event filter ID. appId, id", zzgt.zzl(str), String.valueOf(zzffVar.zza() ? Integer.valueOf(zzffVar.zzb()) : null));
+            zzicVar.zzaV().zze().zzc("Invalid event filter ID. appId, id", zzgu.zzl(str), String.valueOf(zzffVar.zza() ? Integer.valueOf(zzffVar.zzb()) : null));
             return false;
         }
         Object[] objArr = (zzffVar.zzi() || zzffVar.zzj() || zzffVar.zzm()) ? 1 : null;
@@ -89,7 +89,7 @@ public final class zzaa extends zzab {
                         bool = false;
                     }
                 }
-                zzibVar.zzaV().zzk().zzb("Event filter result", bool != null ? AbstractJsonLexerKt.NULL : bool);
+                zzicVar.zzaV().zzk().zzb("Event filter result", bool != null ? AbstractJsonLexerKt.NULL : bool);
                 if (bool != null) {
                     return false;
                 }
@@ -122,7 +122,7 @@ public final class zzaa extends zzab {
                     if (!zzfhVar.zzh().isEmpty()) {
                         hashSet.add(zzfhVar.zzh());
                     } else {
-                        zzibVar.zzaV().zze().zzb("null or empty param name in filter. event", zzibVar.zzl().zza(zzd));
+                        zzicVar.zzaV().zze().zzb("null or empty param name in filter. event", zzicVar.zzl().zza(zzd));
                         break;
                     }
                 } else {
@@ -139,7 +139,7 @@ public final class zzaa extends zzab {
                                 } else if (zzhwVar.zzc()) {
                                     arrayMap.put(zzhwVar.zzb(), zzhwVar.zzd());
                                 } else {
-                                    zzibVar.zzaV().zze().zzc("Unknown value for param. event, param", zzibVar.zzl().zza(zzd), zzibVar.zzl().zzb(zzhwVar.zzb()));
+                                    zzicVar.zzaV().zze().zzc("Unknown value for param. event, param", zzicVar.zzl().zza(zzd), zzicVar.zzl().zzb(zzhwVar.zzb()));
                                     break;
                                 }
                             }
@@ -162,7 +162,7 @@ public final class zzaa extends zzab {
                                                     break;
                                                 }
                                             } else {
-                                                zzibVar.zzaV().zze().zzc("No number filter for long param. event, param", zzibVar.zzl().zza(zzd), zzibVar.zzl().zzb(zzh));
+                                                zzicVar.zzaV().zze().zzc("No number filter for long param. event, param", zzicVar.zzl().zza(zzd), zzicVar.zzl().zzb(zzh));
                                                 break;
                                             }
                                         } else if (v instanceof Double) {
@@ -175,22 +175,22 @@ public final class zzaa extends zzab {
                                                     break;
                                                 }
                                             } else {
-                                                zzibVar.zzaV().zze().zzc("No number filter for double param. event, param", zzibVar.zzl().zza(zzd), zzibVar.zzl().zzb(zzh));
+                                                zzicVar.zzaV().zze().zzc("No number filter for double param. event, param", zzicVar.zzl().zza(zzd), zzicVar.zzl().zzb(zzh));
                                                 break;
                                             }
                                         } else if (v instanceof String) {
                                             if (zzfhVar2.zza()) {
-                                                zzi = zzf((String) v, zzfhVar2.zzb(), zzibVar.zzaV());
+                                                zzi = zzf((String) v, zzfhVar2.zzb(), zzicVar.zzaV());
                                             } else if (zzfhVar2.zzc()) {
                                                 String str2 = (String) v;
-                                                if (zzpj.zzm(str2)) {
+                                                if (zzpk.zzm(str2)) {
                                                     zzi = zzi(str2, zzfhVar2.zzd());
                                                 } else {
-                                                    zzibVar.zzaV().zze().zzc("Invalid param value for number filter. event, param", zzibVar.zzl().zza(zzd), zzibVar.zzl().zzb(zzh));
+                                                    zzicVar.zzaV().zze().zzc("Invalid param value for number filter. event, param", zzicVar.zzl().zza(zzd), zzicVar.zzl().zzb(zzh));
                                                     break;
                                                 }
                                             } else {
-                                                zzibVar.zzaV().zze().zzc("No filter for String param. event, param", zzibVar.zzl().zza(zzd), zzibVar.zzl().zzb(zzh));
+                                                zzicVar.zzaV().zze().zzc("No filter for String param. event, param", zzicVar.zzl().zza(zzd), zzicVar.zzl().zzb(zzh));
                                                 break;
                                             }
                                             if (zzi == null) {
@@ -200,13 +200,13 @@ public final class zzaa extends zzab {
                                                 break;
                                             }
                                         } else if (v == 0) {
-                                            zzibVar.zzaV().zzk().zzc("Missing param for filter. event, param", zzibVar.zzl().zza(zzd), zzibVar.zzl().zzb(zzh));
+                                            zzicVar.zzaV().zzk().zzc("Missing param for filter. event, param", zzicVar.zzl().zza(zzd), zzicVar.zzl().zzb(zzh));
                                             bool = false;
                                         } else {
-                                            zzibVar.zzaV().zze().zzc("Unknown param type. event, param", zzibVar.zzl().zza(zzd), zzibVar.zzl().zzb(zzh));
+                                            zzicVar.zzaV().zze().zzc("Unknown param type. event, param", zzicVar.zzl().zza(zzd), zzicVar.zzl().zzb(zzh));
                                         }
                                     } else {
-                                        zzibVar.zzaV().zze().zzb("Event has empty param name. event", zzibVar.zzl().zza(zzd));
+                                        zzicVar.zzaV().zze().zzb("Event has empty param name. event", zzicVar.zzl().zza(zzd));
                                         break;
                                     }
                                 } else {
@@ -218,11 +218,11 @@ public final class zzaa extends zzab {
                     }
                 }
             }
-            zzibVar.zzaV().zzk().zzb("Event filter result", bool != null ? AbstractJsonLexerKt.NULL : bool);
+            zzicVar.zzaV().zzk().zzb("Event filter result", bool != null ? AbstractJsonLexerKt.NULL : bool);
             if (bool != null) {
             }
         } else {
-            zzibVar.zzaV().zzk().zzc("Event filter already evaluated true and it is not associated with an enhanced audience. audience ID, filter ID", Integer.valueOf(this.zzc), zzffVar.zza() ? Integer.valueOf(zzffVar.zzb()) : null);
+            zzicVar.zzaV().zzk().zzc("Event filter already evaluated true and it is not associated with an enhanced audience. audience ID, filter ID", Integer.valueOf(this.zzc), zzffVar.zza() ? Integer.valueOf(zzffVar.zzb()) : null);
             return true;
         }
     }

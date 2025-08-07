@@ -1,7 +1,7 @@
 package com.google.android.gms.measurement.internal;
 
 import androidx.collection.ArrayMap;
-import com.google.android.gms.internal.measurement.zzpq;
+import com.google.android.gms.internal.measurement.zzpu;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.Collections;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzy {
     final /* synthetic */ zzad zza;
@@ -72,16 +72,16 @@ public final class zzy {
             if (zzabVar.zzb()) {
                 list.clear();
             }
-            zzpq.zza();
-            zzib zzibVar = this.zza.zzu;
-            zzal zzc = zzibVar.zzc();
+            zzpu.zza();
+            zzic zzicVar = this.zza.zzu;
+            zzal zzc = zzicVar.zzc();
             String str = this.zzb;
-            zzfw zzfwVar = zzfx.zzaF;
-            if (zzc.zzp(str, zzfwVar) && zzabVar.zzc()) {
+            zzfx zzfxVar = zzfy.zzaF;
+            if (zzc.zzp(str, zzfxVar) && zzabVar.zzc()) {
                 list.clear();
             }
-            zzpq.zza();
-            if (!zzibVar.zzc().zzp(this.zzb, zzfwVar)) {
+            zzpu.zza();
+            if (!zzicVar.zzc().zzp(this.zzb, zzfxVar)) {
                 list.add(Long.valueOf(zzabVar.zzg.longValue() / 1000));
                 return;
             }
@@ -105,8 +105,8 @@ public final class zzy {
             zzh.zzc(zziiVar);
         }
         com.google.android.gms.internal.measurement.zzih zzi = com.google.android.gms.internal.measurement.zzii.zzi();
-        zzi.zzc(zzpj.zzp(this.zze));
-        zzi.zza(zzpj.zzp(this.zzf));
+        zzi.zzc(zzpk.zzp(this.zze));
+        zzi.zza(zzpk.zzp(this.zzf));
         Map map = this.zzg;
         if (map == null) {
             arrayList = null;

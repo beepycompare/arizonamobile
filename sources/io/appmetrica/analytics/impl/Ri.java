@@ -6,8 +6,8 @@ import io.appmetrica.analytics.internal.IAppMetricaService;
 public final class Ri extends Kh {
     public final Pf e;
 
-    public Ri(C0420m0 c0420m0, Zk zk, Pf pf) {
-        super(c0420m0, zk);
+    public Ri(C0421m0 c0421m0, Zk zk, Pf pf) {
+        super(c0421m0, zk);
         this.e = pf;
     }
 

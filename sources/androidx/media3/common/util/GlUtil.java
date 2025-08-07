@@ -31,6 +31,7 @@ public final class GlUtil {
     private static final long GL_FENCE_SYNC_FAILED = 0;
     public static final int HOMOGENEOUS_COORDINATE_VECTOR_SIZE = 4;
     public static final float LENGTH_NDC = 2.0f;
+    public static final int MAX_BITMAP_DECODING_SIZE = 4096;
     public static final int[] EGL_CONFIG_ATTRIBUTES_RGBA_8888 = {12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12326, 0, 12344};
     public static final int[] EGL_CONFIG_ATTRIBUTES_RGBA_1010102 = {12352, 4, 12324, 10, 12323, 10, 12322, 10, 12321, 2, 12325, 0, 12326, 0, 12344};
     private static final int EGL_GL_COLORSPACE_KHR = 12445;
@@ -76,12 +77,9 @@ public final class GlUtil {
         return fArr;
     }
 
-    public static boolean isProtectedContentExtensionSupported(Context context) {
-        if (Util.SDK_INT < 24) {
-            return false;
-        }
-        if (Util.SDK_INT >= 26 || !(Constants.REFERRER_API_SAMSUNG.equals(Build.MANUFACTURER) || "XT1650".equals(Build.MODEL))) {
-            if (Util.SDK_INT >= 26 || context.getPackageManager().hasSystemFeature("android.hardware.vr.high_performance")) {
+    public static boolean isProtectedContentExtensionSupported(Context context) throws GlException {
+        if (Build.VERSION.SDK_INT >= 26 || !(Constants.REFERRER_API_SAMSUNG.equals(Build.MANUFACTURER) || "XT1650".equals(Build.MODEL))) {
+            if (Build.VERSION.SDK_INT >= 26 || context.getPackageManager().hasSystemFeature("android.hardware.vr.high_performance")) {
                 return isExtensionSupported(EXTENSION_PROTECTED_CONTENT);
             }
             return false;
@@ -89,7 +87,7 @@ public final class GlUtil {
         return false;
     }
 
-    public static boolean isSurfacelessContextExtensionSupported() {
+    public static boolean isSurfacelessContextExtensionSupported() throws GlException {
         return isExtensionSupported(EXTENSION_SURFACELESS_CONTEXT);
     }
 
@@ -111,11 +109,21 @@ public final class GlUtil {
         return glGetString != null && glGetString.contains(EXTENSION_YUV_TARGET);
     }
 
-    public static boolean isBt2020PqExtensionSupported() {
-        return Util.SDK_INT >= 33 && isExtensionSupported(EXTENSION_COLORSPACE_BT2020_PQ);
+    public static boolean isColorTransferSupported(int i) throws GlException {
+        if (i == 6) {
+            return isBt2020PqExtensionSupported();
+        }
+        if (i == 7) {
+            return isBt2020HlgExtensionSupported();
+        }
+        return true;
     }
 
-    public static boolean isBt2020HlgExtensionSupported() {
+    public static boolean isBt2020PqExtensionSupported() throws GlException {
+        return Build.VERSION.SDK_INT >= 33 && isExtensionSupported(EXTENSION_COLORSPACE_BT2020_PQ);
+    }
+
+    public static boolean isBt2020HlgExtensionSupported() throws GlException {
         return isExtensionSupported(EXTENSION_COLORSPACE_BT2020_HLG);
     }
 
@@ -488,8 +496,8 @@ public final class GlUtil {
         return eGLConfigArr[0];
     }
 
-    private static boolean isExtensionSupported(String str) {
-        String eglQueryString = EGL14.eglQueryString(EGL14.eglGetDisplay(0), 12373);
+    private static boolean isExtensionSupported(String str) throws GlException {
+        String eglQueryString = EGL14.eglQueryString(getDefaultEglDisplay(), 12373);
         return eglQueryString != null && eglQueryString.contains(str);
     }
 

@@ -13,9 +13,9 @@ public final class H8 extends MessageNano {
     public static volatile H8[] h;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f469a;
+    public byte[] f468a;
     public byte[] b;
-    public C0752z8 c;
+    public C0753z8 c;
     public F8 d;
     public G8 e;
     public G8 f;
@@ -38,7 +38,7 @@ public final class H8 extends MessageNano {
 
     public final H8 a() {
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f469a = bArr;
+        this.f468a = bArr;
         this.b = bArr;
         this.c = null;
         this.d = null;
@@ -52,17 +52,17 @@ public final class H8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f469a;
+        byte[] bArr = this.f468a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f469a);
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f468a);
         }
         if (!Arrays.equals(this.b, bArr2)) {
             computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(2, this.b);
         }
-        C0752z8 c0752z8 = this.c;
-        if (c0752z8 != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(3, c0752z8);
+        C0753z8 c0753z8 = this.c;
+        if (c0753z8 != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(3, c0753z8);
         }
         F8 f8 = this.d;
         if (f8 != null) {
@@ -96,17 +96,17 @@ public final class H8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f469a;
+        byte[] bArr = this.f468a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f469a);
+            codedOutputByteBufferNano.writeBytes(1, this.f468a);
         }
         if (!Arrays.equals(this.b, bArr2)) {
             codedOutputByteBufferNano.writeBytes(2, this.b);
         }
-        C0752z8 c0752z8 = this.c;
-        if (c0752z8 != null) {
-            codedOutputByteBufferNano.writeMessage(3, c0752z8);
+        C0753z8 c0753z8 = this.c;
+        if (c0753z8 != null) {
+            codedOutputByteBufferNano.writeMessage(3, c0753z8);
         }
         F8 f8 = this.d;
         if (f8 != null) {
@@ -146,12 +146,12 @@ public final class H8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f469a = codedInputByteBufferNano.readBytes();
+                this.f468a = codedInputByteBufferNano.readBytes();
             } else if (readTag == 18) {
                 this.b = codedInputByteBufferNano.readBytes();
             } else if (readTag == 26) {
                 if (this.c == null) {
-                    this.c = new C0752z8();
+                    this.c = new C0753z8();
                 }
                 codedInputByteBufferNano.readMessage(this.c);
             } else if (readTag == 34) {

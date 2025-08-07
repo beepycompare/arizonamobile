@@ -5,20 +5,23 @@ import androidx.media3.common.util.Assertions;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.common.base.Ascii;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.AdRevenueConstants;
 /* loaded from: classes2.dex */
 final class SsaDialogueFormat {
     public final int endTimeIndex;
+    public final int layerIndex;
     public final int length;
     public final int startTimeIndex;
     public final int styleIndex;
     public final int textIndex;
 
-    private SsaDialogueFormat(int i, int i2, int i3, int i4, int i5) {
-        this.startTimeIndex = i;
-        this.endTimeIndex = i2;
-        this.styleIndex = i3;
-        this.textIndex = i4;
-        this.length = i5;
+    private SsaDialogueFormat(int i, int i2, int i3, int i4, int i5, int i6) {
+        this.layerIndex = i;
+        this.startTimeIndex = i2;
+        this.endTimeIndex = i3;
+        this.styleIndex = i4;
+        this.textIndex = i5;
+        this.length = i6;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -30,8 +33,9 @@ final class SsaDialogueFormat {
         int i2 = -1;
         int i3 = -1;
         int i4 = -1;
-        for (int i5 = 0; i5 < split.length; i5++) {
-            String lowerCase = Ascii.toLowerCase(split[i5].trim());
+        int i5 = -1;
+        for (int i6 = 0; i6 < split.length; i6++) {
+            String lowerCase = Ascii.toLowerCase(split[i6].trim());
             lowerCase.hashCode();
             switch (lowerCase.hashCode()) {
                 case 100571:
@@ -48,16 +52,23 @@ final class SsaDialogueFormat {
                     }
                     c = 65535;
                     break;
+                case 102749521:
+                    if (lowerCase.equals(AdRevenueConstants.LAYER_KEY)) {
+                        c = 2;
+                        break;
+                    }
+                    c = 65535;
+                    break;
                 case 109757538:
                     if (lowerCase.equals(TtmlNode.START)) {
-                        c = 2;
+                        c = 3;
                         break;
                     }
                     c = 65535;
                     break;
                 case 109780401:
                     if (lowerCase.equals("style")) {
-                        c = 3;
+                        c = 4;
                         break;
                     }
                     c = 65535;
@@ -68,22 +79,25 @@ final class SsaDialogueFormat {
             }
             switch (c) {
                 case 0:
-                    i2 = i5;
+                    i3 = i6;
                     break;
                 case 1:
-                    i4 = i5;
+                    i5 = i6;
                     break;
                 case 2:
-                    i = i5;
+                    i = i6;
                     break;
                 case 3:
-                    i3 = i5;
+                    i2 = i6;
+                    break;
+                case 4:
+                    i4 = i6;
                     break;
             }
         }
-        if (i == -1 || i2 == -1 || i4 == -1) {
+        if (i2 == -1 || i3 == -1 || i5 == -1) {
             return null;
         }
-        return new SsaDialogueFormat(i, i2, i3, i4, split.length);
+        return new SsaDialogueFormat(i, i2, i3, i4, i5, split.length);
     }
 }

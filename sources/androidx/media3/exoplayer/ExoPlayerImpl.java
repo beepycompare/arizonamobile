@@ -5,6 +5,7 @@ import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
 import android.media.AudioDeviceInfo;
 import android.media.MediaFormat;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Pair;
@@ -80,6 +81,8 @@ import androidx.media3.exoplayer.video.spherical.CameraMotionListener;
 import androidx.media3.exoplayer.video.spherical.SphericalGLSurfaceView;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.UnmodifiableIterator;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -108,6 +111,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
     private CueGroup currentCueGroup;
     private final long detachSurfaceTimeoutMs;
     private DeviceInfo deviceInfo;
+    private ImmutableSet<Integer> disabledTrackTypesWithoutScrubbingMode;
     final TrackSelectorResult emptyTrackSelectorResult;
     private boolean foregroundMode;
     private final FrameMetadataListener frameMetadataListener;
@@ -139,6 +143,8 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
     private PriorityTaskManager priorityTaskManager;
     private final Renderer[] renderers;
     private int repeatMode;
+    private boolean scrubbingModeEnabled;
+    private ScrubbingModeParameters scrubbingModeParameters;
     private final Renderer[] secondaryRenderers;
     private final long seekBackIncrementMs;
     private final long seekForwardIncrementMs;
@@ -177,7 +183,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
         Looper looper;
         Clock clock;
         try {
-            Log.i(TAG, "Init " + Integer.toHexString(System.identityHashCode(this)) + " [AndroidXMedia3/1.7.1] [" + Util.DEVICE_DEBUG_INFO + "]");
+            Log.i(TAG, "Init " + Integer.toHexString(System.identityHashCode(this)) + " [AndroidXMedia3/1.8.0] [" + Util.DEVICE_DEBUG_INFO + "]");
             this.applicationContext = builder.context.getApplicationContext();
             this.analyticsCollector = builder.analyticsCollectorFunction.apply(builder.clock);
             this.priority = builder.priority;
@@ -219,6 +225,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
             this.seekBackIncrementMs = builder.seekBackIncrementMs;
             this.seekForwardIncrementMs = builder.seekForwardIncrementMs;
             this.maxSeekToPreviousPositionMs = builder.maxSeekToPreviousPositionMs;
+            this.scrubbingModeParameters = builder.scrubbingModeParameters;
             this.pauseAtEndOfMediaItems = builder.pauseAtEndOfMediaItems;
             Looper looper2 = builder.looper;
             this.applicationLooper = looper2;
@@ -254,7 +261,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
             this.playbackInfo = PlaybackInfo.createDummy(trackSelectorResult);
             this.analyticsCollector.setPlayer(player2, looper2);
             PlayerId playerId = new PlayerId(builder.playerName);
-            ExoPlayerImplInternal exoPlayerImplInternal = new ExoPlayerImplInternal(this.applicationContext, this.renderers, this.secondaryRenderers, trackSelector, trackSelectorResult, builder.loadControlSupplier.get(), bandwidthMeter, this.repeatMode, this.shuffleModeEnabled, this.analyticsCollector, this.seekParameters, builder.livePlaybackSpeedControl, builder.releaseTimeoutMs, this.pauseAtEndOfMediaItems, builder.dynamicSchedulingEnabled, looper2, clock2, playbackInfoUpdateListener, playerId, builder.playbackLooperProvider, this.preloadConfiguration);
+            ExoPlayerImplInternal exoPlayerImplInternal = new ExoPlayerImplInternal(this.applicationContext, this.renderers, this.secondaryRenderers, trackSelector, trackSelectorResult, builder.loadControlSupplier.get(), bandwidthMeter, this.repeatMode, this.shuffleModeEnabled, this.analyticsCollector, this.seekParameters, builder.livePlaybackSpeedControl, builder.releaseTimeoutMs, this.pauseAtEndOfMediaItems, builder.dynamicSchedulingEnabled, looper2, clock2, playbackInfoUpdateListener, playerId, builder.playbackLooperProvider, this.preloadConfiguration, this.frameMetadataListener);
             this.internalPlayer = exoPlayerImplInternal;
             Looper playbackLooper = exoPlayerImplInternal.getPlaybackLooper();
             this.volume = 1.0f;
@@ -271,7 +278,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
             if (builder.foregroundModeTimeoutMs > 0) {
                 exoPlayerImplInternal.experimentalSetForegroundModeTimeoutMs(builder.foregroundModeTimeoutMs);
             }
-            if (Util.SDK_INT >= 31) {
+            if (Build.VERSION.SDK_INT >= 31) {
                 Api31.registerMediaMetricsListener(this.applicationContext, this, builder.usePlatformDiagnostics, playerId);
             }
             BackgroundThreadStateHandler<Integer> backgroundThreadStateHandler = new BackgroundThreadStateHandler<>(0, playbackLooper, looper2, clock2, new BackgroundThreadStateHandler.StateChangeListener() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$$ExternalSyntheticLambda18
@@ -324,12 +331,12 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
             this.deviceInfo = DeviceInfo.UNKNOWN;
             this.videoSize = VideoSize.UNKNOWN;
             this.surfaceSize = Size.UNKNOWN;
+            exoPlayerImplInternal.setScrubbingModeParameters(this.scrubbingModeParameters);
             exoPlayerImplInternal.setAudioAttributes(this.audioAttributes, builder.handleAudioFocus);
             sendRendererMessage(1, 3, this.audioAttributes);
             sendRendererMessage(2, 4, Integer.valueOf(this.videoScalingMode));
             sendRendererMessage(2, 5, Integer.valueOf(this.videoChangeFrameRateStrategy));
             sendRendererMessage(1, 9, Boolean.valueOf(this.skipSilenceEnabled));
-            sendRendererMessage(2, 7, this.frameMetadataListener);
             sendRendererMessage(6, 8, this.frameMetadataListener);
             sendRendererMessage(16, Integer.valueOf(this.priority));
         } finally {
@@ -555,6 +562,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
         Timeline currentTimeline = getCurrentTimeline();
         this.pendingOperationAcks++;
         Util.moveItems(this.mediaSourceHolderSnapshots, i, min, min2);
+        this.shuffleOrder = this.shuffleOrder.cloneAndMove(i, min, min2);
         Timeline createMaskingTimeline = createMaskingTimeline();
         PlaybackInfo playbackInfo = this.playbackInfo;
         PlaybackInfo maskTimelineAndPosition = maskTimelineAndPosition(playbackInfo, createMaskingTimeline, getPeriodPositionUsAfterTimelineChanged(currentTimeline, createMaskingTimeline, getCurrentWindowIndexInternal(playbackInfo), getContentPositionInternal(this.playbackInfo)));
@@ -594,6 +602,12 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
         this.pendingOperationAcks++;
         this.internalPlayer.setShuffleOrder(shuffleOrder);
         updatePlaybackInfo(maskTimelineAndPosition, 0, false, 5, C.TIME_UNSET, -1, false);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public ShuffleOrder getShuffleOrder() {
+        verifyApplicationThread();
+        return this.shuffleOrder;
     }
 
     @Override // androidx.media3.exoplayer.ExoPlayer
@@ -800,7 +814,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
 
     @Override // androidx.media3.common.Player
     public void release() {
-        Log.i(TAG, "Release " + Integer.toHexString(System.identityHashCode(this)) + " [AndroidXMedia3/1.7.1] [" + Util.DEVICE_DEBUG_INFO + "] [" + MediaLibraryInfo.registeredModules() + "]");
+        Log.i(TAG, "Release " + Integer.toHexString(System.identityHashCode(this)) + " [AndroidXMedia3/1.8.0] [" + Util.DEVICE_DEBUG_INFO + "] [" + MediaLibraryInfo.registeredModules() + "]");
         verifyApplicationThread();
         this.audioBecomingNoisyManager.setEnabled(false);
         StreamVolumeManager streamVolumeManager = this.streamVolumeManager;
@@ -1013,22 +1027,35 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
     @Override // androidx.media3.common.Player
     public TrackSelectionParameters getTrackSelectionParameters() {
         verifyApplicationThread();
-        return this.trackSelector.getParameters();
+        TrackSelectionParameters parameters = this.trackSelector.getParameters();
+        return this.scrubbingModeEnabled ? parameters.buildUpon().setDisabledTrackTypes(this.disabledTrackTypesWithoutScrubbingMode).build() : parameters;
     }
 
     @Override // androidx.media3.common.Player
     public void setTrackSelectionParameters(final TrackSelectionParameters trackSelectionParameters) {
+        TrackSelectionParameters trackSelectionParameters2;
         verifyApplicationThread();
-        if (!this.trackSelector.isSetParametersSupported() || trackSelectionParameters.equals(this.trackSelector.getParameters())) {
-            return;
-        }
-        this.trackSelector.setParameters(trackSelectionParameters);
-        this.listeners.sendEvent(19, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$$ExternalSyntheticLambda24
-            @Override // androidx.media3.common.util.ListenerSet.Event
-            public final void invoke(Object obj) {
-                ((Player.Listener) obj).onTrackSelectionParametersChanged(TrackSelectionParameters.this);
+        if (this.trackSelector.isSetParametersSupported()) {
+            TrackSelectionParameters trackSelectionParameters3 = getTrackSelectionParameters();
+            if (this.scrubbingModeEnabled) {
+                this.disabledTrackTypesWithoutScrubbingMode = trackSelectionParameters.disabledTrackTypes;
+                trackSelectionParameters2 = addDisabledTrackTypes(trackSelectionParameters, this.scrubbingModeParameters.disabledTrackTypes);
+            } else {
+                trackSelectionParameters2 = trackSelectionParameters;
             }
-        });
+            if (!trackSelectionParameters2.equals(this.trackSelector.getParameters())) {
+                this.trackSelector.setParameters(trackSelectionParameters2);
+            }
+            if (trackSelectionParameters3.equals(trackSelectionParameters)) {
+                return;
+            }
+            this.listeners.sendEvent(19, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$$ExternalSyntheticLambda24
+                @Override // androidx.media3.common.util.ListenerSet.Event
+                public final void invoke(Object obj) {
+                    ((Player.Listener) obj).onTrackSelectionParametersChanged(TrackSelectionParameters.this);
+                }
+            });
+        }
     }
 
     @Override // androidx.media3.common.Player
@@ -1075,7 +1102,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
     public void setVideoEffects(List<Effect> list) {
         verifyApplicationThread();
         try {
-            Class.forName("androidx.media3.effect.PreviewingSingleInputVideoGraph$Factory").getConstructor(VideoFrameProcessor.Factory.class);
+            Class.forName("androidx.media3.effect.SingleInputVideoGraph$Factory").getConstructor(VideoFrameProcessor.Factory.class);
             sendRendererMessage(2, 13, list);
         } catch (ClassNotFoundException | NoSuchMethodException e) {
             throw new IllegalStateException("Could not find required lib-effect dependencies.", e);
@@ -1370,6 +1397,61 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
                 ((Player.Listener) obj).onSkipSilenceEnabledChanged(z);
             }
         });
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public void setScrubbingModeEnabled(boolean z) {
+        TrackSelectionParameters build;
+        verifyApplicationThread();
+        if (z == this.scrubbingModeEnabled) {
+            return;
+        }
+        this.scrubbingModeEnabled = z;
+        if (!this.scrubbingModeParameters.disabledTrackTypes.isEmpty() && this.trackSelector.isSetParametersSupported()) {
+            TrackSelectionParameters parameters = this.trackSelector.getParameters();
+            if (z) {
+                this.disabledTrackTypesWithoutScrubbingMode = parameters.disabledTrackTypes;
+                build = addDisabledTrackTypes(parameters, this.scrubbingModeParameters.disabledTrackTypes);
+            } else {
+                build = parameters.buildUpon().setDisabledTrackTypes(this.disabledTrackTypesWithoutScrubbingMode).build();
+                this.disabledTrackTypesWithoutScrubbingMode = null;
+            }
+            if (!build.equals(parameters)) {
+                this.trackSelector.setParameters(build);
+            }
+        }
+        this.internalPlayer.setScrubbingModeEnabled(z);
+        maybeUpdatePlaybackSuppressionReason();
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public boolean isScrubbingModeEnabled() {
+        verifyApplicationThread();
+        return this.scrubbingModeEnabled;
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public void setScrubbingModeParameters(ScrubbingModeParameters scrubbingModeParameters) {
+        verifyApplicationThread();
+        if (this.scrubbingModeParameters.equals(scrubbingModeParameters)) {
+            return;
+        }
+        ScrubbingModeParameters scrubbingModeParameters2 = this.scrubbingModeParameters;
+        this.scrubbingModeParameters = scrubbingModeParameters;
+        this.internalPlayer.setScrubbingModeParameters(scrubbingModeParameters);
+        if (this.scrubbingModeEnabled && this.trackSelector.isSetParametersSupported() && !scrubbingModeParameters2.disabledTrackTypes.equals(scrubbingModeParameters.disabledTrackTypes)) {
+            TrackSelectionParameters addDisabledTrackTypes = addDisabledTrackTypes(getTrackSelectionParameters(), scrubbingModeParameters.disabledTrackTypes);
+            if (addDisabledTrackTypes.equals(this.trackSelector.getParameters())) {
+                return;
+            }
+            this.trackSelector.setParameters(addDisabledTrackTypes);
+        }
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public ScrubbingModeParameters getScrubbingModeParameters() {
+        verifyApplicationThread();
+        return this.scrubbingModeParameters;
     }
 
     @Override // androidx.media3.exoplayer.ExoPlayer
@@ -2340,6 +2422,10 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
         sendRendererMessage(2, 14, new Size(i, i2));
     }
 
+    private void maybeUpdatePlaybackSuppressionReason() {
+        updatePlayWhenReady(this.playbackInfo.playWhenReady, this.playbackInfo.playWhenReadyChangeReason);
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public void updatePlayWhenReady(boolean z, int i) {
         PlaybackInfo playbackInfo;
@@ -2359,6 +2445,9 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
     }
 
     private int computePlaybackSuppressionReason(boolean z) {
+        if (this.scrubbingModeEnabled) {
+            return 4;
+        }
         SuitableOutputChecker suitableOutputChecker = this.suitableOutputChecker;
         if (suitableOutputChecker == null || suitableOutputChecker.isSelectedOutputSuitableForPlayback()) {
             return (this.playbackInfo.playbackSuppressionReason != 1 || z) ? 0 : 1;
@@ -2462,12 +2551,12 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
         }
         if (z) {
             if (this.playbackInfo.playbackSuppressionReason == 3) {
-                updatePlayWhenReady(this.playbackInfo.playWhenReady, 1);
+                maybeUpdatePlaybackSuppressionReason();
                 return;
             }
             return;
         }
-        updatePlayWhenReady(this.playbackInfo.playWhenReady, 1);
+        maybeUpdatePlaybackSuppressionReason();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2486,6 +2575,15 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
     /* JADX INFO: Access modifiers changed from: private */
     public static DeviceInfo createDeviceInfo(StreamVolumeManager streamVolumeManager) {
         return new DeviceInfo.Builder(0).setMinVolume(streamVolumeManager != null ? streamVolumeManager.getMinVolume() : 0).setMaxVolume(streamVolumeManager != null ? streamVolumeManager.getMaxVolume() : 0).build();
+    }
+
+    private static TrackSelectionParameters addDisabledTrackTypes(TrackSelectionParameters trackSelectionParameters, ImmutableSet<Integer> immutableSet) {
+        TrackSelectionParameters.Builder buildUpon = trackSelectionParameters.buildUpon();
+        UnmodifiableIterator<Integer> it = immutableSet.iterator();
+        while (it.hasNext()) {
+            buildUpon.setTrackTypeDisabled(it.next().intValue(), true);
+        }
+        return buildUpon.build();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2551,7 +2649,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
         @Override // androidx.media3.exoplayer.video.VideoRendererEventListener
         public void onVideoSizeChanged(final VideoSize videoSize) {
             ExoPlayerImpl.this.videoSize = videoSize;
-            ExoPlayerImpl.this.listeners.sendEvent(25, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda5
+            ExoPlayerImpl.this.listeners.sendEvent(25, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda7
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onVideoSizeChanged(VideoSize.this);
@@ -2634,7 +2732,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
                 return;
             }
             ExoPlayerImpl.this.skipSilenceEnabled = z;
-            ExoPlayerImpl.this.listeners.sendEvent(23, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda3
+            ExoPlayerImpl.this.listeners.sendEvent(23, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda5
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onSkipSilenceEnabledChanged(z);
@@ -2662,9 +2760,30 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
             ExoPlayerImpl.this.analyticsCollector.onAudioTrackReleased(audioTrackConfig);
         }
 
+        @Override // androidx.media3.exoplayer.audio.AudioRendererEventListener
+        public void onAudioSessionIdChanged(final int i) {
+            ExoPlayerImpl.this.audioSessionIdState.updateStateAsync(new Function() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda1
+                @Override // com.google.common.base.Function
+                public final Object apply(Object obj) {
+                    Integer valueOf;
+                    Integer num = (Integer) obj;
+                    valueOf = Integer.valueOf(i);
+                    return valueOf;
+                }
+            }, new Function() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda2
+                @Override // com.google.common.base.Function
+                public final Object apply(Object obj) {
+                    Integer valueOf;
+                    Integer num = (Integer) obj;
+                    valueOf = Integer.valueOf(i);
+                    return valueOf;
+                }
+            });
+        }
+
         @Override // androidx.media3.exoplayer.text.TextOutput
         public void onCues(final List<Cue> list) {
-            ExoPlayerImpl.this.listeners.sendEvent(27, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda4
+            ExoPlayerImpl.this.listeners.sendEvent(27, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda6
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onCues(list);
@@ -2690,14 +2809,14 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
             MediaMetadata buildUpdatedMediaMetadata = ExoPlayerImpl.this.buildUpdatedMediaMetadata();
             if (!buildUpdatedMediaMetadata.equals(ExoPlayerImpl.this.mediaMetadata)) {
                 ExoPlayerImpl.this.mediaMetadata = buildUpdatedMediaMetadata;
-                ExoPlayerImpl.this.listeners.queueEvent(14, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda1
+                ExoPlayerImpl.this.listeners.queueEvent(14, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda3
                     @Override // androidx.media3.common.util.ListenerSet.Event
                     public final void invoke(Object obj) {
-                        ExoPlayerImpl.ComponentListener.this.m7322xb185137((Player.Listener) obj);
+                        ExoPlayerImpl.ComponentListener.this.m7322x2c83eab9((Player.Listener) obj);
                     }
                 });
             }
-            ExoPlayerImpl.this.listeners.queueEvent(28, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda2
+            ExoPlayerImpl.this.listeners.queueEvent(28, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda4
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onMetadata(Metadata.this);
@@ -2707,8 +2826,8 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* renamed from: lambda$onMetadata$4$androidx-media3-exoplayer-ExoPlayerImpl$ComponentListener  reason: not valid java name */
-        public /* synthetic */ void m7322xb185137(Player.Listener listener) {
+        /* renamed from: lambda$onMetadata$6$androidx-media3-exoplayer-ExoPlayerImpl$ComponentListener  reason: not valid java name */
+        public /* synthetic */ void m7322x2c83eab9(Player.Listener listener) {
             listener.onMediaMetadataChanged(ExoPlayerImpl.this.mediaMetadata);
         }
 
@@ -2772,7 +2891,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
                 return;
             }
             ExoPlayerImpl.this.deviceInfo = createDeviceInfo;
-            ExoPlayerImpl.this.listeners.sendEvent(29, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda6
+            ExoPlayerImpl.this.listeners.sendEvent(29, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda8
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onDeviceInfoChanged(DeviceInfo.this);
@@ -2782,7 +2901,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
 
         @Override // androidx.media3.exoplayer.StreamVolumeManager.Listener
         public void onStreamVolumeChanged(final int i, final boolean z) {
-            ExoPlayerImpl.this.listeners.sendEvent(30, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda7
+            ExoPlayerImpl.this.listeners.sendEvent(30, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda9
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onDeviceVolumeChanged(i, z);

@@ -1,56 +1,51 @@
 package com.google.android.gms.measurement.internal;
 
+import android.os.Bundle;
 import android.os.RemoteException;
+import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzmo implements Runnable {
-    final /* synthetic */ zzbg zza;
-    final /* synthetic */ String zzb;
-    final /* synthetic */ com.google.android.gms.internal.measurement.zzcu zzc;
-    final /* synthetic */ zznk zzd;
+    final /* synthetic */ zzr zza;
+    final /* synthetic */ boolean zzb;
+    final /* synthetic */ zzbe zzc;
+    final /* synthetic */ Bundle zzd;
+    final /* synthetic */ zznl zze;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzmo(zznk zznkVar, zzbg zzbgVar, String str, com.google.android.gms.internal.measurement.zzcu zzcuVar) {
-        this.zza = zzbgVar;
-        this.zzb = str;
-        this.zzc = zzcuVar;
-        Objects.requireNonNull(zznkVar);
-        this.zzd = zznkVar;
+    public zzmo(zznl zznlVar, boolean z, zzr zzrVar, boolean z2, zzbe zzbeVar, Bundle bundle) {
+        this.zza = zzrVar;
+        this.zzb = z2;
+        this.zzc = zzbeVar;
+        this.zzd = bundle;
+        Objects.requireNonNull(zznlVar);
+        this.zze = zznlVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        com.google.android.gms.internal.measurement.zzcu zzcuVar;
-        zzpo zzk;
-        zznk zznkVar;
-        zzga zzZ;
-        byte[] bArr = null;
-        try {
-            try {
-                zznkVar = this.zzd;
-                zzZ = zznkVar.zzZ();
-            } catch (RemoteException e) {
-                this.zzd.zzu.zzaV().zzb().zzb("Failed to send event to the service to bundle", e);
-            }
-            if (zzZ == null) {
-                zzib zzibVar = zznkVar.zzu;
-                zzibVar.zzaV().zzb().zza("Discarding data. Failed to send event to service to bundle");
-                zzk = zzibVar.zzk();
-                zzcuVar = this.zzc;
-                zzk.zzao(zzcuVar, bArr);
-            }
-            bArr = zzZ.zzk(this.zza, this.zzb);
-            zznkVar.zzV();
-            zznk zznkVar2 = this.zzd;
-            zzcuVar = this.zzc;
-            zzk = zznkVar2.zzu.zzk();
-            zzk.zzao(zzcuVar, bArr);
-        } catch (Throwable th) {
-            zznk zznkVar3 = this.zzd;
-            zznkVar3.zzu.zzk().zzao(this.zzc, null);
-            throw th;
+        zznl zznlVar = this.zze;
+        zzgb zzZ = zznlVar.zzZ();
+        if (zzZ == null) {
+            zznlVar.zzu.zzaV().zzb().zza("Failed to send default event parameters to service");
+            return;
         }
+        if (!zznlVar.zzu.zzc().zzp(null, zzfy.zzbb)) {
+            try {
+                zzr zzrVar = this.zza;
+                Preconditions.checkNotNull(zzrVar);
+                zzZ.zzu(this.zzd, zzrVar);
+                zznlVar.zzV();
+                return;
+            } catch (RemoteException e) {
+                this.zze.zzu.zzaV().zzb().zzb("Failed to send default event parameters to service", e);
+                return;
+            }
+        }
+        zzr zzrVar2 = this.zza;
+        Preconditions.checkNotNull(zzrVar2);
+        this.zze.zzm(zzZ, this.zzb ? null : this.zzc, zzrVar2);
     }
 }

@@ -6,25 +6,25 @@ import java.util.HashMap;
 public final class Hl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ka f477a = new Ka();
+    public final Ka f476a = new Ka();
     public final HashMap b = new HashMap();
-    public C0267fm c = null;
+    public C0268fm c = null;
     public final Fl d = new Fl(this);
 
     public static final Hl a() {
-        return Gl.f459a;
+        return Gl.f458a;
     }
 
-    public final Bm a(Context context, C0400l5 c0400l5, Zl zl) {
-        Bm bm = (Bm) this.b.get(c0400l5.f935a);
+    public final Bm a(Context context, C0401l5 c0401l5, Zl zl) {
+        Bm bm = (Bm) this.b.get(c0401l5.f934a);
         boolean z = true;
         if (bm == null) {
             synchronized (this.b) {
-                bm = (Bm) this.b.get(c0400l5.f935a);
+                bm = (Bm) this.b.get(c0401l5.f934a);
                 if (bm == null) {
-                    bm = new Bm(new Cm(context, c0400l5.f935a, zl, this.d));
+                    bm = new Bm(new Cm(context, c0401l5.f934a, zl, this.d));
                     bm.f();
-                    this.b.put(c0400l5.f935a, bm);
+                    this.b.put(c0401l5.f934a, bm);
                     z = false;
                 }
             }
@@ -35,12 +35,12 @@ public final class Hl {
         return bm;
     }
 
-    public final void a(C0400l5 c0400l5, Ql ql) {
+    public final void a(C0401l5 c0401l5, Ql ql) {
         synchronized (this.b) {
-            this.f477a.a(c0400l5.f935a, ql);
-            C0267fm c0267fm = this.c;
-            if (c0267fm != null) {
-                ql.a(c0267fm);
+            this.f476a.a(c0401l5.f934a, ql);
+            C0268fm c0268fm = this.c;
+            if (c0268fm != null) {
+                ql.a(c0268fm);
             }
         }
     }

@@ -2,17 +2,17 @@ package io.appmetrica.analytics.impl;
 
 import android.os.Process;
 /* loaded from: classes4.dex */
-public final class Vd implements InterfaceC0137al {
+public final class Vd implements InterfaceC0138al {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f686a;
+    public final int f685a;
 
     public Vd(int i) {
-        this.f686a = i;
+        this.f685a = i;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0137al
+    @Override // io.appmetrica.analytics.impl.InterfaceC0138al
     public final boolean a(String str) {
-        return this.f686a != Process.myPid();
+        return this.f685a != Process.myPid();
     }
 }

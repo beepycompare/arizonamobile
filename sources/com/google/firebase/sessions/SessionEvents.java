@@ -13,7 +13,7 @@ import kotlin.Metadata;
 import kotlin.collections.MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SessionEvents.kt */
-@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bÀ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002JH\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0014\b\u0002\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00120\u00102\b\b\u0002\u0010\u0013\u001a\u00020\u00142\b\b\u0002\u0010\u0015\u001a\u00020\u0014J\u000e\u0010\u0016\u001a\u00020\u00172\u0006\u0010\t\u001a\u00020\nJ\u0012\u0010\u0018\u001a\u00020\u00192\b\u0010\u001a\u001a\u0004\u0018\u00010\u0012H\u0002R\u0014\u0010\u0003\u001a\u00020\u0004X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006¨\u0006\u001b"}, d2 = {"Lcom/google/firebase/sessions/SessionEvents;", "", "()V", "SESSION_EVENT_ENCODER", "Lcom/google/firebase/encoders/DataEncoder;", "getSESSION_EVENT_ENCODER$com_google_firebase_firebase_sessions", "()Lcom/google/firebase/encoders/DataEncoder;", "buildSession", "Lcom/google/firebase/sessions/SessionEvent;", "firebaseApp", "Lcom/google/firebase/FirebaseApp;", "sessionDetails", "Lcom/google/firebase/sessions/SessionDetails;", "sessionsSettings", "Lcom/google/firebase/sessions/settings/SessionsSettings;", "subscribers", "", "Lcom/google/firebase/sessions/api/SessionSubscriber$Name;", "Lcom/google/firebase/sessions/api/SessionSubscriber;", "firebaseInstallationId", "", "firebaseAuthenticationToken", "getApplicationInfo", "Lcom/google/firebase/sessions/ApplicationInfo;", "toDataCollectionState", "Lcom/google/firebase/sessions/DataCollectionState;", "subscriber", "com.google.firebase-firebase-sessions"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bÀ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003JH\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0014\b\u0002\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00130\u00112\b\b\u0002\u0010\u0014\u001a\u00020\u00152\b\b\u0002\u0010\u0016\u001a\u00020\u0015J\u000e\u0010\u0017\u001a\u00020\u00182\u0006\u0010\n\u001a\u00020\u000bJ\u0012\u0010\u0019\u001a\u00020\u001a2\b\u0010\u001b\u001a\u0004\u0018\u00010\u0013H\u0002R\u0014\u0010\u0004\u001a\u00020\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u001c"}, d2 = {"Lcom/google/firebase/sessions/SessionEvents;", "", "<init>", "()V", "SESSION_EVENT_ENCODER", "Lcom/google/firebase/encoders/DataEncoder;", "getSESSION_EVENT_ENCODER$com_google_firebase_firebase_sessions", "()Lcom/google/firebase/encoders/DataEncoder;", "buildSession", "Lcom/google/firebase/sessions/SessionEvent;", "firebaseApp", "Lcom/google/firebase/FirebaseApp;", "sessionDetails", "Lcom/google/firebase/sessions/SessionDetails;", "sessionsSettings", "Lcom/google/firebase/sessions/settings/SessionsSettings;", "subscribers", "", "Lcom/google/firebase/sessions/api/SessionSubscriber$Name;", "Lcom/google/firebase/sessions/api/SessionSubscriber;", "firebaseInstallationId", "", "firebaseAuthenticationToken", "getApplicationInfo", "Lcom/google/firebase/sessions/ApplicationInfo;", "toDataCollectionState", "Lcom/google/firebase/sessions/DataCollectionState;", "subscriber", "com.google.firebase-firebase-sessions"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class SessionEvents {
     public static final SessionEvents INSTANCE = new SessionEvents();
@@ -28,7 +28,7 @@ public final class SessionEvents {
 
     static {
         DataEncoder build = new JsonDataEncoderBuilder().configureWith(AutoSessionEventEncoder.CONFIG).ignoreNullValues(true).build();
-        Intrinsics.checkNotNullExpressionValue(build, "JsonDataEncoderBuilder()…lues(true)\n      .build()");
+        Intrinsics.checkNotNullExpressionValue(build, "build(...)");
         SESSION_EVENT_ENCODER = build;
     }
 
@@ -54,7 +54,7 @@ public final class SessionEvents {
         String valueOf;
         Intrinsics.checkNotNullParameter(firebaseApp, "firebaseApp");
         Context applicationContext = firebaseApp.getApplicationContext();
-        Intrinsics.checkNotNullExpressionValue(applicationContext, "firebaseApp.applicationContext");
+        Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
         String packageName = applicationContext.getPackageName();
         PackageInfo packageInfo = applicationContext.getPackageManager().getPackageInfo(packageName, 0);
         if (Build.VERSION.SDK_INT >= 28) {
@@ -64,25 +64,25 @@ public final class SessionEvents {
         }
         String str = valueOf;
         String applicationId = firebaseApp.getOptions().getApplicationId();
-        Intrinsics.checkNotNullExpressionValue(applicationId, "firebaseApp.options.applicationId");
+        Intrinsics.checkNotNullExpressionValue(applicationId, "getApplicationId(...)");
         String MODEL = Build.MODEL;
         Intrinsics.checkNotNullExpressionValue(MODEL, "MODEL");
         String RELEASE = Build.VERSION.RELEASE;
         Intrinsics.checkNotNullExpressionValue(RELEASE, "RELEASE");
         LogEnvironment logEnvironment = LogEnvironment.LOG_ENVIRONMENT_PROD;
-        Intrinsics.checkNotNullExpressionValue(packageName, "packageName");
+        Intrinsics.checkNotNull(packageName);
         String str2 = packageInfo.versionName;
         String str3 = str2 == null ? str : str2;
         String MANUFACTURER = Build.MANUFACTURER;
         Intrinsics.checkNotNullExpressionValue(MANUFACTURER, "MANUFACTURER");
         ProcessDetailsProvider processDetailsProvider = ProcessDetailsProvider.INSTANCE;
         Context applicationContext2 = firebaseApp.getApplicationContext();
-        Intrinsics.checkNotNullExpressionValue(applicationContext2, "firebaseApp.applicationContext");
-        ProcessDetails currentProcessDetails = processDetailsProvider.getCurrentProcessDetails(applicationContext2);
+        Intrinsics.checkNotNullExpressionValue(applicationContext2, "getApplicationContext(...)");
+        ProcessDetails myProcessDetails = processDetailsProvider.getMyProcessDetails(applicationContext2);
         ProcessDetailsProvider processDetailsProvider2 = ProcessDetailsProvider.INSTANCE;
         Context applicationContext3 = firebaseApp.getApplicationContext();
-        Intrinsics.checkNotNullExpressionValue(applicationContext3, "firebaseApp.applicationContext");
-        return new ApplicationInfo(applicationId, MODEL, "2.1.2", RELEASE, logEnvironment, new AndroidApplicationInfo(packageName, str3, str, MANUFACTURER, currentProcessDetails, processDetailsProvider2.getAppProcessDetails(applicationContext3)));
+        Intrinsics.checkNotNullExpressionValue(applicationContext3, "getApplicationContext(...)");
+        return new ApplicationInfo(applicationId, MODEL, BuildConfig.VERSION_NAME, RELEASE, logEnvironment, new AndroidApplicationInfo(packageName, str3, str, MANUFACTURER, myProcessDetails, processDetailsProvider2.getAppProcessDetails(applicationContext3)));
     }
 
     private final DataCollectionState toDataCollectionState(SessionSubscriber sessionSubscriber) {

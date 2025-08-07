@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.view.Surface;
 import androidx.media3.common.util.TimestampIterator;
+import com.google.common.collect.ImmutableList;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -18,6 +19,9 @@ public interface VideoFrameProcessor {
     public static final int INPUT_TYPE_SURFACE = 1;
     public static final int INPUT_TYPE_SURFACE_AUTOMATIC_FRAME_REGISTRATION = 4;
     public static final int INPUT_TYPE_TEXTURE_ID = 3;
+    public static final ImmutableList<Effect> REDRAW = ImmutableList.of(new Effect() { // from class: androidx.media3.common.VideoFrameProcessor.1
+    });
+    @Deprecated
     public static final long RENDER_OUTPUT_FRAME_IMMEDIATELY = -1;
     public static final long RENDER_OUTPUT_FRAME_WITH_PRESENTATION_TIME = -3;
 
@@ -44,7 +48,7 @@ public interface VideoFrameProcessor {
         default void onInputStreamRegistered(int i, Format format, List<Effect> list) {
         }
 
-        default void onOutputFrameAvailableForRendering(long j) {
+        default void onOutputFrameAvailableForRendering(long j, boolean z) {
         }
 
         default void onOutputFrameRateChanged(float f) {
@@ -63,6 +67,8 @@ public interface VideoFrameProcessor {
     boolean queueInputBitmap(Bitmap bitmap, TimestampIterator timestampIterator);
 
     boolean queueInputTexture(int i, long j);
+
+    void redraw();
 
     boolean registerInputFrame();
 

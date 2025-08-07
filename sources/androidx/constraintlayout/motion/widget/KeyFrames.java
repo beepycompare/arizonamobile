@@ -51,8 +51,7 @@ public class KeyFrames {
     }
 
     public KeyFrames(Context context, XmlPullParser xmlPullParser) {
-        char c;
-        Key keyAttributes;
+        Key keyTimeCycle;
         try {
             int eventType = xmlPullParser.getEventType();
             Key key = null;
@@ -62,60 +61,41 @@ public class KeyFrames {
                     if (sKeyMakers.containsKey(name)) {
                         switch (name.hashCode()) {
                             case -300573030:
-                                if (name.equals("KeyTimeCycle")) {
-                                    c = 3;
-                                    break;
+                                if (!name.equals("KeyTimeCycle")) {
+                                    throw new NullPointerException("Key " + name + " not found");
                                 }
-                                c = 65535;
+                                keyTimeCycle = new KeyTimeCycle();
                                 break;
                             case -298435811:
-                                if (name.equals("KeyAttribute")) {
-                                    c = 0;
-                                    break;
+                                if (!name.equals("KeyAttribute")) {
+                                    throw new NullPointerException("Key " + name + " not found");
                                 }
-                                c = 65535;
+                                keyTimeCycle = new KeyAttributes();
                                 break;
                             case 540053991:
-                                if (name.equals(TypedValues.CycleType.NAME)) {
-                                    c = 2;
-                                    break;
+                                if (!name.equals(TypedValues.CycleType.NAME)) {
+                                    throw new NullPointerException("Key " + name + " not found");
                                 }
-                                c = 65535;
+                                keyTimeCycle = new KeyCycle();
                                 break;
                             case 1153397896:
-                                if (name.equals(TypedValues.PositionType.NAME)) {
-                                    c = 1;
-                                    break;
+                                if (!name.equals(TypedValues.PositionType.NAME)) {
+                                    throw new NullPointerException("Key " + name + " not found");
                                 }
-                                c = 65535;
+                                keyTimeCycle = new KeyPosition();
                                 break;
                             case 1308496505:
-                                if (name.equals(TypedValues.TriggerType.NAME)) {
-                                    c = 4;
-                                    break;
+                                if (!name.equals(TypedValues.TriggerType.NAME)) {
+                                    throw new NullPointerException("Key " + name + " not found");
                                 }
-                                c = 65535;
+                                keyTimeCycle = new KeyTrigger();
                                 break;
                             default:
-                                c = 65535;
-                                break;
+                                throw new NullPointerException("Key " + name + " not found");
                         }
-                        if (c == 0) {
-                            keyAttributes = new KeyAttributes();
-                        } else if (c == 1) {
-                            keyAttributes = new KeyPosition();
-                        } else if (c == 2) {
-                            keyAttributes = new KeyCycle();
-                        } else if (c == 3) {
-                            keyAttributes = new KeyTimeCycle();
-                        } else if (c == 4) {
-                            keyAttributes = new KeyTrigger();
-                        } else {
-                            throw new NullPointerException("Key " + name + " not found");
-                        }
-                        keyAttributes.load(context, Xml.asAttributeSet(xmlPullParser));
-                        addKey(keyAttributes);
-                        key = keyAttributes;
+                        keyTimeCycle.load(context, Xml.asAttributeSet(xmlPullParser));
+                        addKey(keyTimeCycle);
+                        key = keyTimeCycle;
                     } else if (name.equalsIgnoreCase("CustomAttribute")) {
                         if (key != null && key.mCustomConstraints != null) {
                             ConstraintAttribute.parse(context, xmlPullParser, key.mCustomConstraints);

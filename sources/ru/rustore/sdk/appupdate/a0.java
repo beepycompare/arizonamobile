@@ -1,34 +1,20 @@
 package ru.rustore.sdk.appupdate;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import kotlin.jvm.internal.Intrinsics;
-import ru.rustore.sdk.appupdate.model.InstallState;
 /* loaded from: classes5.dex */
-public final class a0 extends BroadcastReceiver {
+public final class a0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final z f1332a;
+    public final b0 f1356a;
+    public final c0 b;
+    public final d0 c;
 
-    public a0(z installStateProvider) {
-        Intrinsics.checkNotNullParameter(installStateProvider, "installStateProvider");
-        this.f1332a = installStateProvider;
-    }
-
-    @Override // android.content.BroadcastReceiver
-    public final void onReceive(Context context, Intent intent) {
-        InstallState state;
-        Intrinsics.checkNotNullParameter(context, "context");
-        Intrinsics.checkNotNullParameter(intent, "intent");
-        Bundle extras = intent.getExtras();
-        if (extras == null || (state = InstallState.Companion.of$sdk_public_appupdate_release(extras)) == null) {
-            return;
-        }
-        z zVar = this.f1332a;
-        zVar.getClass();
-        Intrinsics.checkNotNullParameter(state, "state");
-        zVar.f1373a.setValue(state);
+    public a0(b0 sdkNameDataSource, c0 sdkTypeDataSource, d0 sdkVersionDataSource) {
+        Intrinsics.checkNotNullParameter(sdkNameDataSource, "sdkNameDataSource");
+        Intrinsics.checkNotNullParameter(sdkTypeDataSource, "sdkTypeDataSource");
+        Intrinsics.checkNotNullParameter(sdkVersionDataSource, "sdkVersionDataSource");
+        this.f1356a = sdkNameDataSource;
+        this.b = sdkTypeDataSource;
+        this.c = sdkVersionDataSource;
     }
 }

@@ -1,20 +1,20 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzfr extends zzme implements zznm {
+public final class zzfr extends zzmf implements zznn {
     private static final zzfr zzh;
     private int zzb;
     private int zzd;
     private boolean zzf;
     private String zze = "";
-    private zzmn zzg = zzme.zzcv();
+    private zzmo zzg = zzmf.zzcv();
 
     static {
         zzfr zzfrVar = new zzfr();
         zzh = zzfrVar;
-        zzme.zzcp(zzfr.class, zzfrVar);
+        zzmf.zzcp(zzfr.class, zzfrVar);
     }
 
     private zzfr() {
@@ -60,7 +60,7 @@ public final class zzfr extends zzme implements zznm {
         return zza;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {

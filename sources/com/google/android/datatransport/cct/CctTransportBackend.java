@@ -222,7 +222,7 @@ public final class CctTransportBackend implements TransportBackend {
     public HttpResponse doSend(HttpRequest httpRequest) throws IOException {
         Logging.i(LOG_TAG, "Making request to: %s", httpRequest.url);
         HttpURLConnection httpURLConnection = (HttpURLConnection) httpRequest.url.openConnection();
-        httpURLConnection.setConnectTimeout(CONNECTION_TIME_OUT);
+        httpURLConnection.setConnectTimeout(30000);
         httpURLConnection.setReadTimeout(this.readTimeout);
         httpURLConnection.setDoOutput(true);
         httpURLConnection.setInstanceFollowRedirects(false);

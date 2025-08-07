@@ -1,64 +1,63 @@
 package com.google.android.gms.internal.measurement;
 
-import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzoc extends AbstractSet {
-    final /* synthetic */ zzod zza;
+final class zzoc implements Iterator {
+    final /* synthetic */ zzoe zza;
+    private int zzb;
+    private boolean zzc;
+    private Iterator zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zzoc(zzod zzodVar, byte[] bArr) {
-        Objects.requireNonNull(zzodVar);
-        this.zza = zzodVar;
+    public /* synthetic */ zzoc(zzoe zzoeVar, byte[] bArr) {
+        Objects.requireNonNull(zzoeVar);
+        this.zza = zzoeVar;
+        this.zzb = -1;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
-        Map.Entry entry = (Map.Entry) obj;
-        if (contains(entry)) {
-            return false;
+    private final Iterator zza() {
+        if (this.zzd == null) {
+            this.zzd = this.zza.zzk().entrySet().iterator();
         }
-        this.zza.put((Comparable) entry.getKey(), entry.getValue());
-        return true;
+        return this.zzd;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
-        this.zza.clear();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        Map.Entry entry = (Map.Entry) obj;
-        Object obj2 = this.zza.get(entry.getKey());
-        Object value = entry.getValue();
-        if (obj2 != value) {
-            return obj2 != null && obj2.equals(value);
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        int i = this.zzb + 1;
+        zzoe zzoeVar = this.zza;
+        if (i >= zzoeVar.zzj()) {
+            return !zzoeVar.zzk().isEmpty() && zza().hasNext();
         }
         return true;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        return new zzob(this.zza, null);
+    @Override // java.util.Iterator
+    public final /* bridge */ /* synthetic */ Object next() {
+        this.zzc = true;
+        int i = this.zzb + 1;
+        this.zzb = i;
+        zzoe zzoeVar = this.zza;
+        return i < zzoeVar.zzj() ? (zzob) zzoeVar.zzi()[i] : (Map.Entry) zza().next();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean remove(Object obj) {
-        Map.Entry entry = (Map.Entry) obj;
-        if (contains(entry)) {
-            this.zza.remove(entry.getKey());
-            return true;
+    @Override // java.util.Iterator
+    public final void remove() {
+        if (!this.zzc) {
+            throw new IllegalStateException("remove() was called before next()");
         }
-        return false;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.zza.size();
+        this.zzc = false;
+        zzoe zzoeVar = this.zza;
+        zzoeVar.zzh();
+        int i = this.zzb;
+        if (i < zzoeVar.zzj()) {
+            this.zzb = i - 1;
+            zzoeVar.zzg(i);
+            return;
+        }
+        zza().remove();
     }
 }

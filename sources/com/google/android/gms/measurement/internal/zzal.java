@@ -13,38 +13,38 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzal extends zzjd {
+public final class zzal extends zzje {
     private Boolean zza;
     private String zzb;
     private zzak zzc;
     private Boolean zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzal(zzib zzibVar) {
-        super(zzibVar);
+    public zzal(zzic zzicVar) {
+        super(zzicVar);
         this.zzc = zzaj.zza;
     }
 
     public static final long zzF() {
-        return ((Long) zzfx.zzd.zzb(null)).longValue();
+        return ((Long) zzfy.zzd.zzb(null)).longValue();
     }
 
     public static final int zzG() {
-        return Math.max(0, ((Integer) zzfx.zzi.zzb(null)).intValue());
+        return Math.max(0, ((Integer) zzfy.zzi.zzb(null)).intValue());
     }
 
     public static final long zzH() {
-        return ((Integer) zzfx.zzk.zzb(null)).intValue();
+        return ((Integer) zzfy.zzk.zzb(null)).intValue();
     }
 
     public static final long zzI() {
-        return ((Long) zzfx.zzR.zzb(null)).longValue();
+        return ((Long) zzfy.zzR.zzb(null)).longValue();
     }
 
     public static final long zzJ() {
-        return ((Long) zzfx.zzM.zzb(null)).longValue();
+        return ((Long) zzfy.zzM.zzb(null)).longValue();
     }
 
     private final String zzK(String str, String str2) {
@@ -111,12 +111,12 @@ public final class zzal extends zzjd {
     }
 
     public final int zzd(String str) {
-        return zzn(str, zzfx.zzX, 25, 100);
+        return zzn(str, zzfy.zzX, 25, 100);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final int zze(String str, boolean z) {
-        return z ? zzn(str, zzfx.zzah, 100, ServiceStarter.ERROR_UNKNOWN) : ServiceStarter.ERROR_UNKNOWN;
+        return z ? zzn(str, zzfy.zzah, 100, ServiceStarter.ERROR_UNKNOWN) : ServiceStarter.ERROR_UNKNOWN;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -126,12 +126,12 @@ public final class zzal extends zzjd {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final int zzh(String str) {
-        return zzn(str, zzfx.zzW, ServiceStarter.ERROR_UNKNOWN, 2000);
+        return zzn(str, zzfy.zzW, ServiceStarter.ERROR_UNKNOWN, 2000);
     }
 
     public final long zzi() {
         this.zzu.zzaU();
-        return 130000L;
+        return 133005L;
     }
 
     @EnsuresNonNull({"this.isMainProcess"})
@@ -139,8 +139,8 @@ public final class zzal extends zzjd {
         if (this.zzd == null) {
             synchronized (this) {
                 if (this.zzd == null) {
-                    zzib zzibVar = this.zzu;
-                    ApplicationInfo applicationInfo = zzibVar.zzaY().getApplicationInfo();
+                    zzic zzicVar = this.zzu;
+                    ApplicationInfo applicationInfo = zzicVar.zzaY().getApplicationInfo();
                     String myProcessName = ProcessUtils.getMyProcessName();
                     if (applicationInfo != null) {
                         String str = applicationInfo.processName;
@@ -151,8 +151,8 @@ public final class zzal extends zzjd {
                         this.zzd = Boolean.valueOf(z);
                     }
                     if (this.zzd == null) {
-                        this.zzd = Boolean.TRUE;
-                        zzibVar.zzaV().zzb().zza("My process not in the list of running processes");
+                        this.zzd = true;
+                        zzicVar.zzaV().zzb().zza("My process not in the list of running processes");
                     }
                 }
             }
@@ -160,85 +160,85 @@ public final class zzal extends zzjd {
         return this.zzd.booleanValue();
     }
 
-    public final String zzk(String str, zzfw zzfwVar) {
+    public final String zzk(String str, zzfx zzfxVar) {
         if (TextUtils.isEmpty(str)) {
-            return (String) zzfwVar.zzb(null);
+            return (String) zzfxVar.zzb(null);
         }
-        return (String) zzfwVar.zzb(this.zzc.zza(str, zzfwVar.zza()));
+        return (String) zzfxVar.zzb(this.zzc.zza(str, zzfxVar.zza()));
     }
 
-    public final long zzl(String str, zzfw zzfwVar) {
+    public final long zzl(String str, zzfx zzfxVar) {
         if (TextUtils.isEmpty(str)) {
-            return ((Long) zzfwVar.zzb(null)).longValue();
+            return ((Long) zzfxVar.zzb(null)).longValue();
         }
-        String zza = this.zzc.zza(str, zzfwVar.zza());
+        String zza = this.zzc.zza(str, zzfxVar.zza());
         if (TextUtils.isEmpty(zza)) {
-            return ((Long) zzfwVar.zzb(null)).longValue();
+            return ((Long) zzfxVar.zzb(null)).longValue();
         }
         try {
-            return ((Long) zzfwVar.zzb(Long.valueOf(Long.parseLong(zza)))).longValue();
+            return ((Long) zzfxVar.zzb(Long.valueOf(Long.parseLong(zza)))).longValue();
         } catch (NumberFormatException unused) {
-            return ((Long) zzfwVar.zzb(null)).longValue();
+            return ((Long) zzfxVar.zzb(null)).longValue();
         }
     }
 
-    public final int zzm(String str, zzfw zzfwVar) {
+    public final int zzm(String str, zzfx zzfxVar) {
         if (TextUtils.isEmpty(str)) {
-            return ((Integer) zzfwVar.zzb(null)).intValue();
+            return ((Integer) zzfxVar.zzb(null)).intValue();
         }
-        String zza = this.zzc.zza(str, zzfwVar.zza());
+        String zza = this.zzc.zza(str, zzfxVar.zza());
         if (TextUtils.isEmpty(zza)) {
-            return ((Integer) zzfwVar.zzb(null)).intValue();
+            return ((Integer) zzfxVar.zzb(null)).intValue();
         }
         try {
-            return ((Integer) zzfwVar.zzb(Integer.valueOf(Integer.parseInt(zza)))).intValue();
+            return ((Integer) zzfxVar.zzb(Integer.valueOf(Integer.parseInt(zza)))).intValue();
         } catch (NumberFormatException unused) {
-            return ((Integer) zzfwVar.zzb(null)).intValue();
+            return ((Integer) zzfxVar.zzb(null)).intValue();
         }
     }
 
-    public final int zzn(String str, zzfw zzfwVar, int i, int i2) {
-        return Math.max(Math.min(zzm(str, zzfwVar), i2), i);
+    public final int zzn(String str, zzfx zzfxVar, int i, int i2) {
+        return Math.max(Math.min(zzm(str, zzfxVar), i2), i);
     }
 
-    public final double zzo(String str, zzfw zzfwVar) {
+    public final double zzo(String str, zzfx zzfxVar) {
         if (TextUtils.isEmpty(str)) {
-            return ((Double) zzfwVar.zzb(null)).doubleValue();
+            return ((Double) zzfxVar.zzb(null)).doubleValue();
         }
-        String zza = this.zzc.zza(str, zzfwVar.zza());
+        String zza = this.zzc.zza(str, zzfxVar.zza());
         if (TextUtils.isEmpty(zza)) {
-            return ((Double) zzfwVar.zzb(null)).doubleValue();
+            return ((Double) zzfxVar.zzb(null)).doubleValue();
         }
         try {
-            return ((Double) zzfwVar.zzb(Double.valueOf(Double.parseDouble(zza)))).doubleValue();
+            return ((Double) zzfxVar.zzb(Double.valueOf(Double.parseDouble(zza)))).doubleValue();
         } catch (NumberFormatException unused) {
-            return ((Double) zzfwVar.zzb(null)).doubleValue();
+            return ((Double) zzfxVar.zzb(null)).doubleValue();
         }
     }
 
-    public final boolean zzp(String str, zzfw zzfwVar) {
+    public final boolean zzp(String str, zzfx zzfxVar) {
         if (TextUtils.isEmpty(str)) {
-            return ((Boolean) zzfwVar.zzb(null)).booleanValue();
+            return ((Boolean) zzfxVar.zzb(null)).booleanValue();
         }
-        String zza = this.zzc.zza(str, zzfwVar.zza());
+        String zza = this.zzc.zza(str, zzfxVar.zza());
         if (TextUtils.isEmpty(zza)) {
-            return ((Boolean) zzfwVar.zzb(null)).booleanValue();
+            return ((Boolean) zzfxVar.zzb(null)).booleanValue();
         }
-        return ((Boolean) zzfwVar.zzb(Boolean.valueOf("1".equals(zza)))).booleanValue();
+        return ((Boolean) zzfxVar.zzb(Boolean.valueOf("1".equals(zza)))).booleanValue();
     }
 
     final Bundle zzq() {
         try {
-            zzib zzibVar = this.zzu;
-            if (zzibVar.zzaY().getPackageManager() != null) {
-                ApplicationInfo applicationInfo = Wrappers.packageManager(zzibVar.zzaY()).getApplicationInfo(zzibVar.zzaY().getPackageName(), 128);
+            zzic zzicVar = this.zzu;
+            if (zzicVar.zzaY().getPackageManager() != null) {
+                ApplicationInfo applicationInfo = Wrappers.packageManager(zzicVar.zzaY()).getApplicationInfo(zzicVar.zzaY().getPackageName(), 128);
                 if (applicationInfo == null) {
-                    zzibVar.zzaV().zzb().zza("Failed to load metadata: ApplicationInfo is null");
+                    zzicVar.zzaV().zzb().zza("Failed to load metadata: ApplicationInfo is null");
                     return null;
                 }
                 return applicationInfo.metaData;
             }
-            zzibVar.zzaV().zzb().zza("Failed to load metadata: PackageManager is null");
+            zzicVar.zzaV().zzb().zza("Failed to load metadata: PackageManager is null");
             return null;
         } catch (PackageManager.NameNotFoundException e) {
             this.zzu.zzaV().zzb().zzb("Failed to load metadata: Package name not found", e);
@@ -308,31 +308,31 @@ public final class zzal extends zzjd {
         return zzr == null || zzr.booleanValue();
     }
 
-    public final zzjh zzw(String str, boolean z) {
+    public final zzji zzw(String str, boolean z) {
         Object obj;
         Preconditions.checkNotEmpty(str);
-        zzib zzibVar = this.zzu;
+        zzic zzicVar = this.zzu;
         Bundle zzq = zzq();
         if (zzq == null) {
-            zzibVar.zzaV().zzb().zza("Failed to load metadata: Metadata bundle is null");
+            zzicVar.zzaV().zzb().zza("Failed to load metadata: Metadata bundle is null");
             obj = null;
         } else {
             obj = zzq.get(str);
         }
         if (obj == null) {
-            return zzjh.UNINITIALIZED;
+            return zzji.UNINITIALIZED;
         }
         if (Boolean.TRUE.equals(obj)) {
-            return zzjh.GRANTED;
+            return zzji.GRANTED;
         }
         if (Boolean.FALSE.equals(obj)) {
-            return zzjh.DENIED;
+            return zzji.DENIED;
         }
         if (!z || !"eu_consent_policy".equals(obj)) {
-            zzibVar.zzaV().zze().zzb("Invalid manifest metadata for", str);
-            return zzjh.UNINITIALIZED;
+            zzicVar.zzaV().zze().zzb("Invalid manifest metadata for", str);
+            return zzji.UNINITIALIZED;
         }
-        return zzjh.POLICY;
+        return zzji.POLICY;
     }
 
     public final boolean zzx() {

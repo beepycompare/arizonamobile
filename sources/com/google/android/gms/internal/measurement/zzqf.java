@@ -1,22 +1,17 @@
 package com.google.android.gms.internal.measurement;
-
-import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
-import org.checkerframework.dataflow.qual.SideEffectFree;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzqf implements Supplier {
-    private static final zzqf zza = new zzqf();
-    private final Supplier zzb = Suppliers.ofInstance(new zzqh());
+public final class zzqf implements zzqe {
+    public static final zzkm zza;
 
-    @SideEffectFree
-    public static boolean zza() {
-        return zza.get().zza();
+    static {
+        zzkg zzb = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
+        zzb.zzd("measurement.gbraid_campaign.gbraid.client", true);
+        zza = zzb.zzd("measurement.gbraid_campaign.stop_lgclid", false);
     }
 
-    @Override // com.google.common.base.Supplier
-    /* renamed from: zzb */
-    public final zzqg get() {
-        return (zzqg) this.zzb.get();
+    @Override // com.google.android.gms.internal.measurement.zzqe
+    public final boolean zza() {
+        return ((Boolean) zza.zzd()).booleanValue();
     }
 }

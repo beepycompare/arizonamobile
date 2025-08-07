@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import android.database.ContentObserver;
 import android.os.Handler;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 final class zzjj extends ContentObserver {
     final /* synthetic */ zzjl zza;

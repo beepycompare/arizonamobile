@@ -27,7 +27,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzfb {
     private static volatile zzfb zzc;
@@ -49,7 +49,7 @@ public final class zzfb {
         this.zze = new AppMeasurementSdk(this);
         this.zzf = new ArrayList();
         try {
-            if (com.google.android.gms.measurement.internal.zzls.zza(context, "google_app_id", com.google.android.gms.measurement.internal.zzht.zza(context)) != null) {
+            if (com.google.android.gms.measurement.internal.zzlt.zza(context, "google_app_id", com.google.android.gms.measurement.internal.zzhu.zza(context)) != null) {
                 try {
                     Class.forName("com.google.firebase.analytics.FirebaseAnalytics", false, getClass().getClassLoader());
                 } catch (ClassNotFoundException unused) {
@@ -236,8 +236,8 @@ public final class zzfb {
         }
     }
 
-    public final void zzd(com.google.android.gms.measurement.internal.zzjo zzjoVar) {
-        zzer zzerVar = new zzer(zzjoVar);
+    public final void zzd(com.google.android.gms.measurement.internal.zzjp zzjpVar) {
+        zzer zzerVar = new zzer(zzjpVar);
         if (this.zzj != null) {
             try {
                 this.zzj.setEventInterceptor(zzerVar);
@@ -253,18 +253,18 @@ public final class zzfb {
         zzM(new zzem(this, intent));
     }
 
-    public final void zzf(com.google.android.gms.measurement.internal.zzjp zzjpVar) {
-        Preconditions.checkNotNull(zzjpVar);
+    public final void zzf(com.google.android.gms.measurement.internal.zzjq zzjqVar) {
+        Preconditions.checkNotNull(zzjqVar);
         List list = this.zzf;
         synchronized (list) {
             for (int i = 0; i < list.size(); i++) {
-                if (zzjpVar.equals(((Pair) list.get(i)).first)) {
+                if (zzjqVar.equals(((Pair) list.get(i)).first)) {
                     Log.w(this.zzd, "OnEventListener already registered.");
                     return;
                 }
             }
-            zzes zzesVar = new zzes(zzjpVar);
-            list.add(new Pair(zzjpVar, zzesVar));
+            zzes zzesVar = new zzes(zzjqVar);
+            list.add(new Pair(zzjqVar, zzesVar));
             if (this.zzj != null) {
                 try {
                     this.zzj.registerOnMeasurementEventListener(zzesVar);
@@ -277,9 +277,9 @@ public final class zzfb {
         }
     }
 
-    public final void zzg(com.google.android.gms.measurement.internal.zzjp zzjpVar) {
+    public final void zzg(com.google.android.gms.measurement.internal.zzjq zzjqVar) {
         Pair pair;
-        Preconditions.checkNotNull(zzjpVar);
+        Preconditions.checkNotNull(zzjqVar);
         List list = this.zzf;
         synchronized (list) {
             int i = 0;
@@ -287,7 +287,7 @@ public final class zzfb {
                 if (i >= list.size()) {
                     pair = null;
                     break;
-                } else if (zzjpVar.equals(((Pair) list.get(i)).first)) {
+                } else if (zzjqVar.equals(((Pair) list.get(i)).first)) {
                     pair = (Pair) list.get(i);
                     break;
                 } else {

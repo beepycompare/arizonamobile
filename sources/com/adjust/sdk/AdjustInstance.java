@@ -455,6 +455,10 @@ public class AdjustInstance {
         if (bool2 != null) {
             AdjustFactory.setIgnoreSystemLifecycleBootstrap(bool2.booleanValue());
         }
+        Boolean bool3 = adjustTestOptions.allowUrlStrategyFallback;
+        if (bool3 != null) {
+            AdjustFactory.setAllowUrlStrategyFallback(bool3.booleanValue());
+        }
     }
 
     public void switchBackToOnlineMode() {

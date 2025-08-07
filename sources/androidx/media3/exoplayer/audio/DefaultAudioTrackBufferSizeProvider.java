@@ -1,13 +1,9 @@
 package androidx.media3.exoplayer.audio;
 
+import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.audio.DefaultAudioSink;
-import androidx.media3.extractor.AacUtil;
-import androidx.media3.extractor.Ac3Util;
-import androidx.media3.extractor.Ac4Util;
-import androidx.media3.extractor.DtsUtil;
-import androidx.media3.extractor.MpegAudioUtil;
-import androidx.media3.extractor.OpusUtil;
+import androidx.media3.extractor.ExtractorUtil;
 import com.google.common.math.IntMath;
 import com.google.common.primitives.Ints;
 import java.math.RoundingMode;
@@ -117,7 +113,7 @@ public class DefaultAudioTrackBufferSizeProvider implements DefaultAudioSink.Aud
     */
     protected int getPassthroughBufferSizeInBytes(int i, int i2) {
         int i3;
-        int maximumEncodedRateBytesPerSecond;
+        int nonPcmMaximumEncodedRateBytesPerSecond;
         int i4 = this.passthroughBufferDurationUs;
         if (i == 5) {
             i3 = this.ac3BufferMultiplicationFactor;
@@ -126,66 +122,29 @@ public class DefaultAudioTrackBufferSizeProvider implements DefaultAudioSink.Aud
                 i3 = this.dtshdBufferMultiplicationFactor;
             }
             if (i2 == -1) {
-                maximumEncodedRateBytesPerSecond = IntMath.divide(i2, 8, RoundingMode.CEILING);
+                nonPcmMaximumEncodedRateBytesPerSecond = IntMath.divide(i2, 8, RoundingMode.CEILING);
             } else {
-                maximumEncodedRateBytesPerSecond = getMaximumEncodedRateBytesPerSecond(i);
+                nonPcmMaximumEncodedRateBytesPerSecond = getNonPcmMaximumEncodedRateBytesPerSecond(i);
             }
-            return Ints.checkedCast((i4 * maximumEncodedRateBytesPerSecond) / 1000000);
+            return Ints.checkedCast((i4 * nonPcmMaximumEncodedRateBytesPerSecond) / 1000000);
         }
         i4 *= i3;
         if (i2 == -1) {
         }
-        return Ints.checkedCast((i4 * maximumEncodedRateBytesPerSecond) / 1000000);
+        return Ints.checkedCast((i4 * nonPcmMaximumEncodedRateBytesPerSecond) / 1000000);
     }
 
     protected int getOffloadBufferSizeInBytes(int i) {
-        return Ints.checkedCast((this.offloadBufferDurationUs * getMaximumEncodedRateBytesPerSecond(i)) / 1000000);
+        return Ints.checkedCast((this.offloadBufferDurationUs * getNonPcmMaximumEncodedRateBytesPerSecond(i)) / 1000000);
     }
 
     protected static int durationUsToBytes(int i, int i2, int i3) {
         return Ints.checkedCast(((i * i2) * i3) / 1000000);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public static int getMaximumEncodedRateBytesPerSecond(int i) {
-        if (i != 20) {
-            if (i != 30) {
-                switch (i) {
-                    case 5:
-                        return Ac3Util.AC3_MAX_RATE_BYTES_PER_SECOND;
-                    case 6:
-                        return 768000;
-                    case 7:
-                        return DtsUtil.DTS_MAX_RATE_BYTES_PER_SECOND;
-                    case 8:
-                        return DtsUtil.DTS_HD_MAX_RATE_BYTES_PER_SECOND;
-                    case 9:
-                        return MpegAudioUtil.MAX_RATE_BYTES_PER_SECOND;
-                    case 10:
-                        return 100000;
-                    case 11:
-                        return AacUtil.AAC_HE_V1_MAX_RATE_BYTES_PER_SECOND;
-                    case 12:
-                        return 7000;
-                    default:
-                        switch (i) {
-                            case 14:
-                                return Ac3Util.TRUEHD_MAX_RATE_BYTES_PER_SECOND;
-                            case 15:
-                                return 8000;
-                            case 16:
-                                return AacUtil.AAC_XHE_MAX_RATE_BYTES_PER_SECOND;
-                            case 17:
-                                return Ac4Util.MAX_RATE_BYTES_PER_SECOND;
-                            case 18:
-                                return 768000;
-                            default:
-                                throw new IllegalArgumentException();
-                        }
-                }
-            }
-            return DtsUtil.DTS_HD_MAX_RATE_BYTES_PER_SECOND;
-        }
-        return OpusUtil.MAX_BYTES_PER_SECOND;
+    private static int getNonPcmMaximumEncodedRateBytesPerSecond(int i) {
+        int maximumEncodedRateBytesPerSecond = ExtractorUtil.getMaximumEncodedRateBytesPerSecond(i);
+        Assertions.checkState(maximumEncodedRateBytesPerSecond != -2147483647);
+        return maximumEncodedRateBytesPerSecond;
     }
 }

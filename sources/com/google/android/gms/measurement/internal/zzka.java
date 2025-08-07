@@ -1,22 +1,25 @@
 package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzka extends zzay {
-    final /* synthetic */ zzli zza;
+final class zzka implements Runnable {
+    final /* synthetic */ long zza;
+    final /* synthetic */ zzlj zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzka(zzli zzliVar, zzjf zzjfVar) {
-        super(zzjfVar);
-        Objects.requireNonNull(zzliVar);
-        this.zza = zzliVar;
+    public zzka(zzlj zzljVar, long j) {
+        this.zza = j;
+        Objects.requireNonNull(zzljVar);
+        this.zzb = zzljVar;
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzay
-    public final void zza() {
-        this.zza.zzD();
+    @Override // java.lang.Runnable
+    public final void run() {
+        zzic zzicVar = this.zzb.zzu;
+        zzhe zzheVar = zzicVar.zzd().zzf;
+        long j = this.zza;
+        zzheVar.zzb(j);
+        zzicVar.zzaV().zzj().zzb("Session timeout duration set", Long.valueOf(j));
     }
 }

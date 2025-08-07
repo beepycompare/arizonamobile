@@ -162,11 +162,11 @@ public final class SettingsBottomBarKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1974234326, "C55@1979L300,62@2296L299,69@2612L307:SettingsBottomBar.kt#1gr92h");
-            ScalingButtonKt.ScalingButton(onBugsReport, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m8419getLambda$13006014$settings_release_web(), startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onBugsReport, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m8441getLambda$13006014$settings_release_web(), startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             function0 = onBugsReport;
             ScalingButtonKt.ScalingButton(onShareLogs, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.getLambda$983320313$settings_release_web(), startRestartGroup, ((i3 >> 3) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             function02 = onPrivacyPolicy;
-            ScalingButtonKt.ScalingButton(function02, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m8420getLambda$473092742$settings_release_web(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(function02, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m8442getLambda$473092742$settings_release_web(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

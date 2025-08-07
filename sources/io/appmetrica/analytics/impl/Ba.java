@@ -8,19 +8,19 @@ public final class Ba extends V4 {
     }
 
     @Override // io.appmetrica.analytics.impl.V4
-    public final boolean a(C0401l6 c0401l6, P4 p4) {
-        Bundle bundle = c0401l6.m;
-        C0580sb c0580sb = bundle != null ? (C0580sb) bundle.getParcelable("io.appmetrica.analytics.impl.IdentifiersData") : null;
-        if (c0580sb != null) {
-            if (c0580sb.d) {
-                J4 j4 = p4.b.d.f550a;
+    public final boolean a(C0402l6 c0402l6, P4 p4) {
+        Bundle bundle = c0402l6.m;
+        C0581sb c0581sb = bundle != null ? (C0581sb) bundle.getParcelable("io.appmetrica.analytics.impl.IdentifiersData") : null;
+        if (c0581sb != null) {
+            if (c0581sb.d) {
+                J4 j4 = p4.b.d.f549a;
                 Boolean bool = j4.n;
                 Boolean bool2 = j4.i;
                 Ia.F.b().c(bool != null ? bool.booleanValue() : true);
                 Ia.F.g().b(bool2);
             }
         }
-        this.f682a.a(c0580sb);
+        this.f681a.a(c0581sb);
         return false;
     }
 }

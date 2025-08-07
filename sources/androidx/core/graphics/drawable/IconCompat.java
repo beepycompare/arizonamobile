@@ -33,7 +33,6 @@ import androidx.core.view.ViewCompat;
 import androidx.versionedparcelable.CustomVersionedParcelable;
 import com.google.android.vending.expansion.downloader.impl.DownloadsDB;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import java.io.ByteArrayOutputStream;
@@ -271,8 +270,8 @@ public class IconCompat extends CustomVersionedParcelable {
         String str = (String) obj;
         if (str.contains(StringUtils.PROCESS_POSTFIX_DELIMITER)) {
             String str2 = str.split(StringUtils.PROCESS_POSTFIX_DELIMITER, -1)[1];
-            String str3 = str2.split(RemoteSettings.FORWARD_SLASH_STRING, -1)[0];
-            String str4 = str2.split(RemoteSettings.FORWARD_SLASH_STRING, -1)[1];
+            String str3 = str2.split("/", -1)[0];
+            String str4 = str2.split("/", -1)[1];
             String str5 = str.split(StringUtils.PROCESS_POSTFIX_DELIMITER, -1)[0];
             if ("0_resource_name_obfuscated".equals(str4)) {
                 Log.i(TAG, "Found obfuscated resource, not trying to update resource id for it");

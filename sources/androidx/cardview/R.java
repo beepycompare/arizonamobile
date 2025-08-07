@@ -4,18 +4,18 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class attr {
-        public static int cardBackgroundColor = 0x7f0400b1;
-        public static int cardCornerRadius = 0x7f0400b2;
-        public static int cardElevation = 0x7f0400b3;
-        public static int cardMaxElevation = 0x7f0400b5;
-        public static int cardPreventCornerOverlap = 0x7f0400b6;
-        public static int cardUseCompatPadding = 0x7f0400b7;
-        public static int cardViewStyle = 0x7f0400b8;
-        public static int contentPadding = 0x7f040164;
-        public static int contentPaddingBottom = 0x7f040165;
-        public static int contentPaddingLeft = 0x7f040167;
-        public static int contentPaddingRight = 0x7f040168;
-        public static int contentPaddingTop = 0x7f04016a;
+        public static int cardBackgroundColor = 0x7f0400b8;
+        public static int cardCornerRadius = 0x7f0400b9;
+        public static int cardElevation = 0x7f0400ba;
+        public static int cardMaxElevation = 0x7f0400bc;
+        public static int cardPreventCornerOverlap = 0x7f0400bd;
+        public static int cardUseCompatPadding = 0x7f0400be;
+        public static int cardViewStyle = 0x7f0400bf;
+        public static int contentPadding = 0x7f04016b;
+        public static int contentPaddingBottom = 0x7f04016c;
+        public static int contentPaddingLeft = 0x7f04016e;
+        public static int contentPaddingRight = 0x7f04016f;
+        public static int contentPaddingTop = 0x7f040171;
 
         private attr() {
         }

@@ -5,18 +5,18 @@ import android.content.Context;
 public abstract class Pi {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f599a;
+    protected final Context f598a;
     public final String b;
     public final String c;
 
     public Pi(Context context, String str, String str2) {
-        this.f599a = context;
+        this.f598a = context;
         this.b = str;
         this.c = str2;
     }
 
     public final Object a() {
-        int identifier = this.f599a.getResources().getIdentifier(this.b, this.c, this.f599a.getPackageName());
+        int identifier = this.f598a.getResources().getIdentifier(this.b, this.c, this.f598a.getPackageName());
         if (identifier != 0) {
             try {
                 return a(identifier);

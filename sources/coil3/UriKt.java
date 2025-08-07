@@ -1,7 +1,6 @@
 package coil3;
 
 import com.google.android.gms.actions.SearchIntents;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -114,13 +113,13 @@ public final class UriKt {
     public static final Uri toUri(String str, String str2) {
         String str3;
         String str4;
-        if (Intrinsics.areEqual(str2, RemoteSettings.FORWARD_SLASH_STRING)) {
+        if (Intrinsics.areEqual(str2, "/")) {
             str3 = str;
             str4 = str2;
         } else {
             str3 = str;
             str4 = str2;
-            str = StringsKt.replace$default(str3, str4, RemoteSettings.FORWARD_SLASH_STRING, false, 4, (Object) null);
+            str = StringsKt.replace$default(str3, str4, "/", false, 4, (Object) null);
         }
         return parseUri(str, str3, str4);
     }

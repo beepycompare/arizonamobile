@@ -249,12 +249,6 @@ public class ForwardingPlayer implements Player {
     }
 
     @Override // androidx.media3.common.Player
-    @Deprecated
-    public void seekToPreviousWindow() {
-        this.player.seekToPreviousWindow();
-    }
-
-    @Override // androidx.media3.common.Player
     public void seekToPreviousMediaItem() {
         this.player.seekToPreviousMediaItem();
     }
@@ -270,32 +264,8 @@ public class ForwardingPlayer implements Player {
     }
 
     @Override // androidx.media3.common.Player
-    @Deprecated
-    public boolean hasNext() {
-        return this.player.hasNext();
-    }
-
-    @Override // androidx.media3.common.Player
-    @Deprecated
-    public boolean hasNextWindow() {
-        return this.player.hasNextWindow();
-    }
-
-    @Override // androidx.media3.common.Player
     public boolean hasNextMediaItem() {
         return this.player.hasNextMediaItem();
-    }
-
-    @Override // androidx.media3.common.Player
-    @Deprecated
-    public void next() {
-        this.player.next();
-    }
-
-    @Override // androidx.media3.common.Player
-    @Deprecated
-    public void seekToNextWindow() {
-        this.player.seekToNextWindow();
     }
 
     @Override // androidx.media3.common.Player

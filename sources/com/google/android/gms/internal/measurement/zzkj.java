@@ -1,9 +1,15 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-final /* synthetic */ class zzkj {
+public final /* synthetic */ class zzkj implements Runnable {
     static final /* synthetic */ zzkj zza = new zzkj();
 
     private /* synthetic */ zzkj() {
+    }
+
+    @Override // java.lang.Runnable
+    public final /* synthetic */ void run() {
+        zzkm.zzc();
     }
 }

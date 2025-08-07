@@ -2,7 +2,6 @@ package androidx.media3.exoplayer.source.preload;
 
 import android.os.Handler;
 import android.os.Looper;
-import androidx.media3.common.C;
 import androidx.media3.common.FlagSet;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.util.Assertions;
@@ -10,23 +9,22 @@ import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.ListenerSet;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.source.MediaSource;
-import androidx.media3.exoplayer.source.preload.TargetPreloadStatusControl;
 import com.google.common.base.Supplier;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 /* loaded from: classes2.dex */
-public abstract class BasePreloadManager<T> {
+public abstract class BasePreloadManager<T, PreloadStatusT> {
     private final Handler applicationHandler;
     private final ListenerSet<PreloadManagerListener> listeners;
     private final Object lock = new Object();
-    private final Map<MediaItem, BasePreloadManager<T>.MediaSourceHolder> mediaItemMediaSourceHolderMap;
+    private final Map<MediaItem, BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder> mediaItemMediaSourceHolderMap;
     private final MediaSource.Factory mediaSourceFactory;
     protected final Comparator<T> rankingDataComparator;
-    private final PriorityQueue<BasePreloadManager<T>.MediaSourceHolder> sourceHolderPriorityQueue;
-    private final TargetPreloadStatusControl<T> targetPreloadStatusControl;
-    private TargetPreloadStatusControl.PreloadStatus targetPreloadStatusOfCurrentPreloadingSource;
+    private final PriorityQueue<BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder> sourceHolderPriorityQueue;
+    private final TargetPreloadStatusControl<T, PreloadStatusT> targetPreloadStatusControl;
+    private PreloadStatusT targetPreloadStatusOfCurrentPreloadingSource;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void lambda$new$0(PreloadManagerListener preloadManagerListener, FlagSet flagSet) {
@@ -38,7 +36,7 @@ public abstract class BasePreloadManager<T> {
         return mediaSource;
     }
 
-    protected abstract void preloadSourceInternal(MediaSource mediaSource, long j);
+    protected abstract void preloadSourceInternal(MediaSource mediaSource, PreloadStatusT preloadstatust);
 
     protected void releaseInternal() {
     }
@@ -50,14 +48,14 @@ public abstract class BasePreloadManager<T> {
     }
 
     /* loaded from: classes2.dex */
-    protected static abstract class BuilderBase<T> {
+    protected static abstract class BuilderBase<T, PreloadStatusT> {
         protected Supplier<MediaSource.Factory> mediaSourceFactorySupplier;
         protected final Comparator<T> rankingDataComparator;
-        protected final TargetPreloadStatusControl<T> targetPreloadStatusControl;
+        protected final TargetPreloadStatusControl<T, PreloadStatusT> targetPreloadStatusControl;
 
-        public abstract BasePreloadManager<T> build();
+        public abstract BasePreloadManager<T, PreloadStatusT> build();
 
-        public BuilderBase(Comparator<T> comparator, TargetPreloadStatusControl<T> targetPreloadStatusControl, Supplier<MediaSource.Factory> supplier) {
+        public BuilderBase(Comparator<T> comparator, TargetPreloadStatusControl<T, PreloadStatusT> targetPreloadStatusControl, Supplier<MediaSource.Factory> supplier) {
             this.rankingDataComparator = comparator;
             this.targetPreloadStatusControl = targetPreloadStatusControl;
             this.mediaSourceFactorySupplier = supplier;
@@ -65,7 +63,7 @@ public abstract class BasePreloadManager<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public BasePreloadManager(Comparator<T> comparator, TargetPreloadStatusControl<T> targetPreloadStatusControl, MediaSource.Factory factory) {
+    public BasePreloadManager(Comparator<T> comparator, TargetPreloadStatusControl<T, PreloadStatusT> targetPreloadStatusControl, MediaSource.Factory factory) {
         Handler createHandlerForCurrentOrMainLooper = Util.createHandlerForCurrentOrMainLooper();
         this.applicationHandler = createHandlerForCurrentOrMainLooper;
         this.rankingDataComparator = comparator;
@@ -105,7 +103,7 @@ public abstract class BasePreloadManager<T> {
 
     public final void add(MediaSource mediaSource, T t) {
         MediaSource createMediaSourceForPreloading = createMediaSourceForPreloading(mediaSource);
-        this.mediaItemMediaSourceHolderMap.put(createMediaSourceForPreloading.getMediaItem(), new MediaSourceHolder(this, createMediaSourceForPreloading, t));
+        this.mediaItemMediaSourceHolderMap.put(createMediaSourceForPreloading.getMediaItem(), new MediaSourceHolder(createMediaSourceForPreloading, t));
     }
 
     public final void invalidate() {
@@ -146,7 +144,7 @@ public abstract class BasePreloadManager<T> {
     }
 
     public final void reset() {
-        for (BasePreloadManager<T>.MediaSourceHolder mediaSourceHolder : this.mediaItemMediaSourceHolderMap.values()) {
+        for (BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder : this.mediaItemMediaSourceHolderMap.values()) {
             releaseSourceInternal(mediaSourceHolder.mediaSource);
         }
         this.mediaItemMediaSourceHolderMap.clear();
@@ -169,7 +167,7 @@ public abstract class BasePreloadManager<T> {
                 this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BasePreloadManager.this.m7422xf9589f29(mediaSource);
+                        BasePreloadManager.this.m7426xf9589f29(mediaSource);
                     }
                 });
             }
@@ -178,14 +176,14 @@ public abstract class BasePreloadManager<T> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onPreloadCompleted$2$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
-    public /* synthetic */ void m7422xf9589f29(final MediaSource mediaSource) {
+    public /* synthetic */ void m7426xf9589f29(final MediaSource mediaSource) {
         this.listeners.sendEvent(-1, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda0
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((PreloadManagerListener) obj).onCompleted(MediaSource.this.getMediaItem());
             }
         });
-        m7424x7039cf91(mediaSource);
+        m7428x7039cf91(mediaSource);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -195,7 +193,7 @@ public abstract class BasePreloadManager<T> {
                 this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BasePreloadManager.this.m7423x773570a8(preloadException, mediaSource);
+                        BasePreloadManager.this.m7427x773570a8(preloadException, mediaSource);
                     }
                 });
             }
@@ -204,24 +202,24 @@ public abstract class BasePreloadManager<T> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onPreloadError$4$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
-    public /* synthetic */ void m7423x773570a8(final PreloadException preloadException, MediaSource mediaSource) {
+    public /* synthetic */ void m7427x773570a8(final PreloadException preloadException, MediaSource mediaSource) {
         this.listeners.sendEvent(-1, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda1
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((PreloadManagerListener) obj).onError(PreloadException.this);
             }
         });
-        m7424x7039cf91(mediaSource);
+        m7428x7039cf91(mediaSource);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void onPreloadSkipped(final MediaSource mediaSource) {
         synchronized (this.lock) {
             if (isPreloading(mediaSource)) {
-                this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda3
+                Util.postOrRun(this.applicationHandler, new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BasePreloadManager.this.m7424x7039cf91(mediaSource);
+                        BasePreloadManager.this.m7428x7039cf91(mediaSource);
                     }
                 });
             }
@@ -230,7 +228,7 @@ public abstract class BasePreloadManager<T> {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: maybeAdvanceToNextSource */
-    public void m7424x7039cf91(MediaSource mediaSource) {
+    public void m7428x7039cf91(MediaSource mediaSource) {
         synchronized (this.lock) {
             if (isPreloading(mediaSource)) {
                 do {
@@ -248,7 +246,7 @@ public abstract class BasePreloadManager<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public final TargetPreloadStatusControl.PreloadStatus getTargetPreloadStatus(MediaSource mediaSource) {
+    public final PreloadStatusT getTargetPreloadStatus(MediaSource mediaSource) {
         synchronized (this.lock) {
             if (isPreloading(mediaSource)) {
                 return this.targetPreloadStatusOfCurrentPreloadingSource;
@@ -260,14 +258,9 @@ public abstract class BasePreloadManager<T> {
     private boolean maybeStartPreloadNextSource() {
         if (shouldStartPreloadingNextSource()) {
             MediaSourceHolder mediaSourceHolder = (MediaSourceHolder) Assertions.checkNotNull(this.sourceHolderPriorityQueue.peek());
-            TargetPreloadStatusControl.PreloadStatus targetPreloadStatus = this.targetPreloadStatusControl.getTargetPreloadStatus(mediaSourceHolder.rankingData);
-            this.targetPreloadStatusOfCurrentPreloadingSource = targetPreloadStatus;
-            if (targetPreloadStatus != null) {
-                preloadSourceInternal(mediaSourceHolder.mediaSource, mediaSourceHolder.startPositionUs);
-                return true;
-            }
-            clearSourceInternal(mediaSourceHolder.mediaSource);
-            return false;
+            this.targetPreloadStatusOfCurrentPreloadingSource = this.targetPreloadStatusControl.getTargetPreloadStatus(mediaSourceHolder.rankingData);
+            preloadSourceInternal(mediaSourceHolder.mediaSource, this.targetPreloadStatusOfCurrentPreloadingSource);
+            return true;
         }
         return false;
     }
@@ -280,27 +273,21 @@ public abstract class BasePreloadManager<T> {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    public final class MediaSourceHolder implements Comparable<BasePreloadManager<T>.MediaSourceHolder> {
+    public final class MediaSourceHolder implements Comparable<BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder> {
         public final MediaSource mediaSource;
         public final T rankingData;
-        public final long startPositionUs;
 
         @Override // java.lang.Comparable
         public /* bridge */ /* synthetic */ int compareTo(Object obj) {
             return compareTo((MediaSourceHolder) ((MediaSourceHolder) obj));
         }
 
-        public MediaSourceHolder(BasePreloadManager basePreloadManager, MediaSource mediaSource, T t) {
-            this(mediaSource, t, C.TIME_UNSET);
-        }
-
-        public MediaSourceHolder(MediaSource mediaSource, T t, long j) {
+        public MediaSourceHolder(MediaSource mediaSource, T t) {
             this.mediaSource = mediaSource;
             this.rankingData = t;
-            this.startPositionUs = j;
         }
 
-        public int compareTo(BasePreloadManager<T>.MediaSourceHolder mediaSourceHolder) {
+        public int compareTo(BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder) {
             return BasePreloadManager.this.rankingDataComparator.compare(this.rankingData, mediaSourceHolder.rankingData);
         }
     }

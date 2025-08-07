@@ -24,7 +24,6 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.Dispatcher;
 import okhttp3.EventListener;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -142,7 +141,7 @@ public final class RealCall implements Call, Cloneable, Lockable {
         Iterator<RoutePlanner.Plan> it = this.plansToCancel.iterator();
         Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
         while (it.hasNext()) {
-            it.next().mo10380cancel();
+            it.next().mo10403cancel();
         }
         this.eventListener.canceled(this);
     }
@@ -577,7 +576,7 @@ public final class RealCall implements Call, Cloneable, Lockable {
 
         @Override // java.lang.Runnable
         public void run() {
-            Dispatcher dispatcher;
+            OkHttpClient client;
             RealCall realCall = this.this$0;
             Thread currentThread = Thread.currentThread();
             String name = currentThread.getName();
@@ -588,7 +587,7 @@ public final class RealCall implements Call, Cloneable, Lockable {
                 try {
                     try {
                         this.responseCallback.onResponse(realCall, realCall.getResponseWithInterceptorChain$okhttp());
-                        dispatcher = realCall.getClient().dispatcher();
+                        client = realCall.getClient();
                     } catch (IOException e) {
                         e = e;
                         z = true;
@@ -597,8 +596,8 @@ public final class RealCall implements Call, Cloneable, Lockable {
                         } else {
                             this.responseCallback.onFailure(realCall, e);
                         }
-                        dispatcher = realCall.getClient().dispatcher();
-                        dispatcher.finished$okhttp(this);
+                        client = realCall.getClient();
+                        client.dispatcher().finished$okhttp(this);
                     } catch (Throwable th) {
                         th = th;
                         z = true;
@@ -615,7 +614,7 @@ public final class RealCall implements Call, Cloneable, Lockable {
                 } catch (Throwable th2) {
                     th = th2;
                 }
-                dispatcher.finished$okhttp(this);
+                client.dispatcher().finished$okhttp(this);
             } finally {
                 currentThread.setName(name);
             }

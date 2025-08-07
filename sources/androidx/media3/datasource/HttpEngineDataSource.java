@@ -11,12 +11,10 @@ import androidx.media3.common.PlaybackException;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.ConditionVariable;
-import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.HttpDataSource;
 import com.google.common.base.Ascii;
 import com.google.common.base.Predicate;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.net.HttpHeaders;
 import com.google.common.primitives.Longs;
 import java.io.IOException;
@@ -24,7 +22,6 @@ import java.io.InterruptedIOException;
 import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.net.SocketTimeoutException;
-import java.net.URI;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
@@ -33,13 +30,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import kotlin.UByte$$ExternalSyntheticBackport0;
 /* loaded from: classes2.dex */
 public final class HttpEngineDataSource extends BaseDataSource implements HttpDataSource {
     public static final int DEFAULT_CONNECT_TIMEOUT_MILLIS = 8000;
     public static final int DEFAULT_READ_TIMEOUT_MILLIS = 8000;
     private static final int READ_BUFFER_SIZE_BYTES = 32768;
-    private static final String TAG = "HttpEngineDataSource";
     private long bytesRemaining;
     private final Clock clock;
     private final int connectTimeoutMs;
@@ -577,52 +572,6 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void storeCookiesFromHeaders(UrlResponseInfo urlResponseInfo) {
-        storeCookiesFromHeaders(urlResponseInfo, CookieHandler.getDefault());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static void storeCookiesFromHeaders(UrlResponseInfo urlResponseInfo, CookieHandler cookieHandler) {
-        if (cookieHandler == null) {
-            return;
-        }
-        try {
-            cookieHandler.put(new URI(urlResponseInfo.getUrl()), urlResponseInfo.getHeaders().getAsMap());
-        } catch (Exception e) {
-            Log.w(TAG, "Failed to store cookies in CookieHandler", e);
-        }
-    }
-
-    static String getCookieHeader(String str) {
-        return getCookieHeader(str, ImmutableMap.of(), CookieHandler.getDefault());
-    }
-
-    static String getCookieHeader(String str, CookieHandler cookieHandler) {
-        return getCookieHeader(str, ImmutableMap.of(), cookieHandler);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static String getCookieHeader(String str, Map<String, List<String>> map, CookieHandler cookieHandler) {
-        List<String> list;
-        if (cookieHandler == null) {
-            return "";
-        }
-        Map<String, List<String>> of = ImmutableMap.of();
-        try {
-            of = cookieHandler.get(new URI(str), map);
-        } catch (Exception e) {
-            Log.w(TAG, "Failed to read cookies from CookieHandler", e);
-        }
-        StringBuilder sb = new StringBuilder();
-        if (of.containsKey(HttpHeaders.COOKIE) && (list = of.get(HttpHeaders.COOKIE)) != null) {
-            for (String str2 : list) {
-                sb.append(str2).append("; ");
-            }
-        }
-        return UByte$$ExternalSyntheticBackport0.m(sb.toString());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
     public static final class UrlRequestWrapper {
         private final UrlRequest urlRequest;
@@ -691,8 +640,10 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
                 if (cookieHandler == null && HttpEngineDataSource.this.handleSetCookieRequests) {
                     cookieHandler = new CookieManager();
                 }
-                HttpEngineDataSource.storeCookiesFromHeaders(urlResponseInfo, cookieHandler);
-                String cookieHeader = HttpEngineDataSource.getCookieHeader(urlResponseInfo.getUrl(), urlResponseInfo.getHeaders().getAsMap(), cookieHandler);
+                String url = urlResponseInfo.getUrl();
+                Map asMap = urlResponseInfo.getHeaders().getAsMap();
+                HttpUtil.storeCookiesFromHeaders(url, asMap, cookieHandler);
+                String cookieHeader = HttpUtil.getCookieHeader(url, asMap, cookieHandler);
                 boolean z = HttpEngineDataSource.this.keepPostFor302Redirects && dataSpec.httpMethod == 2 && httpStatusCode == 302;
                 if (!z && (!HttpEngineDataSource.this.handleSetCookieRequests || TextUtils.isEmpty(cookieHeader))) {
                     urlRequest.followRedirect();
@@ -731,7 +682,7 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
             if (this.isClosed) {
                 return;
             }
-            HttpEngineDataSource.storeCookiesFromHeaders(urlResponseInfo);
+            HttpUtil.storeCookiesFromHeaders(urlResponseInfo.getUrl(), urlResponseInfo.getHeaders().getAsMap(), CookieHandler.getDefault());
             HttpEngineDataSource.this.responseInfo = urlResponseInfo;
             HttpEngineDataSource.this.operation.open();
         }

@@ -18,7 +18,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineDispatcher;
 import kotlinx.coroutines.ExecutorsKt;
 /* compiled from: Firebase.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\u0012\u0010\u0003\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00050\u0004H\u0016¨\u0006\u0006"}, d2 = {"Lcom/google/firebase/FirebaseCommonKtxRegistrar;", "Lcom/google/firebase/components/ComponentRegistrar;", "()V", "getComponents", "", "Lcom/google/firebase/components/Component;", "com.google.firebase-firebase-common"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00060\u0005H\u0016¨\u0006\u0007"}, d2 = {"Lcom/google/firebase/FirebaseCommonKtxRegistrar;", "Lcom/google/firebase/components/ComponentRegistrar;", "<init>", "()V", "getComponents", "", "Lcom/google/firebase/components/Component;", "com.google.firebase-firebase-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class FirebaseCommonKtxRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -27,38 +27,38 @@ public final class FirebaseCommonKtxRegistrar implements ComponentRegistrar {
             @Override // com.google.firebase.components.ComponentFactory
             public final CoroutineDispatcher create(ComponentContainer componentContainer) {
                 Object obj = componentContainer.get(Qualified.qualified(Background.class, Executor.class));
-                Intrinsics.checkNotNullExpressionValue(obj, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                Intrinsics.checkNotNullExpressionValue(obj, "get(...)");
                 return ExecutorsKt.from((Executor) obj);
             }
         }).build();
-        Intrinsics.checkNotNullExpressionValue(build, "builder(Qualified.qualif…cher()\n    }\n    .build()");
+        Intrinsics.checkNotNullExpressionValue(build, "build(...)");
         Component build2 = Component.builder(Qualified.qualified(Lightweight.class, CoroutineDispatcher.class)).add(Dependency.required(Qualified.qualified(Lightweight.class, Executor.class))).factory(new ComponentFactory() { // from class: com.google.firebase.FirebaseCommonKtxRegistrar$getComponents$$inlined$coroutineDispatcher$2
             @Override // com.google.firebase.components.ComponentFactory
             public final CoroutineDispatcher create(ComponentContainer componentContainer) {
                 Object obj = componentContainer.get(Qualified.qualified(Lightweight.class, Executor.class));
-                Intrinsics.checkNotNullExpressionValue(obj, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                Intrinsics.checkNotNullExpressionValue(obj, "get(...)");
                 return ExecutorsKt.from((Executor) obj);
             }
         }).build();
-        Intrinsics.checkNotNullExpressionValue(build2, "builder(Qualified.qualif…cher()\n    }\n    .build()");
+        Intrinsics.checkNotNullExpressionValue(build2, "build(...)");
         Component build3 = Component.builder(Qualified.qualified(Blocking.class, CoroutineDispatcher.class)).add(Dependency.required(Qualified.qualified(Blocking.class, Executor.class))).factory(new ComponentFactory() { // from class: com.google.firebase.FirebaseCommonKtxRegistrar$getComponents$$inlined$coroutineDispatcher$3
             @Override // com.google.firebase.components.ComponentFactory
             public final CoroutineDispatcher create(ComponentContainer componentContainer) {
                 Object obj = componentContainer.get(Qualified.qualified(Blocking.class, Executor.class));
-                Intrinsics.checkNotNullExpressionValue(obj, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                Intrinsics.checkNotNullExpressionValue(obj, "get(...)");
                 return ExecutorsKt.from((Executor) obj);
             }
         }).build();
-        Intrinsics.checkNotNullExpressionValue(build3, "builder(Qualified.qualif…cher()\n    }\n    .build()");
+        Intrinsics.checkNotNullExpressionValue(build3, "build(...)");
         Component build4 = Component.builder(Qualified.qualified(UiThread.class, CoroutineDispatcher.class)).add(Dependency.required(Qualified.qualified(UiThread.class, Executor.class))).factory(new ComponentFactory() { // from class: com.google.firebase.FirebaseCommonKtxRegistrar$getComponents$$inlined$coroutineDispatcher$4
             @Override // com.google.firebase.components.ComponentFactory
             public final CoroutineDispatcher create(ComponentContainer componentContainer) {
                 Object obj = componentContainer.get(Qualified.qualified(UiThread.class, Executor.class));
-                Intrinsics.checkNotNullExpressionValue(obj, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                Intrinsics.checkNotNullExpressionValue(obj, "get(...)");
                 return ExecutorsKt.from((Executor) obj);
             }
         }).build();
-        Intrinsics.checkNotNullExpressionValue(build4, "builder(Qualified.qualif…cher()\n    }\n    .build()");
+        Intrinsics.checkNotNullExpressionValue(build4, "build(...)");
         return CollectionsKt.listOf((Object[]) new Component[]{build, build2, build3, build4});
     }
 }

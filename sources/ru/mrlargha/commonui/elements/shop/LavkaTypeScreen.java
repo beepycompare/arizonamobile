@@ -197,7 +197,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit lavkaAdapter$lambda$4(Activity activity, int i, LavkaTypeScreen lavkaTypeScreen) {
-        Toast.makeText(activity, "Ошибка в интерфейсе : " + i, 1).show();
+        Toast.makeText(activity.getApplicationContext(), "Ошибка в интерфейсе : " + i, 1).show();
         lavkaTypeScreen.getNotifier().setUIElementVisible(i, false);
         return Unit.INSTANCE;
     }
@@ -512,7 +512,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         } catch (Exception e) {
             Log.d(String.valueOf(getBackendID()), data + "  " + e.getMessage());
             e.printStackTrace();
-            Toast.makeText(getTargetActivity(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
         }
     }
 

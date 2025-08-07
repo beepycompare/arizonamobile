@@ -570,7 +570,7 @@ public final class Authorization implements InterfaceController {
                             cancel();
                         }
                     }.start();
-                    Toast.makeText(this.targetActivity, "Игрок уже в игре!", 0).show();
+                    Toast.makeText(this.targetActivity.getApplicationContext(), "Игрок уже в игре!", 0).show();
                 }
             } else {
                 Log.w(TAG, "Действие неопределено. Неопознаный ID.");

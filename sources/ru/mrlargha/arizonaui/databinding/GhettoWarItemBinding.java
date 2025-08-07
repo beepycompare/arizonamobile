@@ -42,13 +42,19 @@ public final class GhettoWarItemBinding implements ViewBinding {
     public final ImageView level2ImageBg;
     public final ImageView levelImage;
     private final LinearLayout rootView;
+    public final CardView terCard1;
+    public final CardView terCard2;
+    public final CardView terCard3;
+    public final TextView terText1;
+    public final TextView terText2;
+    public final TextView terText3;
     public final TextView terrs;
     public final TextView timeText1;
     public final TextView timeText2;
     public final TextView timeText3;
     public final TextView titleHint;
 
-    private GhettoWarItemBinding(LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, TextView textView, TextView textView2, TextView textView3, TextView textView4, CardView cardView, CardView cardView2, LinearLayout linearLayout5, LinearLayout linearLayout6, LinearLayout linearLayout7, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, TextView textView15, TextView textView16, TextView textView17, TextView textView18, ImageView imageView, ImageView imageView2, ImageView imageView3, TextView textView19, TextView textView20, TextView textView21, TextView textView22, TextView textView23) {
+    private GhettoWarItemBinding(LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, TextView textView, TextView textView2, TextView textView3, TextView textView4, CardView cardView, CardView cardView2, LinearLayout linearLayout5, LinearLayout linearLayout6, LinearLayout linearLayout7, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, TextView textView15, TextView textView16, TextView textView17, TextView textView18, ImageView imageView, ImageView imageView2, ImageView imageView3, CardView cardView3, CardView cardView4, CardView cardView5, TextView textView19, TextView textView20, TextView textView21, TextView textView22, TextView textView23, TextView textView24, TextView textView25, TextView textView26) {
         this.rootView = linearLayout;
         this.atk1 = linearLayout2;
         this.atk2 = linearLayout3;
@@ -79,11 +85,17 @@ public final class GhettoWarItemBinding implements ViewBinding {
         this.level2Image = imageView;
         this.level2ImageBg = imageView2;
         this.levelImage = imageView3;
-        this.terrs = textView19;
-        this.timeText1 = textView20;
-        this.timeText2 = textView21;
-        this.timeText3 = textView22;
-        this.titleHint = textView23;
+        this.terCard1 = cardView3;
+        this.terCard2 = cardView4;
+        this.terCard3 = cardView5;
+        this.terText1 = textView19;
+        this.terText2 = textView20;
+        this.terText3 = textView21;
+        this.terrs = textView22;
+        this.timeText1 = textView23;
+        this.timeText2 = textView24;
+        this.timeText3 = textView25;
+        this.titleHint = textView26;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -191,22 +203,46 @@ public final class GhettoWarItemBinding implements ViewBinding {
                                                                                                                         i = R.id.level_image;
                                                                                                                         ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(view, i);
                                                                                                                         if (imageView3 != null) {
-                                                                                                                            i = R.id.terrs;
-                                                                                                                            TextView textView19 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                            if (textView19 != null) {
-                                                                                                                                i = R.id.time_text1;
-                                                                                                                                TextView textView20 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                if (textView20 != null) {
-                                                                                                                                    i = R.id.time_text2;
-                                                                                                                                    TextView textView21 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                    if (textView21 != null) {
-                                                                                                                                        i = R.id.time_text3;
-                                                                                                                                        TextView textView22 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                        if (textView22 != null) {
-                                                                                                                                            i = R.id.title_hint;
-                                                                                                                                            TextView textView23 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                            if (textView23 != null) {
-                                                                                                                                                return new GhettoWarItemBinding((LinearLayout) view, linearLayout, linearLayout2, linearLayout3, textView, textView2, textView3, textView4, cardView, cardView2, linearLayout4, linearLayout5, linearLayout6, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, imageView, imageView2, imageView3, textView19, textView20, textView21, textView22, textView23);
+                                                                                                                            i = R.id.ter_card1;
+                                                                                                                            CardView cardView3 = (CardView) ViewBindings.findChildViewById(view, i);
+                                                                                                                            if (cardView3 != null) {
+                                                                                                                                i = R.id.ter_card2;
+                                                                                                                                CardView cardView4 = (CardView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                if (cardView4 != null) {
+                                                                                                                                    i = R.id.ter_card3;
+                                                                                                                                    CardView cardView5 = (CardView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                    if (cardView5 != null) {
+                                                                                                                                        i = R.id.ter_text1;
+                                                                                                                                        TextView textView19 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                        if (textView19 != null) {
+                                                                                                                                            i = R.id.ter_text2;
+                                                                                                                                            TextView textView20 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                            if (textView20 != null) {
+                                                                                                                                                i = R.id.ter_text3;
+                                                                                                                                                TextView textView21 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                if (textView21 != null) {
+                                                                                                                                                    i = R.id.terrs;
+                                                                                                                                                    TextView textView22 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                    if (textView22 != null) {
+                                                                                                                                                        i = R.id.time_text1;
+                                                                                                                                                        TextView textView23 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                        if (textView23 != null) {
+                                                                                                                                                            i = R.id.time_text2;
+                                                                                                                                                            TextView textView24 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                            if (textView24 != null) {
+                                                                                                                                                                i = R.id.time_text3;
+                                                                                                                                                                TextView textView25 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                if (textView25 != null) {
+                                                                                                                                                                    i = R.id.title_hint;
+                                                                                                                                                                    TextView textView26 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                                                    if (textView26 != null) {
+                                                                                                                                                                        return new GhettoWarItemBinding((LinearLayout) view, linearLayout, linearLayout2, linearLayout3, textView, textView2, textView3, textView4, cardView, cardView2, linearLayout4, linearLayout5, linearLayout6, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, imageView, imageView2, imageView3, cardView3, cardView4, cardView5, textView19, textView20, textView21, textView22, textView23, textView24, textView25, textView26);
+                                                                                                                                                                    }
+                                                                                                                                                                }
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }
+                                                                                                                                                }
                                                                                                                                             }
                                                                                                                                         }
                                                                                                                                     }

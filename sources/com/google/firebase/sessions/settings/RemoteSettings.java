@@ -3,12 +3,11 @@ package com.google.firebase.sessions.settings;
 import android.os.Build;
 import android.util.Log;
 import androidx.media3.exoplayer.upstream.CmcdData;
-import com.google.firebase.annotations.concurrent.Background;
 import com.google.firebase.installations.FirebaseInstallationsApi;
 import com.google.firebase.sessions.ApplicationInfo;
+import com.google.firebase.sessions.FirebaseSessions;
 import com.google.firebase.sessions.InstallationId;
-import com.google.firebase.sessions.dagger.Lazy;
-import java.util.Arrays;
+import com.google.firebase.sessions.TimeProvider;
 import java.util.Map;
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -18,85 +17,72 @@ import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.collections.MapsKt;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.text.Regex;
 import kotlin.time.Duration;
 import kotlin.time.DurationKt;
 import kotlin.time.DurationUnit;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
 /* compiled from: RemoteSettings.kt */
 @Singleton
-@Metadata(d1 = {"\u0000\\\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0006\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0001\u0018\u0000 (2\u00020\u0001:\u0001(B7\b\u0007\u0012\b\b\u0001\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\u0002\u0010\rJ\r\u0010\u001f\u001a\u00020 H\u0001¢\u0006\u0002\b!J\b\u0010\"\u001a\u00020\u0015H\u0016J\u0010\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$H\u0002J\u0011\u0010&\u001a\u00020 H\u0096@ø\u0001\u0000¢\u0006\u0002\u0010'R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\u0004\u0018\u00010\u00118VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013R\u0016\u0010\u0014\u001a\u0004\u0018\u00010\u00158VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R\u001f\u0010\u0018\u001a\u0004\u0018\u00010\u00198VX\u0096\u0004ø\u0001\u0000ø\u0001\u0001ø\u0001\u0002¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001e\u0082\u0002\u000f\n\u0002\b\u0019\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006)"}, d2 = {"Lcom/google/firebase/sessions/settings/RemoteSettings;", "Lcom/google/firebase/sessions/settings/SettingsProvider;", "backgroundDispatcher", "Lkotlin/coroutines/CoroutineContext;", "firebaseInstallationsApi", "Lcom/google/firebase/installations/FirebaseInstallationsApi;", "appInfo", "Lcom/google/firebase/sessions/ApplicationInfo;", "configsFetcher", "Lcom/google/firebase/sessions/settings/CrashlyticsSettingsFetcher;", "lazySettingsCache", "Ldagger/Lazy;", "Lcom/google/firebase/sessions/settings/SettingsCache;", "(Lkotlin/coroutines/CoroutineContext;Lcom/google/firebase/installations/FirebaseInstallationsApi;Lcom/google/firebase/sessions/ApplicationInfo;Lcom/google/firebase/sessions/settings/CrashlyticsSettingsFetcher;Ldagger/Lazy;)V", "fetchInProgress", "Lkotlinx/coroutines/sync/Mutex;", "samplingRate", "", "getSamplingRate", "()Ljava/lang/Double;", "sessionEnabled", "", "getSessionEnabled", "()Ljava/lang/Boolean;", "sessionRestartTimeout", "Lkotlin/time/Duration;", "getSessionRestartTimeout-FghU774", "()Lkotlin/time/Duration;", "settingsCache", "getSettingsCache", "()Lcom/google/firebase/sessions/settings/SettingsCache;", "clearCachedSettings", "", "clearCachedSettings$com_google_firebase_firebase_sessions", "isSettingsStale", "removeForwardSlashesIn", "", CmcdData.STREAMING_FORMAT_SS, "updateSettings", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "com.google.firebase-firebase-sessions"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0006\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0001\u0018\u0000 %2\u00020\u0001:\u0001%B1\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\f\u0010\rJ\u000e\u0010\u001c\u001a\u00020\u001dH\u0096@¢\u0006\u0002\u0010\u001eJ\b\u0010\u001f\u001a\u00020\u0011H\u0016J\u0010\u0010 \u001a\u00020\u001dH\u0081@¢\u0006\u0004\b!\u0010\u001eJ\u0010\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020#H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\u0004\u0018\u00010\u00118VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013R\u0016\u0010\u0014\u001a\u0004\u0018\u00010\u00158VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R\u0016\u0010\u0018\u001a\u0004\u0018\u00010\u00198VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001b¨\u0006&"}, d2 = {"Lcom/google/firebase/sessions/settings/RemoteSettings;", "Lcom/google/firebase/sessions/settings/SettingsProvider;", "timeProvider", "Lcom/google/firebase/sessions/TimeProvider;", "firebaseInstallationsApi", "Lcom/google/firebase/installations/FirebaseInstallationsApi;", "appInfo", "Lcom/google/firebase/sessions/ApplicationInfo;", "configsFetcher", "Lcom/google/firebase/sessions/settings/CrashlyticsSettingsFetcher;", "settingsCache", "Lcom/google/firebase/sessions/settings/SettingsCache;", "<init>", "(Lcom/google/firebase/sessions/TimeProvider;Lcom/google/firebase/installations/FirebaseInstallationsApi;Lcom/google/firebase/sessions/ApplicationInfo;Lcom/google/firebase/sessions/settings/CrashlyticsSettingsFetcher;Lcom/google/firebase/sessions/settings/SettingsCache;)V", "fetchInProgress", "Lkotlinx/coroutines/sync/Mutex;", "sessionEnabled", "", "getSessionEnabled", "()Ljava/lang/Boolean;", "sessionRestartTimeout", "Lkotlin/time/Duration;", "getSessionRestartTimeout-FghU774", "()Lkotlin/time/Duration;", "samplingRate", "", "getSamplingRate", "()Ljava/lang/Double;", "updateSettings", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "isSettingsStale", "clearCachedSettings", "clearCachedSettings$com_google_firebase_firebase_sessions", "sanitize", "", CmcdData.STREAMING_FORMAT_SS, "Companion", "com.google.firebase-firebase-sessions"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class RemoteSettings implements SettingsProvider {
     private static final Companion Companion = new Companion(null);
-    @Deprecated
-    public static final String FORWARD_SLASH_STRING = "/";
-    @Deprecated
-    public static final String TAG = "SessionConfigFetcher";
+    private static final int defaultCacheDuration;
+    private static final Regex sanitizeRegex;
     private final ApplicationInfo appInfo;
-    private final CoroutineContext backgroundDispatcher;
     private final CrashlyticsSettingsFetcher configsFetcher;
     private final Mutex fetchInProgress;
     private final FirebaseInstallationsApi firebaseInstallationsApi;
-    private final Lazy<SettingsCache> lazySettingsCache;
+    private final SettingsCache settingsCache;
+    private final TimeProvider timeProvider;
 
     @Inject
-    public RemoteSettings(@Background CoroutineContext backgroundDispatcher, FirebaseInstallationsApi firebaseInstallationsApi, ApplicationInfo appInfo, CrashlyticsSettingsFetcher configsFetcher, Lazy<SettingsCache> lazySettingsCache) {
-        Intrinsics.checkNotNullParameter(backgroundDispatcher, "backgroundDispatcher");
+    public RemoteSettings(TimeProvider timeProvider, FirebaseInstallationsApi firebaseInstallationsApi, ApplicationInfo appInfo, CrashlyticsSettingsFetcher configsFetcher, SettingsCache settingsCache) {
+        Intrinsics.checkNotNullParameter(timeProvider, "timeProvider");
         Intrinsics.checkNotNullParameter(firebaseInstallationsApi, "firebaseInstallationsApi");
         Intrinsics.checkNotNullParameter(appInfo, "appInfo");
         Intrinsics.checkNotNullParameter(configsFetcher, "configsFetcher");
-        Intrinsics.checkNotNullParameter(lazySettingsCache, "lazySettingsCache");
-        this.backgroundDispatcher = backgroundDispatcher;
+        Intrinsics.checkNotNullParameter(settingsCache, "settingsCache");
+        this.timeProvider = timeProvider;
         this.firebaseInstallationsApi = firebaseInstallationsApi;
         this.appInfo = appInfo;
         this.configsFetcher = configsFetcher;
-        this.lazySettingsCache = lazySettingsCache;
+        this.settingsCache = settingsCache;
         this.fetchInProgress = MutexKt.Mutex$default(false, 1, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final SettingsCache getSettingsCache() {
-        SettingsCache settingsCache = this.lazySettingsCache.get();
-        Intrinsics.checkNotNullExpressionValue(settingsCache, "lazySettingsCache.get()");
-        return settingsCache;
     }
 
     @Override // com.google.firebase.sessions.settings.SettingsProvider
     public Boolean getSessionEnabled() {
-        return getSettingsCache().sessionsEnabled();
+        return this.settingsCache.sessionsEnabled();
     }
 
     @Override // com.google.firebase.sessions.settings.SettingsProvider
     /* renamed from: getSessionRestartTimeout-FghU774 */
-    public Duration mo8293getSessionRestartTimeoutFghU774() {
-        Integer sessionRestartTimeout = getSettingsCache().sessionRestartTimeout();
+    public Duration mo8316getSessionRestartTimeoutFghU774() {
+        Integer sessionRestartTimeout = this.settingsCache.sessionRestartTimeout();
         if (sessionRestartTimeout != null) {
             Duration.Companion companion = Duration.Companion;
-            return Duration.m9828boximpl(DurationKt.toDuration(sessionRestartTimeout.intValue(), DurationUnit.SECONDS));
+            return Duration.m9851boximpl(DurationKt.toDuration(sessionRestartTimeout.intValue(), DurationUnit.SECONDS));
         }
         return null;
     }
 
     @Override // com.google.firebase.sessions.settings.SettingsProvider
     public Double getSamplingRate() {
-        return getSettingsCache().sessionSamplingRate();
+        return this.settingsCache.sessionSamplingRate();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0029  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0093 A[Catch: all -> 0x0161, TRY_LEAVE, TryCatch #0 {all -> 0x0161, blocks: (B:36:0x0089, B:38:0x0093, B:41:0x009e), top: B:62:0x0089 }] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x009e A[Catch: all -> 0x0161, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x0161, blocks: (B:36:0x0089, B:38:0x0093, B:41:0x009e), top: B:62:0x0089 }] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00c1 A[Catch: all -> 0x004f, TRY_LEAVE, TryCatch #2 {all -> 0x004f, blocks: (B:21:0x004b, B:45:0x00b3, B:47:0x00c1, B:51:0x00cd), top: B:65:0x004b }] */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x008f A[Catch: all -> 0x0159, TRY_LEAVE, TryCatch #1 {all -> 0x0159, blocks: (B:36:0x0087, B:38:0x008f, B:41:0x009a), top: B:64:0x0087 }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x009a A[Catch: all -> 0x0159, TRY_ENTER, TRY_LEAVE, TryCatch #1 {all -> 0x0159, blocks: (B:36:0x0087, B:38:0x008f, B:41:0x009a), top: B:64:0x0087 }] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00bd A[Catch: all -> 0x004f, TRY_LEAVE, TryCatch #2 {all -> 0x004f, blocks: (B:21:0x004b, B:45:0x00af, B:47:0x00bd, B:51:0x00c9), top: B:65:0x004b }] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00c8  */
     @Override // com.google.firebase.sessions.settings.SettingsProvider
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -120,17 +106,17 @@ public final class RemoteSettings implements SettingsProvider {
                     i = remoteSettings$updateSettings$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        if (!this.fetchInProgress.isLocked() && !getSettingsCache().hasCacheExpired$com_google_firebase_firebase_sessions()) {
-                            return Unit.INSTANCE;
+                        if (this.fetchInProgress.isLocked() || this.settingsCache.hasCacheExpired()) {
+                            mutex = this.fetchInProgress;
+                            remoteSettings$updateSettings$1.L$0 = this;
+                            remoteSettings$updateSettings$1.L$1 = mutex;
+                            remoteSettings$updateSettings$1.label = 1;
+                            if (mutex.lock(null, remoteSettings$updateSettings$1) != coroutine_suspended) {
+                                remoteSettings = this;
+                            }
+                            return coroutine_suspended;
                         }
-                        mutex = this.fetchInProgress;
-                        remoteSettings$updateSettings$1.L$0 = this;
-                        remoteSettings$updateSettings$1.L$1 = mutex;
-                        remoteSettings$updateSettings$1.label = 1;
-                        if (mutex.lock(null, remoteSettings$updateSettings$1) != coroutine_suspended) {
-                            remoteSettings = this;
-                        }
-                        return coroutine_suspended;
+                        return Unit.INSTANCE;
                     } else if (i != 1) {
                         if (i != 2) {
                             if (i == 3) {
@@ -154,20 +140,17 @@ public final class RemoteSettings implements SettingsProvider {
                             ResultKt.throwOnFailure(obj);
                             fid = ((InstallationId) obj).getFid();
                             if (!Intrinsics.areEqual(fid, "")) {
-                                Log.w(TAG, "Error getting Firebase Installation ID. Skipping this Session Event.");
+                                Log.w(FirebaseSessions.TAG, "Error getting Firebase Installation ID. Skipping this Session Event.");
                                 Unit unit2 = Unit.INSTANCE;
                                 mutex3.unlock(null);
                                 return unit2;
                             }
-                            StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-                            String format = String.format("%s/%s", Arrays.copyOf(new Object[]{Build.MANUFACTURER, Build.MODEL}, 2));
-                            Intrinsics.checkNotNullExpressionValue(format, "format(...)");
                             String INCREMENTAL = Build.VERSION.INCREMENTAL;
                             Intrinsics.checkNotNullExpressionValue(INCREMENTAL, "INCREMENTAL");
                             String RELEASE = Build.VERSION.RELEASE;
                             Intrinsics.checkNotNullExpressionValue(RELEASE, "RELEASE");
-                            Map<String, String> mapOf = MapsKt.mapOf(TuplesKt.to("X-Crashlytics-Installation-ID", fid), TuplesKt.to("X-Crashlytics-Device-Model", remoteSettings.removeForwardSlashesIn(format)), TuplesKt.to("X-Crashlytics-OS-Build-Version", remoteSettings.removeForwardSlashesIn(INCREMENTAL)), TuplesKt.to("X-Crashlytics-OS-Display-Version", remoteSettings.removeForwardSlashesIn(RELEASE)), TuplesKt.to("X-Crashlytics-API-Client-Version", remoteSettings.appInfo.getSessionSdkVersion()));
-                            Log.d(TAG, "Fetching settings from server.");
+                            Map<String, String> mapOf = MapsKt.mapOf(TuplesKt.to("X-Crashlytics-Installation-ID", fid), TuplesKt.to("X-Crashlytics-Device-Model", remoteSettings.sanitize(Build.MANUFACTURER + Build.MODEL)), TuplesKt.to("X-Crashlytics-OS-Build-Version", remoteSettings.sanitize(INCREMENTAL)), TuplesKt.to("X-Crashlytics-OS-Display-Version", remoteSettings.sanitize(RELEASE)), TuplesKt.to("X-Crashlytics-API-Client-Version", remoteSettings.appInfo.getSessionSdkVersion()));
+                            Log.d(FirebaseSessions.TAG, "Fetching settings from server.");
                             remoteSettings$updateSettings$1.L$0 = mutex3;
                             remoteSettings$updateSettings$1.L$1 = null;
                             remoteSettings$updateSettings$1.label = 3;
@@ -189,8 +172,8 @@ public final class RemoteSettings implements SettingsProvider {
                         ResultKt.throwOnFailure(obj);
                         mutex = (Mutex) remoteSettings$updateSettings$1.L$1;
                     }
-                    if (remoteSettings.getSettingsCache().hasCacheExpired$com_google_firebase_firebase_sessions()) {
-                        Log.d(TAG, "Remote settings cache not expired. Using cached values.");
+                    if (remoteSettings.settingsCache.hasCacheExpired()) {
+                        Log.d(FirebaseSessions.TAG, "Remote settings cache not expired. Using cached values.");
                         Unit unit4 = Unit.INSTANCE;
                         mutex.unlock(null);
                         return unit4;
@@ -211,7 +194,7 @@ public final class RemoteSettings implements SettingsProvider {
                     return coroutine_suspended;
                 }
             }
-            if (remoteSettings.getSettingsCache().hasCacheExpired$com_google_firebase_firebase_sessions()) {
+            if (remoteSettings.settingsCache.hasCacheExpired()) {
             }
         } catch (Throwable th4) {
             mutex2 = mutex;
@@ -229,26 +212,42 @@ public final class RemoteSettings implements SettingsProvider {
 
     @Override // com.google.firebase.sessions.settings.SettingsProvider
     public boolean isSettingsStale() {
-        return getSettingsCache().hasCacheExpired$com_google_firebase_firebase_sessions();
+        return this.settingsCache.hasCacheExpired();
     }
 
-    public final void clearCachedSettings$com_google_firebase_firebase_sessions() {
-        BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(this.backgroundDispatcher), null, null, new RemoteSettings$clearCachedSettings$1(this, null), 3, null);
+    public final Object clearCachedSettings$com_google_firebase_firebase_sessions(Continuation<? super Unit> continuation) {
+        Object updateConfigs = this.settingsCache.updateConfigs(SessionConfigsSerializer.INSTANCE.getDefaultValue(), continuation);
+        return updateConfigs == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? updateConfigs : Unit.INSTANCE;
     }
 
-    private final String removeForwardSlashesIn(String str) {
-        return new Regex(FORWARD_SLASH_STRING).replace(str, "");
+    private final String sanitize(String str) {
+        return sanitizeRegex.replace(str, "");
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: RemoteSettings.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0082\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcom/google/firebase/sessions/settings/RemoteSettings$Companion;", "", "()V", "FORWARD_SLASH_STRING", "", "TAG", "com.google.firebase-firebase-sessions"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\f"}, d2 = {"Lcom/google/firebase/sessions/settings/RemoteSettings$Companion;", "", "<init>", "()V", "defaultCacheDuration", "", "getDefaultCacheDuration", "()I", "sanitizeRegex", "Lkotlin/text/Regex;", "getSanitizeRegex", "()Lkotlin/text/Regex;", "com.google.firebase-firebase-sessions"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes4.dex */
-    private static final class Companion {
+    public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
         }
+
+        public final int getDefaultCacheDuration() {
+            return RemoteSettings.defaultCacheDuration;
+        }
+
+        public final Regex getSanitizeRegex() {
+            return RemoteSettings.sanitizeRegex;
+        }
+    }
+
+    static {
+        Duration.Companion companion = Duration.Companion;
+        defaultCacheDuration = (int) Duration.m9867getInWholeSecondsimpl(DurationKt.toDuration(24, DurationUnit.HOURS));
+        sanitizeRegex = new Regex("/");
     }
 }

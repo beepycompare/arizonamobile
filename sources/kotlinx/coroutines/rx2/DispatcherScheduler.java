@@ -235,7 +235,7 @@ public final class DispatcherScheduler extends Scheduler {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final void schedule$lambda$1$lambda$0(DispatcherWorker dispatcherWorker, Function1 function1) {
-            dispatcherWorker.blockChannel.mo7544trySendJP2dKIU(function1);
+            dispatcherWorker.blockChannel.mo7559trySendJP2dKIU(function1);
         }
 
         @Override // io.reactivex.disposables.Disposable

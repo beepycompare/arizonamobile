@@ -15,6 +15,7 @@ import androidx.activity.result.IntentSenderRequest;
 import androidx.activity.result.PickVisualMediaRequest;
 import androidx.activity.result.contract.ActivityResultContract;
 import androidx.core.content.ContextCompat;
+import androidx.media3.common.util.ParsableByteArray;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -708,7 +709,7 @@ public final class ActivityResultContracts {
             @JvmStatic
             public final ResolveInfo getSystemFallbackPicker$activity_release(Context context) {
                 Intrinsics.checkNotNullParameter(context, "context");
-                return context.getPackageManager().resolveActivity(new Intent(PickVisualMedia.ACTION_SYSTEM_FALLBACK_PICK_IMAGES), 1114112);
+                return context.getPackageManager().resolveActivity(new Intent(PickVisualMedia.ACTION_SYSTEM_FALLBACK_PICK_IMAGES), ParsableByteArray.INVALID_CODE_POINT);
             }
 
             public final String getVisualMimeType$activity_release(VisualMediaType input) {

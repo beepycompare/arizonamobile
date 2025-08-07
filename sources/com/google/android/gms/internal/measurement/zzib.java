@@ -1,12 +1,12 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzib extends zzme implements zznm {
+public final class zzib extends zzmf implements zznn {
     private static final zzib zzh;
     private int zzb;
-    private zzmn zzd = zzcv();
+    private zzmo zzd = zzcv();
     private String zze = "";
     private String zzf = "";
     private int zzg;
@@ -14,7 +14,7 @@ public final class zzib extends zzme implements zznm {
     static {
         zzib zzibVar = new zzib();
         zzh = zzibVar;
-        zzme.zzcp(zzib.class, zzibVar);
+        zzmf.zzcp(zzib.class, zzibVar);
     }
 
     private zzib() {
@@ -25,17 +25,17 @@ public final class zzib extends zzme implements zznm {
     }
 
     public static zzhz zzi(zzib zzibVar) {
-        zzma zzck = zzh.zzck();
+        zzmb zzck = zzh.zzck();
         zzck.zzbd(zzibVar);
         return (zzhz) zzck;
     }
 
     private final void zzr() {
-        zzmn zzmnVar = this.zzd;
-        if (zzmnVar.zza()) {
+        zzmo zzmoVar = this.zzd;
+        if (zzmoVar.zza()) {
             return;
         }
-        this.zzd = zzme.zzcw(zzmnVar);
+        this.zzd = zzmf.zzcw(zzmoVar);
     }
 
     public final List zza() {
@@ -81,7 +81,7 @@ public final class zzib extends zzme implements zznm {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {
@@ -105,7 +105,7 @@ public final class zzib extends zzme implements zznm {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzm(Iterable iterable) {
         zzr();
-        zzkr.zzce(iterable, this.zzd);
+        zzks.zzce(iterable, this.zzd);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

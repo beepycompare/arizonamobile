@@ -1,87 +1,75 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Handler;
-import android.os.Looper;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+import android.app.ActivityManager;
+import android.os.Bundle;
+import android.text.TextUtils;
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzob extends zzg {
-    protected final zzoa zza;
-    protected final zznz zzb;
-    protected final zznx zzc;
-    private Handler zzd;
-    private boolean zze;
+public final class zzob {
+    final /* synthetic */ zzoc zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzob(zzib zzibVar) {
-        super(zzibVar);
-        this.zze = true;
-        this.zza = new zzoa(this);
-        this.zzb = new zznz(this);
-        this.zzc = new zznx(this);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: zzn */
-    public final void zzj() {
-        zzg();
-        if (this.zzd == null) {
-            this.zzd = new com.google.android.gms.internal.measurement.zzcn(Looper.getMainLooper());
-        }
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzg
-    protected final boolean zze() {
-        return false;
+    public zzob(zzoc zzocVar) {
+        Objects.requireNonNull(zzocVar);
+        this.zza = zzocVar;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzh(boolean z) {
-        zzg();
-        this.zze = z;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzi() {
-        zzg();
-        return this.zze;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzk(long j) {
-        zzg();
-        zzj();
-        zzib zzibVar = this.zzu;
-        zzibVar.zzaV().zzk().zzb("Activity resumed, time", Long.valueOf(j));
-        if (!zzibVar.zzc().zzp(null, zzfx.zzaU)) {
-            if (zzibVar.zzc().zzv() || zzibVar.zzd().zzn.zza()) {
-                this.zzb.zza(j);
+    public final void zza() {
+        zzoc zzocVar = this.zza;
+        zzocVar.zzg();
+        zzic zzicVar = zzocVar.zzu;
+        if (zzicVar.zzd().zzp(zzicVar.zzaZ().currentTimeMillis())) {
+            zzicVar.zzd().zzg.zzb(true);
+            ActivityManager.RunningAppProcessInfo runningAppProcessInfo = new ActivityManager.RunningAppProcessInfo();
+            ActivityManager.getMyMemoryState(runningAppProcessInfo);
+            if (runningAppProcessInfo.importance == 100) {
+                zzicVar.zzaV().zzk().zza("Detected application was in foreground");
+                zzc(zzicVar.zzaZ().currentTimeMillis(), false);
             }
-        } else if (zzibVar.zzc().zzv() || this.zze) {
-            this.zzb.zza(j);
-        }
-        this.zzc.zza();
-        zzoa zzoaVar = this.zza;
-        zzob zzobVar = zzoaVar.zza;
-        zzobVar.zzg();
-        if (zzobVar.zzu.zzB()) {
-            zzoaVar.zzb(zzobVar.zzu.zzaZ().currentTimeMillis(), false);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzl(long j) {
-        zzg();
-        zzj();
-        zzib zzibVar = this.zzu;
-        zzibVar.zzaV().zzk().zzb("Activity paused, time", Long.valueOf(j));
-        this.zzc.zzb(j);
-        if (zzibVar.zzc().zzv()) {
-            this.zzb.zzb(j);
+    public final void zzb(long j, boolean z) {
+        zzoc zzocVar = this.zza;
+        zzocVar.zzg();
+        zzocVar.zzj();
+        zzic zzicVar = zzocVar.zzu;
+        if (zzicVar.zzd().zzp(j)) {
+            zzicVar.zzd().zzg.zzb(true);
+            zzocVar.zzu.zzv().zzi();
+        }
+        zzicVar.zzd().zzk.zzb(j);
+        if (zzicVar.zzd().zzg.zza()) {
+            zzc(j, z);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ Handler zzm() {
-        return this.zzd;
+    final void zzc(long j, boolean z) {
+        zzoc zzocVar = this.zza;
+        zzocVar.zzg();
+        if (zzocVar.zzu.zzB()) {
+            zzic zzicVar = zzocVar.zzu;
+            zzicVar.zzd().zzk.zzb(j);
+            zzicVar.zzaV().zzk().zzb("Session started, time", Long.valueOf(zzicVar.zzaZ().elapsedRealtime()));
+            zzic zzicVar2 = zzocVar.zzu;
+            Long valueOf = Long.valueOf(j / 1000);
+            zzicVar2.zzj().zzN("auto", "_sid", valueOf, j);
+            zzicVar.zzd().zzl.zzb(valueOf.longValue());
+            zzicVar.zzd().zzg.zzb(false);
+            Bundle bundle = new Bundle();
+            bundle.putLong("_sid", valueOf.longValue());
+            zzicVar2.zzj().zzG("auto", "_s", j, bundle);
+            String zza = zzicVar.zzd().zzq.zza();
+            if (TextUtils.isEmpty(zza)) {
+                return;
+            }
+            Bundle bundle2 = new Bundle();
+            bundle2.putString("_ffr", zza);
+            zzicVar2.zzj().zzG("auto", "_ssr", j, bundle2);
+        }
     }
 }

@@ -50,7 +50,7 @@ public final class R {
         public static int consume_window_insets_tag = 0x7f0a034d;
         public static int hide_in_inspector_tag = 0x7f0a0610;
         public static int inspection_slot_table_set = 0x7f0a06b4;
-        public static int wrapped_composition_tag = 0x7f0a0eee;
+        public static int wrapped_composition_tag = 0x7f0a0ef5;
 
         private id() {
         }
@@ -61,23 +61,23 @@ public final class R {
         public static int autofill = 0x7f130028;
         public static int close_drawer = 0x7f130047;
         public static int close_sheet = 0x7f130048;
-        public static int default_error_message = 0x7f130069;
-        public static int default_popup_window_title = 0x7f13006c;
-        public static int dropdown_menu = 0x7f130076;
-        public static int in_progress = 0x7f1300d6;
-        public static int indeterminate = 0x7f1300d7;
-        public static int navigation_menu = 0x7f13019a;
-        public static int not_selected = 0x7f1301ab;
-        public static int range_end = 0x7f1301c9;
-        public static int range_start = 0x7f1301ca;
-        public static int selected = 0x7f1301e4;
-        public static int snackbar_pane_title = 0x7f1301f6;
-        public static int state_empty = 0x7f1301fb;
-        public static int state_off = 0x7f1301fc;
-        public static int state_on = 0x7f1301fd;
-        public static int switch_role = 0x7f130204;
-        public static int tab = 0x7f130205;
-        public static int template_percent = 0x7f13020a;
+        public static int default_error_message = 0x7f13006a;
+        public static int default_popup_window_title = 0x7f13006d;
+        public static int dropdown_menu = 0x7f130077;
+        public static int in_progress = 0x7f1300d7;
+        public static int indeterminate = 0x7f1300d8;
+        public static int navigation_menu = 0x7f13019b;
+        public static int not_selected = 0x7f1301ac;
+        public static int range_end = 0x7f1301ca;
+        public static int range_start = 0x7f1301cb;
+        public static int selected = 0x7f1301e5;
+        public static int snackbar_pane_title = 0x7f1301f7;
+        public static int state_empty = 0x7f1301fc;
+        public static int state_off = 0x7f1301fd;
+        public static int state_on = 0x7f1301fe;
+        public static int switch_role = 0x7f130205;
+        public static int tab = 0x7f130206;
+        public static int template_percent = 0x7f13020b;
 
         private string() {
         }

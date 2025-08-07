@@ -2,13 +2,13 @@ package androidx.media3.common.audio;
 
 import android.content.Context;
 import android.media.AudioManager;
+import android.os.Build;
 import android.os.Looper;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BackgroundExecutor;
 import androidx.media3.common.util.ConditionVariable;
 import androidx.media3.common.util.Log;
-import androidx.media3.common.util.Util;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -67,14 +67,14 @@ public final class AudioManagerCompat {
     }
 
     public static int requestAudioFocus(AudioManager audioManager2, AudioFocusRequestCompat audioFocusRequestCompat) {
-        if (Util.SDK_INT >= 26) {
+        if (Build.VERSION.SDK_INT >= 26) {
             return audioManager2.requestAudioFocus(audioFocusRequestCompat.getAudioFocusRequest());
         }
         return audioManager2.requestAudioFocus(audioFocusRequestCompat.getOnAudioFocusChangeListener(), audioFocusRequestCompat.getAudioAttributes().getStreamType(), audioFocusRequestCompat.getFocusGain());
     }
 
     public static int abandonAudioFocusRequest(AudioManager audioManager2, AudioFocusRequestCompat audioFocusRequestCompat) {
-        if (Util.SDK_INT >= 26) {
+        if (Build.VERSION.SDK_INT >= 26) {
             return audioManager2.abandonAudioFocusRequest(audioFocusRequestCompat.getAudioFocusRequest());
         }
         return audioManager2.abandonAudioFocus(audioFocusRequestCompat.getOnAudioFocusChangeListener());
@@ -85,7 +85,7 @@ public final class AudioManagerCompat {
     }
 
     public static int getStreamMinVolume(AudioManager audioManager2, int i) {
-        if (Util.SDK_INT >= 28) {
+        if (Build.VERSION.SDK_INT >= 28) {
             return audioManager2.getStreamMinVolume(i);
         }
         return 0;
@@ -101,10 +101,7 @@ public final class AudioManagerCompat {
     }
 
     public static boolean isStreamMute(AudioManager audioManager2, int i) {
-        if (Util.SDK_INT >= 23) {
-            return audioManager2.isStreamMute(i);
-        }
-        return getStreamVolume(audioManager2, i) == 0;
+        return audioManager2.isStreamMute(i);
     }
 
     private AudioManagerCompat() {

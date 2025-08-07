@@ -24,6 +24,6 @@ public final class GhettoScreen$special$$inlined$CoroutineExceptionHandler$1 ext
     public void handleException(CoroutineContext coroutineContext, Throwable th) {
         System.out.println((Object) ("CoroutineExceptionHandler got " + th));
         th.printStackTrace();
-        Toast.makeText(this.$targetActivity$inlined, "Ошибка API : " + this.$backendID$inlined, 1).show();
+        Toast.makeText(this.$targetActivity$inlined.getApplicationContext(), "Ошибка API : " + this.$backendID$inlined, 1).show();
     }
 }

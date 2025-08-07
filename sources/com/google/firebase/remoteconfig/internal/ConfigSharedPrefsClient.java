@@ -239,6 +239,12 @@ public class ConfigSharedPrefsClient {
         }
     }
 
+    public void setRealtimeBackoffEndTime(Date date) {
+        synchronized (this.realtimeBackoffMetadataLock) {
+            this.frcSharedPrefs.edit().putLong(REALTIME_BACKOFF_END_TIME_IN_MILLIS_KEY, date.getTime()).apply();
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public void resetRealtimeBackoff() {
         setRealtimeBackoffMetadata(0, NO_BACKOFF_TIME);

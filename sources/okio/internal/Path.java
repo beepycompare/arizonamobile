@@ -1,6 +1,5 @@
 package okio.internal;
 
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -15,7 +14,7 @@ import okio.Path;
 /* renamed from: okio.internal.-Path */
 /* loaded from: classes5.dex */
 public final class Path {
-    private static final ByteString SLASH = ByteString.Companion.encodeUtf8(RemoteSettings.FORWARD_SLASH_STRING);
+    private static final ByteString SLASH = ByteString.Companion.encodeUtf8("/");
     private static final ByteString BACKSLASH = ByteString.Companion.encodeUtf8("\\");
     private static final ByteString ANY_SLASH = ByteString.Companion.encodeUtf8("/\\");
     private static final ByteString DOT = ByteString.Companion.encodeUtf8(".");
@@ -366,7 +365,7 @@ public final class Path {
     }
 
     public static final ByteString toSlash(String str) {
-        if (Intrinsics.areEqual(str, RemoteSettings.FORWARD_SLASH_STRING)) {
+        if (Intrinsics.areEqual(str, "/")) {
             return SLASH;
         }
         if (Intrinsics.areEqual(str, "\\")) {

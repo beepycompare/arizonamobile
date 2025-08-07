@@ -1,11 +1,11 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 final class zzgy {
-    static final zzne zza;
+    static final zznf zza;
 
     static {
-        zzos zzosVar = zzos.STRING;
-        zza = zzne.zza(zzosVar, "", zzosVar, "");
+        zzot zzotVar = zzot.STRING;
+        zza = zznf.zza(zzotVar, "", zzotVar, "");
     }
 }

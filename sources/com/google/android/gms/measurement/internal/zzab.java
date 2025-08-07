@@ -10,7 +10,7 @@ import java.util.Locale;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 public abstract class zzab {
     final String zzb;
@@ -26,7 +26,7 @@ public abstract class zzab {
         this.zzc = i;
     }
 
-    private static Boolean zzd(String str, int i, boolean z, String str2, List list, String str3, zzgt zzgtVar) {
+    private static Boolean zzd(String str, int i, boolean z, String str2, List list, String str3, zzgu zzguVar) {
         if (i == 7) {
             if (list == null || list.isEmpty()) {
                 return null;
@@ -45,8 +45,8 @@ public abstract class zzab {
                 try {
                     return Boolean.valueOf(Pattern.compile(str3, true != z ? 66 : 0).matcher(str).matches());
                 } catch (PatternSyntaxException unused) {
-                    if (zzgtVar != null) {
-                        zzgtVar.zze().zzb("Invalid regular expression in REGEXP audience filter. expression", str3);
+                    if (zzguVar != null) {
+                        zzguVar.zze().zzb("Invalid regular expression in REGEXP audience filter. expression", str3);
                     }
                     return null;
                 }
@@ -77,7 +77,7 @@ public abstract class zzab {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static Boolean zzf(String str, com.google.android.gms.internal.measurement.zzfr zzfrVar, zzgt zzgtVar) {
+    public static Boolean zzf(String str, com.google.android.gms.internal.measurement.zzfr zzfrVar, zzgu zzguVar) {
         String zzc;
         List list;
         Preconditions.checkNotNull(zzfrVar);
@@ -103,7 +103,7 @@ public abstract class zzab {
                 }
                 list = zzf;
             }
-            return zzd(str, zzj, zze, str2, list, zzj == 2 ? str2 : null, zzgtVar);
+            return zzd(str, zzj, zze, str2, list, zzj == 2 ? str2 : null, zzguVar);
         }
         return null;
     }
@@ -128,7 +128,7 @@ public abstract class zzab {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Boolean zzi(String str, com.google.android.gms.internal.measurement.zzfl zzflVar) {
-        if (zzpj.zzm(str)) {
+        if (zzpk.zzm(str)) {
             try {
                 return zzj(new BigDecimal(str), zzflVar, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
             } catch (NumberFormatException unused) {
@@ -154,7 +154,7 @@ public abstract class zzab {
                 }
                 int zzm = zzflVar.zzm();
                 if (zzflVar.zzm() == 5) {
-                    if (zzpj.zzm(zzflVar.zzg()) && zzpj.zzm(zzflVar.zzi())) {
+                    if (zzpk.zzm(zzflVar.zzg()) && zzpk.zzm(zzflVar.zzi())) {
                         try {
                             BigDecimal bigDecimal5 = new BigDecimal(zzflVar.zzg());
                             bigDecimal4 = new BigDecimal(zzflVar.zzi());
@@ -164,7 +164,7 @@ public abstract class zzab {
                         }
                     }
                     return null;
-                } else if (!zzpj.zzm(zzflVar.zze())) {
+                } else if (!zzpk.zzm(zzflVar.zze())) {
                     return null;
                 } else {
                     try {

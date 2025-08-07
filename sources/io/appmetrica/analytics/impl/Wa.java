@@ -5,9 +5,9 @@ import io.appmetrica.analytics.AppMetricaConfig;
 import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* loaded from: classes4.dex */
 public interface Wa {
-    C0748z4 a();
+    C0749z4 a();
 
-    void a(AppMetricaConfig appMetricaConfig, InterfaceC0481ob interfaceC0481ob);
+    void a(AppMetricaConfig appMetricaConfig, InterfaceC0482ob interfaceC0482ob);
 
     Handler b();
 

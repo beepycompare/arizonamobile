@@ -3,20 +3,19 @@ package com.google.android.gms.measurement.internal;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import com.google.android.gms.internal.measurement.zzql;
+import com.google.android.gms.internal.measurement.zzqp;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzw extends BroadcastReceiver {
-    private final zzib zza;
+    private final zzic zza;
 
-    public zzw(zzib zzibVar) {
-        this.zza = zzibVar;
+    public zzw(zzic zzicVar) {
+        this.zza = zzicVar;
     }
 
     @Override // android.content.BroadcastReceiver
     public final void onReceive(Context context, Intent intent) {
-        char c;
         if (intent == null) {
             this.zza.zzaV().zze().zza("App receiver called with null intent");
             return;
@@ -29,20 +28,9 @@ public final class zzw extends BroadcastReceiver {
         int hashCode = action.hashCode();
         if (hashCode != -1928239649) {
             if (hashCode == 1279883384 && action.equals("com.google.android.gms.measurement.BATCHES_AVAILABLE")) {
-                c = 1;
-            }
-            c = 65535;
-        } else {
-            if (action.equals("com.google.android.gms.measurement.TRIGGERS_AVAILABLE")) {
-                c = 0;
-            }
-            c = 65535;
-        }
-        if (c != 0) {
-            if (c == 1) {
-                zzib zzibVar = this.zza;
-                zzibVar.zzaV().zzk().zza("[sgtm] App Receiver notified batches are available");
-                zzibVar.zzaW().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzt
+                zzic zzicVar = this.zza;
+                zzicVar.zzaV().zzk().zza("[sgtm] App Receiver notified batches are available");
+                zzicVar.zzaW().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzt
                     @Override // java.lang.Runnable
                     public final /* synthetic */ void run() {
                         zzw.this.zza();
@@ -50,37 +38,39 @@ public final class zzw extends BroadcastReceiver {
                 });
                 return;
             }
-            this.zza.zzaV().zze().zza("App receiver called with unknown action");
+        } else if (action.equals("com.google.android.gms.measurement.TRIGGERS_AVAILABLE")) {
+            final zzic zzicVar2 = this.zza;
+            zzqp.zza();
+            if (zzicVar2.zzc().zzp(null, zzfy.zzaQ)) {
+                zzicVar2.zzaV().zzk().zza("App receiver notified triggers are available");
+                zzicVar2.zzaW().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzu
+                    @Override // java.lang.Runnable
+                    public final /* synthetic */ void run() {
+                        zzic zzicVar3 = zzic.this;
+                        if (!zzicVar3.zzk().zzS()) {
+                            zzicVar3.zzaV().zze().zza("registerTrigger called but app not eligible");
+                            return;
+                        }
+                        zzicVar3.zzj().zzv();
+                        final zzlj zzj = zzicVar3.zzj();
+                        Objects.requireNonNull(zzj);
+                        new Thread(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzv
+                            @Override // java.lang.Runnable
+                            public final /* synthetic */ void run() {
+                                zzlj.this.zzw();
+                            }
+                        }).start();
+                    }
+                });
+                return;
+            }
             return;
         }
-        final zzib zzibVar2 = this.zza;
-        zzql.zza();
-        if (zzibVar2.zzc().zzp(null, zzfx.zzaQ)) {
-            zzibVar2.zzaV().zzk().zza("App receiver notified triggers are available");
-            zzibVar2.zzaW().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzu
-                @Override // java.lang.Runnable
-                public final /* synthetic */ void run() {
-                    zzib zzibVar3 = zzib.this;
-                    if (!zzibVar3.zzk().zzS()) {
-                        zzibVar3.zzaV().zze().zza("registerTrigger called but app not eligible");
-                        return;
-                    }
-                    zzibVar3.zzj().zzv();
-                    final zzli zzj = zzibVar3.zzj();
-                    Objects.requireNonNull(zzj);
-                    new Thread(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzv
-                        @Override // java.lang.Runnable
-                        public final /* synthetic */ void run() {
-                            zzli.this.zzw();
-                        }
-                    }).start();
-                }
-            });
-        }
+        this.zza.zzaV().zze().zza("App receiver called with unknown action");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zza() {
-        this.zza.zzx().zzh(((Long) zzfx.zzC.zzb(null)).longValue());
+        this.zza.zzx().zzh(((Long) zzfy.zzC.zzb(null)).longValue());
     }
 }

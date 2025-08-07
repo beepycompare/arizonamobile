@@ -15,11 +15,11 @@ import androidx.media3.common.util.Log;
 import androidx.media3.common.util.LongArray;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
+import androidx.media3.container.DolbyVisionConfig;
 import androidx.media3.container.NalUnitUtil;
 import androidx.media3.extractor.AacUtil;
 import androidx.media3.extractor.AvcConfig;
 import androidx.media3.extractor.ChunkIndex;
-import androidx.media3.extractor.DolbyVisionConfig;
 import androidx.media3.extractor.Extractor;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.ExtractorOutput;
@@ -85,6 +85,7 @@ public class MatroskaExtractor implements Extractor {
     private static final String CODEC_ID_PCM_INT_BIG = "A_PCM/INT/BIG";
     private static final String CODEC_ID_PCM_INT_LIT = "A_PCM/INT/LIT";
     private static final String CODEC_ID_PGS = "S_HDMV/PGS";
+    private static final String CODEC_ID_SSA = "S_TEXT/SSA";
     private static final String CODEC_ID_SUBRIP = "S_TEXT/UTF8";
     private static final String CODEC_ID_THEORA = "V_THEORA";
     private static final String CODEC_ID_TRUEHD = "A_TRUEHD";
@@ -298,7 +299,7 @@ public class MatroskaExtractor implements Extractor {
         switch (i) {
             case ID_TRACK_TYPE /* 131 */:
             case 136:
-            case ID_BLOCK_DURATION /* 155 */:
+            case 155:
             case ID_CHANNELS /* 159 */:
             case ID_PIXEL_WIDTH /* 176 */:
             case ID_CUE_TIME /* 179 */:
@@ -670,7 +671,7 @@ public class MatroskaExtractor implements Extractor {
                 case 136:
                     getCurrentTrack(i).flagDefault = j == 1;
                     return;
-                case ID_BLOCK_DURATION /* 155 */:
+                case 155:
                     this.blockDurationUs = scaleTimecodeToUs(j);
                     return;
                 case ID_CHANNELS /* 159 */:
@@ -1196,7 +1197,7 @@ public class MatroskaExtractor implements Extractor {
         return this.currentTrack;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00aa  */
     @RequiresNonNull({"#1.output"})
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1206,7 +1207,7 @@ public class MatroskaExtractor implements Extractor {
         if (track.trueHdSampleRechunker != null) {
             track.trueHdSampleRechunker.sampleMetadata(track.output, j, i, i2, i3, track.cryptoData);
         } else {
-            if (CODEC_ID_SUBRIP.equals(track.codecId) || CODEC_ID_ASS.equals(track.codecId) || CODEC_ID_VTT.equals(track.codecId)) {
+            if (CODEC_ID_SUBRIP.equals(track.codecId) || CODEC_ID_ASS.equals(track.codecId) || CODEC_ID_SSA.equals(track.codecId) || CODEC_ID_VTT.equals(track.codecId)) {
                 if (this.blockSampleCount > 1) {
                     Log.w(TAG, "Skipping subtitle sample in laced block.");
                 } else if (this.blockDurationUs == C.TIME_UNSET) {
@@ -1266,7 +1267,7 @@ public class MatroskaExtractor implements Extractor {
         if (CODEC_ID_SUBRIP.equals(track.codecId)) {
             writeSubtitleSampleData(extractorInput, SUBRIP_PREFIX, i);
             return finishWriteSampleData();
-        } else if (CODEC_ID_ASS.equals(track.codecId)) {
+        } else if (CODEC_ID_ASS.equals(track.codecId) || CODEC_ID_SSA.equals(track.codecId)) {
             writeSubtitleSampleData(extractorInput, SSA_PREFIX, i);
             return finishWriteSampleData();
         } else if (CODEC_ID_VTT.equals(track.codecId)) {
@@ -1459,29 +1460,36 @@ public class MatroskaExtractor implements Extractor {
                     break;
                 }
                 break;
+            case 738614379:
+                if (str.equals(CODEC_ID_SSA)) {
+                    c = 1;
+                    break;
+                }
+                break;
             case 1045209816:
                 if (str.equals(CODEC_ID_VTT)) {
-                    c = 1;
+                    c = 2;
                     break;
                 }
                 break;
             case 1422270023:
                 if (str.equals(CODEC_ID_SUBRIP)) {
-                    c = 2;
+                    c = 3;
                     break;
                 }
                 break;
         }
         switch (c) {
             case 0:
+            case 1:
                 formatSubtitleTimecode = formatSubtitleTimecode(j, SSA_TIMECODE_FORMAT, 10000L);
                 i = 21;
                 break;
-            case 1:
+            case 2:
                 formatSubtitleTimecode = formatSubtitleTimecode(j, VTT_TIMECODE_FORMAT, 1000L);
                 i = 25;
                 break;
-            case 2:
+            case 3:
                 formatSubtitleTimecode = formatSubtitleTimecode(j, SUBRIP_TIMECODE_FORMAT, 1000L);
                 i = 19;
                 break;
@@ -1747,45 +1755,51 @@ public class MatroskaExtractor implements Extractor {
                     break;
                 }
                 break;
+            case 738614379:
+                if (str.equals(CODEC_ID_SSA)) {
+                    c = 26;
+                    break;
+                }
+                break;
             case 855502857:
                 if (str.equals(CODEC_ID_H265)) {
-                    c = 26;
+                    c = 27;
                     break;
                 }
                 break;
             case 1045209816:
                 if (str.equals(CODEC_ID_VTT)) {
-                    c = 27;
+                    c = 28;
                     break;
                 }
                 break;
             case 1422270023:
                 if (str.equals(CODEC_ID_SUBRIP)) {
-                    c = 28;
+                    c = 29;
                     break;
                 }
                 break;
             case 1809237540:
                 if (str.equals(CODEC_ID_MPEG2)) {
-                    c = 29;
+                    c = 30;
                     break;
                 }
                 break;
             case 1950749482:
                 if (str.equals(CODEC_ID_E_AC3)) {
-                    c = 30;
+                    c = 31;
                     break;
                 }
                 break;
             case 1950789798:
                 if (str.equals(CODEC_ID_FLAC)) {
-                    c = 31;
+                    c = ' ';
                     break;
                 }
                 break;
             case 1951062397:
                 if (str.equals(CODEC_ID_OPUS)) {
-                    c = ' ';
+                    c = '!';
                     break;
                 }
                 break;
@@ -1824,6 +1838,7 @@ public class MatroskaExtractor implements Extractor {
             case 30:
             case 31:
             case ' ':
+            case '!':
                 return true;
             default:
                 return false;
@@ -1953,14 +1968,14 @@ public class MatroskaExtractor implements Extractor {
         }
 
         /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-        /* JADX WARN: Removed duplicated region for block: B:218:0x042a  */
-        /* JADX WARN: Removed duplicated region for block: B:223:0x0444  */
-        /* JADX WARN: Removed duplicated region for block: B:224:0x0446  */
-        /* JADX WARN: Removed duplicated region for block: B:227:0x0453  */
-        /* JADX WARN: Removed duplicated region for block: B:228:0x0465  */
-        /* JADX WARN: Removed duplicated region for block: B:295:0x0592  */
-        /* JADX WARN: Removed duplicated region for block: B:300:0x05ad  */
-        /* JADX WARN: Removed duplicated region for block: B:301:0x05b1  */
+        /* JADX WARN: Removed duplicated region for block: B:222:0x0438  */
+        /* JADX WARN: Removed duplicated region for block: B:227:0x0452  */
+        /* JADX WARN: Removed duplicated region for block: B:228:0x0454  */
+        /* JADX WARN: Removed duplicated region for block: B:231:0x0461  */
+        /* JADX WARN: Removed duplicated region for block: B:232:0x0473  */
+        /* JADX WARN: Removed duplicated region for block: B:299:0x05a0  */
+        /* JADX WARN: Removed duplicated region for block: B:304:0x05bb  */
+        /* JADX WARN: Removed duplicated region for block: B:305:0x05bf  */
         @EnsuresNonNull({"this.output"})
         @RequiresNonNull({"codecId"})
         /*
@@ -2167,51 +2182,58 @@ public class MatroskaExtractor implements Extractor {
                     }
                     c = 65535;
                     break;
+                case 738614379:
+                    if (str4.equals(MatroskaExtractor.CODEC_ID_SSA)) {
+                        c = 26;
+                        break;
+                    }
+                    c = 65535;
+                    break;
                 case 855502857:
                     if (str4.equals(MatroskaExtractor.CODEC_ID_H265)) {
-                        c = 26;
+                        c = 27;
                         break;
                     }
                     c = 65535;
                     break;
                 case 1045209816:
                     if (str4.equals(MatroskaExtractor.CODEC_ID_VTT)) {
-                        c = 27;
+                        c = 28;
                         break;
                     }
                     c = 65535;
                     break;
                 case 1422270023:
                     if (str4.equals(MatroskaExtractor.CODEC_ID_SUBRIP)) {
-                        c = 28;
+                        c = 29;
                         break;
                     }
                     c = 65535;
                     break;
                 case 1809237540:
                     if (str4.equals(MatroskaExtractor.CODEC_ID_MPEG2)) {
-                        c = 29;
+                        c = 30;
                         break;
                     }
                     c = 65535;
                     break;
                 case 1950749482:
                     if (str4.equals(MatroskaExtractor.CODEC_ID_E_AC3)) {
-                        c = 30;
+                        c = 31;
                         break;
                     }
                     c = 65535;
                     break;
                 case 1950789798:
                     if (str4.equals(MatroskaExtractor.CODEC_ID_FLAC)) {
-                        c = 31;
+                        c = ' ';
                         break;
                     }
                     c = 65535;
                     break;
                 case 1951062397:
                     if (str4.equals(MatroskaExtractor.CODEC_ID_OPUS)) {
-                        c = ' ';
+                        c = '!';
                         break;
                     }
                     c = 65535;
@@ -2855,6 +2877,7 @@ public class MatroskaExtractor implements Extractor {
                     track2222222222222222222222222.format(build22222222222222222222222222);
                     return;
                 case 25:
+                case 26:
                     singletonList = ImmutableList.of(MatroskaExtractor.SSA_DIALOGUE_FORMAT, getCodecPrivate(this.codecId));
                     str = null;
                     str5 = MimeTypes.TEXT_SSA;
@@ -2875,7 +2898,7 @@ public class MatroskaExtractor implements Extractor {
                     this.output = track22222222222222222222222222;
                     track22222222222222222222222222.format(build222222222222222222222222222);
                     return;
-                case 26:
+                case 27:
                     HevcConfig parse3 = HevcConfig.parse(new ParsableByteArray(getCodecPrivate(this.codecId)));
                     list = parse3.initializationData;
                     this.nalUnitLengthFieldLength = parse3.nalUnitLengthFieldLength;
@@ -2901,7 +2924,7 @@ public class MatroskaExtractor implements Extractor {
                     this.output = track222222222222222222222222222;
                     track222222222222222222222222222.format(build2222222222222222222222222222);
                     return;
-                case 27:
+                case 28:
                     singletonList = null;
                     str = null;
                     str5 = MimeTypes.TEXT_VTT;
@@ -2922,7 +2945,7 @@ public class MatroskaExtractor implements Extractor {
                     this.output = track2222222222222222222222222222;
                     track2222222222222222222222222222.format(build22222222222222222222222222222);
                     return;
-                case 28:
+                case 29:
                     str5 = MimeTypes.APPLICATION_SUBRIP;
                     singletonList = null;
                     str = null;
@@ -2943,7 +2966,7 @@ public class MatroskaExtractor implements Extractor {
                     this.output = track22222222222222222222222222222;
                     track22222222222222222222222222222.format(build222222222222222222222222222222);
                     return;
-                case 29:
+                case 30:
                     str5 = MimeTypes.VIDEO_MPEG2;
                     singletonList = null;
                     str = null;
@@ -2964,7 +2987,7 @@ public class MatroskaExtractor implements Extractor {
                     this.output = track222222222222222222222222222222;
                     track222222222222222222222222222222.format(build2222222222222222222222222222222);
                     return;
-                case 30:
+                case 31:
                     str5 = MimeTypes.AUDIO_E_AC3;
                     singletonList = null;
                     str = null;
@@ -2985,7 +3008,7 @@ public class MatroskaExtractor implements Extractor {
                     this.output = track2222222222222222222222222222222;
                     track2222222222222222222222222222222.format(build22222222222222222222222222222222);
                     return;
-                case 31:
+                case ' ':
                     singletonList = Collections.singletonList(getCodecPrivate(this.codecId));
                     str5 = MimeTypes.AUDIO_FLAC;
                     str = null;
@@ -3006,7 +3029,7 @@ public class MatroskaExtractor implements Extractor {
                     this.output = track22222222222222222222222222222222;
                     track22222222222222222222222222222222.format(build222222222222222222222222222222222);
                     return;
-                case ' ':
+                case '!':
                     singletonList = new ArrayList<>(3);
                     singletonList.add(getCodecPrivate(this.codecId));
                     singletonList.add(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(this.codecDelayNs).array());

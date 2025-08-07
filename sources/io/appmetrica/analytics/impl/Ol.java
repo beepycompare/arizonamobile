@@ -24,7 +24,7 @@ public final class Ol implements Pl {
     public static final Map k = Collections.unmodifiableMap(new Ll());
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f584a;
+    public final List f583a;
     public final Ji b;
     public final Wl c;
     public final Handler d;
@@ -35,8 +35,8 @@ public final class Ol implements Pl {
     public HashMap i;
     public boolean j;
 
-    public Ol(Context context, Ji ji, C0360jf c0360jf, Handler handler) {
-        this(ji, new Wl(context, c0360jf), handler);
+    public Ol(Context context, Ji ji, C0361jf c0361jf, Handler handler) {
+        this(ji, new Wl(context, c0361jf), handler);
     }
 
     public final void a(StartupParamsCallback startupParamsCallback, List<String> list, Map<String, String> map) {
@@ -68,20 +68,20 @@ public final class Ol implements Pl {
     public final void b(Bundle bundle) {
         HashMap hashMap;
         boolean equals;
-        IdentifiersResult a2 = C0474o4.a(bundle, "Uuid");
-        IdentifiersResult a3 = C0474o4.a(bundle, "DeviceId");
-        IdentifiersResult a4 = C0474o4.a(bundle, "DeviceIdHash");
-        IdentifiersResult a5 = C0474o4.a(bundle, "AdUrlReport");
-        IdentifiersResult a6 = C0474o4.a(bundle, "AdUrlGet");
-        IdentifiersResult a7 = C0474o4.a(bundle, "Clids");
-        IdentifiersResult a8 = C0474o4.a(bundle, "RequestClids");
-        IdentifiersResult a9 = C0474o4.a(bundle, "GAID");
-        IdentifiersResult a10 = C0474o4.a(bundle, "HOAID");
-        IdentifiersResult a11 = C0474o4.a(bundle, "YANDEX_ADV_ID");
-        IdentifiersResult a12 = C0474o4.a(bundle, "CUSTOM_SDK_HOSTS");
+        IdentifiersResult a2 = C0475o4.a(bundle, "Uuid");
+        IdentifiersResult a3 = C0475o4.a(bundle, "DeviceId");
+        IdentifiersResult a4 = C0475o4.a(bundle, "DeviceIdHash");
+        IdentifiersResult a5 = C0475o4.a(bundle, "AdUrlReport");
+        IdentifiersResult a6 = C0475o4.a(bundle, "AdUrlGet");
+        IdentifiersResult a7 = C0475o4.a(bundle, "Clids");
+        IdentifiersResult a8 = C0475o4.a(bundle, "RequestClids");
+        IdentifiersResult a9 = C0475o4.a(bundle, "GAID");
+        IdentifiersResult a10 = C0475o4.a(bundle, "HOAID");
+        IdentifiersResult a11 = C0475o4.a(bundle, "YANDEX_ADV_ID");
+        IdentifiersResult a12 = C0475o4.a(bundle, "CUSTOM_SDK_HOSTS");
         long j = bundle.getLong("ServerTimeOffset");
         long j2 = bundle.getLong("NextStartupTime");
-        C0530qa a13 = C0474o4.a(bundle);
+        C0531qa a13 = C0475o4.a(bundle);
         Bundle bundle2 = bundle.getBundle("module_configs");
         Wl wl = this.c;
         synchronized (wl) {
@@ -146,7 +146,7 @@ public final class Ol implements Pl {
             wl.h = j2;
             wl.c();
         }
-        C0698x4.l().m().a(bundle2, new SdkIdentifiers(a2.id, a3.id, a4.id));
+        C0699x4.l().m().a(bundle2, new SdkIdentifiers(a2.id, a3.id, a4.id));
         h();
     }
 
@@ -162,17 +162,17 @@ public final class Ol implements Pl {
         return identifiersResult.id;
     }
 
-    public final C0579sa e() {
-        C0530qa c0530qa;
+    public final C0580sa e() {
+        C0531qa c0531qa;
         Wl wl = this.c;
-        C0455na c0455na = wl.n;
-        C0480oa c0480oa = wl.m;
-        synchronized (c0480oa) {
-            c0530qa = c0480oa.b;
+        C0456na c0456na = wl.n;
+        C0481oa c0481oa = wl.m;
+        synchronized (c0481oa) {
+            c0531qa = c0481oa.b;
         }
-        c0455na.getClass();
-        Boolean bool = c0530qa.f1017a;
-        return new C0579sa();
+        c0456na.getClass();
+        Boolean bool = c0531qa.f1016a;
+        return new C0580sa();
     }
 
     public final long f() {
@@ -208,13 +208,13 @@ public final class Ol implements Pl {
         synchronized (this.g) {
             if (!this.j || this.c.b()) {
                 this.j = true;
-                a(this.f584a, this.f, this.i, false);
+                a(this.f583a, this.f, this.i, false);
             }
         }
     }
 
     public Ol(Ji ji, Wl wl, Handler handler) {
-        this.f584a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
+        this.f583a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
         this.g = new Object();
         this.h = new WeakHashMap();
         this.j = false;
@@ -237,14 +237,14 @@ public final class Ol implements Pl {
         Ji ji = this.b;
         ji.getClass();
         Bundle bundle = new Bundle();
-        bundle.putParcelable("io.appmetrica.analytics.impl.IdentifiersData", new C0580sb(w6, list, map, z));
-        EnumC0680wb enumC0680wb = EnumC0680wb.EVENT_TYPE_UNDEFINED;
+        bundle.putParcelable("io.appmetrica.analytics.impl.IdentifiersData", new C0581sb(w6, list, map, z));
+        EnumC0681wb enumC0681wb = EnumC0681wb.EVENT_TYPE_UNDEFINED;
         PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
-        Set set = R9.f621a;
-        C0325i4 c0325i4 = new C0325i4("", "", 1536, 0, anonymousInstance);
-        c0325i4.m = bundle;
-        C0121a5 c0121a5 = ji.f509a;
-        ji.a(Ji.a(c0325i4, c0121a5), c0121a5, 1, null);
+        Set set = R9.f620a;
+        C0326i4 c0326i4 = new C0326i4("", "", 1536, 0, anonymousInstance);
+        c0326i4.m = bundle;
+        C0122a5 c0122a5 = ji.f508a;
+        ji.a(Ji.a(c0326i4, c0122a5), c0122a5, 1, null);
     }
 
     public final void a(Map<String, String> map) {
@@ -339,10 +339,10 @@ public final class Ol implements Pl {
             }
             this.h.remove(startupParamsCallback);
             if (this.h.isEmpty()) {
-                C0420m0 c0420m0 = this.b.d;
-                synchronized (c0420m0.f) {
-                    c0420m0.c = false;
-                    c0420m0.c();
+                C0421m0 c0421m0 = this.b.d;
+                synchronized (c0421m0.f) {
+                    c0421m0.c = false;
+                    c0421m0.c();
                 }
             }
         }
@@ -383,10 +383,10 @@ public final class Ol implements Pl {
 
     public final void a(StartupParamsCallback startupParamsCallback, List list) {
         if (this.h.isEmpty()) {
-            C0420m0 c0420m0 = this.b.d;
-            synchronized (c0420m0.f) {
-                c0420m0.c = true;
-                c0420m0.b();
+            C0421m0 c0421m0 = this.b.d;
+            synchronized (c0421m0.f) {
+                c0421m0.c = true;
+                c0421m0.b();
             }
         }
         this.h.put(startupParamsCallback, list);

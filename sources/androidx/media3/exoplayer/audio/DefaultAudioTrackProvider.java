@@ -1,7 +1,9 @@
 package androidx.media3.exoplayer.audio;
 
+import android.content.Context;
 import android.media.AudioAttributes;
 import android.media.AudioTrack;
+import android.os.Build;
 import androidx.media3.common.AudioAttributes;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.audio.AudioSink;
@@ -13,17 +15,17 @@ public class DefaultAudioTrackProvider implements DefaultAudioSink.AudioTrackPro
     }
 
     @Override // androidx.media3.exoplayer.audio.DefaultAudioSink.AudioTrackProvider
-    public final AudioTrack getAudioTrack(AudioSink.AudioTrackConfig audioTrackConfig, AudioAttributes audioAttributes, int i) {
-        if (Util.SDK_INT >= 23) {
-            return createAudioTrackV23(audioTrackConfig, audioAttributes, i);
-        }
-        return createAudioTrackV21(audioTrackConfig, audioAttributes, i);
+    public final AudioTrack getAudioTrack(AudioSink.AudioTrackConfig audioTrackConfig, AudioAttributes audioAttributes, int i, Context context) {
+        return createAudioTrackV23(audioTrackConfig, audioAttributes, i, context);
     }
 
-    private AudioTrack createAudioTrackV23(AudioSink.AudioTrackConfig audioTrackConfig, AudioAttributes audioAttributes, int i) {
+    private AudioTrack createAudioTrackV23(AudioSink.AudioTrackConfig audioTrackConfig, AudioAttributes audioAttributes, int i, Context context) {
         AudioTrack.Builder sessionId = new AudioTrack.Builder().setAudioAttributes(getAudioTrackAttributesV21(audioAttributes, audioTrackConfig.tunneling)).setAudioFormat(Util.getAudioFormat(audioTrackConfig.sampleRate, audioTrackConfig.channelConfig, audioTrackConfig.encoding)).setTransferMode(1).setBufferSizeInBytes(audioTrackConfig.bufferSize).setSessionId(i);
-        if (Util.SDK_INT >= 29) {
+        if (Build.VERSION.SDK_INT >= 29) {
             setOffloadedPlaybackV29(sessionId, audioTrackConfig.offload);
+        }
+        if (Build.VERSION.SDK_INT >= 34 && context != null) {
+            sessionId.setContext(context);
         }
         return customizeAudioTrackBuilder(sessionId).build();
     }

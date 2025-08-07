@@ -1,8 +1,8 @@
 package com.miami.game.core.connection.resolver.data;
 
-import com.google.firebase.ktx.Firebase;
+import com.google.firebase.Firebase;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import com.google.firebase.remoteconfig.ktx.RemoteConfigKt;
+import com.google.firebase.remoteconfig.RemoteConfigKt;
 import com.miami.game.core.build.config.BuildConfigRepository;
 import java.util.List;
 import javax.inject.Inject;

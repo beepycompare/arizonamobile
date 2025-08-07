@@ -91,12 +91,15 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             DonateStates donateStates;
+            StateFlow<UiState<List<DonateItemModelUi>>> itemState;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 donateStates = this.this$0.states;
-                StateFlow<UiState<List<DonateItemModelUi>>> itemState = donateStates.getItemState();
+                if (donateStates == null || (itemState = donateStates.getItemState()) == null) {
+                    return Unit.INSTANCE;
+                }
                 final DonateScreenBinding donateScreenBinding = this.$this_with;
                 final DonateScreen donateScreen = this.this$0;
                 this.label = 1;
@@ -127,27 +130,25 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
                             Intrinsics.checkNotNullExpressionValue(pageProgressBar2, "pageProgressBar");
                             pageProgressBar2.setVisibility(8);
                             Boxing.boxInt(Log.e(DonateUtilsKt.DONATE_TAG, "error items: " + ((UiState.Error) uiState).getMessage()));
-                        } else if (uiState instanceof UiState.Successful) {
+                        } else if (!(uiState instanceof UiState.Successful)) {
+                            throw new NoWhenBranchMatchedException();
+                        } else {
+                            UiState.Successful successful = (UiState.Successful) uiState;
+                            Log.e(DonateUtilsKt.DONATE_TAG, "updateItem: " + ((List) successful.getData()).size());
                             z = donateScreen.isHasUpdate;
                             if (!z) {
                                 donateScreen.isHasUpdate = true;
                                 notifier = donateScreen.getNotifier();
                                 notifier.clickedWrapper(donateScreen.getBackendID(), 0, 6);
-                            } else {
-                                UiState.Successful successful = (UiState.Successful) uiState;
-                                if (!((Collection) successful.getData()).isEmpty()) {
-                                    Log.i(DonateUtilsKt.DONATE_TAG, "successful items: " + ((List) successful.getData()).size());
-                                    map = donateScreen.pages;
-                                    pages = donateScreen.currentPage;
-                                    DonatePage donatePage = (DonatePage) map.get(pages);
-                                    if (donatePage != null) {
-                                        donatePage.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(successful.getData()));
-                                    }
+                            } else if (!((Collection) successful.getData()).isEmpty()) {
+                                map = donateScreen.pages;
+                                pages = donateScreen.currentPage;
+                                DonatePage donatePage = (DonatePage) map.get(pages);
+                                if (donatePage != null) {
+                                    donatePage.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(successful.getData()));
                                 }
                             }
                             Unit unit = Unit.INSTANCE;
-                        } else {
-                            throw new NoWhenBranchMatchedException();
                         }
                         return Unit.INSTANCE;
                     }

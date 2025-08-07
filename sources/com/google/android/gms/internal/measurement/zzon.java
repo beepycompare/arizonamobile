@@ -1,28 +1,57 @@
 package com.google.android.gms.internal.measurement;
 
 import sun.misc.Unsafe;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-public abstract class zzon {
-    final Unsafe zza;
-
+final class zzon extends zzoo {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzon(Unsafe unsafe) {
-        this.zza = unsafe;
+        super(unsafe);
     }
 
-    public abstract void zza(Object obj, long j, byte b);
+    @Override // com.google.android.gms.internal.measurement.zzoo
+    public final void zza(Object obj, long j, byte b) {
+        if (zzop.zzb) {
+            zzop.zzD(obj, j, b);
+        } else {
+            zzop.zzE(obj, j, b);
+        }
+    }
 
-    public abstract boolean zzb(Object obj, long j);
+    @Override // com.google.android.gms.internal.measurement.zzoo
+    public final boolean zzb(Object obj, long j) {
+        if (zzop.zzb) {
+            return zzop.zzu(obj, j);
+        }
+        return zzop.zzv(obj, j);
+    }
 
-    public abstract void zzc(Object obj, long j, boolean z);
+    @Override // com.google.android.gms.internal.measurement.zzoo
+    public final void zzc(Object obj, long j, boolean z) {
+        if (zzop.zzb) {
+            zzop.zzD(obj, j, r3 ? (byte) 1 : (byte) 0);
+        } else {
+            zzop.zzE(obj, j, r3 ? (byte) 1 : (byte) 0);
+        }
+    }
 
-    public abstract float zzd(Object obj, long j);
+    @Override // com.google.android.gms.internal.measurement.zzoo
+    public final float zzd(Object obj, long j) {
+        return Float.intBitsToFloat(this.zza.getInt(obj, j));
+    }
 
-    public abstract void zze(Object obj, long j, float f);
+    @Override // com.google.android.gms.internal.measurement.zzoo
+    public final void zze(Object obj, long j, float f) {
+        this.zza.putInt(obj, j, Float.floatToIntBits(f));
+    }
 
-    public abstract double zzf(Object obj, long j);
+    @Override // com.google.android.gms.internal.measurement.zzoo
+    public final double zzf(Object obj, long j) {
+        return Double.longBitsToDouble(this.zza.getLong(obj, j));
+    }
 
-    public abstract void zzg(Object obj, long j, double d);
+    @Override // com.google.android.gms.internal.measurement.zzoo
+    public final void zzg(Object obj, long j, double d) {
+        this.zza.putLong(obj, j, Double.doubleToLongBits(d));
+    }
 }

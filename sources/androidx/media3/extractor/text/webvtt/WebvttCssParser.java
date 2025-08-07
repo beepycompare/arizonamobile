@@ -108,10 +108,10 @@ final class WebvttCssParser {
     private static void parseStyleDeclaration(ParsableByteArray parsableByteArray, WebvttCssStyle webvttCssStyle, StringBuilder sb) {
         skipWhitespaceAndComments(parsableByteArray);
         String parseIdentifier = parseIdentifier(parsableByteArray, sb);
-        if (!"".equals(parseIdentifier) && StringUtils.PROCESS_POSTFIX_DELIMITER.equals(parseNextToken(parsableByteArray, sb))) {
+        if (!parseIdentifier.isEmpty() && StringUtils.PROCESS_POSTFIX_DELIMITER.equals(parseNextToken(parsableByteArray, sb))) {
             skipWhitespaceAndComments(parsableByteArray);
             String parsePropertyValue = parsePropertyValue(parsableByteArray, sb);
-            if (parsePropertyValue == null || "".equals(parsePropertyValue)) {
+            if (parsePropertyValue == null || parsePropertyValue.isEmpty()) {
                 return;
             }
             int position = parsableByteArray.getPosition();
@@ -176,7 +176,7 @@ final class WebvttCssParser {
             return null;
         }
         String parseIdentifier = parseIdentifier(parsableByteArray, sb);
-        return !"".equals(parseIdentifier) ? parseIdentifier : "" + ((char) parsableByteArray.readUnsignedByte());
+        return !parseIdentifier.isEmpty() ? parseIdentifier : "" + ((char) parsableByteArray.readUnsignedByte());
     }
 
     private static boolean maybeSkipWhitespace(ParsableByteArray parsableByteArray) {
@@ -311,7 +311,7 @@ final class WebvttCssParser {
     }
 
     private void applySelectorToStyle(WebvttCssStyle webvttCssStyle, String str) {
-        if ("".equals(str)) {
+        if (str.isEmpty()) {
             return;
         }
         int indexOf = str.indexOf(91);

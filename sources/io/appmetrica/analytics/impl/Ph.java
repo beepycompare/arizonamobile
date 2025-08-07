@@ -5,20 +5,20 @@ import android.content.Context;
 public final class Ph implements B4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0599t5 f598a;
+    public final InterfaceC0600t5 f597a;
 
-    public Ph(InterfaceC0599t5 interfaceC0599t5) {
-        this.f598a = interfaceC0599t5;
+    public Ph(InterfaceC0600t5 interfaceC0600t5) {
+        this.f597a = interfaceC0600t5;
     }
 
     @Override // io.appmetrica.analytics.impl.B4
     /* renamed from: b */
-    public final Ng a(Context context, C0724y5 c0724y5, C0399l4 c0399l4, K4 k4) {
+    public final Ng a(Context context, C0725y5 c0725y5, C0400l4 c0400l4, K4 k4) {
         Og og;
-        C0400l5 c0400l5 = new C0400l5(c0399l4.b, c0399l4.f934a);
-        Pg pg = new Pg(this.f598a);
-        synchronized (c0724y5) {
-            og = (Og) c0724y5.a(c0400l5, k4, pg, c0724y5.f1149a);
+        C0401l5 c0401l5 = new C0401l5(c0400l4.b, c0400l4.f933a);
+        Pg pg = new Pg(this.f597a);
+        synchronized (c0725y5) {
+            og = (Og) c0725y5.a(c0401l5, k4, pg, c0725y5.f1148a);
         }
         return new Ng(context, og);
     }

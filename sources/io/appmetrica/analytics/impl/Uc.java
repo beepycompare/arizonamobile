@@ -13,12 +13,12 @@ import kotlin.text.Charsets;
 import org.json.JSONObject;
 /* loaded from: classes4.dex */
 public final class Uc {
-    public static final V9 a(Uc uc, EnumC0229ea enumC0229ea, Map map) {
+    public static final V9 a(Uc uc, EnumC0230ea enumC0230ea, Map map) {
         int i;
         Object value;
         uc.getClass();
         V9 v9 = new V9();
-        switch (enumC0229ea.ordinal()) {
+        switch (enumC0230ea.ordinal()) {
             case 0:
                 i = 0;
                 break;
@@ -43,7 +43,7 @@ public final class Uc {
             default:
                 throw new NoWhenBranchMatchedException();
         }
-        v9.f684a = i;
+        v9.f683a = i;
         Vc.b.getClass();
         Set<Map.Entry> entrySet = map.entrySet();
         LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(entrySet, 10)), 16));

@@ -91,7 +91,6 @@ import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import com.miami.game.core.app.root.nav.main.DialogMainState;
 import com.miami.game.core.app.root.nav.main.MainComponent;
 import com.miami.game.core.app.root.nav.main.MainExternalUiStateHolder;
@@ -136,6 +135,7 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.flow.MutableStateFlow;
 import org.json.JSONObject;
+import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.rustore.sdk.appupdate.manager.factory.RuStoreAppUpdateManagerFactory;
 import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
@@ -405,7 +405,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(this, str + " v16.4.3 release_web", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v16.4.4 release_web", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -494,12 +494,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$9(final MainEntrench mainEntrench, final MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C245@9354L269,245@9335L288:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C246@9416L269,246@9397L288:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:245)");
+                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:246)");
             }
             ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(783987227, true, new Function2() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda18
                 @Override // kotlin.jvm.functions.Function2
@@ -518,12 +518,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$9$lambda$8(MainEntrench mainEntrench, MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C246@9372L237:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C247@9434L237:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:246)");
+                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:247)");
             }
             ComposerKt.sourceInformationMarkerStart(composer, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer, 0);
@@ -553,7 +553,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, -384672921, "C89@4556L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C247@9401L8,251@9526L43,249@9431L160:MainEntrench.kt#5ji0rp");
+            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C248@9463L8,252@9588L43,250@9493L160:MainEntrench.kt#5ji0rp");
             mainEntrench.GLView(composer, 0);
             MainRouteKt.MainRoute(mainComponent, AndroidWindowSizeClass_androidKt.calculateWindowSizeClass(mainEntrench, composer, 0), composer, MainComponent.$stable);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -580,13 +580,13 @@ public final class MainEntrench extends Hilt_MainEntrench {
     /* JADX WARN: Type inference failed for: r0v7 */
     public final void GLView(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(163249873);
-        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)273@10031L7,274@10088L7,276@10118L48,278@10209L464,278@10176L497,293@10718L10,292@10683L150:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)274@10093L7,275@10150L7,277@10180L48,279@10271L464,279@10238L497,294@10780L10,293@10745L150:MainEntrench.kt#5ji0rp");
         int i2 = i & 1;
         if (!startRestartGroup.shouldExecute(i2 != 0, i2)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:272)");
+                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:273)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
@@ -1062,7 +1062,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void createDialog$lambda$33(MainEntrench mainEntrench, String str, String str2, DialogInterface dialogInterface, int i) {
         mainEntrench.createDialog(str, str2);
-        mainEntrench.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(str2)));
+        StringKt.openLink(str2, mainEntrench);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1638,7 +1638,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
         int nextInt = Random.Default.nextInt(3, 6);
         MainEntrench mainEntrench2 = this;
         sendRequests$default(this, mainEntrench2, "http://" + ConnectionHolder.INSTANCE.getSelectedServer().getIp() + ":825/", nextInt, null, 4, null);
-        sendRequests$default(this, mainEntrench2, "http://" + ConnectionHolder.INSTANCE.getSelectedServer().getIp() + RemoteSettings.FORWARD_SLASH_STRING, nextInt, null, 4, null);
+        sendRequests$default(this, mainEntrench2, "http://" + ConnectionHolder.INSTANCE.getSelectedServer().getIp() + "/", nextInt, null, 4, null);
         getMainViewModel().setNotFirstRun();
         startActivity(new Intent(mainEntrench, GTASA.class));
     }

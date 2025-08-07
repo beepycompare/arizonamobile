@@ -9,6 +9,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.opengl.GLSurfaceView;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.AttributeSet;
@@ -194,11 +195,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             this.setImageOutputMethod = null;
             this.imageOutput = null;
             ImageView imageView = new ImageView(context);
-            if (Util.SDK_INT >= 23) {
-                configureEditModeLogoV23(context, getResources(), imageView);
-            } else {
-                configureEditModeLogo(context, getResources(), imageView);
-            }
+            configureEditModeLogoV23(context, getResources(), imageView);
             addView(imageView);
             return;
         }
@@ -294,7 +291,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
                 }
             } else {
                 SurfaceView surfaceView = new SurfaceView(context);
-                if (Util.SDK_INT >= 34) {
+                if (Build.VERSION.SDK_INT >= 34) {
                     Api34.setSurfaceLifecycleToFollowsAttachment(surfaceView);
                 }
                 this.surfaceView = surfaceView;
@@ -311,7 +308,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             z7 = false;
         }
         this.surfaceViewIgnoresVideoAspectRatio = z7;
-        this.surfaceSyncGroupV34 = Util.SDK_INT == 34 ? new SurfaceSyncGroupCompatV34() : null;
+        this.surfaceSyncGroupV34 = Build.VERSION.SDK_INT == 34 ? new SurfaceSyncGroupCompatV34() : null;
         this.adOverlayFrameLayout = (FrameLayout) findViewById(R.id.exo_ad_overlay);
         this.overlayFrameLayout = (FrameLayout) findViewById(R.id.exo_overlay);
         this.imageView = (ImageView) findViewById(R.id.exo_image);
@@ -323,7 +320,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             obj = Proxy.newProxyInstance(cls2.getClassLoader(), new Class[]{cls2}, new InvocationHandler() { // from class: androidx.media3.ui.PlayerView$$ExternalSyntheticLambda0
                 @Override // java.lang.reflect.InvocationHandler
                 public final Object invoke(Object obj2, Method method2, Object[] objArr) {
-                    return PlayerView.this.m7480lambda$new$0$androidxmedia3uiPlayerView(obj2, method2, objArr);
+                    return PlayerView.this.m7495lambda$new$0$androidxmedia3uiPlayerView(obj2, method2, objArr);
                 }
             });
         } catch (ClassNotFoundException | NoSuchMethodException unused) {
@@ -394,7 +391,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-ui-PlayerView  reason: not valid java name */
-    public /* synthetic */ Object m7480lambda$new$0$androidxmedia3uiPlayerView(Object obj, Method method, Object[] objArr) throws Throwable {
+    public /* synthetic */ Object m7495lambda$new$0$androidxmedia3uiPlayerView(Object obj, Method method, Object[] objArr) throws Throwable {
         if (method.getName().equals("onImageAvailable")) {
             onImageAvailable((Bitmap) objArr[1]);
             return null;
@@ -788,6 +785,11 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
         this.controller.setShowMultiWindowTimeBar(z);
     }
 
+    public void setTimeBarScrubbingEnabled(boolean z) {
+        Assertions.checkStateNotNull(this.controller);
+        this.controller.setTimeBarScrubbingEnabled(z);
+    }
+
     public void setShowPlayButtonIfPlaybackIsSuppressed(boolean z) {
         Assertions.checkStateNotNull(this.controller);
         this.controller.setShowPlayButtonIfPlaybackIsSuppressed(z);
@@ -1089,14 +1091,14 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
         this.mainLooperHandler.post(new Runnable() { // from class: androidx.media3.ui.PlayerView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                PlayerView.this.m7481lambda$onImageAvailable$1$androidxmedia3uiPlayerView(bitmap);
+                PlayerView.this.m7496lambda$onImageAvailable$1$androidxmedia3uiPlayerView(bitmap);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onImageAvailable$1$androidx-media3-ui-PlayerView  reason: not valid java name */
-    public /* synthetic */ void m7481lambda$onImageAvailable$1$androidxmedia3uiPlayerView(Bitmap bitmap) {
+    public /* synthetic */ void m7496lambda$onImageAvailable$1$androidxmedia3uiPlayerView(Bitmap bitmap) {
         setImage(new BitmapDrawable(getResources(), bitmap));
         if (hasSelectedVideoTrack()) {
             return;
@@ -1194,7 +1196,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
     protected void dispatchDraw(Canvas canvas) {
         SurfaceSyncGroupCompatV34 surfaceSyncGroupCompatV34;
         super.dispatchDraw(canvas);
-        if (Util.SDK_INT == 34 && (surfaceSyncGroupCompatV34 = this.surfaceSyncGroupV34) != null && this.enableComposeSurfaceSyncWorkaround) {
+        if (Build.VERSION.SDK_INT == 34 && (surfaceSyncGroupCompatV34 = this.surfaceSyncGroupV34) != null && this.enableComposeSurfaceSyncWorkaround) {
             surfaceSyncGroupCompatV34.maybeMarkSyncReadyAndClear();
         }
     }
@@ -1239,7 +1241,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
 
         @Override // androidx.media3.common.Player.Listener
         public void onSurfaceSizeChanged(int i, int i2) {
-            if (Util.SDK_INT == 34 && (PlayerView.this.surfaceView instanceof SurfaceView) && PlayerView.this.enableComposeSurfaceSyncWorkaround) {
+            if (Build.VERSION.SDK_INT == 34 && (PlayerView.this.surfaceView instanceof SurfaceView) && PlayerView.this.enableComposeSurfaceSyncWorkaround) {
                 final PlayerView playerView = PlayerView.this;
                 ((SurfaceSyncGroupCompatV34) Assertions.checkNotNull(PlayerView.this.surfaceSyncGroupV34)).postRegister(PlayerView.this.mainLooperHandler, (SurfaceView) PlayerView.this.surfaceView, new Runnable() { // from class: androidx.media3.ui.PlayerView$ComponentListener$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
@@ -1357,14 +1359,14 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             handler.post(new Runnable() { // from class: androidx.media3.ui.PlayerView$SurfaceSyncGroupCompatV34$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlayerView.SurfaceSyncGroupCompatV34.this.m7483xd2b35cc8(surfaceView, runnable);
+                    PlayerView.SurfaceSyncGroupCompatV34.this.m7498xd2b35cc8(surfaceView, runnable);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$postRegister$1$androidx-media3-ui-PlayerView$SurfaceSyncGroupCompatV34  reason: not valid java name */
-        public /* synthetic */ void m7483xd2b35cc8(SurfaceView surfaceView, Runnable runnable) {
+        public /* synthetic */ void m7498xd2b35cc8(SurfaceView surfaceView, Runnable runnable) {
             AttachedSurfaceControl rootSurfaceControl = surfaceView.getRootSurfaceControl();
             if (rootSurfaceControl == null) {
                 return;

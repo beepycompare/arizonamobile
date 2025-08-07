@@ -168,9 +168,9 @@ public final class ConnectionDialogKt {
             ComposerKt.sourceInformationMarkerStart(composer, -407735110, "C101@5232L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, -967227730, "C36@1651L75,39@1739L81,42@1833L90:ConnectionDialog.kt#yp5s1q");
-            InputFieldKt.m8339InputFieldrAjV9yQ(mutableState, Dp.m6684constructorimpl(140), R.drawable.input, composer, 54);
-            InputFieldKt.m8339InputFieldrAjV9yQ(mutableState2, Dp.m6684constructorimpl(50), R.drawable.input_port, composer, 54);
-            InputFieldKt.m8339InputFieldrAjV9yQ(mutableState3, Dp.m6684constructorimpl((float) MenuKt.InTransitionDuration), R.drawable.input_password, composer, 54);
+            InputFieldKt.m8361InputFieldrAjV9yQ(mutableState, Dp.m6684constructorimpl(140), R.drawable.input, composer, 54);
+            InputFieldKt.m8361InputFieldrAjV9yQ(mutableState2, Dp.m6684constructorimpl(50), R.drawable.input_port, composer, 54);
+            InputFieldKt.m8361InputFieldrAjV9yQ(mutableState3, Dp.m6684constructorimpl((float) MenuKt.InTransitionDuration), R.drawable.input_password, composer, 54);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
@@ -222,7 +222,7 @@ public final class ConnectionDialogKt {
                 composer.updateRememberedValue(rememberedValue4);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue4, ComposableSingletons$ConnectionDialogKt.INSTANCE.m8336getLambda$751471044$dialogs_release_web(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue4, ComposableSingletons$ConnectionDialogKt.INSTANCE.m8358getLambda$751471044$dialogs_release_web(), composer, 48);
             ComposerKt.sourceInformationMarkerStart(composer, 1965380645, "CC(remember):ConnectionDialog.kt#9igjgp");
             boolean changed2 = composer.changed(function1);
             Object rememberedValue5 = composer.rememberedValue();
@@ -238,7 +238,7 @@ public final class ConnectionDialogKt {
                 composer.updateRememberedValue(rememberedValue5);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue5, false, ComposableSingletons$ConnectionDialogKt.INSTANCE.m8335getLambda$1711092251$dialogs_release_web(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue5, false, ComposableSingletons$ConnectionDialogKt.INSTANCE.m8357getLambda$1711092251$dialogs_release_web(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

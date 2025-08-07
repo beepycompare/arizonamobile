@@ -27,14 +27,14 @@ public class DefaultTrackNameProvider implements TrackNameProvider {
         } else {
             buildLanguageOrLabelString = buildLanguageOrLabelString(format);
         }
-        if (buildLanguageOrLabelString.length() != 0) {
-            return buildLanguageOrLabelString;
+        if (buildLanguageOrLabelString.isEmpty()) {
+            String str = format.language;
+            if (str == null || str.trim().isEmpty()) {
+                return this.resources.getString(R.string.exo_track_unknown);
+            }
+            return this.resources.getString(R.string.exo_track_unknown_name, str);
         }
-        String str = format.language;
-        if (str == null || str.trim().isEmpty()) {
-            return this.resources.getString(R.string.exo_track_unknown);
-        }
-        return this.resources.getString(R.string.exo_track_unknown_name, str);
+        return buildLanguageOrLabelString;
     }
 
     private String buildResolutionString(Format format) {
@@ -121,7 +121,7 @@ public class DefaultTrackNameProvider implements TrackNameProvider {
     private String joinWithSeparator(String... strArr) {
         String str = "";
         for (String str2 : strArr) {
-            if (str2.length() > 0) {
+            if (!str2.isEmpty()) {
                 str = TextUtils.isEmpty(str) ? str2 : this.resources.getString(R.string.exo_item_list, str, str2);
             }
         }

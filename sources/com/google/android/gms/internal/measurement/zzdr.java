@@ -11,7 +11,7 @@ import com.google.android.gms.dynamite.DynamiteModule;
 import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measurement.dynamite.ModuleDescriptor;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzdr extends zzeq {
     final /* synthetic */ Context zza;
@@ -40,13 +40,13 @@ public final class zzdr extends zzeq {
         try {
             Context context = this.zza;
             Preconditions.checkNotNull(context);
-            String zza = com.google.android.gms.measurement.internal.zzht.zza(context);
+            String zza = com.google.android.gms.measurement.internal.zzhu.zza(context);
             Preconditions.checkNotNull(context);
             Resources resources = context.getResources();
             if (TextUtils.isEmpty(zza)) {
-                zza = com.google.android.gms.measurement.internal.zzht.zza(context);
+                zza = com.google.android.gms.measurement.internal.zzhu.zza(context);
             }
-            Boolean zzc = com.google.android.gms.measurement.internal.zzht.zzc("google_analytics_force_disable_updates", resources, zza);
+            Boolean zzc = com.google.android.gms.measurement.internal.zzhu.zzc("google_analytics_force_disable_updates", resources, zza);
             zzfb zzfbVar = this.zzc;
             if (zzc != null && zzc.booleanValue()) {
                 z = false;
@@ -57,11 +57,11 @@ public final class zzdr extends zzeq {
                     int max = Math.max(localVersion, remoteVersion);
                     if (!Boolean.TRUE.equals(zzc) && remoteVersion >= localVersion) {
                         z2 = false;
-                        ((zzcr) Preconditions.checkNotNull(zzfbVar.zzQ())).initialize(ObjectWrapper.wrap(context), new zzdd(130000L, max, z2, this.zzb, com.google.android.gms.measurement.internal.zzht.zza(context)), this.zzh);
+                        ((zzcr) Preconditions.checkNotNull(zzfbVar.zzQ())).initialize(ObjectWrapper.wrap(context), new zzdd(133005L, max, z2, this.zzb, com.google.android.gms.measurement.internal.zzhu.zza(context)), this.zzh);
                         return;
                     }
                     z2 = true;
-                    ((zzcr) Preconditions.checkNotNull(zzfbVar.zzQ())).initialize(ObjectWrapper.wrap(context), new zzdd(130000L, max, z2, this.zzb, com.google.android.gms.measurement.internal.zzht.zza(context)), this.zzh);
+                    ((zzcr) Preconditions.checkNotNull(zzfbVar.zzQ())).initialize(ObjectWrapper.wrap(context), new zzdd(133005L, max, z2, this.zzb, com.google.android.gms.measurement.internal.zzhu.zza(context)), this.zzh);
                     return;
                 }
                 Log.w(zzfbVar.zzO(), "Failed to connect to measurement client.");

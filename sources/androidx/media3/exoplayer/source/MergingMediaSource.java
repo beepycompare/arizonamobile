@@ -160,11 +160,12 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
         MergingMediaPeriod mergingMediaPeriod = (MergingMediaPeriod) mediaPeriod;
         for (int i = 0; i < this.mediaSources.length; i++) {
             List<MediaPeriodAndId> list = this.mediaPeriods.get(i);
+            MediaPeriod childPeriod = mergingMediaPeriod.getChildPeriod(i);
             int i2 = 0;
             while (true) {
                 if (i2 >= list.size()) {
                     break;
-                } else if (list.get(i2).mediaPeriod.equals(mediaPeriod)) {
+                } else if (list.get(i2).mediaPeriod.equals(childPeriod)) {
                     list.remove(i2);
                     break;
                 } else {

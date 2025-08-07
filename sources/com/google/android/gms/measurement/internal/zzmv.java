@@ -1,62 +1,62 @@
 package com.google.android.gms.measurement.internal;
 
 import android.os.RemoteException;
+import android.text.TextUtils;
 import com.google.android.gms.common.internal.Preconditions;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzmv implements Runnable {
-    final /* synthetic */ String zza;
+    final /* synthetic */ AtomicReference zza;
     final /* synthetic */ String zzb;
-    final /* synthetic */ zzr zzc;
-    final /* synthetic */ com.google.android.gms.internal.measurement.zzcu zzd;
-    final /* synthetic */ zznk zze;
+    final /* synthetic */ String zzc;
+    final /* synthetic */ zzr zzd;
+    final /* synthetic */ zznl zze;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzmv(zznk zznkVar, String str, String str2, zzr zzrVar, com.google.android.gms.internal.measurement.zzcu zzcuVar) {
-        this.zza = str;
+    public zzmv(zznl zznlVar, AtomicReference atomicReference, String str, String str2, String str3, zzr zzrVar) {
+        this.zza = atomicReference;
         this.zzb = str2;
-        this.zzc = zzrVar;
-        this.zzd = zzcuVar;
-        Objects.requireNonNull(zznkVar);
-        this.zze = zznkVar;
+        this.zzc = str3;
+        this.zzd = zzrVar;
+        Objects.requireNonNull(zznlVar);
+        this.zze = zznlVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        com.google.android.gms.internal.measurement.zzcu zzcuVar;
-        zzpo zzk;
-        zznk zznkVar;
-        zzga zzZ;
-        ArrayList arrayList = new ArrayList();
-        try {
+        AtomicReference atomicReference;
+        zznl zznlVar;
+        zzgb zzZ;
+        AtomicReference atomicReference2 = this.zza;
+        synchronized (atomicReference2) {
             try {
-                zznkVar = this.zze;
-                zzZ = zznkVar.zzZ();
+                zznlVar = this.zze;
+                zzZ = zznlVar.zzZ();
             } catch (RemoteException e) {
-                this.zze.zzu.zzaV().zzb().zzd("Failed to get conditional properties; remote exception", this.zza, this.zzb, e);
+                this.zze.zzu.zzaV().zzb().zzd("(legacy) Failed to get conditional properties; remote exception", null, this.zzb, e);
+                this.zza.set(Collections.emptyList());
+                atomicReference = this.zza;
             }
-            if (zzZ == null) {
-                zzib zzibVar = zznkVar.zzu;
-                zzibVar.zzaV().zzb().zzc("Failed to get conditional properties; not connected to service", this.zza, this.zzb);
-                zzk = zzibVar.zzk();
-                zzcuVar = this.zzd;
-                zzk.zzar(zzcuVar, arrayList);
+            if (zzZ != null) {
+                if (!TextUtils.isEmpty(null)) {
+                    atomicReference2.set(zzZ.zzs(null, this.zzb, this.zzc));
+                } else {
+                    zzr zzrVar = this.zzd;
+                    Preconditions.checkNotNull(zzrVar);
+                    atomicReference2.set(zzZ.zzr(this.zzb, this.zzc, zzrVar));
+                }
+                zznlVar.zzV();
+                atomicReference = this.zza;
+                atomicReference.notify();
+                return;
             }
-            zzr zzrVar = this.zzc;
-            Preconditions.checkNotNull(zzrVar);
-            arrayList = zzpo.zzas(zzZ.zzr(this.zza, this.zzb, zzrVar));
-            zznkVar.zzV();
-            zznk zznkVar2 = this.zze;
-            zzcuVar = this.zzd;
-            zzk = zznkVar2.zzu.zzk();
-            zzk.zzar(zzcuVar, arrayList);
-        } catch (Throwable th) {
-            zznk zznkVar3 = this.zze;
-            zznkVar3.zzu.zzk().zzar(this.zzd, arrayList);
-            throw th;
+            zznlVar.zzu.zzaV().zzb().zzd("(legacy) Failed to get conditional properties; not connected to service", null, this.zzb, this.zzc);
+            atomicReference2.set(Collections.emptyList());
+            atomicReference2.notify();
         }
     }
 }

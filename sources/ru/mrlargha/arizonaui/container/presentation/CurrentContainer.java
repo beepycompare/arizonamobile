@@ -115,19 +115,19 @@ public final class CurrentContainer extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't wrap try/catch for region: R(15:1|(2:3|(13:5|6|(1:8)(1:38)|(1:10)|11|12|(1:14)(1:35)|(7:18|(2:(1:21)|22)|23|24|(3:26|(1:28)|(1:30))|31|32)|34|24|(0)|31|32))|39|6|(0)(0)|(0)|11|12|(0)(0)|(7:18|(0)|23|24|(0)|31|32)|34|24|(0)|31|32) */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0112, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0113, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0113, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0114, code lost:
         r0.printStackTrace();
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x009b  */
     /* JADX WARN: Removed duplicated region for block: B:11:0x00a0  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00ca A[Catch: NumberFormatException -> 0x0112, TryCatch #0 {NumberFormatException -> 0x0112, blocks: (B:14:0x00b5, B:16:0x00ca, B:21:0x00d5, B:24:0x00ed, B:25:0x00f3, B:26:0x00f6, B:27:0x00ff), top: B:40:0x00b5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x00ca A[Catch: NumberFormatException -> 0x0113, TryCatch #0 {NumberFormatException -> 0x0113, blocks: (B:14:0x00b5, B:16:0x00ca, B:21:0x00d5, B:24:0x00ed, B:25:0x00f4, B:26:0x00f7, B:27:0x0100), top: B:40:0x00b5 }] */
     /* JADX WARN: Removed duplicated region for block: B:17:0x00cf  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x00eb  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0122  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

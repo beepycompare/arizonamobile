@@ -1,14 +1,34 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+
+import java.util.NoSuchElementException;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-abstract class zzla implements zzlc {
-    @Override // java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return Byte.valueOf(zza());
+final class zzla extends zzlb {
+    final /* synthetic */ zzlh zza;
+    private int zzb;
+    private final int zzc;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzla(zzlh zzlhVar) {
+        Objects.requireNonNull(zzlhVar);
+        this.zza = zzlhVar;
+        this.zzb = 0;
+        this.zzc = zzlhVar.zzc();
     }
 
     @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException();
+    public final boolean hasNext() {
+        return this.zzb < this.zzc;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzld
+    public final byte zza() {
+        int i = this.zzb;
+        if (i >= this.zzc) {
+            throw new NoSuchElementException();
+        }
+        this.zzb = i + 1;
+        return this.zza.zzb(i);
     }
 }

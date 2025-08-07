@@ -4,6 +4,7 @@ import android.graphics.Point;
 import android.media.MediaCodecInfo;
 import android.os.Build;
 import android.util.Pair;
+import android.util.Range;
 import androidx.media3.common.ColorInfo;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
@@ -29,6 +30,13 @@ public final class MediaCodecInfo {
     public final boolean softwareOnly;
     public final boolean tunneling;
     public final boolean vendor;
+    private float maxFrameRate = -3.4028235E38f;
+    private int maxFrameRateWidth = -1;
+    private int maxFrameRateHeight = -1;
+
+    private static boolean needsDisableAdaptationWorkaround(String str) {
+        return false;
+    }
 
     public static MediaCodecInfo newInstance(String str, String str2, String str3, MediaCodecInfo.CodecCapabilities codecCapabilities, boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
         return new MediaCodecInfo(str, str2, str3, codecCapabilities, z, z2, z3, (z4 || codecCapabilities == null || !isAdaptive(codecCapabilities) || needsDisableAdaptationWorkaround(str)) ? false : true, codecCapabilities != null && isTunneling(codecCapabilities), z5 || (codecCapabilities != null && isSecure(codecCapabilities)), isDetachedSurfaceSupported(codecCapabilities));
@@ -62,8 +70,8 @@ public final class MediaCodecInfo {
     }
 
     public int getMaxSupportedInstances() {
-        MediaCodecInfo.CodecCapabilities codecCapabilities;
-        if (Util.SDK_INT < 23 || (codecCapabilities = this.capabilities) == null) {
+        MediaCodecInfo.CodecCapabilities codecCapabilities = this.capabilities;
+        if (codecCapabilities == null) {
             return -1;
         }
         return getMaxSupportedInstancesV23(codecCapabilities);
@@ -91,6 +99,7 @@ public final class MediaCodecInfo {
     }
 
     private boolean isCodecProfileAndLevelSupported(Format format, boolean z) {
+        MediaCodecInfo.CodecProfileLevel[] profileLevels;
         Pair<Integer, Integer> codecProfileAndLevel = MediaCodecUtil.getCodecProfileAndLevel(format);
         if (format.sampleMimeType != null && format.sampleMimeType.equals(MimeTypes.VIDEO_MV_HEVC)) {
             String normalizeMimeType = MimeTypes.normalizeMimeType(this.codecMimeType);
@@ -143,11 +152,7 @@ public final class MediaCodecInfo {
             }
         }
         if (this.isVideo || intValue == 42) {
-            MediaCodecInfo.CodecProfileLevel[] profileLevels = getProfileLevels();
-            if (Util.SDK_INT <= 23 && MimeTypes.VIDEO_VP9.equals(this.mimeType) && profileLevels.length == 0) {
-                profileLevels = estimateLegacyVp9ProfileLevels(this.capabilities);
-            }
-            for (MediaCodecInfo.CodecProfileLevel codecProfileLevel : profileLevels) {
+            for (MediaCodecInfo.CodecProfileLevel codecProfileLevel : getProfileLevels()) {
                 if (codecProfileLevel.profile == intValue && ((codecProfileLevel.level >= intValue2 || !z) && !needsProfileExcludedWorkaround(this.mimeType, intValue))) {
                     return true;
                 }
@@ -159,11 +164,11 @@ public final class MediaCodecInfo {
     }
 
     private boolean isCompressedAudioBitDepthSupported(Format format) {
-        return (Objects.equals(format.sampleMimeType, MimeTypes.AUDIO_FLAC) && format.pcmEncoding == 22 && Util.SDK_INT < 34 && this.name.equals("c2.android.flac.decoder")) ? false : true;
+        return (Objects.equals(format.sampleMimeType, MimeTypes.AUDIO_FLAC) && format.pcmEncoding == 22 && Build.VERSION.SDK_INT < 34 && this.name.equals("c2.android.flac.decoder")) ? false : true;
     }
 
     public boolean isHdr10PlusOutOfBandMetadataSupported() {
-        if (Util.SDK_INT >= 29 && MimeTypes.VIDEO_VP9.equals(this.mimeType)) {
+        if (Build.VERSION.SDK_INT >= 29 && MimeTypes.VIDEO_VP9.equals(this.mimeType)) {
             for (MediaCodecInfo.CodecProfileLevel codecProfileLevel : getProfileLevels()) {
                 if (codecProfileLevel.profile == 16384) {
                     return true;
@@ -184,18 +189,23 @@ public final class MediaCodecInfo {
     public DecoderReuseEvaluation canReuseCodec(Format format, Format format2) {
         Format format3;
         Format format4;
+        boolean z = false;
         int i = !Objects.equals(format.sampleMimeType, format2.sampleMimeType) ? 8 : 0;
         if (this.isVideo) {
             if (format.rotationDegrees != format2.rotationDegrees) {
                 i |= 1024;
             }
-            if (!this.adaptive && (format.width != format2.width || format.height != format2.height)) {
+            z = (format.width == format2.width && format.height == format2.height) ? true : true;
+            if (!this.adaptive && z) {
                 i |= 512;
             }
             if ((!ColorInfo.isEquivalentToAssumedSdrDefault(format.colorInfo) || !ColorInfo.isEquivalentToAssumedSdrDefault(format2.colorInfo)) && !Objects.equals(format.colorInfo, format2.colorInfo)) {
                 i |= 2048;
             }
             if (needsAdaptationReconfigureWorkaround(this.name) && !format.initializationDataEquals(format2)) {
+                i |= 2;
+            }
+            if (format.decodedWidth != -1 && format.decodedHeight != -1 && format.decodedWidth == format2.decodedWidth && format.decodedHeight == format2.decodedHeight && z) {
                 i |= 2;
             }
             if (i == 0) {
@@ -250,7 +260,7 @@ public final class MediaCodecInfo {
             logNoSupport("sizeAndRate.vCaps");
             return false;
         }
-        if (Util.SDK_INT >= 29) {
+        if (Build.VERSION.SDK_INT >= 29) {
             int areResolutionAndFrameRateCovered = MediaCodecPerformancePointCoverageProvider.areResolutionAndFrameRateCovered(videoCapabilities, i, i2, d);
             if (areResolutionAndFrameRateCovered == 2) {
                 return true;
@@ -268,6 +278,41 @@ public final class MediaCodecInfo {
             logAssumedSupport("sizeAndRate.rotated, " + i + "x" + i2 + "@" + d);
         }
         return true;
+    }
+
+    public float getMaxSupportedFrameRate(int i, int i2) {
+        if (this.isVideo) {
+            float f = this.maxFrameRate;
+            if (f != -3.4028235E38f && this.maxFrameRateWidth == i && this.maxFrameRateHeight == i2) {
+                return f;
+            }
+            float computeMaxSupportedFrameRate = computeMaxSupportedFrameRate(i, i2);
+            this.maxFrameRate = computeMaxSupportedFrameRate;
+            this.maxFrameRateWidth = i;
+            this.maxFrameRateHeight = i2;
+            return computeMaxSupportedFrameRate;
+        }
+        return -3.4028235E38f;
+    }
+
+    private float computeMaxSupportedFrameRate(int i, int i2) {
+        float f = 1024.0f;
+        if (isVideoSizeAndRateSupportedV21(i, i2, 1024.0f)) {
+            return 1024.0f;
+        }
+        float f2 = 0.0f;
+        while (true) {
+            float f3 = f - f2;
+            if (Math.abs(f3) <= 5.0f) {
+                return f2;
+            }
+            float f4 = (f3 / 2.0f) + f2;
+            if (isVideoSizeAndRateSupportedV21(i, i2, f4)) {
+                f2 = f4;
+            } else {
+                f = f4;
+            }
+        }
     }
 
     public Point alignVideoSizeV21(int i, int i2) {
@@ -325,7 +370,7 @@ public final class MediaCodecInfo {
 
     private static int adjustMaxInputChannelCount(String str, String str2, int i) {
         int i2;
-        if (i > 1 || ((Util.SDK_INT >= 26 && i > 0) || MimeTypes.AUDIO_MPEG.equals(str2) || MimeTypes.AUDIO_AMR_NB.equals(str2) || MimeTypes.AUDIO_AMR_WB.equals(str2) || MimeTypes.AUDIO_AAC.equals(str2) || MimeTypes.AUDIO_VORBIS.equals(str2) || MimeTypes.AUDIO_OPUS.equals(str2) || MimeTypes.AUDIO_RAW.equals(str2) || MimeTypes.AUDIO_FLAC.equals(str2) || MimeTypes.AUDIO_ALAW.equals(str2) || MimeTypes.AUDIO_MLAW.equals(str2) || MimeTypes.AUDIO_MSGSM.equals(str2))) {
+        if (i > 1 || ((Build.VERSION.SDK_INT >= 26 && i > 0) || MimeTypes.AUDIO_MPEG.equals(str2) || MimeTypes.AUDIO_AMR_NB.equals(str2) || MimeTypes.AUDIO_AMR_WB.equals(str2) || MimeTypes.AUDIO_AAC.equals(str2) || MimeTypes.AUDIO_VORBIS.equals(str2) || MimeTypes.AUDIO_OPUS.equals(str2) || MimeTypes.AUDIO_RAW.equals(str2) || MimeTypes.AUDIO_FLAC.equals(str2) || MimeTypes.AUDIO_ALAW.equals(str2) || MimeTypes.AUDIO_MLAW.equals(str2) || MimeTypes.AUDIO_MSGSM.equals(str2))) {
             return i;
         }
         if (MimeTypes.AUDIO_AC3.equals(str2)) {
@@ -350,7 +395,7 @@ public final class MediaCodecInfo {
     }
 
     private static boolean isDetachedSurfaceSupported(MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return Util.SDK_INT >= 35 && codecCapabilities != null && codecCapabilities.isFeatureSupported("detached-surface") && !needsDetachedSurfaceUnsupportedWorkaround();
+        return Build.VERSION.SDK_INT >= 35 && codecCapabilities != null && codecCapabilities.isFeatureSupported("detached-surface") && !needsDetachedSurfaceUnsupportedWorkaround();
     }
 
     private static boolean areSizeAndRateSupported(MediaCodecInfo.VideoCapabilities videoCapabilities, int i, int i2, double d) {
@@ -360,7 +405,12 @@ public final class MediaCodecInfo {
         if (d == -1.0d || d < 1.0d) {
             return videoCapabilities.isSizeSupported(i3, i4);
         }
-        return videoCapabilities.areSizeAndRateSupported(i3, i4, Math.floor(d));
+        double floor = Math.floor(d);
+        if (videoCapabilities.areSizeAndRateSupported(i3, i4, floor)) {
+            Range<Double> achievableFrameRatesFor = videoCapabilities.getAchievableFrameRatesFor(i3, i4);
+            return achievableFrameRatesFor == null || floor <= achievableFrameRatesFor.getUpper().doubleValue();
+        }
+        return false;
     }
 
     private static Point alignVideoSize(MediaCodecInfo.VideoCapabilities videoCapabilities, int i, int i2) {
@@ -376,21 +426,7 @@ public final class MediaCodecInfo {
     private static MediaCodecInfo.CodecProfileLevel[] estimateLegacyVp9ProfileLevels(MediaCodecInfo.CodecCapabilities codecCapabilities) {
         MediaCodecInfo.VideoCapabilities videoCapabilities;
         int intValue = (codecCapabilities == null || (videoCapabilities = codecCapabilities.getVideoCapabilities()) == null) ? 0 : videoCapabilities.getBitrateRange().getUpper().intValue();
-        int i = intValue >= 180000000 ? 1024 : intValue >= 120000000 ? 512 : intValue >= 60000000 ? 256 : intValue >= 30000000 ? 128 : intValue >= 18000000 ? 64 : intValue >= 12000000 ? 32 : intValue >= 7200000 ? 16 : intValue >= 3600000 ? 8 : intValue >= 1800000 ? 4 : intValue >= 800000 ? 2 : 1;
-        MediaCodecInfo.CodecProfileLevel codecProfileLevel = new MediaCodecInfo.CodecProfileLevel();
-        codecProfileLevel.profile = 1;
-        codecProfileLevel.level = i;
-        return new MediaCodecInfo.CodecProfileLevel[]{codecProfileLevel};
-    }
-
-    private static boolean needsDisableAdaptationWorkaround(String str) {
-        if (Util.SDK_INT <= 22) {
-            if ("ODROID-XU3".equals(Build.MODEL) || "Nexus 10".equals(Build.MODEL)) {
-                return "OMX.Exynos.AVC.Decoder".equals(str) || "OMX.Exynos.AVC.Decoder.secure".equals(str);
-            }
-            return false;
-        }
-        return false;
+        return new MediaCodecInfo.CodecProfileLevel[]{MediaCodecUtil.createCodecProfileLevel(1, intValue >= 180000000 ? 1024 : intValue >= 120000000 ? 512 : intValue >= 60000000 ? 256 : intValue >= 30000000 ? 128 : intValue >= 18000000 ? 64 : intValue >= 12000000 ? 32 : intValue >= 7200000 ? 16 : intValue >= 3600000 ? 8 : intValue >= 1800000 ? 4 : intValue >= 800000 ? 2 : 1)};
     }
 
     private static boolean needsAdaptationReconfigureWorkaround(String str) {
@@ -413,6 +449,6 @@ public final class MediaCodecInfo {
     }
 
     private static boolean needsDetachedSurfaceUnsupportedWorkaround() {
-        return Build.MANUFACTURER.equals("Xiaomi") || Build.MANUFACTURER.equals("OPPO");
+        return Build.MANUFACTURER.equals("Xiaomi") || Build.MANUFACTURER.equals("OPPO") || Build.MANUFACTURER.equals("realme") || Build.MANUFACTURER.equals("motorola") || Build.MANUFACTURER.equals("LENOVO");
     }
 }

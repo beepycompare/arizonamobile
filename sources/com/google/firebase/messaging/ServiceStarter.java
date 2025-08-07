@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
 import android.util.Log;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.ArrayDeque;
 import java.util.Queue;
 /* loaded from: classes4.dex */
@@ -102,7 +101,7 @@ public class ServiceStarter {
                 }
                 return this.firebaseMessagingServiceClassName;
             }
-            Log.e(Constants.TAG, "Error resolving target intent service, skipping classname enforcement. Resolved service was: " + serviceInfo.packageName + RemoteSettings.FORWARD_SLASH_STRING + serviceInfo.name);
+            Log.e(Constants.TAG, "Error resolving target intent service, skipping classname enforcement. Resolved service was: " + serviceInfo.packageName + "/" + serviceInfo.name);
             return null;
         }
         Log.e(Constants.TAG, "Failed to resolve target intent service, skipping classname enforcement");

@@ -1,13 +1,13 @@
 package com.google.android.gms.measurement.internal;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public abstract class zzg extends zzf {
     private boolean zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzg(zzib zzibVar) {
-        super(zzibVar);
+    public zzg(zzic zzicVar) {
+        super(zzicVar);
         this.zzu.zzF();
     }
 

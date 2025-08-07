@@ -1,22 +1,47 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
+import org.checkerframework.dataflow.qual.SideEffectFree;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public interface zzqm {
-    boolean zza();
+public final class zzqm implements Supplier {
+    private static final zzqm zza = new zzqm();
+    private final Supplier zzb = Suppliers.ofInstance(new zzqo());
 
-    boolean zzb();
+    @SideEffectFree
+    public static boolean zza() {
+        return zza.get().zza();
+    }
 
-    boolean zzc();
+    @SideEffectFree
+    public static long zzb() {
+        return zza.get().zzb();
+    }
 
-    boolean zzd();
+    @SideEffectFree
+    public static double zzc() {
+        return zza.get().zzc();
+    }
 
-    boolean zze();
+    @SideEffectFree
+    public static long zzd() {
+        return zza.get().zzd();
+    }
 
-    boolean zzf();
+    @SideEffectFree
+    public static long zze() {
+        return zza.get().zze();
+    }
 
-    boolean zzg();
+    @SideEffectFree
+    public static String zzf() {
+        return zza.get().zzf();
+    }
 
-    boolean zzh();
-
-    boolean zzi();
+    @Override // com.google.common.base.Supplier
+    /* renamed from: zzg */
+    public final zzqn get() {
+        return (zzqn) this.zzb.get();
+    }
 }

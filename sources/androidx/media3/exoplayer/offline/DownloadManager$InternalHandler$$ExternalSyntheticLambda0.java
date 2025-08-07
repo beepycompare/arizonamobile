@@ -7,6 +7,6 @@ import java.util.Comparator;
 public final /* synthetic */ class DownloadManager$InternalHandler$$ExternalSyntheticLambda0 implements Comparator {
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        return DownloadManager.InternalHandler.m7397$r8$lambda$mYoRCebAyoibjFuCntJMlHmrFQ((Download) obj, (Download) obj2);
+        return DownloadManager.InternalHandler.m7401$r8$lambda$mYoRCebAyoibjFuCntJMlHmrFQ((Download) obj, (Download) obj2);
     }
 }

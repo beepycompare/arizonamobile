@@ -10,7 +10,6 @@ import com.google.firebase.crashlytics.internal.common.InstallIdProvider;
 import com.google.firebase.crashlytics.internal.concurrency.CrashlyticsWorkers;
 import com.google.firebase.installations.FirebaseInstallationsApi;
 import com.google.firebase.installations.InstallationTokenResult;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.UUID;
@@ -32,7 +31,7 @@ public class IdManager implements InstallIdProvider {
     private InstallIdProvider.InstallIds installIds;
     private final InstallerPackageNameProvider installerPackageNameProvider;
     private static final Pattern ID_PATTERN = Pattern.compile("[^\\p{Alnum}]");
-    private static final String FORWARD_SLASH_REGEX = Pattern.quote(RemoteSettings.FORWARD_SLASH_STRING);
+    private static final String FORWARD_SLASH_REGEX = Pattern.quote("/");
 
     public IdManager(Context context, String str, FirebaseInstallationsApi firebaseInstallationsApi, DataCollectionArbiter dataCollectionArbiter) {
         if (context == null) {

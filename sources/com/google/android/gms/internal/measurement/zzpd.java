@@ -1,17 +1,154 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzpd implements zzpc {
-    public static final zzkl zza;
+public interface zzpd {
+    long zzA();
 
-    static {
-        zzkf zzb = new zzkf(zzka.zza("com.google.android.gms.measurement")).zza().zzb();
-        zzb.zzd("measurement.client.3p_consent_state_v1", true);
-        zza = zzb.zzc("measurement.service.storage_consent_support_version", 203600L);
-    }
+    long zzB();
 
-    @Override // com.google.android.gms.internal.measurement.zzpc
-    public final long zza() {
-        return ((Long) zza.zzd()).longValue();
-    }
+    boolean zzC();
+
+    String zzD();
+
+    long zzE();
+
+    long zzF();
+
+    long zzG();
+
+    long zzH();
+
+    long zzI();
+
+    long zzJ();
+
+    long zzK();
+
+    long zzL();
+
+    String zzM();
+
+    String zzN();
+
+    long zzO();
+
+    long zzP();
+
+    long zzQ();
+
+    long zzR();
+
+    long zzS();
+
+    long zzT();
+
+    long zzU();
+
+    long zzV();
+
+    long zzW();
+
+    long zzX();
+
+    String zzY();
+
+    long zzZ();
+
+    long zza();
+
+    String zzaa();
+
+    String zzab();
+
+    String zzac();
+
+    long zzad();
+
+    long zzae();
+
+    long zzaf();
+
+    long zzag();
+
+    long zzah();
+
+    long zzai();
+
+    long zzaj();
+
+    long zzak();
+
+    long zzal();
+
+    long zzam();
+
+    long zzan();
+
+    long zzao();
+
+    long zzap();
+
+    long zzaq();
+
+    long zzar();
+
+    long zzas();
+
+    long zzat();
+
+    String zzau();
+
+    long zzav();
+
+    String zzaw();
+
+    long zzb();
+
+    boolean zzc();
+
+    long zzd();
+
+    String zze();
+
+    long zzf();
+
+    String zzg();
+
+    String zzh();
+
+    long zzi();
+
+    long zzj();
+
+    String zzk();
+
+    String zzl();
+
+    long zzm();
+
+    String zzn();
+
+    long zzo();
+
+    long zzp();
+
+    long zzq();
+
+    long zzr();
+
+    long zzs();
+
+    long zzt();
+
+    long zzu();
+
+    long zzv();
+
+    long zzw();
+
+    long zzx();
+
+    long zzy();
+
+    long zzz();
 }

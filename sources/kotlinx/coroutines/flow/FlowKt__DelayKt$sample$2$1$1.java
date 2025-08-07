@@ -41,12 +41,12 @@ final class FlowKt__DelayKt$sample$2$1$1 extends SuspendLambda implements Functi
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(ChannelResult<? extends Object> channelResult, Continuation<? super Unit> continuation) {
-        return m10036invokeWpGqRn0(channelResult.m10016unboximpl(), continuation);
+        return m10059invokeWpGqRn0(channelResult.m10039unboximpl(), continuation);
     }
 
     /* renamed from: invoke-WpGqRn0  reason: not valid java name */
-    public final Object m10036invokeWpGqRn0(Object obj, Continuation<? super Unit> continuation) {
-        return ((FlowKt__DelayKt$sample$2$1$1) create(ChannelResult.m10004boximpl(obj), continuation)).invokeSuspend(Unit.INSTANCE);
+    public final Object m10059invokeWpGqRn0(Object obj, Continuation<? super Unit> continuation) {
+        return ((FlowKt__DelayKt$sample$2$1$1) create(ChannelResult.m10027boximpl(obj), continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     /* JADX WARN: Type inference failed for: r4v4, types: [T, java.lang.Object] */
@@ -58,18 +58,18 @@ final class FlowKt__DelayKt$sample$2$1$1 extends SuspendLambda implements Functi
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        ?? m10016unboximpl = ((ChannelResult) this.L$0).m10016unboximpl();
+        ?? m10039unboximpl = ((ChannelResult) this.L$0).m10039unboximpl();
         Ref.ObjectRef<Object> objectRef = this.$lastValue;
-        boolean z = m10016unboximpl instanceof ChannelResult.Failed;
+        boolean z = m10039unboximpl instanceof ChannelResult.Failed;
         if (!z) {
-            objectRef.element = m10016unboximpl;
+            objectRef.element = m10039unboximpl;
         }
         ReceiveChannel<Unit> receiveChannel = this.$ticker;
         Ref.ObjectRef<Object> objectRef2 = this.$lastValue;
         if (z) {
-            Throwable m10008exceptionOrNullimpl = ChannelResult.m10008exceptionOrNullimpl(m10016unboximpl);
-            if (m10008exceptionOrNullimpl != null) {
-                throw m10008exceptionOrNullimpl;
+            Throwable m10031exceptionOrNullimpl = ChannelResult.m10031exceptionOrNullimpl(m10039unboximpl);
+            if (m10031exceptionOrNullimpl != null) {
+                throw m10031exceptionOrNullimpl;
             }
             receiveChannel.cancel((CancellationException) new ChildCancelledException());
             objectRef2.element = NullSurrogateKt.DONE;

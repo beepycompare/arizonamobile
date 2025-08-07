@@ -16,8 +16,6 @@ import androidx.media3.extractor.text.SubtitleParser;
 import java.io.IOException;
 /* loaded from: classes2.dex */
 final class JpegMotionPhotoExtractor implements Extractor {
-    private static final long EXIF_HEADER = 1165519206;
-    private static final int EXIF_ID_CODE_LENGTH = 6;
     private static final String HEADER_XMP_APP1 = "http://ns.adobe.com/xap/1.0/";
     private static final int MARKER_APP0 = 65504;
     private static final int MARKER_APP1 = 65505;
@@ -37,7 +35,7 @@ final class JpegMotionPhotoExtractor implements Extractor {
     private StartOffsetExtractorInput mp4ExtractorStartOffsetExtractorInput;
     private int segmentLength;
     private int state;
-    private final ParsableByteArray scratch = new ParsableByteArray(6);
+    private final ParsableByteArray scratch = new ParsableByteArray(2);
     private long mp4StartPosition = -1;
 
     @Override // androidx.media3.extractor.Extractor
@@ -51,13 +49,7 @@ final class JpegMotionPhotoExtractor implements Extractor {
             advancePeekPositionToNextSegment(extractorInput);
             this.marker = peekMarker(extractorInput);
         }
-        if (this.marker != MARKER_APP1) {
-            return false;
-        }
-        extractorInput.advancePeekPosition(2);
-        this.scratch.reset(6);
-        extractorInput.peekFully(this.scratch.getData(), 0, 6);
-        return this.scratch.readUnsignedInt() == EXIF_HEADER && this.scratch.readUnsignedShort() == 0;
+        return this.marker == MARKER_APP1;
     }
 
     @Override // androidx.media3.extractor.Extractor

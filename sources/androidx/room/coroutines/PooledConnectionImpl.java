@@ -666,13 +666,13 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindBlob */
-        public void mo7566bindBlob(int i, byte[] value) {
+        public void mo7581bindBlob(int i, byte[] value) {
             Intrinsics.checkNotNullParameter(value, "value");
             if (this.this$0.isRecycled()) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo7566bindBlob(i, value);
+                this.delegate.mo7581bindBlob(i, value);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -681,12 +681,12 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindDouble */
-        public void mo7567bindDouble(int i, double d) {
+        public void mo7582bindDouble(int i, double d) {
             if (this.this$0.isRecycled()) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo7567bindDouble(i, d);
+                this.delegate.mo7582bindDouble(i, d);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -695,12 +695,12 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindLong */
-        public void mo7568bindLong(int i, long j) {
+        public void mo7583bindLong(int i, long j) {
             if (this.this$0.isRecycled()) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo7568bindLong(i, j);
+                this.delegate.mo7583bindLong(i, j);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -709,13 +709,13 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindText */
-        public void mo7570bindText(int i, String value) {
+        public void mo7585bindText(int i, String value) {
             Intrinsics.checkNotNullParameter(value, "value");
             if (this.this$0.isRecycled()) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo7570bindText(i, value);
+                this.delegate.mo7585bindText(i, value);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -724,12 +724,12 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindNull */
-        public void mo7569bindNull(int i) {
+        public void mo7584bindNull(int i) {
             if (this.this$0.isRecycled()) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo7569bindNull(i);
+                this.delegate.mo7584bindNull(i);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -868,12 +868,12 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: clearBindings */
-        public void mo7571clearBindings() {
+        public void mo7586clearBindings() {
             if (this.this$0.isRecycled()) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo7571clearBindings();
+                this.delegate.mo7586clearBindings();
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();

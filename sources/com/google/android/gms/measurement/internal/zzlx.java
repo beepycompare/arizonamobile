@@ -2,23 +2,20 @@ package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzlx implements Runnable {
-    final /* synthetic */ long zza;
-    final /* synthetic */ zzma zzb;
+    final /* synthetic */ zzmb zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzlx(zzma zzmaVar, long j) {
-        this.zza = j;
-        Objects.requireNonNull(zzmaVar);
-        this.zzb = zzmaVar;
+    public zzlx(zzmb zzmbVar) {
+        Objects.requireNonNull(zzmbVar);
+        this.zza = zzmbVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zzma zzmaVar = this.zzb;
-        zzmaVar.zzu.zzw().zzc(this.zza);
-        zzmaVar.zza = null;
+        zzmb zzmbVar = this.zza;
+        zzmbVar.zza = zzmbVar.zzw();
     }
 }

@@ -1,9 +1,9 @@
 package androidx.media3.exoplayer.mediacodec;
 
 import android.media.MediaCodecInfo;
+import android.os.Build;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.mediacodec.MediaCodecUtil;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -18,7 +18,7 @@ public final class MediaCodecPerformancePointCoverageProvider {
     }
 
     public static int areResolutionAndFrameRateCovered(MediaCodecInfo.VideoCapabilities videoCapabilities, int i, int i2, double d) {
-        if (Util.SDK_INT >= 29) {
+        if (Build.VERSION.SDK_INT >= 29) {
             Boolean bool = shouldIgnorePerformancePoints;
             if (bool == null || !bool.booleanValue()) {
                 return Api29.areResolutionAndFrameRateCovered(videoCapabilities, i, i2, d);
@@ -50,7 +50,7 @@ public final class MediaCodecPerformancePointCoverageProvider {
         }
 
         private static boolean shouldIgnorePerformancePoints() {
-            if (Util.SDK_INT >= 35) {
+            if (Build.VERSION.SDK_INT >= 35) {
                 return false;
             }
             int evaluateH264RequiredSupport = evaluateH264RequiredSupport(false);
@@ -62,13 +62,14 @@ public final class MediaCodecPerformancePointCoverageProvider {
         }
 
         private static int evaluateH264RequiredSupport(boolean z) {
+            MediaCodecInfo.VideoCapabilities videoCapabilities;
             List<MediaCodecInfo.VideoCapabilities.PerformancePoint> supportedPerformancePoints;
             try {
                 Format build = new Format.Builder().setSampleMimeType(MimeTypes.VIDEO_H264).build();
                 if (build.sampleMimeType != null) {
                     List<MediaCodecInfo> decoderInfosSoftMatch = MediaCodecUtil.getDecoderInfosSoftMatch(MediaCodecSelector.DEFAULT, build, z, false);
                     for (int i = 0; i < decoderInfosSoftMatch.size(); i++) {
-                        if (decoderInfosSoftMatch.get(i).capabilities != null && decoderInfosSoftMatch.get(i).capabilities.getVideoCapabilities() != null && (supportedPerformancePoints = decoderInfosSoftMatch.get(i).capabilities.getVideoCapabilities().getSupportedPerformancePoints()) != null && !supportedPerformancePoints.isEmpty()) {
+                        if (decoderInfosSoftMatch.get(i).capabilities != null && (videoCapabilities = decoderInfosSoftMatch.get(i).capabilities.getVideoCapabilities()) != null && (supportedPerformancePoints = videoCapabilities.getSupportedPerformancePoints()) != null && !supportedPerformancePoints.isEmpty()) {
                             return evaluatePerformancePointCoverage(supportedPerformancePoints, new MediaCodecInfo.VideoCapabilities.PerformancePoint(1280, 720, 60));
                         }
                     }

@@ -22,14 +22,7 @@ final class XingSeeker implements Seeker {
         if (computeDurationUs == C.TIME_UNSET) {
             return null;
         }
-        if (xingFrame.dataSize == -1 || xingFrame.tableOfContents == null) {
-            return new XingSeeker(j, xingFrame.header.frameSize, computeDurationUs, xingFrame.header.bitrate);
-        }
         return new XingSeeker(j, xingFrame.header.frameSize, computeDurationUs, xingFrame.header.bitrate, xingFrame.dataSize, xingFrame.tableOfContents);
-    }
-
-    private XingSeeker(long j, int i, long j2, int i2) {
-        this(j, i, j2, i2, -1L, null);
     }
 
     private XingSeeker(long j, int i, long j2, int i2, long j3, long[] jArr) {
@@ -88,6 +81,11 @@ final class XingSeeker implements Seeker {
     @Override // androidx.media3.extractor.SeekMap
     public long getDurationUs() {
         return this.durationUs;
+    }
+
+    @Override // androidx.media3.extractor.mp3.Seeker
+    public long getDataStartPosition() {
+        return this.dataStartPosition + this.xingFrameSize;
     }
 
     @Override // androidx.media3.extractor.mp3.Seeker

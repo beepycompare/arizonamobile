@@ -28,7 +28,7 @@ public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
             public final Object create(ComponentContainer componentContainer) {
                 return FirebaseInstallationsRegistrar.lambda$getComponents$0(componentContainer);
             }
-        }).build(), HeartBeatConsumerComponent.create(), LibraryVersionComponent.create(LIBRARY_NAME, "18.0.0"));
+        }).build(), HeartBeatConsumerComponent.create(), LibraryVersionComponent.create(LIBRARY_NAME, "19.0.0"));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

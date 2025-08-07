@@ -12,14 +12,14 @@ import io.appmetrica.analytics.StartupParamsCallback;
 import java.util.List;
 import java.util.Map;
 /* loaded from: classes4.dex */
-public interface Xa extends InterfaceC0181cd, V6, InterfaceC0481ob {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0481ob
-    /* synthetic */ InterfaceC0456nb a();
+public interface Xa extends InterfaceC0182cd, V6, InterfaceC0482ob {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0482ob
+    /* synthetic */ InterfaceC0457nb a();
 
     @Override // io.appmetrica.analytics.impl.V6
     /* synthetic */ void a(int i, Bundle bundle);
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     /* synthetic */ void a(Location location);
 
     void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig);
@@ -32,23 +32,23 @@ public interface Xa extends InterfaceC0181cd, V6, InterfaceC0481ob {
 
     void a(StartupParamsCallback startupParamsCallback, List<String> list);
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     /* synthetic */ void a(String str, String str2);
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     /* synthetic */ void a(boolean z);
 
     void b(AppMetricaConfig appMetricaConfig);
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     /* synthetic */ void b(boolean z);
 
-    InterfaceC0431mb c(ReporterConfig reporterConfig);
+    InterfaceC0432mb c(ReporterConfig reporterConfig);
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     /* synthetic */ void clearAppEnvironment();
 
-    C0579sa d();
+    C0580sa d();
 
     String e();
 
@@ -58,12 +58,12 @@ public interface Xa extends InterfaceC0181cd, V6, InterfaceC0481ob {
 
     Ec i();
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     /* synthetic */ void putAppEnvironmentValue(String str, String str2);
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     /* synthetic */ void setDataSendingEnabled(boolean z);
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0181cd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
     /* synthetic */ void setUserProfileID(String str);
 }

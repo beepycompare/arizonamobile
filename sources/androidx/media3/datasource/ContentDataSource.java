@@ -12,6 +12,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
+import java.util.Objects;
 /* loaded from: classes2.dex */
 public final class ContentDataSource extends BaseDataSource {
     private AssetFileDescriptor assetFileDescriptor;
@@ -47,7 +48,7 @@ public final class ContentDataSource extends BaseDataSource {
                 Uri normalizeScheme = dataSpec.uri.normalizeScheme();
                 this.uri = normalizeScheme;
                 transferInitializing(dataSpec);
-                if (FirebaseAnalytics.Param.CONTENT.equals(normalizeScheme.getScheme())) {
+                if (Objects.equals(normalizeScheme.getScheme(), FirebaseAnalytics.Param.CONTENT)) {
                     Bundle bundle = new Bundle();
                     bundle.putBoolean("android.provider.extra.ACCEPT_ORIGINAL_MEDIA_FORMAT", true);
                     openAssetFileDescriptor = this.resolver.openTypedAssetFileDescriptor(normalizeScheme, "*/*", bundle);

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import io.appmetrica.analytics.internal.CounterConfiguration;
 import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public class Sh extends C0198d4 {
+public class Sh extends C0199d4 {
     protected W8 c;
     protected If d;
     public boolean e;
@@ -17,7 +17,7 @@ public class Sh extends C0198d4 {
     public final Bundle c() {
         Bundle bundle = new Bundle();
         this.b.toBundle(bundle);
-        Pf pf = this.f812a;
+        Pf pf = this.f811a;
         synchronized (pf) {
             bundle.putParcelable("PROCESS_CFG_OBJ", pf);
         }
@@ -27,7 +27,7 @@ public class Sh extends C0198d4 {
     public final synchronized String d() {
         W8 w8;
         w8 = this.c;
-        return w8.f699a.isEmpty() ? null : new JSONObject(w8.f699a).toString();
+        return w8.f698a.isEmpty() ? null : new JSONObject(w8.f698a).toString();
     }
 
     public final synchronized String e() {

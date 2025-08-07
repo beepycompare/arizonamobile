@@ -66,8 +66,9 @@ final class AutoValue_TokenResult extends TokenResult {
     /* loaded from: classes4.dex */
     static final class Builder extends TokenResult.Builder {
         private TokenResult.ResponseCode responseCode;
+        private byte set$0;
         private String token;
-        private Long tokenExpirationTimestamp;
+        private long tokenExpirationTimestamp;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public Builder() {
@@ -75,8 +76,9 @@ final class AutoValue_TokenResult extends TokenResult {
 
         private Builder(TokenResult tokenResult) {
             this.token = tokenResult.getToken();
-            this.tokenExpirationTimestamp = Long.valueOf(tokenResult.getTokenExpirationTimestamp());
+            this.tokenExpirationTimestamp = tokenResult.getTokenExpirationTimestamp();
             this.responseCode = tokenResult.getResponseCode();
+            this.set$0 = (byte) 1;
         }
 
         @Override // com.google.firebase.installations.remote.TokenResult.Builder
@@ -87,7 +89,8 @@ final class AutoValue_TokenResult extends TokenResult {
 
         @Override // com.google.firebase.installations.remote.TokenResult.Builder
         public TokenResult.Builder setTokenExpirationTimestamp(long j) {
-            this.tokenExpirationTimestamp = Long.valueOf(j);
+            this.tokenExpirationTimestamp = j;
+            this.set$0 = (byte) (this.set$0 | 1);
             return this;
         }
 
@@ -99,16 +102,10 @@ final class AutoValue_TokenResult extends TokenResult {
 
         @Override // com.google.firebase.installations.remote.TokenResult.Builder
         public TokenResult build() {
-            String str;
-            if (this.tokenExpirationTimestamp != null) {
-                str = "";
-            } else {
-                str = " tokenExpirationTimestamp";
+            if (this.set$0 != 1) {
+                throw new IllegalStateException("Missing required properties: tokenExpirationTimestamp");
             }
-            if (!str.isEmpty()) {
-                throw new IllegalStateException("Missing required properties:" + str);
-            }
-            return new AutoValue_TokenResult(this.token, this.tokenExpirationTimestamp.longValue(), this.responseCode);
+            return new AutoValue_TokenResult(this.token, this.tokenExpirationTimestamp, this.responseCode);
         }
     }
 }

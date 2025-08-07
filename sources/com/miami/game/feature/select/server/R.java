@@ -10,10 +10,10 @@ public final class R {
         public static int btn_mobile_server_inactive = 0x7f080494;
         public static int btn_next = 0x7f080495;
         public static int mobile_topbar_icon = 0x7f080a11;
-        public static int no_promo_label = 0x7f080abb;
-        public static int select_server_label = 0x7f080c31;
-        public static int server_new_ic = 0x7f080c36;
-        public static int server_top_ic = 0x7f080c37;
+        public static int no_promo_label = 0x7f080abc;
+        public static int select_server_label = 0x7f080c32;
+        public static int server_new_ic = 0x7f080c37;
+        public static int server_top_ic = 0x7f080c38;
 
         private drawable() {
         }

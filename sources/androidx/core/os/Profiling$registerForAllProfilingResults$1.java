@@ -96,6 +96,6 @@ final class Profiling$registerForAllProfilingResults$1 extends SuspendLambda imp
     /* JADX INFO: Access modifiers changed from: private */
     public static final void invokeSuspend$lambda$0(ProducerScope producerScope, ProfilingResult result) {
         Intrinsics.checkNotNullExpressionValue(result, "result");
-        producerScope.mo7544trySendJP2dKIU(result);
+        producerScope.mo7559trySendJP2dKIU(result);
     }
 }

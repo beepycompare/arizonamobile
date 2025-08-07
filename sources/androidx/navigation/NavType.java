@@ -54,7 +54,7 @@ public abstract class NavType<T> {
         public void put(Bundle bundle, String key, int i) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            SavedStateWriter.m7683putIntimpl(SavedStateWriter.m7666constructorimpl(bundle), key, i);
+            SavedStateWriter.m7698putIntimpl(SavedStateWriter.m7681constructorimpl(bundle), key, i);
         }
 
         /* JADX WARN: Can't rename method to resolve collision */
@@ -62,7 +62,7 @@ public abstract class NavType<T> {
         public Integer get(Bundle bundle, String key) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            return Integer.valueOf(SavedStateReader.m7611getIntimpl(SavedStateReader.m7580constructorimpl(bundle), key));
+            return Integer.valueOf(SavedStateReader.m7626getIntimpl(SavedStateReader.m7595constructorimpl(bundle), key));
         }
     };
     public static final NavType<int[]> IntArrayType = new IntArrayNavType();

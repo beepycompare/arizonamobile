@@ -2,7 +2,6 @@ package okio.internal;
 
 import android.support.v4.media.session.PlaybackStateCompat;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -191,7 +190,7 @@ public final class ZipFilesKt {
     }
 
     private static final Map<Path, ZipEntry> buildIndex(List<ZipEntry> list) {
-        Path path = Path.Companion.get$default(Path.Companion, RemoteSettings.FORWARD_SLASH_STRING, false, 1, (Object) null);
+        Path path = Path.Companion.get$default(Path.Companion, "/", false, 1, (Object) null);
         Map<Path, ZipEntry> mutableMapOf = MapsKt.mutableMapOf(TuplesKt.to(path, new ZipEntry(path, true, null, 0L, 0L, 0L, 0, 0L, 0, 0, null, null, null, null, null, null, 65532, null)));
         for (ZipEntry zipEntry : CollectionsKt.sortedWith(list, new Comparator() { // from class: okio.internal.ZipFilesKt$buildIndex$$inlined$sortedBy$1
             @Override // java.util.Comparator
@@ -270,7 +269,7 @@ public final class ZipFilesKt {
         if (j3 > 0 && !booleanRef.element) {
             throw new IOException("bad zip: zip64 extra required but absent");
         }
-        return new ZipEntry(Path.Companion.get$default(Path.Companion, RemoteSettings.FORWARD_SLASH_STRING, false, 1, (Object) null).resolve(readUtf8), StringsKt.endsWith$default(readUtf8, RemoteSettings.FORWARD_SLASH_STRING, false, 2, (Object) null), bufferedSource.readUtf8(readShortLe7), readIntLe2, longRef.element, longRef2.element, readShortLe2, longRef3.element, readShortLe4, readShortLe3, (Long) objectRef.element, (Long) objectRef2.element, (Long) objectRef3.element, null, null, null, 57344, null);
+        return new ZipEntry(Path.Companion.get$default(Path.Companion, "/", false, 1, (Object) null).resolve(readUtf8), StringsKt.endsWith$default(readUtf8, "/", false, 2, (Object) null), bufferedSource.readUtf8(readShortLe7), readIntLe2, longRef.element, longRef2.element, readShortLe2, longRef3.element, readShortLe4, readShortLe3, (Long) objectRef.element, (Long) objectRef2.element, (Long) objectRef3.element, null, null, null, 57344, null);
     }
 
     public static final Unit readCentralDirectoryZipEntry$lambda$8(Ref.BooleanRef booleanRef, long j, Ref.LongRef longRef, final BufferedSource bufferedSource, Ref.LongRef longRef2, Ref.LongRef longRef3, final Ref.ObjectRef objectRef, final Ref.ObjectRef objectRef2, final Ref.ObjectRef objectRef3, int i, long j2) {

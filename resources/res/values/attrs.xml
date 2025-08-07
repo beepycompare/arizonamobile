@@ -215,7 +215,11 @@
     </attr>
     <attr name="backgroundInsetTop" format="dimension">
     </attr>
+    <attr name="backgroundMainColor" format="color">
+    </attr>
     <attr name="backgroundOverlayColorAlpha" format="float">
+    </attr>
+    <attr name="backgroundSecondColor" format="color">
     </attr>
     <attr name="backgroundSplit" format="reference|color">
     </attr>
@@ -230,6 +234,8 @@
         <enum name="multiply" value="14" />
         <enum name="screen" value="15" />
         <enum name="add" value="16" />
+    </attr>
+    <attr name="backgroundTransparency" format="integer">
     </attr>
     <attr name="badgeGravity">
         <enum name="TOP_END" value="8388661" />
@@ -324,13 +330,21 @@
     </attr>
     <attr name="borderColor" format="color">
     </attr>
+    <attr name="borderGradientAngle" format="integer">
+    </attr>
+    <attr name="borderMainColor" format="color">
+    </attr>
     <attr name="borderRound" format="dimension">
     </attr>
     <attr name="borderRoundPercent" format="float">
     </attr>
+    <attr name="borderSecondColor" format="color">
+    </attr>
     <attr name="borderSize" format="dimension">
     </attr>
     <attr name="borderThickness" format="dimension">
+    </attr>
+    <attr name="borderTransparency" format="integer">
     </attr>
     <attr name="borderWidth" format="dimension">
     </attr>
@@ -871,6 +885,10 @@
     </attr>
     <attr name="coplanarSiblingViewId" format="reference">
     </attr>
+    <attr name="cornerBottomLeft" format="dimension">
+    </attr>
+    <attr name="cornerBottomRight" format="dimension">
+    </attr>
     <attr name="cornerFamily">
         <enum name="rounded" value="0" />
         <enum name="cut" value="1" />
@@ -902,6 +920,12 @@
     <attr name="cornerSizeTopLeft" format="dimension|fraction">
     </attr>
     <attr name="cornerSizeTopRight" format="dimension|fraction">
+    </attr>
+    <attr name="cornerTopLeft" format="dimension">
+    </attr>
+    <attr name="cornerTopRight" format="dimension">
+    </attr>
+    <attr name="corners" format="dimension">
     </attr>
     <attr name="counterEnabled" format="boolean">
     </attr>
@@ -1545,9 +1569,9 @@
     </attr>
     <attr name="gradientAngle" format="integer">
     </attr>
-    <attr name="gradientEndColor" format="color">
-    </attr>
-    <attr name="gradientStartColor" format="color">
+    <attr name="gradientType">
+        <flag name="linear" value="0" />
+        <flag name="radial" value="1" />
     </attr>
     <attr name="graph" format="reference">
     </attr>
@@ -3069,6 +3093,8 @@
     </attr>
     <attr name="quickScaleEnabled" format="boolean">
     </attr>
+    <attr name="radialGradientRadius" format="dimension">
+    </attr>
     <attr name="radioButtonStyle" format="reference">
     </attr>
     <attr name="rangeFillColor" format="color">
@@ -3852,6 +3878,8 @@
     <attr name="tileBackgroundColor" format="color">
     </attr>
     <attr name="time_bar_min_update_interval" format="integer">
+    </attr>
+    <attr name="time_bar_scrubbing_enabled" format="boolean">
     </attr>
     <attr name="tint" format="color">
     </attr>

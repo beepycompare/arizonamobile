@@ -16,7 +16,6 @@ import android.webkit.MimeTypeMap;
 import androidx.core.util.ObjectsCompat;
 import com.android.internal.http.multipart.FilePart;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -41,7 +40,7 @@ public class FileProvider extends ContentProvider {
     private final Object mLock;
     private final int mResourceId;
     private static final String[] COLUMNS = {"_display_name", "_size"};
-    private static final File DEVICE_ROOT = new File(RemoteSettings.FORWARD_SLASH_STRING);
+    private static final File DEVICE_ROOT = new File("/");
     private static final HashMap<String, PathStrategy> sCache = new HashMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -335,12 +334,12 @@ public class FileProvider extends ContentProvider {
                     throw new IllegalArgumentException("Failed to find configured root that contains " + canonicalPath);
                 }
                 String path2 = entry.getValue().getPath();
-                if (path2.endsWith(RemoteSettings.FORWARD_SLASH_STRING)) {
+                if (path2.endsWith("/")) {
                     substring = canonicalPath.substring(path2.length());
                 } else {
                     substring = canonicalPath.substring(path2.length() + 1);
                 }
-                return new Uri.Builder().scheme(FirebaseAnalytics.Param.CONTENT).authority(this.mAuthority).encodedPath(Uri.encode(entry.getKey()) + '/' + Uri.encode(substring, RemoteSettings.FORWARD_SLASH_STRING)).build();
+                return new Uri.Builder().scheme(FirebaseAnalytics.Param.CONTENT).authority(this.mAuthority).encodedPath(Uri.encode(entry.getKey()) + '/' + Uri.encode(substring, "/")).build();
             } catch (IOException unused) {
                 throw new IllegalArgumentException("Failed to resolve canonical path for " + file);
             }

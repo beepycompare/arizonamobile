@@ -322,32 +322,28 @@ public final class DataStoreImpl<T> implements DataStore<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Can't wrap try/catch for region: R(8:1|(2:3|(5:5|6|7|(5:(1:(1:(1:12)(2:19|20))(3:21|22|23))(1:28)|13|14|15|16)(5:29|30|31|(6:33|(1:35)|26|14|15|16)(3:36|(1:38)(1:54)|(2:40|(2:42|(1:44)(1:45))(2:46|47))(2:48|(2:50|51)(2:52|53)))|27)|24))|59|6|7|(0)(0)|24|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0054, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(8:1|(2:3|(5:5|6|7|(6:(1:(1:(2:12|13))(3:15|16|17))|26|27|21|22|23)(5:28|29|30|(6:32|(1:34)|20|21|22|23)(3:35|(1:37)(1:53)|(2:39|(2:41|(1:43)(1:44))(2:45|46))(2:47|(2:49|50)(2:51|52)))|25)|18))|58|6|7|(0)(0)|18|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0050, code lost:
         r10 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x00b8, code lost:
-        if (r9 != r1) goto L26;
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x00b4, code lost:
+        if (r9 != r1) goto L20;
      */
-    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0057  */
-    /* JADX WARN: Type inference failed for: r8v0, types: [androidx.datastore.core.DataStoreImpl, java.lang.Object, androidx.datastore.core.DataStoreImpl<T>] */
-    /* JADX WARN: Type inference failed for: r9v21, types: [kotlinx.coroutines.CompletableDeferred] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0053  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object handleUpdate(Message.Update<T> update, Continuation<? super Unit> continuation) {
         DataStoreImpl$handleUpdate$1 dataStoreImpl$handleUpdate$1;
         int i;
-        Object m8478constructorimpl;
+        Object m8500constructorimpl;
         CompletableDeferred<T> completableDeferred;
         CompletableDeferred<T> ack;
         State<T> currentState;
-        DataStoreImpl dataStoreImpl;
+        DataStoreImpl<T> dataStoreImpl;
         Object transformAndWrite;
         Message.Update<T> update2;
-        Message.Update<T> update3;
         if (continuation instanceof DataStoreImpl$handleUpdate$1) {
             dataStoreImpl$handleUpdate$1 = (DataStoreImpl$handleUpdate$1) continuation;
             if ((dataStoreImpl$handleUpdate$1.label & Integer.MIN_VALUE) != 0) {
@@ -361,15 +357,15 @@ public final class DataStoreImpl<T> implements DataStore<T> {
                     ack = update.getAck();
                     try {
                         Result.Companion companion = Result.Companion;
-                        DataStoreImpl dataStoreImpl2 = (DataStoreImpl) this;
+                        DataStoreImpl<T> dataStoreImpl2 = this;
                         currentState = this.inMemoryCache.getCurrentState();
                     } catch (Throwable th) {
                         th = th;
                         update = ack;
                         Result.Companion companion2 = Result.Companion;
-                        m8478constructorimpl = Result.m8478constructorimpl(ResultKt.createFailure(th));
+                        m8500constructorimpl = Result.m8500constructorimpl(ResultKt.createFailure(th));
                         completableDeferred = update;
-                        CompletableDeferredKt.completeWith(completableDeferred, m8478constructorimpl);
+                        CompletableDeferredKt.completeWith(completableDeferred, m8500constructorimpl);
                         return Unit.INSTANCE;
                     }
                     if (currentState instanceof Data) {
@@ -382,10 +378,10 @@ public final class DataStoreImpl<T> implements DataStore<T> {
                         }
                         CompletableDeferred<T> completableDeferred2 = ack;
                         obj = transformAndWrite;
-                        update = completableDeferred2;
-                        m8478constructorimpl = Result.m8478constructorimpl(obj);
+                        update = (Message.Update<T>) completableDeferred2;
+                        m8500constructorimpl = Result.m8500constructorimpl(obj);
                         completableDeferred = update;
-                        CompletableDeferredKt.completeWith(completableDeferred, m8478constructorimpl);
+                        CompletableDeferredKt.completeWith(completableDeferred, m8500constructorimpl);
                         return Unit.INSTANCE;
                     }
                     if (!(currentState instanceof ReadException)) {
@@ -412,25 +408,24 @@ public final class DataStoreImpl<T> implements DataStore<T> {
                     }
                     return coroutine_suspended;
                 }
-                if (i == 1) {
-                    update3 = (CompletableDeferred) dataStoreImpl$handleUpdate$1.L$0;
-                } else if (i == 2) {
-                    CompletableDeferred<T> completableDeferred3 = (CompletableDeferred) dataStoreImpl$handleUpdate$1.L$2;
-                    dataStoreImpl = (DataStoreImpl) dataStoreImpl$handleUpdate$1.L$1;
-                    Message.Update<T> update4 = (Message.Update) dataStoreImpl$handleUpdate$1.L$0;
-                    ResultKt.throwOnFailure(obj);
-                    ack = completableDeferred3;
-                    update2 = update4;
-                } else if (i != 3) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    update3 = (Message.Update<T>) ((CompletableDeferred) dataStoreImpl$handleUpdate$1.L$0);
+                if (i != 1) {
+                    if (i == 2) {
+                        CompletableDeferred<T> completableDeferred3 = (CompletableDeferred) dataStoreImpl$handleUpdate$1.L$2;
+                        dataStoreImpl = (DataStoreImpl) dataStoreImpl$handleUpdate$1.L$1;
+                        Message.Update<T> update3 = (Message.Update) dataStoreImpl$handleUpdate$1.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        ack = completableDeferred3;
+                        update2 = update3;
+                    } else if (i != 3) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
                 }
+                Message.Update<T> update4 = (Message.Update<T>) ((CompletableDeferred) dataStoreImpl$handleUpdate$1.L$0);
                 ResultKt.throwOnFailure(obj);
-                update = update3;
-                m8478constructorimpl = Result.m8478constructorimpl(obj);
+                update = update4;
+                m8500constructorimpl = Result.m8500constructorimpl(obj);
                 completableDeferred = update;
-                CompletableDeferredKt.completeWith(completableDeferred, m8478constructorimpl);
+                CompletableDeferredKt.completeWith(completableDeferred, m8500constructorimpl);
                 return Unit.INSTANCE;
                 Function2<T, Continuation<? super T>, Object> transform2 = update2.getTransform();
                 CoroutineContext callerContext2 = update2.getCallerContext();

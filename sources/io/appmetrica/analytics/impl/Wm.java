@@ -8,7 +8,7 @@ public final class Wm extends Z2 {
     }
 
     public final int b() {
-        return this.f743a;
+        return this.f742a;
     }
 
     public Wm(int i, String str, PublicLogger publicLogger) {
@@ -19,10 +19,10 @@ public final class Wm extends Z2 {
     public final String a(String str) {
         if (str != null) {
             int length = str.length();
-            int i = this.f743a;
+            int i = this.f742a;
             if (length > i) {
                 String substring = str.substring(0, i);
-                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f743a));
+                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f742a));
                 return substring;
             }
         }

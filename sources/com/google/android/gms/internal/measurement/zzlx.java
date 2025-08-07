@@ -1,246 +1,85 @@
 package com.google.android.gms.internal.measurement;
-
-import com.google.common.base.Ascii;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.RandomAccess;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-final class zzlx extends zzkt implements RandomAccess, zzmk, zzns {
-    private static final float[] zza;
-    private float[] zzb;
-    private int zzc;
+public enum zzlx {
+    DOUBLE(0, 1, zzms.DOUBLE),
+    FLOAT(1, 1, zzms.FLOAT),
+    INT64(2, 1, zzms.LONG),
+    UINT64(3, 1, zzms.LONG),
+    INT32(4, 1, zzms.INT),
+    FIXED64(5, 1, zzms.LONG),
+    FIXED32(6, 1, zzms.INT),
+    BOOL(7, 1, zzms.BOOLEAN),
+    STRING(8, 1, zzms.STRING),
+    MESSAGE(9, 1, zzms.MESSAGE),
+    BYTES(10, 1, zzms.BYTE_STRING),
+    UINT32(11, 1, zzms.INT),
+    ENUM(12, 1, zzms.ENUM),
+    SFIXED32(13, 1, zzms.INT),
+    SFIXED64(14, 1, zzms.LONG),
+    SINT32(15, 1, zzms.INT),
+    SINT64(16, 1, zzms.LONG),
+    GROUP(17, 1, zzms.MESSAGE),
+    DOUBLE_LIST(18, 2, zzms.DOUBLE),
+    FLOAT_LIST(19, 2, zzms.FLOAT),
+    INT64_LIST(20, 2, zzms.LONG),
+    UINT64_LIST(21, 2, zzms.LONG),
+    INT32_LIST(22, 2, zzms.INT),
+    FIXED64_LIST(23, 2, zzms.LONG),
+    FIXED32_LIST(24, 2, zzms.INT),
+    BOOL_LIST(25, 2, zzms.BOOLEAN),
+    STRING_LIST(26, 2, zzms.STRING),
+    MESSAGE_LIST(27, 2, zzms.MESSAGE),
+    BYTES_LIST(28, 2, zzms.BYTE_STRING),
+    UINT32_LIST(29, 2, zzms.INT),
+    ENUM_LIST(30, 2, zzms.ENUM),
+    SFIXED32_LIST(31, 2, zzms.INT),
+    SFIXED64_LIST(32, 2, zzms.LONG),
+    SINT32_LIST(33, 2, zzms.INT),
+    SINT64_LIST(34, 2, zzms.LONG),
+    DOUBLE_LIST_PACKED(35, 3, zzms.DOUBLE),
+    FLOAT_LIST_PACKED(36, 3, zzms.FLOAT),
+    INT64_LIST_PACKED(37, 3, zzms.LONG),
+    UINT64_LIST_PACKED(38, 3, zzms.LONG),
+    INT32_LIST_PACKED(39, 3, zzms.INT),
+    FIXED64_LIST_PACKED(40, 3, zzms.LONG),
+    FIXED32_LIST_PACKED(41, 3, zzms.INT),
+    BOOL_LIST_PACKED(42, 3, zzms.BOOLEAN),
+    UINT32_LIST_PACKED(43, 3, zzms.INT),
+    ENUM_LIST_PACKED(44, 3, zzms.ENUM),
+    SFIXED32_LIST_PACKED(45, 3, zzms.INT),
+    SFIXED64_LIST_PACKED(46, 3, zzms.LONG),
+    SINT32_LIST_PACKED(47, 3, zzms.INT),
+    SINT64_LIST_PACKED(48, 3, zzms.LONG),
+    GROUP_LIST(49, 2, zzms.MESSAGE),
+    MAP(50, 4, zzms.VOID);
+    
+    private static final zzlx[] zzaa;
+    private final int zzZ;
 
     static {
-        float[] fArr = new float[0];
-        zza = fArr;
-        new zzlx(fArr, 0, false);
-    }
-
-    zzlx() {
-        this(zza, 0, true);
-    }
-
-    private static int zzi(int i) {
-        return Math.max(((i * 3) / 2) + 1, 10);
-    }
-
-    private final void zzj(int i) {
-        if (i < 0 || i >= this.zzc) {
-            throw new IndexOutOfBoundsException(zzk(i));
+        zzlx[] values = values();
+        zzaa = new zzlx[values.length];
+        for (zzlx zzlxVar : values) {
+            zzaa[zzlxVar.zzZ] = zzlxVar;
         }
     }
 
-    private final String zzk(int i) {
-        return zzkv.zza(this.zzc, i, Ascii.CR, "Index:", ", Size:");
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzkt, java.util.AbstractList, java.util.List
-    public final /* synthetic */ void add(int i, Object obj) {
-        int i2;
-        float floatValue = ((Float) obj).floatValue();
-        zzcF();
-        if (i < 0 || i > (i2 = this.zzc)) {
-            throw new IndexOutOfBoundsException(zzk(i));
+    zzlx(int i, int i2, zzms zzmsVar) {
+        this.zzZ = i;
+        int i3 = i2 - 1;
+        if (i3 == 1) {
+            zzmsVar.zza();
+        } else if (i3 == 3) {
+            zzmsVar.zza();
         }
-        int i3 = i + 1;
-        float[] fArr = this.zzb;
-        int length = fArr.length;
-        if (i2 < length) {
-            System.arraycopy(fArr, i, fArr, i3, i2 - i);
-        } else {
-            float[] fArr2 = new float[zzi(length)];
-            System.arraycopy(this.zzb, 0, fArr2, 0, i);
-            System.arraycopy(this.zzb, i, fArr2, i3, this.zzc - i);
-            this.zzb = fArr2;
+        if (i2 == 1) {
+            zzms zzmsVar2 = zzms.VOID;
+            zzmsVar.ordinal();
         }
-        this.zzb[i] = floatValue;
-        this.zzc++;
-        this.modCount++;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzkt, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        zzcF();
-        byte[] bArr = zzmo.zzb;
-        collection.getClass();
-        if (!(collection instanceof zzlx)) {
-            return super.addAll(collection);
-        }
-        zzlx zzlxVar = (zzlx) collection;
-        int i = zzlxVar.zzc;
-        if (i == 0) {
-            return false;
-        }
-        int i2 = this.zzc;
-        if (Integer.MAX_VALUE - i2 >= i) {
-            int i3 = i2 + i;
-            float[] fArr = this.zzb;
-            if (i3 > fArr.length) {
-                this.zzb = Arrays.copyOf(fArr, i3);
-            }
-            System.arraycopy(zzlxVar.zzb, 0, this.zzb, this.zzc, zzlxVar.zzc);
-            this.zzc = i3;
-            this.modCount++;
-            return true;
-        }
-        throw new OutOfMemoryError();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return indexOf(obj) != -1;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzkt, java.util.AbstractList, java.util.Collection, java.util.List
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof zzlx) {
-            zzlx zzlxVar = (zzlx) obj;
-            if (this.zzc != zzlxVar.zzc) {
-                return false;
-            }
-            float[] fArr = zzlxVar.zzb;
-            for (int i = 0; i < this.zzc; i++) {
-                if (Float.floatToIntBits(this.zzb[i]) != Float.floatToIntBits(fArr[i])) {
-                    return false;
-                }
-            }
-            return true;
-        }
-        return super.equals(obj);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i) {
-        zzj(i);
-        return Float.valueOf(this.zzb[i]);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzkt, java.util.AbstractList, java.util.Collection, java.util.List
-    public final int hashCode() {
-        int i = 1;
-        for (int i2 = 0; i2 < this.zzc; i2++) {
-            i = (i * 31) + Float.floatToIntBits(this.zzb[i2]);
-        }
-        return i;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final int indexOf(Object obj) {
-        if (obj instanceof Float) {
-            float floatValue = ((Float) obj).floatValue();
-            int i = this.zzc;
-            for (int i2 = 0; i2 < i; i2++) {
-                if (this.zzb[i2] == floatValue) {
-                    return i2;
-                }
-            }
-            return -1;
-        }
-        return -1;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzkt, java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object remove(int i) {
-        int i2;
-        zzcF();
-        zzj(i);
-        float[] fArr = this.zzb;
-        float f = fArr[i];
-        if (i < this.zzc - 1) {
-            System.arraycopy(fArr, i + 1, fArr, i, (i2 - i) - 1);
-        }
-        this.zzc--;
-        this.modCount++;
-        return Float.valueOf(f);
-    }
-
-    @Override // java.util.AbstractList
-    protected final void removeRange(int i, int i2) {
-        zzcF();
-        if (i2 >= i) {
-            float[] fArr = this.zzb;
-            System.arraycopy(fArr, i2, fArr, i, this.zzc - i2);
-            this.zzc -= i2 - i;
-            this.modCount++;
-            return;
-        }
-        throw new IndexOutOfBoundsException("toIndex < fromIndex");
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzkt, java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object set(int i, Object obj) {
-        float floatValue = ((Float) obj).floatValue();
-        zzcF();
-        zzj(i);
-        float[] fArr = this.zzb;
-        float f = fArr[i];
-        fArr[i] = floatValue;
-        return Float.valueOf(f);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.zzc;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzmn, com.google.android.gms.internal.measurement.zzmg
-    /* renamed from: zzd */
-    public final zzmk zzg(int i) {
-        if (i < this.zzc) {
-            throw new IllegalArgumentException();
-        }
-        return new zzlx(i == 0 ? zza : Arrays.copyOf(this.zzb, i), this.zzc, true);
-    }
-
-    public final float zze(int i) {
-        zzj(i);
-        return this.zzb[i];
-    }
-
-    public final void zzf(float f) {
-        zzcF();
-        int i = this.zzc;
-        int length = this.zzb.length;
-        if (i == length) {
-            float[] fArr = new float[zzi(length)];
-            System.arraycopy(this.zzb, 0, fArr, 0, this.zzc);
-            this.zzb = fArr;
-        }
-        float[] fArr2 = this.zzb;
-        int i2 = this.zzc;
-        this.zzc = i2 + 1;
-        fArr2[i2] = f;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzh(int i) {
-        int length = this.zzb.length;
-        if (i <= length) {
-            return;
-        }
-        if (length != 0) {
-            while (length < i) {
-                length = zzi(length);
-            }
-            this.zzb = Arrays.copyOf(this.zzb, length);
-            return;
-        }
-        this.zzb = new float[Math.max(i, 10)];
-    }
-
-    private zzlx(float[] fArr, int i, boolean z) {
-        super(z);
-        this.zzb = fArr;
-        this.zzc = i;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzkt, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
-        zzf(((Float) obj).floatValue());
-        return true;
+    public final int zza() {
+        return this.zzZ;
     }
 }

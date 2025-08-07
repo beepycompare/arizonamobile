@@ -1,9 +1,8 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+
+import java.util.Iterator;
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-final class zzld {
-    public static final zzlg zza(zzll zzllVar, byte[] bArr) {
-        zzllVar.zzE();
-        return new zzlf(bArr);
-    }
+public interface zzld extends Iterator {
+    byte zza();
 }

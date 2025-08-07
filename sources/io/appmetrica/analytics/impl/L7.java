@@ -6,7 +6,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class L7 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ae f530a;
+    public final Ae f529a;
 
     public L7() {
         this(null, 1, null);
@@ -16,9 +16,9 @@ public final class L7 implements ProtobufConverter {
     /* renamed from: a */
     public final K7 fromModel(N7 n7) {
         K7 k7 = new K7();
-        Long l = n7.f561a;
+        Long l = n7.f560a;
         if (l != null) {
-            k7.f518a = l.longValue();
+            k7.f517a = l.longValue();
         }
         Long l2 = n7.b;
         if (l2 != null) {
@@ -26,13 +26,13 @@ public final class L7 implements ProtobufConverter {
         }
         Boolean bool = n7.c;
         if (bool != null) {
-            k7.c = this.f530a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
+            k7.c = this.f529a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
         }
         return k7;
     }
 
     public L7(Ae ae) {
-        this.f530a = ae;
+        this.f529a = ae;
     }
 
     public /* synthetic */ L7(Ae ae, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -43,11 +43,11 @@ public final class L7 implements ProtobufConverter {
     /* renamed from: a */
     public final N7 toModel(K7 k7) {
         K7 k72 = new K7();
-        Long valueOf = Long.valueOf(k7.f518a);
-        if (valueOf.longValue() == k72.f518a) {
+        Long valueOf = Long.valueOf(k7.f517a);
+        if (valueOf.longValue() == k72.f517a) {
             valueOf = null;
         }
         Long valueOf2 = Long.valueOf(k7.b);
-        return new N7(valueOf, valueOf2.longValue() != k72.b ? valueOf2 : null, this.f530a.a(k7.c));
+        return new N7(valueOf, valueOf2.longValue() != k72.b ? valueOf2 : null, this.f529a.a(k7.c));
     }
 }

@@ -49,7 +49,7 @@ public final class AudioCapabilities {
     }
 
     public static AudioCapabilities getCapabilities(Context context, AudioAttributes audioAttributes, AudioDeviceInfo audioDeviceInfo) {
-        return getCapabilitiesInternal(context, audioAttributes, (Util.SDK_INT < 23 || audioDeviceInfo == null) ? null : new AudioDeviceInfoApi23(audioDeviceInfo));
+        return getCapabilitiesInternal(context, audioAttributes, audioDeviceInfo != null ? new AudioDeviceInfoApi23(audioDeviceInfo) : null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -61,17 +61,17 @@ public final class AudioCapabilities {
     public static AudioCapabilities getCapabilitiesInternal(Context context, Intent intent, AudioAttributes audioAttributes, AudioDeviceInfoApi23 audioDeviceInfoApi23) {
         AudioManager audioManager = AudioManagerCompat.getAudioManager(context);
         if (audioDeviceInfoApi23 == null) {
-            audioDeviceInfoApi23 = Util.SDK_INT >= 33 ? Api33.getDefaultRoutedDeviceForAttributes(audioManager, audioAttributes) : null;
+            audioDeviceInfoApi23 = Build.VERSION.SDK_INT >= 33 ? Api33.getDefaultRoutedDeviceForAttributes(audioManager, audioAttributes) : null;
         }
-        if (Util.SDK_INT >= 33 && (Util.isTv(context) || Util.isAutomotive(context))) {
+        if (Build.VERSION.SDK_INT >= 33 && (Util.isTv(context) || Util.isAutomotive(context))) {
             return Api33.getCapabilitiesInternalForDirectPlayback(audioManager, audioAttributes);
         }
-        if (Util.SDK_INT >= 23 && Api23.isBluetoothConnected(audioManager, audioDeviceInfoApi23)) {
+        if (Api23.isBluetoothConnected(audioManager, audioDeviceInfoApi23)) {
             return DEFAULT_AUDIO_CAPABILITIES;
         }
         ImmutableSet.Builder builder = new ImmutableSet.Builder();
         builder.add((ImmutableSet.Builder) 2);
-        if (Util.SDK_INT >= 29 && (Util.isTv(context) || Util.isAutomotive(context))) {
+        if (Build.VERSION.SDK_INT >= 29 && (Util.isTv(context) || Util.isAutomotive(context))) {
             builder.addAll((Iterable) Api29.getDirectPlaybackSupportedEncodings(audioAttributes));
             return new AudioCapabilities(getAudioProfiles(Ints.toArray(builder.build()), 10));
         }
@@ -153,7 +153,7 @@ public final class AudioCapabilities {
                     maxSupportedChannelCountForPassthrough = audioProfile.getMaxSupportedChannelCountForPassthrough(format.sampleRate != -1 ? format.sampleRate : 48000, audioAttributes);
                 } else {
                     maxSupportedChannelCountForPassthrough = format.channelCount;
-                    if (!format.sampleMimeType.equals(MimeTypes.AUDIO_DTS_X) || Util.SDK_INT >= 33) {
+                    if (!format.sampleMimeType.equals(MimeTypes.AUDIO_DTS_X) || Build.VERSION.SDK_INT >= 33) {
                         if (!audioProfile.supportsChannelCount(maxSupportedChannelCountForPassthrough)) {
                             return null;
                         }
@@ -196,14 +196,14 @@ public final class AudioCapabilities {
     }
 
     private static int getChannelConfigForPassthrough(int i) {
-        if (Util.SDK_INT <= 28) {
+        if (Build.VERSION.SDK_INT <= 28) {
             if (i == 7) {
                 i = 8;
             } else if (i == 3 || i == 4 || i == 5) {
                 i = 6;
             }
         }
-        if (Util.SDK_INT <= 26 && "fugu".equals(Build.DEVICE) && i == 1) {
+        if (Build.VERSION.SDK_INT <= 26 && "fugu".equals(Build.DEVICE) && i == 1) {
             i = 2;
         }
         return Util.getAudioTrackChannelConfig(i);
@@ -254,7 +254,7 @@ public final class AudioCapabilities {
 
         static {
             AudioProfile audioProfile;
-            if (Util.SDK_INT >= 33) {
+            if (Build.VERSION.SDK_INT >= 33) {
                 audioProfile = new AudioProfile(2, getAllChannelMasksForMaxChannelCount(10));
             } else {
                 audioProfile = new AudioProfile(2, 10);
@@ -295,7 +295,7 @@ public final class AudioCapabilities {
             if (this.channelMasks != null) {
                 return this.maxChannelCount;
             }
-            if (Util.SDK_INT >= 29) {
+            if (Build.VERSION.SDK_INT >= 29) {
                 return Api29.getMaxSupportedChannelCountForPassthrough(this.encoding, i, audioAttributes);
             }
             return ((Integer) Assertions.checkNotNull(AudioCapabilities.ALL_SURROUND_ENCODINGS_AND_MAX_CHANNELS.getOrDefault(Integer.valueOf(this.encoding), 0))).intValue();
@@ -350,10 +350,10 @@ public final class AudioCapabilities {
 
         private static ImmutableSet<Integer> getAllBluetoothDeviceTypes() {
             ImmutableSet.Builder add = new ImmutableSet.Builder().add((Object[]) new Integer[]{8, 7});
-            if (Util.SDK_INT >= 31) {
+            if (Build.VERSION.SDK_INT >= 31) {
                 add.add((Object[]) new Integer[]{26, 27});
             }
-            if (Util.SDK_INT >= 33) {
+            if (Build.VERSION.SDK_INT >= 33) {
                 add.add((ImmutableSet.Builder) 30);
             }
             return add.build();
@@ -371,7 +371,7 @@ public final class AudioCapabilities {
             UnmodifiableIterator<Integer> it = AudioCapabilities.ALL_SURROUND_ENCODINGS_AND_MAX_CHANNELS.keySet().iterator();
             while (it.hasNext()) {
                 int intValue = it.next().intValue();
-                if (Util.SDK_INT >= Util.getApiLevelThatAudioFormatIntroducedAudioEncoding(intValue) && AudioTrack.isDirectPlaybackSupported(new AudioFormat.Builder().setChannelMask(12).setEncoding(intValue).setSampleRate(48000).build(), audioAttributes.getAudioAttributesV21().audioAttributes)) {
+                if (Build.VERSION.SDK_INT >= Util.getApiLevelThatAudioFormatIntroducedAudioEncoding(intValue) && AudioTrack.isDirectPlaybackSupported(new AudioFormat.Builder().setChannelMask(12).setEncoding(intValue).setSampleRate(48000).build(), audioAttributes.getAudioAttributesV21().audioAttributes)) {
                     builder.add((ImmutableList.Builder) Integer.valueOf(intValue));
                 }
             }
@@ -401,15 +401,11 @@ public final class AudioCapabilities {
         }
 
         public static AudioDeviceInfoApi23 getDefaultRoutedDeviceForAttributes(AudioManager audioManager, AudioAttributes audioAttributes) {
-            try {
-                List audioDevicesForAttributes = ((AudioManager) Assertions.checkNotNull(audioManager)).getAudioDevicesForAttributes(audioAttributes.getAudioAttributesV21().audioAttributes);
-                if (audioDevicesForAttributes.isEmpty()) {
-                    return null;
-                }
-                return new AudioDeviceInfoApi23((AudioDeviceInfo) audioDevicesForAttributes.get(0));
-            } catch (RuntimeException unused) {
+            List audioDevicesForAttributes = ((AudioManager) Assertions.checkNotNull(audioManager)).getAudioDevicesForAttributes(audioAttributes.getAudioAttributesV21().audioAttributes);
+            if (audioDevicesForAttributes.isEmpty()) {
                 return null;
             }
+            return new AudioDeviceInfoApi23((AudioDeviceInfo) audioDevicesForAttributes.get(0));
         }
     }
 }

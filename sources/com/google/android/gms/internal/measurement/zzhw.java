@@ -2,9 +2,9 @@ package com.google.android.gms.internal.measurement;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzhw extends zzme implements zznm {
+public final class zzhw extends zzmf implements zznn {
     private static final zzhw zzj;
     private int zzb;
     private long zzf;
@@ -12,12 +12,12 @@ public final class zzhw extends zzme implements zznm {
     private double zzh;
     private String zzd = "";
     private String zze = "";
-    private zzmn zzi = zzcv();
+    private zzmo zzi = zzcv();
 
     static {
         zzhw zzhwVar = new zzhw();
         zzj = zzhwVar;
-        zzme.zzcp(zzhw.class, zzhwVar);
+        zzmf.zzcp(zzhw.class, zzhwVar);
     }
 
     private zzhw() {
@@ -28,11 +28,11 @@ public final class zzhw extends zzme implements zznm {
     }
 
     private final void zzz() {
-        zzmn zzmnVar = this.zzi;
-        if (zzmnVar.zza()) {
+        zzmo zzmoVar = this.zzi;
+        if (zzmoVar.zza()) {
             return;
         }
-        this.zzi = zzme.zzcw(zzmnVar);
+        this.zzi = zzmf.zzcw(zzmoVar);
     }
 
     public final boolean zza() {
@@ -79,7 +79,7 @@ public final class zzhw extends zzme implements zznm {
         return this.zzi;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     protected final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {
@@ -158,7 +158,7 @@ public final class zzhw extends zzme implements zznm {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzw(Iterable iterable) {
         zzz();
-        zzkr.zzce(iterable, this.zzi);
+        zzks.zzce(iterable, this.zzi);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

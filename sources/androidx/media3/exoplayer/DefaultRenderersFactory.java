@@ -1,6 +1,7 @@
 package androidx.media3.exoplayer;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import androidx.media3.common.C;
@@ -9,6 +10,7 @@ import androidx.media3.exoplayer.audio.AudioRendererEventListener;
 import androidx.media3.exoplayer.audio.AudioSink;
 import androidx.media3.exoplayer.audio.DefaultAudioSink;
 import androidx.media3.exoplayer.audio.MediaCodecAudioRenderer;
+import androidx.media3.exoplayer.image.BitmapFactoryImageDecoder;
 import androidx.media3.exoplayer.image.ImageDecoder;
 import androidx.media3.exoplayer.image.ImageRenderer;
 import androidx.media3.exoplayer.mediacodec.DefaultMediaCodecAdapterFactory;
@@ -40,6 +42,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
     private boolean enableAudioTrackPlaybackParams;
     private boolean enableDecoderFallback;
     private boolean enableFloatOutput;
+    private boolean enableMediaCodecBufferDecodeOnlyFlag;
     private boolean enableMediaCodecVideoRendererPrewarming;
     private boolean parseAv1SampleDependencies;
     private int extensionRendererMode = 0;
@@ -112,6 +115,11 @@ public class DefaultRenderersFactory implements RenderersFactory {
         return this;
     }
 
+    public DefaultRenderersFactory experimentalSetEnableMediaCodecBufferDecodeOnlyFlag(boolean z) {
+        this.enableMediaCodecBufferDecodeOnlyFlag = z;
+        return this;
+    }
+
     public final DefaultRenderersFactory setAllowedVideoJoiningTimeMs(long j) {
         this.allowedVideoJoiningTimeMs = j;
         return this;
@@ -137,14 +145,18 @@ public class DefaultRenderersFactory implements RenderersFactory {
         buildTextRenderers(this.context, textOutput, handler2.getLooper(), this.extensionRendererMode, arrayList);
         buildMetadataRenderers(this.context, metadataOutput, handler2.getLooper(), this.extensionRendererMode, arrayList);
         buildCameraMotionRenderers(this.context, this.extensionRendererMode, arrayList);
-        buildImageRenderers(arrayList);
+        buildImageRenderers(this.context, arrayList);
         buildMiscellaneousRenderers(this.context, handler2, this.extensionRendererMode, arrayList);
         return (Renderer[]) arrayList.toArray(new Renderer[0]);
     }
 
     protected void buildVideoRenderers(Context context, int i, MediaCodecSelector mediaCodecSelector, boolean z, Handler handler, VideoRendererEventListener videoRendererEventListener, long j, ArrayList<Renderer> arrayList) {
         int i2;
-        arrayList.add(new MediaCodecVideoRenderer.Builder(context).setCodecAdapterFactory(getCodecAdapterFactory()).setMediaCodecSelector(mediaCodecSelector).setAllowedJoiningTimeMs(j).setEnableDecoderFallback(z).setEventHandler(handler).setEventListener(videoRendererEventListener).setMaxDroppedFramesToNotify(50).experimentalSetParseAv1SampleDependencies(this.parseAv1SampleDependencies).experimentalSetLateThresholdToDropDecoderInputUs(this.lateThresholdToDropDecoderInputUs).build());
+        MediaCodecVideoRenderer.Builder experimentalSetLateThresholdToDropDecoderInputUs = new MediaCodecVideoRenderer.Builder(context).setCodecAdapterFactory(getCodecAdapterFactory()).setMediaCodecSelector(mediaCodecSelector).setAllowedJoiningTimeMs(j).setEnableDecoderFallback(z).setEventHandler(handler).setEventListener(videoRendererEventListener).setMaxDroppedFramesToNotify(50).experimentalSetParseAv1SampleDependencies(this.parseAv1SampleDependencies).experimentalSetLateThresholdToDropDecoderInputUs(this.lateThresholdToDropDecoderInputUs);
+        if (Build.VERSION.SDK_INT >= 34) {
+            experimentalSetLateThresholdToDropDecoderInputUs = experimentalSetLateThresholdToDropDecoderInputUs.experimentalSetEnableMediaCodecBufferDecodeOnlyFlag(this.enableMediaCodecBufferDecodeOnlyFlag);
+        }
+        arrayList.add(experimentalSetLateThresholdToDropDecoderInputUs.build());
         if (i == 0) {
             return;
         }
@@ -346,8 +358,13 @@ public class DefaultRenderersFactory implements RenderersFactory {
         arrayList.add(new CameraMotionRenderer());
     }
 
+    @Deprecated
     protected void buildImageRenderers(ArrayList<Renderer> arrayList) {
-        arrayList.add(new ImageRenderer(getImageDecoderFactory(), null));
+        arrayList.add(new ImageRenderer(getImageDecoderFactory(this.context), null));
+    }
+
+    protected void buildImageRenderers(Context context, ArrayList<Renderer> arrayList) {
+        buildImageRenderers(arrayList);
     }
 
     protected AudioSink buildAudioSink(Context context, boolean z, boolean z2) {
@@ -364,7 +381,11 @@ public class DefaultRenderersFactory implements RenderersFactory {
 
     protected Renderer buildSecondaryVideoRenderer(Renderer renderer, Context context, int i, MediaCodecSelector mediaCodecSelector, boolean z, Handler handler, VideoRendererEventListener videoRendererEventListener, long j) {
         if (this.enableMediaCodecVideoRendererPrewarming && renderer.getClass() == MediaCodecVideoRenderer.class) {
-            return new MediaCodecVideoRenderer.Builder(context).setCodecAdapterFactory(getCodecAdapterFactory()).setMediaCodecSelector(mediaCodecSelector).setAllowedJoiningTimeMs(j).setEnableDecoderFallback(z).setEventHandler(handler).setEventListener(videoRendererEventListener).setMaxDroppedFramesToNotify(50).experimentalSetParseAv1SampleDependencies(this.parseAv1SampleDependencies).experimentalSetLateThresholdToDropDecoderInputUs(this.lateThresholdToDropDecoderInputUs).build();
+            MediaCodecVideoRenderer.Builder experimentalSetLateThresholdToDropDecoderInputUs = new MediaCodecVideoRenderer.Builder(context).setCodecAdapterFactory(getCodecAdapterFactory()).setMediaCodecSelector(mediaCodecSelector).setAllowedJoiningTimeMs(j).setEnableDecoderFallback(z).setEventHandler(handler).setEventListener(videoRendererEventListener).setMaxDroppedFramesToNotify(50).experimentalSetParseAv1SampleDependencies(this.parseAv1SampleDependencies).experimentalSetLateThresholdToDropDecoderInputUs(this.lateThresholdToDropDecoderInputUs);
+            if (Build.VERSION.SDK_INT >= 34) {
+                experimentalSetLateThresholdToDropDecoderInputUs = experimentalSetLateThresholdToDropDecoderInputUs.experimentalSetEnableMediaCodecBufferDecodeOnlyFlag(this.enableMediaCodecBufferDecodeOnlyFlag);
+            }
+            return experimentalSetLateThresholdToDropDecoderInputUs.build();
         }
         return null;
     }
@@ -373,7 +394,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
         return this.codecAdapterFactory;
     }
 
-    protected ImageDecoder.Factory getImageDecoderFactory() {
-        return ImageDecoder.Factory.DEFAULT;
+    protected ImageDecoder.Factory getImageDecoderFactory(Context context) {
+        return new BitmapFactoryImageDecoder.Factory(context);
     }
 }

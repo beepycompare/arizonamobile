@@ -1,5 +1,12 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+
+import java.util.List;
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-final class zzmx {
+public interface zzmx extends List {
+    List zza();
+
+    void zzb();
+
+    Object zzc();
 }

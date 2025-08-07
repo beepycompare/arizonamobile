@@ -1,33 +1,23 @@
 package com.google.android.gms.internal.measurement;
-
-import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
-import org.checkerframework.dataflow.qual.SideEffectFree;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzpn implements Supplier {
-    private static final zzpn zza = new zzpn();
-    private final Supplier zzb = Suppliers.ofInstance(new zzpp());
+public final class zzpn implements zzpm {
+    public static final zzkm zza;
+    public static final zzkm zzb;
 
-    @SideEffectFree
-    public static boolean zza() {
-        zza.get().zza();
-        return true;
+    static {
+        zzkg zzb2 = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
+        zza = zzb2.zzd("measurement.set_default_event_parameters_propagate_clear.client.dev", true);
+        zzb = zzb2.zzd("measurement.set_default_event_parameters_propagate_clear.service", true);
     }
 
-    @SideEffectFree
-    public static boolean zzb() {
-        return zza.get().zzb();
+    @Override // com.google.android.gms.internal.measurement.zzpm
+    public final boolean zza() {
+        return ((Boolean) zza.zzd()).booleanValue();
     }
 
-    @SideEffectFree
-    public static boolean zzc() {
-        return zza.get().zzc();
-    }
-
-    @Override // com.google.common.base.Supplier
-    /* renamed from: zzd */
-    public final zzpo get() {
-        return (zzpo) this.zzb.get();
+    @Override // com.google.android.gms.internal.measurement.zzpm
+    public final boolean zzb() {
+        return ((Boolean) zzb.zzd()).booleanValue();
     }
 }

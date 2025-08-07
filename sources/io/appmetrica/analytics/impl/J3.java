@@ -11,13 +11,13 @@ public final class J3 implements Yn {
     public final List<N3> invoke(List<N3> list, N3 n3) {
         if (!(list instanceof Collection) || !list.isEmpty()) {
             for (N3 n32 : list) {
-                EnumC0403l8 enumC0403l8 = n32.b;
-                EnumC0403l8 enumC0403l82 = n3.b;
-                if (enumC0403l8 == enumC0403l82) {
-                    if (enumC0403l82 == EnumC0403l8.c) {
+                EnumC0404l8 enumC0404l8 = n32.b;
+                EnumC0404l8 enumC0404l82 = n3.b;
+                if (enumC0404l8 == enumC0404l82) {
+                    if (enumC0404l82 == EnumC0404l8.c) {
                         ArrayList arrayList = new ArrayList();
                         for (Object obj : list) {
-                            if (((N3) obj).b != EnumC0403l8.c) {
+                            if (((N3) obj).b != EnumC0404l8.c) {
                                 arrayList.add(obj);
                             }
                         }

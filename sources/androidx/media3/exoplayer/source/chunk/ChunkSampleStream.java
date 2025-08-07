@@ -189,7 +189,8 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
         if (baseMediaChunk != null) {
             seekTo = this.primarySampleQueue.seekTo(baseMediaChunk.getFirstSampleIndex(0));
         } else {
-            seekTo = this.primarySampleQueue.seekTo(j, j < getNextLoadPositionUs());
+            long nextLoadPositionUs = getNextLoadPositionUs();
+            seekTo = this.primarySampleQueue.seekTo(j, nextLoadPositionUs == Long.MIN_VALUE || j < nextLoadPositionUs);
         }
         if (seekTo) {
             this.nextNotifyPrimaryFormatMediaChunkIndex = primarySampleIndexToMediaChunkIndex(this.primarySampleQueue.getReadIndex(), 0);
@@ -487,6 +488,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
 
     public void discardUpstreamSamplesForClippedDuration(long j) {
         long j2;
+        SampleQueue[] sampleQueueArr;
         Assertions.checkState(!this.loader.isLoading());
         if (isPendingReset() || j == C.TIME_UNSET || this.mediaChunks.isEmpty()) {
             return;
@@ -504,9 +506,9 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
         if (largestQueuedTimestampUs <= j) {
             return;
         }
-        this.primarySampleQueue.discardUpstreamFrom(j);
+        this.primarySampleQueue.discardUpstreamFrom(Math.max(j, this.primarySampleQueue.getLargestReadTimestampUs() + 1));
         for (SampleQueue sampleQueue : this.embeddedSampleQueues) {
-            sampleQueue.discardUpstreamFrom(j);
+            sampleQueue.discardUpstreamFrom(Math.max(j, sampleQueue.getLargestReadTimestampUs() + 1));
         }
         this.mediaSourceEventDispatcher.upstreamDiscarded(this.primaryTrackType, j, largestQueuedTimestampUs);
     }

@@ -288,7 +288,7 @@ public final class MutableIntObjectMap<V> extends IntObjectMap<V> {
     public final void adjustStorage$collection() {
         int compare;
         if (this._capacity > 8) {
-            compare = Long.compare(ULong.m8657constructorimpl(ULong.m8657constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m8657constructorimpl(ULong.m8657constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
+            compare = Long.compare(ULong.m8680constructorimpl(ULong.m8680constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m8680constructorimpl(ULong.m8680constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
             if (compare <= 0) {
                 dropDeletes$collection();
                 return;

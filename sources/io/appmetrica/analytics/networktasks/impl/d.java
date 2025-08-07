@@ -5,11 +5,11 @@ import io.appmetrica.analytics.networktasks.internal.NetworkTask;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final NetworkTask f1232a;
+    public final NetworkTask f1231a;
     public final String b;
 
     public d(NetworkTask networkTask) {
-        this.f1232a = networkTask;
+        this.f1231a = networkTask;
         this.b = networkTask.description();
     }
 

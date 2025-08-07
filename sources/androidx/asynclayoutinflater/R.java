@@ -5,17 +5,17 @@ public final class R {
     /* loaded from: classes.dex */
     public static final class attr {
         public static int alpha = 0x7f040037;
-        public static int font = 0x7f04025f;
-        public static int fontProviderAuthority = 0x7f040261;
-        public static int fontProviderCerts = 0x7f040262;
-        public static int fontProviderFetchStrategy = 0x7f040264;
-        public static int fontProviderFetchTimeout = 0x7f040265;
-        public static int fontProviderPackage = 0x7f040266;
-        public static int fontProviderQuery = 0x7f040267;
-        public static int fontStyle = 0x7f040269;
-        public static int fontVariationSettings = 0x7f04026a;
-        public static int fontWeight = 0x7f04026b;
-        public static int ttcIndex = 0x7f04064e;
+        public static int font = 0x7f04026b;
+        public static int fontProviderAuthority = 0x7f04026d;
+        public static int fontProviderCerts = 0x7f04026e;
+        public static int fontProviderFetchStrategy = 0x7f040270;
+        public static int fontProviderFetchTimeout = 0x7f040271;
+        public static int fontProviderPackage = 0x7f040272;
+        public static int fontProviderQuery = 0x7f040273;
+        public static int fontStyle = 0x7f040275;
+        public static int fontVariationSettings = 0x7f040276;
+        public static int fontWeight = 0x7f040277;
+        public static int ttcIndex = 0x7f04065b;
 
         private attr() {
         }
@@ -63,18 +63,18 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class drawable {
-        public static int notification_action_background = 0x7f080abf;
-        public static int notification_bg = 0x7f080ac0;
-        public static int notification_bg_low = 0x7f080ac1;
-        public static int notification_bg_low_normal = 0x7f080ac2;
-        public static int notification_bg_low_pressed = 0x7f080ac3;
-        public static int notification_bg_normal = 0x7f080ac4;
-        public static int notification_bg_normal_pressed = 0x7f080ac5;
-        public static int notification_icon_background = 0x7f080ac7;
-        public static int notification_template_icon_bg = 0x7f080ac9;
-        public static int notification_template_icon_low_bg = 0x7f080aca;
-        public static int notification_tile_bg = 0x7f080acc;
-        public static int notify_panel_notification_icon_bg = 0x7f080ace;
+        public static int notification_action_background = 0x7f080ac0;
+        public static int notification_bg = 0x7f080ac1;
+        public static int notification_bg_low = 0x7f080ac2;
+        public static int notification_bg_low_normal = 0x7f080ac3;
+        public static int notification_bg_low_pressed = 0x7f080ac4;
+        public static int notification_bg_normal = 0x7f080ac5;
+        public static int notification_bg_normal_pressed = 0x7f080ac6;
+        public static int notification_icon_background = 0x7f080ac8;
+        public static int notification_template_icon_bg = 0x7f080aca;
+        public static int notification_template_icon_low_bg = 0x7f080acb;
+        public static int notification_tile_bg = 0x7f080acd;
+        public static int notify_panel_notification_icon_bg = 0x7f080acf;
 
         private drawable() {
         }
@@ -101,15 +101,15 @@ public final class R {
         public static int notification_background = 0x7f0a096e;
         public static int notification_main_column = 0x7f0a0972;
         public static int notification_main_column_container = 0x7f0a0973;
-        public static int right_icon = 0x7f0a0aeb;
-        public static int right_side = 0x7f0a0af1;
-        public static int tag_transition_group = 0x7f0a0cfd;
-        public static int tag_unhandled_key_event_manager = 0x7f0a0cfe;
-        public static int tag_unhandled_key_listeners = 0x7f0a0cff;
-        public static int text = 0x7f0a0d26;
-        public static int text2 = 0x7f0a0d28;
-        public static int time = 0x7f0a0d78;
-        public static int title = 0x7f0a0d86;
+        public static int right_icon = 0x7f0a0aec;
+        public static int right_side = 0x7f0a0af2;
+        public static int tag_transition_group = 0x7f0a0cfe;
+        public static int tag_unhandled_key_event_manager = 0x7f0a0cff;
+        public static int tag_unhandled_key_listeners = 0x7f0a0d00;
+        public static int text = 0x7f0a0d2d;
+        public static int text2 = 0x7f0a0d2f;
+        public static int time = 0x7f0a0d7f;
+        public static int title = 0x7f0a0d8d;
 
         private id() {
         }
@@ -138,7 +138,7 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class string {
-        public static int status_bar_notification_info_overflow = 0x7f1301fe;
+        public static int status_bar_notification_info_overflow = 0x7f1301ff;
 
         private string() {
         }

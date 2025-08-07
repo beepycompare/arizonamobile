@@ -17,6 +17,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 /* loaded from: classes2.dex */
@@ -26,6 +27,7 @@ final class ExternallyLoadedMediaPeriod implements MediaPeriod {
     private ListenableFuture<?> loadingFuture;
     private final AtomicReference<Throwable> loadingThrowable;
     private final byte[] sampleData;
+    private final ArrayList<SampleStreamImpl> sampleStreams;
     private final TrackGroupArray tracks;
     private final Uri uri;
 
@@ -51,11 +53,6 @@ final class ExternallyLoadedMediaPeriod implements MediaPeriod {
     public void reevaluateBuffer(long j) {
     }
 
-    @Override // androidx.media3.exoplayer.source.MediaPeriod
-    public long seekToUs(long j) {
-        return j;
-    }
-
     public ExternallyLoadedMediaPeriod(Uri uri, String str, ExternalLoader externalLoader) {
         this.uri = uri;
         Format build = new Format.Builder().setSampleMimeType(str).build();
@@ -64,6 +61,7 @@ final class ExternallyLoadedMediaPeriod implements MediaPeriod {
         this.sampleData = uri.toString().getBytes(StandardCharsets.UTF_8);
         this.loadingFinished = new AtomicBoolean();
         this.loadingThrowable = new AtomicReference<>();
+        this.sampleStreams = new ArrayList<>();
     }
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod
@@ -92,13 +90,25 @@ final class ExternallyLoadedMediaPeriod implements MediaPeriod {
     @Override // androidx.media3.exoplayer.source.MediaPeriod
     public long selectTracks(ExoTrackSelection[] exoTrackSelectionArr, boolean[] zArr, SampleStream[] sampleStreamArr, boolean[] zArr2, long j) {
         for (int i = 0; i < exoTrackSelectionArr.length; i++) {
-            if (sampleStreamArr[i] != null && (exoTrackSelectionArr[i] == null || !zArr[i])) {
+            SampleStream sampleStream = sampleStreamArr[i];
+            if (sampleStream != null && (exoTrackSelectionArr[i] == null || !zArr[i])) {
+                this.sampleStreams.remove(sampleStream);
                 sampleStreamArr[i] = null;
             }
             if (sampleStreamArr[i] == null && exoTrackSelectionArr[i] != null) {
-                sampleStreamArr[i] = new SampleStreamImpl();
+                SampleStreamImpl sampleStreamImpl = new SampleStreamImpl();
+                this.sampleStreams.add(sampleStreamImpl);
+                sampleStreamArr[i] = sampleStreamImpl;
                 zArr2[i] = true;
             }
+        }
+        return j;
+    }
+
+    @Override // androidx.media3.exoplayer.source.MediaPeriod
+    public long seekToUs(long j) {
+        for (int i = 0; i < this.sampleStreams.size(); i++) {
+            this.sampleStreams.get(i).reset();
         }
         return j;
     }
@@ -143,6 +153,12 @@ final class ExternallyLoadedMediaPeriod implements MediaPeriod {
         }
 
         public SampleStreamImpl() {
+        }
+
+        public void reset() {
+            if (this.streamState == 2) {
+                this.streamState = 1;
+            }
         }
 
         @Override // androidx.media3.exoplayer.source.SampleStream

@@ -1,34 +1,25 @@
 package com.google.android.gms.measurement.internal;
 
-import android.content.Intent;
+import java.util.Map;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzox extends zzay {
-    final /* synthetic */ zzpf zza;
+public final class zzox implements zzgw {
+    final /* synthetic */ String zza;
+    final /* synthetic */ zzpj zzb;
+    final /* synthetic */ zzpg zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzox(zzpf zzpfVar, zzjf zzjfVar) {
-        super(zzjfVar);
-        Objects.requireNonNull(zzpfVar);
-        this.zza = zzpfVar;
+    public zzox(zzpg zzpgVar, String str, zzpj zzpjVar) {
+        this.zza = str;
+        this.zzb = zzpjVar;
+        Objects.requireNonNull(zzpgVar);
+        this.zzc = zzpgVar;
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzay
-    public final void zza() {
-        zzpf zzpfVar = this.zza;
-        zzpfVar.zzaW().zzg();
-        String str = (String) zzpfVar.zzax().pollFirst();
-        if (str != null) {
-            zzpfVar.zzay(zzpfVar.zzaZ().elapsedRealtime());
-            zzpfVar.zzaV().zzk().zzb("Sending trigger URI notification to app", str);
-            Intent intent = new Intent();
-            intent.setAction("com.google.android.gms.measurement.TRIGGERS_AVAILABLE");
-            intent.setPackage(str);
-            zzpf.zzaP(zzpfVar.zzaY(), intent);
-        }
-        zzpfVar.zzau();
+    @Override // com.google.android.gms.measurement.internal.zzgw
+    public final void zza(String str, int i, Throwable th, byte[] bArr, Map map) {
+        this.zzc.zzQ(this.zza, i, th, bArr, this.zzb);
     }
 }

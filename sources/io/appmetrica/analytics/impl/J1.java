@@ -21,22 +21,22 @@ import java.util.Map;
 import java.util.Objects;
 import kotlin.collections.CollectionsKt;
 /* loaded from: classes4.dex */
-public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
+public final class J1 implements InterfaceC0696x1, InterfaceC0496p0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f496a;
+    public boolean f495a;
     public final Context b;
-    public volatile InterfaceC0670w1 c;
-    public final C0673w4 d;
+    public volatile InterfaceC0671w1 c;
+    public final C0674w4 d;
     public final Q1 e;
-    public C0262fh f;
-    public final C0754za g;
-    public final C0422m2 h;
+    public C0263fh f;
+    public final C0755za g;
+    public final C0423m2 h;
     public final K1 i;
-    public final C0537qh j;
+    public final C0538qh j;
 
-    public J1(Context context, InterfaceC0670w1 interfaceC0670w1) {
-        this(context, interfaceC0670w1, new C0724y5(context));
+    public J1(Context context, InterfaceC0671w1 interfaceC0671w1) {
+        this(context, interfaceC0671w1, new C0725y5(context));
     }
 
     public final void a() {
@@ -48,7 +48,7 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
         });
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
+    @Override // io.appmetrica.analytics.impl.InterfaceC0696x1
     public final void b(Intent intent) {
         this.e.d(intent);
         if (intent != null) {
@@ -64,14 +64,14 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
+    @Override // io.appmetrica.analytics.impl.InterfaceC0696x1
     public final void c(Intent intent) {
         Q1 q1 = this.e;
         if (intent != null) {
             q1.getClass();
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                q1.f606a.a(action, Integer.valueOf(Q1.a(intent)));
+                q1.f605a.a(action, Integer.valueOf(Q1.a(intent)));
             }
             for (Map.Entry entry : q1.b.entrySet()) {
                 P1 p1 = (P1) entry.getKey();
@@ -88,53 +88,53 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
         Ia.F.u().a(Bb.e(intent.getStringExtra("screen_size")));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
+    @Override // io.appmetrica.analytics.impl.InterfaceC0696x1
     public final void onConfigurationChanged(Configuration configuration) {
         Ia.F.u().a(configuration);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
+    @Override // io.appmetrica.analytics.impl.InterfaceC0696x1
     public final void onCreate() {
-        if (!this.f496a) {
+        if (!this.f495a) {
             this.g.b(this.b);
             Ia ia = Ia.F;
             synchronized (ia) {
                 ia.B.initAsync();
-                ia.u.a(ia.f490a);
+                ia.u.a(ia.f489a);
                 ia.u.a(new go(ia.B));
-                NetworkServiceLocator.init(new A5(new Ci(ia.g()), new K5(ia.f490a)));
+                NetworkServiceLocator.init(new A5(new Ci(ia.g()), new K5(ia.f489a)));
                 ia.k().a(ia.q);
                 ia.C();
             }
-            AbstractC0291gk.f870a.e();
-            C0318hm c0318hm = Ia.F.u;
-            c0318hm.b();
-            C0267fm b = c0318hm.b();
-            C0739yk o = Ia.F.o();
-            o.a(new C0390kk(new C0657vd(this.e)), b);
-            c0318hm.a(o);
+            AbstractC0292gk.f869a.e();
+            C0319hm c0319hm = Ia.F.u;
+            c0319hm.b();
+            C0268fm b = c0319hm.b();
+            C0740yk o = Ia.F.o();
+            o.a(new C0391kk(new C0658vd(this.e)), b);
+            c0319hm.a(o);
             ((Al) Ia.F.y()).getClass();
             a();
             Ia.F.l().init();
             Ia.F.b().init();
             K1 k1 = this.i;
             Context context = this.b;
-            C0673w4 c0673w4 = this.d;
+            C0674w4 c0674w4 = this.d;
             k1.getClass();
-            this.f = new C0262fh(context, c0673w4);
+            this.f = new C0263fh(context, c0674w4);
             Context context2 = this.b;
-            AbstractC0521q1.f1012a.b(context2);
+            AbstractC0522q1.f1011a.b(context2);
             AppMetrica.getReporter(context2, "20799a27-fa80-4b36-b2db-0f8141f24180");
             Context context3 = this.b;
-            C0262fh c0262fh = this.f;
-            C0208de q = Ia.j().q();
+            C0263fh c0263fh = this.f;
+            C0209de q = Ia.j().q();
             IHandlerExecutor e = Ia.j().w().e();
-            C6 c6 = new C6(context3, c0262fh, EnumC0680wb.EVENT_TYPE_PREV_SESSION_EXCEPTION_UNHANDLED_FROM_FILE, new W(), new BlockingExecutor(), "previous");
-            C6 c62 = new C6(context3, c0262fh, EnumC0680wb.EVENT_TYPE_EXCEPTION_UNHANDLED_FROM_FILE, new Hb(), e, "actual");
+            C6 c6 = new C6(context3, c0263fh, EnumC0681wb.EVENT_TYPE_PREV_SESSION_EXCEPTION_UNHANDLED_FROM_FILE, new W(), new BlockingExecutor(), "previous");
+            C6 c62 = new C6(context3, c0263fh, EnumC0681wb.EVENT_TYPE_EXCEPTION_UNHANDLED_FROM_FILE, new Hb(), e, "actual");
             File crashesDirectory = FileUtils.getCrashesDirectory(context3);
             if (crashesDirectory != null) {
-                A6 a6 = new A6(crashesDirectory, c62, new C0654va());
-                e.execute(new RunnableC0312hg(crashesDirectory, c6));
+                A6 a6 = new A6(crashesDirectory, c62, new C0655va());
+                e.execute(new RunnableC0313hg(crashesDirectory, c6));
                 if (crashesDirectory.exists()) {
                     if (!crashesDirectory.isDirectory() && crashesDirectory.delete()) {
                         crashesDirectory.mkdir();
@@ -149,36 +149,36 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
             File nativeCrashDirectory = FileUtils.getNativeCrashDirectory(context3);
             String absolutePath = nativeCrashDirectory != null ? nativeCrashDirectory.getAbsolutePath() : null;
             if (absolutePath != null) {
-                q.f817a.init(context3, new NativeCrashServiceConfig(absolutePath));
-                List<NativeCrash> allCrashes = q.f817a.getAllCrashes();
+                q.f816a.init(context3, new NativeCrashServiceConfig(absolutePath));
+                List<NativeCrash> allCrashes = q.f816a.getAllCrashes();
                 if (!allCrashes.isEmpty()) {
-                    Yd b2 = q.b.b(context3, c0262fh);
+                    Yd b2 = q.b.b(context3, c0263fh);
                     for (NativeCrash nativeCrash : allCrashes) {
                         b2.newCrash(nativeCrash);
                     }
                 }
-                q.f817a.setDefaultCrashHandler(q.b.a(context3, c0262fh));
+                q.f816a.setDefaultCrashHandler(q.b.a(context3, c0263fh));
             }
-            new RunnableC0225e6(CollectionsKt.listOf(new RunnableC0412lh())).run();
-            this.f496a = true;
+            new RunnableC0226e6(CollectionsKt.listOf(new RunnableC0413lh())).run();
+            this.f495a = true;
         } else {
             Ia.F.u().a(this.b.getResources().getConfiguration());
         }
         Ia.F.k().a();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
+    @Override // io.appmetrica.analytics.impl.InterfaceC0696x1
     public final void onDestroy() {
-        C0128ac k = Ia.F.k();
+        C0129ac k = Ia.F.k();
         synchronized (k) {
             Iterator it = k.c.iterator();
             while (it.hasNext()) {
-                ((InterfaceC0589sk) it.next()).onDestroy();
+                ((InterfaceC0590sk) it.next()).onDestroy();
             }
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
+    @Override // io.appmetrica.analytics.impl.InterfaceC0696x1
     public final void pauseUserSession(Bundle bundle) {
         Pf pf;
         bundle.setClassLoader(Pf.class.getClassLoader());
@@ -188,28 +188,28 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
         } catch (Throwable unused) {
             pf = null;
         }
-        Integer asInteger = pf != null ? pf.f596a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
+        Integer asInteger = pf != null ? pf.f595a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
         if (asInteger != null) {
             this.h.b(asInteger.intValue());
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
+    @Override // io.appmetrica.analytics.impl.InterfaceC0696x1
     public final void reportData(int i, Bundle bundle) {
         this.j.getClass();
-        List<InterfaceC0415lk> list = (List) Ia.F.v.f958a.get(Integer.valueOf(i));
+        List<InterfaceC0416lk> list = (List) Ia.F.v.f957a.get(Integer.valueOf(i));
         if (list == null) {
             list = CollectionsKt.emptyList();
         }
         if (list.isEmpty()) {
             return;
         }
-        for (InterfaceC0415lk interfaceC0415lk : list) {
-            interfaceC0415lk.reportData(i, bundle);
+        for (InterfaceC0416lk interfaceC0416lk : list) {
+            interfaceC0416lk.reportData(i, bundle);
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
+    @Override // io.appmetrica.analytics.impl.InterfaceC0696x1
     public final void resumeUserSession(Bundle bundle) {
         Pf pf;
         bundle.setClassLoader(Pf.class.getClassLoader());
@@ -219,24 +219,24 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
         } catch (Throwable unused) {
             pf = null;
         }
-        Integer asInteger = pf != null ? pf.f596a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
+        Integer asInteger = pf != null ? pf.f595a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
         if (asInteger != null) {
             this.h.c(asInteger.intValue());
         }
     }
 
-    public J1(Context context, InterfaceC0670w1 interfaceC0670w1, C0724y5 c0724y5) {
-        this(context, interfaceC0670w1, new C0673w4(context, c0724y5), new Q1(), C0754za.d, Ia.j().d(), new K1());
+    public J1(Context context, InterfaceC0671w1 interfaceC0671w1, C0725y5 c0725y5) {
+        this(context, interfaceC0671w1, new C0674w4(context, c0725y5), new Q1(), C0755za.d, Ia.j().d(), new K1());
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
+    @Override // io.appmetrica.analytics.impl.InterfaceC0696x1
     public final void a(Intent intent) {
         Q1 q1 = this.e;
         if (intent != null) {
             q1.getClass();
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                q1.f606a.a(action, Integer.valueOf(Q1.a(intent)));
+                q1.f605a.a(action, Integer.valueOf(Q1.a(intent)));
             }
             for (Map.Entry entry : q1.b.entrySet()) {
                 P1 p1 = (P1) entry.getKey();
@@ -249,39 +249,39 @@ public final class J1 implements InterfaceC0695x1, InterfaceC0495p0 {
         q1.getClass();
     }
 
-    public J1(Context context, InterfaceC0670w1 interfaceC0670w1, C0673w4 c0673w4, Q1 q1, C0754za c0754za, C0422m2 c0422m2, K1 k1) {
-        this.f496a = false;
+    public J1(Context context, InterfaceC0671w1 interfaceC0671w1, C0674w4 c0674w4, Q1 q1, C0755za c0755za, C0423m2 c0423m2, K1 k1) {
+        this.f495a = false;
         this.b = context;
-        this.c = interfaceC0670w1;
-        this.d = c0673w4;
+        this.c = interfaceC0671w1;
+        this.d = c0674w4;
         this.e = q1;
-        this.g = c0754za;
-        this.h = c0422m2;
+        this.g = c0755za;
+        this.h = c0423m2;
         this.i = k1;
-        this.j = new C0537qh();
+        this.j = new C0538qh();
     }
 
     public final void a(Bundle bundle) {
         bundle.setClassLoader(CounterConfiguration.class.getClassLoader());
-        C0401l6.b(bundle);
-        C0262fh c0262fh = this.f;
-        if (c0262fh != null) {
-            c0262fh.a(C0401l6.b(bundle), bundle);
+        C0402l6.b(bundle);
+        C0263fh c0263fh = this.f;
+        if (c0263fh != null) {
+            c0263fh.a(C0402l6.b(bundle), bundle);
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
-    public final void a(InterfaceC0670w1 interfaceC0670w1) {
-        this.c = interfaceC0670w1;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0696x1
+    public final void a(InterfaceC0671w1 interfaceC0671w1) {
+        this.c = interfaceC0671w1;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
+    @Override // io.appmetrica.analytics.impl.InterfaceC0696x1
     public final void a(Intent intent, int i) {
-        ((C0620u1) this.c).f1076a.stopSelfResult(i);
+        ((C0621u1) this.c).f1075a.stopSelfResult(i);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0695x1
+    @Override // io.appmetrica.analytics.impl.InterfaceC0696x1
     public final void a(Intent intent, int i, int i2) {
-        ((C0620u1) this.c).f1076a.stopSelfResult(i2);
+        ((C0621u1) this.c).f1075a.stopSelfResult(i2);
     }
 }

@@ -8,6 +8,10 @@ public interface ShuffleOrder {
 
     ShuffleOrder cloneAndInsert(int i, int i2);
 
+    default ShuffleOrder cloneAndMove(int i, int i2, int i3) {
+        return this;
+    }
+
     ShuffleOrder cloneAndRemove(int i, int i2);
 
     int getFirstIndex();

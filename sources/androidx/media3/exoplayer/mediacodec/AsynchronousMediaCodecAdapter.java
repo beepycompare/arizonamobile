@@ -3,6 +3,7 @@ package androidx.media3.exoplayer.mediacodec;
 import android.media.MediaCodec;
 import android.media.MediaCrypto;
 import android.media.MediaFormat;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -11,7 +12,6 @@ import android.view.Surface;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.util.TraceUtil;
-import androidx.media3.common.util.Util;
 import androidx.media3.decoder.CryptoInfo;
 import androidx.media3.exoplayer.mediacodec.AsynchronousMediaCodecAdapter;
 import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
@@ -98,7 +98,7 @@ public final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
                     AsynchronousMediaCodecAdapter asynchronousMediaCodecAdapter2 = new AsynchronousMediaCodecAdapter(mediaCodec, this.callbackThreadSupplier.get(), asynchronousMediaCodecBufferEnqueuer, configuration.loudnessCodecController);
                     try {
                         TraceUtil.endSection();
-                        if (configuration.surface == null && configuration.codecInfo.detachedSurfaceSupported && Util.SDK_INT >= 35) {
+                        if (configuration.surface == null && configuration.codecInfo.detachedSurfaceSupported && Build.VERSION.SDK_INT >= 35) {
                             i |= 8;
                         }
                         asynchronousMediaCodecAdapter2.initialize(configuration.mediaFormat, configuration.surface, configuration.crypto, i);
@@ -123,10 +123,10 @@ public final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
         }
 
         private static boolean useSynchronousBufferQueueingWithAsyncCryptoFlag(Format format) {
-            if (Util.SDK_INT < 34) {
+            if (Build.VERSION.SDK_INT < 34) {
                 return false;
             }
-            return Util.SDK_INT >= 35 || MimeTypes.isVideo(format.sampleMimeType);
+            return Build.VERSION.SDK_INT >= 35 || MimeTypes.isVideo(format.sampleMimeType);
         }
     }
 
@@ -149,7 +149,7 @@ public final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
         TraceUtil.beginSection("startCodec");
         this.codec.start();
         TraceUtil.endSection();
-        if (Util.SDK_INT >= 35 && (loudnessCodecController = this.loudnessCodecController) != null) {
+        if (Build.VERSION.SDK_INT >= 35 && (loudnessCodecController = this.loudnessCodecController) != null) {
             loudnessCodecController.addMediaCodec(this.codec);
         }
         this.state = 1;
@@ -225,11 +225,11 @@ public final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
                 return;
             }
             try {
-                if (Util.SDK_INT >= 30 && Util.SDK_INT < 33) {
+                if (Build.VERSION.SDK_INT >= 30 && Build.VERSION.SDK_INT < 33) {
                     this.codec.stop();
                 }
             } finally {
-                if (Util.SDK_INT >= 35 && (loudnessCodecController3 = this.loudnessCodecController) != null) {
+                if (Build.VERSION.SDK_INT >= 35 && (loudnessCodecController3 = this.loudnessCodecController) != null) {
                     loudnessCodecController3.removeMediaCodec(this.codec);
                 }
                 this.codec.release();
@@ -238,16 +238,16 @@ public final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
         } catch (Throwable th) {
             if (!this.codecReleased) {
                 try {
-                    if (Util.SDK_INT >= 30 && Util.SDK_INT < 33) {
+                    if (Build.VERSION.SDK_INT >= 30 && Build.VERSION.SDK_INT < 33) {
                         this.codec.stop();
                     }
-                    if (Util.SDK_INT >= 35 && (loudnessCodecController2 = this.loudnessCodecController) != null) {
+                    if (Build.VERSION.SDK_INT >= 35 && (loudnessCodecController2 = this.loudnessCodecController) != null) {
                         loudnessCodecController2.removeMediaCodec(this.codec);
                     }
                     this.codec.release();
                     this.codecReleased = true;
                 } finally {
-                    if (Util.SDK_INT >= 35 && (loudnessCodecController = this.loudnessCodecController) != null) {
+                    if (Build.VERSION.SDK_INT >= 35 && (loudnessCodecController = this.loudnessCodecController) != null) {
                         loudnessCodecController.removeMediaCodec(this.codec);
                     }
                     this.codec.release();
@@ -263,14 +263,14 @@ public final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
         this.codec.setOnFrameRenderedListener(new MediaCodec.OnFrameRenderedListener() { // from class: androidx.media3.exoplayer.mediacodec.AsynchronousMediaCodecAdapter$$ExternalSyntheticLambda0
             @Override // android.media.MediaCodec.OnFrameRenderedListener
             public final void onFrameRendered(MediaCodec mediaCodec, long j, long j2) {
-                AsynchronousMediaCodecAdapter.this.m7389x4a2a5e4a(onFrameRenderedListener, mediaCodec, j, j2);
+                AsynchronousMediaCodecAdapter.this.m7393x4a2a5e4a(onFrameRenderedListener, mediaCodec, j, j2);
             }
         }, handler);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOnFrameRenderedListener$0$androidx-media3-exoplayer-mediacodec-AsynchronousMediaCodecAdapter  reason: not valid java name */
-    public /* synthetic */ void m7389x4a2a5e4a(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
+    public /* synthetic */ void m7393x4a2a5e4a(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
         onFrameRenderedListener.onFrameRendered(this, j, j2);
     }
 

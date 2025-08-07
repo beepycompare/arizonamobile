@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.telephony.TelephonyCallback;
@@ -114,7 +115,7 @@ public final class NetworkTypeObserver {
     /* JADX INFO: Access modifiers changed from: private */
     public void handleConnectivityActionBroadcast(Context context) {
         int networkTypeFromConnectivityManager = getNetworkTypeFromConnectivityManager(context);
-        if (Util.SDK_INT >= 31 && networkTypeFromConnectivityManager == 5) {
+        if (Build.VERSION.SDK_INT >= 31 && networkTypeFromConnectivityManager == 5) {
             Api31.disambiguate4gAnd5gNsa(context, this);
         } else {
             updateNetworkType(networkTypeFromConnectivityManager);
@@ -194,7 +195,7 @@ public final class NetworkTypeObserver {
             case 18:
                 return 2;
             case 20:
-                return Util.SDK_INT >= 29 ? 9 : 0;
+                return Build.VERSION.SDK_INT >= 29 ? 9 : 0;
         }
     }
 

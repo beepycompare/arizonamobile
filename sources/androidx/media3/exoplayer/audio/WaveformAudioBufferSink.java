@@ -73,7 +73,7 @@ public class WaveformAudioBufferSink implements TeeAudioProcessor.AudioBufferSin
         this.samplesPerBar = i / this.barsPerSecond;
         this.inputAudioFormat = new AudioProcessor.AudioFormat(i, i2, i3);
         this.mixingAudioFormat = new AudioProcessor.AudioFormat(i, this.outputChannels.size(), 4);
-        this.channelMixingMatrix = ChannelMixingMatrix.create(i2, this.outputChannels.size());
+        this.channelMixingMatrix = ChannelMixingMatrix.createForConstantGain(i2, this.outputChannels.size());
     }
 
     @Override // androidx.media3.exoplayer.audio.TeeAudioProcessor.AudioBufferSink

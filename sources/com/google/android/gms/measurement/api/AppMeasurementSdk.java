@@ -5,16 +5,16 @@ import android.content.Context;
 import android.os.Bundle;
 import com.google.android.gms.internal.measurement.zzdf;
 import com.google.android.gms.internal.measurement.zzfb;
-import com.google.android.gms.measurement.internal.zzjo;
 import com.google.android.gms.measurement.internal.zzjp;
+import com.google.android.gms.measurement.internal.zzjq;
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
 /* loaded from: classes3.dex */
 public class AppMeasurementSdk {
     private final zzfb zza;
 
-    /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
     /* loaded from: classes3.dex */
     public static final class ConditionalUserProperty {
         public static final String ACTIVE = "active";
@@ -37,17 +37,17 @@ public class AppMeasurementSdk {
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
     /* loaded from: classes3.dex */
-    public interface EventInterceptor extends zzjo {
-        @Override // com.google.android.gms.measurement.internal.zzjo
+    public interface EventInterceptor extends zzjp {
+        @Override // com.google.android.gms.measurement.internal.zzjp
         void interceptEvent(String str, String str2, Bundle bundle, long j);
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
     /* loaded from: classes3.dex */
-    public interface OnEventListener extends zzjp {
-        @Override // com.google.android.gms.measurement.internal.zzjp
+    public interface OnEventListener extends zzjq {
+        @Override // com.google.android.gms.measurement.internal.zzjq
         void onEvent(String str, String str2, Bundle bundle, long j);
     }
 

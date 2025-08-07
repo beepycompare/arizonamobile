@@ -2,28 +2,28 @@ package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzku implements Runnable {
-    final /* synthetic */ zzjk zza;
+    final /* synthetic */ zzjl zza;
     final /* synthetic */ long zzb;
     final /* synthetic */ boolean zzc;
-    final /* synthetic */ zzli zzd;
+    final /* synthetic */ zzlj zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzku(zzli zzliVar, zzjk zzjkVar, long j, boolean z) {
-        this.zza = zzjkVar;
+    public zzku(zzlj zzljVar, zzjl zzjlVar, long j, boolean z) {
+        this.zza = zzjlVar;
         this.zzb = j;
         this.zzc = z;
-        Objects.requireNonNull(zzliVar);
-        this.zzd = zzliVar;
+        Objects.requireNonNull(zzljVar);
+        this.zzd = zzljVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zzli zzliVar = this.zzd;
-        zzjk zzjkVar = this.zza;
-        zzliVar.zzA(zzjkVar);
-        zzliVar.zzaj(zzjkVar, this.zzb, false, this.zzc);
+        zzlj zzljVar = this.zzd;
+        zzjl zzjlVar = this.zza;
+        zzljVar.zzA(zzjlVar);
+        zzljVar.zzak(zzjlVar, this.zzb, true, this.zzc);
     }
 }

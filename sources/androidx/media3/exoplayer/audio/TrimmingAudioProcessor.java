@@ -1,10 +1,11 @@
 package androidx.media3.exoplayer.audio;
 
 import androidx.media3.common.audio.AudioProcessor;
+import androidx.media3.common.audio.BaseAudioProcessor;
 import androidx.media3.common.util.Util;
 import java.nio.ByteBuffer;
 /* loaded from: classes2.dex */
-final class TrimmingAudioProcessor extends androidx.media3.common.audio.BaseAudioProcessor {
+public final class TrimmingAudioProcessor extends BaseAudioProcessor {
     private byte[] endBuffer = Util.EMPTY_BYTE_ARRAY;
     private int endBufferSize;
     private int pendingTrimStartBytes;
@@ -33,7 +34,7 @@ final class TrimmingAudioProcessor extends androidx.media3.common.audio.BaseAudi
 
     @Override // androidx.media3.common.audio.BaseAudioProcessor
     public AudioProcessor.AudioFormat onConfigure(AudioProcessor.AudioFormat audioFormat) throws AudioProcessor.UnhandledAudioFormatException {
-        if (audioFormat.encoding != 2 && audioFormat.encoding != 4) {
+        if (!Util.isEncodingLinearPcm(audioFormat.encoding)) {
             throw new AudioProcessor.UnhandledAudioFormatException(audioFormat);
         }
         this.reconfigurationPending = true;

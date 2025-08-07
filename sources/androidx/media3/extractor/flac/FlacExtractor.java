@@ -226,7 +226,7 @@ public final class FlacExtractor implements Extractor {
 
     private SeekMap getSeekMap(long j, long j2) {
         Assertions.checkNotNull(this.flacStreamMetadata);
-        if (this.flacStreamMetadata.seekTable != null) {
+        if (this.flacStreamMetadata.seekTable != null && this.flacStreamMetadata.seekTable.pointSampleNumbers.length > 0) {
             return new FlacSeekTableSeekMap(this.flacStreamMetadata, j);
         }
         if (j2 != -1 && this.flacStreamMetadata.totalSamples > 0) {

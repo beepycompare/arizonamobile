@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import android.content.Context;
 import android.content.SharedPreferences;
 import com.google.common.base.Preconditions;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzcf {
     private static final ThreadLocal zza = new zzce();
@@ -16,13 +16,13 @@ public final class zzcf {
         }
         ThreadLocal threadLocal = zza;
         Preconditions.checkArgument(((Boolean) threadLocal.get()).booleanValue());
-        threadLocal.set(Boolean.FALSE);
+        threadLocal.set(false);
         try {
             SharedPreferences sharedPreferences = context.getSharedPreferences(str, 0);
-            threadLocal.set(Boolean.TRUE);
+            threadLocal.set(true);
             return sharedPreferences;
         } catch (Throwable th) {
-            zza.set(Boolean.TRUE);
+            zza.set(true);
             throw th;
         }
     }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzz {
     final /* synthetic */ zzad zza;
@@ -80,14 +80,14 @@ public final class zzz {
         String zzd = zzhsVar.zzd();
         List zza = zzhsVar.zza();
         zzad zzadVar = this.zza;
-        zzpf zzpfVar = zzadVar.zzg;
-        zzpfVar.zzp();
-        Long l = (Long) zzpj.zzI(zzhsVar, "_eid");
+        zzpg zzpgVar = zzadVar.zzg;
+        zzpgVar.zzp();
+        Long l = (Long) zzpk.zzI(zzhsVar, "_eid");
         if (l != null) {
             if (zzd.equals("_ep")) {
                 Preconditions.checkNotNull(l);
-                zzpfVar.zzp();
-                String str2 = (String) zzpj.zzI(zzhsVar, "_en");
+                zzpgVar.zzp();
+                String str2 = (String) zzpk.zzI(zzhsVar, "_en");
                 if (TextUtils.isEmpty(str2)) {
                     zzadVar.zzu.zzaV().zzc().zzb("Extra parameter without an event name. eventId", l);
                     return null;
@@ -109,12 +109,12 @@ public final class zzz {
                                     zzj2.zzu.zzaV().zzb().zzb("Error clearing complex main event", e);
                                 }
                             } else {
-                                this.zza.zzg.zzj().zzV(str, l, this.zzd, this.zzb);
+                                this.zza.zzg.zzj().zzT(str, l, this.zzd, this.zzb);
                             }
                             arrayList = new ArrayList();
                             for (com.google.android.gms.internal.measurement.zzhw zzhwVar : this.zzb.zza()) {
                                 this.zza.zzg.zzp();
-                                if (zzpj.zzF(zzhsVar, zzhwVar.zzb()) == null) {
+                                if (zzpk.zzF(zzhsVar, zzhwVar.zzb()) == null) {
                                     arrayList.add(zzhwVar);
                                 }
                             }
@@ -132,7 +132,7 @@ public final class zzz {
                         zzhsVar2 = null;
                         try {
                             try {
-                                Pair create = Pair.create((com.google.android.gms.internal.measurement.zzhs) ((com.google.android.gms.internal.measurement.zzhr) zzpj.zzw(com.google.android.gms.internal.measurement.zzhs.zzk(), cursor.getBlob(0))).zzbc(), Long.valueOf(cursor.getLong(1)));
+                                Pair create = Pair.create((com.google.android.gms.internal.measurement.zzhs) ((com.google.android.gms.internal.measurement.zzhr) zzpk.zzw(com.google.android.gms.internal.measurement.zzhs.zzk(), cursor.getBlob(0))).zzbc(), Long.valueOf(cursor.getLong(1)));
                                 pair = create;
                                 if (cursor != null) {
                                     cursor.close();
@@ -141,7 +141,7 @@ public final class zzz {
                             } catch (IOException e2) {
                                 j = 0;
                                 try {
-                                    zzj.zzu.zzaV().zzb().zzd("Failed to merge main event. appId, eventId", zzgt.zzl(str), l, e2);
+                                    zzj.zzu.zzaV().zzb().zzd("Failed to merge main event. appId, eventId", zzgu.zzl(str), l, e2);
                                 } catch (SQLiteException e3) {
                                     e = e3;
                                     zzj.zzu.zzaV().zzb().zzb("Error selecting main event", e);
@@ -169,7 +169,7 @@ public final class zzz {
                     this.zzb = (com.google.android.gms.internal.measurement.zzhs) pair2.first;
                     this.zzd = ((Long) pair2.second).longValue();
                     this.zza.zzg.zzp();
-                    this.zzc = (Long) zzpj.zzI(this.zzb, "_eid");
+                    this.zzc = (Long) zzpk.zzI(this.zzb, "_eid");
                     j2 = this.zzd - 1;
                     this.zzd = j2;
                     if (j2 > j) {
@@ -188,19 +188,19 @@ public final class zzz {
                     }
                     throw th;
                 }
-                zzj = zzpfVar.zzj();
+                zzj = zzpgVar.zzj();
                 zzj.zzg();
-                zzj.zzay();
+                zzj.zzaw();
             } else {
                 this.zzc = l;
                 this.zzb = zzhsVar;
-                zzpfVar.zzp();
-                long longValue2 = ((Long) zzpj.zzJ(zzhsVar, "_epc", 0L)).longValue();
+                zzpgVar.zzp();
+                long longValue2 = ((Long) zzpk.zzJ(zzhsVar, "_epc", 0L)).longValue();
                 this.zzd = longValue2;
                 if (longValue2 <= 0) {
                     zzadVar.zzu.zzaV().zzc().zzb("Complex event with zero extra param count. eventName", zzd);
                 } else {
-                    zzpfVar.zzj().zzV(str, (Long) Preconditions.checkNotNull(l), this.zzd, zzhsVar);
+                    zzpgVar.zzj().zzT(str, (Long) Preconditions.checkNotNull(l), this.zzd, zzhsVar);
                 }
             }
         }

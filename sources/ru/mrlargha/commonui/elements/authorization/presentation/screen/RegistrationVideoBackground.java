@@ -185,13 +185,22 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
                     throw new NoWhenBranchMatchedException();
                 }
                 this.videoBackgroundBinding.videoBg.stopPlayback();
-                this.videoBackgroundBinding.videoBg.setVisibility(8);
+                if (this.videoBackgroundBinding.videoBg.getVisibility() != 8) {
+                    this.videoBackgroundBinding.videoBg.setVisibility(8);
+                    return;
+                }
                 return;
             }
             this.videoBackgroundBinding.videoBg.stopPlayback();
-            this.videoBackground.setVisibility(8);
-            this.videoBackgroundBinding.video.setVisibility(8);
-            this.videoBackgroundBinding.videoBg.setVisibility(8);
+            if (this.videoBackground.getVisibility() != 8) {
+                this.videoBackground.setVisibility(8);
+            }
+            if (this.videoBackgroundBinding.video.getVisibility() != 8) {
+                this.videoBackgroundBinding.video.setVisibility(8);
+            }
+            if (this.videoBackgroundBinding.videoBg.getVisibility() != 8) {
+                this.videoBackgroundBinding.videoBg.setVisibility(8);
+            }
         } else {
             this.lastChoseVideo = videoMode;
             MediaController mediaController2 = new MediaController(getTargetActivity());

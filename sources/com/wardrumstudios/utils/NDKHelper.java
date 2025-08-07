@@ -12,7 +12,6 @@ import android.media.AudioTrack;
 import android.opengl.GLUtils;
 import android.util.Log;
 import androidx.media3.common.MimeTypes;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.File;
 import java.io.FileInputStream;
 /* loaded from: classes4.dex */
@@ -110,7 +109,7 @@ public class NDKHelper {
     /* JADX WARN: Type inference failed for: r6v4, types: [android.graphics.Bitmap] */
     public boolean loadTexture(String str) {
         try {
-            File file = new File(this.activity.getExternalFilesDir(null), !str.startsWith(RemoteSettings.FORWARD_SLASH_STRING) ? RemoteSettings.FORWARD_SLASH_STRING + str : str);
+            File file = new File(this.activity.getExternalFilesDir(null), !str.startsWith("/") ? "/" + str : str);
             str = BitmapFactory.decodeStream(file.canRead() ? new FileInputStream(file) : this.activity.getResources().getAssets().open(str));
             if (str != 0) {
                 GLUtils.texImage2D(3553, 0, str, 0);

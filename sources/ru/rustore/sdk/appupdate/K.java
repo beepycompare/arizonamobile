@@ -1,0 +1,68 @@
+package ru.rustore.sdk.appupdate;
+
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import kotlin.Lazy;
+import kotlin.LazyKt;
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+/* loaded from: classes5.dex */
+public final class K {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Context f1340a;
+    public final Lazy b;
+
+    /* loaded from: classes5.dex */
+    public static final class a extends Lambda implements Function0<String> {
+        public a() {
+            super(0);
+        }
+
+        @Override // kotlin.jvm.functions.Function0
+        public final String invoke() {
+            Object m8500constructorimpl;
+            K k = K.this;
+            try {
+                Result.Companion companion = Result.Companion;
+                PackageManager packageManager = k.f1340a.getPackageManager();
+                Intrinsics.checkNotNullExpressionValue(packageManager, "context.packageManager");
+                String packageName = k.f1340a.getPackageName();
+                Intrinsics.checkNotNullExpressionValue(packageName, "context.packageName");
+                m8500constructorimpl = Result.m8500constructorimpl(K.a(k, packageManager, packageName).versionName);
+            } catch (Throwable th) {
+                Result.Companion companion2 = Result.Companion;
+                m8500constructorimpl = Result.m8500constructorimpl(ResultKt.createFailure(th));
+            }
+            if (Result.m8506isFailureimpl(m8500constructorimpl)) {
+                m8500constructorimpl = null;
+            }
+            return (String) m8500constructorimpl;
+        }
+    }
+
+    public K(Context context) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        this.f1340a = context;
+        this.b = LazyKt.lazy(new a());
+    }
+
+    public static final PackageInfo a(K k, PackageManager packageManager, String str) {
+        PackageInfo packageInfo;
+        String str2;
+        if (Build.VERSION.SDK_INT >= 33) {
+            packageInfo = packageManager.getPackageInfo(str, PackageManager.PackageInfoFlags.of(0L));
+            str2 = "{\n            getPackage…nfoFlags.of(0))\n        }";
+        } else {
+            packageInfo = packageManager.getPackageInfo(str, 0);
+            str2 = "{\n            getPackage…packageName, 0)\n        }";
+        }
+        Intrinsics.checkNotNullExpressionValue(packageInfo, str2);
+        return packageInfo;
+    }
+}

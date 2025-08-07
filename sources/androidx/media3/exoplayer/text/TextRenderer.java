@@ -51,7 +51,6 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
     private final TextOutput output;
     private final Handler outputHandler;
     private boolean outputStreamEnded;
-    private IOException streamError;
     private Format streamFormat;
     private SubtitleOutputBuffer subtitle;
     private SubtitleDecoder subtitleDecoder;
@@ -325,28 +324,26 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
 
     @Override // androidx.media3.exoplayer.Renderer
     public boolean isReady() {
-        if (this.streamFormat == null) {
+        Format format = this.streamFormat;
+        if (format == null) {
             return true;
         }
-        if (this.streamError == null) {
+        if (!isCuesWithTiming((Format) Assertions.checkNotNull(format))) {
+            return !this.outputStreamEnded && (!this.inputStreamEnded || hasEventsAfter(this.subtitle, this.lastRendererPositionUs) || hasEventsAfter(this.nextSubtitle, this.lastRendererPositionUs) || this.nextSubtitleInputBuffer == null);
+        } else if (((CuesResolver) Assertions.checkNotNull(this.cuesResolver)).getNextCueChangeTimeUs(this.lastRendererPositionUs) != Long.MIN_VALUE) {
+            return true;
+        } else {
             try {
                 maybeThrowStreamError();
-            } catch (IOException e) {
-                this.streamError = e;
-            }
-        }
-        if (this.streamError != null) {
-            if (isCuesWithTiming((Format) Assertions.checkNotNull(this.streamFormat))) {
-                return ((CuesResolver) Assertions.checkNotNull(this.cuesResolver)).getNextCueChangeTimeUs(this.lastRendererPositionUs) != Long.MIN_VALUE;
-            } else if (this.outputStreamEnded || (this.inputStreamEnded && hasNoEventsAfter(this.subtitle, this.lastRendererPositionUs) && hasNoEventsAfter(this.nextSubtitle, this.lastRendererPositionUs) && this.nextSubtitleInputBuffer != null)) {
+                return true;
+            } catch (IOException unused) {
                 return false;
             }
         }
-        return true;
     }
 
-    private static boolean hasNoEventsAfter(Subtitle subtitle, long j) {
-        return subtitle == null || subtitle.getEventTime(subtitle.getEventTimeCount() - 1) <= j;
+    private static boolean hasEventsAfter(Subtitle subtitle, long j) {
+        return subtitle != null && subtitle.getEventTimeCount() > 0 && subtitle.getEventTime(subtitle.getEventTimeCount() - 1) > j;
     }
 
     private void releaseSubtitleBuffers() {

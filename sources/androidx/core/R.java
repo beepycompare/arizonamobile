@@ -5,23 +5,23 @@ public final class R {
     /* loaded from: classes2.dex */
     public static final class attr {
         public static int alpha = 0x7f040037;
-        public static int font = 0x7f04025f;
-        public static int fontProviderAuthority = 0x7f040261;
-        public static int fontProviderCerts = 0x7f040262;
-        public static int fontProviderFallbackQuery = 0x7f040263;
-        public static int fontProviderFetchStrategy = 0x7f040264;
-        public static int fontProviderFetchTimeout = 0x7f040265;
-        public static int fontProviderPackage = 0x7f040266;
-        public static int fontProviderQuery = 0x7f040267;
-        public static int fontProviderSystemFontFamily = 0x7f040268;
-        public static int fontStyle = 0x7f040269;
-        public static int fontVariationSettings = 0x7f04026a;
-        public static int fontWeight = 0x7f04026b;
-        public static int lStar = 0x7f040328;
-        public static int nestedScrollViewStyle = 0x7f040465;
-        public static int queryPatterns = 0x7f0404ca;
-        public static int shortcutMatchRequired = 0x7f040523;
-        public static int ttcIndex = 0x7f04064e;
+        public static int font = 0x7f04026b;
+        public static int fontProviderAuthority = 0x7f04026d;
+        public static int fontProviderCerts = 0x7f04026e;
+        public static int fontProviderFallbackQuery = 0x7f04026f;
+        public static int fontProviderFetchStrategy = 0x7f040270;
+        public static int fontProviderFetchTimeout = 0x7f040271;
+        public static int fontProviderPackage = 0x7f040272;
+        public static int fontProviderQuery = 0x7f040273;
+        public static int fontProviderSystemFontFamily = 0x7f040274;
+        public static int fontStyle = 0x7f040275;
+        public static int fontVariationSettings = 0x7f040276;
+        public static int fontWeight = 0x7f040277;
+        public static int lStar = 0x7f040333;
+        public static int nestedScrollViewStyle = 0x7f040470;
+        public static int queryPatterns = 0x7f0404d5;
+        public static int shortcutMatchRequired = 0x7f04052f;
+        public static int ttcIndex = 0x7f04065b;
 
         private attr() {
         }
@@ -77,19 +77,19 @@ public final class R {
         public static int ic_call_answer_video_low = 0x7f080905;
         public static int ic_call_decline = 0x7f080906;
         public static int ic_call_decline_low = 0x7f080907;
-        public static int notification_action_background = 0x7f080abf;
-        public static int notification_bg = 0x7f080ac0;
-        public static int notification_bg_low = 0x7f080ac1;
-        public static int notification_bg_low_normal = 0x7f080ac2;
-        public static int notification_bg_low_pressed = 0x7f080ac3;
-        public static int notification_bg_normal = 0x7f080ac4;
-        public static int notification_bg_normal_pressed = 0x7f080ac5;
-        public static int notification_icon_background = 0x7f080ac7;
-        public static int notification_oversize_large_icon_bg = 0x7f080ac8;
-        public static int notification_template_icon_bg = 0x7f080ac9;
-        public static int notification_template_icon_low_bg = 0x7f080aca;
-        public static int notification_tile_bg = 0x7f080acc;
-        public static int notify_panel_notification_icon_bg = 0x7f080ace;
+        public static int notification_action_background = 0x7f080ac0;
+        public static int notification_bg = 0x7f080ac1;
+        public static int notification_bg_low = 0x7f080ac2;
+        public static int notification_bg_low_normal = 0x7f080ac3;
+        public static int notification_bg_low_pressed = 0x7f080ac4;
+        public static int notification_bg_normal = 0x7f080ac5;
+        public static int notification_bg_normal_pressed = 0x7f080ac6;
+        public static int notification_icon_background = 0x7f080ac8;
+        public static int notification_oversize_large_icon_bg = 0x7f080ac9;
+        public static int notification_template_icon_bg = 0x7f080aca;
+        public static int notification_template_icon_low_bg = 0x7f080acb;
+        public static int notification_tile_bg = 0x7f080acd;
+        public static int notify_panel_notification_icon_bg = 0x7f080acf;
 
         private drawable() {
         }
@@ -152,27 +152,27 @@ public final class R {
         public static int notification_background = 0x7f0a096e;
         public static int notification_main_column = 0x7f0a0972;
         public static int notification_main_column_container = 0x7f0a0973;
-        public static int right_icon = 0x7f0a0aeb;
-        public static int right_side = 0x7f0a0af1;
-        public static int tag_accessibility_actions = 0x7f0a0cf2;
-        public static int tag_accessibility_clickable_spans = 0x7f0a0cf3;
-        public static int tag_accessibility_heading = 0x7f0a0cf4;
-        public static int tag_accessibility_pane_title = 0x7f0a0cf5;
-        public static int tag_compat_insets_dispatch = 0x7f0a0cf6;
-        public static int tag_on_apply_window_listener = 0x7f0a0cf7;
-        public static int tag_on_receive_content_listener = 0x7f0a0cf8;
-        public static int tag_on_receive_content_mime_types = 0x7f0a0cf9;
-        public static int tag_screen_reader_focusable = 0x7f0a0cfa;
-        public static int tag_state_description = 0x7f0a0cfb;
-        public static int tag_system_bar_state_monitor = 0x7f0a0cfc;
-        public static int tag_transition_group = 0x7f0a0cfd;
-        public static int tag_unhandled_key_event_manager = 0x7f0a0cfe;
-        public static int tag_unhandled_key_listeners = 0x7f0a0cff;
-        public static int tag_window_insets_animation_callback = 0x7f0a0d00;
-        public static int text = 0x7f0a0d26;
-        public static int text2 = 0x7f0a0d28;
-        public static int time = 0x7f0a0d78;
-        public static int title = 0x7f0a0d86;
+        public static int right_icon = 0x7f0a0aec;
+        public static int right_side = 0x7f0a0af2;
+        public static int tag_accessibility_actions = 0x7f0a0cf3;
+        public static int tag_accessibility_clickable_spans = 0x7f0a0cf4;
+        public static int tag_accessibility_heading = 0x7f0a0cf5;
+        public static int tag_accessibility_pane_title = 0x7f0a0cf6;
+        public static int tag_compat_insets_dispatch = 0x7f0a0cf7;
+        public static int tag_on_apply_window_listener = 0x7f0a0cf8;
+        public static int tag_on_receive_content_listener = 0x7f0a0cf9;
+        public static int tag_on_receive_content_mime_types = 0x7f0a0cfa;
+        public static int tag_screen_reader_focusable = 0x7f0a0cfb;
+        public static int tag_state_description = 0x7f0a0cfc;
+        public static int tag_system_bar_state_monitor = 0x7f0a0cfd;
+        public static int tag_transition_group = 0x7f0a0cfe;
+        public static int tag_unhandled_key_event_manager = 0x7f0a0cff;
+        public static int tag_unhandled_key_listeners = 0x7f0a0d00;
+        public static int tag_window_insets_animation_callback = 0x7f0a0d01;
+        public static int text = 0x7f0a0d2d;
+        public static int text2 = 0x7f0a0d2f;
+        public static int time = 0x7f0a0d7f;
+        public static int title = 0x7f0a0d8d;
 
         private id() {
         }
@@ -211,7 +211,7 @@ public final class R {
         public static int call_notification_incoming_text = 0x7f130039;
         public static int call_notification_ongoing_text = 0x7f13003a;
         public static int call_notification_screening_text = 0x7f13003b;
-        public static int status_bar_notification_info_overflow = 0x7f1301fe;
+        public static int status_bar_notification_info_overflow = 0x7f1301ff;
 
         private string() {
         }

@@ -1,12 +1,15 @@
 package androidx.media3.exoplayer.drm;
 
+import android.net.Uri;
 import android.os.ConditionVariable;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.util.Pair;
+import androidx.media3.common.C;
 import androidx.media3.common.DrmInitData;
 import androidx.media3.common.Format;
+import androidx.media3.common.MediaItem;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.exoplayer.analytics.PlayerId;
@@ -26,6 +29,11 @@ public final class OfflineLicenseHelper {
     private final Handler handler;
     private final HandlerThread handlerThread;
 
+    public static OfflineLicenseHelper newWidevineInstance(MediaItem.DrmConfiguration drmConfiguration, DataSource.Factory factory, DrmSessionEventListener.EventDispatcher eventDispatcher) {
+        Assertions.checkArgument(drmConfiguration.scheme.equals(C.WIDEVINE_UUID));
+        return newWidevineInstance(((Uri) Assertions.checkNotNull(drmConfiguration.licenseUri)).toString(), drmConfiguration.forceDefaultLicenseUri, drmConfiguration.licenseRequestHeaders, factory, null, eventDispatcher);
+    }
+
     public static OfflineLicenseHelper newWidevineInstance(String str, DataSource.Factory factory, DrmSessionEventListener.EventDispatcher eventDispatcher) {
         return newWidevineInstance(str, false, factory, eventDispatcher);
     }
@@ -35,7 +43,17 @@ public final class OfflineLicenseHelper {
     }
 
     public static OfflineLicenseHelper newWidevineInstance(String str, boolean z, DataSource.Factory factory, Map<String, String> map, DrmSessionEventListener.EventDispatcher eventDispatcher) {
-        return new OfflineLicenseHelper(new DefaultDrmSessionManager.Builder().setKeyRequestParameters(map).build(new HttpMediaDrmCallback(str, z, factory)), eventDispatcher);
+        return newWidevineInstance(str, z, null, factory, map, eventDispatcher);
+    }
+
+    private static OfflineLicenseHelper newWidevineInstance(String str, boolean z, Map<String, String> map, DataSource.Factory factory, Map<String, String> map2, DrmSessionEventListener.EventDispatcher eventDispatcher) {
+        HttpMediaDrmCallback httpMediaDrmCallback = new HttpMediaDrmCallback(str, z, factory);
+        if (map != null) {
+            for (Map.Entry<String, String> entry : map.entrySet()) {
+                httpMediaDrmCallback.setKeyRequestProperty(entry.getKey(), entry.getValue());
+            }
+        }
+        return new OfflineLicenseHelper(new DefaultDrmSessionManager.Builder().setKeyRequestParameters(map2).build(httpMediaDrmCallback), eventDispatcher);
     }
 
     public OfflineLicenseHelper(DefaultDrmSessionManager defaultDrmSessionManager, DrmSessionEventListener.EventDispatcher eventDispatcher) {
@@ -93,7 +111,7 @@ public final class OfflineLicenseHelper {
             this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.drm.OfflineLicenseHelper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    OfflineLicenseHelper.this.m7387xc6195285(create, acquireFirstSessionOnHandlerThread);
+                    OfflineLicenseHelper.this.m7391xc6195285(create, acquireFirstSessionOnHandlerThread);
                 }
             });
             try {
@@ -113,7 +131,7 @@ public final class OfflineLicenseHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getLicenseDurationRemainingSec$0$androidx-media3-exoplayer-drm-OfflineLicenseHelper  reason: not valid java name */
-    public /* synthetic */ void m7387xc6195285(SettableFuture settableFuture, DrmSession drmSession) {
+    public /* synthetic */ void m7391xc6195285(SettableFuture settableFuture, DrmSession drmSession) {
         try {
             settableFuture.set((Pair) Assertions.checkNotNull(WidevineUtil.getLicenseDurationRemainingSec(drmSession)));
         } finally {
@@ -133,7 +151,7 @@ public final class OfflineLicenseHelper {
         this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.drm.OfflineLicenseHelper$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                OfflineLicenseHelper.this.m7386x4ec00c9e(create, acquireFirstSessionOnHandlerThread);
+                OfflineLicenseHelper.this.m7390x4ec00c9e(create, acquireFirstSessionOnHandlerThread);
             }
         });
         try {
@@ -149,7 +167,7 @@ public final class OfflineLicenseHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$acquireSessionAndGetOfflineLicenseKeySetIdOnHandlerThread$1$androidx-media3-exoplayer-drm-OfflineLicenseHelper  reason: not valid java name */
-    public /* synthetic */ void m7386x4ec00c9e(SettableFuture settableFuture, DrmSession drmSession) {
+    public /* synthetic */ void m7390x4ec00c9e(SettableFuture settableFuture, DrmSession drmSession) {
         try {
             settableFuture.set(drmSession.getOfflineLicenseKeySetId());
         } finally {
@@ -166,7 +184,7 @@ public final class OfflineLicenseHelper {
         this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.drm.OfflineLicenseHelper$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                OfflineLicenseHelper.this.m7384xf4292904(i, bArr, create, format);
+                OfflineLicenseHelper.this.m7388xf4292904(i, bArr, create, format);
             }
         });
         try {
@@ -176,7 +194,7 @@ public final class OfflineLicenseHelper {
             this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.drm.OfflineLicenseHelper$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    OfflineLicenseHelper.this.m7385x2201c363(drmSession, create2);
+                    OfflineLicenseHelper.this.m7389x2201c363(drmSession, create2);
                 }
             });
             try {
@@ -194,7 +212,7 @@ public final class OfflineLicenseHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$acquireFirstSessionOnHandlerThread$2$androidx-media3-exoplayer-drm-OfflineLicenseHelper  reason: not valid java name */
-    public /* synthetic */ void m7384xf4292904(int i, byte[] bArr, SettableFuture settableFuture, Format format) {
+    public /* synthetic */ void m7388xf4292904(int i, byte[] bArr, SettableFuture settableFuture, Format format) {
         try {
             this.drmSessionManager.setPlayer((Looper) Assertions.checkNotNull(Looper.myLooper()), PlayerId.UNSET);
             this.drmSessionManager.prepare();
@@ -207,7 +225,7 @@ public final class OfflineLicenseHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$acquireFirstSessionOnHandlerThread$3$androidx-media3-exoplayer-drm-OfflineLicenseHelper  reason: not valid java name */
-    public /* synthetic */ void m7385x2201c363(DrmSession drmSession, SettableFuture settableFuture) {
+    public /* synthetic */ void m7389x2201c363(DrmSession drmSession, SettableFuture settableFuture) {
         try {
             DrmSession.DrmSessionException error = drmSession.getError();
             if (drmSession.getState() == 1) {
@@ -227,7 +245,7 @@ public final class OfflineLicenseHelper {
         this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.drm.OfflineLicenseHelper$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                OfflineLicenseHelper.this.m7388xf255d686(create);
+                OfflineLicenseHelper.this.m7392xf255d686(create);
             }
         });
         try {
@@ -239,7 +257,7 @@ public final class OfflineLicenseHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$releaseManagerOnHandlerThread$4$androidx-media3-exoplayer-drm-OfflineLicenseHelper  reason: not valid java name */
-    public /* synthetic */ void m7388xf255d686(SettableFuture settableFuture) {
+    public /* synthetic */ void m7392xf255d686(SettableFuture settableFuture) {
         try {
             this.drmSessionManager.release();
             settableFuture.set(null);

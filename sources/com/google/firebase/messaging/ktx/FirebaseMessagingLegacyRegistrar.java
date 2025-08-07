@@ -12,6 +12,6 @@ import kotlin.collections.CollectionsKt;
 public final class FirebaseMessagingLegacyRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component<?>> getComponents() {
-        return CollectionsKt.listOf(LibraryVersionComponent.create(LoggingKt.LIBRARY_NAME, com.google.firebase.messaging.BuildConfig.VERSION_NAME));
+        return CollectionsKt.listOf(LibraryVersionComponent.create(LoggingKt.LIBRARY_NAME, "24.1.2"));
     }
 }

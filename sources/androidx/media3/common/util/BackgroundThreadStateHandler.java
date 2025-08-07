@@ -36,7 +36,7 @@ public final class BackgroundThreadStateHandler<T> {
     public void updateStateAsync(Function<T, T> function, final Function<T, T> function2) {
         Assertions.checkState(Looper.myLooper() == this.foregroundHandler.getLooper());
         this.pendingOperations++;
-        this.backgroundHandler.post(new Runnable() { // from class: androidx.media3.common.util.BackgroundThreadStateHandler$$ExternalSyntheticLambda0
+        runInBackground(new Runnable() { // from class: androidx.media3.common.util.BackgroundThreadStateHandler$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 BackgroundThreadStateHandler.this.m7300x55c212ba(function2);
@@ -50,7 +50,7 @@ public final class BackgroundThreadStateHandler<T> {
     public /* synthetic */ void m7300x55c212ba(Function function) {
         final T t = (T) function.apply(this.backgroundState);
         this.backgroundState = t;
-        this.foregroundHandler.post(new Runnable() { // from class: androidx.media3.common.util.BackgroundThreadStateHandler$$ExternalSyntheticLambda2
+        runInForeground(new Runnable() { // from class: androidx.media3.common.util.BackgroundThreadStateHandler$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 BackgroundThreadStateHandler.this.m7299xc8d4fb9b(t);
@@ -71,7 +71,7 @@ public final class BackgroundThreadStateHandler<T> {
 
     public void setStateInBackground(final T t) {
         this.backgroundState = t;
-        this.foregroundHandler.post(new Runnable() { // from class: androidx.media3.common.util.BackgroundThreadStateHandler$$ExternalSyntheticLambda1
+        runInForeground(new Runnable() { // from class: androidx.media3.common.util.BackgroundThreadStateHandler$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 BackgroundThreadStateHandler.this.m7298x5a135e8b(t);
@@ -89,7 +89,15 @@ public final class BackgroundThreadStateHandler<T> {
     }
 
     public void runInBackground(Runnable runnable) {
-        this.backgroundHandler.post(runnable);
+        if (this.backgroundHandler.getLooper().getThread().isAlive()) {
+            this.backgroundHandler.post(runnable);
+        }
+    }
+
+    private void runInForeground(Runnable runnable) {
+        if (this.foregroundHandler.getLooper().getThread().isAlive()) {
+            this.foregroundHandler.post(runnable);
+        }
     }
 
     private void updateStateInForeground(T t) {

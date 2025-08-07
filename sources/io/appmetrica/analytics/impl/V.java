@@ -5,40 +5,40 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class V implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0642un f678a;
+    public final C0643un f677a;
 
-    public V(C0642un c0642un) {
-        this.f678a = c0642un;
+    public V(C0643un c0643un) {
+        this.f677a = c0643un;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0451n6 fromModel(U u) {
-        C0451n6 c0451n6 = new C0451n6();
-        C0617tn c0617tn = u.f661a;
-        if (c0617tn != null) {
-            c0451n6.f966a = this.f678a.fromModel(c0617tn);
+    public final C0452n6 fromModel(U u) {
+        C0452n6 c0452n6 = new C0452n6();
+        C0618tn c0618tn = u.f660a;
+        if (c0618tn != null) {
+            c0452n6.f965a = this.f677a.fromModel(c0618tn);
         }
-        c0451n6.b = new C0675w6[u.b.size()];
+        c0452n6.b = new C0676w6[u.b.size()];
         int i = 0;
-        for (C0617tn c0617tn2 : u.b) {
-            c0451n6.b[i] = this.f678a.fromModel(c0617tn2);
+        for (C0618tn c0618tn2 : u.b) {
+            c0452n6.b[i] = this.f677a.fromModel(c0618tn2);
             i++;
         }
         String str = u.c;
         if (str != null) {
-            c0451n6.c = str;
+            c0452n6.c = str;
         }
-        return c0451n6;
+        return c0452n6;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        C0451n6 c0451n6 = (C0451n6) obj;
+        C0452n6 c0452n6 = (C0452n6) obj;
         throw new UnsupportedOperationException();
     }
 
-    public final U a(C0451n6 c0451n6) {
+    public final U a(C0452n6 c0452n6) {
         throw new UnsupportedOperationException();
     }
 }

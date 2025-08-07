@@ -7,13 +7,13 @@ import kotlin.collections.MapsKt;
 public final class Kk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ok f526a;
+    public final Ok f525a;
     public final Map b;
 
-    public Kk(Context context, C0400l5 c0400l5) {
-        c0400l5.a();
-        Ok ok = new Ok(context, c0400l5);
-        this.f526a = ok;
+    public Kk(Context context, C0401l5 c0401l5) {
+        c0401l5.a();
+        Ok ok = new Ok(context, c0401l5);
+        this.f525a = ok;
         this.b = MapsKt.toMutableMap(ok.a());
     }
 }

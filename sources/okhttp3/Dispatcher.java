@@ -262,7 +262,7 @@ public final class Dispatcher {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "executorService", imports = {}))
     /* renamed from: -deprecated_executorService  reason: not valid java name */
-    public final ExecutorService m10275deprecated_executorService() {
+    public final ExecutorService m10298deprecated_executorService() {
         return executorService();
     }
 }

@@ -19,7 +19,6 @@ import androidx.constraintlayout.core.widgets.Optimizer;
 import androidx.constraintlayout.core.widgets.analyzer.BasicMeasure;
 import androidx.core.internal.view.SupportMenu;
 import androidx.core.view.ViewCompat;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -83,7 +82,7 @@ public class ConstraintLayout extends ViewGroup {
                 this.mDesignIds = new HashMap<>();
             }
             String str = (String) obj;
-            int indexOf = str.indexOf(RemoteSettings.FORWARD_SLASH_STRING);
+            int indexOf = str.indexOf("/");
             if (indexOf != -1) {
                 str = str.substring(indexOf + 1);
             }

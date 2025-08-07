@@ -2,7 +2,6 @@ package com.google.firebase.sessions;
 
 import android.content.Context;
 import androidx.datastore.core.DataStore;
-import androidx.datastore.preferences.core.Preferences;
 import com.google.android.datatransport.TransportFactory;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.inject.Provider;
@@ -18,10 +17,11 @@ import com.google.firebase.sessions.settings.RemoteSettings;
 import com.google.firebase.sessions.settings.RemoteSettingsFetcher;
 import com.google.firebase.sessions.settings.RemoteSettingsFetcher_Factory;
 import com.google.firebase.sessions.settings.RemoteSettings_Factory;
+import com.google.firebase.sessions.settings.SessionConfigs;
 import com.google.firebase.sessions.settings.SessionsSettings;
 import com.google.firebase.sessions.settings.SessionsSettings_Factory;
-import com.google.firebase.sessions.settings.SettingsCache;
-import com.google.firebase.sessions.settings.SettingsCache_Factory;
+import com.google.firebase.sessions.settings.SettingsCacheImpl;
+import com.google.firebase.sessions.settings.SettingsCacheImpl_Factory;
 import kotlin.coroutines.CoroutineContext;
 /* loaded from: classes4.dex */
 public final class DaggerFirebaseSessionsComponent {
@@ -99,28 +99,31 @@ public final class DaggerFirebaseSessionsComponent {
 
     /* loaded from: classes4.dex */
     private static final class FirebaseSessionsComponentImpl implements FirebaseSessionsComponent {
-        private javax.inject.Provider<Context> appContextProvider;
-        private javax.inject.Provider<ApplicationInfo> applicationInfoProvider;
-        private javax.inject.Provider<CoroutineContext> backgroundDispatcherProvider;
-        private javax.inject.Provider<EventGDTLogger> eventGDTLoggerProvider;
-        private javax.inject.Provider<FirebaseApp> firebaseAppProvider;
-        private javax.inject.Provider<FirebaseInstallationsApi> firebaseInstallationsApiProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<Context> appContextProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<ApplicationInfo> applicationInfoProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<CoroutineContext> backgroundDispatcherProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<CoroutineContext> blockingDispatcherProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<EventGDTLogger> eventGDTLoggerProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<FirebaseApp> firebaseAppProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<FirebaseInstallationsApi> firebaseInstallationsApiProvider;
         private final FirebaseSessionsComponentImpl firebaseSessionsComponentImpl;
-        private javax.inject.Provider<FirebaseSessions> firebaseSessionsProvider;
-        private javax.inject.Provider<LocalOverrideSettings> localOverrideSettingsProvider;
-        private javax.inject.Provider<RemoteSettingsFetcher> remoteSettingsFetcherProvider;
-        private javax.inject.Provider<RemoteSettings> remoteSettingsProvider;
-        private javax.inject.Provider<DataStore<Preferences>> sessionConfigsDataStoreProvider;
-        private javax.inject.Provider<SessionDatastoreImpl> sessionDatastoreImplProvider;
-        private javax.inject.Provider<DataStore<Preferences>> sessionDetailsDataStoreProvider;
-        private javax.inject.Provider<SessionFirelogPublisherImpl> sessionFirelogPublisherImplProvider;
-        private javax.inject.Provider<SessionGenerator> sessionGeneratorProvider;
-        private javax.inject.Provider<SessionLifecycleServiceBinderImpl> sessionLifecycleServiceBinderImplProvider;
-        private javax.inject.Provider<SessionsSettings> sessionsSettingsProvider;
-        private javax.inject.Provider<SettingsCache> settingsCacheProvider;
-        private javax.inject.Provider<TimeProvider> timeProvider;
-        private javax.inject.Provider<Provider<TransportFactory>> transportFactoryProvider;
-        private javax.inject.Provider<UuidGenerator> uuidGeneratorProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<FirebaseSessions> firebaseSessionsProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<LocalOverrideSettings> localOverrideSettingsProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<ProcessDataManagerImpl> processDataManagerImplProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<RemoteSettingsFetcher> remoteSettingsFetcherProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<RemoteSettings> remoteSettingsProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<DataStore<SessionConfigs>> sessionConfigsDataStoreProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<SessionDataSerializer> sessionDataSerializerProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<DataStore<SessionData>> sessionDataStoreProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<SessionFirelogPublisherImpl> sessionFirelogPublisherImplProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<SessionGenerator> sessionGeneratorProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<SessionsActivityLifecycleCallbacks> sessionsActivityLifecycleCallbacksProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<SessionsSettings> sessionsSettingsProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<SettingsCacheImpl> settingsCacheImplProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<SharedSessionRepositoryImpl> sharedSessionRepositoryImplProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<TimeProvider> timeProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<Provider<TransportFactory>> transportFactoryProvider;
+        private com.google.firebase.sessions.dagger.internal.Provider<UuidGenerator> uuidGeneratorProvider;
 
         private FirebaseSessionsComponentImpl(Context context, CoroutineContext coroutineContext, CoroutineContext coroutineContext2, FirebaseApp firebaseApp, FirebaseInstallationsApi firebaseInstallationsApi, Provider<TransportFactory> provider) {
             this.firebaseSessionsComponentImpl = this;
@@ -132,43 +135,43 @@ public final class DaggerFirebaseSessionsComponent {
             Factory create = InstanceFactory.create(context);
             this.appContextProvider = create;
             this.localOverrideSettingsProvider = DoubleCheck.provider(LocalOverrideSettings_Factory.create(create));
-            this.backgroundDispatcherProvider = InstanceFactory.create(coroutineContext);
-            this.firebaseInstallationsApiProvider = InstanceFactory.create(firebaseInstallationsApi);
-            javax.inject.Provider<ApplicationInfo> provider2 = DoubleCheck.provider(FirebaseSessionsComponent_MainModule_Companion_ApplicationInfoFactory.create(this.firebaseAppProvider));
-            this.applicationInfoProvider = provider2;
-            this.remoteSettingsFetcherProvider = DoubleCheck.provider(RemoteSettingsFetcher_Factory.create(provider2, this.backgroundDispatcherProvider));
-            javax.inject.Provider<DataStore<Preferences>> provider3 = DoubleCheck.provider(FirebaseSessionsComponent_MainModule_Companion_SessionConfigsDataStoreFactory.create(this.appContextProvider));
-            this.sessionConfigsDataStoreProvider = provider3;
-            javax.inject.Provider<SettingsCache> provider4 = DoubleCheck.provider(SettingsCache_Factory.create(provider3));
-            this.settingsCacheProvider = provider4;
-            javax.inject.Provider<RemoteSettings> provider5 = DoubleCheck.provider(RemoteSettings_Factory.create(this.backgroundDispatcherProvider, this.firebaseInstallationsApiProvider, this.applicationInfoProvider, this.remoteSettingsFetcherProvider, provider4));
-            this.remoteSettingsProvider = provider5;
-            this.sessionsSettingsProvider = DoubleCheck.provider(SessionsSettings_Factory.create(this.localOverrideSettingsProvider, provider5));
-            javax.inject.Provider<SessionLifecycleServiceBinderImpl> provider6 = DoubleCheck.provider(SessionLifecycleServiceBinderImpl_Factory.create(this.appContextProvider));
-            this.sessionLifecycleServiceBinderImplProvider = provider6;
-            this.firebaseSessionsProvider = DoubleCheck.provider(FirebaseSessions_Factory.create(this.firebaseAppProvider, this.sessionsSettingsProvider, this.backgroundDispatcherProvider, provider6));
-            javax.inject.Provider<DataStore<Preferences>> provider7 = DoubleCheck.provider(FirebaseSessionsComponent_MainModule_Companion_SessionDetailsDataStoreFactory.create(this.appContextProvider));
-            this.sessionDetailsDataStoreProvider = provider7;
-            this.sessionDatastoreImplProvider = DoubleCheck.provider(SessionDatastoreImpl_Factory.create(this.backgroundDispatcherProvider, provider7));
-            Factory create2 = InstanceFactory.create(provider);
-            this.transportFactoryProvider = create2;
-            javax.inject.Provider<EventGDTLogger> provider8 = DoubleCheck.provider(EventGDTLogger_Factory.create(create2));
-            this.eventGDTLoggerProvider = provider8;
-            this.sessionFirelogPublisherImplProvider = DoubleCheck.provider(SessionFirelogPublisherImpl_Factory.create(this.firebaseAppProvider, this.firebaseInstallationsApiProvider, this.sessionsSettingsProvider, provider8, this.backgroundDispatcherProvider));
             this.timeProvider = DoubleCheck.provider(FirebaseSessionsComponent_MainModule_Companion_TimeProviderFactory.create());
-            javax.inject.Provider<UuidGenerator> provider9 = DoubleCheck.provider(FirebaseSessionsComponent_MainModule_Companion_UuidGeneratorFactory.create());
-            this.uuidGeneratorProvider = provider9;
-            this.sessionGeneratorProvider = DoubleCheck.provider(SessionGenerator_Factory.create(this.timeProvider, provider9));
+            this.firebaseInstallationsApiProvider = InstanceFactory.create(firebaseInstallationsApi);
+            this.applicationInfoProvider = DoubleCheck.provider(FirebaseSessionsComponent_MainModule_Companion_ApplicationInfoFactory.create(this.firebaseAppProvider));
+            Factory create2 = InstanceFactory.create(coroutineContext2);
+            this.blockingDispatcherProvider = create2;
+            this.remoteSettingsFetcherProvider = DoubleCheck.provider(RemoteSettingsFetcher_Factory.create(this.applicationInfoProvider, create2));
+            this.backgroundDispatcherProvider = InstanceFactory.create(coroutineContext);
+            com.google.firebase.sessions.dagger.internal.Provider<DataStore<SessionConfigs>> provider2 = DoubleCheck.provider(FirebaseSessionsComponent_MainModule_Companion_SessionConfigsDataStoreFactory.create(this.appContextProvider, this.blockingDispatcherProvider));
+            this.sessionConfigsDataStoreProvider = provider2;
+            com.google.firebase.sessions.dagger.internal.Provider<SettingsCacheImpl> provider3 = DoubleCheck.provider(SettingsCacheImpl_Factory.create(this.backgroundDispatcherProvider, this.timeProvider, provider2));
+            this.settingsCacheImplProvider = provider3;
+            com.google.firebase.sessions.dagger.internal.Provider<RemoteSettings> provider4 = DoubleCheck.provider(RemoteSettings_Factory.create(this.timeProvider, this.firebaseInstallationsApiProvider, this.applicationInfoProvider, this.remoteSettingsFetcherProvider, provider3));
+            this.remoteSettingsProvider = provider4;
+            this.sessionsSettingsProvider = DoubleCheck.provider(SessionsSettings_Factory.create(this.localOverrideSettingsProvider, provider4));
+            com.google.firebase.sessions.dagger.internal.Provider<UuidGenerator> provider5 = DoubleCheck.provider(FirebaseSessionsComponent_MainModule_Companion_UuidGeneratorFactory.create());
+            this.uuidGeneratorProvider = provider5;
+            this.sessionGeneratorProvider = DoubleCheck.provider(SessionGenerator_Factory.create(this.timeProvider, provider5));
+            Factory create3 = InstanceFactory.create(provider);
+            this.transportFactoryProvider = create3;
+            com.google.firebase.sessions.dagger.internal.Provider<EventGDTLogger> provider6 = DoubleCheck.provider(EventGDTLogger_Factory.create(create3));
+            this.eventGDTLoggerProvider = provider6;
+            this.sessionFirelogPublisherImplProvider = DoubleCheck.provider(SessionFirelogPublisherImpl_Factory.create(this.firebaseAppProvider, this.firebaseInstallationsApiProvider, this.sessionsSettingsProvider, provider6, this.backgroundDispatcherProvider));
+            com.google.firebase.sessions.dagger.internal.Provider<SessionDataSerializer> provider7 = DoubleCheck.provider(SessionDataSerializer_Factory.create(this.sessionGeneratorProvider));
+            this.sessionDataSerializerProvider = provider7;
+            this.sessionDataStoreProvider = DoubleCheck.provider(FirebaseSessionsComponent_MainModule_Companion_SessionDataStoreFactory.create(this.appContextProvider, this.blockingDispatcherProvider, provider7));
+            com.google.firebase.sessions.dagger.internal.Provider<ProcessDataManagerImpl> provider8 = DoubleCheck.provider(ProcessDataManagerImpl_Factory.create(this.appContextProvider, this.uuidGeneratorProvider));
+            this.processDataManagerImplProvider = provider8;
+            com.google.firebase.sessions.dagger.internal.Provider<SharedSessionRepositoryImpl> provider9 = DoubleCheck.provider(SharedSessionRepositoryImpl_Factory.create(this.sessionsSettingsProvider, this.sessionGeneratorProvider, this.sessionFirelogPublisherImplProvider, this.timeProvider, this.sessionDataStoreProvider, provider8, this.backgroundDispatcherProvider));
+            this.sharedSessionRepositoryImplProvider = provider9;
+            com.google.firebase.sessions.dagger.internal.Provider<SessionsActivityLifecycleCallbacks> provider10 = DoubleCheck.provider(SessionsActivityLifecycleCallbacks_Factory.create(provider9));
+            this.sessionsActivityLifecycleCallbacksProvider = provider10;
+            this.firebaseSessionsProvider = DoubleCheck.provider(FirebaseSessions_Factory.create(this.firebaseAppProvider, this.sessionsSettingsProvider, this.backgroundDispatcherProvider, provider10));
         }
 
         @Override // com.google.firebase.sessions.FirebaseSessionsComponent
         public FirebaseSessions getFirebaseSessions() {
             return this.firebaseSessionsProvider.get();
-        }
-
-        @Override // com.google.firebase.sessions.FirebaseSessionsComponent
-        public SessionDatastore getSessionDatastore() {
-            return this.sessionDatastoreImplProvider.get();
         }
 
         @Override // com.google.firebase.sessions.FirebaseSessionsComponent
@@ -184,6 +187,11 @@ public final class DaggerFirebaseSessionsComponent {
         @Override // com.google.firebase.sessions.FirebaseSessionsComponent
         public SessionsSettings getSessionsSettings() {
             return this.sessionsSettingsProvider.get();
+        }
+
+        @Override // com.google.firebase.sessions.FirebaseSessionsComponent
+        public SharedSessionRepository getSharedSessionRepository() {
+            return this.sharedSessionRepositoryImplProvider.get();
         }
     }
 }

@@ -5,13 +5,13 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzah extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzah> CREATOR = new zzai();
     public String zza;
     public String zzb;
-    public zzpk zzc;
+    public zzpl zzc;
     public long zzd;
     public boolean zze;
     public String zzf;
@@ -55,10 +55,10 @@ public final class zzah extends AbstractSafeParcelable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzah(String str, String str2, zzpk zzpkVar, long j, boolean z, String str3, zzbg zzbgVar, long j2, zzbg zzbgVar2, long j3, zzbg zzbgVar3) {
+    public zzah(String str, String str2, zzpl zzplVar, long j, boolean z, String str3, zzbg zzbgVar, long j2, zzbg zzbgVar2, long j3, zzbg zzbgVar3) {
         this.zza = str;
         this.zzb = str2;
-        this.zzc = zzpkVar;
+        this.zzc = zzplVar;
         this.zzd = j;
         this.zze = z;
         this.zzf = str3;

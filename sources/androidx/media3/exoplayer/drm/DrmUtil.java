@@ -4,6 +4,7 @@ import android.media.DeniedByServerException;
 import android.media.MediaDrm;
 import android.media.MediaDrmResetException;
 import android.media.NotProvisionedException;
+import android.os.Build;
 import androidx.media3.common.PlaybackException;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSource;
@@ -39,42 +40,42 @@ public final class DrmUtil {
         if (th instanceof MediaDrm.MediaDrmStateException) {
             return Util.getErrorCodeForMediaDrmErrorCode(Util.getErrorCodeFromPlatformDiagnosticsInfo(((MediaDrm.MediaDrmStateException) th).getDiagnosticInfo()));
         }
-        if (Util.SDK_INT < 23 || !Api23.isMediaDrmResetException(th)) {
-            if ((th instanceof NotProvisionedException) || isFailureToConstructNotProvisionedException(th)) {
-                return PlaybackException.ERROR_CODE_DRM_PROVISIONING_FAILED;
-            }
-            if (th instanceof DeniedByServerException) {
-                return PlaybackException.ERROR_CODE_DRM_DEVICE_REVOKED;
-            }
-            if (th instanceof UnsupportedDrmException) {
-                return PlaybackException.ERROR_CODE_DRM_SCHEME_UNSUPPORTED;
-            }
-            if (th instanceof DefaultDrmSessionManager.MissingSchemeDataException) {
-                return PlaybackException.ERROR_CODE_DRM_CONTENT_ERROR;
-            }
-            if (th instanceof KeysExpiredException) {
-                return PlaybackException.ERROR_CODE_DRM_LICENSE_EXPIRED;
-            }
-            if (i == 1) {
-                return PlaybackException.ERROR_CODE_DRM_SYSTEM_ERROR;
-            }
-            if (i == 2) {
-                return PlaybackException.ERROR_CODE_DRM_LICENSE_ACQUISITION_FAILED;
-            }
-            if (i == 3) {
-                return PlaybackException.ERROR_CODE_DRM_PROVISIONING_FAILED;
-            }
-            throw new IllegalArgumentException();
+        if (Api23.isMediaDrmResetException(th)) {
+            return PlaybackException.ERROR_CODE_DRM_SYSTEM_ERROR;
         }
-        return PlaybackException.ERROR_CODE_DRM_SYSTEM_ERROR;
+        if ((th instanceof NotProvisionedException) || isFailureToConstructNotProvisionedException(th)) {
+            return PlaybackException.ERROR_CODE_DRM_PROVISIONING_FAILED;
+        }
+        if (th instanceof DeniedByServerException) {
+            return PlaybackException.ERROR_CODE_DRM_DEVICE_REVOKED;
+        }
+        if (th instanceof UnsupportedDrmException) {
+            return PlaybackException.ERROR_CODE_DRM_SCHEME_UNSUPPORTED;
+        }
+        if (th instanceof DefaultDrmSessionManager.MissingSchemeDataException) {
+            return PlaybackException.ERROR_CODE_DRM_CONTENT_ERROR;
+        }
+        if (th instanceof KeysExpiredException) {
+            return PlaybackException.ERROR_CODE_DRM_LICENSE_EXPIRED;
+        }
+        if (i == 1) {
+            return PlaybackException.ERROR_CODE_DRM_SYSTEM_ERROR;
+        }
+        if (i == 2) {
+            return PlaybackException.ERROR_CODE_DRM_LICENSE_ACQUISITION_FAILED;
+        }
+        if (i == 3) {
+            return PlaybackException.ERROR_CODE_DRM_PROVISIONING_FAILED;
+        }
+        throw new IllegalArgumentException();
     }
 
     public static boolean isFailureToConstructNotProvisionedException(Throwable th) {
-        return Util.SDK_INT == 34 && (th instanceof NoSuchMethodError) && th.getMessage() != null && th.getMessage().contains("Landroid/media/NotProvisionedException;.<init>(");
+        return Build.VERSION.SDK_INT == 34 && (th instanceof NoSuchMethodError) && th.getMessage() != null && th.getMessage().contains("Landroid/media/NotProvisionedException;.<init>(");
     }
 
     public static boolean isFailureToConstructResourceBusyException(Throwable th) {
-        return Util.SDK_INT == 34 && (th instanceof NoSuchMethodError) && th.getMessage() != null && th.getMessage().contains("Landroid/media/ResourceBusyException;.<init>(");
+        return Build.VERSION.SDK_INT == 34 && (th instanceof NoSuchMethodError) && th.getMessage() != null && th.getMessage().contains("Landroid/media/ResourceBusyException;.<init>(");
     }
 
     public static byte[] executePost(DataSource dataSource, String str, byte[] bArr, Map<String, String> map) throws MediaDrmCallbackException {

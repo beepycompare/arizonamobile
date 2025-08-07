@@ -7,487 +7,375 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzba {
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static zzao zza(String str, zzae zzaeVar, zzg zzgVar, List list) {
-        char c;
-        String str2;
         double d;
-        zzae zzaeVar2;
-        double min;
-        zzai zzaiVar;
-        zzae zzaeVar3;
-        switch (str.hashCode()) {
+        String str2;
+        int hashCode = str.hashCode();
+        Double valueOf = Double.valueOf(-1.0d);
+        zzai zzaiVar = null;
+        double d2 = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
+        int i = 0;
+        switch (hashCode) {
             case -1776922004:
                 if (str.equals("toString")) {
-                    c = 18;
-                    break;
+                    zzh.zza("toString", 0, list);
+                    return new zzas(zzaeVar.zzs(StringUtils.COMMA));
                 }
-                c = 65535;
-                break;
+                throw new IllegalArgumentException("Command not supported");
             case -1354795244:
                 if (str.equals("concat")) {
-                    c = 0;
-                    break;
-                }
-                c = 65535;
-                break;
-            case -1274492040:
-                if (str.equals("filter")) {
-                    c = 2;
-                    break;
-                }
-                c = 65535;
-                break;
-            case -934873754:
-                if (str.equals("reduce")) {
-                    c = '\n';
-                    break;
-                }
-                c = 65535;
-                break;
-            case -895859076:
-                if (str.equals("splice")) {
-                    c = 17;
-                    break;
-                }
-                c = 65535;
-                break;
-            case -678635926:
-                if (str.equals("forEach")) {
-                    c = 3;
-                    break;
-                }
-                c = 65535;
-                break;
-            case -467511597:
-                if (str.equals("lastIndexOf")) {
-                    c = 6;
-                    break;
-                }
-                c = 65535;
-                break;
-            case -277637751:
-                if (str.equals("unshift")) {
-                    c = 19;
-                    break;
-                }
-                c = 65535;
-                break;
-            case 107868:
-                if (str.equals("map")) {
-                    c = 7;
-                    break;
-                }
-                c = 65535;
-                break;
-            case 111185:
-                if (str.equals("pop")) {
-                    c = '\b';
-                    break;
-                }
-                c = 65535;
-                break;
-            case 3267882:
-                if (str.equals("join")) {
-                    c = 5;
-                    break;
-                }
-                c = 65535;
-                break;
-            case 3452698:
-                if (str.equals(Constants.PUSH)) {
-                    c = '\t';
-                    break;
-                }
-                c = 65535;
-                break;
-            case 3536116:
-                if (str.equals("some")) {
-                    c = 15;
-                    break;
-                }
-                c = 65535;
-                break;
-            case 3536286:
-                if (str.equals("sort")) {
-                    c = 16;
-                    break;
-                }
-                c = 65535;
-                break;
-            case 96891675:
-                if (str.equals("every")) {
-                    c = 1;
-                    break;
-                }
-                c = 65535;
-                break;
-            case 109407362:
-                if (str.equals("shift")) {
-                    c = '\r';
-                    break;
-                }
-                c = 65535;
-                break;
-            case 109526418:
-                if (str.equals("slice")) {
-                    c = 14;
-                    break;
-                }
-                c = 65535;
-                break;
-            case 965561430:
-                if (str.equals("reduceRight")) {
-                    c = 11;
-                    break;
-                }
-                c = 65535;
-                break;
-            case 1099846370:
-                if (str.equals("reverse")) {
-                    c = '\f';
-                    break;
-                }
-                c = 65535;
-                break;
-            case 1943291465:
-                if (str.equals("indexOf")) {
-                    c = 4;
-                    break;
-                }
-                c = 65535;
-                break;
-            default:
-                c = 65535;
-                break;
-        }
-        char c2 = c;
-        double d2 = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        switch (c2) {
-            case 0:
-                zzae zzaeVar4 = (zzae) zzaeVar.zzt();
-                if (!list.isEmpty()) {
-                    Iterator it = list.iterator();
-                    while (it.hasNext()) {
-                        zzao zza = zzgVar.zza((zzao) it.next());
-                        if (!(zza instanceof zzag)) {
-                            int zzh = zzaeVar4.zzh();
+                    zzae zzaeVar2 = (zzae) zzaeVar.zzt();
+                    if (!list.isEmpty()) {
+                        Iterator it = list.iterator();
+                        while (it.hasNext()) {
+                            zzao zza = zzgVar.zza((zzao) it.next());
+                            if (zza instanceof zzag) {
+                                throw new IllegalStateException("Failed evaluation of arguments");
+                            }
+                            int zzh = zzaeVar2.zzh();
                             if (zza instanceof zzae) {
-                                zzae zzaeVar5 = (zzae) zza;
-                                Iterator zzg = zzaeVar5.zzg();
+                                zzae zzaeVar3 = (zzae) zza;
+                                Iterator zzg = zzaeVar3.zzg();
                                 while (zzg.hasNext()) {
                                     Integer num = (Integer) zzg.next();
-                                    zzaeVar4.zzn(num.intValue() + zzh, zzaeVar5.zzl(num.intValue()));
+                                    zzaeVar2.zzn(num.intValue() + zzh, zzaeVar3.zzl(num.intValue()));
                                 }
                             } else {
-                                zzaeVar4.zzn(zzh, zza);
+                                zzaeVar2.zzn(zzh, zza);
                             }
-                        } else {
-                            throw new IllegalStateException("Failed evaluation of arguments");
                         }
                     }
+                    return zzaeVar2;
                 }
-                return zzaeVar4;
-            case 1:
-                zzh.zza("every", 1, list);
-                zzao zza2 = zzgVar.zza((zzao) list.get(0));
-                if (!(zza2 instanceof zzan)) {
-                    throw new IllegalArgumentException("Callback should be a method");
-                }
-                if (zzaeVar.zzh() != 0 && zzc(zzaeVar, zzgVar, (zzan) zza2, false, true).zzh() != zzaeVar.zzh()) {
-                    return zzao.zzl;
-                }
-                return zzao.zzk;
-            case 2:
-                zzh.zza("filter", 1, list);
-                zzao zza3 = zzgVar.zza((zzao) list.get(0));
-                if (!(zza3 instanceof zzan)) {
-                    throw new IllegalArgumentException("Callback should be a method");
-                }
-                if (zzaeVar.zzi() == 0) {
-                    return new zzae();
-                }
-                zzae zzaeVar6 = (zzae) zzaeVar.zzt();
-                zzae zzc = zzc(zzaeVar, zzgVar, (zzan) zza3, null, true);
-                zzae zzaeVar7 = new zzae();
-                Iterator zzg2 = zzc.zzg();
-                while (zzg2.hasNext()) {
-                    zzaeVar7.zzn(zzaeVar7.zzh(), zzaeVar6.zzl(((Integer) zzg2.next()).intValue()));
-                }
-                return zzaeVar7;
-            case 3:
-                zzh.zza("forEach", 1, list);
-                zzao zza4 = zzgVar.zza((zzao) list.get(0));
-                if (!(zza4 instanceof zzan)) {
-                    throw new IllegalArgumentException("Callback should be a method");
-                }
-                if (zzaeVar.zzi() == 0) {
-                    return zzao.zzf;
-                }
-                zzc(zzaeVar, zzgVar, (zzan) zza4, null, null);
-                return zzao.zzf;
-            case 4:
-                zzh.zzc("indexOf", 2, list);
-                zzao zzaoVar = zzao.zzf;
-                if (!list.isEmpty()) {
-                    zzaoVar = zzgVar.zza((zzao) list.get(0));
-                }
-                if (list.size() > 1) {
-                    double zzi = zzh.zzi(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue());
-                    if (zzi >= zzaeVar.zzh()) {
-                        return new zzah(Double.valueOf(-1.0d));
-                    }
-                    d2 = zzi < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE ? zzaeVar.zzh() + zzi : zzi;
-                }
-                Iterator zzg3 = zzaeVar.zzg();
-                while (zzg3.hasNext()) {
-                    int intValue = ((Integer) zzg3.next()).intValue();
-                    double d3 = intValue;
-                    if (d3 >= d2 && zzh.zzf(zzaeVar.zzl(intValue), zzaoVar)) {
-                        return new zzah(Double.valueOf(d3));
-                    }
-                }
-                return new zzah(Double.valueOf(-1.0d));
-            case 5:
-                zzh.zzc("join", 1, list);
-                if (zzaeVar.zzh() == 0) {
-                    return zzao.zzm;
-                }
-                if (!list.isEmpty()) {
-                    zzao zza5 = zzgVar.zza((zzao) list.get(0));
-                    str2 = ((zza5 instanceof zzam) || (zza5 instanceof zzat)) ? "" : zza5.zzc();
-                } else {
-                    str2 = StringUtils.COMMA;
-                }
-                return new zzas(zzaeVar.zzs(str2));
-            case 6:
-                zzh.zzc("lastIndexOf", 2, list);
-                zzao zzaoVar2 = zzao.zzf;
-                if (!list.isEmpty()) {
-                    zzaoVar2 = zzgVar.zza((zzao) list.get(0));
-                }
-                int zzh2 = zzaeVar.zzh() - 1;
-                if (list.size() > 1) {
-                    zzao zza6 = zzgVar.zza((zzao) list.get(1));
-                    d = Double.isNaN(zza6.zzd().doubleValue()) ? zzaeVar.zzh() - 1 : zzh.zzi(zza6.zzd().doubleValue());
-                    if (d < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
-                        d += zzaeVar.zzh();
-                    }
-                } else {
-                    d = zzh2;
-                }
-                if (d < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
-                    return new zzah(Double.valueOf(-1.0d));
-                }
-                for (int min2 = (int) Math.min(zzaeVar.zzh(), d); min2 >= 0; min2--) {
-                    if (zzaeVar.zzo(min2) && zzh.zzf(zzaeVar.zzl(min2), zzaoVar2)) {
-                        return new zzah(Double.valueOf(min2));
-                    }
-                }
-                return new zzah(Double.valueOf(-1.0d));
-            case 7:
-                zzh.zza("map", 1, list);
-                zzao zza7 = zzgVar.zza((zzao) list.get(0));
-                if (!(zza7 instanceof zzan)) {
-                    throw new IllegalArgumentException("Callback should be a method");
-                }
-                if (zzaeVar.zzh() == 0) {
-                    return new zzae();
-                }
-                return zzc(zzaeVar, zzgVar, (zzan) zza7, null, null);
-            case '\b':
-                zzh.zza("pop", 0, list);
-                int zzh3 = zzaeVar.zzh();
-                if (zzh3 == 0) {
-                    return zzao.zzf;
-                }
-                int i = zzh3 - 1;
-                zzao zzl = zzaeVar.zzl(i);
-                zzaeVar.zzr(i);
-                return zzl;
-            case '\t':
-                if (!list.isEmpty()) {
-                    Iterator it2 = list.iterator();
-                    while (it2.hasNext()) {
-                        zzaeVar.zzn(zzaeVar.zzh(), zzgVar.zza((zzao) it2.next()));
-                    }
-                }
-                return new zzah(Double.valueOf(zzaeVar.zzh()));
-            case '\n':
-                return zzb(zzaeVar, zzgVar, list, true);
-            case 11:
-                return zzb(zzaeVar, zzgVar, list, false);
-            case '\f':
-                zzaeVar2 = zzaeVar;
-                zzh.zza("reverse", 0, list);
-                int zzh4 = zzaeVar2.zzh();
-                if (zzh4 != 0) {
-                    for (int i2 = 0; i2 < zzh4 / 2; i2++) {
-                        if (zzaeVar2.zzo(i2)) {
-                            zzao zzl2 = zzaeVar2.zzl(i2);
-                            zzaeVar2.zzn(i2, null);
-                            int i3 = (zzh4 - 1) - i2;
-                            if (zzaeVar2.zzo(i3)) {
-                                zzaeVar2.zzn(i2, zzaeVar2.zzl(i3));
-                            }
-                            zzaeVar2.zzn(i3, zzl2);
+                throw new IllegalArgumentException("Command not supported");
+            case -1274492040:
+                if (str.equals("filter")) {
+                    zzh.zza("filter", 1, list);
+                    zzao zza2 = zzgVar.zza((zzao) list.get(0));
+                    if (zza2 instanceof zzan) {
+                        if (zzaeVar.zzi() == 0) {
+                            return new zzae();
                         }
+                        zzae zzaeVar4 = (zzae) zzaeVar.zzt();
+                        zzae zzc = zzc(zzaeVar, zzgVar, (zzan) zza2, null, true);
+                        zzae zzaeVar5 = new zzae();
+                        Iterator zzg2 = zzc.zzg();
+                        while (zzg2.hasNext()) {
+                            zzaeVar5.zzn(zzaeVar5.zzh(), zzaeVar4.zzl(((Integer) zzg2.next()).intValue()));
+                        }
+                        return zzaeVar5;
                     }
-                    break;
+                    throw new IllegalArgumentException("Callback should be a method");
                 }
-                break;
-            case '\r':
-                zzh.zza("shift", 0, list);
-                if (zzaeVar.zzh() == 0) {
-                    return zzao.zzf;
+                throw new IllegalArgumentException("Command not supported");
+            case -934873754:
+                if (str.equals("reduce")) {
+                    return zzb(zzaeVar, zzgVar, list, true);
                 }
-                zzao zzl3 = zzaeVar.zzl(0);
-                zzaeVar.zzr(0);
-                return zzl3;
-            case 14:
-                zzh.zzc("slice", 2, list);
-                if (list.isEmpty()) {
-                    return zzaeVar.zzt();
-                }
-                double zzh5 = zzaeVar.zzh();
-                double zzi2 = zzh.zzi(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue());
-                if (zzi2 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
-                    min = Math.max(zzi2 + zzh5, (double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
-                } else {
-                    min = Math.min(zzi2, zzh5);
-                }
-                if (list.size() == 2) {
-                    double zzi3 = zzh.zzi(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue());
-                    if (zzi3 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
-                        zzh5 = Math.max(zzh5 + zzi3, (double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
+                throw new IllegalArgumentException("Command not supported");
+            case -895859076:
+                if (str.equals("splice")) {
+                    if (list.isEmpty()) {
+                        return new zzae();
+                    }
+                    int zzi = (int) zzh.zzi(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue());
+                    if (zzi < 0) {
+                        zzi = Math.max(0, zzi + zzaeVar.zzh());
+                    } else if (zzi > zzaeVar.zzh()) {
+                        zzi = zzaeVar.zzh();
+                    }
+                    int zzh2 = zzaeVar.zzh();
+                    zzae zzaeVar6 = new zzae();
+                    if (list.size() > 1) {
+                        int max = Math.max(0, (int) zzh.zzi(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue()));
+                        if (max > 0) {
+                            for (int i2 = zzi; i2 < Math.min(zzh2, zzi + max); i2++) {
+                                zzaeVar6.zzn(zzaeVar6.zzh(), zzaeVar.zzl(zzi));
+                                zzaeVar.zzr(zzi);
+                            }
+                        }
+                        if (list.size() > 2) {
+                            for (int i3 = 2; i3 < list.size(); i3++) {
+                                zzao zza3 = zzgVar.zza((zzao) list.get(i3));
+                                if (zza3 instanceof zzag) {
+                                    throw new IllegalArgumentException("Failed to parse elements to add");
+                                }
+                                zzaeVar.zzq((zzi + i3) - 2, zza3);
+                            }
+                        }
                     } else {
-                        zzh5 = Math.min(zzh5, zzi3);
+                        while (zzi < zzh2) {
+                            zzaeVar6.zzn(zzaeVar6.zzh(), zzaeVar.zzl(zzi));
+                            zzaeVar.zzn(zzi, null);
+                            zzi++;
+                        }
                     }
+                    return zzaeVar6;
                 }
-                zzae zzaeVar8 = new zzae();
-                for (int i4 = (int) min; i4 < zzh5; i4++) {
-                    zzaeVar8.zzn(zzaeVar8.zzh(), zzaeVar.zzl(i4));
-                }
-                return zzaeVar8;
-            case 15:
-                zzh.zza("some", 1, list);
-                zzao zza8 = zzgVar.zza((zzao) list.get(0));
-                if (!(zza8 instanceof zzai)) {
+                throw new IllegalArgumentException("Command not supported");
+            case -678635926:
+                if (str.equals("forEach")) {
+                    zzh.zza("forEach", 1, list);
+                    zzao zza4 = zzgVar.zza((zzao) list.get(0));
+                    if (zza4 instanceof zzan) {
+                        if (zzaeVar.zzi() == 0) {
+                            return zzao.zzf;
+                        }
+                        zzc(zzaeVar, zzgVar, (zzan) zza4, null, null);
+                        return zzao.zzf;
+                    }
                     throw new IllegalArgumentException("Callback should be a method");
                 }
-                if (zzaeVar.zzh() == 0) {
-                    return zzao.zzl;
+                throw new IllegalArgumentException("Command not supported");
+            case -467511597:
+                if (str.equals("lastIndexOf")) {
+                    zzh.zzc("lastIndexOf", 2, list);
+                    zzao zzaoVar = zzao.zzf;
+                    if (!list.isEmpty()) {
+                        zzaoVar = zzgVar.zza((zzao) list.get(0));
+                    }
+                    int zzh3 = zzaeVar.zzh() - 1;
+                    if (list.size() > 1) {
+                        zzao zza5 = zzgVar.zza((zzao) list.get(1));
+                        d = Double.isNaN(zza5.zzd().doubleValue()) ? zzaeVar.zzh() - 1 : zzh.zzi(zza5.zzd().doubleValue());
+                        if (d < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
+                            d += zzaeVar.zzh();
+                        }
+                    } else {
+                        d = zzh3;
+                    }
+                    if (d < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
+                        return new zzah(valueOf);
+                    }
+                    for (int min = (int) Math.min(zzaeVar.zzh(), d); min >= 0; min--) {
+                        if (zzaeVar.zzo(min) && zzh.zzf(zzaeVar.zzl(min), zzaoVar)) {
+                            return new zzah(Double.valueOf(min));
+                        }
+                    }
+                    return new zzah(valueOf);
                 }
-                zzai zzaiVar2 = (zzai) zza8;
-                Iterator zzg4 = zzaeVar.zzg();
-                while (zzg4.hasNext()) {
-                    int intValue2 = ((Integer) zzg4.next()).intValue();
-                    if (zzaeVar.zzo(intValue2) && zzaiVar2.zza(zzgVar, Arrays.asList(zzaeVar.zzl(intValue2), new zzah(Double.valueOf(intValue2)), zzaeVar)).zze().booleanValue()) {
+                throw new IllegalArgumentException("Command not supported");
+            case -277637751:
+                if (str.equals("unshift")) {
+                    if (!list.isEmpty()) {
+                        zzae zzaeVar7 = new zzae();
+                        Iterator it2 = list.iterator();
+                        while (it2.hasNext()) {
+                            zzao zza6 = zzgVar.zza((zzao) it2.next());
+                            if (zza6 instanceof zzag) {
+                                throw new IllegalStateException("Argument evaluation failed");
+                            }
+                            zzaeVar7.zzn(zzaeVar7.zzh(), zza6);
+                        }
+                        int zzh4 = zzaeVar7.zzh();
+                        Iterator zzg3 = zzaeVar.zzg();
+                        while (zzg3.hasNext()) {
+                            Integer num2 = (Integer) zzg3.next();
+                            zzaeVar7.zzn(num2.intValue() + zzh4, zzaeVar.zzl(num2.intValue()));
+                        }
+                        zzaeVar.zzp();
+                        Iterator zzg4 = zzaeVar7.zzg();
+                        while (zzg4.hasNext()) {
+                            Integer num3 = (Integer) zzg4.next();
+                            zzaeVar.zzn(num3.intValue(), zzaeVar7.zzl(num3.intValue()));
+                        }
+                    }
+                    return new zzah(Double.valueOf(zzaeVar.zzh()));
+                }
+                throw new IllegalArgumentException("Command not supported");
+            case 107868:
+                if (str.equals("map")) {
+                    zzh.zza("map", 1, list);
+                    zzao zza7 = zzgVar.zza((zzao) list.get(0));
+                    if (zza7 instanceof zzan) {
+                        return zzaeVar.zzh() == 0 ? new zzae() : zzc(zzaeVar, zzgVar, (zzan) zza7, null, null);
+                    }
+                    throw new IllegalArgumentException("Callback should be a method");
+                }
+                throw new IllegalArgumentException("Command not supported");
+            case 111185:
+                if (str.equals("pop")) {
+                    zzh.zza("pop", 0, list);
+                    int zzh5 = zzaeVar.zzh();
+                    if (zzh5 == 0) {
+                        return zzao.zzf;
+                    }
+                    int i4 = zzh5 - 1;
+                    zzao zzl = zzaeVar.zzl(i4);
+                    zzaeVar.zzr(i4);
+                    return zzl;
+                }
+                throw new IllegalArgumentException("Command not supported");
+            case 3267882:
+                if (str.equals("join")) {
+                    zzh.zzc("join", 1, list);
+                    if (zzaeVar.zzh() == 0) {
+                        return zzao.zzm;
+                    }
+                    if (list.isEmpty()) {
+                        str2 = StringUtils.COMMA;
+                    } else {
+                        zzao zza8 = zzgVar.zza((zzao) list.get(0));
+                        str2 = ((zza8 instanceof zzam) || (zza8 instanceof zzat)) ? "" : zza8.zzc();
+                    }
+                    return new zzas(zzaeVar.zzs(str2));
+                }
+                throw new IllegalArgumentException("Command not supported");
+            case 3452698:
+                if (str.equals(Constants.PUSH)) {
+                    if (!list.isEmpty()) {
+                        Iterator it3 = list.iterator();
+                        while (it3.hasNext()) {
+                            zzaeVar.zzn(zzaeVar.zzh(), zzgVar.zza((zzao) it3.next()));
+                        }
+                    }
+                    return new zzah(Double.valueOf(zzaeVar.zzh()));
+                }
+                throw new IllegalArgumentException("Command not supported");
+            case 3536116:
+                if (str.equals("some")) {
+                    zzh.zza("some", 1, list);
+                    zzao zza9 = zzgVar.zza((zzao) list.get(0));
+                    if (zza9 instanceof zzai) {
+                        if (zzaeVar.zzh() == 0) {
+                            return zzao.zzl;
+                        }
+                        zzai zzaiVar2 = (zzai) zza9;
+                        Iterator zzg5 = zzaeVar.zzg();
+                        while (zzg5.hasNext()) {
+                            int intValue = ((Integer) zzg5.next()).intValue();
+                            if (zzaeVar.zzo(intValue) && zzaiVar2.zza(zzgVar, Arrays.asList(zzaeVar.zzl(intValue), new zzah(Double.valueOf(intValue)), zzaeVar)).zze().booleanValue()) {
+                                return zzao.zzk;
+                            }
+                        }
+                        return zzao.zzl;
+                    }
+                    throw new IllegalArgumentException("Callback should be a method");
+                }
+                throw new IllegalArgumentException("Command not supported");
+            case 3536286:
+                if (str.equals("sort")) {
+                    zzh.zzc("sort", 1, list);
+                    if (zzaeVar.zzh() >= 2) {
+                        List<zzao> zzb = zzaeVar.zzb();
+                        if (!list.isEmpty()) {
+                            zzao zza10 = zzgVar.zza((zzao) list.get(0));
+                            if (!(zza10 instanceof zzai)) {
+                                throw new IllegalArgumentException("Comparator should be a method");
+                            }
+                            zzaiVar = (zzai) zza10;
+                        }
+                        Collections.sort(zzb, new zzaz(zzaiVar, zzgVar));
+                        zzaeVar.zzp();
+                        for (zzao zzaoVar2 : zzb) {
+                            zzaeVar.zzn(i, zzaoVar2);
+                            i++;
+                        }
+                    }
+                    return zzaeVar;
+                }
+                throw new IllegalArgumentException("Command not supported");
+            case 96891675:
+                if (str.equals("every")) {
+                    zzh.zza("every", 1, list);
+                    zzao zza11 = zzgVar.zza((zzao) list.get(0));
+                    if (zza11 instanceof zzan) {
+                        if (zzaeVar.zzh() != 0 && zzc(zzaeVar, zzgVar, (zzan) zza11, false, true).zzh() != zzaeVar.zzh()) {
+                            return zzao.zzl;
+                        }
                         return zzao.zzk;
                     }
+                    throw new IllegalArgumentException("Callback should be a method");
                 }
-                return zzao.zzl;
-            case 16:
-                zzaeVar2 = zzaeVar;
-                zzh.zzc("sort", 1, list);
-                if (zzaeVar2.zzh() >= 2) {
-                    List<zzao> zzb = zzaeVar2.zzb();
+                throw new IllegalArgumentException("Command not supported");
+            case 109407362:
+                if (str.equals("shift")) {
+                    zzh.zza("shift", 0, list);
+                    if (zzaeVar.zzh() == 0) {
+                        return zzao.zzf;
+                    }
+                    zzao zzl2 = zzaeVar.zzl(0);
+                    zzaeVar.zzr(0);
+                    return zzl2;
+                }
+                throw new IllegalArgumentException("Command not supported");
+            case 109526418:
+                if (str.equals("slice")) {
+                    zzh.zzc("slice", 2, list);
                     if (list.isEmpty()) {
-                        zzaiVar = null;
-                    } else {
-                        zzao zza9 = zzgVar.zza((zzao) list.get(0));
-                        if (!(zza9 instanceof zzai)) {
-                            throw new IllegalArgumentException("Comparator should be a method");
-                        }
-                        zzaiVar = (zzai) zza9;
+                        return zzaeVar.zzt();
                     }
-                    Collections.sort(zzb, new zzaz(zzaiVar, zzgVar));
-                    zzaeVar2.zzp();
-                    int i5 = 0;
-                    for (zzao zzaoVar3 : zzb) {
-                        zzaeVar2.zzn(i5, zzaoVar3);
-                        i5++;
+                    double zzh6 = zzaeVar.zzh();
+                    double zzi2 = zzh.zzi(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue());
+                    double max2 = zzi2 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE ? Math.max(zzi2 + zzh6, (double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) : Math.min(zzi2, zzh6);
+                    if (list.size() == 2) {
+                        double zzi3 = zzh.zzi(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue());
+                        zzh6 = zzi3 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE ? Math.max(zzh6 + zzi3, (double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) : Math.min(zzh6, zzi3);
                     }
-                    break;
-                }
-                break;
-            case 17:
-                if (list.isEmpty()) {
-                    return new zzae();
-                }
-                int zzi4 = (int) zzh.zzi(zzgVar.zza((zzao) list.get(0)).zzd().doubleValue());
-                if (zzi4 < 0) {
-                    zzi4 = Math.max(0, zzi4 + zzaeVar.zzh());
-                } else if (zzi4 > zzaeVar.zzh()) {
-                    zzi4 = zzaeVar.zzh();
-                }
-                int zzh6 = zzaeVar.zzh();
-                zzae zzaeVar9 = new zzae();
-                if (list.size() > 1) {
-                    int max = Math.max(0, (int) zzh.zzi(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue()));
-                    if (max > 0) {
-                        for (int i6 = zzi4; i6 < Math.min(zzh6, zzi4 + max); i6++) {
-                            zzaeVar9.zzn(zzaeVar9.zzh(), zzaeVar.zzl(zzi4));
-                            zzaeVar.zzr(zzi4);
-                        }
+                    zzae zzaeVar8 = new zzae();
+                    for (int i5 = (int) max2; i5 < zzh6; i5++) {
+                        zzaeVar8.zzn(zzaeVar8.zzh(), zzaeVar.zzl(i5));
                     }
-                    if (list.size() > 2) {
-                        for (int i7 = 2; i7 < list.size(); i7++) {
-                            zzao zza10 = zzgVar.zza((zzao) list.get(i7));
-                            if (!(zza10 instanceof zzag)) {
-                                zzaeVar.zzq((zzi4 + i7) - 2, zza10);
-                            } else {
-                                throw new IllegalArgumentException("Failed to parse elements to add");
+                    return zzaeVar8;
+                }
+                throw new IllegalArgumentException("Command not supported");
+            case 965561430:
+                if (str.equals("reduceRight")) {
+                    return zzb(zzaeVar, zzgVar, list, false);
+                }
+                throw new IllegalArgumentException("Command not supported");
+            case 1099846370:
+                if (str.equals("reverse")) {
+                    zzh.zza("reverse", 0, list);
+                    int zzh7 = zzaeVar.zzh();
+                    if (zzh7 != 0) {
+                        while (i < zzh7 / 2) {
+                            if (zzaeVar.zzo(i)) {
+                                zzao zzl3 = zzaeVar.zzl(i);
+                                zzaeVar.zzn(i, null);
+                                int i6 = (zzh7 - 1) - i;
+                                if (zzaeVar.zzo(i6)) {
+                                    zzaeVar.zzn(i, zzaeVar.zzl(i6));
+                                }
+                                zzaeVar.zzn(i6, zzl3);
                             }
+                            i++;
                         }
                     }
-                } else {
-                    while (zzi4 < zzh6) {
-                        zzaeVar9.zzn(zzaeVar9.zzh(), zzaeVar.zzl(zzi4));
-                        zzaeVar.zzn(zzi4, null);
-                        zzi4++;
-                    }
+                    return zzaeVar;
                 }
-                return zzaeVar9;
-            case 18:
-                zzh.zza("toString", 0, list);
-                return new zzas(zzaeVar.zzs(StringUtils.COMMA));
-            case 19:
-                if (list.isEmpty()) {
-                    zzaeVar3 = zzaeVar;
-                } else {
-                    zzae zzaeVar10 = new zzae();
-                    Iterator it3 = list.iterator();
-                    while (it3.hasNext()) {
-                        zzao zza11 = zzgVar.zza((zzao) it3.next());
-                        if (!(zza11 instanceof zzag)) {
-                            zzaeVar10.zzn(zzaeVar10.zzh(), zza11);
-                        } else {
-                            throw new IllegalStateException("Argument evaluation failed");
+                throw new IllegalArgumentException("Command not supported");
+            case 1943291465:
+                if (str.equals("indexOf")) {
+                    zzh.zzc("indexOf", 2, list);
+                    zzao zzaoVar3 = zzao.zzf;
+                    if (!list.isEmpty()) {
+                        zzaoVar3 = zzgVar.zza((zzao) list.get(0));
+                    }
+                    if (list.size() > 1) {
+                        double zzi4 = zzh.zzi(zzgVar.zza((zzao) list.get(1)).zzd().doubleValue());
+                        if (zzi4 >= zzaeVar.zzh()) {
+                            return new zzah(valueOf);
                         }
+                        d2 = zzi4 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE ? zzaeVar.zzh() + zzi4 : zzi4;
                     }
-                    int zzh7 = zzaeVar10.zzh();
-                    Iterator zzg5 = zzaeVar.zzg();
-                    while (zzg5.hasNext()) {
-                        Integer num2 = (Integer) zzg5.next();
-                        zzaeVar10.zzn(num2.intValue() + zzh7, zzaeVar.zzl(num2.intValue()));
-                    }
-                    zzaeVar3 = zzaeVar;
-                    zzaeVar3.zzp();
-                    Iterator zzg6 = zzaeVar10.zzg();
+                    Iterator zzg6 = zzaeVar.zzg();
                     while (zzg6.hasNext()) {
-                        Integer num3 = (Integer) zzg6.next();
-                        zzaeVar3.zzn(num3.intValue(), zzaeVar10.zzl(num3.intValue()));
+                        int intValue2 = ((Integer) zzg6.next()).intValue();
+                        double d3 = intValue2;
+                        if (d3 >= d2 && zzh.zzf(zzaeVar.zzl(intValue2), zzaoVar3)) {
+                            return new zzah(Double.valueOf(d3));
+                        }
                     }
+                    return new zzah(valueOf);
                 }
-                return new zzah(Double.valueOf(zzaeVar3.zzh()));
+                throw new IllegalArgumentException("Command not supported");
             default:
                 throw new IllegalArgumentException("Command not supported");
         }
-        return zzaeVar2;
     }
 
     private static zzao zzb(zzae zzaeVar, zzg zzgVar, List list, boolean z) {

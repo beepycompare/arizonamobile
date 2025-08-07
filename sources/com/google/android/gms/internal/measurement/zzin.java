@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public enum zzin implements zzmi {
+public enum zzin implements zzmj {
     CLIENT_UPLOAD_ELIGIBILITY_UNKNOWN(0),
     CLIENT_UPLOAD_ELIGIBLE(1),
     MEASUREMENT_SERVICE_NOT_ENABLED(2),
@@ -60,7 +60,7 @@ public enum zzin implements zzmi {
         return Integer.toString(this.zzm);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzmi
+    @Override // com.google.android.gms.internal.measurement.zzmj
     public final int zza() {
         return this.zzm;
     }

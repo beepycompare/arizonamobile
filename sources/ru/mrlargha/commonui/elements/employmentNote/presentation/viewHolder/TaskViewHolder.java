@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -109,7 +108,7 @@ public final class TaskViewHolder extends RecyclerView.ViewHolder {
             taskRewardAdapter.submitList(((FractionTasks) arrayList2.get(0)).getRedwards());
         }
         itemTasksBinding.tvTasksDone.setText(String.valueOf(item.getProgress()));
-        itemTasksBinding.tvTasksRemain.setText(RemoteSettings.FORWARD_SLASH_STRING + item.getMax());
+        itemTasksBinding.tvTasksRemain.setText("/" + item.getMax());
         itemTasksBinding.progressBar.setMax(item.getMax());
         itemTasksBinding.progressBar.setProgress(item.getProgress());
         itemTasksBinding.linearItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.viewHolder.TaskViewHolder$$ExternalSyntheticLambda1

@@ -3,9 +3,9 @@ package com.google.android.gms.internal.measurement;
 import android.content.Context;
 import com.google.common.base.Supplier;
 import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-final class zzjn extends zzkg {
+final class zzjn extends zzkh {
     private final Context zza;
     @Nullable
     private final Supplier zzb;
@@ -21,9 +21,9 @@ final class zzjn extends zzkg {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof zzkg) {
-            zzkg zzkgVar = (zzkg) obj;
-            if (this.zza.equals(zzkgVar.zza()) && ((supplier = this.zzb) != null ? supplier.equals(zzkgVar.zzb()) : zzkgVar.zzb() == null)) {
+        if (obj instanceof zzkh) {
+            zzkh zzkhVar = (zzkh) obj;
+            if (this.zza.equals(zzkhVar.zza()) && ((supplier = this.zzb) != null ? supplier.equals(zzkhVar.zzb()) : zzkhVar.zzb() == null)) {
                 return true;
             }
         }
@@ -50,13 +50,13 @@ final class zzjn extends zzkg {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // com.google.android.gms.internal.measurement.zzkg
+    @Override // com.google.android.gms.internal.measurement.zzkh
     public final Context zza() {
         return this.zza;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // com.google.android.gms.internal.measurement.zzkg
+    @Override // com.google.android.gms.internal.measurement.zzkh
     @Nullable
     public final Supplier zzb() {
         return this.zzb;

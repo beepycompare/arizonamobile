@@ -9,10 +9,10 @@ public final class Wn extends V4 {
     }
 
     @Override // io.appmetrica.analytics.impl.V4
-    public final boolean a(C0401l6 c0401l6, P4 p4) {
-        J4 j4 = p4.b.d.f550a;
+    public final boolean a(C0402l6 c0402l6, P4 p4) {
+        J4 j4 = p4.b.d.f549a;
         this.b.a(j4.i);
-        InterfaceC0257fc l = Ia.F.l();
+        InterfaceC0258fc l = Ia.F.l();
         if (Boolean.TRUE.equals(j4.b)) {
             l.a(true);
         } else {

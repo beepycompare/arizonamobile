@@ -3,34 +3,34 @@ package com.google.android.gms.internal.measurement;
 import android.util.Log;
 import javax.annotation.Nullable;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzkd extends zzkl {
+public final class zzkd extends zzkm {
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzkd(zzkf zzkfVar, String str, Double d, boolean z) {
-        super(zzkfVar, "measurement.test.double_flag", d, true, null);
+    public zzkd(zzkg zzkgVar, String str, Boolean bool, boolean z) {
+        super(zzkgVar, str, bool, true, null);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzkl
+    @Override // com.google.android.gms.internal.measurement.zzkm
     @Nullable
     final /* synthetic */ Object zza(Object obj) {
-        if (obj instanceof Double) {
-            return (Double) obj;
-        }
-        if (obj instanceof Float) {
-            return Double.valueOf(((Float) obj).doubleValue());
+        if (obj instanceof Boolean) {
+            return (Boolean) obj;
         }
         if (obj instanceof String) {
-            try {
-                return Double.valueOf(Double.parseDouble((String) obj));
-            } catch (NumberFormatException unused) {
+            String str = (String) obj;
+            if (zzjg.zzc.matcher(str).matches()) {
+                return true;
+            }
+            if (zzjg.zzd.matcher(str).matches()) {
+                return false;
             }
         }
-        String str = this.zzb;
+        String str2 = this.zzb;
         String obj2 = obj.toString();
-        StringBuilder sb = new StringBuilder(str.length() + 27 + obj2.length());
-        sb.append("Invalid double value for ");
-        sb.append(str);
+        StringBuilder sb = new StringBuilder(str2.length() + 28 + obj2.length());
+        sb.append("Invalid boolean value for ");
+        sb.append(str2);
         sb.append(": ");
         sb.append(obj2);
         Log.e("PhenotypeFlag", sb.toString());

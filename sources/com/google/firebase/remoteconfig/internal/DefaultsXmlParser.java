@@ -15,13 +15,7 @@ public class DefaultsXmlParser {
     private static final String XML_TAG_KEY = "key";
     private static final String XML_TAG_VALUE = "value";
 
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0083 A[Catch: IOException -> 0x008d, IOException | XmlPullParserException -> 0x008f, TryCatch #2 {IOException | XmlPullParserException -> 0x008f, blocks: (B:3:0x0007, B:5:0x000d, B:7:0x0013, B:12:0x0025, B:43:0x0087, B:15:0x002e, B:19:0x003e, B:20:0x0042, B:26:0x0050, B:40:0x0078, B:41:0x007e, B:42:0x0083, B:31:0x005f, B:34:0x0069), top: B:51:0x0007 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public static Map<String, String> getDefaultsFromXml(Context context, int i) {
-        char c;
         HashMap hashMap = new HashMap();
         try {
             Resources resources = context.getResources();
@@ -51,27 +45,14 @@ public class DefaultsXmlParser {
                     int hashCode = str.hashCode();
                     if (hashCode != 106079) {
                         if (hashCode == 111972721 && str.equals("value")) {
-                            c = 1;
-                            if (c != 0) {
-                                str2 = xml.getText();
-                            } else if (c != 1) {
-                                Log.w(FirebaseRemoteConfig.TAG, "Encountered an unexpected tag while parsing the defaults XML.");
-                            } else {
-                                str3 = xml.getText();
-                            }
+                            str3 = xml.getText();
                         }
-                        c = 65535;
-                        if (c != 0) {
-                        }
+                        Log.w(FirebaseRemoteConfig.TAG, "Encountered an unexpected tag while parsing the defaults XML.");
                     } else {
                         if (str.equals(XML_TAG_KEY)) {
-                            c = 0;
-                            if (c != 0) {
-                            }
+                            str2 = xml.getText();
                         }
-                        c = 65535;
-                        if (c != 0) {
-                        }
+                        Log.w(FirebaseRemoteConfig.TAG, "Encountered an unexpected tag while parsing the defaults XML.");
                     }
                 }
             }

@@ -2,10 +2,10 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 /* loaded from: classes4.dex */
-public final class Ca extends AbstractC0270g {
+public final class Ca extends AbstractC0271g {
     public static final String g = "foreground";
 
-    public Ca(C0574s5 c0574s5, Rk rk, Vk vk, C0188ck c0188ck, SystemTimeProvider systemTimeProvider) {
-        super(c0574s5, rk, vk, Qk.a(Wk.FOREGROUND).a(), c0188ck, systemTimeProvider);
+    public Ca(C0575s5 c0575s5, Rk rk, Vk vk, C0189ck c0189ck, SystemTimeProvider systemTimeProvider) {
+        super(c0575s5, rk, vk, Qk.a(Wk.FOREGROUND).a(), c0189ck, systemTimeProvider);
     }
 }

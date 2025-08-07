@@ -1,6 +1,7 @@
 package androidx.media3.exoplayer.drm;
 
 import android.media.ResourceBusyException;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -335,7 +336,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         if (str == null || C.CENC_TYPE_cenc.equals(str)) {
             return true;
         }
-        return C.CENC_TYPE_cbcs.equals(str) ? Util.SDK_INT >= 25 : (C.CENC_TYPE_cbc1.equals(str) || C.CENC_TYPE_cens.equals(str)) ? false : true;
+        return C.CENC_TYPE_cbcs.equals(str) ? Build.VERSION.SDK_INT >= 25 : (C.CENC_TYPE_cbc1.equals(str) || C.CENC_TYPE_cens.equals(str)) ? false : true;
     }
 
     @EnsuresNonNull({"this.playbackLooper", "this.playbackHandler"})
@@ -585,14 +586,14 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             ((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m7373x937f548e(format);
+                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m7377x937f548e(format);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$acquire$0$androidx-media3-exoplayer-drm-DefaultDrmSessionManager$PreacquiredSessionReference  reason: not valid java name */
-        public /* synthetic */ void m7373x937f548e(Format format) {
+        public /* synthetic */ void m7377x937f548e(Format format) {
             if (DefaultDrmSessionManager.this.prepareCallsCount == 0 || this.isReleased) {
                 return;
             }
@@ -606,14 +607,14 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             Util.postOrRun((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler), new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m7374xce10c5c();
+                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m7378xce10c5c();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$release$1$androidx-media3-exoplayer-drm-DefaultDrmSessionManager$PreacquiredSessionReference  reason: not valid java name */
-        public /* synthetic */ void m7374xce10c5c() {
+        public /* synthetic */ void m7378xce10c5c() {
             if (this.isReleased) {
                 return;
             }

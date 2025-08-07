@@ -202,7 +202,7 @@ public final class BpEventChoiceScreen extends SAMPUIElement {
         } catch (Exception e) {
             Log.d("documents", data + "  " + e.getMessage());
             e.printStackTrace();
-            Toast.makeText(getTargetActivity(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
             getNotifier().setUIElementVisible(getBackendID(), false);
             SAMPUIElement.notifyClick$default(this, 0, 0, null, 4, null);
         }

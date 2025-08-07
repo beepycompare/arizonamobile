@@ -4,34 +4,43 @@ import android.os.RemoteException;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzmk implements Runnable {
     final /* synthetic */ zzr zza;
-    final /* synthetic */ zznk zzb;
+    final /* synthetic */ zznl zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzmk(zznk zznkVar, zzr zzrVar) {
+    public zzmk(zznl zznlVar, zzr zzrVar, boolean z) {
         this.zza = zzrVar;
-        Objects.requireNonNull(zznkVar);
-        this.zzb = zznkVar;
+        Objects.requireNonNull(zznlVar);
+        this.zzb = zznlVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zznk zznkVar = this.zzb;
-        zzga zzZ = zznkVar.zzZ();
+        zznl zznlVar = this.zzb;
+        zzgb zzZ = zznlVar.zzZ();
         if (zzZ == null) {
-            zznkVar.zzu.zzaV().zze().zza("Failed to send app backgrounded");
+            zznlVar.zzu.zzaV().zzb().zza("Discarding data. Failed to send app launch");
             return;
         }
         try {
             zzr zzrVar = this.zza;
             Preconditions.checkNotNull(zzrVar);
-            zzZ.zzA(zzrVar);
-            zznkVar.zzV();
+            zzic zzicVar = zznlVar.zzu;
+            zzal zzc = zzicVar.zzc();
+            zzfx zzfxVar = zzfy.zzbb;
+            if (zzc.zzp(null, zzfxVar)) {
+                zznlVar.zzm(zzZ, null, zzrVar);
+            }
+            zzZ.zzg(zzrVar);
+            zznlVar.zzu.zzm().zzo();
+            zzicVar.zzc().zzp(null, zzfxVar);
+            zznlVar.zzm(zzZ, null, zzrVar);
+            zznlVar.zzV();
         } catch (RemoteException e) {
-            this.zzb.zzu.zzaV().zzb().zzb("Failed to send app backgrounded to the service", e);
+            this.zzb.zzu.zzaV().zzb().zzb("Failed to send app launch to the service", e);
         }
     }
 }

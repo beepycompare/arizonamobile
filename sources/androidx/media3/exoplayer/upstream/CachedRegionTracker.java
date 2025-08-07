@@ -1,7 +1,6 @@
 package androidx.media3.exoplayer.upstream;
 
 import androidx.media3.common.util.Log;
-import androidx.media3.common.util.Util;
 import androidx.media3.datasource.cache.Cache;
 import androidx.media3.datasource.cache.CacheSpan;
 import androidx.media3.extractor.ChunkIndex;
@@ -138,7 +137,7 @@ public final class CachedRegionTracker implements Cache.Listener {
 
         @Override // java.lang.Comparable
         public int compareTo(Region region) {
-            return Util.compareLong(this.startOffset, region.startOffset);
+            return Long.compare(this.startOffset, region.startOffset);
         }
     }
 }

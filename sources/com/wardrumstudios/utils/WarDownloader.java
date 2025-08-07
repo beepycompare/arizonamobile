@@ -14,7 +14,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import androidx.core.app.NotificationCompat;
 import androidx.media3.common.C;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -959,7 +958,7 @@ public class WarDownloader {
         int i2 = 0;
         int i3 = 0;
         for (int i4 = 0; i4 < this.numOfDownloadFiles; i4++) {
-            String str = this.myWarMedia.baseDirectory + RemoteSettings.FORWARD_SLASH_STRING + this.downloadFileList[i4].filename;
+            String str = this.myWarMedia.baseDirectory + "/" + this.downloadFileList[i4].filename;
             try {
             } catch (Exception unused) {
                 i = this.downloadFileList[i4].size;
@@ -983,7 +982,7 @@ public class WarDownloader {
     boolean VerifyData() {
         if (ReadFilelist()) {
             for (int i = 0; i < this.numOfDownloadFiles; i++) {
-                String str = this.myWarMedia.baseDirectory + RemoteSettings.FORWARD_SLASH_STRING + this.downloadFileList[i].filename;
+                String str = this.myWarMedia.baseDirectory + "/" + this.downloadFileList[i].filename;
                 try {
                     if (!CheckToSkipTexture(str)) {
                         File file = new File(str);
@@ -1009,8 +1008,8 @@ public class WarDownloader {
         int i2;
         if (this.UseFTP) {
             try {
-                String sb = (!this.UseWardrumData ? new StringBuilder().append(this.downloadLocation).append(str) : new StringBuilder(RemoteSettings.FORWARD_SLASH_STRING).append(str)).toString();
-                String str2 = this.myWarMedia.baseDirectory + RemoteSettings.FORWARD_SLASH_STRING + str;
+                String sb = (!this.UseWardrumData ? new StringBuilder().append(this.downloadLocation) : new StringBuilder("/")).append(str).toString();
+                String str2 = this.myWarMedia.baseDirectory + "/" + str;
                 System.currentTimeMillis();
                 int CheckAndCreate = CheckAndCreate(str2, i);
                 if (!z || CheckAndCreate <= 0) {
@@ -1056,7 +1055,7 @@ public class WarDownloader {
         }
         try {
             String sb2 = (!this.UseWardrumData ? new StringBuilder().append(this.downloadLocation).append(str) : new StringBuilder("http://wardrumstudios.com/MobileDownloads/gta3/").append(str).append(";type=i")).toString();
-            String str3 = this.myWarMedia.baseDirectory + RemoteSettings.FORWARD_SLASH_STRING + str;
+            String str3 = this.myWarMedia.baseDirectory + "/" + str;
             if (this.mv == null) {
                 this.mv = new MediaVault(GetVal(this.try1));
             }

@@ -8,8 +8,8 @@ public class Tg extends Ja {
     }
 
     @Override // io.appmetrica.analytics.impl.Ja
-    public void a(List<AbstractC0236eh> list) {
-        list.add(this.f504a.m);
-        list.add(this.f504a.b);
+    public void a(List<AbstractC0237eh> list) {
+        list.add(this.f503a.m);
+        list.add(this.f503a.b);
     }
 }

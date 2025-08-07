@@ -102,12 +102,13 @@ final class AutoValue_PersistedInstallationEntry extends PersistedInstallationEn
     /* loaded from: classes4.dex */
     static final class Builder extends PersistedInstallationEntry.Builder {
         private String authToken;
-        private Long expiresInSecs;
+        private long expiresInSecs;
         private String firebaseInstallationId;
         private String fisError;
         private String refreshToken;
         private PersistedInstallation.RegistrationStatus registrationStatus;
-        private Long tokenCreationEpochInSecs;
+        private byte set$0;
+        private long tokenCreationEpochInSecs;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public Builder() {
@@ -118,9 +119,10 @@ final class AutoValue_PersistedInstallationEntry extends PersistedInstallationEn
             this.registrationStatus = persistedInstallationEntry.getRegistrationStatus();
             this.authToken = persistedInstallationEntry.getAuthToken();
             this.refreshToken = persistedInstallationEntry.getRefreshToken();
-            this.expiresInSecs = Long.valueOf(persistedInstallationEntry.getExpiresInSecs());
-            this.tokenCreationEpochInSecs = Long.valueOf(persistedInstallationEntry.getTokenCreationEpochInSecs());
+            this.expiresInSecs = persistedInstallationEntry.getExpiresInSecs();
+            this.tokenCreationEpochInSecs = persistedInstallationEntry.getTokenCreationEpochInSecs();
             this.fisError = persistedInstallationEntry.getFisError();
+            this.set$0 = (byte) 3;
         }
 
         @Override // com.google.firebase.installations.local.PersistedInstallationEntry.Builder
@@ -152,13 +154,15 @@ final class AutoValue_PersistedInstallationEntry extends PersistedInstallationEn
 
         @Override // com.google.firebase.installations.local.PersistedInstallationEntry.Builder
         public PersistedInstallationEntry.Builder setExpiresInSecs(long j) {
-            this.expiresInSecs = Long.valueOf(j);
+            this.expiresInSecs = j;
+            this.set$0 = (byte) (this.set$0 | 1);
             return this;
         }
 
         @Override // com.google.firebase.installations.local.PersistedInstallationEntry.Builder
         public PersistedInstallationEntry.Builder setTokenCreationEpochInSecs(long j) {
-            this.tokenCreationEpochInSecs = Long.valueOf(j);
+            this.tokenCreationEpochInSecs = j;
+            this.set$0 = (byte) (this.set$0 | 2);
             return this;
         }
 
@@ -170,22 +174,20 @@ final class AutoValue_PersistedInstallationEntry extends PersistedInstallationEn
 
         @Override // com.google.firebase.installations.local.PersistedInstallationEntry.Builder
         public PersistedInstallationEntry build() {
-            String str;
-            if (this.registrationStatus != null) {
-                str = "";
-            } else {
-                str = " registrationStatus";
+            if (this.set$0 != 3 || this.registrationStatus == null) {
+                StringBuilder sb = new StringBuilder();
+                if (this.registrationStatus == null) {
+                    sb.append(" registrationStatus");
+                }
+                if ((this.set$0 & 1) == 0) {
+                    sb.append(" expiresInSecs");
+                }
+                if ((this.set$0 & 2) == 0) {
+                    sb.append(" tokenCreationEpochInSecs");
+                }
+                throw new IllegalStateException("Missing required properties:" + ((Object) sb));
             }
-            if (this.expiresInSecs == null) {
-                str = str + " expiresInSecs";
-            }
-            if (this.tokenCreationEpochInSecs == null) {
-                str = str + " tokenCreationEpochInSecs";
-            }
-            if (!str.isEmpty()) {
-                throw new IllegalStateException("Missing required properties:" + str);
-            }
-            return new AutoValue_PersistedInstallationEntry(this.firebaseInstallationId, this.registrationStatus, this.authToken, this.refreshToken, this.expiresInSecs.longValue(), this.tokenCreationEpochInSecs.longValue(), this.fisError);
+            return new AutoValue_PersistedInstallationEntry(this.firebaseInstallationId, this.registrationStatus, this.authToken, this.refreshToken, this.expiresInSecs, this.tokenCreationEpochInSecs, this.fisError);
         }
     }
 }

@@ -12,21 +12,27 @@ import android.os.ResultReceiver;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import ru.rustore.sdk.activitylauncher.ActivityLauncherResult;
 /* compiled from: RuStoreActivityLauncher.kt */
-@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0000\u0018\u0000 \u00122\u00020\u0001:\u0001\u0012B\u0005¢\u0006\u0002\u0010\u0002J\"\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0014J\u0012\u0010\f\u001a\u00020\u00062\b\u0010\r\u001a\u0004\u0018\u00010\u000eH\u0014J\u001a\u0010\u000f\u001a\u00020\u00062\u0006\u0010\u0010\u001a\u00020\b2\b\u0010\u0011\u001a\u0004\u0018\u00010\u000eH\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082.¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"Lru/rustore/sdk/activitylauncher/RuStoreActivityLauncher;", "Landroid/app/Activity;", "()V", "resultReceiver", "Landroid/os/ResultReceiver;", "onActivityResult", "", "requestCode", "", "resultCode", "data", "Landroid/content/Intent;", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "sendResult", "code", "bundle", "Companion", "sdk-public-activitylauncher_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0000\u0018\u0000 \u00142\u00020\u0001:\u0001\u0014B\u0005¢\u0006\u0002\u0010\u0002J\"\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\n2\b\u0010\f\u001a\u0004\u0018\u00010\rH\u0014J\u0012\u0010\u000e\u001a\u00020\b2\b\u0010\u000f\u001a\u0004\u0018\u00010\u0010H\u0014J\u001a\u0010\u0011\u001a\u00020\b2\u0006\u0010\u0012\u001a\u00020\n2\b\u0010\u0013\u001a\u0004\u0018\u00010\u0010H\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082.¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lru/rustore/sdk/activitylauncher/RuStoreActivityLauncher;", "Landroid/app/Activity;", "()V", "activityLauncherAnalytics", "Lru/rustore/sdk/activitylauncher/ActivityLauncherAnalytics;", "resultReceiver", "Landroid/os/ResultReceiver;", "onActivityResult", "", "requestCode", "", "resultCode", "data", "Landroid/content/Intent;", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "sendResult", "code", "bundle", "Companion", "sdk-public-activitylauncher_release"}, k = 1, mv = {1, 7, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class RuStoreActivityLauncher extends Activity {
     public static final Companion Companion = new Companion(null);
     private static final String KEY_CONFIRMATION_PENDING_INTENT = "CONFIRMATION_PENDING_INTENT";
     private static final String KEY_RESULT_RECEIVER = "RESULT_RECEIVER";
     private static final int RC_CONFIRM = 0;
+    private ActivityLauncherAnalytics activityLauncherAnalytics;
     private ResultReceiver resultReceiver;
 
     @Override // android.app.Activity
     protected void onCreate(Bundle bundle) {
         Object parcelableExtra;
         Object parcelableExtra2;
+        RuStoreActivityLauncher ruStoreActivityLauncher;
         super.onCreate(bundle);
+        Context applicationContext = getApplicationContext();
+        Intrinsics.checkNotNullExpressionValue(applicationContext, "this.applicationContext");
+        this.activityLauncherAnalytics = new ActivityLauncherAnalytics(applicationContext);
         Intent intent = getIntent();
         Intrinsics.checkNotNullExpressionValue(intent, "intent");
         if (Build.VERSION.SDK_INT >= 33) {
@@ -41,29 +47,66 @@ public final class RuStoreActivityLauncher extends Activity {
             }
         }
         this.resultReceiver = (ResultReceiver) parcelableExtra;
-        if (bundle == null) {
-            Intent intent2 = getIntent();
-            Intrinsics.checkNotNullExpressionValue(intent2, "intent");
-            if (Build.VERSION.SDK_INT >= 33) {
-                parcelableExtra2 = intent2.getParcelableExtra(KEY_CONFIRMATION_PENDING_INTENT, PendingIntent.class);
-                if (parcelableExtra2 == null) {
-                    throw new IllegalArgumentException("Required value was null.".toString());
-                }
-            } else {
-                parcelableExtra2 = intent2.getParcelableExtra(KEY_CONFIRMATION_PENDING_INTENT);
-                if (parcelableExtra2 == null) {
-                    throw new IllegalArgumentException("Required value was null.".toString());
-                }
+        if (bundle != null) {
+            return;
+        }
+        Intent intent2 = getIntent();
+        Intrinsics.checkNotNullExpressionValue(intent2, "intent");
+        if (Build.VERSION.SDK_INT >= 33) {
+            parcelableExtra2 = intent2.getParcelableExtra(KEY_CONFIRMATION_PENDING_INTENT, PendingIntent.class);
+            if (parcelableExtra2 == null) {
+                throw new IllegalArgumentException("Required value was null.".toString());
             }
+        } else {
+            parcelableExtra2 = intent2.getParcelableExtra(KEY_CONFIRMATION_PENDING_INTENT);
+            if (parcelableExtra2 == null) {
+                throw new IllegalArgumentException("Required value was null.".toString());
+            }
+        }
+        try {
+            ruStoreActivityLauncher = this;
             try {
-                startIntentSenderForResult(((PendingIntent) parcelableExtra2).getIntentSender(), 0, null, 0, 0, 0);
-            } catch (ActivityNotFoundException unused) {
-                sendResult(2, null);
-            } catch (IntentSender.SendIntentException unused2) {
-                sendResult(9901, null);
-            } catch (Exception unused3) {
-                sendResult(9902, null);
+                ruStoreActivityLauncher.startIntentSenderForResult(((PendingIntent) parcelableExtra2).getIntentSender(), 0, null, 0, 0, 0);
+            } catch (ActivityNotFoundException e) {
+                e = e;
+                ActivityNotFoundException activityNotFoundException = e;
+                ActivityLauncherAnalytics activityLauncherAnalytics = ruStoreActivityLauncher.activityLauncherAnalytics;
+                if (activityLauncherAnalytics == null) {
+                    Intrinsics.throwUninitializedPropertyAccessException("activityLauncherAnalytics");
+                    activityLauncherAnalytics = null;
+                }
+                activityLauncherAnalytics.sendExceptionActivityStart(activityNotFoundException);
+                sendResult(ActivityLauncherResult.ActivityNotFound.INSTANCE.getCode(), null);
+            } catch (IntentSender.SendIntentException e2) {
+                e = e2;
+                IntentSender.SendIntentException sendIntentException = e;
+                ActivityLauncherAnalytics activityLauncherAnalytics2 = ruStoreActivityLauncher.activityLauncherAnalytics;
+                if (activityLauncherAnalytics2 == null) {
+                    Intrinsics.throwUninitializedPropertyAccessException("activityLauncherAnalytics");
+                    activityLauncherAnalytics2 = null;
+                }
+                activityLauncherAnalytics2.sendExceptionActivityStart(sendIntentException);
+                sendResult(ActivityLauncherResult.ActivitySendIntentError.INSTANCE.getCode(), null);
+            } catch (Exception e3) {
+                e = e3;
+                Exception exc = e;
+                ActivityLauncherAnalytics activityLauncherAnalytics3 = ruStoreActivityLauncher.activityLauncherAnalytics;
+                if (activityLauncherAnalytics3 == null) {
+                    Intrinsics.throwUninitializedPropertyAccessException("activityLauncherAnalytics");
+                    activityLauncherAnalytics3 = null;
+                }
+                activityLauncherAnalytics3.sendExceptionActivityStart(exc);
+                sendResult(ActivityLauncherResult.ActivityUnknownError.INSTANCE.getCode(), null);
             }
+        } catch (ActivityNotFoundException e4) {
+            e = e4;
+            ruStoreActivityLauncher = this;
+        } catch (IntentSender.SendIntentException e5) {
+            e = e5;
+            ruStoreActivityLauncher = this;
+        } catch (Exception e6) {
+            e = e6;
+            ruStoreActivityLauncher = this;
         }
     }
 
@@ -86,7 +129,7 @@ public final class RuStoreActivityLauncher extends Activity {
     }
 
     /* compiled from: RuStoreActivityLauncher.kt */
-    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0080\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J%\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\tH\u0000¢\u0006\u0002\b\u000fR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lru/rustore/sdk/activitylauncher/RuStoreActivityLauncher$Companion;", "", "()V", "KEY_CONFIRMATION_PENDING_INTENT", "", "KEY_RESULT_RECEIVER", "RC_CONFIRM", "", "getIntent", "Landroid/content/Intent;", "context", "Landroid/content/Context;", "resultReceiver", "Landroid/os/ResultReceiver;", "confirmationIntent", "getIntent$sdk_public_activitylauncher_release", "sdk-public-activitylauncher_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0080\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J%\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\tH\u0000¢\u0006\u0002\b\u000fR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lru/rustore/sdk/activitylauncher/RuStoreActivityLauncher$Companion;", "", "()V", "KEY_CONFIRMATION_PENDING_INTENT", "", "KEY_RESULT_RECEIVER", "RC_CONFIRM", "", "getIntent", "Landroid/content/Intent;", "context", "Landroid/content/Context;", "resultReceiver", "Landroid/os/ResultReceiver;", "confirmationIntent", "getIntent$sdk_public_activitylauncher_release", "sdk-public-activitylauncher_release"}, k = 1, mv = {1, 7, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

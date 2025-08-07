@@ -5,7 +5,6 @@ import androidx.media3.common.ParserException;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.TimestampAdjuster;
 import androidx.media3.extractor.ExtractorOutput;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -108,7 +107,7 @@ public interface TsPayloadReader {
         }
 
         public TrackIdGenerator(int i, int i2, int i3) {
-            this.formatIdPrefix = i != Integer.MIN_VALUE ? i + RemoteSettings.FORWARD_SLASH_STRING : "";
+            this.formatIdPrefix = i != Integer.MIN_VALUE ? i + "/" : "";
             this.firstTrackId = i2;
             this.trackIdIncrement = i3;
             this.trackId = Integer.MIN_VALUE;

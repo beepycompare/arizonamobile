@@ -3,6 +3,7 @@ package androidx.media3.exoplayer.audio;
 import android.content.Context;
 import android.media.AudioFormat;
 import android.media.AudioManager;
+import android.os.Build;
 import androidx.media3.common.AudioAttributes;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
@@ -22,19 +23,19 @@ public final class DefaultAudioOffloadSupportProvider implements DefaultAudioSin
     }
 
     public DefaultAudioOffloadSupportProvider(Context context) {
-        this.context = context;
+        this.context = context == null ? null : context.getApplicationContext();
     }
 
     @Override // androidx.media3.exoplayer.audio.DefaultAudioSink.AudioOffloadSupportProvider
     public AudioOffloadSupport getAudioOffloadSupport(Format format, AudioAttributes audioAttributes) {
         Assertions.checkNotNull(format);
         Assertions.checkNotNull(audioAttributes);
-        if (Util.SDK_INT < 29 || format.sampleRate == -1) {
+        if (Build.VERSION.SDK_INT < 29 || format.sampleRate == -1) {
             return AudioOffloadSupport.DEFAULT_UNSUPPORTED;
         }
         boolean isOffloadVariableRateSupported = isOffloadVariableRateSupported(this.context);
         int encoding = MimeTypes.getEncoding((String) Assertions.checkNotNull(format.sampleMimeType), format.codecs);
-        if (encoding == 0 || Util.SDK_INT < Util.getApiLevelThatAudioFormatIntroducedAudioEncoding(encoding)) {
+        if (encoding == 0 || Build.VERSION.SDK_INT < Util.getApiLevelThatAudioFormatIntroducedAudioEncoding(encoding)) {
             return AudioOffloadSupport.DEFAULT_UNSUPPORTED;
         }
         int audioTrackChannelConfig = Util.getAudioTrackChannelConfig(format.channelCount);
@@ -43,7 +44,7 @@ public final class DefaultAudioOffloadSupportProvider implements DefaultAudioSin
         }
         try {
             AudioFormat audioFormat = Util.getAudioFormat(format.sampleRate, audioTrackChannelConfig, encoding);
-            if (Util.SDK_INT >= 31) {
+            if (Build.VERSION.SDK_INT >= 31) {
                 return Api31.getOffloadedPlaybackSupport(audioFormat, audioAttributes.getAudioAttributesV21().audioAttributes, isOffloadVariableRateSupported);
             }
             return Api29.getOffloadedPlaybackSupport(audioFormat, audioAttributes.getAudioAttributesV21().audioAttributes, isOffloadVariableRateSupported);
@@ -93,7 +94,7 @@ public final class DefaultAudioOffloadSupportProvider implements DefaultAudioSin
             if (playbackOffloadSupport == 0) {
                 return AudioOffloadSupport.DEFAULT_UNSUPPORTED;
             }
-            return new AudioOffloadSupport.Builder().setIsFormatSupported(true).setIsGaplessSupported(Util.SDK_INT > 32 && playbackOffloadSupport == 2).setIsSpeedChangeSupported(z).build();
+            return new AudioOffloadSupport.Builder().setIsFormatSupported(true).setIsGaplessSupported(Build.VERSION.SDK_INT > 32 && playbackOffloadSupport == 2).setIsSpeedChangeSupported(z).build();
         }
     }
 }

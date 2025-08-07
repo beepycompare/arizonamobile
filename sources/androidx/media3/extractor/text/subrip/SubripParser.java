@@ -61,7 +61,7 @@ public final class SubripParser implements SubtitleParser {
             String readLine2 = this.parsableByteArray.readLine(detectUtfCharset);
             if (readLine2 == null) {
                 break;
-            } else if (readLine2.length() != 0) {
+            } else if (!readLine2.isEmpty()) {
                 try {
                     Integer.parseInt(readLine2);
                     readLine = this.parsableByteArray.readLine(detectUtfCharset);
@@ -104,7 +104,7 @@ public final class SubripParser implements SubtitleParser {
                         i3++;
                     }
                     j = j3;
-                    if (outputOptions.startTimeUs == j || parseTimecode >= outputOptions.startTimeUs) {
+                    if (outputOptions.startTimeUs == j || parseTimecode2 >= outputOptions.startTimeUs) {
                         consumer.accept(new CuesWithTiming(ImmutableList.of(buildCue(fromHtml, str)), parseTimecode, parseTimecode2 - parseTimecode));
                     } else if (arrayList != null) {
                         arrayList.add(new CuesWithTiming(ImmutableList.of(buildCue(fromHtml, str)), parseTimecode, parseTimecode2 - parseTimecode));
@@ -142,162 +142,119 @@ public final class SubripParser implements SubtitleParser {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x003a, code lost:
+        if (r15.equals(androidx.media3.extractor.text.subrip.SubripParser.ALIGN_TOP_RIGHT) != false) goto L10;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0046, code lost:
+        if (r15.equals(androidx.media3.extractor.text.subrip.SubripParser.ALIGN_TOP_LEFT) != false) goto L36;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x004d, code lost:
+        if (r15.equals(androidx.media3.extractor.text.subrip.SubripParser.ALIGN_MID_RIGHT) != false) goto L10;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0059, code lost:
+        if (r15.equals(androidx.media3.extractor.text.subrip.SubripParser.ALIGN_MID_LEFT) != false) goto L36;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0060, code lost:
+        if (r15.equals(androidx.media3.extractor.text.subrip.SubripParser.ALIGN_BOTTOM_RIGHT) != false) goto L10;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0062, code lost:
+        r14.setPositionAnchor(2);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x006f, code lost:
+        if (r15.equals(androidx.media3.extractor.text.subrip.SubripParser.ALIGN_BOTTOM_LEFT) != false) goto L36;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0071, code lost:
+        r14.setPositionAnchor(0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0084, code lost:
+        if (r15.equals(androidx.media3.extractor.text.subrip.SubripParser.ALIGN_TOP_RIGHT) != false) goto L15;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x008b, code lost:
+        if (r15.equals(androidx.media3.extractor.text.subrip.SubripParser.ALIGN_TOP_MID) != false) goto L15;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x0092, code lost:
+        if (r15.equals(androidx.media3.extractor.text.subrip.SubripParser.ALIGN_TOP_LEFT) != false) goto L15;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0094, code lost:
+        r14.setLineAnchor(0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00ab, code lost:
+        if (r15.equals(androidx.media3.extractor.text.subrip.SubripParser.ALIGN_BOTTOM_RIGHT) != false) goto L27;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x00b2, code lost:
+        if (r15.equals(androidx.media3.extractor.text.subrip.SubripParser.ALIGN_BOTTOM_MID) != false) goto L27;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x00b9, code lost:
+        if (r15.equals(androidx.media3.extractor.text.subrip.SubripParser.ALIGN_BOTTOM_LEFT) != false) goto L27;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x00bb, code lost:
+        r14.setLineAnchor(2);
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private Cue buildCue(Spanned spanned, String str) {
-        char c;
-        char c2;
         Cue.Builder text = new Cue.Builder().setText(spanned);
         if (str == null) {
             return text.build();
         }
         switch (str.hashCode()) {
             case -685620710:
-                if (str.equals(ALIGN_BOTTOM_LEFT)) {
-                    c = 0;
-                    break;
-                }
-                c = 65535;
                 break;
             case -685620679:
-                if (str.equals(ALIGN_BOTTOM_MID)) {
-                    c = 6;
-                    break;
-                }
-                c = 65535;
+                str.equals(ALIGN_BOTTOM_MID);
+                text.setPositionAnchor(1);
                 break;
             case -685620648:
-                if (str.equals(ALIGN_BOTTOM_RIGHT)) {
-                    c = 3;
-                    break;
-                }
-                c = 65535;
                 break;
             case -685620617:
-                if (str.equals(ALIGN_MID_LEFT)) {
-                    c = 1;
-                    break;
-                }
-                c = 65535;
                 break;
             case -685620586:
-                if (str.equals(ALIGN_MID_MID)) {
-                    c = 7;
-                    break;
-                }
-                c = 65535;
+                str.equals(ALIGN_MID_MID);
+                text.setPositionAnchor(1);
                 break;
             case -685620555:
-                if (str.equals(ALIGN_MID_RIGHT)) {
-                    c = 4;
-                    break;
-                }
-                c = 65535;
                 break;
             case -685620524:
-                if (str.equals(ALIGN_TOP_LEFT)) {
-                    c = 2;
-                    break;
-                }
-                c = 65535;
                 break;
             case -685620493:
-                if (str.equals(ALIGN_TOP_MID)) {
-                    c = '\b';
-                    break;
-                }
-                c = 65535;
+                str.equals(ALIGN_TOP_MID);
+                text.setPositionAnchor(1);
                 break;
             case -685620462:
-                if (str.equals(ALIGN_TOP_RIGHT)) {
-                    c = 5;
-                    break;
-                }
-                c = 65535;
                 break;
             default:
-                c = 65535;
+                text.setPositionAnchor(1);
                 break;
-        }
-        if (c == 0 || c == 1 || c == 2) {
-            text.setPositionAnchor(0);
-        } else if (c == 3 || c == 4 || c == 5) {
-            text.setPositionAnchor(2);
-        } else {
-            text.setPositionAnchor(1);
         }
         switch (str.hashCode()) {
             case -685620710:
-                if (str.equals(ALIGN_BOTTOM_LEFT)) {
-                    c2 = 0;
-                    break;
-                }
-                c2 = 65535;
                 break;
             case -685620679:
-                if (str.equals(ALIGN_BOTTOM_MID)) {
-                    c2 = 1;
-                    break;
-                }
-                c2 = 65535;
                 break;
             case -685620648:
-                if (str.equals(ALIGN_BOTTOM_RIGHT)) {
-                    c2 = 2;
-                    break;
-                }
-                c2 = 65535;
                 break;
             case -685620617:
-                if (str.equals(ALIGN_MID_LEFT)) {
-                    c2 = 6;
-                    break;
-                }
-                c2 = 65535;
+                str.equals(ALIGN_MID_LEFT);
+                text.setLineAnchor(1);
                 break;
             case -685620586:
-                if (str.equals(ALIGN_MID_MID)) {
-                    c2 = 7;
-                    break;
-                }
-                c2 = 65535;
+                str.equals(ALIGN_MID_MID);
+                text.setLineAnchor(1);
                 break;
             case -685620555:
-                if (str.equals(ALIGN_MID_RIGHT)) {
-                    c2 = '\b';
-                    break;
-                }
-                c2 = 65535;
+                str.equals(ALIGN_MID_RIGHT);
+                text.setLineAnchor(1);
                 break;
             case -685620524:
-                if (str.equals(ALIGN_TOP_LEFT)) {
-                    c2 = 3;
-                    break;
-                }
-                c2 = 65535;
                 break;
             case -685620493:
-                if (str.equals(ALIGN_TOP_MID)) {
-                    c2 = 4;
-                    break;
-                }
-                c2 = 65535;
                 break;
             case -685620462:
-                if (str.equals(ALIGN_TOP_RIGHT)) {
-                    c2 = 5;
-                    break;
-                }
-                c2 = 65535;
                 break;
             default:
-                c2 = 65535;
+                text.setLineAnchor(1);
                 break;
-        }
-        if (c2 == 0 || c2 == 1 || c2 == 2) {
-            text.setLineAnchor(2);
-        } else if (c2 == 3 || c2 == 4 || c2 == 5) {
-            text.setLineAnchor(0);
-        } else {
-            text.setLineAnchor(1);
         }
         return text.setPosition(getFractionalPositionForAnchorType(text.getPositionAnchor())).setLine(getFractionalPositionForAnchorType(text.getLineAnchor()), 0).build();
     }

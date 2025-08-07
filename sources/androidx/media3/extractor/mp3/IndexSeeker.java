@@ -11,10 +11,12 @@ final class IndexSeeker implements Seeker {
     static final long MIN_TIME_BETWEEN_POINTS_US = 100000;
     private final int averageBitrate;
     private final long dataEndPosition;
+    private final long dataStartPosition;
     private final IndexSeekMap indexSeekMap;
 
     public IndexSeeker(long j, long j2, long j3) {
         this.indexSeekMap = new IndexSeekMap(new long[]{j2}, new long[]{0}, j);
+        this.dataStartPosition = j2;
         this.dataEndPosition = j3;
         int i = (j > C.TIME_UNSET ? 1 : (j == C.TIME_UNSET ? 0 : -1));
         int i2 = C.RATE_UNSET_INT;
@@ -32,6 +34,11 @@ final class IndexSeeker implements Seeker {
     @Override // androidx.media3.extractor.mp3.Seeker
     public long getTimeUs(long j) {
         return this.indexSeekMap.getTimeUs(j);
+    }
+
+    @Override // androidx.media3.extractor.mp3.Seeker
+    public long getDataStartPosition() {
+        return this.dataStartPosition;
     }
 
     @Override // androidx.media3.extractor.mp3.Seeker

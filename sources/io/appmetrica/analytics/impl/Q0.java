@@ -5,16 +5,16 @@ import io.appmetrica.analytics.profile.UserProfile;
 public final class Q0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ UserProfile f605a;
-    public final /* synthetic */ C0496p1 b;
+    public final /* synthetic */ UserProfile f604a;
+    public final /* synthetic */ C0497p1 b;
 
-    public Q0(C0496p1 c0496p1, UserProfile userProfile) {
-        this.b = c0496p1;
-        this.f605a = userProfile;
+    public Q0(C0497p1 c0497p1, UserProfile userProfile) {
+        this.b = c0497p1;
+        this.f604a = userProfile;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0496p1.a(this.b).reportUserProfile(this.f605a);
+        C0497p1.a(this.b).reportUserProfile(this.f604a);
     }
 }

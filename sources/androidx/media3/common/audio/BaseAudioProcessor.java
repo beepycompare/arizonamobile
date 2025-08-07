@@ -63,7 +63,8 @@ public abstract class BaseAudioProcessor implements AudioProcessor {
 
     @Override // androidx.media3.common.audio.AudioProcessor
     public final void reset() {
-        flush();
+        this.outputBuffer = EMPTY_BUFFER;
+        this.inputEnded = false;
         this.buffer = EMPTY_BUFFER;
         this.pendingInputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
         this.pendingOutputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;

@@ -1,10 +1,14 @@
 package androidx.media3.common.util;
 
+import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.primitives.Chars;
 import com.google.common.primitives.Ints;
+import com.google.common.primitives.UnsignedBytes;
+import com.google.common.primitives.UnsignedInts;
 import com.google.errorprone.annotations.CheckReturnValue;
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -12,12 +16,17 @@ import okio.Utf8;
 @CheckReturnValue
 /* loaded from: classes2.dex */
 public final class ParsableByteArray {
-    private static final char[] CR_AND_LF = {'\r', '\n'};
-    private static final char[] LF = {'\n'};
-    private static final ImmutableSet<Charset> SUPPORTED_CHARSETS_FOR_READLINE = ImmutableSet.of(StandardCharsets.US_ASCII, StandardCharsets.UTF_8, StandardCharsets.UTF_16, StandardCharsets.UTF_16BE, StandardCharsets.UTF_16LE);
+    public static final int INVALID_CODE_POINT = 1114112;
     private byte[] data;
     private int limit;
     private int position;
+    private static final char[] CR_AND_LF = {'\r', '\n'};
+    private static final char[] LF = {'\n'};
+    private static final ImmutableSet<Charset> SUPPORTED_CHARSETS_FOR_READLINE = ImmutableSet.of(StandardCharsets.US_ASCII, StandardCharsets.UTF_8, StandardCharsets.UTF_16, StandardCharsets.UTF_16BE, StandardCharsets.UTF_16LE);
+
+    private static boolean isUtf8ContinuationByte(byte b) {
+        return (b & 192) == 128;
+    }
 
     public ParsableByteArray() {
         this.data = Util.EMPTY_BYTE_ARRAY;
@@ -59,7 +68,7 @@ public final class ParsableByteArray {
     }
 
     public int bytesLeft() {
-        return this.limit - this.position;
+        return Math.max(this.limit - this.position, 0);
     }
 
     public int limit() {
@@ -112,14 +121,45 @@ public final class ParsableByteArray {
     }
 
     public char peekChar() {
-        byte[] bArr = this.data;
-        int i = this.position;
-        return (char) ((bArr[i + 1] & 255) | ((bArr[i] & 255) << 8));
+        return peekChar(ByteOrder.BIG_ENDIAN, 0);
     }
 
+    @Deprecated
     public char peekChar(Charset charset) {
+        int peekUnsignedByte;
         Assertions.checkArgument(SUPPORTED_CHARSETS_FOR_READLINE.contains(charset), "Unsupported charset: " + charset);
-        return (char) (peekCharacterAndSize(charset) >> 16);
+        if (bytesLeft() == 0) {
+            return (char) 0;
+        }
+        if (charset.equals(StandardCharsets.US_ASCII)) {
+            peekUnsignedByte = peekUnsignedByte();
+        } else if (charset.equals(StandardCharsets.UTF_8)) {
+            if ((this.data[this.position] & 128) != 0) {
+                return (char) 0;
+            }
+            peekUnsignedByte = peekUnsignedByte();
+        } else if (bytesLeft() < 2) {
+            return (char) 0;
+        } else {
+            return peekChar(charset.equals(StandardCharsets.UTF_16LE) ? ByteOrder.LITTLE_ENDIAN : ByteOrder.BIG_ENDIAN, 0);
+        }
+        return (char) peekUnsignedByte;
+    }
+
+    private char peekChar(ByteOrder byteOrder, int i) {
+        if (byteOrder == ByteOrder.BIG_ENDIAN) {
+            byte[] bArr = this.data;
+            int i2 = this.position;
+            return Chars.fromBytes(bArr[i2 + i], bArr[i2 + i + 1]);
+        }
+        byte[] bArr2 = this.data;
+        int i3 = this.position;
+        return Chars.fromBytes(bArr2[i3 + i + 1], bArr2[i3 + i]);
+    }
+
+    public int peekCodePoint(Charset charset) {
+        int peekCodePointAndSize = peekCodePointAndSize(charset);
+        return peekCodePointAndSize != 0 ? Ints.checkedCast(peekCodePointAndSize >>> 8) : INVALID_CODE_POINT;
     }
 
     public int readUnsignedByte() {
@@ -477,6 +517,11 @@ public final class ParsableByteArray {
         return Ints.checkedCast(readUnsignedLeb128ToLong());
     }
 
+    public void skipLeb128() {
+        do {
+        } while ((readUnsignedByte() & 128) != 0);
+    }
+
     public Charset readUtfCharsetFromBom() {
         if (bytesLeft() >= 3) {
             byte[] bArr = this.data;
@@ -545,41 +590,92 @@ public final class ParsableByteArray {
     }
 
     private char readCharacterIfInList(Charset charset, char[] cArr) {
-        int peekCharacterAndSize = peekCharacterAndSize(charset);
-        if (peekCharacterAndSize != 0) {
-            char c = (char) (peekCharacterAndSize >> 16);
-            if (Chars.contains(cArr, c)) {
-                this.position += peekCharacterAndSize & 65535;
-                return c;
+        int peekCodePointAndSize;
+        if (bytesLeft() >= getSmallestCodeUnitSize(charset) && (peekCodePointAndSize = peekCodePointAndSize(charset)) != 0) {
+            int checkedCast = UnsignedInts.checkedCast(peekCodePointAndSize >>> 8);
+            if (Character.isSupplementaryCodePoint(checkedCast)) {
+                return (char) 0;
+            }
+            char checkedCast2 = Chars.checkedCast(checkedCast);
+            if (Chars.contains(cArr, checkedCast2)) {
+                this.position += Ints.checkedCast(peekCodePointAndSize & 255);
+                return checkedCast2;
             }
             return (char) 0;
         }
         return (char) 0;
     }
 
-    private int peekCharacterAndSize(Charset charset) {
-        byte b;
-        byte b2;
-        byte b3 = 1;
-        if ((charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) && bytesLeft() >= 1) {
-            b = this.data[this.position];
-            b2 = 0;
-        } else {
-            if ((charset.equals(StandardCharsets.UTF_16) || charset.equals(StandardCharsets.UTF_16BE)) && bytesLeft() >= 2) {
+    private int peekCodePointAndSize(Charset charset) {
+        int i;
+        int i2;
+        Assertions.checkArgument(SUPPORTED_CHARSETS_FOR_READLINE.contains(charset), "Unsupported charset: " + charset);
+        if (bytesLeft() < getSmallestCodeUnitSize(charset)) {
+            throw new IndexOutOfBoundsException("position=" + this.position + ", limit=" + this.limit);
+        }
+        byte b = 1;
+        if (charset.equals(StandardCharsets.US_ASCII)) {
+            byte b2 = this.data[this.position];
+            if ((b2 & 128) != 0) {
+                return 0;
+            }
+            i = UnsignedBytes.toInt(b2);
+        } else if (charset.equals(StandardCharsets.UTF_8)) {
+            byte peekUtf8CodeUnitSize = peekUtf8CodeUnitSize();
+            if (peekUtf8CodeUnitSize == 1) {
+                i2 = UnsignedBytes.toInt(this.data[this.position]);
+            } else if (peekUtf8CodeUnitSize == 2) {
                 byte[] bArr = this.data;
-                int i = this.position;
-                b2 = bArr[i];
-                b = bArr[i + 1];
-            } else if (!charset.equals(StandardCharsets.UTF_16LE) || bytesLeft() < 2) {
+                int i3 = this.position;
+                i2 = decodeUtf8CodeUnit(0, 0, bArr[i3], bArr[i3 + 1]);
+            } else if (peekUtf8CodeUnitSize == 3) {
+                byte[] bArr2 = this.data;
+                int i4 = this.position;
+                i2 = decodeUtf8CodeUnit(0, bArr2[i4] & Ascii.SI, bArr2[i4 + 1], bArr2[i4 + 2]);
+            } else if (peekUtf8CodeUnitSize != 4) {
                 return 0;
             } else {
-                byte[] bArr2 = this.data;
-                int i2 = this.position;
-                b2 = bArr2[i2 + 1];
-                b = bArr2[i2];
+                byte[] bArr3 = this.data;
+                int i5 = this.position;
+                i2 = decodeUtf8CodeUnit(bArr3[i5], bArr3[i5 + 1], bArr3[i5 + 2], bArr3[i5 + 3]);
             }
-            b3 = 2;
+            b = peekUtf8CodeUnitSize;
+            i = i2;
+        } else {
+            ByteOrder byteOrder = charset.equals(StandardCharsets.UTF_16LE) ? ByteOrder.LITTLE_ENDIAN : ByteOrder.BIG_ENDIAN;
+            char peekChar = peekChar(byteOrder, 0);
+            if (!Character.isHighSurrogate(peekChar) || bytesLeft() < 4) {
+                i = peekChar;
+                b = 2;
+            } else {
+                i = Character.toCodePoint(peekChar, peekChar(byteOrder, 2));
+                b = 4;
+            }
         }
-        return Ints.fromBytes(b2, b, (byte) 0, b3);
+        return (i << 8) | b;
+    }
+
+    private static int getSmallestCodeUnitSize(Charset charset) {
+        Assertions.checkArgument(SUPPORTED_CHARSETS_FOR_READLINE.contains(charset), "Unsupported charset: " + charset);
+        return (charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) ? 1 : 2;
+    }
+
+    private byte peekUtf8CodeUnitSize() {
+        byte b = this.data[this.position];
+        if ((b & 128) == 0) {
+            return (byte) 1;
+        }
+        if ((b & 224) == 192 && bytesLeft() >= 2 && isUtf8ContinuationByte(this.data[this.position + 1])) {
+            return (byte) 2;
+        }
+        if ((this.data[this.position] & 240) == 224 && bytesLeft() >= 3 && isUtf8ContinuationByte(this.data[this.position + 1]) && isUtf8ContinuationByte(this.data[this.position + 2])) {
+            return (byte) 3;
+        }
+        return ((this.data[this.position] & 248) == 240 && bytesLeft() >= 4 && isUtf8ContinuationByte(this.data[this.position + 1]) && isUtf8ContinuationByte(this.data[this.position + 2]) && isUtf8ContinuationByte(this.data[this.position + 3])) ? (byte) 4 : (byte) 0;
+    }
+
+    private static int decodeUtf8CodeUnit(int i, int i2, int i3, int i4) {
+        byte b = (byte) i3;
+        return Ints.fromBytes((byte) 0, UnsignedBytes.checkedCast(((i & 7) << 2) | ((i2 & 48) >> 4)), UnsignedBytes.checkedCast(((((byte) i2) & Ascii.SI) << 4) | ((b & 60) >> 2)), UnsignedBytes.checkedCast(((b & 3) << 6) | (((byte) i4) & Utf8.REPLACEMENT_BYTE)));
     }
 }

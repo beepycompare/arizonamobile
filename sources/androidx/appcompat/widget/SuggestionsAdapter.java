@@ -24,7 +24,6 @@ import androidx.appcompat.R;
 import androidx.core.content.ContextCompat;
 import androidx.cursoradapter.widget.ResourceCursorAdapter;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -329,7 +328,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickLi
         }
         try {
             int parseInt = Integer.parseInt(str);
-            String str2 = "android.resource://" + this.mProviderContext.getPackageName() + RemoteSettings.FORWARD_SLASH_STRING + parseInt;
+            String str2 = "android.resource://" + this.mProviderContext.getPackageName() + "/" + parseInt;
             Drawable checkIconCache = checkIconCache(str2);
             if (checkIconCache != null) {
                 return checkIconCache;

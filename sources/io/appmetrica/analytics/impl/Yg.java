@@ -1,13 +1,13 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Yg extends AbstractC0236eh {
-    public Yg(C0574s5 c0574s5) {
-        super(c0574s5);
+public final class Yg extends AbstractC0237eh {
+    public Yg(C0575s5 c0575s5) {
+        super(c0575s5);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0236eh
-    public final boolean a(C0401l6 c0401l6) {
-        this.f832a.d();
+    @Override // io.appmetrica.analytics.impl.AbstractC0237eh
+    public final boolean a(C0402l6 c0402l6) {
+        this.f831a.d();
         return false;
     }
 }

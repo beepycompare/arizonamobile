@@ -48,86 +48,84 @@ final class TextEmphasis {
         return parseWords(ImmutableSet.copyOf(TextUtils.split(lowerCase, WHITESPACE_PATTERN)));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00ed, code lost:
-        if (r9.equals(androidx.media3.extractor.text.ttml.TtmlNode.TEXT_EMPHASIS_MARK_DOT) != false) goto L47;
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x00e0, code lost:
+        if (r7.equals(androidx.media3.extractor.text.ttml.TtmlNode.TEXT_EMPHASIS_MARK_DOT) == false) goto L46;
      */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00dc  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00fa  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00cf  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00ed  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private static TextEmphasis parseWords(ImmutableSet<String> immutableSet) {
-        boolean z;
         int i;
+        Sets.SetView intersection;
+        int i2;
         int hashCode;
         String str = (String) Iterables.getFirst(Sets.intersection(POSITION_VALUES, immutableSet), TtmlNode.ANNOTATION_POSITION_OUTSIDE);
         int hashCode2 = str.hashCode();
-        boolean z2 = false;
-        int i2 = -1;
-        if (hashCode2 == -1392885889) {
-            if (str.equals(TtmlNode.ANNOTATION_POSITION_BEFORE)) {
-                z = true;
+        int i3 = 2;
+        if (hashCode2 != -1392885889) {
+            if (hashCode2 != -1106037339) {
+                if (hashCode2 == 92734940 && str.equals(TtmlNode.ANNOTATION_POSITION_AFTER)) {
+                    i = 2;
+                }
+            } else if (str.equals(TtmlNode.ANNOTATION_POSITION_OUTSIDE)) {
+                i = -2;
             }
-            z = true;
-        } else if (hashCode2 != -1106037339) {
-            if (hashCode2 == 92734940 && str.equals(TtmlNode.ANNOTATION_POSITION_AFTER)) {
-                z = false;
+            intersection = Sets.intersection(SINGLE_STYLE_VALUES, immutableSet);
+            int i4 = -1;
+            if (intersection.isEmpty()) {
+                String str2 = (String) intersection.iterator().next();
+                int hashCode3 = str2.hashCode();
+                if (hashCode3 == 3005871) {
+                    str2.equals("auto");
+                } else if (hashCode3 == 3387192 && str2.equals("none")) {
+                    i4 = 0;
+                }
+                return new TextEmphasis(i4, 0, i);
             }
-            z = true;
-        } else {
-            if (str.equals(TtmlNode.ANNOTATION_POSITION_OUTSIDE)) {
-                z = true;
+            Sets.SetView intersection2 = Sets.intersection(MARK_FILL_VALUES, immutableSet);
+            Sets.SetView intersection3 = Sets.intersection(MARK_SHAPE_VALUES, immutableSet);
+            if (intersection2.isEmpty() && intersection3.isEmpty()) {
+                return new TextEmphasis(-1, 0, i);
             }
-            z = true;
-        }
-        int i3 = z ? !z ? 1 : -2 : 2;
-        Sets.SetView intersection = Sets.intersection(SINGLE_STYLE_VALUES, immutableSet);
-        if (!intersection.isEmpty()) {
-            String str2 = (String) intersection.iterator().next();
-            int hashCode3 = str2.hashCode();
-            if (hashCode3 == 3005871) {
-                str2.equals("auto");
-            } else if (hashCode3 == 3387192 && str2.equals("none")) {
-                i2 = 0;
+            String str3 = (String) Iterables.getFirst(intersection2, TtmlNode.TEXT_EMPHASIS_MARK_FILLED);
+            int hashCode4 = str3.hashCode();
+            if (hashCode4 == -1274499742) {
+                str3.equals(TtmlNode.TEXT_EMPHASIS_MARK_FILLED);
+            } else if (hashCode4 == 3417674 && str3.equals(TtmlNode.TEXT_EMPHASIS_MARK_OPEN)) {
+                i2 = 2;
+                String str4 = (String) Iterables.getFirst(intersection3, TtmlNode.TEXT_EMPHASIS_MARK_CIRCLE);
+                hashCode = str4.hashCode();
+                if (hashCode != -1360216880) {
+                    str4.equals(TtmlNode.TEXT_EMPHASIS_MARK_CIRCLE);
+                } else {
+                    if (hashCode != -905816648) {
+                        if (hashCode == 99657) {
+                        }
+                    } else if (str4.equals(TtmlNode.TEXT_EMPHASIS_MARK_SESAME)) {
+                        i3 = 3;
+                    }
+                    return new TextEmphasis(i3, i2, i);
+                }
+                i3 = 1;
+                return new TextEmphasis(i3, i2, i);
             }
-            return new TextEmphasis(i2, 0, i3);
-        }
-        Sets.SetView intersection2 = Sets.intersection(MARK_FILL_VALUES, immutableSet);
-        Sets.SetView intersection3 = Sets.intersection(MARK_SHAPE_VALUES, immutableSet);
-        if (intersection2.isEmpty() && intersection3.isEmpty()) {
-            return new TextEmphasis(-1, 0, i3);
-        }
-        String str3 = (String) Iterables.getFirst(intersection2, TtmlNode.TEXT_EMPHASIS_MARK_FILLED);
-        int hashCode4 = str3.hashCode();
-        if (hashCode4 == -1274499742) {
-            str3.equals(TtmlNode.TEXT_EMPHASIS_MARK_FILLED);
-        } else if (hashCode4 == 3417674 && str3.equals(TtmlNode.TEXT_EMPHASIS_MARK_OPEN)) {
-            i = 2;
-            String str4 = (String) Iterables.getFirst(intersection3, TtmlNode.TEXT_EMPHASIS_MARK_CIRCLE);
-            hashCode = str4.hashCode();
+            i2 = 1;
+            String str42 = (String) Iterables.getFirst(intersection3, TtmlNode.TEXT_EMPHASIS_MARK_CIRCLE);
+            hashCode = str42.hashCode();
             if (hashCode != -1360216880) {
-                if (str4.equals(TtmlNode.TEXT_EMPHASIS_MARK_CIRCLE)) {
-                    z2 = true;
-                }
-                z2 = true;
-            } else if (hashCode != -905816648) {
-                if (hashCode == 99657) {
-                }
-                z2 = true;
-            } else {
-                if (str4.equals(TtmlNode.TEXT_EMPHASIS_MARK_SESAME)) {
-                    z2 = true;
-                }
-                z2 = true;
             }
-            return new TextEmphasis(z2 ? !z2 ? 1 : 3 : 2, i, i3);
+            i3 = 1;
+            return new TextEmphasis(i3, i2, i);
         }
+        str.equals(TtmlNode.ANNOTATION_POSITION_BEFORE);
         i = 1;
-        String str42 = (String) Iterables.getFirst(intersection3, TtmlNode.TEXT_EMPHASIS_MARK_CIRCLE);
-        hashCode = str42.hashCode();
-        if (hashCode != -1360216880) {
+        intersection = Sets.intersection(SINGLE_STYLE_VALUES, immutableSet);
+        int i42 = -1;
+        if (intersection.isEmpty()) {
         }
-        return new TextEmphasis(z2 ? !z2 ? 1 : 3 : 2, i, i3);
     }
 }

@@ -1,37 +1,105 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.StrictMode;
+import androidx.collection.ArrayMap;
+import com.google.common.base.Preconditions;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public enum zzko implements zzmi {
-    IAB_TCF_PURPOSE_UNKNOWN(0),
-    IAB_TCF_PURPOSE_STORE_AND_ACCESS_INFORMATION_ON_A_DEVICE(1),
-    IAB_TCF_PURPOSE_SELECT_BASIC_ADS(2),
-    IAB_TCF_PURPOSE_CREATE_A_PERSONALISED_ADS_PROFILE(3),
-    IAB_TCF_PURPOSE_SELECT_PERSONALISED_ADS(4),
-    IAB_TCF_PURPOSE_CREATE_A_PERSONALISED_CONTENT_PROFILE(5),
-    IAB_TCF_PURPOSE_SELECT_PERSONALISED_CONTENT(6),
-    IAB_TCF_PURPOSE_MEASURE_AD_PERFORMANCE(7),
-    IAB_TCF_PURPOSE_MEASURE_CONTENT_PERFORMANCE(8),
-    IAB_TCF_PURPOSE_APPLY_MARKET_RESEARCH_TO_GENERATE_AUDIENCE_INSIGHTS(9),
-    IAB_TCF_PURPOSE_DEVELOP_AND_IMPROVE_PRODUCTS(10),
-    IAB_TCF_PURPOSE_USE_LIMITED_DATA_TO_SELECT_CONTENT(11),
-    UNRECOGNIZED(-1);
-    
-    private final int zzn;
+public final class zzko implements zzjv {
+    private static final Map zza = new ArrayMap();
+    private final SharedPreferences zzb;
+    private SharedPreferences.OnSharedPreferenceChangeListener zzc;
+    private volatile Map zze;
+    private final Object zzd = new Object();
+    private final List zzf = new ArrayList();
 
-    zzko(int i) {
-        this.zzn = i;
+    private zzko(SharedPreferences sharedPreferences, Runnable runnable) {
+        this.zzb = sharedPreferences;
     }
 
-    @Override // java.lang.Enum
-    public final String toString() {
-        return Integer.toString(this.zzn);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzmi
-    public final int zza() {
-        if (this != UNRECOGNIZED) {
-            return this.zzn;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static zzko zza(Context context, String str, Runnable runnable) {
+        final zzko zzkoVar;
+        SharedPreferences zza2;
+        if (!zzjm.zza() || str.startsWith("direct_boot:") || zzjm.zzc(context)) {
+            synchronized (zzko.class) {
+                Map map = zza;
+                zzkoVar = (zzko) map.get(str);
+                if (zzkoVar == null) {
+                    StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
+                    if (str.startsWith("direct_boot:")) {
+                        if (zzjm.zza()) {
+                            context = context.createDeviceProtectedStorageContext();
+                        }
+                        zza2 = zzcf.zza(context, str.substring(12), 0, zzcb.zza);
+                    } else {
+                        zza2 = zzcf.zza(context, str, 0, zzcb.zza);
+                    }
+                    StrictMode.setThreadPolicy(allowThreadDiskReads);
+                    zzkoVar = new zzko(zza2, runnable);
+                    SharedPreferences.OnSharedPreferenceChangeListener onSharedPreferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() { // from class: com.google.android.gms.internal.measurement.zzkn
+                        @Override // android.content.SharedPreferences.OnSharedPreferenceChangeListener
+                        public final /* synthetic */ void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String str2) {
+                            zzko.this.zzc(sharedPreferences, str2);
+                        }
+                    };
+                    zzkoVar.zzc = onSharedPreferenceChangeListener;
+                    zzkoVar.zzb.registerOnSharedPreferenceChangeListener(onSharedPreferenceChangeListener);
+                    map.put(str, zzkoVar);
+                }
+            }
+            return zzkoVar;
         }
-        throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
+        return null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static synchronized void zzb() {
+        synchronized (zzko.class) {
+            Map map = zza;
+            for (zzko zzkoVar : map.values()) {
+                zzkoVar.zzb.unregisterOnSharedPreferenceChangeListener((SharedPreferences.OnSharedPreferenceChangeListener) Preconditions.checkNotNull(zzkoVar.zzc));
+            }
+            map.clear();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzc(SharedPreferences sharedPreferences, String str) {
+        synchronized (this.zzd) {
+            this.zze = null;
+            zzkm.zzc();
+        }
+        synchronized (this) {
+            for (zzjs zzjsVar : this.zzf) {
+                zzjsVar.zza();
+            }
+        }
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzjv
+    public final Object zze(String str) {
+        Map<String, ?> map = this.zze;
+        if (map == null) {
+            synchronized (this.zzd) {
+                map = this.zze;
+                if (map == null) {
+                    StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
+                    Map<String, ?> all = this.zzb.getAll();
+                    this.zze = all;
+                    StrictMode.setThreadPolicy(allowThreadDiskReads);
+                    map = all;
+                }
+            }
+        }
+        if (map != null) {
+            return map.get(str);
+        }
+        return null;
     }
 }

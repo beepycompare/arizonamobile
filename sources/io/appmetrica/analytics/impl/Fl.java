@@ -7,16 +7,16 @@ import java.util.Iterator;
 public final class Fl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Hl f441a;
+    public final /* synthetic */ Hl f440a;
 
     public Fl(Hl hl) {
-        this.f441a = hl;
+        this.f440a = hl;
     }
 
-    public final void a(String str, Jl jl, C0267fm c0267fm) {
+    public final void a(String str, Jl jl, C0268fm c0268fm) {
         ArrayList arrayList;
-        synchronized (this.f441a.b) {
-            Collection collection = (Collection) this.f441a.f477a.f520a.get(str);
+        synchronized (this.f440a.b) {
+            Collection collection = (Collection) this.f440a.f476a.f519a.get(str);
             if (collection == null) {
                 arrayList = new ArrayList();
             } else {
@@ -25,7 +25,7 @@ public final class Fl {
         }
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
-            ((Ql) it.next()).a(jl, c0267fm);
+            ((Ql) it.next()).a(jl, c0268fm);
         }
     }
 }

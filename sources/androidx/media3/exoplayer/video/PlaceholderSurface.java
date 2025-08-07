@@ -59,10 +59,15 @@ public final class PlaceholderSurface extends Surface {
     }
 
     private static int getSecureMode(Context context) {
-        if (GlUtil.isProtectedContentExtensionSupported(context)) {
-            return GlUtil.isSurfacelessContextExtensionSupported() ? 1 : 2;
+        try {
+            if (GlUtil.isProtectedContentExtensionSupported(context)) {
+                return GlUtil.isSurfacelessContextExtensionSupported() ? 1 : 2;
+            }
+            return 0;
+        } catch (GlUtil.GlException e) {
+            Log.e(TAG, "Failed to determine secure mode due to GL error: " + e.getMessage());
+            return 0;
         }
-        return 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

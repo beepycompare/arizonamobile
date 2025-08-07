@@ -6,7 +6,6 @@ import androidx.constraintlayout.core.widgets.ConstraintWidgetContainer;
 import androidx.constraintlayout.core.widgets.Guideline;
 import androidx.constraintlayout.core.widgets.HelperWidget;
 import androidx.constraintlayout.core.widgets.analyzer.BasicMeasure;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -732,7 +731,7 @@ public class DependencyGraph {
         if (runGroup != null) {
             sb.append(" [");
             sb.append(runGroup.mGroupIndex + 1);
-            sb.append(RemoteSettings.FORWARD_SLASH_STRING);
+            sb.append("/");
             sb.append(RunGroup.index);
             sb.append("]");
         }

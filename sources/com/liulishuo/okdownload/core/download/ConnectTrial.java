@@ -1,6 +1,5 @@
 package com.liulishuo.okdownload.core.download;
 
-import com.google.firebase.sessions.settings.RemoteSettings;
 import com.liulishuo.okdownload.DownloadListener;
 import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.OkDownload;
@@ -179,7 +178,7 @@ public class ConnectTrial {
         if (str == null) {
             return -1L;
         }
-        String[] split = str.split(RemoteSettings.FORWARD_SLASH_STRING);
+        String[] split = str.split("/");
         if (split.length >= 2) {
             try {
                 return Long.parseLong(split[1]);

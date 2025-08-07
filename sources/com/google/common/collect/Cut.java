@@ -1,7 +1,6 @@
 package com.google.common.collect;
 
 import com.google.common.base.Preconditions;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.Serializable;
 import java.lang.Comparable;
 import java.util.NoSuchElementException;
@@ -351,7 +350,7 @@ public abstract class Cut<C extends Comparable> implements Comparable<Cut<C>>, S
         }
 
         public String toString() {
-            return "\\" + this.endpoint + RemoteSettings.FORWARD_SLASH_STRING;
+            return "\\" + this.endpoint + "/";
         }
     }
 
@@ -467,7 +466,7 @@ public abstract class Cut<C extends Comparable> implements Comparable<Cut<C>>, S
         }
 
         public String toString() {
-            return RemoteSettings.FORWARD_SLASH_STRING + this.endpoint + "\\";
+            return "/" + this.endpoint + "\\";
         }
     }
 }

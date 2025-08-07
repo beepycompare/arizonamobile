@@ -1,10 +1,11 @@
 package androidx.media3.exoplayer.audio;
 
 import androidx.media3.common.audio.AudioProcessor;
+import androidx.media3.common.audio.BaseAudioProcessor;
 import androidx.media3.common.util.Util;
 import java.nio.ByteBuffer;
 /* loaded from: classes2.dex */
-final class ToFloatPcmAudioProcessor extends androidx.media3.common.audio.BaseAudioProcessor {
+public final class ToFloatPcmAudioProcessor extends BaseAudioProcessor {
     private static final int FLOAT_NAN_AS_INT = Float.floatToIntBits(Float.NaN);
     private static final double PCM_32_BIT_INT_TO_PCM_32_BIT_FLOAT_FACTOR = 4.656612875245797E-10d;
 

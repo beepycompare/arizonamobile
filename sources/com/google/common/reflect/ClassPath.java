@@ -15,7 +15,6 @@ import com.google.common.io.ByteSource;
 import com.google.common.io.CharSource;
 import com.google.common.io.Resources;
 import com.google.common.reflect.ClassPath;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -315,7 +314,7 @@ public final class ClassPath {
                 if (file.isDirectory()) {
                     File canonicalFile = file.getCanonicalFile();
                     if (currentPath.add(canonicalFile)) {
-                        scanDirectory(canonicalFile, packagePrefix + name + RemoteSettings.FORWARD_SLASH_STRING, currentPath, builder);
+                        scanDirectory(canonicalFile, packagePrefix + name + "/", currentPath, builder);
                         currentPath.remove(canonicalFile);
                     }
                 } else {

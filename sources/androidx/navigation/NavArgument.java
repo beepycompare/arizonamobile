@@ -65,8 +65,8 @@ public final class NavArgument {
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         if (!this.isNullable) {
-            Bundle m7580constructorimpl = SavedStateReader.m7580constructorimpl(bundle);
-            if (SavedStateReader.m7581containsimpl(m7580constructorimpl, name) && SavedStateReader.m7659isNullimpl(m7580constructorimpl, name)) {
+            Bundle m7595constructorimpl = SavedStateReader.m7595constructorimpl(bundle);
+            if (SavedStateReader.m7596containsimpl(m7595constructorimpl, name) && SavedStateReader.m7674isNullimpl(m7595constructorimpl, name)) {
                 return false;
             }
         }

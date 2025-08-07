@@ -3,25 +3,25 @@ package com.google.android.gms.measurement.internal;
 import android.os.Bundle;
 import java.util.Objects;
 import java.util.concurrent.Callable;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 final class zziv implements Callable {
     final /* synthetic */ zzr zza;
     final /* synthetic */ Bundle zzb;
-    final /* synthetic */ zzjc zzc;
+    final /* synthetic */ zzjd zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zziv(zzjc zzjcVar, zzr zzrVar, Bundle bundle) {
+    public zziv(zzjd zzjdVar, zzr zzrVar, Bundle bundle) {
         this.zza = zzrVar;
         this.zzb = bundle;
-        Objects.requireNonNull(zzjcVar);
-        this.zzc = zzjcVar;
+        Objects.requireNonNull(zzjdVar);
+        this.zzc = zzjdVar;
     }
 
     @Override // java.util.concurrent.Callable
     public final /* bridge */ /* synthetic */ Object call() throws Exception {
-        zzjc zzjcVar = this.zzc;
-        zzjcVar.zzL().zzY();
-        return zzjcVar.zzL().zzap(this.zza, this.zzb);
+        zzjd zzjdVar = this.zzc;
+        zzjdVar.zzL().zzZ();
+        return zzjdVar.zzL().zzaq(this.zza, this.zzb);
     }
 }

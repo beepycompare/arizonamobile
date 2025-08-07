@@ -1,7 +1,6 @@
 package androidx.media3.exoplayer.mediacodec;
 
 import android.media.MediaCodec;
-import androidx.media3.common.util.Util;
 import androidx.media3.decoder.DecoderException;
 /* loaded from: classes2.dex */
 public class MediaCodecDecoderException extends DecoderException {
@@ -11,16 +10,9 @@ public class MediaCodecDecoderException extends DecoderException {
 
     public MediaCodecDecoderException(Throwable th, MediaCodecInfo mediaCodecInfo) {
         super("Decoder failed: " + (mediaCodecInfo == null ? null : mediaCodecInfo.name), th);
-        int errorCodeFromPlatformDiagnosticsInfo;
         this.codecInfo = mediaCodecInfo;
-        String diagnosticInfo = th instanceof MediaCodec.CodecException ? ((MediaCodec.CodecException) th).getDiagnosticInfo() : null;
-        this.diagnosticInfo = diagnosticInfo;
-        if (Util.SDK_INT >= 23) {
-            errorCodeFromPlatformDiagnosticsInfo = getErrorCodeV23(th);
-        } else {
-            errorCodeFromPlatformDiagnosticsInfo = Util.getErrorCodeFromPlatformDiagnosticsInfo(diagnosticInfo);
-        }
-        this.errorCode = errorCodeFromPlatformDiagnosticsInfo;
+        this.diagnosticInfo = th instanceof MediaCodec.CodecException ? ((MediaCodec.CodecException) th).getDiagnosticInfo() : null;
+        this.errorCode = getErrorCodeV23(th);
     }
 
     private static int getErrorCodeV23(Throwable th) {

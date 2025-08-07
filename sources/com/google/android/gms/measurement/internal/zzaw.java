@@ -8,7 +8,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.File;
 import java.util.Collections;
 import java.util.HashSet;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzaw {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -19,11 +19,11 @@ public final class zzaw {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void zza(zzgt zzgtVar, SQLiteDatabase sQLiteDatabase, String str, String str2, String str3, String[] strArr) throws SQLiteException {
+    public static void zza(zzgu zzguVar, SQLiteDatabase sQLiteDatabase, String str, String str2, String str3, String[] strArr) throws SQLiteException {
         Throwable th;
         Cursor cursor;
         String[] split;
-        if (zzgtVar == null) {
+        if (zzguVar == null) {
             throw new IllegalArgumentException("Monitor must not be null");
         }
         Cursor cursor2 = null;
@@ -37,7 +37,7 @@ public final class zzaw {
                     }
                 } catch (SQLiteException e) {
                     e = e;
-                    zzgtVar.zze().zzc("Error querying for table", str, e);
+                    zzguVar.zze().zzc("Error querying for table", str, e);
                     if (cursor != null) {
                         cursor.close();
                     }
@@ -71,9 +71,9 @@ public final class zzaw {
                         if (hashSet.isEmpty()) {
                             return;
                         }
-                        zzgtVar.zze().zzc("Table has extra columns. table, columns", str, TextUtils.join(", ", hashSet));
+                        zzguVar.zze().zzc("Table has extra columns. table, columns", str, TextUtils.join(", ", hashSet));
                     } catch (SQLiteException e2) {
-                        zzgtVar.zzb().zzb("Failed to verify columns on table that was just created", str);
+                        zzguVar.zzb().zzb("Failed to verify columns on table that was just created", str);
                         throw e2;
                     }
                 }
@@ -97,8 +97,8 @@ public final class zzaw {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static void zzb(zzgt zzgtVar, SQLiteDatabase sQLiteDatabase) {
-        if (zzgtVar == null) {
+    public static void zzb(zzgu zzguVar, SQLiteDatabase sQLiteDatabase) {
+        if (zzguVar == null) {
             throw new IllegalArgumentException("Monitor must not be null");
         }
         com.google.android.gms.internal.measurement.zzbv.zza();
@@ -106,17 +106,17 @@ public final class zzaw {
         int i = com.google.android.gms.internal.measurement.zzca.zzb;
         File file = new File(path);
         if (!file.setReadable(false, false)) {
-            zzgtVar.zze().zza("Failed to turn off database read permission");
+            zzguVar.zze().zza("Failed to turn off database read permission");
         }
         if (!file.setWritable(false, false)) {
-            zzgtVar.zze().zza("Failed to turn off database write permission");
+            zzguVar.zze().zza("Failed to turn off database write permission");
         }
         if (!file.setReadable(true, true)) {
-            zzgtVar.zze().zza("Failed to turn on database read permission for owner");
+            zzguVar.zze().zza("Failed to turn on database read permission for owner");
         }
         if (file.setWritable(true, true)) {
             return;
         }
-        zzgtVar.zze().zza("Failed to turn on database write permission for owner");
+        zzguVar.zze().zza("Failed to turn on database write permission for owner");
     }
 }

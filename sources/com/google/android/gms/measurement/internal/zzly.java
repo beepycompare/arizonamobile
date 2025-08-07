@@ -2,26 +2,23 @@ package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzly implements Runnable {
-    final /* synthetic */ zzlt zza;
-    final /* synthetic */ long zzb;
-    final /* synthetic */ zzma zzc;
+    final /* synthetic */ long zza;
+    final /* synthetic */ zzmb zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzly(zzma zzmaVar, zzlt zzltVar, long j) {
-        this.zza = zzltVar;
-        this.zzb = j;
-        Objects.requireNonNull(zzmaVar);
-        this.zzc = zzmaVar;
+    public zzly(zzmb zzmbVar, long j) {
+        this.zza = j;
+        Objects.requireNonNull(zzmbVar);
+        this.zzb = zzmbVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zzma zzmaVar = this.zzc;
-        zzmaVar.zzv(this.zza, false, this.zzb);
-        zzmaVar.zza = null;
-        zzmaVar.zzu.zzt().zzG(null);
+        zzmb zzmbVar = this.zzb;
+        zzmbVar.zzu.zzw().zzc(this.zza);
+        zzmbVar.zza = null;
     }
 }

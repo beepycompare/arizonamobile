@@ -22,21 +22,21 @@ import org.json.JSONObject;
 public final class Jg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f508a;
+    public final Context f507a;
     public final SafePackageManager b;
-    public final InterfaceC0431mb c;
+    public final InterfaceC0432mb c;
     public final Yc d;
     public final long e;
     public final String f;
     public final String g;
 
-    public Jg(Context context, SafePackageManager safePackageManager, InterfaceC0431mb interfaceC0431mb) {
-        this.f508a = context;
+    public Jg(Context context, SafePackageManager safePackageManager, InterfaceC0432mb interfaceC0432mb) {
+        this.f507a = context;
         this.b = safePackageManager;
-        this.c = interfaceC0431mb;
+        this.c = interfaceC0432mb;
         Yc yc = new Yc(0);
-        yc.a(EnumC0760zg.d, 1);
-        yc.a(EnumC0760zg.c, 2);
+        yc.a(EnumC0761zg.d, 1);
+        yc.a(EnumC0761zg.c, 2);
         this.d = yc;
         this.e = TimeUnit.DAYS.toSeconds(1L);
         this.f = "com.android.vending";
@@ -58,7 +58,7 @@ public final class Jg {
             return (Ag) list.get(0);
         }
         SafePackageManager safePackageManager = this.b;
-        Context context = this.f508a;
+        Context context = this.f507a;
         PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 0);
         if (packageInfo != null) {
             long seconds = TimeUnit.MILLISECONDS.toSeconds(packageInfo.firstInstallTime);
@@ -99,20 +99,20 @@ public final class Jg {
             }
             ag = ag4;
         }
-        InterfaceC0431mb interfaceC0431mb = this.c;
+        InterfaceC0432mb interfaceC0432mb = this.c;
         JSONObject jSONObject = new JSONObject();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         Iterator it3 = list.iterator();
         while (it3.hasNext()) {
             Ag ag6 = (Ag) it3.next();
-            arrayList.add(new JSONObject().put(Constants.REFERRER, ag6.f340a).put("install_timestamp_seconds", ag6.c).put("click_timestamp_seconds", ag6.b).put("source", ag6.d.f1173a));
+            arrayList.add(new JSONObject().put(Constants.REFERRER, ag6.f339a).put("install_timestamp_seconds", ag6.c).put("click_timestamp_seconds", ag6.b).put("source", ag6.d.f1172a));
         }
-        interfaceC0431mb.reportEvent("several_filled_referrers", jSONObject.put("candidates", io.a((Collection) arrayList) ? null : new JSONArray((Collection) arrayList)).put("chosen", new JSONObject().put(Constants.REFERRER, ag.f340a).put("install_timestamp_seconds", ag.c).put("click_timestamp_seconds", ag.b).put("source", ag.d.f1173a)).putOpt("install_time", packageInfo != null ? Long.valueOf(packageInfo.firstInstallTime) : null).toString());
+        interfaceC0432mb.reportEvent("several_filled_referrers", jSONObject.put("candidates", io.a((Collection) arrayList) ? null : new JSONArray((Collection) arrayList)).put("chosen", new JSONObject().put(Constants.REFERRER, ag.f339a).put("install_timestamp_seconds", ag.c).put("click_timestamp_seconds", ag.b).put("source", ag.d.f1172a)).putOpt("install_time", packageInfo != null ? Long.valueOf(packageInfo.firstInstallTime) : null).toString());
         return ag;
     }
 
     public /* synthetic */ Jg(Context context) {
-        this(context, new SafePackageManager(), AbstractC0595t1.a());
+        this(context, new SafePackageManager(), AbstractC0596t1.a());
     }
 
     public static final int a(Jg jg, Ag ag, Ag ag2) {

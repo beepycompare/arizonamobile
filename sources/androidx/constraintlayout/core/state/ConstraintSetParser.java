@@ -244,13 +244,7 @@ public class ConstraintSetParser {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:43:0x006a A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x005d A[SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public static void parseMotionSceneJSON(CoreMotionScene coreMotionScene, String str) {
-        char c;
         try {
             CLObject parse = CLParser.parse(str);
             ArrayList<String> names = parse.names();
@@ -264,38 +258,16 @@ public class ConstraintSetParser {
                 if (cLElement instanceof CLObject) {
                     CLObject cLObject = (CLObject) cLElement;
                     int hashCode = next.hashCode();
-                    if (hashCode == -2137403731) {
-                        if (next.equals("Header")) {
-                            c = 2;
-                            if (c != 0) {
-                            }
-                        }
-                        c = 65535;
-                        if (c != 0) {
-                        }
-                    } else if (hashCode != -241441378) {
-                        if (hashCode == 1101852654 && next.equals("ConstraintSets")) {
-                            c = 0;
-                            if (c != 0) {
+                    if (hashCode != -2137403731) {
+                        if (hashCode != -241441378) {
+                            if (hashCode == 1101852654 && next.equals("ConstraintSets")) {
                                 parseConstraintSets(coreMotionScene, cLObject);
-                            } else if (c == 1) {
-                                parseTransitions(coreMotionScene, cLObject);
-                            } else if (c == 2) {
-                                parseHeader(coreMotionScene, cLObject);
                             }
+                        } else if (next.equals(TypedValues.TransitionType.NAME)) {
+                            parseTransitions(coreMotionScene, cLObject);
                         }
-                        c = 65535;
-                        if (c != 0) {
-                        }
-                    } else {
-                        if (next.equals(TypedValues.TransitionType.NAME)) {
-                            c = 1;
-                            if (c != 0) {
-                            }
-                        }
-                        c = 65535;
-                        if (c != 0) {
-                        }
+                    } else if (next.equals("Header")) {
+                        parseHeader(coreMotionScene, cLObject);
                     }
                 }
             }

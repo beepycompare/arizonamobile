@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class M6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile String f545a;
+    public volatile String f544a;
 
     public static String a() {
         try {
@@ -18,15 +18,15 @@ public final class M6 {
     }
 
     public final String b() {
-        if (this.f545a != null) {
-            return this.f545a;
+        if (this.f544a != null) {
+            return this.f544a;
         }
         synchronized (this) {
-            if (this.f545a == null) {
-                this.f545a = a();
+            if (this.f544a == null) {
+                this.f544a = a();
             }
         }
-        return this.f545a;
+        return this.f544a;
     }
 
     public final boolean c() {

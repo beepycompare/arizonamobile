@@ -12,7 +12,6 @@ import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.container.NalUnitUtil;
 import androidx.media3.exoplayer.mediacodec.MediaCodecUtil;
-import com.adjust.sdk.Constants;
 import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
@@ -131,11 +130,8 @@ public final class MediaCodecUtil {
                 return list;
             }
             ArrayList<MediaCodecInfo> decoderInfosInternal = getDecoderInfosInternal(codecKey, new MediaCodecListCompatV21(z, z2, str.equals(MimeTypes.VIDEO_MV_HEVC)));
-            if (z && decoderInfosInternal.isEmpty() && Util.SDK_INT <= 23) {
-                decoderInfosInternal = getDecoderInfosInternal(codecKey, new MediaCodecListCompatV16());
-                if (!decoderInfosInternal.isEmpty()) {
-                    Log.w(TAG, "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + decoderInfosInternal.get(0).name);
-                }
+            if (z) {
+                decoderInfosInternal.isEmpty();
             }
             applyWorkarounds(str, decoderInfosInternal);
             ImmutableList copyOf = ImmutableList.copyOf((Collection) decoderInfosInternal);
@@ -229,6 +225,13 @@ public final class MediaCodecUtil {
         return maxH264DecodableFrameSize;
     }
 
+    public static MediaCodecInfo.CodecProfileLevel createCodecProfileLevel(int i, int i2) {
+        MediaCodecInfo.CodecProfileLevel codecProfileLevel = new MediaCodecInfo.CodecProfileLevel();
+        codecProfileLevel.profile = i;
+        codecProfileLevel.level = i2;
+        return codecProfileLevel;
+    }
+
     @Deprecated
     public static Pair<Integer, Integer> getCodecProfileAndLevel(Format format) {
         return CodecSpecificDataUtil.getCodecProfileAndLevel(format);
@@ -265,137 +268,92 @@ public final class MediaCodecUtil {
         return null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x008c, code lost:
-        if (r1.secure != r12) goto L63;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x0097, code lost:
-        if (r1.secure == false) goto L42;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x009a, code lost:
-        r17 = r11;
-        r18 = r16;
-        r16 = r10;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x00a4, code lost:
-        r5.add(androidx.media3.exoplayer.mediacodec.MediaCodecInfo.newInstance(r9, r7, r8, r9, r10, r11, r18, false, false));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x00ad, code lost:
-        r0 = e;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00ff A[Catch: Exception -> 0x0151, TRY_ENTER, TryCatch #6 {Exception -> 0x0151, blocks: (B:3:0x0008, B:5:0x001b, B:71:0x0121, B:8:0x002b, B:11:0x0036, B:65:0x00f7, B:68:0x00ff, B:70:0x0105, B:72:0x0129, B:73:0x014f), top: B:90:0x0008 }] */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0129 A[ADDED_TO_REGION, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     private static ArrayList<MediaCodecInfo> getDecoderInfosInternal(CodecKey codecKey, MediaCodecListCompat mediaCodecListCompat) throws DecoderQueryException {
+        String codecMimeType;
         String str;
+        boolean isHardwareAccelerated;
+        boolean isSoftwareOnly;
+        boolean isVendor;
         int i;
-        boolean z;
-        boolean z2;
-        CodecKey codecKey2 = codecKey;
+        MediaCodecListCompat mediaCodecListCompat2 = mediaCodecListCompat;
         try {
             ArrayList<MediaCodecInfo> arrayList = new ArrayList<>();
-            String str2 = codecKey2.mimeType;
-            int codecCount = mediaCodecListCompat.getCodecCount();
-            boolean secureDecodersExplicit = mediaCodecListCompat.secureDecodersExplicit();
+            String str2 = codecKey.mimeType;
+            int codecCount = mediaCodecListCompat2.getCodecCount();
+            boolean secureDecodersExplicit = mediaCodecListCompat2.secureDecodersExplicit();
             int i2 = 0;
             while (i2 < codecCount) {
-                android.media.MediaCodecInfo codecInfoAt = mediaCodecListCompat.getCodecInfoAt(i2);
-                if (!isAlias(codecInfoAt)) {
+                android.media.MediaCodecInfo codecInfoAt = mediaCodecListCompat2.getCodecInfoAt(i2);
+                if (isAlias(codecInfoAt)) {
+                    i = i2;
+                } else {
+                    int i3 = i2;
                     String name = codecInfoAt.getName();
-                    if (isCodecUsableDecoder(codecInfoAt, name, secureDecodersExplicit, str2)) {
-                        int i3 = i2;
-                        String codecMimeType = getCodecMimeType(codecInfoAt, name, str2);
-                        if (codecMimeType == null) {
-                            z = secureDecodersExplicit;
-                            i = i3;
-                        } else {
-                            boolean z3 = secureDecodersExplicit;
-                            try {
-                                MediaCodecInfo.CodecCapabilities capabilitiesForType = codecInfoAt.getCapabilitiesForType(codecMimeType);
-                                boolean isFeatureSupported = mediaCodecListCompat.isFeatureSupported("tunneled-playback", codecMimeType, capabilitiesForType);
-                                boolean isFeatureRequired = mediaCodecListCompat.isFeatureRequired("tunneled-playback", codecMimeType, capabilitiesForType);
-                                if ((codecKey2.tunneling || !isFeatureRequired) && (!codecKey2.tunneling || isFeatureSupported)) {
-                                    boolean isFeatureSupported2 = mediaCodecListCompat.isFeatureSupported("secure-playback", codecMimeType, capabilitiesForType);
-                                    boolean isFeatureRequired2 = mediaCodecListCompat.isFeatureRequired("secure-playback", codecMimeType, capabilitiesForType);
-                                    if ((codecKey2.secure || !isFeatureRequired2) && (!codecKey2.secure || isFeatureSupported2)) {
-                                        try {
-                                            boolean isHardwareAccelerated = isHardwareAccelerated(codecInfoAt, str2);
+                    if (isCodecUsableDecoder(codecInfoAt, name, secureDecodersExplicit, str2) && (codecMimeType = getCodecMimeType(codecInfoAt, name, str2)) != null) {
+                        try {
+                            MediaCodecInfo.CodecCapabilities capabilitiesForType = codecInfoAt.getCapabilitiesForType(codecMimeType);
+                            boolean isFeatureSupported = mediaCodecListCompat2.isFeatureSupported("tunneled-playback", codecMimeType, capabilitiesForType);
+                            boolean isFeatureRequired = mediaCodecListCompat2.isFeatureRequired("tunneled-playback", codecMimeType, capabilitiesForType);
+                            if ((codecKey.tunneling || !isFeatureRequired) && (!codecKey.tunneling || isFeatureSupported)) {
+                                boolean isFeatureSupported2 = mediaCodecListCompat2.isFeatureSupported("secure-playback", codecMimeType, capabilitiesForType);
+                                boolean isFeatureRequired2 = mediaCodecListCompat2.isFeatureRequired("secure-playback", codecMimeType, capabilitiesForType);
+                                if ((codecKey.secure || !isFeatureRequired2) && (!codecKey.secure || isFeatureSupported2)) {
+                                    try {
+                                        isHardwareAccelerated = isHardwareAccelerated(codecInfoAt, str2);
+                                        isSoftwareOnly = isSoftwareOnly(codecInfoAt, str2);
+                                        isVendor = isVendor(codecInfoAt);
+                                    } catch (Exception e) {
+                                        e = e;
+                                        str = codecMimeType;
+                                    }
+                                    try {
+                                        if (secureDecodersExplicit) {
+                                            if (codecKey.secure != isFeatureSupported2) {
+                                            }
+                                            str = codecMimeType;
+                                            i = i3;
+                                            arrayList.add(MediaCodecInfo.newInstance(name, str2, str, capabilitiesForType, isHardwareAccelerated, isSoftwareOnly, isVendor, false, false));
+                                        }
+                                        arrayList.add(MediaCodecInfo.newInstance(name, str2, str, capabilitiesForType, isHardwareAccelerated, isSoftwareOnly, isVendor, false, false));
+                                    } catch (Exception e2) {
+                                        e = e2;
+                                        Log.e(TAG, "Failed to query codec " + name + " (" + str + ")");
+                                        throw e;
+                                    }
+                                    if (secureDecodersExplicit || codecKey.secure) {
+                                        str = codecMimeType;
+                                        i = i3;
+                                        if (!secureDecodersExplicit && isFeatureSupported2) {
                                             try {
-                                                boolean isSoftwareOnly = isSoftwareOnly(codecInfoAt, str2);
-                                                boolean isVendor = isVendor(codecInfoAt);
-                                                if (z3) {
-                                                    z2 = isVendor;
-                                                } else {
-                                                    z2 = isVendor;
-                                                }
-                                                if (!z3) {
-                                                    try {
-                                                    } catch (Exception e) {
-                                                        e = e;
-                                                        i = i3;
-                                                        z = z3;
-                                                        str = name;
-                                                        if (Util.SDK_INT <= 23 && !arrayList.isEmpty()) {
-                                                            Log.e(TAG, "Skipping codec " + str + " (failed to query capabilities)");
-                                                            i2 = i + 1;
-                                                            codecKey2 = codecKey;
-                                                            secureDecodersExplicit = z;
-                                                        } else {
-                                                            Log.e(TAG, "Failed to query codec " + str + " (" + codecMimeType + ")");
-                                                            throw e;
-                                                        }
-                                                    }
-                                                }
-                                                z = z3;
-                                                boolean z4 = z2;
-                                                i = i3;
-                                                if (!z && isFeatureSupported2) {
-                                                    str = name;
-                                                    try {
-                                                        arrayList.add(MediaCodecInfo.newInstance(name + ".secure", str2, codecMimeType, capabilitiesForType, isHardwareAccelerated, isSoftwareOnly, z4, false, true));
-                                                        break;
-                                                    } catch (Exception e2) {
-                                                        e = e2;
-                                                        if (Util.SDK_INT <= 23) {
-                                                        }
-                                                        Log.e(TAG, "Failed to query codec " + str + " (" + codecMimeType + ")");
-                                                        throw e;
-                                                    }
-                                                }
                                             } catch (Exception e3) {
                                                 e = e3;
-                                                str = name;
-                                                i = i3;
-                                                z = z3;
                                             }
-                                        } catch (Exception e4) {
-                                            e = e4;
-                                            str = name;
-                                            z = z3;
-                                            i = i3;
+                                            try {
+                                                arrayList.add(MediaCodecInfo.newInstance(name + ".secure", str2, str, capabilitiesForType, isHardwareAccelerated, isSoftwareOnly, isVendor, false, true));
+                                                return arrayList;
+                                            } catch (Exception e4) {
+                                                e = e4;
+                                                name = name;
+                                                Log.e(TAG, "Failed to query codec " + name + " (" + str + ")");
+                                                throw e;
+                                            }
                                         }
                                     }
+                                    str = codecMimeType;
+                                    i = i3;
                                 }
-                                i = i3;
-                                z = z3;
-                            } catch (Exception e5) {
-                                e = e5;
-                                str = name;
-                                i = i3;
-                                z = z3;
                             }
+                            i = i3;
+                        } catch (Exception e5) {
+                            e = e5;
+                            str = codecMimeType;
                         }
-                        i2 = i + 1;
-                        codecKey2 = codecKey;
-                        secureDecodersExplicit = z;
+                    } else {
+                        i = i3;
                     }
                 }
-                z = secureDecodersExplicit;
-                i = i2;
                 i2 = i + 1;
-                codecKey2 = codecKey;
-                secureDecodersExplicit = z;
+                mediaCodecListCompat2 = mediaCodecListCompat;
             }
             return arrayList;
         } catch (Exception e6) {
@@ -437,18 +395,15 @@ public final class MediaCodecUtil {
     }
 
     private static boolean isCodecUsableDecoder(android.media.MediaCodecInfo mediaCodecInfo, String str, boolean z, String str2) {
-        if (mediaCodecInfo.isEncoder() || (!z && str.endsWith(".secure"))) {
+        if (mediaCodecInfo.isEncoder()) {
             return false;
         }
-        if (Util.SDK_INT >= 24 || !(("OMX.SEC.aac.dec".equals(str) || "OMX.Exynos.AAC.Decoder".equals(str)) && Constants.REFERRER_API_SAMSUNG.equals(Build.MANUFACTURER) && (Build.DEVICE.startsWith("zeroflte") || Build.DEVICE.startsWith("zerolte") || Build.DEVICE.startsWith("zenlte") || "SC-05G".equals(Build.DEVICE) || "marinelteatt".equals(Build.DEVICE) || "404SC".equals(Build.DEVICE) || "SC-04G".equals(Build.DEVICE) || "SCV31".equals(Build.DEVICE)))) {
-            return (Util.SDK_INT <= 23 && MimeTypes.AUDIO_E_AC3_JOC.equals(str2) && "OMX.MTK.AUDIO.DECODER.DSPAC3".equals(str)) ? false : true;
-        }
-        return false;
+        return z || !str.endsWith(".secure");
     }
 
     private static void applyWorkarounds(String str, List<MediaCodecInfo> list) {
         if (MimeTypes.AUDIO_RAW.equals(str)) {
-            if (Util.SDK_INT < 26 && Build.DEVICE.equals("R9") && list.size() == 1 && list.get(0).name.equals("OMX.MTK.AUDIO.DECODER.RAW")) {
+            if (Build.VERSION.SDK_INT < 26 && Build.DEVICE.equals("R9") && list.size() == 1 && list.get(0).name.equals("OMX.MTK.AUDIO.DECODER.RAW")) {
                 list.add(MediaCodecInfo.newInstance("OMX.google.raw.decoder", MimeTypes.AUDIO_RAW, MimeTypes.AUDIO_RAW, null, false, true, false, false, false));
             }
             sortByScore(list, new ScoreProvider() { // from class: androidx.media3.exoplayer.mediacodec.MediaCodecUtil$$ExternalSyntheticLambda3
@@ -458,7 +413,7 @@ public final class MediaCodecUtil {
                 }
             });
         }
-        if (Util.SDK_INT >= 32 || list.size() <= 1 || !"OMX.qti.audio.decoder.flac".equals(list.get(0).name)) {
+        if (Build.VERSION.SDK_INT >= 32 || list.size() <= 1 || !"OMX.qti.audio.decoder.flac".equals(list.get(0).name)) {
             return;
         }
         list.add(list.remove(0));
@@ -470,11 +425,11 @@ public final class MediaCodecUtil {
         if (str.startsWith("OMX.google") || str.startsWith("c2.android")) {
             return 1;
         }
-        return (Util.SDK_INT >= 26 || !str.equals("OMX.MTK.AUDIO.DECODER.RAW")) ? 0 : -1;
+        return (Build.VERSION.SDK_INT >= 26 || !str.equals("OMX.MTK.AUDIO.DECODER.RAW")) ? 0 : -1;
     }
 
     private static boolean isAlias(android.media.MediaCodecInfo mediaCodecInfo) {
-        return Util.SDK_INT >= 29 && isAliasV29(mediaCodecInfo);
+        return Build.VERSION.SDK_INT >= 29 && isAliasV29(mediaCodecInfo);
     }
 
     private static boolean isAliasV29(android.media.MediaCodecInfo mediaCodecInfo) {
@@ -482,7 +437,7 @@ public final class MediaCodecUtil {
     }
 
     private static boolean isHardwareAccelerated(android.media.MediaCodecInfo mediaCodecInfo, String str) {
-        if (Util.SDK_INT >= 29) {
+        if (Build.VERSION.SDK_INT >= 29) {
             return isHardwareAcceleratedV29(mediaCodecInfo);
         }
         return !isSoftwareOnly(mediaCodecInfo, str);
@@ -493,7 +448,7 @@ public final class MediaCodecUtil {
     }
 
     private static boolean isSoftwareOnly(android.media.MediaCodecInfo mediaCodecInfo, String str) {
-        if (Util.SDK_INT >= 29) {
+        if (Build.VERSION.SDK_INT >= 29) {
             return isSoftwareOnlyV29(mediaCodecInfo);
         }
         if (MimeTypes.isAudio(str)) {
@@ -511,7 +466,7 @@ public final class MediaCodecUtil {
     }
 
     private static boolean isVendor(android.media.MediaCodecInfo mediaCodecInfo) {
-        if (Util.SDK_INT >= 29) {
+        if (Build.VERSION.SDK_INT >= 29) {
             return isVendorV29(mediaCodecInfo);
         }
         String lowerCase = Ascii.toLowerCase(mediaCodecInfo.getName());
@@ -581,9 +536,8 @@ public final class MediaCodecUtil {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    public static final class MediaCodecListCompatV16 implements MediaCodecListCompat {
+    private static final class MediaCodecListCompatV16 implements MediaCodecListCompat {
         @Override // androidx.media3.exoplayer.mediacodec.MediaCodecUtil.MediaCodecListCompat
         public boolean isFeatureRequired(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
             return false;

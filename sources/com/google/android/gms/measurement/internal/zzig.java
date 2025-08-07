@@ -1,30 +1,35 @@
 package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 final class zzig implements Runnable {
-    final /* synthetic */ zzah zza;
-    final /* synthetic */ zzr zzb;
-    final /* synthetic */ zzjc zzc;
+    final /* synthetic */ String zza;
+    final /* synthetic */ String zzb;
+    final /* synthetic */ String zzc;
+    final /* synthetic */ long zzd;
+    final /* synthetic */ zzjd zze;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzig(zzjc zzjcVar, zzah zzahVar, zzr zzrVar) {
-        this.zza = zzahVar;
-        this.zzb = zzrVar;
-        Objects.requireNonNull(zzjcVar);
-        this.zzc = zzjcVar;
+    public zzig(zzjd zzjdVar, String str, String str2, String str3, long j) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = str3;
+        this.zzd = j;
+        Objects.requireNonNull(zzjdVar);
+        this.zze = zzjdVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zzjc zzjcVar = this.zzc;
-        zzjcVar.zzL().zzY();
-        zzah zzahVar = this.zza;
-        if (zzahVar.zzc.zza() == null) {
-            zzjcVar.zzL().zzal(zzahVar, this.zzb);
+        String str = this.zza;
+        if (str == null) {
+            zzjd zzjdVar = this.zze;
+            zzjdVar.zzL().zzat(this.zzb, null);
             return;
         }
-        zzjcVar.zzL().zzaj(zzahVar, this.zzb);
+        zzlu zzluVar = new zzlu(this.zzc, str, this.zzd);
+        zzjd zzjdVar2 = this.zze;
+        zzjdVar2.zzL().zzat(this.zzb, zzluVar);
     }
 }

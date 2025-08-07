@@ -853,7 +853,7 @@ public final class DownloadManager {
         }
 
         public static int compareStartTimes(Download download, Download download2) {
-            return Util.compareLong(download.startTimeMs, download2.startTimeMs);
+            return Long.compare(download.startTimeMs, download2.startTimeMs);
         }
     }
 

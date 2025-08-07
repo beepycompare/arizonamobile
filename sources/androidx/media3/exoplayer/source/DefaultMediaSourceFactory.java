@@ -248,7 +248,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
                         ProgressiveMediaSource.Factory factory = new ProgressiveMediaSource.Factory(this.dataSourceFactory, new ExtractorsFactory() { // from class: androidx.media3.exoplayer.source.DefaultMediaSourceFactory$$ExternalSyntheticLambda0
                             @Override // androidx.media3.extractor.ExtractorsFactory
                             public final Extractor[] createExtractors() {
-                                return DefaultMediaSourceFactory.this.m7403xeef04c56(build2);
+                                return DefaultMediaSourceFactory.this.m7407xeef04c56(build2);
                             }
                         });
                         if (this.subtitleParserFactory.supportsFormat(build2)) {
@@ -279,7 +279,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$createMediaSource$0$androidx-media3-exoplayer-source-DefaultMediaSourceFactory  reason: not valid java name */
-    public /* synthetic */ Extractor[] m7403xeef04c56(Format format) {
+    public /* synthetic */ Extractor[] m7407xeef04c56(Format format) {
         Extractor unknownSubtitlesExtractor;
         Extractor[] extractorArr = new Extractor[1];
         if (this.subtitleParserFactory.supportsFormat(format)) {
@@ -292,7 +292,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
     }
 
     private static MediaSource maybeClipMediaSource(MediaItem mediaItem, MediaSource mediaSource) {
-        return (mediaItem.clippingConfiguration.startPositionUs == 0 && mediaItem.clippingConfiguration.endPositionUs == Long.MIN_VALUE && !mediaItem.clippingConfiguration.relativeToDefaultPosition) ? mediaSource : new ClippingMediaSource.Builder(mediaSource).setStartPositionUs(mediaItem.clippingConfiguration.startPositionUs).setEndPositionUs(mediaItem.clippingConfiguration.endPositionUs).setEnableInitialDiscontinuity(!mediaItem.clippingConfiguration.startsAtKeyFrame).setAllowDynamicClippingUpdates(mediaItem.clippingConfiguration.relativeToLiveWindow).setRelativeToDefaultPosition(mediaItem.clippingConfiguration.relativeToDefaultPosition).build();
+        return (mediaItem.clippingConfiguration.startPositionUs == 0 && mediaItem.clippingConfiguration.endPositionUs == Long.MIN_VALUE && !mediaItem.clippingConfiguration.relativeToDefaultPosition) ? mediaSource : new ClippingMediaSource.Builder(mediaSource).setStartPositionUs(mediaItem.clippingConfiguration.startPositionUs).setEndPositionUs(mediaItem.clippingConfiguration.endPositionUs).setEnableInitialDiscontinuity(!mediaItem.clippingConfiguration.startsAtKeyFrame).setAllowDynamicClippingUpdates(mediaItem.clippingConfiguration.relativeToLiveWindow).setRelativeToDefaultPosition(mediaItem.clippingConfiguration.relativeToDefaultPosition).setAllowUnseekableMedia(mediaItem.clippingConfiguration.allowUnseekableMedia).build();
     }
 
     private MediaSource maybeWrapWithAdsMediaSource(MediaItem mediaItem, MediaSource mediaSource) {
@@ -497,7 +497,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
                     supplier2 = new Supplier() { // from class: androidx.media3.exoplayer.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda4
                         @Override // com.google.common.base.Supplier
                         public final Object get() {
-                            return DefaultMediaSourceFactory.DelegateFactoryLoader.this.m7404xa479647d(factory);
+                            return DefaultMediaSourceFactory.DelegateFactoryLoader.this.m7408xa479647d(factory);
                         }
                     };
                 } else {
@@ -513,7 +513,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$loadSupplier$4$androidx-media3-exoplayer-source-DefaultMediaSourceFactory$DelegateFactoryLoader  reason: not valid java name */
-        public /* synthetic */ MediaSource.Factory m7404xa479647d(DataSource.Factory factory) {
+        public /* synthetic */ MediaSource.Factory m7408xa479647d(DataSource.Factory factory) {
             return new ProgressiveMediaSource.Factory(factory, this.extractorsFactory);
         }
     }

@@ -191,7 +191,7 @@ public final class DefaultExtractorsFactory implements ExtractorsFactory {
                 addExtractorsForFileType(i, arrayList);
             }
         }
-        return (Extractor[]) arrayList.toArray(new Extractor[arrayList.size()]);
+        return (Extractor[]) arrayList.toArray(new Extractor[0]);
     }
 
     private void addExtractorsForFileType(int i, List<Extractor> list) {

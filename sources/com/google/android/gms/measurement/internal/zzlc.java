@@ -1,16 +1,16 @@
 package com.google.android.gms.measurement.internal;
 
-import java.util.Comparator;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+import java.util.function.Function;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-final /* synthetic */ class zzlc implements Comparator {
+final /* synthetic */ class zzlc implements Function {
     static final /* synthetic */ zzlc zza = new zzlc();
 
     private /* synthetic */ zzlc() {
     }
 
-    @Override // java.util.Comparator
-    public final /* synthetic */ int compare(Object obj, Object obj2) {
-        return Long.compare(((Long) obj).longValue(), ((Long) obj2).longValue());
+    @Override // java.util.function.Function
+    public final /* synthetic */ Object apply(Object obj) {
+        return Long.valueOf(((zzoh) obj).zzb);
     }
 }

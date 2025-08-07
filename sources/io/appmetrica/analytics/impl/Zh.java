@@ -3,17 +3,17 @@ package io.appmetrica.analytics.impl;
 public final class Zh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f752a;
-    public final /* synthetic */ C0612ti b;
+    public final /* synthetic */ String f751a;
+    public final /* synthetic */ C0613ti b;
 
-    public Zh(C0612ti c0612ti, String str) {
-        this.b = c0612ti;
-        this.f752a = str;
+    public Zh(C0613ti c0613ti, String str) {
+        this.b = c0613ti;
+        this.f751a = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0612ti c0612ti = this.b;
-        C0612ti.a(c0612ti.f1069a, c0612ti.d, c0612ti.e).setUserProfileID(this.f752a);
+        C0613ti c0613ti = this.b;
+        C0613ti.a(c0613ti.f1068a, c0613ti.d, c0613ti.e).setUserProfileID(this.f751a);
     }
 }

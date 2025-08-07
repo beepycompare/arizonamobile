@@ -2,7 +2,7 @@ package com.google.android.gms.internal.measurement;
 
 import java.util.List;
 import java.util.concurrent.Callable;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzu extends zzai {
     private final Callable zza;

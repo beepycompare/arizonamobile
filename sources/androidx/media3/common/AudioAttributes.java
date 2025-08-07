@@ -1,6 +1,7 @@
 package androidx.media3.common;
 
 import android.media.AudioAttributes;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.media3.common.util.Util;
 /* loaded from: classes2.dex */
@@ -9,6 +10,7 @@ public final class AudioAttributes {
     private AudioAttributesV21 audioAttributesV21;
     public final int contentType;
     public final int flags;
+    public final boolean isContentSpatialized;
     public final int spatializationBehavior;
     public final int usage;
     public static final AudioAttributes DEFAULT = new Builder().build();
@@ -17,6 +19,7 @@ public final class AudioAttributes {
     private static final String FIELD_USAGE = Util.intToStringMaxRadix(2);
     private static final String FIELD_ALLOWED_CAPTURE_POLICY = Util.intToStringMaxRadix(3);
     private static final String FIELD_SPATIALIZATION_BEHAVIOR = Util.intToStringMaxRadix(4);
+    private static final String FIELD_IS_CONTENT_SPATIALIZED = Util.intToStringMaxRadix(5);
 
     /* loaded from: classes2.dex */
     public static final class AudioAttributesV21 {
@@ -24,11 +27,12 @@ public final class AudioAttributes {
 
         private AudioAttributesV21(AudioAttributes audioAttributes) {
             AudioAttributes.Builder usage = new AudioAttributes.Builder().setContentType(audioAttributes.contentType).setFlags(audioAttributes.flags).setUsage(audioAttributes.usage);
-            if (Util.SDK_INT >= 29) {
+            if (Build.VERSION.SDK_INT >= 29) {
                 Api29.setAllowedCapturePolicy(usage, audioAttributes.allowedCapturePolicy);
             }
-            if (Util.SDK_INT >= 32) {
+            if (Build.VERSION.SDK_INT >= 32) {
                 Api32.setSpatializationBehavior(usage, audioAttributes.spatializationBehavior);
+                Api32.setIsContentSpatialized(usage, audioAttributes.isContentSpatialized);
             }
             this.audioAttributes = usage.build();
         }
@@ -41,6 +45,7 @@ public final class AudioAttributes {
         private int usage = 1;
         private int allowedCapturePolicy = 1;
         private int spatializationBehavior = 0;
+        private boolean isContentSpatialized = false;
 
         public Builder setContentType(int i) {
             this.contentType = i;
@@ -67,17 +72,23 @@ public final class AudioAttributes {
             return this;
         }
 
+        public Builder setIsContentSpatialized(boolean z) {
+            this.isContentSpatialized = z;
+            return this;
+        }
+
         public AudioAttributes build() {
-            return new AudioAttributes(this.contentType, this.flags, this.usage, this.allowedCapturePolicy, this.spatializationBehavior);
+            return new AudioAttributes(this.contentType, this.flags, this.usage, this.allowedCapturePolicy, this.spatializationBehavior, this.isContentSpatialized);
         }
     }
 
-    private AudioAttributes(int i, int i2, int i3, int i4, int i5) {
+    private AudioAttributes(int i, int i2, int i3, int i4, int i5, boolean z) {
         this.contentType = i;
         this.flags = i2;
         this.usage = i3;
         this.allowedCapturePolicy = i4;
         this.spatializationBehavior = i5;
+        this.isContentSpatialized = z;
     }
 
     public AudioAttributesV21 getAudioAttributesV21() {
@@ -122,7 +133,7 @@ public final class AudioAttributes {
         }
         if (obj != null && getClass() == obj.getClass()) {
             AudioAttributes audioAttributes = (AudioAttributes) obj;
-            if (this.contentType == audioAttributes.contentType && this.flags == audioAttributes.flags && this.usage == audioAttributes.usage && this.allowedCapturePolicy == audioAttributes.allowedCapturePolicy && this.spatializationBehavior == audioAttributes.spatializationBehavior) {
+            if (this.contentType == audioAttributes.contentType && this.flags == audioAttributes.flags && this.usage == audioAttributes.usage && this.allowedCapturePolicy == audioAttributes.allowedCapturePolicy && this.spatializationBehavior == audioAttributes.spatializationBehavior && this.isContentSpatialized == audioAttributes.isContentSpatialized) {
                 return true;
             }
         }
@@ -130,7 +141,7 @@ public final class AudioAttributes {
     }
 
     public int hashCode() {
-        return ((((((((527 + this.contentType) * 31) + this.flags) * 31) + this.usage) * 31) + this.allowedCapturePolicy) * 31) + this.spatializationBehavior;
+        return ((((((((((527 + this.contentType) * 31) + this.flags) * 31) + this.usage) * 31) + this.allowedCapturePolicy) * 31) + this.spatializationBehavior) * 31) + (this.isContentSpatialized ? 1 : 0);
     }
 
     public Bundle toBundle() {
@@ -140,6 +151,7 @@ public final class AudioAttributes {
         bundle.putInt(FIELD_USAGE, this.usage);
         bundle.putInt(FIELD_ALLOWED_CAPTURE_POLICY, this.allowedCapturePolicy);
         bundle.putInt(FIELD_SPATIALIZATION_BEHAVIOR, this.spatializationBehavior);
+        bundle.putBoolean(FIELD_IS_CONTENT_SPATIALIZED, this.isContentSpatialized);
         return bundle;
     }
 
@@ -165,6 +177,10 @@ public final class AudioAttributes {
         if (bundle.containsKey(str5)) {
             builder.setSpatializationBehavior(bundle.getInt(str5));
         }
+        String str6 = FIELD_IS_CONTENT_SPATIALIZED;
+        if (bundle.containsKey(str6)) {
+            builder.setIsContentSpatialized(bundle.getBoolean(str6));
+        }
         return builder.build();
     }
 
@@ -185,6 +201,10 @@ public final class AudioAttributes {
 
         public static void setSpatializationBehavior(AudioAttributes.Builder builder, int i) {
             builder.setSpatializationBehavior(i);
+        }
+
+        public static void setIsContentSpatialized(AudioAttributes.Builder builder, boolean z) {
+            builder.setIsContentSpatialized(z);
         }
     }
 }

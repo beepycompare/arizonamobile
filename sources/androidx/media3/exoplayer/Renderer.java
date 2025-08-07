@@ -16,6 +16,7 @@ import java.lang.annotation.Target;
 /* loaded from: classes2.dex */
 public interface Renderer extends PlayerMessage.Target {
     public static final long DEFAULT_DURATION_TO_PROGRESS_US = 10000;
+    public static final long DEFAULT_IDLE_DURATION_TO_PROGRESS_US = 1000000;
     public static final int MSG_CUSTOM_BASE = 10000;
     public static final int MSG_SET_AUDIO_ATTRIBUTES = 3;
     public static final int MSG_SET_AUDIO_SESSION_ID = 10;
@@ -26,6 +27,7 @@ public interface Renderer extends PlayerMessage.Target {
     public static final int MSG_SET_PREFERRED_AUDIO_DEVICE = 12;
     public static final int MSG_SET_PRIORITY = 16;
     public static final int MSG_SET_SCALING_MODE = 4;
+    public static final int MSG_SET_SCRUBBING_MODE = 18;
     public static final int MSG_SET_SKIP_SILENCE_ENABLED = 9;
     public static final int MSG_SET_VIDEO_EFFECTS = 13;
     public static final int MSG_SET_VIDEO_FRAME_METADATA_LISTENER = 7;
@@ -67,10 +69,6 @@ public interface Renderer extends PlayerMessage.Target {
     }
 
     RendererCapabilities getCapabilities();
-
-    default long getDurationToProgressUs(long j, long j2) {
-        return DEFAULT_DURATION_TO_PROGRESS_US;
-    }
 
     MediaClock getMediaClock();
 
@@ -117,4 +115,14 @@ public interface Renderer extends PlayerMessage.Target {
     void start() throws ExoPlaybackException;
 
     void stop();
+
+    default long getDurationToProgressUs(long j, long j2) {
+        if (getState() == 1) {
+            if (isReady() || isEnded()) {
+                return 1000000L;
+            }
+            return DEFAULT_DURATION_TO_PROGRESS_US;
+        }
+        return DEFAULT_DURATION_TO_PROGRESS_US;
+    }
 }

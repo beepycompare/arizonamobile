@@ -217,11 +217,11 @@ public final class NotificationsScreentKt {
                     long m4077copywmQWz5c$default = Color.m4077copywmQWz5c$default(Color.Companion.m4115getWhite0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null);
                     TextStyle bodyMedium = MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodyMedium();
                     float f = 32;
-                    long m8434dpToSp8Feqmps = TypeKt.m8434dpToSp8Feqmps(Dp.m6684constructorimpl(f), composer2, 6);
-                    long m8434dpToSp8Feqmps2 = TypeKt.m8434dpToSp8Feqmps(Dp.m6684constructorimpl(f), composer2, 6);
-                    long m8434dpToSp8Feqmps3 = TypeKt.m8434dpToSp8Feqmps(Dp.m6684constructorimpl(1), composer2, 6);
-                    TextUnitKt.m6891checkArithmeticR2X_6o(m8434dpToSp8Feqmps3);
-                    TextKt.m2497Text4IGK_g("НЕТ УВЕДОМЛЕНИЙ", (Modifier) null, m4077copywmQWz5c$default, m8434dpToSp8Feqmps, (FontStyle) null, (FontWeight) null, (FontFamily) null, TextUnitKt.pack(TextUnit.m6876getRawTypeimpl(m8434dpToSp8Feqmps3), -TextUnit.m6878getValueimpl(m8434dpToSp8Feqmps3)), (TextDecoration) null, (TextAlign) null, m8434dpToSp8Feqmps2, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, bodyMedium, composer2, 390, 0, 64370);
+                    long m8456dpToSp8Feqmps = TypeKt.m8456dpToSp8Feqmps(Dp.m6684constructorimpl(f), composer2, 6);
+                    long m8456dpToSp8Feqmps2 = TypeKt.m8456dpToSp8Feqmps(Dp.m6684constructorimpl(f), composer2, 6);
+                    long m8456dpToSp8Feqmps3 = TypeKt.m8456dpToSp8Feqmps(Dp.m6684constructorimpl(1), composer2, 6);
+                    TextUnitKt.m6891checkArithmeticR2X_6o(m8456dpToSp8Feqmps3);
+                    TextKt.m2497Text4IGK_g("НЕТ УВЕДОМЛЕНИЙ", (Modifier) null, m4077copywmQWz5c$default, m8456dpToSp8Feqmps, (FontStyle) null, (FontWeight) null, (FontFamily) null, TextUnitKt.pack(TextUnit.m6876getRawTypeimpl(m8456dpToSp8Feqmps3), -TextUnit.m6878getValueimpl(m8456dpToSp8Feqmps3)), (TextDecoration) null, (TextAlign) null, m8456dpToSp8Feqmps2, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, bodyMedium, composer2, 390, 0, 64370);
                     composer2 = composer2;
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -264,7 +264,7 @@ public final class NotificationsScreentKt {
                     ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer2, -1167154385, "C93@3962L21:NotificationsScreent.kt#21zkme");
-                    AnimatedLoadingKt.m8318AnimatedLoadinguFdPcIQ(true, 0.0f, null, composer2, 6, 6);
+                    AnimatedLoadingKt.m8340AnimatedLoadinguFdPcIQ(true, 0.0f, null, composer2, 6, 6);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     composer2.endNode();
@@ -526,7 +526,7 @@ public final class NotificationsScreentKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$NotificationsScreentKt.INSTANCE.m8401getLambda$556808038$notifications_release_web(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$NotificationsScreentKt.INSTANCE.m8423getLambda$556808038$notifications_release_web(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.notification_topbar_label, startRestartGroup, 0), (String) null, OffsetKt.m698offsetVpY3zN4$default(SizeKt.m771height3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(30)), Dp.m6684constructorimpl(-Dp.m6684constructorimpl(12)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

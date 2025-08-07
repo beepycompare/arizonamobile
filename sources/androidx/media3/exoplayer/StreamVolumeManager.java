@@ -12,7 +12,6 @@ import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BackgroundThreadStateHandler;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.Log;
-import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.StreamVolumeManager;
 import com.google.common.base.Function;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -52,14 +51,14 @@ public final class StreamVolumeManager {
         backgroundThreadStateHandler.runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.StreamVolumeManager$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                StreamVolumeManager.this.m7343lambda$new$0$androidxmedia3exoplayerStreamVolumeManager(i);
+                StreamVolumeManager.this.m7346lambda$new$0$androidxmedia3exoplayerStreamVolumeManager(i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-exoplayer-StreamVolumeManager  reason: not valid java name */
-    public /* synthetic */ void m7343lambda$new$0$androidxmedia3exoplayerStreamVolumeManager(int i) {
+    public /* synthetic */ void m7346lambda$new$0$androidxmedia3exoplayerStreamVolumeManager(int i) {
         this.audioManager = (AudioManager) Assertions.checkStateNotNull((AudioManager) this.applicationContext.getSystemService(MimeTypes.BASE_TYPE_AUDIO));
         VolumeChangeReceiver volumeChangeReceiver = new VolumeChangeReceiver();
         try {
@@ -80,7 +79,7 @@ public final class StreamVolumeManager {
         }, new Function() { // from class: androidx.media3.exoplayer.StreamVolumeManager$$ExternalSyntheticLambda11
             @Override // com.google.common.base.Function
             public final Object apply(Object obj) {
-                return StreamVolumeManager.this.m7347xb3c607b2(i, (StreamVolumeManager.StreamVolumeState) obj);
+                return StreamVolumeManager.this.m7350xb3c607b2(i, (StreamVolumeManager.StreamVolumeState) obj);
             }
         });
     }
@@ -92,7 +91,7 @@ public final class StreamVolumeManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setStreamType$2$androidx-media3-exoplayer-StreamVolumeManager  reason: not valid java name */
-    public /* synthetic */ StreamVolumeState m7347xb3c607b2(int i, StreamVolumeState streamVolumeState) {
+    public /* synthetic */ StreamVolumeState m7350xb3c607b2(int i, StreamVolumeState streamVolumeState) {
         return streamVolumeState.streamType == i ? streamVolumeState : generateState(i);
     }
 
@@ -121,7 +120,7 @@ public final class StreamVolumeManager {
         }, new Function() { // from class: androidx.media3.exoplayer.StreamVolumeManager$$ExternalSyntheticLambda9
             @Override // com.google.common.base.Function
             public final Object apply(Object obj) {
-                return StreamVolumeManager.this.m7348lambda$setVolume$4$androidxmedia3exoplayerStreamVolumeManager(i, i2, (StreamVolumeManager.StreamVolumeState) obj);
+                return StreamVolumeManager.this.m7351lambda$setVolume$4$androidxmedia3exoplayerStreamVolumeManager(i, i2, (StreamVolumeManager.StreamVolumeState) obj);
             }
         });
     }
@@ -133,7 +132,7 @@ public final class StreamVolumeManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setVolume$4$androidx-media3-exoplayer-StreamVolumeManager  reason: not valid java name */
-    public /* synthetic */ StreamVolumeState m7348lambda$setVolume$4$androidxmedia3exoplayerStreamVolumeManager(int i, int i2, StreamVolumeState streamVolumeState) {
+    public /* synthetic */ StreamVolumeState m7351lambda$setVolume$4$androidxmedia3exoplayerStreamVolumeManager(int i, int i2, StreamVolumeState streamVolumeState) {
         if (i == streamVolumeState.volume || i < streamVolumeState.minVolume || i > streamVolumeState.maxVolume) {
             return streamVolumeState;
         }
@@ -150,7 +149,7 @@ public final class StreamVolumeManager {
         }, new Function() { // from class: androidx.media3.exoplayer.StreamVolumeManager$$ExternalSyntheticLambda4
             @Override // com.google.common.base.Function
             public final Object apply(Object obj) {
-                return StreamVolumeManager.this.m7342x1af3b470(i, (StreamVolumeManager.StreamVolumeState) obj);
+                return StreamVolumeManager.this.m7345x1af3b470(i, (StreamVolumeManager.StreamVolumeState) obj);
             }
         });
     }
@@ -162,7 +161,7 @@ public final class StreamVolumeManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$increaseVolume$6$androidx-media3-exoplayer-StreamVolumeManager  reason: not valid java name */
-    public /* synthetic */ StreamVolumeState m7342x1af3b470(int i, StreamVolumeState streamVolumeState) {
+    public /* synthetic */ StreamVolumeState m7345x1af3b470(int i, StreamVolumeState streamVolumeState) {
         if (streamVolumeState.volume >= streamVolumeState.maxVolume) {
             return streamVolumeState;
         }
@@ -179,7 +178,7 @@ public final class StreamVolumeManager {
         }, new Function() { // from class: androidx.media3.exoplayer.StreamVolumeManager$$ExternalSyntheticLambda7
             @Override // com.google.common.base.Function
             public final Object apply(Object obj) {
-                return StreamVolumeManager.this.m7341x928d2e4e(i, (StreamVolumeManager.StreamVolumeState) obj);
+                return StreamVolumeManager.this.m7344x928d2e4e(i, (StreamVolumeManager.StreamVolumeState) obj);
             }
         });
     }
@@ -191,7 +190,7 @@ public final class StreamVolumeManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$decreaseVolume$8$androidx-media3-exoplayer-StreamVolumeManager  reason: not valid java name */
-    public /* synthetic */ StreamVolumeState m7341x928d2e4e(int i, StreamVolumeState streamVolumeState) {
+    public /* synthetic */ StreamVolumeState m7344x928d2e4e(int i, StreamVolumeState streamVolumeState) {
         if (streamVolumeState.volume <= streamVolumeState.minVolume) {
             return streamVolumeState;
         }
@@ -203,34 +202,30 @@ public final class StreamVolumeManager {
         this.stateHandler.updateStateAsync(new Function() { // from class: androidx.media3.exoplayer.StreamVolumeManager$$ExternalSyntheticLambda12
             @Override // com.google.common.base.Function
             public final Object apply(Object obj) {
-                return StreamVolumeManager.this.m7346lambda$setMuted$9$androidxmedia3exoplayerStreamVolumeManager(z, (StreamVolumeManager.StreamVolumeState) obj);
+                return StreamVolumeManager.this.m7349lambda$setMuted$9$androidxmedia3exoplayerStreamVolumeManager(z, (StreamVolumeManager.StreamVolumeState) obj);
             }
         }, new Function() { // from class: androidx.media3.exoplayer.StreamVolumeManager$$ExternalSyntheticLambda13
             @Override // com.google.common.base.Function
             public final Object apply(Object obj) {
-                return StreamVolumeManager.this.m7345lambda$setMuted$10$androidxmedia3exoplayerStreamVolumeManager(z, i, (StreamVolumeManager.StreamVolumeState) obj);
+                return StreamVolumeManager.this.m7348lambda$setMuted$10$androidxmedia3exoplayerStreamVolumeManager(z, i, (StreamVolumeManager.StreamVolumeState) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMuted$9$androidx-media3-exoplayer-StreamVolumeManager  reason: not valid java name */
-    public /* synthetic */ StreamVolumeState m7346lambda$setMuted$9$androidxmedia3exoplayerStreamVolumeManager(boolean z, StreamVolumeState streamVolumeState) {
+    public /* synthetic */ StreamVolumeState m7349lambda$setMuted$9$androidxmedia3exoplayerStreamVolumeManager(boolean z, StreamVolumeState streamVolumeState) {
         return new StreamVolumeState(streamVolumeState.streamType, streamVolumeState.muted == z ? streamVolumeState.volume : z ? 0 : this.volumeBeforeMute, z, streamVolumeState.minVolume, streamVolumeState.maxVolume);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMuted$10$androidx-media3-exoplayer-StreamVolumeManager  reason: not valid java name */
-    public /* synthetic */ StreamVolumeState m7345lambda$setMuted$10$androidxmedia3exoplayerStreamVolumeManager(boolean z, int i, StreamVolumeState streamVolumeState) {
+    public /* synthetic */ StreamVolumeState m7348lambda$setMuted$10$androidxmedia3exoplayerStreamVolumeManager(boolean z, int i, StreamVolumeState streamVolumeState) {
         if (streamVolumeState.muted == z) {
             return streamVolumeState;
         }
         Assertions.checkNotNull(this.audioManager);
-        if (Util.SDK_INT >= 23) {
-            this.audioManager.adjustStreamVolume(streamVolumeState.streamType, z ? -100 : 100, i);
-        } else {
-            this.audioManager.setStreamMute(streamVolumeState.streamType, z);
-        }
+        this.audioManager.adjustStreamVolume(streamVolumeState.streamType, z ? -100 : 100, i);
         return generateState(streamVolumeState.streamType);
     }
 
@@ -243,14 +238,14 @@ public final class StreamVolumeManager {
         }, new Function() { // from class: androidx.media3.exoplayer.StreamVolumeManager$$ExternalSyntheticLambda2
             @Override // com.google.common.base.Function
             public final Object apply(Object obj) {
-                return StreamVolumeManager.this.m7344lambda$release$12$androidxmedia3exoplayerStreamVolumeManager((StreamVolumeManager.StreamVolumeState) obj);
+                return StreamVolumeManager.this.m7347lambda$release$12$androidxmedia3exoplayerStreamVolumeManager((StreamVolumeManager.StreamVolumeState) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$release$12$androidx-media3-exoplayer-StreamVolumeManager  reason: not valid java name */
-    public /* synthetic */ StreamVolumeState m7344lambda$release$12$androidxmedia3exoplayerStreamVolumeManager(StreamVolumeState streamVolumeState) {
+    public /* synthetic */ StreamVolumeState m7347lambda$release$12$androidxmedia3exoplayerStreamVolumeManager(StreamVolumeState streamVolumeState) {
         VolumeChangeReceiver volumeChangeReceiver = this.receiver;
         if (volumeChangeReceiver != null) {
             try {
@@ -312,14 +307,14 @@ public final class StreamVolumeManager {
             StreamVolumeManager.this.stateHandler.runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.StreamVolumeManager$VolumeChangeReceiver$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StreamVolumeManager.VolumeChangeReceiver.this.m7349x433070e5();
+                    StreamVolumeManager.VolumeChangeReceiver.this.m7352x433070e5();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onReceive$0$androidx-media3-exoplayer-StreamVolumeManager$VolumeChangeReceiver  reason: not valid java name */
-        public /* synthetic */ void m7349x433070e5() {
+        public /* synthetic */ void m7352x433070e5() {
             if (StreamVolumeManager.this.receiver == null) {
                 return;
             }

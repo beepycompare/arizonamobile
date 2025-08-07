@@ -41,6 +41,7 @@ import org.json.JSONObject;
 public class ActivityPackageSender implements IActivityPackageSender {
     private String basePath;
     private String clientSdk;
+    private int connectionTimeout;
     private Context context;
     private String gdprPath;
     private String purchaseVerificationPath;
@@ -51,12 +52,13 @@ public class ActivityPackageSender implements IActivityPackageSender {
     private UtilNetworking.IHttpsURLConnectionProvider httpsURLConnectionProvider = AdjustFactory.getHttpsURLConnectionProvider();
     private UtilNetworking.IConnectionOptions connectionOptions = AdjustFactory.getConnectionOptions();
 
-    public ActivityPackageSender(List<String> list, boolean z, String str, String str2, String str3, String str4, String str5, Context context) {
+    public ActivityPackageSender(List<String> list, boolean z, String str, String str2, String str3, String str4, String str5, int i, Context context) {
         this.basePath = str;
         this.gdprPath = str2;
         this.subscriptionPath = str3;
         this.purchaseVerificationPath = str4;
         this.clientSdk = str5;
+        this.connectionTimeout = i;
         this.context = context;
         this.urlStrategy = new UrlStrategy(AdjustFactory.getBaseUrl(), AdjustFactory.getGdprUrl(), AdjustFactory.getSubscriptionUrl(), AdjustFactory.getPurchaseVerificationUrl(), list, z);
     }
@@ -206,9 +208,9 @@ public class ActivityPackageSender implements IActivityPackageSender {
         responseData.activityPackage.addError(num.intValue());
     }
 
-    private boolean shouldRetryToSend(ResponseData responseData) {
-        if (!responseData.willRetry) {
-            this.logger.debug("Will not retry with current url strategy", new Object[0]);
+    private boolean shouldRetryToSendWithUrlStrategy(ResponseData responseData) {
+        if (responseData.jsonResponse != null) {
+            this.logger.debug("Will not retry with current url strategy, already got a valid json response", new Object[0]);
             this.urlStrategy.resetAfterSuccess();
             return false;
         } else if (this.urlStrategy.shouldRetryAfterFailure(responseData.activityKind)) {
@@ -305,7 +307,7 @@ public class ActivityPackageSender implements IActivityPackageSender {
                 generateUrlStringForPOST = generateUrlStringForPOST(responseData.activityPackage.getActivityKind(), responseData.activityPackage.getPath(), responseData.signedParameters);
             }
             HttpsURLConnection generateHttpsURLConnection = activityPackageSender2.httpsURLConnectionProvider.generateHttpsURLConnection(new URL(generateUrlStringForPOST));
-            activityPackageSender2.connectionOptions.applyConnectionOptions(generateHttpsURLConnection, activityPackageSender2.clientSdk);
+            activityPackageSender2.connectionOptions.applyConnectionOptions(generateHttpsURLConnection, activityPackageSender2.clientSdk, activityPackageSender2.connectionTimeout);
             if (extractAuthorizationHeader != null) {
                 generateHttpsURLConnection.setRequestProperty(HttpHeaders.AUTHORIZATION, extractAuthorizationHeader);
             }
@@ -578,7 +580,7 @@ public class ActivityPackageSender implements IActivityPackageSender {
             Map<String, String> updateSendingParameters = updateSendingParameters(map);
             buildResponseData = ResponseData.buildResponseData(activityPackage, updateSendingParameters, signParameters(activityPackage, updateSendingParameters));
             tryToGetResponse(buildResponseData);
-        } while (shouldRetryToSend(buildResponseData));
+        } while (shouldRetryToSendWithUrlStrategy(buildResponseData));
         return buildResponseData;
     }
 }

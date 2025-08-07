@@ -1,14 +1,14 @@
 package com.google.android.gms.internal.measurement;
 
 import android.os.Bundle;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
 /* loaded from: classes3.dex */
 final class zzes extends zzcz {
-    private final com.google.android.gms.measurement.internal.zzjp zza;
+    private final com.google.android.gms.measurement.internal.zzjq zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzes(com.google.android.gms.measurement.internal.zzjp zzjpVar) {
-        this.zza = zzjpVar;
+    public zzes(com.google.android.gms.measurement.internal.zzjq zzjqVar) {
+        this.zza = zzjqVar;
     }
 
     @Override // com.google.android.gms.internal.measurement.zzda

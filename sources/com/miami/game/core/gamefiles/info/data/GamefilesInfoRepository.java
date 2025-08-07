@@ -1,6 +1,5 @@
 package com.miami.game.core.gamefiles.info.data;
 
-import com.google.firebase.sessions.settings.RemoteSettings;
 import com.miami.game.core.api.model.response.game_info.GameInfoApiModel;
 import com.miami.game.core.api.model.response.game_info.GameInfoResponseApiModel;
 import com.miami.game.core.domain.model.GameInfoFile;
@@ -76,7 +75,7 @@ public final class GamefilesInfoRepository {
         sb.append(str);
         String str2 = null;
         if ((gameInfoApiModel != null ? gameInfoApiModel.getName() : null) != null) {
-            sb.append(RemoteSettings.FORWARD_SLASH_STRING + gameInfoApiModel.getName());
+            sb.append("/" + gameInfoApiModel.getName());
         }
         String sb2 = sb.toString();
         Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");

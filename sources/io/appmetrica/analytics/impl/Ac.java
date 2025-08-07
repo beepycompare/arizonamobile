@@ -6,13 +6,13 @@ public final class Ac extends Tn {
     public final AppMetricaConfig b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Ac(InterfaceC0481ob interfaceC0481ob, AppMetricaConfig appMetricaConfig) {
-        super(interfaceC0481ob);
+    public Ac(InterfaceC0482ob interfaceC0482ob, AppMetricaConfig appMetricaConfig) {
+        super(interfaceC0482ob);
         String str = appMetricaConfig.apiKey;
         this.b = appMetricaConfig;
     }
 
-    public final InterfaceC0506pb a() {
-        return this.f660a.a().a(this.b);
+    public final InterfaceC0507pb a() {
+        return this.f659a.a().a(this.b);
     }
 }

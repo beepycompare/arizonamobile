@@ -21,7 +21,6 @@ import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.google.android.vending.expansion.downloader.Constants;
 import com.google.common.base.Ascii;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -684,7 +683,7 @@ public class ExifInterface {
         }
 
         public String toString() {
-            return this.numerator + RemoteSettings.FORWARD_SLASH_STRING + this.denominator;
+            return this.numerator + "/" + this.denominator;
         }
 
         public double calculate() {
@@ -1485,7 +1484,7 @@ public class ExifInterface {
         int i3 = 2;
         int i4 = 1;
         if (str4 != null) {
-            if (RATIONAL_TAGS_HANDLED_AS_DECIMALS_FOR_COMPATIBILITY.contains(str3) && !str4.contains(RemoteSettings.FORWARD_SLASH_STRING)) {
+            if (RATIONAL_TAGS_HANDLED_AS_DECIMALS_FOR_COMPATIBILITY.contains(str3) && !str4.contains("/")) {
                 try {
                     str4 = Rational.createFromDouble(Double.parseDouble(str4)).toString();
                 } catch (NumberFormatException unused) {
@@ -1587,7 +1586,7 @@ public class ExifInterface {
                             String[] split3 = str4.split(StringUtils.COMMA, -1);
                             Rational[] rationalArr = new Rational[split3.length];
                             while (i5 < split3.length) {
-                                String[] split4 = split3[i5].split(RemoteSettings.FORWARD_SLASH_STRING, i10);
+                                String[] split4 = split3[i5].split("/", i10);
                                 rationalArr[i5] = new Rational((long) Double.parseDouble(split4[i2]), (long) Double.parseDouble(split4[i4]));
                                 i5++;
                                 i4 = 1;
@@ -1631,7 +1630,7 @@ public class ExifInterface {
                             Rational[] rationalArr2 = new Rational[split6.length];
                             int i12 = i5;
                             while (i12 < split6.length) {
-                                String[] split7 = split6[i12].split(RemoteSettings.FORWARD_SLASH_STRING, i7);
+                                String[] split7 = split6[i12].split("/", i7);
                                 rationalArr2[i12] = new Rational((long) Double.parseDouble(split7[i5]), (long) Double.parseDouble(split7[i4]));
                                 i12++;
                                 i5 = i5;
@@ -2489,9 +2488,9 @@ public class ExifInterface {
     private static double convertRationalLatLonToDouble(String str, String str2) {
         try {
             String[] split = str.split(StringUtils.COMMA, -1);
-            String[] split2 = split[0].split(RemoteSettings.FORWARD_SLASH_STRING, -1);
-            String[] split3 = split[1].split(RemoteSettings.FORWARD_SLASH_STRING, -1);
-            String[] split4 = split[2].split(RemoteSettings.FORWARD_SLASH_STRING, -1);
+            String[] split2 = split[0].split("/", -1);
+            String[] split3 = split[1].split("/", -1);
+            String[] split4 = split[2].split("/", -1);
             double parseDouble = (Double.parseDouble(split2[0].trim()) / Double.parseDouble(split2[1].trim())) + ((Double.parseDouble(split3[0].trim()) / Double.parseDouble(split3[1].trim())) / 60.0d) + ((Double.parseDouble(split4[0].trim()) / Double.parseDouble(split4[1].trim())) / 3600.0d);
             if (!str2.equals(LATITUDE_SOUTH) && !str2.equals(LONGITUDE_WEST)) {
                 if (!str2.equals("N") && !str2.equals(LONGITUDE_EAST)) {
@@ -4505,8 +4504,8 @@ public class ExifInterface {
                 }
             }
             return guessDataFormat;
-        } else if (str.contains(RemoteSettings.FORWARD_SLASH_STRING)) {
-            String[] split2 = str.split(RemoteSettings.FORWARD_SLASH_STRING, -1);
+        } else if (str.contains("/")) {
+            String[] split2 = str.split("/", -1);
             if (split2.length == 2) {
                 try {
                     long parseDouble = (long) Double.parseDouble(split2[0]);

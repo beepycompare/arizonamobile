@@ -77,7 +77,10 @@ public final class MediaFormatUtil {
         mediaFormat.setInteger("encoder-padding", format.encoderPadding);
         maybeSetPixelAspectRatio(mediaFormat, format.pixelWidthHeightRatio);
         if (format.id != null) {
-            mediaFormat.setInteger("track-id", Integer.parseInt(format.id));
+            try {
+                mediaFormat.setInteger("track-id", Integer.parseInt(format.id));
+            } catch (NumberFormatException unused) {
+            }
         }
         return mediaFormat;
     }
@@ -122,9 +125,6 @@ public final class MediaFormatUtil {
     }
 
     public static ColorInfo getColorInfo(MediaFormat mediaFormat) {
-        if (Util.SDK_INT < 24) {
-            return null;
-        }
         int integer = getInteger(mediaFormat, "color-standard", -1);
         int integer2 = getInteger(mediaFormat, "color-range", -1);
         int integer3 = getInteger(mediaFormat, "color-transfer", -1);
@@ -160,6 +160,9 @@ public final class MediaFormatUtil {
     private static String getCodecString(MediaFormat mediaFormat) {
         if (Objects.equals(mediaFormat.getString("mime"), MimeTypes.VIDEO_H263) && mediaFormat.containsKey(Scopes.PROFILE) && mediaFormat.containsKey(FirebaseAnalytics.Param.LEVEL)) {
             return CodecSpecificDataUtil.buildH263CodecString(mediaFormat.getInteger(Scopes.PROFILE), mediaFormat.getInteger(FirebaseAnalytics.Param.LEVEL));
+        }
+        if (Objects.equals(mediaFormat.getString("mime"), MimeTypes.VIDEO_DOLBY_VISION) && mediaFormat.containsKey(Scopes.PROFILE) && mediaFormat.containsKey(FirebaseAnalytics.Param.LEVEL)) {
+            return CodecSpecificDataUtil.buildDolbyVisionCodecString(CodecSpecificDataUtil.dolbyVisionConstantToProfileNumber(mediaFormat.getInteger(Scopes.PROFILE)), CodecSpecificDataUtil.dolbyVisionConstantToLevelNumber(mediaFormat.getInteger(FirebaseAnalytics.Param.LEVEL)));
         }
         return getString(mediaFormat, "codecs-string", null);
     }

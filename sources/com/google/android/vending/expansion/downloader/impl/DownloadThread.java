@@ -11,7 +11,6 @@ import com.google.android.vending.expansion.downloader.Constants;
 import com.google.android.vending.expansion.downloader.Helpers;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.common.net.HttpHeaders;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -109,7 +108,7 @@ public class DownloadThread {
         this.mService = downloaderService;
         this.mNotification = downloadNotification;
         this.mDB = DownloadsDB.getDB(downloaderService);
-        this.mUserAgent = "APKXDL (Linux; U; Android " + Build.VERSION.RELEASE + ";" + Locale.getDefault().toString() + "; " + Build.DEVICE + RemoteSettings.FORWARD_SLASH_STRING + Build.ID + ")" + downloaderService.getPackageName();
+        this.mUserAgent = "APKXDL (Linux; U; Android " + Build.VERSION.RELEASE + ";" + Locale.getDefault().toString() + "; " + Build.DEVICE + "/" + Build.ID + ")" + downloaderService.getPackageName();
     }
 
     private void addRequestHeaders(InnerState innerState, HttpGet httpGet) {

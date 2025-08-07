@@ -23,6 +23,11 @@ final class MlltSeeker implements Seeker {
         return -1L;
     }
 
+    @Override // androidx.media3.extractor.mp3.Seeker
+    public long getDataStartPosition() {
+        return 0L;
+    }
+
     @Override // androidx.media3.extractor.SeekMap
     public boolean isSeekable() {
         return true;

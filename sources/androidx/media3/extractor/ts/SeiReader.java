@@ -4,7 +4,7 @@ import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
-import androidx.media3.container.ReorderingSeiMessageQueue;
+import androidx.media3.container.ReorderingBufferQueue;
 import androidx.media3.extractor.CeaUtil;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
@@ -15,10 +15,10 @@ public final class SeiReader {
     private final List<Format> closedCaptionFormats;
     private final String containerMimeType;
     private final TrackOutput[] outputs;
-    private final ReorderingSeiMessageQueue reorderingSeiMessageQueue = new ReorderingSeiMessageQueue(new ReorderingSeiMessageQueue.SeiConsumer() { // from class: androidx.media3.extractor.ts.SeiReader$$ExternalSyntheticLambda0
-        @Override // androidx.media3.container.ReorderingSeiMessageQueue.SeiConsumer
+    private final ReorderingBufferQueue reorderingBufferQueue = new ReorderingBufferQueue(new ReorderingBufferQueue.OutputConsumer() { // from class: androidx.media3.extractor.ts.SeiReader$$ExternalSyntheticLambda0
+        @Override // androidx.media3.container.ReorderingBufferQueue.OutputConsumer
         public final void consume(long j, ParsableByteArray parsableByteArray) {
-            SeiReader.this.m7464lambda$new$0$androidxmedia3extractortsSeiReader(j, parsableByteArray);
+            SeiReader.this.m7478lambda$new$0$androidxmedia3extractortsSeiReader(j, parsableByteArray);
         }
     });
 
@@ -30,7 +30,7 @@ public final class SeiReader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-extractor-ts-SeiReader  reason: not valid java name */
-    public /* synthetic */ void m7464lambda$new$0$androidxmedia3extractortsSeiReader(long j, ParsableByteArray parsableByteArray) {
+    public /* synthetic */ void m7478lambda$new$0$androidxmedia3extractortsSeiReader(long j, ParsableByteArray parsableByteArray) {
         CeaUtil.consume(j, parsableByteArray, this.outputs);
     }
 
@@ -47,18 +47,18 @@ public final class SeiReader {
     }
 
     public void setReorderingQueueSize(int i) {
-        this.reorderingSeiMessageQueue.setMaxSize(i);
+        this.reorderingBufferQueue.setMaxSize(i);
     }
 
     public void consume(long j, ParsableByteArray parsableByteArray) {
-        this.reorderingSeiMessageQueue.add(j, parsableByteArray);
+        this.reorderingBufferQueue.add(j, parsableByteArray);
     }
 
     public void flush() {
-        this.reorderingSeiMessageQueue.flush();
+        this.reorderingBufferQueue.flush();
     }
 
     public void clear() {
-        this.reorderingSeiMessageQueue.flush();
+        this.reorderingBufferQueue.flush();
     }
 }

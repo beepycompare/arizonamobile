@@ -47,7 +47,6 @@ import androidx.core.view.ViewCompat;
 import androidx.cursoradapter.widget.CursorAdapter;
 import androidx.customview.view.AbsSavedState;
 import com.google.android.gms.actions.SearchIntents;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 /* loaded from: classes.dex */
@@ -1101,7 +1100,7 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
                 columnString3 = this.mSearchable.getSuggestIntentData();
             }
             if (columnString3 != null && (columnString = SuggestionsAdapter.getColumnString(cursor, "suggest_intent_data_id")) != null) {
-                columnString3 = columnString3 + RemoteSettings.FORWARD_SLASH_STRING + Uri.encode(columnString);
+                columnString3 = columnString3 + "/" + Uri.encode(columnString);
             }
             return createIntent(str2, columnString3 == null ? null : Uri.parse(columnString3), SuggestionsAdapter.getColumnString(cursor, "suggest_intent_extra_data"), SuggestionsAdapter.getColumnString(cursor, "suggest_intent_query"), i, str);
         } catch (RuntimeException e) {

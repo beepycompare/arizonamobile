@@ -1,6 +1,7 @@
 package androidx.media3.exoplayer.offline;
 
 import android.net.Uri;
+import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.PriorityTaskManager;
 import androidx.media3.common.StreamKey;
@@ -34,15 +35,56 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
     private final Cache cache;
     private final CacheDataSource.Factory cacheDataSourceFactory;
     private final CacheKeyFactory cacheKeyFactory;
+    public final long durationUs;
     private final Executor executor;
     private volatile boolean isCanceled;
     private final DataSpec manifestDataSpec;
     private final ParsingLoadable.Parser<M> manifestParser;
     private final long maxMergedSegmentStartTimeDiffUs;
     private final PriorityTaskManager priorityTaskManager;
+    public final long startPositionUs;
     private final ArrayList<StreamKey> streamKeys;
 
     protected abstract List<Segment> getSegments(DataSource dataSource, M m, boolean z) throws IOException, InterruptedException;
+
+    /* loaded from: classes2.dex */
+    protected static abstract class BaseFactory<M extends FilterableManifest<M>> implements SegmentDownloaderFactory {
+        protected final CacheDataSource.Factory cacheDataSourceFactory;
+        protected ParsingLoadable.Parser<M> manifestParser;
+        protected long startPositionUs;
+        protected Executor executor = new DefaultDownloaderFactory$$ExternalSyntheticLambda0();
+        protected long maxMergedSegmentStartTimeDiffMs = 20000;
+        protected long durationUs = C.TIME_UNSET;
+
+        public BaseFactory(CacheDataSource.Factory factory, ParsingLoadable.Parser<M> parser) {
+            this.cacheDataSourceFactory = factory;
+            this.manifestParser = parser;
+        }
+
+        @Override // androidx.media3.exoplayer.offline.SegmentDownloaderFactory
+        public BaseFactory<M> setExecutor(Executor executor) {
+            this.executor = executor;
+            return this;
+        }
+
+        @Override // androidx.media3.exoplayer.offline.SegmentDownloaderFactory
+        public BaseFactory<M> setMaxMergedSegmentStartTimeDiffMs(long j) {
+            this.maxMergedSegmentStartTimeDiffMs = j;
+            return this;
+        }
+
+        @Override // androidx.media3.exoplayer.offline.SegmentDownloaderFactory
+        public BaseFactory<M> setStartPositionUs(long j) {
+            this.startPositionUs = j;
+            return this;
+        }
+
+        @Override // androidx.media3.exoplayer.offline.SegmentDownloaderFactory
+        public BaseFactory<M> setDurationUs(long j) {
+            this.durationUs = j;
+            return this;
+        }
+    }
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* loaded from: classes2.dex */
@@ -57,22 +99,23 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
 
         @Override // java.lang.Comparable
         public int compareTo(Segment segment) {
-            return Util.compareLong(this.startTimeUs, segment.startTimeUs);
+            return Long.compare(this.startTimeUs, segment.startTimeUs);
         }
     }
 
-    @Deprecated
-    public SegmentDownloader(MediaItem mediaItem, ParsingLoadable.Parser<M> parser, CacheDataSource.Factory factory, Executor executor) {
-        this(mediaItem, parser, factory, executor, 20000L);
+    protected SegmentDownloader(MediaItem mediaItem, ParsingLoadable.Parser<M> parser, CacheDataSource.Factory factory, Executor executor, long j) {
+        this(mediaItem, parser, factory, executor, j, 0L, C.TIME_UNSET);
     }
 
-    public SegmentDownloader(MediaItem mediaItem, ParsingLoadable.Parser<M> parser, CacheDataSource.Factory factory, Executor executor, long j) {
+    public SegmentDownloader(MediaItem mediaItem, ParsingLoadable.Parser<M> parser, CacheDataSource.Factory factory, Executor executor, long j, long j2, long j3) {
         Assertions.checkNotNull(mediaItem.localConfiguration);
         this.manifestDataSpec = getCompressibleDataSpec(mediaItem.localConfiguration.uri);
         this.manifestParser = parser;
         this.streamKeys = new ArrayList<>(mediaItem.localConfiguration.streamKeys);
         this.cacheDataSourceFactory = factory;
         this.executor = executor;
+        this.startPositionUs = j2;
+        this.durationUs = j3;
         this.cache = (Cache) Assertions.checkNotNull(factory.getCache());
         this.cacheKeyFactory = factory.getCacheKeyFactory();
         this.priorityTaskManager = factory.getUpstreamPriorityTaskManager();
@@ -401,11 +444,11 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
         private float getPercentDownloaded() {
             long j = this.contentLength;
             if (j != -1 && j != 0) {
-                return (((float) this.bytesDownloaded) * 100.0f) / ((float) j);
+                return Util.percentFloat(this.bytesDownloaded, j);
             }
             int i = this.totalSegments;
             if (i != 0) {
-                return (this.segmentsDownloaded * 100.0f) / i;
+                return Util.percentFloat(this.segmentsDownloaded, i);
             }
             return -1.0f;
         }

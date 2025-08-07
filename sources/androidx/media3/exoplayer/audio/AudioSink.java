@@ -28,6 +28,9 @@ public interface AudioSink {
         default void onAudioCapabilitiesChanged() {
         }
 
+        default void onAudioSessionIdChanged(int i) {
+        }
+
         default void onAudioSinkError(Exception exc) {
         }
 
@@ -190,8 +193,8 @@ public interface AudioSink {
             this.format = format;
         }
 
-        public InitializationException(int i, int i2, int i3, int i4, Format format, boolean z, Exception exc) {
-            this("AudioTrack init failed " + i + " Config(" + i2 + ", " + i3 + ", " + i4 + ") " + format + (z ? " (recoverable)" : ""), i, format, z, exc);
+        public InitializationException(int i, int i2, int i3, int i4, int i5, Format format, boolean z, Exception exc) {
+            this("AudioTrack init failed " + i + " Config(" + i2 + ", " + i3 + ", " + i4 + ", " + i5 + ") " + format + (z ? " (recoverable)" : ""), i, format, z, exc);
         }
     }
 

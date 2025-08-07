@@ -19,7 +19,6 @@ import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.preload.BasePreloadManager;
 import androidx.media3.exoplayer.source.preload.DefaultPreloadManager;
 import androidx.media3.exoplayer.source.preload.PreloadMediaSource;
-import androidx.media3.exoplayer.source.preload.TargetPreloadStatusControl;
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector;
 import androidx.media3.exoplayer.trackselection.TrackSelector;
 import androidx.media3.exoplayer.upstream.Allocator;
@@ -35,11 +34,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Comparator;
 /* loaded from: classes2.dex */
-public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
+public final class DefaultPreloadManager extends BasePreloadManager<Integer, PreloadStatus> {
     private final boolean deprecatedConstructorCalled;
     private final Handler preloadHandler;
     private final PlaybackLooperProvider preloadLooperProvider;
     private final PreloadMediaSource.Factory preloadMediaSourceFactory;
+    private boolean releaseCalled;
     private final RendererCapabilitiesList rendererCapabilitiesList;
     private final TrackSelector trackSelector;
 
@@ -48,7 +48,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
     }
 
     /* loaded from: classes2.dex */
-    public static final class Builder extends BasePreloadManager.BuilderBase<Integer> {
+    public static final class Builder extends BasePreloadManager.BuilderBase<Integer, PreloadStatus> {
         private Supplier<BandwidthMeter> bandwidthMeterSupplier;
         private boolean buildCalled;
         private boolean buildExoPlayerCalled;
@@ -78,7 +78,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
             return renderersFactory;
         }
 
-        public Builder(final Context context, TargetPreloadStatusControl<Integer> targetPreloadStatusControl) {
+        public Builder(final Context context, TargetPreloadStatusControl<Integer, PreloadStatus> targetPreloadStatusControl) {
             super(new RankingDataComparator(), targetPreloadStatusControl, Suppliers.memoize(new Supplier() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager$Builder$$ExternalSyntheticLambda3
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
@@ -171,7 +171,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
         }
 
         public Builder setPreloadLooper(Looper looper) {
-            Assertions.checkState((this.buildCalled || this.buildExoPlayerCalled) ? false : true);
+            Assertions.checkState((this.buildCalled || this.buildExoPlayerCalled || looper == Looper.getMainLooper()) ? false : true);
             this.preloadLooperProvider = new PlaybackLooperProvider(looper);
             return this;
         }
@@ -186,7 +186,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
         }
 
         @Override // androidx.media3.exoplayer.source.preload.BasePreloadManager.BuilderBase
-        public BasePreloadManager<Integer> build() {
+        public BasePreloadManager<Integer, PreloadStatus> build() {
             Assertions.checkState(!this.buildCalled);
             this.buildCalled = true;
             return new DefaultPreloadManager(this);
@@ -194,12 +194,15 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
     }
 
     /* loaded from: classes2.dex */
-    public static class Status implements TargetPreloadStatusControl.PreloadStatus {
-        public static final int STAGE_LOADED_FOR_DURATION_MS = 2;
+    public static final class PreloadStatus {
         public static final int STAGE_SOURCE_PREPARED = 0;
+        public static final int STAGE_SPECIFIED_RANGE_LOADED = 2;
         public static final int STAGE_TRACKS_SELECTED = 1;
-        private final int stage;
-        private final long value;
+        public final long durationMs;
+        public final int stage;
+        public final long startPositionMs;
+        public static final PreloadStatus SOURCE_PREPARED = new PreloadStatus(0, C.TIME_UNSET, 0);
+        public static final PreloadStatus TRACKS_SELECTED = new PreloadStatus(1, C.TIME_UNSET, 0);
 
         @Target({ElementType.TYPE_USE})
         @Documented
@@ -208,23 +211,21 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
         public @interface Stage {
         }
 
-        public Status(int i, long j) {
+        private PreloadStatus(int i, long j, long j2) {
+            boolean z = false;
+            Assertions.checkArgument(j == C.TIME_UNSET || j >= 0);
+            Assertions.checkArgument((j2 == C.TIME_UNSET || j2 >= 0) ? true : z);
             this.stage = i;
-            this.value = j;
+            this.startPositionMs = j;
+            this.durationMs = j2;
         }
 
-        public Status(int i) {
-            this(i, C.TIME_UNSET);
+        public static PreloadStatus specifiedRangeLoaded(long j) {
+            return new PreloadStatus(2, C.TIME_UNSET, j);
         }
 
-        @Override // androidx.media3.exoplayer.source.preload.TargetPreloadStatusControl.PreloadStatus
-        public int getStage() {
-            return this.stage;
-        }
-
-        @Override // androidx.media3.exoplayer.source.preload.TargetPreloadStatusControl.PreloadStatus
-        public long getValue() {
-            return this.value;
+        public static PreloadStatus specifiedRangeLoaded(long j, long j2) {
+            return new PreloadStatus(2, j, j2);
         }
     }
 
@@ -250,7 +251,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
     }
 
     @Deprecated
-    public DefaultPreloadManager(TargetPreloadStatusControl<Integer> targetPreloadStatusControl, MediaSource.Factory factory, TrackSelector trackSelector, BandwidthMeter bandwidthMeter, RendererCapabilitiesList.Factory factory2, Allocator allocator, Looper looper) {
+    public DefaultPreloadManager(TargetPreloadStatusControl<Integer, PreloadStatus> targetPreloadStatusControl, MediaSource.Factory factory, TrackSelector trackSelector, BandwidthMeter bandwidthMeter, RendererCapabilitiesList.Factory factory2, Allocator allocator, Looper looper) {
         super(new RankingDataComparator(), targetPreloadStatusControl, factory);
         RendererCapabilitiesList createRendererCapabilitiesList = factory2.createRendererCapabilitiesList();
         this.rendererCapabilitiesList = createRendererCapabilitiesList;
@@ -272,37 +273,54 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
         return this.preloadMediaSourceFactory.createMediaSource(mediaSource);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.media3.exoplayer.source.preload.BasePreloadManager
-    protected void preloadSourceInternal(MediaSource mediaSource, long j) {
+    public void preloadSourceInternal(MediaSource mediaSource, PreloadStatus preloadStatus) {
+        if (this.releaseCalled) {
+            return;
+        }
         Assertions.checkArgument(mediaSource instanceof PreloadMediaSource);
-        ((PreloadMediaSource) mediaSource).preload(j);
+        PreloadMediaSource preloadMediaSource = (PreloadMediaSource) mediaSource;
+        if (preloadStatus == null) {
+            preloadMediaSource.clear();
+            onPreloadSkipped(preloadMediaSource);
+            return;
+        }
+        preloadMediaSource.preload(Util.msToUs(preloadStatus.startPositionMs));
     }
 
     @Override // androidx.media3.exoplayer.source.preload.BasePreloadManager
     protected void clearSourceInternal(MediaSource mediaSource) {
+        if (this.releaseCalled) {
+            return;
+        }
         Assertions.checkArgument(mediaSource instanceof PreloadMediaSource);
         ((PreloadMediaSource) mediaSource).clear();
     }
 
     @Override // androidx.media3.exoplayer.source.preload.BasePreloadManager
     protected void releaseSourceInternal(MediaSource mediaSource) {
+        if (this.releaseCalled) {
+            return;
+        }
         Assertions.checkArgument(mediaSource instanceof PreloadMediaSource);
         ((PreloadMediaSource) mediaSource).releasePreloadMediaSource();
     }
 
     @Override // androidx.media3.exoplayer.source.preload.BasePreloadManager
     protected void releaseInternal() {
+        this.releaseCalled = true;
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DefaultPreloadManager.this.m7425xafd85f69();
+                DefaultPreloadManager.this.m7429xafd85f69();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$releaseInternal$1$androidx-media3-exoplayer-source-preload-DefaultPreloadManager  reason: not valid java name */
-    public /* synthetic */ void m7425xafd85f69() {
+    public /* synthetic */ void m7429xafd85f69() {
         this.rendererCapabilitiesList.release();
         if (!this.deprecatedConstructorCalled) {
             this.trackSelector.release();
@@ -330,14 +348,14 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
             return continueOrCompletePreloading(preloadMediaSource, new Predicate() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager$SourcePreloadControl$$ExternalSyntheticLambda1
                 @Override // com.google.common.base.Predicate
                 public final boolean apply(Object obj) {
-                    return DefaultPreloadManager.SourcePreloadControl.lambda$onSourcePrepared$0((DefaultPreloadManager.Status) obj);
+                    return DefaultPreloadManager.SourcePreloadControl.lambda$onSourcePrepared$0((DefaultPreloadManager.PreloadStatus) obj);
                 }
             }, true);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public static /* synthetic */ boolean lambda$onSourcePrepared$0(Status status) {
-            return status.getStage() > 0;
+        public static /* synthetic */ boolean lambda$onSourcePrepared$0(PreloadStatus preloadStatus) {
+            return preloadStatus.stage > 0;
         }
 
         @Override // androidx.media3.exoplayer.source.preload.PreloadMediaSource.PreloadControl
@@ -345,14 +363,14 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
             return continueOrCompletePreloading(preloadMediaSource, new Predicate() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager$SourcePreloadControl$$ExternalSyntheticLambda0
                 @Override // com.google.common.base.Predicate
                 public final boolean apply(Object obj) {
-                    return DefaultPreloadManager.SourcePreloadControl.lambda$onTracksSelected$1((DefaultPreloadManager.Status) obj);
+                    return DefaultPreloadManager.SourcePreloadControl.lambda$onTracksSelected$1((DefaultPreloadManager.PreloadStatus) obj);
                 }
             }, false);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public static /* synthetic */ boolean lambda$onTracksSelected$1(Status status) {
-            return status.getStage() > 1;
+        public static /* synthetic */ boolean lambda$onTracksSelected$1(PreloadStatus preloadStatus) {
+            return preloadStatus.stage > 1;
         }
 
         @Override // androidx.media3.exoplayer.source.preload.PreloadMediaSource.PreloadControl
@@ -360,14 +378,14 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
             return continueOrCompletePreloading(preloadMediaSource, new Predicate() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager$SourcePreloadControl$$ExternalSyntheticLambda2
                 @Override // com.google.common.base.Predicate
                 public final boolean apply(Object obj) {
-                    return DefaultPreloadManager.SourcePreloadControl.lambda$onContinueLoadingRequested$2(j, (DefaultPreloadManager.Status) obj);
+                    return DefaultPreloadManager.SourcePreloadControl.lambda$onContinueLoadingRequested$2(j, (DefaultPreloadManager.PreloadStatus) obj);
                 }
             }, false);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public static /* synthetic */ boolean lambda$onContinueLoadingRequested$2(long j, Status status) {
-            return status.getStage() == 2 && status.getValue() > Util.usToMs(j);
+        public static /* synthetic */ boolean lambda$onContinueLoadingRequested$2(long j, PreloadStatus preloadStatus) {
+            return preloadStatus.stage == 2 && preloadStatus.durationMs != C.TIME_UNSET && preloadStatus.durationMs > Util.usToMs(j);
         }
 
         @Override // androidx.media3.exoplayer.source.preload.PreloadMediaSource.PreloadControl
@@ -385,10 +403,10 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer> {
             DefaultPreloadManager.this.onPreloadError(preloadException, preloadMediaSource);
         }
 
-        private boolean continueOrCompletePreloading(PreloadMediaSource preloadMediaSource, Predicate<Status> predicate, boolean z) {
-            TargetPreloadStatusControl.PreloadStatus targetPreloadStatus = DefaultPreloadManager.this.getTargetPreloadStatus(preloadMediaSource);
+        private boolean continueOrCompletePreloading(PreloadMediaSource preloadMediaSource, Predicate<PreloadStatus> predicate, boolean z) {
+            PreloadStatus targetPreloadStatus = DefaultPreloadManager.this.getTargetPreloadStatus(preloadMediaSource);
             if (targetPreloadStatus != null) {
-                if (predicate.apply((Status) Assertions.checkNotNull((Status) targetPreloadStatus))) {
+                if (predicate.apply((PreloadStatus) Assertions.checkNotNull(targetPreloadStatus))) {
                     return true;
                 }
                 if (z) {

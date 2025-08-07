@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes3.dex */
 public final class Synchronized_jvmAndroidKt {
     /* renamed from: synchronized  reason: not valid java name */
-    public static final <T> T m7561synchronized(Object lock, Function0<? extends T> block) {
+    public static final <T> T m7576synchronized(Object lock, Function0<? extends T> block) {
         T invoke;
         Intrinsics.checkNotNullParameter(lock, "lock");
         Intrinsics.checkNotNullParameter(block, "block");

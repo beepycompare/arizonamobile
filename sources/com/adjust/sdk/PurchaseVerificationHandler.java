@@ -5,16 +5,14 @@ import com.adjust.sdk.scheduler.SingleThreadCachedScheduler;
 import com.adjust.sdk.scheduler.ThreadScheduler;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 /* loaded from: classes3.dex */
 public class PurchaseVerificationHandler implements IPurchaseVerificationHandler {
     private static final double MILLISECONDS_TO_SECONDS_DIVISOR = 1000.0d;
     private static final String SCHEDULED_EXECUTOR_SOURCE = "PurchaseVerificationHandler";
     private WeakReference<IActivityHandler> activityHandlerWeakRef;
     private IActivityPackageSender activityPackageSender;
-    private BackoffStrategy backoffStrategy;
+    private boolean isSendingPurchaseVerificationPackage;
     private long lastPackageRetryInMilli = 0;
     private ILogger logger;
     private List<ActivityPackage> packageQueue;
@@ -24,26 +22,7 @@ public class PurchaseVerificationHandler implements IPurchaseVerificationHandler
     public PurchaseVerificationHandler(IActivityHandler iActivityHandler, boolean z, IActivityPackageSender iActivityPackageSender) {
         init(iActivityHandler, z, iActivityPackageSender);
         this.logger = AdjustFactory.getLogger();
-        this.backoffStrategy = AdjustFactory.getSdkClickBackoffStrategy();
         this.scheduler = new SingleThreadCachedScheduler(SCHEDULED_EXECUTOR_SOURCE);
-    }
-
-    private Map<String, String> generateSendingParametersI() {
-        HashMap hashMap = new HashMap();
-        int size = this.packageQueue.size() - 1;
-        if (size > 0) {
-            PackageBuilder.addLong(hashMap, "queue_size", size);
-        }
-        return hashMap;
-    }
-
-    private void retrySendingI(ActivityPackage activityPackage, Long l) {
-        if (l != null && l.longValue() > 0) {
-            this.lastPackageRetryInMilli = l.longValue();
-        } else {
-            this.logger.error("Retrying purchase_verification package for the %d time", Integer.valueOf(activityPackage.increaseRetries()));
-        }
-        sendPurchaseVerificationPackage(activityPackage);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -59,57 +38,80 @@ public class PurchaseVerificationHandler implements IPurchaseVerificationHandler
     /* JADX INFO: Access modifiers changed from: private */
     public void sendNextPurchaseVerificationPackageI() {
         IActivityHandler iActivityHandler = this.activityHandlerWeakRef.get();
-        if (iActivityHandler.getActivityState() == null || iActivityHandler.getActivityState().isGdprForgotten || this.paused || this.packageQueue.isEmpty()) {
+        if (iActivityHandler.getActivityState() == null || this.packageQueue.isEmpty()) {
             return;
         }
-        final ActivityPackage remove = this.packageQueue.remove(0);
-        int retries = remove.getRetries();
-        Runnable runnable = new Runnable() { // from class: com.adjust.sdk.PurchaseVerificationHandler.3
-            @Override // java.lang.Runnable
-            public final void run() {
-                PurchaseVerificationHandler.this.sendPurchaseVerificationPackageI(remove);
-                PurchaseVerificationHandler.this.sendNextPurchaseVerificationPackage();
-            }
-        };
-        long waitTime = waitTime(retries);
-        if (waitTime > 0) {
-            this.scheduler.schedule(runnable, waitTime);
+        if (iActivityHandler.getActivityState().isGdprForgotten) {
+            this.logger.debug("purchase_verification request won't be sent for GDPR forgotten user", new Object[0]);
+        } else if (this.paused) {
+            this.logger.debug("PurchaseVerificationHandler is paused", new Object[0]);
+        } else if (this.isSendingPurchaseVerificationPackage) {
+            this.logger.debug("PurchaseVerificationHandler is is already sending a package", new Object[0]);
         } else {
-            runnable.run();
+            long waitTime = waitTime();
+            if (waitTime > 0) {
+                this.scheduler.schedule(new Runnable() { // from class: com.adjust.sdk.PurchaseVerificationHandler.3
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        PurchaseVerificationHandler.this.lastPackageRetryInMilli = 0L;
+                        PurchaseVerificationHandler.this.sendNextPurchaseVerificationPackage();
+                    }
+                }, waitTime);
+                return;
+            }
+            this.isSendingPurchaseVerificationPackage = true;
+            sendPurchaseVerificationPackageSync(this.packageQueue.get(0));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void sendPurchaseVerificationPackageI(ActivityPackage activityPackage) {
+        this.packageQueue.add(activityPackage);
+        this.logger.debug("Added purchase_verification %d", Integer.valueOf(this.packageQueue.size()));
+        this.logger.verbose("%s", activityPackage.getExtendedString());
+        sendNextPurchaseVerificationPackage();
+    }
+
+    private void sendPurchaseVerificationPackageSync(ActivityPackage activityPackage) {
         IActivityHandler iActivityHandler = this.activityHandlerWeakRef.get();
-        ResponseData sendActivityPackageSync = this.activityPackageSender.sendActivityPackageSync(activityPackage, generateSendingParametersI());
+        ResponseData sendActivityPackageSync = this.activityPackageSender.sendActivityPackageSync(activityPackage, null);
         if (sendActivityPackageSync instanceof PurchaseVerificationResponseData) {
+            this.isSendingPurchaseVerificationPackage = false;
             PurchaseVerificationResponseData purchaseVerificationResponseData = (PurchaseVerificationResponseData) sendActivityPackageSync;
-            if (purchaseVerificationResponseData.willRetry) {
-                retrySendingI(activityPackage, sendActivityPackageSync.retryIn);
+            if (purchaseVerificationResponseData.jsonResponse == null) {
+                this.logger.error("Could not get purchase_verification JSON response with message: %s", purchaseVerificationResponseData.message);
+            } else if (iActivityHandler == null) {
                 return;
-            }
-            this.lastPackageRetryInMilli = 0L;
-            if (iActivityHandler == null) {
-                return;
-            }
-            if (purchaseVerificationResponseData.trackingState == TrackingState.OPTED_OUT) {
-                iActivityHandler.gotOptOutResponse();
             } else {
-                iActivityHandler.finishedTrackingActivity(purchaseVerificationResponseData);
+                if (purchaseVerificationResponseData.trackingState == TrackingState.OPTED_OUT) {
+                    iActivityHandler.gotOptOutResponse();
+                    return;
+                } else if (purchaseVerificationResponseData.willRetry) {
+                    Long l = sendActivityPackageSync.retryIn;
+                    if (l != null && l.longValue() > 0) {
+                        long longValue = sendActivityPackageSync.retryIn.longValue();
+                        this.lastPackageRetryInMilli = longValue;
+                        this.logger.error("Retrying purchase_verification package with retry in %d ms", Long.valueOf(longValue));
+                    }
+                    sendNextPurchaseVerificationPackage();
+                    return;
+                } else {
+                    this.lastPackageRetryInMilli = 0L;
+                }
             }
+            if (!this.packageQueue.isEmpty()) {
+                this.packageQueue.remove(0);
+            }
+            iActivityHandler.finishedTrackingActivity(purchaseVerificationResponseData);
+            sendNextPurchaseVerificationPackage();
         }
     }
 
-    private long waitTime(int i) {
+    private long waitTime() {
         long j = this.lastPackageRetryInMilli;
         if (j > 0) {
-            return j;
-        }
-        if (i > 0) {
-            long waitingTime = Util.getWaitingTime(i, this.backoffStrategy);
-            this.logger.verbose("Waiting for %s seconds before retrying purchase_verification for the %d time", Util.SecondsDisplayFormat.format(waitingTime / 1000.0d), Integer.valueOf(i));
-            return waitingTime;
+            this.logger.verbose("Waiting for %d ms before retrying purchase_verification with retry_in", Long.valueOf(j));
+            return this.lastPackageRetryInMilli;
         }
         return 0L;
     }
@@ -120,11 +122,15 @@ public class PurchaseVerificationHandler implements IPurchaseVerificationHandler
         this.packageQueue = new ArrayList();
         this.activityHandlerWeakRef = new WeakReference<>(iActivityHandler);
         this.activityPackageSender = iActivityPackageSender;
+        this.isSendingPurchaseVerificationPackage = false;
+        this.lastPackageRetryInMilli = 0L;
     }
 
     @Override // com.adjust.sdk.IPurchaseVerificationHandler
     public void pauseSending() {
         this.paused = true;
+        this.isSendingPurchaseVerificationPackage = false;
+        this.lastPackageRetryInMilli = 0L;
     }
 
     @Override // com.adjust.sdk.IPurchaseVerificationHandler
@@ -138,10 +144,7 @@ public class PurchaseVerificationHandler implements IPurchaseVerificationHandler
         this.scheduler.submit(new Runnable() { // from class: com.adjust.sdk.PurchaseVerificationHandler.1
             @Override // java.lang.Runnable
             public final void run() {
-                PurchaseVerificationHandler.this.packageQueue.add(activityPackage);
-                PurchaseVerificationHandler.this.logger.debug("Added purchase_verification %d", Integer.valueOf(PurchaseVerificationHandler.this.packageQueue.size()));
-                PurchaseVerificationHandler.this.logger.verbose("%s", activityPackage.getExtendedString());
-                PurchaseVerificationHandler.this.sendNextPurchaseVerificationPackage();
+                PurchaseVerificationHandler.this.sendPurchaseVerificationPackageI(activityPackage);
             }
         });
     }
@@ -163,7 +166,8 @@ public class PurchaseVerificationHandler implements IPurchaseVerificationHandler
         }
         this.logger = null;
         this.packageQueue = null;
-        this.backoffStrategy = null;
         this.scheduler = null;
+        this.isSendingPurchaseVerificationPackage = false;
+        this.lastPackageRetryInMilli = 0L;
     }
 }

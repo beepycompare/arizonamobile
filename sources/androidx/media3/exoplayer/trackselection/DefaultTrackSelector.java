@@ -5,6 +5,7 @@ import android.graphics.Point;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.Spatializer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -71,8 +72,10 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     private static final String TAG = "DefaultTrackSelector";
     private AudioAttributes audioAttributes;
     public final Context context;
+    private Boolean deviceIsTV;
     private final Object lock;
     private Parameters parameters;
+    private Thread playbackThread;
     private SpatializerWrapperV32 spatializer;
     private final ExoTrackSelection.Factory trackSelectionFactory;
 
@@ -92,7 +95,6 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         private final Parameters.Builder delegate;
 
         @Override // androidx.media3.common.TrackSelectionParameters.Builder
-        @Deprecated
         public /* bridge */ /* synthetic */ TrackSelectionParameters.Builder setDisabledTrackTypes(Set set) {
             return setDisabledTrackTypes((Set<Integer>) set);
         }
@@ -404,7 +406,6 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         }
 
         @Override // androidx.media3.common.TrackSelectionParameters.Builder
-        @Deprecated
         public ParametersBuilder setDisabledTrackTypes(Set<Integer> set) {
             this.delegate.setDisabledTrackTypes(set);
             return this;
@@ -529,7 +530,6 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
             private boolean tunnelingEnabled;
 
             @Override // androidx.media3.common.TrackSelectionParameters.Builder
-            @Deprecated
             public /* bridge */ /* synthetic */ TrackSelectionParameters.Builder setDisabledTrackTypes(Set set) {
                 return setDisabledTrackTypes((Set<Integer>) set);
             }
@@ -905,7 +905,6 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
             }
 
             @Override // androidx.media3.common.TrackSelectionParameters.Builder
-            @Deprecated
             public Builder setDisabledTrackTypes(Set<Integer> set) {
                 super.setDisabledTrackTypes(set);
                 return this;
@@ -1388,8 +1387,15 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     @Override // androidx.media3.exoplayer.trackselection.TrackSelector
     public void release() {
         SpatializerWrapperV32 spatializerWrapperV32;
-        if (Util.SDK_INT >= 32 && (spatializerWrapperV32 = this.spatializer) != null) {
+        synchronized (this.lock) {
+            Thread thread = this.playbackThread;
+            if (thread != null) {
+                Assertions.checkState(thread == Thread.currentThread(), "DefaultTrackSelector is accessed on the wrong thread.");
+            }
+        }
+        if (Build.VERSION.SDK_INT >= 32 && (spatializerWrapperV32 = this.spatializer) != null) {
             spatializerWrapperV32.release();
+            this.spatializer = null;
         }
         super.release();
     }
@@ -1457,11 +1463,16 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     @Override // androidx.media3.exoplayer.trackselection.MappingTrackSelector
     protected final Pair<RendererConfiguration[], ExoTrackSelection[]> selectTracks(MappingTrackSelector.MappedTrackInfo mappedTrackInfo, int[][][] iArr, int[] iArr2, MediaSource.MediaPeriodId mediaPeriodId, Timeline timeline) throws ExoPlaybackException {
         Parameters parameters;
+        Context context;
         synchronized (this.lock) {
+            this.playbackThread = Thread.currentThread();
             parameters = this.parameters;
         }
-        if (parameters.constrainAudioChannelCountToDeviceCapabilities && Util.SDK_INT >= 32 && this.spatializer == null) {
-            this.spatializer = new SpatializerWrapperV32(this.context, this);
+        if (this.deviceIsTV == null && (context = this.context) != null) {
+            this.deviceIsTV = Boolean.valueOf(Util.isTv(context));
+        }
+        if (parameters.constrainAudioChannelCountToDeviceCapabilities && Build.VERSION.SDK_INT >= 32 && this.spatializer == null) {
+            this.spatializer = new SpatializerWrapperV32(this.context, this, this.deviceIsTV);
         }
         int rendererCount = mappedTrackInfo.getRendererCount();
         ExoTrackSelection.Definition[] selectAllTracks = selectAllTracks(mappedTrackInfo, iArr, iArr2, parameters);
@@ -1560,7 +1571,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         return selectTracksForType(1, mappedTrackInfo, iArr, new TrackInfo.Factory() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda6
             @Override // androidx.media3.exoplayer.trackselection.DefaultTrackSelector.TrackInfo.Factory
             public final List create(int i2, TrackGroup trackGroup, int[] iArr3) {
-                return DefaultTrackSelector.this.m7434x86684b84(parameters, z, iArr2, i2, trackGroup, iArr3);
+                return DefaultTrackSelector.this.m7450x86684b84(parameters, z, iArr2, i2, trackGroup, iArr3);
             }
         }, new Comparator() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda7
             @Override // java.util.Comparator
@@ -1572,25 +1583,29 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$selectAudioTrack$3$androidx-media3-exoplayer-trackselection-DefaultTrackSelector  reason: not valid java name */
-    public /* synthetic */ List m7434x86684b84(final Parameters parameters, boolean z, int[] iArr, int i, TrackGroup trackGroup, int[] iArr2) {
+    public /* synthetic */ List m7450x86684b84(final Parameters parameters, boolean z, int[] iArr, int i, TrackGroup trackGroup, int[] iArr2) {
         return AudioTrackInfo.createForTrackGroup(i, trackGroup, parameters, iArr2, z, new Predicate() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda3
             @Override // com.google.common.base.Predicate
             public final boolean apply(Object obj) {
-                return DefaultTrackSelector.this.m7433x92d8c743(parameters, (Format) obj);
+                return DefaultTrackSelector.this.m7449x92d8c743(parameters, (Format) obj);
             }
         }, iArr[i]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: isAudioFormatWithinAudioChannelCountConstraints */
-    public boolean m7433x92d8c743(Format format, Parameters parameters) {
+    public boolean m7449x92d8c743(Format format, Parameters parameters) {
         SpatializerWrapperV32 spatializerWrapperV32;
         SpatializerWrapperV32 spatializerWrapperV322;
-        if (!parameters.constrainAudioChannelCountToDeviceCapabilities || format.channelCount == -1 || format.channelCount <= 2) {
+        if (parameters.constrainAudioChannelCountToDeviceCapabilities) {
+            Boolean bool = this.deviceIsTV;
+            if ((bool == null || !bool.booleanValue()) && format.channelCount != -1 && format.channelCount > 2) {
+                if (!isDolbyAudio(format) || (Build.VERSION.SDK_INT >= 32 && (spatializerWrapperV322 = this.spatializer) != null && spatializerWrapperV322.isSpatializationSupported())) {
+                    return Build.VERSION.SDK_INT >= 32 && (spatializerWrapperV32 = this.spatializer) != null && spatializerWrapperV32.isSpatializationSupported() && this.spatializer.isAvailable() && this.spatializer.isEnabled() && this.spatializer.canBeSpatialized(this.audioAttributes, format);
+                }
+                return true;
+            }
             return true;
-        }
-        if (!isDolbyAudio(format) || (Util.SDK_INT >= 32 && (spatializerWrapperV322 = this.spatializer) != null && spatializerWrapperV322.isSpatializationSupported())) {
-            return Util.SDK_INT >= 32 && (spatializerWrapperV32 = this.spatializer) != null && spatializerWrapperV32.isSpatializationSupported() && this.spatializer.isAvailable() && this.spatializer.isEnabled() && this.spatializer.canBeSpatialized(this.audioAttributes, format);
         }
         return true;
     }
@@ -1729,7 +1744,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         boolean z;
         SpatializerWrapperV32 spatializerWrapperV32;
         synchronized (this.lock) {
-            z = this.parameters.constrainAudioChannelCountToDeviceCapabilities && Util.SDK_INT >= 32 && (spatializerWrapperV32 = this.spatializer) != null && spatializerWrapperV32.isSpatializationSupported();
+            z = this.parameters.constrainAudioChannelCountToDeviceCapabilities && Build.VERSION.SDK_INT >= 32 && (spatializerWrapperV32 = this.spatializer) != null && spatializerWrapperV32.isSpatializationSupported();
         }
         if (z) {
             invalidate();
@@ -2580,9 +2595,9 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         private final boolean spatializationSupported;
         private final Spatializer spatializer;
 
-        public SpatializerWrapperV32(Context context, final DefaultTrackSelector defaultTrackSelector) {
+        public SpatializerWrapperV32(Context context, final DefaultTrackSelector defaultTrackSelector, Boolean bool) {
             AudioManager audioManager = context == null ? null : AudioManagerCompat.getAudioManager(context);
-            if (audioManager == null || Util.isTv((Context) Assertions.checkNotNull(context))) {
+            if (audioManager == null || (bool != null && bool.booleanValue())) {
                 this.spatializer = null;
                 this.spatializationSupported = false;
                 this.handler = null;

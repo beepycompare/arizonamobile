@@ -3,7 +3,6 @@ package androidx.media3.common.util;
 import android.net.Uri;
 import android.text.TextUtils;
 import com.google.common.base.Ascii;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.List;
 import java.util.Objects;
 /* loaded from: classes2.dex */
@@ -108,7 +107,7 @@ public final class UriUtil {
                 i2 -= i3 - i6;
             } else {
                 if (i5 == i6 + 2 && sb.charAt(i6) == '.' && sb.charAt(i7) == '.') {
-                    i4 = sb.lastIndexOf(RemoteSettings.FORWARD_SLASH_STRING, i6 - 2) + 1;
+                    i4 = sb.lastIndexOf("/", i6 - 2) + 1;
                     int i8 = i4 > i ? i4 : i;
                     sb.delete(i8, i3);
                     i2 -= i3 - i8;
@@ -184,7 +183,7 @@ public final class UriUtil {
                 while (i < pathSegments2.size()) {
                     sb.append(pathSegments2.get(i));
                     if (i < pathSegments2.size() - 1) {
-                        sb.append(RemoteSettings.FORWARD_SLASH_STRING);
+                        sb.append("/");
                     }
                     i++;
                 }

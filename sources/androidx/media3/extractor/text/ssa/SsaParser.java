@@ -81,7 +81,6 @@ public final class SsaParser implements SubtitleParser {
 
     @Override // androidx.media3.extractor.text.SubtitleParser
     public void parse(byte[] bArr, int i, int i2, SubtitleParser.OutputOptions outputOptions, Consumer<CuesWithTiming> consumer) {
-        long j;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         this.parsableByteArray.reset(bArr, i + i2);
@@ -91,32 +90,26 @@ public final class SsaParser implements SubtitleParser {
             parseHeader(this.parsableByteArray, detectUtfCharset);
         }
         parseEventBody(this.parsableByteArray, arrayList, arrayList2, detectUtfCharset);
-        long j2 = outputOptions.startTimeUs;
-        long j3 = C.TIME_UNSET;
-        ArrayList<CuesWithTiming> arrayList3 = (j2 == C.TIME_UNSET || !outputOptions.outputAllCues) ? null : new ArrayList();
-        int i3 = 0;
-        while (i3 < arrayList.size()) {
+        ArrayList<CuesWithTiming> arrayList3 = (outputOptions.startTimeUs == C.TIME_UNSET || !outputOptions.outputAllCues) ? null : new ArrayList();
+        for (int i3 = 0; i3 < arrayList.size(); i3++) {
             List<Cue> list = arrayList.get(i3);
-            if (list.isEmpty() && i3 != 0) {
-                j = j3;
-            } else if (i3 == arrayList.size() - 1) {
-                throw new IllegalStateException();
-            } else {
+            if (!list.isEmpty() || i3 == 0) {
+                if (i3 == arrayList.size() - 1) {
+                    throw new IllegalStateException();
+                }
                 long longValue = arrayList2.get(i3).longValue();
-                long longValue2 = arrayList2.get(i3 + 1).longValue() - arrayList2.get(i3).longValue();
-                j = j3;
-                if (outputOptions.startTimeUs == j || longValue >= outputOptions.startTimeUs) {
-                    consumer.accept(new CuesWithTiming(list, longValue, longValue2));
+                long longValue2 = arrayList2.get(i3 + 1).longValue();
+                CuesWithTiming cuesWithTiming = new CuesWithTiming(list, longValue, longValue2 - longValue);
+                if (outputOptions.startTimeUs == C.TIME_UNSET || longValue2 >= outputOptions.startTimeUs) {
+                    consumer.accept(cuesWithTiming);
                 } else if (arrayList3 != null) {
-                    arrayList3.add(new CuesWithTiming(list, longValue, longValue2));
+                    arrayList3.add(cuesWithTiming);
                 }
             }
-            i3++;
-            j3 = j;
         }
         if (arrayList3 != null) {
-            for (CuesWithTiming cuesWithTiming : arrayList3) {
-                consumer.accept(cuesWithTiming);
+            for (CuesWithTiming cuesWithTiming2 : arrayList3) {
+                consumer.accept(cuesWithTiming2);
             }
         }
     }
@@ -153,7 +146,7 @@ public final class SsaParser implements SubtitleParser {
         while (true) {
             String readLine = parsableByteArray.readLine(charset);
             if (readLine == null) {
-                if (parsableByteArray.bytesLeft() != 0 && parsableByteArray.peekChar(charset) == '[') {
+                if (parsableByteArray.bytesLeft() != 0 && parsableByteArray.peekCodePoint(charset) == 91) {
                     return;
                 }
                 String[] split = readLine.split(StringUtils.PROCESS_POSTFIX_DELIMITER);
@@ -184,7 +177,7 @@ public final class SsaParser implements SubtitleParser {
         SsaStyle.Format format = null;
         while (true) {
             String readLine = parsableByteArray.readLine(charset);
-            if (readLine == null || (parsableByteArray.bytesLeft() != 0 && parsableByteArray.peekChar(charset) == '[')) {
+            if (readLine == null || (parsableByteArray.bytesLeft() != 0 && parsableByteArray.peekCodePoint(charset) == 91)) {
                 break;
             } else if (readLine.startsWith(FORMAT_LINE_PREFIX)) {
                 format = SsaStyle.Format.fromFormatLine(readLine);
@@ -221,29 +214,50 @@ public final class SsaParser implements SubtitleParser {
         }
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:14:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x008b  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private void parseDialogueLine(String str, SsaDialogueFormat ssaDialogueFormat, List<List<Cue>> list, List<Long> list2) {
+        int parseInt;
+        long parseTimecodeUs;
         Assertions.checkArgument(str.startsWith(DIALOGUE_LINE_PREFIX));
         String[] split = str.substring(DIALOGUE_LINE_PREFIX.length()).split(StringUtils.COMMA, ssaDialogueFormat.length);
         if (split.length != ssaDialogueFormat.length) {
             Log.w(TAG, "Skipping dialogue line with fewer columns than format: " + str);
             return;
         }
-        long parseTimecodeUs = parseTimecodeUs(split[ssaDialogueFormat.startTimeIndex]);
-        if (parseTimecodeUs == C.TIME_UNSET) {
-            Log.w(TAG, "Skipping invalid timing: " + str);
+        if (ssaDialogueFormat.layerIndex != -1) {
+            try {
+                parseInt = Integer.parseInt(split[ssaDialogueFormat.layerIndex].trim());
+            } catch (RuntimeException unused) {
+                Log.w(TAG, "Fail to parse layer: " + split[ssaDialogueFormat.layerIndex]);
+            }
+            int i = parseInt;
+            parseTimecodeUs = parseTimecodeUs(split[ssaDialogueFormat.startTimeIndex]);
+            if (parseTimecodeUs != C.TIME_UNSET) {
+                Log.w(TAG, "Skipping invalid timing: " + str);
+                return;
+            }
+            long parseTimecodeUs2 = parseTimecodeUs(split[ssaDialogueFormat.endTimeIndex]);
+            if (parseTimecodeUs2 == C.TIME_UNSET || parseTimecodeUs2 <= parseTimecodeUs) {
+                Log.w(TAG, "Skipping invalid timing: " + str);
+                return;
+            }
+            SsaStyle ssaStyle = (this.styles == null || ssaDialogueFormat.styleIndex == -1) ? null : this.styles.get(split[ssaDialogueFormat.styleIndex].trim());
+            String str2 = split[ssaDialogueFormat.textIndex];
+            Cue createCue = createCue(SsaStyle.Overrides.stripStyleOverrides(str2).replace("\\N", "\n").replace("\\n", "\n").replace("\\h", " "), i, ssaStyle, SsaStyle.Overrides.parseFromDialogue(str2), this.screenWidth, this.screenHeight);
+            int addCuePlacerholderByTime = addCuePlacerholderByTime(parseTimecodeUs2, list2, list);
+            for (int addCuePlacerholderByTime2 = addCuePlacerholderByTime(parseTimecodeUs, list2, list); addCuePlacerholderByTime2 < addCuePlacerholderByTime; addCuePlacerholderByTime2++) {
+                list.get(addCuePlacerholderByTime2).add(createCue);
+            }
             return;
         }
-        long parseTimecodeUs2 = parseTimecodeUs(split[ssaDialogueFormat.endTimeIndex]);
-        if (parseTimecodeUs2 == C.TIME_UNSET || parseTimecodeUs2 <= parseTimecodeUs) {
-            Log.w(TAG, "Skipping invalid timing: " + str);
-            return;
-        }
-        SsaStyle ssaStyle = (this.styles == null || ssaDialogueFormat.styleIndex == -1) ? null : this.styles.get(split[ssaDialogueFormat.styleIndex].trim());
-        String str2 = split[ssaDialogueFormat.textIndex];
-        Cue createCue = createCue(SsaStyle.Overrides.stripStyleOverrides(str2).replace("\\N", "\n").replace("\\n", "\n").replace("\\h", " "), ssaStyle, SsaStyle.Overrides.parseFromDialogue(str2), this.screenWidth, this.screenHeight);
-        int addCuePlacerholderByTime = addCuePlacerholderByTime(parseTimecodeUs2, list2, list);
-        for (int addCuePlacerholderByTime2 = addCuePlacerholderByTime(parseTimecodeUs, list2, list); addCuePlacerholderByTime2 < addCuePlacerholderByTime; addCuePlacerholderByTime2++) {
-            list.get(addCuePlacerholderByTime2).add(createCue);
+        parseInt = 0;
+        int i2 = parseInt;
+        parseTimecodeUs = parseTimecodeUs(split[ssaDialogueFormat.startTimeIndex]);
+        if (parseTimecodeUs != C.TIME_UNSET) {
         }
     }
 
@@ -252,9 +266,9 @@ public final class SsaParser implements SubtitleParser {
         return !matcher.matches() ? C.TIME_UNSET : (Long.parseLong((String) Util.castNonNull(matcher.group(1))) * 3600000000L) + (Long.parseLong((String) Util.castNonNull(matcher.group(2))) * 60000000) + (Long.parseLong((String) Util.castNonNull(matcher.group(3))) * 1000000) + (Long.parseLong((String) Util.castNonNull(matcher.group(4))) * Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
     }
 
-    private static Cue createCue(String str, SsaStyle ssaStyle, SsaStyle.Overrides overrides, float f, float f2) {
+    private static Cue createCue(String str, int i, SsaStyle ssaStyle, SsaStyle.Overrides overrides, float f, float f2) {
         SpannableString spannableString = new SpannableString(str);
-        Cue.Builder text = new Cue.Builder().setText(spannableString);
+        Cue.Builder zIndex = new Cue.Builder().setText(spannableString).setZIndex(i);
         if (ssaStyle != null) {
             if (ssaStyle.primaryColor != null) {
                 spannableString.setSpan(new ForegroundColorSpan(ssaStyle.primaryColor.intValue()), 0, spannableString.length(), 33);
@@ -263,7 +277,7 @@ public final class SsaParser implements SubtitleParser {
                 spannableString.setSpan(new BackgroundColorSpan(ssaStyle.outlineColor.intValue()), 0, spannableString.length(), 33);
             }
             if (ssaStyle.fontSize != -3.4028235E38f && f2 != -3.4028235E38f) {
-                text.setTextSize(ssaStyle.fontSize / f2, 1);
+                zIndex.setTextSize(ssaStyle.fontSize / f2, 1);
             }
             if (ssaStyle.bold && ssaStyle.italic) {
                 spannableString.setSpan(new StyleSpan(3), 0, spannableString.length(), 33);
@@ -279,21 +293,21 @@ public final class SsaParser implements SubtitleParser {
                 spannableString.setSpan(new StrikethroughSpan(), 0, spannableString.length(), 33);
             }
         }
-        int i = -1;
+        int i2 = -1;
         if (overrides.alignment != -1) {
-            i = overrides.alignment;
+            i2 = overrides.alignment;
         } else if (ssaStyle != null) {
-            i = ssaStyle.alignment;
+            i2 = ssaStyle.alignment;
         }
-        text.setTextAlignment(toTextAlignment(i)).setPositionAnchor(toPositionAnchor(i)).setLineAnchor(toLineAnchor(i));
+        zIndex.setTextAlignment(toTextAlignment(i2)).setPositionAnchor(toPositionAnchor(i2)).setLineAnchor(toLineAnchor(i2));
         if (overrides.position != null && f2 != -3.4028235E38f && f != -3.4028235E38f) {
-            text.setPosition(overrides.position.x / f);
-            text.setLine(overrides.position.y / f2, 0);
+            zIndex.setPosition(overrides.position.x / f);
+            zIndex.setLine(overrides.position.y / f2, 0);
         } else {
-            text.setPosition(computeDefaultLineOrPosition(text.getPositionAnchor()));
-            text.setLine(computeDefaultLineOrPosition(text.getLineAnchor()), 0);
+            zIndex.setPosition(computeDefaultLineOrPosition(zIndex.getPositionAnchor()));
+            zIndex.setLine(computeDefaultLineOrPosition(zIndex.getLineAnchor()), 0);
         }
-        return text.build();
+        return zIndex.build();
     }
 
     private static Layout.Alignment toTextAlignment(int i) {

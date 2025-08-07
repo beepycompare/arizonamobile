@@ -77,10 +77,10 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         r2 = r12.updateInfo;
         kotlin.jvm.internal.Intrinsics.checkNotNull(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x01ea, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x01eb, code lost:
         if (r1 >= r2.getNeedToPlay()) goto L42;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x01ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x01ed, code lost:
         r1 = r12.updateInfo;
         kotlin.jvm.internal.Intrinsics.checkNotNull(r1);
         r1 = r1.getNeedToPlay();
@@ -110,17 +110,17 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         r0.getButton.setBackgroundResource(ru.mrlargha.commonui.R.drawable.daily_reward_get_button_unavailable_bg);
         r0.getButtonText.setTextColor(android.graphics.Color.parseColor("#10FFFFFF"));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x029c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x029d, code lost:
         r1 = r12.updateInfo;
         kotlin.jvm.internal.Intrinsics.checkNotNull(r1);
         r1 = r1.getPlayed();
         r2 = r12.updateInfo;
         kotlin.jvm.internal.Intrinsics.checkNotNull(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x02ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x02af, code lost:
         if (r1 < r2.getNeedToPlay()) goto L45;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x02b0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x02b1, code lost:
         android.util.Log.e("rewards", "forth argument  " + r5);
         r0.mainContainer.setBackgroundResource(ru.mrlargha.commonui.R.drawable.daily_rewards_award_item_bg);
         r0.dayContainer.setBackgroundResource(ru.mrlargha.commonui.R.drawable.daily_rewards_award_day_container_bg);
@@ -133,22 +133,22 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         r0.getButton.setBackgroundResource(ru.mrlargha.commonui.R.drawable.daily_reward_get_button_available_bg);
         r0.getButtonText.setTextColor(android.graphics.Color.parseColor("#FFFFFF"));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x0307, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x0308, code lost:
         r3 = com.arizona.common.utils.EasyAnimation.INSTANCE;
         r0 = r0.getButton;
         kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, "getButton");
         com.arizona.common.utils.EasyAnimation.animateClick$default(r3, r0, 0, null, new ru.mrlargha.commonui.elements.daily_rewards.RewardsAdapter$$ExternalSyntheticLambda0(r12), 3, null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0320, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0321, code lost:
         r0 = r12.updateInfo;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x0322, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x0323, code lost:
         if (r0 == null) goto L51;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x0324, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0325, code lost:
         checkIsMayDay(r0, r13.getBinding(), r14);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x032b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x032c, code lost:
         return;
      */
     /* JADX WARN: Code restructure failed: missing block: B:61:?, code lost:

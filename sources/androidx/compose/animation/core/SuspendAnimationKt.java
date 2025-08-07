@@ -150,11 +150,11 @@ public final class SuspendAnimationKt {
         return animate == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? animate : Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x00f9 A[Catch: CancellationException -> 0x005c, TRY_LEAVE, TryCatch #1 {CancellationException -> 0x005c, blocks: (B:98:0x0057, B:123:0x00ec, B:125:0x00f9, B:129:0x011c), top: B:151:0x0057 }] */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x0145  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x014e  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x0136 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x004f  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x00e9 A[Catch: CancellationException -> 0x004c, TRY_LEAVE, TryCatch #1 {CancellationException -> 0x004c, blocks: (B:98:0x0047, B:123:0x00dc, B:125:0x00e9, B:129:0x010c), top: B:151:0x0047 }] */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0135  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x0126 A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:92:0x002a  */
     /* JADX WARN: Type inference failed for: r12v0, types: [T, androidx.compose.animation.core.AnimationScope] */
     /*
@@ -317,20 +317,13 @@ public final class SuspendAnimationKt {
                         }
                     }
                     objectRef = objectRef2;
+                } else if (i != 1 && i != 2) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    if (i == 1) {
-                        objectRef = (Ref.ObjectRef) suspendAnimationKt$animate$42.L$3;
-                        function12 = (Function1) suspendAnimationKt$animate$42.L$2;
-                        animation2 = (Animation) suspendAnimationKt$animate$42.L$1;
-                        animationState3 = (AnimationState) suspendAnimationKt$animate$42.L$0;
-                    } else if (i != 2) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    } else {
-                        objectRef = (Ref.ObjectRef) suspendAnimationKt$animate$42.L$3;
-                        function12 = (Function1) suspendAnimationKt$animate$42.L$2;
-                        animation2 = (Animation) suspendAnimationKt$animate$42.L$1;
-                        animationState3 = (AnimationState) suspendAnimationKt$animate$42.L$0;
-                    }
+                    objectRef = (Ref.ObjectRef) suspendAnimationKt$animate$42.L$3;
+                    function12 = (Function1) suspendAnimationKt$animate$42.L$2;
+                    animation2 = (Animation) suspendAnimationKt$animate$42.L$1;
+                    animationState3 = (AnimationState) suspendAnimationKt$animate$42.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
                     } catch (CancellationException e5) {

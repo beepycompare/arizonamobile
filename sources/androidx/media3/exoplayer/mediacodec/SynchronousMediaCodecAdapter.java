@@ -2,13 +2,13 @@ package androidx.media3.exoplayer.mediacodec;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.PersistableBundle;
 import android.view.Surface;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.TraceUtil;
-import androidx.media3.common.util.Util;
 import androidx.media3.decoder.CryptoInfo;
 import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
 import java.io.IOException;
@@ -38,7 +38,7 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
             }
             try {
                 TraceUtil.beginSection("configureCodec");
-                createCodec.configure(configuration.mediaFormat, configuration.surface, configuration.crypto, (configuration.surface == null && configuration.codecInfo.detachedSurfaceSupported && Util.SDK_INT >= 35) ? 8 : 0);
+                createCodec.configure(configuration.mediaFormat, configuration.surface, configuration.crypto, (configuration.surface == null && configuration.codecInfo.detachedSurfaceSupported && Build.VERSION.SDK_INT >= 35) ? 8 : 0);
                 TraceUtil.endSection();
                 TraceUtil.beginSection("startCodec");
                 createCodec.start();
@@ -67,7 +67,7 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
     private SynchronousMediaCodecAdapter(MediaCodec mediaCodec, LoudnessCodecController loudnessCodecController) {
         this.codec = mediaCodec;
         this.loudnessCodecController = loudnessCodecController;
-        if (Util.SDK_INT < 35 || loudnessCodecController == null) {
+        if (Build.VERSION.SDK_INT < 35 || loudnessCodecController == null) {
             return;
         }
         loudnessCodecController.addMediaCodec(mediaCodec);
@@ -131,11 +131,11 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
     public void release() {
         LoudnessCodecController loudnessCodecController;
         try {
-            if (Util.SDK_INT >= 30 && Util.SDK_INT < 33) {
+            if (Build.VERSION.SDK_INT >= 30 && Build.VERSION.SDK_INT < 33) {
                 this.codec.stop();
             }
         } finally {
-            if (Util.SDK_INT >= 35 && (loudnessCodecController = this.loudnessCodecController) != null) {
+            if (Build.VERSION.SDK_INT >= 35 && (loudnessCodecController = this.loudnessCodecController) != null) {
                 loudnessCodecController.removeMediaCodec(this.codec);
             }
             this.codec.release();
@@ -147,14 +147,14 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
         this.codec.setOnFrameRenderedListener(new MediaCodec.OnFrameRenderedListener() { // from class: androidx.media3.exoplayer.mediacodec.SynchronousMediaCodecAdapter$$ExternalSyntheticLambda0
             @Override // android.media.MediaCodec.OnFrameRenderedListener
             public final void onFrameRendered(MediaCodec mediaCodec, long j, long j2) {
-                SynchronousMediaCodecAdapter.this.m7391xe3d0a01f(onFrameRenderedListener, mediaCodec, j, j2);
+                SynchronousMediaCodecAdapter.this.m7395xe3d0a01f(onFrameRenderedListener, mediaCodec, j, j2);
             }
         }, handler);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOnFrameRenderedListener$0$androidx-media3-exoplayer-mediacodec-SynchronousMediaCodecAdapter  reason: not valid java name */
-    public /* synthetic */ void m7391xe3d0a01f(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
+    public /* synthetic */ void m7395xe3d0a01f(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
         onFrameRenderedListener.onFrameRendered(this, j, j2);
     }
 

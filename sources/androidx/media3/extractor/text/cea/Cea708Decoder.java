@@ -458,7 +458,7 @@ public final class Cea708Decoder extends CeaDecoder {
             case 152:
             case 153:
             case COMMAND_DF2 /* 154 */:
-            case COMMAND_DF3 /* 155 */:
+            case 155:
             case COMMAND_DF4 /* 156 */:
             case COMMAND_DF5 /* 157 */:
             case COMMAND_DF6 /* 158 */:

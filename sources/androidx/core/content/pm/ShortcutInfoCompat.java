@@ -18,7 +18,6 @@ import androidx.core.content.LocusIdCompat;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.core.net.UriCompat;
 import androidx.core.util.Preconditions;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
@@ -562,7 +561,7 @@ public class ShortcutInfoCompat {
                     this.mInfo.mExtras.putStringArray(str, (String[]) map.keySet().toArray(new String[0]));
                     for (String str2 : map.keySet()) {
                         List<String> list = map.get(str2);
-                        this.mInfo.mExtras.putStringArray(str + RemoteSettings.FORWARD_SLASH_STRING + str2, list == null ? new String[0] : (String[]) list.toArray(new String[0]));
+                        this.mInfo.mExtras.putStringArray(str + "/" + str2, list == null ? new String[0] : (String[]) list.toArray(new String[0]));
                     }
                 }
             }

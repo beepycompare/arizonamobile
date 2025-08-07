@@ -2,7 +2,6 @@ package androidx.media3.datasource;
 
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.nio.ByteBuffer;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -34,7 +33,7 @@ public final class AesFlushingCipher {
             this.flushedBlock = new byte[blockSize];
             long j3 = j2 / blockSize;
             int i2 = (int) (j2 % blockSize);
-            cipher.init(i, new SecretKeySpec(bArr, Util.splitAtFirst(cipher.getAlgorithm(), RemoteSettings.FORWARD_SLASH_STRING)[0]), new IvParameterSpec(getInitializationVector(j, j3)));
+            cipher.init(i, new SecretKeySpec(bArr, Util.splitAtFirst(cipher.getAlgorithm(), "/")[0]), new IvParameterSpec(getInitializationVector(j, j3)));
             if (i2 != 0) {
                 updateInPlace(new byte[i2], 0, i2);
             }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzat {
     final /* synthetic */ zzav zza;
@@ -47,7 +47,7 @@ public final class zzat {
                             this.zzc = j;
                         }
                         try {
-                            com.google.android.gms.internal.measurement.zzhr zzhrVar = (com.google.android.gms.internal.measurement.zzhr) zzpj.zzw(com.google.android.gms.internal.measurement.zzhs.zzk(), blob);
+                            com.google.android.gms.internal.measurement.zzhr zzhrVar = (com.google.android.gms.internal.measurement.zzhr) zzpk.zzw(com.google.android.gms.internal.measurement.zzhs.zzk(), blob);
                             String string = cursor2.getString(1);
                             if (string == null) {
                                 string = "";
@@ -56,7 +56,7 @@ public final class zzat {
                             zzhrVar.zzo(cursor2.getLong(2));
                             arrayList.add(new zzas(j, j2, z, (com.google.android.gms.internal.measurement.zzhs) zzhrVar.zzbc()));
                         } catch (IOException e) {
-                            this.zza.zzu.zzaV().zzb().zzc("Data loss. Failed to merge raw event. appId", zzgt.zzl(this.zzb), e);
+                            this.zza.zzu.zzaV().zzb().zzc("Data loss. Failed to merge raw event. appId", zzgu.zzl(this.zzb), e);
                         }
                         if (!cursor2.moveToNext()) {
                             break;
@@ -70,7 +70,7 @@ public final class zzat {
                 e = e2;
                 cursor = cursor2;
                 try {
-                    this.zza.zzu.zzaV().zzb().zzc("Data loss. Error querying raw events batch. appId", zzgt.zzl(this.zzb), e);
+                    this.zza.zzu.zzaV().zzb().zzc("Data loss. Error querying raw events batch. appId", zzgu.zzl(this.zzb), e);
                     cursor2 = cursor;
                     if (cursor2 != null) {
                     }
@@ -107,6 +107,6 @@ public final class zzat {
         this.zza = zzavVar;
         Preconditions.checkNotEmpty(str);
         this.zzb = str;
-        this.zzc = zzavVar.zzaj("select rowid from raw_events where app_id = ? and timestamp < ? order by rowid desc limit 1", new String[]{str, String.valueOf(j)}, -1L);
+        this.zzc = zzavVar.zzah("select rowid from raw_events where app_id = ? and timestamp < ? order by rowid desc limit 1", new String[]{str, String.valueOf(j)}, -1L);
     }
 }

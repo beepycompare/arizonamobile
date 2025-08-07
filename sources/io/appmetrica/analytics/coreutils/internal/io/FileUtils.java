@@ -16,7 +16,7 @@ public final class FileUtils {
     public static final String SDK_STORAGE_RELATIVE_PATH = "/appmetrica/analytics";
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile File f275a;
+    private static volatile File f274a;
 
     private FileUtils() {
     }
@@ -92,7 +92,7 @@ public final class FileUtils {
     @JvmStatic
     public static final void resetSdkStorage() {
         synchronized (INSTANCE) {
-            f275a = null;
+            f274a = null;
             Unit unit = Unit.INSTANCE;
         }
     }
@@ -100,7 +100,7 @@ public final class FileUtils {
     @JvmStatic
     public static final File sdkStorage(Context context) {
         File file;
-        if (f275a == null) {
+        if (f274a == null) {
             FileUtils fileUtils = INSTANCE;
             synchronized (fileUtils) {
                 File appStorageDirectory = getAppStorageDirectory(context);
@@ -114,11 +114,11 @@ public final class FileUtils {
                     }
                     file = file2;
                 }
-                f275a = file;
+                f274a = file;
                 Unit unit = Unit.INSTANCE;
             }
         }
-        return f275a;
+        return f274a;
     }
 
     public final boolean moveByCopy(File file, File file2) {

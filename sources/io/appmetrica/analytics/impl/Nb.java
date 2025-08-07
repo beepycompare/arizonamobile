@@ -12,10 +12,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 /* loaded from: classes4.dex */
-public final class Nb implements InterfaceC0179cb, Closeable {
+public final class Nb implements InterfaceC0180cb, Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f563a = new HashMap();
+    public final HashMap f562a = new HashMap();
     public final HashMap b = new HashMap();
     public final String c = "preferences";
     public final Mb d;
@@ -71,7 +71,7 @@ public final class Nb implements InterfaceC0179cb, Closeable {
                                         str = ParseUtils.parseLong(string2);
                                     }
                                     if (str == null) {
-                                        nb.f563a.put(string, str);
+                                        nb.f562a.put(string, str);
                                     }
                                 } else {
                                     if ("true".equals(string2)) {
@@ -100,7 +100,7 @@ public final class Nb implements InterfaceC0179cb, Closeable {
         nb.f.a(sQLiteDatabase);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
     public final void b() {
         synchronized (this.d) {
             this.d.notifyAll();
@@ -112,7 +112,7 @@ public final class Nb implements InterfaceC0179cb, Closeable {
             return;
         }
         try {
-            this.f563a.wait();
+            this.f562a.wait();
         } catch (InterruptedException unused) {
         }
     }
@@ -124,35 +124,35 @@ public final class Nb implements InterfaceC0179cb, Closeable {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
     public final boolean getBoolean(String str, boolean z) {
         Object b = b(str);
         return b instanceof Boolean ? ((Boolean) b).booleanValue() : z;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
     public final int getInt(String str, int i) {
         Object b = b(str);
         return b instanceof Integer ? ((Integer) b).intValue() : i;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
     public final long getLong(String str, long j) {
         Object b = b(str);
         return b instanceof Long ? ((Long) b).longValue() : j;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
     public final String getString(String str, String str2) {
         Object b = b(str);
         return b instanceof String ? (String) b : str2;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
-    public final InterfaceC0179cb remove(String str) {
-        synchronized (this.f563a) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
+    public final InterfaceC0180cb remove(String str) {
+        synchronized (this.f562a) {
             c();
-            this.f563a.remove(str);
+            this.f562a.remove(str);
         }
         synchronized (this.d) {
             this.b.put(str, this);
@@ -163,9 +163,9 @@ public final class Nb implements InterfaceC0179cb, Closeable {
 
     public final Object b(String str) {
         Object obj;
-        synchronized (this.f563a) {
+        synchronized (this.f562a) {
             c();
-            obj = this.f563a.get(str);
+            obj = this.f562a.get(str);
         }
         return obj;
     }
@@ -239,59 +239,59 @@ public final class Nb implements InterfaceC0179cb, Closeable {
         nb.f.a(sQLiteDatabase);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
-    public final synchronized InterfaceC0179cb a(String str, String str2) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
+    public final synchronized InterfaceC0180cb a(String str, String str2) {
         a(str, (Object) str2);
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
-    public final InterfaceC0179cb a(String str, long j) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
+    public final InterfaceC0180cb a(String str, long j) {
         a(str, Long.valueOf(j));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
-    public final synchronized InterfaceC0179cb a(int i, String str) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
+    public final synchronized InterfaceC0180cb a(int i, String str) {
         a(str, Integer.valueOf(i));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
-    public final InterfaceC0179cb a(String str, boolean z) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
+    public final InterfaceC0180cb a(String str, boolean z) {
         a(str, Boolean.valueOf(z));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
-    public final InterfaceC0179cb a(String str, float f) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
+    public final InterfaceC0180cb a(String str, float f) {
         a(str, Float.valueOf(f));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
     public final boolean a(String str) {
         boolean containsKey;
-        synchronized (this.f563a) {
+        synchronized (this.f562a) {
             c();
-            containsKey = this.f563a.containsKey(str);
+            containsKey = this.f562a.containsKey(str);
         }
         return containsKey;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0179cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
     public final Set a() {
         HashSet hashSet;
-        synchronized (this.f563a) {
-            hashSet = new HashSet(this.f563a.keySet());
+        synchronized (this.f562a) {
+            hashSet = new HashSet(this.f562a.keySet());
         }
         return hashSet;
     }
 
     public final void a(String str, Object obj) {
-        synchronized (this.f563a) {
+        synchronized (this.f562a) {
             c();
-            this.f563a.put(str, obj);
+            this.f562a.put(str, obj);
         }
         synchronized (this.d) {
             this.b.put(str, obj);

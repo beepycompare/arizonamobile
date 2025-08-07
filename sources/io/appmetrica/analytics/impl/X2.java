@@ -2,6 +2,6 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider;
 /* loaded from: classes4.dex */
-public interface X2 extends SslSocketFactoryProvider, InterfaceC0392km {
-    /* synthetic */ void a(C0267fm c0267fm);
+public interface X2 extends SslSocketFactoryProvider, InterfaceC0393km {
+    /* synthetic */ void a(C0268fm c0268fm);
 }

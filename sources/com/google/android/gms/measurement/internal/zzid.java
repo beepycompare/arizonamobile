@@ -1,23 +1,24 @@
 package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+import java.util.concurrent.Callable;
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-final class zzid implements Runnable {
-    final /* synthetic */ zzr zza;
-    final /* synthetic */ zzjc zzb;
+final class zzid implements Callable {
+    final /* synthetic */ String zza;
+    final /* synthetic */ zzjd zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzid(zzjc zzjcVar, zzr zzrVar) {
-        this.zza = zzrVar;
-        Objects.requireNonNull(zzjcVar);
-        this.zzb = zzjcVar;
+    public zzid(zzjd zzjdVar, String str) {
+        this.zza = str;
+        Objects.requireNonNull(zzjdVar);
+        this.zzb = zzjdVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        zzjc zzjcVar = this.zzb;
-        zzjcVar.zzL().zzY();
-        zzjcVar.zzL().zzag(this.zza);
+    @Override // java.util.concurrent.Callable
+    public final /* bridge */ /* synthetic */ Object call() throws Exception {
+        zzjd zzjdVar = this.zzb;
+        zzjdVar.zzL().zzZ();
+        return zzjdVar.zzL().zzj().zzn(this.zza);
     }
 }

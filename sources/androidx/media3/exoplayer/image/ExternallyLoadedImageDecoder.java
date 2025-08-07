@@ -155,6 +155,7 @@ public final class ExternallyLoadedImageDecoder implements ImageDecoder {
             this.pendingDecode = null;
         }
         this.pendingEndOfStream = false;
+        this.inputBuffer.clear();
         this.outputBuffer.release();
     }
 }

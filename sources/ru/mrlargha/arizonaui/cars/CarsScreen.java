@@ -9,7 +9,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.NotificationCompat;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.arizona.common.utils.EasyAnimation;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -213,7 +212,7 @@ public final class CarsScreen extends SAMPUIElement {
             textView.setText(replace$default + substring);
             return;
         }
-        carsLayoutBinding.slotsOccupied.setText(split$default.get(0) + RemoteSettings.FORWARD_SLASH_STRING + replace$default);
+        carsLayoutBinding.slotsOccupied.setText(split$default.get(0) + "/" + replace$default);
     }
 
     private final void setToggleSwitchInfo(List<Companion.ToggleSwitchInfo> list) {

@@ -14,7 +14,6 @@ import com.airbnb.lottie.parser.moshi.JsonReader;
 import com.airbnb.lottie.utils.Logger;
 import com.airbnb.lottie.utils.Utils;
 import com.google.common.base.Ascii;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -492,7 +491,7 @@ public class LottieCompositionFactory {
                     if (!name.contains(".ttf") && !name.contains(".otf")) {
                         zipInputStream.closeEntry();
                     }
-                    String[] split = name.split(RemoteSettings.FORWARD_SLASH_STRING);
+                    String[] split = name.split("/");
                     String str2 = split[split.length - 1];
                     String str3 = str2.split("\\.")[0];
                     if (context == null) {
@@ -527,7 +526,7 @@ public class LottieCompositionFactory {
                         throw th;
                     }
                 }
-                String[] split2 = name.split(RemoteSettings.FORWARD_SLASH_STRING);
+                String[] split2 = name.split("/");
                 hashMap.put(split2[split2.length - 1], BitmapFactory.decodeStream(zipInputStream));
             }
             nextEntry = zipInputStream.getNextEntry();

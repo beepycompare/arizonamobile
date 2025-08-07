@@ -141,6 +141,10 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                     String format2 = String.format(TimeModel.ZERO_LEADING_NUMBER_FORMAT, Arrays.copyOf(new Object[]{Integer.valueOf(capturesItem.getAttack_minute())}, 1));
                     Intrinsics.checkNotNullExpressionValue(format2, "format(...)");
                     textView2.setText(format + StringUtils.PROCESS_POSTFIX_DELIMITER + format2);
+                    binding.terCard1.setVisibility(8);
+                    int capture_id_zone = capturesItem.getCapture_id_zone();
+                    binding.terCard1.setVisibility(0);
+                    binding.terText1.setText(String.valueOf(capture_id_zone));
                 }
                 CapturesItem capturesItem2 = (CapturesItem) CollectionsKt.getOrNull(this.meetings, 1);
                 if (capturesItem2 != null) {
@@ -155,6 +159,10 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                     String format4 = String.format(TimeModel.ZERO_LEADING_NUMBER_FORMAT, Arrays.copyOf(new Object[]{Integer.valueOf(capturesItem2.getAttack_minute())}, 1));
                     Intrinsics.checkNotNullExpressionValue(format4, "format(...)");
                     textView3.setText(format3 + StringUtils.PROCESS_POSTFIX_DELIMITER + format4);
+                    binding.terCard2.setVisibility(8);
+                    int capture_id_zone2 = capturesItem2.getCapture_id_zone();
+                    binding.terCard2.setVisibility(0);
+                    binding.terText2.setText(String.valueOf(capture_id_zone2));
                 }
                 CapturesItem capturesItem3 = (CapturesItem) CollectionsKt.getOrNull(this.meetings, 2);
                 if (capturesItem3 != null) {
@@ -169,6 +177,10 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                     String format6 = String.format(TimeModel.ZERO_LEADING_NUMBER_FORMAT, Arrays.copyOf(new Object[]{Integer.valueOf(capturesItem3.getAttack_minute())}, 1));
                     Intrinsics.checkNotNullExpressionValue(format6, "format(...)");
                     textView4.setText(format5 + StringUtils.PROCESS_POSTFIX_DELIMITER + format6);
+                    binding.terCard3.setVisibility(8);
+                    int capture_id_zone3 = capturesItem3.getCapture_id_zone();
+                    binding.terCard3.setVisibility(0);
+                    binding.terText3.setText(String.valueOf(capture_id_zone3));
                 }
                 GangZonesTopItem gangZonesTopItem = (GangZonesTopItem) CollectionsKt.getOrNull(this.top, 0);
                 if (gangZonesTopItem != null) {
@@ -273,14 +285,14 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
             binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.WarsAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    WarsAdapter.onBindViewHolder$lambda$7$lambda$6(WarsAdapter.this, intValue, view);
+                    WarsAdapter.onBindViewHolder$lambda$10$lambda$9(WarsAdapter.this, intValue, view);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$7$lambda$6(WarsAdapter warsAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$10$lambda$9(WarsAdapter warsAdapter, int i, View view) {
         warsAdapter.onClick.invoke(Integer.valueOf(i));
     }
 

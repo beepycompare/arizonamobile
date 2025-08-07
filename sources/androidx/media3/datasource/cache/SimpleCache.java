@@ -127,6 +127,7 @@ public final class SimpleCache implements Cache {
 
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized void release() {
+        File file;
         if (this.released) {
             return;
         }
@@ -134,11 +135,12 @@ public final class SimpleCache implements Cache {
         removeStaleSpans();
         try {
             this.contentIndex.store();
-            unlockFolder(this.cacheDir);
+            file = this.cacheDir;
         } catch (IOException e) {
             Log.e(TAG, "Storing index file failed", e);
-            unlockFolder(this.cacheDir);
+            file = this.cacheDir;
         }
+        unlockFolder(file);
         this.released = true;
     }
 

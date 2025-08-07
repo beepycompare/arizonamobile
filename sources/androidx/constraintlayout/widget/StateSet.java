@@ -38,53 +38,38 @@ public class StateSet {
         try {
             int eventType = xmlPullParser.getEventType();
             State state = null;
-            while (true) {
-                char c = 1;
-                if (eventType == 1) {
-                    return;
-                }
+            while (eventType != 1) {
                 if (eventType == 2) {
                     String name = xmlPullParser.getName();
                     switch (name.hashCode()) {
                         case 80204913:
-                            if (name.equals("State")) {
-                                c = 2;
+                            if (!name.equals("State")) {
                                 break;
+                            } else {
+                                state = new State(context, xmlPullParser);
+                                this.mStateList.put(state.mId, state);
+                                continue;
                             }
-                            c = 65535;
-                            break;
                         case 1301459538:
-                            if (name.equals("LayoutDescription")) {
-                                c = 0;
-                                break;
-                            }
-                            c = 65535;
-                            break;
+                            name.equals("LayoutDescription");
+                            continue;
                         case 1382829617:
-                            if (name.equals("StateSet")) {
-                                break;
-                            }
-                            c = 65535;
-                            break;
+                            name.equals("StateSet");
+                            continue;
                         case 1901439077:
                             if (name.equals("Variant")) {
-                                c = 3;
-                                break;
+                                Variant variant = new Variant(context, xmlPullParser);
+                                if (state != null) {
+                                    state.add(variant);
+                                    break;
+                                } else {
+                                    break;
+                                }
+                            } else {
+                                continue;
                             }
-                            c = 65535;
-                            break;
                         default:
-                            c = 65535;
-                            break;
-                    }
-                    if (c == 2) {
-                        state = new State(context, xmlPullParser);
-                        this.mStateList.put(state.mId, state);
-                    } else if (c == 3) {
-                        Variant variant = new Variant(context, xmlPullParser);
-                        if (state != null) {
-                            state.add(variant);
-                        }
+                            continue;
                     }
                 } else if (eventType != 3) {
                     continue;

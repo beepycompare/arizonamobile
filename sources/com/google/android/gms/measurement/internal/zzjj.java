@@ -1,15 +1,22 @@
 package com.google.android.gms.measurement.internal;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public enum zzjj {
-    AD_STORAGE("ad_storage"),
-    ANALYTICS_STORAGE("analytics_storage"),
-    AD_USER_DATA("ad_user_data"),
-    AD_PERSONALIZATION("ad_personalization");
+    STORAGE(zzjk.AD_STORAGE, zzjk.ANALYTICS_STORAGE),
+    DMA(zzjk.AD_USER_DATA);
     
-    public final String zze;
+    private final zzjk[] zzc;
 
-    zzjj(String str) {
-        this.zze = str;
+    zzjj(zzjk... zzjkVarArr) {
+        this.zzc = zzjkVarArr;
+    }
+
+    public final zzjk[] zza() {
+        return this.zzc;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ zzjk[] zzb() {
+        return this.zzc;
     }
 }

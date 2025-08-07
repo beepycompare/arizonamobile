@@ -253,12 +253,13 @@ final class WebViewSubtitleOutput extends FrameLayout implements SubtitleView.Ou
             f2 = f;
         }
         sb.append("</div></body></html>");
-        StringBuilder sb2 = new StringBuilder("<html><head><style>");
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append("<html><head><style>");
         for (String str11 : hashMap.keySet()) {
             sb2.append(str11).append("{").append((String) hashMap.get(str11)).append("}");
         }
         sb2.append("</style></head>");
-        sb.insert(0, sb2.toString());
+        sb.insert(0, (CharSequence) sb2);
         this.webView.loadData(Base64.encodeToString(sb.toString().getBytes(StandardCharsets.UTF_8), 1), "text/html", "base64");
     }
 

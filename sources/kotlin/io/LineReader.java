@@ -77,16 +77,16 @@ public final class LineReader {
         r10 = r0.toString();
         kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r10, "toString(...)");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00b7, code lost:
         if (r0.length() <= 32) goto L43;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x00b8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x00b9, code lost:
         trimStringBuilder();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x00bb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x00bc, code lost:
         r0.setLength(0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x00bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x00c0, code lost:
         return r10;
      */
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0020, code lost:

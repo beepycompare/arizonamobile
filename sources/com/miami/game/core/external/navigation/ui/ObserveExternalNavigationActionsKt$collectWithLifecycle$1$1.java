@@ -86,11 +86,11 @@ public final class ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1 e
         @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
         /* renamed from: com.miami.game.core.external.navigation.ui.ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes4.dex */
-        public static final /* synthetic */ class C00891 implements FlowCollector, FunctionAdapter {
+        public static final /* synthetic */ class C00901 implements FlowCollector, FunctionAdapter {
             final /* synthetic */ Function1<T, Unit> $tmp0;
 
             /* JADX WARN: Multi-variable type inference failed */
-            C00891(Function1<? super T, Unit> function1) {
+            C00901(Function1<? super T, Unit> function1) {
                 this.$tmp0 = function1;
             }
 
@@ -127,7 +127,7 @@ public final class ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1 e
                 Flow<T> flow = this.$this_collectWithLifecycle;
                 collectWithLifecycle$lambda$4 = ObserveExternalNavigationActionsKt.collectWithLifecycle$lambda$4(this.$currentOnEvent$delegate);
                 this.label = 1;
-                if (flow.collect(new C00891(collectWithLifecycle$lambda$4), this) == coroutine_suspended) {
+                if (flow.collect(new C00901(collectWithLifecycle$lambda$4), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {

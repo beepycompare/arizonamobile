@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
 public interface zzcr extends IInterface {
     void beginAdUnitExposure(String str, long j) throws RemoteException;

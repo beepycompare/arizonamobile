@@ -652,7 +652,7 @@ public final class SpotifyPage implements MobileController {
         throw new NoSuchElementException("Collection contains no element matching the predicate.");
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x003f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0040, code lost:
         if (r0.isEmpty() != false) goto L44;
      */
     /*

@@ -4,44 +4,44 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class attr {
-        public static int isb_clear_default_padding = 0x7f0402df;
-        public static int isb_indicator_color = 0x7f0402e0;
-        public static int isb_indicator_content_layout = 0x7f0402e1;
-        public static int isb_indicator_text_color = 0x7f0402e2;
-        public static int isb_indicator_text_size = 0x7f0402e3;
-        public static int isb_indicator_top_content_layout = 0x7f0402e4;
-        public static int isb_max = 0x7f0402e5;
-        public static int isb_min = 0x7f0402e6;
-        public static int isb_only_thumb_draggable = 0x7f0402e7;
-        public static int isb_progress = 0x7f0402e8;
-        public static int isb_progress_value_float = 0x7f0402e9;
-        public static int isb_r2l = 0x7f0402ea;
-        public static int isb_seek_smoothly = 0x7f0402eb;
-        public static int isb_show_indicator = 0x7f0402ec;
-        public static int isb_show_thumb_text = 0x7f0402ed;
-        public static int isb_show_tick_marks_type = 0x7f0402ee;
-        public static int isb_show_tick_texts = 0x7f0402ef;
-        public static int isb_thumb_adjust_auto = 0x7f0402f0;
-        public static int isb_thumb_color = 0x7f0402f1;
-        public static int isb_thumb_drawable = 0x7f0402f2;
-        public static int isb_thumb_size = 0x7f0402f3;
-        public static int isb_thumb_text_color = 0x7f0402f4;
-        public static int isb_tick_marks_color = 0x7f0402f5;
-        public static int isb_tick_marks_drawable = 0x7f0402f6;
-        public static int isb_tick_marks_ends_hide = 0x7f0402f7;
-        public static int isb_tick_marks_size = 0x7f0402f8;
-        public static int isb_tick_marks_swept_hide = 0x7f0402f9;
-        public static int isb_tick_texts_array = 0x7f0402fa;
-        public static int isb_tick_texts_color = 0x7f0402fb;
-        public static int isb_tick_texts_size = 0x7f0402fc;
-        public static int isb_tick_texts_typeface = 0x7f0402fd;
-        public static int isb_ticks_count = 0x7f0402fe;
-        public static int isb_track_background_color = 0x7f0402ff;
-        public static int isb_track_background_size = 0x7f040300;
-        public static int isb_track_progress_color = 0x7f040301;
-        public static int isb_track_progress_size = 0x7f040302;
-        public static int isb_track_rounded_corners = 0x7f040303;
-        public static int isb_user_seekable = 0x7f040304;
+        public static int isb_clear_default_padding = 0x7f0402ea;
+        public static int isb_indicator_color = 0x7f0402eb;
+        public static int isb_indicator_content_layout = 0x7f0402ec;
+        public static int isb_indicator_text_color = 0x7f0402ed;
+        public static int isb_indicator_text_size = 0x7f0402ee;
+        public static int isb_indicator_top_content_layout = 0x7f0402ef;
+        public static int isb_max = 0x7f0402f0;
+        public static int isb_min = 0x7f0402f1;
+        public static int isb_only_thumb_draggable = 0x7f0402f2;
+        public static int isb_progress = 0x7f0402f3;
+        public static int isb_progress_value_float = 0x7f0402f4;
+        public static int isb_r2l = 0x7f0402f5;
+        public static int isb_seek_smoothly = 0x7f0402f6;
+        public static int isb_show_indicator = 0x7f0402f7;
+        public static int isb_show_thumb_text = 0x7f0402f8;
+        public static int isb_show_tick_marks_type = 0x7f0402f9;
+        public static int isb_show_tick_texts = 0x7f0402fa;
+        public static int isb_thumb_adjust_auto = 0x7f0402fb;
+        public static int isb_thumb_color = 0x7f0402fc;
+        public static int isb_thumb_drawable = 0x7f0402fd;
+        public static int isb_thumb_size = 0x7f0402fe;
+        public static int isb_thumb_text_color = 0x7f0402ff;
+        public static int isb_tick_marks_color = 0x7f040300;
+        public static int isb_tick_marks_drawable = 0x7f040301;
+        public static int isb_tick_marks_ends_hide = 0x7f040302;
+        public static int isb_tick_marks_size = 0x7f040303;
+        public static int isb_tick_marks_swept_hide = 0x7f040304;
+        public static int isb_tick_texts_array = 0x7f040305;
+        public static int isb_tick_texts_color = 0x7f040306;
+        public static int isb_tick_texts_size = 0x7f040307;
+        public static int isb_tick_texts_typeface = 0x7f040308;
+        public static int isb_ticks_count = 0x7f040309;
+        public static int isb_track_background_color = 0x7f04030a;
+        public static int isb_track_background_size = 0x7f04030b;
+        public static int isb_track_progress_color = 0x7f04030c;
+        public static int isb_track_progress_size = 0x7f04030d;
+        public static int isb_track_rounded_corners = 0x7f04030e;
+        public static int isb_user_seekable = 0x7f04030f;
 
         private attr() {
         }
@@ -77,11 +77,11 @@ public final class R {
         public static int none = 0x7f0a0962;
         public static int normal = 0x7f0a0964;
         public static int oval = 0x7f0a099f;
-        public static int rectangle = 0x7f0a0a7a;
-        public static int rounded_rectangle = 0x7f0a0b56;
-        public static int sans = 0x7f0a0b96;
-        public static int serif = 0x7f0a0bf0;
-        public static int square = 0x7f0a0c85;
+        public static int rectangle = 0x7f0a0a7b;
+        public static int rounded_rectangle = 0x7f0a0b57;
+        public static int sans = 0x7f0a0b97;
+        public static int serif = 0x7f0a0bf1;
+        public static int square = 0x7f0a0c86;
 
         private id() {
         }

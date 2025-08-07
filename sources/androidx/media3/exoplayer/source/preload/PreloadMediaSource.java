@@ -131,14 +131,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m7429xf99e9a56(j);
+                PreloadMediaSource.this.m7445xf99e9a56(j);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$preload$0$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m7429xf99e9a56(long j) {
+    public /* synthetic */ void m7445xf99e9a56(long j) {
         this.preloadCalled = true;
         this.startPositionUs = j;
         this.onSourcePreparedNotified = false;
@@ -155,14 +155,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         Util.postOrRun(this.preloadHandler, new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m7427xcf4780db();
+                PreloadMediaSource.this.m7443xcf4780db();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$clear$1$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m7427xcf4780db() {
+    public /* synthetic */ void m7443xcf4780db() {
         if (this.preloadingMediaPeriodAndKey != null) {
             this.mediaSource.releasePeriod(((PreloadMediaPeriod) this.preloadingMediaPeriodAndKey.first).mediaPeriod);
             this.preloadingMediaPeriodAndKey = null;
@@ -171,6 +171,7 @@ public final class PreloadMediaSource extends WrappingMediaSource {
 
     @Override // androidx.media3.exoplayer.source.WrappingMediaSource
     protected void prepareSourceInternal() {
+        Assertions.checkState(Looper.myLooper() == this.preloadHandler.getLooper());
         if (isUsedByPlayer() && !this.onUsedByPlayerNotified) {
             onUsedByPlayer();
         }
@@ -191,14 +192,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m7428xd674fafd(timeline);
+                PreloadMediaSource.this.m7444xd674fafd(timeline);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onChildSourceInfoRefreshed$2$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m7428xd674fafd(Timeline timeline) {
+    public /* synthetic */ void m7444xd674fafd(Timeline timeline) {
         if (isUsedByPlayer() || this.onSourcePreparedNotified) {
             return;
         }
@@ -274,14 +275,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         this.releaseHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m7430xd9831bcd();
+                PreloadMediaSource.this.m7446xd9831bcd();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$releasePreloadMediaSource$3$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m7430xd9831bcd() {
+    public /* synthetic */ void m7446xd9831bcd() {
         this.preloadCalled = false;
         this.startPositionUs = C.TIME_UNSET;
         this.onSourcePreparedNotified = false;
@@ -356,14 +357,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             PreloadMediaSource.this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$PreloadMediaPeriodCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m7432x5a2a8722(mediaPeriod);
+                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m7448x5a2a8722(mediaPeriod);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onPrepared$0$androidx-media3-exoplayer-source-preload-PreloadMediaSource$PreloadMediaPeriodCallback  reason: not valid java name */
-        public /* synthetic */ void m7432x5a2a8722(MediaPeriod mediaPeriod) {
+        public /* synthetic */ void m7448x5a2a8722(MediaPeriod mediaPeriod) {
             TrackSelectorResult trackSelectorResult;
             if (PreloadMediaSource.this.isUsedByPlayer()) {
                 return;
@@ -392,14 +393,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             PreloadMediaSource.this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$PreloadMediaPeriodCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m7431xba37e565(mediaPeriod);
+                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m7447xba37e565(mediaPeriod);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onContinueLoadingRequested$1$androidx-media3-exoplayer-source-preload-PreloadMediaSource$PreloadMediaPeriodCallback  reason: not valid java name */
-        public /* synthetic */ void m7431xba37e565(MediaPeriod mediaPeriod) {
+        public /* synthetic */ void m7447xba37e565(MediaPeriod mediaPeriod) {
             if (PreloadMediaSource.this.isUsedByPlayer()) {
                 return;
             }

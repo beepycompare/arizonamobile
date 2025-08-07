@@ -8,6 +8,8 @@ interface Seeker extends SeekMap {
 
     long getDataEndPosition();
 
+    long getDataStartPosition();
+
     long getTimeUs(long j);
 
     /* loaded from: classes2.dex */
@@ -20,6 +22,11 @@ interface Seeker extends SeekMap {
         @Override // androidx.media3.extractor.mp3.Seeker
         public long getDataEndPosition() {
             return -1L;
+        }
+
+        @Override // androidx.media3.extractor.mp3.Seeker
+        public long getDataStartPosition() {
+            return 0L;
         }
 
         @Override // androidx.media3.extractor.mp3.Seeker

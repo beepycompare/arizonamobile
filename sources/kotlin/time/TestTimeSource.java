@@ -20,34 +20,34 @@ public final class TestTimeSource extends AbstractLongTimeSource {
     }
 
     /* renamed from: plusAssign-LRDsOJo  reason: not valid java name */
-    public final void m9940plusAssignLRDsOJo(long j) {
-        long m9869toLongimpl = Duration.m9869toLongimpl(j, getUnit());
-        if (((m9869toLongimpl - 1) | 1) != Long.MAX_VALUE) {
+    public final void m9963plusAssignLRDsOJo(long j) {
+        long m9892toLongimpl = Duration.m9892toLongimpl(j, getUnit());
+        if (((m9892toLongimpl - 1) | 1) != Long.MAX_VALUE) {
             long j2 = this.reading;
-            long j3 = j2 + m9869toLongimpl;
-            if ((m9869toLongimpl ^ j2) >= 0 && (j2 ^ j3) < 0) {
-                m9939overflowLRDsOJo(j);
+            long j3 = j2 + m9892toLongimpl;
+            if ((m9892toLongimpl ^ j2) >= 0 && (j2 ^ j3) < 0) {
+                m9962overflowLRDsOJo(j);
             }
             this.reading = j3;
             return;
         }
-        long m9833divUwyO8pc = Duration.m9833divUwyO8pc(j, 2);
-        if ((1 | (Duration.m9869toLongimpl(m9833divUwyO8pc, getUnit()) - 1)) != Long.MAX_VALUE) {
+        long m9856divUwyO8pc = Duration.m9856divUwyO8pc(j, 2);
+        if ((1 | (Duration.m9892toLongimpl(m9856divUwyO8pc, getUnit()) - 1)) != Long.MAX_VALUE) {
             long j4 = this.reading;
             try {
-                m9940plusAssignLRDsOJo(m9833divUwyO8pc);
-                m9940plusAssignLRDsOJo(Duration.m9858minusLRDsOJo(j, m9833divUwyO8pc));
+                m9963plusAssignLRDsOJo(m9856divUwyO8pc);
+                m9963plusAssignLRDsOJo(Duration.m9881minusLRDsOJo(j, m9856divUwyO8pc));
                 return;
             } catch (IllegalStateException e) {
                 this.reading = j4;
                 throw e;
             }
         }
-        m9939overflowLRDsOJo(j);
+        m9962overflowLRDsOJo(j);
     }
 
     /* renamed from: overflow-LRDsOJo  reason: not valid java name */
-    private final void m9939overflowLRDsOJo(long j) {
-        throw new IllegalStateException("TestTimeSource will overflow if its reading " + this.reading + DurationUnitKt.shortName(getUnit()) + " is advanced by " + ((Object) Duration.m9870toStringimpl(j)) + '.');
+    private final void m9962overflowLRDsOJo(long j) {
+        throw new IllegalStateException("TestTimeSource will overflow if its reading " + this.reading + DurationUnitKt.shortName(getUnit()) + " is advanced by " + ((Object) Duration.m9893toStringimpl(j)) + '.');
     }
 }

@@ -346,7 +346,7 @@ public final class ServerItemKt {
                 ComposerKt.sourceInformation(startRestartGroup, "91@3657L200");
                 i3 = i2;
                 i4 = 6;
-                SingletonAsyncImageKt.m7751AsyncImage10Xjiaw(str2, null, SizeKt.m785size3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(24)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, ((i2 >> 3) & 14) | 1573296, 0, 1976);
+                SingletonAsyncImageKt.m7766AsyncImage10Xjiaw(str2, null, SizeKt.m785size3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(24)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, ((i2 >> 3) & 14) | 1573296, 0, 1976);
                 startRestartGroup.endReplaceGroup();
             } else {
                 i3 = i2;
@@ -362,7 +362,7 @@ public final class ServerItemKt {
             long sp = TextUnitKt.getSp(0.6d);
             TextUnitKt.m6891checkArithmeticR2X_6o(sp);
             str3 = str;
-            TextKt.m2497Text4IGK_g(str3, (Modifier) null, m4115getWhite0d7_KjU, TypeKt.m8434dpToSp8Feqmps(Dp.m6684constructorimpl(21), startRestartGroup, i4), (FontStyle) null, (FontWeight) null, (FontFamily) null, TextUnitKt.pack(TextUnit.m6876getRawTypeimpl(sp), -TextUnit.m6878getValueimpl(sp)), (TextDecoration) null, (TextAlign) null, TypeKt.m8434dpToSp8Feqmps(Dp.m6684constructorimpl(22), startRestartGroup, i4), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, labelMedium, startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64370);
+            TextKt.m2497Text4IGK_g(str3, (Modifier) null, m4115getWhite0d7_KjU, TypeKt.m8456dpToSp8Feqmps(Dp.m6684constructorimpl(21), startRestartGroup, i4), (FontStyle) null, (FontWeight) null, (FontFamily) null, TextUnitKt.pack(TextUnit.m6876getRawTypeimpl(sp), -TextUnit.m6878getValueimpl(sp)), (TextDecoration) null, (TextAlign) null, TypeKt.m8456dpToSp8Feqmps(Dp.m6684constructorimpl(22), startRestartGroup, i4), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, labelMedium, startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64370);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -442,8 +442,8 @@ public final class ServerItemKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 129289880, "C118@4492L10,119@4537L13,120@4577L13,116@4401L190,123@4702L10,124@4747L13,121@4600L212:ServerItem.kt#2ojkxh");
             float f = 21;
             composer2 = startRestartGroup;
-            TextKt.m2497Text4IGK_g(String.valueOf(i), (Modifier) null, Color.Companion.m4115getWhite0d7_KjU(), TypeKt.m8434dpToSp8Feqmps(Dp.m6684constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m8434dpToSp8Feqmps(Dp.m6684constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
-            TextKt.m2497Text4IGK_g(" / " + i2, OffsetKt.m698offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m6684constructorimpl(-Dp.m6684constructorimpl(1)), 1, null), Color.m4077copywmQWz5c$default(Color.Companion.m4115getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m8434dpToSp8Feqmps(Dp.m6684constructorimpl(15), composer2, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, 432, 0, 65520);
+            TextKt.m2497Text4IGK_g(String.valueOf(i), (Modifier) null, Color.Companion.m4115getWhite0d7_KjU(), TypeKt.m8456dpToSp8Feqmps(Dp.m6684constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m8456dpToSp8Feqmps(Dp.m6684constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
+            TextKt.m2497Text4IGK_g(" / " + i2, OffsetKt.m698offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m6684constructorimpl(-Dp.m6684constructorimpl(1)), 1, null), Color.m4077copywmQWz5c$default(Color.Companion.m4115getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m8456dpToSp8Feqmps(Dp.m6684constructorimpl(15), composer2, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, 432, 0, 65520);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();

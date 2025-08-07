@@ -1,19 +1,19 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzii extends zzme implements zznm {
+public final class zzii extends zzmf implements zznn {
     private static final zzii zzg;
-    private zzmm zzb = zzct();
-    private zzmm zzd = zzct();
-    private zzmn zze = zzcv();
-    private zzmn zzf = zzcv();
+    private zzmn zzb = zzct();
+    private zzmn zzd = zzct();
+    private zzmo zze = zzcv();
+    private zzmo zzf = zzcv();
 
     static {
         zzii zziiVar = new zzii();
         zzg = zziiVar;
-        zzme.zzcp(zzii.class, zziiVar);
+        zzmf.zzcp(zzii.class, zziiVar);
     }
 
     private zzii() {
@@ -60,14 +60,14 @@ public final class zzii extends zzme implements zznm {
     }
 
     public final /* synthetic */ void zzk(Iterable iterable) {
-        zzmm zzmmVar = this.zzb;
-        if (!zzmmVar.zza()) {
-            this.zzb = zzme.zzcu(zzmmVar);
+        zzmn zzmnVar = this.zzb;
+        if (!zzmnVar.zza()) {
+            this.zzb = zzmf.zzcu(zzmnVar);
         }
-        zzkr.zzce(iterable, this.zzb);
+        zzks.zzce(iterable, this.zzb);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {
@@ -93,11 +93,11 @@ public final class zzii extends zzme implements zznm {
     }
 
     public final /* synthetic */ void zzn(Iterable iterable) {
-        zzmm zzmmVar = this.zzd;
-        if (!zzmmVar.zza()) {
-            this.zzd = zzme.zzcu(zzmmVar);
+        zzmn zzmnVar = this.zzd;
+        if (!zzmnVar.zza()) {
+            this.zzd = zzmf.zzcu(zzmnVar);
         }
-        zzkr.zzce(iterable, this.zzd);
+        zzks.zzce(iterable, this.zzd);
     }
 
     public final /* synthetic */ void zzo() {
@@ -105,11 +105,11 @@ public final class zzii extends zzme implements zznm {
     }
 
     public final /* synthetic */ void zzp(Iterable iterable) {
-        zzmn zzmnVar = this.zze;
-        if (!zzmnVar.zza()) {
-            this.zze = zzme.zzcw(zzmnVar);
+        zzmo zzmoVar = this.zze;
+        if (!zzmoVar.zza()) {
+            this.zze = zzmf.zzcw(zzmoVar);
         }
-        zzkr.zzce(iterable, this.zze);
+        zzks.zzce(iterable, this.zze);
     }
 
     public final /* synthetic */ void zzq() {
@@ -117,11 +117,11 @@ public final class zzii extends zzme implements zznm {
     }
 
     public final /* synthetic */ void zzr(Iterable iterable) {
-        zzmn zzmnVar = this.zzf;
-        if (!zzmnVar.zza()) {
-            this.zzf = zzme.zzcw(zzmnVar);
+        zzmo zzmoVar = this.zzf;
+        if (!zzmoVar.zza()) {
+            this.zzf = zzmf.zzcw(zzmoVar);
         }
-        zzkr.zzce(iterable, this.zzf);
+        zzks.zzce(iterable, this.zzf);
     }
 
     public final /* synthetic */ void zzs() {

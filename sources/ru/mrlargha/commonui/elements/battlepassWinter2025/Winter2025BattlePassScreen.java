@@ -22,7 +22,6 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
@@ -684,10 +683,6 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
                 Winter2025BattlePassScreen.setupBuyPremiumPage$lambda$22$lambda$21(Winter2025BattlePassScreen.this, view);
             }
         });
-        if (!this.isArizonaType) {
-            winterBattlepassBuyPremiumLayoutBinding.vipText.setText("TITAN VIP на 30 дней");
-            winterBattlepassBuyPremiumLayoutBinding.premiumImage2.setImageResource(R.drawable.battlepass_plus_item2_rodina);
-        }
         BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new Winter2025BattlePassScreen$setupBuyPremiumPage$1$3(winterBattlepassBuyPremiumLayoutBinding, this, null), 3, null);
     }
 
@@ -1093,7 +1088,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         int exp = mainBattlePassInfo2.getExp();
         MainBattlePassInfo mainBattlePassInfo3 = this.battlePassInfo;
         Intrinsics.checkNotNull(mainBattlePassInfo3);
-        textView2.setText(exp + RemoteSettings.FORWARD_SLASH_STRING + mainBattlePassInfo3.getMaxExp());
+        textView2.setText(exp + "/" + mainBattlePassInfo3.getMaxExp());
         winterBattlepassLayoutBinding.progressExperience.setMax(20);
         LinearProgressIndicator linearProgressIndicator = winterBattlepassLayoutBinding.progressExperience;
         MainBattlePassInfo mainBattlePassInfo4 = this.battlePassInfo;
@@ -1113,7 +1108,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         int exp3 = mainBattlePassInfo7.getExp();
         MainBattlePassInfo mainBattlePassInfo8 = this.battlePassInfo;
         Intrinsics.checkNotNull(mainBattlePassInfo8);
-        textView4.setText(exp3 + RemoteSettings.FORWARD_SLASH_STRING + mainBattlePassInfo8.getMaxExp());
+        textView4.setText(exp3 + "/" + mainBattlePassInfo8.getMaxExp());
         LinearProgressIndicator linearProgressIndicator2 = winterBattlepassTasksLayoutBinding.progressExperience;
         MainBattlePassInfo mainBattlePassInfo9 = this.battlePassInfo;
         Intrinsics.checkNotNull(mainBattlePassInfo9);
@@ -1146,7 +1141,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         winterBattlepassTasksLayoutBinding.taskInfoDesc.setText(commonTaskInfo.getHint());
         TextView textView = winterBattlepassTasksLayoutBinding.itemCount;
         int validCurrentProgress = commonTaskInfo.validCurrentProgress();
-        textView.setText(validCurrentProgress + RemoteSettings.FORWARD_SLASH_STRING + commonTaskInfo.getTotalProgress());
+        textView.setText(validCurrentProgress + "/" + commonTaskInfo.getTotalProgress());
         winterBattlepassTasksLayoutBinding.progressInPercentText.setText(((commonTaskInfo.validCurrentProgress() / commonTaskInfo.getTotalProgress()) * 100) + "%");
         if (commonTaskInfo.validCurrentProgress() == commonTaskInfo.getTotalProgress()) {
             LinearLayout progressDoneContainer = winterBattlepassTasksLayoutBinding.progressDoneContainer;
@@ -1264,7 +1259,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     private final void updateBattlePassPremium(List<BattlePassPremiumData> list) {
         if (list.size() != this.frontendPremiumMinimumSize) {
             this.isLockPremiumPage = true;
-            Toast.makeText(getTargetActivity(), "Количество премиумов не соотвествует серверу, обратитесь в поддержку!", 1).show();
+            Toast.makeText(getTargetActivity().getApplicationContext(), "Количество премиумов не соотвествует серверу, обратитесь в поддержку!", 1).show();
             return;
         }
         WinterBattlepassBuyPremiumLayoutBinding winterBattlepassBuyPremiumLayoutBinding = this.battlePassBinding.battlepassLevelPremiumPage;
@@ -1312,7 +1307,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     private final void updateLevelSetsInfo(List<BattlePassLevelSetData> list) {
         if (list.size() != this.frontendLevelSetsMinimumSize) {
             this.isLockLevelPage = true;
-            Toast.makeText(getTargetActivity(), "Количество уровней не соотвествует серверу, обратитесь в поддержку!", 1).show();
+            Toast.makeText(getTargetActivity().getApplicationContext(), "Количество уровней не соотвествует серверу, обратитесь в поддержку!", 1).show();
             return;
         }
         WinterBattlepassLevelSetsLayoutBinding winterBattlepassLevelSetsLayoutBinding = this.battlePassBinding.battlepassLevelSetsPage;

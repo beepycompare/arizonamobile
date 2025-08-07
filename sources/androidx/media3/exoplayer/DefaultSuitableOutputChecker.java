@@ -7,6 +7,7 @@ import android.media.AudioManager;
 import android.media.MediaRoute2Info;
 import android.media.MediaRouter2;
 import android.media.RouteDiscoveryPreference;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import androidx.media3.common.MimeTypes;
@@ -24,12 +25,10 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
     private final SuitableOutputChecker impl;
 
     public DefaultSuitableOutputChecker() {
-        if (Util.SDK_INT >= 35) {
+        if (Build.VERSION.SDK_INT >= 35) {
             this.impl = new ImplApi35();
-        } else if (Util.SDK_INT >= 23) {
-            this.impl = new ImplApi23();
         } else {
-            this.impl = null;
+            this.impl = new ImplApi23();
         }
     }
 
@@ -244,16 +243,16 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
                 if (audioDeviceInfo.getType() == 8 || audioDeviceInfo.getType() == 5 || audioDeviceInfo.getType() == 6 || audioDeviceInfo.getType() == 11 || audioDeviceInfo.getType() == 4 || audioDeviceInfo.getType() == 3) {
                     return true;
                 }
-                if (Util.SDK_INT >= 26 && audioDeviceInfo.getType() == 22) {
+                if (Build.VERSION.SDK_INT >= 26 && audioDeviceInfo.getType() == 22) {
                     return true;
                 }
-                if (Util.SDK_INT >= 28 && audioDeviceInfo.getType() == 23) {
+                if (Build.VERSION.SDK_INT >= 28 && audioDeviceInfo.getType() == 23) {
                     return true;
                 }
-                if (Util.SDK_INT >= 31 && (audioDeviceInfo.getType() == 26 || audioDeviceInfo.getType() == 27)) {
+                if (Build.VERSION.SDK_INT >= 31 && (audioDeviceInfo.getType() == 26 || audioDeviceInfo.getType() == 27)) {
                     return true;
                 }
-                if (Util.SDK_INT >= 33 && audioDeviceInfo.getType() == 30) {
+                if (Build.VERSION.SDK_INT >= 33 && audioDeviceInfo.getType() == 30) {
                     return true;
                 }
             }

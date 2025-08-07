@@ -67,7 +67,7 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
                 @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1$1$1", f = "DonateReplenishmentDialogPage.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
                 /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1$1$1  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes5.dex */
-                public static final class C01031 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+                public static final class C01041 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                     final /* synthetic */ Pair<Long, Integer> $it;
                     final /* synthetic */ DonateBoostModelUi $model;
                     int label;
@@ -99,7 +99,7 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
                     }
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    C01031(Pair<Long, Integer> pair, DonateBoostModelUi donateBoostModelUi, DonateReplenishmentDialogPage donateReplenishmentDialogPage, Continuation<? super C01031> continuation) {
+                    C01041(Pair<Long, Integer> pair, DonateBoostModelUi donateBoostModelUi, DonateReplenishmentDialogPage donateReplenishmentDialogPage, Continuation<? super C01041> continuation) {
                         super(2, continuation);
                         this.$it = pair;
                         this.$model = donateBoostModelUi;
@@ -108,17 +108,18 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                        return new C01031(this.$it, this.$model, this.this$0, continuation);
+                        return new C01041(this.$it, this.$model, this.this$0, continuation);
                     }
 
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                        return ((C01031) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                        return ((C01041) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
                     }
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     public final Object invokeSuspend(Object obj) {
                         DonateRateType donateRateType;
+                        DonateRateType donateRateType2;
                         IntrinsicsKt.getCOROUTINE_SUSPENDED();
                         if (this.label != 0) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -127,15 +128,16 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
                         long longValue = (this.$it.getFirst().longValue() * this.$model.getRate().getTo()) / this.$model.getRate().getFrom();
                         int doubleValue = (int) (longValue * (this.$it.getSecond().doubleValue() / 100.0d));
                         long j = doubleValue + longValue;
-                        Log.d(DonateUtilsKt.DONATE_TAG, "setupControllers: rate: " + this.$model.getRate().getTo());
                         donateRateType = this.this$0.rateType;
-                        int i = WhenMappings.$EnumSwitchMapping$0[donateRateType.ordinal()];
+                        Log.d(DonateUtilsKt.DONATE_TAG, "setupControllers: rate: " + donateRateType);
+                        donateRateType2 = this.this$0.rateType;
+                        int i = WhenMappings.$EnumSwitchMapping$0[donateRateType2.ordinal()];
                         if (i == 1) {
-                            this.this$0.getBinding().tvReceive.setText(DonateUtilsKt.formatWithSpaces(longValue));
-                            this.this$0.getAmount = longValue;
-                        } else if (i == 2) {
                             this.this$0.getBinding().tvReceive.setText(DonateUtilsKt.formatWithSpaces(j));
                             this.this$0.getAmount = j;
+                        } else if (i == 2) {
+                            this.this$0.getBinding().tvReceive.setText(DonateUtilsKt.formatWithSpaces(longValue));
+                            this.this$0.getAmount = longValue;
                         } else if (i != 3) {
                             throw new NoWhenBranchMatchedException();
                         } else {
@@ -153,7 +155,7 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
                 }
 
                 public final Object emit(Pair<Long, Integer> pair, Continuation<? super Unit> continuation) {
-                    Object withContext = BuildersKt.withContext(Dispatchers.getMain(), new C01031(pair, DonateBoostModelUi.this, donateReplenishmentDialogPage, null), continuation);
+                    Object withContext = BuildersKt.withContext(Dispatchers.getMain(), new C01041(pair, DonateBoostModelUi.this, donateReplenishmentDialogPage, null), continuation);
                     return withContext == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? withContext : Unit.INSTANCE;
                 }
             }, this) == coroutine_suspended) {

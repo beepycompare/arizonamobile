@@ -3,12 +3,12 @@ package io.appmetrica.analytics.impl;
 public class Gn implements Ti {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f460a;
+    public final int f459a;
     public final int b;
     public int c = 0;
 
     public Gn(int i, int i2) {
-        this.f460a = i;
+        this.f459a = i;
         this.b = i2;
     }
 
@@ -19,7 +19,7 @@ public class Gn implements Ti {
     public final boolean b() {
         int i = this.c;
         this.c = i + 1;
-        return i < this.f460a;
+        return i < this.f459a;
     }
 
     public final void c() {

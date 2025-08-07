@@ -1,29 +1,24 @@
 package com.google.android.gms.measurement.internal;
-
-import android.os.Bundle;
-import java.util.Objects;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzlu implements Runnable {
-    final /* synthetic */ Bundle zza;
-    final /* synthetic */ zzlt zzb;
-    final /* synthetic */ zzlt zzc;
-    final /* synthetic */ long zzd;
-    final /* synthetic */ zzma zze;
+public final class zzlu {
+    public final String zza;
+    public final String zzb;
+    public final long zzc;
+    boolean zzd;
+    public final boolean zze;
+    public final long zzf;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzlu(zzma zzmaVar, Bundle bundle, zzlt zzltVar, zzlt zzltVar2, long j) {
-        this.zza = bundle;
-        this.zzb = zzltVar;
-        this.zzc = zzltVar2;
-        this.zzd = j;
-        Objects.requireNonNull(zzmaVar);
-        this.zze = zzmaVar;
+    public zzlu(String str, String str2, long j) {
+        this(str, str2, j, false, 0L);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        this.zze.zzt(this.zza, this.zzb, this.zzc, this.zzd);
+    public zzlu(String str, String str2, long j, boolean z, long j2) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = j;
+        this.zzd = false;
+        this.zze = z;
+        this.zzf = j2;
     }
 }

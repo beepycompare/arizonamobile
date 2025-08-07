@@ -13,8 +13,8 @@ public final class K8 extends MessageNano {
     public static volatile K8[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f519a;
-    public C0752z8 b;
+    public byte[] f518a;
+    public C0753z8 b;
     public byte[] c;
     public F8 d;
 
@@ -35,7 +35,7 @@ public final class K8 extends MessageNano {
 
     public final K8 a() {
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f519a = bArr;
+        this.f518a = bArr;
         this.b = null;
         this.c = bArr;
         this.d = null;
@@ -46,14 +46,14 @@ public final class K8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f519a;
+        byte[] bArr = this.f518a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f519a);
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f518a);
         }
-        C0752z8 c0752z8 = this.b;
-        if (c0752z8 != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(2, c0752z8);
+        C0753z8 c0753z8 = this.b;
+        if (c0753z8 != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(2, c0753z8);
         }
         if (!Arrays.equals(this.c, bArr2)) {
             computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(3, this.c);
@@ -64,14 +64,14 @@ public final class K8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f519a;
+        byte[] bArr = this.f518a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f519a);
+            codedOutputByteBufferNano.writeBytes(1, this.f518a);
         }
-        C0752z8 c0752z8 = this.b;
-        if (c0752z8 != null) {
-            codedOutputByteBufferNano.writeMessage(2, c0752z8);
+        C0753z8 c0753z8 = this.b;
+        if (c0753z8 != null) {
+            codedOutputByteBufferNano.writeMessage(2, c0753z8);
         }
         if (!Arrays.equals(this.c, bArr2)) {
             codedOutputByteBufferNano.writeBytes(3, this.c);
@@ -91,10 +91,10 @@ public final class K8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f519a = codedInputByteBufferNano.readBytes();
+                this.f518a = codedInputByteBufferNano.readBytes();
             } else if (readTag == 18) {
                 if (this.b == null) {
-                    this.b = new C0752z8();
+                    this.b = new C0753z8();
                 }
                 codedInputByteBufferNano.readMessage(this.b);
             } else if (readTag == 26) {

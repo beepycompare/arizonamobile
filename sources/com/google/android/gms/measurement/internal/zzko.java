@@ -3,25 +3,25 @@ package com.google.android.gms.measurement.internal;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzko implements Runnable {
     final /* synthetic */ AtomicReference zza;
-    final /* synthetic */ zzli zzb;
+    final /* synthetic */ zzlj zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzko(zzli zzliVar, AtomicReference atomicReference) {
+    public zzko(zzlj zzljVar, AtomicReference atomicReference) {
         this.zza = atomicReference;
-        Objects.requireNonNull(zzliVar);
-        this.zzb = zzliVar;
+        Objects.requireNonNull(zzljVar);
+        this.zzb = zzljVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         AtomicReference atomicReference = this.zza;
         synchronized (atomicReference) {
-            zzli zzliVar = this.zzb;
-            atomicReference.set(Long.valueOf(zzliVar.zzu.zzc().zzl(zzliVar.zzu.zzv().zzj(), zzfx.zzac)));
+            zzlj zzljVar = this.zzb;
+            atomicReference.set(zzljVar.zzu.zzc().zzk(zzljVar.zzu.zzv().zzj(), zzfy.zzab));
             this.zza.notify();
         }
     }

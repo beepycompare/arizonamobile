@@ -1,7 +1,6 @@
 package androidx.media3.exoplayer.upstream.experimental;
 
 import androidx.media3.common.util.Assertions;
-import androidx.media3.common.util.Util;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.ArrayDeque;
 import java.util.Iterator;
@@ -93,7 +92,7 @@ public class SlidingPercentileBandwidthStatistic implements BandwidthStatistic {
 
         @Override // java.lang.Comparable
         public int compareTo(Sample sample) {
-            return Util.compareLong(this.bitrate, sample.bitrate);
+            return Long.compare(this.bitrate, sample.bitrate);
         }
     }
 }

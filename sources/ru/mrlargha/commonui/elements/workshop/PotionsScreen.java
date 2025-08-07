@@ -18,7 +18,6 @@ import androidx.media3.exoplayer.ExoPlayer;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -845,7 +844,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                 TextView textView = this.binding.leftItemField.tvTitleText;
                 InventoryItem inventoryItem2 = this.currentPaintItem;
                 textView.setText(String.valueOf(inventoryItem2 != null ? inventoryItem2.getText() : null));
-                this.binding.leftItemField.tvNeedRes.setText(RemoteSettings.FORWARD_SLASH_STRING + craftItemInfo.getAmount());
+                this.binding.leftItemField.tvNeedRes.setText("/" + craftItemInfo.getAmount());
                 if (intValue2 > intValue) {
                     this.binding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(R.color.red));
                 } else {

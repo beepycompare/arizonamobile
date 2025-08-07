@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 /* loaded from: classes2.dex */
-public final class CuesWithTimingSubtitle implements Subtitle {
+final class CuesWithTimingSubtitle implements Subtitle {
     private static final Ordering<CuesWithTiming> CUES_BY_START_TIME_ASCENDING = Ordering.natural().onResultOf(new Function() { // from class: androidx.media3.extractor.text.CuesWithTimingSubtitle$$ExternalSyntheticLambda0
         @Override // com.google.common.base.Function
         public final Object apply(Object obj) {

@@ -35,7 +35,7 @@ public final class ComposableSingletons$DialogCloseButtonKt {
     });
 
     /* renamed from: getLambda$-1894286437$design_system_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8310getLambda$1894286437$design_system_release_web() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m8332getLambda$1894286437$design_system_release_web() {
         return f70lambda$1894286437;
     }
 

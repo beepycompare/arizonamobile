@@ -11,13 +11,15 @@ public class VideoDecoderOutputBuffer extends DecoderOutputBuffer {
     public static final int COLORSPACE_UNKNOWN = 0;
     public int colorspace;
     public ByteBuffer data;
-    public int decoderPrivate;
+    public long decoderPrivate;
     public Format format;
     public int height;
     public int mode;
     private final DecoderOutputBuffer.Owner<VideoDecoderOutputBuffer> owner;
     public ByteBuffer supplementalData;
+    public int uvStride;
     public int width;
+    public int yStride;
     public ByteBuffer[] yuvPlanes;
     public int[] yuvStrides;
 
@@ -54,6 +56,8 @@ public class VideoDecoderOutputBuffer extends DecoderOutputBuffer {
         this.width = i;
         this.height = i2;
         this.colorspace = i5;
+        this.yStride = i3;
+        this.uvStride = i4;
         int i6 = (int) ((i2 + 1) / 2);
         if (isSafeToMultiply(i3, i2) && isSafeToMultiply(i4, i6)) {
             int i7 = i2 * i3;
@@ -94,6 +98,43 @@ public class VideoDecoderOutputBuffer extends DecoderOutputBuffer {
             }
         }
         return false;
+    }
+
+    public boolean initForOffsetFrames(int i, int i2, int i3, int i4, int i5, int i6, int i7) {
+        if (this.yuvPlanes == null) {
+            this.yuvPlanes = new ByteBuffer[3];
+        }
+        ByteBuffer byteBuffer = this.data;
+        if (byteBuffer == null) {
+            return false;
+        }
+        this.width = i2;
+        this.height = i3;
+        this.colorspace = i6;
+        ByteBuffer[] byteBufferArr = this.yuvPlanes;
+        int i8 = i4 * i3;
+        int i9 = (i3 >> 1) * i5;
+        int i10 = i4 * i7;
+        byteBuffer.position(i);
+        ByteBuffer slice = byteBuffer.slice();
+        byteBufferArr[0] = slice;
+        slice.limit(i8);
+        byteBuffer.position(i10 + i);
+        ByteBuffer slice2 = byteBuffer.slice();
+        byteBufferArr[1] = slice2;
+        slice2.limit(i9);
+        byteBuffer.position(i10 + ((i7 >> 1) * i5) + i);
+        ByteBuffer slice3 = byteBuffer.slice();
+        byteBufferArr[2] = slice3;
+        slice3.limit(i9);
+        if (this.yuvStrides == null) {
+            this.yuvStrides = new int[3];
+        }
+        int[] iArr = this.yuvStrides;
+        iArr[0] = i4;
+        iArr[1] = i5;
+        iArr[2] = i5;
+        return true;
     }
 
     public void initForPrivateFrame(int i, int i2) {

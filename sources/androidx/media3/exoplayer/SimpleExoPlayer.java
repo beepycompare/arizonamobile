@@ -425,6 +425,30 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     }
 
     @Override // androidx.media3.exoplayer.ExoPlayer
+    public void setScrubbingModeEnabled(boolean z) {
+        blockUntilConstructorFinished();
+        this.player.setScrubbingModeEnabled(z);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public boolean isScrubbingModeEnabled() {
+        blockUntilConstructorFinished();
+        return this.player.isScrubbingModeEnabled();
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public void setScrubbingModeParameters(ScrubbingModeParameters scrubbingModeParameters) {
+        blockUntilConstructorFinished();
+        this.player.setScrubbingModeParameters(scrubbingModeParameters);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public ScrubbingModeParameters getScrubbingModeParameters() {
+        blockUntilConstructorFinished();
+        return this.player.getScrubbingModeParameters();
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
     public AnalyticsCollector getAnalyticsCollector() {
         blockUntilConstructorFinished();
         return this.player.getAnalyticsCollector();
@@ -688,6 +712,12 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     public void setShuffleOrder(ShuffleOrder shuffleOrder) {
         blockUntilConstructorFinished();
         this.player.setShuffleOrder(shuffleOrder);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public ShuffleOrder getShuffleOrder() {
+        blockUntilConstructorFinished();
+        return this.player.getShuffleOrder();
     }
 
     @Override // androidx.media3.common.Player

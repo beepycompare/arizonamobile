@@ -7,7 +7,6 @@ import androidx.collection.SieveCacheKt;
 import androidx.media3.common.PlaybackException;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -44,7 +43,7 @@ public final class AssetDataSource extends BaseDataSource {
             String str = (String) Assertions.checkNotNull(uri.getPath());
             if (str.startsWith("/android_asset/")) {
                 str = str.substring(15);
-            } else if (str.startsWith(RemoteSettings.FORWARD_SLASH_STRING)) {
+            } else if (str.startsWith("/")) {
                 str = str.substring(1);
             }
             transferInitializing(dataSpec);

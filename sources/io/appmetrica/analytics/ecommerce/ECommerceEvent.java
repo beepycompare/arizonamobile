@@ -1,8 +1,8 @@
 package io.appmetrica.analytics.ecommerce;
 
-import io.appmetrica.analytics.impl.C0163bl;
-import io.appmetrica.analytics.impl.C0215dl;
-import io.appmetrica.analytics.impl.C0266fl;
+import io.appmetrica.analytics.impl.C0164bl;
+import io.appmetrica.analytics.impl.C0216dl;
+import io.appmetrica.analytics.impl.C0267fl;
 import io.appmetrica.analytics.impl.Ce;
 import io.appmetrica.analytics.impl.D3;
 import io.appmetrica.analytics.impl.Xf;
@@ -26,15 +26,15 @@ public abstract class ECommerceEvent implements Xf {
     }
 
     public static ECommerceEvent showProductCardEvent(ECommerceProduct eCommerceProduct, ECommerceScreen eCommerceScreen) {
-        return new C0163bl(eCommerceProduct, eCommerceScreen);
+        return new C0164bl(eCommerceProduct, eCommerceScreen);
     }
 
     public static ECommerceEvent showProductDetailsEvent(ECommerceProduct eCommerceProduct, ECommerceReferrer eCommerceReferrer) {
-        return new C0215dl(eCommerceProduct, eCommerceReferrer);
+        return new C0216dl(eCommerceProduct, eCommerceReferrer);
     }
 
     public static ECommerceEvent showScreenEvent(ECommerceScreen eCommerceScreen) {
-        return new C0266fl(eCommerceScreen);
+        return new C0267fl(eCommerceScreen);
     }
 
     public String getPublicDescription() {

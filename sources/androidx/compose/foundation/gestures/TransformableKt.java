@@ -402,7 +402,7 @@ public final class TransformableKt {
                             float m3835getDistanceimpl = Offset.m3835getDistanceimpl(m3842plusMKHz9U);
                             if (Math.abs(1 - f15) * calculateCentroidSize > f || abs > f || (m3835getDistanceimpl > f && function13.invoke(Offset.m3826boximpl(calculatePan)).booleanValue())) {
                                 i7 = (!z2 || abs >= f) ? 0 : 1;
-                                channel3.mo7544trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
+                                channel3.mo7559trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
                                 i6 = 1;
                                 f8 = f15;
                                 f9 = f16;
@@ -441,7 +441,7 @@ public final class TransformableKt {
                             } else {
                                 transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
                             }
-                            channel3.mo7544trySendJP2dKIU(new TransformEvent.TransformDelta(calculateZoom, calculatePan, f17, null));
+                            channel3.mo7559trySendJP2dKIU(new TransformEvent.TransformDelta(calculateZoom, calculatePan, f17, null));
                             List<PointerInputChange> changes42 = pointerEvent2.getChanges();
                             size2 = changes42.size();
                             while (i10 < size2) {
@@ -453,7 +453,7 @@ public final class TransformableKt {
                     } else {
                         int i15 = i3;
                         transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
-                        channel3.mo7544trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
+                        channel3.mo7559trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
                         f6 = f5;
                         f3 = f4;
                         j2 = j;

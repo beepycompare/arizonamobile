@@ -1,21 +1,20 @@
 package com.google.android.gms.measurement.internal;
 
+import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public abstract class zzgf extends com.google.android.gms.internal.measurement.zzbm implements zzgg {
-    public zzgf() {
-        super("com.google.android.gms.measurement.internal.IUploadBatchesCallback");
+public final class zzgf extends com.google.android.gms.internal.measurement.zzbl implements zzgh {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzgf(IBinder iBinder) {
+        super(iBinder, "com.google.android.gms.measurement.internal.IUploadBatchesCallback");
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzbm
-    protected final boolean zza(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
-        if (i == 2) {
-            com.google.android.gms.internal.measurement.zzbn.zzf(parcel);
-            zze((zzop) com.google.android.gms.internal.measurement.zzbn.zzb(parcel, zzop.CREATOR));
-            return true;
-        }
-        return false;
+    @Override // com.google.android.gms.measurement.internal.zzgh
+    public final void zze(zzoq zzoqVar) throws RemoteException {
+        Parcel zza = zza();
+        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzoqVar);
+        zzd(2, zza);
     }
 }

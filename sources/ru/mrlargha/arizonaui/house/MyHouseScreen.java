@@ -14,7 +14,6 @@ import com.arizona.common.utils.EasyAnimation;
 import com.arizona.common.utils.LinearItemDecoration;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.Constants;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -201,7 +200,7 @@ public final class MyHouseScreen extends SAMPUIElement {
             myHouseScreenBinding.housesNoTenantsIc.setVisibility(8);
             this.tenantsAdapter.clear();
         } else {
-            myHouseScreenBinding.tenantsCount.setText(mainHouseInfo.getTenantsInformation().size() + RemoteSettings.FORWARD_SLASH_STRING + mainHouseInfo.getMaxTenants());
+            myHouseScreenBinding.tenantsCount.setText(mainHouseInfo.getTenantsInformation().size() + "/" + mainHouseInfo.getMaxTenants());
             myHouseScreenBinding.tenantsContainer.setVisibility(0);
             myHouseScreenBinding.upgradesTitle.setVisibility(0);
             myHouseScreenBinding.bizId.setVisibility(0);
@@ -275,7 +274,7 @@ public final class MyHouseScreen extends SAMPUIElement {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(getTargetActivity(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
             getNotifier().setUIElementVisible(getBackendID(), false);
         }
     }

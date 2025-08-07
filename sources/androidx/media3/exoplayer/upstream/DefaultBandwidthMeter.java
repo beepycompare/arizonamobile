@@ -22,6 +22,7 @@ import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import androidx.media3.extractor.ts.PsExtractor;
 import androidx.media3.extractor.ts.TsExtractor;
 import com.android.volley.DefaultRetryPolicy;
+import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measurement.dynamite.ModuleDescriptor;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.common.base.Ascii;
 import com.google.common.base.Strings;
@@ -1985,7 +1986,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 'C':
                 return new int[]{3, 2, 2, 3, 2, 2};
             case 'D':
-            case 155:
+            case ModuleDescriptor.MODULE_VERSION /* 155 */:
             case 192:
                 return new int[]{3, 2, 2, 2, 2, 2};
             case 'E':
@@ -2120,7 +2121,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 151:
             case 232:
                 return new int[]{3, 1, 2, 2, 2, 2};
-            case 152:
+            case BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER /* 152 */:
                 return new int[]{3, 4, 3, 2, 2, 2};
             case BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER /* 153 */:
             case 235:

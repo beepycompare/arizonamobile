@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-sdk@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzp implements zzjo {
+public final class zzp implements zzjp {
     public final com.google.android.gms.internal.measurement.zzda zza;
     final /* synthetic */ AppMeasurementDynamiteService zzb;
 
@@ -17,14 +17,14 @@ public final class zzp implements zzjo {
         this.zza = zzdaVar;
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzjo
+    @Override // com.google.android.gms.measurement.internal.zzjp
     public final void interceptEvent(String str, String str2, Bundle bundle, long j) {
         try {
             this.zza.zze(str, str2, bundle, j);
         } catch (RemoteException e) {
-            zzib zzibVar = this.zzb.zza;
-            if (zzibVar != null) {
-                zzibVar.zzaV().zze().zzb("Event interceptor threw exception", e);
+            zzic zzicVar = this.zzb.zza;
+            if (zzicVar != null) {
+                zzicVar.zzaV().zze().zzb("Event interceptor threw exception", e);
             }
         }
     }

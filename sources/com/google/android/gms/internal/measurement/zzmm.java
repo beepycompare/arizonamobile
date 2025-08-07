@@ -1,10 +1,8 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-public interface zzmm extends zzmn {
-    long zzc(int i);
-
-    @Override // com.google.android.gms.internal.measurement.zzmn, com.google.android.gms.internal.measurement.zzmg
-    /* renamed from: zzd */
+public interface zzmm extends zzmo {
+    @Override // com.google.android.gms.internal.measurement.zzmo, com.google.android.gms.internal.measurement.zzmh
+    /* renamed from: zze */
     zzmm zzg(int i);
 }

@@ -10,7 +10,7 @@ public class UtilNetworking {
 
     /* loaded from: classes3.dex */
     public interface IConnectionOptions {
-        void applyConnectionOptions(HttpsURLConnection httpsURLConnection, String str);
+        void applyConnectionOptions(HttpsURLConnection httpsURLConnection, String str, int i);
     }
 
     /* loaded from: classes3.dex */
@@ -21,10 +21,10 @@ public class UtilNetworking {
     public static IConnectionOptions createDefaultConnectionOptions() {
         return new IConnectionOptions() { // from class: com.adjust.sdk.network.UtilNetworking.1
             @Override // com.adjust.sdk.network.UtilNetworking.IConnectionOptions
-            public final void applyConnectionOptions(HttpsURLConnection httpsURLConnection, String str) {
+            public final void applyConnectionOptions(HttpsURLConnection httpsURLConnection, String str, int i) {
                 httpsURLConnection.setRequestProperty("Client-SDK", str);
-                httpsURLConnection.setConnectTimeout(60000);
-                httpsURLConnection.setReadTimeout(60000);
+                httpsURLConnection.setConnectTimeout(i);
+                httpsURLConnection.setReadTimeout(i);
             }
         };
     }

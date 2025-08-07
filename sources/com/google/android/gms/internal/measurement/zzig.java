@@ -1,16 +1,16 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzig extends zzme implements zznm {
+public final class zzig extends zzmf implements zznn {
     private static final zzig zzf;
     private int zzb;
     private int zzd = 1;
-    private zzmn zze = zzcv();
+    private zzmo zze = zzcv();
 
     static {
         zzig zzigVar = new zzig();
         zzf = zzigVar;
-        zzme.zzcp(zzig.class, zzigVar);
+        zzmf.zzcp(zzig.class, zzigVar);
     }
 
     private zzig() {
@@ -22,14 +22,14 @@ public final class zzig extends zzme implements zznm {
 
     public final /* synthetic */ void zzb(zzhu zzhuVar) {
         zzhuVar.getClass();
-        zzmn zzmnVar = this.zze;
-        if (!zzmnVar.zza()) {
-            this.zze = zzme.zzcw(zzmnVar);
+        zzmo zzmoVar = this.zze;
+        if (!zzmoVar.zza()) {
+            this.zze = zzmf.zzcw(zzmoVar);
         }
         this.zze.add(zzhuVar);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {

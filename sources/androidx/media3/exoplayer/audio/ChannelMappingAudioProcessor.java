@@ -1,12 +1,13 @@
 package androidx.media3.exoplayer.audio;
 
 import androidx.media3.common.audio.AudioProcessor;
+import androidx.media3.common.audio.BaseAudioProcessor;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 /* loaded from: classes2.dex */
-final class ChannelMappingAudioProcessor extends androidx.media3.common.audio.BaseAudioProcessor {
+public final class ChannelMappingAudioProcessor extends BaseAudioProcessor {
     private int[] outputChannels;
     private int[] pendingOutputChannels;
 
@@ -20,7 +21,7 @@ final class ChannelMappingAudioProcessor extends androidx.media3.common.audio.Ba
         if (iArr == null) {
             return AudioProcessor.AudioFormat.NOT_SET;
         }
-        if (audioFormat.encoding != 2 && audioFormat.encoding != 4) {
+        if (!Util.isEncodingLinearPcm(audioFormat.encoding)) {
             throw new AudioProcessor.UnhandledAudioFormatException(audioFormat);
         }
         boolean z = audioFormat.channelCount != iArr.length;
@@ -49,13 +50,28 @@ final class ChannelMappingAudioProcessor extends androidx.media3.common.audio.Ba
             for (int i : iArr) {
                 int byteDepth = (Util.getByteDepth(this.inputAudioFormat.encoding) * i) + position;
                 int i2 = this.inputAudioFormat.encoding;
-                if (i2 == 2) {
-                    replaceOutputBuffer.putShort(byteBuffer.getShort(byteDepth));
-                } else if (i2 == 4) {
-                    replaceOutputBuffer.putFloat(byteBuffer.getFloat(byteDepth));
-                } else {
-                    throw new IllegalStateException("Unexpected encoding: " + this.inputAudioFormat.encoding);
+                if (i2 != 2) {
+                    if (i2 == 3) {
+                        replaceOutputBuffer.put(byteBuffer.get(byteDepth));
+                    } else if (i2 != 4) {
+                        if (i2 != 21) {
+                            if (i2 != 22) {
+                                if (i2 != 268435456) {
+                                    if (i2 != 1342177280) {
+                                        if (i2 != 1610612736) {
+                                            throw new IllegalStateException("Unexpected encoding: " + this.inputAudioFormat.encoding);
+                                        }
+                                    }
+                                }
+                            }
+                            replaceOutputBuffer.putInt(byteBuffer.getInt(byteDepth));
+                        }
+                        Util.putInt24(replaceOutputBuffer, Util.getInt24(byteBuffer, byteDepth));
+                    } else {
+                        replaceOutputBuffer.putFloat(byteBuffer.getFloat(byteDepth));
+                    }
                 }
+                replaceOutputBuffer.putShort(byteBuffer.getShort(byteDepth));
             }
             position += this.inputAudioFormat.bytesPerFrame;
         }

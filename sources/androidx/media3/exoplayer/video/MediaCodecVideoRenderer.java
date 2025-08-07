@@ -20,6 +20,7 @@ import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.PlaybackException;
 import androidx.media3.common.Timeline;
+import androidx.media3.common.VideoFrameProcessor;
 import androidx.media3.common.VideoSize;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
@@ -34,6 +35,7 @@ import androidx.media3.exoplayer.ExoPlaybackException;
 import androidx.media3.exoplayer.FormatHolder;
 import androidx.media3.exoplayer.Renderer;
 import androidx.media3.exoplayer.RendererCapabilities;
+import androidx.media3.exoplayer.ScrubbingModeParameters;
 import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
 import androidx.media3.exoplayer.mediacodec.MediaCodecDecoderException;
 import androidx.media3.exoplayer.mediacodec.MediaCodecInfo;
@@ -72,7 +74,6 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     private static final long MIN_EARLY_US_LATE_THRESHOLD = -30000;
     private static final long MIN_EARLY_US_VERY_LATE_THRESHOLD = -500000;
     private static final long OFFSET_FROM_PERIOD_END_TO_TREAT_AS_LAST_US = 100000;
-    private static final long OFFSET_FROM_RESET_POSITION_TO_ALLOW_INPUT_BUFFER_DROPPING_US = 200000;
     private static final int[] STANDARD_LONG_EDGE_VIDEO_PX = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
     private static final String TAG = "MediaCodecVideoRenderer";
     private static final long TUNNELING_EOS_PRESENTATION_TIME_US = Long.MAX_VALUE;
@@ -93,13 +94,16 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     private final PriorityQueue<Long> droppedDecoderInputBufferTimestamps;
     private long droppedFrameAccumulationStartTimeMs;
     private int droppedFrames;
+    private final boolean enableMediaCodecBufferDecodeOnlyFlag;
     private final VideoRendererEventListener.EventDispatcher eventDispatcher;
     private VideoFrameMetadataListener frameMetadataListener;
     private boolean hasSetVideoSink;
     private boolean haveReportedFirstFrameRenderedForCurrentSurface;
+    private boolean isFlushRequired;
     private long lastFrameReleaseTimeNs;
     private final int maxDroppedFramesToNotify;
     private final long minEarlyUsToDropDecoderInput;
+    private int nextVideoSinkFirstFrameReleaseInstruction;
     private Size outputResolution;
     private final boolean ownsVideoSink;
     private boolean pendingVideoSinkInputStreamChange;
@@ -108,7 +112,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     private int rendererPriority;
     private VideoSize reportedVideoSize;
     private int scalingMode;
-    private boolean shouldDropDecoderInputBuffers;
+    private ScrubbingModeParameters scrubbingModeParameters;
     private long startPositionUs;
     private long totalVideoFrameProcessingOffsetUs;
     private boolean tunneling;
@@ -117,8 +121,14 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     private List<Effect> videoEffects;
     private int videoFrameProcessingOffsetCount;
     private final VideoFrameReleaseControl videoFrameReleaseControl;
+    private final VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster;
     private final VideoFrameReleaseControl.FrameReleaseInfo videoFrameReleaseInfo;
     private VideoSink videoSink;
+
+    @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
+    protected boolean getCodecNeedsEosPropagation() {
+        return false;
+    }
 
     protected boolean shouldDropBuffersToKeyframe(long j, long j2, boolean z) {
         return j < MIN_EARLY_US_VERY_LATE_THRESHOLD && !z;
@@ -143,6 +153,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         private MediaCodecAdapter.Factory codecAdapterFactory;
         private final Context context;
         private boolean enableDecoderFallback;
+        private boolean enableMediaCodecBufferDecodeOnlyFlag;
         private Handler eventHandler;
         private VideoRendererEventListener eventListener;
         private int maxDroppedFramesToNotify;
@@ -212,6 +223,11 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
             return this;
         }
 
+        public Builder experimentalSetEnableMediaCodecBufferDecodeOnlyFlag(boolean z) {
+            this.enableMediaCodecBufferDecodeOnlyFlag = z;
+            return this;
+        }
+
         public MediaCodecVideoRenderer build() {
             Assertions.checkState(!this.buildCalled);
             Handler handler = this.eventHandler;
@@ -252,11 +268,6 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     @Deprecated
-    public MediaCodecVideoRenderer(Context context, MediaCodecAdapter.Factory factory, MediaCodecSelector mediaCodecSelector, long j, boolean z, Handler handler, VideoRendererEventListener videoRendererEventListener, int i, float f, VideoSinkProvider videoSinkProvider) {
-        this(new Builder(context).setMediaCodecSelector(mediaCodecSelector).setCodecAdapterFactory(factory).setAllowedJoiningTimeMs(j).setEnableDecoderFallback(z).setEventHandler(handler).setEventListener(videoRendererEventListener).setMaxDroppedFramesToNotify(i).setAssumedMinimumCodecOperatingRate(f).setVideoSink(videoSinkProvider == null ? null : videoSinkProvider.getSink(0)));
-    }
-
-    @Deprecated
     public MediaCodecVideoRenderer(Context context, MediaCodecAdapter.Factory factory, MediaCodecSelector mediaCodecSelector, long j, boolean z, Handler handler, VideoRendererEventListener videoRendererEventListener, int i, float f, VideoSink videoSink) {
         this(new Builder(context).setMediaCodecSelector(mediaCodecSelector).setCodecAdapterFactory(factory).setAllowedJoiningTimeMs(j).setEnableDecoderFallback(z).setEventHandler(handler).setEventListener(videoRendererEventListener).setMaxDroppedFramesToNotify(i).setAssumedMinimumCodecOperatingRate(f).setVideoSink(videoSink));
     }
@@ -279,12 +290,19 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         this.tunnelingAudioSessionId = 0;
         this.reportedVideoSize = null;
         this.rendererPriority = -1000;
-        long j = C.TIME_UNSET;
         this.startPositionUs = C.TIME_UNSET;
         this.periodDurationUs = C.TIME_UNSET;
         this.av1SampleDependencyParser = builder.parseAv1SampleDependencies ? new Av1SampleDependencyParser() : null;
         this.droppedDecoderInputBufferTimestamps = new PriorityQueue<>();
-        this.minEarlyUsToDropDecoderInput = builder.lateThresholdToDropDecoderInputUs != C.TIME_UNSET ? -builder.lateThresholdToDropDecoderInputUs : j;
+        if (builder.lateThresholdToDropDecoderInputUs != C.TIME_UNSET) {
+            this.minEarlyUsToDropDecoderInput = -builder.lateThresholdToDropDecoderInputUs;
+            this.videoFrameReleaseEarlyTimeForecaster = new VideoFrameReleaseEarlyTimeForecaster(1.0f);
+        } else {
+            this.minEarlyUsToDropDecoderInput = C.TIME_UNSET;
+            this.videoFrameReleaseEarlyTimeForecaster = null;
+        }
+        this.enableMediaCodecBufferDecodeOnlyFlag = builder.enableMediaCodecBufferDecodeOnlyFlag;
+        this.scrubbingModeParameters = null;
     }
 
     @Override // androidx.media3.exoplayer.video.VideoFrameReleaseControl.FrameTimingEvaluator
@@ -299,8 +317,8 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
     @Override // androidx.media3.exoplayer.video.VideoFrameReleaseControl.FrameTimingEvaluator
     public boolean shouldIgnoreFrame(long j, long j2, long j3, boolean z, boolean z2) throws ExoPlaybackException {
-        if (this.minEarlyUsToDropDecoderInput != C.TIME_UNSET) {
-            this.shouldDropDecoderInputBuffers = j2 > getLastResetPositionUs() + OFFSET_FROM_RESET_POSITION_TO_ALLOW_INPUT_BUFFER_DROPPING_US && j < this.minEarlyUsToDropDecoderInput;
+        if (this.videoSink != null && this.ownsVideoSink) {
+            j2 -= getBufferTimestampAdjustmentUs();
         }
         return shouldDropBuffersToKeyframe(j, j3, z) && maybeDropBuffersToKeyframe(j2, z2);
     }
@@ -354,7 +372,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         int i4 = mediaCodecInfo.isSeamlessAdaptationSupported(format) ? 16 : 8;
         int i5 = mediaCodecInfo.hardwareAccelerated ? 64 : 0;
         int i6 = z ? 128 : 0;
-        if (Util.SDK_INT >= 26 && MimeTypes.VIDEO_DOLBY_VISION.equals(format.sampleMimeType) && !Api26.doesDisplaySupportDolbyVision(context)) {
+        if (Build.VERSION.SDK_INT >= 26 && MimeTypes.VIDEO_DOLBY_VISION.equals(format.sampleMimeType) && !Api26.doesDisplaySupportDolbyVision(context)) {
             i6 = 256;
         }
         if (isFormatSupported) {
@@ -378,7 +396,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         if (format.sampleMimeType == null) {
             return ImmutableList.of();
         }
-        if (Util.SDK_INT >= 26 && MimeTypes.VIDEO_DOLBY_VISION.equals(format.sampleMimeType) && !Api26.doesDisplaySupportDolbyVision(context)) {
+        if (Build.VERSION.SDK_INT >= 26 && MimeTypes.VIDEO_DOLBY_VISION.equals(format.sampleMimeType) && !Api26.doesDisplaySupportDolbyVision(context)) {
             List<MediaCodecInfo> alternativeDecoderInfos = MediaCodecUtil.getAlternativeDecoderInfos(mediaCodecSelector, format, z, z2);
             if (!alternativeDecoderInfos.isEmpty()) {
                 return alternativeDecoderInfos;
@@ -425,81 +443,100 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         this.eventDispatcher.enabled(this.decoderCounters);
         if (!this.hasSetVideoSink) {
             if (this.videoEffects != null && this.videoSink == null) {
-                PlaybackVideoGraphWrapper build = new PlaybackVideoGraphWrapper.Builder(this.context, this.videoFrameReleaseControl).setClock(getClock()).build();
-                build.setTotalVideoInputCount(1);
-                this.videoSink = build.getSink(0);
+                PlaybackVideoGraphWrapper createPlaybackVideoGraphWrapper = createPlaybackVideoGraphWrapper(this.context, this.videoFrameReleaseControl);
+                createPlaybackVideoGraphWrapper.setTotalVideoInputCount(1);
+                this.videoSink = createPlaybackVideoGraphWrapper.getSink(0);
             }
             this.hasSetVideoSink = true;
         }
-        VideoSink videoSink = this.videoSink;
-        if (videoSink != null) {
-            videoSink.setListener(new VideoSink.Listener() { // from class: androidx.media3.exoplayer.video.MediaCodecVideoRenderer.1
-                @Override // androidx.media3.exoplayer.video.VideoSink.Listener
-                public void onVideoSizeChanged(VideoSink videoSink2, VideoSize videoSize) {
-                }
-
-                @Override // androidx.media3.exoplayer.video.VideoSink.Listener
-                public void onFirstFrameRendered(VideoSink videoSink2) {
-                    if (MediaCodecVideoRenderer.this.displaySurface != null) {
-                        MediaCodecVideoRenderer.this.notifyRenderedFirstFrame();
-                    }
-                }
-
-                @Override // androidx.media3.exoplayer.video.VideoSink.Listener
-                public void onFrameDropped(VideoSink videoSink2) {
-                    if (MediaCodecVideoRenderer.this.displaySurface != null) {
-                        MediaCodecVideoRenderer.this.updateDroppedBufferCounters(0, 1);
-                    }
-                }
-
-                @Override // androidx.media3.exoplayer.video.VideoSink.Listener
-                public void onError(VideoSink videoSink2, VideoSink.VideoSinkException videoSinkException) {
-                    MediaCodecVideoRenderer mediaCodecVideoRenderer = MediaCodecVideoRenderer.this;
-                    mediaCodecVideoRenderer.setPendingPlaybackException(mediaCodecVideoRenderer.createRendererException(videoSinkException, videoSinkException.format, PlaybackException.ERROR_CODE_VIDEO_FRAME_PROCESSING_FAILED));
-                }
-            }, MoreExecutors.directExecutor());
-            VideoFrameMetadataListener videoFrameMetadataListener = this.frameMetadataListener;
-            if (videoFrameMetadataListener != null) {
-                this.videoSink.setVideoFrameMetadataListener(videoFrameMetadataListener);
-            }
-            if (this.displaySurface != null && !this.outputResolution.equals(Size.UNKNOWN)) {
-                this.videoSink.setOutputSurfaceInfo(this.displaySurface, this.outputResolution);
-            }
-            this.videoSink.setChangeFrameRateStrategy(this.changeFrameRateStrategy);
-            this.videoSink.setPlaybackSpeed(getPlaybackSpeed());
-            List<Effect> list = this.videoEffects;
-            if (list != null) {
-                this.videoSink.setVideoEffects(list);
-            }
-            this.videoSink.onRendererEnabled(z2);
-            Renderer.WakeupListener wakeupListener = getWakeupListener();
-            if (wakeupListener != null) {
-                this.videoSink.setWakeupListener(wakeupListener);
-                return;
-            }
+        if (this.videoSink != null) {
+            configureVideoSink();
+            this.nextVideoSinkFirstFrameReleaseInstruction = !z2 ? 1 : 0;
+            experimentalEnableProcessedStreamChangedAtStart();
             return;
         }
         this.videoFrameReleaseControl.setClock(getClock());
-        this.videoFrameReleaseControl.onEnabled(z2);
+        this.videoFrameReleaseControl.onStreamChanged(!z2 ? 1 : 0);
+    }
+
+    @RequiresNonNull({"videoSink"})
+    private void configureVideoSink() {
+        this.videoSink.setListener(new VideoSink.Listener() { // from class: androidx.media3.exoplayer.video.MediaCodecVideoRenderer.1
+            @Override // androidx.media3.exoplayer.video.VideoSink.Listener
+            public void onVideoSizeChanged(VideoSize videoSize) {
+            }
+
+            @Override // androidx.media3.exoplayer.video.VideoSink.Listener
+            public void onFrameAvailableForRendering() {
+                Renderer.WakeupListener wakeupListener = MediaCodecVideoRenderer.this.getWakeupListener();
+                if (wakeupListener != null) {
+                    wakeupListener.onWakeup();
+                }
+            }
+
+            @Override // androidx.media3.exoplayer.video.VideoSink.Listener
+            public void onFirstFrameRendered() {
+                if (MediaCodecVideoRenderer.this.displaySurface != null) {
+                    MediaCodecVideoRenderer.this.notifyRenderedFirstFrame();
+                }
+            }
+
+            @Override // androidx.media3.exoplayer.video.VideoSink.Listener
+            public void onFrameDropped() {
+                if (MediaCodecVideoRenderer.this.displaySurface != null) {
+                    MediaCodecVideoRenderer.this.updateDroppedBufferCounters(0, 1);
+                }
+            }
+
+            @Override // androidx.media3.exoplayer.video.VideoSink.Listener
+            public void onError(VideoSink.VideoSinkException videoSinkException) {
+                MediaCodecVideoRenderer mediaCodecVideoRenderer = MediaCodecVideoRenderer.this;
+                mediaCodecVideoRenderer.setPendingPlaybackException(mediaCodecVideoRenderer.createRendererException(videoSinkException, videoSinkException.format, PlaybackException.ERROR_CODE_VIDEO_FRAME_PROCESSING_FAILED));
+            }
+        }, MoreExecutors.directExecutor());
+        VideoFrameMetadataListener videoFrameMetadataListener = this.frameMetadataListener;
+        if (videoFrameMetadataListener != null) {
+            this.videoSink.setVideoFrameMetadataListener(videoFrameMetadataListener);
+        }
+        if (this.displaySurface != null && !this.outputResolution.equals(Size.UNKNOWN)) {
+            this.videoSink.setOutputSurfaceInfo(this.displaySurface, this.outputResolution);
+        }
+        this.videoSink.setChangeFrameRateStrategy(this.changeFrameRateStrategy);
+        this.videoSink.setPlaybackSpeed(getPlaybackSpeed());
+        List<Effect> list = this.videoEffects;
+        if (list != null) {
+            this.videoSink.setVideoEffects(list);
+        }
+    }
+
+    protected PlaybackVideoGraphWrapper createPlaybackVideoGraphWrapper(Context context, VideoFrameReleaseControl videoFrameReleaseControl) {
+        return new PlaybackVideoGraphWrapper.Builder(context, videoFrameReleaseControl).setEnablePlaylistMode(true).setClock(getClock()).build();
     }
 
     @Override // androidx.media3.exoplayer.Renderer
     public void enableMayRenderStartOfStream() {
         VideoSink videoSink = this.videoSink;
         if (videoSink != null) {
-            videoSink.enableMayRenderStartOfStream();
-        } else {
-            this.videoFrameReleaseControl.allowReleaseFirstFrameBeforeStarted();
+            int i = this.nextVideoSinkFirstFrameReleaseInstruction;
+            if (i == 0 || i == 1) {
+                this.nextVideoSinkFirstFrameReleaseInstruction = 0;
+                return;
+            } else {
+                videoSink.allowReleaseFirstFrameBeforeStarted();
+                return;
+            }
         }
+        this.videoFrameReleaseControl.allowReleaseFirstFrameBeforeStarted();
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer, androidx.media3.exoplayer.BaseRenderer
     protected void onStreamChanged(Format[] formatArr, long j, long j2, MediaSource.MediaPeriodId mediaPeriodId) throws ExoPlaybackException {
         super.onStreamChanged(formatArr, j, j2, mediaPeriodId);
-        if (this.startPositionUs == C.TIME_UNSET) {
-            this.startPositionUs = j;
-        }
         updatePeriodDurationUs(mediaPeriodId);
+        VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster = this.videoFrameReleaseEarlyTimeForecaster;
+        if (videoFrameReleaseEarlyTimeForecaster != null) {
+            videoFrameReleaseEarlyTimeForecaster.reset();
+        }
     }
 
     private void updatePeriodDurationUs(MediaSource.MediaPeriodId mediaPeriodId) {
@@ -514,16 +551,16 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer, androidx.media3.exoplayer.BaseRenderer
     protected void onPositionReset(long j, boolean z) throws ExoPlaybackException {
         VideoSink videoSink = this.videoSink;
-        if (videoSink != null) {
-            if (!z) {
-                videoSink.flush(true);
-            }
-            this.videoSink.setStreamTimestampInfo(getOutputStreamStartPositionUs(), getBufferTimestampAdjustmentUs());
-            this.pendingVideoSinkInputStreamChange = true;
+        if (videoSink != null && !z) {
+            videoSink.flush(true);
         }
         super.onPositionReset(j, z);
         if (this.videoSink == null) {
             this.videoFrameReleaseControl.reset();
+        }
+        VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster = this.videoFrameReleaseEarlyTimeForecaster;
+        if (videoFrameReleaseEarlyTimeForecaster != null) {
+            videoFrameReleaseEarlyTimeForecaster.reset();
         }
         if (z) {
             VideoSink videoSink2 = this.videoSink;
@@ -568,7 +605,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         this.videoFrameProcessingOffsetCount = 0;
         VideoSink videoSink = this.videoSink;
         if (videoSink != null) {
-            videoSink.onRendererStarted();
+            videoSink.startRendering();
         } else {
             this.videoFrameReleaseControl.onStarted();
         }
@@ -580,9 +617,13 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         maybeNotifyVideoFrameProcessingOffset();
         VideoSink videoSink = this.videoSink;
         if (videoSink != null) {
-            videoSink.onRendererStopped();
+            videoSink.stopRendering();
         } else {
             this.videoFrameReleaseControl.onStopped();
+        }
+        VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster = this.videoFrameReleaseEarlyTimeForecaster;
+        if (videoFrameReleaseEarlyTimeForecaster != null) {
+            videoFrameReleaseEarlyTimeForecaster.reset();
         }
         super.onStopped();
     }
@@ -591,15 +632,10 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     protected void onDisabled() {
         this.reportedVideoSize = null;
         this.periodDurationUs = C.TIME_UNSET;
-        VideoSink videoSink = this.videoSink;
-        if (videoSink != null) {
-            videoSink.onRendererDisabled();
-        } else {
-            this.videoFrameReleaseControl.onDisabled();
-        }
         maybeSetupTunnelingForFirstFrame();
         this.haveReportedFirstFrameRenderedForCurrentSurface = false;
         this.tunnelingOnFrameRenderedListener = null;
+        this.isFlushRequired = true;
         try {
             super.onDisabled();
         } finally {
@@ -632,6 +668,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer, androidx.media3.exoplayer.BaseRenderer, androidx.media3.exoplayer.PlayerMessage.Target
     public void handleMessage(int i, Object obj) throws ExoPlaybackException {
+        boolean z = true;
         if (i == 1) {
             setOutput(obj);
         } else if (i == 7) {
@@ -676,15 +713,34 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
             if (videoSink3 != null) {
                 videoSink3.setOutputSurfaceInfo((Surface) Assertions.checkStateNotNull(this.displaySurface), size);
             }
-        } else if (i == 16) {
-            this.rendererPriority = ((Integer) Assertions.checkNotNull(obj)).intValue();
-            updateCodecImportance();
-        } else if (i == 17) {
-            Surface surface = this.displaySurface;
-            setOutput(null);
-            ((MediaCodecVideoRenderer) Assertions.checkNotNull(obj)).handleMessage(1, surface);
         } else {
-            super.handleMessage(i, obj);
+            switch (i) {
+                case 16:
+                    this.rendererPriority = ((Integer) Assertions.checkNotNull(obj)).intValue();
+                    updateCodecImportance();
+                    return;
+                case 17:
+                    Surface surface = this.displaySurface;
+                    setOutput(null);
+                    ((MediaCodecVideoRenderer) Assertions.checkNotNull(obj)).handleMessage(1, surface);
+                    return;
+                case 18:
+                    ScrubbingModeParameters scrubbingModeParameters = this.scrubbingModeParameters;
+                    boolean z2 = scrubbingModeParameters != null && scrubbingModeParameters.shouldIncreaseCodecOperatingRate;
+                    ScrubbingModeParameters scrubbingModeParameters2 = (ScrubbingModeParameters) obj;
+                    this.scrubbingModeParameters = scrubbingModeParameters2;
+                    if (scrubbingModeParameters2 == null || !scrubbingModeParameters2.shouldIncreaseCodecOperatingRate) {
+                        z = false;
+                    }
+                    if (z2 != z) {
+                        updateCodecOperatingRate();
+                        return;
+                    }
+                    return;
+                default:
+                    super.handleMessage(i, obj);
+                    return;
+            }
         }
     }
 
@@ -707,8 +763,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         MediaCodecAdapter codec = getCodec();
         if (codec != null && this.videoSink == null) {
             MediaCodecInfo mediaCodecInfo = (MediaCodecInfo) Assertions.checkNotNull(getCodecInfo());
-            boolean hasSurfaceForCodec = hasSurfaceForCodec(mediaCodecInfo);
-            if (Util.SDK_INT >= 23 && hasSurfaceForCodec && !this.codecNeedsSetOutputSurfaceWorkaround) {
+            if (hasSurfaceForCodec(mediaCodecInfo) && !this.codecNeedsSetOutputSurfaceWorkaround) {
                 setOutputSurface(codec, getSurfaceForCodec(mediaCodecInfo));
             } else {
                 releaseCodec();
@@ -738,11 +793,6 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     protected boolean shouldInitCodec(MediaCodecInfo mediaCodecInfo) {
         return hasSurfaceForCodec(mediaCodecInfo);
-    }
-
-    @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
-    protected boolean getCodecNeedsEosPropagation() {
-        return this.tunneling && Util.SDK_INT < 23;
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
@@ -795,9 +845,9 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     protected void resetCodecStateForFlush() {
         super.resetCodecStateForFlush();
         this.droppedDecoderInputBufferTimestamps.clear();
-        this.shouldDropDecoderInputBuffers = false;
         this.buffersInCodecCount = 0;
         this.consecutiveDroppedInputBufferCount = 0;
+        this.isFlushRequired = false;
         Av1SampleDependencyParser av1SampleDependencyParser = this.av1SampleDependencyParser;
         if (av1SampleDependencyParser != null) {
             av1SampleDependencyParser.reset();
@@ -812,6 +862,10 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
             videoSink.setPlaybackSpeed(f);
         } else {
             this.videoFrameReleaseControl.setPlaybackSpeed(f);
+        }
+        VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster = this.videoFrameReleaseEarlyTimeForecaster;
+        if (videoFrameReleaseEarlyTimeForecaster != null) {
+            videoFrameReleaseEarlyTimeForecaster.setPlaybackSpeed(f);
         }
     }
 
@@ -914,6 +968,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     protected float getCodecOperatingRateV23(float f, Format format, Format[] formatArr) {
+        MediaCodecInfo codecInfo;
         float f2 = -1.0f;
         for (Format format2 : formatArr) {
             float f3 = format2.frameRate;
@@ -921,10 +976,12 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                 f2 = Math.max(f2, f3);
             }
         }
-        if (f2 == -1.0f) {
-            return -1.0f;
+        float f4 = f2 == -1.0f ? -1.0f : f2 * f;
+        if (this.scrubbingModeParameters == null || (codecInfo = getCodecInfo()) == null) {
+            return f4;
         }
-        return f2 * f;
+        float maxSupportedFrameRate = codecInfo.getMaxSupportedFrameRate(format.width, format.height);
+        return f4 != -1.0f ? Math.max(f4, maxSupportedFrameRate) : maxSupportedFrameRate;
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
@@ -941,10 +998,18 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     public void setVideoEffects(List<Effect> list) {
+        if (list.equals(VideoFrameProcessor.REDRAW)) {
+            VideoSink videoSink = this.videoSink;
+            if (videoSink == null || !videoSink.isInitialized()) {
+                return;
+            }
+            this.videoSink.redraw();
+            return;
+        }
         this.videoEffects = list;
-        VideoSink videoSink = this.videoSink;
-        if (videoSink != null) {
-            videoSink.setVideoEffects(list);
+        VideoSink videoSink2 = this.videoSink;
+        if (videoSink2 != null) {
+            videoSink2.setVideoEffects(list);
         }
     }
 
@@ -968,17 +1033,35 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
-    protected void onWakeupListenerSet(Renderer.WakeupListener wakeupListener) {
-        VideoSink videoSink = this.videoSink;
-        if (videoSink != null) {
-            videoSink.setWakeupListener(wakeupListener);
+    protected final boolean shouldReleaseCodecInsteadOfFlushing() {
+        MediaCodecInfo codecInfo = getCodecInfo();
+        if (this.videoSink == null || codecInfo == null || !(codecInfo.name.equals("c2.mtk.avc.decoder") || codecInfo.name.equals("c2.mtk.hevc.decoder"))) {
+            return super.shouldReleaseCodecInsteadOfFlushing();
         }
+        return true;
+    }
+
+    @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
+    protected final boolean shouldFlushCodec() {
+        Format codecInputFormat = getCodecInputFormat();
+        ScrubbingModeParameters scrubbingModeParameters = this.scrubbingModeParameters;
+        if (scrubbingModeParameters == null) {
+            return super.shouldFlushCodec();
+        }
+        if (!scrubbingModeParameters.allowSkippingMediaCodecFlush || this.isFlushRequired || this.tunneling) {
+            return true;
+        }
+        return (codecInputFormat != null && codecInputFormat.maxNumReorderSamples > 0) || hasSkippedFlushAndWaitingForEarlierFrame() || getLastBufferInStreamPresentationTimeUs() != C.TIME_UNSET;
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     protected DecoderReuseEvaluation onInputFormatChanged(FormatHolder formatHolder) throws ExoPlaybackException {
         DecoderReuseEvaluation onInputFormatChanged = super.onInputFormatChanged(formatHolder);
         this.eventDispatcher.inputFormatChanged((Format) Assertions.checkNotNull(formatHolder.format), onInputFormatChanged);
+        VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster = this.videoFrameReleaseEarlyTimeForecaster;
+        if (videoFrameReleaseEarlyTimeForecaster != null) {
+            videoFrameReleaseEarlyTimeForecaster.reset();
+        }
         return onInputFormatChanged;
     }
 
@@ -988,57 +1071,82 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
             this.av1SampleDependencyParser.queueInputBuffer(decoderInputBuffer.data);
         }
         this.consecutiveDroppedInputBufferCount = 0;
-        if (!this.tunneling) {
+        int codecBufferFlags = getCodecBufferFlags(decoderInputBuffer);
+        if ((Build.VERSION.SDK_INT < 34 || (codecBufferFlags & 32) == 0) && !this.tunneling) {
             this.buffersInCodecCount++;
         }
-        if (Util.SDK_INT >= 23 || !this.tunneling) {
-            return;
-        }
-        onProcessedTunneledBuffer(decoderInputBuffer.timeUs);
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     protected int getCodecBufferFlags(DecoderInputBuffer decoderInputBuffer) {
-        return (Util.SDK_INT >= 34 && this.tunneling && isBufferBeforeStartTime(decoderInputBuffer)) ? 32 : 0;
+        ScrubbingModeParameters scrubbingModeParameters;
+        if (Build.VERSION.SDK_INT >= 34) {
+            return ((this.enableMediaCodecBufferDecodeOnlyFlag || (((scrubbingModeParameters = this.scrubbingModeParameters) != null && scrubbingModeParameters.useDecodeOnlyFlag) || this.tunneling)) && isBufferBeforeStartTime(decoderInputBuffer) && !isBufferProbablyLastSample(decoderInputBuffer)) ? 32 : 0;
+        }
+        return 0;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:21:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0040  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00a7  */
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     protected boolean shouldDiscardDecoderInputBuffer(DecoderInputBuffer decoderInputBuffer) {
-        if (isBufferProbablyLastSample(decoderInputBuffer) || decoderInputBuffer.isEncrypted()) {
+        boolean z;
+        boolean z2 = false;
+        if (isBufferProbablyLastSample(decoderInputBuffer)) {
             return false;
         }
         boolean isBufferBeforeStartTime = isBufferBeforeStartTime(decoderInputBuffer);
-        if ((isBufferBeforeStartTime || this.shouldDropDecoderInputBuffers) && !decoderInputBuffer.hasSupplementalData()) {
-            if (decoderInputBuffer.notDependedOn()) {
-                decoderInputBuffer.clear();
-                if (isBufferBeforeStartTime) {
-                    this.decoderCounters.skippedInputBufferCount++;
-                } else if (this.shouldDropDecoderInputBuffers) {
-                    this.droppedDecoderInputBufferTimestamps.add(Long.valueOf(decoderInputBuffer.timeUs));
-                    this.consecutiveDroppedInputBufferCount++;
-                }
-                return true;
-            }
-            if (this.av1SampleDependencyParser != null && ((MediaCodecInfo) Assertions.checkNotNull(getCodecInfo())).mimeType.equals(MimeTypes.VIDEO_AV1) && decoderInputBuffer.data != null) {
-                boolean z = isBufferBeforeStartTime || this.consecutiveDroppedInputBufferCount <= 0;
-                ByteBuffer asReadOnlyBuffer = decoderInputBuffer.data.asReadOnlyBuffer();
-                asReadOnlyBuffer.flip();
-                int sampleLimitAfterSkippingNonReferenceFrame = this.av1SampleDependencyParser.sampleLimitAfterSkippingNonReferenceFrame(asReadOnlyBuffer, z);
-                boolean z2 = ((CodecMaxValues) Assertions.checkNotNull(this.codecMaxValues)).inputSize + sampleLimitAfterSkippingNonReferenceFrame < asReadOnlyBuffer.capacity();
-                if (sampleLimitAfterSkippingNonReferenceFrame != asReadOnlyBuffer.limit() && z2) {
-                    ((ByteBuffer) Assertions.checkNotNull(decoderInputBuffer.data)).position(sampleLimitAfterSkippingNonReferenceFrame);
-                    if (isBufferBeforeStartTime) {
-                        this.decoderCounters.skippedInputBufferCount++;
-                    } else if (this.shouldDropDecoderInputBuffers) {
-                        this.droppedDecoderInputBufferTimestamps.add(Long.valueOf(decoderInputBuffer.timeUs));
-                        this.consecutiveDroppedInputBufferCount++;
+        VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster = this.videoFrameReleaseEarlyTimeForecaster;
+        if (videoFrameReleaseEarlyTimeForecaster != null) {
+            long predictEarlyUs = videoFrameReleaseEarlyTimeForecaster.predictEarlyUs(decoderInputBuffer.timeUs);
+            if (predictEarlyUs != C.TIME_UNSET && predictEarlyUs < this.minEarlyUsToDropDecoderInput) {
+                z = true;
+                if ((!isBufferBeforeStartTime || z) && !decoderInputBuffer.hasSupplementalData()) {
+                    if (!decoderInputBuffer.notDependedOn()) {
+                        decoderInputBuffer.clear();
+                    } else {
+                        if (this.av1SampleDependencyParser != null && ((MediaCodecInfo) Assertions.checkNotNull(getCodecInfo())).mimeType.equals(MimeTypes.VIDEO_AV1) && decoderInputBuffer.data != null) {
+                            boolean z3 = isBufferBeforeStartTime || this.consecutiveDroppedInputBufferCount <= 0;
+                            ByteBuffer asReadOnlyBuffer = decoderInputBuffer.data.asReadOnlyBuffer();
+                            asReadOnlyBuffer.flip();
+                            int sampleLimitAfterSkippingNonReferenceFrame = this.av1SampleDependencyParser.sampleLimitAfterSkippingNonReferenceFrame(asReadOnlyBuffer, z3);
+                            if (sampleLimitAfterSkippingNonReferenceFrame == 0) {
+                                decoderInputBuffer.clear();
+                            } else if (sampleLimitAfterSkippingNonReferenceFrame != asReadOnlyBuffer.limit() && ((CodecMaxValues) Assertions.checkNotNull(this.codecMaxValues)).inputSize + sampleLimitAfterSkippingNonReferenceFrame < asReadOnlyBuffer.capacity() && !decoderInputBuffer.isEncrypted()) {
+                                ((ByteBuffer) Assertions.checkNotNull(decoderInputBuffer.data)).position(sampleLimitAfterSkippingNonReferenceFrame);
+                            }
+                        }
+                        if (z2) {
+                            if (isBufferBeforeStartTime) {
+                                this.decoderCounters.skippedInputBufferCount++;
+                                return z2;
+                            }
+                            this.droppedDecoderInputBufferTimestamps.add(Long.valueOf(decoderInputBuffer.timeUs));
+                            this.consecutiveDroppedInputBufferCount++;
+                        }
+                        return z2;
                     }
-                    return true;
+                    z2 = true;
+                    if (z2) {
+                    }
+                    return z2;
                 }
+                return false;
             }
-            return false;
         }
-        return false;
+        z = false;
+        if (isBufferBeforeStartTime) {
+        }
+        if (!decoderInputBuffer.notDependedOn()) {
+        }
+        z2 = true;
+        if (z2) {
+        }
+        return z2;
     }
 
     private boolean isBufferProbablyLastSample(DecoderInputBuffer decoderInputBuffer) {
@@ -1092,19 +1200,20 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         this.decodedVideoSize = new VideoSize(i2, i, f);
         VideoSink videoSink = this.videoSink;
         if (videoSink != null && this.pendingVideoSinkInputStreamChange) {
-            changeVideoSinkInputStream(videoSink, 1, format.buildUpon().setWidth(i2).setHeight(i).setPixelWidthHeightRatio(f).build());
+            changeVideoSinkInputStream(videoSink, 1, format.buildUpon().setWidth(i2).setHeight(i).setPixelWidthHeightRatio(f).build(), this.nextVideoSinkFirstFrameReleaseInstruction);
+            this.nextVideoSinkFirstFrameReleaseInstruction = 2;
         } else {
             this.videoFrameReleaseControl.setFrameRate(format.frameRate);
         }
         this.pendingVideoSinkInputStreamChange = false;
     }
 
-    protected void changeVideoSinkInputStream(VideoSink videoSink, int i, Format format) {
+    protected void changeVideoSinkInputStream(VideoSink videoSink, int i, Format format, int i2) {
         List<Effect> list = this.videoEffects;
         if (list == null) {
             list = ImmutableList.of();
         }
-        videoSink.onInputStreamChanged(i, format, list);
+        videoSink.onInputStreamChanged(i, format, getOutputStreamStartPositionUs(), i2, list);
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
@@ -1135,12 +1244,13 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         Assertions.checkNotNull(mediaCodecAdapter);
         final long outputStreamOffsetUs = j3 - getOutputStreamOffsetUs();
         updateDroppedBufferCountersWithInputBuffers(j3);
-        if (this.videoSink != null) {
+        VideoSink videoSink = this.videoSink;
+        if (videoSink != null) {
             if (z && !z2) {
                 skipOutputBuffer(mediaCodecAdapter, i, outputStreamOffsetUs);
                 return true;
             }
-            return this.videoSink.handleInputFrame(getBufferTimestampAdjustmentUs() + j3, z2, new VideoSink.VideoFrameHandler() { // from class: androidx.media3.exoplayer.video.MediaCodecVideoRenderer.2
+            return videoSink.handleInputFrame(j3, new VideoSink.VideoFrameHandler() { // from class: androidx.media3.exoplayer.video.MediaCodecVideoRenderer.2
                 @Override // androidx.media3.exoplayer.video.VideoSink.VideoFrameHandler
                 public void render(long j4) {
                     MediaCodecVideoRenderer.this.renderOutputBuffer(mediaCodecAdapter, i, outputStreamOffsetUs, j4);
@@ -1153,6 +1263,10 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
             });
         }
         int frameReleaseAction = this.videoFrameReleaseControl.getFrameReleaseAction(j3, j, j2, getOutputStreamStartPositionUs(), z, z2, this.videoFrameReleaseInfo);
+        VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster = this.videoFrameReleaseEarlyTimeForecaster;
+        if (videoFrameReleaseEarlyTimeForecaster != null && frameReleaseAction != 5 && frameReleaseAction != 4) {
+            videoFrameReleaseEarlyTimeForecaster.onVideoFrameProcessed(j3, this.videoFrameReleaseInfo.getEarlyUs());
+        }
         if (frameReleaseAction == 0) {
             long nanoTime = getClock().nanoTime();
             notifyFrameMetadataListener(outputStreamOffsetUs, nanoTime, format);
@@ -1183,6 +1297,10 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         if (videoSink != null) {
             videoSink.signalEndOfCurrentInputStream();
         }
+    }
+
+    protected void experimentalDisableAdvancingTimestampChecksInVideoFrameReleaseControl() {
+        this.videoFrameReleaseControl.experimentalDisableAdvancingTimestampChecks();
     }
 
     protected long getBufferTimestampAdjustmentUs() {
@@ -1241,9 +1359,12 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         VideoSink videoSink = this.videoSink;
         if (videoSink != null) {
             videoSink.signalEndOfCurrentInputStream();
-            this.videoSink.setStreamTimestampInfo(getOutputStreamStartPositionUs(), getBufferTimestampAdjustmentUs());
+            if (this.startPositionUs == C.TIME_UNSET) {
+                this.startPositionUs = getOutputStreamStartPositionUs();
+            }
+            this.videoSink.setBufferTimestampAdjustmentUs(getBufferTimestampAdjustmentUs());
         } else {
-            this.videoFrameReleaseControl.onProcessedStreamChange();
+            this.videoFrameReleaseControl.onStreamChanged(2);
         }
         this.pendingVideoSinkInputStreamChange = true;
         maybeSetupTunnelingForFirstFrame();
@@ -1379,11 +1500,11 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     protected boolean shouldUseDetachedSurface(MediaCodecInfo mediaCodecInfo) {
-        return Util.SDK_INT >= 35 && mediaCodecInfo.detachedSurfaceSupported;
+        return Build.VERSION.SDK_INT >= 35 && mediaCodecInfo.detachedSurfaceSupported;
     }
 
     protected boolean shouldUsePlaceholderSurface(MediaCodecInfo mediaCodecInfo) {
-        if (Util.SDK_INT < 23 || this.tunneling || codecNeedsSetOutputSurfaceWorkaround(mediaCodecInfo.name)) {
+        if (this.tunneling || codecNeedsSetOutputSurfaceWorkaround(mediaCodecInfo.name)) {
             return false;
         }
         return !mediaCodecInfo.secure || PlaceholderSurface.isSecureSupported(this.context);
@@ -1399,11 +1520,11 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
     private void maybeSetupTunnelingForFirstFrame() {
         MediaCodecAdapter codec;
-        if (!this.tunneling || Util.SDK_INT < 23 || (codec = getCodec()) == null) {
+        if (!this.tunneling || (codec = getCodec()) == null) {
             return;
         }
         this.tunnelingOnFrameRenderedListener = new OnFrameRenderedListenerV23(codec);
-        if (Util.SDK_INT >= 33) {
+        if (Build.VERSION.SDK_INT >= 33) {
             Bundle bundle = new Bundle();
             bundle.putInt("tunnel-peek", 1);
             codec.setParameters(bundle);
@@ -1412,7 +1533,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
     private void updateCodecImportance() {
         MediaCodecAdapter codec = getCodec();
-        if (codec != null && Util.SDK_INT >= 35) {
+        if (codec != null && Build.VERSION.SDK_INT >= 35) {
             Bundle bundle = new Bundle();
             bundle.putInt("importance", Math.max(0, -this.rendererPriority));
             codec.setParameters(bundle);
@@ -1481,9 +1602,9 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     private void setOutputSurface(MediaCodecAdapter mediaCodecAdapter, Surface surface) {
-        if (Util.SDK_INT >= 23 && surface != null) {
+        if (surface != null) {
             setOutputSurfaceV23(mediaCodecAdapter, surface);
-        } else if (Util.SDK_INT >= 35) {
+        } else if (Build.VERSION.SDK_INT >= 35) {
             detachOutputSurfaceV35(mediaCodecAdapter);
         } else {
             throw new IllegalStateException();
@@ -1514,11 +1635,9 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         mediaFormat.setInteger("max-width", codecMaxValues.width);
         mediaFormat.setInteger("max-height", codecMaxValues.height);
         MediaFormatUtil.maybeSetInteger(mediaFormat, "max-input-size", codecMaxValues.inputSize);
-        if (Util.SDK_INT >= 23) {
-            mediaFormat.setInteger("priority", 0);
-            if (f != -1.0f) {
-                mediaFormat.setFloat("operating-rate", f);
-            }
+        mediaFormat.setInteger("priority", 0);
+        if (f != -1.0f) {
+            mediaFormat.setFloat("operating-rate", f);
         }
         if (z) {
             mediaFormat.setInteger("no-post-process", 1);
@@ -1528,7 +1647,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
             mediaFormat.setFeatureEnabled("tunneled-playback", true);
             mediaFormat.setInteger("audio-session-id", i);
         }
-        if (Util.SDK_INT >= 35) {
+        if (Build.VERSION.SDK_INT >= 35) {
             mediaFormat.setInteger("importance", Math.max(0, -this.rendererPriority));
         }
         return mediaFormat;
@@ -1663,7 +1782,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         boolean z;
         boolean z2;
         char c = 7;
-        if (Util.SDK_INT <= 28) {
+        if (Build.VERSION.SDK_INT <= 28) {
             String str = Build.DEVICE;
             str.hashCode();
             switch (str.hashCode()) {
@@ -1739,7 +1858,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                     return true;
             }
         }
-        if (Util.SDK_INT > 27 || !"HWEML".equals(Build.DEVICE)) {
+        if (Build.VERSION.SDK_INT > 27 || !"HWEML".equals(Build.DEVICE)) {
             String str2 = Build.MODEL;
             str2.hashCode();
             switch (str2.hashCode()) {
@@ -1822,7 +1941,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                 case true:
                     return true;
                 default:
-                    if (Util.SDK_INT <= 26) {
+                    if (Build.VERSION.SDK_INT <= 26) {
                         String str3 = Build.DEVICE;
                         str3.hashCode();
                         switch (str3.hashCode()) {
@@ -2976,7 +3095,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
         @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter.OnFrameRenderedListener
         public void onFrameRendered(MediaCodecAdapter mediaCodecAdapter, long j, long j2) {
-            if (Util.SDK_INT < 30) {
+            if (Build.VERSION.SDK_INT < 30) {
                 this.handler.sendMessageAtFrontOfQueue(Message.obtain(this.handler, 0, (int) (j >> 32), (int) j));
                 return;
             }

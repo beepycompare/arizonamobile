@@ -1,26 +1,25 @@
 package com.google.android.gms.measurement.internal;
 
-import androidx.media3.exoplayer.ExoPlayer;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzkf extends zzay {
-    final /* synthetic */ zzli zza;
+public final class zzkf implements Runnable {
+    final /* synthetic */ AtomicReference zza;
+    final /* synthetic */ boolean zzb;
+    final /* synthetic */ zzlj zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzkf(zzli zzliVar, zzjf zzjfVar) {
-        super(zzjfVar);
-        Objects.requireNonNull(zzliVar);
-        this.zza = zzliVar;
+    public zzkf(zzlj zzljVar, AtomicReference atomicReference, boolean z) {
+        this.zza = atomicReference;
+        this.zzb = z;
+        Objects.requireNonNull(zzljVar);
+        this.zzc = zzljVar;
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzay
-    public final void zza() {
-        zzli zzliVar = this.zza;
-        if (zzliVar.zzu.zzI()) {
-            zzliVar.zzao().zzb(ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
-        }
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.zzc.zzu.zzt().zzv(this.zza, this.zzb);
     }
 }

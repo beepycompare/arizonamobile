@@ -3,9 +3,9 @@ package com.google.android.gms.internal.measurement;
 import androidx.media3.common.C;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzid extends zzme implements zznm {
+public final class zzid extends zzmf implements zznn {
     private static final zzid zzat;
     private int zzA;
     private boolean zzD;
@@ -45,8 +45,8 @@ public final class zzid extends zzme implements zznm {
     private long zzv;
     private boolean zzx;
     private long zzz;
-    private zzmn zzf = zzcv();
-    private zzmn zzg = zzcv();
+    private zzmo zzf = zzcv();
+    private zzmo zzg = zzcv();
     private String zzm = "";
     private String zzn = "";
     private String zzo = "";
@@ -58,18 +58,18 @@ public final class zzid extends zzme implements zznm {
     private String zzy = "";
     private String zzB = "";
     private String zzC = "";
-    private zzmn zzE = zzcv();
+    private zzmo zzE = zzcv();
     private String zzF = "";
     private String zzJ = "";
     private String zzM = "";
     private String zzN = "";
     private String zzP = "";
-    private zzml zzR = zzcs();
+    private zzmm zzR = zzcs();
     private String zzU = "";
     private String zzV = "";
     private String zzY = "";
     private String zzab = "";
-    private zzmn zzac = zzme.zzcv();
+    private zzmo zzac = zzmf.zzcv();
     private String zzad = "";
     private String zzag = "";
     private String zzai = "";
@@ -80,7 +80,7 @@ public final class zzid extends zzme implements zznm {
     static {
         zzid zzidVar = new zzid();
         zzat = zzidVar;
-        zzme.zzcp(zzid.class, zzidVar);
+        zzmf.zzcp(zzid.class, zzidVar);
     }
 
     private zzid() {
@@ -91,25 +91,25 @@ public final class zzid extends zzme implements zznm {
     }
 
     public static zzic zzaF(zzid zzidVar) {
-        zzma zzck = zzat.zzck();
+        zzmb zzck = zzat.zzck();
         zzck.zzbd(zzidVar);
         return (zzic) zzck;
     }
 
     private final void zzcy() {
-        zzmn zzmnVar = this.zzf;
-        if (zzmnVar.zza()) {
+        zzmo zzmoVar = this.zzf;
+        if (zzmoVar.zza()) {
             return;
         }
-        this.zzf = zzme.zzcw(zzmnVar);
+        this.zzf = zzmf.zzcw(zzmoVar);
     }
 
     private final void zzcz() {
-        zzmn zzmnVar = this.zzg;
-        if (zzmnVar.zza()) {
+        zzmo zzmoVar = this.zzg;
+        if (zzmoVar.zza()) {
             return;
         }
-        this.zzg = zzme.zzcw(zzmnVar);
+        this.zzg = zzmf.zzcw(zzmoVar);
     }
 
     public final String zzA() {
@@ -260,7 +260,7 @@ public final class zzid extends zzme implements zznm {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaJ(Iterable iterable) {
         zzcy();
-        zzkr.zzce(iterable, this.zzf);
+        zzks.zzce(iterable, this.zzf);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -291,7 +291,7 @@ public final class zzid extends zzme implements zznm {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaO(Iterable iterable) {
         zzcz();
-        zzkr.zzce(iterable, this.zzg);
+        zzks.zzce(iterable, this.zzg);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -506,12 +506,12 @@ public final class zzid extends zzme implements zznm {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbF(Iterable iterable) {
-        zzml zzmlVar = this.zzR;
-        if (!zzmlVar.zza()) {
-            int size = zzmlVar.size();
-            this.zzR = zzmlVar.zzg(size + size);
+        zzmm zzmmVar = this.zzR;
+        if (!zzmmVar.zza()) {
+            int size = zzmmVar.size();
+            this.zzR = zzmmVar.zzg(size + size);
         }
-        zzkr.zzce(iterable, this.zzR);
+        zzks.zzce(iterable, this.zzR);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -547,11 +547,11 @@ public final class zzid extends zzme implements zznm {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbL(Iterable iterable) {
-        zzmn zzmnVar = this.zzac;
-        if (!zzmnVar.zza()) {
-            this.zzac = zzme.zzcw(zzmnVar);
+        zzmo zzmoVar = this.zzac;
+        if (!zzmoVar.zza()) {
+            this.zzac = zzmf.zzcw(zzmoVar);
         }
-        zzkr.zzce(iterable, this.zzac);
+        zzks.zzce(iterable, this.zzac);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -699,7 +699,7 @@ public final class zzid extends zzme implements zznm {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbi(long j) {
         this.zzb |= 32768;
-        this.zzv = 130000L;
+        this.zzv = 133005L;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -779,11 +779,11 @@ public final class zzid extends zzme implements zznm {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbv(Iterable iterable) {
-        zzmn zzmnVar = this.zzE;
-        if (!zzmnVar.zza()) {
-            this.zzE = zzme.zzcw(zzmnVar);
+        zzmo zzmoVar = this.zzE;
+        if (!zzmoVar.zza()) {
+            this.zzE = zzmf.zzcw(zzmoVar);
         }
-        zzkr.zzce(iterable, this.zzE);
+        zzks.zzce(iterable, this.zzE);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -847,7 +847,7 @@ public final class zzid extends zzme implements zznm {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {

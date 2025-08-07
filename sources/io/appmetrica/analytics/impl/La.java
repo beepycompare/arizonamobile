@@ -23,20 +23,20 @@ public class La extends O2 {
     public final Jn a(List<Object> list) {
         int i;
         int i2 = 0;
-        if (list == null || (list.size() <= this.f571a && this.b == null)) {
+        if (list == null || (list.size() <= this.f570a && this.b == null)) {
             i = 0;
         } else {
             ArrayList arrayList = new ArrayList();
             i = 0;
             int i3 = 0;
             for (Object obj : list) {
-                if (i3 < this.f571a) {
+                if (i3 < this.f570a) {
                     Oa oa = this.b;
                     if (oa != null) {
                         Jn a2 = oa.a(obj);
-                        Object obj2 = a2.f512a;
+                        Object obj2 = a2.f511a;
                         i += a2.b.getBytesTruncated();
-                        io.a(obj, a2.f512a);
+                        io.a(obj, a2.f511a);
                         obj = obj2;
                     }
                     arrayList.add(obj);

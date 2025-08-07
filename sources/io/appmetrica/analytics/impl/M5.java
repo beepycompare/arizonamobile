@@ -2,13 +2,13 @@ package io.appmetrica.analytics.impl;
 
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public final class M5 implements InterfaceC0433md {
+public final class M5 implements InterfaceC0434md {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f544a;
+    public final String f543a;
 
     public M5(String str) {
-        this.f544a = str;
+        this.f543a = str;
     }
 
     public final M5 a(String str) {
@@ -16,34 +16,34 @@ public final class M5 implements InterfaceC0433md {
     }
 
     public final String b() {
-        return this.f544a;
+        return this.f543a;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof M5) && Intrinsics.areEqual(this.f544a, ((M5) obj).f544a);
+        return (obj instanceof M5) && Intrinsics.areEqual(this.f543a, ((M5) obj).f543a);
     }
 
     public final int hashCode() {
-        return this.f544a.hashCode();
+        return this.f543a.hashCode();
     }
 
     public final String toString() {
-        return "ConstantModuleEntryPointProvider(className=" + this.f544a + ')';
+        return "ConstantModuleEntryPointProvider(className=" + this.f543a + ')';
     }
 
     public static M5 a(M5 m5, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = m5.f544a;
+            str = m5.f543a;
         }
         m5.getClass();
         return new M5(str);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0433md
+    @Override // io.appmetrica.analytics.impl.InterfaceC0434md
     public final String a() {
-        return this.f544a;
+        return this.f543a;
     }
 }

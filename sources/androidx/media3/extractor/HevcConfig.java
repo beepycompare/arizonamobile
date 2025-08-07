@@ -14,6 +14,8 @@ public final class HevcConfig {
     public final int colorRange;
     public final int colorSpace;
     public final int colorTransfer;
+    public final int decodedHeight;
+    public final int decodedWidth;
     public final int height;
     public final List<byte[]> initializationData;
     public final int maxNumReorderPics;
@@ -74,89 +76,97 @@ public final class HevcConfig {
             int i12 = -1;
             int i13 = -1;
             int i14 = -1;
+            int i15 = -1;
+            int i16 = -1;
             float f = 1.0f;
             String str = null;
-            int i15 = 0;
-            int i16 = 0;
-            while (i15 < readUnsignedByte2) {
+            int i17 = 0;
+            int i18 = 0;
+            while (i17 < readUnsignedByte2) {
                 int readUnsignedByte3 = parsableByteArray.readUnsignedByte() & 63;
                 int readUnsignedShort3 = parsableByteArray.readUnsignedShort();
                 NalUnitUtil.H265VpsData h265VpsData3 = h265VpsData2;
-                int i17 = 0;
-                while (i17 < readUnsignedShort3) {
+                int i19 = 0;
+                while (i19 < readUnsignedShort3) {
                     int readUnsignedShort4 = parsableByteArray.readUnsignedShort();
                     boolean z3 = z2;
-                    int i18 = readUnsignedByte;
-                    System.arraycopy(NalUnitUtil.NAL_START_CODE, 0, bArr, i16, NalUnitUtil.NAL_START_CODE.length);
-                    int length = i16 + NalUnitUtil.NAL_START_CODE.length;
+                    int i20 = readUnsignedByte;
+                    System.arraycopy(NalUnitUtil.NAL_START_CODE, 0, bArr, i18, NalUnitUtil.NAL_START_CODE.length);
+                    int length = i18 + NalUnitUtil.NAL_START_CODE.length;
                     System.arraycopy(parsableByteArray.getData(), parsableByteArray.getPosition(), bArr, length, readUnsignedShort4);
-                    if (readUnsignedByte3 == 32 && i17 == 0) {
+                    if (readUnsignedByte3 == 32 && i19 == 0) {
                         h265VpsData3 = NalUnitUtil.parseH265VpsNalUnit(bArr, length, length + readUnsignedShort4);
                         i = readUnsignedByte2;
-                    } else if (readUnsignedByte3 == 33 && i17 == 0) {
+                    } else if (readUnsignedByte3 == 33 && i19 == 0) {
                         NalUnitUtil.H265SpsData parseH265SpsNalUnit = NalUnitUtil.parseH265SpsNalUnit(bArr, length, length + readUnsignedShort4, h265VpsData3);
                         i5 = parseH265SpsNalUnit.maxSubLayersMinus1 + 1;
                         i6 = parseH265SpsNalUnit.width;
-                        int i19 = parseH265SpsNalUnit.height;
-                        i8 = parseH265SpsNalUnit.bitDepthLumaMinus8 + 8;
-                        i9 = parseH265SpsNalUnit.bitDepthChromaMinus8 + 8;
-                        int i20 = parseH265SpsNalUnit.colorSpace;
+                        int i21 = parseH265SpsNalUnit.height;
+                        int i22 = parseH265SpsNalUnit.decodedWidth;
                         i = readUnsignedByte2;
-                        int i21 = parseH265SpsNalUnit.colorRange;
-                        int i22 = parseH265SpsNalUnit.colorTransfer;
+                        int i23 = parseH265SpsNalUnit.decodedHeight;
+                        i10 = parseH265SpsNalUnit.bitDepthLumaMinus8 + 8;
+                        i11 = parseH265SpsNalUnit.bitDepthChromaMinus8 + 8;
+                        int i24 = parseH265SpsNalUnit.colorSpace;
+                        int i25 = parseH265SpsNalUnit.colorRange;
+                        int i26 = parseH265SpsNalUnit.colorTransfer;
                         float f2 = parseH265SpsNalUnit.pixelWidthHeightRatio;
-                        int i23 = parseH265SpsNalUnit.maxNumReorderPics;
+                        int i27 = parseH265SpsNalUnit.maxNumReorderPics;
                         if (parseH265SpsNalUnit.profileTierLevel != null) {
                             str = CodecSpecificDataUtil.buildHevcCodecString(parseH265SpsNalUnit.profileTierLevel.generalProfileSpace, parseH265SpsNalUnit.profileTierLevel.generalTierFlag, parseH265SpsNalUnit.profileTierLevel.generalProfileIdc, parseH265SpsNalUnit.profileTierLevel.generalProfileCompatibilityFlags, parseH265SpsNalUnit.profileTierLevel.constraintBytes, parseH265SpsNalUnit.profileTierLevel.generalLevelIdc);
                         }
                         f = f2;
-                        i14 = i23;
-                        i11 = i21;
-                        i12 = i22;
-                        i7 = i19;
-                        i10 = i20;
+                        i16 = i27;
+                        i13 = i25;
+                        i14 = i26;
+                        i9 = i23;
+                        i12 = i24;
+                        i7 = i21;
+                        i8 = i22;
                     } else {
                         i = readUnsignedByte2;
-                        if (readUnsignedByte3 == 39 && i17 == 0 && (parseH265Sei3dRefDisplayInfo = NalUnitUtil.parseH265Sei3dRefDisplayInfo(bArr, length, length + readUnsignedShort4)) != null && h265VpsData3 != null) {
-                            i13 = parseH265Sei3dRefDisplayInfo.leftViewId == h265VpsData3.layerInfos.get(0).viewId ? 4 : 5;
-                            i16 = length + readUnsignedShort4;
+                        if (readUnsignedByte3 == 39 && i19 == 0 && (parseH265Sei3dRefDisplayInfo = NalUnitUtil.parseH265Sei3dRefDisplayInfo(bArr, length, length + readUnsignedShort4)) != null && h265VpsData3 != null) {
+                            i15 = parseH265Sei3dRefDisplayInfo.leftViewId == h265VpsData3.layerInfos.get(0).viewId ? 4 : 5;
+                            i18 = length + readUnsignedShort4;
                             parsableByteArray.skipBytes(readUnsignedShort4);
-                            i17++;
+                            i19++;
                             z2 = z3;
-                            readUnsignedByte = i18;
+                            readUnsignedByte = i20;
                             readUnsignedByte2 = i;
                         }
                     }
-                    i16 = length + readUnsignedShort4;
+                    i18 = length + readUnsignedShort4;
                     parsableByteArray.skipBytes(readUnsignedShort4);
-                    i17++;
+                    i19++;
                     z2 = z3;
-                    readUnsignedByte = i18;
+                    readUnsignedByte = i20;
                     readUnsignedByte2 = i;
                 }
-                i15++;
+                i17++;
                 h265VpsData2 = h265VpsData3;
             }
-            return new HevcConfig(i3 == 0 ? Collections.emptyList() : Collections.singletonList(bArr), readUnsignedByte + 1, i5, i6, i7, i8, i9, i10, i11, i12, i13, f, i14, str, h265VpsData2);
+            return new HevcConfig(i3 == 0 ? Collections.emptyList() : Collections.singletonList(bArr), readUnsignedByte + 1, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, f, i16, str, h265VpsData2);
         } catch (ArrayIndexOutOfBoundsException e) {
             throw ParserException.createForMalformedContainer("Error parsing".concat(z ? "L-HEVC config" : "HEVC config"), e);
         }
     }
 
-    private HevcConfig(List<byte[]> list, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, float f, int i11, String str, NalUnitUtil.H265VpsData h265VpsData) {
+    private HevcConfig(List<byte[]> list, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, int i11, int i12, float f, int i13, String str, NalUnitUtil.H265VpsData h265VpsData) {
         this.initializationData = list;
         this.nalUnitLengthFieldLength = i;
         this.maxSubLayers = i2;
         this.width = i3;
         this.height = i4;
-        this.bitdepthLuma = i5;
-        this.bitdepthChroma = i6;
-        this.colorSpace = i7;
-        this.colorRange = i8;
-        this.colorTransfer = i9;
-        this.stereoMode = i10;
+        this.decodedWidth = i5;
+        this.decodedHeight = i6;
+        this.bitdepthLuma = i7;
+        this.bitdepthChroma = i8;
+        this.colorSpace = i9;
+        this.colorRange = i10;
+        this.colorTransfer = i11;
+        this.stereoMode = i12;
         this.pixelWidthHeightRatio = f;
-        this.maxNumReorderPics = i11;
+        this.maxNumReorderPics = i13;
         this.codecs = str;
         this.vpsData = h265VpsData;
     }

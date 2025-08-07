@@ -4,10 +4,10 @@ import android.location.Location;
 import android.text.TextUtils;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.AbstractC0172c4;
+import io.appmetrica.analytics.impl.AbstractC0173c4;
 import io.appmetrica.analytics.impl.Bb;
 import io.appmetrica.analytics.impl.Bn;
-import io.appmetrica.analytics.impl.C0245f0;
+import io.appmetrica.analytics.impl.C0246f0;
 import io.appmetrica.analytics.impl.I5;
 import io.appmetrica.analytics.impl.Y7;
 import io.appmetrica.analytics.impl.io;
@@ -53,13 +53,13 @@ public class AppMetricaConfig {
 
     /* loaded from: classes4.dex */
     public static class Builder {
-        private static final Bn D = new Bn(new C0245f0());
+        private static final Bn D = new Bn(new C0246f0());
         private Integer A;
         private List B;
         private final HashMap C;
 
         /* renamed from: a  reason: collision with root package name */
-        private final I5 f194a;
+        private final I5 f193a;
         private final String b;
         private String c;
         private Integer d;
@@ -198,7 +198,7 @@ public class AppMetricaConfig {
         }
 
         public Builder withMaxReportsInDatabaseCount(int i) {
-            this.n = Integer.valueOf(this.f194a.a(i));
+            this.n = Integer.valueOf(this.f193a.a(i));
             return this;
         }
 
@@ -237,7 +237,7 @@ public class AppMetricaConfig {
             this.x = new LinkedHashMap();
             this.C = new HashMap();
             D.a(str);
-            this.f194a = new I5(str);
+            this.f193a = new I5(str);
             this.b = str;
         }
     }
@@ -262,8 +262,8 @@ public class AppMetricaConfig {
             if (jSONObject.has("session_timeout")) {
                 newConfigBuilder.withSessionTimeout(jSONObject.getInt("session_timeout"));
             }
-            newConfigBuilder.withLocation(AbstractC0172c4.a(jSONObject.optString(FirebaseAnalytics.Param.LOCATION)));
-            newConfigBuilder.withPreloadInfo(AbstractC0172c4.b(jSONObject.optString("preload_info")));
+            newConfigBuilder.withLocation(AbstractC0173c4.a(jSONObject.optString(FirebaseAnalytics.Param.LOCATION)));
+            newConfigBuilder.withPreloadInfo(AbstractC0173c4.b(jSONObject.optString("preload_info")));
             if (jSONObject.has("logs") && jSONObject.optBoolean("logs")) {
                 newConfigBuilder.withLogs();
             }
@@ -361,7 +361,7 @@ public class AppMetricaConfig {
             jSONObject.put("apikey", this.apiKey);
             jSONObject.put("app_version", this.appVersion);
             jSONObject.put("session_timeout", this.sessionTimeout);
-            jSONObject.put(FirebaseAnalytics.Param.LOCATION, AbstractC0172c4.a(this.location));
+            jSONObject.put(FirebaseAnalytics.Param.LOCATION, AbstractC0173c4.a(this.location));
             PreloadInfo preloadInfo = this.preloadInfo;
             JSONArray jSONArray = null;
             if (preloadInfo != null) {

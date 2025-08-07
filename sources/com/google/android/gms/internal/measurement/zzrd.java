@@ -1,27 +1,22 @@
 package com.google.android.gms.internal.measurement;
-
-import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
-import org.checkerframework.dataflow.qual.SideEffectFree;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzrd implements Supplier {
-    private static final zzrd zza = new zzrd();
-    private final Supplier zzb = Suppliers.ofInstance(new zzrf());
+public final class zzrd implements zzrc {
+    public static final zzkm zza;
 
-    @SideEffectFree
-    public static boolean zza() {
-        return zza.get().zza();
+    static {
+        zzkg zzb = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
+        zza = zzb.zzd("measurement.session_stitching_token_enabled", false);
+        zzb.zzd("measurement.link_sst_to_sid", true);
     }
 
-    @SideEffectFree
-    public static boolean zzb() {
-        return zza.get().zzb();
+    @Override // com.google.android.gms.internal.measurement.zzrc
+    public final boolean zza() {
+        return true;
     }
 
-    @Override // com.google.common.base.Supplier
-    /* renamed from: zzc */
-    public final zzre get() {
-        return (zzre) this.zzb.get();
+    @Override // com.google.android.gms.internal.measurement.zzrc
+    public final boolean zzb() {
+        return ((Boolean) zza.zzd()).booleanValue();
     }
 }

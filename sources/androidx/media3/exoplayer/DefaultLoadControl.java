@@ -20,7 +20,7 @@ public class DefaultLoadControl implements LoadControl {
     public static final int DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS = 2000;
     public static final int DEFAULT_BUFFER_FOR_PLAYBACK_MS = 1000;
     public static final int DEFAULT_CAMERA_MOTION_BUFFER_SIZE = 131072;
-    public static final int DEFAULT_IMAGE_BUFFER_SIZE = 131072;
+    public static final int DEFAULT_IMAGE_BUFFER_SIZE = 26214400;
     public static final int DEFAULT_MAX_BUFFER_MS = 50000;
     public static final int DEFAULT_METADATA_BUFFER_SIZE = 131072;
     public static final int DEFAULT_MIN_BUFFER_MS = 50000;
@@ -287,7 +287,9 @@ public class DefaultLoadControl implements LoadControl {
             case 2:
                 return DEFAULT_VIDEO_BUFFER_SIZE;
             case 3:
+                return 131072;
             case 4:
+                return DEFAULT_IMAGE_BUFFER_SIZE;
             case 5:
             case 6:
                 return 131072;

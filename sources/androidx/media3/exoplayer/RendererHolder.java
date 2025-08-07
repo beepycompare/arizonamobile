@@ -9,11 +9,11 @@ import androidx.media3.exoplayer.source.SampleStream;
 import androidx.media3.exoplayer.text.TextRenderer;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.trackselection.TrackSelectorResult;
+import androidx.media3.exoplayer.video.VideoFrameMetadataListener;
 import java.io.IOException;
 import java.util.Objects;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes2.dex */
-public class RendererHolder {
+class RendererHolder {
     static final int RENDERER_PREWARMING_STATE_NOT_PREWARMING_USING_PRIMARY = 0;
     static final int RENDERER_PREWARMING_STATE_NOT_PREWARMING_USING_SECONDARY = 1;
     static final int RENDERER_PREWARMING_STATE_PREWARMING_PRIMARY = 2;
@@ -52,10 +52,6 @@ public class RendererHolder {
 
     public boolean isPrewarming() {
         return isPrimaryRendererPrewarming() || isSecondaryRendererPrewarming();
-    }
-
-    public boolean isRendererPrewarming(int i) {
-        return (isPrimaryRendererPrewarming() && i == this.index) || (isSecondaryRendererPrewarming() && i != this.index);
     }
 
     private boolean isPrimaryRendererPrewarming() {
@@ -168,6 +164,10 @@ public class RendererHolder {
         return getRendererReadingFromPeriod(mediaPeriodHolder) != null;
     }
 
+    public boolean isPrewarmingPeriod(MediaPeriodHolder mediaPeriodHolder) {
+        return (isPrimaryRendererPrewarming() && getRendererReadingFromPeriod(mediaPeriodHolder) == this.primaryRenderer) || (isSecondaryRendererPrewarming() && getRendererReadingFromPeriod(mediaPeriodHolder) == this.secondaryRenderer);
+    }
+
     public boolean hasFinishedReadingFromPeriod(MediaPeriodHolder mediaPeriodHolder) {
         return hasFinishedReadingFromPeriodInternal(mediaPeriodHolder, this.primaryRenderer) && hasFinishedReadingFromPeriodInternal(mediaPeriodHolder, this.secondaryRenderer);
     }
@@ -257,6 +257,14 @@ public class RendererHolder {
 
     public void handleMessage(int i, Object obj, MediaPeriodHolder mediaPeriodHolder) throws ExoPlaybackException {
         ((Renderer) Assertions.checkNotNull(getRendererReadingFromPeriod(mediaPeriodHolder))).handleMessage(i, obj);
+    }
+
+    public void setScrubbingMode(ScrubbingModeParameters scrubbingModeParameters) throws ExoPlaybackException {
+        this.primaryRenderer.handleMessage(18, scrubbingModeParameters);
+        Renderer renderer = this.secondaryRenderer;
+        if (renderer != null) {
+            renderer.handleMessage(18, scrubbingModeParameters);
+        }
     }
 
     public void disable(DefaultMediaClock defaultMediaClock) throws ExoPlaybackException {
@@ -418,6 +426,17 @@ public class RendererHolder {
             ((Renderer) Assertions.checkNotNull(this.secondaryRenderer)).handleMessage(1, obj);
         } else {
             this.primaryRenderer.handleMessage(1, obj);
+        }
+    }
+
+    public void setVideoFrameMetadataListener(VideoFrameMetadataListener videoFrameMetadataListener) throws ExoPlaybackException {
+        if (getTrackType() != 2) {
+            return;
+        }
+        this.primaryRenderer.handleMessage(7, videoFrameMetadataListener);
+        Renderer renderer = this.secondaryRenderer;
+        if (renderer != null) {
+            renderer.handleMessage(7, videoFrameMetadataListener);
         }
     }
 

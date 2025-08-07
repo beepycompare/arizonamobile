@@ -4,12 +4,12 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int buttonSize = 0x7f0400ac;
-        public static int circleCrop = 0x7f0400f3;
-        public static int colorScheme = 0x7f04013e;
-        public static int imageAspectRatio = 0x7f0402c7;
-        public static int imageAspectRatioAdjust = 0x7f0402c8;
-        public static int scopeUris = 0x7f0404ff;
+        public static int buttonSize = 0x7f0400b3;
+        public static int circleCrop = 0x7f0400fa;
+        public static int colorScheme = 0x7f040145;
+        public static int imageAspectRatio = 0x7f0402d2;
+        public static int imageAspectRatioAdjust = 0x7f0402d3;
+        public static int scopeUris = 0x7f04050b;
 
         private attr() {
         }
@@ -70,8 +70,8 @@ public final class R {
         public static int icon_only = 0x7f0a0661;
         public static int light = 0x7f0a07ae;
         public static int none = 0x7f0a0962;
-        public static int standard = 0x7f0a0c9d;
-        public static int wide = 0x7f0a0edf;
+        public static int standard = 0x7f0a0c9e;
+        public static int wide = 0x7f0a0ee6;
 
         private id() {
         }
@@ -79,23 +79,23 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class string {
-        public static int common_google_play_services_enable_button = 0x7f13004b;
-        public static int common_google_play_services_enable_text = 0x7f13004c;
-        public static int common_google_play_services_enable_title = 0x7f13004d;
-        public static int common_google_play_services_install_button = 0x7f13004e;
-        public static int common_google_play_services_install_text = 0x7f13004f;
-        public static int common_google_play_services_install_title = 0x7f130050;
-        public static int common_google_play_services_notification_channel_name = 0x7f130051;
-        public static int common_google_play_services_notification_ticker = 0x7f130052;
-        public static int common_google_play_services_unsupported_text = 0x7f130054;
-        public static int common_google_play_services_update_button = 0x7f130055;
-        public static int common_google_play_services_update_text = 0x7f130056;
-        public static int common_google_play_services_update_title = 0x7f130057;
-        public static int common_google_play_services_updating_text = 0x7f130058;
-        public static int common_google_play_services_wear_update_text = 0x7f130059;
-        public static int common_open_on_phone = 0x7f13005a;
-        public static int common_signin_button_text = 0x7f13005b;
-        public static int common_signin_button_text_long = 0x7f13005c;
+        public static int common_google_play_services_enable_button = 0x7f13004c;
+        public static int common_google_play_services_enable_text = 0x7f13004d;
+        public static int common_google_play_services_enable_title = 0x7f13004e;
+        public static int common_google_play_services_install_button = 0x7f13004f;
+        public static int common_google_play_services_install_text = 0x7f130050;
+        public static int common_google_play_services_install_title = 0x7f130051;
+        public static int common_google_play_services_notification_channel_name = 0x7f130052;
+        public static int common_google_play_services_notification_ticker = 0x7f130053;
+        public static int common_google_play_services_unsupported_text = 0x7f130055;
+        public static int common_google_play_services_update_button = 0x7f130056;
+        public static int common_google_play_services_update_text = 0x7f130057;
+        public static int common_google_play_services_update_title = 0x7f130058;
+        public static int common_google_play_services_updating_text = 0x7f130059;
+        public static int common_google_play_services_wear_update_text = 0x7f13005a;
+        public static int common_open_on_phone = 0x7f13005b;
+        public static int common_signin_button_text = 0x7f13005c;
+        public static int common_signin_button_text_long = 0x7f13005d;
 
         private string() {
         }

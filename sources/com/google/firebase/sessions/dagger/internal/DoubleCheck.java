@@ -1,7 +1,6 @@
 package com.google.firebase.sessions.dagger.internal;
 
 import com.google.firebase.sessions.dagger.Lazy;
-import javax.inject.Provider;
 /* loaded from: classes4.dex */
 public final class DoubleCheck<T> implements Provider<T>, Lazy<T> {
     static final /* synthetic */ boolean $assertionsDisabled = false;
@@ -44,10 +43,19 @@ public final class DoubleCheck<T> implements Provider<T>, Lazy<T> {
         return p instanceof DoubleCheck ? p : new DoubleCheck(p);
     }
 
+    @Deprecated
+    public static <P extends javax.inject.Provider<T>, T> javax.inject.Provider<T> provider(P p) {
+        return provider(Providers.asDaggerProvider(p));
+    }
+
     public static <P extends Provider<T>, T> Lazy<T> lazy(P p) {
         if (p instanceof Lazy) {
             return (Lazy) p;
         }
         return new DoubleCheck((Provider) Preconditions.checkNotNull(p));
+    }
+
+    public static <P extends javax.inject.Provider<T>, T> Lazy<T> lazy(P p) {
+        return lazy(Providers.asDaggerProvider(p));
     }
 }

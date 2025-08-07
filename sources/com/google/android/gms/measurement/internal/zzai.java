@@ -3,7 +3,7 @@ package com.google.android.gms.measurement.internal;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzai implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
@@ -11,7 +11,7 @@ public final class zzai implements Parcelable.Creator {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         String str = null;
         String str2 = null;
-        zzpk zzpkVar = null;
+        zzpl zzplVar = null;
         String str3 = null;
         zzbg zzbgVar = null;
         zzbg zzbgVar2 = null;
@@ -30,7 +30,7 @@ public final class zzai implements Parcelable.Creator {
                     str2 = SafeParcelReader.createString(parcel, readHeader);
                     break;
                 case 4:
-                    zzpkVar = (zzpk) SafeParcelReader.createParcelable(parcel, readHeader, zzpk.CREATOR);
+                    zzplVar = (zzpl) SafeParcelReader.createParcelable(parcel, readHeader, zzpl.CREATOR);
                     break;
                 case 5:
                     j = SafeParcelReader.readLong(parcel, readHeader);
@@ -62,7 +62,7 @@ public final class zzai implements Parcelable.Creator {
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zzah(str, str2, zzpkVar, j, z, str3, zzbgVar, j2, zzbgVar2, j3, zzbgVar3);
+        return new zzah(str, str2, zzplVar, j, z, str3, zzbgVar, j2, zzbgVar2, j3, zzbgVar3);
     }
 
     @Override // android.os.Parcelable.Creator

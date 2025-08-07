@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int progressCount = 0x7f0404c2;
+        public static int progressCount = 0x7f0404cd;
 
         private attr() {
         }
@@ -33,7 +33,7 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class drawable {
         public static int avatar_error_placeholder = 0x7f0802fc;
-        public static int sample_skin_avatar_view = 0x7f080c22;
+        public static int sample_skin_avatar_view = 0x7f080c23;
 
         private drawable() {
         }

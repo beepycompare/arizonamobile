@@ -6,9 +6,9 @@ public enum Wk {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f707a;
+    public final int f706a;
 
     Wk(int i) {
-        this.f707a = i;
+        this.f706a = i;
     }
 }

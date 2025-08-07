@@ -25,17 +25,17 @@ public final class ServerSideAdInsertionUtil {
         return correctFollowingAdGroupTimes(withContentResumeOffsetUs, i, Util.sum(jArr), j2);
     }
 
-    public static long getStreamPositionUs(Player player, AdPlaybackState adPlaybackState) {
+    public static long getStreamPositionUs(Player player, Object obj) {
         Timeline currentTimeline = player.getCurrentTimeline();
         if (currentTimeline.isEmpty()) {
             return C.TIME_UNSET;
         }
         Timeline.Period period = currentTimeline.getPeriod(player.getCurrentPeriodIndex(), new Timeline.Period());
-        if (Objects.equals(period.getAdsId(), adPlaybackState.adsId)) {
+        if (Objects.equals(period.getAdsId(), obj)) {
             if (player.isPlayingAd()) {
-                return getStreamPositionUsForAd(Util.msToUs(player.getCurrentPosition()), player.getCurrentAdGroupIndex(), player.getCurrentAdIndexInAdGroup(), adPlaybackState);
+                return getStreamPositionUsForAd(Util.msToUs(player.getCurrentPosition()), player.getCurrentAdGroupIndex(), player.getCurrentAdIndexInAdGroup(), period.adPlaybackState);
             }
-            return getStreamPositionUsForContent(Util.msToUs(player.getCurrentPosition()) - period.getPositionInWindowUs(), -1, adPlaybackState);
+            return getStreamPositionUsForContent(Util.msToUs(player.getCurrentPosition()) - period.getPositionInWindowUs(), -1, period.adPlaybackState);
         }
         return C.TIME_UNSET;
     }

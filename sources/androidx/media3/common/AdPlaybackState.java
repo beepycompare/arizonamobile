@@ -327,6 +327,21 @@ public final class AdPlaybackState {
             }
         }
 
+        public AdGroup copy() {
+            long j = this.timeUs;
+            int i = this.count;
+            int i2 = this.originalCount;
+            int[] iArr = this.states;
+            int[] copyOf = Arrays.copyOf(iArr, iArr.length);
+            MediaItem[] mediaItemArr = this.mediaItems;
+            long[] jArr = this.durationsUs;
+            long[] copyOf2 = Arrays.copyOf(jArr, jArr.length);
+            long j2 = this.contentResumeOffsetUs;
+            boolean z = this.isServerSideInserted;
+            String[] strArr = this.ids;
+            return new AdGroup(j, i, i2, copyOf, (MediaItem[]) Arrays.copyOf(mediaItemArr, mediaItemArr.length), copyOf2, j2, z, (String[]) Arrays.copyOf(strArr, strArr.length), this.isPlaceholder);
+        }
+
         private static int[] copyStatesWithSpaceForAdCount(int[] iArr, int i) {
             int length = iArr.length;
             int max = Math.max(i, length);
@@ -461,13 +476,14 @@ public final class AdPlaybackState {
     }
 
     public int getAdGroupIndexAfterPositionUs(long j, long j2) {
+        int i;
         if (j != Long.MIN_VALUE && (j2 == C.TIME_UNSET || j < j2)) {
-            int i = this.removedAdGroupCount;
-            while (i < this.adGroupCount && ((getAdGroup(i).timeUs != Long.MIN_VALUE && getAdGroup(i).timeUs <= j) || !getAdGroup(i).shouldPlayAdGroup())) {
-                i++;
+            int i2 = this.removedAdGroupCount;
+            while (i2 < this.adGroupCount && ((getAdGroup(i2).timeUs != Long.MIN_VALUE && getAdGroup(i2).timeUs <= j) || !getAdGroup(i2).shouldPlayAdGroup())) {
+                i2++;
             }
-            if (i < this.adGroupCount) {
-                return i;
+            if (i2 < this.adGroupCount && (i == 0 || getAdGroup(i2).timeUs <= j2)) {
+                return i2;
             }
         }
         return -1;
@@ -508,6 +524,15 @@ public final class AdPlaybackState {
         AdGroup[] adGroupArr2 = (AdGroup[]) Util.nullSafeArrayCopy(adGroupArr, adGroupArr.length);
         adGroupArr2[i3] = this.adGroups[i3].withAdCount(i2);
         return new AdPlaybackState(this.adsId, adGroupArr2, this.adResumePositionUs, this.contentDurationUs, this.removedAdGroupCount);
+    }
+
+    public AdPlaybackState copy() {
+        int length = this.adGroups.length;
+        AdGroup[] adGroupArr = new AdGroup[length];
+        for (int i = 0; i < length; i++) {
+            adGroupArr[i] = this.adGroups[i].copy();
+        }
+        return new AdPlaybackState(this.adsId, adGroupArr, this.adResumePositionUs, this.contentDurationUs, this.removedAdGroupCount);
     }
 
     @Deprecated
@@ -623,6 +648,18 @@ public final class AdPlaybackState {
         AdGroup[] adGroupArr = new AdGroup[i3];
         System.arraycopy(this.adGroups, i - this.removedAdGroupCount, adGroupArr, 0, i3);
         return new AdPlaybackState(this.adsId, adGroupArr, this.adResumePositionUs, this.contentDurationUs, i);
+    }
+
+    public AdPlaybackState withRemovedAdGroupCountBefore(long j) {
+        int i = this.removedAdGroupCount;
+        while (i < this.adGroupCount) {
+            AdGroup adGroup = getAdGroup(i);
+            if (j <= adGroup.timeUs || adGroup.timeUs == Long.MIN_VALUE) {
+                break;
+            }
+            i++;
+        }
+        return withRemovedAdGroupCount(i);
     }
 
     public AdPlaybackState withContentResumeOffsetUs(int i, long j) {

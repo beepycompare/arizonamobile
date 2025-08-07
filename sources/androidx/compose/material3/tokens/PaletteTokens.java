@@ -98,7 +98,7 @@ public final class PaletteTokens {
     private static final long Tertiary20 = ColorKt.Color$default(73, 37, 50, 0, 8, null);
     private static final long Tertiary30 = ColorKt.Color$default(99, 59, 72, 0, 8, null);
     private static final long Tertiary40 = ColorKt.Color$default(125, 82, 96, 0, 8, null);
-    private static final long Tertiary50 = ColorKt.Color$default(152, 105, 119, 0, 8, null);
+    private static final long Tertiary50 = ColorKt.Color$default(BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER, 105, 119, 0, 8, null);
     private static final long Tertiary60 = ColorKt.Color$default(181, 131, 146, 0, 8, null);
     private static final long Tertiary70 = ColorKt.Color$default(210, 157, TsExtractor.TS_STREAM_TYPE_AC4, 0, 8, null);
     private static final long Tertiary80 = ColorKt.Color$default(239, 184, 200, 0, 8, null);

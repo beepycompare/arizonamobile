@@ -1,13 +1,13 @@
 package com.google.firebase.analytics.connector.internal;
 
 import android.os.Bundle;
-import com.google.android.gms.measurement.internal.zzjn;
+import com.google.android.gms.measurement.internal.zzjo;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.firebase.abt.FirebaseABTesting;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.Constants;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
 /* loaded from: classes4.dex */
 public final class zzc {
     public static final /* synthetic */ int zza = 0;
@@ -15,7 +15,7 @@ public final class zzc {
     private static final ImmutableList zzc = ImmutableList.of("_e", "_f", "_iap", "_s", "_au", "_ui", "_cd");
     private static final ImmutableList zzd = ImmutableList.of("auto", "app", "am");
     private static final ImmutableList zze = ImmutableList.of("_r", "_dbg");
-    private static final ImmutableList zzf = new ImmutableList.Builder().add((Object[]) zzjn.zza).add((Object[]) zzjn.zzb).build();
+    private static final ImmutableList zzf = new ImmutableList.Builder().add((Object[]) zzjo.zza).add((Object[]) zzjo.zzb).build();
     private static final ImmutableList zzg = ImmutableList.of("^_ltv_[A-Z]{3}$", "^_cc[1-5]{1}$");
 
     public static boolean zza(String str) {
@@ -69,7 +69,6 @@ public final class zzc {
     }
 
     public static boolean zze(String str, String str2, Bundle bundle) {
-        char c;
         if (Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN.equals(str2)) {
             if (zza(str) && bundle != null) {
                 ImmutableList immutableList = zze;
@@ -83,34 +82,21 @@ public final class zzc {
                     }
                 }
                 int hashCode = str.hashCode();
-                if (hashCode == 101200) {
-                    if (str.equals("fcm")) {
-                        c = 0;
+                if (hashCode != 101200) {
+                    if (hashCode != 101230) {
+                        if (hashCode == 3142703 && str.equals("fiam")) {
+                            bundle.putString("_cis", "fiam_integration");
+                            return true;
+                        }
+                    } else if (str.equals("fdl")) {
+                        bundle.putString("_cis", "fdl_integration");
+                        return true;
                     }
-                    c = 65535;
-                } else if (hashCode != 101230) {
-                    if (hashCode == 3142703 && str.equals("fiam")) {
-                        c = 2;
-                    }
-                    c = 65535;
-                } else {
-                    if (str.equals("fdl")) {
-                        c = 1;
-                    }
-                    c = 65535;
-                }
-                if (c == 0) {
+                } else if (str.equals("fcm")) {
                     bundle.putString("_cis", "fcm_integration");
                     return true;
-                } else if (c == 1) {
-                    bundle.putString("_cis", "fdl_integration");
-                    return true;
-                } else if (c != 2) {
-                    return false;
-                } else {
-                    bundle.putString("_cis", "fiam_integration");
-                    return true;
                 }
+                return false;
             }
             return false;
         }

@@ -118,12 +118,6 @@ public abstract class BasePlayer implements Player {
     }
 
     @Override // androidx.media3.common.Player
-    @Deprecated
-    public final void seekToPreviousWindow() {
-        seekToPreviousMediaItem();
-    }
-
-    @Override // androidx.media3.common.Player
     public final void seekToPreviousMediaItem() {
         seekToPreviousMediaItemInternal(6);
     }
@@ -149,32 +143,8 @@ public abstract class BasePlayer implements Player {
     }
 
     @Override // androidx.media3.common.Player
-    @Deprecated
-    public final boolean hasNext() {
-        return hasNextMediaItem();
-    }
-
-    @Override // androidx.media3.common.Player
-    @Deprecated
-    public final boolean hasNextWindow() {
-        return hasNextMediaItem();
-    }
-
-    @Override // androidx.media3.common.Player
     public final boolean hasNextMediaItem() {
         return getNextMediaItemIndex() != -1;
-    }
-
-    @Override // androidx.media3.common.Player
-    @Deprecated
-    public final void next() {
-        seekToNextMediaItem();
-    }
-
-    @Override // androidx.media3.common.Player
-    @Deprecated
-    public final void seekToNextWindow() {
-        seekToNextMediaItem();
     }
 
     @Override // androidx.media3.common.Player
@@ -284,7 +254,7 @@ public abstract class BasePlayer implements Player {
         if (duration == 0) {
             return 100;
         }
-        return Util.constrainValue((int) ((bufferedPosition * 100) / duration), 0, 100);
+        return Util.constrainValue(Util.percentInt(bufferedPosition, duration), 0, 100);
     }
 
     @Override // androidx.media3.common.Player

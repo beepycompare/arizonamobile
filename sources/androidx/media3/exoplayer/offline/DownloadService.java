@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -172,7 +173,7 @@ public abstract class DownloadService extends Service {
         DownloadManagerHelper downloadManagerHelper = (DownloadManagerHelper) hashMap.get(cls);
         if (downloadManagerHelper == null) {
             boolean z = this.foregroundNotificationUpdater != null;
-            Scheduler scheduler = (z && (Util.SDK_INT < 31)) ? getScheduler() : null;
+            Scheduler scheduler = (z && (Build.VERSION.SDK_INT < 31)) ? getScheduler() : null;
             DownloadManager downloadManager = getDownloadManager();
             downloadManager.resumeDownloads();
             DownloadManagerHelper downloadManagerHelper2 = new DownloadManagerHelper(getApplicationContext(), downloadManager, z, scheduler, cls);
@@ -311,7 +312,7 @@ public abstract class DownloadService extends Service {
                 Log.e(TAG, "Ignored unrecognized action: " + str);
                 break;
         }
-        if (Util.SDK_INT >= 26 && this.startedInForeground && (foregroundNotificationUpdater = this.foregroundNotificationUpdater) != null) {
+        if (Build.VERSION.SDK_INT >= 26 && this.startedInForeground && (foregroundNotificationUpdater = this.foregroundNotificationUpdater) != null) {
             foregroundNotificationUpdater.showNotificationIfNotAlready();
         }
         this.isStopped = false;
@@ -392,7 +393,7 @@ public abstract class DownloadService extends Service {
             foregroundNotificationUpdater.stopPeriodicUpdates();
         }
         if (((DownloadManagerHelper) Assertions.checkNotNull(this.downloadManagerHelper)).updateScheduler()) {
-            if (Util.SDK_INT < 28 && this.taskRemoved) {
+            if (Build.VERSION.SDK_INT < 28 && this.taskRemoved) {
                 stopSelf();
                 this.isStopped = true;
                 return;
@@ -505,7 +506,7 @@ public abstract class DownloadService extends Service {
                 Util.createHandlerForCurrentOrMainLooper().postAtFrontOfQueue(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadService$DownloadManagerHelper$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DownloadService.DownloadManagerHelper.this.m7398xee6ee963(downloadService);
+                        DownloadService.DownloadManagerHelper.this.m7402xee6ee963(downloadService);
                     }
                 });
             }
@@ -513,7 +514,7 @@ public abstract class DownloadService extends Service {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$attachService$0$androidx-media3-exoplayer-offline-DownloadService$DownloadManagerHelper  reason: not valid java name */
-        public /* synthetic */ void m7398xee6ee963(DownloadService downloadService) {
+        public /* synthetic */ void m7402xee6ee963(DownloadService downloadService) {
             downloadService.notifyDownloads(this.downloadManager.getCurrentDownloads());
         }
 

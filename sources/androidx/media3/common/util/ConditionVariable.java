@@ -30,6 +30,7 @@ public class ConditionVariable {
 
     public synchronized void block() throws InterruptedException {
         while (!this.isOpen) {
+            this.clock.onThreadBlocked();
             wait();
         }
     }
@@ -44,6 +45,7 @@ public class ConditionVariable {
             block();
         } else {
             while (!this.isOpen && elapsedRealtime < j2) {
+                this.clock.onThreadBlocked();
                 wait(j2 - elapsedRealtime);
                 elapsedRealtime = this.clock.elapsedRealtime();
             }
@@ -55,6 +57,7 @@ public class ConditionVariable {
         boolean z = false;
         while (!this.isOpen) {
             try {
+                this.clock.onThreadBlocked();
                 wait();
             } catch (InterruptedException unused) {
                 z = true;
@@ -63,6 +66,32 @@ public class ConditionVariable {
         if (z) {
             Thread.currentThread().interrupt();
         }
+    }
+
+    public synchronized boolean blockUninterruptible(long j) {
+        if (j <= 0) {
+            return this.isOpen;
+        }
+        long elapsedRealtime = this.clock.elapsedRealtime();
+        long j2 = j + elapsedRealtime;
+        if (j2 < elapsedRealtime) {
+            blockUninterruptible();
+        } else {
+            boolean z = false;
+            while (!this.isOpen && elapsedRealtime < j2) {
+                try {
+                    this.clock.onThreadBlocked();
+                    wait(j2 - elapsedRealtime);
+                } catch (InterruptedException unused) {
+                    z = true;
+                }
+                elapsedRealtime = this.clock.elapsedRealtime();
+            }
+            if (z) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        return this.isOpen;
     }
 
     public synchronized boolean isOpen() {

@@ -2,12 +2,12 @@ package com.google.firebase.analytics.connector.internal;
 
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
-import com.google.android.gms.measurement.internal.zzjl;
+import com.google.android.gms.measurement.internal.zzjm;
 import com.google.firebase.analytics.connector.AnalyticsConnector;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
 /* loaded from: classes4.dex */
 public final class zze implements zza {
     final Set zza;
@@ -64,7 +64,7 @@ public final class zze implements zza {
                                             charCount2 += Character.charCount(codePointAt3);
                                         }
                                     } else {
-                                        String zzb = zzjl.zzb(str);
+                                        String zzb = zzjm.zzb(str);
                                         if (zzb != null) {
                                             str = zzb;
                                         }

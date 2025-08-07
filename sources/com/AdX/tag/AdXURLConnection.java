@@ -1,6 +1,7 @@
 package com.AdX.tag;
 
 import android.util.Log;
+import com.adjust.sdk.Constants;
 import java.util.ArrayList;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -23,7 +24,7 @@ public class AdXURLConnection {
             HttpGet httpGet = new HttpGet((String.valueOf(str) + str2).replaceAll(" ", "%20"));
             BasicHttpParams basicHttpParams = new BasicHttpParams();
             HttpConnectionParams.setConnectionTimeout(basicHttpParams, 15000);
-            HttpConnectionParams.setSoTimeout(basicHttpParams, 30000);
+            HttpConnectionParams.setSoTimeout(basicHttpParams, Constants.CONNECTION_TIMEOUT_VERIFY);
             HttpResponse execute = new DefaultHttpClient(basicHttpParams).execute(httpGet);
             str3 = EntityUtils.toString(execute.getEntity());
             httpResponseCode = execute.getStatusLine().getStatusCode();
@@ -57,7 +58,7 @@ public class AdXURLConnection {
             HttpPost httpPost = new HttpPost((String.valueOf(str) + str2).replaceAll(" ", "%20"));
             BasicHttpParams basicHttpParams = new BasicHttpParams();
             HttpConnectionParams.setConnectionTimeout(basicHttpParams, 15000);
-            HttpConnectionParams.setSoTimeout(basicHttpParams, 30000);
+            HttpConnectionParams.setSoTimeout(basicHttpParams, Constants.CONNECTION_TIMEOUT_VERIFY);
             DefaultHttpClient defaultHttpClient = new DefaultHttpClient(basicHttpParams);
             ArrayList arrayList = new ArrayList();
             arrayList.add(new BasicNameValuePair(str3, str4));

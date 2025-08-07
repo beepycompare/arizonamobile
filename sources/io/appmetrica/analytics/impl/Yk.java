@@ -1,16 +1,16 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
 public final class Yk extends W2 {
-    public Yk(InterfaceC0497p2 interfaceC0497p2) {
-        super(interfaceC0497p2);
+    public Yk(InterfaceC0498p2 interfaceC0498p2) {
+        super(interfaceC0498p2);
     }
 
     @Override // io.appmetrica.analytics.impl.W2
-    public final C0192co a(C0140ao c0140ao, C0192co c0192co, InterfaceC0472o2 interfaceC0472o2) {
-        if (c0192co == null || c0192co.c.b) {
-            C0192co a2 = ((Pd) interfaceC0472o2).a();
-            a2.c.f822a = true;
-            return this.f694a.a(c0140ao, a2);
+    public final C0193co a(C0141ao c0141ao, C0193co c0193co, InterfaceC0473o2 interfaceC0473o2) {
+        if (c0193co == null || c0193co.c.b) {
+            C0193co a2 = ((Pd) interfaceC0473o2).a();
+            a2.c.f821a = true;
+            return this.f693a.a(c0141ao, a2);
         }
         return null;
     }

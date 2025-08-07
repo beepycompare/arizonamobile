@@ -822,7 +822,10 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     }
 
     public final synchronized void closePhone() {
-        this.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), -1, 12);
+        if (this.phoneIsOpen) {
+            this.phoneIsOpen = false;
+            this.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), -1, 12);
+        }
         this.timer.cancel();
     }
 

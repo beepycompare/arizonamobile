@@ -52,6 +52,7 @@ public final class Cue {
     public final int verticalType;
     public final int windowColor;
     public final boolean windowColorSet;
+    public final int zIndex;
     @Deprecated
     public static final Cue EMPTY = new Builder().setText("").build();
     private static final String FIELD_TEXT = Util.intToStringMaxRadix(0);
@@ -73,6 +74,7 @@ public final class Cue {
     private static final String FIELD_WINDOW_COLOR_SET = Util.intToStringMaxRadix(14);
     private static final String FIELD_VERTICAL_TYPE = Util.intToStringMaxRadix(15);
     private static final String FIELD_SHEAR_DEGREES = Util.intToStringMaxRadix(16);
+    private static final String FIELD_Z_INDEX = Util.intToStringMaxRadix(19);
 
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
     @Documented
@@ -102,7 +104,7 @@ public final class Cue {
     public @interface VerticalType {
     }
 
-    private Cue(CharSequence charSequence, Layout.Alignment alignment, Layout.Alignment alignment2, Bitmap bitmap, float f, int i, int i2, float f2, int i3, int i4, float f3, float f4, float f5, boolean z, int i5, int i6, float f6) {
+    private Cue(CharSequence charSequence, Layout.Alignment alignment, Layout.Alignment alignment2, Bitmap bitmap, float f, int i, int i2, float f2, int i3, int i4, float f3, float f4, float f5, boolean z, int i5, int i6, float f6, int i7) {
         if (charSequence == null) {
             Assertions.checkNotNull(bitmap);
         } else {
@@ -131,6 +133,7 @@ public final class Cue {
         this.textSize = f3;
         this.verticalType = i6;
         this.shearDegrees = f6;
+        this.zIndex = i7;
     }
 
     public Builder buildUpon() {
@@ -145,7 +148,7 @@ public final class Cue {
         }
         if (obj != null && getClass() == obj.getClass()) {
             Cue cue = (Cue) obj;
-            if (TextUtils.equals(this.text, cue.text) && this.textAlignment == cue.textAlignment && this.multiRowAlignment == cue.multiRowAlignment && ((bitmap = this.bitmap) != null ? !((bitmap2 = cue.bitmap) == null || !bitmap.sameAs(bitmap2)) : cue.bitmap == null) && this.line == cue.line && this.lineType == cue.lineType && this.lineAnchor == cue.lineAnchor && this.position == cue.position && this.positionAnchor == cue.positionAnchor && this.size == cue.size && this.bitmapHeight == cue.bitmapHeight && this.windowColorSet == cue.windowColorSet && this.windowColor == cue.windowColor && this.textSizeType == cue.textSizeType && this.textSize == cue.textSize && this.verticalType == cue.verticalType && this.shearDegrees == cue.shearDegrees) {
+            if (TextUtils.equals(this.text, cue.text) && this.textAlignment == cue.textAlignment && this.multiRowAlignment == cue.multiRowAlignment && ((bitmap = this.bitmap) != null ? !((bitmap2 = cue.bitmap) == null || !bitmap.sameAs(bitmap2)) : cue.bitmap == null) && this.line == cue.line && this.lineType == cue.lineType && this.lineAnchor == cue.lineAnchor && this.position == cue.position && this.positionAnchor == cue.positionAnchor && this.size == cue.size && this.bitmapHeight == cue.bitmapHeight && this.windowColorSet == cue.windowColorSet && this.windowColor == cue.windowColor && this.textSizeType == cue.textSizeType && this.textSize == cue.textSize && this.verticalType == cue.verticalType && this.shearDegrees == cue.shearDegrees && this.zIndex == cue.zIndex) {
                 return true;
             }
         }
@@ -153,7 +156,7 @@ public final class Cue {
     }
 
     public int hashCode() {
-        return Objects.hash(this.text, this.textAlignment, this.multiRowAlignment, this.bitmap, Float.valueOf(this.line), Integer.valueOf(this.lineType), Integer.valueOf(this.lineAnchor), Float.valueOf(this.position), Integer.valueOf(this.positionAnchor), Float.valueOf(this.size), Float.valueOf(this.bitmapHeight), Boolean.valueOf(this.windowColorSet), Integer.valueOf(this.windowColor), Integer.valueOf(this.textSizeType), Float.valueOf(this.textSize), Integer.valueOf(this.verticalType), Float.valueOf(this.shearDegrees));
+        return Objects.hash(this.text, this.textAlignment, this.multiRowAlignment, this.bitmap, Float.valueOf(this.line), Integer.valueOf(this.lineType), Integer.valueOf(this.lineAnchor), Float.valueOf(this.position), Integer.valueOf(this.positionAnchor), Float.valueOf(this.size), Float.valueOf(this.bitmapHeight), Boolean.valueOf(this.windowColorSet), Integer.valueOf(this.windowColor), Integer.valueOf(this.textSizeType), Float.valueOf(this.textSize), Integer.valueOf(this.verticalType), Float.valueOf(this.shearDegrees), Integer.valueOf(this.zIndex));
     }
 
     /* loaded from: classes2.dex */
@@ -175,6 +178,7 @@ public final class Cue {
         private int verticalType;
         private int windowColor;
         private boolean windowColorSet;
+        private int zIndex;
 
         public Builder() {
             this.text = null;
@@ -213,10 +217,12 @@ public final class Cue {
             this.windowColor = cue.windowColor;
             this.verticalType = cue.verticalType;
             this.shearDegrees = cue.shearDegrees;
+            this.zIndex = cue.zIndex;
         }
 
         public Builder setText(CharSequence charSequence) {
             this.text = charSequence;
+            this.bitmap = null;
             return this;
         }
 
@@ -227,6 +233,7 @@ public final class Cue {
 
         public Builder setBitmap(Bitmap bitmap) {
             this.bitmap = bitmap;
+            this.text = null;
             return this;
         }
 
@@ -367,8 +374,18 @@ public final class Cue {
             return this.verticalType;
         }
 
+        public Builder setZIndex(int i) {
+            this.zIndex = i;
+            return this;
+        }
+
+        @Pure
+        public int getZIndex() {
+            return this.zIndex;
+        }
+
         public Cue build() {
-            return new Cue(this.text, this.textAlignment, this.multiRowAlignment, this.bitmap, this.line, this.lineType, this.lineAnchor, this.position, this.positionAnchor, this.textSizeType, this.textSize, this.size, this.bitmapHeight, this.windowColorSet, this.windowColor, this.verticalType, this.shearDegrees);
+            return new Cue(this.text, this.textAlignment, this.multiRowAlignment, this.bitmap, this.line, this.lineType, this.lineAnchor, this.position, this.positionAnchor, this.textSizeType, this.textSize, this.size, this.bitmapHeight, this.windowColorSet, this.windowColor, this.verticalType, this.shearDegrees, this.zIndex);
         }
     }
 
@@ -424,6 +441,7 @@ public final class Cue {
         bundle.putInt(FIELD_WINDOW_COLOR, this.windowColor);
         bundle.putInt(FIELD_VERTICAL_TYPE, this.verticalType);
         bundle.putFloat(FIELD_SHEAR_DEGREES, this.shearDegrees);
+        bundle.putInt(FIELD_Z_INDEX, this.zIndex);
         return bundle;
     }
 
@@ -507,6 +525,10 @@ public final class Cue {
         String str12 = FIELD_SHEAR_DEGREES;
         if (bundle.containsKey(str12)) {
             builder.setShearDegrees(bundle.getFloat(str12));
+        }
+        String str13 = FIELD_Z_INDEX;
+        if (bundle.containsKey(str13)) {
+            builder.setZIndex(bundle.getInt(str13));
         }
         return builder.build();
     }

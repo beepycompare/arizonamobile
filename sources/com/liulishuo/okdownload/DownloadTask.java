@@ -2,7 +2,6 @@ package com.liulishuo.okdownload;
 
 import android.net.Uri;
 import android.util.SparseArray;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import com.liulishuo.okdownload.core.IdentifiedTask;
 import com.liulishuo.okdownload.core.Util;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointInfo;
@@ -528,7 +527,7 @@ public class DownloadTask extends IdentifiedTask implements Comparable<DownloadT
     }
 
     public String toString() {
-        return super.toString() + "@" + this.id + "@" + this.url + "@" + this.directoryFile.toString() + RemoteSettings.FORWARD_SLASH_STRING + this.filenameHolder.get();
+        return super.toString() + "@" + this.id + "@" + this.url + "@" + this.directoryFile.toString() + "/" + this.filenameHolder.get();
     }
 
     public static MockTaskForCompare mockTaskForCompare(int i) {

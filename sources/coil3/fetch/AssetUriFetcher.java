@@ -11,7 +11,6 @@ import coil3.request.Options;
 import coil3.util.MimeTypeMap;
 import coil3.util.Utils_androidKt;
 import com.google.firebase.remoteconfig.RemoteConfigComponent;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
@@ -30,7 +29,7 @@ public final class AssetUriFetcher implements Fetcher {
 
     @Override // coil3.fetch.Fetcher
     public Object fetch(Continuation<? super FetchResult> continuation) {
-        String joinToString$default = CollectionsKt.joinToString$default(CollectionsKt.drop(UriKt.getPathSegments(this.data), 1), RemoteSettings.FORWARD_SLASH_STRING, null, null, 0, null, null, 62, null);
+        String joinToString$default = CollectionsKt.joinToString$default(CollectionsKt.drop(UriKt.getPathSegments(this.data), 1), "/", null, null, 0, null, null, 62, null);
         return new SourceFetchResult(ImageSourceKt.ImageSource(Okio.buffer(Okio.source(this.options.getContext().getAssets().open(joinToString$default))), this.options.getFileSystem(), new AssetMetadata(joinToString$default)), MimeTypeMap.INSTANCE.getMimeTypeFromUrl(joinToString$default), DataSource.DISK);
     }
 

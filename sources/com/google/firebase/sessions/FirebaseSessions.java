@@ -24,6 +24,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
@@ -34,52 +35,50 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 /* compiled from: FirebaseSessions.kt */
 @Singleton
-@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u0000 \u000b2\u00020\u0001:\u0001\u000bB)\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0001\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0002\u0010\nR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/google/firebase/sessions/FirebaseSessions;", "", "firebaseApp", "Lcom/google/firebase/FirebaseApp;", "settings", "Lcom/google/firebase/sessions/settings/SessionsSettings;", "backgroundDispatcher", "Lkotlin/coroutines/CoroutineContext;", "lifecycleServiceBinder", "Lcom/google/firebase/sessions/SessionLifecycleServiceBinder;", "(Lcom/google/firebase/FirebaseApp;Lcom/google/firebase/sessions/settings/SessionsSettings;Lkotlin/coroutines/CoroutineContext;Lcom/google/firebase/sessions/SessionLifecycleServiceBinder;)V", "Companion", "com.google.firebase-firebase-sessions"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u0000 \f2\u00020\u0001:\u0001\fB+\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0001\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Lcom/google/firebase/sessions/FirebaseSessions;", "", "firebaseApp", "Lcom/google/firebase/FirebaseApp;", "settings", "Lcom/google/firebase/sessions/settings/SessionsSettings;", "backgroundDispatcher", "Lkotlin/coroutines/CoroutineContext;", "sessionsActivityLifecycleCallbacks", "Lcom/google/firebase/sessions/SessionsActivityLifecycleCallbacks;", "<init>", "(Lcom/google/firebase/FirebaseApp;Lcom/google/firebase/sessions/settings/SessionsSettings;Lkotlin/coroutines/CoroutineContext;Lcom/google/firebase/sessions/SessionsActivityLifecycleCallbacks;)V", "Companion", "com.google.firebase-firebase-sessions"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class FirebaseSessions {
     public static final Companion Companion = new Companion(null);
-    private static final String TAG = "FirebaseSessions";
+    public static final String TAG = "FirebaseSessions";
     private final FirebaseApp firebaseApp;
     private final SessionsSettings settings;
 
     @Inject
-    public FirebaseSessions(FirebaseApp firebaseApp, SessionsSettings settings, @Background CoroutineContext backgroundDispatcher, SessionLifecycleServiceBinder lifecycleServiceBinder) {
+    public FirebaseSessions(FirebaseApp firebaseApp, SessionsSettings settings, @Background CoroutineContext backgroundDispatcher, SessionsActivityLifecycleCallbacks sessionsActivityLifecycleCallbacks) {
         Intrinsics.checkNotNullParameter(firebaseApp, "firebaseApp");
         Intrinsics.checkNotNullParameter(settings, "settings");
         Intrinsics.checkNotNullParameter(backgroundDispatcher, "backgroundDispatcher");
-        Intrinsics.checkNotNullParameter(lifecycleServiceBinder, "lifecycleServiceBinder");
+        Intrinsics.checkNotNullParameter(sessionsActivityLifecycleCallbacks, "sessionsActivityLifecycleCallbacks");
         this.firebaseApp = firebaseApp;
         this.settings = settings;
-        Log.d("FirebaseSessions", "Initializing Firebase Sessions SDK.");
+        Log.d(TAG, "Initializing Firebase Sessions 3.0.0.");
         Context applicationContext = firebaseApp.getApplicationContext().getApplicationContext();
         if (applicationContext instanceof Application) {
-            ((Application) applicationContext).registerActivityLifecycleCallbacks(SessionsActivityLifecycleCallbacks.INSTANCE);
-            BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(backgroundDispatcher), null, null, new AnonymousClass1(backgroundDispatcher, lifecycleServiceBinder, null), 3, null);
+            ((Application) applicationContext).registerActivityLifecycleCallbacks(sessionsActivityLifecycleCallbacks);
+            BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(backgroundDispatcher), null, null, new AnonymousClass1(sessionsActivityLifecycleCallbacks, null), 3, null);
             return;
         }
-        Log.e("FirebaseSessions", "Failed to register lifecycle callbacks, unexpected context " + applicationContext.getClass() + '.');
+        Integer.valueOf(Log.e(TAG, "Failed to register lifecycle callbacks, unexpected context " + applicationContext.getClass() + '.'));
     }
 
     /* compiled from: FirebaseSessions.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
     @DebugMetadata(c = "com.google.firebase.sessions.FirebaseSessions$1", f = "FirebaseSessions.kt", i = {}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_TAG, ConstraintLayout.LayoutParams.Table.LAYOUT_GONE_MARGIN_BASELINE}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: com.google.firebase.sessions.FirebaseSessions$1  reason: invalid class name */
     /* loaded from: classes4.dex */
     static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-        final /* synthetic */ CoroutineContext $backgroundDispatcher;
-        final /* synthetic */ SessionLifecycleServiceBinder $lifecycleServiceBinder;
+        final /* synthetic */ SessionsActivityLifecycleCallbacks $sessionsActivityLifecycleCallbacks;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        AnonymousClass1(CoroutineContext coroutineContext, SessionLifecycleServiceBinder sessionLifecycleServiceBinder, Continuation<? super AnonymousClass1> continuation) {
+        AnonymousClass1(SessionsActivityLifecycleCallbacks sessionsActivityLifecycleCallbacks, Continuation<? super AnonymousClass1> continuation) {
             super(2, continuation);
-            this.$backgroundDispatcher = coroutineContext;
-            this.$lifecycleServiceBinder = sessionLifecycleServiceBinder;
+            this.$sessionsActivityLifecycleCallbacks = sessionsActivityLifecycleCallbacks;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new AnonymousClass1(this.$backgroundDispatcher, this.$lifecycleServiceBinder, continuation);
+            return new AnonymousClass1(this.$sessionsActivityLifecycleCallbacks, continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
@@ -110,18 +109,18 @@ public final class FirebaseSessions {
             } else if (i != 1) {
                 if (i == 2) {
                     ResultKt.throwOnFailure(obj);
-                    if (!FirebaseSessions.this.settings.getSessionsEnabled()) {
-                        Log.d("FirebaseSessions", "Sessions SDK disabled. Not listening to lifecycle events.");
-                    } else {
-                        SessionLifecycleClient sessionLifecycleClient = new SessionLifecycleClient(this.$backgroundDispatcher);
-                        sessionLifecycleClient.bindToService(this.$lifecycleServiceBinder);
-                        SessionsActivityLifecycleCallbacks.INSTANCE.setLifecycleClient(sessionLifecycleClient);
-                        FirebaseSessions.this.firebaseApp.addLifecycleEventListener(new FirebaseAppLifecycleListener() { // from class: com.google.firebase.sessions.FirebaseSessions$1$$ExternalSyntheticLambda0
+                    if (FirebaseSessions.this.settings.getSessionsEnabled()) {
+                        FirebaseApp firebaseApp = FirebaseSessions.this.firebaseApp;
+                        final SessionsActivityLifecycleCallbacks sessionsActivityLifecycleCallbacks = this.$sessionsActivityLifecycleCallbacks;
+                        firebaseApp.addLifecycleEventListener(new FirebaseAppLifecycleListener() { // from class: com.google.firebase.sessions.FirebaseSessions$1$$ExternalSyntheticLambda0
                             @Override // com.google.firebase.FirebaseAppLifecycleListener
                             public final void onDeleted(String str, FirebaseOptions firebaseOptions) {
-                                FirebaseSessions.AnonymousClass1.invokeSuspend$lambda$1(str, firebaseOptions);
+                                FirebaseSessions.AnonymousClass1.invokeSuspend$lambda$1(SessionsActivityLifecycleCallbacks.this, str, firebaseOptions);
                             }
                         });
+                        Unit unit = Unit.INSTANCE;
+                    } else {
+                        Boxing.boxInt(Log.d(FirebaseSessions.TAG, "Sessions SDK disabled. Not listening to lifecycle events."));
                     }
                     return Unit.INSTANCE;
                 }
@@ -137,19 +136,19 @@ public final class FirebaseSessions {
                     }
                 }
             }
-            Log.d("FirebaseSessions", "No Sessions subscribers. Not listening to lifecycle events.");
+            Boxing.boxInt(Log.d(FirebaseSessions.TAG, "No Sessions subscribers. Not listening to lifecycle events."));
             return Unit.INSTANCE;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void invokeSuspend$lambda$1(String str, FirebaseOptions firebaseOptions) {
-            Log.w("FirebaseSessions", "FirebaseApp instance deleted. Sessions library will stop collecting data.");
-            SessionsActivityLifecycleCallbacks.INSTANCE.setLifecycleClient(null);
+        public static final void invokeSuspend$lambda$1(SessionsActivityLifecycleCallbacks sessionsActivityLifecycleCallbacks, String str, FirebaseOptions firebaseOptions) {
+            Log.w(FirebaseSessions.TAG, "FirebaseApp instance deleted. Sessions library will stop collecting data.");
+            sessionsActivityLifecycleCallbacks.onAppDelete();
         }
     }
 
     /* compiled from: FirebaseSessions.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u0011\u0010\u0005\u001a\u00020\u00068F¢\u0006\u0006\u001a\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Lcom/google/firebase/sessions/FirebaseSessions$Companion;", "", "()V", "TAG", "", "instance", "Lcom/google/firebase/sessions/FirebaseSessions;", "getInstance", "()Lcom/google/firebase/sessions/FirebaseSessions;", "com.google.firebase-firebase-sessions"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0080T¢\u0006\u0002\n\u0000R\u0011\u0010\u0006\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/google/firebase/sessions/FirebaseSessions$Companion;", "", "<init>", "()V", "TAG", "", "instance", "Lcom/google/firebase/sessions/FirebaseSessions;", "getInstance", "()Lcom/google/firebase/sessions/FirebaseSessions;", "com.google.firebase-firebase-sessions"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -161,7 +160,7 @@ public final class FirebaseSessions {
 
         public final FirebaseSessions getInstance() {
             Object obj = FirebaseKt.getApp(Firebase.INSTANCE).get(FirebaseSessions.class);
-            Intrinsics.checkNotNullExpressionValue(obj, "Firebase.app[FirebaseSessions::class.java]");
+            Intrinsics.checkNotNullExpressionValue(obj, "get(...)");
             return (FirebaseSessions) obj;
         }
     }

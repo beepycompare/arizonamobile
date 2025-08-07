@@ -55,6 +55,7 @@ public abstract class Mp4Box {
     public static final int TYPE_dvh1 = 1685481521;
     public static final int TYPE_dvhe = 1685481573;
     public static final int TYPE_dvvC = 1685485123;
+    public static final int TYPE_dvwC = 1685485379;
     public static final int TYPE_ec_3 = 1700998451;
     public static final int TYPE_edts = 1701082227;
     public static final int TYPE_elst = 1701606260;
@@ -64,6 +65,7 @@ public abstract class Mp4Box {
     public static final int TYPE_esds = 1702061171;
     public static final int TYPE_eyes = 1702454643;
     public static final int TYPE_fLaC = 1716281667;
+    public static final int TYPE_fpcm = 1718641517;
     public static final int TYPE_frma = 1718775137;
     public static final int TYPE_ftyp = 1718909296;
     public static final int TYPE_h263 = 1748121139;
@@ -74,6 +76,7 @@ public abstract class Mp4Box {
     public static final int TYPE_iacb = 1767990114;
     public static final int TYPE_iamf = 1767992678;
     public static final int TYPE_ilst = 1768715124;
+    public static final int TYPE_ipcm = 1768973165;
     public static final int TYPE_keys = 1801812339;
     public static final int TYPE_lhvC = 1818785347;
     public static final int TYPE_lpcm = 1819304813;
@@ -95,12 +98,14 @@ public abstract class Mp4Box {
     public static final int TYPE_moof = 1836019558;
     public static final int TYPE_moov = 1836019574;
     public static final int TYPE_mp4a = 1836069985;
+    public static final int TYPE_mp4s = 1836070003;
     public static final int TYPE_mp4v = 1836070006;
     public static final int TYPE_mpvd = 1836086884;
     public static final int TYPE_mvex = 1836475768;
     public static final int TYPE_mvhd = 1836476516;
     public static final int TYPE_name = 1851878757;
     public static final int TYPE_pasp = 1885434736;
+    public static final int TYPE_pcmC = 1885564227;
     public static final int TYPE_proj = 1886547818;
     public static final int TYPE_pssh = 1886614376;
     public static final int TYPE_s263 = 1932670515;

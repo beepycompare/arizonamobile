@@ -101,11 +101,15 @@ public interface ExoPlayer extends Player {
 
     int getRendererType(int i);
 
+    ScrubbingModeParameters getScrubbingModeParameters();
+
     default Renderer getSecondaryRenderer(int i) {
         return null;
     }
 
     SeekParameters getSeekParameters();
+
+    ShuffleOrder getShuffleOrder();
 
     boolean getSkipSilenceEnabled();
 
@@ -120,6 +124,8 @@ public interface ExoPlayer extends Player {
     int getVideoScalingMode();
 
     boolean isReleased();
+
+    boolean isScrubbingModeEnabled();
 
     boolean isSleepingForOffload();
 
@@ -178,6 +184,10 @@ public interface ExoPlayer extends Player {
 
     void setPriorityTaskManager(PriorityTaskManager priorityTaskManager);
 
+    void setScrubbingModeEnabled(boolean z);
+
+    void setScrubbingModeParameters(ScrubbingModeParameters scrubbingModeParameters);
+
     void setSeekParameters(SeekParameters seekParameters);
 
     void setShuffleOrder(ShuffleOrder shuffleOrder);
@@ -230,6 +240,7 @@ public interface ExoPlayer extends Player {
         PriorityTaskManager priorityTaskManager;
         long releaseTimeoutMs;
         Supplier<RenderersFactory> renderersFactorySupplier;
+        ScrubbingModeParameters scrubbingModeParameters;
         long seekBackIncrementMs;
         long seekForwardIncrementMs;
         SeekParameters seekParameters;
@@ -486,6 +497,7 @@ public interface ExoPlayer extends Player {
             this.seekBackIncrementMs = 5000L;
             this.seekForwardIncrementMs = 15000L;
             this.maxSeekToPreviousPositionMs = C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
+            this.scrubbingModeParameters = ScrubbingModeParameters.DEFAULT;
             this.livePlaybackSpeedControl = new DefaultLivePlaybackSpeedControl.Builder().build();
             this.clock = Clock.DEFAULT;
             this.releaseTimeoutMs = 500L;
@@ -681,6 +693,12 @@ public interface ExoPlayer extends Player {
             return this;
         }
 
+        public Builder setScrubbingModeParameters(ScrubbingModeParameters scrubbingModeParameters) {
+            Assertions.checkState(!this.buildCalled);
+            this.scrubbingModeParameters = (ScrubbingModeParameters) Assertions.checkNotNull(scrubbingModeParameters);
+            return this;
+        }
+
         public Builder setReleaseTimeoutMs(long j) {
             Assertions.checkState(!this.buildCalled);
             this.releaseTimeoutMs = j;
@@ -724,7 +742,7 @@ public interface ExoPlayer extends Player {
         }
 
         public Builder setPlaybackLooper(Looper looper) {
-            Assertions.checkState(!this.buildCalled);
+            Assertions.checkState((this.buildCalled || looper == Looper.getMainLooper()) ? false : true);
             this.playbackLooperProvider = new PlaybackLooperProvider(looper);
             return this;
         }

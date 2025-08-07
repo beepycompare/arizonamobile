@@ -17,7 +17,6 @@ import androidx.constraintlayout.widget.Group;
 import androidx.media3.exoplayer.ExoPlayer;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -1150,7 +1149,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                 TextView textView = this.binding.leftItemField.tvTitleText;
                 InventoryItem inventoryItem2 = this.currentLeftItem;
                 textView.setText(String.valueOf(inventoryItem2 != null ? inventoryItem2.getText() : null));
-                this.binding.leftItemField.tvNeedRes.setText(RemoteSettings.FORWARD_SLASH_STRING + craftItemInfo.getAmount());
+                this.binding.leftItemField.tvNeedRes.setText("/" + craftItemInfo.getAmount());
                 if (intValue2 > intValue) {
                     this.binding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(R.color.red));
                     return;
@@ -1185,11 +1184,11 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             TextView tvNeedRes2 = workshopScreenBinding.leftItemField.tvNeedRes;
             Intrinsics.checkNotNullExpressionValue(tvNeedRes2, "tvNeedRes");
             tvNeedRes2.setVisibility((workshopResourceAmount.getLeftResourceAmount() > 0 ? 1 : null) != null ? 0 : 8);
-            workshopScreenBinding.leftItemField.tvNeedRes.setText(RemoteSettings.FORWARD_SLASH_STRING + workshopResourceAmount.getLeftResourceAmount());
+            workshopScreenBinding.leftItemField.tvNeedRes.setText("/" + workshopResourceAmount.getLeftResourceAmount());
             TextView tvNeedRes3 = workshopScreenBinding.rightItemField.tvNeedRes;
             Intrinsics.checkNotNullExpressionValue(tvNeedRes3, "tvNeedRes");
             tvNeedRes3.setVisibility(workshopResourceAmount.getRightResourceAmount() > 0 ? 0 : 8);
-            workshopScreenBinding.rightItemField.tvNeedRes.setText(RemoteSettings.FORWARD_SLASH_STRING + workshopResourceAmount.getRightResourceAmount());
+            workshopScreenBinding.rightItemField.tvNeedRes.setText("/" + workshopResourceAmount.getRightResourceAmount());
         } else if (i == UIElementID.INVENTORY.getId()) {
             Object fromJson5 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
             Intrinsics.checkNotNullExpressionValue(fromJson5, "fromJson(...)");

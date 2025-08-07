@@ -34,7 +34,7 @@ public final class ComposableSingletons$ServerTopBarKt {
     });
 
     /* renamed from: getLambda$-1484463318$select_server_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8407getLambda$1484463318$select_server_release_web() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m8429getLambda$1484463318$select_server_release_web() {
         return f84lambda$1484463318;
     }
 

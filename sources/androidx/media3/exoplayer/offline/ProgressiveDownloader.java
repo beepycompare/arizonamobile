@@ -16,7 +16,7 @@ import java.util.concurrent.Executor;
 public final class ProgressiveDownloader implements Downloader {
     private final CacheWriter cacheWriter;
     private final CacheDataSource dataSource;
-    private final DataSpec dataSpec;
+    final DataSpec dataSpec;
     private volatile RunnableFutureTask<Void, IOException> downloadRunnable;
     private final Executor executor;
     private volatile boolean isCanceled;
@@ -27,17 +27,25 @@ public final class ProgressiveDownloader implements Downloader {
         this(mediaItem, factory, new DefaultDownloaderFactory$$ExternalSyntheticLambda0());
     }
 
+    public ProgressiveDownloader(MediaItem mediaItem, CacheDataSource.Factory factory, long j, long j2) {
+        this(mediaItem, factory, new DefaultDownloaderFactory$$ExternalSyntheticLambda0(), j, j2);
+    }
+
     public ProgressiveDownloader(MediaItem mediaItem, CacheDataSource.Factory factory, Executor executor) {
+        this(mediaItem, factory, executor, 0L, -1L);
+    }
+
+    public ProgressiveDownloader(MediaItem mediaItem, CacheDataSource.Factory factory, Executor executor, long j, long j2) {
         this.executor = (Executor) Assertions.checkNotNull(executor);
         Assertions.checkNotNull(mediaItem.localConfiguration);
-        DataSpec build = new DataSpec.Builder().setUri(mediaItem.localConfiguration.uri).setKey(mediaItem.localConfiguration.customCacheKey).setFlags(4).build();
+        DataSpec build = new DataSpec.Builder().setUri(mediaItem.localConfiguration.uri).setKey(mediaItem.localConfiguration.customCacheKey).setFlags(4).setPosition(j).setLength(j2).build();
         this.dataSpec = build;
         CacheDataSource createDataSourceForDownloading = factory.createDataSourceForDownloading();
         this.dataSource = createDataSourceForDownloading;
         this.cacheWriter = new CacheWriter(createDataSourceForDownloading, build, null, new CacheWriter.ProgressListener() { // from class: androidx.media3.exoplayer.offline.ProgressiveDownloader$$ExternalSyntheticLambda0
             @Override // androidx.media3.datasource.cache.CacheWriter.ProgressListener
-            public final void onProgress(long j, long j2, long j3) {
-                ProgressiveDownloader.this.onProgress(j, j2, j3);
+            public final void onProgress(long j3, long j4, long j5) {
+                ProgressiveDownloader.this.onProgress(j3, j4, j5);
             }
         });
         this.priorityTaskManager = factory.getUpstreamPriorityTaskManager();
@@ -112,10 +120,9 @@ public final class ProgressiveDownloader implements Downloader {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onProgress(long j, long j2, long j3) {
-        Downloader.ProgressListener progressListener = this.progressListener;
-        if (progressListener == null) {
+        if (this.progressListener == null) {
             return;
         }
-        progressListener.onProgress(j, j2, (j == -1 || j == 0) ? -1.0f : (((float) j2) * 100.0f) / ((float) j));
+        ((Downloader.ProgressListener) Assertions.checkNotNull(this.progressListener)).onProgress(j, j2, (j == -1 || j == 0) ? -1.0f : Util.percentFloat(j2, j));
     }
 }

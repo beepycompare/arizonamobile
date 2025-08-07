@@ -13,8 +13,9 @@ import androidx.media3.decoder.CryptoInfo;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes2.dex */
-class AsynchronousMediaCodecBufferEnqueuer implements MediaCodecBufferEnqueuer {
+public class AsynchronousMediaCodecBufferEnqueuer implements MediaCodecBufferEnqueuer {
     private static final int MSG_OPEN_CV = 3;
     private static final int MSG_QUEUE_INPUT_BUFFER = 1;
     private static final int MSG_QUEUE_SECURE_INPUT_BUFFER = 2;
@@ -234,9 +235,7 @@ class AsynchronousMediaCodecBufferEnqueuer implements MediaCodecBufferEnqueuer {
         cryptoInfo2.key = (byte[]) Assertions.checkNotNull(copy(cryptoInfo.key, cryptoInfo2.key));
         cryptoInfo2.iv = (byte[]) Assertions.checkNotNull(copy(cryptoInfo.iv, cryptoInfo2.iv));
         cryptoInfo2.mode = cryptoInfo.mode;
-        if (Util.SDK_INT >= 24) {
-            cryptoInfo2.setPattern(new MediaCodec.CryptoInfo.Pattern(cryptoInfo.encryptedBlocks, cryptoInfo.clearBlocks));
-        }
+        cryptoInfo2.setPattern(new MediaCodec.CryptoInfo.Pattern(cryptoInfo.encryptedBlocks, cryptoInfo.clearBlocks));
     }
 
     private static int[] copy(int[] iArr, int[] iArr2) {

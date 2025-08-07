@@ -40,11 +40,16 @@ public final class ExoPlaybackException extends PlaybackException {
         return new ExoPlaybackException(0, iOException, i);
     }
 
+    @Deprecated
     public static ExoPlaybackException createForRenderer(Throwable th, String str, int i, Format format, int i2, boolean z, int i3) {
+        return createForRenderer(th, str, i, format, i2, null, z, i3);
+    }
+
+    public static ExoPlaybackException createForRenderer(Throwable th, String str, int i, Format format, int i2, MediaSource.MediaPeriodId mediaPeriodId, boolean z, int i3) {
         if (format == null) {
             i2 = 4;
         }
-        return new ExoPlaybackException(1, th, null, i3, str, i, format, i2, z);
+        return new ExoPlaybackException(1, th, null, i3, str, i, format, i2, mediaPeriodId, z);
     }
 
     @Deprecated
@@ -57,15 +62,15 @@ public final class ExoPlaybackException extends PlaybackException {
     }
 
     public static ExoPlaybackException createForRemote(String str) {
-        return new ExoPlaybackException(3, null, str, 1001, null, -1, null, 4, false);
+        return new ExoPlaybackException(3, null, str, 1001, null, -1, null, 4, null, false);
     }
 
     private ExoPlaybackException(int i, Throwable th, int i2) {
-        this(i, th, null, i2, null, -1, null, 4, false);
+        this(i, th, null, i2, null, -1, null, 4, null, false);
     }
 
-    private ExoPlaybackException(int i, Throwable th, String str, int i2, String str2, int i3, Format format, int i4, boolean z) {
-        this(deriveMessage(i, str, str2, i3, format, i4), th, i2, i, str2, i3, format, i4, null, SystemClock.elapsedRealtime(), z);
+    private ExoPlaybackException(int i, Throwable th, String str, int i2, String str2, int i3, Format format, int i4, MediaSource.MediaPeriodId mediaPeriodId, boolean z) {
+        this(deriveMessage(i, str, str2, i3, format, i4), th, i2, i, str2, i3, format, i4, mediaPeriodId, SystemClock.elapsedRealtime(), z);
     }
 
     private ExoPlaybackException(String str, Throwable th, int i, int i2, String str2, int i3, Format format, int i4, MediaSource.MediaPeriodId mediaPeriodId, long j, boolean z) {

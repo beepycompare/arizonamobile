@@ -1,53 +1,26 @@
 package com.google.android.gms.measurement.internal;
 
-import android.text.TextUtils;
+import androidx.media3.exoplayer.ExoPlayer;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzkg implements Runnable {
-    final /* synthetic */ long zza;
-    final /* synthetic */ zzli zzb;
+public final class zzkg extends zzay {
+    final /* synthetic */ zzlj zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzkg(zzli zzliVar, long j) {
-        this.zza = j;
-        Objects.requireNonNull(zzliVar);
-        this.zzb = zzliVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzkg(zzlj zzljVar, zzjg zzjgVar) {
+        super(zzjgVar);
+        Objects.requireNonNull(zzljVar);
+        this.zza = zzljVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        zzli zzliVar = this.zzb;
-        zzliVar.zzg();
-        zzliVar.zzb();
-        zzib zzibVar = zzliVar.zzu;
-        zzibVar.zzaV().zzj().zza("Resetting analytics data (FE)");
-        zzib zzibVar2 = zzliVar.zzu;
-        zzob zzh = zzibVar2.zzh();
-        zzh.zzg();
-        zzoa zzoaVar = zzh.zza;
-        zzh.zzb.zzc();
-        zzibVar2.zzv().zzi();
-        boolean z = !zzliVar.zzu.zzB();
-        zzhg zzd = zzibVar.zzd();
-        zzd.zzc.zzb(this.zza);
-        zzib zzibVar3 = zzd.zzu;
-        if (!TextUtils.isEmpty(zzibVar3.zzd().zzq.zza())) {
-            zzd.zzq.zzb(null);
+    @Override // com.google.android.gms.measurement.internal.zzay
+    public final void zza() {
+        zzlj zzljVar = this.zza;
+        if (zzljVar.zzu.zzI()) {
+            zzljVar.zzap().zzb(ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
         }
-        zzd.zzk.zzb(0L);
-        zzd.zzl.zzb(0L);
-        if (!zzibVar3.zzc().zzt()) {
-            zzd.zzn(z);
-        }
-        zzd.zzr.zzb(null);
-        zzd.zzs.zzb(0L);
-        zzd.zzt.zzb(null);
-        zzibVar2.zzt().zzB();
-        zzibVar2.zzh().zza.zza();
-        zzliVar.zzc = z;
-        zzibVar2.zzt().zzC(new AtomicReference());
     }
 }

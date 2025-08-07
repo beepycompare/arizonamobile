@@ -1,102 +1,83 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Process;
 import com.google.android.gms.common.internal.Preconditions;
+import java.lang.Thread;
 import java.util.Objects;
-import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.atomic.AtomicLong;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzhx extends Thread {
-    final /* synthetic */ zzhy zza;
-    private final Object zzb;
-    private final BlockingQueue zzc;
-    private boolean zzd;
+public final class zzhx extends FutureTask implements Comparable {
+    final boolean zza;
+    final /* synthetic */ zzhz zzb;
+    private final long zzc;
+    private final String zzd;
 
-    public zzhx(zzhy zzhyVar, String str, BlockingQueue blockingQueue) {
-        Objects.requireNonNull(zzhyVar);
-        this.zza = zzhyVar;
-        this.zzd = false;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzhx(zzhz zzhzVar, Runnable runnable, boolean z, String str) {
+        super(runnable, null);
+        AtomicLong atomicLong;
+        Objects.requireNonNull(zzhzVar);
+        this.zzb = zzhzVar;
         Preconditions.checkNotNull(str);
-        Preconditions.checkNotNull(blockingQueue);
-        this.zzb = new Object();
-        this.zzc = blockingQueue;
-        setName(str);
-    }
-
-    private final void zzb() {
-        zzhy zzhyVar = this.zza;
-        synchronized (zzhyVar.zzr()) {
-            if (!this.zzd) {
-                zzhyVar.zzs().release();
-                zzhyVar.zzr().notifyAll();
-                if (this == zzhyVar.zzn()) {
-                    zzhyVar.zzo(null);
-                } else if (this != zzhyVar.zzp()) {
-                    zzhyVar.zzu.zzaV().zzb().zza("Current scheduler thread is neither worker nor network");
-                } else {
-                    zzhyVar.zzq(null);
-                }
-                this.zzd = true;
-            }
+        atomicLong = zzhz.zzj;
+        long andIncrement = atomicLong.getAndIncrement();
+        this.zzc = andIncrement;
+        this.zzd = str;
+        this.zza = z;
+        if (andIncrement == Long.MAX_VALUE) {
+            zzhzVar.zzu.zzaV().zzb().zza("Tasks index overflow");
         }
     }
 
-    private final void zzc(InterruptedException interruptedException) {
-        zzgr zze = this.zza.zzu.zzaV().zze();
-        String name = getName();
-        String.valueOf(name);
-        zze.zzb(String.valueOf(name).concat(" was interrupted"), interruptedException);
+    @Override // java.lang.Comparable
+    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
+        zzhx zzhxVar = (zzhx) obj;
+        boolean z = zzhxVar.zza;
+        boolean z2 = this.zza;
+        if (z2 != z) {
+            return !z2 ? 1 : -1;
+        }
+        long j = this.zzc;
+        int i = (j > zzhxVar.zzc ? 1 : (j == zzhxVar.zzc ? 0 : -1));
+        if (i < 0) {
+            return -1;
+        }
+        if (i > 0) {
+            return 1;
+        }
+        this.zzb.zzu.zzaV().zzc().zzb("Two tasks share the same index. index", Long.valueOf(j));
+        return 0;
     }
 
-    @Override // java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        boolean z = false;
-        while (!z) {
-            try {
-                this.zza.zzs().acquire();
-                z = true;
-            } catch (InterruptedException e) {
-                zzc(e);
-            }
+    @Override // java.util.concurrent.FutureTask
+    protected final void setException(Throwable th) {
+        Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler;
+        this.zzb.zzu.zzaV().zzb().zzb(this.zzd, th);
+        if ((th instanceof zzhv) && (defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler()) != null) {
+            defaultUncaughtExceptionHandler.uncaughtException(Thread.currentThread(), th);
         }
-        try {
-            int threadPriority = Process.getThreadPriority(Process.myTid());
-            while (true) {
-                BlockingQueue blockingQueue = this.zzc;
-                zzhw zzhwVar = (zzhw) blockingQueue.poll();
-                if (zzhwVar != null) {
-                    Process.setThreadPriority(true != zzhwVar.zza ? 10 : threadPriority);
-                    zzhwVar.run();
-                } else {
-                    Object obj = this.zzb;
-                    synchronized (obj) {
-                        if (blockingQueue.peek() == null) {
-                            this.zza.zzt();
-                            try {
-                                obj.wait(30000L);
-                            } catch (InterruptedException e2) {
-                                zzc(e2);
-                            }
-                        }
-                    }
-                    synchronized (this.zza.zzr()) {
-                        if (this.zzc.peek() == null) {
-                            zzb();
-                            return;
-                        }
-                    }
-                }
-            }
-        } finally {
-            zzb();
-        }
+        super.setException(th);
     }
 
-    public final void zza() {
-        Object obj = this.zzb;
-        synchronized (obj) {
-            obj.notifyAll();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzhx(zzhz zzhzVar, Callable callable, boolean z, String str) {
+        super(callable);
+        AtomicLong atomicLong;
+        Objects.requireNonNull(zzhzVar);
+        this.zzb = zzhzVar;
+        Preconditions.checkNotNull("Task exception on worker thread");
+        atomicLong = zzhz.zzj;
+        long andIncrement = atomicLong.getAndIncrement();
+        this.zzc = andIncrement;
+        this.zzd = "Task exception on worker thread";
+        this.zza = z;
+        if (andIncrement == Long.MAX_VALUE) {
+            zzhzVar.zzu.zzaV().zzb().zza("Tasks index overflow");
         }
     }
 }

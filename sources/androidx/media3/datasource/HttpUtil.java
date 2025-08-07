@@ -4,8 +4,15 @@ import android.text.TextUtils;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import com.google.android.vending.expansion.downloader.Constants;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.net.HttpHeaders;
+import java.net.CookieHandler;
+import java.net.URI;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import kotlin.UByte$$ExternalSyntheticBackport0;
 /* loaded from: classes2.dex */
 public final class HttpUtil {
     private static final String TAG = "HttpUtil";
@@ -77,5 +84,36 @@ public final class HttpUtil {
         parseLong = -1;
         if (TextUtils.isEmpty(str2)) {
         }
+    }
+
+    public static void storeCookiesFromHeaders(String str, Map<String, List<String>> map, CookieHandler cookieHandler) {
+        if (cookieHandler == null) {
+            return;
+        }
+        try {
+            cookieHandler.put(new URI(str), map);
+        } catch (Exception e) {
+            Log.w(TAG, "Failed to store cookies in CookieHandler", e);
+        }
+    }
+
+    public static String getCookieHeader(String str, Map<String, List<String>> map, CookieHandler cookieHandler) {
+        List<String> list;
+        if (cookieHandler == null) {
+            return "";
+        }
+        Map<String, List<String>> of = ImmutableMap.of();
+        try {
+            of = cookieHandler.get(new URI(str), map);
+        } catch (Exception e) {
+            Log.w(TAG, "Failed to read cookies from CookieHandler", e);
+        }
+        StringBuilder sb = new StringBuilder();
+        if (of.containsKey(HttpHeaders.COOKIE) && (list = of.get(HttpHeaders.COOKIE)) != null) {
+            for (String str2 : list) {
+                sb.append(str2).append("; ");
+            }
+        }
+        return UByte$$ExternalSyntheticBackport0.m(sb.toString());
     }
 }

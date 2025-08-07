@@ -11,7 +11,8 @@ import androidx.collection.SieveCacheKt;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.internal.measurement.zzql;
+import com.google.android.gms.internal.measurement.zzpr;
+import com.google.android.gms.internal.measurement.zzqp;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.firebase.messaging.Constants;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
@@ -26,11 +27,11 @@ import java.util.Locale;
 import java.util.Map;
 import kotlin.UByte$$ExternalSyntheticBackport0;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzav extends zzor {
+public final class zzav extends zzos {
     private final zzau zzm;
-    private final zzof zzn;
+    private final zzog zzn;
     private static final String[] zzb = {"last_bundled_timestamp", "ALTER TABLE events ADD COLUMN last_bundled_timestamp INTEGER;", "last_bundled_day", "ALTER TABLE events ADD COLUMN last_bundled_day INTEGER;", "last_sampled_complex_event_id", "ALTER TABLE events ADD COLUMN last_sampled_complex_event_id INTEGER;", "last_sampling_rate", "ALTER TABLE events ADD COLUMN last_sampling_rate INTEGER;", "last_exempt_from_sampling", "ALTER TABLE events ADD COLUMN last_exempt_from_sampling INTEGER;", "current_session_count", "ALTER TABLE events ADD COLUMN current_session_count INTEGER;"};
     static final String[] zza = {"associated_row_id", "ALTER TABLE upload_queue ADD COLUMN associated_row_id INTEGER;", "last_upload_timestamp", "ALTER TABLE upload_queue ADD COLUMN last_upload_timestamp INTEGER;"};
     private static final String[] zzc = {"origin", "ALTER TABLE user_attributes ADD COLUMN origin TEXT;"};
@@ -44,59 +45,14 @@ public final class zzav extends zzor {
     private static final String[] zzl = {"idempotent", "CREATE INDEX IF NOT EXISTS trigger_uris_index ON trigger_uris (app_id);"};
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzav(zzpf zzpfVar) {
-        super(zzpfVar);
-        this.zzn = new zzof(this.zzu.zzaZ());
+    public zzav(zzpg zzpgVar) {
+        super(zzpgVar);
+        this.zzn = new zzog(this.zzu.zzaZ());
         this.zzu.zzc();
         this.zzm = new zzau(this, this.zzu.zzaY(), "google_app_measurement.db");
     }
 
-    private final long zzaA(String str, String[] strArr) {
-        Cursor cursor = null;
-        try {
-            try {
-                Cursor rawQuery = zze().rawQuery(str, strArr);
-                if (rawQuery.moveToFirst()) {
-                    long j = rawQuery.getLong(0);
-                    if (rawQuery != null) {
-                        rawQuery.close();
-                    }
-                    return j;
-                }
-                throw new SQLiteException("Database returned empty set");
-            } catch (SQLiteException e) {
-                this.zzu.zzaV().zzb().zzc("Database error", str, e);
-                throw e;
-            }
-        } catch (Throwable th) {
-            if (0 != 0) {
-                cursor.close();
-            }
-            throw th;
-        }
-    }
-
-    private final long zzaB(String str, String[] strArr, long j) {
-        Cursor cursor = null;
-        try {
-            try {
-                cursor = zze().rawQuery(str, strArr);
-                if (cursor.moveToFirst()) {
-                    j = cursor.getLong(0);
-                }
-                return j;
-            } catch (SQLiteException e) {
-                this.zzu.zzaV().zzb().zzc("Database error", str, e);
-                throw e;
-            }
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
-        }
-    }
-
-    private final String zzaC(String str, String[] strArr, String str2) {
+    private final String zzaA(String str, String[] strArr, String str2) {
         Cursor cursor = null;
         try {
             try {
@@ -120,7 +76,7 @@ public final class zzav extends zzor {
         }
     }
 
-    private final void zzaD(String str, String str2, ContentValues contentValues) {
+    private final void zzaB(String str, String str2, ContentValues contentValues) {
         try {
             SQLiteDatabase zze2 = zze();
             String asString = contentValues.getAsString("app_id");
@@ -128,14 +84,14 @@ public final class zzav extends zzor {
                 StringBuilder sb = new StringBuilder(10);
                 sb.append("app_id = ?");
                 if (zze2.update("consent_settings", contentValues, sb.toString(), new String[]{asString}) == 0 && zze2.insertWithOnConflict("consent_settings", null, contentValues, 5) == -1) {
-                    this.zzu.zzaV().zzb().zzc("Failed to insert/update table (got -1). key", zzgt.zzl("consent_settings"), zzgt.zzl("app_id"));
+                    this.zzu.zzaV().zzb().zzc("Failed to insert/update table (got -1). key", zzgu.zzl("consent_settings"), zzgu.zzl("app_id"));
                     return;
                 }
                 return;
             }
-            this.zzu.zzaV().zzd().zzb("Value of the primary key is not set.", zzgt.zzl("app_id"));
+            this.zzu.zzaV().zzd().zzb("Value of the primary key is not set.", zzgu.zzl("app_id"));
         } catch (SQLiteException e) {
-            this.zzu.zzaV().zzb().zzd("Error storing into table. key", zzgt.zzl("consent_settings"), zzgt.zzl("app_id"), e);
+            this.zzu.zzaV().zzb().zzd("Error storing into table. key", zzgu.zzl("consent_settings"), zzgu.zzl("app_id"), e);
         }
     }
 
@@ -144,7 +100,7 @@ public final class zzav extends zzor {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final zzbc zzaE(String str, String str2, String str3) {
+    private final zzbc zzaC(String str, String str2, String str3) {
         String str4;
         Cursor cursor;
         Cursor cursor2;
@@ -152,7 +108,7 @@ public final class zzav extends zzor {
         Preconditions.checkNotEmpty(str2);
         Preconditions.checkNotEmpty(str3);
         zzg();
-        zzay();
+        zzaw();
         Cursor cursor3 = null;
         try {
             cursor = zze().query(str, (String[]) new ArrayList(Arrays.asList("lifetime_count", "current_bundle_count", "last_fire_timestamp", "last_bundled_timestamp", "last_bundled_day", "last_sampled_complex_event_id", "last_sampling_rate", "last_exempt_from_sampling", "current_session_count")).toArray(new String[0]), "app_id=? and name=?", new String[]{str2, str3}, null, null, null);
@@ -197,7 +153,7 @@ public final class zzav extends zzor {
             try {
                 zzbc zzbcVar = new zzbc(str2, str4, j, j2, cursor.isNull(8) ? 0L : cursor.getLong(8), j3, j4, valueOf, l, valueOf3, bool);
                 if (cursor2.moveToNext()) {
-                    this.zzu.zzaV().zzb().zzb("Got multiple records for event aggregates, expected one. appId", zzgt.zzl(str2));
+                    this.zzu.zzaV().zzb().zzb("Got multiple records for event aggregates, expected one. appId", zzgu.zzl(str2));
                 }
                 if (cursor2 != null) {
                     cursor2.close();
@@ -207,8 +163,8 @@ public final class zzav extends zzor {
                 e = e3;
                 cursor = cursor2;
                 try {
-                    zzib zzibVar = this.zzu;
-                    zzibVar.zzaV().zzb().zzd("Error querying events. appId", zzgt.zzl(str2), zzibVar.zzl().zza(str4), e);
+                    zzic zzicVar = this.zzu;
+                    zzicVar.zzaV().zzb().zzd("Error querying events. appId", zzgu.zzl(str2), zzicVar.zzl().zza(str4), e);
                     if (cursor != null) {
                     }
                     return null;
@@ -237,10 +193,10 @@ public final class zzav extends zzor {
         }
     }
 
-    private final void zzaF(String str, zzbc zzbcVar) {
+    private final void zzaD(String str, zzbc zzbcVar) {
         Preconditions.checkNotNull(zzbcVar);
         zzg();
-        zzay();
+        zzaw();
         ContentValues contentValues = new ContentValues();
         String str2 = zzbcVar.zza;
         contentValues.put("app_id", str2);
@@ -257,33 +213,33 @@ public final class zzav extends zzor {
         contentValues.put("last_exempt_from_sampling", (bool == null || !bool.booleanValue()) ? null : 1L);
         try {
             if (zze().insertWithOnConflict(str, null, contentValues, 5) == -1) {
-                this.zzu.zzaV().zzb().zzb("Failed to insert/update event aggregates (got -1). appId", zzgt.zzl(str2));
+                this.zzu.zzaV().zzb().zzb("Failed to insert/update event aggregates (got -1). appId", zzgu.zzl(str2));
             }
         } catch (SQLiteException e) {
-            this.zzu.zzaV().zzb().zzc("Error storing event aggregates. appId", zzgt.zzl(zzbcVar.zza), e);
+            this.zzu.zzaV().zzb().zzc("Error storing event aggregates. appId", zzgu.zzl(zzbcVar.zza), e);
         }
     }
 
-    private final void zzaG(String str, String str2) {
+    private final void zzaE(String str, String str2) {
         Preconditions.checkNotEmpty(str2);
         zzg();
-        zzay();
+        zzaw();
         try {
             zze().delete(str, "app_id=?", new String[]{str2});
         } catch (SQLiteException e) {
-            this.zzu.zzaV().zzb().zzc("Error deleting snapshot. appId", zzgt.zzl(str2), e);
+            this.zzu.zzaV().zzb().zzc("Error deleting snapshot. appId", zzgu.zzl(str2), e);
         }
     }
 
-    private final zzpi zzaH(String str, long j, byte[] bArr, String str2, String str3, int i, int i2, long j2, long j3, long j4) {
+    private final zzpj zzaF(String str, long j, byte[] bArr, String str2, String str3, int i, int i2, long j2, long j3, long j4) {
         if (TextUtils.isEmpty(str2)) {
             this.zzu.zzaV().zzj().zza("Upload uri is null or empty. Destination is unknown. Dropping batch. ");
             return null;
         }
         try {
-            com.google.android.gms.internal.measurement.zzhz zzhzVar = (com.google.android.gms.internal.measurement.zzhz) zzpj.zzw(com.google.android.gms.internal.measurement.zzib.zzh(), bArr);
-            zzlr zzb2 = zzlr.zzb(i);
-            if (zzb2 != zzlr.GOOGLE_SIGNAL && zzb2 != zzlr.GOOGLE_SIGNAL_PENDING && i2 > 0) {
+            com.google.android.gms.internal.measurement.zzhz zzhzVar = (com.google.android.gms.internal.measurement.zzhz) zzpk.zzw(com.google.android.gms.internal.measurement.zzib.zzh(), bArr);
+            zzls zzb2 = zzls.zzb(i);
+            if (zzb2 != zzls.GOOGLE_SIGNAL && zzb2 != zzls.GOOGLE_SIGNAL_PENDING && i2 > 0) {
                 ArrayList arrayList = new ArrayList();
                 for (com.google.android.gms.internal.measurement.zzid zzidVar : zzhzVar.zza()) {
                     com.google.android.gms.internal.measurement.zzic zzicVar = (com.google.android.gms.internal.measurement.zzic) zzidVar.zzcl();
@@ -316,35 +272,35 @@ public final class zzav extends zzor {
                     }
                 }
             }
-            zzph zzphVar = new zzph();
-            zzphVar.zzb(j);
-            zzphVar.zzc((com.google.android.gms.internal.measurement.zzib) zzhzVar.zzbc());
-            zzphVar.zzd(str2);
-            zzphVar.zze(hashMap);
-            zzphVar.zzf(zzb2);
-            zzphVar.zzg(j2);
-            zzphVar.zzh(j3);
-            zzphVar.zzi(j4);
-            zzphVar.zzj(i2);
-            return zzphVar.zza();
+            zzpi zzpiVar = new zzpi();
+            zzpiVar.zzb(j);
+            zzpiVar.zzc((com.google.android.gms.internal.measurement.zzib) zzhzVar.zzbc());
+            zzpiVar.zzd(str2);
+            zzpiVar.zze(hashMap);
+            zzpiVar.zzf(zzb2);
+            zzpiVar.zzg(j2);
+            zzpiVar.zzh(j3);
+            zzpiVar.zzi(j4);
+            zzpiVar.zzj(i2);
+            return zzpiVar.zza();
         } catch (IOException e) {
             this.zzu.zzaV().zzb().zzc("Failed to queued MeasurementBatch from upload_queue. appId", str, e);
             return null;
         }
     }
 
-    private final String zzaI() {
-        zzib zzibVar = this.zzu;
-        long currentTimeMillis = zzibVar.zzaZ().currentTimeMillis();
+    private final String zzaG() {
+        zzic zzicVar = this.zzu;
+        long currentTimeMillis = zzicVar.zzaZ().currentTimeMillis();
         Locale locale = Locale.US;
-        zzlr zzlrVar = zzlr.GOOGLE_SIGNAL;
-        Integer valueOf = Integer.valueOf(zzlrVar.zza());
+        zzls zzlsVar = zzls.GOOGLE_SIGNAL;
+        Integer valueOf = Integer.valueOf(zzlsVar.zza());
         Long valueOf2 = Long.valueOf(currentTimeMillis);
-        zzibVar.zzc();
-        String format = String.format(locale, "(upload_type = %d AND ABS(creation_timestamp - %d) > %d)", valueOf, valueOf2, Long.valueOf(((Long) zzfx.zzS.zzb(null)).longValue()));
+        zzicVar.zzc();
+        String format = String.format(locale, "(upload_type = %d AND ABS(creation_timestamp - %d) > %d)", valueOf, valueOf2, Long.valueOf(((Long) zzfy.zzS.zzb(null)).longValue()));
         Locale locale2 = Locale.US;
-        Integer valueOf3 = Integer.valueOf(zzlrVar.zza());
-        zzibVar.zzc();
+        Integer valueOf3 = Integer.valueOf(zzlsVar.zza());
+        zzicVar.zzc();
         String format2 = String.format(locale2, "(upload_type != %d AND ABS(creation_timestamp - %d) > %d)", valueOf3, valueOf2, Long.valueOf(zzal.zzI()));
         StringBuilder sb = new StringBuilder(String.valueOf(format).length() + 5 + String.valueOf(format2).length() + 1);
         sb.append("(");
@@ -355,11 +311,11 @@ public final class zzav extends zzor {
         return sb.toString();
     }
 
-    private static final String zzaJ(List list) {
+    private static final String zzaH(List list) {
         return list.isEmpty() ? "" : String.format(" AND (upload_type IN (%s))", TextUtils.join(", ", list));
     }
 
-    static final void zzaw(ContentValues contentValues, String str, Object obj) {
+    static final void zzau(ContentValues contentValues, String str, Object obj) {
         Preconditions.checkNotEmpty("value");
         Preconditions.checkNotNull(obj);
         if (obj instanceof String) {
@@ -373,38 +329,83 @@ public final class zzav extends zzor {
         }
     }
 
-    public final long zzA(String str, com.google.android.gms.internal.measurement.zzib zzibVar, String str2, Map map, zzlr zzlrVar, Long l) {
+    private final long zzay(String str, String[] strArr) {
+        Cursor cursor = null;
+        try {
+            try {
+                Cursor rawQuery = zze().rawQuery(str, strArr);
+                if (rawQuery.moveToFirst()) {
+                    long j = rawQuery.getLong(0);
+                    if (rawQuery != null) {
+                        rawQuery.close();
+                    }
+                    return j;
+                }
+                throw new SQLiteException("Database returned empty set");
+            } catch (SQLiteException e) {
+                this.zzu.zzaV().zzb().zzc("Database error", str, e);
+                throw e;
+            }
+        } catch (Throwable th) {
+            if (0 != 0) {
+                cursor.close();
+            }
+            throw th;
+        }
+    }
+
+    private final long zzaz(String str, String[] strArr, long j) {
+        Cursor cursor = null;
+        try {
+            try {
+                cursor = zze().rawQuery(str, strArr);
+                if (cursor.moveToFirst()) {
+                    j = cursor.getLong(0);
+                }
+                return j;
+            } catch (SQLiteException e) {
+                this.zzu.zzaV().zzb().zzc("Database error", str, e);
+                throw e;
+            }
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+    }
+
+    public final long zzA(String str, com.google.android.gms.internal.measurement.zzib zzibVar, String str2, Map map, zzls zzlsVar, Long l) {
         int delete;
         zzg();
-        zzay();
+        zzaw();
         Preconditions.checkNotNull(zzibVar);
         Preconditions.checkNotEmpty(str);
         zzg();
-        zzay();
-        if (zzai()) {
-            zzpf zzpfVar = this.zzg;
-            long zza2 = zzpfVar.zzq().zzb.zza();
-            zzib zzibVar2 = this.zzu;
-            long elapsedRealtime = zzibVar2.zzaZ().elapsedRealtime();
+        zzaw();
+        if (zzag()) {
+            zzpg zzpgVar = this.zzg;
+            long zza2 = zzpgVar.zzq().zzb.zza();
+            zzic zzicVar = this.zzu;
+            long elapsedRealtime = zzicVar.zzaZ().elapsedRealtime();
             long abs = Math.abs(elapsedRealtime - zza2);
-            zzibVar2.zzc();
+            zzicVar.zzc();
             if (abs > zzal.zzJ()) {
-                zzpfVar.zzq().zzb.zzb(elapsedRealtime);
+                zzpgVar.zzq().zzb.zzb(elapsedRealtime);
                 zzg();
-                zzay();
-                if (zzai() && (delete = zze().delete("upload_queue", zzaI(), new String[0])) > 0) {
-                    zzibVar2.zzaV().zzk().zzb("Deleted stale MeasurementBatch rows from upload_queue. rowsDeleted", Integer.valueOf(delete));
+                zzaw();
+                if (zzag() && (delete = zze().delete("upload_queue", zzaG(), new String[0])) > 0) {
+                    zzicVar.zzaV().zzk().zzb("Deleted stale MeasurementBatch rows from upload_queue. rowsDeleted", Integer.valueOf(delete));
                 }
                 Preconditions.checkNotEmpty(str);
                 zzg();
-                zzay();
+                zzaw();
                 try {
-                    int zzm = zzibVar2.zzc().zzm(str, zzfx.zzz);
+                    int zzm = zzicVar.zzc().zzm(str, zzfy.zzz);
                     if (zzm > 0) {
                         zze().delete("upload_queue", "rowid in (SELECT rowid FROM upload_queue WHERE app_id=? ORDER BY rowid DESC LIMIT -1 OFFSET ?)", new String[]{str, String.valueOf(zzm)});
                     }
                 } catch (SQLiteException e) {
-                    this.zzu.zzaV().zzb().zzc("Error deleting over the limit queued batches. appId", zzgt.zzl(str), e);
+                    this.zzu.zzaV().zzb().zzc("Error deleting over the limit queued batches. appId", zzgu.zzl(str), e);
                 }
             }
         }
@@ -424,9 +425,9 @@ public final class zzav extends zzor {
         contentValues.put("measurement_batch", zzcc);
         contentValues.put("upload_uri", str2);
         contentValues.put("upload_headers", UByte$$ExternalSyntheticBackport0.m((CharSequence) "\r\n", (Iterable) arrayList));
-        contentValues.put("upload_type", Integer.valueOf(zzlrVar.zza()));
-        zzib zzibVar3 = this.zzu;
-        contentValues.put(AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, Long.valueOf(zzibVar3.zzaZ().currentTimeMillis()));
+        contentValues.put("upload_type", Integer.valueOf(zzlsVar.zza()));
+        zzic zzicVar2 = this.zzu;
+        contentValues.put(AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, Long.valueOf(zzicVar2.zzaZ().currentTimeMillis()));
         contentValues.put("retry_count", (Integer) 0);
         if (l != null) {
             contentValues.put("associated_row_id", l);
@@ -434,7 +435,7 @@ public final class zzav extends zzor {
         try {
             long insert = zze().insert("upload_queue", null, contentValues);
             if (insert == -1) {
-                zzibVar3.zzaV().zzb().zzb("Failed to insert MeasurementBatch (got -1) to upload_queue. appId", str);
+                zzicVar2.zzaV().zzb().zzb("Failed to insert MeasurementBatch (got -1) to upload_queue. appId", str);
                 return -1L;
             }
             return insert;
@@ -450,16 +451,16 @@ public final class zzav extends zzor {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final zzpi zzB(long j) {
+    public final zzpj zzB(long j) {
         Cursor cursor;
         Cursor cursor2;
         Cursor cursor3;
-        zzpi zzpiVar;
+        zzpj zzpjVar;
         zzg();
-        zzay();
+        zzaw();
         try {
             cursor = null;
-            zzpiVar = 0;
+            zzpjVar = 0;
             cursor2 = null;
             cursor2 = null;
             try {
@@ -469,10 +470,10 @@ public final class zzav extends zzor {
                 cursor3 = cursor2;
                 try {
                     this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
-                    zzpiVar = cursor2;
+                    zzpjVar = cursor2;
                     if (cursor3 != null) {
                     }
-                    return zzpiVar;
+                    return zzpjVar;
                 } catch (Throwable th) {
                     th = th;
                     if (cursor3 != null) {
@@ -498,10 +499,10 @@ public final class zzav extends zzor {
         } catch (SQLiteException e3) {
             e = e3;
             this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
-            zzpiVar = cursor2;
+            zzpjVar = cursor2;
             if (cursor3 != null) {
             }
-            return zzpiVar;
+            return zzpjVar;
         } catch (Throwable th4) {
             th = th4;
             if (cursor3 != null) {
@@ -512,13 +513,13 @@ public final class zzav extends zzor {
             if (cursor3 != null) {
                 cursor3.close();
             }
-            return zzpiVar;
+            return zzpjVar;
         }
-        zzpi zzaH = zzaH((String) Preconditions.checkNotNull(cursor3.getString(1)), j, cursor3.getBlob(2), cursor3.getString(3), cursor3.getString(4), cursor3.getInt(5), cursor3.getInt(6), cursor3.getLong(7), cursor3.getLong(8), cursor3.getLong(9));
+        zzpj zzaF = zzaF((String) Preconditions.checkNotNull(cursor3.getString(1)), j, cursor3.getBlob(2), cursor3.getString(3), cursor3.getString(4), cursor3.getInt(5), cursor3.getInt(6), cursor3.getLong(7), cursor3.getLong(8), cursor3.getLong(9));
         if (cursor3 != null) {
             cursor3.close();
         }
-        return zzaH;
+        return zzaF;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:35:0x0147  */
@@ -526,7 +527,7 @@ public final class zzav extends zzor {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final List zzC(String str, zzon zzonVar, int i) {
+    public final List zzC(String str, zzoo zzooVar, int i) {
         Cursor cursor;
         String str2;
         Cursor cursor2;
@@ -534,20 +535,20 @@ public final class zzav extends zzor {
         Cursor cursor3;
         Preconditions.checkNotEmpty(str);
         zzg();
-        zzay();
+        zzaw();
         try {
             SQLiteDatabase zze2 = zze();
             int i2 = 0;
             int i3 = 2;
             int i4 = 3;
             String[] strArr = {"rowId", "app_id", "measurement_batch", "upload_uri", "upload_headers", "upload_type", "retry_count", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "associated_row_id", "last_upload_timestamp"};
-            String zzaJ = zzaJ(zzonVar.zza);
-            String zzaI = zzaI();
-            StringBuilder sb = new StringBuilder(String.valueOf(zzaJ).length() + 17 + zzaI.length());
+            String zzaH = zzaH(zzooVar.zza);
+            String zzaG = zzaG();
+            StringBuilder sb = new StringBuilder(String.valueOf(zzaH).length() + 17 + zzaG.length());
             sb.append("app_id=?");
-            sb.append(zzaJ);
+            sb.append(zzaH);
             sb.append(" AND NOT ");
-            sb.append(zzaI);
+            sb.append(zzaG);
             int i5 = 7;
             int i6 = 8;
             int i7 = 6;
@@ -574,9 +575,9 @@ public final class zzav extends zzor {
                     str2 = str;
                     List list2 = list;
                     try {
-                        zzpi zzaH = zzaH(str2, j, blob, string, string2, i9, i10, j2, j3, cursor3.getLong(9));
-                        if (zzaH != null) {
-                            list2.add(zzaH);
+                        zzpj zzaF = zzaF(str2, j, blob, string, string2, i9, i10, j2, j3, cursor3.getLong(9));
+                        if (zzaF != null) {
+                            list2.add(zzaF);
                         }
                         list = list2;
                         cursor3 = cursor2;
@@ -638,22 +639,22 @@ public final class zzav extends zzor {
     }
 
     public final boolean zzD(String str) {
-        zzlr[] zzlrVarArr = {zzlr.GOOGLE_SIGNAL};
+        zzls[] zzlsVarArr = {zzls.GOOGLE_SIGNAL};
         ArrayList arrayList = new ArrayList(1);
-        arrayList.add(Integer.valueOf(zzlrVarArr[0].zza()));
-        String zzaJ = zzaJ(arrayList);
-        String zzaI = zzaI();
-        StringBuilder sb = new StringBuilder(String.valueOf(zzaJ).length() + 61 + zzaI.length());
+        arrayList.add(Integer.valueOf(zzlsVarArr[0].zza()));
+        String zzaH = zzaH(arrayList);
+        String zzaG = zzaG();
+        StringBuilder sb = new StringBuilder(String.valueOf(zzaH).length() + 61 + zzaG.length());
         sb.append("SELECT COUNT(1) > 0 FROM upload_queue WHERE app_id=?");
-        sb.append(zzaJ);
+        sb.append(zzaH);
         sb.append(" AND NOT ");
-        sb.append(zzaI);
-        return zzaA(sb.toString(), new String[]{str}) != 0;
+        sb.append(zzaG);
+        return zzay(sb.toString(), new String[]{str}) != 0;
     }
 
     public final void zzE(Long l) {
         zzg();
-        zzay();
+        zzaw();
         Preconditions.checkNotNull(l);
         try {
             if (zze().delete("upload_queue", "rowid=?", new String[]{l.toString()}) != 1) {
@@ -721,12 +722,12 @@ public final class zzav extends zzor {
     }
 
     public final boolean zzG() {
-        return zzaA("select count(1) > 0 from queue where has_realtime = 1", null) != 0;
+        return zzay("select count(1) > 0 from queue where has_realtime = 1", null) != 0;
     }
 
     public final void zzH(long j) {
         zzg();
-        zzay();
+        zzaw();
         try {
             if (zze().delete("queue", "rowid=?", new String[]{String.valueOf(j)}) == 1) {
                 return;
@@ -741,24 +742,24 @@ public final class zzav extends zzor {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void zzI() {
         zzg();
-        zzay();
-        if (zzai()) {
-            zzpf zzpfVar = this.zzg;
-            long zza2 = zzpfVar.zzq().zza.zza();
-            zzib zzibVar = this.zzu;
-            long elapsedRealtime = zzibVar.zzaZ().elapsedRealtime();
+        zzaw();
+        if (zzag()) {
+            zzpg zzpgVar = this.zzg;
+            long zza2 = zzpgVar.zzq().zza.zza();
+            zzic zzicVar = this.zzu;
+            long elapsedRealtime = zzicVar.zzaZ().elapsedRealtime();
             long abs = Math.abs(elapsedRealtime - zza2);
-            zzibVar.zzc();
+            zzicVar.zzc();
             if (abs > zzal.zzJ()) {
-                zzpfVar.zzq().zza.zzb(elapsedRealtime);
+                zzpgVar.zzq().zza.zzb(elapsedRealtime);
                 zzg();
-                zzay();
-                if (zzai()) {
+                zzaw();
+                if (zzag()) {
                     SQLiteDatabase zze2 = zze();
-                    zzibVar.zzc();
-                    int delete = zze2.delete("queue", "abs(bundle_end_timestamp - ?) > cast(? as integer)", new String[]{String.valueOf(zzibVar.zzaZ().currentTimeMillis()), String.valueOf(zzal.zzI())});
+                    zzicVar.zzc();
+                    int delete = zze2.delete("queue", "abs(bundle_end_timestamp - ?) > cast(? as integer)", new String[]{String.valueOf(zzicVar.zzaZ().currentTimeMillis()), String.valueOf(zzal.zzI())});
                     if (delete > 0) {
-                        zzibVar.zzaV().zzk().zzb("Deleted stale rows. rowsDeleted", Integer.valueOf(delete));
+                        zzicVar.zzaV().zzk().zzb("Deleted stale rows. rowsDeleted", Integer.valueOf(delete));
                     }
                 }
             }
@@ -768,10 +769,10 @@ public final class zzav extends zzor {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void zzJ(List list) {
         zzg();
-        zzay();
+        zzaw();
         Preconditions.checkNotNull(list);
         Preconditions.checkNotZero(list.size());
-        if (zzai()) {
+        if (zzag()) {
             String join = TextUtils.join(StringUtils.COMMA, list);
             StringBuilder sb = new StringBuilder(String.valueOf(join).length() + 2);
             sb.append("(");
@@ -782,7 +783,7 @@ public final class zzav extends zzor {
             sb3.append("SELECT COUNT(1) FROM queue WHERE rowid IN ");
             sb3.append(sb2);
             sb3.append(" AND retry_count =  2147483647 LIMIT 1");
-            if (zzaA(sb3.toString(), null) > 0) {
+            if (zzay(sb3.toString(), null) > 0) {
                 this.zzu.zzaV().zze().zza("The number of upload retries exceeds the limit. Will remain unchanged.");
             }
             try {
@@ -801,14 +802,14 @@ public final class zzav extends zzor {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void zzK(Long l) {
         zzg();
-        zzay();
+        zzaw();
         Preconditions.checkNotNull(l);
-        if (zzai()) {
+        if (zzag()) {
             StringBuilder sb = new StringBuilder(l.toString().length() + 86);
             sb.append("SELECT COUNT(1) FROM upload_queue WHERE rowid = ");
             sb.append(l);
             sb.append(" AND retry_count =  2147483647 LIMIT 1");
-            if (zzaA(sb.toString(), null) > 0) {
+            if (zzay(sb.toString(), null) > 0) {
                 this.zzu.zzaV().zze().zza("The number of upload retries exceeds the limit. Will remain unchanged.");
             }
             try {
@@ -855,7 +856,7 @@ public final class zzav extends zzor {
     }
 
     public final long zzM() {
-        return zzaB("select max(bundle_end_timestamp) from queue", null, 0L);
+        return zzaz("select max(bundle_end_timestamp) from queue", null, 0L);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -867,7 +868,7 @@ public final class zzav extends zzor {
         r2 = r9;
      */
     /* JADX WARN: Code restructure failed: missing block: B:21:0x00ae, code lost:
-        r13.zzu.zzaV().zzb().zzd("Error inserting column. appId", com.google.android.gms.measurement.internal.zzgt.zzl(r14), "first_open_count", r15);
+        r13.zzu.zzaV().zzb().zzd("Error inserting column. appId", com.google.android.gms.measurement.internal.zzgu.zzl(r14), "first_open_count", r15);
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x00c1, code lost:
         r7 = r2;
@@ -877,11 +878,11 @@ public final class zzav extends zzor {
     */
     public final long zzN(String str, String str2) {
         long j;
-        long zzaB;
+        long zzaz;
         Preconditions.checkNotEmpty(str);
         Preconditions.checkNotEmpty("first_open_count");
         zzg();
-        zzay();
+        zzaw();
         SQLiteDatabase zze2 = zze();
         zze2.beginTransaction();
         long j2 = 0;
@@ -890,92 +891,66 @@ public final class zzav extends zzor {
                 StringBuilder sb = new StringBuilder(48);
                 sb.append("select first_open_count from app2 where app_id=?");
                 j = -1;
-                zzaB = zzaB(sb.toString(), new String[]{str}, -1L);
+                zzaz = zzaz(sb.toString(), new String[]{str}, -1L);
             } finally {
                 zze2.endTransaction();
             }
         } catch (SQLiteException e) {
             e = e;
         }
-        if (zzaB == -1) {
+        if (zzaz == -1) {
             ContentValues contentValues = new ContentValues();
             contentValues.put("app_id", str);
             contentValues.put("first_open_count", (Integer) 0);
             contentValues.put("previous_install_count", (Integer) 0);
             if (zze2.insertWithOnConflict("app2", null, contentValues, 5) == -1) {
-                this.zzu.zzaV().zzb().zzc("Failed to insert column (got -1). appId", zzgt.zzl(str), "first_open_count");
+                this.zzu.zzaV().zzb().zzc("Failed to insert column (got -1). appId", zzgu.zzl(str), "first_open_count");
                 return j;
             }
-            zzaB = 0;
+            zzaz = 0;
         }
         ContentValues contentValues2 = new ContentValues();
         contentValues2.put("app_id", str);
-        contentValues2.put("first_open_count", Long.valueOf(1 + zzaB));
+        contentValues2.put("first_open_count", Long.valueOf(1 + zzaz));
         if (zze2.update("app2", contentValues2, "app_id = ?", new String[]{str}) == 0) {
-            this.zzu.zzaV().zzb().zzc("Failed to update column (got 0). appId", zzgt.zzl(str), "first_open_count");
+            this.zzu.zzaV().zzb().zzc("Failed to update column (got 0). appId", zzgu.zzl(str), "first_open_count");
         } else {
             zze2.setTransactionSuccessful();
-            j = zzaB;
+            j = zzaz;
         }
         return j;
     }
 
     public final long zzO() {
-        return zzaB("select max(timestamp) from raw_events", null, 0L);
+        return zzaz("select max(timestamp) from raw_events", null, 0L);
     }
 
     public final boolean zzP() {
-        return zzaA("select count(1) > 0 from raw_events", null) != 0;
+        return zzay("select count(1) > 0 from raw_events", null) != 0;
     }
 
     public final boolean zzQ(String str, String str2) {
-        return zzaA("select count(1) from raw_events where app_id = ? and name = ?", new String[]{str, str2}) > 0;
+        return zzay("select count(1) from raw_events where app_id = ? and name = ?", new String[]{str, str2}) > 0;
     }
 
     public final boolean zzR() {
-        return zzaA("select count(1) > 0 from raw_events where realtime = 1", null) != 0;
+        return zzay("select count(1) > 0 from raw_events where realtime = 1", null) != 0;
     }
 
-    public final void zzS(List list) {
-        Preconditions.checkNotNull(list);
-        zzg();
-        zzay();
-        StringBuilder sb = new StringBuilder("rowid in (");
-        for (int i = 0; i < list.size(); i++) {
-            if (i != 0) {
-                sb.append(StringUtils.COMMA);
-            }
-            sb.append(((Long) list.get(i)).longValue());
-        }
-        sb.append(")");
-        int delete = zze().delete("raw_events", sb.toString(), null);
-        if (delete != list.size()) {
-            this.zzu.zzaV().zzb().zzc("Deleted fewer rows from raw events table than expected", Integer.valueOf(delete), Integer.valueOf(list.size()));
-        }
-    }
-
-    public final void zzT(String str) {
-        try {
-            zze().execSQL("delete from raw_events_metadata where app_id=? and metadata_fingerprint not in (select distinct metadata_fingerprint from raw_events where app_id=?)", new String[]{str, str});
-        } catch (SQLiteException e) {
-            this.zzu.zzaV().zzb().zzc("Failed to remove unused event metadata. appId", zzgt.zzl(str), e);
-        }
-    }
-
-    public final long zzU(String str) {
+    public final long zzS(String str) {
         Preconditions.checkNotEmpty(str);
-        return zzaB("select count(1) from events where app_id=? and name not like '!_%' escape '!'", new String[]{str}, 0L);
+        return zzaz("select count(1) from events where app_id=? and name not like '!_%' escape '!'", new String[]{str}, 0L);
     }
 
-    public final boolean zzV(String str, Long l, long j, com.google.android.gms.internal.measurement.zzhs zzhsVar) {
+    public final boolean zzT(String str, Long l, long j, com.google.android.gms.internal.measurement.zzhs zzhsVar) {
         zzg();
-        zzay();
+        zzaw();
         Preconditions.checkNotNull(zzhsVar);
         Preconditions.checkNotEmpty(str);
         Preconditions.checkNotNull(l);
-        zzib zzibVar = this.zzu;
+        zzic zzicVar = this.zzu;
         byte[] zzcc = zzhsVar.zzcc();
-        zzibVar.zzaV().zzk().zzc("Saving complex main event, appId, data size", zzibVar.zzl().zza(str), Integer.valueOf(zzcc.length));
+        zzicVar.zzaV().zzk().zzc("Saving complex main event, appId, data size", zzicVar.zzl().zza(str), Integer.valueOf(zzcc.length));
         ContentValues contentValues = new ContentValues();
         contentValues.put("app_id", str);
         contentValues.put("event_id", l);
@@ -983,12 +958,12 @@ public final class zzav extends zzor {
         contentValues.put("main_event", zzcc);
         try {
             if (zze().insertWithOnConflict("main_event_params", null, contentValues, 5) == -1) {
-                zzibVar.zzaV().zzb().zzb("Failed to insert complex main event (got -1). appId", zzgt.zzl(str));
+                zzicVar.zzaV().zzb().zzb("Failed to insert complex main event (got -1). appId", zzgu.zzl(str));
                 return false;
             }
             return true;
         } catch (SQLiteException e) {
-            this.zzu.zzaV().zzb().zzc("Error storing complex main event. appId", zzgt.zzl(str), e);
+            this.zzu.zzaV().zzb().zzc("Error storing complex main event. appId", zzgu.zzl(str), e);
             return false;
         }
     }
@@ -999,11 +974,11 @@ public final class zzav extends zzor {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Bundle zzW(String str) {
+    public final Bundle zzU(String str) {
         Cursor cursor;
         Cursor cursor2;
         zzg();
-        zzay();
+        zzaw();
         Cursor cursor3 = null;
         try {
             try {
@@ -1013,15 +988,15 @@ public final class zzav extends zzor {
                         this.zzu.zzaV().zzk().zza("Default event parameters not found");
                     } else {
                         try {
-                            com.google.android.gms.internal.measurement.zzhs zzhsVar = (com.google.android.gms.internal.measurement.zzhs) ((com.google.android.gms.internal.measurement.zzhr) zzpj.zzw(com.google.android.gms.internal.measurement.zzhs.zzk(), cursor.getBlob(0))).zzbc();
+                            com.google.android.gms.internal.measurement.zzhs zzhsVar = (com.google.android.gms.internal.measurement.zzhs) ((com.google.android.gms.internal.measurement.zzhr) zzpk.zzw(com.google.android.gms.internal.measurement.zzhs.zzk(), cursor.getBlob(0))).zzbc();
                             this.zzg.zzp();
-                            Bundle zzE = zzpj.zzE(zzhsVar.zza());
+                            Bundle zzE = zzpk.zzE(zzhsVar.zza());
                             if (cursor != null) {
                                 cursor.close();
                             }
                             return zzE;
                         } catch (IOException e) {
-                            this.zzu.zzaV().zzb().zzc("Failed to retrieve default event parameters. appId", zzgt.zzl(str), e);
+                            this.zzu.zzaV().zzb().zzc("Failed to retrieve default event parameters. appId", zzgu.zzl(str), e);
                         }
                     }
                 } catch (SQLiteException e2) {
@@ -1055,12 +1030,12 @@ public final class zzav extends zzor {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzX(String str, long j) {
+    public final boolean zzV(String str, long j) {
         try {
-            if (zzaB("select count(*) from raw_events where app_id=? and timestamp >= ? and name not like '!_%' escape '!' limit 1;", new String[]{str, String.valueOf(j)}, 0L) > 0) {
+            if (zzaz("select count(*) from raw_events where app_id=? and timestamp >= ? and name not like '!_%' escape '!' limit 1;", new String[]{str, String.valueOf(j)}, 0L) > 0) {
                 return false;
             }
-            return zzaB("select count(*) from raw_events where app_id=? and timestamp >= ? and name like '!_%' escape '!' limit 1;", new String[]{str, String.valueOf(j)}, 0L) > 0;
+            return zzaz("select count(*) from raw_events where app_id=? and timestamp >= ? and name like '!_%' escape '!' limit 1;", new String[]{str, String.valueOf(j)}, 0L) > 0;
         } catch (SQLiteException e) {
             this.zzu.zzaV().zzb().zzb("Error checking backfill conditions", e);
             return false;
@@ -1086,18 +1061,18 @@ public final class zzav extends zzor {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void zzY(String str, Long l, String str2, Bundle bundle) {
+    public final void zzW(String str, Long l, String str2, Bundle bundle) {
         String string;
         String str3;
         Bundle bundle2;
         long update;
-        zzpj zzpjVar;
+        zzpk zzpkVar;
         com.google.android.gms.internal.measurement.zzid zzidVar;
         Cursor query;
         String str4 = str;
         Preconditions.checkNotNull(bundle);
         zzg();
-        zzay();
+        zzaw();
         zzat zzatVar = l != null ? new zzat(this, str4, l.longValue()) : new zzat(this, str4);
         List<zzas> zza2 = zzatVar.zza();
         while (!zza2.isEmpty()) {
@@ -1126,13 +1101,13 @@ public final class zzav extends zzor {
                         }
                         if (query.moveToFirst()) {
                             try {
-                                zzidVar = (com.google.android.gms.internal.measurement.zzid) ((com.google.android.gms.internal.measurement.zzic) zzpj.zzw(com.google.android.gms.internal.measurement.zzid.zzaE(), query.getBlob(0))).zzbc();
+                                zzidVar = (com.google.android.gms.internal.measurement.zzid) ((com.google.android.gms.internal.measurement.zzic) zzpk.zzw(com.google.android.gms.internal.measurement.zzid.zzaE(), query.getBlob(0))).zzbc();
                             } catch (IOException e3) {
-                                this.zzu.zzaV().zzb().zzc("Data loss. Failed to merge raw event metadata. appId", zzgt.zzl(str4), e3);
+                                this.zzu.zzaV().zzb().zzc("Data loss. Failed to merge raw event metadata. appId", zzgu.zzl(str4), e3);
                             }
                             try {
                                 if (query.moveToNext()) {
-                                    this.zzu.zzaV().zze().zzb("Get multiple raw event metadata records, expected one. appId", zzgt.zzl(str4));
+                                    this.zzu.zzaV().zze().zzb("Get multiple raw event metadata records, expected one. appId", zzgu.zzl(str4));
                                 }
                                 query.close();
                                 if (query != null) {
@@ -1141,15 +1116,15 @@ public final class zzav extends zzor {
                             } catch (SQLiteException e4) {
                                 e = e4;
                                 cursor2 = query;
-                                this.zzu.zzaV().zzb().zzc("Data loss. Error selecting raw event. appId", zzgt.zzl(str4), e);
+                                this.zzu.zzaV().zzb().zzc("Data loss. Error selecting raw event. appId", zzgu.zzl(str4), e);
                                 if (cursor2 != null) {
                                     cursor2.close();
                                 }
                                 zzidVar2 = zzidVar;
                                 if (zzidVar2 == null) {
                                 }
-                                zzpf zzpfVar = this.zzg;
-                                zzpj zzp = zzpfVar.zzp();
+                                zzpg zzpgVar = this.zzg;
+                                zzpk zzp = zzpgVar.zzp();
                                 com.google.android.gms.internal.measurement.zzhs zzhsVar = zzasVar.zzd;
                                 Bundle bundle3 = new Bundle();
                                 while (r8.hasNext()) {
@@ -1159,25 +1134,25 @@ public final class zzav extends zzor {
                                 String zzd2 = zzhsVar.zzd();
                                 if (string == null) {
                                 }
-                                zzgu zzguVar = new zzgu(zzd2, string, bundle3, zzhsVar.zzf());
-                                zzib zzibVar = this.zzu;
-                                Bundle bundle4 = zzguVar.zzd;
-                                str3 = zzguVar.zza;
-                                zzpo zzk2 = zzibVar.zzk();
+                                zzgv zzgvVar = new zzgv(zzd2, string, bundle3, zzhsVar.zzf());
+                                zzic zzicVar = this.zzu;
+                                Bundle bundle4 = zzgvVar.zzd;
+                                str3 = zzgvVar.zza;
+                                zzpp zzk2 = zzicVar.zzk();
                                 if (str3.equals(Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN)) {
                                 }
-                                zzpf zzpfVar2 = zzpfVar;
+                                zzpg zzpgVar2 = zzpgVar;
                                 zzk2.zzI(bundle4, bundle2);
-                                zzbb zzbbVar = new zzbb(this.zzu, zzguVar.zzb, str4, zzhsVar.zzd(), zzhsVar.zzf(), zzhsVar.zzh(), bundle4);
+                                zzbb zzbbVar = new zzbb(this.zzu, zzgvVar.zzb, str4, zzhsVar.zzd(), zzhsVar.zzf(), zzhsVar.zzh(), bundle4);
                                 long j = zzasVar.zza;
                                 long j2 = zzasVar.zzb;
                                 boolean z = zzasVar.zzc;
                                 zzg();
-                                zzay();
+                                zzaw();
                                 Preconditions.checkNotNull(zzbbVar);
                                 String str5 = zzbbVar.zza;
                                 Preconditions.checkNotEmpty(str5);
-                                byte[] zzcc = zzpfVar2.zzp().zzh(zzbbVar).zzcc();
+                                byte[] zzcc = zzpgVar2.zzp().zzh(zzbbVar).zzcc();
                                 ContentValues contentValues = new ContentValues();
                                 contentValues.put("app_id", str5);
                                 contentValues.put("name", zzbbVar.zzb);
@@ -1199,7 +1174,7 @@ public final class zzav extends zzor {
                                 }
                             }
                         } else {
-                            this.zzu.zzaV().zzb().zzb("Raw event metadata record is missing. appId", zzgt.zzl(str4));
+                            this.zzu.zzaV().zzb().zzb("Raw event metadata record is missing. appId", zzgu.zzl(str4));
                         }
                     } catch (Throwable th2) {
                         th = th2;
@@ -1210,16 +1185,16 @@ public final class zzav extends zzor {
                         throw th;
                     }
                 }
-                zzpf zzpfVar3 = this.zzg;
-                zzpj zzp2 = zzpfVar3.zzp();
+                zzpg zzpgVar3 = this.zzg;
+                zzpk zzp2 = zzpgVar3.zzp();
                 com.google.android.gms.internal.measurement.zzhs zzhsVar2 = zzasVar.zzd;
                 Bundle bundle32 = new Bundle();
                 for (com.google.android.gms.internal.measurement.zzhw zzhwVar : zzhsVar2.zza()) {
                     if (zzhwVar.zzi()) {
-                        zzpjVar = zzp2;
+                        zzpkVar = zzp2;
                         bundle32.putDouble(zzhwVar.zzb(), zzhwVar.zzj());
                     } else {
-                        zzpjVar = zzp2;
+                        zzpkVar = zzp2;
                         if (zzhwVar.zzg()) {
                             bundle32.putFloat(zzhwVar.zzb(), zzhwVar.zzh());
                         } else if (zzhwVar.zze()) {
@@ -1227,12 +1202,12 @@ public final class zzav extends zzor {
                         } else if (zzhwVar.zzc()) {
                             bundle32.putString(zzhwVar.zzb(), zzhwVar.zzd());
                         } else if (zzhwVar.zzk().isEmpty()) {
-                            zzpjVar.zzu.zzaV().zzb().zzb("Unexpected parameter type for parameter", zzhwVar);
+                            zzpkVar.zzu.zzaV().zzb().zzb("Unexpected parameter type for parameter", zzhwVar);
                         } else {
-                            bundle32.putParcelableArray(zzhwVar.zzb(), zzpj.zzy(zzhwVar.zzk()));
+                            bundle32.putParcelableArray(zzhwVar.zzb(), zzpk.zzy(zzhwVar.zzk()));
                         }
                     }
-                    zzp2 = zzpjVar;
+                    zzp2 = zzpkVar;
                 }
                 string = bundle32.getString("_o");
                 bundle32.remove("_o");
@@ -1240,35 +1215,35 @@ public final class zzav extends zzor {
                 if (string == null) {
                     string = "";
                 }
-                zzgu zzguVar2 = new zzgu(zzd22, string, bundle32, zzhsVar2.zzf());
-                zzib zzibVar2 = this.zzu;
-                Bundle bundle42 = zzguVar2.zzd;
-                str3 = zzguVar2.zza;
-                zzpo zzk22 = zzibVar2.zzk();
+                zzgv zzgvVar2 = new zzgv(zzd22, string, bundle32, zzhsVar2.zzf());
+                zzic zzicVar2 = this.zzu;
+                Bundle bundle42 = zzgvVar2.zzd;
+                str3 = zzgvVar2.zza;
+                zzpp zzk22 = zzicVar2.zzk();
                 if (str3.equals(Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN)) {
                     bundle2 = bundle;
                 } else {
                     bundle2 = new Bundle(bundle);
                     for (String str6 : bundle.keySet()) {
-                        zzpf zzpfVar4 = zzpfVar3;
+                        zzpg zzpgVar4 = zzpgVar3;
                         if (str6.startsWith("gad_")) {
                             bundle2.remove(str6);
                         }
-                        zzpfVar3 = zzpfVar4;
+                        zzpgVar3 = zzpgVar4;
                     }
                 }
-                zzpf zzpfVar22 = zzpfVar3;
+                zzpg zzpgVar22 = zzpgVar3;
                 zzk22.zzI(bundle42, bundle2);
-                zzbb zzbbVar2 = new zzbb(this.zzu, zzguVar2.zzb, str4, zzhsVar2.zzd(), zzhsVar2.zzf(), zzhsVar2.zzh(), bundle42);
+                zzbb zzbbVar2 = new zzbb(this.zzu, zzgvVar2.zzb, str4, zzhsVar2.zzd(), zzhsVar2.zzf(), zzhsVar2.zzh(), bundle42);
                 long j3 = zzasVar.zza;
                 long j22 = zzasVar.zzb;
                 boolean z2 = zzasVar.zzc;
                 zzg();
-                zzay();
+                zzaw();
                 Preconditions.checkNotNull(zzbbVar2);
                 String str52 = zzbbVar2.zza;
                 Preconditions.checkNotEmpty(str52);
-                byte[] zzcc2 = zzpfVar22.zzp().zzh(zzbbVar2).zzcc();
+                byte[] zzcc2 = zzpgVar22.zzp().zzh(zzbbVar2).zzcc();
                 ContentValues contentValues2 = new ContentValues();
                 contentValues2.put("app_id", str52);
                 contentValues2.put("name", zzbbVar2.zzb);
@@ -1279,10 +1254,10 @@ public final class zzav extends zzor {
                 try {
                     update = zze().update("raw_events", contentValues2, "rowid = ?", new String[]{String.valueOf(j3)});
                     if (update != 1) {
-                        zzibVar2.zzaV().zzb().zzc("Failed to update raw event. appId, updatedRows", zzgt.zzl(str52), Long.valueOf(update));
+                        zzicVar2.zzaV().zzb().zzc("Failed to update raw event. appId, updatedRows", zzgu.zzl(str52), Long.valueOf(update));
                     }
                 } catch (SQLiteException e5) {
-                    this.zzu.zzaV().zzb().zzc("Error updating raw event. appId", zzgt.zzl(zzbbVar2.zza), e5);
+                    this.zzu.zzaV().zzb().zzc("Error updating raw event. appId", zzgu.zzl(zzbbVar2.zza), e5);
                 }
                 str4 = str;
             }
@@ -1301,18 +1276,18 @@ public final class zzav extends zzor {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final zzjk zzZ(String str) {
+    public final zzjl zzX(String str) {
         Throwable th;
         SQLiteException e;
         Cursor cursor;
         Preconditions.checkNotNull(str);
         zzg();
-        zzay();
+        zzaw();
         Cursor cursor2 = null;
         r3 = null;
         r3 = null;
         r3 = null;
-        zzjk zzjkVar = null;
+        zzjl zzjlVar = null;
         try {
             try {
                 cursor = zze().rawQuery("select consent_state, consent_source from consent_settings where app_id=? limit 1;", new String[]{str});
@@ -1339,98 +1314,98 @@ public final class zzav extends zzor {
             throw th;
         }
         if (cursor.moveToFirst()) {
-            zzjkVar = zzjk.zzf(cursor.getString(0), cursor.getInt(1));
+            zzjlVar = zzjl.zzf(cursor.getString(0), cursor.getInt(1));
         } else {
             this.zzu.zzaV().zzk().zza("No data found");
             if (cursor != null) {
                 cursor.close();
             }
-            return zzjkVar == null ? zzjk.zza : zzjkVar;
+            return zzjlVar == null ? zzjl.zza : zzjlVar;
         }
     }
 
-    public final boolean zzaa(String str, zzog zzogVar) {
+    public final boolean zzY(String str, zzoh zzohVar) {
         zzg();
-        zzay();
-        Preconditions.checkNotNull(zzogVar);
+        zzaw();
+        Preconditions.checkNotNull(zzohVar);
         Preconditions.checkNotEmpty(str);
-        zzib zzibVar = this.zzu;
-        long currentTimeMillis = zzibVar.zzaZ().currentTimeMillis();
-        zzfw zzfwVar = zzfx.zzav;
-        long j = zzogVar.zzb;
-        if (j < currentTimeMillis - ((Long) zzfwVar.zzb(null)).longValue() || j > ((Long) zzfwVar.zzb(null)).longValue() + currentTimeMillis) {
-            zzibVar.zzaV().zze().zzd("Storing trigger URI outside of the max retention time span. appId, now, timestamp", zzgt.zzl(str), Long.valueOf(currentTimeMillis), Long.valueOf(j));
+        zzic zzicVar = this.zzu;
+        long currentTimeMillis = zzicVar.zzaZ().currentTimeMillis();
+        zzfx zzfxVar = zzfy.zzav;
+        long j = zzohVar.zzb;
+        if (j < currentTimeMillis - ((Long) zzfxVar.zzb(null)).longValue() || j > ((Long) zzfxVar.zzb(null)).longValue() + currentTimeMillis) {
+            zzicVar.zzaV().zze().zzd("Storing trigger URI outside of the max retention time span. appId, now, timestamp", zzgu.zzl(str), Long.valueOf(currentTimeMillis), Long.valueOf(j));
         }
-        zzibVar.zzaV().zzk().zza("Saving trigger URI");
+        zzicVar.zzaV().zzk().zza("Saving trigger URI");
         ContentValues contentValues = new ContentValues();
         contentValues.put("app_id", str);
-        contentValues.put("trigger_uri", zzogVar.zza);
-        contentValues.put("source", Integer.valueOf(zzogVar.zzc));
+        contentValues.put("trigger_uri", zzohVar.zza);
+        contentValues.put("source", Integer.valueOf(zzohVar.zzc));
         contentValues.put("timestamp_millis", Long.valueOf(j));
         try {
             if (zze().insert("trigger_uris", null, contentValues) == -1) {
-                zzibVar.zzaV().zzb().zzb("Failed to insert trigger URI (got -1). appId", zzgt.zzl(str));
+                zzicVar.zzaV().zzb().zzb("Failed to insert trigger URI (got -1). appId", zzgu.zzl(str));
                 return false;
             }
             return true;
         } catch (SQLiteException e) {
-            this.zzu.zzaV().zzb().zzc("Error storing trigger URI. appId", zzgt.zzl(str), e);
+            this.zzu.zzaV().zzb().zzc("Error storing trigger URI. appId", zzgu.zzl(str), e);
             return false;
         }
     }
 
-    public final void zzab(String str, zzjk zzjkVar) {
+    public final void zzZ(String str, zzjl zzjlVar) {
         Preconditions.checkNotNull(str);
-        Preconditions.checkNotNull(zzjkVar);
+        Preconditions.checkNotNull(zzjlVar);
         zzg();
-        zzay();
+        zzaw();
         ContentValues contentValues = new ContentValues();
         contentValues.put("app_id", str);
-        contentValues.put("consent_state", zzjkVar.zzl());
-        contentValues.put("consent_source", Integer.valueOf(zzjkVar.zzb()));
-        zzaD("consent_settings", "app_id", contentValues);
+        contentValues.put("consent_state", zzjlVar.zzl());
+        contentValues.put("consent_source", Integer.valueOf(zzjlVar.zzb()));
+        zzaB("consent_settings", "app_id", contentValues);
     }
 
-    public final zzaz zzac(String str) {
+    public final zzaz zzaa(String str) {
         Preconditions.checkNotNull(str);
         zzg();
-        zzay();
-        return zzaz.zzg(zzaC("select dma_consent_settings from consent_settings where app_id=? limit 1;", new String[]{str}, ""));
+        zzaw();
+        return zzaz.zzg(zzaA("select dma_consent_settings from consent_settings where app_id=? limit 1;", new String[]{str}, ""));
     }
 
-    public final void zzad(String str, zzaz zzazVar) {
+    public final void zzab(String str, zzaz zzazVar) {
         Preconditions.checkNotNull(str);
         Preconditions.checkNotNull(zzazVar);
         zzg();
-        zzay();
-        zzjk zzZ = zzZ(str);
-        zzjk zzjkVar = zzjk.zza;
-        if (zzZ == zzjkVar) {
-            zzab(str, zzjkVar);
+        zzaw();
+        zzjl zzX = zzX(str);
+        zzjl zzjlVar = zzjl.zza;
+        if (zzX == zzjlVar) {
+            zzZ(str, zzjlVar);
         }
         ContentValues contentValues = new ContentValues();
         contentValues.put("app_id", str);
         contentValues.put("dma_consent_settings", zzazVar.zze());
-        zzaD("consent_settings", "app_id", contentValues);
+        zzaB("consent_settings", "app_id", contentValues);
     }
 
-    public final void zzae(String str, zzjk zzjkVar) {
+    public final void zzac(String str, zzjl zzjlVar) {
         Preconditions.checkNotNull(str);
-        Preconditions.checkNotNull(zzjkVar);
+        Preconditions.checkNotNull(zzjlVar);
         zzg();
-        zzay();
-        zzab(str, zzZ(str));
+        zzaw();
+        zzZ(str, zzX(str));
         ContentValues contentValues = new ContentValues();
         contentValues.put("app_id", str);
-        contentValues.put("storage_consent_at_bundling", zzjkVar.zzl());
-        zzaD("consent_settings", "app_id", contentValues);
+        contentValues.put("storage_consent_at_bundling", zzjlVar.zzl());
+        zzaB("consent_settings", "app_id", contentValues);
     }
 
-    public final zzjk zzaf(String str) {
+    public final zzjl zzad(String str) {
         Preconditions.checkNotNull(str);
         zzg();
-        zzay();
-        return zzjk.zzf(zzaC("select storage_consent_at_bundling from consent_settings where app_id=? limit 1;", new String[]{str}, ""), 100);
+        zzaw();
+        return zzjl.zzf(zzaA("select storage_consent_at_bundling from consent_settings where app_id=? limit 1;", new String[]{str}, ""), 100);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1438,7 +1413,7 @@ public final class zzav extends zzor {
         if (zze().insertWithOnConflict("property_filters", null, r13, 5) != (-1)) goto L128;
      */
     /* JADX WARN: Code restructure failed: missing block: B:102:0x0347, code lost:
-        r25.zzu.zzaV().zzb().zzb("Failed to insert property filter (got -1). appId", com.google.android.gms.measurement.internal.zzgt.zzl(r26));
+        r25.zzu.zzaV().zzb().zzb("Failed to insert property filter (got -1). appId", com.google.android.gms.measurement.internal.zzgu.zzl(r26));
      */
     /* JADX WARN: Code restructure failed: missing block: B:104:0x035b, code lost:
         r0 = r22;
@@ -1448,10 +1423,10 @@ public final class zzav extends zzor {
         r0 = move-exception;
      */
     /* JADX WARN: Code restructure failed: missing block: B:106:0x0362, code lost:
-        r25.zzu.zzaV().zzb().zzc("Error storing property filter. appId", com.google.android.gms.measurement.internal.zzgt.zzl(r26), r0);
+        r25.zzu.zzaV().zzb().zzc("Error storing property filter. appId", com.google.android.gms.measurement.internal.zzgu.zzl(r26), r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:107:0x0375, code lost:
-        zzay();
+        zzaw();
         zzg();
         com.google.android.gms.common.internal.Preconditions.checkNotEmpty(r26);
         r0 = zze();
@@ -1480,7 +1455,7 @@ public final class zzav extends zzor {
         if (((com.google.android.gms.internal.measurement.zzfn) r12.next()).zza() != false) goto L63;
      */
     /* JADX WARN: Code restructure failed: missing block: B:52:0x018e, code lost:
-        r25.zzu.zzaV().zze().zzc("Property filter with no ID. Audience definition ignored. appId, audienceId", com.google.android.gms.measurement.internal.zzgt.zzl(r26), java.lang.Integer.valueOf(r11));
+        r25.zzu.zzaV().zze().zzc("Property filter with no ID. Audience definition ignored. appId, audienceId", com.google.android.gms.measurement.internal.zzgu.zzl(r26), java.lang.Integer.valueOf(r11));
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x01a7, code lost:
         r12 = r0.zzf().iterator();
@@ -1494,7 +1469,7 @@ public final class zzav extends zzor {
      */
     /* JADX WARN: Code restructure failed: missing block: B:57:0x01c3, code lost:
         r13 = (com.google.android.gms.internal.measurement.zzff) r12.next();
-        zzay();
+        zzaw();
         zzg();
         com.google.android.gms.common.internal.Preconditions.checkNotEmpty(r26);
         com.google.android.gms.common.internal.Preconditions.checkNotNull(r13);
@@ -1504,7 +1479,7 @@ public final class zzav extends zzor {
      */
     /* JADX WARN: Code restructure failed: missing block: B:59:0x01df, code lost:
         r0 = r25.zzu.zzaV().zze();
-        r10 = com.google.android.gms.measurement.internal.zzgt.zzl(r26);
+        r10 = com.google.android.gms.measurement.internal.zzgu.zzl(r26);
         r12 = java.lang.Integer.valueOf(r11);
      */
     /* JADX WARN: Code restructure failed: missing block: B:60:0x01f7, code lost:
@@ -1561,7 +1536,7 @@ public final class zzav extends zzor {
         if (zze().insertWithOnConflict("event_filters", null, r7, 5) != (-1)) goto L93;
      */
     /* JADX WARN: Code restructure failed: missing block: B:77:0x0263, code lost:
-        r25.zzu.zzaV().zzb().zzb("Failed to insert event filter (got -1). appId", com.google.android.gms.measurement.internal.zzgt.zzl(r26));
+        r25.zzu.zzaV().zzb().zzb("Failed to insert event filter (got -1). appId", com.google.android.gms.measurement.internal.zzgu.zzl(r26));
      */
     /* JADX WARN: Code restructure failed: missing block: B:78:0x0276, code lost:
         r0 = r22;
@@ -1571,7 +1546,7 @@ public final class zzav extends zzor {
         r0 = move-exception;
      */
     /* JADX WARN: Code restructure failed: missing block: B:80:0x027f, code lost:
-        r25.zzu.zzaV().zzb().zzc("Error storing event filter. appId", com.google.android.gms.measurement.internal.zzgt.zzl(r26), r0);
+        r25.zzu.zzaV().zzb().zzc("Error storing event filter. appId", com.google.android.gms.measurement.internal.zzgu.zzl(r26), r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:81:0x0294, code lost:
         r23 = r7;
@@ -1582,7 +1557,7 @@ public final class zzav extends zzor {
      */
     /* JADX WARN: Code restructure failed: missing block: B:84:0x02a4, code lost:
         r7 = (com.google.android.gms.internal.measurement.zzfn) r3.next();
-        zzay();
+        zzaw();
         zzg();
         com.google.android.gms.common.internal.Preconditions.checkNotEmpty(r26);
         com.google.android.gms.common.internal.Preconditions.checkNotNull(r7);
@@ -1592,7 +1567,7 @@ public final class zzav extends zzor {
      */
     /* JADX WARN: Code restructure failed: missing block: B:86:0x02c0, code lost:
         r0 = r25.zzu.zzaV().zze();
-        r9 = com.google.android.gms.measurement.internal.zzgt.zzl(r26);
+        r9 = com.google.android.gms.measurement.internal.zzgu.zzl(r26);
         r10 = java.lang.Integer.valueOf(r11);
      */
     /* JADX WARN: Code restructure failed: missing block: B:87:0x02d8, code lost:
@@ -1644,7 +1619,7 @@ public final class zzav extends zzor {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void zzag(String str, List list) {
+    public final void zzae(String str, List list) {
         SQLiteDatabase sQLiteDatabase;
         boolean z;
         Preconditions.checkNotNull(list);
@@ -1654,7 +1629,7 @@ public final class zzav extends zzor {
                 for (int i2 = 0; i2 < zzfcVar.zzd(); i2++) {
                     com.google.android.gms.internal.measurement.zzfe zzfeVar = (com.google.android.gms.internal.measurement.zzfe) zzfcVar.zze(i2).zzcl();
                     com.google.android.gms.internal.measurement.zzfe zzfeVar2 = (com.google.android.gms.internal.measurement.zzfe) zzfeVar.zzaR();
-                    String zzb2 = zzjl.zzb(zzfeVar.zza());
+                    String zzb2 = zzjm.zzb(zzfeVar.zza());
                     if (zzb2 != null) {
                         zzfeVar2.zzb(zzb2);
                         z = true;
@@ -1665,7 +1640,7 @@ public final class zzav extends zzor {
                     while (i3 < zzfeVar.zzc()) {
                         com.google.android.gms.internal.measurement.zzfh zzd2 = zzfeVar.zzd(i3);
                         com.google.android.gms.internal.measurement.zzfe zzfeVar3 = zzfeVar;
-                        String zzc2 = zzls.zzc(zzd2.zzh(), zzjm.zza, zzjm.zzb);
+                        String zzc2 = zzlt.zzc(zzd2.zzh(), zzjn.zza, zzjn.zzb);
                         if (zzc2 != null) {
                             com.google.android.gms.internal.measurement.zzfg zzfgVar = (com.google.android.gms.internal.measurement.zzfg) zzd2.zzcl();
                             zzfgVar.zza(zzc2);
@@ -1684,7 +1659,7 @@ public final class zzav extends zzor {
             if (zzfcVar.zza() != 0) {
                 for (int i4 = 0; i4 < zzfcVar.zza(); i4++) {
                     com.google.android.gms.internal.measurement.zzfn zzb3 = zzfcVar.zzb(i4);
-                    String zzc3 = zzls.zzc(zzb3.zzc(), zzjn.zza, zzjn.zzb);
+                    String zzc3 = zzlt.zzc(zzb3.zzc(), zzjo.zza, zzjo.zzb);
                     if (zzc3 != null) {
                         com.google.android.gms.internal.measurement.zzfm zzfmVar = (com.google.android.gms.internal.measurement.zzfm) zzb3.zzcl();
                         zzfmVar.zza(zzc3);
@@ -1694,14 +1669,14 @@ public final class zzav extends zzor {
                 }
             }
         }
-        zzay();
+        zzaw();
         zzg();
         Preconditions.checkNotEmpty(str);
         Preconditions.checkNotNull(list);
         SQLiteDatabase zze2 = zze();
         zze2.beginTransaction();
         try {
-            zzay();
+            zzaw();
             zzg();
             Preconditions.checkNotEmpty(str);
             SQLiteDatabase zze3 = zze();
@@ -1710,19 +1685,19 @@ public final class zzav extends zzor {
             Iterator it = list.iterator();
             while (it.hasNext()) {
                 com.google.android.gms.internal.measurement.zzfd zzfdVar = (com.google.android.gms.internal.measurement.zzfd) it.next();
-                zzay();
+                zzaw();
                 zzg();
                 Preconditions.checkNotEmpty(str);
                 Preconditions.checkNotNull(zzfdVar);
                 if (!zzfdVar.zza()) {
-                    this.zzu.zzaV().zze().zzb("Audience with no ID. appId", zzgt.zzl(str));
+                    this.zzu.zzaV().zze().zzb("Audience with no ID. appId", zzgu.zzl(str));
                 } else {
                     int zzb4 = zzfdVar.zzb();
                     Iterator it2 = zzfdVar.zzf().iterator();
                     while (true) {
                         if (it2.hasNext()) {
                             if (!((com.google.android.gms.internal.measurement.zzff) it2.next()).zza()) {
-                                this.zzu.zzaV().zze().zzc("Event filter with no ID. Audience definition ignored. appId, audienceId", zzgt.zzl(str), Integer.valueOf(zzb4));
+                                this.zzu.zzaV().zze().zzc("Event filter with no ID. Audience definition ignored. appId, audienceId", zzgu.zzl(str), Integer.valueOf(zzb4));
                                 break;
                             }
                         } else {
@@ -1739,13 +1714,13 @@ public final class zzav extends zzor {
                 arrayList.add(zzfdVar2.zza() ? Integer.valueOf(zzfdVar2.zzb()) : null);
             }
             Preconditions.checkNotEmpty(str);
-            zzay();
+            zzaw();
             zzg();
             SQLiteDatabase zze4 = zze();
             try {
-                long zzaA = zzaA("select count(1) from audience_filter_values where app_id=?", new String[]{str});
-                int max = Math.max(0, Math.min(2000, this.zzu.zzc().zzm(str, zzfx.zzU)));
-                if (zzaA > max) {
+                long zzay = zzay("select count(1) from audience_filter_values where app_id=?", new String[]{str});
+                int max = Math.max(0, Math.min(2000, this.zzu.zzc().zzm(str, zzfy.zzU)));
+                if (zzay > max) {
                     ArrayList arrayList2 = new ArrayList();
                     int i5 = 0;
                     while (true) {
@@ -1773,7 +1748,7 @@ public final class zzav extends zzor {
                     }
                 }
             } catch (SQLiteException e) {
-                this.zzu.zzaV().zzb().zzc("Database error querying filters. appId", zzgt.zzl(str), e);
+                this.zzu.zzaV().zzb().zzc("Database error querying filters. appId", zzgu.zzl(str), e);
             }
             sQLiteDatabase.setTransactionSuccessful();
             sQLiteDatabase.endTransaction();
@@ -1784,71 +1759,149 @@ public final class zzav extends zzor {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzbc zzah(String str, com.google.android.gms.internal.measurement.zzhs zzhsVar, String str2) {
-        zzbc zzaE = zzaE("events", str, zzhsVar.zzd());
-        if (zzaE == null) {
-            zzib zzibVar = this.zzu;
-            zzibVar.zzaV().zze().zzc("Event aggregate wasn't created during raw event logging. appId, event", zzgt.zzl(str), zzibVar.zzl().zza(str2));
+    public final zzbc zzaf(String str, com.google.android.gms.internal.measurement.zzhs zzhsVar, String str2) {
+        zzbc zzaC = zzaC("events", str, zzhsVar.zzd());
+        if (zzaC == null) {
+            zzic zzicVar = this.zzu;
+            zzicVar.zzaV().zze().zzc("Event aggregate wasn't created during raw event logging. appId, event", zzgu.zzl(str), zzicVar.zzl().zza(str2));
             return new zzbc(str, zzhsVar.zzd(), 1L, 1L, 1L, zzhsVar.zzf(), 0L, null, null, null, null);
         }
-        long j = zzaE.zze + 1;
-        long j2 = zzaE.zzd + 1;
-        return new zzbc(zzaE.zza, zzaE.zzb, zzaE.zzc + 1, j2, j, zzaE.zzf, zzaE.zzg, zzaE.zzh, zzaE.zzi, zzaE.zzj, zzaE.zzk);
+        long j = zzaC.zze + 1;
+        long j2 = zzaC.zzd + 1;
+        return new zzbc(zzaC.zza, zzaC.zzb, zzaC.zzc + 1, j2, j, zzaC.zzf, zzaC.zzg, zzaC.zzh, zzaC.zzi, zzaC.zzj, zzaC.zzk);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public final boolean zzai() {
-        zzib zzibVar = this.zzu;
-        Context zzaY = zzibVar.zzaY();
-        zzibVar.zzc();
+    public final boolean zzag() {
+        zzic zzicVar = this.zzu;
+        Context zzaY = zzicVar.zzaY();
+        zzicVar.zzc();
         return zzaY.getDatabasePath("google_app_measurement.db").exists();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ long zzaj(String str, String[] strArr, long j) {
-        return zzaB("select rowid from raw_events where app_id = ? and timestamp < ? order by rowid desc limit 1", strArr, -1L);
+    public final /* synthetic */ long zzah(String str, String[] strArr, long j) {
+        return zzaz("select rowid from raw_events where app_id = ? and timestamp < ? order by rowid desc limit 1", strArr, -1L);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ zzof zzau() {
+    public final /* synthetic */ zzog zzas() {
         return this.zzn;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:67:0x020d A[DONT_GENERATE] */
-    /* JADX WARN: Removed duplicated region for block: B:80:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Can't wrap try/catch for region: R(16:1|2|3|4|5|(6:7|(1:9)(1:113)|(1:11)|12|13|(2:15|(2:17|18)(1:20))(3:21|22|23))(6:114|(1:116)(1:125)|(1:118)|119|120|(2:122|(0)(0))(2:123|124))|25|26|27|28|29|31|32|(1:34)(15:35|36|37|38|(1:40)|41|42|(10:44|(2:46|(1:48)(1:80))(1:83)|49|(1:(1:79))(1:53)|54|55|56|57|(2:59|(8:60|61|62|63|64|(2:72|73)|66|(2:69|70)(1:68)))(1:77)|71)(2:84|(7:86|82|55|56|57|(0)(0)|71)(1:87))|81|82|55|56|57|(0)(0)|71)|(0)(0)|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x0265, code lost:
+        r0 = th;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x0266, code lost:
+        r23 = r3;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x0268, code lost:
+        r6 = r23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:104:0x026b, code lost:
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x026c, code lost:
+        r23 = r3;
+        r22 = r4;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x0270, code lost:
+        r4 = r22;
+        r6 = r23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x0276, code lost:
+        r6 = r3;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x0279, code lost:
+        r4 = r22;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:119:0x029a, code lost:
+        if (r6 != null) goto L101;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:120:0x029c, code lost:
+        r6.close();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:121:0x029f, code lost:
+        throw r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x025b, code lost:
+        r0 = th;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x025c, code lost:
+        r3 = r8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x025e, code lost:
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x025f, code lost:
+        r3 = r8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x0261, code lost:
+        r0 = th;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0263, code lost:
+        r0 = e;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0296  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x029c  */
+    /* JADX WARN: Removed duplicated region for block: B:137:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01de  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0231 A[Catch: all -> 0x0243, SQLiteException -> 0x027d, TRY_LEAVE, TryCatch #2 {all -> 0x0243, blocks: (B:3:0x0016, B:8:0x002b, B:12:0x0046, B:70:0x01d8, B:73:0x01e0, B:74:0x01e8, B:76:0x01f4, B:81:0x0226, B:80:0x0211, B:85:0x0231, B:114:0x0280, B:9:0x003a, B:23:0x007d, B:27:0x0090, B:24:0x0088), top: B:123:0x0016 }] */
+    /* JADX WARN: Type inference failed for: r3v0, types: [java.lang.String] */
+    /* JADX WARN: Type inference failed for: r3v10 */
+    /* JADX WARN: Type inference failed for: r3v11 */
+    /* JADX WARN: Type inference failed for: r3v4 */
+    /* JADX WARN: Type inference failed for: r3v5 */
+    /* JADX WARN: Type inference failed for: r3v6 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void zzav(String str, long j, long j2, zzpb zzpbVar) {
+    public final void zzat(String str, long j, long j2, zzpc zzpcVar) {
         String str2;
         SQLiteDatabase zze2;
         String str3;
         String string;
-        String str4;
-        String[] strArr;
         int i;
-        Preconditions.checkNotNull(zzpbVar);
+        int i2;
+        String[] strArr;
+        String[] strArr2;
+        int i3;
+        long j3;
+        long j4;
+        Preconditions.checkNotNull(zzpcVar);
         zzg();
-        zzay();
-        Cursor cursor = null;
+        zzaw();
+        Cursor cursor = "select metadata_fingerprint from raw_events where app_id = ?";
+        Cursor cursor2 = null;
         try {
             try {
                 zze2 = zze();
-            } catch (SQLiteException e) {
-                e = e;
-                str2 = str;
+            } catch (Throwable th) {
+                th = th;
+            }
+        } catch (SQLiteException e) {
+            e = e;
+            str2 = str;
+        }
+        try {
+            try {
+            } catch (SQLiteException e2) {
+                e = e2;
             }
             if (TextUtils.isEmpty(str)) {
-                int i2 = (j2 > (-1L) ? 1 : (j2 == (-1L) ? 0 : -1));
-                String[] strArr2 = i2 != 0 ? new String[]{String.valueOf(j2), String.valueOf(j)} : new String[]{String.valueOf(j)};
-                str3 = i2 != 0 ? "rowid <= ? and " : "";
+                int i4 = (j2 > (-1L) ? 1 : (j2 == (-1L) ? 0 : -1));
+                String[] strArr3 = i4 != 0 ? new String[]{String.valueOf(j2), String.valueOf(j)} : new String[]{String.valueOf(j)};
+                str3 = i4 != 0 ? "rowid <= ? and " : "";
                 StringBuilder sb = new StringBuilder(str3.length() + 148);
                 sb.append("select app_id, metadata_fingerprint from raw_events where ");
                 sb.append(str3);
                 sb.append("app_id in (select app_id from apps where config_fetched_time >= ?) order by rowid limit 1;");
-                cursor = zze2.rawQuery(sb.toString(), strArr2);
+                cursor = zze2.rawQuery(sb.toString(), strArr3);
                 if (!cursor.moveToFirst()) {
                     if (cursor == null) {
+                        cursor.close();
                         return;
                     }
                     return;
@@ -1857,97 +1910,157 @@ public final class zzav extends zzor {
                 try {
                     string = cursor.getString(1);
                     cursor.close();
-                } catch (SQLiteException e2) {
-                    e = e2;
-                    this.zzu.zzaV().zzb().zzc("Data loss. Error selecting raw event. appId", zzgt.zzl(str2), e);
+                } catch (SQLiteException e3) {
+                    e = e3;
+                    cursor2 = cursor;
+                    this.zzu.zzaV().zzb().zzc("Data loss. Error selecting raw event. appId", zzgu.zzl(str2), e);
+                    cursor = cursor2;
+                    if (cursor == null) {
+                    }
                 }
             } else {
-                int i3 = (j2 > (-1L) ? 1 : (j2 == (-1L) ? 0 : -1));
-                String[] strArr3 = i3 != 0 ? new String[]{str, String.valueOf(j2)} : new String[]{str};
-                str3 = i3 != 0 ? " and rowid <= ?" : "";
+                int i5 = (j2 > (-1L) ? 1 : (j2 == (-1L) ? 0 : -1));
+                String[] strArr4 = i5 != 0 ? new String[]{str, String.valueOf(j2)} : new String[]{str};
+                str3 = i5 != 0 ? " and rowid <= ?" : "";
                 StringBuilder sb2 = new StringBuilder(str3.length() + 84);
                 sb2.append("select metadata_fingerprint from raw_events where app_id = ?");
                 sb2.append(str3);
                 sb2.append(" order by rowid limit 1;");
-                cursor = zze2.rawQuery(sb2.toString(), strArr3);
+                cursor = zze2.rawQuery(sb2.toString(), strArr4);
                 if (cursor.moveToFirst()) {
                     string = cursor.getString(0);
                     cursor.close();
                     str2 = str;
+                } else if (cursor == null) {
                 }
             }
-            int i4 = 1;
-            cursor = zze2.query("raw_events_metadata", new String[]{TtmlNode.TAG_METADATA}, "app_id = ? and metadata_fingerprint = ?", new String[]{str2, string}, null, null, "rowid", ExifInterface.GPS_MEASUREMENT_2D);
-            if (!cursor.moveToFirst()) {
-                this.zzu.zzaV().zzb().zzb("Raw event metadata record is missing. appId", zzgt.zzl(str2));
+            Cursor cursor3 = cursor;
+            str = str2;
+            Cursor query = zze2.query("raw_events_metadata", new String[]{TtmlNode.TAG_METADATA}, "app_id = ? and metadata_fingerprint = ?", new String[]{str2, string}, null, null, "rowid", ExifInterface.GPS_MEASUREMENT_2D);
+            if (!query.moveToFirst()) {
+                this.zzu.zzaV().zzb().zzb("Raw event metadata record is missing. appId", zzgu.zzl(str));
+                cursor = query;
             } else {
                 try {
-                    com.google.android.gms.internal.measurement.zzid zzidVar = (com.google.android.gms.internal.measurement.zzid) ((com.google.android.gms.internal.measurement.zzic) zzpj.zzw(com.google.android.gms.internal.measurement.zzid.zzaE(), cursor.getBlob(0))).zzbc();
-                    if (cursor.moveToNext()) {
-                        this.zzu.zzaV().zze().zzb("Get multiple raw event metadata records, expected one. appId", zzgt.zzl(str2));
+                    com.google.android.gms.internal.measurement.zzid zzidVar = (com.google.android.gms.internal.measurement.zzid) ((com.google.android.gms.internal.measurement.zzic) zzpk.zzw(com.google.android.gms.internal.measurement.zzid.zzaE(), query.getBlob(0))).zzbc();
+                    if (query.moveToNext()) {
+                        this.zzu.zzaV().zze().zzb("Get multiple raw event metadata records, expected one. appId", zzgu.zzl(str));
                     }
-                    cursor.close();
+                    query.close();
                     Preconditions.checkNotNull(zzidVar);
-                    zzpbVar.zza = zzidVar;
-                    if (j2 != -1) {
-                        str4 = "app_id = ? and metadata_fingerprint = ? and rowid <= ?";
-                        strArr = new String[]{str2, string, String.valueOf(j2)};
-                    } else {
-                        str4 = "app_id = ? and metadata_fingerprint = ?";
-                        strArr = new String[]{str2, string};
-                    }
-                    cursor = zze2.query("raw_events", new String[]{"rowid", "name", "timestamp", "data"}, str4, strArr, null, null, "rowid", null);
-                    if (cursor.moveToFirst()) {
-                        while (true) {
-                            long j3 = cursor.getLong(0);
-                            try {
-                                com.google.android.gms.internal.measurement.zzhr zzhrVar = (com.google.android.gms.internal.measurement.zzhr) zzpj.zzw(com.google.android.gms.internal.measurement.zzhs.zzk(), cursor.getBlob(3));
-                                i = i4;
-                                zzhrVar.zzl(cursor.getString(i));
-                                zzhrVar.zzo(cursor.getLong(2));
-                                if (!zzpbVar.zza(j3, (com.google.android.gms.internal.measurement.zzhs) zzhrVar.zzbc())) {
+                    zzpcVar.zza = zzidVar;
+                    zzic zzicVar = this.zzu;
+                    String str4 = "app_id = ? and metadata_fingerprint = ? and rowid <= ?";
+                    if (zzicVar.zzc().zzp(null, zzfy.zzbk)) {
+                        i = 1;
+                        i2 = 0;
+                        long zzaz = zzaz("select (rowid - 1) as max_rowid from raw_events where app_id = ? and metadata_fingerprint != ? order by rowid limit 1;", new String[]{str, string}, -1L);
+                        if (j2 != -1) {
+                            j3 = -1;
+                            j4 = j2;
+                        } else if (zzaz != -1) {
+                            j4 = -1;
+                            j3 = -1;
+                        } else {
+                            strArr = new String[]{str, string};
+                        }
+                        int i6 = (j4 > j3 ? 1 : (j4 == j3 ? 0 : -1));
+                        if (i6 != 0 && zzaz != j3) {
+                            zzaz = Math.min(j4, zzaz);
+                        } else if (i6 != 0) {
+                            zzaz = j4;
+                        }
+                        strArr2 = new String[]{str, string, String.valueOf(zzaz)};
+                        String[] strArr5 = new String[4];
+                        strArr5[i2] = "rowid";
+                        strArr5[i] = "name";
+                        strArr5[2] = "timestamp";
+                        strArr5[3] = "data";
+                        cursor2 = zze2.query("raw_events", strArr5, str4, strArr2, null, null, "rowid", null);
+                        if (cursor2.moveToFirst()) {
+                            int i7 = i2;
+                            while (true) {
+                                long j5 = cursor2.getLong(i7);
+                                try {
+                                    com.google.android.gms.internal.measurement.zzhr zzhrVar = (com.google.android.gms.internal.measurement.zzhr) zzpk.zzw(com.google.android.gms.internal.measurement.zzhs.zzk(), cursor2.getBlob(3));
+                                    i3 = i;
+                                    zzhrVar.zzl(cursor2.getString(i3));
+                                    zzhrVar.zzo(cursor2.getLong(2));
+                                    if (!zzpcVar.zza(j5, (com.google.android.gms.internal.measurement.zzhs) zzhrVar.zzbc())) {
+                                        break;
+                                    }
+                                } catch (IOException e4) {
+                                    i3 = i;
+                                    this.zzu.zzaV().zzb().zzc("Data loss. Failed to merge raw event. appId", zzgu.zzl(str), e4);
+                                }
+                                if (!cursor2.moveToNext()) {
                                     break;
                                 }
-                            } catch (IOException e3) {
-                                i = i4;
-                                this.zzu.zzaV().zzb().zzc("Data loss. Failed to merge raw event. appId", zzgt.zzl(str2), e3);
+                                i = i3;
                             }
-                            if (!cursor.moveToNext()) {
-                                break;
-                            }
-                            i4 = i;
+                        } else {
+                            zzicVar.zzaV().zze().zzb("Raw event data disappeared while in transaction. appId", zzgu.zzl(str));
                         }
+                        cursor = cursor2;
                     } else {
-                        this.zzu.zzaV().zze().zzb("Raw event data disappeared while in transaction. appId", zzgt.zzl(str2));
+                        i = 1;
+                        i2 = 0;
+                        if (j2 != -1) {
+                            strArr = new String[]{str, string, String.valueOf(j2)};
+                            strArr2 = strArr;
+                            String[] strArr52 = new String[4];
+                            strArr52[i2] = "rowid";
+                            strArr52[i] = "name";
+                            strArr52[2] = "timestamp";
+                            strArr52[3] = "data";
+                            cursor2 = zze2.query("raw_events", strArr52, str4, strArr2, null, null, "rowid", null);
+                            if (cursor2.moveToFirst()) {
+                            }
+                            cursor = cursor2;
+                        } else {
+                            strArr = new String[]{str, string};
+                        }
                     }
-                } catch (IOException e4) {
-                    this.zzu.zzaV().zzb().zzc("Data loss. Failed to merge raw event metadata. appId", zzgt.zzl(str2), e4);
+                    str4 = "app_id = ? and metadata_fingerprint = ?";
+                    strArr2 = strArr;
+                    String[] strArr522 = new String[4];
+                    strArr522[i2] = "rowid";
+                    strArr522[i] = "name";
+                    strArr522[2] = "timestamp";
+                    strArr522[3] = "data";
+                    cursor2 = zze2.query("raw_events", strArr522, str4, strArr2, null, null, "rowid", null);
+                    if (cursor2.moveToFirst()) {
+                    }
+                    cursor = cursor2;
+                } catch (IOException e5) {
+                    cursor = query;
+                    this.zzu.zzaV().zzb().zzc("Data loss. Failed to merge raw event metadata. appId", zzgu.zzl(str), e5);
                 }
             }
-        } finally {
-            if (0 != 0) {
-                cursor.close();
+            if (cursor == null) {
             }
+        } catch (Throwable th2) {
+            th = th2;
         }
     }
 
     public final void zzb() {
-        zzay();
+        zzaw();
         zze().beginTransaction();
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzor
+    @Override // com.google.android.gms.measurement.internal.zzos
     protected final boolean zzbb() {
         return false;
     }
 
     public final void zzc() {
-        zzay();
+        zzaw();
         zze().setTransactionSuccessful();
     }
 
     public final void zzd() {
-        zzay();
+        zzaw();
         zze().endTransaction();
     }
 
@@ -1963,16 +2076,16 @@ public final class zzav extends zzor {
     }
 
     public final zzbc zzf(String str, String str2) {
-        return zzaE("events", str, str2);
+        return zzaC("events", str, str2);
     }
 
     public final void zzh(zzbc zzbcVar) {
-        zzaF("events", zzbcVar);
+        zzaD("events", zzbcVar);
     }
 
     public final void zzi(String str) {
-        zzbc zzaE;
-        zzaG("events_snapshot", str);
+        zzbc zzaC;
+        zzaE("events_snapshot", str);
         Cursor cursor = null;
         try {
             try {
@@ -1980,13 +2093,13 @@ public final class zzav extends zzor {
                 if (cursor.moveToFirst()) {
                     do {
                         String string = cursor.getString(0);
-                        if (string != null && (zzaE = zzaE("events", str, string)) != null) {
-                            zzaF("events_snapshot", zzaE);
+                        if (string != null && (zzaC = zzaC("events", str, string)) != null) {
+                            zzaD("events_snapshot", zzaC);
                         }
                     } while (cursor.moveToNext());
                 }
             } catch (SQLiteException e) {
-                this.zzu.zzaV().zzb().zzc("Error creating snapshot. appId", zzgt.zzl(str), e);
+                this.zzu.zzaV().zzb().zzc("Error creating snapshot. appId", zzgu.zzl(str), e);
             }
             if (cursor != null) {
                 cursor.close();
@@ -2003,7 +2116,7 @@ public final class zzav extends zzor {
         if (r10 != null) goto L12;
      */
     /* JADX WARN: Code restructure failed: missing block: B:46:0x00c5, code lost:
-        zzaF("events", r10);
+        zzaD("events", r10);
      */
     /* JADX WARN: Code restructure failed: missing block: B:9:0x005e, code lost:
         if (r10 != null) goto L12;
@@ -2016,12 +2129,12 @@ public final class zzav extends zzor {
     */
     public final void zzj(String str) {
         boolean z;
-        zzbc zzaE;
+        zzbc zzaC;
         boolean z2 = false;
         ArrayList arrayList = new ArrayList(Arrays.asList("name", "lifetime_count"));
-        zzbc zzaE2 = zzaE("events", str, "_f");
-        zzbc zzaE3 = zzaE("events", str, "_v");
-        zzaG("events", str);
+        zzbc zzaC2 = zzaC("events", str, "_f");
+        zzbc zzaC3 = zzaC("events", str, "_v");
+        zzaE("events", str);
         Cursor cursor = null;
         try {
             cursor = zze().query("events_snapshot", (String[]) arrayList.toArray(new String[0]), "app_id=?", new String[]{str}, null, null, null);
@@ -2045,14 +2158,14 @@ public final class zzav extends zzor {
                             z = true;
                         }
                     }
-                    if (string != null && (zzaE = zzaE("events_snapshot", str, string)) != null) {
-                        zzaF("events", zzaE);
+                    if (string != null && (zzaC = zzaC("events_snapshot", str, string)) != null) {
+                        zzaD("events", zzaC);
                     }
                 } catch (SQLiteException e2) {
                     e = e2;
                     z2 = z3;
                     try {
-                        this.zzu.zzaV().zzb().zzc("Error querying snapshot. appId", zzgt.zzl(str), e);
+                        this.zzu.zzaV().zzb().zzc("Error querying snapshot. appId", zzgu.zzl(str), e);
                         z3 = z2;
                         if (cursor != null) {
                         }
@@ -2060,18 +2173,18 @@ public final class zzav extends zzor {
                         }
                         if (!z) {
                         }
-                        zzaG("events_snapshot", str);
+                        zzaE("events_snapshot", str);
                     } catch (Throwable th2) {
                         th = th2;
                         if (cursor != null) {
                             cursor.close();
                         }
-                        if (z2 && zzaE2 != null) {
-                            zzaF("events", zzaE2);
-                        } else if (!z && zzaE3 != null) {
-                            zzaF("events", zzaE3);
+                        if (z2 && zzaC2 != null) {
+                            zzaD("events", zzaC2);
+                        } else if (!z && zzaC3 != null) {
+                            zzaD("events", zzaC3);
                         }
-                        zzaG("events_snapshot", str);
+                        zzaE("events_snapshot", str);
                         throw th;
                     }
                 } catch (Throwable th3) {
@@ -2082,76 +2195,76 @@ public final class zzav extends zzor {
                     if (z2) {
                     }
                     if (!z) {
-                        zzaF("events", zzaE3);
+                        zzaD("events", zzaC3);
                     }
-                    zzaG("events_snapshot", str);
+                    zzaE("events_snapshot", str);
                     throw th;
                 }
             } while (cursor.moveToNext());
             if (cursor != null) {
                 cursor.close();
             }
-            if (!z3 || zzaE2 == null) {
+            if (!z3 || zzaC2 == null) {
                 if (!z) {
                 }
-                zzaG("events_snapshot", str);
+                zzaE("events_snapshot", str);
             }
-            zzaF("events", zzaE2);
-            zzaG("events_snapshot", str);
+            zzaD("events", zzaC2);
+            zzaE("events_snapshot", str);
         }
         if (cursor != null) {
             cursor.close();
         }
-        if (zzaE2 == null) {
+        if (zzaC2 == null) {
         }
-        zzaF("events", zzaE2);
-        zzaG("events_snapshot", str);
+        zzaD("events", zzaC2);
+        zzaE("events_snapshot", str);
     }
 
     public final void zzk(String str, String str2) {
         Preconditions.checkNotEmpty(str);
         Preconditions.checkNotEmpty(str2);
         zzg();
-        zzay();
+        zzaw();
         try {
             zze().delete("user_attributes", "app_id=? and name=?", new String[]{str, str2});
         } catch (SQLiteException e) {
-            zzib zzibVar = this.zzu;
-            zzibVar.zzaV().zzb().zzd("Error deleting user property. appId", zzgt.zzl(str), zzibVar.zzl().zzc(str2), e);
+            zzic zzicVar = this.zzu;
+            zzicVar.zzaV().zzb().zzd("Error deleting user property. appId", zzgu.zzl(str), zzicVar.zzl().zzc(str2), e);
         }
     }
 
-    public final boolean zzl(zzpm zzpmVar) {
-        Preconditions.checkNotNull(zzpmVar);
+    public final boolean zzl(zzpn zzpnVar) {
+        Preconditions.checkNotNull(zzpnVar);
         zzg();
-        zzay();
-        String str = zzpmVar.zza;
-        String str2 = zzpmVar.zzc;
+        zzaw();
+        String str = zzpnVar.zza;
+        String str2 = zzpnVar.zzc;
         if (zzm(str, str2) == null) {
-            if (zzpo.zzh(str2)) {
-                if (zzaA("select count(1) from user_attributes where app_id=? and name not like '!_%' escape '!'", new String[]{str}) >= this.zzu.zzc().zzn(str, zzfx.zzV, 25, 100)) {
+            if (zzpp.zzh(str2)) {
+                if (zzay("select count(1) from user_attributes where app_id=? and name not like '!_%' escape '!'", new String[]{str}) >= this.zzu.zzc().zzn(str, zzfy.zzV, 25, 100)) {
                     return false;
                 }
             } else if (!"_npa".equals(str2)) {
-                long zzaA = zzaA("select count(1) from user_attributes where app_id=? and origin=? AND name like '!_%' escape '!'", new String[]{str, zzpmVar.zzb});
+                long zzay = zzay("select count(1) from user_attributes where app_id=? and origin=? AND name like '!_%' escape '!'", new String[]{str, zzpnVar.zzb});
                 this.zzu.zzc();
-                if (zzaA >= 25) {
+                if (zzay >= 25) {
                     return false;
                 }
             }
         }
         ContentValues contentValues = new ContentValues();
         contentValues.put("app_id", str);
-        contentValues.put("origin", zzpmVar.zzb);
+        contentValues.put("origin", zzpnVar.zzb);
         contentValues.put("name", str2);
-        contentValues.put("set_timestamp", Long.valueOf(zzpmVar.zzd));
-        zzaw(contentValues, "value", zzpmVar.zze);
+        contentValues.put("set_timestamp", Long.valueOf(zzpnVar.zzd));
+        zzau(contentValues, "value", zzpnVar.zze);
         try {
             if (zze().insertWithOnConflict("user_attributes", null, contentValues, 5) == -1) {
-                this.zzu.zzaV().zzb().zzb("Failed to insert/update user property (got -1). appId", zzgt.zzl(str));
+                this.zzu.zzaV().zzb().zzb("Failed to insert/update user property (got -1). appId", zzgu.zzl(str));
             }
         } catch (SQLiteException e) {
-            this.zzu.zzaV().zzb().zzc("Error storing user property. appId", zzgt.zzl(zzpmVar.zza), e);
+            this.zzu.zzaV().zzb().zzc("Error storing user property. appId", zzgu.zzl(zzpnVar.zza), e);
         }
         return true;
     }
@@ -2162,7 +2275,7 @@ public final class zzav extends zzor {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final zzpm zzm(String str, String str2) {
+    public final zzpn zzm(String str, String str2) {
         Throwable th;
         String str3;
         String str4;
@@ -2172,7 +2285,7 @@ public final class zzav extends zzor {
         Preconditions.checkNotEmpty(str);
         Preconditions.checkNotEmpty(str2);
         zzg();
-        zzay();
+        zzaw();
         Cursor cursor3 = null;
         try {
             try {
@@ -2185,19 +2298,19 @@ public final class zzav extends zzor {
                             str3 = str;
                             str4 = str2;
                             try {
-                                zzpm zzpmVar = new zzpm(str3, cursor.getString(2), str4, j, zzL);
+                                zzpn zzpnVar = new zzpn(str3, cursor.getString(2), str4, j, zzL);
                                 if (cursor.moveToNext()) {
-                                    this.zzu.zzaV().zzb().zzb("Got multiple records for user property, expected one. appId", zzgt.zzl(str3));
+                                    this.zzu.zzaV().zzb().zzb("Got multiple records for user property, expected one. appId", zzgu.zzl(str3));
                                 }
                                 if (cursor != null) {
                                     cursor.close();
                                 }
-                                return zzpmVar;
+                                return zzpnVar;
                             } catch (SQLiteException e) {
                                 e = e;
                                 sQLiteException = e;
-                                zzib zzibVar = this.zzu;
-                                zzibVar.zzaV().zzb().zzd("Error querying user property. appId", zzgt.zzl(str3), zzibVar.zzl().zzc(str4), sQLiteException);
+                                zzic zzicVar = this.zzu;
+                                zzicVar.zzaV().zzb().zzd("Error querying user property. appId", zzgu.zzl(str3), zzicVar.zzl().zzc(str4), sQLiteException);
                                 if (cursor != null) {
                                 }
                                 return null;
@@ -2237,13 +2350,13 @@ public final class zzav extends zzor {
     public final List zzn(String str) {
         Preconditions.checkNotEmpty(str);
         zzg();
-        zzay();
+        zzaw();
         List arrayList = new ArrayList();
         Cursor cursor = null;
         try {
             try {
-                zzib zzibVar = this.zzu;
-                zzibVar.zzc();
+                zzic zzicVar = this.zzu;
+                zzicVar.zzc();
                 cursor = zze().query("user_attributes", new String[]{"name", "origin", "set_timestamp", "value"}, "app_id=?", new String[]{str}, null, null, "rowid", "1000");
                 if (cursor.moveToFirst()) {
                     do {
@@ -2256,14 +2369,14 @@ public final class zzav extends zzor {
                         long j = cursor.getLong(2);
                         Object zzL = zzL(cursor, 3);
                         if (zzL != null) {
-                            arrayList.add(new zzpm(str, str2, string, j, zzL));
+                            arrayList.add(new zzpn(str, str2, string, j, zzL));
                         } else {
-                            zzibVar.zzaV().zzb().zzb("Read invalid user property value, ignoring it. appId", zzgt.zzl(str));
+                            zzicVar.zzaV().zzb().zzb("Read invalid user property value, ignoring it. appId", zzgu.zzl(str));
                         }
                     } while (cursor.moveToNext());
                 }
             } catch (SQLiteException e) {
-                this.zzu.zzaV().zzb().zzc("Error querying user properties. appId", zzgt.zzl(str), e);
+                this.zzu.zzaV().zzb().zzc("Error querying user properties. appId", zzgu.zzl(str), e);
                 arrayList = Collections.emptyList();
             }
             return arrayList;
@@ -2291,7 +2404,7 @@ public final class zzav extends zzor {
         String str5;
         Preconditions.checkNotEmpty(str);
         zzg();
-        zzay();
+        zzaw();
         List arrayList = new ArrayList();
         try {
             try {
@@ -2310,7 +2423,7 @@ public final class zzav extends zzor {
                         e = e;
                         cursor = null;
                         try {
-                            this.zzu.zzaV().zzb().zzd("(2)Error querying user properties", zzgt.zzl(str), str4, e);
+                            this.zzu.zzaV().zzb().zzd("(2)Error querying user properties", zzgu.zzl(str), str4, e);
                             arrayList = Collections.emptyList();
                             cursor2 = cursor;
                             if (cursor2 != null) {
@@ -2334,15 +2447,15 @@ public final class zzav extends zzor {
                 }
                 String[] strArr = (String[]) arrayList2.toArray(new String[arrayList2.size()]);
                 String sb3 = sb.toString();
-                zzib zzibVar = this.zzu;
-                zzibVar.zzc();
+                zzic zzicVar = this.zzu;
+                zzicVar.zzc();
                 cursor2 = zze().query("user_attributes", new String[]{"name", "set_timestamp", "value", "origin"}, sb3, strArr, null, null, "rowid", "1001");
                 try {
                     try {
                         if (cursor2.moveToFirst()) {
                             while (true) {
                                 int size = arrayList.size();
-                                zzibVar.zzc();
+                                zzicVar.zzc();
                                 if (size >= 1000) {
                                     break;
                                 }
@@ -2353,12 +2466,12 @@ public final class zzav extends zzor {
                                 if (zzL != null) {
                                     str5 = string2;
                                     try {
-                                        arrayList.add(new zzpm(str6, str5, string, j, zzL));
+                                        arrayList.add(new zzpn(str6, str5, string, j, zzL));
                                     } catch (SQLiteException e2) {
                                         e = e2;
                                         cursor = cursor2;
                                         str4 = str5;
-                                        this.zzu.zzaV().zzb().zzd("(2)Error querying user properties", zzgt.zzl(str), str4, e);
+                                        this.zzu.zzaV().zzb().zzd("(2)Error querying user properties", zzgu.zzl(str), str4, e);
                                         arrayList = Collections.emptyList();
                                         cursor2 = cursor;
                                         if (cursor2 != null) {
@@ -2367,14 +2480,14 @@ public final class zzav extends zzor {
                                     }
                                 } else {
                                     try {
-                                        zzibVar.zzaV().zzb().zzd("(2)Read invalid user property value, ignoring it", zzgt.zzl(str6), string2, str3);
+                                        zzicVar.zzaV().zzb().zzd("(2)Read invalid user property value, ignoring it", zzgu.zzl(str6), string2, str3);
                                         str5 = string2;
                                     } catch (SQLiteException e3) {
                                         e = e3;
                                         str5 = string2;
                                         cursor = cursor2;
                                         str4 = str5;
-                                        this.zzu.zzaV().zzb().zzd("(2)Error querying user properties", zzgt.zzl(str), str4, e);
+                                        this.zzu.zzaV().zzb().zzd("(2)Error querying user properties", zzgu.zzl(str), str4, e);
                                         arrayList = Collections.emptyList();
                                         cursor2 = cursor;
                                         if (cursor2 != null) {
@@ -2417,13 +2530,13 @@ public final class zzav extends zzor {
     public final boolean zzp(zzah zzahVar) {
         Preconditions.checkNotNull(zzahVar);
         zzg();
-        zzay();
+        zzaw();
         String str = zzahVar.zza;
         Preconditions.checkNotNull(str);
         if (zzm(str, zzahVar.zzc.zzb) == null) {
-            long zzaA = zzaA("SELECT COUNT(1) FROM conditional_properties WHERE app_id=?", new String[]{str});
+            long zzay = zzay("SELECT COUNT(1) FROM conditional_properties WHERE app_id=?", new String[]{str});
             this.zzu.zzc();
-            if (zzaA >= 1000) {
+            if (zzay >= 1000) {
                 return false;
             }
         }
@@ -2431,23 +2544,23 @@ public final class zzav extends zzor {
         contentValues.put("app_id", str);
         contentValues.put("origin", zzahVar.zzb);
         contentValues.put("name", zzahVar.zzc.zzb);
-        zzaw(contentValues, "value", Preconditions.checkNotNull(zzahVar.zzc.zza()));
+        zzau(contentValues, "value", Preconditions.checkNotNull(zzahVar.zzc.zza()));
         contentValues.put(AppMeasurementSdk.ConditionalUserProperty.ACTIVE, Boolean.valueOf(zzahVar.zze));
         contentValues.put(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, zzahVar.zzf);
         contentValues.put(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT, Long.valueOf(zzahVar.zzh));
-        zzib zzibVar = this.zzu;
-        contentValues.put("timed_out_event", zzibVar.zzk().zzae(zzahVar.zzg));
+        zzic zzicVar = this.zzu;
+        contentValues.put("timed_out_event", zzicVar.zzk().zzae(zzahVar.zzg));
         contentValues.put(AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, Long.valueOf(zzahVar.zzd));
-        contentValues.put("triggered_event", zzibVar.zzk().zzae(zzahVar.zzi));
+        contentValues.put("triggered_event", zzicVar.zzk().zzae(zzahVar.zzi));
         contentValues.put(AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP, Long.valueOf(zzahVar.zzc.zzc));
         contentValues.put(AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE, Long.valueOf(zzahVar.zzj));
-        contentValues.put("expired_event", zzibVar.zzk().zzae(zzahVar.zzk));
+        contentValues.put("expired_event", zzicVar.zzk().zzae(zzahVar.zzk));
         try {
             if (zze().insertWithOnConflict("conditional_properties", null, contentValues, 5) == -1) {
-                zzibVar.zzaV().zzb().zzb("Failed to insert/update conditional user property (got -1)", zzgt.zzl(str));
+                zzicVar.zzaV().zzb().zzb("Failed to insert/update conditional user property (got -1)", zzgu.zzl(str));
             }
         } catch (SQLiteException e) {
-            this.zzu.zzaV().zzb().zzc("Error storing conditional user property", zzgt.zzl(str), e);
+            this.zzu.zzaV().zzb().zzc("Error storing conditional user property", zzgu.zzl(str), e);
         }
         return true;
     }
@@ -2472,7 +2585,7 @@ public final class zzav extends zzor {
         Preconditions.checkNotEmpty(str);
         Preconditions.checkNotEmpty(str2);
         zzg();
-        zzay();
+        zzaw();
         try {
             try {
                 zze2 = zze();
@@ -2512,8 +2625,8 @@ public final class zzav extends zzor {
                 e = e2;
                 str3 = str2;
                 cursor5 = cursor2;
-                zzib zzibVar = this.zzu;
-                zzibVar.zzaV().zzb().zzd("Error querying conditional property", zzgt.zzl(str), zzibVar.zzl().zzc(str3), e);
+                zzic zzicVar = this.zzu;
+                zzicVar.zzaV().zzb().zzd("Error querying conditional property", zzgu.zzl(str), zzicVar.zzl().zzc(str3), e);
                 zzahVar = cursor2;
                 if (cursor5 != null) {
                 }
@@ -2547,14 +2660,14 @@ public final class zzav extends zzor {
         boolean z = cursor5.getInt(2) != 0;
         String string2 = cursor5.getString(3);
         long j = cursor5.getLong(4);
-        zzpf zzpfVar = this.zzg;
+        zzpg zzpgVar = this.zzg;
         str3 = str2;
         String str4 = string;
         try {
-            zzah zzahVar2 = new zzah(str, str4, new zzpk(str3, cursor5.getLong(8), zzL, str4), cursor5.getLong(6), z, string2, (zzbg) zzpfVar.zzp().zzl(cursor5.getBlob(5), zzbg.CREATOR), j, (zzbg) zzpfVar.zzp().zzl(cursor5.getBlob(7), zzbg.CREATOR), cursor5.getLong(9), (zzbg) zzpfVar.zzp().zzl(cursor5.getBlob(10), zzbg.CREATOR));
+            zzah zzahVar2 = new zzah(str, str4, new zzpl(str3, cursor5.getLong(8), zzL, str4), cursor5.getLong(6), z, string2, (zzbg) zzpgVar.zzp().zzl(cursor5.getBlob(5), zzbg.CREATOR), j, (zzbg) zzpgVar.zzp().zzl(cursor5.getBlob(7), zzbg.CREATOR), cursor5.getLong(9), (zzbg) zzpgVar.zzp().zzl(cursor5.getBlob(10), zzbg.CREATOR));
             if (cursor5.moveToNext()) {
-                zzib zzibVar2 = this.zzu;
-                zzibVar2.zzaV().zzb().zzc("Got multiple records for conditional property, expected one", zzgt.zzl(str), zzibVar2.zzl().zzc(str3));
+                zzic zzicVar2 = this.zzu;
+                zzicVar2.zzaV().zzb().zzc("Got multiple records for conditional property, expected one", zzgu.zzl(str), zzicVar2.zzl().zzc(str3));
             }
             if (cursor5 != null) {
                 cursor5.close();
@@ -2562,8 +2675,8 @@ public final class zzav extends zzor {
             return zzahVar2;
         } catch (SQLiteException e4) {
             e = e4;
-            zzib zzibVar3 = this.zzu;
-            zzibVar3.zzaV().zzb().zzd("Error querying conditional property", zzgt.zzl(str), zzibVar3.zzl().zzc(str3), e);
+            zzic zzicVar3 = this.zzu;
+            zzicVar3.zzaV().zzb().zzd("Error querying conditional property", zzgu.zzl(str), zzicVar3.zzl().zzc(str3), e);
             zzahVar = cursor2;
             if (cursor5 != null) {
             }
@@ -2575,12 +2688,12 @@ public final class zzav extends zzor {
         Preconditions.checkNotEmpty(str);
         Preconditions.checkNotEmpty(str2);
         zzg();
-        zzay();
+        zzaw();
         try {
             return zze().delete("conditional_properties", "app_id=? and name=?", new String[]{str, str2});
         } catch (SQLiteException e) {
-            zzib zzibVar = this.zzu;
-            zzibVar.zzaV().zzb().zzd("Error deleting conditional property", zzgt.zzl(str), zzibVar.zzl().zzc(str2), e);
+            zzic zzicVar = this.zzu;
+            zzicVar.zzaV().zzb().zzd("Error deleting conditional property", zzgu.zzl(str), zzicVar.zzl().zzc(str2), e);
             return 0;
         }
     }
@@ -2588,7 +2701,7 @@ public final class zzav extends zzor {
     public final List zzs(String str, String str2, String str3) {
         Preconditions.checkNotEmpty(str);
         zzg();
-        zzay();
+        zzaw();
         ArrayList arrayList = new ArrayList(3);
         arrayList.add(str);
         StringBuilder sb = new StringBuilder("app_id=?");
@@ -2619,21 +2732,21 @@ public final class zzav extends zzor {
         Cursor cursor;
         Cursor cursor2;
         zzg();
-        zzay();
+        zzaw();
         List arrayList = new ArrayList();
         try {
             SQLiteDatabase zze2 = zze();
             int i = 0;
             int i2 = 1;
             String[] strArr2 = {"app_id", "origin", "name", "value", AppMeasurementSdk.ConditionalUserProperty.ACTIVE, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT, "timed_out_event", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "triggered_event", AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP, AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE, "expired_event"};
-            zzib zzibVar = this.zzu;
-            zzibVar.zzc();
+            zzic zzicVar = this.zzu;
+            zzicVar.zzc();
             cursor2 = zze2.query("conditional_properties", strArr2, str, strArr, null, null, "rowid", "1001");
             try {
                 if (cursor2.moveToFirst()) {
                     while (true) {
                         int size = arrayList.size();
-                        zzibVar.zzc();
+                        zzicVar.zzc();
                         if (size >= 1000) {
                             break;
                         }
@@ -2644,8 +2757,8 @@ public final class zzav extends zzor {
                         boolean z = cursor2.getInt(4) != 0 ? i2 : i;
                         String string4 = cursor2.getString(5);
                         long j = cursor2.getLong(6);
-                        zzpf zzpfVar = this.zzg;
-                        arrayList.add(new zzah(string, string2, new zzpk(string3, cursor2.getLong(10), zzL, string2), cursor2.getLong(8), z, string4, (zzbg) zzpfVar.zzp().zzl(cursor2.getBlob(7), zzbg.CREATOR), j, (zzbg) zzpfVar.zzp().zzl(cursor2.getBlob(9), zzbg.CREATOR), cursor2.getLong(11), (zzbg) zzpfVar.zzp().zzl(cursor2.getBlob(12), zzbg.CREATOR)));
+                        zzpg zzpgVar = this.zzg;
+                        arrayList.add(new zzah(string, string2, new zzpl(string3, cursor2.getLong(10), zzL, string2), cursor2.getLong(8), z, string4, (zzbg) zzpgVar.zzp().zzl(cursor2.getBlob(7), zzbg.CREATOR), j, (zzbg) zzpgVar.zzp().zzl(cursor2.getBlob(9), zzbg.CREATOR), cursor2.getLong(11), (zzbg) zzpgVar.zzp().zzl(cursor2.getBlob(12), zzbg.CREATOR)));
                         if (!cursor2.moveToNext()) {
                             break;
                         }
@@ -2722,11 +2835,11 @@ public final class zzav extends zzor {
         zzh zzhVar;
         boolean z;
         boolean z2;
-        zzib zzibVar;
+        zzic zzicVar;
         Boolean valueOf;
         Preconditions.checkNotEmpty(str);
         zzg();
-        zzay();
+        zzaw();
         try {
             SQLiteDatabase zze2 = zze();
             String[] strArr = new String[45];
@@ -2785,7 +2898,7 @@ public final class zzav extends zzor {
                     try {
                     } catch (SQLiteException e) {
                         e = e;
-                        this.zzu.zzaV().zzb().zzc("Error querying app. appId", zzgt.zzl(str), e);
+                        this.zzu.zzaV().zzb().zzc("Error querying app. appId", zzgu.zzl(str), e);
                         zzhVar = cursor2;
                         if (cursor4 != null) {
                         }
@@ -2802,7 +2915,7 @@ public final class zzav extends zzor {
             } catch (SQLiteException e2) {
                 e = e2;
                 cursor4 = cursor2;
-                this.zzu.zzaV().zzb().zzc("Error querying app. appId", zzgt.zzl(str), e);
+                this.zzu.zzaV().zzb().zzc("Error querying app. appId", zzgu.zzl(str), e);
                 zzhVar = cursor2;
                 if (cursor4 != null) {
                 }
@@ -2827,15 +2940,15 @@ public final class zzav extends zzor {
             }
             return zzhVar;
         }
-        zzpf zzpfVar = this.zzg;
-        zzh zzhVar2 = new zzh(zzpfVar.zzaf(), str);
-        zzjk zzB = zzpfVar.zzB(str);
-        zzjj zzjjVar = zzjj.ANALYTICS_STORAGE;
-        if (zzB.zzo(zzjjVar)) {
+        zzpg zzpgVar = this.zzg;
+        zzh zzhVar2 = new zzh(zzpgVar.zzag(), str);
+        zzjl zzB = zzpgVar.zzB(str);
+        zzjk zzjkVar = zzjk.ANALYTICS_STORAGE;
+        if (zzB.zzo(zzjkVar)) {
             zzhVar2.zze(cursor4.getString(0));
         }
         zzhVar2.zzg(cursor4.getString(1));
-        if (zzpfVar.zzB(str).zzo(zzjj.AD_STORAGE)) {
+        if (zzpgVar.zzB(str).zzo(zzjk.AD_STORAGE)) {
             zzhVar2.zzk(cursor4.getString(2));
         }
         zzhVar2.zzF(cursor4.getLong(3));
@@ -2866,7 +2979,7 @@ public final class zzav extends zzor {
                 if (!cursor4.isNull(26)) {
                     zzhVar2.zzah(Arrays.asList(cursor4.getString(26).split(StringUtils.COMMA, -1)));
                 }
-                if (zzpfVar.zzB(str).zzo(zzjjVar)) {
+                if (zzpgVar.zzB(str).zzo(zzjkVar)) {
                     zzhVar2.zzi(cursor4.getString(28));
                 }
                 zzhVar2.zzaj(cursor4.isNull(29) && cursor4.getInt(29) != 0);
@@ -2874,9 +2987,9 @@ public final class zzav extends zzor {
                 zzhVar2.zzaz(cursor4.getString(36));
                 zzhVar2.zzal(cursor4.getLong(30));
                 zzhVar2.zzan(cursor4.getLong(31));
-                zzql.zza();
-                zzibVar = this.zzu;
-                if (zzibVar.zzc().zzp(str, zzfx.zzaP)) {
+                zzqp.zza();
+                zzicVar = this.zzu;
+                if (zzicVar.zzc().zzp(str, zzfy.zzaP)) {
                     zzhVar2.zzap(cursor4.getInt(32));
                     zzhVar2.zzax(cursor4.getLong(35));
                 }
@@ -2902,7 +3015,7 @@ public final class zzav extends zzor {
                 }
                 zzhVar2.zzb();
                 if (cursor4.moveToNext()) {
-                    zzibVar.zzaV().zzb().zzb("Got multiple records for app, expected one. appId", zzgt.zzl(str));
+                    zzicVar.zzaV().zzb().zzb("Got multiple records for app, expected one. appId", zzgu.zzl(str));
                 }
                 if (cursor4 != null) {
                     cursor4.close();
@@ -2914,16 +3027,16 @@ public final class zzav extends zzor {
             zzhVar2.zzC(!cursor4.isNull(25) ? 0L : cursor4.getLong(25));
             if (!cursor4.isNull(26)) {
             }
-            if (zzpfVar.zzB(str).zzo(zzjjVar)) {
+            if (zzpgVar.zzB(str).zzo(zzjkVar)) {
             }
             zzhVar2.zzaj(cursor4.isNull(29) && cursor4.getInt(29) != 0);
             zzhVar2.zzaE(cursor4.getLong(39));
             zzhVar2.zzaz(cursor4.getString(36));
             zzhVar2.zzal(cursor4.getLong(30));
             zzhVar2.zzan(cursor4.getLong(31));
-            zzql.zza();
-            zzibVar = this.zzu;
-            if (zzibVar.zzc().zzp(str, zzfx.zzaP)) {
+            zzqp.zza();
+            zzicVar = this.zzu;
+            if (zzicVar.zzc().zzp(str, zzfy.zzaP)) {
             }
             zzhVar2.zzar(cursor4.isNull(33) && cursor4.getInt(33) != 0);
             if (cursor4.isNull(34)) {
@@ -2965,16 +3078,16 @@ public final class zzav extends zzor {
             zzhVar2.zzC(!cursor4.isNull(25) ? 0L : cursor4.getLong(25));
             if (!cursor4.isNull(26)) {
             }
-            if (zzpfVar.zzB(str).zzo(zzjjVar)) {
+            if (zzpgVar.zzB(str).zzo(zzjkVar)) {
             }
             zzhVar2.zzaj(cursor4.isNull(29) && cursor4.getInt(29) != 0);
             zzhVar2.zzaE(cursor4.getLong(39));
             zzhVar2.zzaz(cursor4.getString(36));
             zzhVar2.zzal(cursor4.getLong(30));
             zzhVar2.zzan(cursor4.getLong(31));
-            zzql.zza();
-            zzibVar = this.zzu;
-            if (zzibVar.zzc().zzp(str, zzfx.zzaP)) {
+            zzqp.zza();
+            zzicVar = this.zzu;
+            if (zzicVar.zzc().zzp(str, zzfy.zzaP)) {
             }
             zzhVar2.zzar(cursor4.isNull(33) && cursor4.getInt(33) != 0);
             if (cursor4.isNull(34)) {
@@ -3002,16 +3115,16 @@ public final class zzav extends zzor {
         zzhVar2.zzC(!cursor4.isNull(25) ? 0L : cursor4.getLong(25));
         if (!cursor4.isNull(26)) {
         }
-        if (zzpfVar.zzB(str).zzo(zzjjVar)) {
+        if (zzpgVar.zzB(str).zzo(zzjkVar)) {
         }
         zzhVar2.zzaj(cursor4.isNull(29) && cursor4.getInt(29) != 0);
         zzhVar2.zzaE(cursor4.getLong(39));
         zzhVar2.zzaz(cursor4.getString(36));
         zzhVar2.zzal(cursor4.getLong(30));
         zzhVar2.zzan(cursor4.getLong(31));
-        zzql.zza();
-        zzibVar = this.zzu;
-        if (zzibVar.zzc().zzp(str, zzfx.zzaP)) {
+        zzqp.zza();
+        zzicVar = this.zzu;
+        if (zzicVar.zzc().zzp(str, zzfy.zzaP)) {
         }
         zzhVar2.zzar(cursor4.isNull(33) && cursor4.getInt(33) != 0);
         if (cursor4.isNull(34)) {
@@ -3038,19 +3151,19 @@ public final class zzav extends zzor {
     public final void zzv(zzh zzhVar, boolean z, boolean z2) {
         Preconditions.checkNotNull(zzhVar);
         zzg();
-        zzay();
+        zzaw();
         String zzc2 = zzhVar.zzc();
         Preconditions.checkNotNull(zzc2);
         ContentValues contentValues = new ContentValues();
         contentValues.put("app_id", zzc2);
         if (z) {
             contentValues.put("app_instance_id", (String) null);
-        } else if (this.zzg.zzB(zzc2).zzo(zzjj.ANALYTICS_STORAGE)) {
+        } else if (this.zzg.zzB(zzc2).zzo(zzjk.ANALYTICS_STORAGE)) {
             contentValues.put("app_instance_id", zzhVar.zzd());
         }
         contentValues.put("gmp_app_id", zzhVar.zzf());
-        zzpf zzpfVar = this.zzg;
-        if (zzpfVar.zzB(zzc2).zzo(zzjj.AD_STORAGE)) {
+        zzpg zzpgVar = this.zzg;
+        if (zzpgVar.zzB(zzc2).zzo(zzjk.AD_STORAGE)) {
             contentValues.put("resettable_device_id_hash", zzhVar.zzj());
         }
         contentValues.put("last_bundle_index", Long.valueOf(zzhVar.zzG()));
@@ -3075,15 +3188,15 @@ public final class zzav extends zzor {
         contentValues.put("android_id", (Long) 0L);
         contentValues.put("adid_reporting_enabled", Boolean.valueOf(zzhVar.zzac()));
         contentValues.put("dynamite_version", Long.valueOf(zzhVar.zzB()));
-        if (zzpfVar.zzB(zzc2).zzo(zzjj.ANALYTICS_STORAGE)) {
+        if (zzpgVar.zzB(zzc2).zzo(zzjk.ANALYTICS_STORAGE)) {
             contentValues.put("session_stitching_token", zzhVar.zzh());
         }
         contentValues.put("sgtm_upload_enabled", Boolean.valueOf(zzhVar.zzai()));
         contentValues.put("target_os_version", Long.valueOf(zzhVar.zzak()));
         contentValues.put("session_stitching_token_hash", Long.valueOf(zzhVar.zzam()));
-        zzql.zza();
-        zzib zzibVar = this.zzu;
-        if (zzibVar.zzc().zzp(zzc2, zzfx.zzaP)) {
+        zzqp.zza();
+        zzic zzicVar = this.zzu;
+        if (zzicVar.zzc().zzp(zzc2, zzfy.zzaP)) {
             contentValues.put("ad_services_version", Integer.valueOf(zzhVar.zzao()));
             contentValues.put("attribution_eligibility_status", Long.valueOf(zzhVar.zzaw()));
         }
@@ -3098,13 +3211,13 @@ public final class zzav extends zzor {
         List zzag = zzhVar.zzag();
         if (zzag != null) {
             if (zzag.isEmpty()) {
-                zzibVar.zzaV().zze().zzb("Safelisted events should not be an empty list. appId", zzc2);
+                zzicVar.zzaV().zze().zzb("Safelisted events should not be an empty list. appId", zzc2);
             } else {
                 contentValues.put("safelisted_events", TextUtils.join(StringUtils.COMMA, zzag));
             }
         }
-        com.google.android.gms.internal.measurement.zzpn.zza();
-        if (zzibVar.zzc().zzp(null, zzfx.zzaK) && !contentValues.containsKey("safelisted_events")) {
+        zzpr.zza();
+        if (zzicVar.zzc().zzp(null, zzfy.zzaK) && !contentValues.containsKey("safelisted_events")) {
             contentValues.put("safelisted_events", (String) null);
         }
         contentValues.put("unmatched_pfo", zzhVar.zzas());
@@ -3113,10 +3226,10 @@ public final class zzav extends zzor {
         try {
             SQLiteDatabase zze2 = zze();
             if (zze2.update("apps", contentValues, "app_id = ?", new String[]{zzc2}) == 0 && zze2.insertWithOnConflict("apps", null, contentValues, 5) == -1) {
-                zzibVar.zzaV().zzb().zzb("Failed to insert/update app (got -1). appId", zzgt.zzl(zzc2));
+                zzicVar.zzaV().zzb().zzb("Failed to insert/update app (got -1). appId", zzgu.zzl(zzc2));
             }
         } catch (SQLiteException e) {
-            this.zzu.zzaV().zzb().zzc("Error storing app. appId", zzgt.zzl(zzc2), e);
+            this.zzu.zzaV().zzb().zzc("Error storing app. appId", zzgu.zzl(zzc2), e);
         }
     }
 
@@ -3135,7 +3248,7 @@ public final class zzav extends zzor {
         String[] strArr;
         Preconditions.checkNotEmpty(str);
         zzg();
-        zzay();
+        zzaw();
         String[] strArr2 = {str};
         zzar zzarVar = new zzar();
         try {
@@ -3144,7 +3257,7 @@ public final class zzav extends zzor {
                 cursor2 = zze2.query("apps", new String[]{"day", "daily_events_count", "daily_public_events_count", "daily_conversions_count", "daily_error_events_count", "daily_realtime_events_count", "daily_realtime_dcu_count", "daily_registered_triggers_count"}, "app_id=?", new String[]{str}, null, null, null);
                 try {
                     if (!cursor2.moveToFirst()) {
-                        this.zzu.zzaV().zze().zzb("Not updating daily counts, app is not known. appId", zzgt.zzl(str));
+                        this.zzu.zzaV().zze().zzb("Not updating daily counts, app is not known. appId", zzgu.zzl(str));
                     } else {
                         if (cursor2.getLong(0) == j) {
                             strArr = strArr2;
@@ -3192,7 +3305,7 @@ public final class zzav extends zzor {
                     }
                 } catch (SQLiteException e) {
                     e = e;
-                    this.zzu.zzaV().zzb().zzc("Error updating daily counts. appId", zzgt.zzl(str), e);
+                    this.zzu.zzaV().zzb().zzc("Error updating daily counts. appId", zzgu.zzl(str), e);
                     if (cursor2 != null) {
                     }
                     return zzarVar;
@@ -3230,7 +3343,7 @@ public final class zzav extends zzor {
         Cursor cursor;
         Preconditions.checkNotEmpty(str);
         zzg();
-        zzay();
+        zzaw();
         Cursor cursor2 = null;
         try {
             cursor = zze().query("apps", new String[]{"remote_config", "config_last_modified_time", "e_tag"}, "app_id=?", new String[]{str}, null, null, null);
@@ -3241,7 +3354,7 @@ public final class zzav extends zzor {
                         String string = cursor.getString(1);
                         String string2 = cursor.getString(2);
                         if (cursor.moveToNext()) {
-                            this.zzu.zzaV().zzb().zzb("Got multiple records for app config, expected one. appId", zzgt.zzl(str));
+                            this.zzu.zzaV().zzb().zzb("Got multiple records for app config, expected one. appId", zzgu.zzl(str));
                         }
                         if (blob != null) {
                             zzaq zzaqVar = new zzaq(blob, string, string2);
@@ -3253,7 +3366,7 @@ public final class zzav extends zzor {
                     }
                 } catch (SQLiteException e) {
                     e = e;
-                    this.zzu.zzaV().zzb().zzc("Error querying remote config. appId", zzgt.zzl(str), e);
+                    this.zzu.zzaV().zzb().zzc("Error querying remote config. appId", zzgu.zzl(str), e);
                     if (cursor != null) {
                     }
                     return null;
@@ -3289,24 +3402,24 @@ public final class zzav extends zzor {
     */
     public final boolean zzz(com.google.android.gms.internal.measurement.zzid zzidVar, boolean z) {
         zzg();
-        zzay();
+        zzaw();
         Preconditions.checkNotNull(zzidVar);
         Preconditions.checkNotEmpty(zzidVar.zzA());
         Preconditions.checkState(zzidVar.zzn());
         zzI();
-        zzib zzibVar = this.zzu;
-        long currentTimeMillis = zzibVar.zzaZ().currentTimeMillis();
+        zzic zzicVar = this.zzu;
+        long currentTimeMillis = zzicVar.zzaZ().currentTimeMillis();
         long zzo = zzidVar.zzo();
-        zzibVar.zzc();
+        zzicVar.zzc();
         if (zzo >= currentTimeMillis - zzal.zzI()) {
             long zzo2 = zzidVar.zzo();
-            zzibVar.zzc();
+            zzicVar.zzc();
         }
-        zzibVar.zzaV().zze().zzd("Storing bundle outside of the max uploading time span. appId, now, timestamp", zzgt.zzl(zzidVar.zzA()), Long.valueOf(currentTimeMillis), Long.valueOf(zzidVar.zzo()));
+        zzicVar.zzaV().zze().zzd("Storing bundle outside of the max uploading time span. appId, now, timestamp", zzgu.zzl(zzidVar.zzA()), Long.valueOf(currentTimeMillis), Long.valueOf(zzidVar.zzo()));
         try {
             byte[] zzv = this.zzg.zzp().zzv(zzidVar.zzcc());
-            zzib zzibVar2 = this.zzu;
-            zzibVar2.zzaV().zzk().zzb("Saving bundle, size", Integer.valueOf(zzv.length));
+            zzic zzicVar2 = this.zzu;
+            zzicVar2.zzaV().zzk().zzb("Saving bundle, size", Integer.valueOf(zzv.length));
             ContentValues contentValues = new ContentValues();
             contentValues.put("app_id", zzidVar.zzA());
             contentValues.put("bundle_end_timestamp", Long.valueOf(zzidVar.zzo()));
@@ -3317,16 +3430,16 @@ public final class zzav extends zzor {
             }
             try {
                 if (zze().insert("queue", null, contentValues) == -1) {
-                    zzibVar2.zzaV().zzb().zzb("Failed to insert bundle (got -1). appId", zzgt.zzl(zzidVar.zzA()));
+                    zzicVar2.zzaV().zzb().zzb("Failed to insert bundle (got -1). appId", zzgu.zzl(zzidVar.zzA()));
                     return false;
                 }
                 return true;
             } catch (SQLiteException e) {
-                this.zzu.zzaV().zzb().zzc("Error storing bundle. appId", zzgt.zzl(zzidVar.zzA()), e);
+                this.zzu.zzaV().zzb().zzc("Error storing bundle. appId", zzgu.zzl(zzidVar.zzA()), e);
                 return false;
             }
         } catch (IOException e2) {
-            this.zzu.zzaV().zzb().zzc("Data loss. Failed to serialize bundle. appId", zzgt.zzl(zzidVar.zzA()), e2);
+            this.zzu.zzaV().zzb().zzc("Data loss. Failed to serialize bundle. appId", zzgu.zzl(zzidVar.zzA()), e2);
             return false;
         }
     }

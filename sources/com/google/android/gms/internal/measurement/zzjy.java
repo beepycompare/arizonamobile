@@ -1,126 +1,85 @@
 package com.google.android.gms.internal.measurement;
 
 import android.content.Context;
-import android.net.Uri;
-import android.os.Build;
-import android.os.StrictMode;
+import android.database.ContentObserver;
 import android.util.Log;
-import androidx.collection.SimpleArrayMap;
-import com.google.common.base.Optional;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.HashMap;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+import androidx.core.content.PermissionChecker;
+import com.google.common.base.Preconditions;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzjy {
-    private static volatile Optional zza;
+public final class zzjy implements zzjv {
+    private static zzjy zza;
+    private final Context zzb;
+    private final ContentObserver zzc;
+    private boolean zzd;
 
     private zzjy() {
+        this.zzd = false;
+        this.zzb = null;
+        this.zzc = null;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(15:8|(2:12|13)|19|(1:82)(1:23)|24|25|26|27|28|29|(1:31)(1:78)|32|(9:34|35|36|37|38|(2:39|(3:41|(3:56|57|58)(7:43|44|(2:46|(1:49))|50|(1:52)|53|54)|55)(1:59))|60|61|62)(1:77)|63|13) */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0071, code lost:
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0072, code lost:
-        android.util.Log.e("HermeticFileOverrides", "no data dir", r0);
-        r0 = com.google.common.base.Optional.absent();
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static Optional zza(Context context) {
-        Optional optional;
-        Optional optional2 = zza;
-        if (optional2 == null) {
-            synchronized (zzjy.class) {
-                optional = zza;
-                if (optional == null) {
-                    String str = Build.TYPE;
-                    String str2 = Build.TAGS;
-                    int i = zzka.zza;
-                    if ((!str.equals("eng") && !str.equals("userdebug")) || (!str2.contains("dev-keys") && !str2.contains("test-keys"))) {
-                        optional = Optional.absent();
-                        zza = optional;
-                    }
-                    Context createDeviceProtectedStorageContext = (!zzjm.zza() || context.isDeviceProtectedStorage()) ? context : context.createDeviceProtectedStorageContext();
-                    StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
-                    StrictMode.allowThreadDiskWrites();
-                    char c = 0;
-                    File file = new File(createDeviceProtectedStorageContext.getDir("phenotype_hermetic", 0), "overrides.txt");
-                    Optional absent = file.exists() ? Optional.of(file) : Optional.absent();
-                    if (absent.isPresent()) {
-                        File file2 = (File) absent.get();
-                        try {
-                            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file2)));
-                            try {
-                                SimpleArrayMap simpleArrayMap = new SimpleArrayMap();
-                                HashMap hashMap = new HashMap();
-                                while (true) {
-                                    String readLine = bufferedReader.readLine();
-                                    if (readLine == null) {
-                                        break;
-                                    }
-                                    String[] split = readLine.split(" ", 3);
-                                    if (split.length != 3) {
-                                        StringBuilder sb = new StringBuilder(readLine.length() + 9);
-                                        sb.append("Invalid: ");
-                                        sb.append(readLine);
-                                        Log.e("HermeticFileOverrides", sb.toString());
-                                    } else {
-                                        String str3 = new String(split[c]);
-                                        String decode = Uri.decode(new String(split[1]));
-                                        String str4 = (String) hashMap.get(split[2]);
-                                        if (str4 == null) {
-                                            String str5 = new String(split[2]);
-                                            str4 = Uri.decode(str5);
-                                            if (str4.length() < 1024 || str4 == str5) {
-                                                hashMap.put(str5, str4);
-                                            }
-                                        }
-                                        SimpleArrayMap simpleArrayMap2 = (SimpleArrayMap) simpleArrayMap.get(str3);
-                                        if (simpleArrayMap2 == null) {
-                                            simpleArrayMap2 = new SimpleArrayMap();
-                                            simpleArrayMap.put(str3, simpleArrayMap2);
-                                        }
-                                        simpleArrayMap2.put(decode, str4);
-                                        c = 0;
-                                    }
-                                }
-                                String obj = file2.toString();
-                                String packageName = createDeviceProtectedStorageContext.getPackageName();
-                                StringBuilder sb2 = new StringBuilder(obj.length() + 28 + String.valueOf(packageName).length());
-                                sb2.append("Parsed ");
-                                sb2.append(obj);
-                                sb2.append(" for Android package ");
-                                sb2.append(packageName);
-                                Log.w("HermeticFileOverrides", sb2.toString());
-                                zzjs zzjsVar = new zzjs(simpleArrayMap);
-                                bufferedReader.close();
-                                optional = Optional.of(zzjsVar);
-                            } catch (Throwable th) {
-                                try {
-                                    bufferedReader.close();
-                                } catch (Throwable th2) {
-                                    th.addSuppressed(th2);
-                                }
-                                throw th;
-                            }
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                    } else {
-                        optional = Optional.absent();
-                    }
-                    StrictMode.setThreadPolicy(allowThreadDiskReads);
-                    zza = optional;
+    private zzjy(Context context) {
+        this.zzd = false;
+        this.zzb = context;
+        this.zzc = new zzjw(this, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static zzjy zza(Context context) {
+        zzjy zzjyVar;
+        synchronized (zzjy.class) {
+            if (zza == null) {
+                zza = PermissionChecker.checkSelfPermission(context, "com.google.android.providers.gsf.permission.READ_GSERVICES") == 0 ? new zzjy(context) : new zzjy();
+            }
+            zzjy zzjyVar2 = zza;
+            if (zzjyVar2 != null && zzjyVar2.zzc != null && !zzjyVar2.zzd) {
+                try {
+                    context.getContentResolver().registerContentObserver(zzjg.zza, true, zza.zzc);
+                    ((zzjy) Preconditions.checkNotNull(zza)).zzd = true;
+                } catch (SecurityException e) {
+                    Log.e("GservicesLoader", "Unable to register Gservices content observer", e);
                 }
             }
-            return optional;
+            zzjyVar = (zzjy) Preconditions.checkNotNull(zza);
         }
-        return optional2;
+        return zzjyVar;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static synchronized void zzc() {
+        Context context;
+        synchronized (zzjy.class) {
+            zzjy zzjyVar = zza;
+            if (zzjyVar != null && (context = zzjyVar.zzb) != null && zzjyVar.zzc != null && zzjyVar.zzd) {
+                context.getContentResolver().unregisterContentObserver(zza.zzc);
+            }
+            zza = null;
+        }
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzjv
+    /* renamed from: zzb */
+    public final String zze(final String str) {
+        Context context = this.zzb;
+        if (context != null && !zzjm.zzb(context)) {
+            try {
+                return (String) zzjv.zzh(new zzju() { // from class: com.google.android.gms.internal.measurement.zzjx
+                    @Override // com.google.android.gms.internal.measurement.zzju
+                    public final /* synthetic */ Object zza() {
+                        return zzjy.this.zzd(str);
+                    }
+                });
+            } catch (IllegalStateException | NullPointerException | SecurityException e) {
+                Log.e("GservicesLoader", "Unable to read GServices for: ".concat(str), e);
+            }
+        }
+        return null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ String zzd(String str) {
+        return zzjf.zza(((Context) Preconditions.checkNotNull(this.zzb)).getContentResolver(), str, null);
     }
 }

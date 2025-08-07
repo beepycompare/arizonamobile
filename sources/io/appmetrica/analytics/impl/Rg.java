@@ -9,7 +9,7 @@ import java.util.List;
 public final class Rg implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Cn f625a;
+    public final Cn f624a;
     public final V b;
     public final D6 c;
     public final Bl d;
@@ -17,51 +17,51 @@ public final class Rg implements ProtobufConverter {
     public final We f;
 
     public Rg() {
-        this(new Cn(), new V(new C0642un()), new D6(), new Bl(), new Ve(), new We());
+        this(new Cn(), new V(new C0643un()), new D6(), new Bl(), new Ve(), new We());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0600t6 fromModel(Qg qg) {
-        C0600t6 c0600t6 = new C0600t6();
-        c0600t6.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(qg.f612a, c0600t6.f));
+    public final C0601t6 fromModel(Qg qg) {
+        C0601t6 c0601t6 = new C0601t6();
+        c0601t6.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(qg.f611a, c0601t6.f));
         Nn nn = qg.b;
         if (nn != null) {
-            Dn dn = nn.f569a;
+            Dn dn = nn.f568a;
             if (dn != null) {
-                c0600t6.f1061a = this.f625a.fromModel(dn);
+                c0601t6.f1060a = this.f624a.fromModel(dn);
             }
             U u = nn.b;
             if (u != null) {
-                c0600t6.b = this.b.fromModel(u);
+                c0601t6.b = this.b.fromModel(u);
             }
             List<Dl> list = nn.c;
             if (list != null) {
-                c0600t6.e = this.d.fromModel(list);
+                c0601t6.e = this.d.fromModel(list);
             }
-            c0600t6.c = (String) WrapUtils.getOrDefault(nn.g, c0600t6.c);
-            c0600t6.d = this.c.a(nn.h);
+            c0601t6.c = (String) WrapUtils.getOrDefault(nn.g, c0601t6.c);
+            c0601t6.d = this.c.a(nn.h);
             if (!TextUtils.isEmpty(nn.d)) {
-                c0600t6.i = this.e.fromModel(nn.d);
+                c0601t6.i = this.e.fromModel(nn.d);
             }
             if (!TextUtils.isEmpty(nn.e)) {
-                c0600t6.j = nn.e.getBytes();
+                c0601t6.j = nn.e.getBytes();
             }
             if (!io.a(nn.f)) {
-                c0600t6.k = this.f.fromModel(nn.f);
+                c0601t6.k = this.f.fromModel(nn.f);
             }
         }
-        return c0600t6;
+        return c0601t6;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        C0600t6 c0600t6 = (C0600t6) obj;
+        C0601t6 c0601t6 = (C0601t6) obj;
         throw new UnsupportedOperationException();
     }
 
     public Rg(Cn cn, V v, D6 d6, Bl bl, Ve ve, We we) {
-        this.f625a = cn;
+        this.f624a = cn;
         this.b = v;
         this.c = d6;
         this.d = bl;
@@ -69,7 +69,7 @@ public final class Rg implements ProtobufConverter {
         this.f = we;
     }
 
-    public final Qg a(C0600t6 c0600t6) {
+    public final Qg a(C0601t6 c0601t6) {
         throw new UnsupportedOperationException();
     }
 }

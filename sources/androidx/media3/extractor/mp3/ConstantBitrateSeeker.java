@@ -30,6 +30,11 @@ final class ConstantBitrateSeeker extends ConstantBitrateSeekMap implements Seek
     }
 
     @Override // androidx.media3.extractor.mp3.Seeker
+    public long getDataStartPosition() {
+        return this.firstFramePosition;
+    }
+
+    @Override // androidx.media3.extractor.mp3.Seeker
     public long getDataEndPosition() {
         return this.dataEndPosition;
     }

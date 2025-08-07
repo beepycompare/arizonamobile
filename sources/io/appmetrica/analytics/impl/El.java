@@ -8,6 +8,6 @@ public final class El extends Ja {
     }
 
     @Override // io.appmetrica.analytics.impl.Ja
-    public final void a(List<AbstractC0236eh> list) {
+    public final void a(List<AbstractC0237eh> list) {
     }
 }

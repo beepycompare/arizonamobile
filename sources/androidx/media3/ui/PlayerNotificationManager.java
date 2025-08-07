@@ -14,7 +14,6 @@ import android.os.Message;
 import androidx.core.app.NotificationBuilderWithBuilderAccessor;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.media3.common.C;
 import androidx.media3.common.Player;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.NotificationUtil;
@@ -758,7 +757,7 @@ public class PlayerNotificationManager {
     private static PendingIntent createBroadcastIntent(String str, Context context, int i) {
         Intent intent = new Intent(str).setPackage(context.getPackageName());
         intent.putExtra(EXTRA_INSTANCE_ID, i);
-        return PendingIntent.getBroadcast(context, i, intent, Util.SDK_INT >= 23 ? 201326592 : C.BUFFER_FLAG_FIRST_SAMPLE);
+        return PendingIntent.getBroadcast(context, i, intent, 201326592);
     }
 
     private static void setLargeIcon(NotificationCompat.Builder builder, Bitmap bitmap) {

@@ -1,75 +1,76 @@
 package com.google.android.gms.measurement.internal;
 
-import android.app.ActivityManager;
 import android.os.Bundle;
-import android.text.TextUtils;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzoa {
-    final /* synthetic */ zzob zza;
+    protected long zza;
+    protected long zzb;
+    final /* synthetic */ zzoc zzc;
+    private final zzay zzd;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzoa(zzob zzobVar) {
-        Objects.requireNonNull(zzobVar);
-        this.zza = zzobVar;
+    public zzoa(zzoc zzocVar) {
+        Objects.requireNonNull(zzocVar);
+        this.zzc = zzocVar;
+        this.zzd = new zznz(this, zzocVar.zzu);
+        long elapsedRealtime = zzocVar.zzu.zzaZ().elapsedRealtime();
+        this.zza = elapsedRealtime;
+        this.zzb = elapsedRealtime;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zza() {
-        zzob zzobVar = this.zza;
-        zzobVar.zzg();
-        zzib zzibVar = zzobVar.zzu;
-        if (zzibVar.zzd().zzp(zzibVar.zzaZ().currentTimeMillis())) {
-            zzibVar.zzd().zzg.zzb(true);
-            ActivityManager.RunningAppProcessInfo runningAppProcessInfo = new ActivityManager.RunningAppProcessInfo();
-            ActivityManager.getMyMemoryState(runningAppProcessInfo);
-            if (runningAppProcessInfo.importance == 100) {
-                zzibVar.zzaV().zzk().zza("Detected application was in foreground");
-                zzc(zzibVar.zzaZ().currentTimeMillis(), false);
+    public final void zza(long j) {
+        this.zzc.zzg();
+        this.zzd.zzd();
+        this.zza = j;
+        this.zzb = j;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void zzb(long j) {
+        this.zzd.zzd();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void zzc() {
+        this.zzd.zzd();
+        long elapsedRealtime = this.zzc.zzu.zzaZ().elapsedRealtime();
+        this.zza = elapsedRealtime;
+        this.zzb = elapsedRealtime;
+    }
+
+    public final boolean zzd(boolean z, boolean z2, long j) {
+        zzoc zzocVar = this.zzc;
+        zzocVar.zzg();
+        zzocVar.zzb();
+        if (zzocVar.zzu.zzB()) {
+            zzic zzicVar = zzocVar.zzu;
+            zzicVar.zzd().zzk.zzb(zzicVar.zzaZ().currentTimeMillis());
+        }
+        long j2 = j - this.zza;
+        if (z || j2 >= 1000) {
+            if (!z2) {
+                j2 = j - this.zzb;
+                this.zzb = j;
             }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzb(long j, boolean z) {
-        zzob zzobVar = this.zza;
-        zzobVar.zzg();
-        zzobVar.zzj();
-        zzib zzibVar = zzobVar.zzu;
-        if (zzibVar.zzd().zzp(j)) {
-            zzibVar.zzd().zzg.zzb(true);
-            zzobVar.zzu.zzv().zzi();
-        }
-        zzibVar.zzd().zzk.zzb(j);
-        if (zzibVar.zzd().zzg.zza()) {
-            zzc(j, z);
-        }
-    }
-
-    final void zzc(long j, boolean z) {
-        zzob zzobVar = this.zza;
-        zzobVar.zzg();
-        if (zzobVar.zzu.zzB()) {
-            zzib zzibVar = zzobVar.zzu;
-            zzibVar.zzd().zzk.zzb(j);
-            zzibVar.zzaV().zzk().zzb("Session started, time", Long.valueOf(zzibVar.zzaZ().elapsedRealtime()));
-            zzib zzibVar2 = zzobVar.zzu;
-            Long valueOf = Long.valueOf(j / 1000);
-            zzibVar2.zzj().zzN("auto", "_sid", valueOf, j);
-            zzibVar.zzd().zzl.zzb(valueOf.longValue());
-            zzibVar.zzd().zzg.zzb(false);
+            zzic zzicVar2 = zzocVar.zzu;
+            zzicVar2.zzaV().zzk().zzb("Recording user engagement, ms", Long.valueOf(j2));
             Bundle bundle = new Bundle();
-            bundle.putLong("_sid", valueOf.longValue());
-            zzibVar2.zzj().zzG("auto", "_s", j, bundle);
-            String zza = zzibVar.zzd().zzq.zza();
-            if (TextUtils.isEmpty(zza)) {
-                return;
+            bundle.putLong("_et", j2);
+            zzic zzicVar3 = zzocVar.zzu;
+            zzpp.zzav(zzicVar3.zzs().zzh(!zzicVar2.zzc().zzv()), bundle, true);
+            if (!z2) {
+                zzicVar3.zzj().zzF("auto", "_e", bundle);
             }
-            Bundle bundle2 = new Bundle();
-            bundle2.putString("_ffr", zza);
-            zzibVar2.zzj().zzG("auto", "_ssr", j, bundle2);
+            this.zza = j;
+            zzay zzayVar = this.zzd;
+            zzayVar.zzd();
+            zzayVar.zzb(((Long) zzfy.zzaq.zzb(null)).longValue());
+            return true;
         }
+        zzocVar.zzu.zzaV().zzk().zzb("Screen exposed for less than 1000 ms. Event not sent. time", Long.valueOf(j2));
+        return false;
     }
 }

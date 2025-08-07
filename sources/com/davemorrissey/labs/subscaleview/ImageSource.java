@@ -3,7 +3,6 @@ package com.davemorrissey.labs.subscaleview;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.net.Uri;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -67,7 +66,7 @@ public final class ImageSource {
             throw new NullPointerException("Uri must not be null");
         }
         if (!str.contains("://")) {
-            if (str.startsWith(RemoteSettings.FORWARD_SLASH_STRING)) {
+            if (str.startsWith("/")) {
                 str = str.substring(1);
             }
             str = FILE_SCHEME + str;

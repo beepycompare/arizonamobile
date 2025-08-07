@@ -3,7 +3,6 @@ package androidx.constraintlayout.core;
 import androidx.constraintlayout.core.SolverVariable;
 import androidx.constraintlayout.core.widgets.ConstraintAnchor;
 import androidx.constraintlayout.core.widgets.ConstraintWidget;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -849,7 +848,7 @@ public class LinearSystem {
         PrintStream printStream = System.out;
         StringBuilder append = new StringBuilder("Linear System -> Table size: ").append(this.mTableSize).append(" (");
         int i5 = this.mTableSize;
-        printStream.println(append.append(getDisplaySize(i5 * i5)).append(") -- row sizes: ").append(getDisplaySize(i)).append(", actual size: ").append(getDisplaySize(i3)).append(" rows: ").append(this.mNumRows).append(RemoteSettings.FORWARD_SLASH_STRING).append(this.mMaxRows).append(" cols: ").append(this.mNumColumns).append(RemoteSettings.FORWARD_SLASH_STRING).append(this.mMaxColumns).append(" 0 occupied cells, ").append(getDisplaySize(0)).toString());
+        printStream.println(append.append(getDisplaySize(i5 * i5)).append(") -- row sizes: ").append(getDisplaySize(i)).append(", actual size: ").append(getDisplaySize(i3)).append(" rows: ").append(this.mNumRows).append("/").append(this.mMaxRows).append(" cols: ").append(this.mNumColumns).append("/").append(this.mMaxColumns).append(" 0 occupied cells, ").append(getDisplaySize(0)).toString());
     }
 
     private void displaySolverVariables() {

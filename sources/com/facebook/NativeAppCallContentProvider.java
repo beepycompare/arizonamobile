@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 import android.util.Pair;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.UUID;
@@ -70,7 +69,7 @@ public class NativeAppCallContentProvider extends ContentProvider {
 
     Pair<UUID, String> parseCallIdAndAttachmentName(Uri uri) {
         try {
-            String[] split = uri.getPath().substring(1).split(RemoteSettings.FORWARD_SLASH_STRING);
+            String[] split = uri.getPath().substring(1).split("/");
             String str = split[0];
             return new Pair<>(UUID.fromString(str), split[1]);
         } catch (Exception unused) {

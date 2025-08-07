@@ -1,13 +1,24 @@
 package com.google.android.gms.measurement.internal;
 
-import android.app.job.JobParameters;
-import android.content.Intent;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public interface zzno {
-    boolean zza(int i);
+final class zzno implements Runnable {
+    final /* synthetic */ zzpg zza;
+    final /* synthetic */ Runnable zzb;
 
-    void zzb(JobParameters jobParameters, boolean z);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzno(zznt zzntVar, zzpg zzpgVar, Runnable runnable) {
+        this.zza = zzpgVar;
+        this.zzb = runnable;
+        Objects.requireNonNull(zzntVar);
+    }
 
-    void zzc(Intent intent);
+    @Override // java.lang.Runnable
+    public final void run() {
+        zzpg zzpgVar = this.zza;
+        zzpgVar.zzZ();
+        zzpgVar.zzY(this.zzb);
+        zzpgVar.zzM();
+    }
 }

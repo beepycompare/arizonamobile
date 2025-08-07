@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class F7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ae f433a;
+    public final Ae f432a;
 
     public F7() {
         this(null, 1, null);
@@ -17,9 +17,9 @@ public final class F7 implements Converter {
     /* renamed from: a */
     public final J7 fromModel(E7 e7) {
         J7 j7 = new J7();
-        Boolean bool = e7.f413a;
+        Boolean bool = e7.f412a;
         if (bool != null) {
-            j7.f501a = this.f433a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
+            j7.f500a = this.f432a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
         }
         Double d = e7.c;
         if (d != null) {
@@ -61,7 +61,7 @@ public final class F7 implements Converter {
     }
 
     public F7(Ae ae) {
-        this.f433a = ae;
+        this.f432a = ae;
     }
 
     public /* synthetic */ F7(Ae ae, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -75,7 +75,7 @@ public final class F7 implements Converter {
             return new E7(null, null, null, null, null, null, null, null, null, null);
         }
         J7 j72 = new J7();
-        Boolean a2 = this.f433a.a(j7.f501a);
+        Boolean a2 = this.f432a.a(j7.f500a);
         Double valueOf = Double.valueOf(j7.c);
         if (valueOf.doubleValue() == j72.c) {
             valueOf = null;

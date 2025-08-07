@@ -27,7 +27,7 @@ public class ProfileInstallerInitializer implements Initializer<Result> {
         Choreographer.getInstance().postFrameCallback(new Choreographer.FrameCallback() { // from class: androidx.profileinstaller.ProfileInstallerInitializer$$ExternalSyntheticLambda0
             @Override // android.view.Choreographer.FrameCallback
             public final void doFrame(long j) {
-                ProfileInstallerInitializer.this.m7548x451635a(applicationContext, j);
+                ProfileInstallerInitializer.this.m7563x451635a(applicationContext, j);
             }
         });
         return new Result();
@@ -35,7 +35,7 @@ public class ProfileInstallerInitializer implements Initializer<Result> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$create$0$androidx-profileinstaller-ProfileInstallerInitializer  reason: not valid java name */
-    public /* synthetic */ void m7548x451635a(Context context, long j) {
+    public /* synthetic */ void m7563x451635a(Context context, long j) {
         installAfterDelay(context);
     }
 

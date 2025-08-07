@@ -2,7 +2,6 @@ package com.google.android.play.core.splitinstall;
 
 import android.content.Context;
 import android.os.Build;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -19,7 +18,7 @@ public class SplitInstallHelper {
             try {
                 System.loadLibrary(str);
             } catch (UnsatisfiedLinkError e) {
-                String str2 = context.getApplicationInfo().nativeLibraryDir + RemoteSettings.FORWARD_SLASH_STRING + System.mapLibraryName(str);
+                String str2 = context.getApplicationInfo().nativeLibraryDir + "/" + System.mapLibraryName(str);
                 if (new File(str2).exists()) {
                     System.load(str2);
                 } else {

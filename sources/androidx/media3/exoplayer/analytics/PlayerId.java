@@ -1,8 +1,8 @@
 package androidx.media3.exoplayer.analytics;
 
 import android.media.metrics.LogSessionId;
+import android.os.Build;
 import androidx.media3.common.util.Assertions;
-import androidx.media3.common.util.Util;
 import java.util.Objects;
 /* loaded from: classes2.dex */
 public final class PlayerId {
@@ -13,7 +13,7 @@ public final class PlayerId {
 
     public PlayerId(String str) {
         this.name = str;
-        this.logSessionIdApi31 = Util.SDK_INT >= 31 ? new LogSessionIdApi31() : null;
+        this.logSessionIdApi31 = Build.VERSION.SDK_INT >= 31 ? new LogSessionIdApi31() : null;
         this.equalityToken = new Object();
     }
 

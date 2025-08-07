@@ -5,11 +5,11 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class attr {
         public static int assetName = 0x7f040048;
-        public static int panEnabled = 0x7f040484;
-        public static int quickScaleEnabled = 0x7f0404cb;
-        public static int src = 0x7f04055b;
-        public static int tileBackgroundColor = 0x7f040614;
-        public static int zoomEnabled = 0x7f04067e;
+        public static int panEnabled = 0x7f04048f;
+        public static int quickScaleEnabled = 0x7f0404d6;
+        public static int src = 0x7f040567;
+        public static int tileBackgroundColor = 0x7f040620;
+        public static int zoomEnabled = 0x7f04068b;
 
         private attr() {
         }

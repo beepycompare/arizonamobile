@@ -2,10 +2,12 @@ package androidx.media3.common.util;
 
 import android.util.Pair;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.view.InputDeviceCompat;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.common.ColorInfo;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
+import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,12 +17,14 @@ import java.util.regex.Pattern;
 import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 /* loaded from: classes2.dex */
 public final class CodecSpecificDataUtil {
+    private static final String CODEC_ID_AC4 = "ac-4";
     private static final String CODEC_ID_AV01 = "av01";
     private static final String CODEC_ID_AVC1 = "avc1";
     private static final String CODEC_ID_AVC2 = "avc2";
     private static final String CODEC_ID_H263 = "s263";
     private static final String CODEC_ID_HEV1 = "hev1";
     private static final String CODEC_ID_HVC1 = "hvc1";
+    private static final String CODEC_ID_IAMF = "iamf";
     private static final String CODEC_ID_MP4A = "mp4a";
     private static final String CODEC_ID_VP09 = "vp09";
     private static final int EXTENDED_PAR = 15;
@@ -31,6 +35,40 @@ public final class CodecSpecificDataUtil {
     private static final byte[] NAL_START_CODE = {0, 0, 0, 1};
     private static final String[] HEVC_GENERAL_PROFILE_SPACE_STRINGS = {"", ExifInterface.GPS_MEASUREMENT_IN_PROGRESS, "B", "C"};
     private static final Pattern PROFILE_PATTERN = Pattern.compile("^\\D?(\\d+)$");
+
+    private static int ac4BitstreamAndPresentationVersionsToProfileConst(int i, int i2) {
+        if (i == 0) {
+            return i2 == 0 ? 257 : -1;
+        } else if (i == 1) {
+            return i2 == 0 ? InputDeviceCompat.SOURCE_DPAD : i2 == 1 ? 514 : -1;
+        } else if (i != 2) {
+            return -1;
+        } else {
+            if (i2 == 1) {
+                return AnalyticsListener.EVENT_DRM_KEYS_REMOVED;
+            }
+            if (i2 == 2) {
+                return AnalyticsListener.EVENT_PLAYER_RELEASED;
+            }
+            return -1;
+        }
+    }
+
+    private static int ac4LevelNumberToConst(int i) {
+        if (i != 0) {
+            if (i != 1) {
+                if (i != 2) {
+                    if (i != 3) {
+                        return i != 4 ? -1 : 16;
+                    }
+                    return 8;
+                }
+                return 4;
+            }
+            return 2;
+        }
+        return 1;
+    }
 
     private static int av1LevelNumberToConst(int i) {
         switch (i) {
@@ -266,12 +304,68 @@ public final class CodecSpecificDataUtil {
         return Collections.singletonList(z ? new byte[]{1} : new byte[]{0});
     }
 
+    public static String buildIamfCodecString(byte[] bArr) {
+        ParsableByteArray parsableByteArray = new ParsableByteArray(bArr);
+        parsableByteArray.skipLeb128();
+        parsableByteArray.skipBytes(4);
+        int readUnsignedByte = parsableByteArray.readUnsignedByte();
+        int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
+        parsableByteArray.skipBytes(1);
+        parsableByteArray.skipLeb128();
+        parsableByteArray.skipLeb128();
+        String readString = parsableByteArray.readString(4);
+        if (readString.equals(CODEC_ID_MP4A)) {
+            parsableByteArray.skipLeb128();
+            parsableByteArray.skipBytes(2);
+            ParsableBitArray parsableBitArray = new ParsableBitArray();
+            parsableBitArray.reset(parsableByteArray);
+            int readBits = parsableBitArray.readBits(5);
+            if (readBits == 31) {
+                readBits = parsableBitArray.readBits(6) + 32;
+            }
+            readString = readString + ".40." + readBits;
+        }
+        return Util.formatInvariant("iamf.%03X.%03X.%s", Integer.valueOf(readUnsignedByte), Integer.valueOf(readUnsignedByte2), readString);
+    }
+
     public static boolean parseCea708InitializationData(List<byte[]> list) {
         return list.size() == 1 && list.get(0).length == 1 && list.get(0)[0] == 1;
     }
 
     public static ImmutableList<byte[]> buildVp9CodecPrivateInitializationData(byte b, byte b2, byte b3, byte b4) {
         return ImmutableList.of(new byte[]{1, 1, b, 2, 1, b2, 3, 1, b3, 4, 1, b4});
+    }
+
+    public static byte[] buildDolbyVisionInitializationData(int i, int i2) {
+        int i3;
+        int i4;
+        byte[] bArr = new byte[24];
+        if (i == 8) {
+            i3 = 4;
+            i4 = 0;
+        } else if (i == 9) {
+            i3 = 2;
+            i4 = 1;
+        } else {
+            i3 = 0;
+            i4 = 0;
+        }
+        bArr[0] = 1;
+        bArr[1] = 0;
+        byte b = (byte) ((i & 127) << 1);
+        bArr[2] = b;
+        bArr[2] = (byte) ((b | ((i2 >> 5) & 1)) & 255);
+        byte b2 = (byte) ((i2 & 31) << 3);
+        bArr[3] = b2;
+        byte b3 = (byte) (b2 | 4);
+        bArr[3] = b3;
+        byte b4 = b3;
+        bArr[3] = b4;
+        bArr[3] = (byte) (b4 | 1);
+        byte b5 = (byte) (i3 << 4);
+        bArr[4] = b5;
+        bArr[4] = (byte) (b5 | (i4 << 2));
+        return bArr;
     }
 
     public static Pair<Integer, Integer> getVideoResolutionFromMpeg4VideoConfig(byte[] bArr) {
@@ -352,9 +446,19 @@ public final class CodecSpecificDataUtil {
         return Util.formatInvariant("s263.%d.%d", Integer.valueOf(i), Integer.valueOf(i2));
     }
 
+    public static String buildDolbyVisionCodecString(int i, int i2) {
+        if (i > 9) {
+            return Util.formatInvariant("dvh1.%02d.%02d", Integer.valueOf(i), Integer.valueOf(i2));
+        }
+        if (i > 8) {
+            return Util.formatInvariant("dvav.%02d.%02d", Integer.valueOf(i), Integer.valueOf(i2));
+        }
+        return Util.formatInvariant("dvhe.%02d.%02d", Integer.valueOf(i), Integer.valueOf(i2));
+    }
+
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x0084, code lost:
-        if (r3.equals(androidx.media3.common.util.CodecSpecificDataUtil.CODEC_ID_AV01) == false) goto L11;
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x009e, code lost:
+        if (r3.equals(androidx.media3.common.util.CodecSpecificDataUtil.CODEC_ID_AC4) == false) goto L11;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -371,53 +475,67 @@ public final class CodecSpecificDataUtil {
         String str = split[0];
         str.hashCode();
         switch (str.hashCode()) {
+            case 2986313:
+                break;
             case 3004662:
+                if (str.equals(CODEC_ID_AV01)) {
+                    c = 1;
+                    break;
+                }
+                c = 65535;
                 break;
             case 3006243:
                 if (str.equals(CODEC_ID_AVC1)) {
-                    c = 1;
+                    c = 2;
                     break;
                 }
                 c = 65535;
                 break;
             case 3006244:
                 if (str.equals(CODEC_ID_AVC2)) {
-                    c = 2;
+                    c = 3;
                     break;
                 }
                 c = 65535;
                 break;
             case 3199032:
                 if (str.equals(CODEC_ID_HEV1)) {
-                    c = 3;
+                    c = 4;
                     break;
                 }
                 c = 65535;
                 break;
             case 3214780:
                 if (str.equals(CODEC_ID_HVC1)) {
-                    c = 4;
+                    c = 5;
+                    break;
+                }
+                c = 65535;
+                break;
+            case 3224753:
+                if (str.equals(CODEC_ID_IAMF)) {
+                    c = 6;
                     break;
                 }
                 c = 65535;
                 break;
             case 3356560:
                 if (str.equals(CODEC_ID_MP4A)) {
-                    c = 5;
+                    c = 7;
                     break;
                 }
                 c = 65535;
                 break;
             case 3475740:
                 if (str.equals(CODEC_ID_H263)) {
-                    c = 6;
+                    c = '\b';
                     break;
                 }
                 c = 65535;
                 break;
             case 3624515:
                 if (str.equals(CODEC_ID_VP09)) {
-                    c = 7;
+                    c = '\t';
                     break;
                 }
                 c = 65535;
@@ -428,18 +546,22 @@ public final class CodecSpecificDataUtil {
         }
         switch (c) {
             case 0:
-                return getAv1ProfileAndLevel(format.codecs, split, format.colorInfo);
+                return getAc4CodecProfileAndLevel(format.codecs, split);
             case 1:
+                return getAv1ProfileAndLevel(format.codecs, split, format.colorInfo);
             case 2:
-                return getAvcProfileAndLevel(format.codecs, split);
             case 3:
+                return getAvcProfileAndLevel(format.codecs, split);
             case 4:
-                return getHevcProfileAndLevel(format.codecs, split, format.colorInfo);
             case 5:
-                return getAacCodecProfileAndLevel(format.codecs, split);
+                return getHevcProfileAndLevel(format.codecs, split, format.colorInfo);
             case 6:
-                return getH263ProfileAndLevel(format.codecs, split);
+                return getIamfCodecProfileAndLevel(format.codecs, split);
             case 7:
+                return getAacCodecProfileAndLevel(format.codecs, split);
+            case '\b':
+                return getH263ProfileAndLevel(format.codecs, split);
+            case '\t':
                 return getVp9ProfileAndLevel(format.codecs, split);
             default:
                 return null;
@@ -505,6 +627,79 @@ public final class CodecSpecificDataUtil {
             return bArr2;
         }
         return null;
+    }
+
+    public static int dolbyVisionConstantToLevelNumber(int i) {
+        int i2 = 1;
+        if (i != 1) {
+            i2 = 2;
+            if (i != 2) {
+                switch (i) {
+                    case 4:
+                        return 3;
+                    case 8:
+                        return 4;
+                    case 16:
+                        return 5;
+                    case 32:
+                        return 6;
+                    case 64:
+                        return 7;
+                    case 128:
+                        return 8;
+                    case 256:
+                        return 9;
+                    case 512:
+                        return 10;
+                    case 1024:
+                        return 11;
+                    case 2048:
+                        return 12;
+                    case 4096:
+                        return 13;
+                    default:
+                        throw new IllegalArgumentException("Unknown Dolby Vision level: " + i);
+                }
+            }
+        }
+        return i2;
+    }
+
+    public static int dolbyVisionConstantToProfileNumber(int i) {
+        if (i != 1) {
+            if (i != 2) {
+                if (i != 4) {
+                    if (i != 8) {
+                        if (i != 16) {
+                            if (i != 32) {
+                                if (i != 64) {
+                                    if (i != 128) {
+                                        if (i != 256) {
+                                            if (i != 512) {
+                                                if (i == 1024) {
+                                                    return 10;
+                                                }
+                                                throw new IllegalArgumentException("Unknown Dolby Vision profile: " + i);
+                                            }
+                                            return 9;
+                                        }
+                                        return 8;
+                                    }
+                                    return 7;
+                                }
+                                return 6;
+                            }
+                            return 5;
+                        }
+                        return 4;
+                    }
+                    return 3;
+                }
+                return 2;
+            }
+            return 1;
+        }
+        return 0;
     }
 
     private static int findNalStartCode(byte[] bArr, int i) {
@@ -682,6 +877,92 @@ public final class CodecSpecificDataUtil {
             Log.w(TAG, "Ignoring malformed MP4A codec string: " + str);
         }
         return null;
+    }
+
+    private static Pair<Integer, Integer> getAc4CodecProfileAndLevel(String str, String[] strArr) {
+        if (strArr.length != 4) {
+            Log.w(TAG, "Ignoring malformed AC-4 codec string: " + str);
+            return null;
+        }
+        try {
+            int parseInt = Integer.parseInt(strArr[1]);
+            int parseInt2 = Integer.parseInt(strArr[2]);
+            int parseInt3 = Integer.parseInt(strArr[3]);
+            int ac4BitstreamAndPresentationVersionsToProfileConst = ac4BitstreamAndPresentationVersionsToProfileConst(parseInt, parseInt2);
+            if (ac4BitstreamAndPresentationVersionsToProfileConst == -1) {
+                Log.w(TAG, "Unknown AC-4 profile: " + parseInt + "." + parseInt2);
+                return null;
+            }
+            int ac4LevelNumberToConst = ac4LevelNumberToConst(parseInt3);
+            if (ac4LevelNumberToConst == -1) {
+                Log.w(TAG, "Unknown AC-4 level: " + parseInt3);
+                return null;
+            }
+            return new Pair<>(Integer.valueOf(ac4BitstreamAndPresentationVersionsToProfileConst), Integer.valueOf(ac4LevelNumberToConst));
+        } catch (NumberFormatException unused) {
+            Log.w(TAG, "Ignoring malformed AC-4 codec string: " + str);
+            return null;
+        }
+    }
+
+    private static Pair<Integer, Integer> getIamfCodecProfileAndLevel(String str, String[] strArr) {
+        int i = 4;
+        if (strArr.length < 4) {
+            Log.w(TAG, "Ignoring malformed IAMF codec string: " + str);
+            return null;
+        }
+        try {
+            int parseInt = 1 << (Integer.parseInt(strArr[1]) + 16);
+            String str2 = strArr[3];
+            str2.hashCode();
+            char c = 65535;
+            switch (str2.hashCode()) {
+                case 2464863:
+                    if (str2.equals("Opus")) {
+                        c = 0;
+                        break;
+                    }
+                    break;
+                case 3114792:
+                    if (str2.equals("fLaC")) {
+                        c = 1;
+                        break;
+                    }
+                    break;
+                case 3238865:
+                    if (str2.equals("ipcm")) {
+                        c = 2;
+                        break;
+                    }
+                    break;
+                case 3356560:
+                    if (str2.equals(CODEC_ID_MP4A)) {
+                        c = 3;
+                        break;
+                    }
+                    break;
+            }
+            switch (c) {
+                case 0:
+                    i = 1;
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    i = 8;
+                    break;
+                case 3:
+                    i = 2;
+                    break;
+                default:
+                    Log.w(TAG, "Ignoring unknown codec identifier for IAMF auxiliary profile: " + strArr[3]);
+                    return null;
+            }
+            return new Pair<>(Integer.valueOf(16777216 | parseInt | i), 0);
+        } catch (NumberFormatException e) {
+            Log.w(TAG, "Ignoring malformed primary profile in IAMF codec string: " + strArr[1], e);
+            return null;
+        }
     }
 
     private static Integer hevcCodecStringToProfileLevel(String str) {

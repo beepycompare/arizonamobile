@@ -2,7 +2,6 @@ package com.arizona.launcher.util;
 
 import com.arizona.launcher.model.servers.SAMPServerInfo;
 import com.arizona.launcher.model.servers.ServerType;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: IconsLoaderUtil.kt */
@@ -18,6 +17,6 @@ public final class IconsLoaderUtil {
     public final String getPathForServerIcon(SAMPServerInfo sampServerInfo) {
         Intrinsics.checkNotNullParameter(sampServerInfo, "sampServerInfo");
         ServerType serverType = sampServerInfo.getServerType();
-        return "file:///android_asset/servers_icons/" + serverType + RemoteSettings.FORWARD_SLASH_STRING + sampServerInfo.getId() + ".png";
+        return "file:///android_asset/servers_icons/" + serverType + "/" + sampServerInfo.getId() + ".png";
     }
 }

@@ -36,23 +36,14 @@ public final class RequirementsWatcher {
         this.notMetRequirements = this.requirements.getNotMetRequirements(this.context);
         IntentFilter intentFilter = new IntentFilter();
         if (this.requirements.isNetworkRequired()) {
-            if (Util.SDK_INT >= 24) {
-                registerNetworkCallbackV24();
-            } else {
-                intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-            }
+            registerNetworkCallbackV24();
         }
         if (this.requirements.isChargingRequired()) {
             intentFilter.addAction("android.intent.action.ACTION_POWER_CONNECTED");
             intentFilter.addAction("android.intent.action.ACTION_POWER_DISCONNECTED");
         }
         if (this.requirements.isIdleRequired()) {
-            if (Util.SDK_INT >= 23) {
-                intentFilter.addAction("android.os.action.DEVICE_IDLE_MODE_CHANGED");
-            } else {
-                intentFilter.addAction("android.intent.action.SCREEN_ON");
-                intentFilter.addAction("android.intent.action.SCREEN_OFF");
-            }
+            intentFilter.addAction("android.os.action.DEVICE_IDLE_MODE_CHANGED");
         }
         if (this.requirements.isStorageNotLowRequired()) {
             intentFilter.addAction("android.intent.action.DEVICE_STORAGE_LOW");
@@ -67,10 +58,9 @@ public final class RequirementsWatcher {
     public void stop() {
         this.context.unregisterReceiver((BroadcastReceiver) Assertions.checkNotNull(this.receiver));
         this.receiver = null;
-        if (Util.SDK_INT < 24 || this.networkCallback == null) {
-            return;
+        if (this.networkCallback != null) {
+            unregisterNetworkCallbackV24();
         }
-        unregisterNetworkCallbackV24();
     }
 
     public Requirements getRequirements() {
@@ -166,14 +156,14 @@ public final class RequirementsWatcher {
             RequirementsWatcher.this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.scheduler.RequirementsWatcher$NetworkCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RequirementsWatcher.NetworkCallback.this.m7399xcc18be42();
+                    RequirementsWatcher.NetworkCallback.this.m7403xcc18be42();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$postCheckRequirements$0$androidx-media3-exoplayer-scheduler-RequirementsWatcher$NetworkCallback  reason: not valid java name */
-        public /* synthetic */ void m7399xcc18be42() {
+        public /* synthetic */ void m7403xcc18be42() {
             if (RequirementsWatcher.this.networkCallback != null) {
                 RequirementsWatcher.this.checkRequirements();
             }
@@ -183,14 +173,14 @@ public final class RequirementsWatcher {
             RequirementsWatcher.this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.scheduler.RequirementsWatcher$NetworkCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RequirementsWatcher.NetworkCallback.this.m7400xfb2bca45();
+                    RequirementsWatcher.NetworkCallback.this.m7404xfb2bca45();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$postRecheckNotMetNetworkRequirements$1$androidx-media3-exoplayer-scheduler-RequirementsWatcher$NetworkCallback  reason: not valid java name */
-        public /* synthetic */ void m7400xfb2bca45() {
+        public /* synthetic */ void m7404xfb2bca45() {
             if (RequirementsWatcher.this.networkCallback != null) {
                 RequirementsWatcher.this.recheckNotMetNetworkRequirements();
             }

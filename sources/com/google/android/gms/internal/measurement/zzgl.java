@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzgl extends zzme implements zznm {
+public final class zzgl extends zzmf implements zznn {
     private static final zzgl zzu;
     private int zzb;
     private long zzd;
@@ -15,19 +15,19 @@ public final class zzgl extends zzme implements zznm {
     private zzgr zzs;
     private zzgn zzt;
     private String zze = "";
-    private zzmn zzg = zzcv();
-    private zzmn zzh = zzcv();
-    private zzmn zzi = zzcv();
+    private zzmo zzg = zzcv();
+    private zzmo zzh = zzcv();
+    private zzmo zzi = zzcv();
     private String zzj = "";
-    private zzmn zzl = zzcv();
-    private zzmn zzm = zzcv();
+    private zzmo zzl = zzcv();
+    private zzmo zzm = zzcv();
     private String zzn = "";
     private String zzo = "";
 
     static {
         zzgl zzglVar = new zzgl();
         zzu = zzglVar;
-        zzme.zzcp(zzgl.class, zzglVar);
+        zzmf.zzcp(zzgl.class, zzglVar);
     }
 
     private zzgl() {
@@ -85,7 +85,7 @@ public final class zzgl extends zzme implements zznm {
         return this.zzm;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {
@@ -130,9 +130,9 @@ public final class zzgl extends zzme implements zznm {
 
     public final /* synthetic */ void zzt(int i, zzgj zzgjVar) {
         zzgjVar.getClass();
-        zzmn zzmnVar = this.zzh;
-        if (!zzmnVar.zza()) {
-            this.zzh = zzme.zzcw(zzmnVar);
+        zzmo zzmoVar = this.zzh;
+        if (!zzmoVar.zza()) {
+            this.zzh = zzmf.zzcw(zzmoVar);
         }
         this.zzh.set(i, zzgjVar);
     }

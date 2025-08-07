@@ -4,7 +4,7 @@ import android.os.Bundle;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
 /* loaded from: classes4.dex */
 public final class zzf implements AppMeasurementSdk.OnEventListener {
     final /* synthetic */ zzg zza;
@@ -14,7 +14,7 @@ public final class zzf implements AppMeasurementSdk.OnEventListener {
         this.zza = zzgVar;
     }
 
-    @Override // com.google.android.gms.measurement.api.AppMeasurementSdk.OnEventListener, com.google.android.gms.measurement.internal.zzjp
+    @Override // com.google.android.gms.measurement.api.AppMeasurementSdk.OnEventListener, com.google.android.gms.measurement.internal.zzjq
     public final void onEvent(String str, String str2, Bundle bundle, long j) {
         if (str == null || !zzc.zzc(str2)) {
             return;

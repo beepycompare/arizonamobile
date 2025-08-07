@@ -1,10 +1,8 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-public interface zznk extends Cloneable, zznm {
-    zznk zzaV(byte[] bArr, zzlq zzlqVar) throws zzmq;
+interface zznk {
+    boolean zzb(Class cls);
 
-    zznk zzaW(byte[] bArr) throws zzmq;
-
-    zznl zzbf();
+    zznj zzc(Class cls);
 }

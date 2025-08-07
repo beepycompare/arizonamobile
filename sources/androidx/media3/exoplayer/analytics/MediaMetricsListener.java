@@ -273,7 +273,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
         this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                MediaMetricsListener.this.m7357xdf4bfb0e(build);
+                MediaMetricsListener.this.m7360xdf4bfb0e(build);
             }
         });
         this.reportedEventsForCurrentSession = true;
@@ -282,7 +282,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeReportPlaybackError$0$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m7357xdf4bfb0e(PlaybackErrorEvent playbackErrorEvent) {
+    public /* synthetic */ void m7360xdf4bfb0e(PlaybackErrorEvent playbackErrorEvent) {
         this.playbackSession.reportPlaybackErrorEvent(playbackErrorEvent);
     }
 
@@ -331,7 +331,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MediaMetricsListener.this.m7356xe45a00bc(build);
+                    MediaMetricsListener.this.m7359xe45a00bc(build);
                 }
             });
         }
@@ -339,7 +339,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeReportNetworkChange$1$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m7356xe45a00bc(NetworkEvent networkEvent) {
+    public /* synthetic */ void m7359xe45a00bc(NetworkEvent networkEvent) {
         this.playbackSession.reportNetworkEvent(networkEvent);
     }
 
@@ -360,7 +360,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MediaMetricsListener.this.m7358x6c41e093(build);
+                    MediaMetricsListener.this.m7361x6c41e093(build);
                 }
             });
         }
@@ -368,7 +368,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeReportPlaybackStateChange$2$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m7358x6c41e093(PlaybackStateEvent playbackStateEvent) {
+    public /* synthetic */ void m7361x6c41e093(PlaybackStateEvent playbackStateEvent) {
         this.playbackSession.reportPlaybackStateEvent(playbackStateEvent);
     }
 
@@ -484,14 +484,14 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
         this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MediaMetricsListener.this.m7359x86fc0269(build);
+                MediaMetricsListener.this.m7362x86fc0269(build);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$reportTrackChangeEvent$3$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m7359x86fc0269(TrackChangeEvent trackChangeEvent) {
+    public /* synthetic */ void m7362x86fc0269(TrackChangeEvent trackChangeEvent) {
         this.playbackSession.reportTrackChangeEvent(trackChangeEvent);
     }
 
@@ -527,7 +527,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MediaMetricsListener.this.m7355x9548dab(build);
+                    MediaMetricsListener.this.m7358x9548dab(build);
                 }
             });
         }
@@ -544,7 +544,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$finishCurrentSession$4$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m7355x9548dab(PlaybackMetrics playbackMetrics) {
+    public /* synthetic */ void m7358x9548dab(PlaybackMetrics playbackMetrics) {
         this.playbackSession.reportPlaybackMetrics(playbackMetrics);
     }
 
@@ -669,7 +669,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
                     if (th2 instanceof MediaDrm.MediaDrmStateException) {
                         int errorCodeFromPlatformDiagnosticsInfo = Util.getErrorCodeFromPlatformDiagnosticsInfo(((MediaDrm.MediaDrmStateException) th2).getDiagnosticInfo());
                         return new ErrorInfo(getDrmErrorCode(errorCodeFromPlatformDiagnosticsInfo), errorCodeFromPlatformDiagnosticsInfo);
-                    } else if (Util.SDK_INT >= 23 && (th2 instanceof MediaDrmResetException)) {
+                    } else if (th2 instanceof MediaDrmResetException) {
                         return new ErrorInfo(27, 0);
                     } else {
                         if (th2 instanceof NotProvisionedException) {

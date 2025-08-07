@@ -1,50 +1,56 @@
 package com.google.android.gms.measurement.internal;
+
+import android.content.Context;
+import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.common.util.Clock;
+import org.checkerframework.dataflow.qual.Pure;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public abstract class zzje extends zzjd {
-    private boolean zza;
+public class zzje implements zzjg {
+    protected final zzic zzu;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzje(zzib zzibVar) {
-        super(zzibVar);
-        this.zzu.zzF();
+    public zzje(zzic zzicVar) {
+        Preconditions.checkNotNull(zzicVar);
+        this.zzu = zzicVar;
     }
 
-    protected abstract boolean zza();
-
-    protected void zzba() {
+    @Override // com.google.android.gms.measurement.internal.zzjg
+    @Pure
+    public final zzae zzaU() {
+        throw null;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzv() {
-        return this.zza;
+    @Override // com.google.android.gms.measurement.internal.zzjg
+    @Pure
+    public final zzgu zzaV() {
+        throw null;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void zzw() {
-        if (!zzv()) {
-            throw new IllegalStateException("Not initialized");
-        }
+    @Override // com.google.android.gms.measurement.internal.zzjg
+    @Pure
+    public final zzhz zzaW() {
+        throw null;
     }
 
-    public final void zzx() {
-        if (this.zza) {
-            throw new IllegalStateException("Can't initialize twice");
-        }
-        if (zza()) {
-            return;
-        }
-        this.zzu.zzG();
-        this.zza = true;
+    public void zzaX() {
+        this.zzu.zzaW().zzaX();
     }
 
-    public final void zzy() {
-        if (this.zza) {
-            throw new IllegalStateException("Can't initialize twice");
-        }
-        zzba();
-        this.zzu.zzG();
-        this.zza = true;
+    @Override // com.google.android.gms.measurement.internal.zzjg
+    @Pure
+    public final Context zzaY() {
+        throw null;
+    }
+
+    @Override // com.google.android.gms.measurement.internal.zzjg
+    @Pure
+    public final Clock zzaZ() {
+        throw null;
+    }
+
+    public void zzg() {
+        this.zzu.zzaW().zzg();
     }
 }

@@ -1,24 +1,65 @@
 package com.google.android.gms.internal.measurement;
-
-import java.io.IOException;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-interface zznw<T> {
-    Object zza();
+public final class zznw implements zznj {
+    private final zznm zza;
+    private final String zzb;
+    private final Object[] zzc;
+    private final int zzd;
 
-    boolean zzb(Object obj, Object obj2);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zznw(zznm zznmVar, String str, Object[] objArr) {
+        this.zza = zznmVar;
+        this.zzb = str;
+        this.zzc = objArr;
+        char charAt = str.charAt(0);
+        if (charAt < 55296) {
+            this.zzd = charAt;
+            return;
+        }
+        int i = charAt & 8191;
+        int i2 = 1;
+        int i3 = 13;
+        while (true) {
+            int i4 = i2 + 1;
+            char charAt2 = str.charAt(i2);
+            if (charAt2 < 55296) {
+                this.zzd = i | (charAt2 << i3);
+                return;
+            }
+            i |= (charAt2 & 8191) << i3;
+            i3 += 13;
+            i2 = i4;
+        }
+    }
 
-    int zzc(Object obj);
+    @Override // com.google.android.gms.internal.measurement.zznj
+    public final boolean zza() {
+        return (this.zzd & 2) == 2;
+    }
 
-    void zzd(Object obj, Object obj2);
+    @Override // com.google.android.gms.internal.measurement.zznj
+    public final zznm zzb() {
+        return this.zza;
+    }
 
-    int zze(Object obj);
+    @Override // com.google.android.gms.internal.measurement.zznj
+    public final int zzc() {
+        int i = this.zzd;
+        if ((i & 1) != 0) {
+            return 1;
+        }
+        return (i & 4) == 4 ? 3 : 2;
+    }
 
-    void zzf(Object obj, zzou zzouVar) throws IOException;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final String zzd() {
+        return this.zzb;
+    }
 
-    void zzi(Object obj, byte[] bArr, int i, int i2, zzkv zzkvVar) throws IOException;
-
-    void zzj(Object obj);
-
-    boolean zzk(Object obj);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final Object[] zze() {
+        return this.zzc;
+    }
 }

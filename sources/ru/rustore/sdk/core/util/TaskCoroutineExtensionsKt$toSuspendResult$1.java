@@ -8,11 +8,12 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TaskCoroutineExtensions.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "ru.rustore.sdk.core.util.TaskCoroutineExtensionsKt", f = "TaskCoroutineExtensions.kt", i = {0}, l = {27}, m = "toSuspendResult", n = {"$this$toSuspendResult"}, s = {"L$0"})
+@Metadata(k = 3, mv = {1, 7, 0}, xi = 48)
+@DebugMetadata(c = "ru.rustore.sdk.core.util.TaskCoroutineExtensionsKt", f = "TaskCoroutineExtensions.kt", i = {0, 0}, l = {36}, m = "toSuspendResult", n = {"$this$toSuspendResult", "executor"}, s = {"L$0", "L$1"})
 /* loaded from: classes5.dex */
 public final class TaskCoroutineExtensionsKt$toSuspendResult$1<T> extends ContinuationImpl {
     Object L$0;
+    Object L$1;
     int label;
     /* synthetic */ Object result;
 
@@ -26,6 +27,6 @@ public final class TaskCoroutineExtensionsKt$toSuspendResult$1<T> extends Contin
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
         Object suspendResult = TaskCoroutineExtensionsKt.toSuspendResult(null, this);
-        return suspendResult == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? suspendResult : Result.m8477boximpl(suspendResult);
+        return suspendResult == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? suspendResult : Result.m8499boximpl(suspendResult);
     }
 }

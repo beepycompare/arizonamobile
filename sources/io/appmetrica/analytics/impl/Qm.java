@@ -5,24 +5,24 @@ import java.util.HashMap;
 public final class Qm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f616a;
+    public final HashMap f615a;
 
     public Qm() {
         HashMap hashMap = new HashMap();
-        this.f616a = hashMap;
+        this.f615a = hashMap;
         Km km = new Km();
         Lm lm = new Lm();
         Mm mm = new Mm();
         Nm nm = new Nm();
         Om om = new Om();
-        hashMap.put(C0367jm.class, km);
+        hashMap.put(C0368jm.class, km);
         hashMap.put(Z1.class, lm);
-        hashMap.put(C0559rf.class, mm);
-        hashMap.put(C0671w2.class, nm);
+        hashMap.put(C0560rf.class, mm);
+        hashMap.put(C0672w2.class, nm);
         hashMap.put(O3.class, om);
     }
 
     public static Rm a(Class cls) {
-        return (Rm) Pm.f602a.f616a.get(cls);
+        return (Rm) Pm.f601a.f615a.get(cls);
     }
 }

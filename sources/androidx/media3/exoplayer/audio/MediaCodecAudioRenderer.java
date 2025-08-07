@@ -7,6 +7,7 @@ import android.media.MediaFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Pair;
 import androidx.media3.common.AudioAttributes;
 import androidx.media3.common.AuxEffectInfo;
 import androidx.media3.common.C;
@@ -16,6 +17,7 @@ import androidx.media3.common.PlaybackException;
 import androidx.media3.common.PlaybackParameters;
 import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.common.util.Assertions;
+import androidx.media3.common.util.CodecSpecificDataUtil;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.MediaFormatUtil;
 import androidx.media3.common.util.Util;
@@ -36,9 +38,10 @@ import androidx.media3.exoplayer.mediacodec.MediaCodecRenderer;
 import androidx.media3.exoplayer.mediacodec.MediaCodecSelector;
 import androidx.media3.exoplayer.mediacodec.MediaCodecUtil;
 import androidx.media3.extractor.VorbisUtil;
-import com.adjust.sdk.Constants;
+import com.google.android.gms.common.Scopes;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
@@ -59,11 +62,18 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     private final AudioRendererEventListener.EventDispatcher eventDispatcher;
     private boolean hasPendingReportedSkippedSilence;
     private Format inputFormat;
-    private boolean isRendereringToEndOfStream;
     private boolean isStarted;
     private final LoudnessCodecController loudnessCodecController;
     private long nextBufferToWritePresentationTimeUs;
     private int rendererPriority;
+
+    private static boolean codecNeedsDiscardChannelsWorkaround(String str) {
+        return false;
+    }
+
+    private static boolean deviceDoesntSupportOperatingRate() {
+        return false;
+    }
 
     @Override // androidx.media3.exoplayer.BaseRenderer, androidx.media3.exoplayer.Renderer
     public MediaClock getMediaClock() {
@@ -92,7 +102,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     }
 
     public MediaCodecAudioRenderer(Context context, MediaCodecAdapter.Factory factory, MediaCodecSelector mediaCodecSelector, boolean z, Handler handler, AudioRendererEventListener audioRendererEventListener, AudioSink audioSink) {
-        this(context, factory, mediaCodecSelector, z, handler, audioRendererEventListener, audioSink, Util.SDK_INT >= 35 ? new LoudnessCodecController() : null);
+        this(context, factory, mediaCodecSelector, z, handler, audioRendererEventListener, audioSink, Build.VERSION.SDK_INT >= 35 ? new LoudnessCodecController() : null);
     }
 
     public MediaCodecAudioRenderer(Context context, MediaCodecAdapter.Factory factory, MediaCodecSelector mediaCodecSelector, boolean z, Handler handler, AudioRendererEventListener audioRendererEventListener, AudioSink audioSink, LoudnessCodecController loudnessCodecController) {
@@ -231,22 +241,18 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     protected long getDurationToProgressUs(long j, long j2, boolean z) {
-        if (this.nextBufferToWritePresentationTimeUs == C.TIME_UNSET) {
-            return super.getDurationToProgressUs(j, j2, z);
+        boolean z2 = this.nextBufferToWritePresentationTimeUs != C.TIME_UNSET;
+        if (!this.isStarted) {
+            if (z2 || super.isEnded()) {
+                return 1000000L;
+            }
+            return Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
         }
         long audioTrackBufferSizeUs = this.audioSink.getAudioTrackBufferSizeUs();
-        if (!this.isRendereringToEndOfStream && audioTrackBufferSizeUs == C.TIME_UNSET) {
-            return super.getDurationToProgressUs(j, j2, z);
+        if (!z2 || audioTrackBufferSizeUs == C.TIME_UNSET) {
+            return Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
         }
-        long j3 = this.nextBufferToWritePresentationTimeUs - j;
-        if (audioTrackBufferSizeUs != C.TIME_UNSET) {
-            j3 = Math.min(audioTrackBufferSizeUs, j3);
-        }
-        long j4 = (((float) j3) / (getPlaybackParameters() != null ? getPlaybackParameters().speed : 1.0f)) / 2.0f;
-        if (this.isStarted) {
-            j4 -= Util.msToUs(getClock().elapsedRealtime()) - j2;
-        }
-        return Math.max((long) Renderer.DEFAULT_DURATION_TO_PROGRESS_US, j4);
+        return Math.max((long) Renderer.DEFAULT_DURATION_TO_PROGRESS_US, ((((float) Math.min(audioTrackBufferSizeUs, this.nextBufferToWritePresentationTimeUs - j)) / (getPlaybackParameters() != null ? getPlaybackParameters().speed : 1.0f)) / 2.0f) - (Util.msToUs(getClock().elapsedRealtime()) - j2));
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
@@ -300,7 +306,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
             Assertions.checkNotNull(mediaFormat);
             if (MimeTypes.AUDIO_RAW.equals(format.sampleMimeType)) {
                 pcmEncoding = format.pcmEncoding;
-            } else if (Util.SDK_INT >= 24 && mediaFormat.containsKey("pcm-encoding")) {
+            } else if (mediaFormat.containsKey("pcm-encoding")) {
                 pcmEncoding = mediaFormat.getInteger("pcm-encoding");
             } else {
                 pcmEncoding = mediaFormat.containsKey(VIVO_BITS_PER_SAMPLE_KEY) ? Util.getPcmEncoding(mediaFormat.getInteger(VIVO_BITS_PER_SAMPLE_KEY)) : 2;
@@ -317,7 +323,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
             format = build;
         }
         try {
-            if (Util.SDK_INT >= 29) {
+            if (Build.VERSION.SDK_INT >= 29) {
                 if (isBypassEnabled() && getConfiguration().offloadModePreferred != 0) {
                     this.audioSink.setOffloadMode(getConfiguration().offloadModePreferred);
                 } else {
@@ -353,7 +359,6 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         this.audioSink.flush();
         this.currentPositionUs = j;
         this.nextBufferToWritePresentationTimeUs = C.TIME_UNSET;
-        this.isRendereringToEndOfStream = false;
         this.hasPendingReportedSkippedSilence = false;
         this.allowPositionDiscontinuity = true;
     }
@@ -378,7 +383,6 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         this.audioSinkNeedsReset = true;
         this.inputFormat = null;
         this.nextBufferToWritePresentationTimeUs = C.TIME_UNSET;
-        this.isRendereringToEndOfStream = false;
         try {
             this.audioSink.flush();
             try {
@@ -398,7 +402,6 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     protected void onReset() {
         this.hasPendingReportedSkippedSilence = false;
         this.nextBufferToWritePresentationTimeUs = C.TIME_UNSET;
-        this.isRendereringToEndOfStream = false;
         try {
             super.onReset();
         } finally {
@@ -414,7 +417,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     public void onRelease() {
         LoudnessCodecController loudnessCodecController;
         this.audioSink.release();
-        if (Util.SDK_INT < 35 || (loudnessCodecController = this.loudnessCodecController) == null) {
+        if (Build.VERSION.SDK_INT < 35 || (loudnessCodecController = this.loudnessCodecController) == null) {
             return;
         }
         loudnessCodecController.release();
@@ -501,7 +504,6 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
             if (getLastBufferInStreamPresentationTimeUs() != C.TIME_UNSET) {
                 this.nextBufferToWritePresentationTimeUs = getLastBufferInStreamPresentationTimeUs();
             }
-            this.isRendereringToEndOfStream = true;
         } catch (AudioSink.WriteException e) {
             throw createRendererException(e, e.format, e.isRecoverable, isBypassEnabled() ? PlaybackException.ERROR_CODE_AUDIO_TRACK_OFFLOAD_WRITE_FAILED : PlaybackException.ERROR_CODE_AUDIO_TRACK_WRITE_FAILED);
         }
@@ -521,9 +523,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         } else if (i == 6) {
             this.audioSink.setAuxEffectInfo((AuxEffectInfo) Assertions.checkNotNull((AuxEffectInfo) obj));
         } else if (i == 12) {
-            if (Util.SDK_INT >= 23) {
-                Api23.setAudioSinkPreferredDevice(this.audioSink, obj);
-            }
+            Api23.setAudioSinkPreferredDevice(this.audioSink, obj);
         } else if (i == 16) {
             this.rendererPriority = ((Integer) Assertions.checkNotNull(obj)).intValue();
             updateCodecImportance();
@@ -538,7 +538,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     protected void handleInputBufferSupplementalData(DecoderInputBuffer decoderInputBuffer) {
-        if (Util.SDK_INT < 29 || decoderInputBuffer.format == null || !Objects.equals(decoderInputBuffer.format.sampleMimeType, MimeTypes.AUDIO_OPUS) || !isBypassEnabled()) {
+        if (Build.VERSION.SDK_INT < 29 || decoderInputBuffer.format == null || !Objects.equals(decoderInputBuffer.format.sampleMimeType, MimeTypes.AUDIO_OPUS) || !isBypassEnabled()) {
             return;
         }
         ByteBuffer byteBuffer = (ByteBuffer) Assertions.checkNotNull(decoderInputBuffer.supplementalData);
@@ -562,10 +562,8 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     }
 
     private int getCodecMaxInputSize(MediaCodecInfo mediaCodecInfo, Format format) {
-        if (!"OMX.google.raw.decoder".equals(mediaCodecInfo.name) || Util.SDK_INT >= 24 || (Util.SDK_INT == 23 && Util.isTv(this.context))) {
-            return format.maxInputSize;
-        }
-        return -1;
+        "OMX.google.raw.decoder".equals(mediaCodecInfo.name);
+        return format.maxInputSize;
     }
 
     protected MediaFormat getMediaFormat(Format format, String str, int i, float f) {
@@ -575,22 +573,27 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         mediaFormat.setInteger("sample-rate", format.sampleRate);
         MediaFormatUtil.setCsdBuffers(mediaFormat, format.initializationData);
         MediaFormatUtil.maybeSetInteger(mediaFormat, "max-input-size", i);
-        if (Util.SDK_INT >= 23) {
-            mediaFormat.setInteger("priority", 0);
-            if (f != -1.0f && !deviceDoesntSupportOperatingRate()) {
-                mediaFormat.setFloat("operating-rate", f);
+        mediaFormat.setInteger("priority", 0);
+        if (f != -1.0f && !deviceDoesntSupportOperatingRate()) {
+            mediaFormat.setFloat("operating-rate", f);
+        }
+        if (MimeTypes.AUDIO_AC4.equals(format.sampleMimeType)) {
+            Pair<Integer, Integer> codecProfileAndLevel = CodecSpecificDataUtil.getCodecProfileAndLevel(format);
+            if (codecProfileAndLevel != null) {
+                MediaFormatUtil.maybeSetInteger(mediaFormat, Scopes.PROFILE, ((Integer) codecProfileAndLevel.first).intValue());
+                MediaFormatUtil.maybeSetInteger(mediaFormat, FirebaseAnalytics.Param.LEVEL, ((Integer) codecProfileAndLevel.second).intValue());
+            }
+            if (Build.VERSION.SDK_INT <= 28) {
+                mediaFormat.setInteger("ac4-is-sync", 1);
             }
         }
-        if (Util.SDK_INT <= 28 && MimeTypes.AUDIO_AC4.equals(format.sampleMimeType)) {
-            mediaFormat.setInteger("ac4-is-sync", 1);
-        }
-        if (Util.SDK_INT >= 24 && this.audioSink.getFormatSupport(Util.getPcmFormat(4, format.channelCount, format.sampleRate)) == 2) {
+        if (this.audioSink.getFormatSupport(Util.getPcmFormat(4, format.channelCount, format.sampleRate)) == 2) {
             mediaFormat.setInteger("pcm-encoding", 4);
         }
-        if (Util.SDK_INT >= 32) {
+        if (Build.VERSION.SDK_INT >= 32) {
             mediaFormat.setInteger("max-output-channel-count", 99);
         }
-        if (Util.SDK_INT >= 35) {
+        if (Build.VERSION.SDK_INT >= 35) {
             mediaFormat.setInteger("importance", Math.max(0, -this.rendererPriority));
         }
         return mediaFormat;
@@ -599,7 +602,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     private void setAudioSessionId(int i) {
         LoudnessCodecController loudnessCodecController;
         this.audioSink.setAudioSessionId(i);
-        if (Util.SDK_INT < 35 || (loudnessCodecController = this.loudnessCodecController) == null) {
+        if (Build.VERSION.SDK_INT < 35 || (loudnessCodecController = this.loudnessCodecController) == null) {
             return;
         }
         loudnessCodecController.setAudioSessionId(i);
@@ -607,7 +610,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
 
     private void updateCodecImportance() {
         MediaCodecAdapter codec = getCodec();
-        if (codec != null && Util.SDK_INT >= 35) {
+        if (codec != null && Build.VERSION.SDK_INT >= 35) {
             Bundle bundle = new Bundle();
             bundle.putInt("importance", Math.max(0, -this.rendererPriority));
             codec.setParameters(bundle);
@@ -623,20 +626,6 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
             this.currentPositionUs = currentPositionUs;
             this.allowPositionDiscontinuity = false;
         }
-    }
-
-    private static boolean deviceDoesntSupportOperatingRate() {
-        if (Util.SDK_INT == 23) {
-            return "ZTE B2017G".equals(Build.MODEL) || "AXON 7 mini".equals(Build.MODEL);
-        }
-        return false;
-    }
-
-    private static boolean codecNeedsDiscardChannelsWorkaround(String str) {
-        if (Util.SDK_INT < 24 && "OMX.SEC.aac.dec".equals(str) && Constants.REFERRER_API_SAMSUNG.equals(Build.MANUFACTURER)) {
-            return Build.DEVICE.startsWith("zeroflte") || Build.DEVICE.startsWith("herolte") || Build.DEVICE.startsWith("heroqlte");
-        }
-        return false;
     }
 
     private static boolean codecNeedsVorbisToAndroidChannelMappingWorkaround(String str) {
@@ -708,6 +697,14 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         @Override // androidx.media3.exoplayer.audio.AudioSink.Listener
         public void onAudioTrackReleased(AudioSink.AudioTrackConfig audioTrackConfig) {
             MediaCodecAudioRenderer.this.eventDispatcher.audioTrackReleased(audioTrackConfig);
+        }
+
+        @Override // androidx.media3.exoplayer.audio.AudioSink.Listener
+        public void onAudioSessionIdChanged(int i) {
+            if (Build.VERSION.SDK_INT >= 35 && MediaCodecAudioRenderer.this.loudnessCodecController != null) {
+                MediaCodecAudioRenderer.this.loudnessCodecController.setAudioSessionId(i);
+            }
+            MediaCodecAudioRenderer.this.eventDispatcher.audioSessionIdChanged(i);
         }
     }
 

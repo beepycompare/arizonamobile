@@ -156,7 +156,7 @@ public class FirebaseInstallationServiceClient {
             jSONObject.put("fid", str);
             jSONObject.put(RemoteConfigConstants.RequestFieldKey.APP_ID, str2);
             jSONObject.put("authVersion", FIREBASE_INSTALLATION_AUTH_VERSION);
-            jSONObject.put(RemoteConfigConstants.RequestFieldKey.SDK_VERSION, "a:18.0.0");
+            jSONObject.put(RemoteConfigConstants.RequestFieldKey.SDK_VERSION, "a:19.0.0");
             return jSONObject;
         } catch (JSONException e) {
             throw new IllegalStateException(e);
@@ -170,7 +170,7 @@ public class FirebaseInstallationServiceClient {
     private static JSONObject buildGenerateAuthTokenRequestBody() {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put(RemoteConfigConstants.RequestFieldKey.SDK_VERSION, "a:18.0.0");
+            jSONObject.put(RemoteConfigConstants.RequestFieldKey.SDK_VERSION, "a:19.0.0");
             JSONObject jSONObject2 = new JSONObject();
             jSONObject2.put("installation", jSONObject);
             return jSONObject2;

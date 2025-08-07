@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzje extends zzme implements zznm {
+public final class zzje extends zzmf implements zznn {
     private static final zzje zzj;
     private int zzb;
     private int zzd;
-    private zzmn zze = zzcv();
+    private zzmo zze = zzcv();
     private String zzf = "";
     private String zzg = "";
     private boolean zzh;
@@ -16,7 +16,7 @@ public final class zzje extends zzme implements zznm {
     static {
         zzje zzjeVar = new zzje();
         zzj = zzjeVar;
-        zzme.zzcp(zzje.class, zzjeVar);
+        zzmf.zzcp(zzje.class, zzjeVar);
     }
 
     private zzje() {
@@ -63,7 +63,7 @@ public final class zzje extends zzme implements zznm {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {

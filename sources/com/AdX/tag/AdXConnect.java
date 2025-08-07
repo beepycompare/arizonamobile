@@ -20,7 +20,6 @@ import androidx.media3.exoplayer.upstream.CmcdData;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import java.io.ByteArrayInputStream;
 import java.io.UnsupportedEncodingException;
@@ -233,7 +232,7 @@ public final class AdXConnect {
                     e2.printStackTrace();
                 }
             }
-            String postToURL = AdXURLConnection.postToURL(String.valueOf(AdXConnect.this.protocol) + AdXConnect.this.host + "/API/RetargetEvent/" + AdXConnect.this.clientID + RemoteSettings.FORWARD_SLASH_STRING + ((AdXConnect.this.androidID == "" || AdXConnect.this.androidID == null) ? "none" : "none") + RemoteSettings.FORWARD_SLASH_STRING + AdXConnect.this.appID + "?event=" + this.event + "&platform=Android&", AdXConnect.this.urlParams, "payload", this.postData);
+            String postToURL = AdXURLConnection.postToURL(String.valueOf(AdXConnect.this.protocol) + AdXConnect.this.host + "/API/RetargetEvent/" + AdXConnect.this.clientID + "/" + ((AdXConnect.this.androidID == "" || AdXConnect.this.androidID == null) ? "none" : "none") + "/" + AdXConnect.this.appID + "?event=" + this.event + "&platform=Android&", AdXConnect.this.urlParams, "payload", this.postData);
             return Boolean.valueOf((postToURL == null || postToURL.length() <= 0) ? false : AdXConnect.this.handleConnectResponse(postToURL));
         }
     }

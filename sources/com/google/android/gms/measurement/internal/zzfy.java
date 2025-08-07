@@ -1,242 +1,266 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.Parcel;
-import android.os.RemoteException;
+import androidx.compose.material3.internal.CalendarModelKt;
+import androidx.media3.exoplayer.Renderer;
+import com.adjust.sdk.Constants;
+import com.google.firebase.messaging.ServiceStarter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzfy extends com.google.android.gms.internal.measurement.zzbl implements zzga {
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzfy(IBinder iBinder) {
-        super(iBinder, "com.google.android.gms.measurement.internal.IMeasurementService");
+public final class zzfy {
+    public static final zzfx zzA;
+    public static final zzfx zzB;
+    public static final zzfx zzC;
+    public static final zzfx zzD;
+    public static final zzfx zzE;
+    public static final zzfx zzF;
+    public static final zzfx zzG;
+    public static final zzfx zzH;
+    public static final zzfx zzI;
+    public static final zzfx zzJ;
+    public static final zzfx zzK;
+    public static final zzfx zzL;
+    public static final zzfx zzM;
+    public static final zzfx zzN;
+    public static final zzfx zzO;
+    public static final zzfx zzP;
+    public static final zzfx zzQ;
+    public static final zzfx zzR;
+    public static final zzfx zzS;
+    public static final zzfx zzT;
+    public static final zzfx zzU;
+    public static final zzfx zzV;
+    public static final zzfx zzW;
+    public static final zzfx zzX;
+    public static final zzfx zzY;
+    public static final zzfx zzZ;
+    public static final zzfx zza;
+    public static final zzfx zzaA;
+    public static final zzfx zzaB;
+    public static final zzfx zzaC;
+    public static final zzfx zzaD;
+    public static final zzfx zzaE;
+    public static final zzfx zzaF;
+    public static final zzfx zzaG;
+    public static final zzfx zzaH;
+    public static final zzfx zzaI;
+    public static final zzfx zzaJ;
+    public static final zzfx zzaK;
+    public static final zzfx zzaL;
+    public static final zzfx zzaM;
+    public static final zzfx zzaN;
+    public static final zzfx zzaO;
+    public static final zzfx zzaP;
+    public static final zzfx zzaQ;
+    public static final zzfx zzaR;
+    public static final zzfx zzaS;
+    public static final zzfx zzaT;
+    public static final zzfx zzaU;
+    public static final zzfx zzaV;
+    public static final zzfx zzaW;
+    public static final zzfx zzaX;
+    public static final zzfx zzaY;
+    public static final zzfx zzaZ;
+    public static final zzfx zzaa;
+    public static final zzfx zzab;
+    public static final zzfx zzac;
+    public static final zzfx zzad;
+    public static final zzfx zzae;
+    public static final zzfx zzaf;
+    public static final zzfx zzag;
+    public static final zzfx zzah;
+    public static final zzfx zzai;
+    public static final zzfx zzaj;
+    public static final zzfx zzak;
+    public static final zzfx zzal;
+    public static final zzfx zzam;
+    public static final zzfx zzan;
+    public static final zzfx zzao;
+    public static final zzfx zzap;
+    public static final zzfx zzaq;
+    public static final zzfx zzar;
+    public static final zzfx zzas;
+    public static final zzfx zzat;
+    public static final zzfx zzau;
+    public static final zzfx zzav;
+    public static final zzfx zzaw;
+    public static final zzfx zzax;
+    public static final zzfx zzay;
+    public static final zzfx zzaz;
+    public static final zzfx zzb;
+    public static final zzfx zzba;
+    public static final zzfx zzbb;
+    public static final zzfx zzbc;
+    public static final zzfx zzbd;
+    public static final zzfx zzbe;
+    public static final zzfx zzbf;
+    public static final zzfx zzbg;
+    public static final zzfx zzbh;
+    public static final zzfx zzbi;
+    public static final zzfx zzbj;
+    public static final zzfx zzbk;
+    private static final List zzbl = Collections.synchronizedList(new ArrayList());
+    public static final zzfx zzc;
+    public static final zzfx zzd;
+    public static final zzfx zze;
+    public static final zzfx zzf;
+    public static final zzfx zzg;
+    public static final zzfx zzh;
+    public static final zzfx zzi;
+    public static final zzfx zzj;
+    public static final zzfx zzk;
+    public static final zzfx zzl;
+    public static final zzfx zzm;
+    public static final zzfx zzn;
+    public static final zzfx zzo;
+    public static final zzfx zzp;
+    public static final zzfx zzq;
+    public static final zzfx zzr;
+    public static final zzfx zzs;
+    public static final zzfx zzt;
+    public static final zzfx zzu;
+    public static final zzfx zzv;
+    public static final zzfx zzw;
+    public static final zzfx zzx;
+    public static final zzfx zzy;
+    public static final zzfx zzz;
+
+    static {
+        Collections.synchronizedSet(new HashSet());
+        Long valueOf = Long.valueOf((long) Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
+        zza = zza("measurement.ad_id_cache_time", valueOf, valueOf, zzfq.zza, false);
+        zzb = zza("measurement.app_uninstalled_additional_ad_id_cache_time", 3600000L, 3600000L, zzbo.zza, false);
+        Long valueOf2 = Long.valueOf((long) CalendarModelKt.MillisecondsIn24Hours);
+        zzc = zza("measurement.monitoring.sample_period_millis", valueOf2, valueOf2, zzcf.zza, false);
+        zzd = zza("measurement.config.cache_time", valueOf2, 3600000L, zzcq.zza, false);
+        zze = zza("measurement.config.url_scheme", Constants.SCHEME, Constants.SCHEME, zzdb.zza, false);
+        zzf = zza("measurement.config.url_authority", "app-measurement.com", "app-measurement.com", zzdm.zza, false);
+        zzg = zza("measurement.upload.max_bundles", 100, 100, zzdx.zza, false);
+        zzh = zza("measurement.upload.max_batch_size", 65536, 65536, zzei.zza, false);
+        zzi = zza("measurement.upload.max_bundle_size", 65536, 65536, zzet.zza, false);
+        zzj = zza("measurement.upload.max_events_per_bundle", 1000, 1000, zzfe.zza, false);
+        zzk = zza("measurement.upload.max_events_per_day", 100000, 100000, zzfp.zza, false);
+        zzl = zza("measurement.upload.max_error_events_per_day", 1000, 1000, zzbv.zza, false);
+        zzm = zza("measurement.upload.max_public_events_per_day", 50000, 50000, zzbw.zza, false);
+        zzn = zza("measurement.upload.max_conversions_per_day", 10000, 10000, zzbx.zza, false);
+        zzo = zza("measurement.upload.max_realtime_events_per_day", 10, 10, zzby.zza, false);
+        zzp = zza("measurement.store.max_stored_events_per_app", 100000, 100000, zzbz.zza, false);
+        zzq = zza("measurement.upload.url", "https://app-measurement.com/a", "https://app-measurement.com/a", zzca.zza, false);
+        zzr = zza("measurement.sgtm.google_signal.url", "https://app-measurement.com/s/d", "https://app-measurement.com/s/d", zzcb.zza, false);
+        zzs = zza("measurement.sgtm.service_upload_apps_list", "", "", zzcc.zza, false);
+        zzt = zza("measurement.sgtm.upload.backoff_http_codes", "404,429,503,504", "404,429,503,504", zzcd.zza, false);
+        zzu = zza("measurement.sgtm.upload.retry_interval", 600000L, 600000L, zzce.zza, false);
+        zzv = zza("measurement.sgtm.upload.retry_max_wait", 21600000L, 21600000L, zzcg.zza, false);
+        zzw = zza("measurement.sgtm.batch.retry_interval", 1800000L, 1800000L, zzch.zza, false);
+        zzx = zza("measurement.sgtm.batch.retry_max_wait", 21600000L, 21600000L, zzci.zza, false);
+        zzy = zza("measurement.sgtm.batch.retry_max_count", 10, 10, zzcj.zza, false);
+        zzz = zza("measurement.sgtm.upload.max_queued_batches", 5000, 5000, zzck.zza, false);
+        zzA = zza("measurement.sgtm.upload.batches_retrieval_limit", 5, 5, zzcl.zza, false);
+        zzB = zza("measurement.sgtm.upload.min_delay_after_startup", 5000L, 5000L, zzcm.zza, false);
+        zzC = zza("measurement.sgtm.upload.min_delay_after_broadcast", 1000L, 1000L, zzcn.zza, false);
+        zzD = zza("measurement.sgtm.upload.min_delay_after_background", 600000L, 600000L, zzco.zza, false);
+        zzE = zza("measurement.sgtm.batch.long_queuing_threshold", 14400000L, 14400000L, zzcp.zza, false);
+        zzF = zza("measurement.upload.backoff_period", 43200000L, 43200000L, zzcr.zza, false);
+        zzG = zza("measurement.upload.window_interval", 3600000L, 3600000L, zzcs.zza, false);
+        zzH = zza("measurement.upload.interval", 3600000L, 3600000L, zzct.zza, false);
+        zzI = zza("measurement.upload.realtime_upload_interval", valueOf, valueOf, zzcu.zza, false);
+        zzJ = zza("measurement.upload.debug_upload_interval", 1000L, 1000L, zzcv.zza, false);
+        zzK = zza("measurement.upload.minimum_delay", 500L, 500L, zzcw.zza, false);
+        zzL = zza("measurement.alarm_manager.minimum_interval", 60000L, 60000L, zzcx.zza, false);
+        zzM = zza("measurement.upload.stale_data_deletion_interval", valueOf2, valueOf2, zzcy.zza, false);
+        zzN = zza("measurement.upload.refresh_blacklisted_config_interval", 604800000L, 604800000L, zzcz.zza, false);
+        zzO = zza("measurement.upload.initial_upload_delay_time", 15000L, 15000L, zzda.zza, false);
+        zzP = zza("measurement.upload.retry_time", 1800000L, 1800000L, zzdc.zza, false);
+        zzQ = zza("measurement.upload.retry_count", 6, 6, zzdd.zza, false);
+        zzR = zza("measurement.upload.max_queue_time", 518400000L, 518400000L, zzde.zza, false);
+        zzS = zza("measurement.upload.google_signal_max_queue_time", 300000L, 300000L, zzdf.zza, false);
+        zzT = zza("measurement.lifetimevalue.max_currency_tracked", 4, 4, zzdg.zza, false);
+        zzU = zza("measurement.audience.filter_result_max_count", 200, 200, zzdh.zza, false);
+        zzV = zza("measurement.upload.max_public_user_properties", 100, 100, null, false);
+        zzW = zza("measurement.upload.max_event_name_cardinality", 2000, 2000, null, false);
+        zzX = zza("measurement.upload.max_public_event_params", 100, 100, null, false);
+        zzY = zza("measurement.service_client.idle_disconnect_millis", 5000L, 5000L, zzdi.zza, false);
+        zzZ = zza("measurement.service_client.reconnect_millis", 1000L, 1000L, zzdj.zza, false);
+        zzaa = zza("measurement.test.boolean_flag", false, false, zzdk.zza, false);
+        zzab = zza("measurement.test.string_flag", "---", "---", zzdl.zza, false);
+        zzac = zza("measurement.test.long_flag", -1L, -1L, zzdn.zza, false);
+        zza("measurement.test.cached_long_flag", -1L, -1L, zzdo.zza, true);
+        zzad = zza("measurement.test.int_flag", -2, -2, zzdp.zza, false);
+        Double valueOf3 = Double.valueOf(-3.0d);
+        zzae = zza("measurement.test.double_flag", valueOf3, valueOf3, zzdq.zza, false);
+        zzaf = zza("measurement.experiment.max_ids", 50, 50, zzdr.zza, false);
+        zzag = zza("measurement.upload.max_item_scoped_custom_parameters", 27, 27, zzds.zza, false);
+        Integer valueOf4 = Integer.valueOf((int) ServiceStarter.ERROR_UNKNOWN);
+        zzah = zza("measurement.upload.max_event_parameter_value_length", valueOf4, valueOf4, zzdt.zza, true);
+        zzai = zza("measurement.max_bundles_per_iteration", 100, 100, zzdu.zza, false);
+        zzaj = zza("measurement.sdk.attribution.cache.ttl", 604800000L, 604800000L, zzdv.zza, false);
+        zzak = zza("measurement.redaction.app_instance_id.ttl", 7200000L, 7200000L, zzdw.zza, false);
+        zzal = zza("measurement.rb.attribution.client.min_ad_services_version", 7, 7, zzdy.zza, false);
+        zzam = zza("measurement.dma_consent.max_daily_dcu_realtime_events", 1, 1, zzdz.zza, false);
+        zzan = zza("measurement.rb.attribution.uri_scheme", Constants.SCHEME, Constants.SCHEME, zzea.zza, false);
+        zzao = zza("measurement.rb.attribution.uri_authority", "google-analytics.com", "google-analytics.com", zzeb.zza, false);
+        zzap = zza("measurement.rb.attribution.uri_path", "privacy-sandbox/register-app-conversion", "privacy-sandbox/register-app-conversion", zzec.zza, false);
+        zzaq = zza("measurement.session.engagement_interval", 3600000L, 3600000L, zzed.zza, false);
+        zzar = zza("measurement.rb.attribution.app_allowlist", "", "", zzee.zza, false);
+        zzas = zza("measurement.rb.attribution.user_properties", "_npa,npa|_fot,fot", "_npa,npa|_fot,fot", zzef.zza, false);
+        zzat = zza("measurement.rb.attribution.event_params", "value|currency", "value|currency", zzeg.zza, false);
+        zzau = zza("measurement.rb.attribution.query_parameters_to_remove", "", "", zzeh.zza, false);
+        zzav = zza("measurement.rb.attribution.max_queue_time", 864000000L, 864000000L, zzej.zza, false);
+        zzaw = zza("measurement.rb.attribution.max_retry_delay_seconds", 16, 16, zzek.zza, false);
+        zzax = zza("measurement.rb.attribution.client.min_time_after_boot_seconds", 90, 90, zzel.zza, false);
+        zza("measurement.rb.attribution.max_trigger_uris_queried_at_once", 0, 0, zzem.zza, false);
+        zzay = zza("measurement.rb.max_trigger_registrations_per_day", 1000, 1000, zzen.zza, false);
+        zzaz = zza("measurement.config.bundle_for_all_apps_on_backgrounded", true, true, zzeo.zza, false);
+        zzaA = zza("measurement.config.notify_trigger_uris_on_backgrounded", true, true, zzep.zza, false);
+        zzaB = zza("measurement.rb.attribution.notify_app_delay_millis", 3000, 3000, zzeq.zza, false);
+        zzaC = zza("measurement.quality.checksum", false, false, null, false);
+        zzaD = zza("measurement.audience.use_bundle_end_timestamp_for_non_sequence_property_filters", false, false, zzer.zza, false);
+        zzaE = zza("measurement.audience.refresh_event_count_filters_timestamp", false, false, zzes.zza, false);
+        zzaF = zza("measurement.audience.use_bundle_timestamp_for_event_count_filters", false, false, zzeu.zza, true);
+        zzaG = zza("measurement.sdk.collection.last_deep_link_referrer_campaign2", false, false, zzev.zza, false);
+        zzaH = zza("measurement.integration.disable_firebase_instance_id", false, false, zzew.zza, false);
+        zzaI = zza("measurement.collection.service.update_with_analytics_fix", false, false, zzex.zza, false);
+        zzaJ = zza("measurement.service.storage_consent_support_version", 203600, 203600, zzey.zza, false);
+        zzaK = zza("measurement.service.store_null_safelist", true, true, zzez.zza, false);
+        zzaL = zza("measurement.service.store_safelist", true, true, zzfa.zza, false);
+        zzaM = zza("measurement.session_stitching_token_enabled", false, false, zzfb.zza, false);
+        zzaN = zza("measurement.sgtm.client.upload_on_backgrounded.dev", false, false, zzfc.zza, true);
+        zzaO = zza("measurement.gmscore_client_telemetry", false, false, zzft.zza, false);
+        zzaP = zza("measurement.rb.attribution.service", true, true, zzfd.zza, true);
+        zzaQ = zza("measurement.rb.attribution.client2", true, true, zzff.zza, true);
+        zzaR = zza("measurement.rb.attribution.uuid_generation", true, true, zzfg.zza, false);
+        zzaS = zza("measurement.rb.attribution.enable_trigger_redaction", true, true, zzfh.zza, false);
+        zza("measurement.rb.attribution.followup1.service", false, false, zzfi.zza, false);
+        zzaT = zza("measurement.rb.attribution.retry_disposition", false, false, zzfj.zza, false);
+        zzaU = zza("measurement.client.sessions.enable_fix_background_engagement", false, false, zzfw.zza, false);
+        zzaV = zza("measurement.set_default_event_parameters_propagate_clear.service.dev", true, true, zzfk.zza, false);
+        zzaW = zza("measurement.set_default_event_parameters_propagate_clear.client.dev", true, true, zzfl.zza, false);
+        zzaX = zza("measurement.service.ad_impression.convert_value_to_double", true, true, zzfm.zza, false);
+        zza("measurement.rb.attribution.service.enable_max_trigger_uris_queried_at_once", true, true, zzfn.zza, false);
+        zza("measurement.remove_conflicting_first_party_apis.dev", false, false, zzfo.zza, false);
+        zzaY = zza("measurement.rb.attribution.service.trigger_uris_high_priority", true, true, zzbp.zza, false);
+        zzaZ = zza("measurement.tcf.consent_fix", true, true, zzbq.zza, false);
+        zzba = zza("measurement.experiment.enable_phenotype_experiment_reporting", true, true, zzbr.zza, false);
+        zzbb = zza("measurement.set_default_event_parameters.fix_service_request_ordering", false, false, zzbj.zza, false);
+        zzbc = zza("measurement.set_default_event_parameters.fix_app_update_logging", true, true, zzbi.zza, false);
+        zzbd = zza("measurement.service.fix_stop_bundling_bug", true, true, zzbm.zza, false);
+        zzbe = zza("measurement.fix_params_logcat_spam", true, true, zzbl.zza, false);
+        zzbf = zza("measurement.gbraid_campaign.stop_lgclid", false, false, zzfs.zza, false);
+        zzbg = zza("measurement.gbraid_compaign.compaign_params_triggering_info_update", "gclid,gbraid,gad_campaignid", "gclid,gbraid,gad_campaignid", zzbs.zza, false);
+        zzbh = zza("measurement.edpb.service", false, false, zzbk.zza, false);
+        zzbi = zza("measurement.edpb.events_cached_in_no_data_mode", "_f,_v,_cmp", "_f,_v,_cmp", zzbt.zza, false);
+        zzbj = zza("measurement.add_first_launch_logging_timestamp.service", false, false, zzfv.zza, false);
+        zzbk = zza("measurement.overlapping_bundles_fix", false, false, zzbu.zza, false);
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzA(zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        zzc(27, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzB(zzr zzrVar, zzon zzonVar, zzgg zzggVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzonVar);
-        com.google.android.gms.internal.measurement.zzbn.zzd(zza, zzggVar);
-        zzc(29, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzC(zzr zzrVar, zzaf zzafVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzafVar);
-        zzc(30, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzD(zzr zzrVar, Bundle bundle, zzgd zzgdVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, bundle);
-        com.google.android.gms.internal.measurement.zzbn.zzd(zza, zzgdVar);
-        zzc(31, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zze(zzbg zzbgVar, zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzbgVar);
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        zzc(1, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzf(zzpk zzpkVar, zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzpkVar);
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        zzc(2, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzg(zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        zzc(4, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzh(zzbg zzbgVar, String str, String str2) throws RemoteException {
-        throw null;
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzi(zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        zzc(6, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final List zzj(zzr zzrVar, boolean z) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        zza.writeInt(z ? 1 : 0);
-        Parcel zzP = zzP(7, zza);
-        ArrayList createTypedArrayList = zzP.createTypedArrayList(zzpk.CREATOR);
-        zzP.recycle();
-        return createTypedArrayList;
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final byte[] zzk(zzbg zzbgVar, String str) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzbgVar);
-        zza.writeString(str);
-        Parcel zzP = zzP(9, zza);
-        byte[] createByteArray = zzP.createByteArray();
-        zzP.recycle();
-        return createByteArray;
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzl(long j, String str, String str2, String str3) throws RemoteException {
-        Parcel zza = zza();
-        zza.writeLong(j);
-        zza.writeString(str);
-        zza.writeString(str2);
-        zza.writeString(str3);
-        zzc(10, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final String zzm(zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        Parcel zzP = zzP(11, zza);
-        String readString = zzP.readString();
-        zzP.recycle();
-        return readString;
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzn(zzah zzahVar, zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzahVar);
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        zzc(12, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzo(zzah zzahVar) throws RemoteException {
-        throw null;
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final List zzp(String str, String str2, boolean z, zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        zza.writeString(str);
-        zza.writeString(str2);
-        int i = com.google.android.gms.internal.measurement.zzbn.zza;
-        zza.writeInt(z ? 1 : 0);
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        Parcel zzP = zzP(14, zza);
-        ArrayList createTypedArrayList = zzP.createTypedArrayList(zzpk.CREATOR);
-        zzP.recycle();
-        return createTypedArrayList;
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final List zzq(String str, String str2, String str3, boolean z) throws RemoteException {
-        Parcel zza = zza();
-        zza.writeString(null);
-        zza.writeString(str2);
-        zza.writeString(str3);
-        int i = com.google.android.gms.internal.measurement.zzbn.zza;
-        zza.writeInt(z ? 1 : 0);
-        Parcel zzP = zzP(15, zza);
-        ArrayList createTypedArrayList = zzP.createTypedArrayList(zzpk.CREATOR);
-        zzP.recycle();
-        return createTypedArrayList;
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final List zzr(String str, String str2, zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        zza.writeString(str);
-        zza.writeString(str2);
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        Parcel zzP = zzP(16, zza);
-        ArrayList createTypedArrayList = zzP.createTypedArrayList(zzah.CREATOR);
-        zzP.recycle();
-        return createTypedArrayList;
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final List zzs(String str, String str2, String str3) throws RemoteException {
-        Parcel zza = zza();
-        zza.writeString(null);
-        zza.writeString(str2);
-        zza.writeString(str3);
-        Parcel zzP = zzP(17, zza);
-        ArrayList createTypedArrayList = zzP.createTypedArrayList(zzah.CREATOR);
-        zzP.recycle();
-        return createTypedArrayList;
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzt(zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        zzc(18, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzu(Bundle bundle, zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, bundle);
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        zzc(19, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzv(zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        zzc(20, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final zzao zzw(zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        Parcel zzP = zzP(21, zza);
-        zzao zzaoVar = (zzao) com.google.android.gms.internal.measurement.zzbn.zzb(zzP, zzao.CREATOR);
-        zzP.recycle();
-        return zzaoVar;
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final List zzx(zzr zzrVar, Bundle bundle) throws RemoteException {
-        throw null;
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzy(zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        zzc(25, zza);
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzga
-    public final void zzz(zzr zzrVar) throws RemoteException {
-        Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
-        zzc(26, zza);
+    static zzfx zza(String str, Object obj, Object obj2, zzbn zzbnVar, boolean z) {
+        zzfx zzfxVar = new zzfx(str, obj, obj2, zzbnVar, null);
+        if (z) {
+            zzbl.add(zzfxVar);
+        }
+        return zzfxVar;
     }
 }

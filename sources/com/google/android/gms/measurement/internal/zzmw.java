@@ -1,64 +1,62 @@
 package com.google.android.gms.measurement.internal;
 
 import android.os.RemoteException;
-import android.text.TextUtils;
 import com.google.android.gms.common.internal.Preconditions;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzmw implements Runnable {
-    final /* synthetic */ AtomicReference zza;
+    final /* synthetic */ String zza;
     final /* synthetic */ String zzb;
-    final /* synthetic */ String zzc;
-    final /* synthetic */ zzr zzd;
-    final /* synthetic */ boolean zze;
-    final /* synthetic */ zznk zzf;
+    final /* synthetic */ zzr zzc;
+    final /* synthetic */ com.google.android.gms.internal.measurement.zzcu zzd;
+    final /* synthetic */ zznl zze;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzmw(zznk zznkVar, AtomicReference atomicReference, String str, String str2, String str3, zzr zzrVar, boolean z) {
-        this.zza = atomicReference;
+    public zzmw(zznl zznlVar, String str, String str2, zzr zzrVar, com.google.android.gms.internal.measurement.zzcu zzcuVar) {
+        this.zza = str;
         this.zzb = str2;
-        this.zzc = str3;
-        this.zzd = zzrVar;
-        this.zze = z;
-        Objects.requireNonNull(zznkVar);
-        this.zzf = zznkVar;
+        this.zzc = zzrVar;
+        this.zzd = zzcuVar;
+        Objects.requireNonNull(zznlVar);
+        this.zze = zznlVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        AtomicReference atomicReference;
-        zznk zznkVar;
-        zzga zzZ;
-        AtomicReference atomicReference2 = this.zza;
-        synchronized (atomicReference2) {
+        com.google.android.gms.internal.measurement.zzcu zzcuVar;
+        zzpp zzk;
+        zznl zznlVar;
+        zzgb zzZ;
+        ArrayList arrayList = new ArrayList();
+        try {
             try {
-                zznkVar = this.zzf;
-                zzZ = zznkVar.zzZ();
+                zznlVar = this.zze;
+                zzZ = zznlVar.zzZ();
             } catch (RemoteException e) {
-                this.zzf.zzu.zzaV().zzb().zzd("(legacy) Failed to get user properties; remote exception", null, this.zzb, e);
-                this.zza.set(Collections.emptyList());
-                atomicReference = this.zza;
+                this.zze.zzu.zzaV().zzb().zzd("Failed to get conditional properties; remote exception", this.zza, this.zzb, e);
             }
-            if (zzZ != null) {
-                if (!TextUtils.isEmpty(null)) {
-                    atomicReference2.set(zzZ.zzq(null, this.zzb, this.zzc, this.zze));
-                } else {
-                    zzr zzrVar = this.zzd;
-                    Preconditions.checkNotNull(zzrVar);
-                    atomicReference2.set(zzZ.zzp(this.zzb, this.zzc, this.zze, zzrVar));
-                }
-                zznkVar.zzV();
-                atomicReference = this.zza;
-                atomicReference.notify();
-                return;
+            if (zzZ == null) {
+                zzic zzicVar = zznlVar.zzu;
+                zzicVar.zzaV().zzb().zzc("Failed to get conditional properties; not connected to service", this.zza, this.zzb);
+                zzk = zzicVar.zzk();
+                zzcuVar = this.zzd;
+                zzk.zzar(zzcuVar, arrayList);
             }
-            zznkVar.zzu.zzaV().zzb().zzd("(legacy) Failed to get user properties; not connected to service", null, this.zzb, this.zzc);
-            atomicReference2.set(Collections.emptyList());
-            atomicReference2.notify();
+            zzr zzrVar = this.zzc;
+            Preconditions.checkNotNull(zzrVar);
+            arrayList = zzpp.zzas(zzZ.zzr(this.zza, this.zzb, zzrVar));
+            zznlVar.zzV();
+            zznl zznlVar2 = this.zze;
+            zzcuVar = this.zzd;
+            zzk = zznlVar2.zzu.zzk();
+            zzk.zzar(zzcuVar, arrayList);
+        } catch (Throwable th) {
+            zznl zznlVar3 = this.zze;
+            zznlVar3.zzu.zzk().zzar(this.zzd, arrayList);
+            throw th;
         }
     }
 }

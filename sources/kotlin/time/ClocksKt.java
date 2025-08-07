@@ -21,7 +21,7 @@ public final class ClocksKt {
 
             @Override // kotlin.time.Clock
             public Instant now() {
-                return this.$origin.m9930plusLRDsOJo(this.startMark.mo9820elapsedNowUwyO8pc());
+                return this.$origin.m9953plusLRDsOJo(this.startMark.mo9843elapsedNowUwyO8pc());
             }
         };
     }

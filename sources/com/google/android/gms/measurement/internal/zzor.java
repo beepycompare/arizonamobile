@@ -1,36 +1,30 @@
 package com.google.android.gms.measurement.internal;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+import java.util.ArrayList;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public abstract class zzor extends zzok {
-    private boolean zza;
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzor(zzpf zzpfVar) {
-        super(zzpfVar);
-        this.zzg.zzad();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzax() {
-        return this.zza;
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void zzay() {
-        if (!zzax()) {
-            throw new IllegalStateException("Not initialized");
+public final class zzor implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
+        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        ArrayList arrayList = null;
+        while (parcel.dataPosition() < validateObjectHeader) {
+            int readHeader = SafeParcelReader.readHeader(parcel);
+            if (SafeParcelReader.getFieldId(readHeader) == 1) {
+                arrayList = SafeParcelReader.createTypedList(parcel, readHeader, zzom.CREATOR);
+            } else {
+                SafeParcelReader.skipUnknownField(parcel, readHeader);
+            }
         }
+        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
+        return new zzoq(arrayList);
     }
 
-    public final void zzaz() {
-        if (this.zza) {
-            throw new IllegalStateException("Can't initialize twice");
-        }
-        zzbb();
-        this.zzg.zzae();
-        this.zza = true;
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new zzoq[i];
     }
-
-    protected abstract boolean zzbb();
 }

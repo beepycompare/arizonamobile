@@ -43,8 +43,8 @@ public final class FavoriteServerDao_Impl implements FavoriteServerDao {
             public void bind(SQLiteStatement statement, FavoriteServerEntity entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo7568bindLong(1, entity.getServerId());
-                statement.mo7570bindText(2, entity.getServerName());
+                statement.mo7583bindLong(1, entity.getServerId());
+                statement.mo7585bindText(2, entity.getServerName());
             }
         };
         this.__deleteAdapterOfFavoriteServerEntity = new EntityDeleteOrUpdateAdapter<FavoriteServerEntity>() { // from class: com.miami.game.core.server.data.FavoriteServerDao_Impl.2
@@ -58,8 +58,8 @@ public final class FavoriteServerDao_Impl implements FavoriteServerDao {
             public void bind(SQLiteStatement statement, FavoriteServerEntity entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo7568bindLong(1, entity.getServerId());
-                statement.mo7570bindText(2, entity.getServerName());
+                statement.mo7583bindLong(1, entity.getServerId());
+                statement.mo7585bindText(2, entity.getServerName());
             }
         };
     }

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Iterator;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzbb {
     final String zza;
@@ -15,7 +15,7 @@ public final class zzbb {
     final zzbe zzf;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzbb(zzib zzibVar, String str, String str2, String str3, long j, long j2, Bundle bundle) {
+    public zzbb(zzic zzicVar, String str, String str2, String str3, long j, long j2, Bundle bundle) {
         zzbe zzbeVar;
         Preconditions.checkNotEmpty(str2);
         Preconditions.checkNotEmpty(str3);
@@ -25,7 +25,7 @@ public final class zzbb {
         this.zzd = j;
         this.zze = j2;
         if (j2 != 0 && j2 > j) {
-            zzibVar.zzaV().zze().zzb("Event created with reverse previous/current timestamps. appId", zzgt.zzl(str2));
+            zzicVar.zzaV().zze().zzb("Event created with reverse previous/current timestamps. appId", zzgu.zzl(str2));
         }
         if (bundle == null || bundle.isEmpty()) {
             zzbeVar = new zzbe(new Bundle());
@@ -35,15 +35,15 @@ public final class zzbb {
             while (it.hasNext()) {
                 String next = it.next();
                 if (next == null) {
-                    zzibVar.zzaV().zzb().zza("Param name can't be null");
+                    zzicVar.zzaV().zzb().zza("Param name can't be null");
                     it.remove();
                 } else {
-                    Object zzE = zzibVar.zzk().zzE(next, bundle2.get(next));
+                    Object zzE = zzicVar.zzk().zzE(next, bundle2.get(next));
                     if (zzE == null) {
-                        zzibVar.zzaV().zze().zzb("Param value can't be null", zzibVar.zzl().zzb(next));
+                        zzicVar.zzaV().zze().zzb("Param value can't be null", zzicVar.zzl().zzb(next));
                         it.remove();
                     } else {
-                        zzibVar.zzk().zzM(bundle2, next, zzE);
+                        zzicVar.zzk().zzM(bundle2, next, zzE);
                     }
                 }
             }
@@ -69,11 +69,11 @@ public final class zzbb {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzbb zza(zzib zzibVar, long j) {
-        return new zzbb(zzibVar, this.zzc, this.zza, this.zzb, this.zzd, j, this.zzf);
+    public final zzbb zza(zzic zzicVar, long j) {
+        return new zzbb(zzicVar, this.zzc, this.zza, this.zzb, this.zzd, j, this.zzf);
     }
 
-    private zzbb(zzib zzibVar, String str, String str2, String str3, long j, long j2, zzbe zzbeVar) {
+    private zzbb(zzic zzicVar, String str, String str2, String str3, long j, long j2, zzbe zzbeVar) {
         Preconditions.checkNotEmpty(str2);
         Preconditions.checkNotEmpty(str3);
         Preconditions.checkNotNull(zzbeVar);
@@ -83,7 +83,7 @@ public final class zzbb {
         this.zzd = j;
         this.zze = j2;
         if (j2 != 0 && j2 > j) {
-            zzibVar.zzaV().zze().zzc("Event created with reverse previous/current timestamps. appId, name", zzgt.zzl(str2), zzgt.zzl(str3));
+            zzicVar.zzaV().zze().zzc("Event created with reverse previous/current timestamps. appId, name", zzgu.zzl(str2), zzgu.zzl(str3));
         }
         this.zzf = zzbeVar;
     }

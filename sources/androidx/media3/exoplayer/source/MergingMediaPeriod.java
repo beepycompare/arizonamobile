@@ -7,10 +7,8 @@ import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.LoadingInfo;
 import androidx.media3.exoplayer.SeekParameters;
 import androidx.media3.exoplayer.source.MediaPeriod;
-import androidx.media3.exoplayer.source.chunk.Chunk;
-import androidx.media3.exoplayer.source.chunk.MediaChunk;
-import androidx.media3.exoplayer.source.chunk.MediaChunkIterator;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
+import androidx.media3.exoplayer.trackselection.ForwardingTrackSelection;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
@@ -104,7 +102,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
                 sampleStreamArr3[i4] = iArr[i4] == i3 ? sampleStreamArr[i4] : null;
                 if (iArr2[i4] == i3) {
                     ExoTrackSelection exoTrackSelection2 = (ExoTrackSelection) Assertions.checkNotNull(exoTrackSelectionArr[i4]);
-                    exoTrackSelectionArr2[i4] = new ForwardingTrackSelection(exoTrackSelection2, (TrackGroup) Assertions.checkNotNull(this.childTrackGroupByMergedTrackGroup.get(exoTrackSelection2.getTrackGroup())));
+                    exoTrackSelectionArr2[i4] = new MergingMediaPeriodTrackSelection(exoTrackSelection2, (TrackGroup) Assertions.checkNotNull(this.childTrackGroupByMergedTrackGroup.get(exoTrackSelection2.getTrackGroup())));
                 } else {
                     exoTrackSelectionArr2[i4] = null;
                 }
@@ -281,148 +279,45 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
     }
 
     /* loaded from: classes2.dex */
-    private static final class ForwardingTrackSelection implements ExoTrackSelection {
+    private static final class MergingMediaPeriodTrackSelection extends ForwardingTrackSelection {
         private final TrackGroup trackGroup;
-        private final ExoTrackSelection trackSelection;
 
-        public ForwardingTrackSelection(ExoTrackSelection exoTrackSelection, TrackGroup trackGroup) {
-            this.trackSelection = exoTrackSelection;
+        public MergingMediaPeriodTrackSelection(ExoTrackSelection exoTrackSelection, TrackGroup trackGroup) {
+            super(exoTrackSelection);
             this.trackGroup = trackGroup;
         }
 
-        @Override // androidx.media3.exoplayer.trackselection.TrackSelection
-        public int getType() {
-            return this.trackSelection.getType();
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.TrackSelection
+        @Override // androidx.media3.exoplayer.trackselection.ForwardingTrackSelection, androidx.media3.exoplayer.trackselection.TrackSelection
         public TrackGroup getTrackGroup() {
             return this.trackGroup;
         }
 
-        @Override // androidx.media3.exoplayer.trackselection.TrackSelection
-        public int length() {
-            return this.trackSelection.length();
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.TrackSelection
+        @Override // androidx.media3.exoplayer.trackselection.ForwardingTrackSelection, androidx.media3.exoplayer.trackselection.TrackSelection
         public Format getFormat(int i) {
-            return this.trackGroup.getFormat(this.trackSelection.getIndexInTrackGroup(i));
+            return this.trackGroup.getFormat(getWrappedInstance().getIndexInTrackGroup(i));
         }
 
-        @Override // androidx.media3.exoplayer.trackselection.TrackSelection
-        public int getIndexInTrackGroup(int i) {
-            return this.trackSelection.getIndexInTrackGroup(i);
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.TrackSelection
+        @Override // androidx.media3.exoplayer.trackselection.ForwardingTrackSelection, androidx.media3.exoplayer.trackselection.TrackSelection
         public int indexOf(Format format) {
-            return this.trackSelection.indexOf(this.trackGroup.indexOf(format));
+            return getWrappedInstance().indexOf(this.trackGroup.indexOf(format));
         }
 
-        @Override // androidx.media3.exoplayer.trackselection.TrackSelection
-        public int indexOf(int i) {
-            return this.trackSelection.indexOf(i);
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public void enable() {
-            this.trackSelection.enable();
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public void disable() {
-            this.trackSelection.disable();
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
+        @Override // androidx.media3.exoplayer.trackselection.ForwardingTrackSelection, androidx.media3.exoplayer.trackselection.ExoTrackSelection
         public Format getSelectedFormat() {
-            return this.trackGroup.getFormat(this.trackSelection.getSelectedIndexInTrackGroup());
+            return this.trackGroup.getFormat(getWrappedInstance().getSelectedIndexInTrackGroup());
         }
 
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public int getSelectedIndexInTrackGroup() {
-            return this.trackSelection.getSelectedIndexInTrackGroup();
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public int getSelectedIndex() {
-            return this.trackSelection.getSelectedIndex();
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public int getSelectionReason() {
-            return this.trackSelection.getSelectionReason();
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public Object getSelectionData() {
-            return this.trackSelection.getSelectionData();
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public void onPlaybackSpeed(float f) {
-            this.trackSelection.onPlaybackSpeed(f);
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public void onDiscontinuity() {
-            this.trackSelection.onDiscontinuity();
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public void onRebuffer() {
-            this.trackSelection.onRebuffer();
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public void onPlayWhenReadyChanged(boolean z) {
-            this.trackSelection.onPlayWhenReadyChanged(z);
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public void updateSelectedTrack(long j, long j2, long j3, List<? extends MediaChunk> list, MediaChunkIterator[] mediaChunkIteratorArr) {
-            this.trackSelection.updateSelectedTrack(j, j2, j3, list, mediaChunkIteratorArr);
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public int evaluateQueueSize(long j, List<? extends MediaChunk> list) {
-            return this.trackSelection.evaluateQueueSize(j, list);
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public boolean shouldCancelChunkLoad(long j, Chunk chunk, List<? extends MediaChunk> list) {
-            return this.trackSelection.shouldCancelChunkLoad(j, chunk, list);
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public boolean excludeTrack(int i, long j) {
-            return this.trackSelection.excludeTrack(i, j);
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public boolean isTrackExcluded(int i, long j) {
-            return this.trackSelection.isTrackExcluded(i, j);
-        }
-
-        @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
-        public long getLatestBitrateEstimate() {
-            return this.trackSelection.getLatestBitrateEstimate();
-        }
-
+        @Override // androidx.media3.exoplayer.trackselection.ForwardingTrackSelection
         public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (obj instanceof ForwardingTrackSelection) {
-                ForwardingTrackSelection forwardingTrackSelection = (ForwardingTrackSelection) obj;
-                return this.trackSelection.equals(forwardingTrackSelection.trackSelection) && this.trackGroup.equals(forwardingTrackSelection.trackGroup);
+            if (super.equals(obj) && (obj instanceof MergingMediaPeriodTrackSelection)) {
+                return this.trackGroup.equals(((MergingMediaPeriodTrackSelection) obj).trackGroup);
             }
             return false;
         }
 
+        @Override // androidx.media3.exoplayer.trackselection.ForwardingTrackSelection
         public int hashCode() {
-            return ((527 + this.trackGroup.hashCode()) * 31) + this.trackSelection.hashCode();
+            return (super.hashCode() * 31) + this.trackGroup.hashCode();
         }
     }
 }

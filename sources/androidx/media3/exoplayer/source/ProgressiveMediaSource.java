@@ -125,14 +125,19 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
         }
 
         public <T extends Executor> Factory setDownloadExecutor(final Supplier<T> supplier, final Consumer<T> consumer) {
-            this.downloadExecutorSupplier = new Supplier() { // from class: androidx.media3.exoplayer.source.ProgressiveMediaSource$Factory$$ExternalSyntheticLambda1
+            setDownloadExecutor(new Supplier() { // from class: androidx.media3.exoplayer.source.ProgressiveMediaSource$Factory$$ExternalSyntheticLambda1
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     ReleasableExecutor from;
                     from = ReleasableExecutor.from((Executor) Supplier.this.get(), consumer);
                     return from;
                 }
-            };
+            });
+            return this;
+        }
+
+        public MediaSource.Factory setDownloadExecutor(Supplier<ReleasableExecutor> supplier) {
+            this.downloadExecutorSupplier = supplier;
             return this;
         }
 

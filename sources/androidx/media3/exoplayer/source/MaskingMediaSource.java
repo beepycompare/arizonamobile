@@ -21,10 +21,6 @@ public final class MaskingMediaSource extends WrappingMediaSource {
     private final boolean useLazyPreparation;
     private final Timeline.Window window;
 
-    @Override // androidx.media3.exoplayer.source.CompositeMediaSource, androidx.media3.exoplayer.source.MediaSource
-    public void maybeThrowSourceInfoRefreshError() {
-    }
-
     public MaskingMediaSource(MediaSource mediaSource, boolean z) {
         super(mediaSource);
         this.useLazyPreparation = z && mediaSource.isSingleWindow();

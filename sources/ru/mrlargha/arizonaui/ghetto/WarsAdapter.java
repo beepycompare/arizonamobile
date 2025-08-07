@@ -152,6 +152,13 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                     textView2.setText((CharSequence) formatUnixTime3.getSecond());
                     binding.attack1.setTextColor(Color.parseColor(ColorsKt.ghettoColors(captureData.getAttack_fraction_id())));
                     binding.deffence1.setTextColor(Color.parseColor(ColorsKt.ghettoColors(captureData.getDefend_fraction_id())));
+                    binding.terCard1.setVisibility(8);
+                    Integer gangzone_id = captureData.getGangzone_id();
+                    if (gangzone_id != null) {
+                        int intValue2 = gangzone_id.intValue();
+                        binding.terCard1.setVisibility(0);
+                        binding.terText1.setText(String.valueOf(intValue2));
+                    }
                 }
                 CaptureData captureData2 = (CaptureData) CollectionsKt.getOrNull(list, 1);
                 if (captureData2 != null) {
@@ -163,6 +170,13 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                     TextView textView3 = binding.timeText2;
                     formatUnixTime2 = WarsAdapterKt.formatUnixTime(captureData2.getDate_unix());
                     textView3.setText((CharSequence) formatUnixTime2.getSecond());
+                    binding.terCard2.setVisibility(8);
+                    Integer gangzone_id2 = captureData2.getGangzone_id();
+                    if (gangzone_id2 != null) {
+                        int intValue3 = gangzone_id2.intValue();
+                        binding.terCard2.setVisibility(0);
+                        binding.terText2.setText(String.valueOf(intValue3));
+                    }
                 }
                 CaptureData captureData3 = (CaptureData) CollectionsKt.getOrNull(list, 2);
                 if (captureData3 != null) {
@@ -174,6 +188,13 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                     TextView textView4 = binding.timeText3;
                     formatUnixTime = WarsAdapterKt.formatUnixTime(captureData3.getDate_unix());
                     textView4.setText((CharSequence) formatUnixTime.getSecond());
+                    binding.terCard3.setVisibility(8);
+                    Integer gangzone_id3 = captureData3.getGangzone_id();
+                    if (gangzone_id3 != null) {
+                        int intValue4 = gangzone_id3.intValue();
+                        binding.terCard3.setVisibility(0);
+                        binding.terText3.setText(String.valueOf(intValue4));
+                    }
                 }
                 RatingData ratingData = (RatingData) CollectionsKt.getOrNull(this.top, 0);
                 if (ratingData != null) {
@@ -223,14 +244,14 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
             binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.ghetto.WarsAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    WarsAdapter.onBindViewHolder$lambda$7$lambda$6(WarsAdapter.this, intValue, view);
+                    WarsAdapter.onBindViewHolder$lambda$10$lambda$9(WarsAdapter.this, intValue, view);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$7$lambda$6(WarsAdapter warsAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$10$lambda$9(WarsAdapter warsAdapter, int i, View view) {
         warsAdapter.onClick.invoke(Integer.valueOf(i));
     }
 

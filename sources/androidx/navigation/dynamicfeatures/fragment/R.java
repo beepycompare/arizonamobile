@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int moduleName = 0x7f04042c;
+        public static int moduleName = 0x7f040437;
 
         private attr() {
         }
@@ -32,12 +32,12 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class string {
-        public static int installation_cancelled = 0x7f1300e8;
-        public static int installation_failed = 0x7f1300e9;
-        public static int installing_module = 0x7f1300ea;
-        public static int ok = 0x7f1301b0;
-        public static int progress = 0x7f1301c5;
-        public static int retry = 0x7f1301db;
+        public static int installation_cancelled = 0x7f1300e9;
+        public static int installation_failed = 0x7f1300ea;
+        public static int installing_module = 0x7f1300eb;
+        public static int ok = 0x7f1301b1;
+        public static int progress = 0x7f1301c6;
+        public static int retry = 0x7f1301dc;
 
         private string() {
         }

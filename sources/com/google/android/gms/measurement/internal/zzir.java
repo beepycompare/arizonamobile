@@ -1,25 +1,26 @@
 package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 final class zzir implements Runnable {
     final /* synthetic */ zzbg zza;
-    final /* synthetic */ String zzb;
-    final /* synthetic */ zzjc zzc;
+    final /* synthetic */ zzr zzb;
+    final /* synthetic */ zzjd zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzir(zzjc zzjcVar, zzbg zzbgVar, String str) {
+    public zzir(zzjd zzjdVar, zzbg zzbgVar, zzr zzrVar) {
         this.zza = zzbgVar;
-        this.zzb = str;
-        Objects.requireNonNull(zzjcVar);
-        this.zzc = zzjcVar;
+        this.zzb = zzrVar;
+        Objects.requireNonNull(zzjdVar);
+        this.zzc = zzjdVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zzjc zzjcVar = this.zzc;
-        zzjcVar.zzL().zzY();
-        zzjcVar.zzL().zzD(this.zza, this.zzb);
+        zzbg zzbgVar = this.zza;
+        zzr zzrVar = this.zzb;
+        zzjd zzjdVar = this.zzc;
+        zzjdVar.zzb(zzjdVar.zzc(zzbgVar, zzrVar), zzrVar);
     }
 }

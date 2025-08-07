@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.internal.measurement.zzdf;
 import com.google.android.gms.internal.measurement.zzfb;
-import com.google.android.gms.measurement.internal.zzlj;
+import com.google.android.gms.measurement.internal.zzlk;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.installations.FirebaseInstallations;
@@ -17,21 +17,21 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
 /* loaded from: classes4.dex */
 public final class FirebaseAnalytics {
     private static volatile FirebaseAnalytics zza;
     private final zzfb zzb;
     private ExecutorService zzc;
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
     /* loaded from: classes4.dex */
     public enum ConsentStatus {
         GRANTED,
         DENIED
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
     /* loaded from: classes4.dex */
     public enum ConsentType {
         AD_STORAGE,
@@ -40,7 +40,7 @@ public final class FirebaseAnalytics {
         AD_PERSONALIZATION
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
     /* loaded from: classes4.dex */
     public static class Event {
         public static final String ADD_PAYMENT_INFO = "add_payment_info";
@@ -83,7 +83,7 @@ public final class FirebaseAnalytics {
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
     /* loaded from: classes4.dex */
     public static class Param {
         public static final String ACHIEVEMENT_ID = "achievement_id";
@@ -160,7 +160,7 @@ public final class FirebaseAnalytics {
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
     /* loaded from: classes4.dex */
     public static class UserProperty {
         public static final String ALLOW_AD_PERSONALIZATION_SIGNALS = "allow_personalized_ads";
@@ -186,7 +186,7 @@ public final class FirebaseAnalytics {
         return zza;
     }
 
-    public static zzlj getScionFrontendApiImplementation(Context context, Bundle bundle) {
+    public static zzlk getScionFrontendApiImplementation(Context context, Bundle bundle) {
         zzfb zza2 = zzfb.zza(context, bundle);
         if (zza2 == null) {
             return null;

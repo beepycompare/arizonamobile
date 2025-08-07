@@ -1,6 +1,7 @@
 package androidx.media3.exoplayer.audio;
 
 import androidx.media3.common.audio.AudioProcessor;
+import androidx.media3.common.audio.BaseAudioProcessor;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
@@ -10,7 +11,7 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 /* loaded from: classes2.dex */
-public final class TeeAudioProcessor extends androidx.media3.common.audio.BaseAudioProcessor {
+public final class TeeAudioProcessor extends BaseAudioProcessor {
     private final AudioBufferSink audioBufferSink;
 
     /* loaded from: classes2.dex */

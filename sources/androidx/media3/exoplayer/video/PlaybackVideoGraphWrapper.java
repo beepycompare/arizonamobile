@@ -2,16 +2,17 @@ package androidx.media3.exoplayer.video;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Looper;
 import android.util.Pair;
 import android.util.SparseArray;
 import android.view.Surface;
+import androidx.collection.SieveCacheKt;
 import androidx.media3.common.C;
 import androidx.media3.common.ColorInfo;
 import androidx.media3.common.DebugViewProvider;
 import androidx.media3.common.Effect;
 import androidx.media3.common.Format;
-import androidx.media3.common.PreviewingVideoGraph;
 import androidx.media3.common.SurfaceInfo;
 import androidx.media3.common.VideoCompositorSettings;
 import androidx.media3.common.VideoFrameProcessingException;
@@ -20,12 +21,13 @@ import androidx.media3.common.VideoGraph;
 import androidx.media3.common.VideoSize;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
+import androidx.media3.common.util.GlUtil;
 import androidx.media3.common.util.HandlerWrapper;
+import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Size;
 import androidx.media3.common.util.TimedValueQueue;
 import androidx.media3.common.util.TimestampIterator;
 import androidx.media3.common.util.Util;
-import androidx.media3.exoplayer.Renderer;
 import androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper;
 import androidx.media3.exoplayer.video.VideoSink;
 import com.google.common.base.Supplier;
@@ -37,10 +39,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.Executor;
-import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
 /* loaded from: classes2.dex */
-public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, VideoGraph.Listener {
-    private static final Executor NO_OP_EXECUTOR = new Executor() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda2
+public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
+    private static final Executor NO_OP_EXECUTOR = new Executor() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda1
         @Override // java.util.concurrent.Executor
         public final void execute(Runnable runnable) {
             PlaybackVideoGraphWrapper.lambda$static$0(runnable);
@@ -50,41 +51,51 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
     private static final int STATE_CREATED = 0;
     private static final int STATE_INITIALIZED = 1;
     private static final int STATE_RELEASED = 2;
-    private long bufferTimestampAdjustmentUs;
+    private static final String TAG = "PlaybackVidGraphWrapper";
     private final Clock clock;
-    private final List<Effect> compositionEffects;
-    private final VideoCompositorSettings compositorSettings;
+    private ImmutableList<Effect> compositionEffects;
+    private VideoCompositorSettings compositorSettings;
     private final Context context;
     private Pair<Surface, Size> currentSurfaceAndSize;
     private final VideoSink defaultVideoSink;
-    private long finalBufferPresentationTimeUs;
+    private final boolean enablePlaylistMode;
+    private long finalFramePresentationTimeUs;
     private HandlerWrapper handler;
-    private boolean hasSignaledEndOfCurrentInputStream;
+    private boolean hasSignaledEndOfVideoGraphOutputStream;
     private final SparseArray<InputVideoSink> inputVideoSinks;
-    private long lastOutputBufferPresentationTimeUs;
+    private boolean isInputSdrToneMapped;
+    private long lastOutputFramePresentationTimeUs;
     private final CopyOnWriteArraySet<Listener> listeners;
+    private int outputStreamFirstFrameReleaseInstruction;
     private long outputStreamStartPositionUs;
     private int pendingFlushCount;
-    private final PreviewingVideoGraph.Factory previewingVideoGraphFactory;
+    private TimedValueQueue<StreamChangeInfo> pendingStreamChanges;
     private int registeredVideoInputCount;
-    private final boolean requestOpenGlToneMapping;
+    private boolean requestOpenGlToneMapping;
     private int state;
-    private final TimedValueQueue<Long> streamStartPositionsUs;
     private int totalVideoInputCount;
     private final VideoSink.VideoFrameHandler videoFrameHandler;
-    private PreviewingVideoGraph videoGraph;
+    private VideoFrameMetadataListener videoFrameMetadataListener;
+    private VideoGraph videoGraph;
+    private final VideoGraph.Factory videoGraphFactory;
     private Format videoGraphOutputFormat;
-    private Renderer.WakeupListener wakeupListener;
 
     /* loaded from: classes2.dex */
     public interface Listener {
-        void onError(PlaybackVideoGraphWrapper playbackVideoGraphWrapper, VideoFrameProcessingException videoFrameProcessingException);
+        default void onError(VideoFrameProcessingException videoFrameProcessingException) {
+        }
 
-        void onFirstFrameRendered(PlaybackVideoGraphWrapper playbackVideoGraphWrapper);
+        default void onFirstFrameRendered() {
+        }
 
-        void onFrameDropped(PlaybackVideoGraphWrapper playbackVideoGraphWrapper);
+        default void onFrameAvailableForRendering() {
+        }
 
-        void onVideoSizeChanged(PlaybackVideoGraphWrapper playbackVideoGraphWrapper, VideoSize videoSize);
+        default void onFrameDropped() {
+        }
+
+        default void onVideoSizeChanged(VideoSize videoSize) {
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -98,37 +109,25 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
     /* loaded from: classes2.dex */
     public static final class Builder {
         private boolean built;
-        private final Context context;
-        private PreviewingVideoGraph.Factory previewingVideoGraphFactory;
-        private boolean requestOpenGlToneMapping;
-        private VideoFrameProcessor.Factory videoFrameProcessorFactory;
-        private final VideoFrameReleaseControl videoFrameReleaseControl;
-        private List<Effect> compositionEffects = ImmutableList.of();
-        private VideoCompositorSettings compositorSettings = VideoCompositorSettings.DEFAULT;
         private Clock clock = Clock.DEFAULT;
+        private final Context context;
+        private boolean enablePlaylistMode;
+        private boolean enableReplayableCache;
+        private final VideoFrameReleaseControl videoFrameReleaseControl;
+        private VideoGraph.Factory videoGraphFactory;
 
         public Builder(Context context, VideoFrameReleaseControl videoFrameReleaseControl) {
             this.context = context.getApplicationContext();
             this.videoFrameReleaseControl = videoFrameReleaseControl;
         }
 
-        public Builder setVideoFrameProcessorFactory(VideoFrameProcessor.Factory factory) {
-            this.videoFrameProcessorFactory = factory;
+        public Builder setVideoGraphFactory(VideoGraph.Factory factory) {
+            this.videoGraphFactory = factory;
             return this;
         }
 
-        public Builder setPreviewingVideoGraphFactory(PreviewingVideoGraph.Factory factory) {
-            this.previewingVideoGraphFactory = factory;
-            return this;
-        }
-
-        public Builder setCompositionEffects(List<Effect> list) {
-            this.compositionEffects = list;
-            return this;
-        }
-
-        public Builder setCompositorSettings(VideoCompositorSettings videoCompositorSettings) {
-            this.compositorSettings = videoCompositorSettings;
+        public Builder setEnablePlaylistMode(boolean z) {
+            this.enablePlaylistMode = z;
             return this;
         }
 
@@ -137,18 +136,15 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
             return this;
         }
 
-        public Builder setRequestOpenGlToneMapping(boolean z) {
-            this.requestOpenGlToneMapping = z;
+        public Builder setEnableReplayableCache(boolean z) {
+            this.enableReplayableCache = z;
             return this;
         }
 
         public PlaybackVideoGraphWrapper build() {
             Assertions.checkState(!this.built);
-            if (this.previewingVideoGraphFactory == null) {
-                if (this.videoFrameProcessorFactory == null) {
-                    this.videoFrameProcessorFactory = new ReflectiveDefaultVideoFrameProcessorFactory();
-                }
-                this.previewingVideoGraphFactory = new ReflectivePreviewingSingleInputVideoGraphFactory(this.videoFrameProcessorFactory);
+            if (this.videoGraphFactory == null) {
+                this.videoGraphFactory = new ReflectiveSingleInputVideoGraphFactory(this.enableReplayableCache);
             }
             PlaybackVideoGraphWrapper playbackVideoGraphWrapper = new PlaybackVideoGraphWrapper(this);
             this.built = true;
@@ -158,30 +154,31 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
 
     private PlaybackVideoGraphWrapper(Builder builder) {
         this.context = builder.context;
-        this.streamStartPositionsUs = new TimedValueQueue<>();
-        this.previewingVideoGraphFactory = (PreviewingVideoGraph.Factory) Assertions.checkStateNotNull(builder.previewingVideoGraphFactory);
+        this.pendingStreamChanges = new TimedValueQueue<>();
+        this.videoGraphFactory = (VideoGraph.Factory) Assertions.checkStateNotNull(builder.videoGraphFactory);
         this.inputVideoSinks = new SparseArray<>();
-        this.compositionEffects = builder.compositionEffects;
-        this.compositorSettings = builder.compositorSettings;
+        this.compositionEffects = ImmutableList.of();
+        this.compositorSettings = VideoCompositorSettings.DEFAULT;
+        this.enablePlaylistMode = builder.enablePlaylistMode;
         Clock clock = builder.clock;
         this.clock = clock;
         this.defaultVideoSink = new DefaultVideoSink(builder.videoFrameReleaseControl, clock);
         this.videoFrameHandler = new VideoSink.VideoFrameHandler() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper.1
             @Override // androidx.media3.exoplayer.video.VideoSink.VideoFrameHandler
             public void render(long j) {
-                ((PreviewingVideoGraph) Assertions.checkStateNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).renderOutputFrame(j);
+                ((VideoGraph) Assertions.checkStateNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).renderOutputFrame(j);
             }
 
             @Override // androidx.media3.exoplayer.video.VideoSink.VideoFrameHandler
             public void skip() {
-                ((PreviewingVideoGraph) Assertions.checkStateNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).renderOutputFrame(-2L);
+                ((VideoGraph) Assertions.checkStateNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).renderOutputFrame(-2L);
             }
         };
         this.listeners = new CopyOnWriteArraySet<>();
-        this.requestOpenGlToneMapping = builder.requestOpenGlToneMapping;
         this.videoGraphOutputFormat = new Format.Builder().build();
-        this.lastOutputBufferPresentationTimeUs = C.TIME_UNSET;
-        this.finalBufferPresentationTimeUs = C.TIME_UNSET;
+        this.outputStreamStartPositionUs = C.TIME_UNSET;
+        this.lastOutputFramePresentationTimeUs = C.TIME_UNSET;
+        this.finalFramePresentationTimeUs = C.TIME_UNSET;
         this.totalVideoInputCount = -1;
         this.state = 0;
     }
@@ -194,16 +191,22 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         this.listeners.remove(listener);
     }
 
-    @Override // androidx.media3.exoplayer.video.VideoSinkProvider
+    public void setTotalVideoInputCount(int i) {
+        this.totalVideoInputCount = i;
+    }
+
     public VideoSink getSink(int i) {
-        Assertions.checkState(!Util.contains(this.inputVideoSinks, i));
+        if (Util.contains(this.inputVideoSinks, i)) {
+            return this.inputVideoSinks.get(i);
+        }
         InputVideoSink inputVideoSink = new InputVideoSink(this.context, i);
-        addListener(inputVideoSink);
+        if (i == 0) {
+            addListener(inputVideoSink);
+        }
         this.inputVideoSinks.put(i, inputVideoSink);
         return inputVideoSink;
     }
 
-    @Override // androidx.media3.exoplayer.video.VideoSinkProvider
     public void setOutputSurfaceInfo(Surface surface, Size size) {
         Pair<Surface, Size> pair = this.currentSurfaceAndSize;
         if (pair != null && ((Surface) pair.first).equals(surface) && ((Size) this.currentSurfaceAndSize.second).equals(size)) {
@@ -213,13 +216,43 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         maybeSetOutputSurfaceInfo(surface, size.getWidth(), size.getHeight());
     }
 
-    @Override // androidx.media3.exoplayer.video.VideoSinkProvider
     public void clearOutputSurfaceInfo() {
         maybeSetOutputSurfaceInfo(null, Size.UNKNOWN.getWidth(), Size.UNKNOWN.getHeight());
         this.currentSurfaceAndSize = null;
     }
 
-    @Override // androidx.media3.exoplayer.video.VideoSinkProvider
+    public void startRendering() {
+        this.defaultVideoSink.startRendering();
+    }
+
+    public void stopRendering() {
+        this.defaultVideoSink.stopRendering();
+    }
+
+    public void setCompositionEffects(List<Effect> list) {
+        this.compositionEffects = ImmutableList.copyOf((Collection) list);
+        VideoGraph videoGraph = this.videoGraph;
+        if (videoGraph != null) {
+            videoGraph.setCompositionEffects(list);
+        }
+    }
+
+    public void setCompositorSettings(VideoCompositorSettings videoCompositorSettings) {
+        this.compositorSettings = videoCompositorSettings;
+        VideoGraph videoGraph = this.videoGraph;
+        if (videoGraph != null) {
+            videoGraph.setCompositorSettings(videoCompositorSettings);
+        }
+    }
+
+    public void setRequestOpenGlToneMapping(boolean z) {
+        this.requestOpenGlToneMapping = z;
+    }
+
+    public void setIsInputSdrToneMapped(boolean z) {
+        this.isInputSdrToneMapped = z;
+    }
+
     public void release() {
         if (this.state == 2) {
             return;
@@ -228,9 +261,9 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         if (handlerWrapper != null) {
             handlerWrapper.removeCallbacksAndMessages(null);
         }
-        PreviewingVideoGraph previewingVideoGraph = this.videoGraph;
-        if (previewingVideoGraph != null) {
-            previewingVideoGraph.release();
+        VideoGraph videoGraph = this.videoGraph;
+        if (videoGraph != null) {
+            videoGraph.release();
         }
         this.currentSurfaceAndSize = null;
         this.state = 2;
@@ -238,120 +271,140 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
 
     @Override // androidx.media3.common.VideoGraph.Listener
     public void onOutputSizeChanged(int i, int i2) {
-        Format build = this.videoGraphOutputFormat.buildUpon().setWidth(i).setHeight(i2).build();
-        this.videoGraphOutputFormat = build;
-        this.defaultVideoSink.onInputStreamChanged(1, build, ImmutableList.of());
+        this.videoGraphOutputFormat = this.videoGraphOutputFormat.buildUpon().setWidth(i).setHeight(i2).build();
+        onOutputStreamChanged();
     }
 
     @Override // androidx.media3.common.VideoGraph.Listener
     public void onOutputFrameRateChanged(float f) {
-        Format build = this.videoGraphOutputFormat.buildUpon().setFrameRate(f).build();
-        this.videoGraphOutputFormat = build;
-        this.defaultVideoSink.onInputStreamChanged(1, build, ImmutableList.of());
+        this.videoGraphOutputFormat = this.videoGraphOutputFormat.buildUpon().setFrameRate(f).build();
+        onOutputStreamChanged();
     }
 
     @Override // androidx.media3.common.VideoGraph.Listener
-    public void onOutputFrameAvailableForRendering(long j) {
+    public void onOutputFrameAvailableForRendering(long j, boolean z) {
         if (this.pendingFlushCount > 0) {
             return;
         }
-        Renderer.WakeupListener wakeupListener = this.wakeupListener;
-        if (wakeupListener != null) {
-            wakeupListener.onWakeup();
+        Iterator<Listener> it = this.listeners.iterator();
+        while (it.hasNext()) {
+            it.next().onFrameAvailableForRendering();
         }
-        long j2 = j - this.bufferTimestampAdjustmentUs;
-        this.lastOutputBufferPresentationTimeUs = j2;
-        Long pollFloor = this.streamStartPositionsUs.pollFloor(j2);
-        if (pollFloor != null && pollFloor.longValue() != this.outputStreamStartPositionUs) {
-            this.defaultVideoSink.setStreamTimestampInfo(pollFloor.longValue(), this.bufferTimestampAdjustmentUs);
-            this.outputStreamStartPositionUs = pollFloor.longValue();
-        }
-        long j3 = this.finalBufferPresentationTimeUs;
-        boolean z = j3 != C.TIME_UNSET && j2 >= j3;
-        this.defaultVideoSink.handleInputFrame(j, z, this.videoFrameHandler);
         if (z) {
-            this.defaultVideoSink.signalEndOfCurrentInputStream();
-            this.hasSignaledEndOfCurrentInputStream = true;
+            VideoFrameMetadataListener videoFrameMetadataListener = this.videoFrameMetadataListener;
+            if (videoFrameMetadataListener != null) {
+                videoFrameMetadataListener.onVideoFrameAboutToBeRendered(j, C.TIME_UNSET, this.videoGraphOutputFormat, null);
+                return;
+            }
+            return;
         }
+        this.lastOutputFramePresentationTimeUs = j;
+        StreamChangeInfo pollFloor = this.pendingStreamChanges.pollFloor(j);
+        if (pollFloor != null) {
+            this.outputStreamStartPositionUs = pollFloor.startPositionUs;
+            this.outputStreamFirstFrameReleaseInstruction = pollFloor.firstFrameReleaseInstruction;
+            onOutputStreamChanged();
+        }
+        this.defaultVideoSink.handleInputFrame(j, this.videoFrameHandler);
+        long j2 = this.finalFramePresentationTimeUs;
+        if (j2 == C.TIME_UNSET || j < j2) {
+            return;
+        }
+        signalEndOfVideoGraphOutputStream();
     }
 
     @Override // androidx.media3.common.VideoGraph.Listener
     public void onError(VideoFrameProcessingException videoFrameProcessingException) {
         Iterator<Listener> it = this.listeners.iterator();
         while (it.hasNext()) {
-            it.next().onError(this, videoFrameProcessingException);
+            it.next().onError(videoFrameProcessingException);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public VideoFrameProcessor registerInput(Format format, int i) throws VideoSink.VideoSinkException {
+    public boolean registerInput(Format format, int i) throws VideoSink.VideoSinkException {
         PlaybackVideoGraphWrapper playbackVideoGraphWrapper;
-        PreviewingVideoGraph.Factory factory;
+        GlUtil.GlException glException;
+        VideoGraph.Factory factory;
         Context context;
         DebugViewProvider debugViewProvider;
         final HandlerWrapper handlerWrapper;
         if (i == 0) {
             Assertions.checkState(this.state == 0);
             ColorInfo adjustedInputColorInfo = getAdjustedInputColorInfo(format.colorInfo);
-            if (this.requestOpenGlToneMapping) {
-                adjustedInputColorInfo = ColorInfo.SDR_BT709_LIMITED;
-            } else if (adjustedInputColorInfo.colorTransfer == 7 && Util.SDK_INT < 34) {
-                adjustedInputColorInfo = adjustedInputColorInfo.buildUpon().setColorTransfer(6).build();
-            }
-            ColorInfo colorInfo = adjustedInputColorInfo;
-            this.handler = this.clock.createHandler((Looper) Assertions.checkStateNotNull(Looper.myLooper()), null);
             try {
-                factory = this.previewingVideoGraphFactory;
-                context = this.context;
-                debugViewProvider = DebugViewProvider.NONE;
-                handlerWrapper = this.handler;
-                Objects.requireNonNull(handlerWrapper);
-                playbackVideoGraphWrapper = this;
-            } catch (VideoFrameProcessingException e) {
-                e = e;
+            } catch (GlUtil.GlException e) {
+                glException = e;
             }
             try {
-                PreviewingVideoGraph create = factory.create(context, colorInfo, debugViewProvider, playbackVideoGraphWrapper, new Executor() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda0
-                    @Override // java.util.concurrent.Executor
-                    public final void execute(Runnable runnable) {
-                        HandlerWrapper.this.post(runnable);
-                    }
-                }, this.compositorSettings, this.compositionEffects, 0L);
-                playbackVideoGraphWrapper.videoGraph = create;
-                create.initialize();
-                Pair<Surface, Size> pair = playbackVideoGraphWrapper.currentSurfaceAndSize;
-                if (pair != null) {
-                    Size size = (Size) playbackVideoGraphWrapper.currentSurfaceAndSize.second;
-                    maybeSetOutputSurfaceInfo((Surface) pair.first, size.getWidth(), size.getHeight());
+                if (this.requestOpenGlToneMapping) {
+                    adjustedInputColorInfo = ColorInfo.SDR_BT709_LIMITED;
+                } else if (adjustedInputColorInfo.colorTransfer == 7 && Build.VERSION.SDK_INT < 34 && GlUtil.isBt2020PqExtensionSupported()) {
+                    adjustedInputColorInfo = adjustedInputColorInfo.buildUpon().setColorTransfer(6).build();
+                } else if (!GlUtil.isColorTransferSupported(adjustedInputColorInfo.colorTransfer) && Build.VERSION.SDK_INT >= 29) {
+                    Log.w(TAG, Util.formatInvariant("Color transfer %d is not supported. Falling back to OpenGl tone mapping.", Integer.valueOf(adjustedInputColorInfo.colorTransfer)));
+                    adjustedInputColorInfo = ColorInfo.SDR_BT709_LIMITED;
                 }
-                playbackVideoGraphWrapper.defaultVideoSink.initialize(format);
-                playbackVideoGraphWrapper.state = 1;
-            } catch (VideoFrameProcessingException e2) {
-                e = e2;
-                throw new VideoSink.VideoSinkException(e, format);
+                ColorInfo colorInfo = adjustedInputColorInfo;
+                this.handler = this.clock.createHandler((Looper) Assertions.checkStateNotNull(Looper.myLooper()), null);
+                try {
+                    factory = this.videoGraphFactory;
+                    context = this.context;
+                    debugViewProvider = DebugViewProvider.NONE;
+                    handlerWrapper = this.handler;
+                    Objects.requireNonNull(handlerWrapper);
+                    playbackVideoGraphWrapper = this;
+                } catch (VideoFrameProcessingException e2) {
+                    e = e2;
+                }
+                try {
+                    VideoGraph create = factory.create(context, colorInfo, debugViewProvider, playbackVideoGraphWrapper, new Executor() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda2
+                        @Override // java.util.concurrent.Executor
+                        public final void execute(Runnable runnable) {
+                            HandlerWrapper.this.post(runnable);
+                        }
+                    }, 0L, false);
+                    playbackVideoGraphWrapper.videoGraph = create;
+                    create.setCompositionEffects(playbackVideoGraphWrapper.compositionEffects);
+                    playbackVideoGraphWrapper.videoGraph.setCompositorSettings(playbackVideoGraphWrapper.compositorSettings);
+                    playbackVideoGraphWrapper.videoGraph.initialize();
+                    Pair<Surface, Size> pair = playbackVideoGraphWrapper.currentSurfaceAndSize;
+                    if (pair != null) {
+                        Size size = (Size) playbackVideoGraphWrapper.currentSurfaceAndSize.second;
+                        maybeSetOutputSurfaceInfo((Surface) pair.first, size.getWidth(), size.getHeight());
+                    }
+                    playbackVideoGraphWrapper.defaultVideoSink.initialize(format);
+                    VideoSink videoSink = playbackVideoGraphWrapper.defaultVideoSink;
+                    DefaultVideoSinkListener defaultVideoSinkListener = new DefaultVideoSinkListener();
+                    final HandlerWrapper handlerWrapper2 = playbackVideoGraphWrapper.handler;
+                    Objects.requireNonNull(handlerWrapper2);
+                    videoSink.setListener(defaultVideoSinkListener, new Executor() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda2
+                        @Override // java.util.concurrent.Executor
+                        public final void execute(Runnable runnable) {
+                            HandlerWrapper.this.post(runnable);
+                        }
+                    });
+                    playbackVideoGraphWrapper.state = 1;
+                } catch (VideoFrameProcessingException e3) {
+                    e = e3;
+                    throw new VideoSink.VideoSinkException(e, format);
+                }
+            } catch (GlUtil.GlException e4) {
+                glException = e4;
+                throw new VideoSink.VideoSinkException(glException, format);
             }
         } else {
             playbackVideoGraphWrapper = this;
             if (!isInitialized()) {
-                return null;
+                return false;
             }
         }
         try {
-            ((PreviewingVideoGraph) Assertions.checkNotNull(playbackVideoGraphWrapper.videoGraph)).registerInput(i);
+            ((VideoGraph) Assertions.checkNotNull(playbackVideoGraphWrapper.videoGraph)).registerInput(i);
             playbackVideoGraphWrapper.registeredVideoInputCount++;
-            VideoSink videoSink = playbackVideoGraphWrapper.defaultVideoSink;
-            DefaultVideoSinkListener defaultVideoSinkListener = new DefaultVideoSinkListener();
-            final HandlerWrapper handlerWrapper2 = (HandlerWrapper) Assertions.checkNotNull(playbackVideoGraphWrapper.handler);
-            Objects.requireNonNull(handlerWrapper2);
-            videoSink.setListener(defaultVideoSinkListener, new Executor() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda0
-                @Override // java.util.concurrent.Executor
-                public final void execute(Runnable runnable) {
-                    HandlerWrapper.this.post(runnable);
-                }
-            });
-            return playbackVideoGraphWrapper.videoGraph.getProcessor(i);
-        } catch (VideoFrameProcessingException e3) {
-            throw new VideoSink.VideoSinkException(e3, format);
+            return true;
+        } catch (VideoFrameProcessingException e5) {
+            throw new VideoSink.VideoSinkException(e5, format);
         }
     }
 
@@ -359,21 +412,17 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         return this.state == 1;
     }
 
-    public void setTotalVideoInputCount(int i) {
-        this.totalVideoInputCount = i;
-    }
-
     private void maybeSetOutputSurfaceInfo(Surface surface, int i, int i2) {
-        PreviewingVideoGraph previewingVideoGraph = this.videoGraph;
-        if (previewingVideoGraph == null) {
+        VideoGraph videoGraph = this.videoGraph;
+        if (videoGraph == null) {
             return;
         }
         if (surface != null) {
-            previewingVideoGraph.setOutputSurfaceInfo(new SurfaceInfo(surface, i, i2));
+            videoGraph.setOutputSurfaceInfo(new SurfaceInfo(surface, i, i2));
             this.defaultVideoSink.setOutputSurfaceInfo(surface, new Size(i, i2));
             return;
         }
-        previewingVideoGraph.setOutputSurfaceInfo(null);
+        videoGraph.setOutputSurfaceInfo(null);
         this.defaultVideoSink.clearOutputSurfaceInfo();
     }
 
@@ -383,8 +432,14 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public void signalEndOfVideoGraphOutputStream() {
+        this.defaultVideoSink.signalEndOfCurrentInputStream();
+        this.hasSignaledEndOfVideoGraphOutputStream = true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public boolean isEnded() {
-        return this.pendingFlushCount == 0 && this.hasSignaledEndOfCurrentInputStream && this.defaultVideoSink.isEnded();
+        return this.pendingFlushCount == 0 && this.hasSignaledEndOfVideoGraphOutputStream && this.defaultVideoSink.isEnded();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -397,19 +452,22 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         if (isInitialized()) {
             this.pendingFlushCount++;
             this.defaultVideoSink.flush(z);
-            while (this.streamStartPositionsUs.size() > 1) {
-                this.streamStartPositionsUs.pollFirst();
+            while (this.pendingStreamChanges.size() > 1) {
+                this.pendingStreamChanges.pollFirst();
             }
-            if (this.streamStartPositionsUs.size() == 1) {
-                this.defaultVideoSink.setStreamTimestampInfo(((Long) Assertions.checkNotNull(this.streamStartPositionsUs.pollFirst())).longValue(), this.bufferTimestampAdjustmentUs);
+            if (this.pendingStreamChanges.size() == 1) {
+                StreamChangeInfo streamChangeInfo = (StreamChangeInfo) Assertions.checkNotNull(this.pendingStreamChanges.pollFirst());
+                this.outputStreamStartPositionUs = streamChangeInfo.startPositionUs;
+                this.outputStreamFirstFrameReleaseInstruction = streamChangeInfo.firstFrameReleaseInstruction;
+                onOutputStreamChanged();
             }
-            this.lastOutputBufferPresentationTimeUs = C.TIME_UNSET;
-            this.finalBufferPresentationTimeUs = C.TIME_UNSET;
-            this.hasSignaledEndOfCurrentInputStream = false;
-            ((HandlerWrapper) Assertions.checkStateNotNull(this.handler)).post(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda1
+            this.lastOutputFramePresentationTimeUs = C.TIME_UNSET;
+            this.finalFramePresentationTimeUs = C.TIME_UNSET;
+            this.hasSignaledEndOfVideoGraphOutputStream = false;
+            ((HandlerWrapper) Assertions.checkStateNotNull(this.handler)).post(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.this.m7440x92e2e5d9();
+                    PlaybackVideoGraphWrapper.this.m7457x92e2e5d9();
                 }
             });
         }
@@ -417,12 +475,23 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$flush$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper  reason: not valid java name */
-    public /* synthetic */ void m7440x92e2e5d9() {
+    public /* synthetic */ void m7457x92e2e5d9() {
         this.pendingFlushCount--;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public void joinPlayback(boolean z) {
+        this.defaultVideoSink.join(z);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void allowReleaseFirstFrameBeforeStarted() {
+        this.defaultVideoSink.allowReleaseFirstFrameBeforeStarted();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public void setVideoFrameMetadataListener(VideoFrameMetadataListener videoFrameMetadataListener) {
+        this.videoFrameMetadataListener = videoFrameMetadataListener;
         this.defaultVideoSink.setVideoFrameMetadataListener(videoFrameMetadataListener);
     }
 
@@ -432,9 +501,8 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void setBufferTimestampAdjustment(long j) {
-        this.bufferTimestampAdjustmentUs = j;
-        this.defaultVideoSink.setStreamTimestampInfo(this.outputStreamStartPositionUs, j);
+    public void setChangeFrameRateStrategy(int i) {
+        this.defaultVideoSink.setChangeFrameRateStrategy(i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -444,8 +512,12 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static ColorInfo getAdjustedInputColorInfo(ColorInfo colorInfo) {
-        return (colorInfo == null || !colorInfo.isDataSpaceValid()) ? ColorInfo.SDR_BT709_LIMITED : colorInfo;
+    public ColorInfo getAdjustedInputColorInfo(ColorInfo colorInfo) {
+        return (colorInfo == null || !colorInfo.isDataSpaceValid() || this.isInputSdrToneMapped) ? ColorInfo.SDR_BT709_LIMITED : colorInfo;
+    }
+
+    private void onOutputStreamChanged() {
+        this.defaultVideoSink.onInputStreamChanged(1, this.videoGraphOutputFormat, this.outputStreamStartPositionUs, this.outputStreamFirstFrameReleaseInstruction, ImmutableList.of());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -455,11 +527,11 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         private Format inputFormat;
         private final int inputIndex;
         private int inputType;
+        private boolean isInitialized;
         private boolean signaledEndOfStream;
-        private VideoFrameProcessor videoFrameProcessor;
         private final int videoFrameProcessorMaxPendingFrameCount;
         private ImmutableList<Effect> videoEffects = ImmutableList.of();
-        private long lastBufferPresentationTimeUs = C.TIME_UNSET;
+        private long lastFramePresentationTimeUs = C.TIME_UNSET;
         private VideoSink.Listener listener = VideoSink.Listener.NO_OP;
         private Executor listenerExecutor = PlaybackVideoGraphWrapper.NO_OP_EXECUTOR;
 
@@ -469,23 +541,17 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
-        public void onRendererEnabled(boolean z) {
-            PlaybackVideoGraphWrapper.this.defaultVideoSink.onRendererEnabled(z);
+        public void startRendering() {
+            if (PlaybackVideoGraphWrapper.this.enablePlaylistMode) {
+                PlaybackVideoGraphWrapper.this.startRendering();
+            }
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
-        public void onRendererDisabled() {
-            PlaybackVideoGraphWrapper.this.defaultVideoSink.onRendererDisabled();
-        }
-
-        @Override // androidx.media3.exoplayer.video.VideoSink
-        public void onRendererStarted() {
-            PlaybackVideoGraphWrapper.this.defaultVideoSink.onRendererStarted();
-        }
-
-        @Override // androidx.media3.exoplayer.video.VideoSink
-        public void onRendererStopped() {
-            PlaybackVideoGraphWrapper.this.defaultVideoSink.onRendererStopped();
+        public void stopRendering() {
+            if (PlaybackVideoGraphWrapper.this.enablePlaylistMode) {
+                PlaybackVideoGraphWrapper.this.stopRendering();
+            }
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
@@ -497,23 +563,36 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         @Override // androidx.media3.exoplayer.video.VideoSink
         public boolean initialize(Format format) throws VideoSink.VideoSinkException {
             Assertions.checkState(!isInitialized());
-            VideoFrameProcessor registerInput = PlaybackVideoGraphWrapper.this.registerInput(format, this.inputIndex);
-            this.videoFrameProcessor = registerInput;
-            return registerInput != null;
+            boolean registerInput = PlaybackVideoGraphWrapper.this.registerInput(format, this.inputIndex);
+            this.isInitialized = registerInput;
+            return registerInput;
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
-        @EnsuresNonNullIf(expression = {"videoFrameProcessor"}, result = true)
         public boolean isInitialized() {
-            return this.videoFrameProcessor != null;
+            return this.isInitialized;
+        }
+
+        @Override // androidx.media3.exoplayer.video.VideoSink
+        public void redraw() {
+            if (isInitialized()) {
+                boolean z = this.signaledEndOfStream;
+                long j = PlaybackVideoGraphWrapper.this.lastOutputFramePresentationTimeUs;
+                PlaybackVideoGraphWrapper.this.flush(false);
+                ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).redraw();
+                PlaybackVideoGraphWrapper.this.lastOutputFramePresentationTimeUs = j;
+                if (z) {
+                    signalEndOfCurrentInputStream();
+                }
+            }
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public void flush(boolean z) {
             if (isInitialized()) {
-                this.videoFrameProcessor.flush();
+                ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).flush();
             }
-            this.lastBufferPresentationTimeUs = C.TIME_UNSET;
+            this.lastFramePresentationTimeUs = C.TIME_UNSET;
             PlaybackVideoGraphWrapper.this.flush(z);
             this.signaledEndOfStream = false;
         }
@@ -525,17 +604,16 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public void signalEndOfCurrentInputStream() {
-            PlaybackVideoGraphWrapper.this.finalBufferPresentationTimeUs = this.lastBufferPresentationTimeUs;
-            if (PlaybackVideoGraphWrapper.this.lastOutputBufferPresentationTimeUs >= PlaybackVideoGraphWrapper.this.finalBufferPresentationTimeUs) {
-                PlaybackVideoGraphWrapper.this.defaultVideoSink.signalEndOfCurrentInputStream();
-                PlaybackVideoGraphWrapper.this.hasSignaledEndOfCurrentInputStream = true;
+            PlaybackVideoGraphWrapper.this.finalFramePresentationTimeUs = this.lastFramePresentationTimeUs;
+            if (PlaybackVideoGraphWrapper.this.lastOutputFramePresentationTimeUs >= PlaybackVideoGraphWrapper.this.finalFramePresentationTimeUs) {
+                PlaybackVideoGraphWrapper.this.signalEndOfVideoGraphOutputStream();
             }
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public void signalEndOfInput() {
             if (!this.signaledEndOfStream && isInitialized()) {
-                this.videoFrameProcessor.signalEndOfInput();
+                ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).signalEndOfInput(this.inputIndex);
                 this.signaledEndOfStream = true;
             }
         }
@@ -546,33 +624,62 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
-        public void onInputStreamChanged(int i, Format format, List<Effect> list) {
+        public void onInputStreamChanged(int i, Format format, long j, int i2, List<Effect> list) {
             Assertions.checkState(isInitialized());
-            if (i != 1 && i != 2) {
-                throw new UnsupportedOperationException("Unsupported input type " + i);
-            }
-            setPendingVideoEffects(list);
+            this.videoEffects = ImmutableList.copyOf((Collection) list);
             this.inputType = i;
             this.inputFormat = format;
-            PlaybackVideoGraphWrapper.this.finalBufferPresentationTimeUs = C.TIME_UNSET;
-            PlaybackVideoGraphWrapper.this.hasSignaledEndOfCurrentInputStream = false;
+            PlaybackVideoGraphWrapper.this.finalFramePresentationTimeUs = C.TIME_UNSET;
+            PlaybackVideoGraphWrapper.this.hasSignaledEndOfVideoGraphOutputStream = false;
             registerInputStream(format);
+            boolean z = this.lastFramePresentationTimeUs == C.TIME_UNSET;
+            if (PlaybackVideoGraphWrapper.this.enablePlaylistMode || (this.inputIndex == 0 && z)) {
+                long j2 = z ? SieveCacheKt.NodeMetaMask : this.lastFramePresentationTimeUs + 1;
+                PlaybackVideoGraphWrapper.this.pendingStreamChanges.add(j2, new StreamChangeInfo(this.inputBufferTimestampAdjustmentUs + j, i2, j2));
+            }
+        }
+
+        @Override // androidx.media3.exoplayer.video.VideoSink
+        public void allowReleaseFirstFrameBeforeStarted() {
+            if (PlaybackVideoGraphWrapper.this.pendingStreamChanges.size() == 0) {
+                PlaybackVideoGraphWrapper.this.allowReleaseFirstFrameBeforeStarted();
+                return;
+            }
+            TimedValueQueue timedValueQueue = new TimedValueQueue();
+            boolean z = true;
+            while (PlaybackVideoGraphWrapper.this.pendingStreamChanges.size() > 0) {
+                StreamChangeInfo streamChangeInfo = (StreamChangeInfo) Assertions.checkNotNull((StreamChangeInfo) PlaybackVideoGraphWrapper.this.pendingStreamChanges.pollFirst());
+                if (z) {
+                    if (streamChangeInfo.firstFrameReleaseInstruction != 0 && streamChangeInfo.firstFrameReleaseInstruction != 1) {
+                        PlaybackVideoGraphWrapper.this.allowReleaseFirstFrameBeforeStarted();
+                    } else {
+                        streamChangeInfo = new StreamChangeInfo(streamChangeInfo.startPositionUs, 0, streamChangeInfo.fromTimestampUs);
+                    }
+                    z = false;
+                }
+                timedValueQueue.add(streamChangeInfo.fromTimestampUs, streamChangeInfo);
+            }
+            PlaybackVideoGraphWrapper.this.pendingStreamChanges = timedValueQueue;
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public Surface getInputSurface() {
             Assertions.checkState(isInitialized());
-            return ((VideoFrameProcessor) Assertions.checkStateNotNull(this.videoFrameProcessor)).getInputSurface();
+            return ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).getInputSurface(this.inputIndex);
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public void setVideoFrameMetadataListener(VideoFrameMetadataListener videoFrameMetadataListener) {
-            PlaybackVideoGraphWrapper.this.setVideoFrameMetadataListener(videoFrameMetadataListener);
+            if (this.inputIndex == 0) {
+                PlaybackVideoGraphWrapper.this.setVideoFrameMetadataListener(videoFrameMetadataListener);
+            }
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public void setPlaybackSpeed(float f) {
-            PlaybackVideoGraphWrapper.this.setPlaybackSpeed(f);
+            if (this.inputIndex == 0) {
+                PlaybackVideoGraphWrapper.this.setPlaybackSpeed(f);
+            }
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
@@ -580,7 +687,7 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
             if (this.videoEffects.equals(list)) {
                 return;
             }
-            setPendingVideoEffects(list);
+            this.videoEffects = ImmutableList.copyOf((Collection) list);
             Format format = this.inputFormat;
             if (format != null) {
                 registerInputStream(format);
@@ -588,12 +695,8 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
-        public void setStreamTimestampInfo(long j, long j2) {
-            TimedValueQueue timedValueQueue = PlaybackVideoGraphWrapper.this.streamStartPositionsUs;
-            long j3 = this.lastBufferPresentationTimeUs;
-            timedValueQueue.add(j3 == C.TIME_UNSET ? 0L : j3 + 1, Long.valueOf(j));
-            this.inputBufferTimestampAdjustmentUs = j2;
-            PlaybackVideoGraphWrapper.this.setBufferTimestampAdjustment(j2);
+        public void setBufferTimestampAdjustmentUs(long j) {
+            this.inputBufferTimestampAdjustmentUs = j;
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
@@ -608,20 +711,18 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public void setChangeFrameRateStrategy(int i) {
-            PlaybackVideoGraphWrapper.this.defaultVideoSink.setChangeFrameRateStrategy(i);
+            if (this.inputIndex == 0) {
+                PlaybackVideoGraphWrapper.this.setChangeFrameRateStrategy(i);
+            }
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
-        public void enableMayRenderStartOfStream() {
-            PlaybackVideoGraphWrapper.this.defaultVideoSink.enableMayRenderStartOfStream();
-        }
-
-        @Override // androidx.media3.exoplayer.video.VideoSink
-        public boolean handleInputFrame(long j, boolean z, VideoSink.VideoFrameHandler videoFrameHandler) {
+        public boolean handleInputFrame(long j, VideoSink.VideoFrameHandler videoFrameHandler) {
             Assertions.checkState(isInitialized());
-            if (PlaybackVideoGraphWrapper.this.shouldRenderToInputVideoSink() && ((VideoFrameProcessor) Assertions.checkStateNotNull(this.videoFrameProcessor)).getPendingInputFrameCount() < this.videoFrameProcessorMaxPendingFrameCount && ((VideoFrameProcessor) Assertions.checkStateNotNull(this.videoFrameProcessor)).registerInputFrame()) {
-                this.lastBufferPresentationTimeUs = j - this.inputBufferTimestampAdjustmentUs;
-                videoFrameHandler.render(j * 1000);
+            if (PlaybackVideoGraphWrapper.this.shouldRenderToInputVideoSink() && ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).getPendingInputFrameCount(this.inputIndex) < this.videoFrameProcessorMaxPendingFrameCount && ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).registerInputFrame(this.inputIndex)) {
+                long j2 = j + this.inputBufferTimestampAdjustmentUs;
+                this.lastFramePresentationTimeUs = j2;
+                videoFrameHandler.render(j2 * 1000);
                 return true;
             }
             return false;
@@ -630,28 +731,29 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         @Override // androidx.media3.exoplayer.video.VideoSink
         public boolean handleInputBitmap(Bitmap bitmap, TimestampIterator timestampIterator) {
             Assertions.checkState(isInitialized());
-            if (PlaybackVideoGraphWrapper.this.shouldRenderToInputVideoSink() && ((VideoFrameProcessor) Assertions.checkNotNull(this.videoFrameProcessor)).queueInputBitmap(bitmap, timestampIterator)) {
-                long lastTimestampUs = timestampIterator.getLastTimestampUs() - this.inputBufferTimestampAdjustmentUs;
-                Assertions.checkState(lastTimestampUs != C.TIME_UNSET);
-                this.lastBufferPresentationTimeUs = lastTimestampUs;
-                return true;
+            if (PlaybackVideoGraphWrapper.this.shouldRenderToInputVideoSink()) {
+                ShiftingTimestampIterator shiftingTimestampIterator = new ShiftingTimestampIterator(timestampIterator, this.inputBufferTimestampAdjustmentUs);
+                if (((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).queueInputBitmap(this.inputIndex, bitmap, shiftingTimestampIterator)) {
+                    long lastTimestampUs = shiftingTimestampIterator.getLastTimestampUs();
+                    Assertions.checkState(lastTimestampUs != C.TIME_UNSET);
+                    this.lastFramePresentationTimeUs = lastTimestampUs;
+                    return true;
+                }
+                return false;
             }
             return false;
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public void render(long j, long j2) throws VideoSink.VideoSinkException {
-            PlaybackVideoGraphWrapper.this.render(j, j2);
-        }
-
-        @Override // androidx.media3.exoplayer.video.VideoSink
-        public void setWakeupListener(Renderer.WakeupListener wakeupListener) {
-            PlaybackVideoGraphWrapper.this.wakeupListener = wakeupListener;
+            PlaybackVideoGraphWrapper.this.render(j + this.inputBufferTimestampAdjustmentUs, j2);
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public void join(boolean z) {
-            PlaybackVideoGraphWrapper.this.defaultVideoSink.join(z);
+            if (PlaybackVideoGraphWrapper.this.enablePlaylistMode) {
+                PlaybackVideoGraphWrapper.this.joinPlayback(z);
+            }
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
@@ -660,83 +762,74 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         }
 
         @Override // androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper.Listener
-        public void onFirstFrameRendered(PlaybackVideoGraphWrapper playbackVideoGraphWrapper) {
+        public void onFrameAvailableForRendering() {
             final VideoSink.Listener listener = this.listener;
-            this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$InputVideoSink$$ExternalSyntheticLambda2
+            Executor executor = this.listenerExecutor;
+            Objects.requireNonNull(listener);
+            executor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$InputVideoSink$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.InputVideoSink.this.m7442x2299ee49(listener);
+                    VideoSink.Listener.this.onFrameAvailableForRendering();
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
-        /* renamed from: lambda$onFirstFrameRendered$0$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper$InputVideoSink  reason: not valid java name */
-        public /* synthetic */ void m7442x2299ee49(VideoSink.Listener listener) {
-            listener.onFirstFrameRendered(this);
+        @Override // androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper.Listener
+        public void onFirstFrameRendered() {
+            final VideoSink.Listener listener = this.listener;
+            Executor executor = this.listenerExecutor;
+            Objects.requireNonNull(listener);
+            executor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$InputVideoSink$$ExternalSyntheticLambda2
+                @Override // java.lang.Runnable
+                public final void run() {
+                    VideoSink.Listener.this.onFirstFrameRendered();
+                }
+            });
         }
 
         @Override // androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper.Listener
-        public void onFrameDropped(PlaybackVideoGraphWrapper playbackVideoGraphWrapper) {
+        public void onFrameDropped() {
+            final VideoSink.Listener listener = this.listener;
+            Executor executor = this.listenerExecutor;
+            Objects.requireNonNull(listener);
+            executor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$InputVideoSink$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    VideoSink.Listener.this.onFrameDropped();
+                }
+            });
+        }
+
+        @Override // androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper.Listener
+        public void onVideoSizeChanged(final VideoSize videoSize) {
             final VideoSink.Listener listener = this.listener;
             this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$InputVideoSink$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.InputVideoSink.this.m7443x39948ea7(listener);
+                    VideoSink.Listener.this.onVideoSizeChanged(videoSize);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
-        /* renamed from: lambda$onFrameDropped$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper$InputVideoSink  reason: not valid java name */
-        public /* synthetic */ void m7443x39948ea7(VideoSink.Listener listener) {
-            listener.onFrameDropped((VideoSink) Assertions.checkStateNotNull(this));
-        }
-
         @Override // androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper.Listener
-        public void onVideoSizeChanged(PlaybackVideoGraphWrapper playbackVideoGraphWrapper, final VideoSize videoSize) {
+        public void onError(final VideoFrameProcessingException videoFrameProcessingException) {
             final VideoSink.Listener listener = this.listener;
             this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$InputVideoSink$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.InputVideoSink.this.m7444x47b4e41(listener, videoSize);
+                    PlaybackVideoGraphWrapper.InputVideoSink.this.m7458x167f068a(listener, videoFrameProcessingException);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* renamed from: lambda$onVideoSizeChanged$2$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper$InputVideoSink  reason: not valid java name */
-        public /* synthetic */ void m7444x47b4e41(VideoSink.Listener listener, VideoSize videoSize) {
-            listener.onVideoSizeChanged(this, videoSize);
-        }
-
-        @Override // androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper.Listener
-        public void onError(PlaybackVideoGraphWrapper playbackVideoGraphWrapper, final VideoFrameProcessingException videoFrameProcessingException) {
-            final VideoSink.Listener listener = this.listener;
-            this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$InputVideoSink$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    PlaybackVideoGraphWrapper.InputVideoSink.this.m7441x4b60f8c8(listener, videoFrameProcessingException);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: package-private */
-        /* renamed from: lambda$onError$3$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper$InputVideoSink  reason: not valid java name */
-        public /* synthetic */ void m7441x4b60f8c8(VideoSink.Listener listener, VideoFrameProcessingException videoFrameProcessingException) {
-            listener.onError(this, new VideoSink.VideoSinkException(videoFrameProcessingException, (Format) Assertions.checkStateNotNull(this.inputFormat)));
-        }
-
-        private void setPendingVideoEffects(List<Effect> list) {
-            if (PlaybackVideoGraphWrapper.this.previewingVideoGraphFactory.supportsMultipleInputs()) {
-                this.videoEffects = ImmutableList.copyOf((Collection) list);
-            } else {
-                this.videoEffects = new ImmutableList.Builder().addAll((Iterable) list).addAll((Iterable) PlaybackVideoGraphWrapper.this.compositionEffects).build();
-            }
+        /* renamed from: lambda$onError$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper$InputVideoSink  reason: not valid java name */
+        public /* synthetic */ void m7458x167f068a(VideoSink.Listener listener, VideoFrameProcessingException videoFrameProcessingException) {
+            listener.onError(new VideoSink.VideoSinkException(videoFrameProcessingException, (Format) Assertions.checkStateNotNull(this.inputFormat)));
         }
 
         private void registerInputStream(Format format) {
-            ((VideoFrameProcessor) Assertions.checkStateNotNull(this.videoFrameProcessor)).registerInputStream(this.inputType, format.buildUpon().setColorInfo(PlaybackVideoGraphWrapper.getAdjustedInputColorInfo(format.colorInfo)).build(), this.videoEffects, 0L);
+            ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).registerInputStream(this.inputIndex, this.inputType != 1 ? 2 : 1, format.buildUpon().setColorInfo(PlaybackVideoGraphWrapper.this.getAdjustedInputColorInfo(format.colorInfo)).build(), this.videoEffects, 0L);
         }
     }
 
@@ -747,88 +840,141 @@ public final class PlaybackVideoGraphWrapper implements VideoSinkProvider, Video
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink.Listener
-        public void onFirstFrameRendered(VideoSink videoSink) {
+        public void onFirstFrameRendered() {
             Iterator it = PlaybackVideoGraphWrapper.this.listeners.iterator();
             while (it.hasNext()) {
-                ((Listener) it.next()).onFirstFrameRendered(PlaybackVideoGraphWrapper.this);
+                ((Listener) it.next()).onFirstFrameRendered();
             }
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink.Listener
-        public void onFrameDropped(VideoSink videoSink) {
+        public void onFrameDropped() {
             Iterator it = PlaybackVideoGraphWrapper.this.listeners.iterator();
             while (it.hasNext()) {
-                ((Listener) it.next()).onFrameDropped(PlaybackVideoGraphWrapper.this);
+                ((Listener) it.next()).onFrameDropped();
             }
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink.Listener
-        public void onVideoSizeChanged(VideoSink videoSink, VideoSize videoSize) {
+        public void onVideoSizeChanged(VideoSize videoSize) {
             Iterator it = PlaybackVideoGraphWrapper.this.listeners.iterator();
             while (it.hasNext()) {
-                ((Listener) it.next()).onVideoSizeChanged(PlaybackVideoGraphWrapper.this, videoSize);
+                ((Listener) it.next()).onVideoSizeChanged(videoSize);
             }
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink.Listener
-        public void onError(VideoSink videoSink, VideoSink.VideoSinkException videoSinkException) {
+        public void onError(VideoSink.VideoSinkException videoSinkException) {
             Iterator it = PlaybackVideoGraphWrapper.this.listeners.iterator();
             while (it.hasNext()) {
-                ((Listener) it.next()).onError(PlaybackVideoGraphWrapper.this, VideoFrameProcessingException.from(videoSinkException));
+                ((Listener) it.next()).onError(VideoFrameProcessingException.from(videoSinkException));
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    public static final class ReflectivePreviewingSingleInputVideoGraphFactory implements PreviewingVideoGraph.Factory {
+    public static final class StreamChangeInfo {
+        public final int firstFrameReleaseInstruction;
+        public final long fromTimestampUs;
+        public final long startPositionUs;
+
+        public StreamChangeInfo(long j, int i, long j2) {
+            this.startPositionUs = j;
+            this.firstFrameReleaseInstruction = i;
+            this.fromTimestampUs = j2;
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    private static final class ShiftingTimestampIterator implements TimestampIterator {
+        private final long shift;
+        private final TimestampIterator timestampIterator;
+
+        public ShiftingTimestampIterator(TimestampIterator timestampIterator, long j) {
+            this.timestampIterator = timestampIterator;
+            this.shift = j;
+        }
+
+        @Override // androidx.media3.common.util.TimestampIterator
+        public boolean hasNext() {
+            return this.timestampIterator.hasNext();
+        }
+
+        @Override // androidx.media3.common.util.TimestampIterator
+        public long next() {
+            return this.timestampIterator.next() + this.shift;
+        }
+
+        @Override // androidx.media3.common.util.TimestampIterator
+        public TimestampIterator copyOf() {
+            return new ShiftingTimestampIterator(this.timestampIterator.copyOf(), this.shift);
+        }
+
+        @Override // androidx.media3.common.util.TimestampIterator
+        public long getLastTimestampUs() {
+            long lastTimestampUs = this.timestampIterator.getLastTimestampUs();
+            return lastTimestampUs == C.TIME_UNSET ? C.TIME_UNSET : lastTimestampUs + this.shift;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes2.dex */
+    public static final class ReflectiveSingleInputVideoGraphFactory implements VideoGraph.Factory {
         private final VideoFrameProcessor.Factory videoFrameProcessorFactory;
 
-        @Override // androidx.media3.common.PreviewingVideoGraph.Factory
+        @Override // androidx.media3.common.VideoGraph.Factory
         public boolean supportsMultipleInputs() {
             return false;
         }
 
-        public ReflectivePreviewingSingleInputVideoGraphFactory(VideoFrameProcessor.Factory factory) {
-            this.videoFrameProcessorFactory = factory;
+        public ReflectiveSingleInputVideoGraphFactory(boolean z) {
+            this.videoFrameProcessorFactory = new ReflectiveDefaultVideoFrameProcessorFactory(z);
         }
 
-        @Override // androidx.media3.common.PreviewingVideoGraph.Factory
-        public PreviewingVideoGraph create(Context context, ColorInfo colorInfo, DebugViewProvider debugViewProvider, VideoGraph.Listener listener, Executor executor, VideoCompositorSettings videoCompositorSettings, List<Effect> list, long j) throws VideoFrameProcessingException {
+        @Override // androidx.media3.common.VideoGraph.Factory
+        public VideoGraph create(Context context, ColorInfo colorInfo, DebugViewProvider debugViewProvider, VideoGraph.Listener listener, Executor executor, long j, boolean z) {
             try {
-                return ((PreviewingVideoGraph.Factory) Class.forName("androidx.media3.effect.PreviewingSingleInputVideoGraph$Factory").getConstructor(VideoFrameProcessor.Factory.class).newInstance(this.videoFrameProcessorFactory)).create(context, colorInfo, debugViewProvider, listener, executor, videoCompositorSettings, list, j);
+                return ((VideoGraph.Factory) Class.forName("androidx.media3.effect.SingleInputVideoGraph$Factory").getConstructor(VideoFrameProcessor.Factory.class).newInstance(this.videoFrameProcessorFactory)).create(context, colorInfo, debugViewProvider, listener, executor, j, z);
             } catch (Exception e) {
-                throw VideoFrameProcessingException.from(e);
+                throw new IllegalStateException(e);
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    public static final class ReflectiveDefaultVideoFrameProcessorFactory implements VideoFrameProcessor.Factory {
-        private static final Supplier<VideoFrameProcessor.Factory> VIDEO_FRAME_PROCESSOR_FACTORY_SUPPLIER = Suppliers.memoize(new Supplier() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$ReflectiveDefaultVideoFrameProcessorFactory$$ExternalSyntheticLambda0
+    private static final class ReflectiveDefaultVideoFrameProcessorFactory implements VideoFrameProcessor.Factory {
+        private static final Supplier<Class<?>> DEFAULT_VIDEO_FRAME_PROCESSOR_FACTORY_BUILDER_CLASS = Suppliers.memoize(new Supplier() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$ReflectiveDefaultVideoFrameProcessorFactory$$ExternalSyntheticLambda0
             @Override // com.google.common.base.Supplier
             public final Object get() {
                 return PlaybackVideoGraphWrapper.ReflectiveDefaultVideoFrameProcessorFactory.lambda$static$0();
             }
         });
-
-        private ReflectiveDefaultVideoFrameProcessorFactory() {
-        }
+        private final boolean enableReplayableCache;
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public static /* synthetic */ VideoFrameProcessor.Factory lambda$static$0() {
+        public static /* synthetic */ Class lambda$static$0() {
             try {
-                Class<?> cls = Class.forName("androidx.media3.effect.DefaultVideoFrameProcessor$Factory$Builder");
-                return (VideoFrameProcessor.Factory) Assertions.checkNotNull(cls.getMethod("build", new Class[0]).invoke(cls.getConstructor(new Class[0]).newInstance(new Object[0]), new Object[0]));
+                return Class.forName("androidx.media3.effect.DefaultVideoFrameProcessor$Factory$Builder");
             } catch (Exception e) {
                 throw new IllegalStateException(e);
             }
         }
 
+        public ReflectiveDefaultVideoFrameProcessorFactory(boolean z) {
+            this.enableReplayableCache = z;
+        }
+
         @Override // androidx.media3.common.VideoFrameProcessor.Factory
         public VideoFrameProcessor create(Context context, DebugViewProvider debugViewProvider, ColorInfo colorInfo, boolean z, Executor executor, VideoFrameProcessor.Listener listener) throws VideoFrameProcessingException {
-            return VIDEO_FRAME_PROCESSOR_FACTORY_SUPPLIER.get().create(context, debugViewProvider, colorInfo, z, executor, listener);
+            try {
+                Class<?> cls = DEFAULT_VIDEO_FRAME_PROCESSOR_FACTORY_BUILDER_CLASS.get();
+                Object newInstance = cls.getConstructor(new Class[0]).newInstance(new Object[0]);
+                cls.getMethod("setEnableReplayableCache", Boolean.TYPE).invoke(newInstance, Boolean.valueOf(this.enableReplayableCache));
+                return ((VideoFrameProcessor.Factory) Assertions.checkNotNull(cls.getMethod("build", new Class[0]).invoke(newInstance, new Object[0]))).create(context, debugViewProvider, colorInfo, z, executor, listener);
+            } catch (Exception e) {
+                throw new VideoFrameProcessingException(e);
+            }
         }
     }
 }

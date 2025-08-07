@@ -264,11 +264,11 @@ public final class RegistrationAccount implements InterfaceController {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void _init_$lambda$0(RegistrationAccount registrationAccount, View view) {
         if (registrationAccount.requestState == RequestState.SEND_TO_SERVER) {
-            Toast.makeText(registrationAccount.targetActivity, "Подождите...", 0).show();
+            Toast.makeText(registrationAccount.targetActivity.getApplicationContext(), "Подождите...", 0).show();
         } else if (registrationAccount.requestState == RequestState.DISABLE) {
-            Toast.makeText(registrationAccount.targetActivity, "Исправьте отмеченные поля!", 1).show();
+            Toast.makeText(registrationAccount.targetActivity.getApplicationContext(), "Исправьте отмеченные поля!", 1).show();
         } else if (registrationAccount.requestState == RequestState.RECEIVED_BAD_ANSWER_FROM_SERVER) {
-            Toast.makeText(registrationAccount.targetActivity, "Исправьте отмеченные поля!", 0).show();
+            Toast.makeText(registrationAccount.targetActivity.getApplicationContext(), "Исправьте отмеченные поля!", 0).show();
         } else {
             String obj = StringsKt.trim((CharSequence) registrationAccount.registrationAccountBinding.registrationAccountUsernamePlaceholder.getText().toString()).toString();
             String obj2 = StringsKt.trim((CharSequence) registrationAccount.registrationAccountBinding.registrationAccountSurnamePlaceholder.getText().toString()).toString();

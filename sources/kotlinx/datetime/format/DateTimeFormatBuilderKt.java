@@ -68,7 +68,7 @@ public final class DateTimeFormatBuilderKt {
     }
 
     /* renamed from: char  reason: not valid java name */
-    public static final void m10105char(DateTimeFormatBuilder dateTimeFormatBuilder, char c) {
+    public static final void m10128char(DateTimeFormatBuilder dateTimeFormatBuilder, char c) {
         Intrinsics.checkNotNullParameter(dateTimeFormatBuilder, "<this>");
         dateTimeFormatBuilder.chars(String.valueOf(c));
     }

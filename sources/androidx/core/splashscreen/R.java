@@ -4,12 +4,12 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class attr {
-        public static int postSplashScreenTheme = 0x7f0404ad;
-        public static int splashScreenIconSize = 0x7f040550;
-        public static int windowSplashScreenAnimatedIcon = 0x7f040677;
-        public static int windowSplashScreenAnimationDuration = 0x7f040678;
-        public static int windowSplashScreenBackground = 0x7f040679;
-        public static int windowSplashScreenIconBackgroundColor = 0x7f04067a;
+        public static int postSplashScreenTheme = 0x7f0404b8;
+        public static int splashScreenIconSize = 0x7f04055c;
+        public static int windowSplashScreenAnimatedIcon = 0x7f040684;
+        public static int windowSplashScreenAnimationDuration = 0x7f040685;
+        public static int windowSplashScreenBackground = 0x7f040686;
+        public static int windowSplashScreenIconBackgroundColor = 0x7f040687;
 
         private attr() {
         }
@@ -41,7 +41,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int splashscreen_icon_view = 0x7f0a0c6b;
+        public static int splashscreen_icon_view = 0x7f0a0c6c;
 
         private id() {
         }

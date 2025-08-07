@@ -41,6 +41,8 @@ public final class Format {
     public final int cryptoType;
     public final int cueReplacementBehavior;
     public final Object customData;
+    public final int decodedHeight;
+    public final int decodedWidth;
     public final DrmInitData drmInitData;
     public final int encoderDelay;
     public final int encoderPadding;
@@ -107,6 +109,8 @@ public final class Format {
     private static final String FIELD_LABELS = Util.intToStringMaxRadix(32);
     private static final String FIELD_AUXILIARY_TRACK_TYPE = Util.intToStringMaxRadix(33);
     private static final String FIELD_MAX_SUB_LAYERS = Util.intToStringMaxRadix(34);
+    private static final String FIELD_DECODED_WIDTH = Util.intToStringMaxRadix(35);
+    private static final String FIELD_DECODED_HEIGHT = Util.intToStringMaxRadix(36);
 
     @Target({ElementType.TYPE_USE})
     @Documented
@@ -131,6 +135,8 @@ public final class Format {
         private int cryptoType;
         private int cueReplacementBehavior;
         private Object customData;
+        private int decodedHeight;
+        private int decodedWidth;
         private DrmInitData drmInitData;
         private int encoderDelay;
         private int encoderPadding;
@@ -170,6 +176,8 @@ public final class Format {
             this.subsampleOffsetUs = Long.MAX_VALUE;
             this.width = -1;
             this.height = -1;
+            this.decodedWidth = -1;
+            this.decodedHeight = -1;
             this.frameRate = -1.0f;
             this.pixelWidthHeightRatio = 1.0f;
             this.stereoMode = -1;
@@ -207,6 +215,8 @@ public final class Format {
             this.hasPrerollSamples = format.hasPrerollSamples;
             this.width = format.width;
             this.height = format.height;
+            this.decodedWidth = format.decodedWidth;
+            this.decodedHeight = format.decodedHeight;
             this.frameRate = format.frameRate;
             this.rotationDegrees = format.rotationDegrees;
             this.pixelWidthHeightRatio = format.pixelWidthHeightRatio;
@@ -338,6 +348,16 @@ public final class Format {
 
         public Builder setHeight(int i) {
             this.height = i;
+            return this;
+        }
+
+        public Builder setDecodedWidth(int i) {
+            this.decodedWidth = i;
+            return this;
+        }
+
+        public Builder setDecodedHeight(int i) {
+            this.decodedHeight = i;
             return this;
         }
 
@@ -483,6 +503,8 @@ public final class Format {
         this.hasPrerollSamples = builder.hasPrerollSamples;
         this.width = builder.width;
         this.height = builder.height;
+        this.decodedWidth = builder.decodedWidth;
+        this.decodedHeight = builder.decodedHeight;
         this.frameRate = builder.frameRate;
         this.rotationDegrees = builder.rotationDegrees == -1 ? 0 : builder.rotationDegrees;
         this.pixelWidthHeightRatio = builder.pixelWidthHeightRatio == -1.0f ? 1.0f : builder.pixelWidthHeightRatio;
@@ -591,7 +613,7 @@ public final class Format {
             String str5 = this.containerMimeType;
             int hashCode7 = (hashCode6 + (str5 == null ? 0 : str5.hashCode())) * 31;
             String str6 = this.sampleMimeType;
-            this.hashCode = ((((((((((((((((((((((((((((((((((((hashCode7 + (str6 != null ? str6.hashCode() : 0)) * 31) + this.maxInputSize) * 31) + ((int) this.subsampleOffsetUs)) * 31) + this.width) * 31) + this.height) * 31) + Float.floatToIntBits(this.frameRate)) * 31) + this.rotationDegrees) * 31) + Float.floatToIntBits(this.pixelWidthHeightRatio)) * 31) + this.stereoMode) * 31) + this.maxSubLayers) * 31) + this.channelCount) * 31) + this.sampleRate) * 31) + this.pcmEncoding) * 31) + this.encoderDelay) * 31) + this.encoderPadding) * 31) + this.accessibilityChannel) * 31) + this.tileCountHorizontal) * 31) + this.tileCountVertical) * 31) + this.cryptoType;
+            this.hashCode = ((((((((((((((((((((((((((((((((((((((((hashCode7 + (str6 != null ? str6.hashCode() : 0)) * 31) + this.maxInputSize) * 31) + ((int) this.subsampleOffsetUs)) * 31) + this.width) * 31) + this.height) * 31) + this.decodedWidth) * 31) + this.decodedHeight) * 31) + Float.floatToIntBits(this.frameRate)) * 31) + this.rotationDegrees) * 31) + Float.floatToIntBits(this.pixelWidthHeightRatio)) * 31) + this.stereoMode) * 31) + this.maxSubLayers) * 31) + this.channelCount) * 31) + this.sampleRate) * 31) + this.pcmEncoding) * 31) + this.encoderDelay) * 31) + this.encoderPadding) * 31) + this.accessibilityChannel) * 31) + this.tileCountHorizontal) * 31) + this.tileCountVertical) * 31) + this.cryptoType;
         }
         return this.hashCode;
     }
@@ -604,7 +626,7 @@ public final class Format {
         if (obj != null && getClass() == obj.getClass()) {
             Format format = (Format) obj;
             int i2 = this.hashCode;
-            if ((i2 == 0 || (i = format.hashCode) == 0 || i2 == i) && this.selectionFlags == format.selectionFlags && this.roleFlags == format.roleFlags && this.auxiliaryTrackType == format.auxiliaryTrackType && this.averageBitrate == format.averageBitrate && this.peakBitrate == format.peakBitrate && this.maxInputSize == format.maxInputSize && this.subsampleOffsetUs == format.subsampleOffsetUs && this.width == format.width && this.height == format.height && this.rotationDegrees == format.rotationDegrees && this.stereoMode == format.stereoMode && this.maxSubLayers == format.maxSubLayers && this.channelCount == format.channelCount && this.sampleRate == format.sampleRate && this.pcmEncoding == format.pcmEncoding && this.encoderDelay == format.encoderDelay && this.encoderPadding == format.encoderPadding && this.accessibilityChannel == format.accessibilityChannel && this.tileCountHorizontal == format.tileCountHorizontal && this.tileCountVertical == format.tileCountVertical && this.cryptoType == format.cryptoType && Float.compare(this.frameRate, format.frameRate) == 0 && Float.compare(this.pixelWidthHeightRatio, format.pixelWidthHeightRatio) == 0 && Objects.equals(this.id, format.id) && Objects.equals(this.label, format.label) && this.labels.equals(format.labels) && Objects.equals(this.codecs, format.codecs) && Objects.equals(this.containerMimeType, format.containerMimeType) && Objects.equals(this.sampleMimeType, format.sampleMimeType) && Objects.equals(this.language, format.language) && Arrays.equals(this.projectionData, format.projectionData) && Objects.equals(this.metadata, format.metadata) && Objects.equals(this.colorInfo, format.colorInfo) && Objects.equals(this.drmInitData, format.drmInitData) && initializationDataEquals(format) && Objects.equals(this.customData, format.customData)) {
+            if ((i2 == 0 || (i = format.hashCode) == 0 || i2 == i) && this.selectionFlags == format.selectionFlags && this.roleFlags == format.roleFlags && this.auxiliaryTrackType == format.auxiliaryTrackType && this.averageBitrate == format.averageBitrate && this.peakBitrate == format.peakBitrate && this.maxInputSize == format.maxInputSize && this.subsampleOffsetUs == format.subsampleOffsetUs && this.width == format.width && this.height == format.height && this.decodedWidth == format.decodedWidth && this.decodedHeight == format.decodedHeight && this.rotationDegrees == format.rotationDegrees && this.stereoMode == format.stereoMode && this.maxSubLayers == format.maxSubLayers && this.channelCount == format.channelCount && this.sampleRate == format.sampleRate && this.pcmEncoding == format.pcmEncoding && this.encoderDelay == format.encoderDelay && this.encoderPadding == format.encoderPadding && this.accessibilityChannel == format.accessibilityChannel && this.tileCountHorizontal == format.tileCountHorizontal && this.tileCountVertical == format.tileCountVertical && this.cryptoType == format.cryptoType && Float.compare(this.frameRate, format.frameRate) == 0 && Float.compare(this.pixelWidthHeightRatio, format.pixelWidthHeightRatio) == 0 && Objects.equals(this.id, format.id) && Objects.equals(this.label, format.label) && this.labels.equals(format.labels) && Objects.equals(this.codecs, format.codecs) && Objects.equals(this.containerMimeType, format.containerMimeType) && Objects.equals(this.sampleMimeType, format.sampleMimeType) && Objects.equals(this.language, format.language) && Arrays.equals(this.projectionData, format.projectionData) && Objects.equals(this.metadata, format.metadata) && Objects.equals(this.colorInfo, format.colorInfo) && Objects.equals(this.drmInitData, format.drmInitData) && initializationDataEquals(format) && Objects.equals(this.customData, format.customData)) {
                 return true;
             }
         }
@@ -663,6 +685,9 @@ public final class Format {
         }
         if (format.width != -1 && format.height != -1) {
             sb.append(", res=").append(format.width).append("x").append(format.height);
+        }
+        if (format.decodedWidth != -1 && format.decodedHeight != -1) {
+            sb.append(", decRes=").append(format.decodedWidth).append("x").append(format.decodedHeight);
         }
         if (!DoubleMath.fuzzyEquals(format.pixelWidthHeightRatio, 1.0d, 0.001d)) {
             sb.append(", par=").append(Util.formatInvariant("%.3f", Float.valueOf(format.pixelWidthHeightRatio)));
@@ -750,6 +775,8 @@ public final class Format {
         bundle.putLong(FIELD_SUBSAMPLE_OFFSET_US, this.subsampleOffsetUs);
         bundle.putInt(FIELD_WIDTH, this.width);
         bundle.putInt(FIELD_HEIGHT, this.height);
+        bundle.putInt(FIELD_DECODED_WIDTH, this.decodedWidth);
+        bundle.putInt(FIELD_DECODED_HEIGHT, this.decodedHeight);
         bundle.putFloat(FIELD_FRAME_RATE, this.frameRate);
         bundle.putInt(FIELD_ROTATION_DEGREES, this.rotationDegrees);
         bundle.putFloat(FIELD_PIXEL_WIDTH_HEIGHT_RATIO, this.pixelWidthHeightRatio);
@@ -804,7 +831,7 @@ public final class Format {
         Builder drmInitData = builder.setInitializationData(arrayList).setDrmInitData((DrmInitData) bundle.getParcelable(FIELD_DRM_INIT_DATA));
         String str = FIELD_SUBSAMPLE_OFFSET_US;
         Format format2 = DEFAULT;
-        drmInitData.setSubsampleOffsetUs(bundle.getLong(str, format2.subsampleOffsetUs)).setWidth(bundle.getInt(FIELD_WIDTH, format2.width)).setHeight(bundle.getInt(FIELD_HEIGHT, format2.height)).setFrameRate(bundle.getFloat(FIELD_FRAME_RATE, format2.frameRate)).setRotationDegrees(bundle.getInt(FIELD_ROTATION_DEGREES, format2.rotationDegrees)).setPixelWidthHeightRatio(bundle.getFloat(FIELD_PIXEL_WIDTH_HEIGHT_RATIO, format2.pixelWidthHeightRatio)).setProjectionData(bundle.getByteArray(FIELD_PROJECTION_DATA)).setStereoMode(bundle.getInt(FIELD_STEREO_MODE, format2.stereoMode)).setMaxSubLayers(bundle.getInt(FIELD_MAX_SUB_LAYERS, format2.maxSubLayers));
+        drmInitData.setSubsampleOffsetUs(bundle.getLong(str, format2.subsampleOffsetUs)).setWidth(bundle.getInt(FIELD_WIDTH, format2.width)).setHeight(bundle.getInt(FIELD_HEIGHT, format2.height)).setDecodedWidth(bundle.getInt(FIELD_DECODED_WIDTH, format2.decodedWidth)).setDecodedHeight(bundle.getInt(FIELD_DECODED_HEIGHT, format2.decodedHeight)).setFrameRate(bundle.getFloat(FIELD_FRAME_RATE, format2.frameRate)).setRotationDegrees(bundle.getInt(FIELD_ROTATION_DEGREES, format2.rotationDegrees)).setPixelWidthHeightRatio(bundle.getFloat(FIELD_PIXEL_WIDTH_HEIGHT_RATIO, format2.pixelWidthHeightRatio)).setProjectionData(bundle.getByteArray(FIELD_PROJECTION_DATA)).setStereoMode(bundle.getInt(FIELD_STEREO_MODE, format2.stereoMode)).setMaxSubLayers(bundle.getInt(FIELD_MAX_SUB_LAYERS, format2.maxSubLayers));
         Bundle bundle2 = bundle.getBundle(FIELD_COLOR_INFO);
         if (bundle2 != null) {
             builder.setColorInfo(ColorInfo.fromBundle(bundle2));

@@ -5,14 +5,14 @@ import java.util.List;
 public abstract class Ja {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ei f504a;
+    public final Ei f503a;
 
     public Ja(Ei ei) {
-        this.f504a = ei;
+        this.f503a = ei;
     }
 
     public final Ei a() {
-        return this.f504a;
+        return this.f503a;
     }
 
     public abstract void a(List list);

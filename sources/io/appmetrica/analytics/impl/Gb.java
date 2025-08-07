@@ -6,16 +6,16 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class Gb implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0309hd f453a;
+    public final C0310hd f452a;
 
     public Gb() {
-        this(new C0309hd(new On()));
+        this(new C0310hd(new On()));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final byte[] fromModel(Nn nn) {
-        return MessageNano.toByteArray((MessageNano) this.f453a.f884a.fromModel(nn));
+        return MessageNano.toByteArray((MessageNano) this.f452a.f883a.fromModel(nn));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -24,8 +24,8 @@ public final class Gb implements Converter {
         throw new UnsupportedOperationException();
     }
 
-    public Gb(C0309hd c0309hd) {
-        this.f453a = c0309hd;
+    public Gb(C0310hd c0310hd) {
+        this.f452a = c0310hd;
     }
 
     public final Nn a(byte[] bArr) {

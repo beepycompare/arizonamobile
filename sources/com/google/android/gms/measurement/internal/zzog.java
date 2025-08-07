@@ -1,31 +1,27 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.common.util.Clock;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzog extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<zzog> CREATOR = new zzoh();
-    public final String zza;
-    public final long zzb;
-    public final int zzc;
+final class zzog {
+    private final Clock zza;
+    private long zzb;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzog(String str, long j, int i) {
-        this.zza = str;
-        this.zzb = j;
-        this.zzc = i;
+    public zzog(Clock clock) {
+        Preconditions.checkNotNull(clock);
+        this.zza = clock;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        String str = this.zza;
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeString(parcel, 1, str, false);
-        SafeParcelWriter.writeLong(parcel, 2, this.zzb);
-        SafeParcelWriter.writeInt(parcel, 3, this.zzc);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    public final void zza() {
+        this.zzb = this.zza.elapsedRealtime();
+    }
+
+    public final void zzb() {
+        this.zzb = 0L;
+    }
+
+    public final boolean zzc(long j) {
+        return this.zzb == 0 || this.zza.elapsedRealtime() - this.zzb >= 3600000;
     }
 }

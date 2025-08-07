@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WithTimeoutOrThrow.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+@Metadata(k = 3, mv = {1, 7, 0}, xi = 48)
 @DebugMetadata(c = "ru.rustore.sdk.core.util.WithTimeoutOrThrowKt", f = "WithTimeoutOrThrow.kt", i = {0}, l = {13}, m = "withTimeoutOrThrow", n = {"exceptionFactory"}, s = {"L$0"})
 /* loaded from: classes5.dex */
 public final class WithTimeoutOrThrowKt$withTimeoutOrThrow$1<T> extends ContinuationImpl {

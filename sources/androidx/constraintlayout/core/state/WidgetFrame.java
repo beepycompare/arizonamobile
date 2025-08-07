@@ -13,7 +13,6 @@ import androidx.constraintlayout.core.state.Transition;
 import androidx.constraintlayout.core.widgets.ConstraintAnchor;
 import androidx.constraintlayout.core.widgets.ConstraintWidget;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.reactivex.annotations.SchedulerSupport;
 import java.util.HashMap;
@@ -731,7 +730,7 @@ public class WidgetFrame {
         StackTraceElement stackTraceElement = new Throwable().getStackTrace()[1];
         String str2 = (".(" + stackTraceElement.getFileName() + StringUtils.PROCESS_POSTFIX_DELIMITER + stackTraceElement.getLineNumber() + ") " + stackTraceElement.getMethodName()) + " " + (hashCode() % 1000);
         if (this.widget != null) {
-            str = str2 + RemoteSettings.FORWARD_SLASH_STRING + (this.widget.hashCode() % 1000) + " ";
+            str = str2 + "/" + (this.widget.hashCode() % 1000) + " ";
         } else {
             str = str2 + "/NULL ";
         }
@@ -749,7 +748,7 @@ public class WidgetFrame {
         StackTraceElement stackTraceElement = new Throwable().getStackTrace()[1];
         String str3 = (".(" + stackTraceElement.getFileName() + StringUtils.PROCESS_POSTFIX_DELIMITER + stackTraceElement.getLineNumber() + ") " + stackTraceElement.getMethodName()) + " " + (hashCode() % 1000);
         if (this.widget != null) {
-            str2 = str3 + RemoteSettings.FORWARD_SLASH_STRING + (this.widget.hashCode() % 1000);
+            str2 = str3 + "/" + (this.widget.hashCode() % 1000);
         } else {
             str2 = str3 + "/NULL";
         }

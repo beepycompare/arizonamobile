@@ -2,7 +2,6 @@ package com.google.android.gms.common.util;
 
 import android.text.TextUtils;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -120,7 +119,7 @@ public final class JsonUtils {
             if (charAt == '\"') {
                 matcher.appendReplacement(stringBuffer, "\"");
             } else if (charAt == '/') {
-                matcher.appendReplacement(stringBuffer, RemoteSettings.FORWARD_SLASH_STRING);
+                matcher.appendReplacement(stringBuffer, "/");
             } else if (charAt == '\\') {
                 matcher.appendReplacement(stringBuffer, "\\\\");
             } else if (charAt == 'b') {

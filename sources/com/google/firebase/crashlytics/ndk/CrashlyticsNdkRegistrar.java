@@ -24,7 +24,7 @@ public class CrashlyticsNdkRegistrar implements ComponentRegistrar {
                 buildCrashlyticsNdk = CrashlyticsNdkRegistrar.this.buildCrashlyticsNdk(componentContainer);
                 return buildCrashlyticsNdk;
             }
-        }).eagerInDefaultApp().build(), LibraryVersionComponent.create(LIBRARY_NAME, "19.4.4"));
+        }).eagerInDefaultApp().build(), LibraryVersionComponent.create(LIBRARY_NAME, "20.0.0"));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

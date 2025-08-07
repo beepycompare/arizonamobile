@@ -496,7 +496,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         } catch (Exception e) {
             Log.d("FAMILY_ARIZONA", data + "  " + e.getMessage());
             e.printStackTrace();
-            Toast.makeText(getTargetActivity(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
         }
     }
 

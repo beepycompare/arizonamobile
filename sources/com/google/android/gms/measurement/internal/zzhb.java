@@ -1,38 +1,73 @@
 package com.google.android.gms.measurement.internal;
 
-import android.content.SharedPreferences;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import com.google.android.gms.common.internal.Preconditions;
-import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzhb {
-    final /* synthetic */ zzhg zza;
-    private final String zzb;
-    private final boolean zzc;
-    private boolean zzd;
-    private boolean zze;
+public final class zzhb extends BroadcastReceiver {
+    private final zzpg zza;
+    private boolean zzb;
+    private boolean zzc;
 
-    public zzhb(zzhg zzhgVar, String str, boolean z) {
-        Objects.requireNonNull(zzhgVar);
-        this.zza = zzhgVar;
-        Preconditions.checkNotEmpty(str);
-        this.zzb = str;
-        this.zzc = z;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzhb(zzpg zzpgVar) {
+        Preconditions.checkNotNull(zzpgVar);
+        this.zza = zzpgVar;
     }
 
-    public final boolean zza() {
-        if (!this.zzd) {
-            this.zzd = true;
-            zzhg zzhgVar = this.zza;
-            this.zze = zzhgVar.zzd().getBoolean(this.zzb, this.zzc);
+    @Override // android.content.BroadcastReceiver
+    public final void onReceive(Context context, Intent intent) {
+        zzpg zzpgVar = this.zza;
+        zzpgVar.zzu();
+        String action = intent.getAction();
+        zzpgVar.zzaV().zzk().zzb("NetworkBroadcastReceiver received action", action);
+        if (!"android.net.conn.CONNECTIVITY_CHANGE".equals(action)) {
+            zzpgVar.zzaV().zze().zzb("NetworkBroadcastReceiver received unknown action", action);
+            return;
         }
-        return this.zze;
+        boolean zzb = zzpgVar.zzi().zzb();
+        if (this.zzc != zzb) {
+            this.zzc = zzb;
+            zzpgVar.zzaW().zzj(new zzha(this, zzb));
+        }
     }
 
-    public final void zzb(boolean z) {
-        SharedPreferences.Editor edit = this.zza.zzd().edit();
-        edit.putBoolean(this.zzb, z);
-        edit.apply();
-        this.zze = z;
+    public final void zza() {
+        zzpg zzpgVar = this.zza;
+        zzpgVar.zzu();
+        zzpgVar.zzaW().zzg();
+        if (this.zzb) {
+            return;
+        }
+        zzpgVar.zzaY().registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+        this.zzc = zzpgVar.zzi().zzb();
+        zzpgVar.zzaV().zzk().zzb("Registering connectivity change receiver. Network connected", Boolean.valueOf(this.zzc));
+        this.zzb = true;
+    }
+
+    public final void zzb() {
+        zzpg zzpgVar = this.zza;
+        zzpgVar.zzu();
+        zzpgVar.zzaW().zzg();
+        zzpgVar.zzaW().zzg();
+        if (this.zzb) {
+            zzpgVar.zzaV().zzk().zza("Unregistering connectivity change receiver");
+            this.zzb = false;
+            this.zzc = false;
+            try {
+                zzpgVar.zzaY().unregisterReceiver(this);
+            } catch (IllegalArgumentException e) {
+                this.zza.zzaV().zzb().zzb("Failed to unregister the network broadcast receiver", e);
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ zzpg zzc() {
+        return this.zza;
     }
 }

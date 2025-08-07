@@ -1,11 +1,12 @@
 package androidx.media3.exoplayer.audio;
 
 import androidx.media3.common.audio.AudioProcessor;
+import androidx.media3.common.audio.BaseAudioProcessor;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import java.nio.ByteBuffer;
 /* loaded from: classes2.dex */
-public final class SilenceSkippingAudioProcessor extends androidx.media3.common.audio.BaseAudioProcessor {
+public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
     private static final int AVOID_TRUNCATION_FACTOR = 1000;
     public static final long DEFAULT_MAX_SILENCE_TO_KEEP_DURATION_US = 2000000;
     public static final long DEFAULT_MINIMUM_SILENCE_DURATION_US = 100000;

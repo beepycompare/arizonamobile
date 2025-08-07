@@ -22,7 +22,6 @@ import androidx.constraintlayout.widget.ConstraintAttribute;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.constraintlayout.widget.R;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -150,8 +149,13 @@ public class ViewTransition {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0060, code lost:
+        if (r2.equals(androidx.constraintlayout.motion.widget.ViewTransition.CUSTOM_METHOD) != false) goto L29;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public ViewTransition(Context context, XmlPullParser xmlPullParser) {
-        boolean z;
         this.mContext = context;
         try {
             int eventType = xmlPullParser.getEventType();
@@ -161,59 +165,42 @@ public class ViewTransition {
                     switch (name.hashCode()) {
                         case -1962203927:
                             if (name.equals(CONSTRAINT_OVERRIDE)) {
-                                z = true;
-                                break;
+                                this.mConstraintDelta = ConstraintSet.buildDelta(context, xmlPullParser);
+                                continue;
                             }
-                            z = true;
-                            break;
+                            Log.e("ViewTransition", Debug.getLoc() + " unknown tag " + name);
+                            Log.e("ViewTransition", ".xml:" + xmlPullParser.getLineNumber());
+                            continue;
                         case -1239391468:
                             if (name.equals(KEY_FRAME_SET_TAG)) {
-                                z = true;
-                                break;
+                                this.mKeyFrames = new KeyFrames(context, xmlPullParser);
+                                continue;
                             }
-                            z = true;
-                            break;
+                            Log.e("ViewTransition", Debug.getLoc() + " unknown tag " + name);
+                            Log.e("ViewTransition", ".xml:" + xmlPullParser.getLineNumber());
+                            continue;
                         case 61998586:
                             if (name.equals("ViewTransition")) {
-                                z = false;
-                                break;
+                                parseViewTransitionTags(context, xmlPullParser);
+                                continue;
                             }
-                            z = true;
-                            break;
+                            Log.e("ViewTransition", Debug.getLoc() + " unknown tag " + name);
+                            Log.e("ViewTransition", ".xml:" + xmlPullParser.getLineNumber());
+                            continue;
                         case 366511058:
-                            if (name.equals(CUSTOM_METHOD)) {
-                                z = true;
-                                break;
-                            }
-                            z = true;
                             break;
                         case 1791837707:
                             if (name.equals(CUSTOM_ATTRIBUTE)) {
-                                z = true;
-                                break;
+                                ConstraintAttribute.parse(context, xmlPullParser, this.mConstraintDelta.mCustomConstraints);
+                                continue;
                             }
-                            z = true;
-                            break;
+                            Log.e("ViewTransition", Debug.getLoc() + " unknown tag " + name);
+                            Log.e("ViewTransition", ".xml:" + xmlPullParser.getLineNumber());
+                            continue;
                         default:
-                            z = true;
-                            break;
-                    }
-                    if (!z) {
-                        parseViewTransitionTags(context, xmlPullParser);
-                        continue;
-                    } else if (z) {
-                        this.mKeyFrames = new KeyFrames(context, xmlPullParser);
-                        continue;
-                    } else if (z) {
-                        this.mConstraintDelta = ConstraintSet.buildDelta(context, xmlPullParser);
-                        continue;
-                    } else if (z || z) {
-                        ConstraintAttribute.parse(context, xmlPullParser, this.mConstraintDelta.mCustomConstraints);
-                        continue;
-                    } else {
-                        Log.e("ViewTransition", Debug.getLoc() + " unknown tag " + name);
-                        Log.e("ViewTransition", ".xml:" + xmlPullParser.getLineNumber());
-                        continue;
+                            Log.e("ViewTransition", Debug.getLoc() + " unknown tag " + name);
+                            Log.e("ViewTransition", ".xml:" + xmlPullParser.getLineNumber());
+                            continue;
                     }
                 } else if (eventType == 3 && "ViewTransition".equals(xmlPullParser.getName())) {
                     return;
@@ -269,7 +256,7 @@ public class ViewTransition {
                 } else if (peekValue.type == 3) {
                     String string = obtainStyledAttributes.getString(index);
                     this.mDefaultInterpolatorString = string;
-                    if (string != null && string.indexOf(RemoteSettings.FORWARD_SLASH_STRING) > 0) {
+                    if (string != null && string.indexOf("/") > 0) {
                         this.mDefaultInterpolatorID = obtainStyledAttributes.getResourceId(index, -1);
                         this.mDefaultInterpolator = -2;
                     } else {

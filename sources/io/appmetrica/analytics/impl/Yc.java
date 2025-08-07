@@ -6,7 +6,7 @@ import java.util.Map;
 public class Yc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f734a;
+    public final Map f733a;
     public final Object b;
 
     public Yc(Object obj) {
@@ -14,16 +14,16 @@ public class Yc {
     }
 
     public final void a(Object obj, Object obj2) {
-        this.f734a.put(obj, obj2);
+        this.f733a.put(obj, obj2);
     }
 
     public Yc(HashMap hashMap, Object obj) {
-        this.f734a = hashMap;
+        this.f733a = hashMap;
         this.b = obj;
     }
 
     public final Object a(Object obj) {
-        Object obj2 = this.f734a.get(obj);
+        Object obj2 = this.f733a.get(obj);
         return obj2 == null ? this.b : obj2;
     }
 }

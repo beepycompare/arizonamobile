@@ -1,6 +1,8 @@
 package com.google.firebase.remoteconfig.internal;
 
 import android.util.Log;
+import com.google.android.gms.common.util.Clock;
+import com.google.android.gms.common.util.DefaultClock;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
@@ -16,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.util.Date;
 import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
@@ -25,6 +28,7 @@ import org.json.JSONException;
 public class ConfigAutoFetch {
     private static final int MAXIMUM_FETCH_ATTEMPTS = 3;
     private static final String REALTIME_DISABLED_KEY = "featureDisabled";
+    private static final String REALTIME_RETRY_INTERVAL = "retryIntervalSeconds";
     private static final String TEMPLATE_VERSION_KEY = "latestTemplateVersionNumber";
     private final ConfigCacheClient activatedCache;
     private final ConfigFetchHandler configFetchHandler;
@@ -32,16 +36,23 @@ public class ConfigAutoFetch {
     private final HttpURLConnection httpURLConnection;
     private final ConfigUpdateListener retryCallback;
     private final ScheduledExecutorService scheduledExecutorService;
+    private final ConfigSharedPrefsClient sharedPrefsClient;
     private final Random random = new Random();
     private boolean isInBackground = false;
+    private final Clock clock = DefaultClock.getInstance();
 
-    public ConfigAutoFetch(HttpURLConnection httpURLConnection, ConfigFetchHandler configFetchHandler, ConfigCacheClient configCacheClient, Set<ConfigUpdateListener> set, ConfigUpdateListener configUpdateListener, ScheduledExecutorService scheduledExecutorService) {
+    public ConfigAutoFetch(HttpURLConnection httpURLConnection, ConfigFetchHandler configFetchHandler, ConfigCacheClient configCacheClient, Set<ConfigUpdateListener> set, ConfigUpdateListener configUpdateListener, ScheduledExecutorService scheduledExecutorService, ConfigSharedPrefsClient configSharedPrefsClient) {
         this.httpURLConnection = httpURLConnection;
         this.configFetchHandler = configFetchHandler;
         this.activatedCache = configCacheClient;
         this.eventListeners = set;
         this.retryCallback = configUpdateListener;
         this.scheduledExecutorService = scheduledExecutorService;
+        this.sharedPrefsClient = configSharedPrefsClient;
+    }
+
+    private synchronized void updateBackoffMetadataWithRetryInterval(int i) {
+        this.sharedPrefsClient.setRealtimeBackoffEndTime(new Date(new Date(this.clock.currentTimeMillis()).getTime() + (i * 1000)));
     }
 
     private synchronized void propagateErrors(FirebaseRemoteConfigException firebaseRemoteConfigException) {
@@ -110,33 +121,39 @@ public class ConfigAutoFetch {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x003d, code lost:
-        r4 = new org.json.JSONObject(r3);
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x003f, code lost:
+        r5 = new org.json.JSONObject(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0046, code lost:
-        if (r4.has(com.google.firebase.remoteconfig.internal.ConfigAutoFetch.REALTIME_DISABLED_KEY) == false) goto L38;
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0048, code lost:
+        if (r5.has(com.google.firebase.remoteconfig.internal.ConfigAutoFetch.REALTIME_DISABLED_KEY) == false) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x004c, code lost:
-        if (r4.getBoolean(com.google.firebase.remoteconfig.internal.ConfigAutoFetch.REALTIME_DISABLED_KEY) == false) goto L22;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x004e, code lost:
+        if (r5.getBoolean(com.google.firebase.remoteconfig.internal.ConfigAutoFetch.REALTIME_DISABLED_KEY) == false) goto L22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x004e, code lost:
-        r8.retryCallback.onError(new com.google.firebase.remoteconfig.FirebaseRemoteConfigServerException("The server is temporarily unavailable. Try again in a few minutes.", com.google.firebase.remoteconfig.FirebaseRemoteConfigException.Code.CONFIG_UPDATE_UNAVAILABLE));
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0050, code lost:
+        r10.retryCallback.onError(new com.google.firebase.remoteconfig.FirebaseRemoteConfigServerException("The server is temporarily unavailable. Try again in a few minutes.", com.google.firebase.remoteconfig.FirebaseRemoteConfigException.Code.CONFIG_UPDATE_UNAVAILABLE));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0061, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0063, code lost:
         if (isEventListenersEmpty() == false) goto L25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0068, code lost:
-        if (r4.has(com.google.firebase.remoteconfig.internal.ConfigAutoFetch.TEMPLATE_VERSION_KEY) == false) goto L35;
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x006a, code lost:
+        if (r5.has(com.google.firebase.remoteconfig.internal.ConfigAutoFetch.TEMPLATE_VERSION_KEY) == false) goto L30;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x006a, code lost:
-        r5 = r8.configFetchHandler.getTemplateVersionNumber();
-        r3 = r4.getLong(com.google.firebase.remoteconfig.internal.ConfigAutoFetch.TEMPLATE_VERSION_KEY);
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x006c, code lost:
+        r6 = r10.configFetchHandler.getTemplateVersionNumber();
+        r8 = r5.getLong(com.google.firebase.remoteconfig.internal.ConfigAutoFetch.TEMPLATE_VERSION_KEY);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0076, code lost:
-        if (r3 <= r5) goto L34;
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0078, code lost:
+        if (r8 <= r6) goto L30;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0078, code lost:
-        autoFetch(3, r3);
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x007a, code lost:
+        autoFetch(3, r8);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0082, code lost:
+        if (r5.has(com.google.firebase.remoteconfig.internal.ConfigAutoFetch.REALTIME_RETRY_INTERVAL) == false) goto L36;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0084, code lost:
+        updateBackoffMetadataWithRetryInterval(r5.getInt(com.google.firebase.remoteconfig.internal.ConfigAutoFetch.REALTIME_RETRY_INTERVAL));
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -189,7 +206,7 @@ public class ConfigAutoFetch {
                 return Tasks.whenAllComplete(fetchNowWithTypeAndAttemptNumber, task).continueWithTask(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigAutoFetch$$ExternalSyntheticLambda0
                     @Override // com.google.android.gms.tasks.Continuation
                     public final Object then(Task task2) {
-                        return ConfigAutoFetch.this.m8281xc4c7076e(fetchNowWithTypeAndAttemptNumber, task, j, i2, task2);
+                        return ConfigAutoFetch.this.m8300xc4c7076e(fetchNowWithTypeAndAttemptNumber, task, j, i2, task2);
                     }
                 });
             } catch (Throwable th) {
@@ -204,7 +221,7 @@ public class ConfigAutoFetch {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$fetchLatestConfig$0$com-google-firebase-remoteconfig-internal-ConfigAutoFetch  reason: not valid java name */
-    public /* synthetic */ Task m8281xc4c7076e(Task task, Task task2, long j, int i, Task task3) throws Exception {
+    public /* synthetic */ Task m8300xc4c7076e(Task task, Task task2, long j, int i, Task task3) throws Exception {
         if (!task.isSuccessful()) {
             return Tasks.forException(new FirebaseRemoteConfigClientException("Failed to auto-fetch config update.", task.getException()));
         }

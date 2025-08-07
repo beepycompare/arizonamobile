@@ -48,6 +48,7 @@ public abstract class TrackSelector {
     }
 
     public void init(InvalidationListener invalidationListener, BandwidthMeter bandwidthMeter) {
+        Assertions.checkState(this.listener == null);
         this.listener = invalidationListener;
         this.bandwidthMeter = bandwidthMeter;
     }

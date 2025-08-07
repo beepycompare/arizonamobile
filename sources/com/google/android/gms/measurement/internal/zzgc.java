@@ -1,23 +1,21 @@
 package com.google.android.gms.measurement.internal;
 
+import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
-import java.util.ArrayList;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+import java.util.List;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public abstract class zzgc extends com.google.android.gms.internal.measurement.zzbm implements zzgd {
-    public zzgc() {
-        super("com.google.android.gms.measurement.internal.ITriggerUrisCallback");
+public final class zzgc extends com.google.android.gms.internal.measurement.zzbl implements zzge {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzgc(IBinder iBinder) {
+        super(iBinder, "com.google.android.gms.measurement.internal.ITriggerUrisCallback");
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzbm
-    protected final boolean zza(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
-        if (i == 2) {
-            ArrayList createTypedArrayList = parcel.createTypedArrayList(zzog.CREATOR);
-            com.google.android.gms.internal.measurement.zzbn.zzf(parcel);
-            zze(createTypedArrayList);
-            return true;
-        }
-        return false;
+    @Override // com.google.android.gms.measurement.internal.zzge
+    public final void zze(List list) throws RemoteException {
+        Parcel zza = zza();
+        zza.writeTypedList(list);
+        zzd(2, zza);
     }
 }

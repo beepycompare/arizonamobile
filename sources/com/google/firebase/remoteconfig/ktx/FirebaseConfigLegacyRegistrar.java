@@ -12,6 +12,6 @@ import kotlin.collections.CollectionsKt;
 public final class FirebaseConfigLegacyRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component<?>> getComponents() {
-        return CollectionsKt.listOf(LibraryVersionComponent.create(LoggingKt.LIBRARY_NAME, com.google.firebase.remoteconfig.BuildConfig.VERSION_NAME));
+        return CollectionsKt.listOf(LibraryVersionComponent.create(LoggingKt.LIBRARY_NAME, "22.1.2"));
     }
 }

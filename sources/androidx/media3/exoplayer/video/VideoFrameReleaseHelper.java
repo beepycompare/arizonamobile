@@ -2,6 +2,7 @@ package androidx.media3.exoplayer.video;
 
 import android.content.Context;
 import android.hardware.display.DisplayManager;
+import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
@@ -164,7 +165,7 @@ public final class VideoFrameReleaseHelper {
     }
 
     private void updateSurfaceMediaFrameRate() {
-        if (Util.SDK_INT < 30 || this.surface == null) {
+        if (Build.VERSION.SDK_INT < 30 || this.surface == null) {
             return;
         }
         float frameRate = this.frameRateEstimator.isSynced() ? this.frameRateEstimator.getFrameRate() : this.formatFrameRate;
@@ -187,7 +188,7 @@ public final class VideoFrameReleaseHelper {
     private void updateSurfacePlaybackFrameRate(boolean z) {
         Surface surface;
         float f;
-        if (Util.SDK_INT < 30 || (surface = this.surface) == null || this.changeFrameRateStrategy == Integer.MIN_VALUE) {
+        if (Build.VERSION.SDK_INT < 30 || (surface = this.surface) == null || this.changeFrameRateStrategy == Integer.MIN_VALUE) {
             return;
         }
         if (this.started) {
@@ -210,7 +211,7 @@ public final class VideoFrameReleaseHelper {
 
     private void clearSurfaceFrameRate() {
         Surface surface;
-        if (Util.SDK_INT < 30 || (surface = this.surface) == null || this.changeFrameRateStrategy == Integer.MIN_VALUE || this.surfacePlaybackFrameRate == 0.0f) {
+        if (Build.VERSION.SDK_INT < 30 || (surface = this.surface) == null || this.changeFrameRateStrategy == Integer.MIN_VALUE || this.surfacePlaybackFrameRate == 0.0f) {
             return;
         }
         this.surfacePlaybackFrameRate = 0.0f;

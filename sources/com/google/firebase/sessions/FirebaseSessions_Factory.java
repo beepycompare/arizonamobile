@@ -9,26 +9,26 @@ import kotlin.coroutines.CoroutineContext;
 public final class FirebaseSessions_Factory implements Factory<FirebaseSessions> {
     private final Provider<CoroutineContext> backgroundDispatcherProvider;
     private final Provider<FirebaseApp> firebaseAppProvider;
-    private final Provider<SessionLifecycleServiceBinder> lifecycleServiceBinderProvider;
+    private final Provider<SessionsActivityLifecycleCallbacks> sessionsActivityLifecycleCallbacksProvider;
     private final Provider<SessionsSettings> settingsProvider;
 
-    public FirebaseSessions_Factory(Provider<FirebaseApp> provider, Provider<SessionsSettings> provider2, Provider<CoroutineContext> provider3, Provider<SessionLifecycleServiceBinder> provider4) {
+    public FirebaseSessions_Factory(Provider<FirebaseApp> provider, Provider<SessionsSettings> provider2, Provider<CoroutineContext> provider3, Provider<SessionsActivityLifecycleCallbacks> provider4) {
         this.firebaseAppProvider = provider;
         this.settingsProvider = provider2;
         this.backgroundDispatcherProvider = provider3;
-        this.lifecycleServiceBinderProvider = provider4;
+        this.sessionsActivityLifecycleCallbacksProvider = provider4;
     }
 
     @Override // javax.inject.Provider, jakarta.inject.Provider
     public FirebaseSessions get() {
-        return newInstance(this.firebaseAppProvider.get(), this.settingsProvider.get(), this.backgroundDispatcherProvider.get(), this.lifecycleServiceBinderProvider.get());
+        return newInstance(this.firebaseAppProvider.get(), this.settingsProvider.get(), this.backgroundDispatcherProvider.get(), this.sessionsActivityLifecycleCallbacksProvider.get());
     }
 
-    public static FirebaseSessions_Factory create(Provider<FirebaseApp> provider, Provider<SessionsSettings> provider2, Provider<CoroutineContext> provider3, Provider<SessionLifecycleServiceBinder> provider4) {
+    public static FirebaseSessions_Factory create(Provider<FirebaseApp> provider, Provider<SessionsSettings> provider2, Provider<CoroutineContext> provider3, Provider<SessionsActivityLifecycleCallbacks> provider4) {
         return new FirebaseSessions_Factory(provider, provider2, provider3, provider4);
     }
 
-    public static FirebaseSessions newInstance(FirebaseApp firebaseApp, SessionsSettings sessionsSettings, CoroutineContext coroutineContext, SessionLifecycleServiceBinder sessionLifecycleServiceBinder) {
-        return new FirebaseSessions(firebaseApp, sessionsSettings, coroutineContext, sessionLifecycleServiceBinder);
+    public static FirebaseSessions newInstance(FirebaseApp firebaseApp, SessionsSettings sessionsSettings, CoroutineContext coroutineContext, SessionsActivityLifecycleCallbacks sessionsActivityLifecycleCallbacks) {
+        return new FirebaseSessions(firebaseApp, sessionsSettings, coroutineContext, sessionsActivityLifecycleCallbacks);
     }
 }

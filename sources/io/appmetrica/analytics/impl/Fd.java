@@ -10,44 +10,44 @@ import kotlin.collections.MapsKt;
 public final class Fd implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0739yk f437a = Ia.j().o();
+    public final C0740yk f436a = Ia.j().o();
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0616tm[] fromModel(Map<String, ? extends Object> map) {
-        C0616tm c0616tm;
-        Map<String, C0607td> c = this.f437a.c();
+    public final C0617tm[] fromModel(Map<String, ? extends Object> map) {
+        C0617tm c0617tm;
+        Map<String, C0608td> c = this.f436a.c();
         ArrayList arrayList = new ArrayList();
         for (Map.Entry<String, ? extends Object> entry : map.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            C0607td c0607td = c.get(key);
-            if (c0607td == null || value == null) {
-                c0616tm = null;
+            C0608td c0608td = c.get(key);
+            if (c0608td == null || value == null) {
+                c0617tm = null;
             } else {
-                c0616tm = new C0616tm();
-                c0616tm.f1072a = key;
-                c0616tm.b = (byte[]) c0607td.c.fromModel(value);
+                c0617tm = new C0617tm();
+                c0617tm.f1071a = key;
+                c0617tm.b = (byte[]) c0608td.c.fromModel(value);
             }
-            if (c0616tm != null) {
-                arrayList.add(c0616tm);
+            if (c0617tm != null) {
+                arrayList.add(c0617tm);
             }
         }
-        Object[] array = arrayList.toArray(new C0616tm[0]);
+        Object[] array = arrayList.toArray(new C0617tm[0]);
         if (array != null) {
-            return (C0616tm[]) array;
+            return (C0617tm[]) array;
         }
         throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Map<String, Object> toModel(C0616tm[] c0616tmArr) {
-        Map<String, C0607td> c = this.f437a.c();
+    public final Map<String, Object> toModel(C0617tm[] c0617tmArr) {
+        Map<String, C0608td> c = this.f436a.c();
         ArrayList arrayList = new ArrayList();
-        for (C0616tm c0616tm : c0616tmArr) {
-            C0607td c0607td = c.get(c0616tm.f1072a);
-            Pair pair = c0607td != null ? TuplesKt.to(c0616tm.f1072a, c0607td.c.toModel(c0616tm.b)) : null;
+        for (C0617tm c0617tm : c0617tmArr) {
+            C0608td c0608td = c.get(c0617tm.f1071a);
+            Pair pair = c0608td != null ? TuplesKt.to(c0617tm.f1071a, c0608td.c.toModel(c0617tm.b)) : null;
             if (pair != null) {
                 arrayList.add(pair);
             }

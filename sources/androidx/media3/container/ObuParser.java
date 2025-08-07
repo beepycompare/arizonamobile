@@ -9,6 +9,7 @@ import java.util.List;
 public final class ObuParser {
     public static final int OBU_FRAME = 6;
     public static final int OBU_FRAME_HEADER = 3;
+    public static final int OBU_METADATA = 5;
     public static final int OBU_PADDING = 15;
     public static final int OBU_SEQUENCE_HEADER = 1;
     public static final int OBU_TEMPORAL_DELIMITER = 2;
@@ -61,12 +62,26 @@ public final class ObuParser {
 
     /* loaded from: classes2.dex */
     public static final class SequenceHeader {
+        public final int chromaSamplePosition;
+        public final byte colorPrimaries;
         public final boolean decoderModelInfoPresentFlag;
         public final boolean frameIdNumbersPresentFlag;
+        public final boolean highBitdepth;
+        public final int initialDisplayDelayMinus1;
+        public final boolean initialDisplayDelayPresentFlag;
+        public final byte matrixCoefficients;
+        public final boolean monochrome;
         public final int orderHintBits;
         public final boolean reducedStillPictureHeader;
         public final boolean seqForceIntegerMv;
         public final boolean seqForceScreenContentTools;
+        public final int seqLevelIdx0;
+        public final int seqProfile;
+        public final int seqTier0;
+        public final boolean subsamplingX;
+        public final boolean subsamplingY;
+        public final byte transferCharacteristics;
+        public final boolean twelveBit;
 
         public static SequenceHeader parse(Obu obu) {
             try {
@@ -76,69 +91,183 @@ public final class ObuParser {
             }
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r8v4, types: [int] */
+        /* JADX WARN: Type inference failed for: r8v5 */
+        /* JADX WARN: Type inference failed for: r8v6 */
         private SequenceHeader(Obu obu) throws NotYetImplementedException {
+            int i;
+            int i2;
+            boolean z;
+            ?? r8;
             Assertions.checkArgument(obu.type == 1);
             byte[] bArr = new byte[obu.payload.remaining()];
             obu.payload.asReadOnlyBuffer().get(bArr);
             ParsableBitArray parsableBitArray = new ParsableBitArray(bArr);
-            parsableBitArray.skipBits(4);
+            this.seqProfile = parsableBitArray.readBits(3);
+            parsableBitArray.skipBit();
             boolean readBit = parsableBitArray.readBit();
             this.reducedStillPictureHeader = readBit;
-            ObuParser.throwWhenFeatureRequired(readBit);
-            if (parsableBitArray.readBit()) {
-                skipTimingInfo(parsableBitArray);
-                boolean readBit2 = parsableBitArray.readBit();
-                this.decoderModelInfoPresentFlag = readBit2;
-                if (readBit2) {
-                    parsableBitArray.skipBits(47);
-                }
-            } else {
+            if (readBit) {
+                i2 = parsableBitArray.readBits(5);
                 this.decoderModelInfoPresentFlag = false;
-            }
-            boolean readBit3 = parsableBitArray.readBit();
-            int readBits = parsableBitArray.readBits(5);
-            for (int i = 0; i <= readBits; i++) {
-                parsableBitArray.skipBits(12);
-                if (parsableBitArray.readBits(5) > 7) {
-                    parsableBitArray.skipBit();
+                this.initialDisplayDelayPresentFlag = false;
+                r8 = 0;
+                i = 0;
+            } else {
+                if (parsableBitArray.readBit()) {
+                    skipTimingInfo(parsableBitArray);
+                    boolean readBit2 = parsableBitArray.readBit();
+                    this.decoderModelInfoPresentFlag = readBit2;
+                    if (readBit2) {
+                        parsableBitArray.skipBits(47);
+                    }
+                } else {
+                    this.decoderModelInfoPresentFlag = false;
                 }
-                ObuParser.throwWhenFeatureRequired(this.decoderModelInfoPresentFlag);
-                if (readBit3 && parsableBitArray.readBit()) {
-                    parsableBitArray.skipBits(4);
+                this.initialDisplayDelayPresentFlag = parsableBitArray.readBit();
+                int readBits = parsableBitArray.readBits(5);
+                int i3 = 0;
+                int i4 = 0;
+                boolean z2 = false;
+                i = 0;
+                while (i4 <= readBits) {
+                    parsableBitArray.skipBits(12);
+                    if (i4 == 0) {
+                        i3 = parsableBitArray.readBits(5);
+                        z = z2;
+                        if (i3 > 7) {
+                            z = parsableBitArray.readBit();
+                        }
+                    } else {
+                        z = z2;
+                        if (parsableBitArray.readBits(5) > 7) {
+                            parsableBitArray.skipBit();
+                            z = z2;
+                        }
+                    }
+                    if (this.decoderModelInfoPresentFlag) {
+                        parsableBitArray.skipBit();
+                    }
+                    if (this.initialDisplayDelayPresentFlag && parsableBitArray.readBit()) {
+                        if (i4 == 0) {
+                            i = parsableBitArray.readBits(4);
+                        } else {
+                            parsableBitArray.skipBits(4);
+                        }
+                    }
+                    i4++;
+                    z2 = z;
                 }
+                i2 = i3;
+                r8 = z2;
             }
             int readBits2 = parsableBitArray.readBits(4);
             int readBits3 = parsableBitArray.readBits(4);
             parsableBitArray.skipBits(readBits2 + 1);
             parsableBitArray.skipBits(readBits3 + 1);
-            boolean readBit4 = parsableBitArray.readBit();
-            this.frameIdNumbersPresentFlag = readBit4;
-            ObuParser.throwWhenFeatureRequired(readBit4);
+            if (!this.reducedStillPictureHeader) {
+                this.frameIdNumbersPresentFlag = parsableBitArray.readBit();
+            } else {
+                this.frameIdNumbersPresentFlag = false;
+            }
+            if (this.frameIdNumbersPresentFlag) {
+                parsableBitArray.skipBits(4);
+                parsableBitArray.skipBits(3);
+            }
             parsableBitArray.skipBits(3);
-            parsableBitArray.skipBits(4);
-            boolean readBit5 = parsableBitArray.readBit();
-            if (readBit5) {
-                parsableBitArray.skipBits(2);
+            if (this.reducedStillPictureHeader) {
+                this.seqForceIntegerMv = true;
+                this.seqForceScreenContentTools = true;
+                this.orderHintBits = 0;
+            } else {
+                parsableBitArray.skipBits(4);
+                boolean readBit3 = parsableBitArray.readBit();
+                if (readBit3) {
+                    parsableBitArray.skipBits(2);
+                }
+                if (parsableBitArray.readBit()) {
+                    this.seqForceScreenContentTools = true;
+                } else {
+                    this.seqForceScreenContentTools = parsableBitArray.readBit();
+                }
+                if (this.seqForceScreenContentTools) {
+                    if (parsableBitArray.readBit()) {
+                        this.seqForceIntegerMv = true;
+                    } else {
+                        this.seqForceIntegerMv = parsableBitArray.readBit();
+                    }
+                } else {
+                    this.seqForceIntegerMv = true;
+                }
+                if (readBit3) {
+                    this.orderHintBits = parsableBitArray.readBits(3) + 1;
+                } else {
+                    this.orderHintBits = 0;
+                }
+            }
+            this.seqLevelIdx0 = i2;
+            this.seqTier0 = r8;
+            this.initialDisplayDelayMinus1 = i;
+            parsableBitArray.skipBits(3);
+            boolean readBit4 = parsableBitArray.readBit();
+            this.highBitdepth = readBit4;
+            if (this.seqProfile == 2 && readBit4) {
+                this.twelveBit = parsableBitArray.readBit();
+            } else {
+                this.twelveBit = false;
+            }
+            if (this.seqProfile != 1) {
+                this.monochrome = parsableBitArray.readBit();
+            } else {
+                this.monochrome = false;
             }
             if (parsableBitArray.readBit()) {
-                this.seqForceScreenContentTools = true;
+                this.colorPrimaries = (byte) parsableBitArray.readBits(8);
+                this.transferCharacteristics = (byte) parsableBitArray.readBits(8);
+                this.matrixCoefficients = (byte) parsableBitArray.readBits(8);
             } else {
-                this.seqForceScreenContentTools = parsableBitArray.readBit();
+                this.colorPrimaries = (byte) 0;
+                this.transferCharacteristics = (byte) 0;
+                this.matrixCoefficients = (byte) 0;
             }
-            if (this.seqForceScreenContentTools) {
-                if (parsableBitArray.readBit()) {
-                    this.seqForceIntegerMv = true;
+            if (this.monochrome) {
+                parsableBitArray.skipBit();
+                this.subsamplingX = false;
+                this.subsamplingY = false;
+                this.chromaSamplePosition = 0;
+            } else if (this.colorPrimaries == 1 && this.transferCharacteristics == 13 && this.matrixCoefficients == 0) {
+                this.subsamplingX = false;
+                this.subsamplingY = false;
+                this.chromaSamplePosition = 0;
+            } else {
+                parsableBitArray.skipBit();
+                int i5 = this.seqProfile;
+                if (i5 == 0) {
+                    this.subsamplingX = true;
+                    this.subsamplingY = true;
+                } else if (i5 == 1) {
+                    this.subsamplingX = false;
+                    this.subsamplingY = false;
+                } else if (this.twelveBit) {
+                    boolean readBit5 = parsableBitArray.readBit();
+                    this.subsamplingX = readBit5;
+                    if (readBit5) {
+                        this.subsamplingY = parsableBitArray.readBit();
+                    } else {
+                        this.subsamplingY = false;
+                    }
                 } else {
-                    this.seqForceIntegerMv = parsableBitArray.readBit();
+                    this.subsamplingX = true;
+                    this.subsamplingY = false;
                 }
-            } else {
-                this.seqForceIntegerMv = true;
+                if (this.subsamplingX && this.subsamplingY) {
+                    this.chromaSamplePosition = parsableBitArray.readBits(2);
+                } else {
+                    this.chromaSamplePosition = 0;
+                }
             }
-            if (readBit5) {
-                this.orderHintBits = parsableBitArray.readBits(3) + 1;
-            } else {
-                this.orderHintBits = 0;
-            }
+            parsableBitArray.skipBit();
         }
 
         private static void skipTimingInfo(ParsableBitArray parsableBitArray) {

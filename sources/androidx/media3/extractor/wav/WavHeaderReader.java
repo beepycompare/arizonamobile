@@ -9,10 +9,14 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.WavUtil;
+import com.google.common.base.Ascii;
 import java.io.IOException;
+import java.util.Arrays;
 /* loaded from: classes2.dex */
 final class WavHeaderReader {
     private static final String TAG = "WavHeaderReader";
+    private static final byte[] WAVEEXT_SUBFORMAT = {0, 0, 0, 0, Ascii.DLE, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
+    private static final byte[] AMBISONIC_SUBFORMAT = {0, 0, 33, 7, -45, 17, -122, 68, -56, -63, -54, 0, 0, 0};
 
     public static boolean checkFileType(ExtractorInput extractorInput) throws IOException {
         ParsableByteArray parsableByteArray = new ParsableByteArray(8);
@@ -62,11 +66,33 @@ final class WavHeaderReader {
         if (i > 0) {
             bArr = new byte[i];
             extractorInput.peekFully(bArr, 0, i);
+            if (readLittleEndianUnsignedShort == 65534 && i == 24) {
+                ParsableByteArray parsableByteArray2 = new ParsableByteArray(bArr);
+                parsableByteArray2.readLittleEndianUnsignedShort();
+                int readLittleEndianUnsignedShort5 = parsableByteArray2.readLittleEndianUnsignedShort();
+                if (readLittleEndianUnsignedShort5 != 0 && readLittleEndianUnsignedShort5 != readLittleEndianUnsignedShort4) {
+                    throw ParserException.createForUnsupportedContainerFeature("validBits ( " + readLittleEndianUnsignedShort5 + ")  != bitsPerSample( " + readLittleEndianUnsignedShort4 + ") are not supported");
+                }
+                int readLittleEndianUnsignedIntToInt3 = parsableByteArray2.readLittleEndianUnsignedIntToInt();
+                if ((readLittleEndianUnsignedIntToInt3 >> 18) != 0) {
+                    throw ParserException.createForUnsupportedContainerFeature("invalid channel mask " + readLittleEndianUnsignedIntToInt3);
+                }
+                if (readLittleEndianUnsignedIntToInt3 != 0 && Integer.bitCount(readLittleEndianUnsignedIntToInt3) != readLittleEndianUnsignedShort2) {
+                    throw ParserException.createForUnsupportedContainerFeature("invalid number of channels (" + Integer.bitCount(readLittleEndianUnsignedIntToInt3) + ") in channel mask " + readLittleEndianUnsignedIntToInt3);
+                }
+                readLittleEndianUnsignedShort = parsableByteArray2.readLittleEndianUnsignedShort();
+                byte[] bArr2 = new byte[14];
+                parsableByteArray2.readBytes(bArr2, 0, 14);
+                if (!Arrays.equals(bArr2, WAVEEXT_SUBFORMAT) && !Arrays.equals(bArr2, AMBISONIC_SUBFORMAT)) {
+                    throw ParserException.createForUnsupportedContainerFeature("invalid wav format extension guid");
+                }
+            }
         } else {
             bArr = Util.EMPTY_BYTE_ARRAY;
         }
+        int i2 = readLittleEndianUnsignedShort;
         extractorInput.skipFully((int) (extractorInput.getPeekPosition() - extractorInput.getPosition()));
-        return new WavFormat(readLittleEndianUnsignedShort, readLittleEndianUnsignedShort2, readLittleEndianUnsignedIntToInt, readLittleEndianUnsignedIntToInt2, readLittleEndianUnsignedShort3, readLittleEndianUnsignedShort4, bArr);
+        return new WavFormat(i2, readLittleEndianUnsignedShort2, readLittleEndianUnsignedIntToInt, readLittleEndianUnsignedIntToInt2, readLittleEndianUnsignedShort3, readLittleEndianUnsignedShort4, bArr);
     }
 
     public static Pair<Long, Long> skipToSampleData(ExtractorInput extractorInput) throws IOException {

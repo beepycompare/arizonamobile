@@ -5,34 +5,34 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Pair;
 import com.google.firebase.messaging.Constants;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzx {
-    private final zzib zza;
+    private final zzic zza;
 
-    public zzx(zzib zzibVar) {
-        this.zza = zzibVar;
+    public zzx(zzic zzicVar) {
+        this.zza = zzicVar;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void zza() {
-        zzib zzibVar = this.zza;
-        zzibVar.zzaW().zzg();
+        zzic zzicVar = this.zza;
+        zzicVar.zzaW().zzg();
         if (zze()) {
             if (zzd()) {
-                zzibVar.zzd().zzr.zzb(null);
+                zzicVar.zzd().zzr.zzb(null);
                 Bundle bundle = new Bundle();
                 bundle.putString("source", "(not set)");
                 bundle.putString("medium", "(not set)");
                 bundle.putString("_cis", "intent");
                 bundle.putLong("_cc", 1L);
-                zzibVar.zzj().zzF("auto", "_cmpx", bundle);
+                zzicVar.zzj().zzF("auto", "_cmpx", bundle);
             } else {
-                String zza = zzibVar.zzd().zzr.zza();
+                String zza = zzicVar.zzd().zzr.zza();
                 if (TextUtils.isEmpty(zza)) {
-                    zzibVar.zzaV().zzc().zza("Cache still valid but referrer not found");
+                    zzicVar.zzaV().zzc().zza("Cache still valid but referrer not found");
                 } else {
-                    long zza2 = zzibVar.zzd().zzs.zza() / 3600000;
+                    long zza2 = zzicVar.zzd().zzs.zza() / 3600000;
                     Uri parse = Uri.parse(zza);
                     Bundle bundle2 = new Bundle();
                     Pair pair = new Pair(parse.getPath(), bundle2);
@@ -40,20 +40,20 @@ public final class zzx {
                         bundle2.putString(str, parse.getQueryParameter(str));
                     }
                     ((Bundle) pair.second).putLong("_cc", (zza2 - 1) * 3600000);
-                    zzibVar.zzj().zzF(pair.first == null ? "app" : (String) pair.first, Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN, (Bundle) pair.second);
+                    zzicVar.zzj().zzF(pair.first == null ? "app" : (String) pair.first, Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN, (Bundle) pair.second);
                 }
-                zzibVar.zzd().zzr.zzb(null);
+                zzicVar.zzd().zzr.zzb(null);
             }
-            zzibVar.zzd().zzs.zzb(0L);
+            zzicVar.zzd().zzs.zzb(0L);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void zzb(String str, Bundle bundle) {
         String uri;
-        zzib zzibVar = this.zza;
-        zzibVar.zzaW().zzg();
-        if (zzibVar.zzB()) {
+        zzic zzicVar = this.zza;
+        zzicVar.zzaW().zzg();
+        if (zzicVar.zzB()) {
             return;
         }
         if (bundle.isEmpty()) {
@@ -72,8 +72,8 @@ public final class zzx {
         if (TextUtils.isEmpty(uri)) {
             return;
         }
-        zzibVar.zzd().zzr.zzb(uri);
-        zzibVar.zzd().zzs.zzb(zzibVar.zzaZ().currentTimeMillis());
+        zzicVar.zzd().zzr.zzb(uri);
+        zzicVar.zzd().zzs.zzb(zzicVar.zzaZ().currentTimeMillis());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -85,8 +85,8 @@ public final class zzx {
 
     final boolean zzd() {
         if (zze()) {
-            zzib zzibVar = this.zza;
-            return zzibVar.zzaZ().currentTimeMillis() - zzibVar.zzd().zzs.zza() > zzibVar.zzc().zzl(null, zzfx.zzaj);
+            zzic zzicVar = this.zza;
+            return zzicVar.zzaZ().currentTimeMillis() - zzicVar.zzd().zzs.zza() > zzicVar.zzc().zzl(null, zzfy.zzaj);
         }
         return false;
     }

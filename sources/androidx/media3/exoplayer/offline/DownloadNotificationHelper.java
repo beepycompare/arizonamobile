@@ -3,8 +3,8 @@ package androidx.media3.exoplayer.offline;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.os.Build;
 import androidx.core.app.NotificationCompat;
-import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.R;
 import java.util.List;
 /* loaded from: classes2.dex */
@@ -126,7 +126,7 @@ public final class DownloadNotificationHelper {
         this.notificationBuilder.setProgress(i3, i4, z);
         this.notificationBuilder.setOngoing(z2);
         this.notificationBuilder.setShowWhen(z3);
-        if (Util.SDK_INT >= 31) {
+        if (Build.VERSION.SDK_INT >= 31) {
             Api31.setForegroundServiceBehavior(this.notificationBuilder);
         }
         return this.notificationBuilder.build();

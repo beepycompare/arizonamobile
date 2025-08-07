@@ -1,12 +1,12 @@
 package androidx.media3.common;
 
 import android.os.Binder;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
 import androidx.media3.common.util.Assertions;
-import androidx.media3.common.util.Util;
 import com.google.common.collect.ImmutableList;
 import java.util.Collection;
 import java.util.List;
@@ -19,7 +19,7 @@ public final class BundleListRetriever extends Binder {
     private final ImmutableList<Bundle> list;
 
     static {
-        SUGGESTED_MAX_IPC_SIZE = Util.SDK_INT >= 30 ? IBinder.getSuggestedMaxIpcSizeBytes() : 65536;
+        SUGGESTED_MAX_IPC_SIZE = Build.VERSION.SDK_INT >= 30 ? IBinder.getSuggestedMaxIpcSizeBytes() : 65536;
     }
 
     public BundleListRetriever(List<Bundle> list) {

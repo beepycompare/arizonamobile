@@ -20,11 +20,11 @@ public final class O8 extends MessageNano {
     public static volatile O8[] o;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f576a;
+    public int f575a;
     public N8 b;
     public L8 c;
     public M8 d;
-    public C0702x8 e;
+    public C0703x8 e;
     public D8 f;
 
     public O8() {
@@ -43,7 +43,7 @@ public final class O8 extends MessageNano {
     }
 
     public final O8 a() {
-        this.f576a = 0;
+        this.f575a = 0;
         this.b = null;
         this.c = null;
         this.d = null;
@@ -56,7 +56,7 @@ public final class O8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i2 = this.f576a;
+        int i2 = this.f575a;
         if (i2 != 0) {
             computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(1, i2);
         }
@@ -72,9 +72,9 @@ public final class O8 extends MessageNano {
         if (m8 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(4, m8);
         }
-        C0702x8 c0702x8 = this.e;
-        if (c0702x8 != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(5, c0702x8);
+        C0703x8 c0703x8 = this.e;
+        if (c0703x8 != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(5, c0703x8);
         }
         D8 d8 = this.f;
         return d8 != null ? CodedOutputByteBufferNano.computeMessageSize(6, d8) + computeSerializedSize : computeSerializedSize;
@@ -82,7 +82,7 @@ public final class O8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i2 = this.f576a;
+        int i2 = this.f575a;
         if (i2 != 0) {
             codedOutputByteBufferNano.writeInt32(1, i2);
         }
@@ -98,9 +98,9 @@ public final class O8 extends MessageNano {
         if (m8 != null) {
             codedOutputByteBufferNano.writeMessage(4, m8);
         }
-        C0702x8 c0702x8 = this.e;
-        if (c0702x8 != null) {
-            codedOutputByteBufferNano.writeMessage(5, c0702x8);
+        C0703x8 c0703x8 = this.e;
+        if (c0703x8 != null) {
+            codedOutputByteBufferNano.writeMessage(5, c0703x8);
         }
         D8 d8 = this.f;
         if (d8 != null) {
@@ -126,7 +126,7 @@ public final class O8 extends MessageNano {
                         case 5:
                         case 6:
                         case 7:
-                            this.f576a = readInt32;
+                            this.f575a = readInt32;
                             continue;
                     }
                 } else if (readTag == 18) {
@@ -146,7 +146,7 @@ public final class O8 extends MessageNano {
                     codedInputByteBufferNano.readMessage(this.d);
                 } else if (readTag == 42) {
                     if (this.e == null) {
-                        this.e = new C0702x8();
+                        this.e = new C0703x8();
                     }
                     codedInputByteBufferNano.readMessage(this.e);
                 } else if (readTag != 50) {

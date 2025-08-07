@@ -1,16 +1,22 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
+import org.checkerframework.dataflow.qual.SideEffectFree;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public interface zzqj {
-    boolean zza();
+public final class zzqj implements Supplier {
+    private static final zzqj zza = new zzqj();
+    private final Supplier zzb = Suppliers.ofInstance(new zzql());
 
-    long zzb();
+    @SideEffectFree
+    public static boolean zza() {
+        return zza.get().zza();
+    }
 
-    double zzc();
-
-    long zzd();
-
-    long zze();
-
-    String zzf();
+    @Override // com.google.common.base.Supplier
+    /* renamed from: zzb */
+    public final zzqk get() {
+        return (zzqk) this.zzb.get();
+    }
 }

@@ -1,63 +1,18 @@
 package com.google.android.gms.internal.measurement;
-
-import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
-import org.checkerframework.dataflow.qual.SideEffectFree;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzql implements Supplier {
-    private static final zzql zza = new zzql();
-    private final Supplier zzb = Suppliers.ofInstance(new zzqn());
+public final class zzql implements zzqk {
+    public static final zzkm zza;
 
-    @SideEffectFree
-    public static boolean zza() {
-        zza.get().zza();
-        return true;
+    static {
+        zzkg zzb = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
+        zzb.zzd("measurement.sdk.collection.enable_extend_user_property_size", true);
+        zza = zzb.zzd("measurement.sdk.collection.last_deep_link_referrer_campaign2", false);
+        zzb.zzc("measurement.id.sdk.collection.last_deep_link_referrer2", 0L);
     }
 
-    @SideEffectFree
-    public static boolean zzb() {
-        return zza.get().zzb();
-    }
-
-    @SideEffectFree
-    public static boolean zzc() {
-        return zza.get().zzc();
-    }
-
-    @SideEffectFree
-    public static boolean zzd() {
-        return zza.get().zzd();
-    }
-
-    @SideEffectFree
-    public static boolean zze() {
-        return zza.get().zze();
-    }
-
-    @SideEffectFree
-    public static boolean zzf() {
-        return zza.get().zzf();
-    }
-
-    @SideEffectFree
-    public static boolean zzg() {
-        return zza.get().zzg();
-    }
-
-    @SideEffectFree
-    public static boolean zzh() {
-        return zza.get().zzh();
-    }
-
-    @SideEffectFree
-    public static boolean zzi() {
-        return zza.get().zzi();
-    }
-
-    @Override // com.google.common.base.Supplier
-    /* renamed from: zzj */
-    public final zzqm get() {
-        return (zzqm) this.zzb.get();
+    @Override // com.google.android.gms.internal.measurement.zzqk
+    public final boolean zza() {
+        return ((Boolean) zza.zzd()).booleanValue();
     }
 }

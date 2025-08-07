@@ -1,14 +1,14 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzff extends zzme implements zznm {
+public final class zzff extends zzmf implements zznn {
     private static final zzff zzl;
     private int zzb;
     private int zzd;
     private String zze = "";
-    private zzmn zzf = zzcv();
+    private zzmo zzf = zzcv();
     private boolean zzg;
     private zzfl zzh;
     private boolean zzi;
@@ -18,7 +18,7 @@ public final class zzff extends zzme implements zznm {
     static {
         zzff zzffVar = new zzff();
         zzl = zzffVar;
-        zzme.zzcp(zzff.class, zzffVar);
+        zzmf.zzcp(zzff.class, zzffVar);
     }
 
     private zzff() {
@@ -73,7 +73,7 @@ public final class zzff extends zzme implements zznm {
         return (this.zzb & 64) != 0;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {
@@ -105,9 +105,9 @@ public final class zzff extends zzme implements zznm {
 
     public final /* synthetic */ void zzp(int i, zzfh zzfhVar) {
         zzfhVar.getClass();
-        zzmn zzmnVar = this.zzf;
-        if (!zzmnVar.zza()) {
-            this.zzf = zzme.zzcw(zzmnVar);
+        zzmo zzmoVar = this.zzf;
+        if (!zzmoVar.zza()) {
+            this.zzf = zzmf.zzcw(zzmoVar);
         }
         this.zzf.set(i, zzfhVar);
     }

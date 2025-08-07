@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
@@ -197,7 +198,7 @@ public class DefaultTimeBar extends View implements TimeBar {
         this.stopScrubbingRunnable = new Runnable() { // from class: androidx.media3.ui.DefaultTimeBar$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DefaultTimeBar.this.m7465lambda$new$0$androidxmedia3uiDefaultTimeBar();
+                DefaultTimeBar.this.m7480lambda$new$0$androidxmedia3uiDefaultTimeBar();
             }
         };
         Drawable drawable2 = this.scrubberDrawable;
@@ -212,7 +213,7 @@ public class DefaultTimeBar extends View implements TimeBar {
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.media3.ui.DefaultTimeBar$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                DefaultTimeBar.this.m7466lambda$new$1$androidxmedia3uiDefaultTimeBar(valueAnimator2);
+                DefaultTimeBar.this.m7481lambda$new$1$androidxmedia3uiDefaultTimeBar(valueAnimator2);
             }
         });
         this.duration = C.TIME_UNSET;
@@ -226,13 +227,13 @@ public class DefaultTimeBar extends View implements TimeBar {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-ui-DefaultTimeBar  reason: not valid java name */
-    public /* synthetic */ void m7465lambda$new$0$androidxmedia3uiDefaultTimeBar() {
+    public /* synthetic */ void m7480lambda$new$0$androidxmedia3uiDefaultTimeBar() {
         stopScrubbing(false);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$1$androidx-media3-ui-DefaultTimeBar  reason: not valid java name */
-    public /* synthetic */ void m7466lambda$new$1$androidxmedia3uiDefaultTimeBar(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m7481lambda$new$1$androidxmedia3uiDefaultTimeBar(ValueAnimator valueAnimator) {
         this.scrubberScale = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         invalidate(this.seekBounds);
     }
@@ -536,7 +537,7 @@ public class DefaultTimeBar extends View implements TimeBar {
         }
         this.seekBounds.set(paddingLeft, i5, paddingRight, this.touchTargetHeight + i5);
         this.progressBar.set(this.seekBounds.left + i9, i6, this.seekBounds.right - i9, this.barHeight + i6);
-        if (Util.SDK_INT >= 29) {
+        if (Build.VERSION.SDK_INT >= 29) {
             setSystemGestureExclusionRectsV29(i7, i8);
         }
         update();
@@ -778,10 +779,10 @@ public class DefaultTimeBar extends View implements TimeBar {
     }
 
     private boolean setDrawableLayoutDirection(Drawable drawable) {
-        return Util.SDK_INT >= 23 && setDrawableLayoutDirection(drawable, getLayoutDirection());
+        return setDrawableLayoutDirection(drawable, getLayoutDirection());
     }
 
     private static boolean setDrawableLayoutDirection(Drawable drawable, int i) {
-        return Util.SDK_INT >= 23 && drawable.setLayoutDirection(i);
+        return drawable.setLayoutDirection(i);
     }
 }

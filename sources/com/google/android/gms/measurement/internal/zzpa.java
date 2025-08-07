@@ -1,29 +1,31 @@
 package com.google.android.gms.measurement.internal;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzpa implements zzpn {
-    final /* synthetic */ zzpf zza;
+final class zzpa implements Runnable {
+    final /* synthetic */ String zza;
+    final /* synthetic */ String zzb;
+    final /* synthetic */ Bundle zzc;
+    final /* synthetic */ zzpb zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzpa(zzpf zzpfVar) {
-        Objects.requireNonNull(zzpfVar);
-        this.zza = zzpfVar;
+    public zzpa(zzpb zzpbVar, String str, String str2, Bundle bundle) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = bundle;
+        Objects.requireNonNull(zzpbVar);
+        this.zzd = zzpbVar;
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzpn
-    public final void zza(String str, String str2, Bundle bundle) {
-        if (!TextUtils.isEmpty(str)) {
-            this.zza.zzaW().zzj(new zzoz(this, str, str2, bundle));
-            return;
-        }
-        zzpf zzpfVar = this.zza;
-        if (zzpfVar.zzaw() != null) {
-            zzpfVar.zzaw().zzaV().zzb().zzb("AppId not known when logging event", str2);
-        }
+    @Override // java.lang.Runnable
+    public final void run() {
+        zzpg zzpgVar = this.zzd.zza;
+        zzpp zzt = zzpgVar.zzt();
+        long currentTimeMillis = zzpgVar.zzaZ().currentTimeMillis();
+        String str = this.zza;
+        zzpgVar.zzD((zzbg) Preconditions.checkNotNull(zzt.zzac(str, this.zzb, this.zzc, "auto", currentTimeMillis, false, true)), str);
     }
 }

@@ -8,15 +8,15 @@ import java.io.File;
 public final class A6 extends FileObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Consumer f333a;
+    public final Consumer f332a;
     public final File b;
-    public final C0654va c;
+    public final C0655va c;
 
-    public A6(File file, C6 c6, C0654va c0654va) {
+    public A6(File file, C6 c6, C0655va c0655va) {
         super(file.getAbsolutePath(), 8);
-        this.f333a = c6;
+        this.f332a = c6;
         this.b = file;
-        this.c = c0654va;
+        this.c = c0655va;
     }
 
     @Override // android.os.FileObserver
@@ -24,10 +24,10 @@ public final class A6 extends FileObserver {
         if (i != 8 || TextUtils.isEmpty(str)) {
             return;
         }
-        Consumer consumer = this.f333a;
-        C0654va c0654va = this.c;
+        Consumer consumer = this.f332a;
+        C0655va c0655va = this.c;
         File file = this.b;
-        c0654va.getClass();
+        c0655va.getClass();
         consumer.consume(new File(file, str));
     }
 }

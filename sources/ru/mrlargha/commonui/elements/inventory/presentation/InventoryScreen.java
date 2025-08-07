@@ -22,7 +22,6 @@ import androidx.constraintlayout.widget.Group;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -49,6 +48,7 @@ import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
+import ru.mrlargha.commonui.databinding.LayoutGuardInventoryBinding;
 import ru.mrlargha.commonui.databinding.LayoutVehicleInventoryBinding;
 import ru.mrlargha.commonui.databinding.MainInventoryBinding;
 import ru.mrlargha.commonui.domain.db.AppDatabase;
@@ -1007,11 +1007,14 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void initClickListeners$lambda$54$lambda$40(InventoryScreen inventoryScreen, View view) {
-        IBackendNotifier iBackendNotifier = inventoryScreen.frontendNotifier;
-        int id = UIElementID.INVENTORY_SECURITY_SCREEN.getId();
+        int size = inventoryScreen.guardInfoList.size();
+        int i = inventoryScreen.guardNumber;
+        if (i < 0 || i >= size) {
+            return;
+        }
         byte[] bytes = StringKt.toStringJson(new SendId(inventoryScreen.guardInfoList.get(inventoryScreen.guardNumber).getId())).getBytes(Charsets.UTF_8);
         Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
-        iBackendNotifier.clickedWrapper(id, -1, 3, bytes);
+        inventoryScreen.frontendNotifier.clickedWrapper(UIElementID.INVENTORY_SECURITY_SCREEN.getId(), -1, 3, bytes);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1571,40 +1574,47 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     private final void guardInfoSetUi(List<GuardInfo> list) {
         String str;
         observeGuardAccessories();
-        this.binding.layoutGuards.tvGuardName.setText(list.get(this.guardNumber).getName());
-        this.binding.layoutGuards.tvGuardType.setText(list.get(this.guardNumber).getQuality());
-        this.binding.layoutGuards.tvGuardLevel.setText(list.get(this.guardNumber).getLevel() + " уровень");
-        this.binding.layoutGuards.tvGuardExpPoints.setText(list.get(this.guardNumber).getExp() + RemoteSettings.FORWARD_SLASH_STRING + list.get(this.guardNumber).getMaxExp());
-        this.binding.layoutGuards.tvGuardHealthCount.setText(String.valueOf(list.get(this.guardNumber).getHealth()));
-        this.binding.layoutGuards.tvGuardShieldCount.setText(String.valueOf(list.get(this.guardNumber).getDefence()));
-        this.binding.layoutGuards.tvGuardDamageCount.setText(String.valueOf(list.get(this.guardNumber).getDamage()));
-        AppCompatTextView tvGuardStatus = this.binding.layoutGuards.tvGuardStatus;
-        Intrinsics.checkNotNullExpressionValue(tvGuardStatus, "tvGuardStatus");
-        AppCompatTextView appCompatTextView = tvGuardStatus;
-        Integer died = list.get(this.guardNumber).getDied();
-        appCompatTextView.setVisibility(died == null || died.intValue() != 0 ? 0 : 8);
-        Integer skinBackground = list.get(this.guardNumber).getSkinBackground();
-        if (skinBackground != null) {
-            this.binding.layoutGuards.layoutGuardInfo.setCardBackgroundColor(UtilsKt.getColorTint(skinBackground.intValue()));
+        GuardInfo guardInfo = (GuardInfo) CollectionsKt.getOrNull(list, this.guardNumber);
+        if (guardInfo != null) {
+            LayoutGuardInventoryBinding layoutGuardInventoryBinding = this.binding.layoutGuards;
+            layoutGuardInventoryBinding.tvGuardName.setText(guardInfo.getName());
+            layoutGuardInventoryBinding.tvGuardType.setText(guardInfo.getQuality());
+            layoutGuardInventoryBinding.tvGuardLevel.setText(guardInfo.getLevel() + " уровень");
+            layoutGuardInventoryBinding.tvGuardExpPoints.setText(guardInfo.getExp() + "/" + guardInfo.getMaxExp());
+            layoutGuardInventoryBinding.tvGuardHealthCount.setText(String.valueOf(guardInfo.getHealth()));
+            layoutGuardInventoryBinding.tvGuardShieldCount.setText(String.valueOf(guardInfo.getDefence()));
+            layoutGuardInventoryBinding.tvGuardDamageCount.setText(String.valueOf(guardInfo.getDamage()));
+            AppCompatTextView tvGuardStatus = layoutGuardInventoryBinding.tvGuardStatus;
+            Intrinsics.checkNotNullExpressionValue(tvGuardStatus, "tvGuardStatus");
+            AppCompatTextView appCompatTextView = tvGuardStatus;
+            Integer died = guardInfo.getDied();
+            appCompatTextView.setVisibility(died == null || died.intValue() != 0 ? 0 : 8);
+            Integer skinBackground = guardInfo.getSkinBackground();
+            if (skinBackground != null) {
+                this.binding.layoutGuards.layoutGuardInfo.setCardBackgroundColor(UtilsKt.getColorTint(skinBackground.intValue()));
+            }
+            RecyclerView rvGuardInventory = this.binding.rvGuardInventory;
+            Intrinsics.checkNotNullExpressionValue(rvGuardInventory, "rvGuardInventory");
+            rvGuardInventory.setVisibility(8);
+            if (this.isArizonaType) {
+                str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/inventory/skins/512/" + guardInfo.getSkin() + ".webp";
+            } else {
+                str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/inventory/skins/512/" + guardInfo.getSkin() + ".webp";
+            }
+            String str2 = str;
+            AppCompatImageView ivGuardSkin = this.binding.layoutGuards.ivGuardSkin;
+            Intrinsics.checkNotNullExpressionValue(ivGuardSkin, "ivGuardSkin");
+            observeUserSkin$default(this, ivGuardSkin, str2, 0, 4, null);
+            GuardInfo guardInfo2 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
+            if (guardInfo2 != null) {
+                IBackendNotifier iBackendNotifier = this.frontendNotifier;
+                int id = UIElementID.INVENTORY_SECURITY_SCREEN.getId();
+                byte[] bytes = StringKt.toStringJson(new SendId(guardInfo2.getId())).getBytes(Charsets.UTF_8);
+                Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
+                iBackendNotifier.clickedWrapper(id, -1, 6, bytes);
+            }
+            setVisibilityBtnGuards();
         }
-        RecyclerView rvGuardInventory = this.binding.rvGuardInventory;
-        Intrinsics.checkNotNullExpressionValue(rvGuardInventory, "rvGuardInventory");
-        rvGuardInventory.setVisibility(8);
-        if (this.isArizonaType) {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/inventory/skins/512/" + list.get(this.guardNumber).getSkin() + ".webp";
-        } else {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/inventory/skins/512/" + list.get(this.guardNumber).getSkin() + ".webp";
-        }
-        String str2 = str;
-        AppCompatImageView ivGuardSkin = this.binding.layoutGuards.ivGuardSkin;
-        Intrinsics.checkNotNullExpressionValue(ivGuardSkin, "ivGuardSkin");
-        observeUserSkin$default(this, ivGuardSkin, str2, 0, 4, null);
-        IBackendNotifier iBackendNotifier = this.frontendNotifier;
-        int id = UIElementID.INVENTORY_SECURITY_SCREEN.getId();
-        byte[] bytes = StringKt.toStringJson(new SendId(this.guardInfoList.get(this.guardNumber).getId())).getBytes(Charsets.UTF_8);
-        Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
-        iBackendNotifier.clickedWrapper(id, -1, 6, bytes);
-        setVisibilityBtnGuards();
     }
 
     private final void observeGuardAccessories() {
@@ -1788,16 +1798,16 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
                         new Handler().postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                InventoryScreen.onBackendMessage$lambda$73(InventoryScreen.this);
+                                InventoryScreen.onBackendMessage$lambda$76(InventoryScreen.this);
                             }
                         }, 1000L);
                     }
                     CollectionsKt.removeAll((List) this.mainInventoryList, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda11
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj9) {
-                            boolean onBackendMessage$lambda$74;
-                            onBackendMessage$lambda$74 = InventoryScreen.onBackendMessage$lambda$74((InventoryItem) obj9);
-                            return Boolean.valueOf(onBackendMessage$lambda$74);
+                            boolean onBackendMessage$lambda$77;
+                            onBackendMessage$lambda$77 = InventoryScreen.onBackendMessage$lambda$77((InventoryItem) obj9);
+                            return Boolean.valueOf(onBackendMessage$lambda$77);
                         }
                     });
                     CollectionsKt.addAll(this.mainInventoryList, editResponseInfo(inventoryResponse));
@@ -2812,14 +2822,14 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackendMessage$lambda$73(InventoryScreen inventoryScreen) {
+    public static final void onBackendMessage$lambda$76(InventoryScreen inventoryScreen) {
         inventoryScreen.addLockedItems();
         inventoryScreen.mainInventoryAdapter.notifyDataSetChanged();
         inventoryScreen.addInfoToDatabase(inventoryScreen.mainInventoryList);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean onBackendMessage$lambda$74(InventoryItem it) {
+    public static final boolean onBackendMessage$lambda$77(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.isLocked();
     }

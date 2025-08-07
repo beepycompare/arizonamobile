@@ -1,25 +1,36 @@
 package com.google.android.gms.measurement.internal;
 
-import java.util.Objects;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzoi extends zzay {
-    final /* synthetic */ zzoj zza;
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzoi(zzoj zzojVar, zzjf zzjfVar) {
-        super(zzjfVar);
-        Objects.requireNonNull(zzojVar);
-        this.zza = zzojVar;
+public final class zzoi implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
+        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        int i = 0;
+        long j = 0;
+        String str = null;
+        while (parcel.dataPosition() < validateObjectHeader) {
+            int readHeader = SafeParcelReader.readHeader(parcel);
+            int fieldId = SafeParcelReader.getFieldId(readHeader);
+            if (fieldId == 1) {
+                str = SafeParcelReader.createString(parcel, readHeader);
+            } else if (fieldId == 2) {
+                j = SafeParcelReader.readLong(parcel, readHeader);
+            } else if (fieldId == 3) {
+                i = SafeParcelReader.readInt(parcel, readHeader);
+            } else {
+                SafeParcelReader.skipUnknownField(parcel, readHeader);
+            }
+        }
+        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
+        return new zzoh(str, j, i);
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzay
-    public final void zza() {
-        zzoj zzojVar = this.zza;
-        zzojVar.zzd();
-        zzojVar.zzu.zzaV().zzk().zza("Starting upload from DelayedRunnable");
-        zzojVar.zzg.zzM();
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new zzoh[i];
     }
 }

@@ -6,18 +6,18 @@ import javax.net.ssl.SSLSocketFactory;
 public final class Al implements X2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f344a;
+    public final Context f343a;
 
     public Al(Context context) {
-        this.f344a = context;
+        this.f343a = context;
     }
 
-    @Override // io.appmetrica.analytics.impl.X2, io.appmetrica.analytics.impl.InterfaceC0392km
-    public final void a(C0267fm c0267fm) {
+    @Override // io.appmetrica.analytics.impl.X2, io.appmetrica.analytics.impl.InterfaceC0393km
+    public final void a(C0268fm c0268fm) {
     }
 
     public final Context b() {
-        return this.f344a;
+        return this.f343a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider

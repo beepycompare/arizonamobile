@@ -166,47 +166,30 @@ public class TopicsSubscriber {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0034  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0079 A[Catch: IOException -> 0x009f, TryCatch #0 {IOException -> 0x009f, blocks: (B:3:0x0009, B:18:0x0036, B:20:0x003c, B:21:0x0053, B:23:0x0060, B:24:0x0079, B:26:0x0086, B:8:0x001b, B:11:0x0025), top: B:43:0x0009 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     boolean performTopicOperation(TopicOperation topicOperation) throws IOException {
-        char c;
         try {
             String operation = topicOperation.getOperation();
             int hashCode = operation.hashCode();
-            if (hashCode == 83) {
-                if (operation.equals(ExifInterface.LATITUDE_SOUTH)) {
-                    c = 0;
-                    if (c != 0) {
-                    }
-                    return true;
-                }
-                c = 65535;
-                if (c != 0) {
-                }
-                return true;
-            }
-            if (hashCode == 85 && operation.equals("U")) {
-                c = 1;
-                if (c != 0) {
-                    blockingSubscribeToTopic(topicOperation.getTopic());
-                    if (isDebugLogEnabled()) {
-                        Log.d(Constants.TAG, "Subscribe to topic: " + topicOperation.getTopic() + " succeeded.");
-                    }
-                } else if (c == 1) {
+            if (hashCode != 83) {
+                if (hashCode == 85 && operation.equals("U")) {
                     blockingUnsubscribeFromTopic(topicOperation.getTopic());
                     if (isDebugLogEnabled()) {
                         Log.d(Constants.TAG, "Unsubscribe from topic: " + topicOperation.getTopic() + " succeeded.");
+                        return true;
                     }
-                } else if (isDebugLogEnabled()) {
-                    Log.d(Constants.TAG, "Unknown topic operation" + topicOperation + ".");
+                    return true;
+                }
+            } else if (operation.equals(ExifInterface.LATITUDE_SOUTH)) {
+                blockingSubscribeToTopic(topicOperation.getTopic());
+                if (isDebugLogEnabled()) {
+                    Log.d(Constants.TAG, "Subscribe to topic: " + topicOperation.getTopic() + " succeeded.");
+                    return true;
                 }
                 return true;
             }
-            c = 65535;
-            if (c != 0) {
+            if (isDebugLogEnabled()) {
+                Log.d(Constants.TAG, "Unknown topic operation" + topicOperation + ".");
+                return true;
             }
             return true;
         } catch (IOException e) {

@@ -1,33 +1,57 @@
 package com.google.android.gms.measurement.internal;
 
+import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-import java.util.ArrayList;
-import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzon extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<zzon> CREATOR = new zzoo();
-    public final List zza;
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzon(List list) {
-        this.zza = list;
+public final class zzon implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
+        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        byte[] bArr = null;
+        String str = null;
+        Bundle bundle = null;
+        String str2 = null;
+        long j = 0;
+        long j2 = 0;
+        int i = 0;
+        while (parcel.dataPosition() < validateObjectHeader) {
+            int readHeader = SafeParcelReader.readHeader(parcel);
+            switch (SafeParcelReader.getFieldId(readHeader)) {
+                case 1:
+                    j = SafeParcelReader.readLong(parcel, readHeader);
+                    break;
+                case 2:
+                    bArr = SafeParcelReader.createByteArray(parcel, readHeader);
+                    break;
+                case 3:
+                    str = SafeParcelReader.createString(parcel, readHeader);
+                    break;
+                case 4:
+                    bundle = SafeParcelReader.createBundle(parcel, readHeader);
+                    break;
+                case 5:
+                    i = SafeParcelReader.readInt(parcel, readHeader);
+                    break;
+                case 6:
+                    j2 = SafeParcelReader.readLong(parcel, readHeader);
+                    break;
+                case 7:
+                    str2 = SafeParcelReader.createString(parcel, readHeader);
+                    break;
+                default:
+                    SafeParcelReader.skipUnknownField(parcel, readHeader);
+                    break;
+            }
+        }
+        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
+        return new zzom(j, bArr, str, bundle, i, j2, str2);
     }
 
-    public static zzon zza(zzlr... zzlrVarArr) {
-        ArrayList arrayList = new ArrayList(1);
-        arrayList.add(Integer.valueOf(zzlrVarArr[0].zza()));
-        return new zzon(arrayList);
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        List list = this.zza;
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeIntegerList(parcel, 1, list, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new zzom[i];
     }
 }

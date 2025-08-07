@@ -1,63 +1,83 @@
 package com.google.android.gms.internal.measurement;
 
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-final class zzob implements Iterator {
-    final /* synthetic */ zzod zza;
-    private int zzb;
-    private boolean zzc;
-    private Iterator zzd;
+final class zzob implements Map.Entry, Comparable {
+    final /* synthetic */ zzoe zza;
+    private final Comparable zzb;
+    private Object zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zzob(zzod zzodVar, byte[] bArr) {
-        Objects.requireNonNull(zzodVar);
-        this.zza = zzodVar;
-        this.zzb = -1;
+    public zzob(zzoe zzoeVar, Comparable comparable, Object obj) {
+        Objects.requireNonNull(zzoeVar);
+        this.zza = zzoeVar;
+        this.zzb = comparable;
+        this.zzc = obj;
     }
 
-    private final Iterator zza() {
-        if (this.zzd == null) {
-            this.zzd = this.zza.zzk().entrySet().iterator();
+    private static final boolean zzb(Object obj, Object obj2) {
+        if (obj == null) {
+            return obj2 == null;
         }
-        return this.zzd;
+        return obj.equals(obj2);
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        int i = this.zzb + 1;
-        zzod zzodVar = this.zza;
-        if (i >= zzodVar.zzj()) {
-            return !zzodVar.zzk().isEmpty() && zza().hasNext();
-        }
-        return true;
+    @Override // java.lang.Comparable
+    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
+        return this.zzb.compareTo(((zzob) obj).zzb);
     }
 
-    @Override // java.util.Iterator
-    public final /* bridge */ /* synthetic */ Object next() {
-        this.zzc = true;
-        int i = this.zzb + 1;
-        this.zzb = i;
-        zzod zzodVar = this.zza;
-        return i < zzodVar.zzj() ? (zzoa) zzodVar.zzi()[i] : (Map.Entry) zza().next();
+    @Override // java.util.Map.Entry
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            return zzb(this.zzb, entry.getKey()) && zzb(this.zzc, entry.getValue());
+        }
+        return false;
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        if (!this.zzc) {
-            throw new IllegalStateException("remove() was called before next()");
-        }
-        this.zzc = false;
-        zzod zzodVar = this.zza;
-        zzodVar.zzh();
-        int i = this.zzb;
-        if (i < zzodVar.zzj()) {
-            this.zzb = i - 1;
-            zzodVar.zzg(i);
-            return;
-        }
-        zza().remove();
+    @Override // java.util.Map.Entry
+    public final /* synthetic */ Object getKey() {
+        return this.zzb;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.zzc;
+    }
+
+    @Override // java.util.Map.Entry
+    public final int hashCode() {
+        Comparable comparable = this.zzb;
+        int hashCode = comparable == null ? 0 : comparable.hashCode();
+        Object obj = this.zzc;
+        return hashCode ^ (obj != null ? obj.hashCode() : 0);
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        this.zza.zzh();
+        Object obj2 = this.zzc;
+        this.zzc = obj;
+        return obj2;
+    }
+
+    public final String toString() {
+        String valueOf = String.valueOf(this.zzb);
+        String valueOf2 = String.valueOf(this.zzc);
+        StringBuilder sb = new StringBuilder(String.valueOf(valueOf).length() + 1 + String.valueOf(valueOf2).length());
+        sb.append(valueOf);
+        sb.append("=");
+        sb.append(valueOf2);
+        return sb.toString();
+    }
+
+    public final Comparable zza() {
+        return this.zzb;
     }
 }

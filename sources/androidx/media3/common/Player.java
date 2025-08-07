@@ -114,6 +114,7 @@ public interface Player {
     public static final int MEDIA_ITEM_TRANSITION_REASON_REPEAT = 0;
     public static final int MEDIA_ITEM_TRANSITION_REASON_SEEK = 2;
     public static final int PLAYBACK_SUPPRESSION_REASON_NONE = 0;
+    public static final int PLAYBACK_SUPPRESSION_REASON_SCRUBBING = 4;
     public static final int PLAYBACK_SUPPRESSION_REASON_TRANSIENT_AUDIO_FOCUS_LOSS = 1;
     public static final int PLAYBACK_SUPPRESSION_REASON_UNSUITABLE_AUDIO_OUTPUT = 3;
     @Deprecated
@@ -439,13 +440,7 @@ public interface Player {
 
     float getVolume();
 
-    @Deprecated
-    boolean hasNext();
-
     boolean hasNextMediaItem();
-
-    @Deprecated
-    boolean hasNextWindow();
 
     boolean hasPreviousMediaItem();
 
@@ -483,9 +478,6 @@ public interface Player {
 
     void moveMediaItems(int i, int i2, int i3);
 
-    @Deprecated
-    void next();
-
     void pause();
 
     void play();
@@ -520,15 +512,9 @@ public interface Player {
 
     void seekToNextMediaItem();
 
-    @Deprecated
-    void seekToNextWindow();
-
     void seekToPrevious();
 
     void seekToPreviousMediaItem();
-
-    @Deprecated
-    void seekToPreviousWindow();
 
     void setAudioAttributes(AudioAttributes audioAttributes, boolean z);
 
@@ -673,6 +659,11 @@ public interface Player {
 
         public int hashCode() {
             return Objects.hash(this.windowUid, Integer.valueOf(this.mediaItemIndex), this.mediaItem, this.periodUid, Integer.valueOf(this.periodIndex), Long.valueOf(this.positionMs), Long.valueOf(this.contentPositionMs), Integer.valueOf(this.adGroupIndex), Integer.valueOf(this.adIndexInAdGroup));
+        }
+
+        public String toString() {
+            String str = "mediaItem=" + this.mediaItemIndex + ", period=" + this.periodIndex + ", pos=" + this.positionMs;
+            return this.adGroupIndex == -1 ? str : str + ", contentPos=" + this.contentPositionMs + ", adGroup=" + this.adGroupIndex + ", ad=" + this.adIndexInAdGroup;
         }
 
         public boolean equalsForBundling(PositionInfo positionInfo) {

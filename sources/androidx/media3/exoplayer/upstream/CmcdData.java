@@ -7,6 +7,7 @@ import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.TrackGroup;
 import androidx.media3.common.util.Assertions;
+import androidx.media3.common.util.UriUtil;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSpec;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Pattern;
 /* loaded from: classes2.dex */
@@ -320,6 +322,26 @@ public final class CmcdData {
         return dataSpec.buildUpon().setUri(dataSpec.uri.buildUpon().appendQueryParameter(CmcdConfiguration.CMCD_QUERY_PARAMETER_KEY, COMMA_JOINER.join(arrayList)).build()).build();
     }
 
+    public static DataSpec removeFromDataSpec(DataSpec dataSpec) {
+        if (dataSpec.uri.getQueryParameter(CmcdConfiguration.CMCD_QUERY_PARAMETER_KEY) != null) {
+            dataSpec = dataSpec.withUri(removeFromUri(dataSpec.uri));
+        }
+        if (dataSpec.httpRequestHeaders.containsKey(CmcdConfiguration.KEY_CMCD_OBJECT) || dataSpec.httpRequestHeaders.containsKey(CmcdConfiguration.KEY_CMCD_REQUEST) || dataSpec.httpRequestHeaders.containsKey(CmcdConfiguration.KEY_CMCD_STATUS) || dataSpec.httpRequestHeaders.containsKey(CmcdConfiguration.KEY_CMCD_SESSION)) {
+            ImmutableMap.Builder builder = ImmutableMap.builder();
+            for (Map.Entry<String, String> entry : dataSpec.httpRequestHeaders.entrySet()) {
+                if (!entry.getKey().equals(CmcdConfiguration.KEY_CMCD_OBJECT) && !entry.getKey().equals(CmcdConfiguration.KEY_CMCD_REQUEST) && !entry.getKey().equals(CmcdConfiguration.KEY_CMCD_STATUS) && !entry.getKey().equals(CmcdConfiguration.KEY_CMCD_SESSION)) {
+                    builder.put(entry);
+                }
+            }
+            return dataSpec.withRequestHeaders(builder.buildOrThrow());
+        }
+        return dataSpec;
+    }
+
+    public static Uri removeFromUri(Uri uri) {
+        return uri.getQueryParameter(CmcdConfiguration.CMCD_QUERY_PARAMETER_KEY) != null ? UriUtil.removeQueryParameter(uri, CmcdConfiguration.CMCD_QUERY_PARAMETER_KEY) : uri;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
     public static final class CmcdObject {
@@ -534,11 +556,11 @@ public final class CmcdData {
         /* loaded from: classes2.dex */
         public static final class Builder {
             private String contentId;
-            private ImmutableList<String> customDataList = ImmutableList.of();
-            private float playbackRate;
             private String sessionId;
             private String streamType;
             private String streamingFormat;
+            private float playbackRate = -3.4028235E38f;
+            private ImmutableList<String> customDataList = ImmutableList.of();
 
             public Builder setContentId(String str) {
                 Assertions.checkArgument(str == null || str.length() <= 64);

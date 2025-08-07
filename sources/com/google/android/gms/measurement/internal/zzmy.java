@@ -1,22 +1,29 @@
 package com.google.android.gms.measurement.internal;
 
-import android.content.ComponentName;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
 final class zzmy implements Runnable {
-    final /* synthetic */ ComponentName zza;
-    final /* synthetic */ zzne zzb;
+    final /* synthetic */ zzgb zza;
+    final /* synthetic */ zznf zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzmy(zzne zzneVar, ComponentName componentName) {
-        this.zza = componentName;
-        Objects.requireNonNull(zzneVar);
-        this.zzb = zzneVar;
+    public zzmy(zznf zznfVar, zzgb zzgbVar) {
+        this.zza = zzgbVar;
+        Objects.requireNonNull(zznfVar);
+        this.zzb = zznfVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.zzb.zza.zzW(this.zza);
+        zznf zznfVar = this.zzb;
+        synchronized (zznfVar) {
+            zznfVar.zzd(false);
+            zznl zznlVar = zznfVar.zza;
+            if (!zznlVar.zzh()) {
+                zznlVar.zzu.zzaV().zzk().zza("Connected to service");
+                zznlVar.zzL(this.zza);
+            }
+        }
     }
 }

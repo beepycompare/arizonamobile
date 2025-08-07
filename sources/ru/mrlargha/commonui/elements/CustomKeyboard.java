@@ -18,7 +18,6 @@ import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
@@ -356,24 +355,24 @@ public final class CustomKeyboard extends SAMPUIElement {
         CharSequence text = this.chatType.getText();
         if (!Intrinsics.areEqual(text, "РП")) {
             if (Intrinsics.areEqual(text, "НРП")) {
-                if (this.isChat && !StringsKt.startsWith$default(str, RemoteSettings.FORWARD_SLASH_STRING, false, 2, (Object) null)) {
+                if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
                     str = "/b " + str;
                 }
             } else if (Intrinsics.areEqual(text, "ОРГ")) {
-                if (this.isChat && !StringsKt.startsWith$default(str, RemoteSettings.FORWARD_SLASH_STRING, false, 2, (Object) null)) {
+                if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
                     str = "/fr " + str;
                 }
             } else if (Intrinsics.areEqual(text, "СЕМ")) {
-                if (this.isChat && !StringsKt.startsWith$default(str, RemoteSettings.FORWARD_SLASH_STRING, false, 2, (Object) null)) {
+                if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
                     str = "/fam " + str;
                 }
             } else if (Intrinsics.areEqual(text, "РАБ")) {
-                if (this.isChat && !StringsKt.startsWith$default(str, RemoteSettings.FORWARD_SLASH_STRING, false, 2, (Object) null)) {
+                if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
                     str = "/j " + str;
                 }
             } else if (!Intrinsics.areEqual(text, "VIP")) {
                 str = "";
-            } else if (this.isChat && !StringsKt.startsWith$default(str, RemoteSettings.FORWARD_SLASH_STRING, false, 2, (Object) null)) {
+            } else if (this.isChat && !StringsKt.startsWith$default(str, "/", false, 2, (Object) null)) {
                 str = "/vr " + str;
             }
         }
@@ -393,7 +392,7 @@ public final class CustomKeyboard extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void _init_$lambda$0(CustomKeyboard customKeyboard, View view) {
-        customKeyboard.inputArea.getText().insert(customKeyboard.inputArea.getSelectionStart(), RemoteSettings.FORWARD_SLASH_STRING);
+        customKeyboard.inputArea.getText().insert(customKeyboard.inputArea.getSelectionStart(), "/");
     }
 
     /* JADX INFO: Access modifiers changed from: private */

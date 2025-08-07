@@ -4,10 +4,10 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int graphPackage = 0x7f040284;
-        public static int graphResName = 0x7f040289;
-        public static int moduleName = 0x7f04042c;
-        public static int progressDestination = 0x7f0404c3;
+        public static int graphPackage = 0x7f04028f;
+        public static int graphResName = 0x7f040294;
+        public static int moduleName = 0x7f040437;
+        public static int progressDestination = 0x7f0404ce;
 
         private attr() {
         }

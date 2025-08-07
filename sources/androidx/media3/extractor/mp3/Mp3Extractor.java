@@ -365,8 +365,10 @@ public final class Mp3Extractor implements Extractor {
 
     @RequiresNonNull({"realTrackOutput"})
     private Seeker computeSeeker(ExtractorInput extractorInput) throws IOException {
+        long length;
         long id3TlenUs;
         long j;
+        long dataEndPosition;
         Seeker maybeReadSeekFrame = maybeReadSeekFrame(extractorInput);
         MlltSeeker maybeHandleSeekMetadata = maybeHandleSeekMetadata(this.metadata, extractorInput.getPosition());
         if (this.disableSeeking) {
@@ -375,27 +377,40 @@ public final class Mp3Extractor implements Extractor {
         if ((this.flags & 4) != 0) {
             if (maybeHandleSeekMetadata != null) {
                 id3TlenUs = maybeHandleSeekMetadata.getDurationUs();
-                j = maybeHandleSeekMetadata.getDataEndPosition();
+                dataEndPosition = maybeHandleSeekMetadata.getDataEndPosition();
             } else if (maybeReadSeekFrame != null) {
                 id3TlenUs = maybeReadSeekFrame.getDurationUs();
-                j = maybeReadSeekFrame.getDataEndPosition();
+                dataEndPosition = maybeReadSeekFrame.getDataEndPosition();
             } else {
                 id3TlenUs = getId3TlenUs(this.metadata);
                 j = -1;
+                maybeReadSeekFrame = new IndexSeeker(id3TlenUs, extractorInput.getPosition(), j);
             }
+            j = dataEndPosition;
             maybeReadSeekFrame = new IndexSeeker(id3TlenUs, extractorInput.getPosition(), j);
         } else if (maybeHandleSeekMetadata != null) {
             maybeReadSeekFrame = maybeHandleSeekMetadata;
         } else if (maybeReadSeekFrame == null) {
             maybeReadSeekFrame = null;
         }
-        if (maybeReadSeekFrame == null || (!maybeReadSeekFrame.isSeekable() && (this.flags & 1) != 0)) {
+        if (maybeReadSeekFrame != null && shouldFallbackToConstantBitrateSeeking(maybeReadSeekFrame) && maybeReadSeekFrame.getDurationUs() != C.TIME_UNSET && (maybeReadSeekFrame.getDataEndPosition() != -1 || extractorInput.getLength() != -1)) {
+            long dataStartPosition = maybeReadSeekFrame.getDataStartPosition() != -1 ? maybeReadSeekFrame.getDataStartPosition() : 0L;
+            if (maybeReadSeekFrame.getDataEndPosition() != -1) {
+                length = maybeReadSeekFrame.getDataEndPosition();
+            } else {
+                length = extractorInput.getLength();
+            }
+            long j2 = length;
+            maybeReadSeekFrame = new ConstantBitrateSeeker(j2, dataStartPosition, Ints.saturatedCast(Util.scaleLargeValue(j2 - dataStartPosition, 8000000L, maybeReadSeekFrame.getDurationUs(), RoundingMode.HALF_UP)), -1, false);
+        } else if (maybeReadSeekFrame == null || shouldFallbackToConstantBitrateSeeking(maybeReadSeekFrame)) {
             maybeReadSeekFrame = getConstantBitrateSeeker(extractorInput, (this.flags & 2) != 0);
         }
-        if (maybeReadSeekFrame != null) {
-            this.realTrackOutput.durationUs(maybeReadSeekFrame.getDurationUs());
-        }
+        this.realTrackOutput.durationUs(maybeReadSeekFrame.getDurationUs());
         return maybeReadSeekFrame;
+    }
+
+    private boolean shouldFallbackToConstantBitrateSeeking(Seeker seeker) {
+        return (seeker.isSeekable() || (this.flags & 1) == 0) ? false : true;
     }
 
     private Seeker maybeReadSeekFrame(ExtractorInput extractorInput) throws IOException {

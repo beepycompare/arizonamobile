@@ -7,13 +7,16 @@ import android.media.MediaDataSource;
 import android.media.MediaFormat;
 import android.media.metrics.LogSessionId;
 import android.net.Uri;
+import android.os.Build;
 import android.os.PersistableBundle;
+import android.util.Pair;
 import android.util.SparseArray;
 import androidx.media3.common.C;
 import androidx.media3.common.DrmInitData;
 import androidx.media3.common.Format;
 import androidx.media3.common.ParserException;
 import androidx.media3.common.util.Assertions;
+import androidx.media3.common.util.CodecSpecificDataUtil;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.MediaFormatUtil;
 import androidx.media3.common.util.Util;
@@ -43,10 +46,12 @@ import androidx.media3.extractor.SeekPoint;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.mp4.Mp4Extractor;
 import androidx.media3.extractor.mp4.PsshAtomUtil;
+import com.google.android.gms.common.Scopes;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import java.io.EOFException;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
@@ -138,10 +143,8 @@ public final class MediaExtractorCompat {
 
     public void setDataSource(Context context, Uri uri, Map<String, String> map) throws IOException {
         AssetFileDescriptor openAssetFileDescriptor;
-        String scheme = uri.getScheme();
-        String path = uri.getPath();
-        if ((scheme == null || scheme.equals("file")) && path != null) {
-            setDataSource(path);
+        if (Util.isLocalFileUri(uri)) {
+            setDataSource((String) Assertions.checkNotNull(uri.getPath()));
             return;
         }
         try {
@@ -634,12 +637,18 @@ public final class MediaExtractorCompat {
         }
 
         public MediaFormat createDownstreamMediaFormat(FormatHolder formatHolder, DecoderInputBuffer decoderInputBuffer) {
-            MediaFormat createMediaFormatFromFormat = MediaFormatUtil.createMediaFormatFromFormat(getFormat(formatHolder, decoderInputBuffer));
+            Format format = getFormat(formatHolder, decoderInputBuffer);
+            MediaFormat createMediaFormatFromFormat = MediaFormatUtil.createMediaFormatFromFormat(format);
             if (this.compatibilityTrackMimeType != null) {
-                if (Util.SDK_INT >= 29) {
+                if (Build.VERSION.SDK_INT >= 29) {
                     createMediaFormatFromFormat.removeKey("codecs-string");
                 }
                 createMediaFormatFromFormat.setString("mime", this.compatibilityTrackMimeType);
+            }
+            Pair<Integer, Integer> codecProfileAndLevel = CodecSpecificDataUtil.getCodecProfileAndLevel(format);
+            if (codecProfileAndLevel != null) {
+                createMediaFormatFromFormat.setInteger(Scopes.PROFILE, ((Integer) codecProfileAndLevel.first).intValue());
+                createMediaFormatFromFormat.setInteger(FirebaseAnalytics.Param.LEVEL, ((Integer) codecProfileAndLevel.second).intValue());
             }
             return createMediaFormatFromFormat;
         }

@@ -1,43 +1,26 @@
 package com.google.android.gms.measurement.internal;
 
-import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
 public final class zzpd {
-    private final zzpf zza;
-    private int zzb = 1;
-    private long zzc = zzd();
+    final String zza;
+    long zzb;
 
-    public zzpd(zzpf zzpfVar) {
-        this.zza = zzpfVar;
-    }
-
-    private final long zzd() {
-        zzpf zzpfVar = this.zza;
-        Preconditions.checkNotNull(zzpfVar);
-        long longValue = ((Long) zzfx.zzu.zzb(null)).longValue();
-        long longValue2 = ((Long) zzfx.zzv.zzb(null)).longValue();
-        for (int i = 1; i < this.zzb; i++) {
-            longValue += longValue;
-            if (longValue >= longValue2) {
-                break;
-            }
-        }
-        return zzpfVar.zzaZ().currentTimeMillis() + Math.min(longValue, longValue2);
-    }
-
-    public final void zza() {
-        this.zzb++;
-        this.zzc = zzd();
-    }
-
-    public final boolean zzb() {
-        return this.zza.zzaZ().currentTimeMillis() >= this.zzc;
+    private zzpd(zzpg zzpgVar, String str) {
+        Objects.requireNonNull(zzpgVar);
+        this.zza = str;
+        this.zzb = zzpgVar.zzaZ().elapsedRealtime();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ long zzc() {
-        return this.zzc;
+    public /* synthetic */ zzpd(zzpg zzpgVar, String str, byte[] bArr) {
+        this(zzpgVar, str);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzpd(zzpg zzpgVar, byte[] bArr) {
+        this(zzpgVar, zzpgVar.zzt().zzaw());
     }
 }

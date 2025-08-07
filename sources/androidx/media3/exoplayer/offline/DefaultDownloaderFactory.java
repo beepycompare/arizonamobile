@@ -5,13 +5,13 @@ import androidx.media3.common.MediaItem;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.cache.CacheDataSource;
-import java.lang.reflect.Constructor;
+import androidx.media3.exoplayer.offline.DownloadRequest;
 import java.util.concurrent.Executor;
 /* loaded from: classes2.dex */
 public class DefaultDownloaderFactory implements DownloaderFactory {
-    private static final SparseArray<Constructor<? extends Downloader>> CONSTRUCTORS = createDownloaderConstructors();
     private final CacheDataSource.Factory cacheDataSourceFactory;
     private final Executor executor;
+    private final SparseArray<SegmentDownloaderFactory> segmentDownloaderFactories;
 
     @Deprecated
     public DefaultDownloaderFactory(CacheDataSource.Factory factory) {
@@ -21,54 +21,62 @@ public class DefaultDownloaderFactory implements DownloaderFactory {
     public DefaultDownloaderFactory(CacheDataSource.Factory factory, Executor executor) {
         this.cacheDataSourceFactory = (CacheDataSource.Factory) Assertions.checkNotNull(factory);
         this.executor = (Executor) Assertions.checkNotNull(executor);
+        this.segmentDownloaderFactories = new SparseArray<>();
     }
 
     @Override // androidx.media3.exoplayer.offline.DownloaderFactory
     public Downloader createDownloader(DownloadRequest downloadRequest) {
         int inferContentTypeForUriAndMimeType = Util.inferContentTypeForUriAndMimeType(downloadRequest.uri, downloadRequest.mimeType);
         if (inferContentTypeForUriAndMimeType == 0 || inferContentTypeForUriAndMimeType == 1 || inferContentTypeForUriAndMimeType == 2) {
-            return createDownloader(downloadRequest, inferContentTypeForUriAndMimeType);
+            return createSegmentDownloader(downloadRequest, inferContentTypeForUriAndMimeType);
         }
         if (inferContentTypeForUriAndMimeType == 4) {
-            return new ProgressiveDownloader(new MediaItem.Builder().setUri(downloadRequest.uri).setCustomCacheKey(downloadRequest.customCacheKey).build(), this.cacheDataSourceFactory, this.executor);
+            DownloadRequest.ByteRange byteRange = downloadRequest.byteRange;
+            return new ProgressiveDownloader(new MediaItem.Builder().setUri(downloadRequest.uri).setCustomCacheKey(downloadRequest.customCacheKey).build(), this.cacheDataSourceFactory, this.executor, byteRange != null ? byteRange.offset : 0L, byteRange != null ? byteRange.length : -1L);
         }
         throw new IllegalArgumentException("Unsupported type: " + inferContentTypeForUriAndMimeType);
     }
 
-    private Downloader createDownloader(DownloadRequest downloadRequest, int i) {
-        Constructor<? extends Downloader> constructor = CONSTRUCTORS.get(i);
-        if (constructor == null) {
-            throw new IllegalStateException("Module missing for content type " + i);
+    private Downloader createSegmentDownloader(DownloadRequest downloadRequest, int i) {
+        SegmentDownloaderFactory segmentDownloaderFactory = getSegmentDownloaderFactory(i, this.cacheDataSourceFactory);
+        MediaItem build = new MediaItem.Builder().setUri(downloadRequest.uri).setStreamKeys(downloadRequest.streamKeys).setCustomCacheKey(downloadRequest.customCacheKey).build();
+        if (downloadRequest.timeRange != null) {
+            segmentDownloaderFactory.setStartPositionUs(downloadRequest.timeRange.startPositionUs).setDurationUs(downloadRequest.timeRange.durationUs);
+        }
+        return segmentDownloaderFactory.setExecutor(this.executor).create(build);
+    }
+
+    private SegmentDownloaderFactory getSegmentDownloaderFactory(int i, CacheDataSource.Factory factory) {
+        if (Util.contains(this.segmentDownloaderFactories, i)) {
+            return this.segmentDownloaderFactories.get(i);
         }
         try {
-            return constructor.newInstance(new MediaItem.Builder().setUri(downloadRequest.uri).setStreamKeys(downloadRequest.streamKeys).setCustomCacheKey(downloadRequest.customCacheKey).build(), this.cacheDataSourceFactory, this.executor);
+            return loadSegmentDownloaderFactory(i, factory);
+        } catch (ClassNotFoundException e) {
+            throw new IllegalStateException("Module missing for content type " + i, e);
+        }
+    }
+
+    private SegmentDownloaderFactory loadSegmentDownloaderFactory(int i, CacheDataSource.Factory factory) throws ClassNotFoundException {
+        SegmentDownloaderFactory createSegmentDownloaderFactory;
+        if (i == 0) {
+            createSegmentDownloaderFactory = createSegmentDownloaderFactory(Class.forName("androidx.media3.exoplayer.dash.offline.DashDownloader$Factory").asSubclass(SegmentDownloaderFactory.class), factory);
+        } else if (i == 1) {
+            createSegmentDownloaderFactory = createSegmentDownloaderFactory(Class.forName("androidx.media3.exoplayer.smoothstreaming.offline.SsDownloader$Factory").asSubclass(SegmentDownloaderFactory.class), factory);
+        } else if (i == 2) {
+            createSegmentDownloaderFactory = createSegmentDownloaderFactory(Class.forName("androidx.media3.exoplayer.hls.offline.HlsDownloader$Factory").asSubclass(SegmentDownloaderFactory.class), factory);
+        } else {
+            throw new IllegalArgumentException("Unsupported type: " + i);
+        }
+        this.segmentDownloaderFactories.put(i, createSegmentDownloaderFactory);
+        return createSegmentDownloaderFactory;
+    }
+
+    private static SegmentDownloaderFactory createSegmentDownloaderFactory(Class<? extends SegmentDownloaderFactory> cls, CacheDataSource.Factory factory) {
+        try {
+            return cls.getConstructor(CacheDataSource.Factory.class).newInstance(factory);
         } catch (Exception e) {
-            throw new IllegalStateException("Failed to instantiate downloader for content type " + i, e);
-        }
-    }
-
-    private static SparseArray<Constructor<? extends Downloader>> createDownloaderConstructors() {
-        SparseArray<Constructor<? extends Downloader>> sparseArray = new SparseArray<>();
-        try {
-            sparseArray.put(0, getDownloaderConstructor(Class.forName("androidx.media3.exoplayer.dash.offline.DashDownloader")));
-        } catch (ClassNotFoundException unused) {
-        }
-        try {
-            sparseArray.put(2, getDownloaderConstructor(Class.forName("androidx.media3.exoplayer.hls.offline.HlsDownloader")));
-        } catch (ClassNotFoundException unused2) {
-        }
-        try {
-            sparseArray.put(1, getDownloaderConstructor(Class.forName("androidx.media3.exoplayer.smoothstreaming.offline.SsDownloader")));
-        } catch (ClassNotFoundException unused3) {
-        }
-        return sparseArray;
-    }
-
-    private static Constructor<? extends Downloader> getDownloaderConstructor(Class<?> cls) {
-        try {
-            return cls.asSubclass(Downloader.class).getConstructor(MediaItem.class, CacheDataSource.Factory.class, Executor.class);
-        } catch (NoSuchMethodException e) {
-            throw new IllegalStateException("Downloader constructor missing", e);
+            throw new IllegalStateException("Downloader factory missing", e);
         }
     }
 }

@@ -1,14 +1,15 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-public interface zzlu extends Comparable {
-    int zza();
+final class zzlu {
+    private static final zzls zza = new zzlt();
 
-    zzos zzb();
+    static {
+        int i = zznu.zza;
+    }
 
-    zzot zzc();
-
-    boolean zzd();
-
-    boolean zze();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static zzls zza() {
+        return zza;
+    }
 }

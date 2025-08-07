@@ -12,7 +12,6 @@ import android.os.Parcelable;
 import android.os.PowerManager;
 import androidx.core.app.NotificationCompat;
 import androidx.media3.common.util.Assertions;
-import androidx.media3.common.util.Util;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -123,8 +122,7 @@ public final class Requirements implements Parcelable {
     }
 
     private boolean isDeviceIdle(Context context) {
-        PowerManager powerManager = (PowerManager) Assertions.checkNotNull(context.getSystemService("power"));
-        return Util.SDK_INT >= 23 ? powerManager.isDeviceIdleMode() : !powerManager.isInteractive();
+        return ((PowerManager) Assertions.checkNotNull(context.getSystemService("power"))).isDeviceIdleMode();
     }
 
     private boolean isStorageNotLow(Context context) {
@@ -132,9 +130,6 @@ public final class Requirements implements Parcelable {
     }
 
     private static boolean isInternetConnectivityValidated(ConnectivityManager connectivityManager) {
-        if (Util.SDK_INT < 24) {
-            return true;
-        }
         Network activeNetwork = connectivityManager.getActiveNetwork();
         if (activeNetwork == null) {
             return false;

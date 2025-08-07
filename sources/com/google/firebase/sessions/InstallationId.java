@@ -11,11 +11,10 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.tasks.TasksKt;
 /* compiled from: InstallationId.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\b\u0000\u0018\u0000 \t2\u00020\u0001:\u0001\tB\u0017\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0002\u0010\u0005R\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0007¨\u0006\n"}, d2 = {"Lcom/google/firebase/sessions/InstallationId;", "", "fid", "", "authToken", "(Ljava/lang/String;Ljava/lang/String;)V", "getAuthToken", "()Ljava/lang/String;", "getFid", "Companion", "com.google.firebase-firebase-sessions"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\b\b\u0000\u0018\u0000 \n2\u00020\u0001:\u0001\nB\u0019\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\b¨\u0006\u000b"}, d2 = {"Lcom/google/firebase/sessions/InstallationId;", "", "fid", "", "authToken", "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "getFid", "()Ljava/lang/String;", "getAuthToken", "Companion", "com.google.firebase-firebase-sessions"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class InstallationId {
     public static final Companion Companion = new Companion(null);
-    private static final String TAG = "InstallationId";
     private final String authToken;
     private final String fid;
 
@@ -24,7 +23,7 @@ public final class InstallationId {
     }
 
     /* compiled from: InstallationId.kt */
-    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0019\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0086@ø\u0001\u0000¢\u0006\u0002\u0010\tR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\u0082\u0002\u0004\n\u0002\b\u0019¨\u0006\n"}, d2 = {"Lcom/google/firebase/sessions/InstallationId$Companion;", "", "()V", "TAG", "", "create", "Lcom/google/firebase/sessions/InstallationId;", "firebaseInstallations", "Lcom/google/firebase/installations/FirebaseInstallationsApi;", "(Lcom/google/firebase/installations/FirebaseInstallationsApi;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "com.google.firebase-firebase-sessions"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0086@¢\u0006\u0002\u0010\b¨\u0006\t"}, d2 = {"Lcom/google/firebase/sessions/InstallationId$Companion;", "", "<init>", "()V", "create", "Lcom/google/firebase/sessions/InstallationId;", "firebaseInstallations", "Lcom/google/firebase/installations/FirebaseInstallationsApi;", "(Lcom/google/firebase/installations/FirebaseInstallationsApi;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "com.google.firebase-firebase-sessions"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -34,23 +33,23 @@ public final class InstallationId {
         private Companion() {
         }
 
-        /* JADX WARN: Can't wrap try/catch for region: R(9:1|(2:3|(7:5|6|7|(1:(1:(6:11|12|13|14|15|16)(2:19|20))(2:21|22))(3:29|30|(2:32|27))|23|24|25))|37|6|7|(0)(0)|23|24|25) */
+        /* JADX WARN: Can't wrap try/catch for region: R(9:1|(2:3|(7:5|6|7|(1:(1:(6:11|12|13|(1:15)|16|17)(2:20|21))(2:22|23))(3:30|31|(2:33|28))|24|25|26))|38|6|7|(0)(0)|24|25|26) */
         /* JADX WARN: Code restructure failed: missing block: B:15:0x0035, code lost:
             r10 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:28:0x006e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:28:0x0069, code lost:
             r10 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:29:0x006f, code lost:
-            android.util.Log.w(com.google.firebase.sessions.InstallationId.TAG, "Error getting authentication token.", r10);
+        /* JADX WARN: Code restructure failed: missing block: B:29:0x006a, code lost:
+            android.util.Log.w(com.google.firebase.sessions.FirebaseSessions.TAG, "Error getting authentication token.", r10);
             r10 = r9;
             r9 = "";
          */
-        /* JADX WARN: Code restructure failed: missing block: B:31:0x0089, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:31:0x0084, code lost:
             if (r10 != r1) goto L13;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:35:0x0095, code lost:
-            android.util.Log.w(com.google.firebase.sessions.InstallationId.TAG, "Error getting Firebase installation id .", r10);
+        /* JADX WARN: Code restructure failed: missing block: B:37:0x008e, code lost:
+            android.util.Log.w(com.google.firebase.sessions.FirebaseSessions.TAG, "Error getting Firebase installation id .", r10);
             r9 = r9;
          */
         /* JADX WARN: Multi-variable type inference failed */
@@ -59,6 +58,7 @@ public final class InstallationId {
         /* JADX WARN: Type inference failed for: r9v13, types: [java.lang.String] */
         /* JADX WARN: Type inference failed for: r9v16 */
         /* JADX WARN: Type inference failed for: r9v17 */
+        /* JADX WARN: Type inference failed for: r9v18 */
         /* JADX WARN: Type inference failed for: r9v5, types: [java.lang.String] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -77,7 +77,7 @@ public final class InstallationId {
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         Task<InstallationTokenResult> token = firebaseInstallationsApi.getToken(false);
-                        Intrinsics.checkNotNullExpressionValue(token, "firebaseInstallations.getToken(false)");
+                        Intrinsics.checkNotNullExpressionValue(token, "getToken(...)");
                         installationId$Companion$create$1.L$0 = firebaseInstallationsApi;
                         installationId$Companion$create$1.label = 1;
                         obj = TasksKt.await(token, installationId$Companion$create$1);
@@ -89,9 +89,12 @@ public final class InstallationId {
                             ?? r9 = (String) installationId$Companion$create$1.L$0;
                             ResultKt.throwOnFailure(obj);
                             firebaseInstallationsApi = r9;
-                            Intrinsics.checkNotNullExpressionValue(obj, "{\n          firebaseInst…ions.id.await()\n        }");
-                            str = (String) obj;
+                            String str2 = (String) obj;
                             ?? r92 = firebaseInstallationsApi;
+                            if (str2 != null) {
+                                str = str2;
+                                r92 = firebaseInstallationsApi;
+                            }
                             return new InstallationId(str, r92, null);
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -100,34 +103,32 @@ public final class InstallationId {
                         ResultKt.throwOnFailure(obj);
                     }
                     String token2 = ((InstallationTokenResult) obj).getToken();
-                    Intrinsics.checkNotNullExpressionValue(token2, "{\n          firebaseInst…).await().token\n        }");
                     FirebaseInstallationsApi firebaseInstallationsApi2 = firebaseInstallationsApi;
-                    String str2 = token2;
+                    String str3 = token2;
                     Task<String> id = firebaseInstallationsApi2.getId();
-                    Intrinsics.checkNotNullExpressionValue(id, "firebaseInstallations.id");
-                    installationId$Companion$create$1.L$0 = str2;
+                    Intrinsics.checkNotNullExpressionValue(id, "getId(...)");
+                    installationId$Companion$create$1.L$0 = str3;
                     installationId$Companion$create$1.label = 2;
                     obj = TasksKt.await(id, installationId$Companion$create$1);
-                    firebaseInstallationsApi = str2;
+                    firebaseInstallationsApi = str3;
                 }
             }
             installationId$Companion$create$1 = new InstallationId$Companion$create$1(this, continuation);
             Object obj2 = installationId$Companion$create$1.result;
             Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             i = installationId$Companion$create$1.label;
-            String str3 = "";
+            String str4 = "";
             if (i != 0) {
             }
             String token22 = ((InstallationTokenResult) obj2).getToken();
-            Intrinsics.checkNotNullExpressionValue(token22, "{\n          firebaseInst…).await().token\n        }");
             FirebaseInstallationsApi firebaseInstallationsApi22 = firebaseInstallationsApi;
-            String str22 = token22;
+            String str32 = token22;
             Task<String> id2 = firebaseInstallationsApi22.getId();
-            Intrinsics.checkNotNullExpressionValue(id2, "firebaseInstallations.id");
-            installationId$Companion$create$1.L$0 = str22;
+            Intrinsics.checkNotNullExpressionValue(id2, "getId(...)");
+            installationId$Companion$create$1.L$0 = str32;
             installationId$Companion$create$1.label = 2;
             obj2 = TasksKt.await(id2, installationId$Companion$create$1);
-            firebaseInstallationsApi = str22;
+            firebaseInstallationsApi = str32;
         }
     }
 

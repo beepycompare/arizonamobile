@@ -9,7 +9,7 @@ public final class Ib implements Function, Consumer {
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Function
     /* renamed from: a */
     public final Eb apply(File file) {
-        String a2 = AbstractC0230eb.a(file);
+        String a2 = AbstractC0231eb.a(file);
         if (!TextUtils.isEmpty(a2)) {
             try {
                 return new Eb(a2);

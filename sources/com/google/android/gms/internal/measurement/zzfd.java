@@ -1,21 +1,21 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzfd extends zzme implements zznm {
+public final class zzfd extends zzmf implements zznn {
     private static final zzfd zzi;
     private int zzb;
     private int zzd;
-    private zzmn zze = zzcv();
-    private zzmn zzf = zzcv();
+    private zzmo zze = zzcv();
+    private zzmo zzf = zzcv();
     private boolean zzg;
     private boolean zzh;
 
     static {
         zzfd zzfdVar = new zzfd();
         zzi = zzfdVar;
-        zzme.zzcp(zzfd.class, zzfdVar);
+        zzmf.zzcp(zzfd.class, zzfdVar);
     }
 
     private zzfd() {
@@ -56,9 +56,9 @@ public final class zzfd extends zzme implements zznm {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzi(int i, zzfn zzfnVar) {
         zzfnVar.getClass();
-        zzmn zzmnVar = this.zze;
-        if (!zzmnVar.zza()) {
-            this.zze = zzme.zzcw(zzmnVar);
+        zzmo zzmoVar = this.zze;
+        if (!zzmoVar.zza()) {
+            this.zze = zzmf.zzcw(zzmoVar);
         }
         this.zze.set(i, zzfnVar);
     }
@@ -66,15 +66,15 @@ public final class zzfd extends zzme implements zznm {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzj(int i, zzff zzffVar) {
         zzffVar.getClass();
-        zzmn zzmnVar = this.zzf;
-        if (!zzmnVar.zza()) {
-            this.zzf = zzme.zzcw(zzmnVar);
+        zzmo zzmoVar = this.zzf;
+        if (!zzmoVar.zza()) {
+            this.zzf = zzmf.zzcw(zzmoVar);
         }
         this.zzf.set(i, zzffVar);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {

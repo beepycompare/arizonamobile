@@ -1,11 +1,11 @@
 package androidx.media3.exoplayer.source.chunk;
 
 import android.media.MediaParser;
+import android.os.Build;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.util.Assertions;
-import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.source.chunk.ChunkExtractor;
 import androidx.media3.exoplayer.source.mediaparser.InputReaderAdapterV30;
@@ -99,7 +99,7 @@ public final class MediaParserChunkExtractor implements ChunkExtractor {
             arrayList.add(MediaParserUtil.toCaptionsMediaFormat(list.get(i2)));
         }
         this.mediaParser.setParameter(MediaParserUtil.PARAMETER_EXPOSE_CAPTION_FORMATS, arrayList);
-        if (Util.SDK_INT >= 31) {
+        if (Build.VERSION.SDK_INT >= 31) {
             MediaParserUtil.setLogSessionIdOnMediaParser(this.mediaParser, playerId);
         }
         this.outputConsumerAdapter.setMuxedCaptionFormats(list);

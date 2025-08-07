@@ -1,33 +1,27 @@
 package com.google.android.gms.internal.measurement;
 
-import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-final class zzms implements Map.Entry {
-    private final Map.Entry zza;
+public enum zzms {
+    VOID(Void.class, Void.class, null),
+    INT(Integer.TYPE, Integer.class, 0),
+    LONG(Long.TYPE, Long.class, 0L),
+    FLOAT(Float.TYPE, Float.class, Float.valueOf(0.0f)),
+    DOUBLE(Double.TYPE, Double.class, Double.valueOf((double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE)),
+    BOOLEAN(Boolean.TYPE, Boolean.class, false),
+    STRING(String.class, String.class, ""),
+    BYTE_STRING(zzlh.class, zzlh.class, zzlh.zzb),
+    ENUM(Integer.TYPE, Integer.class, null),
+    MESSAGE(Object.class, Object.class, null);
+    
+    private final Class zzk;
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.zza.getKey();
+    zzms(Class cls, Class cls2, Object obj) {
+        this.zzk = cls2;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        if (((zzmu) this.zza.getValue()) == null) {
-            return null;
-        }
-        throw null;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        if (!(obj instanceof zznl)) {
-            throw new IllegalArgumentException("LazyField now only used for MessageSet, and the value of MessageSet must be an instance of MessageLite");
-        }
-        return ((zzmu) this.zza.getValue()).zza((zznl) obj);
-    }
-
-    public final zzmu zza() {
-        return (zzmu) this.zza.getValue();
+    public final Class zza() {
+        return this.zzk;
     }
 }

@@ -104,17 +104,7 @@ public class EventLogger implements AnalyticsListener {
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsListener
     public void onPositionDiscontinuity(AnalyticsListener.EventTime eventTime, Player.PositionInfo positionInfo, Player.PositionInfo positionInfo2, int i) {
-        StringBuilder sb = new StringBuilder("reason=");
-        sb.append(getDiscontinuityReasonString(i)).append(", PositionInfo:old [mediaItem=").append(positionInfo.mediaItemIndex).append(", period=").append(positionInfo.periodIndex).append(", pos=").append(positionInfo.positionMs);
-        if (positionInfo.adGroupIndex != -1) {
-            sb.append(", contentPos=").append(positionInfo.contentPositionMs).append(", adGroup=").append(positionInfo.adGroupIndex).append(", ad=").append(positionInfo.adIndexInAdGroup);
-        }
-        sb.append("], PositionInfo:new [mediaItem=").append(positionInfo2.mediaItemIndex).append(", period=").append(positionInfo2.periodIndex).append(", pos=").append(positionInfo2.positionMs);
-        if (positionInfo2.adGroupIndex != -1) {
-            sb.append(", contentPos=").append(positionInfo2.contentPositionMs).append(", adGroup=").append(positionInfo2.adGroupIndex).append(", ad=").append(positionInfo2.adIndexInAdGroup);
-        }
-        sb.append("]");
-        logd(eventTime, "positionDiscontinuity", sb.toString());
+        logd(eventTime, "positionDiscontinuity", "reason=" + getDiscontinuityReasonString(i) + ", PositionInfo:old [" + positionInfo + "], PositionInfo:new [" + positionInfo2 + "]");
     }
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsListener
@@ -161,7 +151,7 @@ public class EventLogger implements AnalyticsListener {
         ImmutableList<Tracks.Group> groups = tracks.getGroups();
         for (int i = 0; i < groups.size(); i++) {
             Tracks.Group group = groups.get(i);
-            logd("  group [");
+            logd("  group [ id=" + group.getMediaTrackGroup().id);
             for (int i2 = 0; i2 < group.length; i2++) {
                 logd("    " + getTrackStatusString(group.isTrackSelected(i2)) + " Track:" + i2 + ", " + Format.toLogString(group.getTrackFormat(i2)) + ", supported=" + Util.getFormatSupportString(group.getTrackSupport(i2)));
             }
@@ -250,6 +240,11 @@ public class EventLogger implements AnalyticsListener {
     }
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsListener
+    public void onAudioPositionAdvancing(AnalyticsListener.EventTime eventTime, long j) {
+        logd(eventTime, "audioPositionAdvancing", "since " + getTimeString(((j - System.currentTimeMillis()) + SystemClock.elapsedRealtime()) - this.startTimeMs));
+    }
+
+    @Override // androidx.media3.exoplayer.analytics.AnalyticsListener
     public void onVideoEnabled(AnalyticsListener.EventTime eventTime, DecoderCounters decoderCounters) {
         logd(eventTime, "videoEnabled");
     }
@@ -286,7 +281,11 @@ public class EventLogger implements AnalyticsListener {
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsListener
     public void onVideoSizeChanged(AnalyticsListener.EventTime eventTime, VideoSize videoSize) {
-        logd(eventTime, "videoSize", videoSize.width + ", " + videoSize.height);
+        StringBuilder sb = new StringBuilder("w=" + videoSize.width + ", h=" + videoSize.height);
+        if (videoSize.pixelWidthHeightRatio != 1.0f) {
+            sb.append(", par=").append(videoSize.pixelWidthHeightRatio);
+        }
+        logd(eventTime, "videoSize", sb.toString());
     }
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsListener
@@ -296,7 +295,7 @@ public class EventLogger implements AnalyticsListener {
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsListener
     public void onSurfaceSizeChanged(AnalyticsListener.EventTime eventTime, int i, int i2) {
-        logd(eventTime, "surfaceSize", i + ", " + i2);
+        logd(eventTime, "surfaceSize", "w=" + i + ", h=" + i2);
     }
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsListener
@@ -491,10 +490,13 @@ public class EventLogger implements AnalyticsListener {
     private static String getPlaybackSuppressionReasonString(int i) {
         if (i != 0) {
             if (i != 1) {
-                if (i == 3) {
-                    return "UNSUITABLE_AUDIO_OUTPUT";
+                if (i != 3) {
+                    if (i == 4) {
+                        return "SCRUBBING";
+                    }
+                    return "?";
                 }
-                return "?";
+                return "UNSUITABLE_AUDIO_OUTPUT";
             }
             return "TRANSIENT_AUDIO_FOCUS_LOSS";
         }

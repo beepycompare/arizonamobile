@@ -1,32 +1,46 @@
 package com.google.firebase.sessions.settings;
 
 import kotlin.Metadata;
+import kotlin.jvm.JvmStatic;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-/* compiled from: SettingsCache.kt */
-@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0019\n\u0002\u0010\u000e\n\u0000\b\u0080\b\u0018\u00002\u00020\u0001B7\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\t\u001a\u0004\u0018\u00010\n¢\u0006\u0002\u0010\u000bJ\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010\u0013J\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u0005HÆ\u0003¢\u0006\u0002\u0010\u0017J\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u0007HÆ\u0003¢\u0006\u0002\u0010\rJ\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u0007HÆ\u0003¢\u0006\u0002\u0010\rJ\u0010\u0010\u001d\u001a\u0004\u0018\u00010\nHÆ\u0003¢\u0006\u0002\u0010\u0010JJ\u0010\u001e\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\nHÆ\u0001¢\u0006\u0002\u0010\u001fJ\u0013\u0010 \u001a\u00020\u00032\b\u0010!\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\"\u001a\u00020\u0007HÖ\u0001J\t\u0010#\u001a\u00020$HÖ\u0001R\u0015\u0010\b\u001a\u0004\u0018\u00010\u0007¢\u0006\n\n\u0002\u0010\u000e\u001a\u0004\b\f\u0010\rR\u0015\u0010\t\u001a\u0004\u0018\u00010\n¢\u0006\n\n\u0002\u0010\u0011\u001a\u0004\b\u000f\u0010\u0010R\u0015\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010\u0014\u001a\u0004\b\u0012\u0010\u0013R\u0015\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\n\n\u0002\u0010\u000e\u001a\u0004\b\u0015\u0010\rR\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\n\n\u0002\u0010\u0018\u001a\u0004\b\u0016\u0010\u0017¨\u0006%"}, d2 = {"Lcom/google/firebase/sessions/settings/SessionConfigs;", "", "sessionEnabled", "", "sessionSamplingRate", "", "sessionRestartTimeout", "", "cacheDuration", "cacheUpdatedTime", "", "(Ljava/lang/Boolean;Ljava/lang/Double;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;)V", "getCacheDuration", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getCacheUpdatedTime", "()Ljava/lang/Long;", "Ljava/lang/Long;", "getSessionEnabled", "()Ljava/lang/Boolean;", "Ljava/lang/Boolean;", "getSessionRestartTimeout", "getSessionSamplingRate", "()Ljava/lang/Double;", "Ljava/lang/Double;", "component1", "component2", "component3", "component4", "component5", "copy", "(Ljava/lang/Boolean;Ljava/lang/Double;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;)Lcom/google/firebase/sessions/settings/SessionConfigs;", "equals", "other", "hashCode", "toString", "", "com.google.firebase-firebase-sessions"}, k = 1, mv = {1, 8, 0}, xi = 48)
+import kotlinx.serialization.KSerializer;
+import kotlinx.serialization.Serializable;
+import kotlinx.serialization.descriptors.SerialDescriptor;
+import kotlinx.serialization.encoding.CompositeEncoder;
+import kotlinx.serialization.internal.BooleanSerializer;
+import kotlinx.serialization.internal.DoubleSerializer;
+import kotlinx.serialization.internal.IntSerializer;
+import kotlinx.serialization.internal.LongSerializer;
+import kotlinx.serialization.internal.PluginExceptionsKt;
+import kotlinx.serialization.internal.SerializationConstructorMarker;
+/* compiled from: SessionConfigs.kt */
+@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0019\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0081\b\u0018\u0000 32\u00020\u0001:\u000223B9\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\t\u001a\u0004\u0018\u00010\n¢\u0006\u0004\b\u000b\u0010\fBM\b\u0010\u0012\u0006\u0010\r\u001a\u00020\u0007\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\t\u001a\u0004\u0018\u00010\n\u0012\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f¢\u0006\u0004\b\u000b\u0010\u0010J\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010\u0012J\u0010\u0010\u001f\u001a\u0004\u0018\u00010\u0005HÆ\u0003¢\u0006\u0002\u0010\u0015J\u0010\u0010 \u001a\u0004\u0018\u00010\u0007HÆ\u0003¢\u0006\u0002\u0010\u0018J\u0010\u0010!\u001a\u0004\u0018\u00010\u0007HÆ\u0003¢\u0006\u0002\u0010\u0018J\u0010\u0010\"\u001a\u0004\u0018\u00010\nHÆ\u0003¢\u0006\u0002\u0010\u001cJJ\u0010#\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\nHÆ\u0001¢\u0006\u0002\u0010$J\u0013\u0010%\u001a\u00020\u00032\b\u0010&\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010'\u001a\u00020\u0007HÖ\u0001J\t\u0010(\u001a\u00020)HÖ\u0001J%\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u00002\u0006\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u000200H\u0001¢\u0006\u0002\b1R\u0015\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0011\u0010\u0012R\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\n\n\u0002\u0010\u0016\u001a\u0004\b\u0014\u0010\u0015R\u0015\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\n\n\u0002\u0010\u0019\u001a\u0004\b\u0017\u0010\u0018R\u0015\u0010\b\u001a\u0004\u0018\u00010\u0007¢\u0006\n\n\u0002\u0010\u0019\u001a\u0004\b\u001a\u0010\u0018R\u0015\u0010\t\u001a\u0004\u0018\u00010\n¢\u0006\n\n\u0002\u0010\u001d\u001a\u0004\b\u001b\u0010\u001c¨\u00064"}, d2 = {"Lcom/google/firebase/sessions/settings/SessionConfigs;", "", "sessionsEnabled", "", "sessionSamplingRate", "", "sessionTimeoutSeconds", "", "cacheDurationSeconds", "cacheUpdatedTimeSeconds", "", "<init>", "(Ljava/lang/Boolean;Ljava/lang/Double;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;)V", "seen0", "serializationConstructorMarker", "Lkotlinx/serialization/internal/SerializationConstructorMarker;", "(ILjava/lang/Boolean;Ljava/lang/Double;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V", "getSessionsEnabled", "()Ljava/lang/Boolean;", "Ljava/lang/Boolean;", "getSessionSamplingRate", "()Ljava/lang/Double;", "Ljava/lang/Double;", "getSessionTimeoutSeconds", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getCacheDurationSeconds", "getCacheUpdatedTimeSeconds", "()Ljava/lang/Long;", "Ljava/lang/Long;", "component1", "component2", "component3", "component4", "component5", "copy", "(Ljava/lang/Boolean;Ljava/lang/Double;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;)Lcom/google/firebase/sessions/settings/SessionConfigs;", "equals", "other", "hashCode", "toString", "", "write$Self", "", "self", "output", "Lkotlinx/serialization/encoding/CompositeEncoder;", "serialDesc", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "write$Self$com_google_firebase_firebase_sessions", "$serializer", "Companion", "com.google.firebase-firebase-sessions"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Serializable
 /* loaded from: classes4.dex */
 public final class SessionConfigs {
-    private final Integer cacheDuration;
-    private final Long cacheUpdatedTime;
-    private final Boolean sessionEnabled;
-    private final Integer sessionRestartTimeout;
+    public static final Companion Companion = new Companion(null);
+    private final Integer cacheDurationSeconds;
+    private final Long cacheUpdatedTimeSeconds;
     private final Double sessionSamplingRate;
+    private final Integer sessionTimeoutSeconds;
+    private final Boolean sessionsEnabled;
 
     public static /* synthetic */ SessionConfigs copy$default(SessionConfigs sessionConfigs, Boolean bool, Double d, Integer num, Integer num2, Long l, int i, Object obj) {
         if ((i & 1) != 0) {
-            bool = sessionConfigs.sessionEnabled;
+            bool = sessionConfigs.sessionsEnabled;
         }
         if ((i & 2) != 0) {
             d = sessionConfigs.sessionSamplingRate;
         }
         if ((i & 4) != 0) {
-            num = sessionConfigs.sessionRestartTimeout;
+            num = sessionConfigs.sessionTimeoutSeconds;
         }
         if ((i & 8) != 0) {
-            num2 = sessionConfigs.cacheDuration;
+            num2 = sessionConfigs.cacheDurationSeconds;
         }
         if ((i & 16) != 0) {
-            l = sessionConfigs.cacheUpdatedTime;
+            l = sessionConfigs.cacheUpdatedTimeSeconds;
         }
         Long l2 = l;
         Integer num3 = num;
@@ -34,7 +48,7 @@ public final class SessionConfigs {
     }
 
     public final Boolean component1() {
-        return this.sessionEnabled;
+        return this.sessionsEnabled;
     }
 
     public final Double component2() {
@@ -42,15 +56,15 @@ public final class SessionConfigs {
     }
 
     public final Integer component3() {
-        return this.sessionRestartTimeout;
+        return this.sessionTimeoutSeconds;
     }
 
     public final Integer component4() {
-        return this.cacheDuration;
+        return this.cacheDurationSeconds;
     }
 
     public final Long component5() {
-        return this.cacheUpdatedTime;
+        return this.cacheUpdatedTimeSeconds;
     }
 
     public final SessionConfigs copy(Boolean bool, Double d, Integer num, Integer num2, Long l) {
@@ -63,53 +77,89 @@ public final class SessionConfigs {
         }
         if (obj instanceof SessionConfigs) {
             SessionConfigs sessionConfigs = (SessionConfigs) obj;
-            return Intrinsics.areEqual(this.sessionEnabled, sessionConfigs.sessionEnabled) && Intrinsics.areEqual((Object) this.sessionSamplingRate, (Object) sessionConfigs.sessionSamplingRate) && Intrinsics.areEqual(this.sessionRestartTimeout, sessionConfigs.sessionRestartTimeout) && Intrinsics.areEqual(this.cacheDuration, sessionConfigs.cacheDuration) && Intrinsics.areEqual(this.cacheUpdatedTime, sessionConfigs.cacheUpdatedTime);
+            return Intrinsics.areEqual(this.sessionsEnabled, sessionConfigs.sessionsEnabled) && Intrinsics.areEqual((Object) this.sessionSamplingRate, (Object) sessionConfigs.sessionSamplingRate) && Intrinsics.areEqual(this.sessionTimeoutSeconds, sessionConfigs.sessionTimeoutSeconds) && Intrinsics.areEqual(this.cacheDurationSeconds, sessionConfigs.cacheDurationSeconds) && Intrinsics.areEqual(this.cacheUpdatedTimeSeconds, sessionConfigs.cacheUpdatedTimeSeconds);
         }
         return false;
     }
 
     public int hashCode() {
-        Boolean bool = this.sessionEnabled;
+        Boolean bool = this.sessionsEnabled;
         int hashCode = (bool == null ? 0 : bool.hashCode()) * 31;
         Double d = this.sessionSamplingRate;
         int hashCode2 = (hashCode + (d == null ? 0 : d.hashCode())) * 31;
-        Integer num = this.sessionRestartTimeout;
+        Integer num = this.sessionTimeoutSeconds;
         int hashCode3 = (hashCode2 + (num == null ? 0 : num.hashCode())) * 31;
-        Integer num2 = this.cacheDuration;
+        Integer num2 = this.cacheDurationSeconds;
         int hashCode4 = (hashCode3 + (num2 == null ? 0 : num2.hashCode())) * 31;
-        Long l = this.cacheUpdatedTime;
+        Long l = this.cacheUpdatedTimeSeconds;
         return hashCode4 + (l != null ? l.hashCode() : 0);
     }
 
     public String toString() {
-        return "SessionConfigs(sessionEnabled=" + this.sessionEnabled + ", sessionSamplingRate=" + this.sessionSamplingRate + ", sessionRestartTimeout=" + this.sessionRestartTimeout + ", cacheDuration=" + this.cacheDuration + ", cacheUpdatedTime=" + this.cacheUpdatedTime + ')';
+        return "SessionConfigs(sessionsEnabled=" + this.sessionsEnabled + ", sessionSamplingRate=" + this.sessionSamplingRate + ", sessionTimeoutSeconds=" + this.sessionTimeoutSeconds + ", cacheDurationSeconds=" + this.cacheDurationSeconds + ", cacheUpdatedTimeSeconds=" + this.cacheUpdatedTimeSeconds + ')';
+    }
+
+    /* compiled from: SessionConfigs.kt */
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¨\u0006\u0007"}, d2 = {"Lcom/google/firebase/sessions/settings/SessionConfigs$Companion;", "", "<init>", "()V", "serializer", "Lkotlinx/serialization/KSerializer;", "Lcom/google/firebase/sessions/settings/SessionConfigs;", "com.google.firebase-firebase-sessions"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes4.dex */
+    public static final class Companion {
+        private Companion() {
+        }
+
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        public final KSerializer<SessionConfigs> serializer() {
+            return SessionConfigs$$serializer.INSTANCE;
+        }
+    }
+
+    public /* synthetic */ SessionConfigs(int i, Boolean bool, Double d, Integer num, Integer num2, Long l, SerializationConstructorMarker serializationConstructorMarker) {
+        if (31 != (i & 31)) {
+            PluginExceptionsKt.throwMissingFieldException(i, 31, SessionConfigs$$serializer.INSTANCE.getDescriptor());
+        }
+        this.sessionsEnabled = bool;
+        this.sessionSamplingRate = d;
+        this.sessionTimeoutSeconds = num;
+        this.cacheDurationSeconds = num2;
+        this.cacheUpdatedTimeSeconds = l;
+    }
+
+    @JvmStatic
+    public static final /* synthetic */ void write$Self$com_google_firebase_firebase_sessions(SessionConfigs sessionConfigs, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
+        compositeEncoder.encodeNullableSerializableElement(serialDescriptor, 0, BooleanSerializer.INSTANCE, sessionConfigs.sessionsEnabled);
+        compositeEncoder.encodeNullableSerializableElement(serialDescriptor, 1, DoubleSerializer.INSTANCE, sessionConfigs.sessionSamplingRate);
+        compositeEncoder.encodeNullableSerializableElement(serialDescriptor, 2, IntSerializer.INSTANCE, sessionConfigs.sessionTimeoutSeconds);
+        compositeEncoder.encodeNullableSerializableElement(serialDescriptor, 3, IntSerializer.INSTANCE, sessionConfigs.cacheDurationSeconds);
+        compositeEncoder.encodeNullableSerializableElement(serialDescriptor, 4, LongSerializer.INSTANCE, sessionConfigs.cacheUpdatedTimeSeconds);
     }
 
     public SessionConfigs(Boolean bool, Double d, Integer num, Integer num2, Long l) {
-        this.sessionEnabled = bool;
+        this.sessionsEnabled = bool;
         this.sessionSamplingRate = d;
-        this.sessionRestartTimeout = num;
-        this.cacheDuration = num2;
-        this.cacheUpdatedTime = l;
+        this.sessionTimeoutSeconds = num;
+        this.cacheDurationSeconds = num2;
+        this.cacheUpdatedTimeSeconds = l;
     }
 
-    public final Boolean getSessionEnabled() {
-        return this.sessionEnabled;
+    public final Boolean getSessionsEnabled() {
+        return this.sessionsEnabled;
     }
 
     public final Double getSessionSamplingRate() {
         return this.sessionSamplingRate;
     }
 
-    public final Integer getSessionRestartTimeout() {
-        return this.sessionRestartTimeout;
+    public final Integer getSessionTimeoutSeconds() {
+        return this.sessionTimeoutSeconds;
     }
 
-    public final Integer getCacheDuration() {
-        return this.cacheDuration;
+    public final Integer getCacheDurationSeconds() {
+        return this.cacheDurationSeconds;
     }
 
-    public final Long getCacheUpdatedTime() {
-        return this.cacheUpdatedTime;
+    public final Long getCacheUpdatedTimeSeconds() {
+        return this.cacheUpdatedTimeSeconds;
     }
 }

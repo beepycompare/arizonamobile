@@ -73,7 +73,6 @@ import com.google.android.vending.expansion.downloader.Helpers;
 import com.google.android.vending.expansion.downloader.IDownloaderClient;
 import com.google.android.vending.expansion.downloader.IDownloaderService;
 import com.google.android.vending.expansion.downloader.IStub;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import com.nvidia.devtech.NvUtil;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.BufferedReader;
@@ -491,7 +490,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
 
     public boolean CheckIfNeedsReadPermission(Activity activity) {
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(getObbDir().getAbsolutePath() + RemoteSettings.FORWARD_SLASH_STRING + Helpers.getExpansionAPKFileName(this, true, this.xAPKS[0].mFileVersion)));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(getObbDir().getAbsolutePath() + "/" + Helpers.getExpansionAPKFileName(this, true, this.xAPKS[0].mFileVersion)));
             bufferedReader.read();
             bufferedReader.close();
         } catch (Exception unused) {
@@ -687,9 +686,9 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
             for (int i = 0; i < list.length; i++) {
                 File file2 = new File(file, list[i]);
                 if (file2.isDirectory()) {
-                    DeleteDirectory(file + RemoteSettings.FORWARD_SLASH_STRING + list[i], z);
+                    DeleteDirectory(file + "/" + list[i], z);
                 }
-                System.out.println("delete " + file + RemoteSettings.FORWARD_SLASH_STRING + list[i]);
+                System.out.println("delete " + file + "/" + list[i]);
                 file2.delete();
             }
             file.delete();
@@ -697,7 +696,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
     }
 
     public boolean DeleteFile(String str) {
-        String str2 = this.baseDirectory + RemoteSettings.FORWARD_SLASH_STRING + str.replace(AbstractJsonLexerKt.STRING_ESC, '/');
+        String str2 = this.baseDirectory + "/" + str.replace(AbstractJsonLexerKt.STRING_ESC, '/');
         File file = new File(str2);
         if (this.DoLog) {
             System.out.println("trying to delete file " + str2);
@@ -803,7 +802,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
     }
 
     public boolean FileRename(String str, String str2, int i) {
-        new File(this.baseDirectory + RemoteSettings.FORWARD_SLASH_STRING + str.replace(AbstractJsonLexerKt.STRING_ESC, '/')).renameTo(new File(this.baseDirectory + RemoteSettings.FORWARD_SLASH_STRING + str2.replace(AbstractJsonLexerKt.STRING_ESC, '/')));
+        new File(this.baseDirectory + "/" + str.replace(AbstractJsonLexerKt.STRING_ESC, '/')).renameTo(new File(this.baseDirectory + "/" + str2.replace(AbstractJsonLexerKt.STRING_ESC, '/')));
         return true;
     }
 
@@ -900,7 +899,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
                 File externalFilesDir = getExternalFilesDir(null);
                 String absolutePath = externalFilesDir.getAbsolutePath();
                 this.baseDirectoryRoot = absolutePath.substring(0, absolutePath.indexOf("/Android"));
-                return externalFilesDir.getAbsolutePath() + RemoteSettings.FORWARD_SLASH_STRING;
+                return externalFilesDir.getAbsolutePath() + "/";
             } catch (NullPointerException | Exception unused) {
             }
         }
@@ -1306,7 +1305,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
         if (this.DoLog) {
             System.out.println("PlayMovie " + str);
         }
-        final String str3 = this.baseDirectory + RemoteSettings.FORWARD_SLASH_STRING + str.replace("\\", RemoteSettings.FORWARD_SLASH_STRING) + (this.AddMovieExtension ? ".m4v" : "");
+        final String str3 = this.baseDirectory + "/" + str.replace("\\", "/") + (this.AddMovieExtension ? ".m4v" : "");
         if (this.DoLog) {
             System.out.println("PlayMovie newFile " + str3);
         }
@@ -1314,10 +1313,10 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
         if (!new File(str3).exists()) {
             try {
                 if (this.AddMovieExtension) {
-                    append = new StringBuilder().append(str.replace("\\", RemoteSettings.FORWARD_SLASH_STRING));
+                    append = new StringBuilder().append(str.replace("\\", "/"));
                     str2 = ".m4v.mp3";
                 } else {
-                    append = new StringBuilder().append(str.replace("\\", RemoteSettings.FORWARD_SLASH_STRING));
+                    append = new StringBuilder().append(str.replace("\\", "/"));
                     str2 = ".mp3";
                 }
                 String sb = append.append(str2).toString();
@@ -1396,7 +1395,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
         if (this.DoLog) {
             System.out.println("PlayMovieInFile " + str + " offset " + i + " length " + i2);
         }
-        String sb = (str.startsWith(RemoteSettings.FORWARD_SLASH_STRING) ? new StringBuilder().append(Environment.getExternalStorageDirectory().getAbsolutePath()).append(str) : new StringBuilder().append(this.baseDirectory).append(RemoteSettings.FORWARD_SLASH_STRING).append(str.replace("\\", RemoteSettings.FORWARD_SLASH_STRING))).toString();
+        String sb = (str.startsWith("/") ? new StringBuilder().append(Environment.getExternalStorageDirectory().getAbsolutePath()).append(str) : new StringBuilder().append(this.baseDirectory).append("/").append(str.replace("\\", "/"))).toString();
         if (new File(sb).exists()) {
             str = sb;
         }

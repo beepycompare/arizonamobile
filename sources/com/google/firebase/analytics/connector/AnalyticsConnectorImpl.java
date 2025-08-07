@@ -5,8 +5,8 @@ import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.internal.measurement.zzfb;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
-import com.google.android.gms.measurement.internal.zzjg;
-import com.google.android.gms.measurement.internal.zzls;
+import com.google.android.gms.measurement.internal.zzjh;
+import com.google.android.gms.measurement.internal.zzlt;
 import com.google.firebase.DataCollectionDefaultChange;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.analytics.connector.AnalyticsConnector;
@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
 /* loaded from: classes4.dex */
 public class AnalyticsConnectorImpl implements AnalyticsConnector {
     private static volatile AnalyticsConnector zzc;
@@ -70,21 +70,21 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
             int i = zzc.zza;
             Preconditions.checkNotNull(bundle);
             AnalyticsConnector.ConditionalUserProperty conditionalUserProperty = new AnalyticsConnector.ConditionalUserProperty();
-            conditionalUserProperty.origin = (String) Preconditions.checkNotNull((String) zzjg.zzb(bundle, "origin", String.class, null));
-            conditionalUserProperty.name = (String) Preconditions.checkNotNull((String) zzjg.zzb(bundle, "name", String.class, null));
-            conditionalUserProperty.value = zzjg.zzb(bundle, "value", Object.class, null);
-            conditionalUserProperty.triggerEventName = (String) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, String.class, null);
-            conditionalUserProperty.triggerTimeout = ((Long) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT, Long.class, 0L)).longValue();
-            conditionalUserProperty.timedOutEventName = (String) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_NAME, String.class, null);
-            conditionalUserProperty.timedOutEventParams = (Bundle) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_PARAMS, Bundle.class, null);
-            conditionalUserProperty.triggeredEventName = (String) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_NAME, String.class, null);
-            conditionalUserProperty.triggeredEventParams = (Bundle) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_PARAMS, Bundle.class, null);
-            conditionalUserProperty.timeToLive = ((Long) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE, Long.class, 0L)).longValue();
-            conditionalUserProperty.expiredEventName = (String) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_NAME, String.class, null);
-            conditionalUserProperty.expiredEventParams = (Bundle) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_PARAMS, Bundle.class, null);
-            conditionalUserProperty.active = ((Boolean) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.ACTIVE, Boolean.class, false)).booleanValue();
-            conditionalUserProperty.creationTimestamp = ((Long) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, Long.class, 0L)).longValue();
-            conditionalUserProperty.triggeredTimestamp = ((Long) zzjg.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP, Long.class, 0L)).longValue();
+            conditionalUserProperty.origin = (String) Preconditions.checkNotNull((String) zzjh.zzb(bundle, "origin", String.class, null));
+            conditionalUserProperty.name = (String) Preconditions.checkNotNull((String) zzjh.zzb(bundle, "name", String.class, null));
+            conditionalUserProperty.value = zzjh.zzb(bundle, "value", Object.class, null);
+            conditionalUserProperty.triggerEventName = (String) zzjh.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, String.class, null);
+            conditionalUserProperty.triggerTimeout = ((Long) zzjh.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT, Long.class, 0L)).longValue();
+            conditionalUserProperty.timedOutEventName = (String) zzjh.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_NAME, String.class, null);
+            conditionalUserProperty.timedOutEventParams = (Bundle) zzjh.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_PARAMS, Bundle.class, null);
+            conditionalUserProperty.triggeredEventName = (String) zzjh.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_NAME, String.class, null);
+            conditionalUserProperty.triggeredEventParams = (Bundle) zzjh.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_PARAMS, Bundle.class, null);
+            conditionalUserProperty.timeToLive = ((Long) zzjh.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE, Long.class, 0L)).longValue();
+            conditionalUserProperty.expiredEventName = (String) zzjh.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_NAME, String.class, null);
+            conditionalUserProperty.expiredEventParams = (Bundle) zzjh.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_PARAMS, Bundle.class, null);
+            conditionalUserProperty.active = ((Boolean) zzjh.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.ACTIVE, Boolean.class, false)).booleanValue();
+            conditionalUserProperty.creationTimestamp = ((Long) zzjh.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, Long.class, 0L)).longValue();
+            conditionalUserProperty.triggeredTimestamp = ((Long) zzjh.zzb(bundle, AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP, Long.class, 0L)).longValue();
             arrayList.add(conditionalUserProperty);
         }
         return arrayList;
@@ -179,7 +179,7 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
         if (conditionalUserProperty == null || (str = conditionalUserProperty.origin) == null || str.isEmpty()) {
             return;
         }
-        if ((conditionalUserProperty.value == null || zzls.zzb(conditionalUserProperty.value) != null) && zzc.zza(str) && zzc.zzd(str, conditionalUserProperty.name)) {
+        if ((conditionalUserProperty.value == null || zzlt.zzb(conditionalUserProperty.value) != null) && zzc.zza(str) && zzc.zzd(str, conditionalUserProperty.name)) {
             if (conditionalUserProperty.expiredEventName == null || (zzc.zzb(conditionalUserProperty.expiredEventName, conditionalUserProperty.expiredEventParams) && zzc.zze(str, conditionalUserProperty.expiredEventName, conditionalUserProperty.expiredEventParams))) {
                 if (conditionalUserProperty.triggeredEventName == null || (zzc.zzb(conditionalUserProperty.triggeredEventName, conditionalUserProperty.triggeredEventParams) && zzc.zze(str, conditionalUserProperty.triggeredEventName, conditionalUserProperty.triggeredEventParams))) {
                     if (conditionalUserProperty.timedOutEventName == null || (zzc.zzb(conditionalUserProperty.timedOutEventName, conditionalUserProperty.timedOutEventParams) && zzc.zze(str, conditionalUserProperty.timedOutEventName, conditionalUserProperty.timedOutEventParams))) {
@@ -192,7 +192,7 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
                             bundle.putString("name", conditionalUserProperty.name);
                         }
                         if (conditionalUserProperty.value != null) {
-                            zzjg.zza(bundle, conditionalUserProperty.value);
+                            zzjh.zza(bundle, conditionalUserProperty.value);
                         }
                         if (conditionalUserProperty.triggerEventName != null) {
                             bundle.putString(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, conditionalUserProperty.triggerEventName);

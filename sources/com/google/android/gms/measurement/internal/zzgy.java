@@ -1,90 +1,235 @@
 package com.google.android.gms.measurement.internal;
 
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.net.Uri;
 import com.google.android.gms.common.internal.Preconditions;
-import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
+import com.google.common.net.HttpHeaders;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
+import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzgy extends zzor {
-    public zzgy(zzpf zzpfVar) {
-        super(zzpfVar);
+public final class zzgy implements Runnable {
+    final /* synthetic */ zzgz zza;
+    private final URL zzb;
+    private final byte[] zzc;
+    private final zzgw zzd;
+    private final String zze;
+    private final Map zzf;
+
+    public zzgy(zzgz zzgzVar, String str, URL url, byte[] bArr, Map map, zzgw zzgwVar) {
+        Objects.requireNonNull(zzgzVar);
+        this.zza = zzgzVar;
+        Preconditions.checkNotEmpty(str);
+        Preconditions.checkNotNull(url);
+        Preconditions.checkNotNull(zzgwVar);
+        this.zzb = url;
+        this.zzc = bArr;
+        this.zzd = zzgwVar;
+        this.zze = str;
+        this.zzf = map;
     }
 
-    public final boolean zzb() {
-        zzay();
-        ConnectivityManager connectivityManager = (ConnectivityManager) this.zzu.zzaY().getSystemService("connectivity");
-        NetworkInfo networkInfo = null;
-        if (connectivityManager != null) {
-            try {
-                networkInfo = connectivityManager.getActiveNetworkInfo();
-            } catch (SecurityException unused) {
+    /* JADX WARN: Not initialized variable reg: 11, insn: 0x00f6: MOVE  (r9 I:??[OBJECT, ARRAY]) = (r11 I:??[OBJECT, ARRAY]), block:B:44:0x00f4 */
+    /* JADX WARN: Not initialized variable reg: 11, insn: 0x00fa: MOVE  (r10 I:??[OBJECT, ARRAY]) = (r11 I:??[OBJECT, ARRAY]), block:B:46:0x00f9 */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x013a  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0178  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x011e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x015c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int i;
+        HttpURLConnection httpURLConnection;
+        Map map;
+        IOException iOException;
+        int i2;
+        Map map2;
+        Throwable th;
+        int responseCode;
+        Map map3;
+        Map map4;
+        InputStream inputStream;
+        zzgz zzgzVar = this.zza;
+        zzgzVar.zzaX();
+        OutputStream outputStream = null;
+        try {
+            URL url = this.zzb;
+            int i3 = com.google.android.gms.internal.measurement.zzcj.zzb;
+            URLConnection openConnection = url.openConnection();
+            if (!(openConnection instanceof HttpURLConnection)) {
+                throw new IOException("Failed to obtain HTTP connection");
             }
-        }
-        return networkInfo != null && networkInfo.isConnected();
-    }
-
-    @Override // com.google.android.gms.measurement.internal.zzor
-    protected final boolean zzbb() {
-        return false;
-    }
-
-    public final void zzc(String str, zzos zzosVar, com.google.android.gms.internal.measurement.zzib zzibVar, zzgv zzgvVar) {
-        zzgy zzgyVar;
-        String str2;
-        URL url;
-        byte[] zzcc;
-        zzg();
-        zzay();
-        try {
-            url = new URI(zzosVar.zza()).toURL();
-            this.zzg.zzp();
-            zzcc = zzibVar.zzcc();
-            zzgyVar = this;
-            str2 = str;
-        } catch (IllegalArgumentException | MalformedURLException | URISyntaxException unused) {
-            zzgyVar = this;
-            str2 = str;
-        }
-        try {
-            this.zzu.zzaW().zzm(new zzgx(zzgyVar, str2, url, zzcc, zzosVar.zzb(), zzgvVar));
-        } catch (IllegalArgumentException | MalformedURLException | URISyntaxException unused2) {
-            zzgyVar.zzu.zzaV().zzb().zzc("Failed to parse URL. Not uploading MeasurementBatch. appId", zzgt.zzl(str2), zzosVar.zza());
-        }
-    }
-
-    public final void zzd(zzh zzhVar, Map map, zzgv zzgvVar) {
-        zzgy zzgyVar;
-        URL url;
-        zzg();
-        zzay();
-        Preconditions.checkNotNull(zzhVar);
-        Preconditions.checkNotNull(zzgvVar);
-        zzot zzf = this.zzg.zzf();
-        Uri.Builder builder = new Uri.Builder();
-        String zzf2 = zzhVar.zzf();
-        Uri.Builder encodedAuthority = builder.scheme((String) zzfx.zze.zzb(null)).encodedAuthority((String) zzfx.zzf.zzb(null));
-        String.valueOf(zzf2);
-        Uri.Builder appendQueryParameter = encodedAuthority.path("config/app/".concat(String.valueOf(zzf2))).appendQueryParameter("platform", ConstantDeviceInfo.APP_PLATFORM);
-        zzf.zzu.zzc().zzi();
-        appendQueryParameter.appendQueryParameter("gmp_version", String.valueOf(130000L)).appendQueryParameter("runtime_version", "0");
-        String uri = builder.build().toString();
-        try {
-            url = new URI(uri).toURL();
-            zzgyVar = this;
-        } catch (IllegalArgumentException | MalformedURLException | URISyntaxException unused) {
-            zzgyVar = this;
-        }
-        try {
-            this.zzu.zzaW().zzm(new zzgx(zzgyVar, zzhVar.zzc(), url, null, map, zzgvVar));
-        } catch (IllegalArgumentException | MalformedURLException | URISyntaxException unused2) {
-            zzgyVar.zzu.zzaV().zzb().zzc("Failed to parse config URL. Not fetching. appId", zzgt.zzl(zzhVar.zzc()), uri);
+            httpURLConnection = (HttpURLConnection) openConnection;
+            httpURLConnection.setDefaultUseCaches(false);
+            zzic zzicVar = zzgzVar.zzu;
+            zzicVar.zzc();
+            httpURLConnection.setConnectTimeout(60000);
+            zzicVar.zzc();
+            httpURLConnection.setReadTimeout(61000);
+            httpURLConnection.setInstanceFollowRedirects(false);
+            httpURLConnection.setDoInput(true);
+            try {
+                Map map5 = this.zzf;
+                if (map5 != null) {
+                    for (Map.Entry entry : map5.entrySet()) {
+                        httpURLConnection.addRequestProperty((String) entry.getKey(), (String) entry.getValue());
+                    }
+                }
+                byte[] bArr = this.zzc;
+                if (bArr != null) {
+                    byte[] zzv = zzgzVar.zzg.zzp().zzv(bArr);
+                    zzgs zzk = zzicVar.zzaV().zzk();
+                    int length = zzv.length;
+                    zzk.zzb("Uploading data. size", Integer.valueOf(length));
+                    httpURLConnection.setDoOutput(true);
+                    httpURLConnection.addRequestProperty(HttpHeaders.CONTENT_ENCODING, "gzip");
+                    httpURLConnection.setFixedLengthStreamingMode(length);
+                    httpURLConnection.connect();
+                    OutputStream outputStream2 = httpURLConnection.getOutputStream();
+                    try {
+                        outputStream2.write(zzv);
+                        outputStream2.close();
+                    } catch (IOException e) {
+                        iOException = e;
+                        i2 = 0;
+                        map2 = null;
+                        outputStream = outputStream2;
+                        if (outputStream != null) {
+                        }
+                        if (httpURLConnection != null) {
+                        }
+                        this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, i2, iOException, null, map2, null));
+                    } catch (Throwable th2) {
+                        th = th2;
+                        i = 0;
+                        map = null;
+                        outputStream = outputStream2;
+                        th = th;
+                        if (outputStream != null) {
+                        }
+                        if (httpURLConnection != null) {
+                        }
+                        this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, i, null, null, map, null));
+                        throw th;
+                    }
+                }
+                responseCode = httpURLConnection.getResponseCode();
+            } catch (IOException e2) {
+                iOException = e2;
+                i2 = 0;
+                map2 = null;
+            } catch (Throwable th3) {
+                th = th3;
+                i = 0;
+                map = null;
+            }
+            try {
+                try {
+                    Map<String, List<String>> headerFields = httpURLConnection.getHeaderFields();
+                    try {
+                        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                        inputStream = httpURLConnection.getInputStream();
+                        try {
+                            byte[] bArr2 = new byte[1024];
+                            while (true) {
+                                int read = inputStream.read(bArr2);
+                                if (read <= 0) {
+                                    break;
+                                }
+                                byteArrayOutputStream.write(bArr2, 0, read);
+                            }
+                            byte[] byteArray = byteArrayOutputStream.toByteArray();
+                            if (inputStream != null) {
+                                inputStream.close();
+                            }
+                            if (httpURLConnection != null) {
+                                httpURLConnection.disconnect();
+                            }
+                            this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, responseCode, null, byteArray, headerFields, null));
+                        } catch (Throwable th4) {
+                            th = th4;
+                            if (inputStream != null) {
+                                inputStream.close();
+                            }
+                            throw th;
+                        }
+                    } catch (Throwable th5) {
+                        th = th5;
+                        inputStream = null;
+                    }
+                } catch (IOException e3) {
+                    e = e3;
+                    i2 = responseCode;
+                    map2 = map4;
+                    iOException = e;
+                    if (outputStream != null) {
+                        try {
+                            outputStream.close();
+                        } catch (IOException e4) {
+                            this.zza.zzu.zzaV().zzb().zzc("Error closing HTTP compressed POST connection output stream. appId", zzgu.zzl(this.zze), e4);
+                        }
+                    }
+                    if (httpURLConnection != null) {
+                        httpURLConnection.disconnect();
+                    }
+                    this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, i2, iOException, null, map2, null));
+                } catch (Throwable th6) {
+                    th = th6;
+                    i = responseCode;
+                    map = map3;
+                    if (outputStream != null) {
+                        try {
+                            outputStream.close();
+                        } catch (IOException e5) {
+                            this.zza.zzu.zzaV().zzb().zzc("Error closing HTTP compressed POST connection output stream. appId", zzgu.zzl(this.zze), e5);
+                        }
+                    }
+                    if (httpURLConnection != null) {
+                        httpURLConnection.disconnect();
+                    }
+                    this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, i, null, null, map, null));
+                    throw th;
+                }
+            } catch (IOException e6) {
+                e = e6;
+                map2 = null;
+                i2 = responseCode;
+                iOException = e;
+                if (outputStream != null) {
+                }
+                if (httpURLConnection != null) {
+                }
+                this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, i2, iOException, null, map2, null));
+            } catch (Throwable th7) {
+                th = th7;
+                map = null;
+                i = responseCode;
+                if (outputStream != null) {
+                }
+                if (httpURLConnection != null) {
+                }
+                this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, i, null, null, map, null));
+                throw th;
+            }
+        } catch (IOException e7) {
+            iOException = e7;
+            i2 = 0;
+            httpURLConnection = null;
+            map2 = null;
+        } catch (Throwable th8) {
+            th = th8;
+            i = 0;
+            httpURLConnection = null;
+            map = null;
         }
     }
 }

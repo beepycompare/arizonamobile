@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import androidx.media3.common.PlaybackException;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.EOFException;
 import java.io.FileInputStream;
@@ -123,7 +122,7 @@ public final class RawResourceDataSource extends BaseDataSource {
             }
         } else if (TextUtils.equals("android.resource", normalizeScheme.getScheme())) {
             String str = (String) Assertions.checkNotNull(normalizeScheme.getPath());
-            if (str.startsWith(RemoteSettings.FORWARD_SLASH_STRING)) {
+            if (str.startsWith("/")) {
                 str = str.substring(1);
             }
             if (TextUtils.isEmpty(normalizeScheme.getHost())) {

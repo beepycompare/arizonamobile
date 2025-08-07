@@ -10,7 +10,7 @@ import javax.net.ssl.SSLSocketFactory;
 public class CacheControlHttpsConnectionPerformer {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f1238a;
+    private final a f1237a;
     private final SSLSocketFactory b;
 
     /* loaded from: classes4.dex */
@@ -32,7 +32,7 @@ public class CacheControlHttpsConnectionPerformer {
         Response a2;
         int code;
         try {
-            a aVar = this.f1238a;
+            a aVar = this.f1237a;
             String oldETag = client.getOldETag();
             SSLSocketFactory sSLSocketFactory = this.b;
             aVar.getClass();
@@ -51,7 +51,7 @@ public class CacheControlHttpsConnectionPerformer {
     }
 
     CacheControlHttpsConnectionPerformer(a aVar, SSLSocketFactory sSLSocketFactory) {
-        this.f1238a = aVar;
+        this.f1237a = aVar;
         this.b = sSLSocketFactory;
     }
 }

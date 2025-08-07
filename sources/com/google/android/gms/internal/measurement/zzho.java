@@ -1,16 +1,16 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzho extends zzme implements zznm {
+public final class zzho extends zzmf implements zznn {
     private static final zzho zzd;
-    private zzmn zzb = zzcv();
+    private zzmo zzb = zzcv();
 
     static {
         zzho zzhoVar = new zzho();
         zzd = zzhoVar;
-        zzme.zzcp(zzho.class, zzhoVar);
+        zzmf.zzcp(zzho.class, zzhoVar);
     }
 
     private zzho() {
@@ -29,14 +29,14 @@ public final class zzho extends zzme implements zznm {
     }
 
     public final /* synthetic */ void zzd(Iterable iterable) {
-        zzmn zzmnVar = this.zzb;
-        if (!zzmnVar.zza()) {
-            this.zzb = zzme.zzcw(zzmnVar);
+        zzmo zzmoVar = this.zzb;
+        if (!zzmoVar.zza()) {
+            this.zzb = zzmf.zzcw(zzmoVar);
         }
-        zzkr.zzce(iterable, this.zzb);
+        zzks.zzce(iterable, this.zzb);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {

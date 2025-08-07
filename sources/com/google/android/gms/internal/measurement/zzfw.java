@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes3.dex */
-public final class zzfw extends zzme implements zznm {
+public final class zzfw extends zzmf implements zznn {
     private static final zzfw zzf;
     private int zzb;
     private int zzd;
@@ -10,7 +10,7 @@ public final class zzfw extends zzme implements zznm {
     static {
         zzfw zzfwVar = new zzfw();
         zzf = zzfwVar;
-        zzme.zzcp(zzfw.class, zzfwVar);
+        zzmf.zzcp(zzfw.class, zzfwVar);
     }
 
     private zzfw() {
@@ -33,13 +33,13 @@ public final class zzfw extends zzme implements zznm {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.gms.internal.measurement.zzme
+    @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
         if (i2 != 0) {
             if (i2 == 2) {
-                zzmj zzmjVar = zzfz.zza;
-                return zzcq(zzf, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001᠌\u0000\u0002᠌\u0001", new Object[]{"zzb", "zzd", zzmjVar, "zze", zzmjVar});
+                zzmk zzmkVar = zzfz.zza;
+                return zzcq(zzf, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001᠌\u0000\u0002᠌\u0001", new Object[]{"zzb", "zzd", zzmkVar, "zze", zzmkVar});
             } else if (i2 != 3) {
                 if (i2 != 4) {
                     if (i2 == 5) {

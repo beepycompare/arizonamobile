@@ -44,7 +44,7 @@ public final class WebvttCueParser {
     private static final char CHAR_SEMI_COLON = ';';
     private static final char CHAR_SLASH = '/';
     private static final char CHAR_SPACE = ' ';
-    public static final Pattern CUE_HEADER_PATTERN = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)(.*)?$");
+    public static final Pattern CUE_HEADER_PATTERN = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*)?$");
     private static final Pattern CUE_SETTING_PATTERN = Pattern.compile("(\\S+?):(\\S+)");
     private static final Map<String, Integer> DEFAULT_BACKGROUND_COLORS;
     static final float DEFAULT_POSITION = 0.5f;

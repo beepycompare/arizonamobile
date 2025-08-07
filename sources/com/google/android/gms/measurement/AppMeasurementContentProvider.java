@@ -7,8 +7,8 @@ import android.content.pm.ProviderInfo;
 import android.database.Cursor;
 import android.net.Uri;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.measurement.internal.zzib;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@22.5.0 */
+import com.google.android.gms.measurement.internal.zzic;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 @Deprecated
 /* loaded from: classes3.dex */
 public class AppMeasurementContentProvider extends ContentProvider {
@@ -39,7 +39,7 @@ public class AppMeasurementContentProvider extends ContentProvider {
     public boolean onCreate() {
         Context context = getContext();
         Preconditions.checkNotNull(context);
-        zzib.zzy(context, null, null);
+        zzic.zzy(context, null, null);
         return false;
     }
 

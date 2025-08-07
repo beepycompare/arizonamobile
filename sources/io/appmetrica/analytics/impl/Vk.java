@@ -11,16 +11,16 @@ public final class Vk {
     public static final String i = "SESSION_IS_ALIVE_REPORT_NEEDED";
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f692a;
-    protected final C0385kf b;
+    public final String f691a;
+    protected final C0386kf b;
     public Ab c;
 
-    public Vk(C0385kf c0385kf, String str) {
-        this.b = c0385kf;
-        this.f692a = str;
+    public Vk(C0386kf c0386kf, String str) {
+        this.b = c0386kf;
+        this.f691a = str;
         Ab ab = new Ab();
         try {
-            String h2 = c0385kf.h(str);
+            String h2 = c0386kf.h(str);
             if (!TextUtils.isEmpty(h2)) {
                 ab = new Ab(h2);
             }
@@ -80,7 +80,7 @@ public final class Vk {
     }
 
     public final void b() {
-        this.b.e(this.f692a, this.c.toString());
+        this.b.e(this.f691a, this.c.toString());
         this.b.b();
     }
 

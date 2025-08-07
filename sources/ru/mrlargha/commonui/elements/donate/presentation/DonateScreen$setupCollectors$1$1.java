@@ -83,12 +83,15 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             DonateStates donateStates;
+            StateFlow<UiState<List<DonateCategoryModelUi>>> categoriesState;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 donateStates = this.this$0.states;
-                StateFlow<UiState<List<DonateCategoryModelUi>>> categoriesState = donateStates.getCategoriesState();
+                if (donateStates == null || (categoriesState = donateStates.getCategoriesState()) == null) {
+                    return Unit.INSTANCE;
+                }
                 final DonateScreenBinding donateScreenBinding = this.$this_with;
                 final DonateScreen donateScreen = this.this$0;
                 this.label = 1;

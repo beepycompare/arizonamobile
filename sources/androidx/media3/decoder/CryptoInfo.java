@@ -2,7 +2,6 @@ package androidx.media3.decoder;
 
 import android.media.MediaCodec;
 import androidx.media3.common.util.Assertions;
-import androidx.media3.common.util.Util;
 /* loaded from: classes2.dex */
 public final class CryptoInfo {
     public int clearBlocks;
@@ -19,7 +18,7 @@ public final class CryptoInfo {
     public CryptoInfo() {
         MediaCodec.CryptoInfo cryptoInfo = new MediaCodec.CryptoInfo();
         this.frameworkCryptoInfo = cryptoInfo;
-        this.patternHolder = Util.SDK_INT >= 24 ? new PatternHolderV24(cryptoInfo) : null;
+        this.patternHolder = new PatternHolderV24(cryptoInfo);
     }
 
     public void set(int i, int[] iArr, int[] iArr2, byte[] bArr, byte[] bArr2, int i2, int i3, int i4) {
@@ -37,9 +36,7 @@ public final class CryptoInfo {
         this.frameworkCryptoInfo.key = bArr;
         this.frameworkCryptoInfo.iv = bArr2;
         this.frameworkCryptoInfo.mode = i2;
-        if (Util.SDK_INT >= 24) {
-            ((PatternHolderV24) Assertions.checkNotNull(this.patternHolder)).set(i3, i4);
-        }
+        ((PatternHolderV24) Assertions.checkNotNull(this.patternHolder)).set(i3, i4);
     }
 
     public MediaCodec.CryptoInfo getFrameworkCryptoInfo() {

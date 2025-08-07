@@ -2,7 +2,6 @@ package okio.internal;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.google.firebase.sessions.settings.RemoteSettings;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -42,7 +41,7 @@ import okio.Source;
 /* loaded from: classes5.dex */
 public final class ResourceFileSystem extends FileSystem {
     private static final Companion Companion = new Companion(null);
-    private static final Path ROOT = Path.Companion.get$default(Path.Companion, RemoteSettings.FORWARD_SLASH_STRING, false, 1, (Object) null);
+    private static final Path ROOT = Path.Companion.get$default(Path.Companion, "/", false, 1, (Object) null);
     private final ClassLoader classLoader;
     private final Lazy roots$delegate;
     private final FileSystem systemFileSystem;

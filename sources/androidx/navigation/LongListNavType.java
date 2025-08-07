@@ -68,11 +68,11 @@ public final class LongListNavType extends CollectionNavType<List<? extends Long
     public void put(Bundle bundle, String key, List<Long> list) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        Bundle m7666constructorimpl = SavedStateWriter.m7666constructorimpl(bundle);
+        Bundle m7681constructorimpl = SavedStateWriter.m7681constructorimpl(bundle);
         if (list != null) {
-            SavedStateWriter.m7688putLongArrayimpl(m7666constructorimpl, key, CollectionsKt.toLongArray(list));
+            SavedStateWriter.m7703putLongArrayimpl(m7681constructorimpl, key, CollectionsKt.toLongArray(list));
         } else {
-            SavedStateWriter.m7689putNullimpl(m7666constructorimpl, key);
+            SavedStateWriter.m7704putNullimpl(m7681constructorimpl, key);
         }
     }
 
@@ -80,10 +80,10 @@ public final class LongListNavType extends CollectionNavType<List<? extends Long
     public List<Long> get(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        Bundle m7580constructorimpl = SavedStateReader.m7580constructorimpl(bundle);
-        if (!SavedStateReader.m7581containsimpl(m7580constructorimpl, key) || SavedStateReader.m7659isNullimpl(m7580constructorimpl, key)) {
+        Bundle m7595constructorimpl = SavedStateReader.m7595constructorimpl(bundle);
+        if (!SavedStateReader.m7596containsimpl(m7595constructorimpl, key) || SavedStateReader.m7674isNullimpl(m7595constructorimpl, key)) {
             return null;
         }
-        return ArraysKt.toList(SavedStateReader.m7622getLongArrayimpl(m7580constructorimpl, key));
+        return ArraysKt.toList(SavedStateReader.m7637getLongArrayimpl(m7595constructorimpl, key));
     }
 }

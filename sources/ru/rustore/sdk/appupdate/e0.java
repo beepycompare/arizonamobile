@@ -1,80 +1,109 @@
 package ru.rustore.sdk.appupdate;
 
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.ServiceConnection;
-import android.os.IBinder;
-import kotlin.Unit;
+import java.util.Map;
+import kotlin.Lazy;
+import kotlin.LazyKt;
 import kotlin.jvm.functions.Function0;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.Intrinsics;
-import ru.rustore.sdk.appupdate.d0;
-import ru.rustore.sdk.appupdate.errors.RemoteProviderErrors;
-import ru.rustore.sdk.appupdate.u;
-import ru.rustore.sdk.core.exception.RuStoreException;
-import ru.rustore.sdk.core.util.ContextExtKt;
+import kotlin.jvm.internal.Lambda;
+import ru.rustore.sdk.analytics.AnalyticsEventProvider;
+import ru.rustore.sdk.metrics.MetricsClient;
 /* loaded from: classes5.dex */
-public final class e0 implements ServiceConnection {
+public final class e0 {
+    public static volatile e0 i;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1349a;
-    public final String b;
-    public final Function0<Unit> c;
-    public final Function1<RuStoreException, Unit> d;
+    public final Context f1365a;
+    public final Map<String, Object> b;
+    public final Lazy c = LazyKt.lazy(new d());
+    public final Lazy d = LazyKt.lazy(new c());
+    public final Lazy e = LazyKt.lazy(new e());
+    public final Lazy f = LazyKt.lazy(b.f1366a);
+    public final Lazy g = LazyKt.lazy(new f());
+    public final Lazy h = LazyKt.lazy(new g());
 
-    public e0(Context context, String applicationId, g onSuccess, h onError) {
-        Intrinsics.checkNotNullParameter(context, "context");
-        Intrinsics.checkNotNullParameter(applicationId, "applicationId");
-        Intrinsics.checkNotNullParameter(onSuccess, "onSuccess");
-        Intrinsics.checkNotNullParameter(onError, "onError");
-        this.f1349a = context;
-        this.b = applicationId;
-        this.c = onSuccess;
-        this.d = onError;
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName name, IBinder service) {
-        Intrinsics.checkNotNullParameter(name, "name");
-        Intrinsics.checkNotNullParameter(service, "service");
-        try {
-            u.a.a(service).a(this.b, new a(this));
-        } catch (Exception e) {
-            Function1<RuStoreException, Unit> function1 = this.d;
-            String message = e.getMessage();
-            if (message == null) {
-                message = "";
-            }
-            function1.invoke(new RuStoreException(message));
-            ContextExtKt.unbindServiceSafely(this.f1349a, this);
-        }
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
-        this.d.invoke(new RuStoreException("onServiceDisconnected"));
-        ContextExtKt.unbindServiceSafely(this.f1349a, this);
+    /* loaded from: classes5.dex */
+    public static final class a {
     }
 
     /* loaded from: classes5.dex */
-    public static final class a extends d0.a {
-        public final /* synthetic */ e0 b;
+    public static final class b extends Lambda implements Function0<C0804j> {
 
-        public a(e0 e0Var) {
-            this.b = e0Var;
+        /* renamed from: a  reason: collision with root package name */
+        public static final b f1366a = new b();
+
+        public b() {
+            super(0);
         }
 
-        @Override // ru.rustore.sdk.appupdate.d0
-        public final void a(int i, String errorMessage) {
-            Intrinsics.checkNotNullParameter(errorMessage, "errorMessage");
-            e0.this.d.invoke(RemoteProviderErrors.INSTANCE.toRuStoreException(i, errorMessage));
-            ContextExtKt.unbindServiceSafely(e0.this.f1349a, this.b);
+        @Override // kotlin.jvm.functions.Function0
+        public final C0804j invoke() {
+            return new C0804j();
+        }
+    }
+
+    /* loaded from: classes5.dex */
+    public static final class c extends Lambda implements Function0<C0808n> {
+        public c() {
+            super(0);
         }
 
-        @Override // ru.rustore.sdk.appupdate.d0
-        public final void a() {
-            e0.this.c.invoke();
-            ContextExtKt.unbindServiceSafely(e0.this.f1349a, this.b);
+        @Override // kotlin.jvm.functions.Function0
+        public final C0808n invoke() {
+            return new C0808n((C0804j) e0.this.f.getValue(), (MetricsClient) e0.this.g.getValue());
         }
+    }
+
+    /* loaded from: classes5.dex */
+    public static final class d extends Lambda implements Function0<C0799e> {
+        public d() {
+            super(0);
+        }
+
+        @Override // kotlin.jvm.functions.Function0
+        public final C0799e invoke() {
+            return new C0799e((C0808n) e0.this.d.getValue(), (a0) e0.this.h.getValue(), (L) e0.this.e.getValue(), AnalyticsEventProvider.INSTANCE, e0.this.f1365a);
+        }
+    }
+
+    /* loaded from: classes5.dex */
+    public static final class e extends Lambda implements Function0<L> {
+        public e() {
+            super(0);
+        }
+
+        @Override // kotlin.jvm.functions.Function0
+        public final L invoke() {
+            return new L(new K(e0.this.f1365a));
+        }
+    }
+
+    /* loaded from: classes5.dex */
+    public static final class f extends Lambda implements Function0<MetricsClient> {
+        public f() {
+            super(0);
+        }
+
+        @Override // kotlin.jvm.functions.Function0
+        public final MetricsClient invoke() {
+            return MetricsClient.Companion.getInstance(e0.this.f1365a);
+        }
+    }
+
+    /* loaded from: classes5.dex */
+    public static final class g extends Lambda implements Function0<a0> {
+        public g() {
+            super(0);
+        }
+
+        @Override // kotlin.jvm.functions.Function0
+        public final a0 invoke() {
+            return new a0(new b0(), new c0(e0.this.b), new d0());
+        }
+    }
+
+    public e0(Context context, Map map) {
+        this.f1365a = context;
+        this.b = map;
     }
 }

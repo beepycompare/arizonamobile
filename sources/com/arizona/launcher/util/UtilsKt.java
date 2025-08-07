@@ -3,6 +3,7 @@ package com.arizona.launcher.util;
 import android.content.Context;
 import android.os.Build;
 import android.util.Log;
+import androidx.core.content.ContextCompat;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import com.adjust.sdk.Adjust;
 import com.adjust.sdk.AdjustEvent;
@@ -64,6 +65,7 @@ public final class UtilsKt {
         Intrinsics.checkNotNullParameter(context, "context");
         if (file == null) {
             Log.w("getItemsJson", "External files dir is null");
+        } else if (ContextCompat.checkSelfPermission(context, "android.permission.READ_EXTERNAL_STORAGE") != 0) {
         } else {
             BuildersKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), null, null, new UtilsKt$getItemsJson$1(i, file, context, null), 3, null);
         }

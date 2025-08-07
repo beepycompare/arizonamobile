@@ -1,15 +1,10 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@22.5.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
 /* loaded from: classes3.dex */
-final class zzlt {
-    private static final zzlr zza = new zzls();
-
-    static {
-        int i = zznt.zza;
-    }
-
+final class zzlt extends zzls {
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static zzlr zza() {
-        return zza;
+    @Override // com.google.android.gms.internal.measurement.zzls
+    public final void zza(Object obj) {
+        ((zzmc) obj).zzb.zzb();
     }
 }

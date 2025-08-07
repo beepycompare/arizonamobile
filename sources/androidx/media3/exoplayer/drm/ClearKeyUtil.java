@@ -1,5 +1,6 @@
 package androidx.media3.exoplayer.drm;
 
+import android.os.Build;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import com.google.firebase.crashlytics.internal.metadata.UserMetadata;
@@ -15,11 +16,11 @@ final class ClearKeyUtil {
     }
 
     public static byte[] adjustRequestData(byte[] bArr) {
-        return Util.SDK_INT >= 27 ? bArr : Util.getUtf8Bytes(base64ToBase64Url(Util.fromUtf8Bytes(bArr)));
+        return Build.VERSION.SDK_INT >= 27 ? bArr : Util.getUtf8Bytes(base64ToBase64Url(Util.fromUtf8Bytes(bArr)));
     }
 
     public static byte[] adjustResponseData(byte[] bArr) {
-        if (Util.SDK_INT >= 27) {
+        if (Build.VERSION.SDK_INT >= 27) {
             return bArr;
         }
         try {
